@@ -1,6 +1,12 @@
 # How the full quantum invariant acquires the knot volume
 
-This chapter follows the completed proof and then explains the local tools used in other presentations. The [methods chapter](methods.md) gives the definitions, elementary examples, and literature references for those tools. The [notation chapter](notation.md) records the conventions needed to compare their formulas.
+This chapter follows the current strict Conway proof and then explains
+local tools used in other presentations. Its main written account is
+[Holomorphic source asymptotics and volume limits for strict Conway compositions](../../docs/papers/conway-asymptotics.pdf).
+The [dependency graph](../../docs/papers/dependencies.html) locates its
+finite, analytic and geometric inputs. The [methods chapter](methods.md)
+gives definitions, examples and literature references; the
+[notation chapter](notation.md) records the conventions.
 
 The main result concerns a particular, already defined knot invariant. For a knot \(K\) and an integer level \(N\), write \(K_N(K)\) for its reduced Kashaev invariant, normalized to be \(1\) on the unknot. The quantum parameter is \(q_N=e^{\pi i/N}\). A diagram computes \(K_N\) by multiplying crossing matrices, joining their indices along strands, and summing the remaining indices. Cups, caps and the marked cut specify how the strands close. In the technical notes, this entire prescribed expression is called the **source**. It includes its scalar factors and derivatives, not just the part that seems largest.
 
@@ -25,15 +31,49 @@ The exact tangle recursion supplies the starting point. A physical leaf is a qua
 
 At complete colors, the factorial weights have a real limiting action: the logarithm of a weight, divided by \(N\), has that limit. The action is a function of the scaled leaf and product indices, subject to the original compatibility equations. It must be maximized with those equations still imposed. Strictness ensures that the maximum occurs where the relevant cell angles are positive. The geometry chapter explains why the resulting cells reconstruct the actual augmented exterior, rather than merely a collection of tetrahedra of the correct total volume.
 
-The local analysis then permits the auxiliary colors to vary slightly in a complex neighborhood. The [general core theorem](../../notes/actual_conway_general_core_packet_and_gap.md) and the [quarter-index theorem](../../notes/actual_conway_quarter_index_color_packet.md) retain the exact recurrence, its boundary data and the original phases. They give a nonzero analytic contribution near the geometric critical point. The quarter-index case is needed because some strict diagrams have a limiting scaled leaf index exactly \(1/4\); it is an equal-modulus boundary for two transfer roots, not a collision of those roots. The proof controls their accumulated contributions instead of inferring dominance from their distinctness.
+For the current volume proof, each full integer crossing power is first
+expanded exactly in ordinary colored circles. This allows the local
+analysis to use the source with no retained half twists. Its actual
+factorials have a holomorphic interpolation near every strict stationary
+state, including a leaf index equal to \(1/4\). Summing over the original
+integer lattice gives a nonzero local contribution with the required
+normalization at both level parities.
 
-The remaining difficulty is global: a pointwise estimate on each factor can be too large after the factors are joined. The solution uses two compatible estimates for parts of the tree. A product carrying an actual character operator is controlled by the [decorated-character theorem](../../notes/actual_conway_decorated_character_spectral_closure.md). A connected product region without such an operator is closed against an auxiliary positive comparison polynomial. The [probe theorem](../../notes/actual_conway_unflagged_core_probe_bound.md) bounds that comparison at the region's actual geometric boundary action. The comparison polynomial is used only in the inequality; it does not replace a physical coupon in the invariant.
+The [quarter-index recurrence theorem](../../docs/papers/quarter-index-asymptotics.pdf)
+remains a separate local result. It controls two transfer roots of equal
+modulus without assuming that distinct roots imply dominance. That
+signed recurrence analysis is not needed for the pure-source argument
+used by the current strict volume theorem.
 
-The [spectral propagation theorem](../../notes/actual_conway_mixed_core_spectral_propagation.md) shows that these estimates survive the next turn and product. Here a spectral norm records both values and first derivatives at repeated spectral nodes. The proof keeps a neighborhood of the unique maximizing indices separate from its complement. In the neighborhood, the actual polynomial factors give angular decay and a local loss when a physical color is far from complete. Outside it, a fixed exponential gap absorbs the polynomial interpolation costs. Induction over the finite tree therefore controls the full expression at the correct action, without assigning the same cost to every turn.
+The remaining difficulty is global: a pointwise estimate on each factor
+can be too large after the factors are joined. The
+[source-bound paper](../../docs/papers/conway-source-bounds.pdf) retains
+the shared indices, exact Fourier identities and first derivatives at
+repeated spectral roots. Positive comparison sums and boundary profiles
+control the expression outside its central region. Its Theorem 1.1
+treats at least three leaves; Corollary 9.1 proves the two-leaf case
+separately. A local saddle estimate is not substituted for either bound.
+
+The earlier [decorated-character](../../notes/actual_conway_decorated_character_spectral_closure.md),
+[auxiliary comparison](../../notes/actual_conway_unflagged_core_probe_bound.md),
+and [spectral propagation](../../notes/actual_conway_mixed_core_spectral_propagation.md)
+arguments remain in the archive. They explain the development of the
+estimates and retain their own hypotheses. The current paper gives the
+proof and import list for the full strict class in one account.
 
 This yields two global facts. Every physical color tuple obeys the required upper bound, and any tuple with at least one color a fixed fraction away from complete has a strict exponential loss. The difference between a full leaf and its chosen local expression is an explicit complementary-color term, called an **alias**. Expanding these differences turns every unwanted term into an actual full quantum evaluation with at least one small color. The global color bound suppresses them. This is why the argument controls all aliases at once; it does not assume that individual absolute-value estimates preserve the cancellations.
 
-Finally, an exact finite Fourier identity inserts the prescribed integer twists into the original leaf frames. The local packet produces a nonzero saddle contribution. Estimates on the whole Fourier domain, including its boundary terms, make the remaining part exponentially smaller. The [marked filling theorem](../../notes/actual_conway_general_mask_marked_filling.md) identifies the resulting action with the volume of the actual knot complement. Only auxiliary crossing-circle cusps are filled. The main knot cusp remains complete and unfilled.
+Finally, the finite Fourier formula expresses the filling evaluation as
+an oscillatory sum. The [whole-period theorem](../../docs/papers/oscillatory-fillings.pdf)
+estimates all charges, including the infinite tail and endpoint terms,
+once its local asymptotic and global gap hypotheses have been supplied.
+The resulting nonzero contribution dominates the entire remainder.
+The [strict marked geometry](../../docs/papers/strict-conway-geometry.pdf)
+and the asymptotics paper's shear calculation identify its action,
+including its additive constant, with the volume of the actual knot
+complement. Odd crossing powers keep their original retained half twist
+and integer filling slope in this geometric comparison. Only auxiliary
+crossing-circle cusps are filled; the main knot cusp remains complete.
 
 ## Subtree estimates with a uniform twist threshold
 
@@ -69,6 +109,13 @@ strict-tree long-filling proof; it does not narrow that
 proof to circle trees.
 
 ## The same limit written through a quantum \(A\)-operator
+
+This is a separate route through recurrence data. The current
+[meridian-expansion theorem](../../docs/papers/meridian-expansions.pdf)
+assumes a specified fixed annihilator of the actual state; it does not
+construct that operator. The earlier finite-state constructions below
+have their own hypotheses. They are not extra premises of the volume
+proof just described.
 
 A quantum \(A\)-operator is a finite difference operator in a meridian variable. It is more data than a classical algebraic curve, but an equation alone can still have several solutions. The actual solution is selected here by its original quantum-group definition and finitely many fixed small-color values.
 

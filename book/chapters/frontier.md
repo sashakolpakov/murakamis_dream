@@ -15,6 +15,13 @@ Each link leads to the precise hypotheses and normalization used by that
 approach. The [notation chapter](notation.md) fixes the level, color,
 meridian and twist conventions.
 
+The [review of the retained results](../../repro/RETAINED_RELEASE_ASSESSMENT.md)
+has reached its stated stopping point. The questions below concern
+extensions or alternative proofs. In particular, the missing estimate
+for an arbitrary unchanged matched sphere is not an assumption used by
+the restricted-family theorems. The [dependency graph](../../docs/papers/dependencies.html)
+separates their completed proof paths from that open comparison.
+
 ## The planar decoration result and the remaining general problem
 
 The [balanced decoration theorem](../../notes/actual_balanced_terminal_fan_volume.md)

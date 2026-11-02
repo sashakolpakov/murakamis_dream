@@ -1,15 +1,19 @@
 # Marked geometry of strict Conway compositions
 
+[Read the PDF](../../docs/papers/strict-conway-geometry.pdf) · [TeX source](main.tex) · [Dependency graph](https://sashakolpakov.github.io/murakamis_dream/papers/dependencies.html)
+
 This classical paper constructs the complete exterior and independently
 long primitive signed fillings of a fixed literal strict Conway
 expression. It proves the individual-edge mask induction and the
 original closed-link identification; it does not apply the completed-root
 global metric theorem to the enlarged syntax.
 
+The [strict Conway asymptotic paper](../conway-asymptotics/README.md) uses this construction to identify its action with the volume of the original knot complement. The metric is constructed here from the strict variational data; its existence is not inferred from the quantum asymptotic.
+
 ## Statements
 
 - **sm:complete**: complete metric of the original augmented link,
-  primitive crossing-circle bases and absolute volume \(2\pi F_0\).
+  primitive crossing-circle bases and absolute volume $2\pi F_0$.
 - **sm:mask-invariant**: all four output-edge bits, including asymmetric
   high-type outputs, convex attachment and terminal accounting.
 - **sm:knot-choice**: a literal pure/odd choice with one main component.
@@ -70,9 +74,9 @@ of the present proof.
   the same-boundary-chain comparison. All topological, flag, positivity,
   primitive-log and unfilled-cusp premises are verified here.
 
-The primitive ratio is \(\tau=2ic/(1-\epsilon ic)\). Accordingly
-\(\Phi_{\chi_i\chi_j}(0)=\pi i\tau_i\delta_{ij}\) and
-\(DV(0)=-2\pi i\,\mathrm{diag}(\tau_i)\). This convention avoids the
+The primitive ratio is $\tau=2ic/(1-\epsilon ic)$. Accordingly
+$\Phi_{\chi_i\chi_j}(0)=\pi i\tau_i\delta_{ij}$ and
+$DV(0)=-2\pi i\,\mathrm{diag}(\tau_i)$. This convention avoids the
 half-ratio ambiguity in the older general-mask note.
 
 ## Build and finite reproduction

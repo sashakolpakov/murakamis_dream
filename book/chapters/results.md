@@ -25,6 +25,13 @@ when the remaining part of the invariant has not been bounded.
 The local identities and conditional estimates near the end of this
 chapter are stated with those smaller conclusions.
 
+For the current proof texts, use the [papers by subject](../../papers/README.md)
+and their [statement dependencies](../../docs/papers/dependencies.html).
+The frozen reference account and older technical notes retain their own
+hypotheses; a broader current theorem is not attributed retrospectively
+to an earlier edition. The [closing assessment](../../repro/RETAINED_RELEASE_ASSESSMENT.md)
+records which proof requirements were checked for the retained results.
+
 The following table separates the principal conclusions. The subsequent
 sections define each construction and give its proof and restrictions.
 

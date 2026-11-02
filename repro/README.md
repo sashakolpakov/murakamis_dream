@@ -1,213 +1,91 @@
 # Reproducing the calculations
 
+This directory contains the finite certificates, symbolic checks and
+Lean replay commands used by the papers. A successful computation has a
+specific role: it may establish a rational inequality, check an exact
+finite identity, or compile a stated implication. It does not replace the
+written proof that connects that result to the original knot invariant.
 
-The manuscript proves inequalities on continuous regions of state variables. Some of those inequalities are reduced, by concavity and supporting tangent planes, to a finite set of rational comparisons. This directory provides the scripts and reference records for those comparisons. The quantitative circle-tree theorem also has a group of symbolic, geometric and finite numerical checks, described below.
+The [closing assessment](RETAINED_RELEASE_ASSESSMENT.md) records the
+completed review of the retained restricted results. The
+[manuscript audit](MANUSCRIPT_AUDIT.md) locates their written arguments
+and corrections. In particular, the
+[whole-sum review](manuscript_audit/whole-charge/report.md) examines the
+infinite charge estimates and endpoint terms, while the
+[assembly review](manuscript_audit/internal-assembly-completion/report.md)
+checks how the resulting theorem is used. The general source comparison
+remains open. No complete formal proof for an actual knot is claimed.
 
-## Run the checks
+## Choose the check that matches the claim
 
-The [manuscript audit](MANUSCRIPT_AUDIT.md) follows the implications from
-the exact invariant to the volume identity, records the corrections
-found in this review, and identifies the arguments still outside formal
-verification. The [Lean project](../formal/README.md) checks finite
-support, polynomial and tensor identities, and conditional implications
-from whole-source estimates to a volume limit. Run it with
-the pinned Lean toolchain installed:
+Run these commands from the repository root. Each writes its results to
+the specified directory; the commands use separate directories so that
+one kind of check does not overwrite another.
 
-```sh
-python3 repro/check_proof_logic.py --output repro/results/proof-logic
-```
+| Claim being checked | Entry point | Requirements |
+| --- | --- | --- |
+| Finite rational certificates for the original tangle bounds | `python3 repro/verify.py --output repro/results` | Python 3.10 or later; standard library |
+| Finite algebra and rational constants in the registered papers | `python3 repro/check_paper_algebra.py --output repro/results/paper-algebra` | SymPy, python-flint, NumPy and mpmath |
+| Finite algebra and conditional proof implications in Lean | `python3 repro/check_proof_logic.py --output repro/results/proof-logic` | Pinned Lean toolchain |
+| Concrete analytic, variational and formal-series results in Lean | `python3 repro/check_concrete_limits.py --output repro/results/concrete-limits` | Pinned Lean and Mathlib dependencies |
+| Consistency of the declared proof dependencies | `python3 repro/check_manuscript_logic.py --output repro/results/manuscript-logic` | Python standard library |
 
-This command does not replace the certificate checks below or formally
-prove an analytic or geometric theorem in the manuscript.
+The [Std-only instructions](../formal/README.md) and
+[Mathlib setup](../formal-real/README.md#fresh-checkout-setup) explain how
+to install and replay the formal packages. The Mathlib command is a
+separate, larger check. Its library proves actual logarithmic-limit,
+triangle-potential and formal-series statements. The exact source
+formula, the source-specific asymptotic and whole-remainder estimates,
+and the absolute geometric volume comparison remain application inputs.
+The [paper coverage record](PAPER_FORMAL_COVERAGE.md) gives the precise
+compiled and written boundary for each current paper.
 
-The optional [Mathlib package](../formal-real/README.md) verifies the
-elementary real and complex analysis used by the final implication:
-actual norms and logarithms, a nonzero asymptotic contribution, and the
-strict-gap argument for the ordinary volume limit. With its pinned
-dependencies installed, run:
+The paper-algebra runner has 22 groups. They cover the finite spectral
+and Newton identities, both parity conventions, filling normalization,
+original peripheral coordinates, and the rational certificates used by
+the restricted families. The combined Casimir and circle-tree groups
+invoke the retained component checks. Consolidation changes their
+organization, not their finite assertions. The runner saves every
+program's output and stops on a failure. Its record identifies the
+registered TeX and bibliography sources, the catalog, and the check
+scripts by their hashes; earlier registered editions are included.
 
-```sh
-python3 repro/check_concrete_limits.py --output repro/results/concrete-limits
-```
+The two planar certificate groups use outward interval arithmetic and
+explicit Fourier-series remainder bounds. The written proofs explain
+why those finite inequalities cover the required continuous domains.
+Matrix comparisons at selected levels and numerical Gaussian samples
+have a narrower scope: they test the stated formulas and do not prove a
+uniform asymptotic estimate. The specialist checks below retain that
+distinction.
 
-The exact state formula, its leading asymptotic, the whole-remainder
-estimate and the geometric volume equality are explicit inputs. The
-package also assembles distinct nonzero limits on finitely many residue
-classes, including even and odd levels, when their action limits have
-the same real part. Every rate uses the original level as denominator.
-It also proves the finite weighted-graph energy and Laplacian identities,
-including the constant kernel and strict positivity after fixing one
-vertex. Identifying that matrix with the geometric Hessian remains a
-written argument. The real-calculus module also derives the quadratic
-action cost from actual second derivatives, the supporting-tangent
-entropy gain, and the resulting two-branch strict sector estimate.
-The triangle-potential module below now proves the local entropy derivative;
-its substitution into the geometric application is stated separately.
-The transport module starts with an actual positive table of corner
-loads. If its supported incidence graph is connected, grounding one
-vertex gives a strictly positive recession in every nonzero direction.
-Compactness then supplies a uniform norm bound, compact sublevel sets
-and an attained minimum. The geometric Hall inequalities constructing
-that table remain written proofs. For fixed positive boundary values,
-the application combines the boundary destinations into the grounded
-vertex and retains their prescribed logarithms as row constants.
-The strict-convexity module identifies the second derivative on an actual
-segment with connected weighted graph energy. It derives strict
-convexity, and hence uniqueness of that same potential's minimum. The
-positive-table construction is supplied below by the finite-cut modules; geometric incidence remains an application input;
-the actual supported triangle derivatives are now supplied by the later
-potential module. The reduced-Laplacian module identifies the actual free
-matrix with that energy, constructs its inverse, and proves uniqueness
-of every grounded linear solution. It does not prove a quantitative
-inverse estimate or a nonlinear deformation theorem. The triangle-load module now differentiates the actual exponential,
-square-root and arctangent expressions and identifies their shared-vertex
-pairing with that edge energy. It includes one-zero triangles. The
-triangle-potential module starts with the actual Lobachevsky integral and
-supported supremum, proves attainment by those loads, and derives the
-first and second derivatives. Its mixed assembly includes singleton rows
-and retains shared variables and demands. The triangle-minimum module
-then proves the actual potential's vertex lower bound and multivariate
-continuity, aggregates a positive half-mass corner table, and converts
-its row paths to positive conductance paths. These facts give a unique
-global minimum after one coordinate is fixed. Repeated corner destinations
-retain their separate coefficients; the prescribed demands need agree
-with the table only at free vertices. The later cut modules construct the
-table and prove connectivity; geometric incidence and support-changing
-limits remain application inputs. The load-equation module then proves that the actual
-coordinate derivative is the aggregate corner load minus the prescribed
-demand. The grounded minimum is equivalent to the free load equations,
-and is their unique solution under the same table and connectivity
-hypotheses. The root equation holds precisely when total demand equals
-one half the number of triangles. The finite-cut modules now derive the
-positive table, connectivity and unique full balance from strict cut
-inequalities and total mass compatibility. The cut conditions must still
-be checked for the particular geometric incidence and demands. The saved optional replay lists every definition and theorem in its
-axiom audit and rejects invalid metadata and axiom inventories.
-Seven compiled mathematical controls check
-the half-mass convention, repeated destinations, arbitrary root demand,
-the role of connectedness, a strict-cut balance, and failures when either
-strictness or total mass compatibility is dropped. The formal-shift module
-also constructs substitution in actual power series, proves that
-$S(u+jh)-S(u)$ is divisible by $h$, and identifies the quotient at
-$h=0$ with $jS'(u)$. An arbitrary regular logarithmic amplitude
-contributes zero at that order. Five further compiled controls retain the
-shift factor and sign, the divisibility hypothesis, the first derivative
-at the origin, and the nonzero higher-order amplitude change. The later
-modules construct the actual ring map $u=hs$, prove its injectivity,
-construct formal exponentials, and prove coefficient uniqueness for
-actual complex asymptotic expansions. Their finite gauge construction
-retains all meridian factors and the sign. The characteristic theorem
-combines these into a classical identity. The actual recurrence modules
-now derive the sine normalization, denominator clearing and whole finite
-expansion from estimates for the original coefficients and source ratios.
-They also prove the literal meridian-factor expansion at the physical
-root-of-unity scale. The later Laurent module constructs all original
-coefficient Taylor estimates. Common $q-1$ division and an exact coefficient
-adapter then yield a nonzero complete classical symbol with its formal
-characteristic identity. Actual operator existence, the rational
-denominator chart, source-ratio estimates and geometric factor
-identification remain application arguments.
+The dependency checker examines premise roles, family assumptions,
+level conventions, references and absence of cycles. Its 61 declared
+steps distinguish the strict Conway route from the separate two-leaf
+source estimate. It also rejects nineteen deliberately invalid maps.
+This validates the dependency record, not the mathematical assertions
+assigned to its vertices. For the reading order and the numbered
+statements imported between papers, use the
+[paper dependency graph](https://sashakolpakov.github.io/murakamis_dream/papers/dependencies.html).
 
-The uniform-profile module proves a common nonvanishing threshold and
-uniform logarithmic rate from the actual uniform profile estimates.
-Compactness and a continuous nonvanishing limit supply the factor bounds;
-pointwise convergence alone does not. The explicit removable sine and fixed quadratic diagram factors now have their own proved uniform limits, including the value at zero and the nonzero-integer zero set. The
-[paper coverage record](PAPER_FORMAL_COVERAGE.md) names the compiled
-implications and written inputs for all current papers.
-The optional command is separate from the Std-only
-check above; it requires
-Mathlib and its substantially larger compiled library.
+## Replay the original rational certificates
 
-The separate [research papers](../papers/README.md) include bounded
-checks of their finite algebra and rational constants. Run them together:
-
-~~~sh
-python3 repro/check_paper_algebra.py --output repro/results/paper-algebra
-~~~
-
-The runner requires SymPy, python-flint, NumPy and mpmath. It saves each program's
-output and stops on a failed check. Its source record covers all registered
-papers, including earlier editions, and the scripts used by those checks.
-Unregistered working drafts are excluded from that publication record. Its twenty-three groups cover polynomial
-resolvents and path partitions, positive-matrix identities and parity
-anchors, filling-sum normalization, symbolic peripheral coordinates,
-rational three-braid constants, the complete forty-branch planar
-certificate, its forty-five-branch extension at ordinary boundaries,
-physical Newton matrices at eight levels, the exact terminal fan
-recurrence, symbolic tree-block and peripheral identities, moving-meridian
-physical matrices, complete Conway face maps and endpoint pairings,
-the two complementary-color certificates, and the classical Conway
-filling's symbolic peripheral and volume identities. The quarter-index
-group compares the literal finite factorial source with its recurrence
-and terminal walls, and checks two-channel transport identities. The
-directed-tree group verifies its rational budgets, endpoint pairings and
-finite quotient-versus-normal trace calculations. The same combined Newton group
-also checks exact supports, turn-and-product identities and rational harmonic
-responses. The strict-geometry group checks boundary labels, original
-endpoint pairings and peripheral identities. The consolidated source
-group also checks its full Fourier formula and derivative terms, including
-examples whose values vanish at every spectral node while their normals
-do not.
-The moving-source group checks the full Fourier trace in both parities,
-ordered dual pairings, fusion and the odd-level projector identities at
-the stated finite levels. The meridian-expansion group checks the sine
-factor, the reduced-to-full gauge, denominator clearing, coefficient
-regrading and finite-jet counterexamples. Neither group replaces the
-uniform estimates or the all-orders argument in the papers.
-The two planar certificate groups use outward interval arithmetic with explicit
-Fourier tails. Their reports keep the finite assertions separate from
-the written all-length arguments.
-The [planar and insertion review](PLANAR_INSERTION_AUDIT.md) records
-which written arguments were examined and which results they import.
-The [tangle and tree review](TANGLE_TREE_AUDIT.md) records the new papers'
-proof boundaries and the transport module's formal coverage.
-The subsequent [Conway geometry and meridian review](CONWAY_MERIDIAN_AUDIT.md)
-records the two additional papers, their proof corrections, and the
-formal derivation of strict convexity and uniqueness.
-The [source and filling review](CONWAY_SOURCE_FILLING_AUDIT.md) records
-the uniform complementary-color proof, classical deformation proof,
-corrected Jacobian and formal reduced-Laplacian inverse.
-
-The [strict Conway review](STRICT_CONWAY_AUDIT.md) records the larger
-variational and geometric arguments, the consolidated whole-source proof,
-the pure-source filling route and the formal minimum of the actual
-triangle potential. The later [reduction and geometry review](CONWAY_REDUCTION_AUDIT.md)
-records the consolidated local geometry proofs, the actual net-twist
-and zero-cap reductions, and the formal Euler/load equations.
-
-The programs use either a JSON output file or an output directory, as
-registered in the single runner.
-The planar, triangular-insertion, terminal-decoration, moving-meridian and
-complementary-color programs accept an output directory
-containing their summary and supporting records. The unified runner
-handles both conventions. These commands do not establish uniform
-large-level estimates, packing existence or metric completeness.
-
-The statement-level dependency map for the retained volume families has a separate
-standard-library command:
-
-```sh
-python3 repro/check_manuscript_logic.py --output repro/results/manuscript-logic
-```
-
-It checks the declared premise roles, retained assumptions, level scope,
-references and absence of cycles. Its 61 declared steps include the
-strict Conway route and the separate two-leaf source bound. Nineteen
-deliberately invalid maps must be rejected. The unrestricted matched-sphere route retains its open
-remainder requirement. This is a check of the dependency record, not a
-formal proof of the mathematical claims it records.
-
-The exact verifiers require Python 3.10 or later and only its standard library. From the repository root, run:
+To inspect the checks before running them:
 
 ```sh
 python3 repro/verify.py --list
 python3 repro/verify.py --plan
-python3 repro/verify.py --output repro/results
 ```
 
-The first command lists the checks. The second prints the execution plan without running them. The third executes the checks serially, writes fresh result records to `repro/results`, and compares them with the committed exact reference records. It does not overwrite those references. Without `--output`, the runner uses temporary results and removes them when it finishes.
+The command in the table executes them serially, writes fresh results,
+and compares those results with the committed exact reference records.
+It does not overwrite the references. Without `--output`, the runner
+uses a temporary directory and removes it when finished.
 
-Each verifier runs in Python's isolated mode. This prevents environment options from silently disabling the assertions on which the check depends. A successful run means that every required comparison and reference-record comparison passed; a failure should be investigated rather than accepted as a new reference result.
+Each verifier runs in Python's isolated mode, with assertions enabled.
+A failure must be investigated; changing the reference output is not a
+substitute for resolving it. The [proof-input map](PROOF_INPUTS.md)
+locates the written reductions that make these finite comparisons
+sufficient for their stated inequalities.
 
 ## What is being verified
 
@@ -366,19 +244,29 @@ not replaced by the script results.
 
 The suite verifies the finite arithmetic in the source bounds. It does not mechanically verify the whole manuscript. In particular, the invariant normalization, the ordered tangle identities, the geometric gluing, the complex interpolation estimates and the filling-period argument require their written proofs. A passing result should not be reported as a computer proof of the volume conjecture for arbitrary knots.
 
-## Build the paper and documentation
+## Build the papers and illustrated guide
 
-The [manuscript source guide](../manuscript/README.md) gives the paper and figure build commands. Documentation builds are separate from the proof checks and do not launch this suite.
+The [paper catalog](../papers/README.md) gives the current subject
+accounts and their build commands. These are provisional mathematical
+groupings; the dependency graph identifies their shared foundations.
+The [manuscript source guide](../manuscript/README.md) describes the frozen
+374-page reference account. Its [errata](../manuscript/ERRATA.md) should
+be read with it. Rebuilding documentation does not run the mathematical
+checks above.
 
 The paper and figure builds require TeX Live or MacTeX with `latexmk`, `pdflatex`, TikZ and `standalone`, plus Ghostscript (`gs`) for PNG previews. The guide requires Pandoc. Its builder uses Python's standard library and produces native MathML, with no separate documentation framework.
 
-Then, from the repository root:
+To rebuild and check the illustrated guide, run:
 
 ```sh
-python3 tools/build_manuscript.py
 python3 tools/build_book.py
 python3 tools/check_book.py
 ```
+
+`python3 tools/build_manuscript.py` reproduces the frozen reference
+account from its retained sources; it is not needed for an ordinary
+guide update. It does not incorporate later companion-paper results
+or the separate errata into that archive.
 
 The certificate runner itself still requires only Python's standard library. Keeping rendering and verification separate makes a failed build distinguishable from a failed mathematical certificate.
 

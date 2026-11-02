@@ -1,5 +1,7 @@
 # Newton calculus and stationary profiles of Conway tangles
 
+[Read the PDF](../../docs/papers/newton-calculus.pdf) · [TeX source](main.tex) · [Dependency graph](https://sashakolpakov.github.io/murakamis_dream/papers/dependencies.html)
+
 This 26-page paper combines the exact finite Newton calculus with the
 variational theory of arbitrary strict ordered Conway expressions. It gives
 one set of conventions and one proof of the shared support, lattice and
@@ -11,6 +13,8 @@ The finite calculation retains values and first derivatives at repeated
 spectral roots. The positive source is the expression with every auxiliary
 circle at complete color and no retained half twists. Its positive-sum limit
 is not a statement about the signed filled invariant.
+
+This is a common foundation for the [strict source bounds](../conway-source-bounds/README.md), [strict geometric construction](../strict-conway-geometry/README.md), and [moving-meridian source estimates](../moving-meridian-sources/README.md). Each uses specific finite or variational statements; the signed filling analysis and geometric volume comparison are not premises of this paper.
 
 The main results are:
 

@@ -1,5 +1,7 @@
 # Volume asymptotics for trees of crossing circles
 
+[Read the PDF](../../docs/papers/circle-tree-volume.pdf) · [TeX source](main.tex) · [Dependency graph](https://sashakolpakov.github.io/murakamis_dream/papers/dependencies.html)
+
 This 27-page paper treats a fixed ordered tree of crossing circles whose literal tangle closure is a knot, with no component already closed inside an intermediate tangle. Every product junction carries a crossing circle. The tree, orientations and signed powers are fixed before the level tends to infinity.
 
 The paper gives two independently sufficient conditions for the nonzero leading asymptotic of the reduced zero-framed invariant, through both level parities. The exponent is the volume of the original knot complement, by the primitive metric-completion theorem used with its hypotheses checked.
@@ -36,4 +38,4 @@ python3 -I papers/circle-tree-volume/check.py --output /tmp/circle-tree-volume-c
 
 It invokes the two existing checkers unchanged, with isolated Python, removes old results before launching them, requires both runs to succeed, and checks the recorded input hashes. It covers their exact identities, rational inequalities, endpoint pairings and finite comparisons. It does not certify the uniform estimates, Gaussian induction or geometric theorem by finite samples.
 
-The earlier two paper editions remain available for existing citations. Their finite check implementations are retained by the combined runner.
+This is the current combined account. The earlier [summed-condition edition](../circle-tree-asymptotics/README.md) and [directed-condition edition](../directed-tree-asymptotics/README.md) remain available for existing citations. Their finite check implementations are retained by the combined runner. Combining the common preliminaries does not merge the two sufficient conditions or strengthen the directed meridian estimate.

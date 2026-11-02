@@ -1,169 +1,161 @@
 # Volume limits from planar tangles
 
-[Read the manuscript (PDF)](build/main.pdf).
+[Read the reference manuscript](build/main.pdf) ·
+[Corrections to the reference](ERRATA.md) ·
+[Current papers](../papers/README.md) ·
+[Illustrated reading guide](../book/chapters/manuscript.md)
 
-This is the 374-page reference account, retained while its results are
-rewritten as [papers organized by subject](../papers/README.md). Each new paper
-has its own theorem, notation and proof dependencies and must fit within
-30 pages. The reference PDF is frozen during that work.
-Corrections found during extraction are recorded in the
-[errata](ERRATA.md), with their effect on the affected arguments.
+This is the frozen 374-page reference account. It contains 15 main
+chapters (93 pages), eighteen appendices (266 pages), thirteen pages of
+front matter and two pages of references. Several separate arguments
+accumulated in one file, with repeated definitions and summaries followed
+by full proofs. The page count is not the length of one proof of the
+general volume conjecture.
 
-The manuscript contains completed proofs, including partial results with narrower conclusions. [The introduction](sections/01-introduction.tex) lists the statements and their hypotheses. The illustrated guide's [methods chapter](../book/chapters/methods.md) retains exploratory constructions and unsuccessful comparisons, with their definitions, references and limitations.
+The current subject drafts develop these arguments in smaller units and
+include some broader results. There are 21 drafts, totaling 403 pages,
+each between 11 and 29 pages. Their boundaries are provisional. The
+[dependency graph](../docs/papers/dependencies.html) records which numbered
+statements each argument uses, so a reader can follow one theorem without
+reading the whole reference. Splitting has improved access; it has not
+compressed the total collection. The reference's mathematical sources
+and PDF stay frozen, and corrections are recorded in the errata.
 
-The proofs retain their named dependencies on earlier finite-source and geometric lemmas. Those citations are part of the argument; the PDF does not reproduce every calculation in the technical library. [The proof-input map](../repro/PROOF_INPUTS.md) separates these written inputs from executable checks.
+## What the reference proves
 
-The [manuscript audit](../repro/MANUSCRIPT_AUDIT.md) records the current
-checks of those implications and the corrections they required. The
-reproduction chapter now states the final rate-transfer argument with
-all its hypotheses. A [Lean project](../formal/README.md) checks
-finite algebra and the conditional implications from source bounds to
-the volume limit; the analytic and geometric premises remain written proofs.
-Appendix N now proves the uniqueness of polynomial reduction and its
-independence of root order, including repeated roots. These statements
-also have Lean proofs. The separate geometric and analytic reviews
-record their hypotheses and the earlier results they use.
-The resolvent identity now proves how this coefficient functional
-recovers evaluation at one annihilating operator, including its
-nilpotent part. Appendix O also gives the exact root-grid coefficient
-selection and the complete circle-pattern Hessian calculation. The
-formal proofs cover the finite resolvent and exponent arguments.
-Appendix N now supplies a direct finite Fourier proof of the original
-Casimir's annihilating relation and the homogeneous face adapter,
-including its factor \(1/N\) and the even-level displacement phase.
-That calculation, the crossing comparison, analytic estimates and
-metric construction remain written proofs.
-The product extension proves that factors may be reduced before each
-multiplication while retaining repeated-root derivatives. Appendix M
-also explains the formally checked coefficient recovery under
-\(u=hs\), and why it needs all expansion orders. The dependency check
-for Appendices N–R keeps the full remainder premise distinct from the
-geometric contribution; it does not certify the proofs at its vertices.
+The manuscript gives volume limits for specified constructions of knots.
+It also contains partial results with narrower conclusions. The
+[introduction](sections/01-introduction.tex) states the hypotheses. In
+every volume theorem, the diagram and all twist powers are fixed before
+the root-of-unity level tends to infinity. The strand connections must
+give one knot, without an internally closed extra main component. The
+volume is that of the original knot complement: only auxiliary crossing
+circles are filled, and the main knot cusp remains complete.
 
-The paper proves volume limits for finite decorations of planar tangle diagrams and for specified ordered-tree constructions. The planar theorem starts from a simple triangulated sphere with a chosen matching, constructs its complete circle packing, and adds terminal tangles until a strict shared-radius inequality holds. Independently sufficiently long signed twists at every original and added crossing circle then give the volume equality for the resulting knot. The tree theorems have separate explicit degree and twist bounds. Chapter 1 distinguishes these families and their quantifiers.
+One construction starts with a simple triangulated sphere whose triangles
+are paired across selected edges. Terminal tangles are added until a
+shared circle-packing inequality becomes strict. Independently
+sufficiently long signed twists at every original and added crossing
+circle then give the volume limit for the resulting knot. The decoration
+can change the knot. For an unchanged matched sphere, a separate theorem
+assumes an explicit weak balance condition on its complete packing;
+that condition is not asserted for every diagram.
 
-The recursive tangle theorem permits independently chosen positive or negative twist numbers beyond a construction-dependent threshold. For a finite ordered tree with at least one edge and a crossing circle at every vertex, the paper also proves explicit sufficient conditions. Write $d_v$ for a vertex degree and $n_v$ for its signed half-twist power. One such condition is
-
-$$
- \sum_v\frac{d_v}{d_v^2+n_v^2}\le2^{-25}.
-$$
-
-A different argument proves the volume identity whenever each vertex satisfies
+The ordered-tangle results have different hypotheses. The reference's
+recursive construction admits independently long signed twists. For a
+finite ordered tree with at least one edge and a crossing circle at each
+vertex, let $d_v$ be the degree and $n_v$ the signed half-twist power.
+The summed criterion is
 
 $$
-                d_v\ge2^{28}\qquad\text{or}\qquad |n_v|\ge2^{27}.
+ \sum_v \frac{d_v}{d_v^2+n_v^2}\le 2^{-25}.
 $$
 
-Thus $2^{27}$ half twists suffice independently of the number of tangles. The degree alternative permits any fixed short or zero powers at sufficiently large-degree vertices. The full directed criterion is more flexible than this simple consequence: it assigns a separate decay constant to each subtree and distinguishes the vertex evaluated last. The summed test remains useful, for example when $|n_v|\ge8192\sqrt E$ on a tree with $E$ edges.
+A separate directed argument has the following sufficient condition at
+every vertex:
 
-In every theorem the actual strand connections must give one knot, with no internally closed extra component. The diagram and all integer powers are fixed while the root-of-unity level tends to infinity. The limit is the volume of the original knot complement. Only auxiliary crossing circles are filled; the main knot cusp remains complete.
+$$
+ d_v\ge 2^{28}\quad\text{or}\quad |n_v|\ge 2^{27}.
+$$
 
-## Reading the proof
+The alternatives may differ from vertex to vertex. The degree alternative
+allows fixed short or zero powers. The full directed condition assigns
+separate bounds to the polynomials obtained from subtrees and is more
+flexible than this consequence. The purely geometric threshold
+$\sqrt{d_v^2+n_v^2}\ge630$ constructs a metric; it does not by itself prove
+the quantum volume limit.
 
-Chapters 2–8 develop the first construction. They define the finite invariant, build the augmented hyperbolic metric, control the signed color terms and analyze the oscillatory filling sum. Appendices A–D supply its detailed algebra, estimates, geometry and rational certificates.
+The meridian and longitude arguments give a conditional operator result.
+If a specified fixed nonzero operator annihilates the whole reduced
+meridian function at every sufficiently large level, the selected
+geometric factor divides its first nonzero classical symbol. This
+assumes the annihilator. It proves neither its existence nor equality
+with the entire A-polynomial or recurrence ideal.
 
-Chapters 9–11 treat the quantitative tree conditions. The geometric construction attaches two octahedra per tree edge in the original order and follows their positive deformation to smooth filling. The quantum argument evaluates a subtree as an exact polynomial, retains its value at zero and estimates the polynomial left on the attaching edge. Chapter 11 proves the stronger directed condition and the bound $2^{27}$. Appendices E–G and K contain the full finite-sum, geometric and recursive proofs. The separate metric condition $\sqrt{d_v^2+n_v^2}\ge630$ constructs a hyperbolic metric but does not alone prove a quantum limit.
+## Where the arguments are located
 
-The [geometric-longitude chapter](sections/08c-geometric-characteristic.tex) first treats circle trees, then inserts and fills a zero-power crossing circle at an unmarked product junction. Keeping the based boundary maps proves that this operation recovers the original representation. Appendices H–J give the full source expansion, algebraic rigidity and junction arguments. If a fixed nonzero operator annihilates the actual reduced sequence at every sufficiently large level, the selected geometric factor divides its first nonzero classical symbol. This implication assumes the annihilator; it proves neither its existence nor equality with the entire A-polynomial or recurrence ideal. [The all-orders chapter](sections/08f-directed-all-orders.tex) and Appendix M prove the expansion on shifted meridian charts for every directed certificate, so those cases also have the selected-factor conclusion.
+| Part of the reference | Mathematical role |
+| --- | --- |
+| Chapters 2–8 and Appendices A–D | Finite invariant, the first tangle construction, source bounds, oscillatory filling, marked geometry and rational certificates. |
+| Chapters 9–11 and Appendices E–G, K | Summed and directed tree estimates, with their separate geometric thresholds and full finite-sum proofs. |
+| Appendices H–J, M | Moving-meridian expansions, the geometric longitude, junction relations and the conditional classical-symbol conclusion. |
+| The planar-decoration chapter and Appendix L | The packing decoration, its oriented source, full Fourier estimate and primitive filling. |
+| Appendix N | A finite norm bound for inserting fixed twist powers. A volume application also requires a source estimate. |
+| Appendix O | A nonzero geometric contribution for an unchanged matched sphere. Its general complementary signed contribution remains a separate problem. |
+| Appendix P | A bound for that whole remainder under weak balance, including equality in the local inequalities and a quantified small-defect variant. |
+| Appendix Q | Gluing certified pieces along protected triangles, retaining every locally allowed sector and the shared coefficient demands. |
+| Appendix R | Insertion along an ordinary triangular face, with a fixed-boundary variational problem and sufficiently small positive boundary ratios. |
 
-The [planar-decoration chapter](sections/08e-balanced-terminal-fans.tex) and Appendix L include the packing construction, the oriented finite source, the full Fourier estimate and smooth primitive filling. The [reproduction chapter](sections/09-reproduction.tex) explains the role of each finite check. The technical notes provide separately readable versions of the proofs. The older local numerical condition remains in Chapter 10 as an intermediate theorem, with its improvement stated explicitly.
+The current strict Conway proof is broader than the reference's original
+completed-root construction. Its own variational, source and marked
+geometry arguments are given in the [current papers](../papers/README.md).
+The separate reduction paper treats net twists, zero sums and the
+surviving closure before applying that theorem. Large written twist
+numbers alone need not remain large after reduction.
 
-The [net-twist companion theorem](../notes/actual_conway_net_twist_volume.md) treats a broader class of ordered tangle expressions using exact tangle reductions and the strict-tree estimates. Its hypothesis concerns the combined twist numbers left after reduction. The subsequent [closure theorem](../notes/actual_conway_arbitrary_closure_volume.md) also handles cap closures and exact zero sums under its long-surviving-weight condition. These companion results are described in the [results chapter](../book/chapters/results.md); they are distinct from the construction classes developed in this PDF.
+## Proof dependencies and review
 
-[Appendix N](sections/N-uniform-filling-bound.tex) proves a level-independent finite bound for inserting fixed twist powers. Its transfer to a further volume theorem explicitly assumes an exponential estimate for the shared source. [Appendix O](sections/O-morse-geometric-contribution.tex) proves that the specified geometric contribution for an unchanged matched spherical diagram is nonzero and has the volume rate of its actual long-filled complement. This is a contribution to the original exact invariant, not a new topological invariant. A general bound on its complementary signed contribution is not asserted. These appendices do not enlarge the full-invariant claims.
+A full volume conclusion requires five pieces: the exact invariant
+formula, a nonzero leading contribution, a bound for everything else,
+the intended completed metric, and an absolute comparison of its volume
+with the same action. A theorem about one geometric contribution cannot
+supply the bound for the remainder. The restricted results have their
+own estimates; they do not assume a general source theorem.
 
-[Appendix P](sections/P-weak-balance.tex) supplies a full-invariant
-theorem for an unchanged matched sphere whose complete packing satisfies
-weak balance. Equality in the local condition is allowed. The proof
-derives the entropy and Hessian estimates, chooses one shared coefficient
-weight, and uses Appendices N and O to bound the full remainder and
-identify the surviving action. A quantified variant permits small
-balance defects. No assertion that every diagram satisfies either test
-is part of this theorem.
+The [closing assessment](../repro/RETAINED_RELEASE_ASSESSMENT.md) records
+the completed review of those retained implications. The
+[proof-input map](../repro/PROOF_INPUTS.md) and
+[detailed audit](../repro/MANUSCRIPT_AUDIT.md) locate the written inputs,
+corrections and scope of each check. The named analytic and geometric
+lemmas retain written proofs. The [Lean library](../formal/README.md)
+and [Mathlib extension](../formal-real/README.md) prove finite algebra,
+calculus and internal implications, with their application hypotheses
+visible. They do not give an end-to-end formal proof for an actual knot.
 
-## Build the paper
+The illustrated guide's [methods](../book/chapters/methods.md) and
+[algebraic approaches](../book/chapters/algebraic.md) chapters preserve
+exploratory ideas and unsuccessful comparisons. Those are separate from
+the retained proof dependencies and from the frozen reference.
 
-From the repository root, run:
+## Reproduce the reference and its checks
+
+From the repository root, rebuild the archived sources with:
 
 ```sh
 python3 tools/build_manuscript.py
 ```
 
-The result is `manuscript/build/main.pdf`. The build also produces standalone previews of the native TikZ figures and a manifest of the TeX, bibliography and PDF hashes. It requires TeX Live or MacTeX with `latexmk` and the packages listed in `main.tex`. Building the paper does not execute the mathematical certificates.
+This requires TeX Live or MacTeX with `latexmk` and the packages listed
+in `main.tex`. It writes `manuscript/build/main.pdf`, figure previews and
+a manifest of input and output hashes. Building the PDF checks
+typesetting; it does not execute mathematical certificates or incorporate
+the separate errata into the frozen text.
 
-## Check the finite certificates
-
-Run:
+For the reference's rational supporting inequalities and their exact
+domain coverage, run:
 
 ```sh
 python3 repro/verify.py --output repro/results
 ```
 
-The verifier checks the rational supporting inequalities and their exact domain coverage. It does not use numerical optimization or numerical sampling as a proof. See [the reproduction instructions](../repro/README.md) and [the proof-input map](../repro/PROOF_INPUTS.md) for the inputs and the separate role of optional finite checks. The continuum estimates and geometric arguments are proved in the manuscript.
-
-For the quantitative circle-tree result, run:
+For the current papers' full registered finite suite, run:
 
 ```sh
-python3 repro/run_research_checks.py curvature-fillings
+python3 repro/check_paper_algebra.py --output repro/results/paper-algebra
 ```
 
-This group checks symbolic edge identities, finite complex-parameter bounds, and the labeled octahedron attachments and peripheral words. Its finite computations supplement the uniform estimates and topological proofs; they do not replace them.
+The [reproduction instructions](../repro/README.md) list dependencies,
+individual check groups and the separate Lean commands. Finite checks
+support the exact formulas and inequalities used; they do not prove
+uniform analytic estimates by sampling levels.
 
-For the local condition and its geometric criterion, run:
-
-```sh
-python3 repro/run_research_checks.py local-tree-fillings
-```
-
-This group checks 29 rational constant margins and 48 finite recursion cases. The finite cases compare the exact subtree evaluation with the corresponding finite contraction. They supplement the analytic induction and geometric completion proved in Chapter 10 and Appendix G.
-
-For the stronger directed condition, run:
-
-~~~sh
-python3 repro/run_research_checks.py directed-tree-fillings
-~~~
-
-This checks exact rational constant inequalities. The uniform estimates and induction are proved in Appendix K.
-
-For the unmarked-junction formulas, run:
-
-~~~sh
-python3 repro/run_research_checks.py strict-tree-geometry
-~~~
-
-This requires SymPy and checks the local algebra. The based paths and full representation gluing are proved in Appendix J.
-
-## Build the illustrated guide
-
-The guide build is separate from the paper build:
+To publish the illustrated guide locally:
 
 ```sh
 python3 tools/build_book.py
 python3 tools/check_book.py
 ```
 
-The guide is written to `docs/`, with the paper copied to `docs/papers/conway-composition.pdf`. Building it does not execute research scripts. Pandoc converts its mathematical displays to native MathML; the checker verifies the rendered formulas and local links.
-
-The illustrated guide is the maintained web text. The former Sphinx routes redirect to it; there is no separate Sphinx proof source to build.
-
-
-Appendix Q gives a further constructive closure theorem. Two marked
-spheres with certificates covering every locally allowed noncentral
-sector can be joined along triangles incident to their protected edges.
-The new source retains a strict gap. Repeating this operation gives an
-explicit sequence with \(17+r\) crossing regions outside weak balance at
-the retained mark. The argument, its inherited analytic and geometric
-inputs, and the finite reproduction command are recorded in the
-[protected-sum audit](../repro/manuscript_audit/protected-sum.md).
-
-Appendix R treats insertion along an ordinary triangular face. It proves
-the conditional disk minimum for every positive boundary triple,
-extends the finite source certificates to sufficiently small positive
-boundary ratios, and keeps the original coefficient targets when the
-pieces are joined. Explicit even chains provide suitable boundaries
-for any fixed finite list of certified pieces. The nine corresponding
-Lean declarations check the scalar comparison and the distinction
-between a wholly central block and a block with a noncentral term.
-The packing construction and the analytic and geometric inputs remain
-written proofs; their role is recorded in the
-[ordinary-boundary audit](../repro/manuscript_audit/triangular-boundary.md).
+Pandoc renders the formulas as MathML. The guide includes the reference
+PDF and a rendered errata page. Former Sphinx addresses redirect to this
+single maintained web exposition.

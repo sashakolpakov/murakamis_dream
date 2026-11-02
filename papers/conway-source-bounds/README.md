@@ -1,14 +1,16 @@
 # Spectral estimates for Conway tangle sources
 
+[Read the PDF](../../docs/papers/conway-source-bounds.pdf) · [TeX source](main.tex) · [Dependency graph](https://sashakolpakov.github.io/murakamis_dream/papers/dependencies.html)
+
 The paper proves whole-source and complementary-color bounds for every fixed strict Conway presentation with at least three elementary boxes. A separate corollary treats every strict two-leaf closure, with all retained signs and the original coefficient-square normalization. Strictness is the explicit interval-type test in Section 1. It includes the earlier completed/completed closure grammar, elementary closing leaves and the isolated three-leaf closure.
 
 The main conclusions are uniform over all physical auxiliary colors, retained signs 0,+1,-1 and all sufficiently large integer levels:
 
-- the full source has upper rate equal to the positive complete-action maximum;
+- the full source has exponential upper rate bounded by the positive complete-action maximum;
 - a macroscopic deficit in any original color gives a strict rate loss;
 - the entire full-minus-core difference has a strict rate loss.
 
-These are estimates before filling. No nonzero filled asymptotic or volume identity is asserted.
+These are estimates before filling. The [strict asymptotic paper](../conway-asymptotics/README.md) uses them to control the terms outside its leading contribution; it separately proves that contribution is nonzero and compares its action with the volume. No nonzero filled asymptotic or volume identity is asserted here.
 
 The paper retains the local signed recurrence estimates as Proposition 3.1 and the scalar supporting-plane inequalities as Lemmas 4.1 and 5.1. The new global proof uses the scalar inequalities, the exact Fourier functional, complete-node Hermite conditioning and the pure variational/profile results. It does not require the local signed recurrence or a quantum core packet. The complete-node conditioning and high first-normal estimates are proved directly here; there is no circle-tree-asymptotics import.
 

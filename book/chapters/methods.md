@@ -2,6 +2,13 @@
 
 The manuscript develops completed arguments under their stated hypotheses. This chapter also explains approaches whose general applications remain unresolved. Its purpose is to make the calculation behind each approach intelligible before sending the reader to a technical note.
 
+The [current papers](../../papers/README.md) give the detailed proofs
+used by the retained theorems. The technical archive also preserves
+earlier attempts and examples. Use the
+[dependency graph](../../docs/papers/dependencies.html) to distinguish
+a method that is part of a particular proof from a related proposal
+that has not supplied its required estimate.
+
 There are three different conclusions to distinguish. An **identity** rewrites the same finite quantity exactly. An **estimate** bounds its size, perhaps only from above. A **volume theorem** proves a limit for the original invariant and identifies the number in that limit with the volume of the specified knot complement. A useful identity or a sharp upper bound can be a completed result without being a volume theorem.
 
 Throughout, \(K\) is a fixed knot, \(N\ge2\) is the quantum level, and \(K_N(K)\) is the reduced Kashaev invariant; the unknot has value one. We use

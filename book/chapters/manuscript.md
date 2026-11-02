@@ -2,7 +2,7 @@
 
 The frozen PDF is a 374-page reference account. Its results have been
 divided into [papers organized by subject](../../papers/README.md).
-The 21 current papers total 403 pages and range from 11 to 29 pages each,
+The 21 current drafts total 403 pages and range from 11 to 29 pages each,
 including references. Their shared foundations cover
 finite spectral evaluation, coefficient estimates, source asymptotics,
 oscillatory sums and marked geometry. The application papers give their
@@ -88,7 +88,7 @@ construction.
 
 [Read the manuscript PDF](../../manuscript/build/main.pdf). The [editable sources and build instructions](../../manuscript/README.md) are available alongside it.
 
-The paper contains completed proofs of volume equalities for decorated
+The reference account contains completed proofs of volume equalities for decorated
 planar diagrams, unchanged diagrams satisfying weak balance, and ordered-tree constructions, together with several
 completed theorems whose conclusions are narrower. It derives the finite
 quantum expression, constructs the labeled hyperbolic geometry, bounds
@@ -501,14 +501,16 @@ calculation; a circle is a topological component carrying such a
 label. Summing colors changes the evaluation and filling changes the
 diagram, so the two operations must be distinguished. The source formula retains values and first derivatives at repeated spectral points, which explains the use of Hermite interpolation. Newton polynomials make the allowed integer indices at a product explicit. These support conditions are kept before taking a continuum limit.
 
-The 18-page [Newton tangle paper](../../docs/papers/newton-tangles.pdf)
-now proves the complete-meridian product, physical turn, closure and
+The 26-page [Newton calculus paper](../../docs/papers/newton-calculus.pdf)
+proves the complete-meridian product, physical turn, closure and
 colored-circle formulas with their repeated-root derivatives. For its
 specified finite compositions, it also proves the positive complete
 auxiliary-color source's variational limit and strict interior maximum.
 It imports the finite paper's operator and reduced-invariant
 normalization. Signed fillings require additional bounds and
-noncancellation.
+noncancellation. The earlier 18-page Newton tangle account and 14-page
+stationary-profile account remain available for their existing citations;
+new readers can use the combined proof.
 
 The [moving-meridian paper](../../docs/papers/meridian-tangles.pdf)
 proves the finite formulas needed when the main meridian parameter
@@ -525,8 +527,8 @@ subsequent analytic problem.
 
 The geometric part associates normalized state variables with angles of ideal pyramids and prisms. An ideal vertex lies at infinity in hyperbolic space. Strict angle inequalities produce genuine cells, and the ordered endpoint data determine their face identifications. A strictly concave angle functional has a unique geometric maximum. The proof then follows actual paths on the cusps to identify the meridian and longitude used for filling.
 
-The [complete Conway geometry paper](../../docs/papers/conway-geometry.pdf)
-gives this construction for the completed-root grammar. Matching edge
+The [strict Conway geometry paper](../../docs/papers/strict-conway-geometry.pdf)
+gives this construction for the current strict grammar. Matching edge
 angles is only one part of the argument: the stationary equations match
 the ordered quadrilateral faces, including their shear. The paper proves
 convexity after each attachment, recovers the actual projection cut from
@@ -539,8 +541,8 @@ basis. Four illustrations show the tangle operations, the two cells and
 this cusp lattice. The resulting positive-source volume identity is
 distinct from the signed invariant after filling the crossing circles.
 
-The 12-page [Conway filling paper](../../docs/papers/conway-fillings.pdf)
-continues this geometry. It defines its potential from the cells, keeps
+The same paper continues from the complete metric to its deformations.
+It defines its potential from the cells, keeps
 the actual face maps and original peripheral curves, and solves the
 primitive equations for independently long signed slopes. Its metric
 completion checks that the new meridian winds exactly once. The volume
@@ -548,6 +550,11 @@ constant is fixed at the complete metric and carried to the same filled
 fundamental chain. A quantum expansion is not needed for this classical
 construction. Comparing the resulting action with the action of a finite
 source is a separate analytic step.
+
+The earlier [complete geometry](../../docs/papers/conway-geometry.pdf)
+and [filling](../../docs/papers/conway-fillings.pdf) editions cover the
+completed-root grammar. They are preserved for citations; their shared
+construction is now developed in the 21-page strict geometry account.
 
 The source estimates address a different issue: a signed sum can be much smaller than the sum of the absolute values of its terms. In the recursive tree proof, the exact reflection formula separates
 a principal contribution from extra terms called aliases. In the
@@ -610,7 +617,7 @@ The companion papers have a combined finite-check command:
 python3 repro/check_paper_algebra.py --output repro/results/paper-algebra
 ```
 
-It runs 23 finite groups registered in the paper-check runner. They check physical Newton identities over
+It runs 22 finite groups registered in the paper-check runner. They check physical Newton identities over
 exact finite fields, terminal curvature and endpoint identities, and
 circle-tree seam, peripheral and rational-bound formulas. The additional
 moving-meridian checks use physical matrices at both ordinary and

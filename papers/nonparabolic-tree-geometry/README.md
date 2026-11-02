@@ -1,16 +1,18 @@
 # Nonparabolic holonomy of trees of crossing circles
 
+[Read the PDF](../../docs/papers/nonparabolic-tree-geometry.pdf) · [TeX source](main.tex) · [Dependency graph](https://sashakolpakov.github.io/murakamis_dream/papers/dependencies.html)
+
 This classical paper constructs the actual marked representation of an
 ordered tree of crossing circles with a variable main meridian. It proves
 the complete face and character maps, ordered page sewing, the physical
 Hurwitz collar, and the locally unramified primitive filled germ.
-There is no quantum asymptotic or global preferred-longitude theorem here.
+This supplies the marked geometric branch used by the [preferred-longitude paper](../preferred-longitudes/README.md) and the geometric corollary of [meridian expansions](../meridian-expansions/README.md). The longitude formula and the quantum asymptotic require their separate arguments.
 
 ## Statements and proof locations
 
 - **Theorem 1.1, ng:representation**: the original augmented group,
-  selected main \(M^{-1}\) flag and primitive auxiliary logarithms
-  \(U_v=\sum\log\rho_{v,e}-\epsilon_v\log Q_v\), \(V_v=2\log Q_v\).
+  selected main $M^{-1}$ flag and primitive auxiliary logarithms
+  $U_v=\sum\log\rho_{v,e}-\epsilon_v\log Q_v$, $V_v=2\log Q_v$.
   Sections 2–4 construct the full maps and actual gluing.
 - **Theorem 3.1, ng:character**: the explicit four-puncture chart,
   rational two-generator intertwinings and its native marked conjugacy.
@@ -25,13 +27,13 @@ There is no quantum asymptotic or global preferred-longitude theorem here.
 - **Theorem 1.2, ng:filled-germ**: at an actual positive smooth
   filled endpoint with distinct auxiliary longitude eigenvalues,
   the continued primitive slope equations are exactly the filled-group
-  relations. With one unfilled main cusp, \(\log M\) is a local coordinate.
+  relations. With one unfilled main cusp, $\log M$ is a local coordinate.
 - **Corollary 7.1, ng:branch-identification**: a separately constructed
   branch with the same original representation, flags and logarithmic
   slopes is this same marked geometric germ.
 
 The tree criterion is the published geometric condition
-\(\sqrt{d_v^2+n_v^2}\ge630\), or its heterogeneous refinement.
+$\sqrt{d_v^2+n_v^2}\ge630$, or its heterogeneous refinement.
 It does not require a lower bound on each twist alone. The actual
 main strand pairing must have one component for the knot statement.
 At a parabolic auxiliary longitude, an exponentiated slope equation

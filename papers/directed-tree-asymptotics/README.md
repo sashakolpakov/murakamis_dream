@@ -1,5 +1,9 @@
 # Local degree and twist bounds for circle-tree volume limits
 
+[Read the PDF](../../docs/papers/directed-tree-asymptotics.pdf) · [TeX source](main.tex) · [Dependency graph](https://sashakolpakov.github.io/murakamis_dream/papers/dependencies.html)
+
+This is an earlier edition, retained for existing citations and its finite-check implementation. For the current account of the directed condition and its degree-or-twist corollaries, read [circle-tree-volume](../circle-tree-volume/README.md). The statement numbers below refer to this earlier edition; it is not an additional current paper.
+
 This paper proves a full invariant asymptotic and actual hyperbolic volume
 limit for fixed literal ordered circle trees whose endpoint tracing gives
 one main knot and no internal closed component. Every product junction
@@ -13,22 +17,22 @@ indices and repeated-root normals. The final root has no outgoing bound.
 
 Corollary 1.2 (`dt:mixed`) gives the sufficient alternative
 
-\[
+$$
  d_v\ge2^{28}\quad\text{or}\quad |n_v|\ge2^{27}
  \qquad\text{at every vertex}.
-\]
+$$
 
 The choice may vary from vertex to vertex; large-degree vertices may keep
 zero powers. Corollary 9.1 (`dt:local`) recovers the older condition
-\(\max_v d_v/(d_v^2+n_v^2)\le2^{-120}\) directly from this alternative.
+$\max_v d_v/(d_v^2+n_v^2)\le2^{-120}$ directly from this alternative.
 Its separate tiny-disk induction is unnecessary here. The summed
 criterion is neither assumed nor replaced by a bound depending on the
 number of vertices.
 
 The full leading term includes the exact unit scalar, a nonzero constant
-through both level parities, and the factor \(N^{3/2}\). The normalized
-microscopic main-meridian profile is \(1+O_R(N^{-1})\) for
-\(M=q_N^s\), \(|s|\le R<1\). No fixed meridian neighborhood, all-orders
+through both level parities, and the factor $N^{3/2}$. The normalized
+microscopic main-meridian profile is $1+O_R(N^{-1})$ for
+$M=q_N^s$, $|s|\le R<1$. No fixed meridian neighborhood, all-orders
 expansion, longitude factor or larger strict Conway grammar is asserted.
 
 ## Inputs

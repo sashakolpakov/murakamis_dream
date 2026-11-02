@@ -13,9 +13,9 @@ collect several subjects: finite quantum algebra, geometric constructions,
 asymptotic estimates, sufficient conditions for different knot families,
 and meridian and longitude results. Those subjects accumulated in one
 file; the length does not show that one theorem requires 374 pages.
-The account remains available while this division is prepared. The working
-limit of 30 pages per paper is an editorial constraint, not the principle
-for grouping results.
+The account remains frozen, with corrections recorded in its
+[errata](../manuscript/ERRATA.md). The working limit of 30 pages per paper
+is an editorial constraint, not the principle for grouping results.
 
 [Explore the dependency graph](../docs/papers/dependencies.html).
 Each statement lists the results it uses, the reason for each use, and
@@ -59,16 +59,27 @@ common core for several inserted diagrams also uses protected gluing.
 
 ## The current drafts
 
-The twenty-one current papers total 403 pages, with individual lengths from
-11 to 29 pages. Each gives the proofs of its stated results and names
+The twenty-one current drafts total 403 pages, with individual lengths from
+11 to 29 pages. These are provisional subject groupings, not a decision
+to publish twenty-one separate papers. Each gives the proofs of its stated results and names
 its numbered companion imports. Eight earlier editions, totaling
 another 113 pages, are preserved below for existing citations. This is a
 division of the retained results into citable components; the reading
 routes are explained at the end of this guide. The aggregate page count
 is not a measure of compression: separate papers repeat their conventions
 and references, and some supply arguments only sketched in the reference.
-The aim is to make each proof independently readable and citable while
-removing duplicated arguments from its prerequisites.
+The Newton, circle-tree and Casimir mergers have removed ten pages of
+overlap: 32 became 26 pages, 30 became 27, and 26 became 25. No estimate
+has yet been made of the total dispensable material. The aim is to make
+each proof independently readable and citable while giving every shared
+argument one home.
+
+The [closing assessment](../repro/RETAINED_RELEASE_ASSESSMENT.md) records
+the completed review of these retained results. It distinguishes written
+analytic and geometric proofs, compiled internal implications, and finite
+diagnostics. The general volume conjecture remains open. Editorial
+consolidation and broader research do not enlarge the scope of the
+reviewed theorems.
 
 **Finite spectral evaluation and uniform filling bounds.** 28 pages.
 [TeX source](filling-bounds/main.tex) ·
@@ -215,8 +226,8 @@ quarter-index recurrence theorem.
 The exact moving-meridian formulas describe a finite sum. This paper
 proves which part of that sum dominates for a fixed strict expression,
 including connected groups of product junctions without crossing circles.
-The main meridian is \(M=q_N^s\), where \(q_N=e^{\pi i/N}\) and
-\(s\) stays in a fixed disk \(|s|\le R<1\) or a fixed compact
+The main meridian is $M=q_N^s$, where $q_N=e^{\pi i/N}$ and
+$s$ stays in a fixed disk $|s|\le R<1$ or a fixed compact
 subset of the upper half-plane. All original turns,
 crossing powers and shared indices remain in the calculation.
 
@@ -389,10 +400,10 @@ neither determine the preferred longitude nor estimate a quantum source.
 [PDF](../docs/papers/preferred-longitudes.pdf)
 
 For each physical quarter-turn edge, the formula contributes
-\((M^2-X_e)/(1-M^2X_e)\), where \(M\) is the meridian eigenvalue
-and \(X_e\) is the edge shape coordinate. The proof first shows that
+$(M^2-X_e)/(1-M^2X_e)$, where $M$ is the meridian eigenvalue
+and $X_e$ is the edge shape coordinate. The proof first shows that
 the ratio between this product and the actual longitude depends only on
-\(M\). It then constructs regular representations at every nonzero
+$M$. It then constructs regular representations at every nonzero
 meridian value, excluding additional zeros and poles. The remaining
 factor is a monomial. A direct cusp-path calculation determines its
 exponent, including the writhe and surgery correction; a Seifert-surface
@@ -422,10 +433,10 @@ each subtree divided by its exact zero-parent value, so its constants
 and error margins survive the induction to higher orders. The permitted
 high-degree, zero-power cases remain included.
 
-The expansion holds for \(M=q_N^s\) on fixed microscopic parameter
-sets and their required integer translates. At order \(N^{-r}\),
-the logarithmic coefficient is an even polynomial in \(s\) of degree
-at most \(r+1\). Its highest-degree term is determined by the same
+The expansion holds for $M=q_N^s$ on fixed microscopic parameter
+sets and their required integer translates. At order $N^{-r}$,
+the logarithmic coefficient is an even polynomial in $s$ of degree
+at most $r+1$. Its highest-degree term is determined by the same
 stationary action on the original physical edges. The proof needs
 the nonzero source theorem and its full error bounds; a volume limit
 or a first-order meridian profile alone would not supply these estimates.
@@ -542,11 +553,11 @@ constants and certificate inequalities used in the example.
 
 This application concerns the ordinary closure of
 
-\[
+$$
  \sigma_2^{n_0}\sigma_1^{n_1}\cdots
  \sigma_2^{n_{m-2}}\sigma_1^{n_{m-1}},\qquad
  m\ge6\text{ even}.
-\]
+$$
 
 For each fixed number of factors, the signed powers are independently
 sufficiently large in magnitude, and their permutation must give a knot.
@@ -615,7 +626,7 @@ stay convex. It then identifies the assembled boundary with the original
 projection cut, checks the face maps and edge returns, and constructs
 compatible horospheres at every cusp. The metric is therefore on the
 specified augmented link complement. Its volume is twice the sum of the
-cell volumes, or \(2\pi\) times the source action. The original meridian
+cell volumes, or $2\pi$ times the source action. The original meridian
 and disk longitude form a primitive basis, also for the retained
 half-twist partners. The theorem uses the completed-root grammar of the
 Newton paper. A corollary identifies the positive complete source's rate

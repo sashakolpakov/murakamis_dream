@@ -1,5 +1,12 @@
 # Checking the formulas and reproducing the calculations
 
+The [closing assessment](../../repro/RETAINED_RELEASE_ASSESSMENT.md)
+summarizes the completed review of the retained results. This chapter
+explains what the individual checks establish and gives their commands.
+The analytic and geometric proofs remain written; the formal libraries
+verify their stated internal implications and concrete auxiliary results.
+They do not contain a complete formal model of a knot-family theorem.
+
 ## Following the proof's dependencies
 
 The manuscript's final step is an explicit implication. Write the exact
@@ -695,7 +702,9 @@ classical filling and volume construction. It also records the new
 reduced-Laplacian proof. The
 [reference errata](../../manuscript/ERRATA.md) give the corrected filling
 Jacobian, \(-2\pi i\operatorname{diag}(\tau_\ell)\), and show directly
-why its invertibility is unaffected. The reference PDF remains unchanged.
+why its invertibility is unaffected. They also correct the outer weights
+of the unchanged matched pair after (R.39), and give the quantitative
+inequality that preserves its strict gap. The reference PDF remains unchanged.
 
 The [analytic tree review](../../repro/ANALYTIC_TREE_AUDIT.md) follows the
 completed-root Conway asymptotic and the summed circle-tree criterion.

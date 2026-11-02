@@ -5,6 +5,15 @@ hyperbolic metric on the complement of the link drawn by the specified
 diagram. Second, identify the normalized source action with that metric's
 volume. Face labels, orientations and peripheral curves enter both tasks.
 
+The current proof accounts are
+[marked geometry of strict Conway compositions](../../docs/papers/strict-conway-geometry.pdf),
+[circle patterns and primitive fillings of augmented links](../../docs/papers/marked-fillings.pdf),
+and [positive octahedra for trees of crossing circles](../../docs/papers/circle-tree-geometry.pdf).
+They treat different constructions and thresholds. The
+[dependency graph](../../docs/papers/dependencies.html) records which
+geometric theorem each asymptotic argument uses; a metric construction
+alone does not supply the quantum remainder estimate.
+
 Throughout this chapter \(D\) is a fixed diagram. Its **augmented
 exterior** \(Y_D\) is obtained by surrounding each recorded twist region
 with an auxiliary crossing circle and retaining its specified half twist.

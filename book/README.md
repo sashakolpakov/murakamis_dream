@@ -1,6 +1,11 @@
 # Sources for the research guide
 
-This directory contains the readable account of the results and their proofs. The guide starts with the knot invariant and the class of diagrams covered by the theorem, explains how the quantum estimates and hyperbolic geometry fit together, and separates those results from questions that remain open.
+This directory contains the illustrated guide. It introduces the knot
+invariant, explains the diagram classes covered by the retained results,
+and shows how their quantum estimates and hyperbolic geometry fit
+together. The guide also explains approaches whose applications remain
+open. It is the maintained web exposition; the papers give the detailed
+theorem statements and proofs.
 
 The results have several distinct hypotheses. The planar theorem decorates
 a diagram encoded by a matched triangulated sphere before imposing long
@@ -27,7 +32,20 @@ and [reproduction](chapters/audits.md) are reference chapters.
 The [research library](https://sashakolpakov.github.io/murakamis_dream/library.html)
 connects these explanations to the detailed arguments and historical notes.
 
-The manuscript contains completed proofs. The guide also preserves approaches with unresolved applications and explains their obstructions. Former Sphinx URLs redirect to this guide; there is no separate Sphinx source or build to maintain.
+For a particular theorem, use the
+[dependency graph](../docs/papers/dependencies.html) and its **recorded
+proof route** to find the prerequisites in order. A shared result appears
+once in that route. The [manuscript chapter](chapters/manuscript.md)
+explains why the frozen account reached 374 pages and how the current
+21 subject drafts, totaling 403 pages, differ from it. The drafts are
+provisional groupings; splitting alone has not shortened the collection.
+
+The [closing assessment](../repro/RETAINED_RELEASE_ASSESSMENT.md) states
+what the retained-results review covered. Analytic and geometric proofs
+remain written proofs; the Lean results verify their stated mathematical
+implications without providing an end-to-end formal knot theorem.
+Former Sphinx URLs redirect to this guide; there is no separate Sphinx
+source or build to maintain.
 
 ## Files and diagrams
 
@@ -43,7 +61,9 @@ Reading the committed guide needs no build software. To rebuild it from the repo
     python3 tools/check_book.py
 
 The build requires Pandoc. It converts the formulas to native MathML and
-copies the figure assets into the static site. The check examines local
+copies the figure assets into the static site. It also renders the
+[reference errata](../manuscript/ERRATA.md) as a page linked from the
+manuscript chapter. The check examines local
 navigation, image assets, and the technical-note index. It also detects
 failed MathML conversion and common TeX commands left visible in prose,
 including malformed delimiters. Literal code examples are excluded.

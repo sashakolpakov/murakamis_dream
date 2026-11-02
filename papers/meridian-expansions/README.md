@@ -1,10 +1,14 @@
 # Meridian expansions and classical symbols of quantum recurrences
 
+[Read the PDF](../../docs/papers/meridian-expansions.pdf) · [TeX source](main.tex) · [Dependency graph](https://sashakolpakov.github.io/murakamis_dream/papers/dependencies.html)
+
 Theorem 1.1 proves every finite inverse-level order of the actual normalized meridian state on disks $|s|<1$ and fixed translated compact sets in the upper half-plane. At order $N^{-r}$ its logarithmic coefficient is an even polynomial of degree at most $r+1$. The highest-degree terms come from the stationary value of the explicitly normalized physical-edge deformation.
 
 The covered sources are strict Conway expressions with independently long fixed signed powers, summed-criterion circle trees, and the full directed circle-tree criterion, including its separate local and mixed degree/twist corollaries. A high-degree vertex in the last two classes can have zero twist. The directed all-orders proof normalizes by each exact child scalar and retains the original conditional error margins.
 
 Theorem 1.2 starts with a specified fixed finite recurrence annihilating the **whole reduced function at every sufficiently large integer level**. It proves that the first nonzero classical symbol vanishes on the analytic characteristic germ. It neither constructs an annihilator by interpolation nor asserts an equality of full recurrence ideals. The exact reduced/full gauge retains the meridian divisor and negative longitude sign. Corollary 8.1 identifies the selected geometric factor using separate marked classical theorems. For its strict class, the fixed power threshold is the maximum of the analytic and classical thresholds; no comparison between those constants is assumed.
+
+This is the last analytic step in the recurrence route, not a premise of the earlier volume proofs. The [moving-meridian source paper](../moving-meridian-sources/README.md) and [circle-tree volume paper](../circle-tree-volume/README.md) provide its analytic alternatives. The geometric factor uses the representation and longitude papers only after the analytic characteristic has been obtained.
 
 The main imports are precise and one-way:
 
@@ -24,4 +28,4 @@ The bounded algebra checker requires Python and SymPy:
 python3 -I papers/meridian-expansions/check.py --output /tmp/meridian-expansion-check
 ```
 
-The output directory receives `summary.json`; an older summary is removed before validation. The checks derive the reduced/full ratio modulo the actual relation $q^N=-1$, verify the cleared classical divisor/sign, check the rational sine identities, and exercise formal coefficient recovery with finite-jet negative controls. They do not test analytic remainders or identify a geometric representation by finite samples. The written coefficient recovery is also the finite algebra represented by the existing `FormalRegrading` formal module; analytic existence and the operator/source correspondence remain the written arguments here.
+The output directory receives `summary.json`; an older summary is removed before validation. The checks derive the reduced/full ratio modulo the actual relation $q^N=-1$, verify the cleared classical divisor/sign, check the rational sine identities, and exercise formal coefficient recovery with finite-jet negative controls. They do not test analytic remainders or identify a geometric representation by finite samples. The [formal coverage record](../../repro/PAPER_FORMAL_COVERAGE.md) locates the compiled coefficient, gauge, regrading and meridian-substitution implications. The source estimates, the actual annihilating recurrence and the geometric identification remain their stated written or application inputs. These formal implications are not a complete Lean theorem about a particular knot.

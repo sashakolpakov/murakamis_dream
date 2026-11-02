@@ -1,10 +1,18 @@
 # Formal checks of the proof implications
 
-This directory contains Lean proofs of finite algebraic steps and of the
-implications that assemble the volume limit from explicit estimates.
-This Std-only library contains 241 proved declarations. The analytic estimates and
-geometric constructions remain written proofs; the library does not yet
-give an end-to-end formal proof for a knot family.
+This library proves the finite algebra and rate comparisons used to
+assemble the volume arguments. Its main objects are polynomial
+remainders, repeated-root evaluations, finite source decompositions,
+and sequences with a prescribed exponential growth rate. It uses Lean's
+standard library, without Mathlib.
+
+The [current paper collection](../papers/README.md) gives each argument
+its mathematical setting. The [coverage record](../repro/PAPER_FORMAL_COVERAGE.md)
+identifies the statements supplied by this library and by the separate
+Mathlib package. The [closing assembly review](../repro/manuscript_audit/internal-assembly-completion/report.md)
+checks how those statements are used in the retained papers. The
+analytic estimates and geometric constructions retain written proofs;
+no theorem here constitutes a complete formal proof for an actual knot.
 
 From the repository root, with Lean 4.32.2 installed, run:
 
@@ -40,7 +48,7 @@ theorem is applied.
 | [ProtectedSum.lean](VolumeLogic/ProtectedSum.lean) | The three local sector comparisons for a protected triangular sum, cancellation of the duplicated face target, and preservation of a positive gap. The local maxima and the sector map are constructed explicitly. | Scalar part of Appendix Q. The triangle lower bounds, existence of shared witnesses, diagram construction, and analytic and geometric inputs remain written proofs. |
 | [TriangularBoundary.lean](VolumeLogic/TriangularBoundary.lean) | The local comparison with three positive boundary weights, the exact duplicated target, and the two cases according to whether the entire inserted block is central. | Scalar part of Appendix R. The conditional disk minimum, extension of certificates to positive boundary weights, topology, and volume identity remain written proofs. |
 | [RateComparison.lean](VolumeLogic/RateComparison.lean) | A linear entropy gain exceeds a quadratic cost under the stated inequality; nonnegative additional losses cannot undo a strict sector gap; a sufficiently small filling-action drop preserves the gap. | Scalar implications in Appendix P, following the entropy, Hessian, and filling estimates. |
-| [FormalRegrading.lean](VolumeLogic/FormalRegrading.lean) | The coefficient substitution \(u=hs\), its inverse on the supported coefficient tables, injectivity, and the exact information retained through any finite order. A nonzero term invisible through a prescribed order is constructed. | The formal coefficient argument in Appendix M. The analytic expansion to every order, compatibility with the actual operator, and the geometric longitude remain separate proofs. |
+| [FormalRegrading.lean](VolumeLogic/FormalRegrading.lean) | The coefficient substitution $u=hs$, its inverse on the supported coefficient tables, injectivity, and the exact information retained through any finite order. A nonzero term invisible through a prescribed order is constructed. | The formal coefficient argument in Appendix M. The analytic expansion to every order, compatibility with the actual operator, and the geometric longitude remain separate proofs. |
 | [SourceAssembly.lean](VolumeLogic/SourceAssembly.lean) | Additivity preserves the entire finite sector decomposition. Bounds for every admissible sector and for the filling functional give a bound for the whole remainder. A common level threshold is constructed from the individual thresholds. | The original index list and its multiplicities are retained. The exact diagram identity, canonical degree restriction and analytic estimates are explicit premises. |
 | [LevelLimits.lean](VolumeLogic/LevelLimits.lean) | Epsilon limits, finite intersections of eventual estimates, union of the two parity subsequences, and common thresholds for independently long signed powers. | The diagram and filling tuple are fixed before taking the level limit. An odd-level result alone cannot supply the all-level conclusion. |
 | [VolumeTransfer.lean](VolumeLogic/VolumeTransfer.lean) | A strict upper-rate gap implies actual domination of the remainder, eventual nonvanishing and equality of exponential rates. Finite positive budgets, filling bounds and a scalar normalization are included. The volume transfer uses the same diagram and fixed filling throughout. | Source estimates, the nonzero central asymptotic and equality of its action with hyperbolic volume remain hypotheses. The optional Mathlib package constructs the modulus and logarithm and proves their required elementary laws for actual complex and real numbers. |
@@ -66,7 +74,7 @@ these constants have the required properties for a given diagram.
 The algebraic comparison lemmas permit a general real margin. The two
 `strictly_below` theorems explicitly add its positivity to obtain a
 strict rate loss. The geometric application also supplies
-\(0<t<1\); the scalar flattening identity itself only needs \(t\ge0\).
+$0<t<1$; the scalar flattening identity itself only needs $t\ge0$.
 
 ## What remains outside these checks
 
@@ -76,21 +84,25 @@ Hessian formulas, nonzero stationary contribution, primitive filling
 curves, and equality with hyperbolic volume remain written arguments.
 Neither the Lean build nor the finite experimental checks certify those
 arguments. The [manuscript audit](../repro/MANUSCRIPT_AUDIT.md) records
-which parts have been read and where further formalization is needed.
+which written arguments were examined. The
+[closing assessment](../repro/RETAINED_RELEASE_ASSESSMENT.md) records the
+accepted division between those proofs and the compiled implications.
+Further formalization of the actual invariants and manifolds is a
+separate task, not an omitted premise of a theorem in this library.
 
 For the uniqueness result, suppose a polynomial has a coefficientwise
-decomposition \(f=pq+r\), where
-\(p(X)=\prod_{i=1}^m(X-r_i)\) and every coefficient of \(r\) in
-degree at least \(m\) is zero. The constructed remainder equals
-\(r\), coefficient by coefficient. This formulation allows any number
+decomposition $f=pq+r$, where
+$p(X)=\prod_{i=1}^m(X-r_i)$ and every coefficient of $r$ in
+degree at least $m$ is zero. The constructed remainder equals
+$r$, coefficient by coefficient. This formulation allows any number
 of trailing zero entries. Permuting the roots gives the same modulus
 and hence the same remainder, even when some roots coincide. The proof
 does not divide by a root difference.
 
-The characterization theorem considers a candidate functional \(F\)
+The characterization theorem considers a candidate functional $F$
 on coefficient lists. If it respects coefficient equality, is additive,
 vanishes on every multiple of the modulus, and takes a polynomial of
-degree below \(m\) to its coefficient in degree \(m-1\), then it
+degree below $m$ to its coefficient in degree $m-1$, then it
 equals the constructed functional on every input. The four hypotheses
 are explicit Lean parameters. Proving them for the literal spectral
 functional remains part of the application.
@@ -99,22 +111,22 @@ The monic-remainder module represents polynomials by their actual
 coefficient lists, allowing trailing zeros. Its main division theorem
 proves equality of every coefficient, rather than only equality of
 polynomial values at selected arguments. If
-\(p(X)=\prod_{i=1}^n(X-r_i)\), it constructs \(q\) and a remainder
-of degree less than \(n\), with \(f=pq+\operatorname{rem}_p f\).
+$p(X)=\prod_{i=1}^n(X-r_i)$, it constructs $q$ and a remainder
+of degree less than $n$, with $f=pq+\operatorname{rem}_p f$.
 Successive synthetic divisions give the iterated divided difference;
-the theorem identifies it with the coefficient of \(X^{n-1}\) in
+the theorem identifies it with the coefficient of $X^{n-1}$ in
 the remainder. No distinctness hypothesis on the nodes is used.
 The module also proves that a multiple of the modulus has zero remainder
-and that an input represented by at most \(n\) coefficients is unchanged.
+and that an input represented by at most $n$ coefficients is unchanged.
 This representation bound is the hypothesis of the normalization theorem;
 trailing zero entries count toward the list length. For two
 coincident nodes it proves the full formula
 
-\[
+$$
  \operatorname{rem}_{(X-r)^2}f(X)=f(r)+f'(r)(X-r).
-\]
+$$
 
-Here \(f'\) is formal polynomial differentiation, defined by a coefficient
+Here $f'$ is formal polynomial differentiation, defined by a coefficient
 recurrence. No claim about analytic differentiability is needed. Thus
 the derivative term is derived from polynomial reduction itself.
 This top-coefficient functional is not the ordinary trace of the
@@ -123,25 +135,25 @@ are not included in its definition.
 
 The empty root list has remainder zero and a zero Newton functional. In
 the intended application the root list has positive length and the
-coefficient ring is \(\mathbb C\).
+coefficient ring is $\mathbb C$.
 The companion `MonicLinearity` module proves that the constructed
 remainder and functional are linear over the coefficient ring. If two
 lists have equal coefficients at every degree, they give literally the
 same remainder list and the same functional value. Thus arbitrary
 trailing zeros make no difference. It also proves that
-\(f=g+pq\), interpreted coefficientwise with the constructed monic
-multiple \(pq\), implies equal remainders and equal functional values.
+$f=g+pq$, interpreted coefficientwise with the constructed monic
+multiple $pq$, implies equal remainders and equal functional values.
 These conclusions establish invariance under changing the polynomial
-representative modulo \(p\). An abstract quotient-ring type and the general confluent root-sum
+representative modulo $p$. An abstract quotient-ring type and the general confluent root-sum
 formula are not yet exported by the project. Invariance under reordering
 the roots is proved in `MonicUniqueness`.
 
 `MonicProduct` constructs multiplication of coefficient lists and proves
-\(\mathcal R_p(fg)=\mathcal R_p((\mathcal R_pf)(\mathcal R_pg))\).
+$\mathcal R_p(fg)=\mathcal R_p((\mathcal R_pf)(\mathcal R_pg))$.
 It also proves that reducing after each multiplication in a finite
 product gives the same final remainder and top-coefficient functional.
 At a double root, the reduced product retains
-\(f'(r)g(r)+f(r)g'(r)\), including when either value vanishes.
+$f'(r)g(r)+f(r)g'(r)$, including when either value vanishes.
 The code constructs an associative multiplication on canonical lists;
 it does not declare a separate abstract quotient-ring type.
 
@@ -222,8 +234,8 @@ original tensor diagram uses multilinearity.
 ## The protected triangular sum
 
 `ProtectedSum` doubles every rate, target and gap to avoid division.
-Its variable `b` is \(\log B\), while `qa` and `qc` are
-\(2Q(0,a,B)\) and \(2Q(0,c,B)\). The two inequalities
+Its variable `b` is $\log B$, while `qa` and `qc` are
+$2Q(0,a,B)$ and $2Q(0,c,B)$. The two inequalities
 `b ≤ qa` and `b ≤ qc` come from testing a vertex of the triangle
 allocation simplex. The module assumes these inequalities; it does not
 formalize that variational problem.
@@ -231,7 +243,7 @@ formalize that variational problem.
 The new crossing has three possibilities. Central maps to two central
 input pieces, left to left/central, and right to central/right. The
 module defines the corresponding maxima, proves their comparison, and
-subtracts the actual duplicated target \(2\log B\). Its main theorem,
+subtracts the actual duplicated target $2\log B$. Its main theorem,
 `protected_sum_certified_rate`, then selects an input certificate from
 the noncentral-sector map and proves that the output gap is at least
 the smaller input gap. The complete actions and gaps in that statement
@@ -247,16 +259,16 @@ normalization at each joining face, are proved in Appendix Q.
 
 `TriangularBoundary` uses the same three local rates as `ProtectedSum`.
 The two formerly zero weights may now be positive. In the notation of
-Appendix R, put \(T=Q(u,v,b)\) and
-\(\Delta=2T-\log b\). The Lean variable `t` is \(2T\), while
-`b` is \(\log b\); hence `t-b` is \(\Delta\). Costs, complete
+Appendix R, put $T=Q(u,v,b)$ and
+$\Delta=2T-\log b$. The Lean variable `t` is $2T$, while
+`b` is $\log b$; hence `t-b` is $\Delta$. Costs, complete
 actions and certificate gaps are doubled. The duplicated coefficient
-target is \(2\log b\), not \(4T\).
+target is $2\log b$, not $4T$.
 
 The general local comparison permits a defect of at most
-\(\Delta/2\) in undoubled rates. If the entire inserted block is
+$\Delta/2$ in undoubled rates. If the entire inserted block is
 central, only the central or left attaching label is possible. The
-conditional packing comparison \(Q(u,a,b)\ge T\) removes that
+conditional packing comparison $Q(u,a,b)\ge T$ removes that
 defect. If any label of the block is noncentral, its absolute
 certificate absorbs the defect and retains its strict margin.
 `boundary_certified_rate` proves precisely this case split. Its

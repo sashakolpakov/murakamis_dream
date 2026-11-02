@@ -1,40 +1,33 @@
 # Concrete analytic, variational and formal-series proofs
 
-This optional Lean package realizes the elementary analytic interfaces of
-[VolumeTransfer](../formal/VolumeLogic/VolumeTransfer.lean) using Mathlib's
-complex numbers, complex modulus and real logarithm. It depends on the
-existing Std-only package by the relative path `../formal`; its sources are
-not copied. The ordinary Std-only check does not need this package or Mathlib.
-The package also proves the real finite quadratic-form implication used in
-the circle-pattern Hessian argument, the one-variable calculus behind
-shared-weight flattening, coercivity from a positive finite transport table,
-uniqueness from actual graph-valued second derivatives, and invertibility
-of the actual graph Laplacian after grounding one coordinate. The triangle
-load module derives the local derivative and its assembled graph energy
-from the exponential, square-root and arctangent formulas themselves.
-The triangle-potential module then proves that these loads are the
-gradient of the literal integral-entropy supremum, including singleton rows.
-The triangle-minimizer module combines those actual derivatives with
-proved local bounds, continuity and finite corner-table identities to
-obtain a unique grounded minimum from the supported table and row paths.
-The triangle-balance module then derives the concrete free-vertex Euler
-equations and proves that their grounded solution is unique.
-The finite-cut modules remove the assumed transport table: strict cut
-inequalities and compatible total demand imply existence of the actual
-loads, their unique grounded balance, and the positive table itself.
-The formal-series modules construct meridian shifts, regrading and
-exponentiation, then derive a classical identity from an actual finite
-recurrence and the stated all-orders source-ratio estimates. For fixed
-finite Laurent coefficients, their expansions are proved from the
-complex exponential itself. A separate normalization module removes the
-common q-1 factor and proves that the resulting classical symbol is
-nonzero. The coefficient adapter connects that polynomial record to the
-finite Laurent expansions and derives its formal characteristic equation.
-The meridian substitution is proved to be an injective algebra map by
-a finite Vandermonde argument, so the formal symbol is also nonzero.
-The uniform-profile modules prove common nonvanishing thresholds
-and logarithmic rates, including the actual removable sine quotient and
-fixed quadratic scalar occurring in the circle-tree profiles.
+This Lean package proves the analysis and algebra used between the
+source estimates and their final conclusions. It uses Mathlib's actual
+complex norm, real logarithm, derivatives and power series, and imports
+the finite algebra from [the Std-only library](../formal/README.md).
+The ordinary Std-only check does not require Mathlib.
+
+There are three main parts. The first derives logarithmic growth and
+nonvanishing from a nonzero leading term and a strictly smaller whole
+remainder. The second studies the triangle potential: its derivatives,
+finite-cut conditions, unique minimum and grounded Hessian. The third
+derives a nonzero formal characteristic equation from an existing
+recurrence and specified all-orders source-ratio estimates. It retains
+the meridian factors and proves that meridian expansion preserves a
+nonzero polynomial before evaluation at a selected longitude.
+
+These are mathematical implications with explicit inputs. The package
+does not construct the Kashaev invariant, prove the source-specific
+contour estimates, or construct the filled hyperbolic manifold. Those
+arguments remain written proofs in the [current papers](../papers/README.md).
+The [coverage record](../repro/PAPER_FORMAL_COVERAGE.md) and
+[closing assembly review](../repro/manuscript_audit/internal-assembly-completion/report.md)
+identify the boundary for each application. None of the knot-family
+conclusions is claimed as an end-to-end Lean theorem.
+
+For installation, use [the fresh-checkout instructions](#fresh-checkout-setup).
+For a configured checkout, use [the replay command](#replay-and-audit-record).
+The sections below explain the mathematical statements by subject; they
+are a reference for the formal library, not additional research papers.
 
 ## What is proved
 
@@ -282,7 +275,7 @@ requiring `h root = 0`, every nonzero `h` therefore has positive recession.
 `grounded_recession_coercive` proves the stronger uniform conclusion
 
 $$
-\exists c>0\quad\forall h\text{ with }h_{\rm root}=0,
+\exists c>0\quad\forall h\text{ with }h_{\mathrm{root}}=0,
 \qquad \mathcal R(h)\ge c\lVert h\rVert.
 $$
 

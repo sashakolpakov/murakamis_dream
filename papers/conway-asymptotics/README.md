@@ -1,10 +1,14 @@
 # Holomorphic source asymptotics and volume limits for strict Conway compositions
 
+[Read the PDF](../../docs/papers/conway-asymptotics.pdf) · [TeX source](main.tex) · [Dependency graph](https://sashakolpakov.github.io/murakamis_dream/papers/dependencies.html)
+
 Theorem 1.1 proves the nonzero asymptotic of the full reduced Kashaev invariant and its actual knot-complement volume limit for each fixed strict Conway presentation with at least two original crossing circles. Every filling integer is independently signed, sufficiently long, and fixed before the integer level tends to infinity. The actual main-strand component test counts components closed inside products as well as at the final closure.
 
-Strictness means that the original wire constraints admit leaf labels in \( (0,1/2) \), strict product labels \( \max(x,y)<z<x+y<1 \), complemented turn labels, and complementary closing outputs. Bare or turned elementary closing children are allowed. Boundary-only presentations and constructions growing with the level are outside the theorem.
+Strictness means that the original wire constraints admit leaf labels in $ (0,1/2) $, strict product labels $ \max(x,y)<z<x+y<1 $, complemented turn labels, and complementary closing outputs. Bare or turned elementary closing children are allowed. Boundary-only presentations and constructions growing with the level are outside the theorem.
 
 The full-volume proof uses the exact pure factorial source at every strict leaf index. The paper proves its finite wire-window expansion, primitive lattice amplitude, real Fourier action, whole spectral-cube gap, and full integer-power Hermite/midpoint conversion. A direct classical shear identifies the critical action with the primitive filling of the original odd or even partner. No half-integral surgery is assigned to the pure algebraic partner.
+
+In the dependency graph, this is the application that joins the strict variational result, the full-source bounds and the marked geometric filling theorem. The [ordered-reduction paper](../conway-reductions/README.md) can apply its conclusion after checking the surviving strict factor and its net twists.
 
 The separately retained signed results have their original scope: Proposition 3.1 treats high-index signed leaves, and Theorem 4.1 gives the signed packet for the completed-root grammar. They are not premises of the enlarged strict pure-source route.
 
@@ -22,13 +26,13 @@ The separately retained signed results have their original scope: Proposition 3.
 - Lemma 2.1, ca:factorial: unchanged canonical factorial interpolation.
 - Proposition 3.1, ca:shear: unchanged high-index signed action identity.
 - Theorem 4.1, ca:packet-theorem: retained completed-root signed packet.
-- Theorem 4.2, ca:strict-pure: new strict pure-window and physical-source comparison.
+- Theorem 4.2, ca:strict-pure: strict pure-window and physical-source comparison.
 - Proposition 4.3, ca:Fourier-theorem: strict real local Fourier expansion and global spectral gap; previously numbered 4.2.
 - Section 5 retains the full-power and midpoint equations. Its final action adapter now uses the direct strict classical potential.
 
 ## Build and finite reproduction
 
-Build with latexmk -pdf -outdir=build main.tex in this folder.
+From the repository root, build with `python3 tools/build_papers.py conway-asymptotics`.
 
 From the repository root, run:
 

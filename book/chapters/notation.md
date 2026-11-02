@@ -9,6 +9,13 @@ notation used after those definitions.
 
 Letters are reused in the technical archive. In particular, a tangle turn, a crossing matrix, and a shift of a meridian variable are different operations. Local definitions take precedence when a note uses another convention.
 
+Each [current paper](../../papers/README.md) defines its own notation
+and identifies the numbered statements it imports. When moving between
+papers, compare those definitions and hypotheses before substituting a
+formula. The [dependency graph](../../docs/papers/dependencies.html)
+locates the imported statement; it does not identify two symbols merely
+because their names agree.
+
 ## The invariant and the order of limits
 
 Fix the diagram, its ordered tangle construction, its integer twist powers, and any finite certificate used by a theorem. Then let the integer quantum level \(N\) tend to infinity. Statements for arbitrary finite trees or spheres allow arbitrarily large fixed diagrams; they do not allow the diagram to grow with \(N\). A universal sufficient twist bound and a uniform error estimate over all diagrams are different assertions.

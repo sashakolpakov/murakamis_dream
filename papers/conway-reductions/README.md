@@ -1,8 +1,12 @@
 # Ordered tangle reductions and long net twists
 
+[Read the PDF](../../docs/papers/conway-reductions.pdf) · [TeX source](main.tex) · [Dependency graph](https://sashakolpakov.github.io/murakamis_dream/papers/dependencies.html)
+
 This paper gives actual ordered tangle isotopies and a terminating reduction before applying a long-filling theorem. A cylindrical product closure has parity-independent net label blocks, with parity-dependent rotations and orders. Allowing cap closures and zero sums gives an explicit tree of componentwise connected sums. Every component and every deleted label block is recorded.
 
 The application imports Theorem 1.1 of *Holomorphic source asymptotics and volume limits for strict Conway compositions*. Only the surviving strict-factor weights must be sufficiently large; the original expression and integer assignment are fixed before the level tends to infinity. The hyperbolic criterion uses the explicit long strict and elementary terminal factors. No general prime decomposition, new estimate for short twists, or quantum connected-sum theorem is claimed.
+
+This paper sits after the strict volume theorem: it proves when an ordered tangle construction reduces to a presentation to which that theorem applies. Its reduction does not supply a new asymptotic estimate for short surviving twists.
 
 The finite strict type test is the one in *Newton calculus and stationary profiles of Conway tangles*, Lemma 5.2 and Theorem 5.5. The reduced invariant normalization is *Finite spectral evaluation and uniform filling bounds*, Theorem 10.1, at levels at least three.
 

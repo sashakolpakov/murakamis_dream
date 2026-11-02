@@ -15,6 +15,14 @@ also retains an unsuccessful model: knowing why it fails as an exact
 state is useful even when its volume rate is correct. These proposals
 are not premises silently added to the manuscript's volume theorems.
 
+The retained operator result has a separate, precise scope in
+[Meridian expansions and classical symbols of quantum recurrences](../../docs/papers/meridian-expansions.pdf).
+It assumes a genuine fixed annihilator and the stated expansions of the
+actual source, then derives a nonzero classical symbol and its selected
+geometric factor. It neither constructs a universal operator nor proves
+the general volume conjecture. The proposals below should be compared
+with those hypotheses, rather than treated as substitutes for them.
+
 ## A positive factorial model and a change of triangulation
 
 Fix an integer \(N\ge2\), and put

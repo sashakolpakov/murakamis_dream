@@ -1,5 +1,9 @@
 # Stationary profiles of strict Newton trees
 
+[Read the PDF](../../docs/papers/strict-newton-profiles.pdf) · [TeX source](main.tex) · [Dependency graph](https://sashakolpakov.github.io/murakamis_dream/papers/dependencies.html)
+
+This is an earlier edition, retained for existing citations and its finite-check implementation. For the current account of the strict optimizer, boundary profiles and their finite Newton foundations, read [newton-calculus](../newton-calculus/README.md). The statement numbers below refer to this earlier edition; it is not an additional current paper.
+
 This paper studies arbitrary fixed ordered expressions in elementary Newton pieces, turns and products whose original closed wire constraints have a strict state. It proves exact support and the reduced-junction criterion, the primitive lattice, the interior optimizer with its boundary argument, stationary profile constants, and the quarter bound for every original leaf. The positive-sum limit identifies the optimized action with the rate of the original positive evaluation.
 
 The finite rerooting identities retain all physical leaf labels. They do not assert a tangle isotopy or estimate signed coefficients. Local signed asymptotics, complementary source bounds, the geometric construction and the entire filling sum require separate arguments.

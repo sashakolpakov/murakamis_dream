@@ -1,9 +1,12 @@
 # Murakami’s Dream
 
-The results are being rewritten as [papers organized by subject](../../papers/README.md),
-each at most 30 pages. The existing [reference manuscript](manuscript.md)
-remains available with its complete dependencies. This guide explains
-the results, their methods and the approaches that remain unfinished.
+This guide explains the retained results, their proofs, and the approaches
+that remain unfinished. The [current papers](../../papers/README.md) are
+organized by mathematical subject, with shared foundations cited by
+numbered statement. Their 21 drafts are provisional groupings, not a
+decision to publish 21 papers. The [manuscript guide](manuscript.md)
+explains how the frozen 374-page reference account grew and how the
+current papers differ from it.
 
 ## The question and the knots under consideration
 
@@ -189,7 +192,21 @@ The same intrinsic volume, nonvanishing, cusp and selected-factor conclusions pa
 
 ## Reading and checking the arguments
 
-Read the [manuscript](manuscript.md) for a continuous account with definitions, proof details, and illustrations. Use [the results chapter](results.md) to compare the exact families and hypotheses, and [the notation chapter](notation.md) when consulting technical notes. The [reproduction chapter](audits.md) distinguishes the finite rational inequalities checked by the supplied programs from the analytic and geometric arguments proved in writing.
+Use [the results chapter](results.md) to choose a theorem whose hypotheses
+fit the diagram under consideration. Then follow its
+[paper and numbered imports](../../papers/README.md). The
+[dependency graph](../../docs/papers/dependencies.html) shows which
+foundational statements that argument uses; it is not a requirement to
+read the entire collection. The [manuscript guide](manuscript.md) locates
+the current and earlier accounts, and the [notation chapter](notation.md)
+explains their conventions.
+
+The [closing assessment](../../repro/RETAINED_RELEASE_ASSESSMENT.md)
+records the review of the retained results. The
+[reproduction chapter](audits.md) distinguishes finite computations,
+compiled mathematical implications, and written analytic and geometric
+proofs. No complete knot-family theorem is claimed as an end-to-end Lean
+formalization.
 
 The [research library](../library.html) organizes the supporting notes by question. It retains the Fourier, weighted Cauchy, torsor, cube, and other approaches, including estimates that failed and the explanations of their failure. Those historical routes are useful evidence about the problem; they are not additional prerequisites for reading the main theorem.
 

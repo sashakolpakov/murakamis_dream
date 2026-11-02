@@ -204,141 +204,85 @@ separate work.
 
 ## Reading and reproducing the work
 
-The [collection of research papers](papers/README.md) now contains twenty-one
-current drafts totaling 403 pages, ranging from 11 to 29 pages each.
-They separate the exact finite
-invariant, coefficient estimates, complex asymptotics and marked
-hyperbolic geometry from the application theorems. The strict
-Conway theorem and the summed and directed circle-tree criteria have
-companion accounts with explicit proof dependencies. A separate local paper treats the signed
-recurrence at the quarter index. Each paper states the numbered results
-it imports and checks their hypotheses.
+Choose a theorem in the
+[dependency graph](https://sashakolpakov.github.io/murakamis_dream/papers/dependencies.html)
+and open **The recorded proof route**. This lists the statements it uses
+in prerequisite order, with each shared result appearing once. Follow
+that route through the [papers organized by subject](papers/README.md);
+there is no need to read the whole collection before approaching one
+application. The graph records declared theorem uses. Its cycle and
+source-location checks do not verify the proofs themselves.
 
-These papers extract selected results from the
-[374-page reference manuscript](manuscript/README.md); they do not yet
-replace it. The reference contains 93 pages of main text, 266 pages of
-appendices and 15 pages of front matter and references. Its length came
-from collecting several theorem families, repeated setup for separate
-proofs, and alternative constructions in one continuous account.
+The collection currently contains **21 drafts, totaling 403 pages**, each
+between 11 and 29 pages. These are provisional mathematical groupings,
+not a decision to publish 21 separate papers. Shared finite algebra,
+coefficient estimates, asymptotic analysis and hyperbolic geometry should
+each have a clear home. An application cites the numbered statements it
+needs and checks their hypotheses.
 
-The local spectral bounds and central-source asymptotics now share a
-25-page paper. It defines their common finite polynomial once, then
-proves the uniform upper bounds and the nonzero central asymptotic in
-separate sections. This removes a repeated prerequisite from later
-papers without merging the two conclusions.
+The [frozen reference manuscript](manuscript/README.md) has 374 pages:
+93 pages of main text, 266 pages in eighteen appendices, 13 pages of front
+matter, and two pages of references. Several mathematical projects
+accumulated in that account, with repeated setup and summaries followed
+by full proofs. Its length is not the length of one proof of the general
+volume conjecture. Splitting the material has made individual arguments
+easier to follow, but has not reduced the total page count. Current
+papers also contain expanded proofs and broader results. The Newton,
+circle-tree and Casimir consolidations have removed ten pages of overlap;
+we have not measured how much more can be removed. The
+[manuscript guide](https://sashakolpakov.github.io/murakamis_dream/guide/manuscript.html)
+explains the current division and the [errata](manuscript/ERRATA.md)
+record corrections to the frozen account.
 
-The net-twist and zero-twist reductions now have a separate 15-page
-topological account. The marked nonparabolic representations and preferred
-longitudes have separate 22- and 29-page accounts. They prove the
-geometric statements without importing quantum asymptotics. The new
-20-page moving-source and 13-page meridian-expansion papers supply the
-analytic steps and conditional recurrence implication described above.
-Their theorem statements make these one-way dependencies explicit.
-The consolidated 21-page strict geometry
-paper includes the local proofs previously spread over three articles;
-the two earlier editions remain available for existing citations. The
-older local tree criterion now follows from the directed paper, without repeating its
-separate induction. The reference remains frozen and is no
-longer presented as a single journal paper. Its
-[errata](manuscript/ERRATA.md) record corrections found during extraction.
-Chapter 1 separates full volume theorems from completed partial results:
-a finite filling estimate and a theorem about one geometric contribution
-do not assert the volume limit for an arbitrary original invariant.
-Each full-invariant theorem names the estimate that bounds its remaining terms. A completed implication retains its hypothesis; it is not counted as a proof that the hypothesis holds for every diagram.
-The open remainder estimate for unchanged general diagrams is not a
-premise of the restricted-family proofs.
+The [closing assessment](repro/RETAINED_RELEASE_ASSESSMENT.md) records the
+completed review of the retained restricted results. For each volume
+conclusion, the proof needs an exact invariant formula, a nonzero leading
+term, a bound for the whole remainder, the intended hyperbolic metric,
+and an absolute comparison between its volume and the same action.
+The open remainder estimate for general unchanged diagrams is not an
+input to the retained restricted-family arguments. Further families,
+stronger estimates and the general conjecture remain separate research.
 
-The [paper reproduction command](papers/README.md#building-and-reproducing-the-papers)
-runs twenty-two finite check groups. They compare exact matrix and
-polynomial formulas, replay rational certificate inequalities, and check
-normalizations and endpoint pairings. The source Fourier checks retain repeated-root derivatives and endpoint
-terms; the local recurrence checks retain both source components and
-both level parities. The new groups also check whole moving traces,
-reflected pairings and exact reduced/full gauge and coefficient-recovery
-identities. These computations
-supplement the written analytic and geometric proofs; sampling levels
-or diagrams does not establish those proofs.
+There are three different kinds of checks:
 
-The [manuscript audit](repro/MANUSCRIPT_AUDIT.md) records the proof
-dependencies, corrections, and precise extent of the review. The
-[Lean project](formal/README.md) verifies finite algebraic steps,
-including polynomial reduction with repeated roots and independence
-of its representative and root ordering, reduction of finite products,
-and the first derivative of a product at a repeated root. It also checks
-formal coefficient recovery under \(u=hs\), including the limitation
-of any fixed finite-order expansion, and the local sector
-comparisons and target cancellation for the triangular-sum construction.
-It also checks the ordinary-boundary comparison, including the
-different estimates for a wholly central piece and a piece containing
-any noncentral term. A separate [Mathlib package](formal-real/README.md)
-constructs the actual complex norm and real logarithmic rate, derives the
-rate of a nonzero asymptotic contribution, and verifies the limit
-implication when the entire remainder has a strictly smaller rate.
-It also proves existence and uniqueness of the minimum of the explicit
-supported triangle-entropy potential. Strict finite cut inequalities and
-compatible total demand now construct the positive corner table,
-connected incidence and unique grounded load balance. The potential's
-lower bound, continuity and derivatives are proved in Lean; checking the
-cut inequalities for the particular geometric incidence remains a
-written application step.
-The package now also proves the actual regrading ring map, formal
-exponential projection and meridian denominator-clearing calculation.
-The root-of-unity recurrence calculation now derives the Laurent
-coefficient expansions, literal sine gauge, meridian factors and finite
-equation expansion. From a specified nonzero polynomial coefficient
-record, it removes the common $q-1$ factor and derives a nonzero classical
-symbol and its formal characteristic identity. The substitution $M=e^u$
-is proved injective on Laurent coefficients by a finite Vandermonde
-argument, so it preserves that nonzero symbol while $L$ remains an
-independent variable. The actual operator,
-its denominator chart, source normalization and nonvanishing, and the
-source-ratio asymptotics remain application inputs. Another theorem
-derives one common nonvanishing threshold and a uniform logarithmic
-rate from a uniform microscopic profile. The
-[paper-by-paper coverage record](repro/PAPER_FORMAL_COVERAGE.md) separates
-these compiled implications from the analytic, geometric and topological
-inputs still supplied by written proofs.
-Appendix N explains why this
-remainder is unique and states exactly what would identify a candidate
-functional with its top coefficient. It also proves that the polynomial
-resolvent recovers evaluation at an annihilating operator. An explicit
-finite Fourier transform derives the actual Casimir annihilator and
-the local face polynomial, including its scalar and endpoint conditions.
-The face-grid
-argument in Appendix O makes explicit why the total degree excludes
-every unwanted monomial. The analytic estimates and geometric completion
-remain written proofs with their stated hypotheses.
-
-The scope of this research phase is frozen at these restricted families.
-Its [stopping criteria](repro/MANUSCRIPT_AUDIT.md#where-this-research-phase-ends)
-require a complete dependency chain for each retained conclusion and
-reproducible finite certificates. Broader families, smaller constants
-and the archived exploratory approaches are separate projects.
+- The [finite reproduction suite](papers/README.md#building-and-reproducing-the-papers)
+  runs 22 groups covering exact formulas, rational and interval
+  inequalities, normalization factors and endpoint pairings. It does
+  not infer an asymptotic theorem from sampled levels.
+- The [Lean library](formal/README.md) proves finite algebra and theorem
+  assembly. The [Mathlib extension](formal-real/README.md) also proves
+  concrete calculus, norm and logarithmic-limit results, formal series
+  identities and the nonzero classical-symbol implication under its
+  stated recurrence assumptions. The
+  [coverage record](repro/PAPER_FORMAL_COVERAGE.md) identifies the written
+  analytic, geometric and topological inputs. No actual knot-family
+  theorem is claimed as an end-to-end Lean proof.
+- The [guide checks](book/README.md#rebuilding-the-guide) verify rendered
+  formulas, navigation and illustration assets. Paper builds check
+  typesetting, references and page limits.
 
 The [illustrated guide](https://sashakolpakov.github.io/murakamis_dream/)
-also explains the approaches that remain incomplete. Its
-[methods chapter](https://sashakolpakov.github.io/murakamis_dream/guide/methods.html)
-introduces the techniques, gives their literature references, and
-distinguishes completed arguments from proposed extensions. The
-[algebraic approaches chapter](https://sashakolpakov.github.io/murakamis_dream/guide/algebraic.html)
-defines the earlier torsor and gluing proposals, works out the
-factorial model's move test, and explains the remaining comparison
-problems. The
+is the maintained web exposition. Its
+[methods](https://sashakolpakov.github.io/murakamis_dream/guide/methods.html)
+and [algebraic approaches](https://sashakolpakov.github.io/murakamis_dream/guide/algebraic.html)
+chapters retain the Fourier, torsor, weighted Cauchy, cube and other
+approaches, including unsuccessful comparisons and the reasons they
+failed. Definitions, literature references and limitations accompany
+those discussions. The
 [research library](https://sashakolpakov.github.io/murakamis_dream/library.html)
-retains the Fourier, torsor, weighted Cauchy, cube, and other approaches,
-including failed estimates and the reasons they failed. These historical
-notes are not additional premises of the manuscript's theorems.
-
-The illustrated guide is the maintained documentation. Former Sphinx
-addresses redirect to it; there is no second exposition to keep in sync.
+keeps the detailed notes available. Historical approaches are not extra
+premises of a current theorem. Former Sphinx addresses redirect to the
+guide; there is no second exposition to maintain.
 
 | Directory | Contents |
 | --- | --- |
-| `manuscript/` | TeX paper, bibliography, figures, and compiled PDF |
-| `repro/` | Check runner and the precise scope of its checks |
-| `formal/` | Lean proofs of finite steps, with their remaining hypotheses stated |
-| `book/` | Guide chapters and editable diagrams |
-| `docs/` | Published illustrated guide |
+| `papers/` | Current subject drafts, earlier editions, and the dependency inventory |
+| `manuscript/` | Frozen reference manuscript, illustrations, bibliography and errata |
+| `repro/` | Reproduction commands, recorded results and scoped proof reviews |
+| `formal/` | Lean proofs of finite algebra and internal implications |
+| `formal-real/` | Mathlib proofs of calculus, limits and formal-series implications |
+| `book/` | Illustrated-guide sources and editable diagrams |
+| `docs/` | Published guide, dependency graph and PDFs |
 | `notes/` | Detailed arguments and historical research notes |
-| `experiments/` | Verification programs and recorded results |
-| `tools/` | Paper, guide, and figure builders |
+| `experiments/` | Verification programs and recorded calculations |
+| `tools/` | Paper, guide, graph and figure builders |

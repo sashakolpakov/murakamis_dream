@@ -6,6 +6,12 @@ must prove. The [results chapter](results.md) then states the families
 covered by the arguments. The [methods chapter](methods.md) develops the
 estimates and the alternative approaches.
 
+There is no need to read the reference manuscript from beginning to end.
+After these definitions, choose a construction in the results chapter
+and use the [dependency graph](../../docs/papers/dependencies.html) to
+find the statements its proof imports. The graph distinguishes an exact
+finite formula, an estimate, and a geometric conclusion.
+
 The invariant originates in Kashaev’s
 [1994 construction using cyclic quantum dilogarithms](https://arxiv.org/abs/hep-th/9411147).
 His [1995 paper](https://arxiv.org/abs/q-alg/9504020) gives the crossing-matrix

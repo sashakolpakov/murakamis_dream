@@ -1,15 +1,56 @@
-# Uniform bounds for finite Hermite filling functionals
+# Finite spectral evaluation and uniform filling bounds
 
-The standalone article proves the finite bound
+[Read the PDF](../../docs/papers/filling-bounds.pdf) · [TeX source](main.tex) · [Dependency graph](https://sashakolpakov.github.io/murakamis_dream/papers/dependencies.html)
+
+The paper connects two descriptions of the same finite knot invariant:
+a contraction of crossing matrices, and a coefficient of a polynomial
+whose face variables are shared across the diagram. It then bounds the
+cost of inserting fixed signed crossing powers into that polynomial.
+These are the algebraic foundations used by the later source estimates
+and volume arguments.
+
+Its first theorem is the estimate
 
 $$
-|\mathcal L_N^n H|\le (1+|n|/2)\|H\|_{[-2,2]},\qquad \deg H<N,
+|\mathcal L_N^n H|\le (1+|n|/2)\|H\|_{[-2,2]},\qquad \deg H<N.
 $$
 
-with the explicit Gaussian multiplier and all repeated-root derivatives. It includes the node-vanishing improvement, the joint-product-grid subtraction, canonical polynomial remainders and resolvent reproduction, the local Casimir/Fourier identity, and the finite crossing polynomial with its normal derivatives. The finite proofs work at every $N\ge2$, including both parities and composite levels.
+Here $N\ge2$ is the integer level, $n\in\mathbb Z$ is the signed crossing
+power, $\|H\|_{[-2,2]}$ is the supremum norm, and $\mathcal L_N^n$ is the
+Gaussian Hermite functional defined in Section 1. It retains first
+derivatives at the double roots of $2T_N(z/2)+2$, where $T_N$ is the
+Chebyshev polynomial. At odd levels, the remaining simple root has its
+own value term. The theorem also gives stronger bounds when values
+vanish at the nodes, and an exact subtraction for several variables.
 
-The shared-diagram application is conditional on its stated exact marked-source identity. That companion input must retain the original cups, caps, mark, grids, framing, and shared coefficient targets. This article does not prove a full knot-volume limit.
+The finite matrix calculations establish the Casimir/Fourier identity
+and the full crossing polynomial. For a planar diagram obtained from
+a matched triangulated sphere, Theorem 9.1 proves the exact marked face
+coefficient, and Corollary 9.2 expresses its signed crossing insertions
+by these functionals. Theorem 10.1 identifies that evaluation with the
+reduced Kashaev invariant, including the framing factor, at every
+integer level $N\ge3$. The cups, caps, marked cut, face lattice and both
+level parities are part of those proofs. The diagram identity is therefore
+a conclusion of this paper, not an unproved companion assumption.
 
-`main.tex` is a standalone `article`, using standard LaTeX packages and its own bibliography. It has no inputs from the long manuscript. The main mathematical source is Appendix N, with the crossing-normal proof expanded from `notes/casimir_braiding_and_recoupling_lattice.md`, Section 3. Hermite interpolation and the Riesz/Bernstein inequality are classical tools; their needed finite forms are proved in the text and attributed to primary references.
+The input is the enhanced ribbon definition of the reduced invariant.
+The needed finite interpolation forms are proved here and attributed
+to their classical sources. No theorem from the long reference manuscript
+is required as a substitute for these proofs. A nonzero asymptotic, a
+bound for the entire remaining sum, and its geometric volume comparison
+are separate analytic and geometric inputs to later applications.
 
-Build from this directory with `latexmk -pdf main.tex`, or use the repository's manuscript builder. The common builder enforces the 30-page limit and checks references and overflow.
+## Build and finite checks
+
+From the repository root:
+
+```sh
+python3 tools/build_papers.py filling-bounds
+python3 repro/run_research_checks.py filling-supremum
+```
+
+The builder checks references, overflow and the 30-page ceiling. The
+finite checks exercise the Hermite formulas and the value/derivative
+channels described in the [reproduction guide](../../repro/README.md#uniform-bounds-for-inserting-twists).
+They do not prove the uniform norm theorem by sampling, and they do not
+supply an asymptotic or a geometric volume identity.
