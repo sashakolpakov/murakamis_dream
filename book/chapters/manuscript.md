@@ -1,6 +1,6 @@
 # A guide to the manuscript
 
-The current PDF is a 374-page reference account. Its results have been
+The frozen PDF is a 374-page reference account. Its results have been
 divided into [papers organized by subject](../../papers/README.md).
 The 21 current papers total 403 pages and range from 11 to 29 pages each,
 including references. Their shared foundations cover
@@ -53,13 +53,30 @@ shared source. The nonparabolic representation and preferred-longitude
 proofs have separate 22- and 29-page papers and enter only when the
 analytic germ is identified geometrically. The operator implication
 retains the hypothesis of a genuine fixed all-level annihilator.
-The reference PDF remains frozen. Its measured length is 93 pages of main
-text, 266 pages of appendices, and 15 pages of front matter and references.
-Several theorem families and their separate dependencies accumulated in
-that file. Repeated definitions and setup made individual appendices
-readable on their own, while alternative constructions added further
-length. The new division groups related proofs and imports their shared
-foundations by numbered statement. The
+The reference PDF remains frozen. It contains 15 chapters and 18 appendices:
+93 pages of main text, 266 pages of appendices, 13 pages of front matter
+and two pages of references. Thus more than seventy percent of the file
+is appendices. The five longest alone occupy 126 pages: the geometric
+longitude argument (37), terminal decoration (27), the octahedral and
+filling geometry (22), the central contribution for matched spheres (22),
+and the analytic and contour estimates (18).
+
+This is how the document became a reference book. Several separate
+arguments accumulated behind chapters that summarized their conclusions.
+The appendices repeated definitions and setup so that each could be read
+on its own. They also retained different constructions with different
+hypotheses. This page count is not the length of a single proof of the
+volume conjecture.
+
+The current division improves the reading order; it has not compressed
+the whole project. Its 403 pages include expanded proofs and broader
+current results, as well as each paper's introduction, notation and
+references. The Newton, circle-tree and Casimir mergers have removed ten
+pages of overlap in total. The 21 drafts are provisional subject
+groupings, not a decision to publish 21 papers. Further consolidation
+should follow the mathematical dependencies: state a shared foundation
+once, cite its precise conclusion, and keep distinct hypotheses visible.
+The
 [errata](../../manuscript/ERRATA.md) record corrections to the frozen account.
 
 The [dependency graph](../../docs/papers/dependencies.html) records the

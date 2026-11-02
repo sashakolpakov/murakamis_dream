@@ -840,3 +840,25 @@ consolidating the group names does not remove any finite check. The five
 rebuilt PDFs have no unresolved references or overfull boxes. All 97
 original labels remain available in the combined paper; the consumer
 citations were checked against their new numbers.
+
+
+## Closing the retained proof assembly review
+
+The [closing assessment](RETAINED_RELEASE_ASSESSMENT.md) records the
+completion boundary for the retained results. The
+[assembly review](manuscript_audit/internal-assembly-completion/report.md),
+with its [source snapshot](manuscript_audit/internal-assembly-completion/snapshot.json),
+found no additional missing implication in the inspected theorem uses.
+Analytic and geometric lemmas retain their written proofs, and the actual
+knot and manifold applications are not fully instantiated in Lean.
+
+The [whole-sum review](manuscript_audit/whole-charge/report.md) found no
+defect under the printed local and global source hypotheses after reading
+the infinite charge estimates, endpoint currents, contours and phase
+alignment for fixed signed twists. Its [source record](manuscript_audit/whole-charge/sources.json)
+and [handoff](manuscript_audit/whole-charge/handoff.json) preserve the exact
+reviewed inputs. The [diagnostic script](manuscript_audit/whole-charge/finite_phase_probe.py)
+and [saved samples](manuscript_audit/whole-charge/finite-phase-probe.json)
+check finite signs, parities and a boundary case; they do not prove the
+analytic theorem. This closes the agreed review of the retained
+restricted results. The general volume conjecture remains open.

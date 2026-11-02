@@ -75,6 +75,15 @@ Once these requirements, the reproducible certificates and the
 exposition checks are complete, a new family or a smaller constant is
 further research rather than a condition for finishing this release.
 
+The [closing assessment](../../repro/RETAINED_RELEASE_ASSESSMENT.md)
+collects the evidence for these requirements. The final analytic reading
+checks the entire oscillatory filling sum, including its infinite charge
+tail and endpoint terms; the assembly reading checks how its conclusion
+is used. Neither reading found an additional missing implication within
+the stated hypotheses. The analytic and geometric proofs remain written
+proofs. The Lean results verify their stated mathematical implications,
+but do not constitute a complete formal proof for a particular knot.
+
 Two wording changes make the all-orders argument more precise. Its
 annihilator has fixed order \(r_P\), independent of the quantum level;
 the separate spectral degree is \(N-1\). Its norm comparison applies

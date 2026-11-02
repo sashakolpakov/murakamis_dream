@@ -183,6 +183,7 @@ def main():
     mapping["book/library.html"] = "library.html"
     mapping["book/archive.html"] = "archive.html"
     mapping["papers/README.md"] = "papers/index.html"
+    mapping["manuscript/ERRATA.md"] = "guide/errata.html"
     for name in ("dependencies.html", "dependencies.svg", "dependencies.json", "dependency-analysis.json"):
         mapping[f"docs/papers/{name}"] = f"papers/{name}"
     for entry in json.loads((ROOT / "papers/catalog.json").read_text())["papers"]:
@@ -278,7 +279,9 @@ def main():
         if result.stderr.strip():
             raise RuntimeError(f"Cannot publish {source}:\n{result.stderr.strip()}")
         body = rewrite(result.stdout, source, target)
-        stem = Path(source).stem; is_guide = source.startswith("book/")
+        stem = Path(source).stem
+        is_errata = source == "manuscript/ERRATA.md"
+        is_guide = source.startswith("book/") or is_errata
         topic, status = ("Research guide", "Guide") if is_guide else catalog.get(stem, ["Research archive", "See note"])
         is_papers = source == "papers/README.md"
         if is_papers:
@@ -292,7 +295,8 @@ def main():
                     slug, label = CHAPTERS[j]; adjacent.append((mapping[f"book/chapters/{slug}.md"], ("← " if delta < 0 else "Next: ") + label))
                 else: adjacent.append(("", ""))
         title = title_of(text, stem)
-        html = page(target, title, body, "papers" if is_papers else stem if is_guide else "archive", source, topic, status, adjacent)
+        active = "manuscript" if is_errata else "papers" if is_papers else stem if is_guide else "archive"
+        html = page(target, title, body, active, source, topic, status, adjacent)
         # Preserve explicit TeX spaces in MathML annotations without storing
         # trailing whitespace in generated HTML source lines.
         html = re.sub(r'(<annotation encoding="application/x-tex">)(.*?)(</annotation>)',

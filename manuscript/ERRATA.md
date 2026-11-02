@@ -47,3 +47,50 @@ is positive. The implicit-function argument and its conclusion about
 independently sufficiently long signed filling slopes are unchanged.
 This correction concerns that classical deformation argument; it supplies
 no estimate for the quantum invariant.
+
+## Appendix R: the unchanged matched pair in the explicit core
+
+In Section R.8, printed page 356 (page 369 of the PDF), immediately
+after equation (R.39), the sentence
+“The other unchanged region has positive outer weights” describes the
+wrong support. The outer weights are \((2,0)\), and the two middle
+weights are \((1,1)\). This is the pair of triangles \(T_3,Z_3\),
+whose common edge is \(v_3v_0\). Equation (R.36) assigns curvatures
+\(v_3=2\), \(v_0=0\), and \(P=S=1\).
+
+The required strict inequalities still hold, with quantitative bounds.
+To see this directly, use the triangle potential \(Q\) defined in
+equation (R.3), and write
+
+\[
+ f(t)=\frac{\Lambda(\pi t)+\Lambda(\pi/2-\pi t)}{\pi},
+ \qquad g=f(1/4),
+ \qquad \Lambda(s)=-\int_0^s\log(2\sin r)\,dr.
+\]
+
+For weights \((2,1,0)\), the admissible loads
+\((1/4,1/4,0)\) give
+
+\[
+ Q(2,1,0)\ge 2g+\tfrac14\log2.
+\]
+
+Both triangles have those weights, so their complete rate satisfies
+\(X=2Q(2,1,0)\ge4g+\tfrac12\log2\). Each overloaded middle
+has weight \(h=1\). Its pure-middle comparison is therefore
+\(X-\log h=X\), and its mixed comparison satisfies
+
+\[
+ Q(2,h,0)-\tfrac12\log h
+ \ge 2g+\tfrac14\log2>\frac3{50}.
+\]
+
+The last inequality follows already from the stronger comparison
+\(2g-\tfrac34\log2>3/50\) in (R.39). Thus this correction
+preserves the stated uniform core gap and the insertion theorem.
+It changes neither the matching nor the protected zero weight.
+The corrected description and its branch bounds appear in Section 9
+of [the triangular-insertion paper](../papers/triangular-insertion/main.tex),
+after equation (9.5) and in the table following (9.10). The
+[insertion audit](../repro/PLANAR_INSERTION_AUDIT.md) also records
+the correction.
