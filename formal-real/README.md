@@ -19,6 +19,9 @@ proved local bounds, continuity and finite corner-table identities to
 obtain a unique grounded minimum from the supported table and row paths.
 The triangle-balance module then derives the concrete free-vertex Euler
 equations and proves that their grounded solution is unique.
+The finite-cut modules remove the assumed transport table: strict cut
+inequalities and compatible total demand imply existence of the actual
+loads, their unique grounded balance, and the positive table itself.
 
 ## What is proved
 
@@ -378,8 +381,9 @@ These derivative hypotheses are satisfied by a `C²` potential with the
 stated Hessian identity; the proof needs only the indicated derivatives,
 not continuity of the Hessian. For the explicit triangle entropy-envelope sum, `TrianglePotential`
 below now supplies the derivatives, including singleton rows. Identifying
-the geometric potential and its positive connected conductance support,
-and Hall feasibility of the transport table, remain written inputs. In the
+the geometric potential and its positive conductance support remains an
+application step. The later triangle and cut modules supply transport
+feasibility and connectivity from the stated finite inequalities. In the
 fixed-boundary disk application, the boundary pool and prescribed offsets
 are those described above; the Hessian must be that of the resulting
 potential in the free interior coordinates. The module does not prove
@@ -658,8 +662,8 @@ conductance support and the appropriate grounding. The next module derives
 that conductance connectivity from the actual row paths. The derivative
 identity itself no longer needs to be supplied for this potential. The geometric
 or source interpretation of `Q`, the incidence maps, fixed-boundary
-pooling and offsets, Hall transport feasibility, and graph connectivity
-remain written application inputs. No continuity theorem as the fixed
+pooling and offsets remain application inputs. The later cut modules
+derive transport feasibility and connectivity from explicit inequalities. No continuity theorem as the fixed
 coefficients `a_i` change support is claimed; the one-zero and singleton
 cases are proved directly at their own fixed supports. Packing existence,
 nonlinear deformation and the volume identity are not conclusions of
@@ -772,9 +776,9 @@ aggregated. This includes two-zero protected boundary data and singleton
 rows without interpreting a zero denominator in the arctangent formula.
 The one-vertex grounded space is covered by the same theorems.
 
-The supplied positive table must still come from the written Hall argument,
-and the stated incidence/support and its row connectivity must describe
-the actual disk. Those geometric/combinatorial application proofs have not
+This module assumes the table and row connectivity. The later finite-cut
+modules construct both from strict cut inequalities and compatible total
+mass; the support and its inequalities must still describe the actual disk. Those geometric/combinatorial application proofs have not
 been replaced by hypotheses asserting a minimum. The module does not prove
 support-changing limits of minimizers, parameter smoothness, nonlinear
 implicit-function results, circle development or the action-volume
@@ -855,11 +859,88 @@ small mathematical counterexamples to stronger unsupported conclusions,
 not sampled tests of the general theorem. Their axioms are audited
 separately from the reusable module's declaration inventory.
 
-The corner table's existence and its free columns, actual incidence and
-row connectivity remain explicit inputs. Hall feasibility, geometric
-identification/development and limits that change support are not proved
-by this module. No stationary point, coercivity, strict convexity or
+This module assumes the corner table and connected row incidence. The
+next two modules derive them from finite cut inequalities. Geometric
+identification, development and limits that change support remain outside
+these balance theorems. No stationary point, coercivity, strict convexity or
 Hessian formula is assumed as a substitute for the actual load equations.
+
+## Constructing the balance from finite cut inequalities
+
+[HallRecession.lean](HallRecession.lean) and
+[TriangleHall.lean](TriangleHall.lean) prove the preceding existence step.
+Let (T) be a finite set of triangle rows, (V) their finite set of
+vertex destinations, and (S_t\subseteq V) the nonempty active support of
+row (t). For (A\subseteq V), define its available supply and deficit by
+
+\[
+ C(A)=\frac12\#\{t:S_t\cap A\ne\varnothing\},\qquad
+ \delta(A)=C(A)-\sum_{v\in A}d_v.
+\]
+
+The hypotheses are explicit:
+
+\[
+ \sum_vd_v=\frac{|T|}{2},\qquad
+ \delta(A)>0\quad(\varnothing\ne A\subsetneq V).
+\]
+
+The first identity matches the demand to the total supply. The strict
+inequalities are stronger than weak feasibility at the boundary. They
+are sufficient for a solution at finite logarithmic weights. Neither a
+feasible table nor connectedness is assumed. When only free-vertex demands
+are prescribed, the root demand is chosen as the complementary mass;
+it does not affect the grounded potential.
+
+Here is the finite argument formalized in `HallRecession`. Define
+
+\[
+ R(q)=\frac12\sum_t\max_{v\in S_t}q_v-\sum_vd_vq_v.
+\]
+
+For a nonnegative vector (q), let (A=\{v:q_v>0\}) and let (a)
+be its least positive value. Subtract (a) at every vertex of (A),
+obtaining (q'). Then
+
+\[
+ R(q)=R(q')+a\delta(A).
+\]
+
+The positive support gets smaller. Induction proves nonnegativity from
+weak cuts, and positivity when a proper positive support meets a strict
+cut. Total mass makes (R) invariant under constant translations.
+Subtracting the smallest coordinate therefore proves (R(q)>0) for
+every nonzero vector with a fixed root coordinate equal to zero.
+Continuity, positive homogeneity and compactness of the grounded unit
+sphere give (R(q)\ge b\lVert q\rVert) for some (b>0).
+A disconnected component and its complement would have positive
+deficits whose sum is zero, so the same cuts also imply connectivity.
+
+`TriangleHall` applies this bound to the literal Lobachevsky envelope
+already defined in `TrianglePotential`. Its proved vertex bound gives
+
+\[
+ P_d(q)\ge R(q)-\sum_t C_t,
+\]
+
+where (C_t) is the fixed logarithmic offset cost. The continuous
+potential therefore attains a grounded minimum. Its actual coordinate
+derivatives give the prescribed loads at all free vertices; total mass
+gives the root equation. The maximizing corner loads are positive on
+exactly the active corners, have row mass (1/2), and have column sums
+(d). This constructs the required table. The existing conductance
+argument then proves uniqueness of both the balanced weights and the
+grounded minimum. Singleton rows and repeated destinations remain included.
+
+The [compiled controls](../repro/lean/hall-controls.lean) include an
+actual strict-cut balance with a zero corner, a connected example where
+weak cuts permit an unattainable boundary demand, and strict proper
+cuts with incompatible total mass. The latter two prevent replacing the
+hypotheses by weaker conditions. The modules contain six definitions
+and twenty-six theorems. Applying them to a particular packing still
+requires its incidence data, coefficients, demands and cut inequalities.
+Developing the geometric pattern and limits in which support changes
+are not conclusions of these theorems.
 
 ## Pinned dependencies
 
@@ -898,6 +979,7 @@ lake exe cache get \
   Mathlib.Topology.Order.Compact \
   Mathlib.Topology.Order.Lattice \
   Mathlib.Algebra.Order.GroupWithZero.Finset \
+  Mathlib.Algebra.Order.Group.Finset \
   Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic \
   Mathlib.Analysis.SpecialFunctions.Pow.Real \
   Mathlib.Analysis.SpecialFunctions.Log.Basic \
@@ -948,7 +1030,8 @@ The checker rebuilds the Std-only path dependency, compiles
 `RealTransfer.lean`, `WeightedGraph.lean`, `Flattening.lean`,
 `TransportCoercivity.lean`, `GroundedConvexity.lean` and
 `GroundedLaplacian.lean`, `TriangleLoads.lean`, `TrianglePotential.lean`
-`TriangleMinimizer.lean` and `TriangleBalance.lean`, and runs
+`TriangleMinimizer.lean`, `TriangleBalance.lean`, `HallRecession.lean`
+and `TriangleHall.lean`, and runs
 [AxiomAudit.lean](AxiomAudit.lean). Every
 definition and theorem must appear exactly once in the audit. Only Lean's
 standard foundational axioms `propext`, `Classical.choice` and `Quot.sound`
@@ -957,7 +1040,7 @@ are permitted; placeholders and additional axioms fail the check.
 `summary.json` records every declaration, its axioms, all dependency pins,
 and the SHA-256 hashes of the optional package, checker and Std-only sources.
 It contains relative paths and omits timestamps so identical inputs produce
-the same summary. Twenty-six negative controls check altered pins, missing or
+the same summary. Thirty negative controls check altered pins, missing or
 duplicate dependencies, an absolute local dependency, incomplete or
 duplicate declaration audits, an omitted graph module or grounded-energy
 audit entry, an omitted flattening module or quadratic-cost audit entry,
@@ -968,10 +1051,11 @@ an omitted triangle-load module or shared-load derivative audit entry,
 an omitted triangle-potential module or actual supremum-gradient audit entry,
 an omitted triangle-minimizer module or actual prescribed-minimum audit entry,
 an omitted triangle-balance module or unique-load-solution audit entry,
+an omitted cut-recession or cut-to-balance module or its main theorem audit,
 and an unexpected logical axiom. A failed run
 removes any old success summary in its output directory.
 
-The optional count is **fifty-one definitions and two hundred eight theorems**, separate
+The optional count is **fifty-seven definitions and two hundred thirty-four theorems**, separate
 from the Std-only theorem count: `RealTransfer` has two definitions and
 twenty-two theorems, `WeightedGraph` has seven definitions and nineteen
 theorems, `Flattening` has one definition and nine theorems,
@@ -981,7 +1065,9 @@ theorems, `Flattening` has one definition and nine theorems,
 `TriangleLoads` has ten definitions and twenty-four theorems, and
 `TrianglePotential` has eight definitions and forty-one theorems, and
 `TriangleMinimizer` has six definitions and thirty-two theorems, and
-`TriangleBalance` has three definitions and nineteen theorems. Four compiled
+`TriangleBalance` has three definitions and nineteen theorems,
+`HallRecession` has six definitions and seventeen theorems, and
+`TriangleHall` has nine theorems. Seven compiled
 mathematical boundary controls have their own recorded axiom inventory and
 are not added to these reusable-library counts. The audit
 checks these proofs and the

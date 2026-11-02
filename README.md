@@ -238,10 +238,12 @@ constructs the actual complex norm and real logarithmic rate, derives the
 rate of a nonzero asymptotic contribution, and verifies the limit
 implication when the entire remainder has a strictly smaller rate.
 It also proves existence and uniqueness of the minimum of the explicit
-supported triangle-entropy potential from a positive corner table and
-connected incidence. The geometric construction of that table remains
-a written input; the potential's lower bound, continuity and derivatives
-are now proved in Lean.
+supported triangle-entropy potential. Strict finite cut inequalities and
+compatible total demand now construct the positive corner table,
+connected incidence and unique grounded load balance. The potential's
+lower bound, continuity and derivatives are proved in Lean; checking the
+cut inequalities for the particular geometric incidence remains a
+written application step.
 Appendix N explains why this
 remainder is unique and states exactly what would identify a candidate
 functional with its top coefficient. It also proves that the polynomial

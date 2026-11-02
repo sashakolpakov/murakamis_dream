@@ -8,6 +8,8 @@ import TriangleLoads
 import TrianglePotential
 import TriangleMinimizer
 import TriangleBalance
+import HallRecession
+import TriangleHall
 
 #print axioms VolumeLogic.RealModel.complexMagnitude
 #print axioms VolumeLogic.RealModel.constant_div_nat_rate
@@ -277,3 +279,37 @@ import TriangleBalance
 #print axioms VolumeLogic.TriangleBalance.balance_minimizer
 #print axioms VolumeLogic.TriangleBalance.grounded_minimizer_iff_balance
 #print axioms VolumeLogic.TriangleBalance.exists_unique_balance
+
+#print axioms VolumeLogic.HallRecession.positive
+#print axioms VolumeLogic.HallRecession.rowCut
+#print axioms VolumeLogic.HallRecession.capacity
+#print axioms VolumeLogic.HallRecession.deficit
+#print axioms VolumeLogic.HallRecession.recession
+#print axioms VolumeLogic.HallRecession.peel
+#print axioms VolumeLogic.HallRecession.mem_positive
+#print axioms VolumeLogic.HallRecession.peel_nonneg
+#print axioms VolumeLogic.HallRecession.peel_split
+#print axioms VolumeLogic.HallRecession.rowMax_peel
+#print axioms VolumeLogic.HallRecession.recession_peel
+#print axioms VolumeLogic.HallRecession.peel_card_lt
+#print axioms VolumeLogic.HallRecession.nonneg_of_cuts
+#print axioms VolumeLogic.HallRecession.capacity_univ
+#print axioms VolumeLogic.HallRecession.weak_cuts_of_strict
+#print axioms VolumeLogic.HallRecession.positive_of_strict_cuts
+#print axioms VolumeLogic.HallRecession.recession_translate
+#print axioms VolumeLogic.HallRecession.grounded_positive
+#print axioms VolumeLogic.HallRecession.continuous_recession
+#print axioms VolumeLogic.HallRecession.recession_smul
+#print axioms VolumeLogic.HallRecession.grounded_coercive
+#print axioms VolumeLogic.HallRecession.connected_of_strict_cuts
+#print axioms VolumeLogic.HallRecession.exists_grounded_minimizer
+
+#print axioms VolumeLogic.TriangleHall.supportedLoad_positive
+#print axioms VolumeLogic.TriangleHall.supportedLoad_zero
+#print axioms VolumeLogic.TriangleHall.row_lower
+#print axioms VolumeLogic.TriangleHall.continuous_summedPotential
+#print axioms VolumeLogic.TriangleHall.recession_lower
+#print axioms VolumeLogic.TriangleHall.exists_balance
+#print axioms VolumeLogic.TriangleHall.exists_positive_table
+#print axioms VolumeLogic.TriangleHall.exists_unique_balance
+#print axioms VolumeLogic.TriangleHall.exists_unique_minimizer

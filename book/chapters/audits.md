@@ -474,9 +474,9 @@ with \(v_0\), while their individual coefficients \(a_{ti}\) remain
 distinct. On the grounded space their weights are still those prescribed
 coefficients. Only the transport table is aggregated. The demand at
 \(v_0\) is unrestricted, because its contribution is multiplied by zero.
-Constructing the table by the geometric Hall inequalities, proving the
-actual incidence is connected, and developing the circle pattern remain
-written application steps. The theorem does not take a limit in which
+The cut argument below constructs the table and proves connectivity from
+strict inequalities. Checking those inequalities for the actual geometric
+incidence and developing the circle pattern remain application steps. The theorem does not take a limit in which
 the positive support changes.
 
 The [load-equation module](../../formal-real/TriangleBalance.lean)
@@ -505,9 +505,28 @@ only if the total demand is compatible. Four compiled examples check
 this distinction, the half-mass normalization, repeated destinations
 and the failure of uniqueness without connected support.
 
-The optional package has 51 definitions and 208 theorems.
-Its axiom audit covers all 259 declarations, separately from
-the Std-only project. Twenty-six negative controls check that invalid
+The [finite-cut argument](../../formal-real/HallRecession.lean) now
+removes the assumed table. For a set of vertices \(A\), its available
+supply is one half the number of triangle supports meeting \(A\).
+Suppose this strictly exceeds \(\sum_{v\in A}d_v\) for every nonempty
+proper subset, and total demand is \(\lvert T\rvert/2\).
+Subtracting successive height levels expresses the recession function as
+a sum of cut deficits. This gives a positive uniform bound on grounded
+directions. The same inequalities rule out disconnected support.
+
+The [triangle application](../../formal-real/TriangleHall.lean) uses
+that bound and the proved vertex estimates to obtain an actual minimum.
+Its maximizing loads construct the positive corner table and solve all
+vertex equations; the conductance argument proves uniqueness. Thus table
+existence and connectivity now follow from the stated cuts. The geometric
+incidence and its cut inequalities must still be established in each
+application. Three additional compiled checks retain a zero corner and
+repeated destinations, and show why weak cuts or incompatible total mass
+cannot replace the hypotheses.
+
+The optional package has 57 definitions and 234 theorems.
+Its axiom audit covers all 291 declarations, separately from
+the Std-only project. Thirty negative controls check that invalid
 metadata or axiom inventories are rejected. The saddle estimates, whole-source gap and geometric
 volume identity remain written application inputs. The
 [tangle and tree review](../../repro/TANGLE_TREE_AUDIT.md) records the

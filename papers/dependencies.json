@@ -5603,6 +5603,90 @@
         }
       ],
       "coverage": "The proof gives an ambient isotopy to the selected strict knot. It makes no assertion that every ray or every short terminal expression is hyperbolic."
+    },
+    {
+      "id": "analytic_strict_cut_coercivity",
+      "title": "Finite cut inequalities give coercivity and connectivity",
+      "group": "finite_graph_energy",
+      "statement": "For finite nonempty row supports with supply one half per row, compatible total demand and strict deficit on every nonempty proper vertex subset imply a positive grounded recession function, a uniform coercive margin, and connected row incidence. Any continuous potential bounded below by that recession minus a constant attains a grounded minimum. No positive transport table is assumed.",
+      "sources": [
+        {
+          "path": "formal-real/HallRecession.lean",
+          "anchor": "theorem recession_peel"
+        },
+        {
+          "path": "formal-real/HallRecession.lean",
+          "anchor": "theorem nonneg_of_cuts"
+        },
+        {
+          "path": "formal-real/HallRecession.lean",
+          "anchor": "theorem grounded_positive"
+        },
+        {
+          "path": "formal-real/HallRecession.lean",
+          "anchor": "theorem grounded_coercive"
+        },
+        {
+          "path": "formal-real/HallRecession.lean",
+          "anchor": "theorem connected_of_strict_cuts"
+        },
+        {
+          "path": "formal-real/HallRecession.lean",
+          "anchor": "theorem exists_grounded_minimizer"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "analytic_supported_transport_coercivity",
+          "reason": "Uses its finite row-maximum and co-occurrence-path definitions. The new proof derives coercivity from cuts directly, without invoking a table-dependent coercivity theorem."
+        }
+      ],
+      "coverage": "The finite level-removal induction, translation invariance, compactness argument and connectivity implication have Lean proofs. Actual geometric supports and their strict cut inequalities are not supplied by this abstract theorem.",
+      "article": null
+    },
+    {
+      "id": "analytic_triangle_balance_from_cuts",
+      "title": "Strict cuts construct the actual triangle balance",
+      "group": "finite_graph_energy",
+      "statement": "For fixed nonnegative corner coefficients with nonempty active rows, compatible total demand and strict cut deficits for the actual support imply a unique grounded minimum of the literal Lobachevsky envelope and a unique full vertex-load balance. Its explicit maximizing loads construct a positive half-mass corner table with the prescribed column sums. Singleton rows, zero corners and repeated destinations remain included.",
+      "sources": [
+        {
+          "path": "formal-real/TriangleHall.lean",
+          "anchor": "theorem row_lower"
+        },
+        {
+          "path": "formal-real/TriangleHall.lean",
+          "anchor": "theorem recession_lower"
+        },
+        {
+          "path": "formal-real/TriangleHall.lean",
+          "anchor": "theorem exists_balance"
+        },
+        {
+          "path": "formal-real/TriangleHall.lean",
+          "anchor": "theorem exists_positive_table"
+        },
+        {
+          "path": "formal-real/TriangleHall.lean",
+          "anchor": "theorem exists_unique_balance"
+        },
+        {
+          "path": "formal-real/TriangleHall.lean",
+          "anchor": "theorem exists_unique_minimizer"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "analytic_strict_cut_coercivity",
+          "reason": "Constructs the grounded minimum and connected row incidence from the finite cuts and compatible mass."
+        },
+        {
+          "id": "analytic_actual_triangle_balance",
+          "reason": "Supplies actual minimizing-load equations, the root mass identity and uniqueness from a positive table; the new theorem constructs that table instead of assuming it."
+        }
+      ],
+      "coverage": "The complete implication for the fixed supported entropy potential is formalized. Applications still supply geometric incidence, coefficients, demands and proof of the cut inequalities. No developing-map theorem, changing-support limit or knot volume identity follows from this result alone.",
+      "article": null
     }
   ],
   "articles": {

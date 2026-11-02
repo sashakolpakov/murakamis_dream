@@ -1,7 +1,7 @@
 {
   "scope": "Consistency, article ownership, witnessed import and source-location checks on the declared inventory, not proof verification or exhaustive dependency discovery.",
-  "nodes": 140,
-  "edges": 316,
+  "nodes": 142,
+  "edges": 319,
   "component_edges": [
     [
       "action_volume",
@@ -206,6 +206,7 @@
     "analytic_circle_charge_path",
     "analytic_convex_flattening",
     "analytic_supported_transport_coercivity",
+    "analytic_strict_cut_coercivity",
     "braid_literal_matched_sphere",
     "elementary_rate_transfer",
     "finite_bernstein",
@@ -235,6 +236,7 @@
     "analytic_supported_triangle_potential",
     "analytic_actual_triangle_minimum",
     "analytic_actual_triangle_balance",
+    "analytic_triangle_balance_from_cuts",
     "finite_grounded_inverse",
     "geo_circle_ordered_cut",
     "geo_circle_positive_edge_charts",
@@ -385,7 +387,7 @@
     },
     {
       "id": "finite_weighted_graph_kernel",
-      "downstream": 25
+      "downstream": 26
     },
     {
       "id": "recursive_strict_normal_form",
@@ -572,6 +574,10 @@
       "downstream": 9
     },
     {
+      "id": "analytic_supported_transport_coercivity",
+      "downstream": 9
+    },
+    {
       "id": "finite_bernstein",
       "downstream": 9
     },
@@ -622,10 +628,6 @@
     {
       "id": "recursive_strict_marked_metric",
       "downstream": 8
-    },
-    {
-      "id": "analytic_supported_transport_coercivity",
-      "downstream": 7
     },
     {
       "id": "geo_longitude_ratio_differential",
@@ -680,6 +682,10 @@
       "downstream": 5
     },
     {
+      "id": "analytic_triangle_load_derivatives",
+      "downstream": 4
+    },
+    {
       "id": "geo_filled_meridian_germ",
       "downstream": 4
     },
@@ -708,11 +714,15 @@
       "downstream": 4
     },
     {
+      "id": "analytic_grounded_strict_convexity",
+      "downstream": 3
+    },
+    {
       "id": "analytic_shifted_filtered_all_orders",
       "downstream": 3
     },
     {
-      "id": "analytic_triangle_load_derivatives",
+      "id": "analytic_supported_triangle_potential",
       "downstream": 3
     },
     {
@@ -728,19 +738,15 @@
       "downstream": 3
     },
     {
+      "id": "analytic_actual_triangle_minimum",
+      "downstream": 2
+    },
+    {
       "id": "analytic_convex_flattening",
       "downstream": 2
     },
     {
       "id": "analytic_filtered_coefficient_regrading",
-      "downstream": 2
-    },
-    {
-      "id": "analytic_grounded_strict_convexity",
-      "downstream": 2
-    },
-    {
-      "id": "analytic_supported_triangle_potential",
       "downstream": 2
     },
     {
@@ -776,7 +782,7 @@
       "downstream": 1
     },
     {
-      "id": "analytic_actual_triangle_minimum",
+      "id": "analytic_actual_triangle_balance",
       "downstream": 1
     },
     {
@@ -785,6 +791,10 @@
     },
     {
       "id": "analytic_morse_geometric_contribution",
+      "downstream": 1
+    },
+    {
+      "id": "analytic_strict_cut_coercivity",
       "downstream": 1
     },
     {
@@ -820,11 +830,11 @@
       "downstream": 1
     },
     {
-      "id": "analytic_actual_triangle_balance",
+      "id": "analytic_fold_interpolation",
       "downstream": 0
     },
     {
-      "id": "analytic_fold_interpolation",
+      "id": "analytic_triangle_balance_from_cuts",
       "downstream": 0
     },
     {
@@ -1007,13 +1017,15 @@
     "papers/conway-reductions/moves.tex": "f3411d129266688ecc059c013f5cc45a128e18736b1c6605f52f5151b3bf156a",
     "papers/conway-reductions/normalization.tex": "92ba449d741cdcf5703b240e2f31cd592db648ba397491297615029d27e892f3",
     "papers/conway-reductions/closures.tex": "d792e8bc9103129d8f5406220b0f9976941a2c72d347cd3b3e44b1f0127cadab",
+    "formal-real/HallRecession.lean": "3b518ee62e07565c074f09029c55d2b14879c64ad48ee7de6c01f456b9dbfc21",
+    "formal-real/TriangleHall.lean": "09513da3ef9483ae09615e078543779c6e8de1038e126ed0985e815a55e7af55",
     "papers/strict-newton-profiles/main.tex": "1b3ce59bf16a638f11c15bd5ea0e137fa1f9b15de5f66f1cd63221213fb27eab",
-    "papers/dependencies.json": "de8e9ff28a4aff4e5976748f8b44d44bc62f51180a1b77a82cb915e38d06495d",
+    "papers/dependencies.json": "e6f159523f2b22175cdd17af42d09fcebdda30348aaf931a0a07a550eb8396b7",
     "tools/build_dependency_graph.py": "c52c2bd644ac0fcb191789247c8a00007a85ac8798e3d25f71df9955ec0de84b"
   },
   "articles": 22,
   "owned_statements": 106,
-  "unowned_statements": 34,
+  "unowned_statements": 36,
   "article_edges": [
     [
       "circle-tree-asymptotics",

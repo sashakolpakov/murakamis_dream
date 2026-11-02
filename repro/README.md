@@ -54,7 +54,7 @@ vertex and retains their prescribed logarithms as row constants.
 The strict-convexity module identifies the second derivative on an actual
 segment with connected weighted graph energy. It derives strict
 convexity, and hence uniqueness of that same potential's minimum. The
-positive-table construction and geometric incidence remain written inputs;
+positive-table construction is supplied below by the finite-cut modules; geometric incidence remains an application input;
 the actual supported triangle derivatives are now supplied by the later
 potential module. The reduced-Laplacian module identifies the actual free
 matrix with that energy, constructs its inverse, and proves uniqueness
@@ -71,19 +71,23 @@ continuity, aggregates a positive half-mass corner table, and converts
 its row paths to positive conductance paths. These facts give a unique
 global minimum after one coordinate is fixed. Repeated corner destinations
 retain their separate coefficients; the prescribed demands need agree
-with the table only at free vertices. Geometric Hall feasibility,
-incidence, row connectivity and support-changing limits remain written
-application inputs. The load-equation module then proves that the actual
+with the table only at free vertices. The later cut modules construct the
+table and prove connectivity; geometric incidence and support-changing
+limits remain application inputs. The load-equation module then proves that the actual
 coordinate derivative is the aggregate corner load minus the prescribed
 demand. The grounded minimum is equivalent to the free load equations,
 and is their unique solution under the same table and connectivity
 hypotheses. The root equation holds precisely when total demand equals
-one half the number of triangles. Together the optional modules contain
-51 definitions and 208 theorems, all 259 declarations included in the
-axiom audit; 26 negative controls check invalid metadata and axiom
-inventories. Four additional compiled mathematical controls retain the
-half-mass convention, repeated destinations, arbitrary root demand and
-the role of connectedness.
+one half the number of triangles. The finite-cut modules now derive the
+positive table, connectivity and unique full balance from strict cut
+inequalities and total mass compatibility. The cut conditions must still
+be checked for the particular geometric incidence and demands. Together
+the optional modules contain 57 definitions and 234 theorems, all 291
+declarations included in the axiom audit; 30 negative controls check invalid
+metadata and axiom inventories. Seven compiled mathematical controls check
+the half-mass convention, repeated destinations, arbitrary root demand,
+the role of connectedness, a strict-cut balance, and failures when either
+strictness or total mass compatibility is dropped.
 The optional command is separate from the Std-only
 check above; it requires
 Mathlib and its substantially larger compiled library.
