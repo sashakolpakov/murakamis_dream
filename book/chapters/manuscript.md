@@ -415,6 +415,17 @@ orders are needed. After clearing denominators and removing the common
 power of \(q-1\), the first nonzero classical symbol consequently
 vanishes on the selected analytic germ.
 
+The optional Lean package now proves the intermediate mathematical
+implication: uniqueness of asymptotic coefficients, the actual injective
+ring map, formal exponentiation, the finite gauge calculation and
+cancellation of its nonzero meridian factor. Its
+[characteristic theorem](../../formal-real/FormalCharacteristic.lean)
+requires the written all-orders estimate for the actual finite equation
+to match the constructed coefficient series. It does not construct an
+annihilator or prove that its classical symbol is nonzero. The
+[coverage record](../../repro/PAPER_FORMAL_COVERAGE.md) lists these
+boundaries for every current paper.
+
 Corollary 8.1 makes the separate geometric identification. It checks the
 original group, eigenflag and primitive logarithmic filling equations
 before applying Nonparabolic Geometry Theorem 1.2 and Corollary 7.1 and

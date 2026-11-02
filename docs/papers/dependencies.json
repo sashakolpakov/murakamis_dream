@@ -2324,6 +2324,11 @@
           "path": "papers/circle-tree-asymptotics/conclusion.tex",
           "anchor": "\\label{cta:conclusion}",
           "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-asymptotics/conclusion.tex#L2"
+        },
+        {
+          "path": "formal-real/UniformProfile.lean",
+          "anchor": "theorem compact_microscopic_volume_transfer",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/UniformProfile.lean#L299"
         }
       ],
       "depends_on": [
@@ -2340,7 +2345,7 @@
           "reason": "The nonzero coefficient and lower exponential error give the all-level logarithmic rate with the retained physical normalization."
         }
       ],
-      "coverage": "Proved in the degree-and-twist companion with its explicit summed condition. The preferred-cusp interpretation and all-orders longitude statements remain separate.",
+      "coverage": "Proved in the degree-and-twist companion with its explicit summed condition. The preferred-cusp interpretation and all-orders longitude statements remain separate. The compiled UniformProfile theorem derives one common nonvanishing threshold and the uniform logarithmic rate from the written microscopic profile, actual moving-factor limits and base volume rate. It does not prove the tree-specific source estimates or geometry.",
       "article": "circle-tree-asymptotics"
     },
     {
@@ -2448,6 +2453,11 @@
           "path": "manuscript/sections/K-directed-circle-messages.tex",
           "anchor": "\\label{dk:sec-8}",
           "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/K-directed-circle-messages.tex#L672"
+        },
+        {
+          "path": "formal-real/UniformProfile.lean",
+          "anchor": "theorem compact_microscopic_volume_transfer",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/UniformProfile.lean#L299"
         }
       ],
       "depends_on": [
@@ -2464,7 +2474,8 @@
           "reason": "A bound for the entire remainder, the nonzero central contribution and the original scalar normalization are combined to obtain the rate of the invariant."
         }
       ],
-      "article": "directed-tree-asymptotics"
+      "article": "directed-tree-asymptotics",
+      "coverage": " The compiled UniformProfile theorem derives one common nonvanishing threshold and the uniform logarithmic rate from the written microscopic profile, actual moving-factor limits and base volume rate. It does not prove the tree-specific source estimates or geometry."
     },
     {
       "id": "braid_literal_matched_sphere",
@@ -4091,7 +4102,7 @@
       "id": "analytic_filtered_coefficient_regrading",
       "title": "Recovering the formal two-parameter series from all microscopic orders",
       "group": "geometric_longitude",
-      "statement": "The proved degree filtration regrades the logarithm as h^(-1) S(u)+sum h^j A_j(u), with u=h s and no other negative h-power. Substitution B(h,u) -> B(h,h s) on nonnegative bivariate series is injective by the coefficient recovery B_(a,b)=[h^(a+b) s^b]B(h,h s). FormalRegrading checks this coefficient recovery and the finite-order distinction. The optional Mathlib module FormalShift constructs the actual substitution S(u+j h), proves divisibility of S(u+j h)-S(u) by h, and proves that the full logarithmic shift has h^0 coefficient j S prime(u); the regular amplitude contributes zero. The ring interpretation of u=h s, formal exponentiation giving exp(j S prime(u)), and the analytic/operator correspondence remain written proofs.",
+      "statement": "The proved degree filtration writes the logarithm as h^(-1) S(u)+a regular series, with u=h s. FormalRegradingRing constructs the actual injective algebra map C[[h,u]] -> C[s][[h]], derives coefficient recovery, and identifies the earlier Std coefficient table. FormalShift proves exact divisibility of S(u+j h)-S(u) by h and the logarithmic projection j S prime(u). FormalExp constructs admissible exponentials from the factorial series, proves compatibility with h=0, and gives exp(j S prime(u))=(exp S prime(u))^j for natural shifts. Every finite jet recovers only its coefficient triangle. The analytic filtration and identification of the physical expansion with these formal data remain written inputs.",
       "sources": [
         {
           "path": "papers/meridian-expansions/operators.tex",
@@ -4127,6 +4138,21 @@
           "path": "formal-real/FormalShift.lean",
           "anchor": "theorem logarithmicShift_atHZero",
           "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/FormalShift.lean#L212"
+        },
+        {
+          "path": "formal-real/FormalRegradingRing.lean",
+          "anchor": "theorem regrading_injective",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/FormalRegradingRing.lean#L94"
+        },
+        {
+          "path": "formal-real/FormalRegradingRing.lean",
+          "anchor": "theorem std_table_compatibility",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/FormalRegradingRing.lean#L88"
+        },
+        {
+          "path": "formal-real/FormalExp.lean",
+          "anchor": "theorem logarithmic_exponential_atHZero_nat",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/FormalExp.lean#L147"
         }
       ],
       "depends_on": [
@@ -4182,6 +4208,26 @@
           "path": "papers/meridian-expansions/operators.tex",
           "anchor": "\\label{me:symbol-identity}",
           "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/meridian-expansions/operators.tex#L93"
+        },
+        {
+          "path": "formal-real/AsymptoticIdentity.lean",
+          "anchor": "theorem formal_series_zero",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/AsymptoticIdentity.lean#L72"
+        },
+        {
+          "path": "formal-real/FormalGauge.lean",
+          "anchor": "theorem denominator_clearing",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/FormalGauge.lean#L77"
+        },
+        {
+          "path": "formal-real/FormalGauge.lean",
+          "anchor": "theorem atHZero_clearedCoefficient",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/FormalGauge.lean#L113"
+        },
+        {
+          "path": "formal-real/FormalCharacteristic.lean",
+          "anchor": "theorem gauged_classical_identity_from_all_orders",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/FormalCharacteristic.lean#L116"
         }
       ],
       "depends_on": [
@@ -4198,7 +4244,8 @@
           "reason": "Identifies the actual reduced/full meridian gauge and component sign before cancellation."
         }
       ],
-      "article": "meridian-expansions"
+      "article": "meridian-expansions",
+      "coverage": "AsymptoticIdentity proves coefficient uniqueness for actual complex all-orders estimates on an infinite parameter set. FormalGauge proves the constructed finite denominator clearing and its retained meridian factor/sign. FormalCharacteristic then proves the classical formal identity using actual regrading, exponential projection and cancellation. Applying it to the physical equation still requires the written all-orders coefficient adapter and normalization of the original fixed operator. The Lean theorem does not assert nonzero symbol, operator existence, analytic germ convergence or selected-factor identification."
     },
     {
       "id": "geometric_selected_factor_of_actual_recurrence",
@@ -9876,6 +9923,7 @@
       "papers/circle-tree-geometry/main.tex": "2404285044d7efb8376b3fdeaa3a6da6f2d36bc29da6a7e176f09f8230339301",
       "papers/circle-tree-asymptotics/main.tex": "ba6e5ffb622ec103ba07e8418117553f3b12b12330ccc45047aa241470b1e562",
       "papers/circle-tree-asymptotics/conclusion.tex": "13185fcea97d31f528daf323527a04a903794b13f3055713196a938c00cdffe8",
+      "formal-real/UniformProfile.lean": "9ff6d34509b935e6202ac50b9811ff74ecc40341d7407c3df7c7fc2ad80f97b1",
       "papers/directed-tree-asymptotics/applications.tex": "4fba94e89e75f841abacecd286181b296127e6fc4cef490ce353aca3460f810b",
       "manuscript/sections/G-local-tree-messages.tex": "9a169d6aeff06df5887952c18c22a0aef470bbcda9e18610d4f57f016e2dbdce",
       "papers/directed-tree-asymptotics/main.tex": "5ee3f676319c36c1a88fbd78327df446f9a0b38eb7f4468b34f0f6384bd07b45",
@@ -9918,6 +9966,11 @@
       "papers/meridian-expansions/operators.tex": "eb9cc280c7c95e3f533eb8130c46e67443834191e610f3cc7536cef3291336f8",
       "formal/VolumeLogic/FormalRegrading.lean": "9fe0b604cfe2857cc26569442ee9c608c214307adb5fdfd666e154fcbadc7a2c",
       "formal-real/FormalShift.lean": "bee3c96faa1c552dc91276b89233079f2d6d9cc512b9dd7554584e148e8064d9",
+      "formal-real/FormalRegradingRing.lean": "1fdfd750feaa1c5f96a7146c0045c9b3453c0204f071bb09cf812ba8a78b84ed",
+      "formal-real/FormalExp.lean": "7110bb7dc22a5ab3bdb84152e8000cd8b23bf0a9fd8ef47d863fff2737a54a1c",
+      "formal-real/AsymptoticIdentity.lean": "6b4f19fa90db28f0ae2bbe080936e384b9f1383676ddc522a3e16dc140e59fea",
+      "formal-real/FormalGauge.lean": "7605e11cc43e072a800c8996f7c1e0223a74adc215969b72b1251acc113624db",
+      "formal-real/FormalCharacteristic.lean": "e9959ce488552cd93ed0a289a04bb0b9333c46c4f79d295749da45d157b8d9d4",
       "papers/meridian-expansions/geometric.tex": "30c4fd64731cb1a982450f52c2eff270d75e8961aeeb183d5208a9209beba309",
       "formal-real/WeightedGraph.lean": "3e3d77275515fcc861bc861ac8b5e4988e5c5d2775636931ee561db7ce56fecf",
       "papers/strict-newton-profiles/syntax.tex": "73794d02369c60405780877fd5754f1b8f5fc170cd67f4cec115ccf135b653d2",
@@ -9969,7 +10022,7 @@
       "papers/moving-meridian-sources/finite.tex": "3edc64aaa7114fe8775c0a753fb410e63f68f43b767daa2cc66aa3e11f39ab5a",
       "papers/moving-meridian-sources/filling.tex": "69a57bba241285ef6c249b7fdd0205e64f57468e166306f58786288460f42445",
       "papers/strict-newton-profiles/main.tex": "1b3ce59bf16a638f11c15bd5ea0e137fa1f9b15de5f66f1cd63221213fb27eab",
-      "papers/dependencies.json": "7338411e0800762efc80c53b511fe2fdaec8143e0866f509ebb57ee3c0fecb8f",
+      "papers/dependencies.json": "8bc20fb5de56c64883f3ecc593437efaa3595a2c0191a65e788ba3f9fd46cf73",
       "tools/build_dependency_graph.py": "c52c2bd644ac0fcb191789247c8a00007a85ac8798e3d25f71df9955ec0de84b"
     },
     "articles": 26,

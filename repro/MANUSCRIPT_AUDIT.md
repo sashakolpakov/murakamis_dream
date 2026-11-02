@@ -611,16 +611,77 @@ coefficient recovery and finite-jet limitations. Its cases do not prove
 the uniform analytic bounds. The saved reports pin the mathematical
 sources used in that execution.
 
-The new optional Lean module `FormalShift` works with actual formal
+At the extraction release, the new optional module `FormalShift` worked with actual formal
 power series over a commutative ring. It constructs \(S(u+jh)\), proves
 that \(S(u+jh)-S(u)\) is divisible by \(h\), and evaluates the quotient
 at \(h=0\) as \(jS'(u)\). It also proves that a regular logarithmic
 amplitude contributes zero at that order. Together with the earlier
 coefficient-table recovery, this checks two internal steps of the
-written argument. The ring interpretation of \(u=hs\), exponentiation,
+written argument. At that stage the ring interpretation of \(u=hs\), exponentiation,
 and the connection between the analytic expansion and the actual
-recurrence remain written proofs. The optional replay covers 68
+recurrence remained written proofs. That optional replay covered 68
 definitions and 252 theorems, checks 32 invalid metadata or axiom
 inventories, and compiles 12 mathematical boundary examples. Those
 figures describe the scope of the replay, not a machine verification of
-either complete paper.
+either complete paper. The following addition extends its coverage.
+
+## Formal characteristic and uniform profile implications
+
+The review at commit `70f6e816` compared the main conclusions of all
+24 current papers with the actual compiled declarations. The
+[coverage record](PAPER_FORMAL_COVERAGE.md) gives the updated map and
+its exact locators. This comparison found two missing formal assembly
+steps: the characteristic calculation after an all-orders expansion,
+and the uniform profile-to-volume implication. It found no more urgent
+missing scalar remainder-to-rate implication. The existing volume
+transfer theorems already retain the full remainder, fixed signed
+filling data and both parity subsequences.
+
+Six additional Mathlib modules now address those two gaps. The formal
+characteristic argument starts with an exactly zero complex equation
+and estimates for every expansion order. Its coefficients are
+polynomials on an infinite parameter set. Actual limit arguments make
+all those polynomials zero. The constructed algebra homomorphism
+\(\rho(B)=B(h,hs)\) is injective, so the bivariate equation also
+vanishes. Exponentiation is defined by the factorial series and is
+proved to commute with evaluation at \(h=0\).
+
+The gauge module constructs the cleared coefficients before this
+projection. It proves the multiplied denominator identity, with no
+assumption that a meridian denominator is a unit. Its projection keeps
+the entire factor \((e^u-e^{-u})^r\) and the sign \((-1)^j\).
+The final theorem cancels that factor only inside the resulting formal
+identity, using its nonzero linear coefficient. The coefficient family
+is constructed explicitly, so this gauge normalization is no longer an
+extra premise of the final assembler.
+
+The application boundary is still substantial. The physical recurrence
+must exist, its fixed coefficients must be normalized by clearing their
+original denominators and removing their common \(q-1\) valuation,
+and its all-orders expansion must have the constructed coefficients.
+When the asymptotic scale changes from \(N^{-1}\) to
+\(h_N=\pi i/N\), the coefficients must change by the corresponding
+powers of \(\pi i\). The theorem permits a cofinal parity filter,
+so it does not require parity-dependent regular amplitudes to agree.
+It proves a formal polynomial identity; nonzero classical normalization,
+analytic germ convergence, irreducible-factor extraction and preferred
+longitude identification remain written arguments.
+
+The uniform profile module starts with the actual equality
+\(F_N(s)=A_N(s)H_N(s)K_N(1+r_N(s))\). Uniform positive bounds on
+the moving factors and a uniformly small relative error imply upper
+and lower bounds by fixed multiples of \(\lVert K_N\rVert\).
+Taking real logarithms gives a uniform error bounded by \(B/N\),
+and hence a common nonvanishing threshold and uniform volume rate.
+Compactness derives the factor bounds from continuous nonvanishing
+uniform limits. The actual sine-quotient limit and the source's uniform
+remainder estimate are still supplied by the analytic papers. The
+module never replaces a uniform hypothesis by pointwise convergence.
+
+The new optional replay compiles 80 definitions and 318 theorems in
+19 modules, with all 398 declarations included in its axiom audit.
+It rejects 44 altered metadata or axiom inventories and compiles
+39 mathematical boundary assertions with one separately identified
+helper. The saved source hashes cover the actual modules and controls.
+No paper statement, mathematical manuscript source or reference PDF
+changed during this formalization.

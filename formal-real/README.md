@@ -22,8 +22,11 @@ equations and proves that their grounded solution is unique.
 The finite-cut modules remove the assumed transport table: strict cut
 inequalities and compatible total demand imply existence of the actual
 loads, their unique grounded balance, and the positive table itself.
-A separate formal-series module constructs meridian shifts and proves
-which part of a shifted logarithm survives at order zero.
+The formal-series modules construct meridian shifts, regrading and
+exponentiation, then derive a classical identity from the stated
+all-orders estimates for an exact equation. A separate analytic module
+proves common nonvanishing thresholds and uniform logarithmic rates
+from uniform microscopic profiles.
 
 ## What is proved
 
@@ -979,6 +982,7 @@ lake exe cache get \
   Mathlib.LinearAlgebra.Matrix.NonsingularInverse \
   Mathlib.LinearAlgebra.FiniteDimensional.Basic \
   Mathlib.Topology.Order.Compact \
+  Mathlib.Topology.MetricSpace.Pseudo.Basic \
   Mathlib.Topology.Order.Lattice \
   Mathlib.Algebra.Order.GroupWithZero.Finset \
   Mathlib.Algebra.Order.Group.Finset \
@@ -990,6 +994,11 @@ lake exe cache get \
   Mathlib.Analysis.SpecialFunctions.Trigonometric.ArctanDeriv \
   Mathlib.Data.Fin.VecNotation \
   Mathlib.RingTheory.PowerSeries.Derivative \
+  Mathlib.RingTheory.PowerSeries.Exp \
+  Mathlib.Analysis.Asymptotics.Lemmas \
+  Mathlib.Algebra.Polynomial.Roots \
+  Mathlib.Algebra.Ring.GrindInstances \
+  Mathlib.Order.Interval.Finset.Nat \
   Mathlib.RingTheory.MvPowerSeries.Rename \
   Mathlib.Tactic.FieldSimp \
   Mathlib.Tactic.FinCases \
@@ -1053,15 +1062,152 @@ Thus the regular logarithmic amplitude does not change this leading
 shift. When \(S'(0)=0\), the constructed logarithmic shift also has
 zero constant term at the joint origin.
 
-This proof covers substitution and the logarithmic shift. It does not
-formalize the subsequent exponential or the recurrence-symbol argument.
-The separate Std-only [FormalRegrading](../formal/VolumeLogic/FormalRegrading.lean)
-module proves coefficient-table recovery and its finite-order limit; it
-does not identify that table operation with a power-series ring map.
-The analytic expansion, that remaining adapter, formal exponentiation,
-and the actual operator and geometric identifications remain written
-arguments. The two modules must not be described as a formal proof of
-the complete recurrence theorem.
+## Regrading and exponentiation
+
+[FormalRegradingRing.lean](FormalRegradingRing.lean) constructs the
+algebra homomorphism
+\[
+ \rho:R[[h,u]]\longrightarrow R[s][[h]],\qquad
+ \rho(h)=h,\quad \rho(u)=hs.
+\]
+Its target has a polynomial in \(s\) at each \(h\)-coefficient.
+The proof derives the coefficient formula from actual admissible
+substitution:
+\[
+ [s^b][h^n]\rho(B)=
+ \begin{cases}[h^{n-b}u^b]B,&b\le n,\\0,&b>n.\end{cases}
+\]
+Thus \([h^a u^b]B=[s^b][h^{a+b}]\rho(B)\), which proves injectivity.
+The module proves multiplication compatibility, identifies the existing
+Std-only coefficient table with this ring map, and shows that agreement
+through \(h^L\) recovers exactly the triangle \(a+b\le L\). Fixing
+one value of \(s\) would lose injectivity even if all \(h\)-orders
+were retained.
+
+[FormalExp.lean](FormalExp.lean) works over a commutative
+\(\mathbb Q\)-algebra. For a formal series \(B\) with zero constant
+term it defines \(\exp B\) by substituting \(B\) into Mathlib's
+factorial exponential series. The coefficient sums have finite support;
+the result has constant coefficient one and is a unit. Evaluation at
+\(h=0\) is a bundled algebra homomorphism, and admissible substitution
+proves
+\[
+ (\exp B)|_{h=0}=\exp(B|_{h=0}).
+\]
+Applied to the logarithmic shift above, this gives
+\[
+ \exp\bigl(D_jS+A(h,u+jh)-A(h,u)\bigr)|_{h=0}
+       =\exp(jS'(u)).
+\]
+The hypothesis \(S'(0)=0\) makes this formal exponential admissible.
+For natural shifts \(j\), the module also proves
+\(\exp(jS')=(\exp S')^j\). The regular amplitude contributes one
+only after projection; its higher-order terms remain in the full series.
+
+## From an exact equation to a classical identity
+
+[AsymptoticIdentity.lean](AsymptoticIdentity.lean) proves uniqueness of
+coefficients for actual complex-valued asymptotic expansions. Let
+\(h_N\to0\), with \(h_N\ne0\) eventually, along a nontrivial
+filter. Suppose \(F_N(s)=0\) eventually for each \(s\) in an
+infinite set \(D\), and for every \(m\ge0\),
+\[
+ F_N(s)-\sum_{i=0}^{m}p_i(s)h_N^i=O(h_N^{m+1}),
+ \qquad p_i\in\mathbb C[s].
+\]
+The constants and thresholds may depend on \(s\) and \(m\).
+Induction proves every \(p_i(s)=0\): after removing the earlier
+coefficients, divide by \(h_N^i\) and take the limit. A polynomial
+vanishing on the infinite set \(D\) is zero, so the entire series in
+\(\mathbb C[s][[h]]\) vanishes. The proof permits complex scales,
+including \(h_N=\pi i/N\), and cofinal parity subsequences. When an
+expansion was originally written in powers of \(N^{-1}\), its
+coefficients must be rescaled by \((\pi i)^{-i}\) before this application.
+
+[FormalGauge.lean](FormalGauge.lean) constructs the denominator clearing
+used by the reduced-to-full conversion. Define
+\[
+ f_j=\exp(u+jh)-\exp(-u-jh),\qquad
+ D_r=\prod_{k=1}^{r}f_k.
+\]
+For coefficients \(a_j(h,u)\), the cleared coefficients are
+\[
+ \widetilde a_0=D_r a_0,\qquad
+ \widetilde a_j=(-1)^j f_0
+    \prod_{\substack{1\le k\le r\\k\ne j}}f_k\,a_j
+       \quad(1\le j\le r).
+\]
+The module proves the multiplied denominator identity, including
+\(j=0\), without inverting any series. Projection sends every
+\(f_j\) to \(f=\exp u-\exp(-u)\), hence
+\[
+ \widetilde a_j|_{h=0}=f^r(-1)^j(a_j|_{h=0}).
+\]
+All meridian factors are retained in this calculation.
+
+[FormalCharacteristic.lean](FormalCharacteristic.lean) assembles these
+results. It constructs the finite shifted equation
+\[
+ Q(h,u)=\sum_{j=0}^{r}\widetilde a_j(h,u)
+       \exp\bigl(D_jS+A(h,u+jh)-A(h,u)\bigr).
+\]
+Its main theorem assumes that the coefficient polynomials of \(\rho(Q)\)
+are the all-orders coefficients of an eventually zero complex equation,
+as specified above. Coefficient uniqueness gives \(\rho(Q)=0\),
+injectivity gives \(Q=0\), and projection gives
+\[
+ f^r\sum_{j=0}^{r}(a_j|_{h=0})(-\exp S'(u))^j=0.
+\]
+The coefficient of \(u\) in \(f\) is two. Thus \(f\ne0\), and
+cancellation in the domain \(\mathbb C[[u]]\) gives the classical
+polynomial identity. This cancellation is inside a proved identity;
+\(f\) is not a unit at the complete meridian.
+
+The connection to the physical recurrence still requires its exact
+finite equation and its all-orders expansion to be identified with
+these constructed coefficients. The fixed operator's denominators and
+common \(q-1\) valuation must be normalized as in the written paper.
+The formal theorem does not prove existence of an operator or that its
+classical polynomial is nonzero. Analytic convergence of the resulting
+germ, its irreducible factor and the preferred geometric longitude
+remain the paper's separate written arguments.
+
+## Uniform consequences of microscopic profiles
+
+[UniformProfile.lean](UniformProfile.lean) proves the uniform consequence
+used by the summed and directed circle-tree papers. Write their exact
+profile on a fixed parameter set \(K\) as
+\[
+ F_N(s)=A_N(s)H_N(s)K_N(1+r_N(s)).
+\]
+The moving factors \(A_N\) and \(H_N\) remain in this equality.
+Suppose \(K_N\) is eventually nonzero, its logarithmic rate tends to
+\(v\), the product \(A_NH_N\) has fixed positive lower and upper
+norm bounds \(c,C\), and \(r_N\to0\) uniformly on \(K\).
+One threshold makes \(\lVert r_N(s)\rVert\le1/2\) for every
+\(s\in K\). Consequently
+\[
+ \frac c2\lVert K_N\rVert\le\lVert F_N(s)\rVert
+       \le\frac{3C}{2}\lVert K_N\rVert.
+\]
+Taking actual real logarithms gives an explicit uniform bound
+\[
+ \left|\frac{\log\lVert F_N(s)\rVert}{N}
+       -\frac{\log\lVert K_N\rVert}{N}\right|
+ \le \frac{|\log(c/2)|+|\log(3C/2)|}{N}.
+\]
+This proves one eventual nonvanishing threshold and
+`TendstoUniformlyOn` for the logarithmic rate. The module also restores
+\(2\pi\), using the written geometric equality \(2\pi v=V\).
+
+For a compact \(K\), the module derives the positive factor bounds
+from uniform convergence to continuous nonvanishing limits; the empty
+set is included. Bounds of the form \(C_1/N+C_2/N^2\) imply uniform
+vanishing of the remainder. These results apply to the actual profiles
+once their uniform estimates and factor limits are supplied. They do not
+prove the source expansion or the limit of the sine quotient defining
+\(H_N\), and pointwise convergence alone is not a substitute for the
+stated uniform hypotheses.
 
 ## Replay and audit record
 
@@ -1080,7 +1226,9 @@ The checker rebuilds the Std-only path dependency, compiles
 `TransportCoercivity.lean`, `GroundedConvexity.lean` and
 `GroundedLaplacian.lean`, `TriangleLoads.lean`, `TrianglePotential.lean`
 `TriangleMinimizer.lean`, `TriangleBalance.lean`, `HallRecession.lean`
-`TriangleHall.lean` and `FormalShift.lean`, and runs
+`TriangleHall.lean`, `FormalShift.lean`, `FormalRegradingRing.lean`,
+`FormalExp.lean`, `AsymptoticIdentity.lean`, `FormalGauge.lean`,
+`FormalCharacteristic.lean` and `UniformProfile.lean`, and runs
 [AxiomAudit.lean](AxiomAudit.lean). Every
 definition and theorem must appear exactly once in the audit. Only Lean's
 standard foundational axioms `propext`, `Classical.choice` and `Quot.sound`
@@ -1101,7 +1249,8 @@ an omitted triangle-potential module or actual supremum-gradient audit entry,
 an omitted triangle-minimizer module or actual prescribed-minimum audit entry,
 an omitted triangle-balance module or unique-load-solution audit entry,
 an omitted cut-recession or cut-to-balance module or its main theorem audit,
-an omitted formal-shift module or leading-shift audit,
+an omitted formal-shift, regrading, exponential, asymptotic-identity,
+gauge, characteristic or uniform-profile module or main-theorem audit,
 and an unexpected logical axiom. A failed run
 removes any old success summary in its output directory.
 

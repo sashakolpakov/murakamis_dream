@@ -11,6 +11,12 @@ import TriangleBalance
 import HallRecession
 import TriangleHall
 import FormalShift
+import FormalRegradingRing
+import FormalExp
+import AsymptoticIdentity
+import FormalGauge
+import FormalCharacteristic
+import UniformProfile
 
 #print axioms VolumeLogic.RealModel.complexMagnitude
 #print axioms VolumeLogic.RealModel.constant_div_nat_rate
@@ -344,3 +350,87 @@ import FormalShift
 #print axioms VolumeLogic.FormalShift.logarithmicShift
 #print axioms VolumeLogic.FormalShift.logarithmicShift_atHZero
 #print axioms VolumeLogic.FormalShift.logarithmicShift_origin
+
+#print axioms VolumeLogic.FormalRegradingRing.targetVariables
+#print axioms VolumeLogic.FormalRegradingRing.targetVariables_hasSubst
+#print axioms VolumeLogic.FormalRegradingRing.regrading
+#print axioms VolumeLogic.FormalRegradingRing.regrading_add
+#print axioms VolumeLogic.FormalRegradingRing.regrading_mul
+#print axioms VolumeLogic.FormalRegradingRing.monomial_image
+#print axioms VolumeLogic.FormalRegradingRing.monomial_image_coeff
+#print axioms VolumeLogic.FormalRegradingRing.regrading_coeff
+#print axioms VolumeLogic.FormalRegradingRing.coefficient_recovery
+#print axioms VolumeLogic.FormalRegradingRing.std_table_compatibility
+#print axioms VolumeLogic.FormalRegradingRing.regrading_injective
+#print axioms VolumeLogic.FormalRegradingRing.regrading_zero_iff
+#print axioms VolumeLogic.FormalRegradingRing.finite_order_iff
+#print axioms VolumeLogic.FormalRegradingRing.coefficient_degree
+#print axioms VolumeLogic.FormalRegradingRing.regrading_h
+#print axioms VolumeLogic.FormalRegradingRing.regrading_u
+
+#print axioms VolumeLogic.FormalExp.exponential
+#print axioms VolumeLogic.FormalExp.exponential_coeff
+#print axioms VolumeLogic.FormalExp.exponential_coeff_finite
+#print axioms VolumeLogic.FormalExp.atHZero_constant
+#print axioms VolumeLogic.FormalExp.exponential_constant
+#print axioms VolumeLogic.FormalExp.exponential_isUnit
+#print axioms VolumeLogic.FormalExp.exponential_zero
+#print axioms VolumeLogic.FormalExp.hZeroHom
+#print axioms VolumeLogic.FormalExp.hZeroHom_apply
+#print axioms VolumeLogic.FormalExp.atHZero_exponential
+#print axioms VolumeLogic.FormalExp.regularDifference_atHZero
+#print axioms VolumeLogic.FormalExp.regularDifference_origin
+#print axioms VolumeLogic.FormalExp.regular_exponential_atHZero
+#print axioms VolumeLogic.FormalExp.exponential_linear_coeff
+#print axioms VolumeLogic.FormalExp.logarithmic_exponential_atHZero
+#print axioms VolumeLogic.FormalExp.logarithmic_exponential_amplitude_independent
+#print axioms VolumeLogic.FormalExp.logarithmic_exponential_isUnit
+#print axioms VolumeLogic.FormalExp.exponential_nat_smul
+#print axioms VolumeLogic.FormalExp.logarithmic_exponential_atHZero_nat
+
+#print axioms VolumeLogic.AsymptoticIdentity.coefficient_zero_of_next_order
+#print axioms VolumeLogic.AsymptoticIdentity.coefficients_zero_of_all_orders
+#print axioms VolumeLogic.AsymptoticIdentity.coefficient_polynomials_zero
+#print axioms VolumeLogic.AsymptoticIdentity.formal_series_zero
+
+#print axioms VolumeLogic.FormalGauge.shiftedMeridian
+#print axioms VolumeLogic.FormalGauge.meridian
+#print axioms VolumeLogic.FormalGauge.denominator
+#print axioms VolumeLogic.FormalGauge.punctured
+#print axioms VolumeLogic.FormalGauge.clearedCoefficient
+#print axioms VolumeLogic.FormalGauge.project_shiftArgument
+#print axioms VolumeLogic.FormalGauge.project_shiftedMeridian
+#print axioms VolumeLogic.FormalGauge.shiftedMeridian_constant
+#print axioms VolumeLogic.FormalGauge.meridian_constant
+#print axioms VolumeLogic.FormalGauge.project_denominator
+#print axioms VolumeLogic.FormalGauge.shifted_mul_punctured
+#print axioms VolumeLogic.FormalGauge.denominator_clearing
+#print axioms VolumeLogic.FormalGauge.project_punctured
+#print axioms VolumeLogic.FormalGauge.project_clearedCoefficient
+#print axioms VolumeLogic.FormalGauge.atHZero_clearedCoefficient
+#print axioms VolumeLogic.FormalCharacteristic.shiftedEquation
+#print axioms VolumeLogic.FormalCharacteristic.classicalPolynomial
+#print axioms VolumeLogic.FormalCharacteristic.meridianDivisor
+#print axioms VolumeLogic.FormalCharacteristic.meridianDivisor_linear
+#print axioms VolumeLogic.FormalCharacteristic.meridianDivisor_ne_zero
+#print axioms VolumeLogic.FormalCharacteristic.projected_shiftedEquation
+#print axioms VolumeLogic.FormalCharacteristic.classical_identity_of_shifted_zero
+#print axioms VolumeLogic.FormalCharacteristic.regraded_asymptotics_force_zero
+#print axioms VolumeLogic.FormalCharacteristic.classical_identity_from_all_orders
+
+#print axioms VolumeLogic.FormalCharacteristic.gauged_classical_identity_from_all_orders
+
+#print axioms VolumeLogic.UniformProfile.norm_one_add_bounds
+#print axioms VolumeLogic.UniformProfile.profile_norm_bounds
+#print axioms VolumeLogic.UniformProfile.log_rate_corridor
+#print axioms VolumeLogic.UniformProfile.uniform_profile_rate
+#print axioms VolumeLogic.UniformProfile.uniform_profile_tendsto
+#print axioms VolumeLogic.UniformProfile.moving_factor_bounds
+#print axioms VolumeLogic.UniformProfile.compact_nonvanishing_bounds
+#print axioms VolumeLogic.UniformProfile.compact_moving_factor_bounds
+#print axioms VolumeLogic.UniformProfile.scalar_profile_transfer
+#print axioms VolumeLogic.UniformProfile.uniform_vanishing_of_bound
+#print axioms VolumeLogic.UniformProfile.uniform_vanishing_of_inverse_level
+#print axioms VolumeLogic.UniformProfile.uniform_vanishing_of_two_orders
+#print axioms VolumeLogic.UniformProfile.microscopic_volume_transfer
+#print axioms VolumeLogic.UniformProfile.compact_microscopic_volume_transfer

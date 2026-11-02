@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check optional Mathlib transfer, variational estimates and triangle calculus.
+"""Check optional Mathlib transfer, triangle calculus and formal characteristic algebra.
 
 The Std-only package is a path dependency and remains independently usable.
 This checker never downloads dependencies or updates the manifest. Provision
@@ -38,6 +38,12 @@ MODULE_NAMESPACES = {
     "HallRecession": "VolumeLogic.HallRecession",
     "TriangleHall": "VolumeLogic.TriangleHall",
     "FormalShift": "VolumeLogic.FormalShift",
+    "FormalRegradingRing": "VolumeLogic.FormalRegradingRing",
+    "FormalExp": "VolumeLogic.FormalExp",
+    "AsymptoticIdentity": "VolumeLogic.AsymptoticIdentity",
+    "FormalGauge": "VolumeLogic.FormalGauge",
+    "FormalCharacteristic": "VolumeLogic.FormalCharacteristic",
+    "UniformProfile": "VolumeLogic.UniformProfile",
 }
 ALLOWED_AXIOMS = {"propext", "Classical.choice", "Quot.sound"}
 # The complete expected Git dependency set, not merely the direct Mathlib pin.
@@ -137,6 +143,54 @@ HALL_CONTROL_NAMES = ['strict_cut_balance', 'weak_cuts_no_balance', 'incompatibl
 SHIFT_CONTROL_SOURCE = ROOT / 'repro/lean/formal-shift-controls.lean'
 SHIFT_CONTROL_NAMES = ['shift_factor_required', 'negative_shift', 'principal_pole_required',
                        'origin_condition_required', 'regular_shift_retained']
+
+# These files import the actual registered modules; they do not embed copies.
+SYMBOL_BOUNDARY_CONTROLS = {
+    "regrading_boundary_controls": {
+        "source": ROOT / "repro/lean/formal-regrading-controls.lean",
+        "namespace": "VolumeLogic.RegradingControls",
+        "names": ["omitted_h_factor", "finite_jet_misses_term", "fixed_s_loses_information"],
+        "scope": "Actual polynomial-series controls: the h factor in u=h*s is necessary, every fixed finite jet misses a nonzero term, and specializing s to one value loses injectivity.",
+    },
+    "formal_exp_boundary_controls": {
+        "source": ROOT / "repro/lean/formal-exp-controls.lean",
+        "namespace": "VolumeLogic.FormalExpControls",
+        "names": ["retained_u_exponential", "h_exponential_projection", "h_exponential_nonconstant",
+                  "negative_linear_coefficient", "quadratic_coefficient_retained",
+                  "nonzero_origin_inadmissible", "linear_action_inadmissible"],
+        "scope": "Actual formal exponential controls retain the full u series and higher coefficients, signed shifts, and the zero-origin admissibility condition.",
+    },
+    "asymptotic_identity_boundary_controls": {
+        "source": ROOT / "repro/lean/asymptotic-identity-controls.lean",
+        "namespace": "VolumeLogic.AsymptoticIdentityControls",
+        "names": ["zero_scale_hides_linear", "one_parameter_hides_polynomial", "finite_order_hides_next_coefficient"],
+        "scope": "Actual BigO contrasts show why the scale must eventually be nonzero, the parameter set must be infinite, and estimates through every order are needed.",
+    },
+    "formal_gauge_boundary_controls": {
+        "source": ROOT / "repro/lean/formal-gauge-controls.lean",
+        "namespace": "VolumeLogic.FormalGaugeControls",
+        "names": ["zero_order", "first_shift_replacement", "first_shift_signed_linear",
+                  "shifted_denominator_not_unit", "outside_order_fails"],
+        "scope": "Actual finite-product gauge controls retain order zero, the punctured denominator product, the signed first shift and the index range; clearing does not invert the nonunit shifted denominators.",
+    },
+    "formal_characteristic_boundary_controls": {
+        "source": ROOT / "repro/lean/formal-characteristic-controls.lean",
+        "namespace": "VolumeLogic.FormalCharacteristicControls",
+        "names": ["meridian_divisor_not_unit", "negative_classical_argument_required"],
+        "scope": "Actual formal-series controls distinguish nonzero domain cancellation from invertibility of the meridian divisor and retain the required negative classical argument.",
+    },
+    "uniform_profile_boundary_controls": {
+        "source": ROOT / "repro/lean/uniform-profile-controls.lean",
+        "namespace": "VolumeLogic.UniformProfile.Controls",
+        "names": ["spikes_pointwise", "spikes_destroy_common_nonvanishing",
+                  "inverse_locations_injective", "compact_spikes_pointwise",
+                  "compact_spikes_have_zero_every_level", "relative_error_one_can_cancel",
+                  "zero_factor_can_cancel", "unbounded_factor_changes_rate"],
+        "helper_names": ["inverse_locations_injective"],
+        "scope": "Seven boundary assertions, with one audited injectivity helper, distinguish pointwise from uniform convergence even on a compact interval, small relative errors from exact cancellation, positive factor bounds from zero factors, and controlled factors from exponential rate changes.",
+    },
+}
+
 
 def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -341,6 +395,20 @@ def negative_controls(manifest: dict, names: dict[str, str], audit: str) -> list
         raise ValueError("The actual logarithmic-shift coefficient theorem is missing.")
     reject("omitted_logarithmic_shift_audit", validate_audit, names,
            audit.replace("#print axioms " + shift_name, ""))
+    for module, theorem in (
+            ("FormalRegradingRing", "regrading_injective"),
+            ("FormalExp", "logarithmic_exponential_atHZero_nat"),
+            ("AsymptoticIdentity", "formal_series_zero"),
+            ("FormalGauge", "project_clearedCoefficient"),
+            ("FormalCharacteristic", "gauged_classical_identity_from_all_orders"),
+            ("UniformProfile", "compact_microscopic_volume_transfer")):
+        reject("omitted_" + module + "_module", declaration_inventory,
+               [PACKAGE / (m + ".lean") for m in MODULE_NAMESPACES if m != module])
+        name = MODULE_NAMESPACES[module] + "." + theorem
+        if name not in names:
+            raise ValueError("Missing formal-characteristic theorem: " + name)
+        reject("omitted_" + module + "_theorem_audit", validate_audit, names,
+               audit.replace("#print axioms " + name, ""))
     return checks
 
 
@@ -401,6 +469,7 @@ def main() -> None:
             validate_audit(names, audit)
             controls = negative_controls(manifest, names, audit)
             inputs = source_files + [HALL_CONTROL_SOURCE, SHIFT_CONTROL_SOURCE] + [PACKAGE / name for name in ("AxiomAudit.lean", "lakefile.toml", "lean-toolchain", "lake-manifest.json", "README.md", ".gitignore")]
+            inputs += [control["source"] for control in SYMBOL_BOUNDARY_CONTROLS.values()]
             inputs += sorted((FORMAL / "VolumeLogic").glob("*.lean"))
             inputs += [FORMAL / name for name in ("VolumeLogic.lean", "lakefile.toml", "lean-toolchain", "lake-manifest.json")]
             inputs.append(Path(__file__).resolve())
@@ -452,11 +521,30 @@ def main() -> None:
             shift_axioms = parse_axioms(
                 {"VolumeLogic.FormalShiftControls." + n: "theorem" for n in SHIFT_CONTROL_NAMES},
                 shift_run.stdout)
+            symbol_control_results = {}
+            for key, control in SYMBOL_BOUNDARY_CONTROLS.items():
+                control_source = output / control["source"].name
+                control_source.write_text(control["source"].read_text())
+                control_run = subprocess.run([args.lake, "env", "lean", str(control_source)],
+                    cwd=PACKAGE, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+                (output / (control_source.stem + ".txt")).write_text(control_run.stdout)
+                if control_run.returncode or re.search(r"\b(?:warning|error)(?:\([^)]*\))?:", control_run.stdout):
+                    raise ValueError(control_run.stdout + "\nFormal-characteristic boundary controls failed.")
+                control_axioms = parse_axioms(
+                    {control["namespace"] + "." + n: "theorem" for n in control["names"]},
+                    control_run.stdout)
+                symbol_control_results[key] = {
+                    "cases": [name for name in control["names"] if name not in control.get("helper_names", [])],
+                    "helper_declarations": control.get("helper_names", []),
+                    "source": control_source.name,
+                    "source_sha256": sha256(control_source), "axioms": control_axioms,
+                    "scope": control["scope"],
+                }
             if any(sha256(ROOT / path) != digest for path, digest in hashes.items()):
                 raise ValueError("A recorded source changed during this replay; rerun on stable inputs.")
             report = {
-                "scope": "Concrete complex modulus and real logarithmic level scale; finite-residue packet assembly, whole-remainder noncancellation and conditional volume transfer; actual finite real weighted graph energy, positive-edge paths, constant kernel, grounded strict positivity and the explicit Laplacian quadratic identity; actual one-variable derivative bounds imply stationary quadratic cost, convex supporting-tangent gains and a strict two-branch sector margin; an actual positive finite corner table and connected co-occurrence paths give a uniform grounded max-minus-linear recession bound, coercivity of its vertex-bounded potential, compact sublevels and an attained minimum; actual segment derivatives with second derivative equal to connected graph energy imply strict convexity and uniqueness of that same grounded minimum; the actual reduced principal graph Laplacian has its constructed bilinear form, trivial kernel, nonzero determinant and a linear inverse, yielding a unique solution of every grounded linear equation; actual exponential triangle weights, square roots and arctangent loads have the proved directional conductance Jacobian, and their finite shared-vertex pairing is the explicit graph energy, including a zero corner; the literal Lobachevsky integral defines a continuous concave triangle entropy, the supported supremum is attained at the explicit arctangent loads, its actual affine-path first derivative is their pairing, and the actual shared-potential second derivative at every path point is the graph energy; the same supported supremum gives singleton affine rows, which are retained together with nonsingletons in a mixed-row shared-sum theorem; actual pure-corner lower bounds and fixed-support multivariate Lipschitz continuity, exact corner-table aggregation, and row-to-conductance paths give a unique grounded minimum of this explicit potential, including fixed boundary coefficients and physical demands matched only away from the root; the aggregate actual maximizing loads are the coordinate derivatives, grounded minimization is equivalent to all free-vertex load equations, and the explicit positive table and connected support yield a unique grounded balance solution; the unforced root residual is exactly the total mass discrepancy; strict finite cut inequalities and total half-mass compatibility now derive the grounded recession margin, connectivity, an actual minimum, a positive supported corner table and unique full load balance without assuming any table; actual formal substitution, binomial coefficients and exact h divisibility give the leading logarithmic shift j*S′(u), while every regular bivariate amplitude contributes zero to its h-constant coefficient.",
-                "explicit_inputs_remaining": ["the actual invariant's exact finite source identity", "the nonzero packet coefficient and finite-action convergence (a common limit, or a limit on every residue class with equal real action)", "a strict bound for the whole complementary remainder", "the actual geometric action-volume equality", "identification of the geometric/source potential with the proved supported entropy supremum and its incidence graph; application-specific nonnegative corner coefficients and identification of the actual supported incidence", "identification of the shared-weight path and its stationary point, directional second-derivative bound, additional entropy sign inequalities for the sector criterion, and the actual source envelopes", "verification of the finite strict cut inequalities and total half-mass compatibility for the actual geometric incidence and prescribed demands; transport-table feasibility and connectivity now follow from these cuts, and the triangle vertex bound and fixed-coefficient continuity are proved", "identification of the geometric potential with the finite shared sum and its fixed boundary corner coefficients; the explicit table gives nonempty support and the fixed row partition, and row paths give conductance connectivity; no support-changing minimizer limit or nonlinear geometric development is claimed", "the filtered expansion and its identification with actual formal series S,A; compatibility of coefficient-table regrading with multiplication and the actual operator; the formal exponential projection, all-orders analytic equation and geometric longitude remain separate"],
+                "scope": "Concrete complex modulus and real logarithmic level scale; finite-residue packet assembly, whole-remainder noncancellation and conditional volume transfer; actual finite real weighted graph energy, positive-edge paths, constant kernel, grounded strict positivity and the explicit Laplacian quadratic identity; actual one-variable derivative bounds imply stationary quadratic cost, convex supporting-tangent gains and a strict two-branch sector margin; an actual positive finite corner table and connected co-occurrence paths give a uniform grounded max-minus-linear recession bound, coercivity of its vertex-bounded potential, compact sublevels and an attained minimum; actual segment derivatives with second derivative equal to connected graph energy imply strict convexity and uniqueness of that same grounded minimum; the actual reduced principal graph Laplacian has its constructed bilinear form, trivial kernel, nonzero determinant and a linear inverse, yielding a unique solution of every grounded linear equation; actual exponential triangle weights, square roots and arctangent loads have the proved directional conductance Jacobian, and their finite shared-vertex pairing is the explicit graph energy, including a zero corner; the literal Lobachevsky integral defines a continuous concave triangle entropy, the supported supremum is attained at the explicit arctangent loads, its actual affine-path first derivative is their pairing, and the actual shared-potential second derivative at every path point is the graph energy; the same supported supremum gives singleton affine rows, which are retained together with nonsingletons in a mixed-row shared-sum theorem; actual pure-corner lower bounds and fixed-support multivariate Lipschitz continuity, exact corner-table aggregation, and row-to-conductance paths give a unique grounded minimum of this explicit potential, including fixed boundary coefficients and physical demands matched only away from the root; the aggregate actual maximizing loads are the coordinate derivatives, grounded minimization is equivalent to all free-vertex load equations, and the explicit positive table and connected support yield a unique grounded balance solution; the unforced root residual is exactly the total mass discrepancy; strict finite cut inequalities and total half-mass compatibility now derive the grounded recession margin, connectivity, an actual minimum, a positive supported corner table and unique full load balance without assuming any table; actual formal substitution, binomial coefficients and exact h divisibility give the leading logarithmic shift j*S′(u), while every regular bivariate amplitude contributes zero to its h-constant coefficient; the admissible regrading into actual polynomial-coefficient power series is an injective algebra map and agrees with the Std coefficient table; the actual formal exponential commutes with h=0 projection and yields the powers of exp(S prime); all-orders BigO estimates for an eventually zero function on infinitely many parameters force the full polynomial-coefficient series to vanish; actual finite products clear every shifted meridian denominator and prove the complete h=0 coefficient normalization, including its sign; a constructed finite shifted equation then gives the conditional classical polynomial identity, cancelling the proved nonzero meridian divisor inside that identity; actual uniform relative-profile errors and nonvanishing compact limiting factors give one common nonvanishing threshold and uniform logarithmic rates, retaining every level-dependent factor and the 2*pi normalization.",
+                "explicit_inputs_remaining": ["the actual invariant's exact finite source identity", "the nonzero packet coefficient and finite-action convergence (a common limit, or a limit on every residue class with equal real action)", "a strict bound for the whole complementary remainder", "the actual microscopic profile and its uniform error bound, the compact factor limits, the base packet rate and its geometric calibration; the common-threshold and uniform logarithmic-rate consequence are proved", "the actual geometric action-volume equality", "identification of the geometric/source potential with the proved supported entropy supremum and its incidence graph; application-specific nonnegative corner coefficients and identification of the actual supported incidence", "identification of the shared-weight path and its stationary point, directional second-derivative bound, additional entropy sign inequalities for the sector criterion, and the actual source envelopes", "verification of the finite strict cut inequalities and total half-mass compatibility for the actual geometric incidence and prescribed demands; transport-table feasibility and connectivity now follow from these cuts, and the triangle vertex bound and fixed-coefficient continuity are proved", "identification of the geometric potential with the finite shared sum and its fixed boundary corner coefficients; the explicit table gives nonempty support and the fixed row partition, and row paths give conductance connectivity; no support-changing minimizer limit or nonlinear geometric development is claimed", "the filtered source expansion and its identification with formal series S,A; the actual finite recurrence and its all-orders BigO expansion on infinitely many parameters, with the physical reduced/full operator identified with the constructed finite-product gauge; the geometric longitude and convergent-germ realization remain written inputs"],
                 "residue_assembly": {"period": "any fixed positive natural number", "denominator": "original level N, including on N=p*n+r", "amplitudes": "each residue limit is nonzero; the complex limits may differ", "actions": "the complex residue limits may differ; their real parts agree", "unit_character": "may depend arbitrarily on N and need not converge", "conclusion": "ordinary all-integer-level convergence and eventual nonvanishing"},
                 "toolchain": TOOLCHAIN,
                 "dependency_pins": materialized,
@@ -494,6 +582,7 @@ def main() -> None:
                 },
                 "result": "All optional declarations compiled; every definition and theorem has only the permitted foundational axioms.",
             }
+            report.update(symbol_control_results)
             (output / "summary.json").write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
         except (ValueError, OSError, KeyError) as error:
             raise SystemExit(str(error)) from error
@@ -505,7 +594,8 @@ def main() -> None:
         print("Actual integral entropy, supported maximization, its gradient and shared-potential second derivatives are proved; packing and source identification remain written.")
         print("Actual grounded load balance and unique solution are proved; the root equation additionally requires total demand compatibility.")
         print("Grounded finite graph inversion is proved; geometric Hessian identification, quantitative inverse bounds and nonlinear deformation remain outside this theorem.")
-        print("Actual formal logarithmic shifts are proved; exponential projection and the analytic/physical operator adapter remain written.")
+        print("Uniform microscopic profile bounds imply a common nonvanishing threshold and uniform logarithmic rates; the analytic profile estimates remain inputs.")
+        print("Actual regrading, formal exponential projection and the conditional classical identity are proved; the source estimates, physical recurrence and its identification with the constructed gauge remain inputs.")
         if args.output:
             print(f"Report: {output / 'summary.json'}")
 

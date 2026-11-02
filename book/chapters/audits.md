@@ -542,21 +542,58 @@ ignoring its sign, dividing the principal series before taking a
 difference, dropping the condition \(S'(0)=0\) at the joint origin,
 or discarding higher-order changes in the regular amplitude.
 
-This module does not formalize the exponential of that logarithmic
-shift or connect it to a quantum recurrence. The substitution \(u=hs\)
-is checked separately at the level of coefficient tables in the
-Std-only package; its interpretation as a ring map remains written.
-The [meridian-expansion paper](../../docs/papers/meridian-expansions.pdf) supplies
-the analytic expansion and the written recurrence argument. That
-argument assumes an exact recurrence for the original finite functions
-at every sufficiently large level; it does not construct one.
+The next modules prove the substitution and exponential calculations
+needed to use that shift in a recurrence. The actual ring map
+\(\rho(B)=B(h,hs)\) takes \(\mathbb C[[h,u]]\) to
+\(\mathbb C[s][[h]]\); coefficient recovery proves it is injective.
+The formal exponential is constructed from its factorial series, and
+evaluation at \(h=0\) sends the exponential shift to
+\(\exp(jS'(u))=(\exp S'(u))^j\) for natural \(j\).
 
-The optional package has 68 definitions and 252 theorems.
-Its axiom audit covers all 320 declarations, separately from
-the Std-only project. Thirty-two negative controls check that invalid
-metadata or axiom inventories are rejected. Twelve compiled mathematical
-controls check the distinctions described above. The saddle estimates, whole-source gap and geometric
-volume identity remain written application inputs. The
+The [characteristic theorem](../../formal-real/FormalCharacteristic.lean)
+then starts with an exactly zero complex equation and estimates for its
+expansion to every order. Its coefficient polynomials are the coefficients
+of the constructed regraded equation. Uniqueness of asymptotic coefficients
+on an infinite parameter set makes that formal equation zero. The proof
+then projects at \(h=0\). The [gauge calculation](../../formal-real/FormalGauge.lean)
+retains every shifted meridian denominator, proves its clearing identity,
+and gives the classical meridian factor and sign. The nonzero meridian
+factor is cancelled inside the resulting identity. It is not a unit at
+the complete meridian.
+
+To apply this theorem, the written argument must still identify the actual
+finite recurrence and its all-orders expansion with those formal data.
+The formal theorem neither constructs an annihilator nor proves that its
+classical polynomial is nonzero. The
+[meridian-expansion paper](../../docs/papers/meridian-expansions.pdf)
+supplies that application argument and the separate passage to a
+holomorphic germ and its selected geometric factor.
+
+A different [uniform-profile theorem](../../formal-real/UniformProfile.lean)
+addresses the compact-parameter conclusions of the circle-tree papers.
+If
+\(F_N(s)=A_N(s)H_N(s)K_N(1+r_N(s))\), with the moving factor product
+bounded above and away from zero uniformly and \(r_N\to0\) uniformly,
+then one threshold makes every \(F_N(s)\) nonzero. Fixed positive norm
+bounds give
+\[
+ \left|N^{-1}\log\lVert F_N(s)\rVert
+       -N^{-1}\log\lVert K_N\rVert\right|\le B/N
+\]
+for a constant \(B\) independent of \(s\) and \(N\). Thus the base
+rate transfers uniformly. The module derives the factor bounds from
+continuous nonvanishing compact limits and retains the actual moving
+\(A_N,H_N\). The source estimates and sine-factor limit remain written
+inputs. Compiled examples show why pointwise convergence, even on
+\([0,1]\), cannot replace a uniform estimate.
+
+The [paper-by-paper coverage record](../../repro/PAPER_FORMAL_COVERAGE.md)
+locates the compiled implications and the written inputs for each current
+paper. The optional package's saved replay lists every declaration and
+its axioms, separately from the Std-only project. It also records rejected
+metadata and axiom inventories and the compiled boundary examples.
+The saddle estimates, whole-source gap and geometric volume identity
+remain written application inputs. The
 [tangle and tree review](../../repro/TANGLE_TREE_AUDIT.md) records the
 precise scope of the new paper readings and finite replays.
 The later [Conway geometry and meridian review](../../repro/CONWAY_MERIDIAN_AUDIT.md)

@@ -276,6 +276,15 @@ connected incidence and unique grounded load balance. The potential's
 lower bound, continuity and derivatives are proved in Lean; checking the
 cut inequalities for the particular geometric incidence remains a
 written application step.
+The package now also proves the actual regrading ring map, formal
+exponential projection and meridian denominator-clearing calculation.
+These assemble into a classical polynomial identity once the exact
+recurrence has the specified all-orders expansion. Another theorem
+derives one common nonvanishing threshold and a uniform logarithmic
+rate from a uniform microscopic profile. The
+[paper-by-paper coverage record](repro/PAPER_FORMAL_COVERAGE.md) separates
+these compiled implications from the analytic, geometric and topological
+inputs still supplied by written proofs.
 Appendix N explains why this
 remainder is unique and states exactly what would identify a candidate
 functional with its top coefficient. It also proves that the polynomial

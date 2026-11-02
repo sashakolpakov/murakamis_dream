@@ -2068,6 +2068,10 @@
         {
           "path": "papers/circle-tree-asymptotics/conclusion.tex",
           "anchor": "\\label{cta:conclusion}"
+        },
+        {
+          "path": "formal-real/UniformProfile.lean",
+          "anchor": "theorem compact_microscopic_volume_transfer"
         }
       ],
       "depends_on": [
@@ -2084,7 +2088,7 @@
           "reason": "The nonzero coefficient and lower exponential error give the all-level logarithmic rate with the retained physical normalization."
         }
       ],
-      "coverage": "Proved in the degree-and-twist companion with its explicit summed condition. The preferred-cusp interpretation and all-orders longitude statements remain separate.",
+      "coverage": "Proved in the degree-and-twist companion with its explicit summed condition. The preferred-cusp interpretation and all-orders longitude statements remain separate. The compiled UniformProfile theorem derives one common nonvanishing threshold and the uniform logarithmic rate from the written microscopic profile, actual moving-factor limits and base volume rate. It does not prove the tree-specific source estimates or geometry.",
       "article": "circle-tree-asymptotics"
     },
     {
@@ -2175,6 +2179,10 @@
         {
           "path": "manuscript/sections/K-directed-circle-messages.tex",
           "anchor": "\\label{dk:sec-8}"
+        },
+        {
+          "path": "formal-real/UniformProfile.lean",
+          "anchor": "theorem compact_microscopic_volume_transfer"
         }
       ],
       "depends_on": [
@@ -2191,7 +2199,8 @@
           "reason": "A bound for the entire remainder, the nonzero central contribution and the original scalar normalization are combined to obtain the rate of the invariant."
         }
       ],
-      "article": "directed-tree-asymptotics"
+      "article": "directed-tree-asymptotics",
+      "coverage": " The compiled UniformProfile theorem derives one common nonvanishing threshold and the uniform logarithmic rate from the written microscopic profile, actual moving-factor limits and base volume rate. It does not prove the tree-specific source estimates or geometry."
     },
     {
       "id": "braid_literal_matched_sphere",
@@ -3640,7 +3649,7 @@
       "id": "analytic_filtered_coefficient_regrading",
       "title": "Recovering the formal two-parameter series from all microscopic orders",
       "group": "geometric_longitude",
-      "statement": "The proved degree filtration regrades the logarithm as h^(-1) S(u)+sum h^j A_j(u), with u=h s and no other negative h-power. Substitution B(h,u) -> B(h,h s) on nonnegative bivariate series is injective by the coefficient recovery B_(a,b)=[h^(a+b) s^b]B(h,h s). FormalRegrading checks this coefficient recovery and the finite-order distinction. The optional Mathlib module FormalShift constructs the actual substitution S(u+j h), proves divisibility of S(u+j h)-S(u) by h, and proves that the full logarithmic shift has h^0 coefficient j S prime(u); the regular amplitude contributes zero. The ring interpretation of u=h s, formal exponentiation giving exp(j S prime(u)), and the analytic/operator correspondence remain written proofs.",
+      "statement": "The proved degree filtration writes the logarithm as h^(-1) S(u)+a regular series, with u=h s. FormalRegradingRing constructs the actual injective algebra map C[[h,u]] -> C[s][[h]], derives coefficient recovery, and identifies the earlier Std coefficient table. FormalShift proves exact divisibility of S(u+j h)-S(u) by h and the logarithmic projection j S prime(u). FormalExp constructs admissible exponentials from the factorial series, proves compatibility with h=0, and gives exp(j S prime(u))=(exp S prime(u))^j for natural shifts. Every finite jet recovers only its coefficient triangle. The analytic filtration and identification of the physical expansion with these formal data remain written inputs.",
       "sources": [
         {
           "path": "papers/meridian-expansions/operators.tex",
@@ -3669,6 +3678,18 @@
         {
           "path": "formal-real/FormalShift.lean",
           "anchor": "theorem logarithmicShift_atHZero"
+        },
+        {
+          "path": "formal-real/FormalRegradingRing.lean",
+          "anchor": "theorem regrading_injective"
+        },
+        {
+          "path": "formal-real/FormalRegradingRing.lean",
+          "anchor": "theorem std_table_compatibility"
+        },
+        {
+          "path": "formal-real/FormalExp.lean",
+          "anchor": "theorem logarithmic_exponential_atHZero_nat"
         }
       ],
       "depends_on": [
@@ -3716,6 +3737,22 @@
         {
           "path": "papers/meridian-expansions/operators.tex",
           "anchor": "\\label{me:symbol-identity}"
+        },
+        {
+          "path": "formal-real/AsymptoticIdentity.lean",
+          "anchor": "theorem formal_series_zero"
+        },
+        {
+          "path": "formal-real/FormalGauge.lean",
+          "anchor": "theorem denominator_clearing"
+        },
+        {
+          "path": "formal-real/FormalGauge.lean",
+          "anchor": "theorem atHZero_clearedCoefficient"
+        },
+        {
+          "path": "formal-real/FormalCharacteristic.lean",
+          "anchor": "theorem gauged_classical_identity_from_all_orders"
         }
       ],
       "depends_on": [
@@ -3732,7 +3769,8 @@
           "reason": "Identifies the actual reduced/full meridian gauge and component sign before cancellation."
         }
       ],
-      "article": "meridian-expansions"
+      "article": "meridian-expansions",
+      "coverage": "AsymptoticIdentity proves coefficient uniqueness for actual complex all-orders estimates on an infinite parameter set. FormalGauge proves the constructed finite denominator clearing and its retained meridian factor/sign. FormalCharacteristic then proves the classical formal identity using actual regrading, exponential projection and cancellation. Applying it to the physical equation still requires the written all-orders coefficient adapter and normalization of the original fixed operator. The Lean theorem does not assert nonzero symbol, operator existence, analytic germ convergence or selected-factor identification."
     },
     {
       "id": "geometric_selected_factor_of_actual_recurrence",

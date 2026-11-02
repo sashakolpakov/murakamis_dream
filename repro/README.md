@@ -81,10 +81,9 @@ hypotheses. The root equation holds precisely when total demand equals
 one half the number of triangles. The finite-cut modules now derive the
 positive table, connectivity and unique full balance from strict cut
 inequalities and total mass compatibility. The cut conditions must still
-be checked for the particular geometric incidence and demands. Together
-the optional modules contain 68 definitions and 252 theorems, all 320
-declarations included in the axiom audit; 32 negative controls check invalid
-metadata and axiom inventories. Seven compiled mathematical controls check
+be checked for the particular geometric incidence and demands. The saved optional replay lists every definition and theorem in its
+axiom audit and rejects invalid metadata and axiom inventories.
+Seven compiled mathematical controls check
 the half-mass convention, repeated destinations, arbitrary root demand,
 the role of connectedness, a strict-cut balance, and failures when either
 strictness or total mass compatibility is dropped. The formal-shift module
@@ -93,9 +92,22 @@ also constructs substitution in actual power series, proves that
 \(h=0\) with \(jS'(u)\). An arbitrary regular logarithmic amplitude
 contributes zero at that order. Five further compiled controls retain the
 shift factor and sign, the divisibility hypothesis, the first derivative
-at the origin, and the nonzero higher-order amplitude change. Formal
-exponentiation and the connection to the analytic source and its
-recurrence remain written arguments.
+at the origin, and the nonzero higher-order amplitude change. The later
+modules construct the actual ring map \(u=hs\), prove its injectivity,
+construct formal exponentials, and prove coefficient uniqueness for
+actual complex asymptotic expansions. Their finite gauge construction
+retains all meridian factors and the sign. The characteristic theorem
+combines these into a classical identity, assuming the exact finite
+equation has the stated all-orders expansion. Operator existence,
+nonzero classical normalization and geometric factor identification
+remain application arguments.
+
+The uniform-profile module proves a common nonvanishing threshold and
+uniform logarithmic rate from the actual uniform profile estimates.
+Compactness and a continuous nonvanishing limit supply the factor bounds;
+pointwise convergence alone does not. The
+[paper coverage record](PAPER_FORMAL_COVERAGE.md) names the compiled
+implications and written inputs for all current papers.
 The optional command is separate from the Std-only
 check above; it requires
 Mathlib and its substantially larger compiled library.
