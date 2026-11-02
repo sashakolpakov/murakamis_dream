@@ -32,6 +32,14 @@ and normalization calculations included. The graph keeps them as
 separate components because the abstract norm theorem does not use
 that contraction argument.
 
+For a particular theorem, expand **The recorded proof route** in the
+graph. It lists that theorem and its earlier prerequisites in dependency
+order, with each shared result appearing once and its paper identified.
+This makes it possible to follow one argument without working through
+every subject in the collection. The route follows the named uses in
+the inventory; it does not automatically include every result from an
+article that supplies one lemma.
+
 The current source-asymptotics proof defines its finite action directly
 from the exact cofactor polynomial. The earlier fold interpolation
 remains in the reference account and guide as an alternative construction;
@@ -51,10 +59,10 @@ common core for several inserted diagrams also uses protected gluing.
 
 ## The current drafts
 
-The twenty-four current papers total 413 pages, with individual lengths from
+The twenty-three current papers total 407 pages, with individual lengths from
 11 to 29 pages. Each gives the proofs of its stated results and names
-its numbered companion imports. Two earlier geometry editions, totaling
-another 25 pages, are preserved below for existing citations. This is a
+its numbered companion imports. Four earlier editions, totaling
+another 57 pages, are preserved below for existing citations. This is a
 division of the retained results into citable components; the reading
 routes are explained at the end of this guide. The aggregate page count
 is not a measure of compression: separate papers repeat their conventions
@@ -79,41 +87,32 @@ framing factor. These results supply the finite formulas used by later
 papers. They do not estimate the large-level invariant or identify an
 exponential rate with volume.
 
-**Newton coefficients and positive sources for Conway tangles.** 18 pages.
-[TeX source](newton-tangles/main.tex) ·
-[PDF](../docs/papers/newton-tangles.pdf)
+**Newton calculus and stationary profiles of Conway tangles.** 26 pages.
+[TeX source](newton-calculus/main.tex) ·
+[PDF](../docs/papers/newton-calculus.pdf)
 
-This paper supplies the additional finite calculus for composing turned
-two-strand tangles. It proves the Newton product, physical quarter-turn,
-closure and colored-circle formulas in the full Casimir quotient,
-retaining the derivatives at repeated spectral roots and the retained
-half-twist factors. It uses the finite paper's operator and reduced
-Kashaev normalization. For the stated class of fixed Conway compositions,
-it then proves the positive complete auxiliary-color source's variational
-limit, strict interior maximum and stationary boundary bounds at both
-level parities. The positive source is not the signed filled invariant.
-The analytic estimates for that invariant remain separate. Other companions supply the moving-meridian formulas, the larger strict
-variational problem and the complete geometric interpretation.
+The paper develops the finite tangle algebra and the variational problem
+that it defines. Values and first derivatives are retained at repeated
+spectral roots. Exact formulas describe multiplication, a physical
+quarter-turn, marked closure, colored crossing circles and retained half
+twists. Their positive integer supports determine which ordered
+expressions admit a strict real state.
 
-**Stationary profiles of strict Newton trees.** 14 pages.
-[TeX source](strict-newton-profiles/main.tex) ·
-[PDF](../docs/papers/strict-newton-profiles.pdf)
+For every such expression, the paper proves that the complete positive
+source has a unique interior maximum with negative definite Hessian.
+It derives the positive-source limit at both level parities by a uniform
+factorial estimate and an admissible integer approximation to that
+maximum. Fixing an exposed output gives a boundary profile; the paper
+calculates these profiles, their additive constants and their harmonic
+response law. Every original stationary leaf is at least one quarter.
+The completed-root subclass retains its stronger, strict two-sided bound.
 
-Which ordered tangle expressions admit an interior state of the positive
-sum? This paper answers the question by computing the exact integer
-supports, then their strict real intervals, under products and turns.
-It proves that the independent summation coordinates form a primitive
-integer lattice. A boundary argument excludes degenerate maxima;
-strict concavity gives a unique interior maximum and its nondegenerate
-Hessian. These conclusions also hold when an output is fixed.
-
-The stationary value as a function of that output is its boundary
-profile. The paper calculates these profiles, including their additive
-constants, and proves the harmonic addition rule for their parameters.
-It also proves that every stationary leaf index is at least one quarter
-of the level. The elementary positive-sum limit and these variational
-facts need neither a bound for the signed invariant nor a global
-hyperbolic metric. Later papers use them for those separate purposes.
+This account replaces the separate 18-page finite-calculus paper and
+14-page strict-profile paper in the current reading route. The support,
+lattice, concavity and boundary arguments are now proved once. Both
+illustrations and the stronger special-case result remain. The paper
+proves a positive-source limit; estimates for signed fillings and a
+geometric interpretation of the limiting action are separate inputs.
 
 **Exact Newton calculus for tangles with a moving meridian.** 15 pages.
 [TeX source](meridian-tangles/main.tex) ·
@@ -560,7 +559,16 @@ circle-pattern paper supplies the marked geometric volume comparison.
 The application now cites numbered statements in these companion papers,
 and checks their common normalization and hypotheses.
 
-## Earlier geometry editions
+## Earlier editions
+
+The earlier Newton accounts remain available at their original addresses,
+so their numbered citations still identify the statements intended:
+
+- [Newton coefficients and positive sources for Conway tangles](../docs/papers/newton-tangles.pdf), 18 pages: the complete-meridian finite calculus and the completed-root variational theorem.
+- [Stationary profiles of strict Newton trees](../docs/papers/strict-newton-profiles.pdf), 14 pages: the larger strict-state problem and its boundary profiles.
+
+Their proofs are combined in the 26-page current Newton paper. Current
+companions cite that account; the earlier files are unchanged.
 
 The following two papers treat the narrower completed-root construction.
 They remain available for existing citations. The 21-page **Marked
@@ -685,7 +693,7 @@ with one command:
 python3 repro/check_paper_algebra.py --output repro/results/paper-algebra
 ```
 
-The runner has 25 finite check groups and requires SymPy, python-flint
+The runner has 24 finite check groups and requires SymPy, python-flint
 and NumPy. It saves a separate
 record and log for each registered check group, and stops on failure. The
 planar certificate groups retain their supporting interval records in

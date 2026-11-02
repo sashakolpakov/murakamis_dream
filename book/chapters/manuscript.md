@@ -2,12 +2,18 @@
 
 The current PDF is a 374-page reference account. Its results have been
 divided into [papers organized by subject](../../papers/README.md).
-The 24 current papers total 413 pages and range from 11 to 29 pages each,
+The 23 current papers total 407 pages and range from 11 to 29 pages each,
 including references. Their shared foundations cover
 finite spectral evaluation, coefficient estimates, source asymptotics,
 oscillatory sums and marked geometry. The application papers give their
 precise diagram and twist hypotheses and name the numbered statements
 they use.
+
+The Newton calculus and stationary-profile arguments now share one
+26-page paper. It replaces two drafts totaling 32 pages by proving their
+common support, lattice and maximization results once. The finite tangle
+identities and the stronger completed-root leaf bound are retained, and
+both earlier editions remain available for their existing citations.
 
 The current Conway papers cover every fixed strict expression, rather
 than only the reference manuscript's completed-root grammar. The proof
@@ -415,16 +421,18 @@ orders are needed. After clearing denominators and removing the common
 power of \(q-1\), the first nonzero classical symbol consequently
 vanishes on the selected analytic germ.
 
-The optional Lean package now proves the intermediate mathematical
-implication: uniqueness of asymptotic coefficients, the actual injective
-ring map, formal exponentiation, the finite gauge calculation and
-cancellation of its nonzero meridian factor. Its
-[characteristic theorem](../../formal-real/FormalCharacteristic.lean)
-requires the written all-orders estimate for the actual finite equation
-to match the constructed coefficient series. It does not construct an
-annihilator or prove that its classical symbol is nonzero. The
-[coverage record](../../repro/PAPER_FORMAL_COVERAGE.md) lists these
-boundaries for every current paper.
+The optional Lean package now connects an original root-of-unity
+recurrence to the formal characteristic calculation. Its
+[entry theorem](../../formal-real/MeridianExpansion.lean) proves the
+literal sine gauge, shifted denominator exclusions, meridian-factor
+expansion and assembly of the finite equation. Coefficient uniqueness,
+injective regrading and cancellation then give the classical identity.
+The original recurrence and source normalization remain hypotheses,
+together with eventual nonvanishing and the all-orders expansions of
+the original coefficients and actual shifted source ratios. It does
+not construct an annihilator or prove nonzero classical specialization.
+The [coverage record](../../repro/PAPER_FORMAL_COVERAGE.md) lists the
+remaining written inputs for every current paper.
 
 Corollary 8.1 makes the separate geometric identification. It checks the
 original group, eigenflag and primitive logarithmic filling equations
@@ -559,7 +567,7 @@ The companion papers have a combined finite-check command:
 python3 repro/check_paper_algebra.py --output repro/results/paper-algebra
 ```
 
-It runs 25 finite groups registered in the paper-check runner. They check physical Newton identities over
+It runs 24 finite groups registered in the paper-check runner. They check physical Newton identities over
 exact finite fields, terminal curvature and endpoint identities, and
 circle-tree seam, peripheral and rational-bound formulas. The additional
 moving-meridian checks use physical matrices at both ordinary and

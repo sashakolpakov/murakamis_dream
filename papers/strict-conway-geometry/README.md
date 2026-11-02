@@ -55,9 +55,9 @@ of the present proof.
 
 ## Exact imports
 
-- **Stationary profiles of strict Newton trees**:
-  Lemma 2.2 (st:types), Theorem 3.3 (st:positive-action),
-  Lemma 4.1 (st:port-product) and Proposition 4.2 (st:port-types).
+- **Newton calculus and stationary profiles of Conway tangles**:
+  Lemma 5.2 (st:types), Theorem 6.4 (st:positive-action),
+  Lemma 7.1 (st:port-product) and Proposition 7.2 (st:port-types).
   Only the nonmetric strict optimizer, Hessian and profile identities are
   used. The local core quantum asymptotic is not imported.
 - The classical ideal-tetrahedron volume formula, with its flat limit,

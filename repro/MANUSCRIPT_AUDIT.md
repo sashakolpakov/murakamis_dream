@@ -678,10 +678,56 @@ uniform limits. The actual sine-quotient limit and the source's uniform
 remainder estimate are still supplied by the analytic papers. The
 module never replaces a uniform hypothesis by pointwise convergence.
 
-The new optional replay compiles 80 definitions and 318 theorems in
+The replay published at `5ac0441b` compiled 80 definitions and 318 theorems in
 19 modules, with all 398 declarations included in its axiom audit.
 It rejects 44 altered metadata or axiom inventories and compiles
 39 mathematical boundary assertions with one separately identified
 helper. The saved source hashes cover the actual modules and controls.
 No paper statement, mathematical manuscript source or reference PDF
 changed during this formalization.
+
+## Consolidating the Newton arguments and deriving the actual recurrence equation
+
+The current Newton paper combines the former 18-page finite-calculus
+account and 14-page strict-profile account in 26 pages, with the original
+11-point type and 30 mm margins. The finite algebra and both figures are
+retained. The broader support, primitive-lattice, endpoint-descent and
+optimizer arguments are proved once; the completed-root conclusions are
+explicit specializations, and their stronger leaf window retains its
+separate proof. Both earlier editions remain unchanged at their existing
+addresses. Seventeen TeX files in eight current companions have their
+numbered references migrated to the combined paper. All nine affected
+PDFs compile without unresolved references or overfull boxes.
+
+The dependency graph now records the specialization of the completed-root
+optimizer from the strict optimizer. The stronger leaf bound has its own
+node and explicit uses in the signed local asymptotic and the earlier
+geometry construction. Each selected statement also has a route listing
+all its recorded prerequisites in dependency order, counting a shared
+result once. This route is a reading aid, not proof verification or a
+claim of exhaustive or minimal prerequisites.
+
+Four further Mathlib modules connect the actual scalar recurrence to the
+formal characteristic theorem. The exact sine normalization gives the
+retained sign and meridian factors. On a nonreal parameter set all needed
+shifted denominators are nonzero. The zeroth cleared coefficient retains
+the full denominator product. Finite asymptotic multiplication is proved
+by the divisibility of its truncated Cauchy remainder by the next power;
+finite summation then constructs the whole equation’s expansion.
+
+The elementary complex exponential estimate proves the actual meridian
+expansion at the physical scale $h=π i/N$, which tends to zero and is
+eventually nonzero on any cofinal sequence of levels. The final theorem
+retains the actual recurrence, exact source factorization, eventual
+nonvanishing, and the original coefficient/source-ratio expansions as
+inputs. It does not assume an expansion of the already assembled equation.
+Operator existence, the nonzero classical specialization, and the analytic
+and geometric germ identifications remain written application steps.
+
+The fresh optional replay covers 91 definitions and 362 theorems in
+23 modules, with every declaration included in the axiom audit. It checks
+52 rejected metadata or axiom inventories and 53 mathematical boundary
+assertions with one separately identified helper. These counts describe
+the checked libraries; no actual knot family is asserted to have an
+end-to-end Lean proof. The 374-page reference manuscript and its PDF
+remain unchanged.

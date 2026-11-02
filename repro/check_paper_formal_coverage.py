@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import json
 import pathlib
+import re
 
 p=argparse.ArgumentParser(description=__doc__)
 p.add_argument('--root',type=pathlib.Path,default=pathlib.Path.cwd())
@@ -27,7 +28,7 @@ for record in [std,real]:
 cat=json.loads((root/'papers/catalog.json').read_text())['papers']
 current={p['directory'] for p in cat if p.get('edition')!='earlier'}
 assert {r['article'] for r in data['rows']}==current
-assert len(data['rows'])==len(current)==24
+assert len(data['rows'])==len(current)==data['current_articles']
 locators=set();decls=set()
 for row in data['rows']:
     entries=row['conclusion_sources']+row['compiled_results']
@@ -39,7 +40,9 @@ for row in data['rows']:
         locators.add((e['path'],e['anchor']))
     for e in row['compiled_results']:
         assert e['declaration'] in known,('declaration not compiled',e)
-        assert e['anchor']=='theorem '+e['declaration'].rsplit('.',1)[1],('declaration/anchor mismatch',e)
+        namespace=re.findall(r'^namespace\s+(\S+)',(root/e['path']).read_text(),re.M)
+        assert len(namespace)==1 and e['anchor'].startswith('theorem '),('ambiguous declaration namespace',e)
+        assert e['declaration']==namespace[0]+'.'+e['anchor'].removeprefix('theorem '),('declaration/anchor mismatch',e)
         decls.add(e['declaration'])
 result={'result':'All source hashes, current-paper rows, declaration inventories and literal locators match.',
  'scope':'Snapshot consistency only; no proof certification, source analysis or Lean replay.',

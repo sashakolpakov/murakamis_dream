@@ -1,0 +1,45 @@
+% Ordered boundary connections; boxes suppress their interior tangles.
+\begin{tikzpicture}[x=1cm,y=1cm, every node/.style={font=\small},
+ tangent/.style={line width=.7pt}, terminal/.style={circle,fill=black,inner sep=1.3pt}]
+% Left: stacking.
+\begin{scope}[shift={(0,0)}]
+ \node[font=\small\bfseries] at (1.2,4.8) {Vertical stack $FG$};
+ \draw[fill=blue!3] (.45,.45) rectangle (1.95,1.85);
+ \draw[fill=blue!3] (.45,2.75) rectangle (1.95,4.15);
+ \node at (1.2,1.15) {$F$}; \node at (1.2,3.45) {$G$};
+ \foreach \x in {.65,1.75} {
+  \draw[tangent] (\x,1.85)--(\x,2.75);
+  \foreach \y in {.45,1.85,2.75,4.15} \node[terminal] at (\x,\y) {};
+ }
+ \node[below left] at (.65,.45) {$F_0$};\node[below right] at (1.75,.45) {$F_1$};
+ \node[left] at (.65,1.85) {$F_3$};\node[right] at (1.75,1.85) {$F_2$};
+ \node[left] at (.65,2.75) {$G_0$};\node[right] at (1.75,2.75) {$G_1$};
+ \node[above left] at (.65,4.15) {$G_3$};\node[above right] at (1.75,4.15) {$G_2$};
+\end{scope}
+% Middle: a genuine clockwise turn, showing old labels in new positions.
+\begin{scope}[shift={(4.25,0)}]
+ \node[font=\small\bfseries] at (1.15,4.8) {Quarter-turn $\mathsf T F$};
+ \draw[fill=blue!3] (.2,1.4) rectangle (2.1,3.3);
+ \node[align=center] at (1.15,2.35) {$F$ rotated\\clockwise};
+ \foreach \p in {(.4,1.4),(1.9,1.4),(1.9,3.3),(.4,3.3)} \node[terminal] at \p {};
+ \node[below left] at (.4,1.4) {$F_1$};\node[below right] at (1.9,1.4) {$F_2$};
+ \node[above right] at (1.9,3.3) {$F_3$};\node[above left] at (.4,3.3) {$F_0$};
+ \draw[-{Latex[length=2mm]},thick] (.45,3.95) arc[start angle=130,end angle=35,radius=1.1];
+ \node[align=center,font=\footnotesize] at (1.15,.55) {Labels name the old endpoints;\\the tangle rotates with them.};
+\end{scope}
+% Right: closure arcs are actual identity connections outside both boxes.
+\begin{scope}[shift={(8.65,0)}]
+ \node[font=\small\bfseries] at (1.2,4.8) {Cylindrical closure $C(FG)$};
+ \draw[fill=blue!3] (.45,.65) rectangle (1.95,1.85);
+ \draw[fill=blue!3] (.45,2.65) rectangle (1.95,3.85);
+ \node at (1.2,1.25) {$F$};\node at (1.2,3.25) {$G$};
+ \foreach \x in {.65,1.75} {
+  \draw[tangent] (\x,1.85)--(\x,2.65);
+  \foreach \y in {.65,1.85,2.65,3.85} \node[terminal] at (\x,\y) {};
+ }
+ \draw[tangent] (.65,.65)..controls(-.45,.1)and(-.45,4.4)..(.65,3.85);
+ \draw[tangent] (1.75,.65)..controls(2.85,.1)and(2.85,4.4)..(1.75,3.85);
+ \node[below] at (.65,.5) {$F_0$};\node[below] at (1.75,.5) {$F_1$};
+ \node[above] at (.65,4.0) {$G_3$};\node[above] at (1.75,4.0) {$G_2$};
+\end{scope}
+\end{tikzpicture}

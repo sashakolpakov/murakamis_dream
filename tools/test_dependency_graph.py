@@ -201,5 +201,40 @@ class ArticleDependencies(unittest.TestCase):
             self.validate()
 
 
+class PrerequisiteRoutes(unittest.TestCase):
+    def test_shared_foundation_is_counted_once(self):
+        nodes = {n: {"article": a} for n, a in [
+            ("foundation", "a"), ("left", "b"), ("right", "b"),
+            ("target", "c"), ("unrelated", "a"), ("later", "d")]}
+        edges = {("foundation", "left"), ("foundation", "right"),
+                 ("left", "target"), ("right", "target"),
+                 ("target", "later")}
+        routes = BUILDER.prerequisite_routes(nodes, edges)
+        self.assertEqual(routes["target"]["statements"],
+                         ["foundation", "left", "right", "target"])
+        self.assertEqual(routes["target"]["articles"], ["a", "b", "c"])
+        self.assertEqual(routes["target"]["unowned_statements"], [])
+
+    def test_unowned_results_are_retained(self):
+        nodes = {"first": {"article": "a"}, "bridge": {"article": None},
+                 "last": {"article": "b"}}
+        result = BUILDER.prerequisite_routes(
+            nodes, {("first", "bridge"), ("bridge", "last")})["last"]
+        self.assertEqual(result["statements"], ["first", "bridge", "last"])
+        self.assertEqual(result["articles"], ["a", "b"])
+        self.assertEqual(result["unowned_statements"], ["bridge"])
+
+    def test_leaf_retains_itself_without_other_article_results(self):
+        nodes = {"x": {"article": "a"}, "y": {"article": "a"}}
+        result = BUILDER.prerequisite_routes(nodes, set())["x"]
+        self.assertEqual(result["statements"], ["x"])
+        self.assertEqual(result["articles"], ["a"])
+
+    def test_cycle_is_not_a_proof_route(self):
+        nodes = {"x": {"article": "a"}, "y": {"article": "a"}}
+        with self.assertRaisesRegex(ValueError, "Cycle"):
+            BUILDER.prerequisite_routes(nodes, {("x", "y"), ("y", "x")})
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

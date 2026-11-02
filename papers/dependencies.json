@@ -2498,35 +2498,35 @@
       "statement": "At every level N>=2, the physical complete-meridian pair commutant is the full Hermite Casimir algebra. Literal turns, cylindrical closure, positive Newton multiplication, colored-circle expansions, the core/alias split and retained signed half twists are exact, including repeated-root normals. The positive-source theorem is restricted separately to the stated completed-root grammar; moving-meridian identities and the whole filled sum are not consequences of this node.",
       "sources": [
         {
-          "path": "papers/newton-tangles/main.tex",
+          "path": "papers/newton-calculus/finite.tex",
           "anchor": "\\label{lem:commutant}"
         },
         {
-          "path": "papers/newton-tangles/main.tex",
+          "path": "papers/newton-calculus/finite.tex",
           "anchor": "\\label{prop:newton-turn}"
         },
         {
-          "path": "papers/newton-tangles/main.tex",
+          "path": "papers/newton-calculus/finite.tex",
           "anchor": "\\label{nt:generic-trace}"
         },
         {
-          "path": "papers/newton-tangles/main.tex",
+          "path": "papers/newton-calculus/finite.tex",
           "anchor": "\\label{thm:positive-product}"
         },
         {
-          "path": "papers/newton-tangles/main.tex",
+          "path": "papers/newton-calculus/finite.tex",
           "anchor": "\\label{prop:circle}"
         },
         {
-          "path": "papers/newton-tangles/main.tex",
+          "path": "papers/newton-calculus/finite.tex",
           "anchor": "\\label{eq:core-alias}"
         },
         {
-          "path": "papers/newton-tangles/main.tex",
+          "path": "papers/newton-calculus/finite.tex",
           "anchor": "\\label{eq:low-alias}"
         },
         {
-          "path": "papers/newton-tangles/main.tex",
+          "path": "papers/newton-calculus/finite.tex",
           "anchor": "\\label{nt:crossing-newton}"
         }
       ],
@@ -2541,7 +2541,7 @@
         }
       ],
       "coverage": "The complete-meridian finite algebra is proved in the Newton paper. The exact all-integer circle-basis filling expansion is proved separately in the Conway asymptotics companion. Moving-meridian identities retain their own adapter.",
-      "article": "newton-tangles"
+      "article": "newton-calculus"
     },
     {
       "id": "recursive_exact_filling_source",
@@ -2593,47 +2593,47 @@
     },
     {
       "id": "recursive_positive_source",
-      "title": "Completed-root positive source and stationary boundary bounds",
+      "title": "Completed-root optimizer and positive-source limit",
       "group": "local_asymptotics",
-      "statement": "For the fixed completed/completed closure grammar, the positive complete auxiliary-color source has a primitive lattice of dimension 2H-3, a unique strict action maximum and a nondegenerate Hessian. Uniform factorial estimates and strict integer rounding give its logarithmic rate at both level parities. Fixed-output profiles are analytic, and every stationary leaf lies strictly between 1/4 and arctan(2)/pi. No signed filling or metric-volume conclusion is asserted.",
+      "statement": "For the fixed completed/completed closure grammar, the positive complete auxiliary-color source has a primitive lattice of dimension 2H-3, a unique strict action maximum and a nondegenerate Hessian. The general strict optimizer theorem applies after completed-root feasibility is checked; it gives the logarithmic rate at both level parities and analytic fixed-output profiles. This is a positive-source result, with no signed filling or metric-volume conclusion.",
       "sources": [
         {
-          "path": "papers/newton-tangles/main.tex",
+          "path": "papers/newton-calculus/completed.tex",
           "anchor": "\\label{def:grammar}"
         },
         {
-          "path": "papers/newton-tangles/main.tex",
+          "path": "papers/newton-calculus/completed.tex",
           "anchor": "\\label{lem:strict-feasible}"
         },
         {
-          "path": "papers/newton-tangles/main.tex",
-          "anchor": "\\label{eq:lattice-dimension}"
+          "path": "papers/newton-calculus/variation.tex",
+          "anchor": "\\label{st:lattice}"
         },
         {
-          "path": "papers/newton-tangles/main.tex",
+          "path": "papers/newton-calculus/variation.tex",
           "anchor": "\\label{lem:factorial-action}"
         },
         {
-          "path": "papers/newton-tangles/main.tex",
+          "path": "papers/newton-calculus/completed.tex",
           "anchor": "\\label{prop:strict-maximum}"
         },
         {
-          "path": "papers/newton-tangles/main.tex",
+          "path": "papers/newton-calculus/completed.tex",
           "anchor": "\\label{cor:complete-limit}"
-        },
-        {
-          "path": "papers/newton-tangles/main.tex",
-          "anchor": "\\label{lem:port-bounds}"
         }
       ],
       "depends_on": [
         {
           "id": "recursive_finite_source",
           "reason": "The actual positive complete-color coefficients, Newton product support and closing target determine the shared action and its integer lattice."
+        },
+        {
+          "id": "recursive_strict_optimizer",
+          "reason": "Proposition9.3 and Corollary9.4 specialize the strict optimizer and positive-source limit after establishing completed-root feasibility."
         }
       ],
-      "coverage": "This is the completed-root positive-source theorem in the new paper. Arbitrary strict syntax, complementary signed colors, moving meridians and filled invariant limits require their separate recorded proofs.",
-      "article": "newton-tangles"
+      "coverage": "The completed-root conclusions are special cases of the strict theorem in the combined Newton paper. The stronger leaf window is recorded separately.",
+      "article": "newton-calculus"
     },
     {
       "id": "recursive_angle_geometry",
@@ -2673,11 +2673,15 @@
       "depends_on": [
         {
           "id": "recursive_positive_source",
-          "reason": "Newton Proposition 5.3 gives the unique strict stationary point and analytic profiles; Lemma 6.1 supplies the cusp window. Corollary 5.4 is used only for the separate pure positive-source limit."
+          "reason": "Supplies the completed-root strict optimizer, primitive lattice, nondegenerate Hessian and analytic fixed-output profiles. The stronger leaf window is supplied by the separate completed-bound prerequisite."
         },
         {
           "id": "recursive_local_ideal_cells",
           "reason": "Provides the actual convex cells, calibrated volumes and ordered full-face maps used by the global completed-root assembly."
+        },
+        {
+          "id": "recursive_completed_port_bounds",
+          "reason": "The completed-root leaf window places the original stationary labels strictly above quarter, as required in this argument."
         }
       ],
       "coverage": "The companion proves this exact completed-root scope, including the literal same-manifold argument. General strict masks and nearby filled geometry retain their separate written inputs.",
@@ -2717,7 +2721,7 @@
       "depends_on": [
         {
           "id": "recursive_positive_source",
-          "reason": "Supplies the completed-root strict maximum, primitive coordinates and stationary high-index leaf window."
+          "reason": "Supplies the completed-root strict optimizer, primitive lattice, nondegenerate Hessian and analytic fixed-output profiles. The stronger leaf window is supplied by the separate completed-bound prerequisite."
         },
         {
           "id": "recursive_local_leaf_estimates",
@@ -2726,6 +2730,10 @@
         {
           "id": "recursive_completed_source_gap",
           "reason": "Controls the whole physical-source complement beyond the signed corridor."
+        },
+        {
+          "id": "recursive_completed_port_bounds",
+          "reason": "The completed-root leaf window places the original stationary labels strictly above quarter, as required in this argument."
         }
       ],
       "coverage": "Conway Asymptotics Theorem 4.1 remains a separate completed-root signed result. The strict pure volume route uses Theorem 4.2 instead.",
@@ -3753,6 +3761,22 @@
         {
           "path": "formal-real/FormalCharacteristic.lean",
           "anchor": "theorem gauged_classical_identity_from_all_orders"
+        },
+        {
+          "path": "formal-real/ActualGauge.lean",
+          "anchor": "theorem sine_cleared_equation"
+        },
+        {
+          "path": "formal-real/RecurrenceExpansion.lean",
+          "anchor": "theorem finite_equation_expansion"
+        },
+        {
+          "path": "formal-real/RecurrenceGaugeExpansion.lean",
+          "anchor": "theorem characteristic_of_sine_recurrence"
+        },
+        {
+          "path": "formal-real/MeridianExpansion.lean",
+          "anchor": "theorem characteristic_at_roots"
         }
       ],
       "depends_on": [
@@ -3770,7 +3794,7 @@
         }
       ],
       "article": "meridian-expansions",
-      "coverage": "AsymptoticIdentity proves coefficient uniqueness for actual complex all-orders estimates on an infinite parameter set. FormalGauge proves the constructed finite denominator clearing and its retained meridian factor/sign. FormalCharacteristic then proves the classical formal identity using actual regrading, exponential projection and cancellation. Applying it to the physical equation still requires the written all-orders coefficient adapter and normalization of the original fixed operator. The Lean theorem does not assert nonzero symbol, operator existence, analytic germ convergence or selected-factor identification."
+      "coverage": "The compiled theorem now starts with the original recurrence and exact sine-factor source normalization. It proves denominator exclusions, the retained gauge and sign, finite expansion assembly and the literal meridian expansion at pi*i/N on any cofinal level sequence. The original coefficient and shifted source-ratio expansions, eventual nonvanishing, and action/amplitude identification remain inputs. The fixed operator is assumed to exist; its denominator/q-1 normalization, nonzero Laurent specialization, analytic germ and geometric irreducible-factor conclusion remain written."
     },
     {
       "id": "geometric_selected_factor_of_actual_recurrence",
@@ -3983,23 +4007,23 @@
       "statement": "The actual integer supports propagate through every ordered product and turn. Contracting adjacent product vertices gives the reduced strict criterion, and any original leaf can be exposed without changing the closed evaluation or its wire constraints.",
       "sources": [
         {
-          "path": "papers/strict-newton-profiles/syntax.tex",
+          "path": "papers/newton-calculus/supports.tex",
           "anchor": "\\label{st:finite-support}"
         },
         {
-          "path": "papers/strict-newton-profiles/syntax.tex",
+          "path": "papers/newton-calculus/supports.tex",
           "anchor": "\\label{st:types}"
         },
         {
-          "path": "papers/strict-newton-profiles/syntax.tex",
+          "path": "papers/newton-calculus/supports.tex",
           "anchor": "\\label{st:hub-support}"
         },
         {
-          "path": "papers/strict-newton-profiles/syntax.tex",
+          "path": "papers/newton-calculus/supports.tex",
           "anchor": "\\label{st:reduced-junctions}"
         },
         {
-          "path": "papers/strict-newton-profiles/syntax.tex",
+          "path": "papers/newton-calculus/supports.tex",
           "anchor": "\\label{st:any-root}"
         }
       ],
@@ -4009,8 +4033,8 @@
           "reason": "The full Newton product, turn and closure identities determine the literal supports and the unchanged re-rooted evaluation."
         }
       ],
-      "coverage": "Profiles Section 2 is finite and combinatorial. Its strict states are used by separate variational and geometric theorems.",
-      "article": "strict-newton-profiles"
+      "coverage": "Section5 of the combined Newton paper proves the exact support, reduced-junction criterion and exposure of any original leaf while retaining the finite source.",
+      "article": "newton-calculus"
     },
     {
       "id": "recursive_strict_boundary_profiles",
@@ -4019,19 +4043,19 @@
       "statement": "Harmonic addition determines the absolute one-sided profiles and satellite constants of every strict subtree. The reference-leaf parameter lies in [1/2,1), with its exceptional equality case specified, and the budget at any exposed leaf is the same original complete action.",
       "sources": [
         {
-          "path": "papers/strict-newton-profiles/profiles.tex",
+          "path": "papers/newton-calculus/profiles.tex",
           "anchor": "\\label{st:profiles}"
         },
         {
-          "path": "papers/strict-newton-profiles/profiles.tex",
+          "path": "papers/newton-calculus/profiles.tex",
           "anchor": "\\label{st:probe}"
         },
         {
-          "path": "papers/strict-newton-profiles/profiles.tex",
+          "path": "papers/newton-calculus/profiles.tex",
           "anchor": "\\label{st:root-budget}"
         },
         {
-          "path": "papers/strict-newton-profiles/profiles.tex",
+          "path": "papers/newton-calculus/profiles.tex",
           "anchor": "\\label{st:quarter}"
         }
       ],
@@ -4045,8 +4069,8 @@
           "reason": "Permits exposure of any original leaf while preserving the original finite evaluation and wire constraints."
         }
       ],
-      "coverage": "Profiles Theorems 4.3–4.4, Corollary 4.5 and Theorem 5.1 are variational identities. They do not import a hyperbolic metric or a quantum packet.",
-      "article": "strict-newton-profiles"
+      "coverage": "Theorems7.3–7.4, Corollary7.5 and Theorem8.1 of the combined Newton paper prove variational identities. They do not import a hyperbolic metric or a quantum asymptotic.",
+      "article": "newton-calculus"
     },
     {
       "id": "recursive_strict_component_bounds",
@@ -5116,12 +5140,12 @@
       "statement": "The literal finite sine factorial has logarithm NJ(r/N)+O(log N), uniformly through both endpoints. Applying it to the original leaf and product coefficients retains the finite affine offsets with the same logarithmic error. This local estimate does not require a completed-root or strict global optimizer.",
       "sources": [
         {
-          "path": "papers/newton-tangles/main.tex",
+          "path": "papers/newton-calculus/variation.tex",
           "anchor": "\\label{lem:factorial-action}"
         },
         {
-          "path": "papers/newton-tangles/main.tex",
-          "anchor": "\\label{eq:uniform-state-action}"
+          "path": "papers/newton-calculus/variation.tex",
+          "anchor": "\\label{st:weight-rate}"
         }
       ],
       "depends_on": [
@@ -5130,7 +5154,7 @@
           "reason": "Specifies the exact factorial coefficients and finite support to which the uniform real estimate is applied."
         }
       ],
-      "article": "newton-tangles"
+      "article": "newton-calculus"
     },
     {
       "id": "recursive_strict_optimizer",
@@ -5139,19 +5163,19 @@
       "statement": "Every fixed strict ordered expression has the stated primitive wire coordinates, a unique strict closed or admissible fixed-output action maximum and a negative definite Hessian on its free directions. Boundary descent establishes interior existence; continuity includes admissible endpoint profiles. Uniform factorial rates and integer rounding give the all-integer positive-source limit.",
       "sources": [
         {
-          "path": "papers/strict-newton-profiles/variation.tex",
+          "path": "papers/newton-calculus/variation.tex",
           "anchor": "\\label{st:lattice}"
         },
         {
-          "path": "papers/strict-newton-profiles/variation.tex",
+          "path": "papers/newton-calculus/variation.tex",
           "anchor": "\\label{st:barrier}"
         },
         {
-          "path": "papers/strict-newton-profiles/variation.tex",
+          "path": "papers/newton-calculus/variation.tex",
           "anchor": "\\label{st:positive-action}"
         },
         {
-          "path": "papers/strict-newton-profiles/variation.tex",
+          "path": "papers/newton-calculus/variation.tex",
           "anchor": "\\label{st:gate-curvature}"
         }
       ],
@@ -5166,24 +5190,24 @@
         }
       ],
       "coverage": "A pure finite and variational result. It assumes no complete metric, signed core packet or filling asymptotic.",
-      "article": "strict-newton-profiles"
+      "article": "newton-calculus"
     },
     {
       "id": "recursive_stationary_port_identities",
-      "title": "Stationary port identities and exact type parameters",
+      "title": "Stationary boundary triples and exact type parameters",
       "group": "local_asymptotics",
-      "statement": "At the strict optimizer, output derivatives define the two port parameters. Product and turn equations give the three output-type parameter tables and the literal remaining-input support identities used to assemble the geometric masks.",
+      "statement": "At each strict fixed-output maximum, its output and the derivative of its profile define a triple (B,X,Y). Product and turn equations give the parameter formulas for low, high and unrestricted outputs. These are variational identities before any global geometric construction.",
       "sources": [
         {
-          "path": "papers/strict-newton-profiles/profiles.tex",
+          "path": "papers/newton-calculus/profiles.tex",
           "anchor": "\\label{st:port}"
         },
         {
-          "path": "papers/strict-newton-profiles/profiles.tex",
+          "path": "papers/newton-calculus/profiles.tex",
           "anchor": "\\label{st:port-product}"
         },
         {
-          "path": "papers/strict-newton-profiles/profiles.tex",
+          "path": "papers/newton-calculus/profiles.tex",
           "anchor": "\\label{st:port-types}"
         }
       ],
@@ -5193,7 +5217,7 @@
           "reason": "The strict differentiable fixed-output maximizers justify the envelope derivatives; their local stationary equations give the product and type identities."
         }
       ],
-      "article": "strict-newton-profiles"
+      "article": "newton-calculus"
     },
     {
       "id": "recursive_scalar_comparisons",
@@ -5452,14 +5476,14 @@
       "id": "recursive_completed_port_bounds",
       "title": "Stationary inequalities for completed positive reference trees",
       "group": "local_asymptotics",
-      "statement": "At the strict maximum of a completed positive reference tree, stationary leaf and child-output parameters obey the strict bounds needed by the scalar attachment comparison. These are inequalities for the fixed positive reference, not a restriction on the arbitrary coefficient arrays subsequently dominated by it.",
+      "statement": "For a completed/completed closure, every stationary leaf label a lies strictly between 1/4 and arctan(2)/pi. The proof propagates the boundary-triple inequalities through products and turns. These bounds are for the fixed positive reference; they do not restrict the arbitrary coefficient arrays later dominated by it.",
       "sources": [
         {
-          "path": "papers/newton-tangles/main.tex",
+          "path": "papers/newton-calculus/completed.tex",
           "anchor": "\\label{lem:port-bounds}"
         },
         {
-          "path": "papers/newton-tangles/main.tex",
+          "path": "papers/newton-calculus/completed.tex",
           "anchor": "\\label{eq:leaf-window}"
         }
       ],
@@ -5467,9 +5491,13 @@
         {
           "id": "recursive_positive_source",
           "reason": "Gives the actual completed positive stationary point; the local product and turn identities propagate its boundary inequalities."
+        },
+        {
+          "id": "recursive_stationary_port_identities",
+          "reason": "Lemma9.5 uses the already proved product and turn equations for the boundary triples."
         }
       ],
-      "article": "newton-tangles"
+      "article": "newton-calculus"
     },
     {
       "id": "analytic_actual_triangle_balance",
@@ -6338,11 +6366,13 @@
     },
     "newton-tangles": {
       "title": "Newton coefficients and positive sources for Conway tangles",
-      "path": "papers/newton-tangles/main.tex"
+      "path": "papers/newton-tangles/main.tex",
+      "edition": "earlier"
     },
     "strict-newton-profiles": {
       "title": "Stationary profiles of strict Newton trees",
-      "path": "papers/strict-newton-profiles/main.tex"
+      "path": "papers/strict-newton-profiles/main.tex",
+      "edition": "earlier"
     },
     "meridian-tangles": {
       "title": "Exact Newton calculus for tangles with a moving meridian",
@@ -6437,6 +6467,10 @@
     "meridian-expansions": {
       "title": "Meridian expansions and classical symbols of quantum recurrences",
       "path": "papers/meridian-expansions/main.tex"
+    },
+    "newton-calculus": {
+      "title": "Newton calculus and stationary profiles of Conway tangles",
+      "path": "papers/newton-calculus/main.tex"
     }
   },
   "article_dependencies": [
@@ -6907,7 +6941,7 @@
     },
     {
       "from": "filling-bounds",
-      "to": "newton-tangles",
+      "to": "newton-calculus",
       "witnesses": [
         {
           "path": [
@@ -7517,7 +7551,7 @@
       ]
     },
     {
-      "from": "newton-tangles",
+      "from": "newton-calculus",
       "to": "conway-asymptotics",
       "witnesses": [
         {
@@ -7554,11 +7588,18 @@
             "recursive_local_packet_filling"
           ],
           "reason": "Supplies the completed-root strict maximum, primitive coordinates and stationary high-index leaf window."
+        },
+        {
+          "path": [
+            "recursive_strict_optimizer",
+            "recursive_strict_pure_packet"
+          ],
+          "reason": "Supplies the primitive lattice, strict global maximum and nondegenerate wire Hessian."
         }
       ]
     },
     {
-      "from": "newton-tangles",
+      "from": "newton-calculus",
       "to": "conway-fillings",
       "witnesses": [
         {
@@ -7571,7 +7612,7 @@
       ]
     },
     {
-      "from": "newton-tangles",
+      "from": "newton-calculus",
       "to": "conway-geometry",
       "witnesses": [
         {
@@ -7584,7 +7625,7 @@
       ]
     },
     {
-      "from": "newton-tangles",
+      "from": "newton-calculus",
       "to": "conway-source-bounds",
       "witnesses": [
         {
@@ -7628,11 +7669,32 @@
             "recursive_completed_source_gap"
           ],
           "reason": "Identifies the completed-root complete action and strict state used in this specialization."
+        },
+        {
+          "path": [
+            "recursive_strict_boundary_profiles",
+            "recursive_strict_component_bounds"
+          ],
+          "reason": "Gives the positive reference profile and its exact absolute action budget."
+        },
+        {
+          "path": [
+            "recursive_strict_boundary_profiles",
+            "recursive_strict_source_gap"
+          ],
+          "reason": "Makes the sum of propagated constants exactly the complete positive action of the original tree."
+        },
+        {
+          "path": [
+            "recursive_strict_normal_form",
+            "recursive_strict_source_gap"
+          ],
+          "reason": "Allows decomposition into character and unflagged regions and any-leaf rooting of the original expression."
         }
       ]
     },
     {
-      "from": "newton-tangles",
+      "from": "newton-calculus",
       "to": "meridian-tangles",
       "witnesses": [
         {
@@ -7645,7 +7707,7 @@
       ]
     },
     {
-      "from": "newton-tangles",
+      "from": "newton-calculus",
       "to": "moving-meridian-sources",
       "witnesses": [
         {
@@ -7675,11 +7737,39 @@
             "recursive_moving_component_pressure"
           ],
           "reason": "Exact complete metric, positive products and odd projector identity."
+        },
+        {
+          "path": [
+            "recursive_strict_boundary_profiles",
+            "recursive_moving_component_gap"
+          ],
+          "reason": "Original probe/root budgets and retained constants."
+        },
+        {
+          "path": [
+            "recursive_strict_boundary_profiles",
+            "recursive_moving_component_pressure"
+          ],
+          "reason": "Stationary response laws with absolute profile constants."
+        },
+        {
+          "path": [
+            "recursive_strict_optimizer",
+            "analytic_moving_strict_packet"
+          ],
+          "reason": "Original shared strict maximum, primitive lattice and complement gap."
+        },
+        {
+          "path": [
+            "recursive_strict_optimizer",
+            "recursive_moving_component_pressure"
+          ],
+          "reason": "Primitive gate/leaf action and strict optimizer framework; the enlarged constrained boundary proof is supplied here."
         }
       ]
     },
     {
-      "from": "newton-tangles",
+      "from": "newton-calculus",
       "to": "preferred-longitudes",
       "witnesses": [
         {
@@ -7688,11 +7778,18 @@
             "geo_bare_hub_legendre"
           ],
           "reason": "Supplies the uniform scalar sine-factorial coefficient rate including boundary offsets."
+        },
+        {
+          "path": [
+            "recursive_stationary_port_identities",
+            "geo_bare_hub_legendre"
+          ],
+          "reason": "Gives the exact response inequalities establishing the physical-label window and exceptional half edge."
         }
       ]
     },
     {
-      "from": "newton-tangles",
+      "from": "newton-calculus",
       "to": "quarter-index-asymptotics",
       "witnesses": [
         {
@@ -7701,26 +7798,6 @@
             "recursive_quarter_leaf_expansion"
           ],
           "reason": "Fixes the actual finite source, its two recurrence channels and the exact source anchor."
-        }
-      ]
-    },
-    {
-      "from": "newton-tangles",
-      "to": "strict-newton-profiles",
-      "witnesses": [
-        {
-          "path": [
-            "recursive_factorial_rate",
-            "recursive_strict_optimizer"
-          ],
-          "reason": "Identifies the positive variational maximum with the original finite positive-source rate, including boundary support and both parities."
-        },
-        {
-          "path": [
-            "recursive_finite_source",
-            "recursive_strict_normal_form"
-          ],
-          "reason": "The full Newton product, turn and closure identities determine the literal supports and the unchanged re-rooted evaluation."
         }
       ]
     },
@@ -7940,20 +8017,7 @@
       ]
     },
     {
-      "from": "strict-newton-profiles",
-      "to": "conway-asymptotics",
-      "witnesses": [
-        {
-          "path": [
-            "recursive_strict_optimizer",
-            "recursive_strict_pure_packet"
-          ],
-          "reason": "Supplies the primitive lattice, strict global maximum and nondegenerate wire Hessian."
-        }
-      ]
-    },
-    {
-      "from": "strict-newton-profiles",
+      "from": "newton-calculus",
       "to": "conway-reductions",
       "witnesses": [
         {
@@ -7966,81 +8030,7 @@
       ]
     },
     {
-      "from": "strict-newton-profiles",
-      "to": "conway-source-bounds",
-      "witnesses": [
-        {
-          "path": [
-            "recursive_strict_boundary_profiles",
-            "recursive_strict_component_bounds"
-          ],
-          "reason": "Gives the positive reference profile and its exact absolute action budget."
-        },
-        {
-          "path": [
-            "recursive_strict_boundary_profiles",
-            "recursive_strict_source_gap"
-          ],
-          "reason": "Makes the sum of propagated constants exactly the complete positive action of the original tree."
-        },
-        {
-          "path": [
-            "recursive_strict_normal_form",
-            "recursive_strict_source_gap"
-          ],
-          "reason": "Allows decomposition into character and unflagged regions and any-leaf rooting of the original expression."
-        }
-      ]
-    },
-    {
-      "from": "strict-newton-profiles",
-      "to": "moving-meridian-sources",
-      "witnesses": [
-        {
-          "path": [
-            "recursive_strict_boundary_profiles",
-            "recursive_moving_component_gap"
-          ],
-          "reason": "Original probe/root budgets and retained constants."
-        },
-        {
-          "path": [
-            "recursive_strict_boundary_profiles",
-            "recursive_moving_component_pressure"
-          ],
-          "reason": "Stationary response laws with absolute profile constants."
-        },
-        {
-          "path": [
-            "recursive_strict_optimizer",
-            "analytic_moving_strict_packet"
-          ],
-          "reason": "Original shared strict maximum, primitive lattice and complement gap."
-        },
-        {
-          "path": [
-            "recursive_strict_optimizer",
-            "recursive_moving_component_pressure"
-          ],
-          "reason": "Primitive gate/leaf action and strict optimizer framework; the enlarged constrained boundary proof is supplied here."
-        }
-      ]
-    },
-    {
-      "from": "strict-newton-profiles",
-      "to": "preferred-longitudes",
-      "witnesses": [
-        {
-          "path": [
-            "recursive_stationary_port_identities",
-            "geo_bare_hub_legendre"
-          ],
-          "reason": "Gives the exact response inequalities establishing the physical-label window and exceptional half edge."
-        }
-      ]
-    },
-    {
-      "from": "strict-newton-profiles",
+      "from": "newton-calculus",
       "to": "strict-conway-geometry",
       "witnesses": [
         {

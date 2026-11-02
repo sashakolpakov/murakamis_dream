@@ -97,8 +97,11 @@ modules construct the actual ring map \(u=hs\), prove its injectivity,
 construct formal exponentials, and prove coefficient uniqueness for
 actual complex asymptotic expansions. Their finite gauge construction
 retains all meridian factors and the sign. The characteristic theorem
-combines these into a classical identity, assuming the exact finite
-equation has the stated all-orders expansion. Operator existence,
+combines these into a classical identity. The actual recurrence modules
+now derive the sine normalization, denominator clearing and whole finite
+expansion from estimates for the original coefficients and source ratios.
+They also prove the literal meridian-factor expansion at the physical
+root-of-unity scale. Operator existence,
 nonzero classical normalization and geometric factor identification
 remain application arguments.
 
@@ -122,7 +125,7 @@ python3 repro/check_paper_algebra.py --output repro/results/paper-algebra
 The runner requires SymPy, python-flint, NumPy and mpmath. It saves each program's
 output and stops on a failed check. Its source record covers all registered
 papers, including earlier editions, and the scripts used by those checks.
-Unregistered working drafts are excluded from that publication record. Its twenty-five groups cover polynomial
+Unregistered working drafts are excluded from that publication record. Its twenty-four groups cover polynomial
 resolvents and path partitions, positive-matrix identities and parity
 anchors, filling-sum normalization, symbolic peripheral coordinates,
 rational three-braid constants, the complete forty-branch planar
@@ -135,8 +138,8 @@ filling's symbolic peripheral and volume identities. The quarter-index
 group compares the literal finite factorial source with its recurrence
 and terminal walls, and checks two-channel transport identities. The
 directed-tree group verifies its rational budgets, endpoint pairings and
-finite quotient-versus-normal trace calculations. The strict-profile group
-checks exact supports, turn-and-product identities and rational harmonic
+finite quotient-versus-normal trace calculations. The same combined Newton group
+also checks exact supports, turn-and-product identities and rational harmonic
 responses. The strict-geometry group checks boundary labels, original
 endpoint pairings and peripheral identities. The consolidated source
 group also checks its full Fourier formula and derivative terms, including

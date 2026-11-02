@@ -1,0 +1,20 @@
+\begin{tikzpicture}[scale=.95,>=Latex,every node/.style={font=\small},
+ junction/.style={circle,draw,fill=white,minimum size=6mm,inner sep=1pt}]
+ \node[junction] (a) at (-1.65,0) {$C_3$};
+ \node[junction] (b) at (1.65,0) {$C_3$};
+ \coordinate (l1) at (-3.35,1.2);
+ \coordinate (l2) at (-3.35,-1.2);
+ \coordinate (l3) at (3.35,1.2);
+ \coordinate (l4) at (3.35,-1.2);
+ \draw[thick] (a)--(b) node[midway,above=3pt] {$\T$};
+ \draw[thick] (a)--(l1) node[pos=.52,above left] {$\T$};
+ \draw[thick] (a)--(l2);
+ \draw[thick] (b)--(l3) node[pos=.52,above right] {$\T$};
+ \draw[thick] (b)--(l4);
+ \fill (l1) circle(2pt) node[left=4pt] {$h_1$};
+ \fill (l2) circle(2pt) node[left=4pt] {$h_2$};
+ \fill (l3) circle(2pt) node[right=4pt] {$h_3$};
+ \fill (l4) circle(2pt) node[right=4pt] {$h_4$};
+ \node at (0,-1.65)
+ {$\phi\bigl((\T h_1)h_2\,\T((\T h_3)h_4)\bigr)$};
+\end{tikzpicture}

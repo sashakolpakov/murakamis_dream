@@ -4,7 +4,7 @@ This paper gives actual ordered tangle isotopies and a terminating reduction bef
 
 The application imports Theorem 1.1 of *Holomorphic source asymptotics and volume limits for strict Conway compositions*. Only the surviving strict-factor weights must be sufficiently large; the original expression and integer assignment are fixed before the level tends to infinity. The hyperbolic criterion uses the explicit long strict and elementary terminal factors. No general prime decomposition, new estimate for short twists, or quantum connected-sum theorem is claimed.
 
-The finite strict type test is the one in *Stationary profiles of strict Newton trees*, Lemma 2.2 and Theorem 2.5. The reduced invariant normalization is *Finite spectral evaluation and uniform filling bounds*, Theorem 10.1, at levels at least three.
+The finite strict type test is the one in *Newton calculus and stationary profiles of Conway tangles*, Lemma 5.2 and Theorem 5.5. The reduced invariant normalization is *Finite spectral evaluation and uniform filling bounds*, Theorem 10.1, at levels at least three.
 
 Build locally from this directory:
 

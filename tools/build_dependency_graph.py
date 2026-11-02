@@ -55,6 +55,31 @@ def closure(start, adjacency):
     return found
 
 
+def prerequisite_routes(nodes, edges):
+    """Trace each statement's recorded prerequisites, counting shared uses once.
+
+    A route contains the target and its ancestors, in dependency order. It
+    does not collect unrelated statements from the same article or downstream
+    applications. The inventory may omit background lemmas, so this is not a
+    proof that these are sufficient or minimal reading requirements.
+    """
+    order, incoming, _ = topological(nodes, edges)
+    result = {}
+    for target in order:
+        ancestors = closure(target, incoming) | {target}
+        statements = [name for name in order if name in ancestors]
+        articles = list(dict.fromkeys(
+            nodes[name]["article"] for name in statements
+            if nodes[name]["article"] is not None))
+        result[target] = {
+            "statements": statements,
+            "articles": articles,
+            "unowned_statements": [name for name in statements
+                                   if nodes[name]["article"] is None],
+        }
+    return result
+
+
 def reduce_edges(edges, outgoing):
     """Remove edges whose endpoint is already reached through another neighbor."""
     result = set(edges)
@@ -248,13 +273,15 @@ const h=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','
 Object.entries(data.groups).forEach(([id,g])=>{let o=document.createElement('option');o.value=id;o.textContent=g.title;groups.append(o)});
 function button(n){return '<button data-node="'+h(n.id)+'">'+h(n.title)+'</button>'}
 function articleLink(id){const a=data.articles[id];return '<a href="'+h(a.url)+'">'+h(a.title)+'</a>'+(a.edition==='earlier'?' <span class="small">(earlier edition)</span>':'')}
+function proofRoute(id){const r=data.analysis.prerequisite_routes[id];return '<section id="proof-route"><h3>The recorded proof route</h3><p>This statement and its prerequisites use '+r.statements.length+' recorded results in '+r.articles.length+' articles'+(r.unowned_statements.length?', with '+r.unowned_statements.length+' results outside the article assignments':'')+'. Shared prerequisites appear once. Only the named results are included; other results in those articles are not added automatically.</p><details><summary>Show the results in dependency order</summary><ol>'+r.statements.map(n=>'<li>'+button(nodes.get(n))+'<br><span class="small">'+(nodes.get(n).article===null?'No article owner is assigned.':articleLink(nodes.get(n).article))+'</span></li>').join('')+'</ol></details><p class="small">The route follows the declared inventory. It does not establish that every background lemma has been recorded, or that this is the shortest possible proof.</p></section>'}
 function renderList(){list.innerHTML=data.nodes.filter(n=>(!groups.value||n.group===groups.value)&&(!search.value||(n.title+' '+n.statement).toLowerCase().includes(search.value.toLowerCase()))).map(n=>'<button class="'+(n.id===selected?'selected':'')+'" data-node="'+h(n.id)+'">'+h(n.title)+'</button>').join('')||'<p>No matching statements.</p>'}
-function select(id){const n=nodes.get(id);if(!n)return;selected=id;renderList();let users=data.nodes.filter(x=>x.depends_on.some(d=>d.id===id));details.innerHTML='<p class="label">'+h(data.groups[n.group].title)+'</p><h2>'+h(n.title)+'</h2><p>'+h(n.statement)+'</p><p class="small">'+(n.article===null?'No article owner is assigned in this inventory.':'Article: '+articleLink(n.article))+'</p>'+(n.status==='open'?'<p class="open">This result remains open.</p>':'')+'<h3>Where it is stated or proved</h3><ul>'+n.sources.map(s=>'<li><a href="'+h(s.url)+'">'+h(s.path)+'</a><br><code>'+h(s.anchor)+'</code></li>').join('')+'</ul><h3>Direct prerequisites</h3>'+(n.depends_on.length?n.depends_on.map(d=>'<div class="dep">'+button(nodes.get(d.id))+'<br>'+h(d.reason)+'</div>').join(''):'<p>No earlier result in this inventory is required. Definitions and standard background are stated in the source; this is not a claim of logical independence from all mathematics.</p>')+'<h3>Used directly by</h3>'+(users.length?users.map(u=>'<div class="dep">'+button(u)+'<br>'+h(u.depends_on.find(d=>d.id===id).reason)+'</div>').join(''):'<p>No downstream use is recorded here.</p>')+(n.coverage?'<p class="small">'+h(n.coverage)+'</p>':'');location.hash=id}
+function select(id){const n=nodes.get(id);if(!n)return;selected=id;renderList();let users=data.nodes.filter(x=>x.depends_on.some(d=>d.id===id));details.innerHTML='<p class="label">'+h(data.groups[n.group].title)+'</p><h2>'+h(n.title)+'</h2><p>'+h(n.statement)+'</p><p class="small">'+(n.article===null?'No article owner is assigned in this inventory.':'Article: '+articleLink(n.article))+'</p>'+(n.status==='open'?'<p class="open">This result remains open.</p>':'')+'<h3>Where it is stated or proved</h3><ul>'+n.sources.map(s=>'<li><a href="'+h(s.url)+'">'+h(s.path)+'</a><br><code>'+h(s.anchor)+'</code></li>').join('')+'</ul><h3>Direct prerequisites</h3>'+(n.depends_on.length?n.depends_on.map(d=>'<div class="dep">'+button(nodes.get(d.id))+'<br>'+h(d.reason)+'</div>').join(''):'<p>No earlier result in this inventory is required. Definitions and standard background are stated in the source; this is not a claim of logical independence from all mathematics.</p>')+'<h3>Used directly by</h3>'+(users.length?users.map(u=>'<div class="dep">'+button(u)+'<br>'+h(u.depends_on.find(d=>d.id===id).reason)+'</div>').join(''):'<p>No downstream use is recorded here.</p>')+proofRoute(id)+(n.coverage?'<p class="small">'+h(n.coverage)+'</p>':'');location.hash=id}
 document.addEventListener('click',e=>{let b=e.target.closest('[data-node]');if(b){select(b.dataset.node);return}let a=e.target.closest('[data-group]');if(a){e.preventDefault();groups.value=a.dataset.group;search.value='';renderList();location.hash=groups.value;document.querySelector('.controls').scrollIntoView({block:'start'})}});
 groups.addEventListener('change',renderList);search.addEventListener('input',renderList);document.getElementById('clear').addEventListener('click',()=>{groups.value='';search.value='';renderList()});
 document.getElementById('analysis').innerHTML='<p>'+data.nodes.length+' statements and '+data.analysis.edges+' direct uses are recorded. The statement graph, proposed component graph and explicit article graph have no directed cycles. The article graph has '+data.analysis.articles+' articles and '+data.analysis.article_edges.length+' witnessed imports; '+data.analysis.unowned_statements+' statements have no assigned article owner.</p><p>The most widely used prerequisites, counted by distinct downstream statements in this inventory, are:</p><ul>'+data.analysis.shared_prerequisites.slice(0,6).map(x=>'<li>'+button(nodes.get(x.id))+' — '+x.downstream+' downstream statements</li>').join('')+'</ul><p>These counts locate shared foundations; they measure neither mathematical importance nor how much of a proof has been verified.</p>';
 document.getElementById('articles').innerHTML='<ul>'+data.analysis.article_topological_order.map(id=>{const imports=data.article_dependencies.filter(e=>e.to===id);return '<li>'+articleLink(id)+(imports.length?'<ul>'+imports.map(e=>'<li>Uses '+articleLink(e.from)+'<details><summary>Theorem-path witnesses</summary><ul>'+e.witnesses.map(w=>'<li>'+w.path.map(n=>button(nodes.get(n))).join(' → ')+'<br>'+h(w.reason)+'</li>').join('')+'</ul></details></li>').join('')+'</ul>':'<p class="small">No earlier article import is recorded.</p>')+'</li>'}).join('')+'</ul>';
 const initial=decodeURIComponent(location.hash.slice(1));if(data.groups[initial])groups.value=initial;renderList();select(nodes.has(initial)?initial:data.nodes[0].id);
+window.addEventListener('hashchange',()=>{const id=decodeURIComponent(location.hash.slice(1));if(nodes.has(id)&&id!==selected){select(id)}else if(data.groups[id]){groups.value=id;search.value='';renderList()}});
 </script></body></html>'''
 
 
@@ -303,6 +330,7 @@ def main():
                 "shared_prerequisites": sorted([{"id": n, "downstream": len(closure(n, outgoing))} for n in nodes], key=lambda x: (-x["downstream"], x["id"])),
                 "source_sha256": hashes}
     analysis.update(article_analysis)
+    analysis["prerequisite_routes"] = prerequisite_routes(nodes, edges)
     analysis["source_sha256"]["papers/dependencies.json"] = hashlib.sha256(source.read_bytes()).hexdigest()
     analysis["source_sha256"]["tools/build_dependency_graph.py"] = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
     data["analysis"] = analysis

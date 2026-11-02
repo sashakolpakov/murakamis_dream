@@ -7,8 +7,7 @@ Theorem 1.1 constructs the original finite wire packet and proves its holomorphi
 The new estimates are the whole low trace, reflected high-index trace, coupled pressure comparison, simultaneous half-boundary reassembly and the strict Fourier loss at equality saddles. The proof uses the following numbered companion inputs:
 
 - *Exact Newton calculus for tangles with a moving meridian*: Proposition 6.1, equation (6.4), Theorem 7.1 and Proposition 8.1 for the physical crossing, normals, original contraction and scalar ledger.
-- *Newton coefficients and positive sources for Conway tangles*: Theorem 3.3 for exact complete positive multiplication.
-- *Stationary profiles of strict Newton trees*: Lemma 2.2, Theorem 2.5, Theorem 3.3, Lemma 4.1, Proposition 4.2, Theorems 4.3–4.4 and Corollary 4.5 for strict syntax, the original optimizer and its absolute branch budgets.
+- *Newton calculus and stationary profiles of Conway tangles*: Theorem 3.3 for exact complete positive multiplication; Lemma 5.2 and Theorem 5.5 for strict syntax; Theorem 6.4 for the original optimizer; Lemma 7.1, Proposition 7.2, Theorems 7.3–7.4 and Corollary 7.5 for stationary response and absolute branch budgets.
 - *Spectral estimates for Conway tangle sources*: Lemma 2.1 for complete Hermite conditioning and Lemma 7.2 for the angular estimate. The paper proves the local argument that upgrades the latter's subexponential prefactor to the polynomial bound used here.
 - *Holomorphic source asymptotics and volume limits for strict Conway compositions*: Lemma 2.1 for the canonical factorial interpolation and its bulk expansions.
 

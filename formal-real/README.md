@@ -24,7 +24,8 @@ inequalities and compatible total demand imply existence of the actual
 loads, their unique grounded balance, and the positive table itself.
 The formal-series modules construct meridian shifts, regrading and
 exponentiation, then derive a classical identity from the stated
-all-orders estimates for an exact equation. A separate analytic module
+all-orders estimates for the original coefficients and source ratios
+of an actual finite recurrence. A separate analytic module
 proves common nonvanishing thresholds and uniform logarithmic rates
 from uniform microscopic profiles.
 
@@ -972,6 +973,13 @@ cd formal-real
 MATHLIB_NO_CACHE_ON_UPDATE=1 lake update volumeLogic mathlib
 lake exe cache get \
   Mathlib.Analysis.Complex.Basic \
+  Mathlib.Analysis.SpecialFunctions.Trigonometric.Complex \
+  Mathlib.Analysis.SpecialFunctions.Exp \
+  Mathlib.Analysis.SpecificLimits.Basic \
+  Mathlib.RingTheory.PowerSeries.Trunc \
+  Mathlib.Algebra.Polynomial.Div \
+  Mathlib.Topology.Algebra.Polynomial \
+  Mathlib.Tactic.FieldSimp \
   Mathlib.Analysis.Convex.Deriv \
   Mathlib.Analysis.SpecialFunctions.Integrals.LogTrigonometric \
   Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus \
@@ -1163,14 +1171,69 @@ cancellation in the domain \(\mathbb C[[u]]\) gives the classical
 polynomial identity. This cancellation is inside a proved identity;
 \(f\) is not a unit at the complete meridian.
 
-The connection to the physical recurrence still requires its exact
-finite equation and its all-orders expansion to be identified with
-these constructed coefficients. The fixed operator's denominators and
-common \(q-1\) valuation must be normalized as in the written paper.
-The formal theorem does not prove existence of an operator or that its
-classical polynomial is nonzero. Analytic convergence of the resulting
-germ, its irreducible factor and the preferred geometric longitude
-remain the paper's separate written arguments.
+## The actual finite recurrence at roots of unity
+
+[ActualGauge.lean](ActualGauge.lean) starts with the actual finite
+recurrence, before any expansion. Write its shifted values as
+\[
+ F_N(s+j)=K_N H_N(s+j)Z_N(s+j),\qquad
+ H_N(s)=\frac{\sin\pi s}{N\sin(\pi s/N)}.
+\]
+Here the quotient is used on a nonreal parameter set. Every shifted
+sine denominator is nonzero there; this fact is proved. The function's
+removable extension at zero is a separate definition and is not needed
+in this argument. With \(q_N=e^{\pi i/N}\), \(M_N=q_N^s\), put
+\[
+ f_{N,j}=q_N^jM_N-(q_N^jM_N)^{-1}.
+\]
+The module proves the root identity, the meridian shift and the exact
+multiplied normalization identity
+\[
+ H_N(s+j)f_{N,j}=(-1)^jH_N(s)f_{N,0}.
+\]
+The original recurrence therefore implies the equation with the cleared
+coefficients defined above, divided by the nonzero unshifted source
+\(Z_N(s)\). The exceptional zeroth coefficient keeps the full product
+of shifted factors. No inverse of the unshifted meridian factor is used.
+
+[RecurrenceExpansion.lean](RecurrenceExpansion.lean) proves how to expand
+that finite equation. An actual function has formal expansion \(P\)
+when its remainder after degree \(m\) is \(O(h^{m+1})\) for every
+\(m\). The module proves closure under finite sums and products.
+For products, the order-zero estimate gives boundedness. The difference
+between the product of two truncated polynomials and the truncation of
+the formal product is divisible by \(h^{m+1}\); evaluating its
+polynomial quotient gives the needed remainder estimate. This keeps
+all mixed coefficients of the product.
+
+[RecurrenceGaugeExpansion.lean](RecurrenceGaugeExpansion.lean) applies
+that calculation to each explicitly constructed cleared coefficient and
+then to the whole finite sum. Thus an expansion of the already assembled
+equation is a conclusion, rather than an additional application premise.
+Its exact zero value comes from the original recurrence and normalization.
+
+[MeridianExpansion.lean](MeridianExpansion.lean) supplies the remaining
+elementary meridian expansion. It proves that substitution \(u=hs\)
+commutes with the admissible formal exponential, then uses the actual
+complex exponential remainder estimate to identify every coefficient of
+\[
+ f_{N,j}=e^{(s+j)h_N}-e^{-(s+j)h_N},\qquad h_N=\pi i/N.
+\]
+The scale tends to zero and is eventually nonzero along every cofinal
+sequence of levels, including either parity. The theorem
+`characteristic_at_roots` joins these steps with the formal
+characteristic calculation.
+
+Its remaining analytic inputs are the expansions of the original
+operator coefficients and of the actual source ratios
+\(Z_N(s+j)/Z_N(s)\), with the formal action and amplitude specified.
+The recurrence itself, the exact source normalization, and eventual
+nonvanishing of \(K_N\) and \(Z_N(s)\) are also explicit inputs.
+These source estimates are not consequences of finite scalar algebra.
+The theorem does not construct an operator or prove that its classical
+polynomial is nonzero. Clearing its original rational denominators,
+removing the common \(q-1\) valuation, passing to a holomorphic germ
+and identifying the geometric factor remain written application steps.
 
 ## Uniform consequences of microscopic profiles
 
@@ -1228,7 +1291,9 @@ The checker rebuilds the Std-only path dependency, compiles
 `TriangleMinimizer.lean`, `TriangleBalance.lean`, `HallRecession.lean`
 `TriangleHall.lean`, `FormalShift.lean`, `FormalRegradingRing.lean`,
 `FormalExp.lean`, `AsymptoticIdentity.lean`, `FormalGauge.lean`,
-`FormalCharacteristic.lean` and `UniformProfile.lean`, and runs
+`FormalCharacteristic.lean`, `UniformProfile.lean`, `ActualGauge.lean`,
+`RecurrenceExpansion.lean`, `RecurrenceGaugeExpansion.lean` and
+`MeridianExpansion.lean`, and runs
 [AxiomAudit.lean](AxiomAudit.lean). Every
 definition and theorem must appear exactly once in the audit. Only Lean's
 standard foundational axioms `propext`, `Classical.choice` and `Quot.sound`

@@ -10,8 +10,7 @@ The separately retained signed results have their original scope: Proposition 3.
 
 ## Numbered imports
 
-- **Newton coefficients and positive sources for Conway tangles:** Proposition 3.2, Theorem 3.3, Proposition 4.1 and equation (4.8) for the exact local algebra; Lemma 5.2 for the uniform endpoint factorial estimate. The completed-root signed packet also uses Proposition 5.3 and Lemma 6.1.
-- **Stationary profiles of strict Newton trees:** Lemma 2.2 for strict types, Lemma 3.1 for primitive integer coordinates and all-level feasible approximation, and Theorem 3.3 for the unique strict optimizer and negative definite wire Hessian.
+- **Newton calculus and stationary profiles of Conway tangles:** Proposition 3.2, Theorem 3.3, Proposition 4.1 and equation (4.8) give the exact local algebra; Lemma 6.2 gives the uniform endpoint factorial estimate. Lemmas 5.2 and 6.1 give the strict type test and primitive integer coordinates with all-level feasible approximation. Theorem 6.4 gives the unique strict optimizer and negative definite wire Hessian. The completed-root signed packet separately uses Proposition 9.3 and the stronger leaf bound of Lemma 9.5.
 - **Spectral estimates for Conway tangle sources:** Theorem 1.1 for the full-source, physical-color and full-minus-core bounds at three or more leaves; Corollary 9.1 for exactly two leaves. The main volume proof uses their pure specialization. Proposition 3.1 is used separately in the older signed completed-root packet.
 - **Finite spectral evaluation and uniform filling bounds:** Proposition 5.1 for the full crossing and repeated-root normals, and Theorem 10.1 for reduced Kashaev normalization at N≥3.
 - **Oscillatory filling sums with independently long twists:** Theorem 1.1, after the present paper verifies both hypotheses for the exact even Fourier polynomial and matches every scalar and endpoint multiplicity.

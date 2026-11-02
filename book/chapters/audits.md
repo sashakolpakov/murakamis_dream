@@ -561,13 +561,31 @@ and gives the classical meridian factor and sign. The nonzero meridian
 factor is cancelled inside the resulting identity. It is not a unit at
 the complete meridian.
 
-To apply this theorem, the written argument must still identify the actual
-finite recurrence and its all-orders expansion with those formal data.
-The formal theorem neither constructs an annihilator nor proves that its
-classical polynomial is nonzero. The
-[meridian-expansion paper](../../docs/papers/meridian-expansions.pdf)
-supplies that application argument and the separate passage to a
-holomorphic germ and its selected geometric factor.
+The [finite recurrence calculation](../../formal-real/ActualGauge.lean)
+now supplies the exact cleared equation from the original recurrence and
+its source normalization. For nonreal \(s\), it proves that the literal
+sine quotient has no shifted denominator zero and satisfies the required
+integer-shift sign identity. The exceptional zeroth coefficient and every
+meridian factor are retained.
+
+The [expansion calculation](../../formal-real/RecurrenceExpansion.lean)
+then derives the expansion of the finite equation from its individual
+factors. Its product proof keeps every mixed coefficient: the difference
+between the product of the truncated polynomials and the truncation of
+their product is divisible by the next power of the small parameter.
+The [root-of-unity theorem](../../formal-real/MeridianExpansion.lean)
+also proves the elementary meridian expansion, using the complex
+exponential remainder at \(h_N=\pi i/N\). Thus the exact scalar gauge,
+finite expansion assembly and meridian-factor estimate are proved parts
+of the argument.
+
+The application still supplies the original recurrence, its exact source
+normalization, eventual nonvanishing, and the all-orders expansions of
+the original coefficients and actual shifted source ratios. The theorem
+does not construct an annihilator or establish nonzero classical
+specialization. The [meridian-expansion paper](../../docs/papers/meridian-expansions.pdf)
+gives the remaining application argument, the normalization in \(q-1\),
+and the separate passage to the selected holomorphic and geometric germ.
 
 A different [uniform-profile theorem](../../formal-real/UniformProfile.lean)
 addresses the compact-parameter conclusions of the circle-tree papers.

@@ -1,0 +1,76 @@
+\section{The completed-root subclass}\label{nt:completed}
+The preceding results allow every strict ordered expression. The
+following narrower recursive construction gives a stronger two-sided
+bound at each original leaf.
+
+\begin{definition}[Completed expressions]\label{def:grammar}
+Start with the stack $hh$. One may turn a constructed box, stack two
+constructed boxes, or attach a single elementary piece on either side.
+Equivalently,
+\[
+ E::=hh\mid\Turn(E)\mid E_1E_2\mid hE\mid Eh.
+\]
+A closed expression is $C(FG)$ with both $F$ and $G$ completed.
+The word ``completed'' specifies this rule; it has no metric meaning.
+\end{definition}
+
+\begin{lemma}[Strict feasibility]\label{lem:strict-feasible}
+Every completed expression has a strict state at every output $b\in(0,1)$. Every completed/completed cylindrical closure has a strict reduced state.
+\end{lemma}
+\begin{proof}
+For $hh$, choose equal leaves $a\in(b/2,\min(b,1/2))$. For a completed product choose its two outputs in the same interval and use induction in each child. For $hE$ or $Eh$, use that number for the bare leaf and for the completed child's output. A turn uses the child's strict state at $1-b$. At the closing product prescribe $1/2,1/2$ and remove its forced gate. All remaining inequalities are strict.
+\end{proof}
+
+By Lemma~\ref{st:types}, every completed expression has unrestricted
+type $A$. The two conclusions below record the specialization used in
+the completed-root applications. Write $Z_{F,G,N}=Z_N^0$ for the
+complete scalar of $C(FG)$.
+
+\begin{proposition}[Completed-root optimizer]\label{prop:strict-maximum}
+After deleting the forced closing gate, every completed/completed
+closure has a unique strict maximizer. Its Hessian on the primitive
+coordinates is negative definite. The fixed-output profile $f_E(b)$
+is real analytic on $0<b<1$ for every completed expression.
+\end{proposition}
+\begin{proof}
+Lemma~\ref{lem:strict-feasible} supplies the strict state and full
+output interval. Apply Theorem~\ref{st:positive-action}.
+\end{proof}
+
+\begin{corollary}[Completed-root positive-source limit]\label{cor:complete-limit}
+For the positive complete scalar of $C(FG)$,
+\[
+ \lim_{N\to\infty}\frac1N\log Z_{F,G,N}
+       =\max\mathcal A_{C(FG)}.
+\]
+\end{corollary}
+\begin{proof}
+This is the positive limit of Theorem~\ref{st:positive-action}
+on the same original wire polytope, using its primitive lattice
+approximation at every sufficiently large level of either parity.
+\end{proof}
+
+The stationary triples are exactly those of \eqref{st:port};
+their product and turn rules are Lemma~\ref{st:port-product}.
+The next argument strengthens the quarter bound on this subclass.
+
+\begin{lemma}[Bounds on the boundary parameters]\label{lem:port-bounds}
+The boundary parameters of every completed box satisfy $-Y<B<X$. In a completed/completed closure every completed descendant has $0<X,Y<1$, and every leaf satisfies
+\begin{equation}\label{eq:leaf-window}
+ \frac12<X_\ell=\cot\pi a_\ell<1,
+ \qquad \frac14<a_\ell<\frac{\arctan2}{\pi}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The base $hh$ has $B=X-1/(2X)$ and $Y=1/(2X)$. Turns preserve the claimed inequality. For a single attachment, \eqref{st:port-product-equations} becomes
+\[
+ B_o=X-\frac1{X+B},\qquad Y_o=\frac{Y}{X+B}.
+\]
+For $X\ge1$, the child inequality forces $B>\sqrt{X^2-1}$ and the result follows. For $X<1$, let $h_0=\sqrt{1-X^2}$ and $\alpha=\arccos X$. Express a child as $(B,Y)=(h_0\cot\beta,h_0\csc\beta)$. A bare leaf has $\beta=\alpha$, a completed child has $\beta>\alpha$, and product adds the angles, with their sum below $\pi$. This proves the strict upper bound and the lower bound $B_o+Y_o=h_0\cot((\beta_1+\beta_2)/2)>0$. It also proves the completed/completed step when $X<1$. When $X\ge1$, both completed children satisfy $\sqrt{X^2-1}<B_i<X$. Hence $0<X-B_i<X-\sqrt{X^2-1}\le1$, so $(X-B_1)(X-B_2)<1$. Formula~\eqref{st:port-product-equations} then gives $B_o<X$, while $B_o>0$ proves the lower bound.
+
+At closure the boundary triples of the two boxes are $(B,X,Y)$ and $(-B,X,Y)$. Applying both inequalities gives $|B|<\min(X,Y)$; the hyperboloid relation implies $X,Y<1$. In the angle chart, parent $Y<1$ puts the sum of child angles below $\pi-\alpha$, while each child angle is at least $\alpha$. Every completed child therefore has $Y<1$, and turns exchange the bounds. Finally, at a single attachment $Y_o<1$ gives
+$1<2X(X+B)<4X^2$. At an $hh$ base it gives $1/(2X)<1$. Thus every leaf has $X>1/2$, proving \eqref{eq:leaf-window}.
+\end{proof}
+
+For a fixed tree the inequalities give a compact neighborhood of every selected leaf inside $(1/4,1/2)$. This supplies a compact interior interval for later complex source estimates. It is not a uniform bound over an unbounded family of trees.
+

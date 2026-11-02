@@ -205,8 +205,8 @@ separate work.
 
 ## Reading and reproducing the work
 
-The [collection of research papers](papers/README.md) now contains twenty-four
-current drafts totaling 413 pages, ranging from 11 to 29 pages each.
+The [collection of research papers](papers/README.md) now contains twenty-three
+current drafts totaling 407 pages, ranging from 11 to 29 pages each.
 They separate the exact finite
 invariant, coefficient estimates, complex asymptotics and marked
 hyperbolic geometry from the application theorems. The strict
@@ -278,8 +278,10 @@ cut inequalities for the particular geometric incidence remains a
 written application step.
 The package now also proves the actual regrading ring map, formal
 exponential projection and meridian denominator-clearing calculation.
-These assemble into a classical polynomial identity once the exact
-recurrence has the specified all-orders expansion. Another theorem
+The root-of-unity recurrence calculation derives the whole equation’s
+expansion from the original coefficient and source-ratio estimates,
+including the literal sine normalization and meridian factors. It then
+gives the conditional classical polynomial identity. Another theorem
 derives one common nonvanishing threshold and a uniform logarithmic
 rate from a uniform microscopic profile. The
 [paper-by-paper coverage record](repro/PAPER_FORMAL_COVERAGE.md) separates

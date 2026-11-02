@@ -1,0 +1,140 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage[margin=30mm]{geometry}
+\usepackage{booktabs,enumitem,tikz,xcolor,xurl}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\usepackage[unicode,colorlinks=true,linkcolor=blue!45!black,urlcolor=blue!55!black,citecolor=green!35!black]{hyperref}
+\setlength{\emergencystretch}{2em}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\ii}{\mathrm i}\newcommand{\dd}{\mathrm d}
+\newcommand{\CC}{\mathbb C}\newcommand{\RR}{\mathbb R}\newcommand{\ZZ}{\mathbb Z}
+\newcommand{\cH}{\mathcal H}\newcommand{\Bhat}{\widehat B}
+\newcommand{\Turn}{\mathsf T}\newcommand{\Cheb}{\mathsf C}
+\newcommand{\Tr}{\operatorname{Tr}}\newcommand{\arccot}{\operatorname{arccot}}
+\newcommand{\T}{\mathsf T}\newcommand{\HH}{\mathcal H}\newcommand{\A}{\mathcal A}
+\newcommand{\eps}{\varepsilon}
+\title{Newton calculus and stationary profiles of Conway tangles}
+\author{}\date{}
+\begin{document}\maketitle
+\begin{abstract}
+At a principal root of unity, the two-strand Casimir has repeated
+spectral roots. We construct its full Newton calculus, including
+multiplication, physical quarter-turn, marked closure and colored
+crossing circles, with the derivative data at repeated roots retained.
+For arbitrary ordered Conway expressions, we determine the exact
+positive integer support and characterize the existence of a strict
+real state. For every expression admitting a strict state, the complete
+positive source has a unique interior maximum
+with negative definite Hessian on its primitive wire lattice. Its
+logarithmic growth equals this maximum at both level parities.
+We calculate stationary boundary profiles with their additive constants
+and prove an exact harmonic response law. Every original leaf at a
+closed strict maximum lies at or above one quarter; a specified
+completed-root subclass satisfies stronger bounds. The positive source
+studied here provides finite and variational input for separate estimates
+of signed fillings and their hyperbolic volumes.
+\end{abstract}
+
+\section{Introduction}
+A tangle calculation changes character when two spectral roots
+coincide. Polynomial values alone no longer determine the operator:
+a derivative can multiply a nonzero nilpotent matrix. This paper uses
+one polynomial algebra throughout the tangle calculation, keeping both
+values and first derivatives. Its basis is chosen so that the physical
+quarter-turn reverses the basis index. Multiplication then has positive
+coefficients with a simple support, and cylindrical closure pairs
+complementary indices.
+
+These identities turn any fixed ordered expression in two-strand
+tangles into a finite sum over integer indices. For the complete color
+on every auxiliary circle, every nonzero summand is positive. The
+positivity makes a variational question natural: which expressions
+have an interior maximizing state, and how does that state respond
+when the exposed output index changes?
+
+The exact finite calculus is proved in
+Proposition~\ref{prop:newton-turn}, Theorem~\ref{thm:positive-product}
+and Proposition~\ref{prop:circle}. The strict support criterion is
+Theorem~\ref{st:reduced-junctions}. Theorem~\ref{st:positive-action}
+proves the unique interior maximum, its nondegenerate Hessian and the
+positive-source limit. Its boundary argument is necessary: concavity
+by itself would permit a maximum on the boundary. Theorems
+\ref{st:profiles} and \ref{st:probe} calculate the absolute stationary
+profiles. Theorem~\ref{st:quarter} and Lemma~\ref{lem:port-bounds}
+give respectively the general and completed-root leaf bounds.
+
+All expressions and their number of leaves are fixed before the
+quantum level grows. No tangle-isotopy classification is needed.
+The positive auxiliary source still has to be compared with signed
+terms and with the entire filling sum before it supplies a volume
+limit for an invariant.
+
+Kashaev's crossing-matrix definition supplies the knot-theoretic
+background \cite{Kashaev1995}. The exact enhanced normalization used
+here is compared with that definition, for $N\ge3$, in
+\cite[Theorem~10.1]{Finite}. The finite identities below also hold
+at $N=2$. Rational-tangle conventions are discussed in
+\cite{KauffmanLambropoulou}; we fix the ordered endpoints explicitly.
+The angle-variable concavity used in our variational proof is discussed
+in the Casson--Rivin exposition \cite{FuterGueritaud}. Here the
+polytope, integer approximation and boundary proof are established
+directly. A global hyperbolic metric is a separate construction.
+
+\section{The diagrams and the positive source}\label{nt:diagrams}
+A two-string tangle consists of two arcs in a ball with four prescribed
+boundary points. Additional closed curves are allowed and will include
+the auxiliary crossing circles. Label the exposed endpoints in their
+cyclic order by
+\[
+0=\text{bottom left},\quad1=\text{bottom right},\quad
+2=\text{top right},\quad3=\text{top left}.
+\]
+For a vertical stack $FG$, place $F$ below $G$ and join $F_2$ to $G_1$
+and $F_3$ to $G_0$. The exposed tuple is $(F_0,F_1,G_2,G_3)$.
+A clockwise quarter-turn carries the entire tangle with its box; the
+new tuple is $(F_1,F_2,F_3,F_0)$ in terms of the old labels.
+Cylindrical closure $C(FG)$ joins the remaining bottom and top endpoints
+on each side, without additional crossings. These connections are shown
+in Figure~\ref{nt:operations}.
+
+\begin{figure}[ht]
+\centering\input{figures/tangle-construction}
+\caption{Stacking, clockwise rotation and cylindrical closure. Each box
+contains its entire tangle. The outside arcs specify the actual
+connections used in the evaluation.}\label{nt:operations}
+\end{figure}
+
+Let $L_j$ be an auxiliary circle carrying the $j$-dimensional
+highest-weight representation and surrounding two main strands of
+complete color $N$. Its disk fixes the ordering and framing. Set
+$h_j=\Turn L_j$. When discussing the construction, $h$ denotes one
+such turned circle; in the positive source it is evaluated as $h_N$.
+Every written occurrence is a distinct auxiliary circle.
+
+The open expressions considered here have arbitrary ordered syntax
+\[
+ E::=h\mid\Turn E\mid E_1E_2.
+\]
+A closed expression is $C(FG)$. Every written occurrence of $h$ is a
+distinct auxiliary circle. The complete positive source $Z_N^0$ is
+its evaluation with every leaf equal to $h_N$ and no retained half
+twists. Section~\ref{nt:algebra} defines this scalar as $\phi(FG)$.
+Its endpoint pairing need not form a knot; that condition belongs
+to later knot applications. For example, $C((hh)(hh))$ has four
+leaves and $C(h\Turn(hh))$ has three. Section~\ref{nt:completed}
+will distinguish a narrower recursive class with stronger bounds.
+
+\input{finite}
+\input{supports}
+\input{variation}
+\input{profiles}
+\input{completed}
+\input{conclusion}

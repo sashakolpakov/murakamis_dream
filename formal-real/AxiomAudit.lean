@@ -1,3 +1,7 @@
+import MeridianExpansion
+import ActualGauge
+import RecurrenceExpansion
+import RecurrenceGaugeExpansion
 import RealTransfer
 import WeightedGraph
 import Flattening
@@ -434,3 +438,62 @@ import UniformProfile
 #print axioms VolumeLogic.UniformProfile.uniform_vanishing_of_two_orders
 #print axioms VolumeLogic.UniformProfile.microscopic_volume_transfer
 #print axioms VolumeLogic.UniformProfile.compact_microscopic_volume_transfer
+
+#print axioms VolumeLogic.ActualGauge.denominator
+#print axioms VolumeLogic.ActualGauge.punctured
+#print axioms VolumeLogic.ActualGauge.clearedCoefficient
+#print axioms VolumeLogic.ActualGauge.denominator_clearing
+#print axioms VolumeLogic.ActualGauge.formal_coefficient_eq
+#print axioms VolumeLogic.ActualGauge.map_clearedCoefficient
+#print axioms VolumeLogic.ActualGauge.coefficient_times_normalization
+#print axioms VolumeLogic.ActualGauge.cleared_equation_of_recurrence
+#print axioms VolumeLogic.ActualGauge.cleared_equation_of_ratio
+#print axioms VolumeLogic.ActualGauge.sineNormalization
+#print axioms VolumeLogic.ActualGauge.sineMeridian
+#print axioms VolumeLogic.ActualGauge.sineMeridian_eq_exp
+#print axioms VolumeLogic.ActualGauge.levelRoot
+#print axioms VolumeLogic.ActualGauge.meridianValue
+#print axioms VolumeLogic.ActualGauge.levelRoot_power
+#print axioms VolumeLogic.ActualGauge.meridianValue_shift
+#print axioms VolumeLogic.ActualGauge.sineMeridian_eq_root_shift
+#print axioms VolumeLogic.ActualGauge.numerator_shift
+#print axioms VolumeLogic.ActualGauge.sine_gauge
+#print axioms VolumeLogic.ActualGauge.shifted_sine_ne_zero
+#print axioms VolumeLogic.ActualGauge.sine_cleared_equation
+
+#print axioms VolumeLogic.RecurrenceExpansion.HasExpansion
+#print axioms VolumeLogic.RecurrenceExpansion.polynomial_bounded
+#print axioms VolumeLogic.RecurrenceExpansion.eval_isBigO_of_X_pow_dvd
+#print axioms VolumeLogic.RecurrenceExpansion.trunc_product_remainder
+#print axioms VolumeLogic.RecurrenceExpansion.hasExpansion_polynomial
+#print axioms VolumeLogic.RecurrenceExpansion.HasExpansion.bounded
+#print axioms VolumeLogic.RecurrenceExpansion.HasExpansion.mul
+#print axioms VolumeLogic.RecurrenceExpansion.HasExpansion.sum
+#print axioms VolumeLogic.RecurrenceExpansion.hasExpansion_const
+#print axioms VolumeLogic.RecurrenceExpansion.HasExpansion.prod
+#print axioms VolumeLogic.RecurrenceExpansion.microscopic
+#print axioms VolumeLogic.RecurrenceExpansion.microscopic_coeff
+#print axioms VolumeLogic.RecurrenceExpansion.trunc_eval
+#print axioms VolumeLogic.RecurrenceExpansion.finite_equation_expansion
+#print axioms VolumeLogic.RecurrenceExpansion.characteristic_of_factor_expansions
+
+#print axioms VolumeLogic.RecurrenceExpansion.clearedCoefficient_expansion
+#print axioms VolumeLogic.RecurrenceExpansion.characteristic_of_original_coefficient_expansions
+#print axioms VolumeLogic.RecurrenceExpansion.characteristic_of_actual_recurrence
+#print axioms VolumeLogic.RecurrenceExpansion.characteristic_of_sine_recurrence
+
+#print axioms VolumeLogic.RecurrenceExpansion.parameterVariables
+#print axioms VolumeLogic.RecurrenceExpansion.parameterVariables_hasSubst
+#print axioms VolumeLogic.RecurrenceExpansion.microscopic_eq_subst
+#print axioms VolumeLogic.RecurrenceExpansion.microscopic_exponential
+#print axioms VolumeLogic.RecurrenceExpansion.microscopic_shiftArgument
+#print axioms VolumeLogic.RecurrenceExpansion.microscopic_shiftedMeridian
+#print axioms VolumeLogic.RecurrenceExpansion.hasExpansion_exp_linear
+#print axioms VolumeLogic.RecurrenceExpansion.HasExpansion.sub
+#print axioms VolumeLogic.RecurrenceExpansion.hasExpansion_meridian_linear
+#print axioms VolumeLogic.RecurrenceExpansion.levelScale
+#print axioms VolumeLogic.RecurrenceExpansion.levelScale_tendsto
+#print axioms VolumeLogic.RecurrenceExpansion.levelScale_eventually_ne_zero
+#print axioms VolumeLogic.RecurrenceExpansion.sineMeridian_linear_expansion
+#print axioms VolumeLogic.RecurrenceExpansion.sineMeridian_expansion
+#print axioms VolumeLogic.RecurrenceExpansion.characteristic_at_roots

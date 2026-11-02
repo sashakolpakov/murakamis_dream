@@ -25,8 +25,7 @@ CHECKS = {
     "cyclic-source-constants": "repro/check_cyclic_source_constants.py",
     "planar-certificates": "papers/planar-certificates/check.py",
     "triangular-insertion": "repro/check_triangular_boundary_certificate.py",
-    "newton-tangles": "papers/newton-tangles/check.py",
-    "strict-newton-profiles": "papers/strict-newton-profiles/check.py",
+    "newton-calculus": "papers/newton-calculus/check.py",
     "strict-conway-geometry": "papers/strict-conway-geometry/check.py",
     "conway-reductions": "papers/conway-reductions/check.py",
     "terminal-decorations": "papers/terminal-decorations/check.py",
@@ -46,9 +45,11 @@ CHECKS = {
 }
 DIRECTORY_CHECKS = {"planar-certificates", "triangular-insertion", "terminal-decorations",
                     "meridian-tangles", "conway-source-bounds", "conway-asymptotics",
-                    "quarter-index-asymptotics", "strict-newton-profiles", "conway-reductions",
+                    "quarter-index-asymptotics", "newton-calculus", "conway-reductions",
                     "moving-meridian-sources", "meridian-expansions"}
 CERTIFICATE_INPUTS = (
+    "papers/newton-tangles/check.py",
+    "papers/strict-newton-profiles/check.py",
     "papers/conway-source-bounds/check_fourier.py",
     "repro/check_protected_sums.py",
     "experiments/audit_actual_sector_cover.py",
