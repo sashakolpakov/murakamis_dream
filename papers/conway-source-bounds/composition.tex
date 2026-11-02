@@ -1,6 +1,11 @@
 \section{A two-leaf comparison on the whole output interval}\label{cs:two-leaf}
 
-A pointwise comparison with a single complete leaf is insufficient throughout \eqref{cs:leaf-window}. The relevant quantity would be
+In a completed pure reference the selected leaf range is
+\begin{equation}\label{cs:leaf-window}
+ \frac14<a<\frac{\arctan2}{\pi}<\frac12.
+\end{equation}
+A pointwise comparison with a single complete leaf is insufficient
+throughout this range. The relevant quantity would be
 \[
  \min_{0\le u\le1}\{g(a)+g'(a)(u-a)-k(u)\},
 \]
@@ -12,7 +17,7 @@ At the selected pure two-leaf stack, write
  F_2(b)=2g(a)+m(a,a,b),\qquad
  \lambda=2\log(2X^2).
 \end{equation}
-Here $\arccot$ always takes values in $(0,\pi)$. By the imported boundary bounds $1/2<X<1$ in our closed construction; it is useful to prove the comparison on the closed enlargement $[1/2,1]$.
+Here $\arccot$ takes values in $(0,\pi)$. The displayed expressions define the scalar parameters for every $X\in[1/2,1]$. Completed pure references use the interior range; the three-leaf reference in Section~\ref{cs:probe} uses the endpoint $X=1/2$.
 
 \begin{lemma}[Two-leaf gap]\label{cs:two-leaf-gap}
 For $1/2\le X\le1$ and the slope in \eqref{cs:seed-parameters},
@@ -92,7 +97,7 @@ For a leaf attached to a completed child these become
  \lambda=f_{hE}'(c)=2\log(X/Y_p).
  \end{gathered}
 \end{equation}
-Both child and parent are completed. Lemma 6.1 of \cite{Newton} therefore gives $0<X,Y,Y_p<1$. The child inequality $Y<1$ gives $|B|<X$. The parent inequality $Y_p<1$ gives
+For a completed pure reference, both child and parent are completed. Lemma 6.1 of \cite{Newton} then gives $0<X,Y,Y_p<1$. The child inequality $Y<1$ gives $|B|<X$. The parent inequality $Y_p<1$ gives
 \[
  B>\frac1{2X}-X.
 \]
@@ -108,7 +113,7 @@ Define the pure and alias dual maxima
 Only the new leaf has the restriction $x\le1/2$. The child coordinate $y$ retains the whole interval $[0,1]$; it is represented by its tangent, not replaced by a second leaf.
 
 \begin{lemma}[Single-attachment gap]\label{cs:attachment-gap}
-For the parameters of every selected attachment in our closed grammar,
+Let $1/2<X<1$, $Y=\sqrt{1+B^2-X^2}$, $Y_p=Y/(X+B)$ and $0<Y,Y_p<1$, with the positive branch $X+B>0$. Define $a,b,c,\mu,\lambda$ by \eqref{cs:attachment-parameters}. Then
 \[
  Q(\mu,\lambda)\le P(\mu,\lambda)-\frac1{2500}.
 \]
@@ -174,63 +179,3 @@ $k(u)\le g(a)+g'(a)(u-a)-1/2500$ on the full alias interval. Adding the supporti
 \caption{A completed construction retains its exact indices at every step; $\star$ is the multiplication in \eqref{cs:product}. In the left seed, $i,j$ are leaf indices and $r$ is the output of their original multiplication. In the right attachment, $j$ is the output of the entire child $E$, not a new leaf. The affine estimates use the same $i/N,j/N,r/N$; the internal slopes cancel at the selected stationary state.}
 \label{cs:figure}
 \end{figure}
-
-\section{Propagation through the entire construction}\label{cs:assembly}
-
-A \emph{sector} specifies at each elementary piece whether its core or its alias is used. This is a finite exact expansion because the construction is fixed. For a completed subtree $E$, let $E_S$ denote the contribution from an alias subset $S$ of its leaves, propagated by the original operations. We prove the following open-output estimate.
-
-\begin{proposition}[Affine bound with an inherited loss]\label{cs:tangent}
-At the selected output $b_E$ of every completed subtree, put
-$\lambda_E=f_E'(b_E)$. For each of its alias subsets there is a number $\delta_S$ with $\delta_\varnothing=0$ and $\delta_S>0$ for $S\ne\varnothing$, such that
-\begin{equation}\label{cs:subtree}
- |[e_r]E_S|
- \le\exp\!\left\{N\left[f_E(b_E)+
-       \lambda_E(r/N-b_E)-\delta_S+e_{E,N}\right]\right\}.
-\end{equation}
-Here $e_{E,N}\to0$ uniformly over all physical colors, retained signs and output indices $0\le r\le d$.
-\end{proposition}
-\begin{proof}
-For an $hh$ seed, Proposition~\ref{cs:envelopes} and the uniform gate estimate reduce each summand to the action in Lemma~\ref{cs:two-leaf-gap}. A nonempty alias subset loses $1/100$. The all-core estimate uses the supporting tangent of $\widetilde g+\widetilde g+m$ at the same selected point, with no loss. There are at most $N^2$ input pairs for each output; this and the factorial errors enter $e_{E,N}$.
-
-A turn sends the output index to $d-r$. Its pure profile is $f_E(1-b)$, so its slope changes sign. The difference between $d/N$ and $1$ contributes only $O(1/N)$ inside the exponent in \eqref{cs:subtree}. The inherited loss is unchanged.
-
-For a product of two completed children, let their selected indices be $a,b$ and its output $c$. Their slopes and the gate derivatives satisfy
-\[
- f_1'(a)+m_x(a,b,c)=0,\qquad
- f_2'(b)+m_y(a,b,c)=0,\qquad
- f_o'(c)=m_z(a,b,c).
-\]
-Add the two child inequalities to the global supporting plane of the concave gate. Every input linear term cancels, leaving
-$f_o(c)+f_o'(c)(r/N-c)$ and the sum of the inherited losses. The true finite support is a subset of $D$, so the bound covers every summand, including ones with a high input. Polynomially many input pairs again cost $o(1)$ in the rate.
-
-For $hE$, a core at the new leaf uses the tangent of $\widetilde g$ at $a>1/4$ and leaves any child loss unchanged. If the new leaf is an alias, Lemma~\ref{cs:attachment-gap}, with the child's actual linear tangent, gives an additional loss $1/2500$. If the child also has aliases, its loss adds. More explicitly the three nonempty possibilities are
-\[
- A_h\star C_E,\qquad C_h\star E_S,\qquad A_h\star E_S
- \quad(S\ne\varnothing),
-\]
-where $\star$ denotes exactly \eqref{cs:product}. The child is never assigned the elementary support $[0,M]$. A stack $Eh$ has the same estimate by the symmetry of this multiplication; no coupon is commuted through a physical turn. The tree has finitely many operations, so accumulated errors still tend to zero uniformly. This completes the induction.
-\end{proof}
-
-\subsection{Closure and the sum of all complementary sectors}
-Let $E,F$ be the two closing completed boxes, with selected outputs $b_E+b_F=1$. Their slopes agree, say $\lambda_E=\lambda_F=\lambda$, because the complete action is stationary on this constraint. On the exact relation $i+j=d$ the sum of the two affine output terms is
-\[
- \lambda(i/N-b_E)+\lambda(j/N-b_F)=-\lambda/N.
-\]
-After multiplication by $N$ it is a fixed scalar contribution. Equation \eqref{cs:turn-trace} now bounds a sector with at least one alias by
-\[
- N\exp\{N(F_0-\delta_S+o(1))\}.
-\]
-There are finitely many nonempty subsets $S$. Their positive minimum loss, the common uniform errors, and the polynomial number of states can be absorbed by halving that minimum and increasing the level threshold. This proves \eqref{cs:alias-gap}. It bounds the entire difference $\mathcal A_N-\mathcal C_N$, using the triangle inequality only after the local signed cancellations have supplied the core envelope.
-
-\subsection{The macroscopic physical-color loss}
-Let $\mathcal P$ be the compact limiting pure state polytope after the closing constraint has been imposed and all turns have been eliminated. Replace each $g$ in its complete action by $\widetilde g$, leaving every gate $m$ unchanged. Call the resulting concave action $\widetilde F$. At the selected complete state $p_*$ all leaf indices satisfy \eqref{cs:leaf-window}, so $\widetilde F$ agrees with the original action on a neighborhood of $p_*$. Its gradient vanishes there and its Hessian on the actual state space is negative definite by \cite[Proposition 5.3]{Newton}.
-
-It follows that $p_*$ is the unique maximum of $\widetilde F$, of value $F_0$. Indeed a second maximum would make the line segment between it and $p_*$ constant, contradicting the negative Hessian near $p_*$. Compactness gives a strict loss on the complement of any sufficiently small fixed neighborhood of $p_*$. This is a shared-state maximum: no sum of separate factor maxima is substituted for it.
-
-The exact finite states obey $d/N=1-1/N$ at turns and closure. They are uniformly bounded, and every subsequential limit lies in $\mathcal P$. Uniform continuity of all the actions therefore transfers the preceding loss to the finite states outside a slightly smaller neighborhood. This argument does not discard a finite endpoint or presume an integral state exists at a chosen real point; only an upper bound is being proved.
-
-Inside the neighborhood all leaf indices lie in one fixed compact interval $I\subset(1/4,1/2)$. Suppose some physical deficit $N-j_\ell$ is at least $\delta N$. If that color is low, its core is zero and the whole source is already covered by \eqref{cs:alias-gap}. Otherwise Proposition~\ref{cs:envelopes} gives a fixed strict reduction at that leaf relative to $g=\widetilde g$. The other factors retain their common majorant, whose maximum is $F_0$. Combining the inside and outside estimates bounds the all-core contribution by $\exp\{N(F_0-\eta_\delta)\}$ after reducing the positive margin. Add \eqref{cs:alias-gap} and absorb the factor two. This proves \eqref{cs:color-gap} and Theorem~\ref{cs:main}.
-
-\begin{remark}
-The constants are attached to a fixed completed construction. A closing elementary leaf need not satisfy \eqref{cs:leaf-window}; the strict recurrence interval and the attachment comparisons would then require another argument. Likewise, changing a meridian changes the finite quotient and its operators. Neither extension is part of the theorem proved here.
-\end{remark}

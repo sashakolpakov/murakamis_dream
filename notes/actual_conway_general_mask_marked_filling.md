@@ -396,8 +396,8 @@ There is no wire Schur correction to the color Hessian. With
 \[
 \partial_i\partial_j\Phi_\epsilon(0)
 =-\frac{2\pi c_i}{1-\epsilon_i i c_i}\delta_{ij}
-=2\pi i\tau_i\delta_{ij},\qquad
-\tau_i=\frac{ic_i}{1-\epsilon_i i c_i},\quad \Im\tau_i>0.
+=\pi i\tau_i\delta_{ij},\qquad
+\tau_i=\frac{2ic_i}{1-\epsilon_i i c_i},\quad \Im\tau_i>0.
 \tag{21}
 \]
 Choose any auxiliary subset to fill and set \(\chi_i=0\) elsewhere.
@@ -409,7 +409,11 @@ U_i+p_iV_i=-2\pi i.
 \tag{22}
 \]
 Writing \(r_i=1/p_i\), their Jacobian in \(\chi\) at \(r=0\) is
-\(-4\pi i\operatorname{diag}(\tau_i)\), invertible by (21).
+\(-2\pi i\operatorname{diag}(\tau_i)\), invertible by (21).
+Here \(\tau_i=dV_i/dU_i\) is the ratio for the original primitive
+longitude and meridian. The half-sized ratio used in an earlier version
+of this note gives the same numerical Jacobian only after a compensating
+factor of two; it is not the primitive cusp ratio.
 The implicit-function theorem supplies the selected solution in one
 fixed reciprocal-slope polydisk, without slope-comparability conditions.
 

@@ -1,0 +1,183 @@
+\section{Multiplying by a character before turning}\label{cs:characters}
+
+For an input class \(E\), define
+\begin{equation}\label{cs:decorated}
+ D_j^\epsilon[E]=\Turn(R^\epsilon L_jE).
+\end{equation}
+The character stays at its specified position before the turn. The
+input may be a product of several subtree polynomials; it need not
+have a positive coefficient expansion.
+
+\begin{lemma}[Coefficient duality]\label{cs:duality}
+For \(0\le r\le d\),
+\begin{equation}\label{cs:dual}
+ \coef{r}{D_j^\epsilon[E]}=\phi(e_rR^\epsilon L_jE),\qquad
+ |\coef{r}{D_j^\epsilon[E]}|\le CN^A\normJ{E}w_{N,r}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The pairing in \eqref{cs:turn-trace} extracts the coefficient
+\(d-r\) before the turn, hence coefficient \(r\) after the turn.
+Use \eqref{cs:finite-cost}, submultiplicativity and
+\eqref{cs:basis-norm}. There is no sum over the coefficients of
+the input representative.
+\end{proof}
+
+Set \(G_0=g(1/4)\). Differentiation gives
+\begin{equation}\label{cs:g-derivatives}
+ g'(u)=2\log\cot(\pi u),\qquad
+ g''(u)=-\frac{4\pi}{\sin(2\pi u)}<0,\qquad 0<u<1/2.
+\end{equation}
+Thus \(G_0>0\) is the unique maximum of \(g\), while
+\(g(0)=g(1/2)=0\).
+
+\begin{lemma}[Angular bound for a low Newton polynomial]\label{cs:low-strip}
+Let \(I\) be a compact subinterval of \((0,1/2)\). There are
+\(c_I,C_I,y_I>0\) and \(e_N\to0\) such that, whenever \(r/N\in I\),
+\begin{equation}\label{cs:low-gaussian}
+ |e_r(2\cos(\theta+\ii y))|
+ \le w_{N,r}\exp N\{-c_I(\theta-\pi)^2+C_Iy^2+e_N\}
+\end{equation}
+for \(0\le\theta\le2\pi\), \(|y|\le y_I\).
+On the full low range, the upper logarithmic rate is
+\begin{equation}\label{cs:Newton-action}
+ b(u,\theta,y)=\int_0^u
+      \log|2\cos(2\pi v)-2\cos(\theta+\ii y)|\dd v-2J(u).
+\end{equation}
+At \(y=0\), \(g(u)+b(u,\theta,0)\) has the unique maximum
+\(2G_0\) at \((u,\theta)=(1/4,\pi)\).
+\end{lemma}
+\begin{proof}
+The numerator product in \eqref{cs:basis} is a midpoint Riemann
+sum for the integral in \eqref{cs:Newton-action}. Factor each cosine
+difference into its two sine factors. For an upper bound,
+replace each of their logarithms separately by its maximum with \(-K\). The resulting
+continuous functions have uniform Riemann sums on the compact parameter
+set. The negative tails of the two circular logarithms have integrals
+bounded uniformly by \(C e^{-K}(1+K)\): near a zero this follows by
+integrating \(|\log|t||\) on a short interval, and moving the zero off
+the real circle only decreases its negative tail. This also covers
+coalescing zeros. Let \(K\to\infty\) after taking the upper limit in
+\(N\). The factorial estimate in equation~\eqref{cs:factorial} handles
+the denominator, including both endpoints. This proves a uniform
+upper error \(o(1)\) in the rate.
+
+Here is the strict real comparison. Write
+\(\ell(t)=\log|2\sin(t/2)|\), a periodic function of period \(2\pi\).
+For \(0<u<1/2\), the numerator integral is
+\[
+ \frac1{2\pi}\int_{\theta-2\pi u}^{\theta+2\pi u}\ell(t)\dd t.
+\]
+As the center \(\theta\) moves from \(0\) to \(\pi\), this integral
+strictly increases. Its derivative is the difference of its endpoint
+values divided by \(2\pi\); that difference is positive because
+\[
+ \sin^2\frac{\theta+\alpha}{2}
+       -\sin^2\frac{\theta-\alpha}{2}
+       =\sin\theta\sin\alpha>0,
+ \qquad \alpha=2\pi u\in(0,\pi).
+\]
+The isolated logarithmic singularities are integrable, so the argument
+extends across them by continuity. Reflection treats \(\pi<\theta<2\pi\).
+It follows that
+\(b(u,\theta,0)\le b(u,\pi,0)=g(u)\), strictly away from \(\pi\)
+when \(0<u<1/2\). At \(u=0,1/2\) the rate is zero. Equation
+\eqref{cs:g-derivatives} proves the stated unique joint maximum.
+
+Near \(\theta=\pi\), put \(w=\theta-\pi+\ii y\). The numerator
+has no zeros for \(u\in I\) in a small fixed neighborhood, and its
+holomorphic action there is
+\begin{equation}\label{cs:B-action}
+ B(u,w)=-J(1/2-u+w/(2\pi))-J(1/2-u-w/(2\pi))-2J(u).
+\end{equation}
+The analytic branch of \(J\) is the real one on this compact interior
+interval. It satisfies
+\[
+ B(u,0)=g(u),\quad B_w(u,0)=0,\quad
+ B_{ww}(u,0)=-\frac{\tan\pi u}{2\pi}<0.
+\]
+Uniform Taylor bounds give a negative angular quadratic and a positive
+quadratic height cost there. The remaining real compact set has a
+strict gap by the preceding comparison. Continuity of the logarithmic
+integrals preserves half that gap at sufficiently small fixed heights.
+Reducing the angular constant gives \eqref{cs:low-gaussian} on the
+whole strip. Finally use \eqref{cs:weight-rate} to replace
+\(e^{Ng(r/N)}\) by \(w_{N,r}\).
+\end{proof}
+
+\begin{proposition}[Norm and angular localization after a character]\label{cs:decorated-turn}
+Suppose \(\normJ{E_N}\le e^{N(c+o(1))}\), uniformly in the specified
+input family. Then
+\begin{equation}\label{cs:D-norm}
+ \normJ{D_j^\epsilon[E_N]}\le e^{N(c+2G_0+o(1))}.
+\end{equation}
+Its canonical representative has constants \(a,C,y_0>0\) such that
+\begin{equation}\label{cs:D-strip}
+ |D_j^\epsilon[E_N](2\cos(\theta+\ii y))|
+ \le e^{N(c+2G_0-a(\theta-\pi)^2+Cy^2+o(1))}
+\end{equation}
+on \(0\le\theta\le2\pi\), \(|y|\le y_0\). The constants are
+independent of the physical color \(j\) and retained sign.
+A fixed loss in the norm exponent of \(E_N\) is preserved in the
+coefficient estimate \eqref{cs:dual} at every output index.
+\end{proposition}
+\begin{proof}
+For low indices, reconstruct the polynomial using
+\eqref{cs:dual} and \eqref{cs:basis-norm}. The norm is bounded by
+a polynomial times
+\(\normJ{E_N}\sum_{r\le M}w_{N,r}^2\), whose rate is at most
+\(c+2G_0\). The high part has rate at most \(c\), proving
+\eqref{cs:D-norm}.
+
+For the low angular estimate, the rate of the \(r\)-th term is
+\(c+g(r/N)+b(r/N,\theta,y)\). Lemma~\ref{cs:low-strip} gives
+a strict index and angular quadratic at its unique maximum and a
+strict gap on the compact complement. The same argument with a small
+fixed height gives the required bound for this entire low sum. The
+high part is itself canonical, has norm at most \(e^{N(c+o(1))}\),
+and by \eqref{cs:ellipse} has strip rate at most \(c+|y|\).
+Choose \(y_0\) and then the angular constant small enough that
+\(y_0+a\pi^2<2G_0\). This part then lies below
+\eqref{cs:D-strip} with a fixed loss. All sums have at most \(N\)
+terms. The final assertion follows directly from \eqref{cs:dual}.
+\end{proof}
+
+\begin{proposition}[A deficit in the new character]\label{cs:regular-deficit}
+Suppose an actual representative of \(E_N\) satisfies
+\begin{equation}\label{cs:E-strip}
+ |E_N(2\cos(\theta+\ii y))|
+ \le e^{N(c-c_E(\theta-\pi)^2+C_Ey^2+o(1))},
+ \quad |y|\le y_E,
+\end{equation}
+with \(c_E\ge0\). The empty input \(E_N=1,c=0\) is allowed.
+For every compact \(I\subset(0,1/2)\) and every \(\delta>0\),
+there is \(\eta>0\) such that
+\begin{equation}\label{cs:regular-color-loss}
+ N-j\ge\delta N,\quad r/N\in I
+ \quad\Longrightarrow\quad
+ |\coef{r}{D_j^\epsilon[E_N]}|
+          \le e^{N(c+g(r/N)-\eta)}
+\end{equation}
+for all sufficiently large \(N\). If also
+\(\normJ{E_N}\le e^{N(c+o(1))}\), then this subfamily has
+\(\normJ{D_j^\epsilon[E_N]}\le e^{N(c+2G_0-\eta')}\)
+for some \(\eta'>0\).
+\end{proposition}
+\begin{proof}
+By Lemma~\ref{cs:low-strip}, the actual product \(e_rE_N\)
+satisfies the positive-angular hypothesis of Theorem~\ref{cs:root-bound}
+uniformly for \(r/N\in I\), at rate \(c+g(r/N)\).
+The first identity in \eqref{cs:dual} and that theorem prove
+\eqref{cs:regular-color-loss}. No continuation of the discrete color
+\(j\) is used.
+
+For the norm assertion take \(I\) to be a small interval about
+\(1/4\). Its contribution loses \(\eta\). The other low indices
+have a fixed loss from \(2g(u)<2G_0\) outside \(I\), and the high
+part has the fixed gap \(2G_0\). Apply \eqref{cs:dual} to those
+remaining terms and sum. Reducing the minimum loss proves the claim.
+\end{proof}
+
+For a later component, the relevant input index can be strictly above
+\(1/4\). This is why \eqref{cs:regular-color-loss} is stated on every
+compact regular interval, rather than only near the maximum of \(g\).

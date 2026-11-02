@@ -1,6 +1,6 @@
 \section{A finite holomorphic source and its two lattice saddles}\label{ca:packet}
 
-We now assemble the actual leaves before estimating any sum. Let $b$ be the number of leaves. A binary construction has $b-1$ multiplication gates. The last is the closing trace; its equation is $i+j=d$ and its coefficient is one. Removing that equation leaves $b-2$ gates and
+We first retain the completed-root grammar defined in Section~\ref{ca:intro}, including arbitrary retained signs. The strict pure extension begins in Section~\ref{ca:strict-pure-section}. We assemble the actual leaves before estimating any sum. Let $b$ be the number of leaves. A binary construction has $b-1$ multiplication gates. The last is the closing trace; its equation is $i+j=d$ and its coefficient is one. Removing that equation leaves $b-2$ gates and
 \[
  k=b+(b-2)-1=2b-3
 \]
@@ -23,7 +23,7 @@ The exact gate coefficient and its action are
 Define $C_N^\epsilon(t)$ to be the finite sum over $\mathbf k/N\in\mathcal B$ of the product of the exact $\ell_N^{\epsilon_\ell}(r_\ell,t_\ell)$ and these integer gate coefficients. Only colors are continued in this definition. The function is holomorphic on a fixed polydisk and separately even. No index continuation has yet replaced the sum.
 
 \begin{theorem}[The exact corridor source]\label{ca:packet-theorem}
-There are a fixed complex color polydisk, a nonzero holomorphic function
+For a fixed completed-root expression there are a fixed complex color polydisk, a nonzero holomorphic function
 $a_\epsilon$, and a separately even holomorphic action $\Phi_\epsilon$ such that
 \begin{equation}\label{ca:packet-expansion}
  C_N^\epsilon(t)=N^{3/2}a_\epsilon(t)e^{N\Phi_\epsilon(t)}
@@ -103,9 +103,19 @@ which is nonzero. Separate evenness makes every wire--color mixed second derivat
 \eqref{ca:leaf-hessian} therefore give \eqref{ca:packet-hessian}.
 They also show $\Re\Phi_\epsilon$ has a strict real-color maximum at zero.
 
-Finally, Theorem 1.1 and the supporting-plane proof in Section 6.2 of
-\cite{Bounds} control all alias selections, not one term of their sum.
-Its concave core majorant has the same unique maximum and is strictly below it off any neighborhood of that point: the actual leaf intervals lie above $1/4$, where the majorant equals the original action. Compactness leaves a uniform gap outside $\mathcal B$, also for small physical colors. The finite number of sums has only polynomial cardinality. Shrinking the strict gap absorbs their uniform $o(N)$ errors and proves \eqref{ca:source-error}. The macroscopic-color estimate is exactly the second assertion of that imported theorem.
+Finally, Theorem 1.1 of \cite{Bounds} controls the entire difference
+between the full source and its core. Proposition 3.1 of that paper
+gives the concave core majorant. It agrees with the original action
+near the complete stationary point, since every selected leaf index
+is above $1/4$. Its Hessian there is negative definite. Concavity
+therefore makes this the unique global maximum: a second maximum
+would force a constant segment entering that neighborhood, contradicting
+the negative Hessian. Compactness leaves a uniform gap outside
+$\mathcal B$, including the displaced finite grids and all physical
+colors in the corridor. The number of states is polynomial in $N$.
+Reducing the gap absorbs the uniform $o(N)$ coefficient errors and
+proves \eqref{ca:source-error}. The macroscopic-color estimate is
+the second assertion of the imported theorem.
 \end{proof}
 
 The argument also gives, after shrinking the color disk,
@@ -115,9 +125,11 @@ The argument also gives, after shrinking the color disk,
 \end{equation}
 The mixed real--imaginary term of a complex quadratic form is absorbed by these two terms. This is a bound for the actual continued finite window.
 
+\input{pure-window}
+
 \subsection{A real local Fourier action and a gap on the entire torus}
 
-We now use only $\epsilon=0$, and abbreviate $C_N=C_N^0$,
+We now take any fixed strict expression with $b\ge2$, use only $\epsilon=0$, and abbreviate $C_N=C_N^0$,
 $\Phi_0=\Phi_{\epsilon=0}$ and $a_0=a_{\epsilon=0}$ when $a_0$ denotes a function rather than the positive constant in \eqref{ca:color-gaussian}. Choose a smaller fixed $\delta>0$ and let $H_N^{\rm cut}=\lfloor\delta N\rfloor$. Define the exact finite Fourier polynomial
 \begin{equation}\label{ca:Fourier-source}
  \mathcal F_N(z)=
@@ -130,7 +142,7 @@ for a polynomial of separate degree at most $H_N^{\rm cut}\le d$.
 Here $P_N$ denotes this multivariate polynomial, not the root polynomial used in the next section.
 
 \begin{proposition}[Local expansion and global spectral gap]\label{ca:Fourier-theorem}
-On a fixed complex neighborhood of zero,
+For the strict pure source of Theorem~\ref{ca:strict-pure}, on a fixed complex neighborhood of zero,
 \begin{align}
  \mathcal F_N(z)&=
  N^{3/2+b/2}B(z)e^{N\Psi_0(z)}(1+O(N^{-1})),\label{ca:Fourier-local}\\
@@ -191,5 +203,5 @@ $e^{2\pi(\delta N+1/2)\sum|y_\ell|}$, apart from the already estimated real-freq
 
 \begin{figure}[ht]
  \centering\input{figures/two-lattices}
- \caption{The two finite lattices in the proof. The wire indices determine the exact finite function $C_N(t)$; each affine wire retains its integer offset. Its color samples are then summed to the even Fourier polynomial $\mathcal F_N(z)$. The horizontal contour moves are made only after an exact residue representation and an exponentially accurate wire interpolation. The outer rectangle retains all its connecting sides.}\label{ca:two-lattices}
+ \caption{The two finite lattices in the proof. The wire indices determine the exact finite function $C_N(t)$; each affine wire retains its integer offset. Its color samples are then summed to the even Fourier polynomial $\mathcal F_N(z)$. For the strict pure source the factorial continuation agrees exactly on the wire grid. The signed completed-root source instead uses exponentially accurate interpolation. In both cases the contour rectangle retains all its connecting sides.}\label{ca:two-lattices}
 \end{figure}

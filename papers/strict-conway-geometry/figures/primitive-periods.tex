@@ -1,0 +1,16 @@
+\begin{tikzpicture}[x=.9cm,y=.9cm,>=Stealth,
+ every node/.style={font=\small}]
+ \coordinate (O) at (0,0); \coordinate (V) at (3,1.1);
+ \coordinate (M) at (0,-2.3); \coordinate (U) at (-3,-3.4);
+ \draw[gray!55,dashed] (V)--(3,-1.2)--(M);
+ \fill[blue!7] (O)--(V)--(3,-1.2)--(M)--cycle;
+ \draw[->,thick,blue!60!black] (O)--node[above] {$V$}(V);
+ \draw[->,thick] (O)--node[right] {$m=-2\pi\ii$}(M);
+ \draw[->,thick,orange!75!black] (O)--node[left] {$U=m-V$}(U);
+ \draw[dashed,->,gray] (U)--node[below] {$V$}(M);
+ \fill (O) circle (1.6pt); \node[above left] at (O) {$0$};
+ \node[align=left,anchor=west,text width=4.2cm] at (4.8,-.7)
+ {Original primitive basis: $U,V$.\\[3pt]
+  Filled meridian: $m=U+pV$.\\[3pt]
+  The fixed small increments are established before forming $m$.};
+\end{tikzpicture}

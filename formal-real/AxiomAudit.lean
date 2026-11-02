@@ -6,6 +6,7 @@ import GroundedConvexity
 import GroundedLaplacian
 import TriangleLoads
 import TrianglePotential
+import TriangleMinimizer
 
 #print axioms VolumeLogic.RealModel.complexMagnitude
 #print axioms VolumeLogic.RealModel.constant_div_nat_rate
@@ -213,3 +214,42 @@ import TrianglePotential
 #print axioms VolumeLogic.TrianglePotential.summedPotential_path_second_at
 #print axioms VolumeLogic.TrianglePotential.summedPotential_mixed_hasDerivAt
 #print axioms VolumeLogic.TrianglePotential.summedPotential_mixed_second_at
+
+#print axioms VolumeLogic.TriangleMinimizer.Regular
+#print axioms VolumeLogic.TriangleMinimizer.regular_radicand
+#print axioms VolumeLogic.TriangleMinimizer.nonregular_singleton
+#print axioms VolumeLogic.TriangleMinimizer.potential_attained
+#print axioms VolumeLogic.TriangleMinimizer.potential_vertex_lower
+#print axioms VolumeLogic.TriangleMinimizer.objective_difference
+#print axioms VolumeLogic.TriangleMinimizer.objective_difference_le
+#print axioms VolumeLogic.TriangleMinimizer.potential_lipschitz
+#print axioms VolumeLogic.TriangleMinimizer.potential_continuous
+#print axioms VolumeLogic.TriangleMinimizer.support
+#print axioms VolumeLogic.TriangleMinimizer.aggregate
+#print axioms VolumeLogic.TriangleMinimizer.column
+#print axioms VolumeLogic.TriangleMinimizer.offsetCost
+#print axioms VolumeLogic.TriangleMinimizer.mem_support
+#print axioms VolumeLogic.TriangleMinimizer.support_nonempty
+#print axioms VolumeLogic.TriangleMinimizer.aggregate_nonneg
+#print axioms VolumeLogic.TriangleMinimizer.aggregate_positive
+#print axioms VolumeLogic.TriangleMinimizer.aggregate_zero_outside
+#print axioms VolumeLogic.TriangleMinimizer.table_nonneg
+#print axioms VolumeLogic.TriangleMinimizer.table_support_nonempty
+#print axioms VolumeLogic.TriangleMinimizer.aggregate_sum
+#print axioms VolumeLogic.TriangleMinimizer.aggregate_rowMass
+#print axioms VolumeLogic.TriangleMinimizer.aggregate_demand
+#print axioms VolumeLogic.TriangleMinimizer.transport_potential_eq
+#print axioms VolumeLogic.TriangleMinimizer.row_vertex_lower
+#print axioms VolumeLogic.TriangleMinimizer.corner_pair_covered
+#print axioms VolumeLogic.TriangleMinimizer.edgeWeight
+#print axioms VolumeLogic.TriangleMinimizer.edgeWeight_nonneg
+#print axioms VolumeLogic.TriangleMinimizer.row_step_positive_path
+#print axioms VolumeLogic.TriangleMinimizer.conductance_connected_of_rows
+#print axioms VolumeLogic.TriangleMinimizer.affine_eq_segment
+#print axioms VolumeLogic.TriangleMinimizer.summedPotential_segment_hasDerivAt
+#print axioms VolumeLogic.TriangleMinimizer.summedPotential_segment_second
+#print axioms VolumeLogic.TriangleMinimizer.exists_unique_triangle_minimizer
+#print axioms VolumeLogic.TriangleMinimizer.pooled_boundary_weight
+#print axioms VolumeLogic.TriangleMinimizer.root_demand_difference
+#print axioms VolumeLogic.TriangleMinimizer.grounded_demand_eq
+#print axioms VolumeLogic.TriangleMinimizer.exists_unique_prescribed_minimizer

@@ -81,6 +81,34 @@ the separate spectral degree is \(N-1\). Its norm comparison applies
 to the reduced polynomial of degree less than \(N\). A higher-degree
 product is reduced before that comparison is used.
 
+## Separating the strict Conway proof
+
+The [strict Conway review](../../repro/STRICT_CONWAY_AUDIT.md) follows the
+complete-meridian argument through four different kinds of result. The
+variational paper proves the strict optimizer and its boundary profiles.
+The source-estimates paper bounds the whole original sum, including
+physical colors outside the central range. The geometry paper constructs
+the actual marked metric and fixes its absolute volume. The asymptotics
+paper must then supply a nonzero leading term and compare its action with
+that volume. A theorem about one of these objects does not supply the
+other three.
+
+The dependency review has removed an unnecessary loop in the exposition.
+The variational paper no longer imports a quantum source estimate; its
+positive-sum limit follows directly from the finite coefficients. The
+source paper can therefore use its boundary profiles without circularity.
+The broader source proof is incorporated into the existing article,
+rather than published as a second overlapping account.
+
+For the volume argument, expanding each full integer crossing power in
+ordinary colored circles permits the asymptotic analysis to use the pure
+source. Its factorial interpolation is regular at every strict leaf
+index, including one quarter. The signed local recurrence and its
+quarter-index theorem remain separate results. The odd crossing powers
+are still interpreted on the original half-twisted geometric partner,
+with integer primitive surgery slopes. The exact shear calculation,
+including its constant, is part of the final comparison.
+
 ## Checking the implications in Lean
 
 The current audit also records a machine-readable dependency map for
@@ -399,9 +427,48 @@ weights. Geometric incidence, connected positive support and the
 transport table remain application inputs. Changes of support in a
 geometric degeneration are not covered by these fixed-support theorems.
 
-The optional package has forty-two definitions and 157 theorems.
-Its axiom audit covers all 199 declarations, separately from
-the Std-only project. Twenty-two negative controls check that invalid
+The [triangle-minimum module](../../formal-real/TriangleMinimizer.lean)
+now applies the existence and uniqueness arguments to this actual
+supremum. For each triangle \(t\), keep three fixed nonnegative
+coefficients \(a_{ti}\), and let \(c(t,i)\) identify the vertex used
+by its \(i\)-th corner. The function being minimized is
+
+\[
+ P_d(q)=\sum_t Q\bigl(a_{t0}e^{q_{c(t,0)}},
+                     a_{t1}e^{q_{c(t,1)}},
+                     a_{t2}e^{q_{c(t,2)}}\bigr)
+                    -\sum_v d_vq_v.
+\]
+
+The hypothesis is a table \(\beta_{ti}\) whose entries are positive
+exactly where \(a_{ti}>0\), whose row sums are \(1/2\), and whose
+column sums equal \(d_v\) at every free vertex. Corners belonging to
+the same triangle must connect the vertex set by paths. Under these
+hypotheses, Lean proves that fixing one coordinate \(q_{v_0}=0\)
+leaves exactly one global minimum of \(P_d\).
+
+The proof establishes the missing analytic premises. Inserting a pure
+corner into the supremum gives
+\(Q\ge(\log a_{ti}+q_{c(t,i)})/2\). Comparing its attained maxima
+at two vectors gives a \(1/2\)-Lipschitz bound for each triangle in
+the maximum norm. These yield the required lower bound and multivariate
+continuity. A path through the supported corners gives a path of positive
+conductances, so the actual second derivative supplies strict convexity.
+No coercivity, Hessian identity or minimizing point is assumed.
+
+For fixed boundary values, several corner destinations may be identified
+with \(v_0\), while their individual coefficients \(a_{ti}\) remain
+distinct. On the grounded space their weights are still those prescribed
+coefficients. Only the transport table is aggregated. The demand at
+\(v_0\) is unrestricted, because its contribution is multiplied by zero.
+Constructing the table by the geometric Hall inequalities, proving the
+actual incidence is connected, and developing the circle pattern remain
+written application steps. The theorem does not take a limit in which
+the positive support changes.
+
+The optional package has forty-eight definitions and 189 theorems.
+Its axiom audit covers all 237 declarations, separately from
+the Std-only project. Twenty-four negative controls check that invalid
 inputs are rejected. The saddle estimates, whole-source gap and geometric
 volume identity remain written application inputs. The
 [tangle and tree review](../../repro/TANGLE_TREE_AUDIT.md) records the

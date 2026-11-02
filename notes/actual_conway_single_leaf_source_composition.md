@@ -126,8 +126,11 @@ $$
 where S is the strict output set. Thus LL and HH fail, while LA, HA, AA,
 and LH pass. Neither this classification nor an empty strict-state type
 asserts that the finite quantum source vanishes. For example T(h)T(h) has
-zero source at even levels, but at odd levels a nonzero boundary-only
-product supported at d; this follows directly from (2).
+zero source at even levels. At odd level \(N=2m+1\), both input
+indices must equal \(m\), but their product has positive coefficients
+at every output index \(m,\ldots,2m=d\), by (2). Thus the inputs
+are confined to the boundary even though the output is not supported
+at a single index.
 
 The completed grammar used here is
 

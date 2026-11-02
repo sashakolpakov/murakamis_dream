@@ -1,0 +1,369 @@
+\section{Four boundary labels and convex assembly}\label{sm:masks}
+
+An open cell has one ordered quadrilateral gluing face
+$Q=(C_0,C_1,C_2,C_3)$. Number its edges $j=(j,j+1)$ modulo four.
+Edges $0,2$ are called free, and $1,3$ cap edges. These names record
+the original leaf order, not an unmarked symmetry of the whole tangle.
+Set $\eta_j=1$ if the face beside edge $j$, other than $Q$, is shaded,
+and set $\eta_j=0$ if it is white. The four bits
+$\boldsymbol\eta=(\eta_0,\eta_1,\eta_2,\eta_3)$ will be called the
+boundary mask.
+
+\begin{proposition}\label{sm:mask-invariant}
+At every open subexpression evaluated at its strict stationary wires
+there is a convex ideal cell with a maximal, nondegenerate ordered
+quadrilateral output. Its boundary-edge angles are
+\begin{equation}\label{sm:masked-angles}
+ \frac{\theta_j}{\pi}=
+ \begin{cases}
+ b-\eta_j/2,&j=0,2,\\
+ 1-b-\eta_j/2,&j=1,3.
+ \end{cases}
+\end{equation}
+Every other surviving edge is right angled and separates a white
+face from a shaded triangle. The possible supports satisfy
+\begin{equation}\label{sm:mask-support}
+ L:\eta_0=\eta_2=0,\qquad H:\eta_1=\eta_3=0,\qquad
+ A:\boldsymbol\eta=0.
+\end{equation}
+Every original shaded triangle remains an entire face. The four
+output corners are four active original terminal singletons.
+Every other main ideal vertex is a permanently consumed pair of
+terminals; crossing-circle apices stay separate.
+\end{proposition}
+
+The statement permits a type $H$ output with only one shaded free
+edge. Replacing its two free angles by a common angle would therefore
+lose information essential to the next gluing.
+
+\begin{figure}[ht]
+\centering\input{figures/individual-masks}
+\caption{Individual boundary labels in an $HL$ product. A colored
+edge has a shaded adjacent face; the other edges have a white
+adjacent face. The turned leaf has mask $(1,0,1,0)$, the upper
+leaf has mask $(0,1,0,1)$, and the product has mask $(1,0,0,0)$.
+Its two free angles are $\pi(z-1/2)$ and $\pi z$.
+The pictures display the ordered quadrilateral gluing faces.}
+\label{sm:mask-figure}
+\end{figure}
+
+\subsection{Every seam angle}
+For a leaf the mask is $(0,1,0,1)$, so
+\eqref{sm:masked-angles} is the pyramid angle calculation.
+A turn rotates the mask by one and replaces $b$ by $1-b$.
+This proves the assertion under turns and exchanges the support
+conditions for $L,H$.
+
+At a product the output mask is exactly
+\begin{equation}\label{sm:mask-product}
+         \boldsymbol\eta^o=(\eta^F_0,0,\eta^G_2,0).
+\end{equation}
+Indeed the two output cap sides adjoin the prism's white triangles,
+and each output free side inherits its indicated child side.
+A child cap seam has angle
+$\pi(1-\eta_j/2)$: a zero bit merges two white pieces flatly, while
+a one bit leaves a right shaded--white edge.
+At the edge common to both prism inputs, the total angle is
+\begin{equation}\label{sm:shared-angle}
+ \pi\left[w+x-\frac{\eta^F_2}{2}
+             +y-\frac{\eta^G_0}{2}\right]
+       =\pi\left[1-\frac{\eta^F_2+\eta^G_0}{2}\right].
+\end{equation}
+Both bits could be one only with two type $H$ inputs, forbidden
+by \eqref{sm:types}. Thus this seam is either flat white--white
+or right shaded--white. The remaining free output angles are
+$\pi(p+x-\eta^F_0/2)$ and $\pi(q+y-\eta^G_2/2)$; the cap
+angles are $\pi(1-z)$. This gives \eqref{sm:masked-angles}.
+
+The support assertion also follows case by case from
+\eqref{sm:types}. An output of type $A$ has no type $H$ child,
+so both inherited free bits vanish. An output of type $H$ has
+zero cap bits by \eqref{sm:mask-product}. Turns give all type $L$
+cases. We assert these support inclusions, not equality with the
+two-bit leaf masks.
+
+For successive convex attachments one must check the intermediate
+stage, not only the final totals. Attach $F$ to the prism first.
+Its free seams have angles
+\[
+ \pi(z-\eta^F_0/2),\qquad
+ \pi(1-y-\eta^F_2/2).
+\]
+If the first bit is one, $F$ has type $H$, hence $z>x>1/2$.
+If the second bit is one, $x>1/2$ and $x+y<1$ give $y<1/2$.
+Both displayed angles are therefore positive and strictly less
+than $\pi$. In particular the other prism input remains a
+supported nondegenerate quadrilateral. The cap seams have already
+been checked. The second attachment is now justified by
+\eqref{sm:shared-angle}.
+
+\subsection{Convexity includes the ideal boundary}
+Here is the geometric argument used at each attachment. Place two
+convex finite-faced ideal polyhedra on opposite sides of the plane
+of the matched quadrilateral. Their finite intersection is that
+face. The finite union is closed, connected and locally convex:
+the only new boundary points lie on the seam edges, where the
+total angle is at most $\pi$. There are no finite seam vertices.
+
+Two finite points in the union have a shortest path in it.
+Indeed a length-bounded minimizing sequence stays in a compact
+ambient hyperbolic ball. Constant-speed parametrization and
+Arzelà--Ascoli give a limiting path; closedness keeps it in the
+union. Local convexity makes each small subarc the ambient
+geodesic. The complete path is therefore the unique ambient
+geodesic segment. This proves convexity of the union.
+
+There is a further ideal-point issue. The two ideal closures can
+meet only on the boundary circle of the common supporting plane.
+The intersection of either cell with that plane is exactly its
+maximal quadrilateral face. An additional ideal vertex on the
+circle would enlarge that face past one of its edges, making the
+edge flat; all four supporting angles there are strictly nonflat.
+Equivalently, in the Klein model the closed quadrilateral meets
+the sphere at infinity only in its four vertices. Thus the only
+ideal coincidences are the four specified corner identifications.
+This argument applies again to the second input, which the
+intermediate angle check kept strictly supported.
+
+Every output angle in \eqref{sm:masked-angles} lies in $(0,\pi)$
+on its actual type interval. Hence the output remains a maximal
+supported quadrilateral and the induction continues. Every
+shaded-triangle seam is right, never flat. Only white faces merge:
+no shaded edge or triangle is deleted, split or merged with
+another shaded face. A leaf apex is never in an attaching
+quadrilateral. It retains its four right edges and its two
+original shaded sectors.
+
+\subsection{Terminal pairs never become chains}
+Give leaf $i$ the four distinct terminal symbols $(i,0),\ldots,(i,3)$
+and the distinct apex symbol $O_i$. The purely literal endpoint
+rules prove the following invariant independently of the metric.
+An open expression has four active singleton terminals; all other
+terminals form disjoint consumed two-element pairs. A turn only
+permutes the active tuple. Product consumes exactly
+\begin{equation}\label{sm:terminal-product}
+          F_2\sim G_1,\qquad F_3\sim G_0,
+\end{equation}
+and keeps $F_0,F_1,G_2,G_3$ active. The child leaf sets are disjoint.
+A consumed pair is never subsequently attached or exposed.
+Thus no class grows to three terminals. The geometric maps
+\eqref{sm:stack-map} make exactly these pairs; the ideal-point
+argument excludes any additional identification.
+
+At an exposed corner the two adjacent mask bits have sum at most one.
+If their sum is zero, its cyclic faces are the gluing quadrilateral,
+white, shaded, white; if the sum is one there are only the
+quadrilateral, white and shaded faces in the retained order.
+This also follows by taking the ideal Euclidean link:
+the two quadrilateral-edge angles sum to $\pi$ or $\pi/2$,
+and the remaining edge angles are right. Each exposed corner
+therefore carries exactly one original shaded sector.
+At \eqref{sm:terminal-product}, the two sectors concatenate
+in the original ribbon order. This proves every assertion of
+Proposition~\ref{sm:mask-invariant}.
+
+\section{The closed polyhedron and the original link}\label{sm:cut}
+
+At the closing root glue the entire face by
+\begin{equation}\label{sm:closing}
+                       C_j^F\longmapsto C_{3-j}^G.
+\end{equation}
+The profile equation already matches its ordered metric.
+An edge $j$ on the first child matches edge $2-j$ on the second.
+Its total angle is $\pi$ minus half the sum of the two mask bits,
+in units of $\pi$. Two shaded free bits would require an $HH$
+closing pair; two shaded cap bits would require $LL$. Neither is
+strict. The convex-union proof therefore applies, and all remaining
+edges of the closed polyhedron $P_E$ are right shaded--white edges.
+
+The four closing pairs in \eqref{sm:closing} are between distinct
+root-child leaf sets. Together with \eqref{sm:terminal-product}
+they pair every original terminal once, never with a terminal of
+the same leaf. Hence each leaf still has four distinct corner
+vertices. Its two shaded triangles are distinct and meet only
+at their original apex. This rules out a transitive corner
+collapse at closure.
+
+The boundary of the actual convex polyhedron is a sphere. Its
+white faces are maximal convex ideal polygons. They cannot be
+bigons or zero-width regions. No two shaded triangles share an
+edge: every surviving edge has a white side. These observations
+will matter for both the topological cut and the cusp returns.
+
+\subsection{Recovering every colored face from the literal wires}
+Compile the same boundary without prisms. At leaf $i$ put the
+two shaded triangles
+\[
+       (O_i,C_{i1},C_{i2}),\qquad (O_i,C_{i3},C_{i0})
+\]
+in its original oriented projection chart. At a terminal record
+its outgoing-next and incoming-previous shaded neighbors. Joining
+two actual identity-wire endpoints concatenates those two ordered
+sectors. To see the order directly, take a thin planar neighborhood
+of the joining arc: its two white sides join the complementary
+sectors, with no crossing or reflected child.
+Turns rotate the charts; the final closure uses
+\eqref{sm:closing}. This constructs the full oriented ribbon graph,
+not merely its abstract incidence or component count.
+
+All white face cycles are now determined. A facial walk entering
+along $(u,v)$ leaves $v$ along the neighbor preceding $u$ in its
+cyclic order. The original shaded triples are some of these walks;
+the remaining walks are exactly the white regions.
+The prism maps \eqref{sm:stack-map} induce the same two pairings
+and the same sector concatenation. The mask proof shows that
+every other seam is flat white--white and every shaded edge remains.
+Thus the metric boundary has precisely this ribbon graph and
+every one of its colored facial cycles.
+
+\subsection{The reversible disk cut}
+Each original auxiliary circle lies in its own leaf ball, perpendicular
+to the projection sphere, with its recorded twice-punctured disk.
+The disks and their collars remain disjoint under physical turns
+and products. In either projection ball each auxiliary semicircle
+is boundary parallel by the corresponding half disk.
+Drilling the semicircle introduces one handle; cutting along that
+same bridge half disk cancels the handle in its explicit collar.
+The disjoint cancellations leave a ball. The main segments lie
+on the projection boundary; removing their neighborhoods creates
+ideal ends and no interior handle.
+
+The cut ball has one ideal vertex for each paired main segment
+and one for each auxiliary semicircle. The exposed half disks give
+exactly the two shaded triangles above. The remaining regions
+have precisely the compiled white facial walks. Identify this
+labeled boundary sphere with $\partial P_E$ and extend over the
+balls by radial extension after choosing interior points.
+Across the two balls restore the identically labeled white
+projection faces. For a pure leaf restore the shaded pairing
+fixing $O_i$ and sending $C_{i1}$ to $C_{i0}$ and $C_{i2}$ to
+$C_{i3}$. For an odd leaf use the original half-disk rotation,
+which pairs the corresponding triangles across copies.
+Reversing these cuts gives exactly $Y_E^\eps$.
+
+This is a degree-one topological identification with all components
+and paths retained. It does not interpret an intermediate gluing
+quadrilateral as the physical four-punctured boundary of a tangle:
+that assertion is unnecessary and generally false.
+
+\subsection{Complete returns and a common horosphere decoration}
+Take two oppositely oriented copies of $P_E$. For a pure leaf, an
+edge $e$ of one shaded triangle has a distinct partner $e'$ on
+the other. Its four occurrences are
+\[
+                e^{(0)},\ e'^{(0)},\ e'^{(1)},\ e^{(1)}.
+\]
+The labeled shaded maps are inverse maps and the white maps identify
+equal labels across copies, so the return is pointwise identity
+on the edge. The angle sum is $4(\pi/2)=2\pi$.
+An odd pairing changes the copy permutation in this return.
+It still has four distinct occurrences, since the two shaded
+triangles have no common edge and the two cut copies are distinct.
+The local pure and odd return identities of
+\cite[equations~(5.7)--(5.8)]{Geometry}, written again in
+\eqref{sm:edge-words} below, show that the full return is identity.
+Thus the quotient has neither an edge cone angle nor a residual
+translation along an edge.
+
+At an ideal vertex all edges are right. Its small horosphere
+section is a finite Euclidean polygon with all angles $\pi/2$,
+hence a rectangle. Its side lengths are positive: the supporting
+planes are distinct, and coincident opposite sides would force
+the three-dimensional polyhedron into a plane. The colors alternate.
+Scale its horosphere until its two equal shaded side lengths are one.
+Each shaded ideal triangle now has its canonical three unit
+horocyclic segments, so every shaded isometry preserves these
+decorations, including the odd permutations. White maps preserve
+them because they identify the identical labeled copies.
+The rectangles therefore glue without dilation into smooth compact
+Euclidean tori, the original cusp tori of the cut.
+A common shrinking factor makes the horospheres disjoint; beyond
+them are complete horoball ends. The truncated core is compact.
+The resulting finite-volume metric is complete.
+
+All cell attachments had disjoint interiors. There is one leaf
+pyramid and one prism per retained gate in each cut copy. Their
+volumes are $\pi g$ and $\pi m$, respectively. Consequently
+$\Vol(Y_E^\eps)=2\Vol(P_E)=2\pi F_0$ as an equality of ordinary
+metric volumes. This proves the metric part of
+Theorem~\ref{sm:complete}, including the two-leaf strict case.
+
+\section{The primitive collar and its component information}
+\label{sm:collar}
+
+The auxiliary apex retains its original leaf rectangle throughout
+the construction. In \eqref{sm:leaf} its adjacent sides have lengths
+$2\sin\pi a$ and $2\cos\pi a$. The cusp has exactly two such
+rectangles. The original disk paths in
+\cite[Section~7, equations~(7.1)--(7.5)]{Geometry} are local to this
+unchanged collar. We recall the path and area checks so that no
+global completed-root marking is being imported.
+
+Normalize the ordered leaf base to $(0,\infty,1,R)$.
+Let $W_j$ be the white transition at edge $j$ between projection
+charts, and let $S,A,B$ be the pure and the two odd shaded maps,
+as defined in Section~\ref{sm:maps}. The traced paths are
+\begin{equation}\label{sm:peripheral-words}
+ \lambda=W_2^{-1}W_0,\qquad
+ \mu_0=S^{-1},\qquad
+ \mu_-=A^{-1}W_0,\qquad
+ \mu_+=W_0^{-1}B.
+\end{equation}
+The longitude crosses white face $0$ and returns through $2$.
+The pure meridian crosses the shaded identification once in the
+reverse direction. The odd paths cross the respective half-disk
+pairing and white face $0$. The retained negative crossing uses
+$\mu_-$ and the positive crossing uses $\mu_+$ in the original
+disk frame. A physical turn transports the whole collar, not its sign.
+
+Conjugation back to the original apex at infinity gives the translations
+\begin{equation}\label{sm:translations}
+ \mu_0=E-1,\qquad \lambda=-2(E+1),\qquad
+ \mu_-=-2,\qquad \mu_+=2E.
+\end{equation}
+The actual torus area is $8\sin\pi a\cos\pi a=4\sin2\pi a$,
+and
+$|\Ima(\overline{\mu_0}\lambda)|=4\sin2\pi a$.
+Thus the closed paths span the full lattice, not a proper sublattice.
+Replacing $\mu_0$ by either odd meridian preserves this area.
+They too are primitive. As translation vectors on the corresponding
+half-twist partners,
+\[
+                   \mu_\eps=\mu_0-\eps\lambda/2.
+\]
+This compares different marked tori; half a longitude is not being
+declared an integral curve on the pure torus.
+Since $(E+1)/(E-1)=-\ii\cot\pi a$, the ratio
+$\lambda/\mu_\eps$ is \eqref{sm:tau}.
+This proves the remaining marking assertion of
+Theorem~\ref{sm:complete}.
+
+\begin{proposition}\label{sm:knot-choice}
+Every strict expression admits a choice of pure or odd leaves for
+which the main strands form one component. Either odd sign may be
+chosen, and subsequent full twists preserve the component count.
+\end{proposition}
+\begin{proof}
+Write the endpoint pairings as
+$I=(03)(12)$, $U=(01)(23)$ and $X=(02)(13)$.
+A leaf offers $\{U,X\}$, and a turn exchanges $I,U$ and fixes $X$.
+Tracing the two actual product connections gives
+\[
+\begin{array}{c|ccc}
+ &I&U&X\\\hline
+ I&I&U&X\\
+ U&U&U\text{ and an internal circle}&U\\
+ X&X&U&I
+\end{array}.
+\]
+Discard only the product $U\cdot U$ in this existence argument.
+For sets $A=\{I,U\}$, $B=\{I,X\}$ and $C=\{U,X\}$, the output
+sets for $AA,AB,AC,BB,BC,CC$ are respectively
+$A,\{I,U,X\},C,B,\{I,U,X\},A$, also in reversed orders.
+Thus every subexpression has at least two loop-free choices,
+starting with the leaf itself; the same is true if a child already
+offers all three. At least one choice at the root stack is $U$
+or $X$, both of which close to one component. Backtracking chooses
+the leaves. No identity of unmarked tangles or assertion about
+quantum connected-sum factors is used.
+\end{proof}

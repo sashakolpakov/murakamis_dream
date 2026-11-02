@@ -834,6 +834,85 @@ The same distinction matters for slowly varying recurrences. Distinct instantane
 
 Local stationary-phase methods are treated in [Hörmander, *The Analysis of Linear Partial Differential Operators I*](https://link.springer.com/book/10.1007/978-3-642-61497-2). A related root-of-unity asymptotic problem is [Garoufalidis and Zagier's Nahm-sum analysis](https://arxiv.org/abs/1812.07690). Its fixed-root radial limit and hypotheses differ from the growing-order roots and finite knot sums here; no identification of those objects is assumed.
 
+## Using the pure source for a strict Conway composition
+
+There are two ways to organize the local calculation. One keeps a signed
+crossing at each leaf and studies the resulting recurrence. The other
+expands the entire crossing power before estimating the source. The
+[strict Conway asymptotics paper](../../docs/papers/conway-asymptotics.pdf)
+uses the second route for its volume theorem, while retaining the signed
+recurrence as a separate local result.
+
+Let \(N\) be the quantum level, \(R\) the physical crossing operator
+on two strands, and \(L_j\) the operator of an ordinary surrounding
+circle colored by the integer \(1\le j\le N\). In the complete
+finite spectral algebra, every integer power has an exact expansion
+\[
+ R^n=\sum_{j=1}^N b_{N,j}(n)L_j,\qquad
+ \sum_{j=1}^N|b_{N,j}(n)|\le2N(1+|n|/2).
+\]
+The coefficients here include the unit-modulus crossing scalar. The
+operator is invertible in that algebra, so the identity also applies to
+negative powers. The inversion determining the coefficients uses both
+values and first derivatives at repeated spectral roots. A discrete
+Fourier transform of the values alone would lose part of the operator.
+
+Apply this identity separately in every original twist disk. Multilinearity
+expresses the filled invariant as a sum of pure circle sources with
+independent physical colors. The original product order, reduced cut
+and framing are retained. For a fixed number of disks and fixed twists,
+the displayed coefficient bound is polynomial in \(N\). Thus an
+exponential error estimate for the whole physical source remains an
+exponential error estimate after this replacement.
+
+For a color near \(N\), put \(t=(N-j)/N\). The pure core coefficient
+is a ratio of sine factorials. Their canonical holomorphic continuation
+agrees exactly with the factorials at the original integer indices.
+For a strict expression, all factorial arguments near its stationary
+state lie inside their regular intervals. An index equal to one quarter
+of the level causes no singularity in this pure formula.
+
+![The internal wire indices are summed first. Samples in the independent color variables are then summed by a finite Fourier transform.](../figures/conway-two-lattices.png)
+
+On the left, \(y_1,y_2\) illustrate independent wire coordinates,
+\(y_*(0)\) is the complete stationary state, and \(\mathcal B\)
+is a small fixed window around it. The actual number of independent
+coordinates is \(2b-3\) for \(b\) leaves. Their primitive integer
+lattice has no hidden multiplicity. Summing the exact coefficients in
+that window defines a holomorphic function \(C_N(t)\). The first
+Gaussian calculation gives
+\[
+ C_N(t)=N^{3/2}a_0(t)e^{N\Phi_0(t)}(1+O(N^{-1})),
+ \qquad a_0(0)>0.
+\]
+Here \(t\) is the vector of color deficits, \(\Phi_0\) is the
+stationary pure action, and \(a_0\) includes every fixed integer
+shift in the original wire labels. Those shifts affect the leading
+coefficient even though they do not change the exponential rate.
+
+On the right, the dots are samples of a color variable at integer
+multiples of \(1/N\). Their finite Fourier sum has frequency
+variable \(z\). Its critical color \(\xi(z)\) may be complex,
+so the horizontal contour is moved to pass through it. The rectangle's
+vertical sides are retained and estimated; the move is not justified
+by the critical-point equation alone. The second Gaussian calculation
+gives a local Fourier phase real on real \(z\), and a separate
+estimate bounds the same polynomial away from zero on the whole torus.
+These are the two analytic hypotheses of the whole-period filling theorem.
+The source-estimates paper supplies the physical terms omitted from the
+window, including the entire difference between the source and its core.
+
+Finally the geometric calculation returns to the actual retained half
+twist. Write \(n=\epsilon-2p\), with \(\epsilon\in\{0,1,-1\}\)
+and \(p\) an integer. A classical shear identity, with its constant
+fixed at the complete structure, identifies the Fourier critical action
+with filling the original primitive slope \(\mu+p\lambda\).
+Here \(\mu\) is the disk meridian and \(\lambda\) its primitive
+longitude. The metric theorem completes that filling and identifies its
+absolute volume. This comparison is needed also for odd \(n\); the
+pure algebraic expansion does not change the integer surgery on the
+actual half-twisted partner.
+
 ## Following the actual recurrence through the quarter index
 
 The [quarter-index paper](../../docs/papers/quarter-index-asymptotics.pdf)

@@ -1,0 +1,199 @@
+\section{A character contraction as a Fourier functional}\label{cs:fourier}
+
+We first isolate the estimate used whenever an original character is
+exposed at the closing functional. The input can be an unreduced product:
+it is its actual analytic representative that enters the hypothesis.
+
+\begin{lemma}[Exact Fourier and sampling formulas]\label{cs:character-fourier}
+For any polynomial \(F\), write its finite symmetric Laurent expansion
+\[
+ F(w+w^{-1})=\sum_{r\in\mathbb Z}a_rw^r,\qquad a_{-r}=a_r.
+\]
+For \(0\le h\le d\),
+\begin{equation}\label{cs:fourier-exact}
+ \phi(L_{N-h}F)=(-1)^hN^2
+      \sum_{m\in\mathbb Z}(-1)^m(m+1)a_{h+mN}.
+\end{equation}
+In particular the winding \(m=-1\) has exactly zero coefficient.
+With \(\theta_l=(2l+1)\pi/N\) and \(w_l=e^{\ii\theta_l}\), the same
+functional is
+\begin{equation}\label{cs:sampling}
+ (-1)^h\sum_{l=0}^{N-1}w_l^{-h}
+ \bigl[(N-h)F(c_l)+(w_l-w_l^{-1})F'(c_l)\bigr].
+\end{equation}
+\end{lemma}
+\begin{proof}
+The coefficient of \(z^d\) after reduction is the coefficient of
+\(z^{-1}\) in \(L_{N-h}(z)F(z)/P_N(z)\) at infinity. Make the change
+\(z=w+w^{-1}\). Then
+\[
+ P_N(w+w^{-1})=w^{-N}(w^N+1)^2,\qquad
+ U_{N-h-1}\bigl((w+w^{-1})/2\bigr)
+    =\frac{w^{N-h}-w^{-(N-h)}}{w-w^{-1}}.
+\]
+After including \(\dd z=(1-w^{-2})\dd w\) and the signs from
+\eqref{cs:turn-trace}, the answer is \((-1)^hN^2\) times the
+coefficient of \(w^{-1}\) in
+\[
+ F(w+w^{-1})\frac{w^{2N-h-1}-w^{h-1}}{(w^N+1)^2}.
+\]
+Expanding the denominator at infinity gives
+\[
+ \sum_{m\ge0}(-1)^m(m+1)
+       \{a_{h+mN}-a_{2N-h+mN}\}.
+\]
+Use symmetry to rewrite the second half with negative windings. Its
+first winding is \(-2\), leaving precisely the zero coefficient at
+\(-1\) in \eqref{cs:fourier-exact}.
+
+Discrete orthogonality gives
+\[
+ \frac1N\sum_lw_l^{-h}\sum_ra_rw_l^r
+      =\sum_m(-1)^m a_{h+mN}.
+\]
+Applying \(w\partial_w\) supplies the additional multiplier \(h+mN\).
+The combination \((N-h)+w\partial_w\) is \(N(m+1)\) on that
+frequency, proving \eqref{cs:sampling}. It counts every double node
+twice and the odd simple node once; the derivative multiplier is zero
+at the latter. Thus the formula retains exactly the full quotient data.
+\end{proof}
+
+If \(\deg F<N\), only the term \(m=0\) can survive in
+\eqref{cs:fourier-exact}. For a product of canonical polynomials the
+other windings can occur, and must be kept.
+
+\begin{theorem}[Color loss from a spectral strip]\label{cs:root-bound}
+Let \(E_N\) be actual polynomials, not necessarily canonical. Suppose
+there are constants \(c>0,C>0,y_0>0\), a real number \(F\), and positive
+\(A_N\) with \(\log A_N=o(N)\), such that
+\begin{equation}\label{cs:strip-hyp}
+ |E_N(2\cos(\theta+\ii y))|
+ \le A_N\exp N\{F-c(\theta-\pi)^2+Cy^2\}
+\end{equation}
+for \(0\le\theta\le2\pi\), \(|y|\le y_0\). The constants and the
+error are uniform over any further specified parameters of \(E_N\).
+Then, uniformly in \(j\) and \(\epsilon\in\{0,1,-1\}\),
+\[
+ |\phi(R^\epsilon L_j E_N)|\le e^{N(F+o(1))}.
+\]
+For each fixed \(\delta>0\), the subfamily \(N-j\ge\delta N\) satisfies
+\begin{equation}\label{cs:root-gap}
+ |\phi(R^\epsilon L_j E_N)|\le e^{N(F-\gamma_\delta)}
+\end{equation}
+for some \(\gamma_\delta>0\) and every sufficiently large \(N\).
+\end{theorem}
+
+\begin{proof}
+The proof has to retain the crossing derivative as well as its values.
+For \(\epsilon\in\{0,1,-1\}\), define the entire function
+\begin{equation}\label{cs:chirp}
+ \rho_{\epsilon,N}(z)=\kappa^\epsilon
+  \exp\!\left[\ii\epsilon
+       \left(\frac\pi2-\frac\pi{4N}-\frac{N\pi}4\right)\right]
+  \exp\!\left[\frac{\ii\epsilon N}{4\pi}(z-\pi)^2\right].
+\end{equation}
+At every \(\theta_l\) it equals \(R^\epsilon(c_l)\). Its logarithmic
+derivative is \(\ii\epsilon N(\theta_l-\pi)/(2\pi)\), which is also
+the derivative of \(R^\epsilon(2\cos z)\) there by
+\eqref{cs:circle-crossing}. At an odd simple node only the value is
+needed. Hence, if
+\(F_N(z)=\rho_{\epsilon,N}(z)E_N(2\cos z)\) and \(h=N-j\), the exact
+functional is
+\begin{equation}\label{cs:chirp-sampling}
+ Z_{N,h}=(-1)^h\sum_{l=0}^{N-1}e^{-\ii h\theta_l}
+          \{(N-h)F_N(\theta_l)-\ii F_N'(\theta_l)\}.
+\end{equation}
+The real-axis chirp has modulus one. Cauchy's inequality on radius
+\(1/N\) disks bounds the derivative by a polynomial cost times
+\(A_Ne^{NF}\), proving the first conclusion. At endpoint disks use
+the periodicity of \(E_N(2\cos z)\); its continuation still has the
+bound required near the endpoints.
+
+For the strict loss, put \(u=\theta-\pi\). Completing the square in
+the product of \eqref{cs:strip-hyp} and \eqref{cs:chirp} gives, on a
+smaller fixed strip,
+\begin{equation}\label{cs:chirp-envelope}
+ |F_N(\theta+\ii y)|
+    \le A_N e^{N(F-c_1u^2+C_1y^2)},\qquad c_1>0.
+\end{equation}
+For instance absorb \(|uy|/(2\pi)\) into half the negative
+\(cu^2\) term and a constant times \(y^2\). On small fixed disks
+about \(0,2\pi\), the first several derivatives consequently have
+the common bound
+\begin{equation}\label{cs:endpoint-gap}
+ C N^A A_N e^{N(F-\gamma_0)},\qquad \gamma_0>0.
+\end{equation}
+Choose those disks first and use Cauchy on smaller disks. Their
+distance from \(\pi\) is bounded below, so shrinking the strip leaves
+a fixed loss.
+
+The function \(F_N\) is symmetric under \(z\mapsto2\pi-z\), but
+its derivatives do not all match at the two ends of the interval.
+Specifically,
+\[
+ F_N'(2\pi)-F_N'(0)=\ii\epsilon N F_N(0).
+\]
+Set
+\begin{equation}\label{cs:repair}
+ \psi(z)=z(2\pi-z),\quad
+ b_N=-\frac{\ii\epsilon N F_N(0)}{4\pi},\quad
+ G_N(z)=F_N(z)-b_N\psi(z).
+\end{equation}
+The endpoint values of \(G_N,G_N',G_N''\) match: the first derivatives
+match by the displayed choice of \(b_N\), and the even derivatives
+match by reflection. The periodic extension is therefore \(C^2\).
+Four integrations by parts, retaining the third-derivative jump, show
+that its Fourier coefficients
+\[
+ g_{N,k}=\frac1{2\pi}\int_0^{2\pi}G_N(\theta)e^{-\ii k\theta}\dd\theta
+\]
+are \(O_N((1+|k|)^{-4})\). In particular both its Fourier series and
+the differentiated series converge absolutely. Substitution in
+\eqref{cs:chirp-sampling} is legitimate and gives
+\begin{equation}\label{cs:repaired-fourier}
+ Z_{N,h}(G_N)=(-1)^hN^2
+           \sum_{m\in\mathbb Z}(-1)^m(m+1)g_{N,h+mN}.
+\end{equation}
+The subtracted polynomial is not omitted. Its original nodal
+functional costs at most a polynomial times the bound
+\eqref{cs:endpoint-gap}; it will be restored at the end.
+
+For \(k>0\), move the coefficient contour to imaginary part
+\(-\eta\), with \(0<\eta\) fixed and small. For \(k<0\), move it
+to \(+\eta\). There are two vertical joining sides. Their difference,
+for \(k>0\), contains
+\[
+ D_N(y)=G_N(2\pi-\ii y)-G_N(-\ii y),\qquad 0\le y\le\eta.
+\]
+By the endpoint matching, \(D_N(0)=D_N'(0)=D_N''(0)=0\).
+Three integrations by parts in
+\(\int_0^\eta e^{-ky}D_N(y)\dd y\) bound the joining contribution by
+\[
+ CN^A A_N e^{N(F-\gamma_0)}
+ \left[e^{-k\eta}(k^{-1}+k^{-2}+k^{-3})+k^{-4}\right].
+\]
+The terms at \(\eta\) are the joining-side boundary terms; none is
+set to zero. The remainder uses the bound for \(D_N'''\) in
+\eqref{cs:endpoint-gap}. The horizontal segment of \(F_N\) is bounded by
+\eqref{cs:chirp-envelope}; the subtracted polynomial \(b_N\psi\)
+has the smaller endpoint rate \eqref{cs:endpoint-gap}, multiplied
+by the same factor \(e^{-|k|\eta}\). The same argument in the other half-plane
+proves, for \(k\ne0\),
+\begin{equation}\label{cs:fourier-tail}
+ |g_{N,k}|\le CN^A A_N\left\{
+  e^{N(F+C_1\eta^2)-|k|\eta}
+       +\frac{e^{N(F-\gamma_0)}}{(1+|k|)^4}\right\}.
+\end{equation}
+
+If \(\delta N\le h\le N-1\), every frequency in
+\eqref{cs:repaired-fourier} with nonzero weight has absolute value
+at least \(\delta N\). The potentially small frequency \(h-N\)
+has the zero weight \(m+1=0\). The exponential terms in
+\eqref{cs:fourier-tail}, multiplied by \(|m+1|\), sum to
+\(O(e^{-\delta N\eta})\). The inverse fourth powers are likewise
+summable with that multiplier. Choose \(\eta\) so small that
+\(C_1\eta^2<\delta\eta/2\), then restore the correction in
+\eqref{cs:repair}. Reducing the smaller positive loss absorbs
+\(\log A_N=o(N)\) and all powers of \(N\), proving
+\eqref{cs:root-gap}.
+\end{proof}

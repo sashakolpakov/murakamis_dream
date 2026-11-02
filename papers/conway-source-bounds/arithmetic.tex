@@ -83,8 +83,22 @@ From the repository root, with Python's standard library alone, run
 python3 papers/conway-source-bounds/check.py \
     --output /tmp/conway-source-check
 \end{verbatim}
-The wrapper replays just the two certificates used in this paper, verifies their coverage counts and margins, and checks the elementary rational comparison. It records the source and data hashes before and after execution. It rejects optimized Python execution, uses isolated subprocesses and removes any previous success summary before validation. Output consists of the two detailed rational records and one summary.
+The wrapper replays the two certificates, verifies their coverage counts
+and margins, and checks the elementary rational comparison. It also
+calls \texttt{check\_fourier.py}, which compares
+\eqref{cs:fourier-exact} with independent monic polynomial division
+at \(N=2,\ldots,18\), including unreduced products and multiples of
+\(P_N\). The same program checks the rational crossing phases and
+angular derivatives, the endpoint-jet repair, and the two-high support
+exclusion. Nonzero classes invisible to all spectral values and negative
+controls for a nonzero missing winding or deleted normals test the
+need to retain the full quotient.
 
-The computation proves the finite inequalities once the enclosure rules and concavity arguments above have been established. It does not sample levels to prove the Ward identity, the long matrix-product bounds, or the tree induction. Those are all-level written arguments. The finite physical identities are the separately stated imports from \cite{Newton}; the certificates supply no new identification of a polynomial with a tangle evaluation.
+The wrapper records source and data hashes before and after execution.
+It rejects optimized Python, runs isolated subprocesses and removes any
+old success summary before validation. The output contains both detailed
+rational records, the bounded finite-algebra record and a summary.
+
+The computation proves the finite inequalities once the enclosure rules and concavity arguments above have been established. It does not sample levels to prove the Ward identity, the long matrix-product bounds, or the tree induction. Those are all-level written arguments. The physical identification of the finite algebra remains the stated import from \cite{Newton}. Neither the interval certificates nor the bounded Fourier checks replace that identification or prove an analytic estimate by samples.
 
 The theorem can be used in a later filling argument in the following precise way. It supplies a strict bound on the sum of all alias sectors and on the entire physical-color complement of a fixed complete-color neighborhood. A filling analysis must still keep its exact finite functional, control the remaining neighborhood and prove a nonzero selected contribution with the appropriate normalization. These requirements are not conclusions of an absolute source bound.

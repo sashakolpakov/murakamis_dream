@@ -22,12 +22,21 @@ INPUTS = [
     "papers/conway-asymptotics/factorial.tex",
     "papers/conway-asymptotics/leaf.tex",
     "papers/conway-asymptotics/packet.tex",
+    "papers/conway-asymptotics/pure-window.tex",
     "papers/conway-asymptotics/filling.tex",
     "papers/conway-asymptotics/figures/two-lattices.tex",
     "papers/conway-asymptotics/check.py",
     "papers/newton-tangles/main.tex",
     "papers/filling-bounds/main.tex",
     "papers/oscillatory-fillings/main.tex",
+    "papers/strict-newton-profiles/main.tex",
+    "papers/strict-newton-profiles/syntax.tex",
+    "papers/strict-newton-profiles/variation.tex",
+    "papers/conway-source-bounds/main.tex",
+    "papers/conway-source-bounds/assembly.tex",
+    "papers/strict-conway-geometry/main.tex",
+    "papers/strict-conway-geometry/deformation.tex",
+    "papers/strict-conway-geometry/fillings.tex",
 ]
 
 

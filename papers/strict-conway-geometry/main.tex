@@ -1,0 +1,267 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,booktabs,array,xurl}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\numberwithin{equation}{section}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\dd}{\mathrm d}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\Rea}{\operatorname{Re}}
+\newcommand{\Ima}{\operatorname{Im}}
+\newcommand{\Log}{\operatorname{Log}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Turn}{\mathsf T}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\kap}{\varkappa}
+\title{Marked geometry of strict Conway compositions}
+\author{}\date{}
+\begin{document}\maketitle
+\begin{abstract}
+An ordered expression in crossing-circle tangles, products and physical
+turns determines a link diagram and a real wire polytope. We construct
+the complete hyperbolic metric whenever that polytope has a strict state.
+Four separate boundary-edge labels allow the pyramid-and-prism
+construction to pass through turned elementary children and arbitrary
+strict closing pairs. We prove convexity, retain every original shaded
+triangle, and identify the closed assembly with the literal projection
+cut of the specified link. Whole complex face maps then give its marked
+deformation, with parabolic main cusps. The original primitive filling
+equations have a unique small solution for independently long signed
+slopes. Smooth completion and an absolute fundamental-chain comparison
+identify the volume with a critical value of a classical cell potential.
+No asymptotic formula for a quantum invariant is used or asserted.
+\end{abstract}
+
+\section{The fixed diagram and the geometric statements}\label{sm:intro}
+
+A crossing circle is an auxiliary unknotted component bounding a disk
+punctured twice by the main strands. We retain its disk and its original
+framing. Let $h$ be the physical quarter-turn of this elementary
+two-strand tangle, with full twists removed. A construction is a finite
+expression in distinct copies of $h$, ordered products and physical
+clockwise quarter-turns $\Turn$. No reduced algebraic expression replaces
+the original diagram in this paper.
+
+The four endpoints of a box are numbered $0,1,2,3$ cyclically, starting
+at the bottom left. In the stack $FG$, with $F$ below $G$, join
+$F_2$ to $G_1$ and $F_3$ to $G_0$. Its exposed tuple is
+$(F_0,F_1,G_2,G_3)$. A turn replaces a tuple by
+$(C_1,C_2,C_3,C_0)$ and moves the entire box and all its disks.
+Cylindrical closure $C$ joins endpoints $0$ to $3$ and $1$ to $2$.
+Our closed diagrams are $C(FG)$ with arbitrary such $F,G$ subject to
+the following condition.
+
+\begin{definition}\label{sm:strict}
+A strict wire state assigns a leaf variable $a\in(0,1/2)$ and an
+output variable to every open subexpression. A turn complements its
+variable. Every product retained below the closing root satisfies
+\begin{equation}\label{sm:gate-domain}
+             \max(x,y)<z<x+y<1.
+\end{equation}
+The two closing outputs are $b,1-b$. The final forced gate is removed,
+but this complementary relation is retained. An expression is strict
+if the resulting real polytope has a strict state.
+\end{definition}
+
+Thus strictness is a condition on this particular presentation. A turned
+leaf or a bare leaf may occur at a closing child. This is larger syntax
+than the completed/completed closing grammar of \cite{Geometry}; its
+global metric theorem will not be applied here.
+
+Fix $\eps_i\in\{-1,0,1\}$ at the $H$ original leaves. It specifies
+the retained signed half twist; $\eps_i=0$ is the pure disk pairing.
+Let $Y_E^\eps$ be the exterior in $S^3$ of the resulting augmented
+link, retaining all $H$ crossing circles and every main component.
+The source-independent functions used below are
+\begin{align}
+ J(u)&=\int_0^u\log(2\sin\pi t)\,\dd t\quad(0\le u\le1),
+       &J(1-u)&=-J(u),\label{sm:J}\\
+ g(a)&=J(2a)-4J(a),\label{sm:g}\\
+ m(x,y,z)&=J(x+y)+J(z)-J(x)-J(y)\notag\\
+ &\hspace{13mm}-J(z-x)-J(z-y)-J(x+y-z).\label{sm:m}
+\end{align}
+Let $\mathcal F$ be the sum of $g$ over leaves and $m$ over retained
+products, and let $F_0$ denote its maximum. The variational theorem
+of \cite{Profiles} supplies the unique strict optimizer and its
+negative definite Hessian in independent wires. We state the precise
+input in Section~\ref{sm:variational}; its proof does not use a
+global metric or a quantum noncancellation theorem.
+
+\begin{theorem}[Complete marked exterior]\label{sm:complete}
+For every fixed strict expression and retained half-twist pattern,
+$Y_E^\eps$ has a complete finite-volume hyperbolic metric assembled
+from two copies of a convex right-angled ideal polyhedron. Its volume is
+\begin{equation}\label{sm:complete-volume}
+                     \Vol(Y_E^\eps)=2\pi F_0.
+\end{equation}
+At each crossing circle the original meridian $\mu_i$ and disk
+longitude $\lambda_i$ are a primitive ordered basis. Their complete
+longitude-to-meridian translation ratio is
+\begin{equation}\label{sm:tau}
+ \tau_i=\frac{2\ii c_i}{1-\eps_i\ii c_i},\qquad
+ c_i=\cot(\pi a_i)>0,\qquad \Ima\tau_i>0.
+\end{equation}
+All original main components have complete cusp ends.
+\end{theorem}
+
+The primitive basis fixes the filling convention. For a subset
+$I\subseteq\{1,\ldots,H\}$ and integers $p_i$, fill precisely the
+auxiliary slopes $\mu_i+p_i\lambda_i$, $i\in I$. Denote the original
+filled exterior by $Y_E^\eps(\mathbf p;I)$. Cutting the original disk,
+rotating through $p_i$ full turns and removing its crossing circle
+inserts the physical power $\eps_i-2p_i$ in that same disk frame.
+The disjoint disk neighborhoods show directly that the ambient manifold
+is still $S^3$. We never fill a main cusp.
+
+\begin{theorem}[Primitive signed fillings]\label{sm:fillings}
+There is a holomorphic classical potential $\Phi_\eps(\boldsymbol\chi)$,
+with $\Phi_\eps(0)=F_0$, and a framed representation of the original
+group near its oriented complete holonomy, whose primitive similarity
+logarithms are
+\begin{equation}\label{sm:UV}
+       U_i=-2\pi\ii\chi_i,\qquad V_i=-2\partial_i\Phi_\eps.
+\end{equation}
+Every main peripheral group remains parabolic. Set $\chi_i=0$ outside
+$I$. There is a bound $B_{E,\eps,I}$ such that, whenever all
+$|p_i|>B_{E,\eps,I}$, the restricted action
+\begin{equation}\label{sm:filled-action}
+ S_{\eps,\mathbf p}(\boldsymbol\chi)=\Phi_\eps(\boldsymbol\chi)
+       +\frac{\pi\ii}{2}\sum_{i\in I}\frac{(\chi_i-1)^2}{p_i}
+\end{equation}
+has a unique critical point in a fixed neighborhood of zero. The
+representation there completes to a smooth complete finite-volume
+hyperbolic metric on the original $Y_E^\eps(\mathbf p;I)$, and
+\begin{equation}\label{sm:filled-volume}
+ \Vol\bigl(Y_E^\eps(\mathbf p;I)\bigr)
+                   =2\pi\Rea S_{\eps,\mathbf p}(\boldsymbol\chi_*).
+\end{equation}
+The signs and relative sizes of the filling integers are independent.
+If $I$ contains all auxiliaries and the literal strand pairing has one
+component, the right side is the volume of that knot complement.
+\end{theorem}
+
+The uniqueness assertion is local in this prescribed family, not a
+classification of the character variety. The potential is defined from
+the cells in Section~\ref{sm:potential}; no selected quantum action is
+an input. A maximum over the finitely many $\eps,I$ gives one bound
+for a fixed strict expression if desired. An empty filling subset
+recovers Theorem~\ref{sm:complete}.
+
+The classical geometry of fully augmented links and their half-twist
+partners is well established; see \cite{Purcell}. Dehn filling and
+holomorphic peripheral potentials belong to the framework of
+\cite{NZ}. The work here is the ordered individual-edge assembly and
+its marked continuation for strict expressions, with the original
+manifold and the absolute normalization proved explicitly.
+
+\section{Variational input and local cells}\label{sm:variational}
+
+We use the following specific conclusions of the strict-profile
+companion \cite[Lemma~2.2, Theorem~3.3, Lemma~4.1 and
+Proposition~4.2]{Profiles}.
+For each nonempty strict fixed-output domain, the maximum over the
+internal wires is strict, unique and nondegenerate. Its profile $f_E(b)$
+is real analytic on that domain. The analogous closed statement holds
+on Definition~\ref{sm:strict}'s reduced affine constraint space.
+The exact open types and product table are
+\begin{equation}\label{sm:types}
+ L=(0,1/2),\quad H=(1/2,1),\quad A=(0,1),\qquad
+ \begin{array}{c|ccc}
+    &L&H&A\\\hline
+ L&A&H&A\\ H&H&\varnothing&H\\ A&A&H&A
+ \end{array}.
+\end{equation}
+Every point of each indicated interval is attained. A leaf has type
+$L$; a turn exchanges $L,H$ and preserves $A$. The nonempty closing
+pairs are $AA,AL,AH,LH$ and their reversals.
+
+For an optimized output define
+\begin{equation}\label{sm:profile-data}
+ B=\cot\pi b,\quad \kap=e^{-f_E'(b)},\qquad
+ X^2=\frac{1+B^2}{1+\kap},\quad Y^2=\kap X^2,
+ \quad X,Y>0.
+\end{equation}
+Then $X^2+Y^2-B^2=1$, and the imported profile identities give
+\begin{equation}\label{sm:profile-types}
+ L:(B,X,Y)=(B,B,1),\qquad H:(B,X,Y)=(-Y,1,Y),
+ \qquad A:-Y<B<X.
+\end{equation}
+A turn sends $(B,X,Y)$ to $(-B,Y,X)$. At a stationary product the
+two children have a common $X$, and, writing $S=B_1+B_2>0$,
+\begin{equation}\label{sm:profile-product}
+       B_o=\frac{B_1B_2+X^2-1}{S},\qquad
+       Y_o=\frac{Y_1Y_2}{S}.
+\end{equation}
+These are scalar variational identities; they do not identify an
+open quadrilateral with a physical four-punctured tangle boundary.
+
+The local geometric inputs are the explicit cells of
+\cite[Section~2]{Geometry}. They require only the strict inequalities,
+not the completed grammar. A leaf $a$ is the convex ideal pyramid
+\begin{equation}\label{sm:leaf}
+ O=\infty,\qquad (C_0,C_1,C_2,C_3)=(1,E,-1,-E),
+                  \qquad E=e^{2\pi\ii a}.
+\end{equation}
+Its base is an ordered quadrilateral gluing face. The side triangles
+$(O,C_1,C_2)$ and $(O,C_3,C_0)$ are shaded; the other two are white.
+The four apex edges are right angled. On the base, edges $01,23$
+have angle $\pi a$ and edges $12,30$ have angle $\pi(1/2-a)$.
+The pyramid volume is $\pi g(a)$.
+
+For a product put $p=z-x$, $q=z-y$, $r=x+y-z$, $w=1-x-y$.
+All are positive. The prism has ideal vertices
+\begin{align}
+ v_0&=1,&v_1&=e^{2\pi\ii p},&v_2&=e^{2\pi\ii(p+r)},&
+ v_3&=e^{2\pi\ii(p+r+q)},\label{sm:prism-vertices}\\
+ P&=v_1+\frac{\sin\pi x\sin\pi r}{\sin\pi w\sin\pi p}(v_1-v_0),
+ &&&&\notag
+\end{align}
+and $\infty$. Its two triangular faces are white. Its ordered
+attachment and output tuples are
+\begin{equation}\label{sm:stack-map}
+ F:C\mapsto(v_0,v_1,P,\infty),\quad
+ G:C\mapsto(\infty,P,v_2,v_3),\quad
+ C^o=(v_0,v_1,v_2,v_3).
+\end{equation}
+The angle table from the explicit supporting planes is
+\begin{equation}\label{sm:prism-angles}
+\begin{array}{c|ccccc}
+\text{edge}&Pv_1,\infty v_0&Pv_2,\infty v_3&v_1v_2,v_0v_3&P\infty&v_0v_1,\ v_2v_3\\\hline
+\text{angle}/\pi&x&y&1-z&w&p,\ q
+\end{array}.
+\end{equation}
+The prism volume is $\pi m(x,y,z)$. These volume normalizations
+follow by subdivision into positive ideal tetrahedra and the
+Lobachevsky formula, \cite[equation~(2.1)]{Geometry}.
+
+For an ordered quadrilateral let
+\[
+ \kap(a,b,c,d)=\frac{(a-b)(c-d)}{(a-d)(b-c)}.
+\]
+It determines the whole ideal face, including shear. The local
+calculation \cite[equations~(3.2)--(3.3)]{Geometry} gives input
+cross ratios $e^{-m_x},e^{-m_y}$ and output $e^{-m_z}$ in the
+canonical prism order. The first two assignments in
+\eqref{sm:stack-map} invert the canonical input ratios.
+Consequently $f_F'(x)+m_x=0$ and $f_G'(y)+m_y=0$ match all four
+ordered vertices. Full reversal $C_j^F\mapsto C_{3-j}^G$ preserves
+$\kap$, so the closing equation $f_F'(b)=f_G'(1-b)$ matches the
+entire closing face as well. No comparison of absolute values replaces
+these isometries.
+
+\input{complete}
+\input{deformation}
+\input{fillings}
+\end{document}

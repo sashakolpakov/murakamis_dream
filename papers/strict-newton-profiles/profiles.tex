@@ -1,0 +1,379 @@
+\section{Stationary boundary profiles and their constants}\label{st:profile-section}
+The derivative of a fixed-output profile describes how the
+maximum changes when the output moves. It is convenient to
+record this derivative together with the output itself.
+For a strict open output $b$, define
+\begin{equation}\label{st:port}
+ B=\cot\pi b,\qquad \kappa_E=e^{-f_E'(b)},\qquad
+ X=\sqrt{\frac{1+B^2}{1+\kappa_E}},\qquad
+ Y=\sqrt{\kappa_E}\,X .
+\end{equation}
+The square roots are positive. Thus
+$X^2+Y^2-B^2=1$ and $f_E'(b)=2\log(X/Y)$.
+We call $(B,X,Y)$ the stationary boundary parameters.
+Their definitions are variational; no global geometric
+realization is assumed.
+
+\begin{lemma}[The stationary product]\label{st:port-product}
+At a strict stationary product the two children and the
+output have the same $X$. With child cotangents $B_1,B_2$,
+\begin{equation}\label{st:port-product-equations}
+ S=B_1+B_2>0,\qquad
+ B_o=\frac{B_1B_2+X^2-1}{S},\qquad
+ Y_o=\frac{Y_1Y_2}{S}.
+\end{equation}
+A turn sends $(B,X,Y)$ to $(-B,Y,X)$.
+\end{lemma}
+\begin{proof}
+At inputs $x,y$ and output $z$, stationarity gives
+$f_1'(x)=-m_x$, $f_2'(y)=-m_y$ and $f_o'(z)=m_z$.
+Differentiating \eqref{st:m} yields
+\begin{align*}
+ e^{m_x}&=\frac{\sin\pi(x+y)\sin\pi(z-x)}
+                  {\sin\pi x\sin\pi(x+y-z)},\\
+ e^{m_y}&=\frac{\sin\pi(x+y)\sin\pi(z-y)}
+                  {\sin\pi y\sin\pi(x+y-z)},\\
+ e^{-m_z}&=\frac{\sin\pi(z-x)\sin\pi(z-y)}
+                  {\sin\pi z\sin\pi(x+y-z)}.
+\end{align*}
+Set $D=1-B_1B_2+B_o(B_1+B_2)$. The identities
+\[
+ S=\frac{\sin\pi(x+y)}{\sin\pi x\sin\pi y}>0,\qquad
+ D=\frac{\sin\pi(x+y-z)}
+          {\sin\pi x\sin\pi y\sin\pi z}>0
+\]
+and \eqref{st:port} give
+\[
+ X_1^2=X_2^2=X_o^2=D,\quad
+ Y_1^2=S(B_1-B_o),\quad Y_2^2=S(B_2-B_o),\quad
+ Y_o^2=(B_1-B_o)(B_2-B_o).
+\]
+Taking positive roots proves the product formulas.
+For a turn $f_{\T E}(b)=f_E(1-b)$, so its derivative
+changes sign and its cotangent changes sign. This
+proves the last assertion.
+\end{proof}
+
+\begin{proposition}[Parameters of the three types]\label{st:port-types}
+On their actual strict output intervals the parameters satisfy
+\begin{equation}\label{st:parameter-table}
+ \begin{array}{c|c}
+ L&(B,X,Y)=(B,B,1),\quad B>0,\\
+ H&(B,X,Y)=(-Y,1,Y),\quad Y>0,\\
+ A&-Y<B<X.
+ \end{array}
+\end{equation}
+Consequently there are constants $c_E$ such that
+\begin{equation}\label{st:rigid-profiles}
+ f_E(b)=g(b)+c_E\quad(E:L),\qquad
+ f_E(b)=g(1-b)+c_E\quad(E:H).
+\end{equation}
+\end{proposition}
+\begin{proof}
+For a leaf, $g'=2\log\cot\pi b$ gives $(B,B,1)$.
+The turn formula exchanges the first two rows and
+preserves the inequality in the third.
+Consider the products giving type $A$, whose children
+have type $L$ or $A$.
+If the common $X<1$, put $h_0=\sqrt{1-X^2}$ and write
+\[
+ B_i=h_0\cot\alpha_i,\qquad
+ Y_i=h_0\csc\alpha_i,\qquad 0<\alpha_i<\pi.
+\]
+The low type has $\alpha_i=\arccos X$ and the
+unrestricted type has $\alpha_i>\arccos X$.
+The positivity of $S$ gives $\alpha_1+\alpha_2<\pi$,
+and \eqref{st:port-product-equations} adds these angles.
+Therefore $B_o<X$ and
+$B_o+Y_o=h_0\cot((\alpha_1+\alpha_2)/2)>0$.
+If $X\ge1$, each child has
+$\sqrt{X^2-1}<B_i\le X$, with equality at the
+upper bound allowed for type $L$.
+In particular $B_o>0$, and
+\[
+ (X-B_1)(X-B_2)<1
+\]
+implies $B_o<X$ by \eqref{st:port-product-equations}.
+The strict inequality holds also at $X=1$, since
+each $B_i>0$.
+
+A product giving type $H$ has one high child, with
+parameters $(-u,1,u)$. Hence the common $X=1$.
+Its other child, of type $L$ or $A$, has parameters
+$(b,1,b)$ with $b>0$. Strictness says $b-u>0$,
+and the output is
+\[
+ \left(-\frac{ub}{b-u},1,\frac{ub}{b-u}\right).
+\]
+This proves all cases of the table.
+Finally the first two rows determine $f_E'$ as
+the derivative of $g(b)$ or $g(1-b)$ on the
+connected strict interval, giving \eqref{st:rigid-profiles}.
+Their constants are computed next, without a choice
+of additive normalization.
+\end{proof}
+
+\subsection{The intrinsic satellite action}
+No product has type $L$. A product of type $H$ has
+exactly one high child. Starting at an $L$ or $H$
+output, follow turns and the unique high child of
+each product. This path terminates at a unique
+original leaf, the \emph{distinguished leaf}.
+The other children on the path are called its
+satellites, and have type $L$ or $A$.
+Between successive high products the number of turns
+is even. Thus the full algebra also gives
+\begin{equation}\label{st:spine-source}
+ E_H=(\T h_*)\prod_{j=1}^m Q_j,\qquad
+ E_L=\T\left((\T h_*)\prod_{j=1}^m Q_j\right),
+\end{equation}
+after associating the inherited products. This
+identity retains the actual polynomials; its
+stationary profile is simpler than the polynomial.
+
+For a satellite $Q$ define
+\begin{equation}\label{st:Omega}
+ \Omega_Q=\max_{0\le a\le1/2}\{g(a)+f_Q(a)\}.
+\end{equation}
+The maximum is the complete action of the literal
+strict closure $C(h\,\T Q)$. The strict type of
+$Q$ is $L$ or $A$, so Theorem~\ref{st:positive-action}
+gives a unique strict maximizer $\beta_Q$.
+Its equation is
+$g'(\beta_Q)+f_Q'(\beta_Q)=0$.
+Consequently the satellite has parameters
+\begin{equation}\label{st:satellite-parameters}
+ (B_Q,X_Q,Y_Q)=(b_Q,1,b_Q),\qquad
+ b_Q=\cot\pi\beta_Q>0 .
+\end{equation}
+For type $L$, $\beta_Q=1/4$ and $b_Q=1$;
+for type $A$, the strict inequality $B_Q<X_Q$
+gives $1/4<\beta_Q<1/2$ and $0<b_Q<1$.
+
+\begin{theorem}[Harmonic response and absolute profiles]\label{st:profiles}
+For the spine \eqref{st:spine-source}, let $u_0$
+be the cotangent of its distinguished original leaf.
+Let $v$ be the final high output's $Y$, equivalently
+the final low output's $X$. At its stationary state,
+\begin{equation}\label{st:harmonic}
+ \frac1{u_0}=\frac1v+\sum_{j=1}^m\frac1{b_{Q_j}},
+ \qquad
+ c_E=\sum_{j=1}^m\Omega_{Q_j}.
+\end{equation}
+In particular \eqref{st:rigid-profiles} holds with
+exactly this constant. The parameters $b_{Q_j}$
+depend only on the corresponding satellites.
+\end{theorem}
+\begin{proof}
+Every high product has common $X=1$, so its satellite
+is at the unique state \eqref{st:satellite-parameters}.
+With high input $(-u,1,u)$ and output $(-v,1,v)$,
+\eqref{st:port-product-equations} gives
+\begin{equation}\label{st:one-response}
+ v=\frac{ub}{b-u},\qquad
+ 0<u<b,\qquad \frac1u=\frac1v+\frac1b .
+\end{equation}
+Iteration proves the first formula. Conversely every
+$v,b>0$ gives the strict branch $0<u<b$; no sign
+has been lost by squaring the stationary equations.
+
+It remains to fix the constant. Suppose the incoming
+high profile is $g(1-x)+c$. Send the outgoing high
+label $z$ to one. Then
+$v=-\cot\pi z\to+\infty$, $u\to b$ and
+$x\to1-\beta_Q$. The last gate approaches
+$x+\beta_Q=z=1$. Its continuous action is zero:
+in \eqref{st:m} use $J(1-\beta_Q)=-J(\beta_Q)$,
+or note that all three atoms in
+\eqref{st:gate-atoms} are flat.
+Continuity of profiles, proved in
+Theorem~\ref{st:positive-action}, gives
+\[
+ c_{\rm out}=c+g(\beta_Q)+f_Q(\beta_Q)=c+\Omega_Q.
+\]
+Turns preserve the constant and the bare leaf has
+constant zero. This proves the second formula.
+\end{proof}
+For a low satellite, $\Omega_Q=2G_0+c_Q$ where
+$G_0=g(1/4)$. The formula is an identity of optimized
+actions. For example at $N=3$ the complete source has
+$h=10-z$ and $\T h=z^2-1$; their product is
+$10z^2-2z-8$ in
+$\CC[z]/((z-1)^2(z+2))$. It is not a scalar
+multiple of $\T h$: the value ratio at $-2$ is
+$12$, whereas the normal ratio at $1$ is $9$.
+Thus the constant profile does not suppress normal
+data of the source.
+
+\subsection{Unrestricted components and their effective range}
+Replace each maximal low subtree by its profile
+$g+c_i$. A remaining type-$A$ subtree has syntax
+\begin{equation}\label{st:skeleton}
+ A::=LL\mid\T A\mid AA\mid LA\mid AL,
+\end{equation}
+where $L$ here is an effective profile, not a
+replacement quantum leaf. The definition of the
+maximum immediately gives
+\begin{equation}\label{st:constant-skeleton}
+ f_A(z)=f_{A^{\rm skel}}(z)+\sum_i c_i.
+\end{equation}
+At an unflagged junction directed toward a parent,
+the outgoing expression is $Q=\T A$ with $A=FG$
+an unturned product and both children of type $L$
+or $A$. Its intrinsic action is
+\[
+ \Omega_Q=\max_{0\le a\le1/2}
+                 \{g(a)+f_A(1-a)\}.
+\]
+This is the action of the strict closure $C(hA)$.
+
+\begin{theorem}[The intrinsic probe range]\label{st:probe}
+At this closing maximum the unturned output has
+\begin{equation}\label{st:probe-port}
+ (B_A,X_A,Y_A)=(-x,x,1),\qquad \frac12\le x<1.
+\end{equation}
+Every effective leaf in \eqref{st:skeleton},
+including the closing probe, has cotangent in
+$[1/2,1)$. Equality at $1/2$ occurs only when
+the entire effective closure consists of three
+leaves. In every other case all these cotangents
+are strictly between $1/2$ and one.
+
+The absolute identities are
+\begin{equation}\label{st:probe-constant}
+ \Omega_Q=F_{\rm probe}(A^{\rm skel})+\sum_i c_i,
+ \qquad F_0=\sum_j\Omega_{Q_j}
+\end{equation}
+for a whole reduced tree rooted at a flagged leaf,
+with satellites $Q_j$ at that root.
+\end{theorem}
+\begin{proof}
+The root condition says that the two output labels
+are complementary and their profile derivatives
+agree. Hence their triples are $(B,X,Y)$ and
+$(-B,X,Y)$. The bare probe has $(x,x,1)$,
+so \eqref{st:probe-port} holds initially with
+$0<x<1$, the strict upper bound coming from
+$-Y_A<B_A$.
+At the last product use the identities in the
+proof of Lemma~\ref{st:port-product}:
+\[
+ 1=Y_A^2=(B_F-B_A)(B_G-B_A)
+             \le(X_A-B_A)^2=4x^2 .
+\]
+Both factors are positive because output labels
+strictly exceed the inputs. This proves $x\ge1/2$.
+
+At the root product every child has common $X=x<1$.
+Its cotangent satisfies $B_i\le X$ and, by
+$B_1+B_2>0$, also $B_i>-X$.
+If it is type $A$, both inequalities are strict,
+so $Y_i^2=1+B_i^2-X^2<1$.
+Turns exchange $X,Y$. The same argument propagates
+the strict bounds $X,Y<1$ through every proper
+type-$A$ descendant.
+For a low child $(X,X,1)$ and another child
+$(B,X,Y)$, the output bound $Y_o\le1$ implies
+\begin{equation}\label{st:effective-bound}
+ 1+B^2-X^2\le(B+X)^2,\qquad
+ 1\le2X(B+X)\le4X^2.
+\end{equation}
+The last inequality is strict for an unrestricted
+neighbor. For two low children at a proper
+descendant, the first is strict because $Y_o<1$.
+Thus equality is possible only at the root
+product with two effective low children. It
+gives the three-leaf closure and $x=1/2$ at
+all three leaves. This proves the range.
+
+The first identity in \eqref{st:probe-constant}
+is \eqref{st:constant-skeleton} inside the same
+maximum. For the second, write the original
+root source as $\phi((\T h_0)\prod Q_j)$.
+The associated open high profile is
+$g(1-z)+\sum_j\Omega_{Q_j}$ by
+Theorem~\ref{st:profiles}. At the closing output
+$z=1$ the deleted last gate has coefficient
+one and $g(0)=0$. Profile continuity identifies
+its endpoint maximum with precisely the original
+closed action, proving the formula.
+\end{proof}
+
+One boundary case in later coefficient estimates can
+be read directly from these parameters. If the last
+product is $A=LF$ with $F$ unrestricted, then
+\[
+ B_F=\frac1{2x}-x,\qquad Y_F=\frac1{2x},\qquad
+ f_F'=2\log(2x^2),\quad f_A'=2\log x .
+\]
+For $1/2\le x\le2/3$ both slopes lie in
+$[-2\log2,0]$. This is an exact closed parameter
+range; it does not assert an estimate for the
+signed source. Such estimates require its actual
+coefficient arrays.
+
+\begin{corollary}[The action budget at any exposed leaf]\label{st:root-budget}
+Use Corollary~\ref{st:any-root}, with root edge parity
+$\sigma$ and remaining product $A$.
+If $\sigma=1$, every branch of $A$ has type $L$ or
+$A$ and the original complete action is
+$F_0=\sum_Q\Omega_Q$, summed over those branches.
+If $\sigma=0$, then $Q=\T A$ has type $L$ or $A$
+and $\Omega_Q=F_0$.
+\end{corollary}
+\begin{proof}
+For $\sigma=1$, this is the last identity of
+\eqref{st:probe-constant} at the exposed flagged
+root. For $\sigma=0$, the original positive closure
+is $C(hA)$, whose action is exactly
+$\max_a\{g(a)+f_A(1-a)\}=\Omega_{\T A}$.
+This includes the decorated case in which $A$
+has one high child and $\T A$ is low.
+Only the finite source is rerooted; the variational
+maximum and every physical leaf are unchanged.
+\end{proof}
+
+\section{The quarter bound at the original closed maximum}
+\begin{theorem}[All original leaves are at or above quarter]\label{st:quarter}
+At the unique complete maximum of any strict closed
+expression, every stationary port satisfies $X,Y\le1$.
+Every original leaf label therefore satisfies
+\begin{equation}\label{st:quarter-bound}
+ \frac14\le a_\ell(y_*)<\frac12 .
+\end{equation}
+Along an $L/H$ spine with $m$ satellites, its
+distinguished original leaf additionally satisfies
+$\cot(\pi a_*)\le1/(m+1)$.
+\end{theorem}
+\begin{proof}
+At the complementary root the two triples have
+opposite $B$ and equal $X,Y$. For type $AA$ the
+inequalities give $|B|<\min(X,Y)$.
+Together with $X^2+Y^2-B^2=1$ this gives
+$X,Y<1$. For type $AL$, the low side is
+$(x,x,1)$ and the unrestricted inequality
+$-1<-x$ gives $x<1$.
+For type $AH$, the high side has $X=1$,
+and the unrestricted side gives $Y<1$.
+For type $LH$, the two explicit forms force
+$X=Y=1$. These exhaust the strict closing pairs.
+
+Descend through a product. The common $X$ is
+already at most one. Every child type satisfies
+$B_i\le X$, and $B_1+B_2>0$ implies
+$B_i>-B_j\ge-X$. Thus
+$Y_i^2=1+B_i^2-X^2\le1$.
+A turn exchanges the same two bounds.
+At a leaf, $X=\cot\pi a>0$, proving
+\eqref{st:quarter-bound}. Finally, in
+\eqref{st:harmonic} one has $v\le1$ and
+$b_{Q_j}\le1$, so $1/u_0\ge m+1$.
+\end{proof}
+The lower endpoint is attained. In
+$C(h\,\T(h^s))$, the inner $s$ original leaves
+have $X=1$ and hence label $1/4$.
+Indeed their product has at $X=1$ the parameters
+$B=Y=1/s$, its turn has $(-1/s,1/s,1)$, and
+the closing leaf has cotangent $1/s$.
+Thus strictness of every angle state does not force
+its original leaf labels to lie strictly above one quarter.

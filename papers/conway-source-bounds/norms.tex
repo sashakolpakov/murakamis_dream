@@ -1,0 +1,125 @@
+\subsection{Conditioning at the complete spectral nodes}\label{cs:conditioning}
+
+The canonical representative of a quotient class has degree less than
+\(N\). Off the spectral nodes we specify whether we use this
+representative or an actual unreduced product. Define the norm
+\[
+ \normJ{F}=\max\bigl\{|F(c)|+|F'(c)|:c\text{ a double node};
+                     \ |F(-2)|\text{ if }N\text{ is odd}\bigr\}.
+\]
+It is a norm on the full quotient and is submultiplicative because
+\(|FG|+|(FG)'|\le(|F|+|F'|)(|G|+|G'|)\) at each double node.
+The derivative at an odd simple node is not part of the data.
+Put
+\begin{equation}\label{cs:weights}
+ w_{N,r}=\begin{cases}e_r(-2),&0\le r\le M,\\1,&M<r<N.\end{cases}
+\end{equation}
+These weights are positive. The following estimates are purely at the
+complete main color; no tree or filling-power hypothesis is needed.
+
+\begin{lemma}[Complete-node conditioning]\label{cs:conditioning-lemma}
+There are absolute constants \(C,A\) such that
+\begin{align}
+ |\phi(F)|&\le CN^A\normJ{F},&
+ \normJ{R^\epsilon L_j}&\le CN^A,
+ &1\le j\le N,\quad\epsilon\in\{0,1,-1\},\label{cs:finite-cost}\\
+ \normJ{e_r}&\le CN^A w_{N,r},&&&0\le r<N,\label{cs:basis-norm}\\
+ \log w_{N,r}&=Ng(r/N)+O(\log N),&&&0\le r\le M.\label{cs:weight-rate}
+\end{align}
+For \(r>M\), every value of \(e_r\) at a spectral node is zero,
+but its first normals satisfy \(\normJ{e_r}\le N^2/16\).
+Every canonical polynomial also satisfies
+\begin{equation}\label{cs:ellipse}
+ |F(2\cos(\theta+\ii y))|
+       \le CN^A e^{N|y|}\normJ{F},\qquad \theta,y\in\mathbb R.
+\end{equation}
+This last assertion is not made for arbitrary unreduced representatives.
+\end{lemma}
+\begin{proof}
+The polynomial with the distinct complete nodes as simple roots is
+\[
+ Q_N(z)=\begin{cases}
+ 2T_{N/2}(z/2),&N\text{ even},\\
+ (z+2)\{U_M(z/2)-U_{M-1}(z/2)\},&N=2M+1.
+ \end{cases}
+\]
+Its interval norm and first derivatives are polynomial in \(N\).
+At even roots, \(|Q_N'|\ge N/2\). At an odd interior root
+\(c=2\cos t\), differentiation gives
+\(|Q_N'(c)|=N/(2\sin(t/2))\); at \(-2\) it gives \(N\).
+Each Lagrange cardinal is bounded on \([-2,2]\) by
+\(\|Q_N'\|_\infty/|Q_N'(c)|\), by the mean-value formula.
+Thus interpolation at the distinct nodes has polynomial cost.
+
+For \(\deg F<N\), interpolate its values by \(I\) with
+\(\deg I<\deg Q_N\). Write \(F-I=Q_N H\). At each double node,
+\[
+ H(c)=\frac{F'(c)-I'(c)}{Q_N'(c)}.
+\]
+The degree of \(H\) is less than the number of double nodes, so these
+values determine it. The interpolating polynomial for this second
+step is \(Q_N\) at even levels and \(Q_N/(z+2)\) at odd levels.
+The latter has polynomial interval norm, and its root derivatives
+have magnitude \(|Q_N'(c)|/(c+2)\ge N/8\). The same cardinal
+estimate applies. Derivative bounds do not presume good conditioning:
+a degree-\(n\) polynomial has Chebyshev coefficients at most twice its
+interval norm, and \(\|T_j'(z/2)\|_\infty\le j^2/2\).
+This proves polynomial equivalence of the canonical interval norm,
+its complete value-and-normal norm, and its Chebyshev coefficient sum.
+
+In particular \([z^d]T_d(z/2)=1/2\), so the exact functional in
+\eqref{cs:turn-trace} has polynomial cost. The circle polynomial has
+\(|L_j|\le j\) on \([-2,2]\), and the same derivative estimate gives
+a polynomial bound for its first derivative. The crossing has unit
+values and logarithmic derivative \(O(N^2)\) at every double node
+by \eqref{cs:circle-crossing}. Its inverse has the same bounds.
+This proves \eqref{cs:finite-cost}. The Chebyshev coefficient bound
+and \(|T_k(\cos(\theta+\ii y))|\le e^{k|y|}\) prove
+\eqref{cs:ellipse}.
+
+For low \(r\), the values \(e_r(c)\) at distinct nodes are either
+zero or nonnegative, and do not exceed \(e_r(-2)\). Its degree is
+less than the number of distinct nodes, so the first interpolation
+step bounds its interval norm and derivative by \(CN^A e_r(-2)\).
+The product at \(-2\) is
+\[
+ e_r(-2)=\frac{\prod_{a<r}4\cos^2((a+1/2)\pi/N)}{S_r^2}.
+\]
+Endpoint sum--integral comparison, as in \eqref{cs:factorial}, gives
+\(\log e_r(-2)=Ng(r/N)+O(\log N)\) uniformly in \(r\le M\).
+The midpoint logarithmic intervals at the upper endpoint contribute
+only \(O(\log N)\), including both parities.
+
+For high \(r\), put \(l=N-r\le\lfloor N/2\rfloor\),
+\(\theta=\pi/N\), and \(B_k(z)=\prod_{a<k}(c_a-z)\).
+Reflection gives \(B_rB_l=(-1)^NP_N\). At a double node indexed by
+\(0\le j<\lfloor N/2\rfloor\), the derivative of \(e_r\) vanishes
+unless \(j<l\), and otherwise
+\begin{equation}\label{cs:high-normal}
+ |e_r'(c_j)|=
+ \frac{S_{l-1}^2}
+ {2\sin((2j+1)\theta)S_{l+j}S_{l-1-j}}.
+\end{equation}
+Compare quadratic coefficients in the reflected identity, using
+\[
+ \frac{|P_N''(c_j)|}{2}=\frac{N^2}{4\sin^2((2j+1)\theta)},\qquad
+ |B_l'(c_j)|=\frac{S_{l+j}S_{l-1-j}}{2\sin((2j+1)\theta)},
+\]
+and \(S_rS_{l-1}=N\). The ratio
+\(D_j=S_{l+j}S_{l-1-j}/S_{l-1}^2\) starts at \(2\sin(l\theta)\)
+and is nondecreasing, since
+\[
+ \frac{D_{j+1}}{D_j}
+ =\frac{\sin((l+j+1)\theta)}{\sin((l-1-j)\theta)}\ge1;
+\]
+the two angles sum to at most \(\pi\). Consequently
+\eqref{cs:high-normal} is at most
+\(1/[4\sin((2j+1)\theta)\sin(l\theta)]\le N^2/16\).
+The odd simple-node value is zero. This retains every normal and
+completes the proof.
+\end{proof}
+
+Throughout the estimates, a uniform error \(o(1)\) may absorb powers
+of \(N\), a fixed number of sums and the errors of fixed estimates.
+It is uniform over all indicated physical colors and retained signs.
+A strict exponential loss is reduced before those errors are absorbed.

@@ -58,7 +58,8 @@ For the bound use $|H_a|\le1$, $|D_a|\le |n|d/2$ in
 
 \subsection{The midpoint identity, including odd physical powers}
 
-Let $C_N(t)$ be the even pure corridor from Section~\ref{ca:packet}, with one variable for the moment, and let
+Let $C_N(t)$ be the even strict pure corridor of
+Theorem~\ref{ca:strict-pure}, with one variable for the moment, and let
 $\mathcal F_N(z)=\sum_{|h|\le H_N^{\rm cut}}C_N(h/N)e^{2\pi\ii hz}$.
 Put
 \[
@@ -119,7 +120,7 @@ where, with $I=[-1/2,1/2]$,
 This is precisely the normalization in \cite[equation (1.6)]{Filling}; the definition \eqref{ca:period} fixes it independently of that equation number.
 
 Before using any asymptotic theorem, \eqref{ca:crossing-split} and
-Theorem~\ref{ca:packet-theorem} show that replacing the full physical source by this corridor changes its filled value by at most
+Theorem~\ref{ca:strict-pure} show that replacing the full physical source by this corridor changes its filled value by at most
 \begin{equation}\label{ca:filled-error}
  \prod_j2N(1+|n_j|/2)\ e^{N(F_0-\gamma_*)}
 \end{equation}
@@ -142,20 +143,52 @@ $\alpha-b/2=3/2$. The local phase and amplitude are independent of $N$ here, so 
 $F_0-\Re S_{\mathbf n}=O(\sum n_j^{-2})$ with no ratio constraint.
 Increase a fixed threshold on the independent $|n_j|$ until this loss is smaller than $\gamma_*/2$. Then \eqref{ca:filled-error} is exponentially below the nonzero leading term. This proves the same relative asymptotic for the whole original evaluation.
 
-It remains to identify its action with the classical marked filling. Proposition~\ref{ca:shear}, followed by elimination of the stationary wires, gives the exact identities of germs
+It remains to identify its action with the original marked filling,
+especially when a physical power is odd. We use a classical shear
+defined at every strict leaf, not a signed quantum asymptotic at
+that leaf. For $0<x<1/2$ and $v=g_t(x,t)$ put
+\[
+ \chi=t-\frac{\epsilon}{2\pi\ii}v,\qquad
+ f_\epsilon^{\rm cl}(x,\chi)
+        =g(x,t)-\frac{\epsilon}{4\pi\ii}v^2.
+\]
+At zero its change of parameter has derivative
+$1-\epsilon\ii\cot(\pi x)\ne0$, so it is locally invertible.
+Direct differentiation gives
+$\dd f_\epsilon^{\rm cl}=g_x\,\dd x+v\,\dd\chi$.
+These are exactly the mixed-pyramid potential and the
+primitive retained-half-twist shear of
+\cite[Section 6, equations (6.1)--(6.5)]{StrictGeometry};
+the normalization is $J(0)=0$ and $f_\epsilon^{\rm cl}(x,0)=g(x,0)$.
+Their construction is classical and includes $x=1/4$.
+On the high-index interval they agree with
+Proposition~\ref{ca:shear}, but that agreement is not needed here.
+
+Sum these functions and the unchanged gate actions and eliminate
+the stationary wires. Denote the resulting classical action by
+$\Phi_\epsilon^{\rm cl}$. The differential just computed shows that
+its wire derivatives are precisely the pure wire derivatives at
+the changed colors. Hence the pure stationary wires are also
+stationary for this sheared action. Its Hessian in those wires
+is invertible near zero, so they are the same local branch.
+The envelope rule and the local formula give the exact identities
 \begin{align}
  \chi_j&=t_j-\frac{\epsilon_j}{2\pi\ii}
                              \partial_{t_j}\Phi_0(t),\notag\\
- \Phi_\epsilon(\chi)
+ \Phi_\epsilon^{\rm cl}(\chi)
    &=\Phi_0(t)
        -\sum_j\frac{\epsilon_j}{4\pi\ii}
                          [\partial_{t_j}\Phi_0(t)]^2.\label{ca:global-shear}
 \end{align}
-Indeed the wire derivatives after the local shear equal the pure derivatives; their stationary points agree at the changed colors. The leaf identity already fixed the additive function, so no new constant appears on elimination. The functions and branches in \eqref{ca:global-shear} are exactly the cell potential of \cite[Section 2]{Geometry}: they use the same $J$, gate action, retained half twists and complete value $F_0$.
+The right side is an identity of functions, not merely of their
+derivatives. It fixes the additive constant and every
+color-dependent term. By its construction it is the cell potential
+of \cite[Theorem 1.3]{StrictGeometry}, for the same original
+expression, disk framings and retained half twists.
 
 For the Fourier Legendre functions, \eqref{ca:global-shear} gives
 \begin{equation}\label{ca:Legendre-shear}
- \Psi_\epsilon(z)=\Psi_0(z)+\pi\ii\sum_j\epsilon_jz_j^2,
+ \Psi_\epsilon^{\rm cl}(z)=\Psi_0(z)+\pi\ii\sum_j\epsilon_jz_j^2,
  \qquad \chi=t+\epsilon z,
  \quad \nabla\Phi_0(t)=-2\pi\ii z.
 \end{equation}
@@ -171,12 +204,34 @@ Substitution into the Legendre expression gives exactly
  S_{\mathbf n}
  &=\Psi_0(z_g)+\pi\ii\sum_jn_j z_{g,j}^2
                         -2\pi\ii\sum_j z_{g,j}\notag\\
- &=\Phi_\epsilon(\chi)
+ &=\Phi_\epsilon^{\rm cl}(\chi)
        +\frac{\pi\ii}{2}\sum_j\frac{(\chi_j-1)^2}{p_j}.
  \label{ca:classical-action}
 \end{align}
-The point $\chi$ is critical for this last expression and tends to zero as the independent $|p_j|$ grow. The uniqueness assertion of
-\cite[Theorem 1.1]{Geometry} identifies it with the original primitive filling branch. That theorem proves smooth metric completion on the actual knot exterior, with all main cusps complete, and gives its absolute volume as $2\pi$ times the real part of \eqref{ca:classical-action}. It does not merely identify a representation volume.
+The primitive similarity logarithms in that theorem are
+\[
+ U_j=-2\pi\ii\chi_j,\qquad
+ V_j=-2\partial_j\Phi_\epsilon^{\rm cl}
+       =4\pi\ii z_{g,j}.
+\]
+Consequently $U_j+p_jV_j=-2\pi\ii$ exactly, with the original
+integer $p_j$. These equations also show that $\chi$ is critical
+for the final expression in \eqref{ca:classical-action}.
+Since $z_{\mathbf n}=O(\max_j|n_j|^{-1})$ and
+$\xi(z)=O(\|z\|)$, the formula $\chi=t_g+\epsilon z_g$
+shows that $\chi$ tends to zero independently of the ratios
+of the filling integers. Local uniqueness in
+\cite[Theorem 1.3]{StrictGeometry} therefore identifies it with
+the primitive filling branch through the oriented complete metric.
+No uniqueness of the full character variety is used.
+That theorem keeps the original full group relations and main
+parabolic cusps, proves smooth completion on the actual filled
+exterior, and compares the same positive cell chain with the
+metric fundamental chain. Its conclusion is the absolute equality
+$\Vol(S^3\setminus K_{\epsilon,\mathbf p})
+=2\pi\Re S_{\mathbf n}$.
+The knot test in Section~\ref{ca:intro} is what makes this
+filled main link a knot.
 
 Take $P_0$ larger than the geometric threshold and large enough that
 $|n_j|=|\epsilon_j-2p_j|$ exceeds the source and whole-period thresholds. The equality holds for every fixed signed tuple beyond it. Finally the framing factor and all powers of $\kappa$ have modulus one; the Gaussian coefficient is nonzero. Taking logarithms proves \eqref{ca:volume} and completes the proof of Theorem~\ref{ca:main}.

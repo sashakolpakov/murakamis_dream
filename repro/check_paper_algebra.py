@@ -26,6 +26,8 @@ CHECKS = {
     "planar-certificates": "papers/planar-certificates/check.py",
     "triangular-insertion": "repro/check_triangular_boundary_certificate.py",
     "newton-tangles": "papers/newton-tangles/check.py",
+    "strict-newton-profiles": "papers/strict-newton-profiles/check.py",
+    "strict-conway-geometry": "papers/strict-conway-geometry/check.py",
     "terminal-decorations": "papers/terminal-decorations/check.py",
     "circle-tree-geometry": "papers/circle-tree-geometry/check.py",
     "conway-geometry": "papers/conway-geometry/check.py",
@@ -39,8 +41,9 @@ CHECKS = {
 }
 DIRECTORY_CHECKS = {"planar-certificates", "triangular-insertion", "terminal-decorations",
                     "meridian-tangles", "conway-source-bounds", "conway-asymptotics",
-                    "quarter-index-asymptotics"}
+                    "quarter-index-asymptotics", "strict-newton-profiles"}
 CERTIFICATE_INPUTS = (
+    "papers/conway-source-bounds/check_fourier.py",
     "repro/check_protected_sums.py",
     "experiments/audit_actual_sector_cover.py",
     "experiments/audit_actual_shared_radius_anchor_obstruction.py",

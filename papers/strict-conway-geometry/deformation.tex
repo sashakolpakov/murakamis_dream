@@ -1,0 +1,305 @@
+\section{A classical shear potential}\label{sm:potential}
+
+Continue each occurrence of $J$ holomorphically from its strict real
+argument. Its branch and additive constant are fixed by
+\eqref{sm:J}. For a leaf put
+\begin{equation}\label{sm:mixed-g}
+ g(x,t)=J(2x)-2J(x)-J(x-t)-J(x+t),\qquad
+ v=g_t=\Log\frac{\sin\pi(x-t)}{\sin\pi(x+t)}.
+\end{equation}
+At $t=0$ this is $g(x)$ and $v=0$. The local mixed pyramid has
+ordered base
+$(1,E/T,-1/T,-E)$, with $E=e^{2\pi\ii x}$ and $T=e^{2\pi\ii t}$.
+For small real $t$, its four half-arcs are
+$x-t,1/2-x,x+t,1/2-x$. The two positive tetrahedra across its
+first diagonal have angle triples
+$(x-t,1/2-x,1/2+t)$ and $(1/2-t,x+t,1/2-x)$.
+The complementary Lobachevsky terms cancel, giving volume
+$\pi g(x,t)$. This fixes the local primitive without a quantum
+normalization argument.
+
+For the retained sign $\eps$, define the small hidden parameter
+$t=t(x,\chi)$ and its sheared potential by
+\begin{equation}\label{sm:shear}
+ \chi=t-\frac{\eps v}{2\pi\ii},\qquad
+ f_\eps(x,\chi)=g(x,t)-\frac{\eps v^2}{4\pi\ii}.
+\end{equation}
+At $(a,0)$ the derivative of the first equation in $t$ is
+$1-\eps\ii\cot\pi a\ne0$. The holomorphic implicit-function
+theorem applies. Differentiating both equations proves
+\begin{equation}\label{sm:local-differential}
+                         \dd f_\eps=g_x\,\dd x+v\,\dd\chi.
+\end{equation}
+The construction is separately even in each small $\chi$ because
+$g$ is even in $t$ and the shear equation is odd.
+
+Choose independent real coordinates $\mathbf y$ on the original
+reduced wire space, keeping every turn and the complementary closing
+relation. The affine leaf and gate wires extend to its complexification.
+Set
+\begin{equation}\label{sm:global-potential}
+ \mathcal A_\eps(\mathbf y,\boldsymbol\chi)
+       =\sum_i f_{\eps_i}(a_i(\mathbf y),\chi_i)+\sum_{\text{gates}}m.
+\end{equation}
+At zero color this is exactly $\mathcal F$. Its nondegenerate internal
+Hessian is the imported strict variational theorem. A second application
+of the holomorphic implicit-function theorem therefore gives a unique
+small solution $\mathbf y_*(\boldsymbol\chi)$ of
+$\partial_{\mathbf y}\mathcal A_\eps=0$ through the complete optimizer.
+Define
+\begin{equation}\label{sm:Phi}
+ \Phi_\eps(\boldsymbol\chi)
+       =\mathcal A_\eps(\mathbf y_*(\boldsymbol\chi),\boldsymbol\chi).
+\end{equation}
+It is separately even, and the envelope rule gives
+$\partial_i\Phi_\eps=v_i$. All these statements concern an explicitly
+defined classical germ, independently of any finite-level source.
+
+\begin{lemma}\label{sm:hessian}
+With $\tau_i$ the actual primitive ratio in \eqref{sm:tau},
+\begin{equation}\label{sm:Hessian}
+             \partial_i\partial_j\Phi_\eps(0)
+                           =\pi\ii\tau_i\,\delta_{ij}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+At a leaf, $g_{tt}(a,0)=-2\pi c$ and
+$\chi_t=1-\eps\ii c$. Hence
+$f_{\chi\chi}=-2\pi c/(1-\eps\ii c)=\pi\ii\tau$.
+Also $g_{xt}(x,0)=0$. Every mixed wire--auxiliary derivative
+vanishes at zero, so eliminating the stationary wires adds no
+Schur-complement term to this block. Distinct leaves have no direct
+mixed auxiliary derivative in \eqref{sm:global-potential}.
+\end{proof}
+
+\section{Actual and auxiliary white transitions}\label{sm:maps}
+
+An intermediate mask bit distinguishes two different roles for a
+matrix. At a zero bit it is the actual map on the adjacent white
+piece. At a one bit there is a shaded face instead; a \emph{completion
+map} records the white transition that must be supplied from the other
+side when the edge becomes internal. It is not an extra face or a
+pairing assigned to that shaded triangle.
+
+\subsection{Universal local formulas}
+Normalize the four ordered face flags to $(0,\infty,1,R)$.
+For the mixed leaf the relevant coordinates are
+\begin{equation}\label{sm:flags}
+ R=\frac{\cos^2\pi x}{\cos^2\pi t}
+   =\frac{T(1+E)^2}{E(1+T)^2},\qquad
+ Z=\frac{1+E}{1+T},\qquad
+ Z^2-(1+E)Z+ER=0.
+\end{equation}
+Its ordered cross ratio is $R^{-1}-1=e^{-g_x}$.
+The first apex is $Z$ and the second-copy apex is $Z/E$:
+the latter is the reflected minus-$t$ chart.
+Reflection here means inversion of the phase coefficients, not
+complex conjugation of free parameters. Every defining triple of
+face flags is distinct at completeness and remains so nearby.
+The two roots $Z,TZ$ of the auxiliary fixed-point equation may
+coalesce at completeness; we require no distinctness of that pair
+there.
+
+The four white or completion matrices are
+\begin{equation}\label{sm:W}
+\begin{aligned}
+ W_0&=\begin{pmatrix}1&0\\0&E\end{pmatrix},&
+ W_1&=\begin{pmatrix}1&E-1\\0&E\end{pmatrix},\\
+ W_2&=\begin{pmatrix}E-R&R(1-E)\\E-1&1-ER\end{pmatrix},&
+ W_3&=\begin{pmatrix}R&0\\1-E&ER\end{pmatrix}.
+\end{aligned}
+\end{equation}
+All matrices are projective. At a leaf, $W_0,W_2$ are its actual
+white maps: they fix the endpoints of the appropriate base edge and
+send $Z$ to $Z/E$. The apex equation verifies the statement for
+$W_2$. The other two matrices are completion maps at its shaded
+cap bases.
+
+We use the rational prism identities of
+\cite[equation~(5.5)]{Geometry}, equivalently
+\cite[equation~(3.7)]{Fillings}. To specify their charts, put
+$\alpha=e^{2\pi\ii(z-x)}$, $\beta=e^{2\pi\ii(x+y-z)}$,
+$\gamma=e^{2\pi\ii(z-y)}$. The world prism is
+\begin{equation}\label{sm:complex-prism}
+\begin{split}
+ (v_0,v_1,v_2,v_3)&=(1,\alpha,\alpha\beta,\alpha\beta\gamma),\\
+ P&=1+\alpha-
+ \frac{\alpha[\alpha\beta(1+\gamma)-1-\alpha]}
+      {\alpha^2\beta^2\gamma-\alpha}.
+\end{split}
+\end{equation}
+For an ordered quadruple $(a,b,c,d)$ let
+$M(z)=(z-a)(c-b)/((z-b)(c-a))$ and $R=M(d)$, with the
+usual limits at infinity. Its world transition is
+$(M^\#)^{-1}W_jM$, where $\#$ reciprocates the three phase
+variables. Use the ordered tuples \eqref{sm:stack-map}, with
+wire phases $\beta\gamma,\alpha\beta,\alpha\beta\gamma$.
+The resulting entire maps satisfy
+\begin{equation}\label{sm:prism-maps}
+\begin{aligned}
+ W_{F,1}=W_{G,1}=W_{o,1}&=W_{\rm top},&
+ W_{F,3}=W_{G,3}=W_{o,3}&=W_{\rm bottom},\\
+ W_{F,2}&=W_{G,0},&
+ W_{o,0}=W_{F,0},\qquad W_{o,2}&=W_{G,2}.
+\end{aligned}
+\end{equation}
+The top and bottom maps are the actual white prism triangles.
+The cited proof is an identity in independent complex phase variables,
+so it applies also to a wire above $1/2$. No completed-child
+hypothesis enters that local calculation.
+
+For turns and closure the corresponding identities are
+\begin{equation}\label{sm:turn-maps}
+\begin{split}
+ T_Q(z)&=\frac{R-1}{z-1},\qquad C_Q(z)=\frac{z-R}{z-1},\\
+ T_QW_{j+1}(E,R)&=W_j(E^{-1},1-R)T_Q,\\
+ C_QW_j(E^{-1},R)&=W_{2-j}(E,R)C_Q .
+\end{split}
+\end{equation}
+They are \cite[equation~(5.6)]{Geometry}. They retain all translations,
+not only derivatives at endpoints.
+
+\subsection{The mask induction for the entire maps}
+We prove the following strengthened statement simultaneously through
+the original expression: at each output, zero bits carry actual white
+maps and one bits carry completion maps; at every internal shaded edge
+the actual adjacent white piece already has the recorded completion
+map. White pieces joined flatly carry the same entire map.
+
+At a child cap seam the prism is white. If the child bit is zero,
+\eqref{sm:prism-maps} identifies two actual maps on a flat seam.
+If it is one, the shaded triangle remains and the actual prism map
+supplies exactly its completion. At the common free edge the
+possible bit pairs are $(0,0),(1,0),(0,1)$. In the first case the
+actual white maps merge by $W_{F,2}=W_{G,0}$. In the other cases
+the unmasked child's actual map supplies the masked child's
+completion. The excluded pair $(1,1)$ would require $HH$.
+Finally the inherited output free maps and the two actual prism
+cap maps give precisely \eqref{sm:mask-product}.
+
+A turn transports this distinction by \eqref{sm:turn-maps}. At the
+closing face the strict complementary pair excludes two shaded bits
+on the same seam, as already proved. Zero--zero joins actual white
+pieces; one--zero supplies the required completion from the actual
+white side. No output face remains, so every completion map
+that enters a leaf edge return is now its actual neighboring
+white transition.
+
+Stationarity of \eqref{sm:global-potential} matches the same complete
+complex cross ratios, by \eqref{sm:local-differential}. Three vertices
+determine the Möbius map and the cross ratio matches the fourth.
+This proves the induction for the deformed charts as well. A deformed
+white polygon need not be planar; all its retained triangular pieces
+have one common transition by the proved identities.
+
+\section{The original group and the retained positive chain}
+\label{sm:group}
+
+\begin{proposition}\label{sm:marked-deformation}
+The stationary family \eqref{sm:Phi} determines a holomorphic framed
+representation of the original $\pi_1(Y_E^\eps)$ through its complete
+holonomy. It retains a compatible positive ideal fundamental chain.
+All main peripheral groups remain parabolic, and the original
+auxiliary basis has exactly the logarithms \eqref{sm:UV}.
+\end{proposition}
+
+We prove the group, chain and peripheral assertions in that order.
+In a leaf frame the pure shaded map and the two odd maps are
+\begin{equation}\label{sm:shaded}
+ S=\begin{pmatrix}0&-ER\\1&-1-E\end{pmatrix},\quad
+ A=\begin{pmatrix}R&-R\\1&ER-1-E\end{pmatrix},\quad
+ B=\begin{pmatrix}R/E-1-1/E&R\\-1&R\end{pmatrix}.
+\end{equation}
+They send the original ordered triples as follows:
+$S:(Z,\infty,1)\mapsto(Z,0,R)$,
+$A:(Z,\infty,1)\mapsto(Z/E,R,0)$, and
+$B:(Z,R,0)\mapsto(Z/E,\infty,1)$.
+With $S^\#=S(E^{-1},R)$, direct multiplication gives
+\begin{equation}\label{sm:edge-words}
+\begin{gathered}
+ W_0S=S^\#W_0,\quad W_2S=S^\#W_2,\quad W_3S=S^\#W_1,\\
+ W_0^{-1}BW_2^{-1}A=I,\quad
+ W_2^{-1}BW_0^{-1}A=I,\quad W_1^{-1}BW_3^{-1}A=I .
+\end{gathered}
+\end{equation}
+Equalities are in the projective group. These local identities are
+\cite[equations~(5.7)--(5.8)]{Geometry}, for independent $E,R$.
+The actual/ completion-map induction is what permits their use on
+the enlarged syntax.
+
+The original cut balls have a dual cell decomposition: paired faces
+give generators and edge cycles give the relations of its
+two-skeleton. Truncating the cusps gives the same group presentation;
+higher-dimensional cells add no fundamental-group relation.
+Every white seam and every pure or odd shaded return has now been
+verified by whole Möbius maps. Hence these maps define an actual
+holomorphic framed representation $\rho_{\boldsymbol\chi}$ of
+$\pi_1(Y_E^\eps)$ through its oriented complete holonomy. This
+conclusion uses the closed topological cut, not a cross-ratio argument
+for a hypothetical open four-punctured boundary.
+
+There is also a compatible positive chain on the original manifold.
+At completeness first assemble the actual polyhedron $P_E$, whose
+ideal vertices are distinct except for the prescribed terminal pairs.
+Order these cut vertices and restrict the order to every constituent
+cell. Pulling triangulations agree on each shared quadrilateral.
+The order selects diagonals; orient every tetrahedron by the ambient
+oriented cell, not by its increasing vertex list. Coning from the first
+vertex to faces not containing it gives positive nondegenerate
+tetrahedra. Give the second projection copy the same labeled
+subdivision. White pairings match it, and shaded pairings are already
+triangular, so no order on the quotient cusp vertices is required.
+
+Transport these finitely many flags by the actual rational charts.
+Their positive complete shapes remain in the positive half-plane
+on one small parameter polydisk. The face maps match the subdivided
+faces, and edge products stay exactly one. The continuous edge-log
+branches have their original sums there. Thus the representation has
+the same oriented ideal fundamental chain and boundary triangulation
+as the complete metric. We neither require deformed half-balls to
+be convex nor triangulate the filled manifold by new positive cells.
+
+\subsection{All main cusps remain parabolic}
+At corner $C_j$ the actual small main meridian is
+$W_{j-1}^{-1}W_j$ or its inverse. One of these maps may have been
+supplied as a completion, but both are now actual white maps.
+Their derivatives at the corner agree: they are $E^{-1}$ at
+$C_0,C_2$ and $E$ at $C_1,C_3$, using a finite coordinate at
+infinity. The meridian multiplier is identically one. The
+meridian is nonidentity at completeness and remains so nearby.
+It is therefore parabolic. Its commuting peripheral elements
+are translations in the same fixed-flag chart. This proves the
+statement for every main cusp, including any component closed
+inside an intermediate physical product.
+
+\subsection{The exact auxiliary logarithms}
+All the based curves \eqref{sm:peripheral-words} remain in the original
+leaf collar. Put
+\begin{equation}\label{sm:rho-Q}
+ \rho=\frac{Z}{1+E-Z}=\frac1T,\qquad
+ Q=\frac{E-Z}{Z-1}=\frac{ET-1}{E-T}.
+\end{equation}
+In a frame sending the selected flag $Z$ to infinity, the
+similarity multipliers of the four words are
+\begin{equation}\label{sm:multipliers}
+        \lambda:Q^2,\qquad \mu_0:\rho,\qquad
+        \mu_-:\rho Q,\qquad \mu_+:\rho/Q.
+\end{equation}
+At a finite fixed flag, this multiplier is the reciprocal of the
+Möbius derivative. Substitution of \eqref{sm:flags} into
+$\det M/(cZ+d)^2$ verifies these formulas. They are the local
+identities \cite[equations~(4.2)--(4.3)]{Fillings}.
+Since $\rho=e^{-2\pi\ii t}$ and $Q=e^{-v}$, their small logarithms are
+\begin{equation}\label{sm:logs}
+ U=-2\pi\ii t+\eps v=-2\pi\ii\chi,\qquad V=-2v.
+\end{equation}
+These are similarity logs, twice selected eigenvalue logs. Their
+constants are zero at completeness. The envelope rule proves
+\eqref{sm:UV}; physical turns only conjugate the words.
+
+If $\chi_i=0$, separate evenness gives $V_i=0$ as well. The
+auxiliary meridian remains nonidentity nearby, so an auxiliary
+cusp left unfilled also remains a genuine parabolic translation
+group. All flags and defining face triples stay in a finite
+collection of bounded local frames.
+This proves Proposition~\ref{sm:marked-deformation}.

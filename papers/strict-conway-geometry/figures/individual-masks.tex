@@ -1,0 +1,27 @@
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,
+  every node/.style={font=\small},>=Stealth]
+ \definecolor{shadeedge}{RGB}{153,61,37}
+ \foreach \x/\title/\bits in {0/$F:\ H$/{},4.7/$G:\ L$/{},9.4/$FG:\ H$/{}} {
+  \begin{scope}[shift={(\x,0)}]
+   \coordinate (a) at (0,0);
+   \coordinate (b) at (2,0);
+   \coordinate (c) at (2,1.6);
+   \coordinate (d) at (0,1.6);
+   \draw[gray!65] (a)--(b)--(c)--(d)--cycle;
+   \foreach \p/\lab/\pos in {a/0/below left,b/1/below right,c/2/above right,d/3/above left}
+    {\fill (\p) circle (1.5pt); \node[\pos] at (\p) {$C_{\lab}$};}
+   \node at (1,2.25) {\title};
+  \end{scope}
+ }
+ \draw[shadeedge,very thick] (0,0)--(2,0) (0,1.6)--(2,1.6);
+ \draw[shadeedge,very thick] (4.7,0)--(4.7,1.6) (6.7,0)--(6.7,1.6);
+ \draw[shadeedge,very thick] (9.4,0)--(11.4,0);
+ \node at (1,-.75) {$(1,0,1,0)$};
+ \node at (5.7,-.75) {$(0,1,0,1)$};
+ \node at (10.4,-.75) {$(1,0,0,0)$};
+ \node at (3.35,.8) {$\cdot$};
+ \draw[->,thick] (7.5,.8)--(8.6,.8);
+ \node[anchor=west,font=\footnotesize] at (0,-1.5)
+ {$\eta^o_0=\eta^F_0,\quad \eta^o_2=\eta^G_2,\quad
+   \eta^o_1=\eta^o_3=0$};
+\end{tikzpicture}

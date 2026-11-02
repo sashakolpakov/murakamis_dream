@@ -1,0 +1,219 @@
+\section{Induction over the original composition}\label{cs:assembly}
+
+We now explain why the two estimates just proved exhaust a strict
+source, and why their exponents add to its own complete action.
+The reduction is an equality of finite contractions. The original
+ordered diagram is still needed for any later geometric interpretation.
+
+\subsection{The reduced tree and its constants}
+
+Associate consecutive products and cancel pairs of adjacent turns
+using \(\Turn^2=1\) and \eqref{cs:adjoint}. The result is a tree of
+product junctions, each of valence at least three. Every internal edge
+carries a turn. An external edge carries either
+\(h_i=\Turn(R^{\epsilon_i}L_{j_i})\), or its turn
+\(p_i=R^{\epsilon_i}L_{j_i}\). Call the latter edge \emph{flagged}.
+The reduced-junction theorem in \cite{Profiles} says that strictness
+is equivalent to at most one flagged external edge at each junction.
+All labels and full polynomial classes remain in this tree.
+
+A junction with a flagged leaf sends toward its parent an operator
+\begin{equation}\label{cs:L-module}
+ F_i=D_{j_i}^{\epsilon_i}[E_i],\qquad E_i=\prod_b Q_b.
+\end{equation}
+An ordinary external leaf is the same operation with \(E_i=1\).
+These are the type-\(L\) modules used at the boundaries of
+Section~\ref{cs:probe}. Every maximal connected set of unflagged
+junctions gives the other operation,
+\begin{equation}\label{cs:A-module}
+ Q=\Turn A(F_1,\ldots,F_n),\qquad n\ge2.
+\end{equation}
+Its boundary modules are all type \(L\); adjoining unflagged junctions
+were already included in the same maximal component. Both operations
+depend only on smaller subtrees.
+
+Let \(f_Q(b)\) be the optimized pure action with output \(b\) held
+fixed, and define its intrinsic rate
+\[
+ \Omega_Q=\max_{0\le b\le1/2}\{g(b)+f_Q(b)\}.
+\]
+The harmonic-profile and probe theorems of \cite{Profiles} give
+\begin{align}
+ f_{F_i}(b)&=g(b)+c_i,
+ &c_i&=\sum_b\Omega_{Q_b},
+ &\Omega_{F_i}&=c_i+2G_0,\label{cs:rigid-budget}\\
+ \Omega_{\Turn A(F_1,\ldots,F_n)}
+     &=\sum_i c_i+\Phi_A.&&&&\label{cs:component-budget}
+\end{align}
+The sum in \eqref{cs:rigid-budget} is zero for an empty input.
+These equalities include the additive constants, not just derivatives
+of profiles. The quantity in \eqref{cs:component-budget} is precisely
+\eqref{cs:Omega}. Thus the positive comparison has not introduced
+an extra exponential budget.
+
+\begin{figure}[t]
+\centering\input{figures/component}
+\caption{An unflagged region with three boundary modules.
+Here \(A=F_1\Turn(F_2F_3)\) and \(Q=\Turn A\). The internal
+turn is part of the original expression. The positive scalar on the
+right bounds its outgoing norm with the same shared indices.
+The polynomial \(W_N\) belongs to this inequality only.}
+\label{cs:component-figure}
+\end{figure}
+
+\subsection{Properties propagated from the leaves}
+
+We prove three properties together. Every subtree output \(Q\) has
+the norm bound \(e^{N(\Omega_Q+o(1))}\), a canonical angular strip
+bound at that same rate with a strictly negative angular quadratic,
+and a fixed norm loss whenever any one of its original colors has a
+macroscopic deficit. In addition, a type-\(L\) module \(F_i\) has
+the coefficient envelope \eqref{cs:cone}, and each original color
+inside that module gives a strict coefficient loss on every fixed
+compact interval in \((0,1/2)\).
+
+For an elementary leaf, these assertions are
+Lemma~\ref{cs:duality}, Proposition~\ref{cs:decorated-turn} and
+Proposition~\ref{cs:regular-deficit}, with \(E=1\).
+In particular its coefficient reference constant is zero and its
+norm rate is \(2G_0\).
+
+Suppose next that \(F_i\) is given by \eqref{cs:L-module}.
+Multiply the canonical representatives of the \(Q_b\) without first
+reducing that product. The norm bounds multiply by
+submultiplicativity, their analytic strip bounds multiply as actual
+polynomials, and their rates sum to \(c_i\) in
+\eqref{cs:rigid-budget}. A deficit in a descendant gives a strict
+norm loss in this product. Lemma~\ref{cs:duality} then preserves
+that loss in every output coefficient. A deficit in the newly
+inserted character gives the regular-index coefficient loss by
+Proposition~\ref{cs:regular-deficit}. That proposition also supplies
+the norm loss for the new color. Proposition~\ref{cs:decorated-turn}
+gives the canonical strip estimate at rate \(c_i+2G_0=\Omega_{F_i}\).
+This proves every claimed property for the new type-\(L\) module.
+
+For \eqref{cs:A-module}, the input coefficient envelopes give
+Theorem~\ref{cs:unflagged}, and Proposition~\ref{cs:probe-strip}
+regenerates the angular estimate at \(\Omega_Q\). A deficit in any
+original descendant lies inside one boundary module \(F_i\).
+Its coefficient loss holds on a compact interval about the actual
+selected index \(a_i^*\), even when that index is above \(1/4\).
+Corollary~\ref{cs:loss-transfer} gives the required norm loss in
+\(Q\). Equation \eqref{cs:component-budget} identifies its rate
+with the intrinsic rate of this very subtree.
+
+This is an induction on a finite tree. At each step the constants may
+depend on the subtree, but not on its physical color tuple. Taking
+the minimum of finitely many positive losses leaves a positive loss.
+No lower estimate or nonzero value of an arbitrary subtree is assumed.
+
+\subsection{The closing character, including an unflagged root}
+
+The arbitrary-leaf rooting identity of \cite{Profiles} allows one
+original leaf to be exposed without changing the contraction. If its
+edge parity is \(\sigma\in\{0,1\}\), and \(A\) is the product of
+the other branches at its junction, then
+\begin{equation}\label{cs:any-root}
+ Z_N=\phi((\Turn^\sigma h_0)A)
+     =\phi(R^{\epsilon_0}L_{j_0}\,\Turn^{\sigma+1}A).
+\end{equation}
+There are at least two other branches because \(H\ge3\) and
+junctions have valence at least three.
+
+If \(\sigma=1\), the exposed leaf is the sole possible flag there.
+The final input in \eqref{cs:any-root} is the unturned product of
+the remaining branches. Its norm rate is their sum of intrinsic
+rates, which the root-budget identity of \cite{Profiles} identifies
+with \(F_0\). Their strip estimates multiply to give a positive
+angular quadratic at that rate.
+
+If \(\sigma=0\) and another leaf at this junction is flagged, the
+final input is the type-\(L\) module supplied by that other
+character. If no leaf there is flagged, it is the outgoing turn
+of an unflagged component. Both cases have already been treated
+by the induction, including their angular estimates. The same
+root-budget identity says \(\Omega_{\Turn A}=F_0\). One can also
+see this equality directly from the positive closing constraint:
+\[
+ F_0=\max_a\{g(a)+f_A(1-a)\}=\Omega_{\Turn A}.
+\]
+
+Now apply \eqref{cs:finite-cost} to bound the full contraction.
+A deficit in a descendant gives a strict norm loss by the induction;
+the closing character has only polynomial norm cost. A deficit in
+the exposed color \(j_0\) is handled by
+Theorem~\ref{cs:root-bound} on the inherited strip. This proves
+\eqref{cs:whole} and \eqref{cs:color-gap}. It also treats a tree with no
+flagged junction anywhere. In particular the three-leaf closure
+uses exactly the \(n=2\) comparison in
+Theorem~\ref{cs:unflagged}; it requires no additional source theorem.
+
+\subsection{From a physical color loss to the core comparison}
+
+For a physical high color \(j>N/2\), the exact circle formula gives
+\begin{equation}\label{cs:physical-alias}
+ h_j^\epsilon=C_j^\epsilon+(-1)^N h_{N-j}^\epsilon,
+       \qquad h_0^\epsilon=0.
+\end{equation}
+Here \(C_j^\epsilon\) is the selected core; set it equal to zero
+for \(j\le N/2\). Formula \eqref{cs:physical-alias} follows from
+the pure complementary-color identity of \cite[Section 4]{Newton}
+by the linear operation \(F\mapsto\Turn(R^\epsilon\Turn F)\).
+It therefore retains the crossing and all repeated-root derivatives.
+
+If some original color is at most \(N/2\), the all-core contraction
+is zero, and \eqref{cs:color-gap} with \(\delta=1/2\) proves
+\eqref{cs:alias-gap}. Otherwise replace each core in its
+multilinear contraction by
+\(h_j^\epsilon-(-1)^N h_{N-j}^\epsilon\).
+Subtracting from the full source leaves finitely many terms with
+at least one color \(N-j\le N/2\). Terms containing color zero
+vanish. Every other term is an original physical source with a
+macroscopic color deficit, so \eqref{cs:color-gap} applies. The number
+of terms is at most \(2^H-1\), independent of \(N\). Reducing
+the gap absorbs that finite sum and proves
+\eqref{cs:alias-gap}, completing Theorem~\ref{cs:main}.
+
+\subsection{The strict two-leaf closure}
+
+\begin{corollary}[Two leaves with their original signs]\label{cs:two-leaf-source}
+Let \(H=2\) and suppose the closure is strict. After the exact turn
+and pairing identities it is
+\[
+ Z_N=\phi(h_{j_0}^{\epsilon_0}\Turn h_{j_1}^{\epsilon_1})
+     =\phi(p_0\Turn p_1),\qquad
+ p_i=R^{\epsilon_i}L_{j_i},\quad \epsilon_i\in\{0,1,-1\}.
+\]
+Its pure complete rate is \(F_0=2G_0\). The whole-source bound
+\eqref{cs:whole}, every macroscopic physical-color gap
+\eqref{cs:color-gap}, and the full-minus-core gap
+\eqref{cs:alias-gap} hold with this value, at all sufficiently large
+integer levels. No unflagged-component comparison is needed.
+\end{corollary}
+\begin{proof}
+Strictness leaves one turn between the two elementary leaves, modulo
+\(\Turn^2=1\) and the adjoint pairing identity. The displayed equality
+then follows from \(h_j^\epsilon=\Turn p_j\).
+For the pure complete circle, the exact coefficients in
+\eqref{cs:split} give
+\[
+ h_N=\sum_{r=0}^M a_{N,r}e_r,\qquad
+ a_{N,r}=\frac{N^2S_{2r}}{S_r^4},\qquad
+ \phi(h_N\Turn h_N)=\sum_{r=0}^M a_{N,r}^2.
+\]
+Thus the normalization is the original coefficient-square sum, without
+an extra trace factor. Uniform factorial rates and one index nearest
+\(N/4\) give its all-level exponential rate \(2G_0\).
+
+The final input to the character \(p_0\) is exactly
+\(\Turn p_1=D_{j_1}^{\epsilon_1}[1]\). Proposition~\ref{cs:decorated-turn}
+gives its norm and angular strip at rate \(2G_0\). A deficit in
+\(j_1\) gives a norm gap by Proposition~\ref{cs:regular-deficit};
+the other character then has only the polynomial cost
+\eqref{cs:finite-cost}. A deficit in \(j_0\) gives a gap by
+Theorem~\ref{cs:root-bound} on that same strip. The norm bound also
+gives the full upper rate. Finally the exact physical alias expansion
+from the preceding subsection converts these color gaps into the
+full-minus-core gap. It preserves both retained crossing signs and
+all double-root derivatives.
+\end{proof}

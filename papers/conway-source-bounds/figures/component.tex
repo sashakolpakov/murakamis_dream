@@ -1,0 +1,23 @@
+\begin{tikzpicture}[>=Latex,thick,font=\small,
+ junction/.style={circle,draw,fill=blue!6,minimum size=6mm,inner sep=1pt},
+ factor/.style={draw,rounded corners=2pt,inner sep=5pt}]
+\node[junction] (a) at (0,1) {$\times$};
+\node[junction] (b) at (0,-.5) {$\times$};
+\node[factor] (f1) at (-1.5,1) {$F_1$};
+\node[factor] (f2) at (-1,-1.8) {$F_2$};
+\node[factor] (f3) at (1,-1.8) {$F_3$};
+\draw[->] (f1)--(a);
+\draw[->] (f2)--(b);
+\draw[->] (f3)--(b);
+\draw[->] (b)--node[right]{$\Turn$}(a);
+\draw[->] (a)--node[right]{$\Turn$}(0,2.2);
+\node[above] at (0,2.2) {$Q=\Turn A$};
+\draw[gray!50] (2.1,-2.2)--(2.1,2.5);
+\node[align=left,anchor=west] at (2.6,1.5)
+ {$\displaystyle W_N=\sum_r w_{N,r}e_r$};
+\node[align=left,anchor=west] at (2.6,.35)
+ {$\displaystyle \normJ{Q_N}\le CN^A\phi(W_N A_N^{\mathrm{abs}})$};
+\node[align=left,text width=6.4cm,anchor=west] at (2.6,-1.1)
+ {$A_N^{\mathrm{abs}}$ uses the same products and turns, with the absolute
+ values of the boundary coefficients.};
+\end{tikzpicture}

@@ -1,0 +1,224 @@
+\section{A positive comparison for a region without a character}\label{cs:probe}
+
+Consider a connected region of product junctions with no distinguished
+original character at a junction. Each internal edge carries a turn.
+Choose one outgoing edge. Every junction then has at least two incoming
+branches. Its boundary inputs are \(n\ge2\) polynomials \(F_{i,N}\)
+of type \(L\). The resulting expression, before its outgoing turn,
+is denoted by \(A(F_1,\ldots,F_n)\), and its outgoing operator by
+\(Q_N=\Turn A(F_1,\ldots,F_n)\).
+
+The finite expression uses only products and turns; every input occurs
+once. It can be constructed from two-input products by turns, products
+of completed expressions and single-input attachments. Its type refers
+to its pure positive states, not to the range of its signed Newton
+coefficients.
+
+\begin{definition}[The comparison arrays]
+Let \(c_i\in\mathbb R\) be fixed constants. The input arrays satisfy
+the comparison hypothesis if a common \(e_N\to0\) gives
+\begin{equation}\label{cs:cone}
+ |\coef{r}{F_{i,N}}|\le e^{N(c_i+e_N)}w_{N,r},
+       \qquad 0\le r\le d,\quad 1\le i\le n.
+\end{equation}
+Replace every input coefficient by its absolute value, and apply the
+same products and turns; call the resulting operator \(A_N^{\mathrm{abs}}\).
+It is a positive coefficient comparison, not the pointwise absolute
+value of the polynomial \(A_N\).
+\end{definition}
+
+Introduce the auxiliary polynomial
+\begin{equation}\label{cs:probe-polynomial}
+ W_N=\sum_{r=0}^{d}w_{N,r}e_r.
+\end{equation}
+It serves only in a norm inequality. It does not add a crossing circle
+to the link. A \emph{band sector} chooses, for each input and for this
+comparison polynomial, either the low indices \(r\le M\) or the high
+indices \(r>M\). These bands are not the physical core and alias.
+
+Let \(A^0\) be the same expression with every input replaced by the pure
+complete leaf \(h_N=\Turn L_N\). Write \(\Phi_A\) for the complete
+action of the closed reference expression \(\phi(h_N A^0)\), and set
+\begin{equation}\label{cs:Omega}
+ \Omega=\sum_i c_i+\Phi_A.
+\end{equation}
+The reference has \(n+1\ge3\) effective leaves. It has no flagged
+junction and is strict; these facts and its stationary boundary indices
+are supplied by \cite{Profiles}.
+
+\begin{theorem}[Positive comparison with shared indices]\label{cs:unflagged}
+For the fixed component and inputs \eqref{cs:cone},
+\begin{equation}\label{cs:positive-bound}
+ \normJ{Q_N}\le CN^A\phi(W_N A_N^{\mathrm{abs}})
+                      \le e^{N(\Omega+o(1))}.
+\end{equation}
+Every band sector with a high input or a high comparison index has
+upper bound \(e^{N(\Omega-\gamma)}\), for some \(\gamma>0\) and all
+sufficiently large \(N\). The constants are uniform over the specified
+input families.
+
+The all-low comparison is concentrated at the unique strict maximum
+of the original reference action. Its effective input indices and
+comparison index are in \((1/4,1/2)\). Outside any fixed neighborhood
+of that maximum it has a fixed exponential loss.
+\end{theorem}
+
+\begin{proof}
+Positivity of \eqref{cs:product} and exact coefficient reversal give
+\(|\coef{r}{A_N}|\le\coef{r}{A_N^{\mathrm{abs}}}\).
+By the full pairing,
+\(\coef{r}{Q_N}=\phi(e_r A_N)\). Hence
+\begin{equation}\label{cs:positive-mass}
+ \sum_r w_{N,r}|\coef{r}{Q_N}|
+      \le\phi(W_N A_N^{\mathrm{abs}}).
+\end{equation}
+This proves the first inequality in \eqref{cs:positive-bound} by
+\eqref{cs:basis-norm}. It holds separately in each specified band
+sector and retains the first derivatives of all high basis elements.
+
+It remains to bound the positive scalar. For low input and comparison
+indices its upper leaf profile is \(g\); for high indices it is zero.
+The common additive constants are \(\sum_i c_i\). Set
+\[
+ \widetilde g(x)=g(\max(x,1/4)),\quad 0\le x\le1/2,
+ \qquad k(x)=-2J(x/2),\quad 0\le x\le1.
+\]
+On these domains \(g\le\widetilde g\) and \(0\le k\).
+Thus the scalar supporting-plane estimates of
+Lemmas~\ref{cs:two-leaf-gap} and~\ref{cs:attachment-gap} apply to the profiles of
+\eqref{cs:cone}. We give the propagation argument to specify why
+their applicability does not depend on the origin of the arrays.
+
+First suppose \(n+1\ge4\). The unflagged closed junction tree can be
+rooted between two completed expressions. If there is an internal
+edge, each side has at least two leaves, because every internal vertex
+has valence at least three. If there is only one junction, split its
+at least four leaves into two products with at least two factors each.
+Products, associativity and \eqref{cs:adjoint} realize this change of
+root as an exact identity of full colored tensors. Every external band
+stays attached to its original array. No tangle isotopy is asserted.
+
+At a two-leaf seed with selected output \(b\), write its pure profile
+as \(f(b)\), with slope \(\lambda=f'(b)\). The effective boundary
+parameters have \(1/2<X<1\). The two-leaf scalar inequalities give
+\begin{equation}\label{cs:seed-affine}
+ \text{nonempty high profile at output }z
+       \le f(b)+\lambda(z-b)-1/100.
+\end{equation}
+The all-low case has the same tangent without a loss. At a turn the
+output index changes from \(r\) to \(d-r\), so the tangent slope
+changes sign. At a product of two completed children, add their affine
+bounds to the supporting plane of the concave function \(m\).
+Stationarity cancels both child slopes. The outgoing slope is the
+derivative of the parent profile, and inherited losses add.
+
+For a single-input attachment, use the child's entire affine bound,
+not an elementary-leaf domain for that child. If the new input is low,
+the tangent of \(\widetilde g\) preserves the child's loss. If it is
+high, the single-attachment inequality supplies a further loss
+\(1/2500\). Its hypotheses are the effective stationary inequalities
+\(1/2<X<1\) and \(0<Y,Y_o<1\) from the pure completed construction.
+These hypotheses concern the fixed reference profiles. They impose no
+additional condition on the coefficient arrays being bounded.
+
+At closure the two reference outputs sum to one and their slopes
+agree. The exact finite indices sum to \(d/N=1-1/N\), so the
+remaining affine term is \(-\lambda/N\). After multiplication by
+\(N\), it is a bounded constant. Every nonempty high assignment
+has inherited at least one of the positive losses above. This proves
+the required strict rate bound for \(n+1\ge4\).
+
+For \(n=2\), the closed reference has three effective leaves.
+There is a shorter direct argument. Factorial reflection
+\(S_rS_{d-r}=N\) in \eqref{cs:product} gives the symmetric tensor
+\begin{equation}\label{cs:trivalent}
+ \phi(e_i e_j e_k)=
+ \frac{S_{i+j}S_{i+k}S_{j+k}}
+ {N S_iS_jS_kS_{i+j+k-d}}
+\end{equation}
+when
+\(i+j,i+k,j+k\le d\) and \(i+j+k\ge d\), and zero otherwise.
+In particular two high indices force the coefficient to vanish:
+their sum is at least \(2M+2>d\), at either parity. For exactly
+one high index, group it with a low index, leaving the other low
+index for closure. The pure selected point is
+\[
+ a=\frac{\arctan2}{\pi},\quad b=1-a,\quad X=1/2,\quad
+ \lambda=g'(a)=-\log4.
+\]
+The endpoint case of the two-leaf inequality gives
+\(f(b)+\lambda(z-b)-1/100\). The remaining low profile has tangent
+\(g(a)+\lambda(u-a)\). Since \(z+u=d/N\), their sum is at most
+\(\Phi_A-1/100+\log4/N\). This proves the high-sector claim also
+in the three-leaf reference. No estimate for three physical aliases
+is needed here: these are coefficient bands, and the two-high
+vanishing is an exact polynomial identity.
+
+For the all-low sector, the uniform closed upper action is
+\begin{equation}\label{cs:reference-action}
+ \sum_i c_i+g(u)+\sum_i g(a_i)+\sum_v m(x_v,y_v,z_v),
+\end{equation}
+with the reference's original shared indices. Its unique strict
+maximum is \(\Omega\). The stationary input and comparison indices
+lie in \((1/4,1/2)\), including the value \(a\) just displayed in
+the three-leaf case. These are the strict optimizer and effective
+boundary-range results of \cite{Profiles}. Compactness gives a strict
+loss outside each fixed neighborhood of that maximum.
+
+There are only polynomially many finite states, because the component
+is fixed. The factorial rates are uniform on the whole closed support.
+Any limit of finite states satisfies the limiting turn and closing
+constraints, so continuity of the actions transfers the compact gaps
+to the displaced finite grids. Powers of \(N\), the common error in
+\eqref{cs:cone} and the fixed number of sectors are absorbed by
+reducing the loss. This proves all the assertions.
+\end{proof}
+
+\begin{corollary}[Transfer of an input coefficient loss]\label{cs:loss-transfer}
+Let \(a_i^*\) be the selected index of input \(i\) in
+\eqref{cs:reference-action}. Suppose that, on a fixed interval \(I_i\)
+containing \(a_i^*\) in its interior, a specified subfamily improves
+\eqref{cs:cone} to
+\begin{equation}\label{cs:input-loss}
+ |\coef{r}{F_{i,N}}|\le e^{N(c_i+g(r/N)-\eta+o(1))},
+ \qquad r/N\in I_i,\quad \eta>0.
+\end{equation}
+Then \(\normJ{Q_N}\le e^{N(\Omega-\eta')}\) for some \(\eta'>0\)
+on that subfamily, for every sufficiently large \(N\).
+\end{corollary}
+\begin{proof}
+The high sectors already have a fixed gap. In the all-low sector,
+choose a neighborhood of the strict maximum whose \(i\)-th coordinate
+lies in \(I_i\). Inside it the improved coefficient removes
+\(\eta\) from every state rate; outside it compactness gives a gap.
+Use \eqref{cs:positive-mass} and reduce the minimum of these losses.
+The arrays can be complex or identically zero; no lower bound for
+them is used.
+\end{proof}
+
+\begin{proposition}[Angular localization at the reference rate]\label{cs:probe-strip}
+The canonical outgoing polynomial in Theorem~\ref{cs:unflagged}
+satisfies
+\begin{equation}\label{cs:Q-strip}
+ |Q_N(2\cos(\theta+\ii y))|
+ \le e^{N(\Omega-c(\theta-\pi)^2+Cy^2+o(1))}
+\end{equation}
+on a fixed strip, with \(c,C>0\), uniformly in its physical inputs.
+\end{proposition}
+\begin{proof}
+Choose a compact interval \(I\subset(0,1/2)\) around the selected
+comparison index. Separate the actual state expansion of \(Q_N\)
+into an all-low part with output index \(r/N\in I\), and its
+complement. The weighted coefficient mass of the complementary part
+has a strict gap by Theorem~\ref{cs:unflagged}. It is a canonical
+polynomial, so \eqref{cs:ellipse} bounds its strip rate by
+\(\Omega-\gamma+|y|\).
+
+For the first part apply \eqref{cs:low-gaussian} to each output
+\(e_r\). Its factor \(w_{N,r}\) is already present in
+\eqref{cs:positive-mass}; no further exponential cost is added.
+This gives \eqref{cs:Q-strip} for that part. Finally choose
+\(y_0<\gamma/4\) and \(c\pi^2<\gamma/4\), reducing the angular
+constant if needed. The complementary part then fits under the same
+bound. The two contributions together prove the assertion.
+\end{proof}

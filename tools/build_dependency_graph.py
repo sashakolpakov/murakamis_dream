@@ -2,7 +2,10 @@
 """Validate and render the mathematical dependency graph.
 
 Edges are manually traced uses of results, not links inferred from file names.
-This checks the graph and its source locators, not the underlying proofs.
+Explicit article owners and witnessed imports also form a separate graph:
+contracting an acyclic theorem graph can introduce an article-level cycle.
+These checks validate the declared inventory, not the underlying proofs or
+the completeness of its imports. Bibliography absence proves no independence.
 Only the Python standard library is required.
 """
 from __future__ import annotations
@@ -59,6 +62,117 @@ def reduce_edges(edges, outgoing):
         if any(b in closure(other, outgoing) for other in outgoing[a] if other != b):
             result.remove((a, b))
     return result
+
+
+def validate_articles(data, nodes, edges, root=ROOT):
+    """Check explicit owners and nearest-owner imports, without rendering.
+
+    An article import is witnessed by a prerequisite-to-consumer theorem
+    path. Its interior may contain only unowned nodes: an intervening
+    article owns the intermediate result and is the immediate reading
+    prerequisite. Same-article uses stay internal, not self-imports.
+    """
+    articles = data.get("articles")
+    declarations = data.get("article_dependencies")
+    if not isinstance(articles, dict) or not isinstance(declarations, list):
+        raise ValueError("Explicit articles and article_dependencies are required")
+    root = Path(root).resolve()
+    article_hashes = {}
+    for article, item in articles.items():
+        if not isinstance(article, str) or not article or not isinstance(item, dict):
+            raise ValueError(f"Invalid article registry entry: {article!r}")
+        title, path = item.get("title"), item.get("path")
+        if not isinstance(title, str) or not title.strip():
+            raise ValueError(f"{article}: missing article title")
+        if not isinstance(path, str) or not path or Path(path).is_absolute():
+            raise ValueError(f"{article}: invalid article source path")
+        full = (root / path).resolve()
+        if not full.is_relative_to(root) or not full.is_file():
+            raise ValueError(f"{article}: missing or nonlocal article source: {path}")
+        article_hashes[path] = hashlib.sha256(full.read_bytes()).hexdigest()
+
+    owners = {}
+    for name, node in nodes.items():
+        if "article" not in node:
+            raise ValueError(f"{name}: explicit article owner or null is required")
+        owner = node["article"]
+        if owner is not None and (not isinstance(owner, str) or owner not in articles):
+            raise ValueError(f"{name}: unknown article owner {owner!r}")
+        owners[name] = owner
+
+    _, incoming, _ = topological(nodes, edges)
+    induced = set()
+    for consumer, owner in owners.items():
+        if owner is None:
+            continue
+        seen, pending = set(), list(incoming[consumer])
+        while pending:
+            prerequisite = pending.pop()
+            if prerequisite in seen:
+                continue
+            seen.add(prerequisite)
+            earlier_owner = owners[prerequisite]
+            if earlier_owner is None:
+                pending.extend(incoming[prerequisite])
+            elif earlier_owner != owner:
+                induced.add((earlier_owner, owner))
+            # Stop at every owned node, including the consumer's own article.
+
+    declared = set()
+    for declaration in declarations:
+        if not isinstance(declaration, dict):
+            raise ValueError("Invalid article import declaration")
+        earlier, later = declaration.get("from"), declaration.get("to")
+        if (not isinstance(earlier, str) or earlier not in articles or
+                not isinstance(later, str) or later not in articles):
+            raise ValueError(f"Unknown article in import: {earlier!r} -> {later!r}")
+        edge = (earlier, later)
+        if earlier == later:
+            raise ValueError(f"Article self-import is not an external dependency: {earlier}")
+        if edge in declared:
+            raise ValueError(f"Repeated article import: {earlier} -> {later}")
+        declared.add(edge)
+        witnesses = declaration.get("witnesses")
+        if not isinstance(witnesses, list) or not witnesses:
+            raise ValueError(f"{earlier} -> {later}: missing article import witness")
+        for witness in witnesses:
+            if not isinstance(witness, dict):
+                raise ValueError(f"{earlier} -> {later}: invalid article import witness")
+            path, reason = witness.get("path"), witness.get("reason")
+            if (not isinstance(path, list) or len(path) < 2 or
+                    any(not isinstance(n, str) or n not in nodes for n in path)):
+                raise ValueError(f"{earlier} -> {later}: invalid witness node path")
+            if not isinstance(reason, str) or not reason.strip():
+                raise ValueError(f"{earlier} -> {later}: witness needs a use explanation")
+            if owners[path[0]] != earlier or owners[path[-1]] != later:
+                raise ValueError(f"{earlier} -> {later}: witness endpoint owners disagree")
+            if any(owners[n] is not None for n in path[1:-1]):
+                raise ValueError(f"{earlier} -> {later}: witness crosses an intervening article")
+            if any((a, b) not in edges for a, b in zip(path, path[1:])):
+                raise ValueError(f"{earlier} -> {later}: unsupported witness dependency step")
+
+    missing, extra = induced - declared, declared - induced
+    if missing or extra:
+        raise ValueError("Article imports disagree with nearest-owner theorem uses; "
+                         f"missing={sorted(missing)}, unsupported={sorted(extra)}")
+    try:
+        article_order, _, _ = topological(articles, declared)
+    except ValueError as exc:
+        raise ValueError("Article dependency cycle after theorem ownership contraction: "
+                         + str(exc)) from exc
+    return {
+        "articles": len(articles),
+        "owned_statements": sum(owner is not None for owner in owners.values()),
+        "unowned_statements": sum(owner is None for owner in owners.values()),
+        "article_edges": sorted(declared),
+        "article_topological_order": article_order,
+        "article_import_scope": (
+            "Explicit article ownership and witnessed nearest-owner imports in the "
+            "recorded theorem graph. Internal uses are not self-imports. This does "
+            "not establish exhaustive reading requirements or independence from "
+            "unrecorded results, optional methods, or bibliography absence."
+        ),
+    }, article_hashes
 
 
 def svg_graph(groups, edges):
@@ -121,11 +235,11 @@ HTML = r'''<!doctype html>
 <p><a href="index.html">Finite quantum invariants and hyperbolic volume</a> · <a href="../index.html">Illustrated guide</a></p>
 <h1>Which results use which?</h1>
 <p>An arrow points from a prerequisite to the component that uses it. The overview groups related statements and omits transitive arrows. Select a component, then a statement, to see its direct inputs, the reason each is needed, its downstream uses and the exact source locations.</p>
-<p class="small">This is an explicit, manually traced proof inventory. The checks detect missing source anchors and cycles in the recorded graph. They do not establish the truth of a statement or prove that every dependency has been found. Component boundaries are proposals for organizing papers, not additional theorems.</p>
+<p class="small">This is an explicit, manually traced proof inventory. The checks detect missing source anchors, invalid article-import witnesses and cycles in the statement, component and article graphs. They do not establish the truth of a statement or prove that every dependency has been found. Article ownership is declared explicitly; absence from a bibliography does not establish proof independence. Component boundaries organize the results and are not additional theorems.</p>
 <div id="overview">__SVG__</div>
 <div class="controls"><label for="groups">Component </label><select id="groups"><option value="">All components</option></select><input id="search" aria-label="Search mathematical statements" placeholder="Find a statement or mathematical term"><button id="clear">Show all</button></div>
 <div class="layout"><div><h2>Statements</h2><div id="nodes"></div></div><section id="details" aria-live="polite"></section></div>
-<section class="facts"><h2>What the graph tells us</h2><div id="analysis"></div><p><a href="dependencies.json">Download the mathematical inventory</a> · <a href="dependencies.svg">Open the overview as a vector image</a> · <a href="dependency-analysis.json">Checks and source hashes</a></p></section>
+<section class="facts"><h2>What the graph tells us</h2><div id="analysis"></div><h3>Declared article reading dependencies</h3><p class="small">These are witnessed uses in the recorded proofs. Same-article uses stay internal. A different or duplicated proof can give a different reading route; optional background is not inferred from citations.</p><div id="articles"></div><p><a href="dependencies.json">Download the mathematical inventory</a> · <a href="dependencies.svg">Open the overview as a vector image</a> · <a href="dependency-analysis.json">Checks and source hashes</a></p></section>
 <script id="graph-data" type="application/json">__DATA__</script>
 <script>
 const data=JSON.parse(document.getElementById('graph-data').textContent), nodes=new Map(data.nodes.map(n=>[n.id,n]));
@@ -133,11 +247,13 @@ const groups=document.getElementById('groups'),search=document.getElementById('s
 const h=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 Object.entries(data.groups).forEach(([id,g])=>{let o=document.createElement('option');o.value=id;o.textContent=g.title;groups.append(o)});
 function button(n){return '<button data-node="'+h(n.id)+'">'+h(n.title)+'</button>'}
+function articleLink(id){const a=data.articles[id];return '<a href="'+h(a.url)+'">'+h(a.title)+'</a>'}
 function renderList(){list.innerHTML=data.nodes.filter(n=>(!groups.value||n.group===groups.value)&&(!search.value||(n.title+' '+n.statement).toLowerCase().includes(search.value.toLowerCase()))).map(n=>'<button class="'+(n.id===selected?'selected':'')+'" data-node="'+h(n.id)+'">'+h(n.title)+'</button>').join('')||'<p>No matching statements.</p>'}
-function select(id){const n=nodes.get(id);if(!n)return;selected=id;renderList();let users=data.nodes.filter(x=>x.depends_on.some(d=>d.id===id));details.innerHTML='<p class="label">'+h(data.groups[n.group].title)+'</p><h2>'+h(n.title)+'</h2><p>'+h(n.statement)+'</p>'+(n.status==='open'?'<p class="open">This result remains open.</p>':'')+'<h3>Where it is stated or proved</h3><ul>'+n.sources.map(s=>'<li><a href="'+h(s.url)+'">'+h(s.path)+'</a><br><code>'+h(s.anchor)+'</code></li>').join('')+'</ul><h3>Direct prerequisites</h3>'+(n.depends_on.length?n.depends_on.map(d=>'<div class="dep">'+button(nodes.get(d.id))+'<br>'+h(d.reason)+'</div>').join(''):'<p>No earlier result in this inventory is required. Definitions and standard background are stated in the source; this is not a claim of logical independence from all mathematics.</p>')+'<h3>Used directly by</h3>'+(users.length?users.map(u=>'<div class="dep">'+button(u)+'<br>'+h(u.depends_on.find(d=>d.id===id).reason)+'</div>').join(''):'<p>No downstream use is recorded here.</p>')+(n.coverage?'<p class="small">'+h(n.coverage)+'</p>':'');location.hash=id}
+function select(id){const n=nodes.get(id);if(!n)return;selected=id;renderList();let users=data.nodes.filter(x=>x.depends_on.some(d=>d.id===id));details.innerHTML='<p class="label">'+h(data.groups[n.group].title)+'</p><h2>'+h(n.title)+'</h2><p>'+h(n.statement)+'</p><p class="small">'+(n.article===null?'No article owner is assigned in this inventory.':'Article: '+articleLink(n.article))+'</p>'+(n.status==='open'?'<p class="open">This result remains open.</p>':'')+'<h3>Where it is stated or proved</h3><ul>'+n.sources.map(s=>'<li><a href="'+h(s.url)+'">'+h(s.path)+'</a><br><code>'+h(s.anchor)+'</code></li>').join('')+'</ul><h3>Direct prerequisites</h3>'+(n.depends_on.length?n.depends_on.map(d=>'<div class="dep">'+button(nodes.get(d.id))+'<br>'+h(d.reason)+'</div>').join(''):'<p>No earlier result in this inventory is required. Definitions and standard background are stated in the source; this is not a claim of logical independence from all mathematics.</p>')+'<h3>Used directly by</h3>'+(users.length?users.map(u=>'<div class="dep">'+button(u)+'<br>'+h(u.depends_on.find(d=>d.id===id).reason)+'</div>').join(''):'<p>No downstream use is recorded here.</p>')+(n.coverage?'<p class="small">'+h(n.coverage)+'</p>':'');location.hash=id}
 document.addEventListener('click',e=>{let b=e.target.closest('[data-node]');if(b){select(b.dataset.node);return}let a=e.target.closest('[data-group]');if(a){e.preventDefault();groups.value=a.dataset.group;search.value='';renderList();location.hash=groups.value;document.querySelector('.controls').scrollIntoView({block:'start'})}});
 groups.addEventListener('change',renderList);search.addEventListener('input',renderList);document.getElementById('clear').addEventListener('click',()=>{groups.value='';search.value='';renderList()});
-document.getElementById('analysis').innerHTML='<p>'+data.nodes.length+' statements and '+data.analysis.edges+' direct uses are recorded. The statement graph and the proposed component graph have no directed cycles.</p><p>The most widely used prerequisites, counted by distinct downstream statements in this inventory, are:</p><ul>'+data.analysis.shared_prerequisites.slice(0,6).map(x=>'<li>'+button(nodes.get(x.id))+' — '+x.downstream+' downstream statements</li>').join('')+'</ul><p>These counts locate shared foundations; they measure neither mathematical importance nor how much of a proof has been verified.</p>';
+document.getElementById('analysis').innerHTML='<p>'+data.nodes.length+' statements and '+data.analysis.edges+' direct uses are recorded. The statement graph, proposed component graph and explicit article graph have no directed cycles. The article graph has '+data.analysis.articles+' articles and '+data.analysis.article_edges.length+' witnessed imports; '+data.analysis.unowned_statements+' statements have no assigned article owner.</p><p>The most widely used prerequisites, counted by distinct downstream statements in this inventory, are:</p><ul>'+data.analysis.shared_prerequisites.slice(0,6).map(x=>'<li>'+button(nodes.get(x.id))+' — '+x.downstream+' downstream statements</li>').join('')+'</ul><p>These counts locate shared foundations; they measure neither mathematical importance nor how much of a proof has been verified.</p>';
+document.getElementById('articles').innerHTML='<ul>'+data.analysis.article_topological_order.map(id=>{const imports=data.article_dependencies.filter(e=>e.to===id);return '<li>'+articleLink(id)+(imports.length?'<ul>'+imports.map(e=>'<li>Uses '+articleLink(e.from)+'<details><summary>Theorem-path witnesses</summary><ul>'+e.witnesses.map(w=>'<li>'+w.path.map(n=>button(nodes.get(n))).join(' → ')+'<br>'+h(w.reason)+'</li>').join('')+'</ul></details></li>').join('')+'</ul>':'<p class="small">No earlier article import is recorded.</p>')+'</li>'}).join('')+'</ul>';
 const initial=decodeURIComponent(location.hash.slice(1));if(data.groups[initial])groups.value=initial;renderList();select(nodes.has(initial)?initial:data.nodes[0].id);
 </script></body></html>'''
 
@@ -174,15 +290,21 @@ def main():
                 raise ValueError(f"{name}: written result imports open statements {open_inputs}")
     group_edges = {(nodes[a]["group"], nodes[b]["group"]) for a, b in edges if nodes[a]["group"] != nodes[b]["group"]}
     topological(groups, group_edges)
+    article_analysis, article_hashes = validate_articles(data, nodes, edges)
+    hashes.update(article_hashes)
+    for article in data["articles"].values():
+        article["url"] = REPO + quote(article["path"])
     for group in groups:
         groups[group]["count"] = sum(n["group"] == group for n in nodes.values())
         groups[group]["open"] = any(n["group"] == group and n.get("status") == "open" for n in nodes.values())
-    analysis = {"scope": "Consistency and source-location checks on the declared mathematical dependency graph, not proof verification.",
+    analysis = {"scope": "Consistency, article ownership, witnessed import and source-location checks on the declared inventory, not proof verification or exhaustive dependency discovery.",
                 "nodes": len(nodes), "edges": len(edges), "component_edges": sorted(group_edges),
                 "topological_order": order,
                 "shared_prerequisites": sorted([{"id": n, "downstream": len(closure(n, outgoing))} for n in nodes], key=lambda x: (-x["downstream"], x["id"])),
                 "source_sha256": hashes}
+    analysis.update(article_analysis)
     analysis["source_sha256"]["papers/dependencies.json"] = hashlib.sha256(source.read_bytes()).hexdigest()
+    analysis["source_sha256"]["tools/build_dependency_graph.py"] = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
     data["analysis"] = analysis
     svg = svg_graph(groups, group_edges)
     html = HTML.replace("__SVG__", svg).replace("__DATA__", json.dumps(data, ensure_ascii=False).replace("<", "\\u003c"))
@@ -192,7 +314,9 @@ def main():
     (destination / "dependency-analysis.json").write_text(json.dumps(analysis, indent=2) + "\n")
     (destination / "dependencies.svg").write_text(svg + "\n")
     (destination / "dependencies.html").write_text(html)
-    print(f"Recorded {len(nodes)} statements and {len(edges)} direct uses in {len(groups)} components; both graphs are acyclic.")
+    print(f"Recorded {len(nodes)} statements and {len(edges)} direct uses in {len(groups)} components; "
+          f"{analysis['articles']} articles and {len(analysis['article_edges'])} witnessed imports; "
+          "all three graphs are acyclic.")
 
 
 if __name__ == "__main__":

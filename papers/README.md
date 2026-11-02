@@ -24,7 +24,9 @@ from prerequisites to their consumers. The overview groups related
 results; the detailed view retains the individual statements.
 
 The components are finer than the eventual papers. They are not a proposal
-for one paper per box. For example, finite spectral algebra and exact
+for one paper per box. Overlapping arguments belong in the same article:
+the broader Conway source estimate has been incorporated into the existing
+source paper, with its earlier local estimates retained as separate exports. For example, finite spectral algebra and exact
 diagram evaluation now form one article, with the global contraction
 and normalization calculations included. The graph keeps them as
 separate components because the abstract norm theorem does not use
@@ -49,7 +51,7 @@ common core for several inserted diagrams also uses protected gluing.
 
 ## The current drafts
 
-The nineteen papers total 288 pages, with individual lengths from 11 to
+The twenty-one papers total 335 pages, with individual lengths from 11 to
 28 pages. They provide complete accounts of the results described below,
 with numbered companion imports. This is a partial extraction of the
 reference manuscript, rather than a replacement for all its theorem
@@ -85,9 +87,28 @@ Kashaev normalization. For the stated class of fixed Conway compositions,
 it then proves the positive complete auxiliary-color source's variational
 limit, strict interior maximum and stationary boundary bounds at both
 level parities. The positive source is not the signed filled invariant.
-The analytic estimates for that invariant remain separate. The next two
-papers supply the moving-meridian formulas and the complete geometric
-interpretation, respectively.
+The analytic estimates for that invariant remain separate. Other companions supply the moving-meridian formulas, the larger strict
+variational problem and the complete geometric interpretation.
+
+**Stationary profiles of strict Newton trees.** 14 pages.
+[TeX source](strict-newton-profiles/main.tex) ·
+[PDF](../docs/papers/strict-newton-profiles.pdf)
+
+Which ordered tangle expressions admit an interior state of the positive
+sum? This paper answers the question by computing the exact integer
+supports, then their strict real intervals, under products and turns.
+It proves that the independent summation coordinates form a primitive
+integer lattice. A boundary argument excludes degenerate maxima;
+strict concavity gives a unique interior maximum and its nondegenerate
+Hessian. These conclusions also hold when an output is fixed.
+
+The stationary value as a function of that output is its boundary
+profile. The paper calculates these profiles, including their additive
+constants, and proves the harmonic addition rule for their parameters.
+It also proves that every stationary leaf index is at least one quarter
+of the level. The elementary positive-sum limit and these variational
+facts need neither a bound for the signed invariant nor a global
+hyperbolic metric. Later papers use them for those separate purposes.
 
 **Exact Newton calculus for tangles with a moving meridian.** 15 pages.
 [TeX source](meridian-tangles/main.tex) ·
@@ -123,20 +144,28 @@ half-twist partners. The theorem uses the completed-root grammar of the
 Newton paper. A corollary identifies the positive complete source's rate
 with this volume; neither result asserts a signed filling asymptotic.
 
-**Complementary color bounds for Conway tangle sources.** 16 pages.
+**Spectral estimates for Conway tangle sources.** 28 pages.
 [TeX source](conway-source-bounds/main.tex) ·
 [PDF](../docs/papers/conway-source-bounds.pdf)
 
-The exact colored-circle formula has a core and a complementary term.
-This paper bounds the sum of every contribution containing a complementary
-term, uniformly over the integer colors and retained half twists. It
-also bounds the whole source when one color stays a fixed fraction of the
-level away from complete color. A finite recurrence preserves the signed
-cancellation inside each core. Fixed matrix blocks bound both recurrence
-roots, including their collisions; rational supporting planes then give
-two local strict comparisons that propagate through the completed-root
-construction. The theorem is an upper bound before filling. It supplies
-neither a nonzero filled contribution nor a volume identity.
+An auxiliary circle has an integer color between one and the quantum
+level. The theorem bounds the whole source uniformly over all these
+colors. It proves a strict exponential loss when any color stays a fixed
+fraction below the level, and also bounds the entire difference between
+the source and its central part. Theorem 1.1 treats any fixed strict
+expression with at least three leaves; Corollary 9.1 proves the two-leaf
+case separately. All retained half-twist signs and both level parities
+are included.
+
+The proof uses the value and first derivative at every repeated spectral
+root. An exact Fourier formula controls a colored circle followed by a
+turn, including its endpoint terms. Products between such turns are
+bounded by positive sums with their shared indices retained. Two rational
+supporting-plane inequalities and the absolute boundary profiles propagate
+these bounds through the whole expression. The older signed recurrence
+estimates remain available as local results; they are not premises of
+this global argument. The conclusion is a bound before filling, with no
+claim here about a nonzero filled invariant or its volume.
 
 **Marked deformations and long fillings of Conway closures.** 12 pages.
 [TeX source](conway-fillings/main.tex) ·
@@ -154,24 +183,54 @@ absolute filled volume. Its proof does not use a quantum asymptotic.
 The [reference errata](../manuscript/ERRATA.md) explain the corrected
 factor in the filling Jacobian.
 
-**Holomorphic source asymptotics and volume limits for Conway closures.** 16 pages.
+**Marked geometry of strict Conway compositions.** 17 pages.
+[TeX source](strict-conway-geometry/main.tex) ·
+[PDF](../docs/papers/strict-conway-geometry.pdf)
+
+This paper extends the geometric construction to every fixed expression
+passing the strict-state test. Four separate boundary-edge labels record
+which shaded triangles have already been attached. Tracking them through
+each product and turn proves convexity and identifies the assembled
+polyhedron with the original projection cut. The complete metric is
+therefore on the specified augmented link complement, with the original
+meridians and primitive disk longitudes.
+
+The complex face maps then give a marked deformation with complete main
+cusps. Solving the primitive filling equations in one neighborhood permits
+independently long twists of either sign. Smooth completion and a
+comparison of the same oriented fundamental chain identify the absolute
+filled volume. The proof uses local cell calculations from the earlier
+geometric accounts, but proves the larger assembly directly. It has no
+quantum asymptotic premise.
+
+**Holomorphic source asymptotics and volume limits for strict Conway compositions.** 20 pages.
 [TeX source](conway-asymptotics/main.tex) ·
 [PDF](../docs/papers/conway-asymptotics.pdf)
 
-This paper completes the analytic argument for the completed-root Conway
-construction. It first proves a canonical factorial interpolation that
-can also be cited without any knot hypothesis. The actual terminal
-condition of the signed leaf recurrence selects its holomorphic solution;
-an exponentially accurate interpolation then permits the shared wire
-sum to be moved to a complex contour. A second finite sum gives an even
-Fourier polynomial with a real local action and a strict bound away
-from its maximum. Expanding the full physical crossing powers makes the
-oscillatory filling theorem applicable to this polynomial. The entire
-invariant has a nonzero leading coefficient through both level parities.
-The final comparison fixes the quantum action's additive constant and
-identifies it with the independently constructed filled metric volume.
-The knot diagram and independently long signed powers are fixed before
-the level tends to infinity. The broader strict-tree syntax is separate.
+This paper proves the nonzero asymptotic of the whole reduced invariant
+for every fixed strict Conway expression with at least two leaves,
+provided its actual strand pairing gives a knot and all signed twist
+powers are independently sufficiently long. The expression and the
+powers are fixed before the level tends to infinity.
+
+The exact expansion of each full crossing power in ordinary colored
+circles permits the analytic calculation to use the pure source.
+Canonical factorial interpolation agrees exactly with its finite
+coefficients, including at a quarter-index leaf. Summing over the original
+wire lattice gives a nonzero local Gaussian term. A second finite Fourier
+sum has a real local phase and a strict bound away from its maximum.
+The source bounds control the original physical error before the
+whole-period filling theorem is applied. Its nonzero amplitude supplies
+the lower bound needed for a volume limit.
+
+An explicit classical shear then identifies the quantum action with the
+primitive filling action on the actual retained half-twist partner.
+The calculation keeps its additive constant and the integer slope;
+odd powers are not treated as half-integral surgery on another partner.
+The signed local coefficient and completed-root source expansions remain
+proved in the same article as separate reusable results. The strict
+volume route does not require those signed expansions or the
+quarter-index recurrence theorem.
 
 **Asymptotics of signed Newton coefficients near the quarter index.** 11 pages.
 [TeX source](quarter-index-asymptotics/main.tex) ·
@@ -375,7 +434,7 @@ It imports three explicitly stated results: the exact source identity,
 the uniform local coefficient estimates, and the nonzero geometric
 filling contribution with its absolute volume calibration. Those
 dependencies are substantial. The finite input and local upper bounds are
-proved in the first two papers above. The filling-sum paper proves the
+proved in the finite spectral and local Casimir coefficient papers. The filling-sum paper proves the
 analytic implication once its local expansion and global gap are supplied.
 The source-asymptotics paper constructs that expansion and gap. The
 circle-pattern paper supplies the marked geometric volume comparison.
@@ -390,17 +449,17 @@ purposes:
 
 | Subject | Result to explain and prove | Dependencies that must remain visible |
 | --- | --- | --- |
-| General strict Conway trees | Extend the completed-root argument to the broader syntax, including bare junctions | Exact normal form, boundary profiles, signed component bounds, quarter-index expansions and marked geometry |
+| Reducing an ordered tangle presentation | Combine twists along the same strands and treat vanishing net twists and changes of closure | Actual tangle isotopies, original endpoint pairings, termination and the strict volume theorem for the surviving presentation |
 | Geometric longitude and recurrences | All-order meridian expansions force the selected geometric factor to divide a classical symbol | The moving-meridian source, full expansion, normalization and preferred geometric longitude |
 
 The frozen reference manuscript's first theorem uses its completed-root
-grammar. The research notes extend this to more general strict ordered
-trees, with extra normal-form, boundary-profile and spectral-propagation
-arguments. The dependency graph now records those extra steps separately.
-It does not treat the narrower manuscript chapters as proofs of the
-broader extension. The quarter-index estimate now has its own paper. The remaining normal-form,
-comparison and marked-geometry arguments still need a complete account
-and detailed review before the broader extension has companion-paper coverage.
+grammar. The companion accounts now cover the larger strict syntax through
+its own variational, source and marked-geometry arguments. A further
+topological reduction can change the written expression before this
+theorem is applied. That step still needs its own account: large written
+twists may cancel to a small net twist, and a vanishing net twist may
+change the closure or produce additional components. The strict theorem
+cannot by itself justify those reductions.
 
 These remaining subjects still need their own complete accounts. Each
 candidate needs a precise theorem, complete proofs of its own claims,
@@ -410,11 +469,11 @@ For a citation between papers, the exporting paper must state a numbered
 theorem with its normalization, degree restrictions, level parity and
 uniformity assumptions. The importing paper must name that theorem and
 check those hypotheses. A reference to a folder of calculations is not
-a substitute. The nineteen drafts now include the completed-root Conway volume theorem,
+a substitute. The twenty-one drafts include the strict Conway volume theorem,
 the summed and directed circle-tree criteria, and the local quarter-index
 expansion, together with their finite and geometric foundations. The
-broader strict-tree extension and the all-orders meridian and longitude
-results still require their own extraction and proof review.
+net-twist and zero-twist topological reductions and the all-orders meridian
+and longitude results still require their own extraction and proof review.
 The dependency graph keeps those obligations visible.
 
 The illustrated guide retains the broader approaches and unsuccessful
@@ -444,11 +503,16 @@ python3 tools/build_dependency_graph.py
 ```
 
 Its source is `papers/dependencies.json`. The command verifies the named
-source locations, checks both statement and component graphs for cycles,
-and refuses a recorded completed result that imports an open result.
+source locations, checks statement, component and article graphs for cycles,
+and refuses a recorded completed result that imports an open result. Each
+article import has a path through named theorem uses; the builder checks
+that path and its declared ownership. Acyclic statements can become
+circular when grouped into papers, so this is a separate check.
 It generates the interactive graph, vector overview and source-hash
 record in `docs/papers/`. These checks validate the declared dependency
-record, not the proofs at its nodes.
+record, not the proofs at its nodes or the completeness of the inventory.
+The article-cycle and witness controls run with
+`python3 -I tools/test_dependency_graph.py`.
 
 Replay the papers' finite identities and rational certificate constants
 with one command:

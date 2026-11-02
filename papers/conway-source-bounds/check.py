@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Replay the two exact supporting-plane certificates used by this paper.
+"""Replay exact scalar certificates and bounded character-Fourier checks.
 
-The written proofs supply the source identities, concavity, recurrence
-estimates and tree induction. This command validates only the fixed
-rational tables, their full-domain coverage and their interval margins.
+The written proofs supply concavity, uniform recurrence and strip estimates,
+and strict-source component induction. These checks validate the fixed
+rational tables and finite algebra in their explicitly recorded ranges.
 Python's standard library is sufficient.
 """
 from __future__ import annotations
@@ -19,13 +19,16 @@ import sys
 ROOT = Path(__file__).resolve().parents[2]
 PAPER = Path(__file__).resolve().parent
 INPUTS = [
-    "papers/conway-source-bounds/main.tex",
-    "papers/conway-source-bounds/local.tex",
-    "papers/conway-source-bounds/composition.tex",
-    "papers/conway-source-bounds/arithmetic.tex",
-    "papers/conway-source-bounds/figures/tangent-propagation.tex",
+    *[str(path.relative_to(ROOT)) for path in sorted(PAPER.rglob("*.tex"))
+      if "build" not in path.relative_to(PAPER).parts],
     "papers/conway-source-bounds/check.py",
+    "papers/conway-source-bounds/check_fourier.py",
     "papers/newton-tangles/main.tex",
+    "papers/filling-bounds/main.tex",
+    "papers/strict-newton-profiles/main.tex",
+    "papers/strict-newton-profiles/syntax.tex",
+    "papers/strict-newton-profiles/variation.tex",
+    "papers/strict-newton-profiles/profiles.tex",
     "experiments/verify_conway_two_leaf_block_alias_certificate.py",
     "experiments/conway_two_leaf_block_alias_certificate.json",
     "experiments/verify_conway_single_leaf_attachment_certificate.py",
@@ -68,8 +71,34 @@ def main():
         raise SystemExit("Run without -O: the certificate verifiers require assertions")
     before = hashes()
 
-    two = replay("two-leaf", INPUTS[7], INPUTS[8], output)
-    single = replay("single-attachment", INPUTS[9], INPUTS[10], output)
+    two = replay("two-leaf",
+        "experiments/verify_conway_two_leaf_block_alias_certificate.py",
+        "experiments/conway_two_leaf_block_alias_certificate.json", output)
+    single = replay("single-attachment",
+        "experiments/verify_conway_single_leaf_attachment_certificate.py",
+        "experiments/conway_single_leaf_attachment_certificate.json", output)
+    fourier_path = output / "fourier.json"
+    fourier_path.unlink(missing_ok=True)
+    run = subprocess.run(
+        [sys.executable, "-I", str(PAPER / "check_fourier.py"),
+         "--output", str(fourier_path)], cwd=ROOT, text=True,
+        stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    (output / "fourier.log").write_text(run.stdout)
+    if run.returncode:
+        raise RuntimeError("Fourier finite checks failed; see fourier.log")
+    fourier = json.loads(fourier_path.read_text())
+    expected_counts = {
+        "monomial_identities": 7004, "dense_product_identities": 340,
+        "ideal_multiple_identities": 340, "phase_identities": 510,
+        "angular_derivative_identities": 510, "endpoint_jet_repairs": 153,
+        "normal_blind_polynomials": 17, "two_high_support_exclusions": 489,
+    }
+    assert fourier["levels"] == [2, 18]
+    assert fourier["counts"] == expected_counts
+    assert len(fourier["negative_controls"]) == 16
+    assert all(w["actual"] != w["nonzero_missing_winding"] and
+               w["actual"] != w["normals_deleted"]
+               for w in fourier["negative_controls"])
     F = Fraction
     assert two["cells"] == 16 and len(two["records"]) == 32
     assert F(two["minimum_lower"]) == F(
@@ -101,10 +130,11 @@ def main():
             "two_leaf": "16 complete slope intervals; 288 vertex/endpoint inequalities",
             "single_attachment": "55 recursively covering rectangles; 880 vertex/corner inequalities",
             "elementary_leaf": "exact rational lower bound after written alternating-series remainders",
+            "fourier": "exact polynomial/Laurent, crossing-phase, endpoint-jet and support checks at N=2,...,18",
             "excluded": [
                 "all-level physical polynomial identities",
-                "uniform recurrence-product estimates",
-                "whole-tree propagation",
+                "uniform recurrence-product and complex-strip estimates",
+                "strict-source component induction",
                 "filled-invariant or hyperbolic-volume asymptotics",
             ],
         },
@@ -119,13 +149,16 @@ def main():
         "elementary_leaf": {
             "lower": str(leaf_margin), "claimed_gap": "1/2500",
         },
+        "fourier": {"record": "fourier.json", "levels": fourier["levels"],
+                    "counts": fourier["counts"], "negative_control_levels": 16},
         "input_hashes": before,
     }
     summary_path.write_text(json.dumps(result, indent=2, sort_keys=True)+"\n")
     print(json.dumps({"verified": True, "summary": str(summary_path),
                       "two_leaf_inequalities": 288,
                       "attachment_inequalities": 880,
-                      "elementary_leaf_lower": str(leaf_margin)}, indent=2))
+                      "elementary_leaf_lower": str(leaf_margin),
+                      "fourier": fourier["counts"]}, indent=2))
 
 
 if __name__ == "__main__":

@@ -1,0 +1,177 @@
+\subsection{The pure source of an arbitrary strict expression}
+\label{ca:strict-pure-section}
+
+Return to the full strict syntax of Section~\ref{ca:intro}, with
+$b\ge2$, and set every retained sign to zero in the source.
+This does not yet change a filling: Section~\ref{ca:filling} will
+expand each original full power into these pure circle operators.
+Let $y_*$ be the strict complete maximizer and let $a_\ell$ be its
+leaf coordinates. Choose a rectangular window $\mathcal B$ about
+$y_*$ in the primitive coordinates of \cite[Lemma 3.1]{Profiles}.
+All its leaf coordinates are in a compact subset of $(0,1/2)$.
+There are still exactly $k=2b-3$ free coordinates and $b-2$ retained
+products, with the same integer offsets \eqref{ca:offsets}.
+This includes $b=2$, when there is one free coordinate and no
+retained product.
+
+For integer wires the pure leaf is exactly \eqref{ca:pure-leaf};
+that formula is valid below as well as above $r=N/4$.
+Choose the color disk so small that every $r/N\pm t$ in the
+window stays in the factorial strip. Define $C_N(t)$ by the
+finite window sum of these pure leaves and \eqref{ca:gate}.
+For real $t$ near zero it is positive for every sufficiently
+large $N$, and it is separately even and holomorphic.
+For complex wires its exact interpolating leaf is
+\begin{equation}\label{ca:pure-index}
+ \mathscr L_N(x,t)=
+ \frac{N^2G_N(2Nx)}
+ {G_N(Nx)^2G_N(N(x-t))G_N(N(x+t))}.
+\end{equation}
+At $x=r/N$ this is the original leaf, with no approximation.
+Interpolate every gate by replacing each $S_j$ in
+\eqref{ca:gate} by $G_N(j)$. Thus the entire product agrees
+exactly on the primitive grid, with every affine wire offset.
+There is no recurrence to continue across a quarter index.
+
+\begin{theorem}[The strict pure source]\label{ca:strict-pure}
+For every fixed strict expression with $b\ge2$, the finite
+function just defined has the uniform expansion
+\[
+ C_N(t)=N^{3/2}a_0(t)e^{N\Phi_0(t)}(1+O(N^{-1}))
+\]
+on a fixed complex polydisk, with all fixed derivatives on smaller
+polydisks. The functions $a_0,\Phi_0$ are holomorphic and separately
+even, $a_0$ is nonzero, $a_0(0)>0$, and
+\begin{equation}\label{ca:strict-pure-hessian}
+ \Phi_0(0)=F_0,\qquad
+ \Phi_0''(0)=-2\pi\diag(X_1,\ldots,X_b),\qquad
+ X_\ell=\cot(\pi a_\ell)>0.
+\end{equation}
+The original physical pure source satisfies
+\eqref{ca:source-error} with $\epsilon=0$, and has a strict
+exponential loss when any color deficit is at least $\delta N$.
+The complex Gaussian bound \eqref{ca:color-gaussian} also holds
+for this exact $C_N$.
+\end{theorem}
+
+\begin{proof}
+The phase of the interpolated summand is
+\[
+ F(y,t)=
+ \sum_{\ell=1}^b
+ \{J(2L_\ell)-2J(L_\ell)-J(L_\ell-t_\ell)-J(L_\ell+t_\ell)\}
+ +\sum_{\text{gates}}m(L_i,L_j,L_r).
+\]
+All arguments lie in fixed strict complex neighborhoods.
+Lemma~\ref{ca:factorial} therefore gives, uniformly with fixed
+derivatives, the summand
+$N^{3-b}b_0(y,t)e^{NF(y,t)}(1+O(N^{-1}))$.
+To specify its normalization, the unshifted leaf density is
+\[
+ \frac{\sqrt{\sin(2\pi x)}}
+ {2^{3/2}\sin(\pi x)
+       \sqrt{\sin(\pi(x-t))\sin(\pi(x+t))}},
+\]
+and the gate density is $b_\mu$ displayed in the proof of
+Theorem~\ref{ca:packet-theorem}. Multiply these densities, then
+multiply by $e^{\delta_\ell g_x}$ at each leaf and by
+$e^{\delta_i m_x+\delta_jm_y+\delta_rm_z}$ at each gate.
+Here $g(x,t)=J(2x)-2J(x)-J(x-t)-J(x+t)$, and all derivatives
+are evaluated at their actual changed arguments.
+This defines $b_0$ without an unspecified normalization.
+At real strict arguments its complete value is positive.
+
+Theorem 3.3 of \cite{Profiles} gives the negative definite
+matrix $F_{yy}(y_*,0)$. The holomorphic implicit-function theorem
+gives $y_*(t)$ and
+\[
+ \Phi_0(t)=F(y_*(t),t),\qquad
+ a_0(t)=
+ \frac{(2\pi)^{k/2}b_0(y_*(t),t)}
+ {\sqrt{\det[-F_{yy}(y_*(t),t)]}}.
+\]
+Both are independent of $N$. The square root is positive at
+zero and is then continued holomorphically. Primitivity of the
+coordinates shows that there is no additional lattice covolume.
+
+We give the contour justification because exact interpolation
+is the reason this proof has the larger scope.
+Move each endpoint of the wire window by at most $1/N$ to a
+half-grid point. The exact kernel $\pi N\cot(\pi Nz)$ encloses
+precisely the retained grid points. On a vertical half-grid side
+its modulus is at most $\pi N$. On horizontal sides of height
+$\pm a$ its constant parts are $\mp\pi N\ii$, with error
+$O(Ne^{-2\pi Na})$. The real complete action has a fixed loss
+$g_\partial>0$ on the boundary of this window. Since it is real
+on real wires, imaginary displacement by $a$ has real-action
+cost at most $Ca^2$ there. Choose $a>0$ first so that
+$Ca^2<\min(\pi a,g_\partial/4)$, and then shrink the color
+disk. Analyticity and evenness in the color give an additional
+uniform cost $C\|t\|^2$. Every vertical boundary and every
+nonconstant cotangent contribution has a fixed exponential loss.
+The two constant horizontal contributions have weight $1/2$
+each. Repeating this operation in the $k$ coordinates replaces
+the sum by $N^k$ times its integral, with exponentially small
+absolute error and no factor $2^k$.
+
+Translate the integral to the parallel contour through $y_*(t)$.
+The connecting boundary faces retain the same strict loss.
+The positive real part of $-F_{yy}$ gives a uniform Gaussian
+on a fixed ball; odd cubic and linear terms integrate to zero,
+and the remainder is relative $O(N^{-1})$.
+The prefactor is $N^{3-b+k/2}=N^{3/2}$.
+Cauchy's formula gives the derivative estimates.
+This argument uses only the exact function
+\eqref{ca:pure-index}, not the signed interpolation of
+Section~\ref{ca:leaf}.
+
+Separate evenness gives $F_{yt}(y,0)=0$.
+Moreover $g_{tt}(x,0)=-2\pi\cot(\pi x)$.
+The stationary-wire Schur term therefore vanishes at zero,
+proving \eqref{ca:strict-pure-hessian}. Positivity of the
+complete density proves $a_0(0)>0$ and nonvanishing nearby.
+Its negative real-color Hessian and holomorphy give
+\eqref{ca:color-gaussian}, after shrinking the disk.
+
+It remains to compare this window with the full physical
+source, rather than merely with its local summands.
+For a physical deficit $h\ge0$ the pure core leaf is zero for
+$r<h$; for $h\le r\le M$ it is the nonnegative factorial
+ratio \eqref{ca:pure-leaf}. The uniform endpoint estimate
+$\log S_r=NJ(r/N)+O(\log N)$ from
+\cite[Lemma 5.2]{Newton} controls this ratio on its entire
+support. Its rate is
+\[
+ g(x,t)=g(x,0)-\Delta(x,t),\qquad
+ \Delta(x,t)=J(x-t)+J(x+t)-2J(x)\ge0
+ \quad(0\le t\le x\le1/2).
+\]
+Indeed, for $0<t<x<1/2$,
+\[
+ \partial_t\Delta(x,t)
+ =\log\frac{\sin\pi(x+t)}{\sin\pi(x-t)}>0,
+\]
+because the difference of the two sines is
+$2\cos(\pi x)\sin(\pi t)>0$. Continuity gives the boundary
+inequality. At displaced finite endpoints the modulus of
+continuity of $J$ is $O(\eta|\log\eta|)$, so the fixed wire
+offsets still cost only $O(\log N)$.
+
+The complete action has its unique global maximum strictly
+inside $\mathcal B$. Its continuous value on the compact
+polytope outside the window is therefore below $F_0$ by a fixed
+amount. The nonnegative losses $\Delta$ preserve that gap for
+every real color in the chosen corridor. The polynomial number
+of states and all $O(\log N)$ errors do not remove the gap.
+This proves a uniform bound for the entire pure core outside
+the window. Finally \cite[Theorem 1.1]{Bounds}, or
+\cite[Corollary 9.1]{Bounds} when $b=2$, bounds the whole
+full-minus-core difference and supplies the macroscopic-color
+loss. Combining these bounds proves the physical source
+assertions at both parities.
+\end{proof}
+
+This theorem and the following Fourier argument are the local
+analytic inputs to the strict volume theorem. Neither uses the
+signed recurrence, its separated-root interval, or a quarter-index
+asymptotic.

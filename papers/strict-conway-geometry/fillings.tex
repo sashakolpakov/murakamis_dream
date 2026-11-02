@@ -1,0 +1,286 @@
+\section{Independent signed slopes and smooth completion}
+\label{sm:filling-proof}
+
+Fix the subset $I$ and set all other $\chi_i$ equal to zero.
+For $i\in I$ write $r_i=1/p_i$. Solve
+\begin{equation}\label{sm:reciprocal}
+                  V_i(\boldsymbol\chi)+r_iU_i(\boldsymbol\chi)
+                                  =-2\pi\ii r_i.
+\end{equation}
+At $\mathbf r=0$ the solution is $\boldsymbol\chi=0$.
+Equations \eqref{sm:UV} and \eqref{sm:Hessian} give the invertible
+Jacobian
+\begin{equation}\label{sm:Jacobian}
+                       D_{\boldsymbol\chi}V(0)
+                              =-2\pi\ii\diag(\tau_i)_{i\in I}.
+\end{equation}
+The implicit-function theorem gives a unique solution on one
+reciprocal-slope polydisk. Shrink it until the representation and
+positive original chain are in their common fixed neighborhood.
+For real signed $p_i$ this imposes a lower bound on each $|p_i|$,
+with no restriction on their ratios. For $p_i\ne0$ the equations are
+\begin{equation}\label{sm:primitive-equations}
+                           U_i+p_iV_i=-2\pi\ii .
+\end{equation}
+They are precisely the critical equations of
+\eqref{sm:filled-action}.
+
+The peripheral direction is actually loxodromic at these solutions.
+Separate evenness makes the apparent quotient
+$\widetilde\tau_i=V_i/U_i$ removable, holomorphic near zero, and
+equal to $\tau_i$ there. Shrink once more so that
+$\Ima\widetilde\tau_i>0$. Equation \eqref{sm:reciprocal} yields
+\begin{equation}\label{sm:positive-length}
+ \chi_{i,*}=\frac{r_i}{\widetilde\tau_i+r_i},\qquad
+ \Rea V_i=\frac{2\pi r_i^2\Ima\widetilde\tau_i}
+                         {|\widetilde\tau_i+r_i|^2}>0 .
+\end{equation}
+This is valid for either sign of a nonzero real reciprocal slope.
+It is a classical consequence of the positive primitive cusp ratio.
+
+We now apply the precise near-complete completion result
+\cite[Proposition~6.1]{Marked}. Its input is an oriented complete
+finite-volume manifold with marked primitive cusp bases, and an
+actual nearby framed representation with small similarity logs in
+bounded frames. At unfilled cusps both multipliers must be one.
+At each filled cusp a primitive integral combination of the small
+logs must equal $2\pi\ii$ or $-2\pi\ii$. It then completes the
+original topological filling to a smooth complete hyperbolic metric.
+
+Every hypothesis has been supplied on this enlarged syntax:
+Theorem~\ref{sm:complete} constructs the actual complete exterior;
+the unchanged two-rectangle collar proves its primitive basis;
+Sections~\ref{sm:maps}--\ref{sm:group} construct the actual framed
+representation and the original group relations; all unfilled
+cusps have translation holonomy; and \eqref{sm:primitive-equations}
+uses the primitive vector $(1,p_i)$. The fixed small parameter
+neighborhood is chosen before the slopes.
+
+\subsection{Why the integer equation gives one actual angular turn}
+We recall the part of the imported proof that prevents an exponential
+period equation from being mistaken for completion. On a complete
+cusp link use a translation lattice $\Lambda\subset\CC$ and its fixed
+generator paths. A nearby peripheral action is affine,
+$A_\lambda(z)=a_\lambda z+b_\lambda$, in a bounded moving flag
+frame. A smooth partition $\eta$ on the complete plane with
+$\sum_{\lambda\in\Lambda}\eta(w-\lambda)=1$ gives
+\[
+ d_\rho(w)=\sum_{\lambda\in\Lambda}
+                    \eta(w-\lambda)A_\lambda(w-\lambda).
+\]
+On a fundamental parallelogram this is $C^1$-close to the complete
+identity and has positive real Jacobian; equivariance propagates
+this fact. With the real peripheral logarithmic character in the
+height coordinate it gives a nonsingular developed cusp, matched
+over a compact collar to a nearby developing map on the original
+truncated core.
+
+At a filled cusp a multiplier has nonunit modulus by
+\eqref{sm:positive-length}. Commutativity gives a second common
+fixed point $q$ besides infinity. Since the original complete
+translations are nonzero, $|q|\to\infty$ near completeness.
+The developed fixed generator paths stay bounded, with bounded
+length. They miss $q$, and their increments of
+$f=\Log(d_\rho-q)$ tend to zero. Quantitatively, a path of length
+at most $L$ contained in $|d_\rho|\le R$ has
+$|\Delta f|\le L/(|q|-R)$.
+Thus those increments are the prescribed small logs $U,V$,
+without an added integral multiple of $2\pi\ii$, \emph{before}
+multiplication by the large integer $p$.
+
+The metric $|df|^2$ descends to a compact nonsingular flat torus.
+Its complete lifted developing map is a diffeomorphism to $\CC$,
+so $U,V$ form its actual rank-two period lattice. The developed
+end contains a punctured metric tube with cylindrical metric
+\begin{equation}\label{sm:tube}
+             dR^2+\cosh^2R\,dX^2+\sinh^2R\,d\theta^2.
+\end{equation}
+A complex period $L$ acts by
+$(X,\theta)\mapsto(X+\Rea L,\theta+\Ima L)$.
+The original primitive slope has period $U+pV=-2\pi\ii$,
+exactly one angular turn. Its complementary primitive period $V$
+has nonzero real part. Adding $R=0$ produces the smooth solid
+torus with this original meridian. The slope fixes both
+$q,\infty$ and has multiplier one, so it is the identity in the
+group, not a nontrivial unipotent with the same eigenvalues.
+The remaining ends are full horoball quotients, and the middle
+region is compact. Completeness and finite volume follow.
+
+\begin{figure}[ht]
+\centering\input{figures/primitive-periods}
+\caption{The developed logarithmic link of a filled original
+crossing circle. The old basis is $U,V$, while
+$m=U+pV=-2\pi\ii$ is the primitive meridian of the added solid
+torus. The picture shows $p=1$; the proof uses the small periods
+before multiplying by any integer $p$. In the tube metric,
+$m$ makes one angular turn and $V$ gives a nonzero axial
+translation.}
+\label{sm:period-figure}
+\end{figure}
+
+This verifies the metric conclusion of Theorem~\ref{sm:fillings}
+for the actual disk-filled exterior. In particular high-index
+estimates for a quantum coefficient, source positivity and whole
+character-variety rigidity have played no role.
+
+\section{Absolute volume on the original chain}\label{sm:absolute}
+
+Set $G=2\pi\ii\Phi_\eps$. The exact peripheral identity gives
+\begin{equation}\label{sm:primitive}
+ \dd G=\frac12\sum_i V_i\,\dd U_i,\qquad
+ \Ima G(0)=2\pi F_0=\Vol(Y_E^\eps).
+\end{equation}
+This is the $V\,dU$ polarization. A primitive of
+$-\tfrac12\sum U\,dV$ differs by the boundary term
+$\tfrac12\sum UV$; its regulator correction cannot be reused
+unchanged here.
+
+Let $\mathcal V(\rho)$ be the signed sum of the ideal tetrahedron
+volumes of the retained original chain. The local boundary
+differential \cite[equation~(7.3)]{Marked} reads, for similarity logs,
+\begin{equation}\label{sm:volume-differential}
+ \dd\mathcal V
+     =\frac12\sum_i\bigl(\Rea V_i\,\dd\Ima U_i
+                          -\Rea U_i\,\dd\Ima V_i\bigr).
+\end{equation}
+Its hypotheses hold on our positive nondegenerate chain:
+internal faces cancel by the actual maps, edge-log sums stay fixed,
+and the primitive cusp orientation is
+$\Ima(\lambda/\mu)>0$ by \eqref{sm:tau}.
+All main logs vanish. The proof of that local identity differentiates
+Bloch--Wigner volume and cancels normal-face flows; it uses the
+positive ordered model $(0,\infty,1,z)$ and the primitive cusp
+intersection pairing. It is not a theorem restricted to the
+complete packing of a particular diagram.
+
+Taking the imaginary part of \eqref{sm:primitive} and differentiating
+its boundary correction now gives
+\begin{equation}\label{sm:regulator}
+ \mathcal V(\rho_{\boldsymbol\chi})
+      =2\pi\Rea\Phi_\eps(\boldsymbol\chi)
+                     -\frac12\sum_i\Rea U_i\,\Ima V_i .
+\end{equation}
+The integration constant is fixed by the actual degree-one complete
+cell volumes, not just by a derivative computation.
+At a filling solution write $\chi_i=u_i+\ii v_i$. Since
+$V_i=2\pi\ii(\chi_i-1)/p_i$,
+\begin{equation}\label{sm:boundary-term}
+ -\frac12\Rea U_i\,\Ima V_i
+    =-\frac{2\pi^2}{p_i}v_i(u_i-1)
+    =2\pi\Rea\left[\frac{\pi\ii}{2p_i}(\chi_i-1)^2\right].
+\end{equation}
+Unfilled auxiliaries have $U_i=V_i=0$.
+
+\subsection{The same boundary triangulation after filling}
+It remains to identify $\mathcal V$ with the volume of the smooth
+metric just constructed. We verify the chain hypotheses of
+\cite[Section~7.3]{Marked}. At a filled cusp conjugate the common
+fixed points to $0,\infty$. On each triangle of the retained
+boundary triangulation the ideal conical development is
+$(a(w),Yb(w))$, with $b>0$. All functions and their derivatives
+are bounded on a finite fundamental set. Choose an equivariant
+axis map $(0,Y e^{\eta(w)})$, where $\eta$ has the real peripheral
+logarithmic character. On the \emph{same} triangulation set
+\begin{equation}\label{sm:chain-homotopy}
+ H_s(w,Y)=\left(sa(w),
+      Y\exp\bigl((1-s)\eta(w)+s\log b(w)\bigr)\right),
+                  \qquad 0\le s\le1.
+\end{equation}
+Both horizontal coordinates and heights have the required
+equivariance, and the homotopy agrees along every face.
+Its height is comparable to $Y$, horizontal derivatives are bounded,
+and height derivatives are $O(Y)$. The volume form
+$y^{-3}\,dx_1\wedge dx_2\wedge dy$ therefore bounds its
+three-dimensional boundary sweep by $O(Y^{-2})$.
+
+Once the primitive slope is killed, extend that axis-valued boundary
+over the added solid torus. The remaining cyclic group acts along
+the axis, so all added vertices can lie on the axis and all added
+tetrahedra have zero signed volume. At unfilled cusps the same
+vanishing boundary estimate applies. Stokes on finite truncations,
+followed by $Y\to\infty$, identifies the retained ideal chain with
+the filled equivariant fundamental class. Comparing it with the
+complete metric developing map on a common subdivision gives
+\[
+                 \mathcal V(\rho_{\boldsymbol\chi_*})
+                        =\Vol(Y_E^\eps(\mathbf p;I)).
+\]
+An unrelated chain with the same peripheral differential would not
+suffice; \eqref{sm:chain-homotopy} supplies the absolute comparison.
+Combining it with \eqref{sm:regulator} and
+\eqref{sm:boundary-term} proves \eqref{sm:filled-volume}.
+
+\section{Proof boundary and finite algebra}\label{sm:scope}
+
+The strict variational existence, Hessian and boundary-profile
+identities are imported from \cite{Profiles}, with their precise
+nonmetric content in Section~\ref{sm:variational}. The local cells,
+entire rational prism maps and collar words are the local results
+of \cite{Geometry,Fillings}. The present paper proves the
+individual-mask induction, its enlarged closed topology and
+all actual versus completion-map status, before using those
+local formulas. Smooth metric completion and the local
+volume differential are the explicitly stated inputs from
+\cite{Marked}, with all hypotheses verified here.
+
+No source asymptotic, full spectral bound or nonzero Fourier
+contribution is claimed. To identify the classical action with a
+quantum packet one must independently match each endpoint-normalized
+leaf action, including its color-dependent additive constant, and
+then eliminate these same wires. A further whole-source estimate
+and filling noncancellation theorem are needed for an invariant
+volume limit. The geometry alone does not supply them.
+Similarly no equivalence with a completed-root presentation is used,
+and no moving main-meridian or preferred-longitude deformation
+claim is made.
+
+The accompanying \texttt{check.py} verifies the finite mask closure
+and its allowed edge pairings, the literal endpoint-connection
+table, projective turn/closing and pure/odd return identities,
+and the primitive Hessian and critical boundary normalization.
+It includes altered mask, pairing and factor-of-two controls.
+It writes a source-hashed JSON record with \texttt{--output}.
+These exact finite checks do not prove convexity, the variational
+existence theorem, the original manifold identification,
+implicit-function theory, smooth completeness or the chain
+comparison.
+
+\begin{thebibliography}{9}
+\bibitem{Profiles}
+\emph{Stationary profiles of strict Newton trees},
+companion paper, Lemma~2.2, Theorem~3.3, Lemma~4.1 and
+Proposition~4.2.
+\href{https://sashakolpakov.github.io/murakamis_dream/papers/strict-newton-profiles.pdf}
+{Companion PDF}.
+
+\bibitem{Geometry}
+\emph{Pyramids, prisms, and complete geometry of Conway closures},
+companion paper, Section~2, equations~(3.2)--(3.3),
+(5.5)--(5.8), and Section~7.
+\href{https://sashakolpakov.github.io/murakamis_dream/papers/conway-geometry.pdf}
+{Companion PDF}.
+
+\bibitem{Fillings}
+\emph{Marked deformations and long fillings of Conway closures},
+companion paper, Sections~2--4 and~7.
+\href{https://sashakolpakov.github.io/murakamis_dream/papers/conway-fillings.pdf}
+{Companion PDF}.
+
+\bibitem{Marked}
+\emph{Circle patterns and primitive fillings of augmented links},
+companion paper, Proposition~6.1, equation~(7.3) and Section~7.3.
+\href{https://sashakolpakov.github.io/murakamis_dream/papers/marked-fillings.pdf}
+{Companion PDF}.
+
+\bibitem{Purcell}
+J.~S.~Purcell, An introduction to fully augmented links,
+\emph{Contemp.\ Math.} \textbf{541} (2011), 205--220.
+\href{https://users.monash.edu.au/~jpurcell/papers/expos-auglinks.pdf}
+{Author's manuscript}.
+
+\bibitem{NZ}
+W.~D.~Neumann and D.~Zagier, Volumes of hyperbolic three-manifolds,
+\emph{Topology} \textbf{24} (1985), 307--332.
+\href{https://doi.org/10.1016/0040-9383(85)90004-7}
+{doi:10.1016/0040-9383(85)90004-7}.
+\end{thebibliography}

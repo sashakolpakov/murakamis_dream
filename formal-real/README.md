@@ -14,6 +14,9 @@ load module derives the local derivative and its assembled graph energy
 from the exponential, square-root and arctangent formulas themselves.
 The triangle-potential module then proves that these loads are the
 gradient of the literal integral-entropy supremum, including singleton rows.
+The triangle-minimizer module combines those actual derivatives with
+proved local bounds, continuity and finite corner-table identities to
+obtain a unique grounded minimum from the supported table and row paths.
 
 ## What is proved
 
@@ -301,8 +304,9 @@ The application must still construct the strictly positive supported table
 from the disk's Hall inequalities, identify its prescribed margins (row
 supply `1/2` and the required face demands), and verify the connected
 grounded support. It must also identify the geometric potential with the
-displayed `𝓙` and prove its local vertex bounds. Fixed boundary logarithms
-may enter the constants `C_t`; any identification of fixed boundary
+displayed `𝓙`. For a general row function Q, its local vertex bounds remain
+hypotheses; `TriangleMinimizer` below proves them for the actual supported
+triangle envelope. Fixed boundary logarithms may enter the constants `C_t`; any identification of fixed boundary
 directions with the grounded coordinates is part of that written
 application. For a disk with three positive fixed boundary weights, pool
 the boundary destinations into the single grounded root, aggregating the
@@ -648,8 +652,9 @@ has zero second derivative.
 Thus the entropy-gradient identification is now proved for this concrete
 potential, including mixed supported rows. To apply `GroundedConvexity`,
 write a segment as `q+t h` and supply connectivity of the actual positive
-conductance support and the appropriate grounding. The derivative identity
-itself no longer needs to be supplied for this potential. The geometric
+conductance support and the appropriate grounding. The next module derives
+that conductance connectivity from the actual row paths. The derivative
+identity itself no longer needs to be supplied for this potential. The geometric
 or source interpretation of `Q`, the incidence maps, fixed-boundary
 pooling and offsets, Hall transport feasibility, and graph connectivity
 remain written application inputs. No continuity theorem as the fixed
@@ -657,6 +662,122 @@ coefficients `a_i` change support is claimed; the one-zero and singleton
 cases are proved directly at their own fixed supports. Packing existence,
 nonlinear deformation and the volume identity are not conclusions of
 this module.
+
+## The actual supported triangle minimum
+
+[TriangleMinimizer.lean](TriangleMinimizer.lean) contains six definitions and
+thirty-two theorems in `VolumeLogic.TriangleMinimizer`. It instantiates the
+coercivity and uniqueness results with the **same** `TrianglePotential`
+supremum, rather than assuming its lower bound, continuity, gradient or
+Hessian. Its two main entry points are
+`exists_unique_triangle_minimizer` and
+`exists_unique_prescribed_minimizer`.
+
+Let `T,V` be finite triangle and vertex types, `root : V` the grounded
+vertex, and `c : T → Fin 3 → V` the corner map. The fixed corner
+coefficients `a_ti` are nonnegative. An actual table `β_ti` must satisfy
+
+\[
+\beta_{ti}>0\quad(a_{ti}>0),\qquad
+\beta_{ti}=0\quad(a_{ti}=0),\qquad
+\sum_{i=0}^2\beta_{ti}=\frac12.
+\]
+
+In the Lean statement the zero condition is written for every corner
+without a strictly positive coefficient; nonnegativity of `a` makes these
+the same inactive corners. These conditions themselves imply that each
+row has nonempty support. Define
+
+\[
+S_t=\{c_t(i):a_{ti}>0\},\quad
+\alpha_{tv}=\sum_{i:c_t(i)=v}\beta_{ti},\quad
+d_v=\sum_t\alpha_{tv}.
+\]
+
+The proofs retain repeated corners. `aggregate_rowMass` gives the exact
+half-row masses, `aggregate_demand` identifies the actual column demands,
+and `transport_potential_eq` identifies the constructed transport potential
+with `summedPotential c a d`. Positive entries on each set `S_t` follow
+from the original supported corner table; demands are not substituted by
+an unrelated vector.
+
+The local lower bound is proved by putting the full feasible mass `1/2`
+at any active corner. Its entropy is zero, so
+
+\[
+Q(a,q)\ge\frac{\log a_i+q_i}{2}\qquad(a_i>0).
+\]
+
+The explicit row constant
+
+\[
+C_t=\frac12\sum_{i:a_{ti}>0}|\log a_{ti}|
+\]
+
+therefore gives `Q_t(q) ≥ (1/2) max_(v∈S_t) q_v − C_t` for every q.
+This is the precise lower-bound input of `TransportCoercivity`; it includes
+fixed boundary offsets and needs no uniform bound on their magnitudes.
+The module also proves the quantitative fixed-support estimate
+
+\[
+|Q(a,q)-Q(a,p)|\le\frac12\lVert q-p\rVert_\infty.
+\]
+
+For any feasible load, the two objective values differ by
+`Σ_i α_i(q_i−p_i)`; comparing the attained maximizers in both directions
+proves this estimate and hence multivariate continuity. This is not an
+inference from differentiability on each line, and it includes singleton
+rows.
+
+The connectivity hypothesis is the actual finite-path condition
+`TransportCoercivity.connected S`. The module **derives** connectivity of
+the positive conductance graph at every q. A row step between distinct
+vertices chooses two distinct active corners, which form one of the
+three pair labels of `TriangleLoads`. Their conductance is positive. A
+step from a vertex to itself uses a zero-length path. Induction transports
+the complete row path. Singleton rows provide no distinct-vertex edge;
+parallel edges and loops from repeated destinations are allowed.
+
+The existing mixed-support derivative theorems are then applied to the
+identity `(1-t)x+t y = x+t(y-x)`. They supply the actual first derivative
+and the actual graph-energy second derivative on every grounded segment.
+Together with the proved vertex bound, continuity and finite table
+identities, `GroundedConvexity.exists_unique_grounded_minimizer` yields
+exactly one grounded minimum of
+
+\[
+\mathcal P_d(q)=\sum_t Q(a^t,q\circ c_t)-\sum_v d_vq_v.
+\]
+
+For a prescribed physical demand `δ`, only the free-vertex equalities
+`δ_v=d_v` for `v≠root` are required. The theorem
+`root_demand_difference` keeps the exact identity
+
+\[
+\mathcal P_\delta(q)-\mathcal P_d(q)
+=(d_{\mathrm{root}}-\delta_{\mathrm{root}})q_{\mathrm{root}}.
+\]
+
+Thus the two functions agree on `q_root=0`, and
+`exists_unique_prescribed_minimizer` proves the unique minimum for the
+original free-vertex demands. No boundary equation is introduced.
+
+For a disk with several fixed boundary corners, map them to one root but
+retain their **separate** prescribed coefficients `a_ti` in the potential.
+`pooled_boundary_weight` proves that grounding leaves each original
+boundary weight equal to that coefficient. Only the transport table is
+aggregated. This includes two-zero protected boundary data and singleton
+rows without interpreting a zero denominator in the arctangent formula.
+The one-vertex grounded space is covered by the same theorems.
+
+The supplied positive table must still come from the written Hall argument,
+and the stated incidence/support and its row connectivity must describe
+the actual disk. Those geometric/combinatorial application proofs have not
+been replaced by hypotheses asserting a minimum. The module does not prove
+support-changing limits of minimizers, parameter smoothness, nonlinear
+implicit-function results, circle development or the action-volume
+identity. The earlier general coercivity and convexity modules remain
+applicable to other potentials with their own explicit inputs.
 
 ## Pinned dependencies
 
@@ -743,8 +864,8 @@ the executed Lean version must still match the pin.
 The checker rebuilds the Std-only path dependency, compiles
 `RealTransfer.lean`, `WeightedGraph.lean`, `Flattening.lean`,
 `TransportCoercivity.lean`, `GroundedConvexity.lean` and
-`GroundedLaplacian.lean`, `TriangleLoads.lean` and `TrianglePotential.lean`,
-and runs
+`GroundedLaplacian.lean`, `TriangleLoads.lean`, `TrianglePotential.lean`
+and `TriangleMinimizer.lean`, and runs
 [AxiomAudit.lean](AxiomAudit.lean). Every
 definition and theorem must appear exactly once in the audit. Only Lean's
 standard foundational axioms `propext`, `Classical.choice` and `Quot.sound`
@@ -753,7 +874,7 @@ are permitted; placeholders and additional axioms fail the check.
 `summary.json` records every declaration, its axioms, all dependency pins,
 and the SHA-256 hashes of the optional package, checker and Std-only sources.
 It contains relative paths and omits timestamps so identical inputs produce
-the same summary. Twenty-two negative controls check altered pins, missing or
+the same summary. Twenty-four negative controls check altered pins, missing or
 duplicate dependencies, an absolute local dependency, incomplete or
 duplicate declaration audits, an omitted graph module or grounded-energy
 audit entry, an omitted flattening module or quadratic-cost audit entry,
@@ -762,10 +883,11 @@ an omitted grounded-convexity module or unique-minimum audit entry,
 an omitted grounded-Laplacian module or unique-linear-solution audit entry,
 an omitted triangle-load module or shared-load derivative audit entry,
 an omitted triangle-potential module or actual supremum-gradient audit entry,
+an omitted triangle-minimizer module or actual prescribed-minimum audit entry,
 and an unexpected logical axiom. A failed run
 removes any old success summary in its output directory.
 
-The optional count is **forty-two definitions and one hundred fifty-seven theorems**, separate
+The optional count is **forty-eight definitions and one hundred eighty-nine theorems**, separate
 from the Std-only theorem count: `RealTransfer` has two definitions and
 twenty-two theorems, `WeightedGraph` has seven definitions and nineteen
 theorems, `Flattening` has one definition and nine theorems,
@@ -773,7 +895,8 @@ theorems, `Flattening` has one definition and nine theorems,
 `GroundedConvexity` has three definitions and eight theorems, and
 `GroundedLaplacian` has four definitions and eighteen theorems, and
 `TriangleLoads` has ten definitions and twenty-four theorems, and
-`TrianglePotential` has eight definitions and forty-one theorems. The audit
+`TrianglePotential` has eight definitions and forty-one theorems, and
+`TriangleMinimizer` has six definitions and thirty-two theorems. The audit
 checks these proofs and the
 listed dependency pins; it does not certify that a particular knot family
 satisfies the remaining written analytic and geometric hypotheses.

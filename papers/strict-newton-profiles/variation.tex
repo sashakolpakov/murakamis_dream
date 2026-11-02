@@ -1,0 +1,272 @@
+\section{The primitive polytope and its interior maximum}\label{st:variation}
+For a fixed strict expression let $P$ be the compact polytope
+obtained by replacing all strict leaf and product inequalities
+by their weak versions. Turns retain $y=1-x$, and closure
+retains the complementary relation. Its relative interior is
+the strict state set: a strict state exists, so none of the
+listed proper inequalities is identically an equality.
+
+\subsection{Integer coordinates and endpoints}
+\begin{lemma}[Primitive coordinates]\label{st:lattice}
+A closed tree with $H$ leaves has $K=2H-3$ free integer
+coordinates after the forced closing product is removed.
+Every remaining finite label has the form
+\begin{equation}\label{st:offsets}
+ r_w=NL_w(k/N)+\delta_w,\qquad k\in\ZZ^K,
+\end{equation}
+where $L_w$ is integral affine and $\delta_w$ is a fixed
+integer. There is no residual congruence restriction.
+Every strict real state is approached by admissible states
+at all sufficiently large levels of both parities.
+For an open tree the full dimension is $2H-1$ and its
+fixed-output slice has dimension $2H-2$.
+\end{lemma}
+\begin{proof}
+Keep a coordinate for every leaf output and every product
+output. A unary turn simply replaces its input by $d-r$.
+The closed tree has $H-2$ retained products, in addition
+to its $H$ leaves. Its two root subtrees are disjoint,
+so the closing relation can be solved for an output
+coordinate in one subtree with coefficient $1$ or $-1$.
+No identification of the two root coordinates has been
+made. In particular, this procedure never creates $2r=d$.
+This proves the dimension and primitivity assertions.
+Replacing $d$ by $N-1$ gives \eqref{st:offsets}.
+
+Round $d$ times the free coordinates of a strict state,
+and reconstruct the eliminated coordinate exactly.
+The errors in all labels are bounded for the fixed
+expression. Every proper inequality has a positive
+slack times $d$, so the rounded state is admissible
+for all sufficiently large $N$. The strict leaf slack
+also puts its labels below $M$, at either parity.
+For a prescribed open output $r_N/d\to b$ in the actual
+strict interval, choose strict states continuously
+near $b$, fix that output first and round the other
+coordinates. Such a continuous choice is obtained by
+interpolating two nearby strict states with output
+on either side of $b$.
+\end{proof}
+
+Define
+\begin{align}
+ J(t)&=\int_0^t\log(2\sin\pi u)\dd u,\qquad 0\le t\le1,
+       \label{st:J}\\
+ g(a)&=J(2a)-4J(a)
+       =-2J(a)-2J(1/2-a),\label{st:g}\\
+ m(x,y,z)&=J(x+y)+J(z)-J(x)-J(y)\notag\\
+ &\hspace{11mm}-J(z-x)-J(z-y)-J(x+y-z).
+       \label{st:m}
+\end{align}
+Here $J$ has its continuous endpoint values,
+$J(1-t)=-J(t)$ and $J(1/2)=0$.
+The complete action is the sum of one $g$ for each
+original leaf and one $m$ for each retained product:
+\begin{equation}\label{st:action}
+ \A(y)=\sum_{\ell=1}^H g(a_\ell(y))
+             +\sum_{v=1}^{H-2}m(x_v(y),y_v(y),z_v(y)).
+\end{equation}
+For an open expression the sum contains all its products.
+
+The uniform factorial estimate
+\cite[Lemma 5.2]{Newton} is
+$\log S_r=NJ(r/N)+O(\log N)$ for $0\le r<N$.
+Applied to \eqref{st:product} and \eqref{st:leaf}, it gives
+\begin{equation}\label{st:weight-rate}
+ \log w_N(\mathbf r)=N\A(\mathbf r/d)+O_E(\log N)
+\end{equation}
+uniformly on all nonzero positive states of a fixed
+expression. In using this estimate at the endpoints,
+the modulus of continuity of $J$ is
+$O(\eta|\log\eta|)$. Thus the changes from $r/N$ to
+$r/d$, and from $M/N$ to $1/2$, contribute
+$O_E(\log N)$, even at the support boundary.
+
+\subsection{The atoms and their boundary derivative}
+For $a+b+c=1$ set
+\[
+ V(a,b,c)=-\pi\{J(a)+J(b)+J(c)\}.
+\]
+This is a nonnegative function, zero on the boundary of
+the angle simplex and positive in its interior.
+Only these elementary properties and its derivatives
+are used here. With $c=1-a-b$ its Hessian has entries
+\[
+ -\pi^2
+ \begin{pmatrix}
+  \cot\pi a+\cot\pi c&\cot\pi c\\
+  \cot\pi c&\cot\pi b+\cot\pi c
+ \end{pmatrix}.
+\]
+Both displayed diagonal sums are positive, and the
+determinant is $\pi^4$, since
+$\cot\pi a\cot\pi b+\cot\pi b\cot\pi c+
+\cot\pi c\cot\pi a=1$. The Hessian is therefore negative
+definite at a positive triple.
+
+At a product put
+\[
+ p=z-x,\quad q_0=z-y,\quad r=x+y-z,\quad w=1-x-y.
+\]
+The subscript on $q_0$ distinguishes this angle from
+the root of unity. Direct substitution gives
+\begin{align}
+ \pi g(a)&=2V(a,1/2-a,1/2),\label{st:leaf-atoms}\\
+ \pi m(x,y,z)&=
+ V(y,x,w)+V(p,q_0,2r+w)+V(p+q_0,r,r+w).
+ \label{st:gate-atoms}
+\end{align}
+All three entries of each atom are nonnegative and sum
+to one on the original gate support. Consequently the
+whole action is concave on its shared-label polytope.
+
+There are two different kinds of flat atom. At
+$(0,a,1-a)$ with $0<a<1$, the directional derivative
+toward a positive atom is $+\infty$:
+$-J(t)=-t\log t+O(t)$ near zero.
+At $(0,0,1)$ the singularities cancel. More explicitly,
+along the segment with small entries $t\alpha,t\beta$,
+\[
+ V(t\alpha,t\beta,1-t(\alpha+\beta))
+ =\pi t\{(\alpha+\beta)\log(\alpha+\beta)
+                  -\alpha\log\alpha-\beta\log\beta\}
+       +O(t^2).
+\]
+The derivative is finite. A positive atom also has a
+finite derivative. Thus no atom contributes $-\infty$
+along a segment toward a strict state.
+
+\begin{lemma}[Endpoint descent]\label{st:barrier}
+At every nonstrict point of a nonempty strict closed
+polytope, or of an open fixed-output slice with output
+in its strict interval, at least one atom in
+\eqref{st:leaf-atoms}--\eqref{st:gate-atoms} is flat
+but is not a vertex of its angle simplex.
+\end{lemma}
+\begin{proof}
+First suppose a proper wire has value zero or one.
+A turn replaces it by its complementary endpoint.
+At a product with output zero both inputs are zero.
+At a product with output one the inputs sum to one:
+if both are interior, the first atom is $(y,x,0)$,
+as required; otherwise one may descend to an endpoint
+child. Repeating this descent in the finite tree
+terminates at a leaf endpoint. A leaf of value zero
+has atom $(0,1/2,1/2)$; a leaf cannot have value one.
+The same argument applies to either child of the
+deleted root: one descends inside that child, without
+putting the removed flat gate back.
+
+Suppose now that every wire is in $(0,1)$.
+A leaf at its allowed upper endpoint $1/2$ gives
+$(1/2,0,1/2)$. If every leaf is strict, a nonstrict
+state must lie on a retained gate face.
+When $w=0$, the first atom $(y,x,0)$ is nonvertex-flat.
+When $r=0$, the third atom is $(z,0,1-z)$.
+When $p=0$ and $q_0>0$, the second atom has one zero
+entry and two positive entries; the case $q_0=0<p$
+is symmetric. In the remaining intersection
+$p=q_0=0$, one has $x=y=z\in(0,1)$ and the third
+atom is $(0,x,1-x)$. This lists every gate boundary.
+
+For a fixed-output slice the output itself is in
+$(0,1)$, and the same descent applies to each proper
+endpoint wire. The segment used below keeps that
+output fixed. No boundary caused only by imposing
+the output is included among these proper faces.
+\end{proof}
+
+\begin{theorem}[Unique strict optimizer]\label{st:positive-action}
+Every strict closed expression has a unique maximizer
+$y_*$ of its complete action. It is strict and its
+Hessian in the primitive coordinates is negative
+definite. The positive scalar satisfies the all-level
+limit
+\begin{equation}\label{st:positive-limit}
+ \lim_{N\to\infty}\frac1N\log Z_N^0=F_0,\qquad
+ F_0=\A(y_*)>0 .
+\end{equation}
+For an open expression of nonempty type, each output
+$b$ in its strict interval has a unique strict
+fixed-output maximizer. The profile
+\[
+ f_E(b)=\max_{\text{output }b}\A_E
+\]
+is real analytic and strictly concave on that interval.
+It has a continuous extension to the closed feasible
+output interval.
+\end{theorem}
+\begin{proof}
+Compactness gives a maximizer. Join a nonstrict point
+to a strict state in the same polytope. By
+Lemma~\ref{st:barrier}, one atom contributes $+\infty$
+to the one-sided derivative, and none contributes
+$-\infty$. Hence the action increases and the point
+cannot maximize.
+
+At a strict product the gate Hessian is already
+negative definite in $(x,y,z)$. Indeed the first
+atom in \eqref{st:gate-atoms} detects
+$(\delta x,\delta y)$; if those vanish, the second
+detects $\delta z$. Its third atom is nonpositive
+and cannot cancel either negative term.
+The leaf Hessian is strictly negative since
+\[
+ g'(a)=2\log\cot\pi a,\qquad
+ g''(a)=-\frac{4\pi}{\sin2\pi a}<0 .
+\]
+If all atom variations vanish, every leaf output
+and retained product output is fixed. Turns then
+fix their output wires, and the closing relation
+fixes the eliminated coordinate. Thus the sum is
+negative definite on the primitive tangent space.
+This proves uniqueness by concavity.
+
+For an open expression the same argument applies
+including its output coordinate: its last product
+detects that coordinate, or the expression is a
+turned leaf and its leaf detects it. On a fixed-output
+slice, the internal Hessian is therefore invertible.
+The analytic implicit-function theorem gives a
+real analytic maximizing state and profile.
+The full negative Hessian has a negative Schur
+complement in the output coordinate, so $f_E''<0$.
+For the single-leaf case this is the displayed
+formula and its reflection.
+
+Continuity at a feasible endpoint is worth recording.
+For any endpoint maximizing state, interpolate it
+with an interior strict state. This supplies states
+at every nearby interior output, and their actions
+converge to the endpoint maximum. Conversely, every
+sequence of maximizing states has a convergent
+subsequence in the compact full polytope; its limit
+is feasible at the endpoint. These two observations
+prove continuity. They do not require finite support
+at the exact endpoint for every parity.
+
+There are at most $N^K$ positive states.
+Equation~\eqref{st:weight-rate} gives the upper
+limit in \eqref{st:positive-limit}. Primitive
+rounding of $y_*$ gives a genuine positive summand
+at every sufficiently large $N$ and the matching
+lower limit. The strict leaf atoms are positive,
+so $F_0>0$.
+\end{proof}
+
+\begin{lemma}[Gate curvature without leaf curvature]\label{st:gate-curvature}
+For a closed strict tree with $H\ge3$, the sum of the
+retained gate Hessians is itself negative definite
+in the primitive coordinates.
+\end{lemma}
+\begin{proof}
+Contract unary turn chains. Every wire in a nontrivial
+root subtree appears at a retained product, either
+as an input or as an output. If all gate variations
+vanish, these wires have zero variation. The only
+possible uncovered root subtree is a single leaf
+with turns; its variation is fixed by the complementary
+root relation and the other subtree. Both subtrees
+can be single leaves only when $H=2$. The injectivity
+and the strict gate Hessian proved above give the result.
+\end{proof}

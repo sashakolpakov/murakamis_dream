@@ -567,6 +567,16 @@ For example, each stack of two basic pieces has label A, and closing two such st
 
 For every passing presentation $\tau$, there is a finite threshold $B(\tau)$. Choose integers with $|n_i|>B(\tau)$, with either sign and with no restriction on their relative sizes. Follow the strands to check that the resulting endpoint pairing has one component and no internal closed component. Then the resulting knot is hyperbolic and has the volume limit above. The entire presentation and every twist integer are fixed before $N$ tends to infinity. The threshold may depend on the whole tree.
 
+The [20-page asymptotics paper](../../docs/papers/conway-asymptotics.pdf)
+now gives the complete-meridian argument for this strict class. Its exact
+imports are the primitive variational theorem, the whole-source bounds,
+the whole-period filling theorem and the independently constructed marked
+metric. It uses the pure-source calculation explained in
+[Chapter 2](methods.md#using-the-pure-source-for-a-strict-conway-composition).
+The signed recurrence and quarter-index theorem are separate local
+results. The moving-meridian and longitude results below require their
+own additional arguments and are not inferred from this leading limit.
+
 The proof uses auxiliary circles around the twist regions. Filling these circles inserts the chosen twists. All auxiliary circles are filled in the knot conclusion; the knot cusp remains unfilled. Thus the right side is the knot complement volume, not the complete augmented-link volume and not the volume of a closed three-manifold.
 
 The estimate for a general tree must preserve cancellation across large internal components. The [positive probe bound](../../notes/actual_conway_unflagged_core_probe_bound.md) controls such a component without changing its coefficient targets. The [spectral propagation theorem](../../notes/actual_conway_mixed_core_spectral_propagation.md) carries strict losses in the physical color variables through it. The [geometric comparison](../../notes/actual_conway_unflagged_probe_geometry.md) identifies the exponential constants with the action of the original cells. These estimates restore the full signed source from its nonzero local geometric contribution.

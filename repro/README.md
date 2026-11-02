@@ -65,10 +65,16 @@ pairing with that edge energy. It includes one-zero triangles. The
 triangle-potential module starts with the actual Lobachevsky integral and
 supported supremum, proves attainment by those loads, and derives the
 first and second derivatives. Its mixed assembly includes singleton rows
-and retains shared variables and demands. Geometric incidence, connected
-positive support and support-changing limits remain written application
-inputs. Together the optional modules contain forty-two definitions and
-157 theorems, all 199 declarations included in the axiom audit; 22 negative
+and retains shared variables and demands. The triangle-minimum module
+then proves the actual potential's vertex lower bound and multivariate
+continuity, aggregates a positive half-mass corner table, and converts
+its row paths to positive conductance paths. These facts give a unique
+global minimum after one coordinate is fixed. Repeated corner destinations
+retain their separate coefficients; the prescribed demands need agree
+with the table only at free vertices. Geometric Hall feasibility,
+incidence, row connectivity and support-changing limits remain written
+application inputs. Together the optional modules contain forty-eight definitions and
+189 theorems, all 237 declarations included in the axiom audit; 24 negative
 controls check invalid inputs.
 The optional command is separate from the Std-only
 check above; it requires
@@ -82,7 +88,7 @@ python3 repro/check_paper_algebra.py --output repro/results/paper-algebra
 ~~~
 
 The runner requires SymPy, python-flint, NumPy and mpmath. It saves each program's
-output and stops on a failed check. Its eighteen groups cover polynomial
+output and stops on a failed check. Its twenty groups cover polynomial
 resolvents and path partitions, positive-matrix identities and parity
 anchors, filling-sum normalization, symbolic peripheral coordinates,
 rational three-braid constants, the complete forty-branch planar
@@ -95,7 +101,13 @@ filling's symbolic peripheral and volume identities. The quarter-index
 group compares the literal finite factorial source with its recurrence
 and terminal walls, and checks two-channel transport identities. The
 directed-tree group verifies its rational budgets, endpoint pairings and
-finite quotient-versus-normal trace calculations.
+finite quotient-versus-normal trace calculations. The strict-profile group
+checks exact supports, turn-and-product identities and rational harmonic
+responses. The strict-geometry group checks boundary labels, original
+endpoint pairings and peripheral identities. The consolidated source
+group also checks its full Fourier formula and derivative terms, including
+examples whose values vanish at every spectral node while their normals
+do not.
 The two planar certificate groups use outward interval arithmetic with explicit
 Fourier tails. Their reports keep the finite assertions separate from
 the written all-length arguments.
@@ -110,7 +122,13 @@ The [source and filling review](CONWAY_SOURCE_FILLING_AUDIT.md) records
 the uniform complementary-color proof, classical deformation proof,
 corrected Jacobian and formal reduced-Laplacian inverse.
 
-Nine programs accept `--output` naming a JSON result file.
+The [strict Conway review](STRICT_CONWAY_AUDIT.md) records the larger
+variational and geometric arguments, the consolidated whole-source proof,
+the pure-source filling route and the formal minimum of the actual
+triangle potential.
+
+The programs use either a JSON output file or an output directory, as
+registered in the single runner.
 The planar, triangular-insertion, terminal-decoration, moving-meridian and
 complementary-color programs accept an output directory
 containing their summary and supporting records. The unified runner

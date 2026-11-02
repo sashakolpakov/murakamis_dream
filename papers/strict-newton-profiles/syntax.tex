@@ -1,0 +1,287 @@
+\section{Exact supports and reduced product junctions}\label{st:syntax}
+A support is a set of Newton indices with nonzero coefficients.
+For the complete pure source these coefficients are nonnegative,
+so supports can be computed without cancellations.
+
+\begin{proposition}[Integer supports]\label{st:finite-support}
+Every nonempty open complete support is an integer interval. If
+$I_E=[l_E,u_E]\cap\ZZ$, then
+\begin{align}
+ I_h&=[0,M]\cap\ZZ,&
+ I_{\T E}&=[d-u_E,d-l_E]\cap\ZZ,\notag\\
+ I_{FG}&=
+ \begin{cases}
+ \varnothing,&l_F+l_G>d,\\
+ [\max(l_F,l_G),\min(d,u_F+u_G)]\cap\ZZ,&l_F+l_G\le d.
+ \end{cases}\label{st:interval}
+\end{align}
+Every coefficient in the displayed nonempty interval is positive.
+An empty support remains empty under subsequent operations.
+\end{proposition}
+\begin{proof}
+Only the product requires proof. For a proposed output $r$, the
+allowable inputs lie in
+$[l_F,\min(u_F,r)]$ and $[l_G,\min(u_G,r)]$.
+Their sums fill an integer interval with lower endpoint $l_F+l_G$
+and upper endpoint $\min(u_F,r)+\min(u_G,r)\ge r$.
+Both $r$ and the lower endpoint are at most $d$, so this sum
+interval meets $[r,d]$. Formula~\eqref{st:product} supplies a
+positive summand. The same formula gives every necessary
+inequality and the zero case.
+\end{proof}
+In particular
+\[
+ \phi(FG)=\sum_{r=0}^d [e_r]F\,[e_{d-r}]G.
+\]
+This identity also holds for arbitrary signed leaf coefficients.
+Only the positive-support conclusion uses positivity.
+
+\subsection{Strict real supports}
+Scale the finite wire labels by $d$. A strict leaf label is
+$0<a<1/2$. A strict retained product with inputs $x,y$ and output
+$z$ satisfies
+\begin{equation}\label{st:strict-gate}
+ \max(x,y)<z<x+y<1.
+\end{equation}
+A turn sends $x$ to $1-x$. At a closed root impose $x+y=1$
+instead of requiring a strict final product.
+
+\begin{lemma}[The complete type table]\label{st:types}
+The set of strictly realizable outputs of an open expression is
+exactly one of
+\[
+ L=(0,1/2),\qquad H=(1/2,1),\qquad A=(0,1),\qquad\varnothing.
+\]
+The leaf has type $L$. Turn exchanges $L,H$, fixes $A$, and
+preserves emptiness. Product is symmetric and has table
+\[
+ \begin{array}{c|ccc}
+  &L&H&A\\\hline
+ L&A&H&A\\
+ H&H&\varnothing&H\\
+ A&A&H&A
+ \end{array}.
+\]
+The strict closed pairs are $AA,AL,AH,LH$ and their reversals.
+\end{lemma}
+\begin{proof}
+For two low inputs and any $0<z<1$, choose both inputs in
+$(z/2,\min(z,1/2))$. For an $L,A$ pair choose a sufficiently
+small low input $c>0$ and the other input $z-c/2$.
+Two $A$ inputs can use the first construction. A high input
+forces $z>1/2$; for such $z$ choose that input $z-c/2$ and
+the other input $c>0$ sufficiently small. Their sum is less
+than one. Two high inputs cannot have sum less than one.
+These choices prove sufficiency at every output in each stated
+interval, as well as necessity. Finally, the closed condition is
+$S_F\cap(1-S_G)\ne\varnothing$.
+\end{proof}
+\begin{definition}\label{st:strict-definition}
+A cylindrical expression is \emph{strict} if it has a strict
+reduced real state in this sense. This definition concerns its
+original wire constraints.
+\end{definition}
+An empty strict type does not imply finite vanishing.
+For example $\T h\,\T h$ has no strict state. At even $N$ its
+support is empty, whereas at odd $N=2m+1$ its support
+is the full interval $[m,d]$. Both original leaf
+indices are then forced to their upper endpoint $m$,
+so the contribution is boundary-only despite this
+range of product outputs. Its cylindrical scalar
+at output $d$ is positive. These assertions follow
+from \eqref{st:interval}.
+
+\subsection{A product with several inputs}
+The symmetric tensor
+$C_k(i_1,\ldots,i_k)=\phi(e_{i_1}\cdots e_{i_k})$
+retains its normalization from \eqref{st:product}.
+For $k=3$ its support is
+\[
+ i_1+i_2,\ i_1+i_3,\ i_2+i_3\le d,\qquad
+ i_1+i_2+i_3\ge d.
+\]
+The input legs of a product gate are $x,y,1-z$ in this
+symmetric notation.
+
+\begin{lemma}[Multiple-input support]\label{st:hub-support}
+For $n\ge2$ the product of basis elements with indices $i_1,\ldots,i_n$
+is zero unless every pair satisfies $i_p+i_q\le d$. If all
+these inequalities hold, its positive support is
+\begin{equation}\label{st:many-support}
+ [\max_p i_p,\min(d,\sum_p i_p)]\cap\ZZ.
+\end{equation}
+For fixed $0<x_p<1$, a prescribed output $z$ has a strict
+resolution in any binary parenthesization precisely when
+\begin{equation}\label{st:many-strict}
+ x_p+x_q<1\ (p\ne q),\qquad
+ \max_p x_p<z<\min(1,\sum_p x_p).
+\end{equation}
+A closed $k$-input product, $k\ge3$, has a strict resolution
+precisely when
+\begin{equation}\label{st:closed-hub}
+ \sum_p x_p>1,\qquad x_p+x_q<1\quad(p\ne q).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Associate a violating pair first to prove the finite zero
+assertion. Otherwise split at any binary root. The lower
+endpoints of the two child supports are their largest indices;
+their sum is at most $d$ by the pair inequalities.
+Proposition~\ref{st:finite-support} proves
+\eqref{st:many-support} inductively, for this and every other
+parenthesization.
+
+For necessity in the strict statement, follow two inputs to
+their first common gate. Its child labels are at least those
+two input labels, and their sum is less than one. Following
+outputs also gives the strict maximum and sum bounds.
+For sufficiency, in a child set $S$ write
+$L_S=\max_{p\in S}x_p$, $U_S=\min(1,\sum_{p\in S}x_p)$.
+A nonsingleton child has output interval $(L_S,U_S)$;
+a singleton has its prescribed value. Restrict the two
+children to values below $z$. The lower endpoint of their
+possible sum is $L_1+L_2<1$, and its upper endpoint is greater
+than $z$, by \eqref{st:many-strict}. Thus their sum can be
+chosen strictly between $z$ and one. If both are singletons,
+their fixed sum already lies there. This gives a strict
+parent gate, and induction fills its children.
+
+For a closed product split at the removed final gate.
+If both child sets have at least two inputs, their lower
+endpoint sum is less than one and their upper endpoint sum
+is greater than one, so their output intervals contain a
+complementary pair. If one set is the singleton $x$, the
+other interval contains $1-x$: its lower bound is smaller
+by the pair inequalities, and its upper bound is larger
+by the total-sum inequality. This proves sufficiency.
+For necessity, two inputs meeting at a retained gate
+have sum less than one. If their first common vertex
+is the deleted closing gate, at least one branch
+contains a strict product because $k\ge3$; its
+output strictly exceeds the selected input. The two
+selected inputs therefore still have sum less than
+one. The same strict product makes the total of
+the external inputs strictly larger than the two
+closing outputs, whose sum is one.
+For $k=2$ only that relation
+remains, namely $x_1+x_2=1$.
+\end{proof}
+
+\subsection{The reduced junction tree}
+Write $\mathbf J_{ij}=\mathbf1_{i+j=d}$. Raising one index of
+$C_3$ by $\mathbf J$ recovers multiplication. Thus an internal
+edge without a turn contracts through $\mathbf J$, while an
+edge with a turn contracts through $\mathbf J\T=I$.
+Contract unary chains modulo the algebraic identity $\T^2=I$,
+suppress the degree-two closing vertex, and collapse every
+internal edge without a turn. The result is a tree of
+product vertices of valence at least three. We call these
+vertices \emph{junctions}. Every remaining internal edge
+has one turn. The original leaf labels are retained.
+A leaf is \emph{flagged} if its incident edge has one turn:
+it supplies $\T h$ rather than $h$.
+
+\begin{theorem}[Reduced junction criterion]\label{st:reduced-junctions}
+For a closed expression with $H\ge3$ leaves, the reduced
+junction tree is unique under the indicated contractions.
+The expression is strict if and only if each junction has
+at most one flagged leaf. Its full finite source is the
+contraction of the same tensors $C_k$, with all independent
+leaf coefficients and repeated-root normal data retained.
+\end{theorem}
+\begin{proof}
+The contracted components are exactly the connected components
+of the internal edges without a turn, so they are uniquely
+specified. Frobenius associativity identifies their tensor
+with $C_k$. Lemma~\ref{st:hub-support} proves preservation of
+strict feasibility at fixed external labels under every
+collapse and resolution.
+
+Two flagged leaves at a junction have labels greater than
+$1/2$, contradicting \eqref{st:closed-hub}.
+Conversely root at an internal edge, if one exists.
+Every junction has at least two branches besides its parent.
+An unflagged leaf supplies type $L$ and a flagged leaf type
+$H$. Inductively an outward child product has type $H$ if
+its own junction has one flagged leaf, and $A$ otherwise.
+After the intervening turn its input to the parent has
+type $L$ or $A$. The table of Lemma~\ref{st:types} therefore
+gives exactly these claimed outgoing types. At the chosen
+root edge one side is turned, leaving one of the closing
+pairs $AA,AL,HA,HL$, each strict.
+For a single junction, expose a leaf. With no flag the
+remaining product has type $A$ and the pair is $L,A$.
+With one flag expose it, giving $H,A$. The strict resolution
+lemma transports the resulting state back to the literal
+binary syntax.
+\end{proof}
+With two leaves there is no junction. The strict case has
+one turn on their connecting edge and the two original leaf
+labels are equal. We retain this case separately below.
+
+\begin{figure}[ht]
+\centering\input{figures/reduced-tree}
+\caption{A strict source with four original leaves. Each trivalent
+vertex carries the symmetric product tensor. The middle edge has
+a turn, so it is retained. A flagged leaf supplies $\T h_i$;
+the other leaves supply $h_i$. Each vertex has one flagged
+leaf. The labels $i$ remain independent when colors or crossings
+are changed.}\label{st:tree-figure}
+\end{figure}
+
+For later estimates it is useful to record the exact outgoing
+coupons. Root at a flagged leaf when one is present. A
+nonroot junction gives
+\begin{equation}\label{st:messages}
+ Q_v=
+ \begin{cases}
+ \T\bigl(p_{i(v)}\prod_wQ_w\prod_lh_l\bigr),
+       &\text{one flagged leaf},\\
+ \T\bigl(\prod_wQ_w\prod_lh_l\bigr),
+       &\text{no flagged leaf},
+ \end{cases}
+ \qquad p_i=\T h_i .
+\end{equation}
+The final scalar is $\phi(p_0\prod Q_w\prod h_l)$.
+These are exact full-algebra identities, also for
+$h_i=\T(R^{\eps_i}L_{j_i})$ at independent colors and signs.
+The two outgoing types are respectively $L$ and $A$.
+Commutativity and $\T^2=I$ in this calculation are not
+claims that arbitrary physical turns or products can be
+removed from the underlying tangle.
+
+\begin{corollary}[Exposing any original leaf]\label{st:any-root}
+Every original leaf of a strict closed tree with $H\ge3$
+can be exposed as a closing character without changing
+any other leaf. If its reduced edge parity is $\sigma$,
+and $A$ is the product of the other branches at its
+junction, then
+\[
+ Z_N=\phi((\T^\sigma h_j)A)
+     =\phi(h_j\T^\sigma A)
+     =\phi(p_j\T^{\sigma+1}A),\qquad p_j=\T h_j .
+\]
+The last factor is either an unturned product of at least
+two $L/A$ branches, a decorated low module of the first
+form in \eqref{st:messages}, or the turned output of an
+unflagged product with at least two branches.
+\end{corollary}
+\begin{proof}
+The pairing in \eqref{st:pairing} makes $\T$ self-adjoint:
+$\phi((\T F)G)=\phi(F(\T G))$. This proves the identities.
+If $\sigma=1$, the root leaf uses the only possible flag,
+so all other branches are $L/A$ and
+$\T^{\sigma+1}A=A$.
+If $\sigma=0$ and another leaf at the junction is flagged,
+$A=p_i\prod Q$ and $\T A$ is the decorated low module.
+If there is no such flag, $\T A$ is the outgoing
+unflagged product. The valence is at least three in
+all cases. In particular an entirely unflagged
+three-leaf tree is included.
+\end{proof}
+For a two-input product, two high Newton coordinates
+vanish exactly: if $i,j>M$, then $i+j>d$ at both
+parities. This finite observation is useful when the
+last case of Corollary~\ref{st:any-root} has only
+two inputs. It does not by itself bound a signed
+character at the exposed root.

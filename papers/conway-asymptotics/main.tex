@@ -19,23 +19,30 @@
 \newcommand{\Log}{\operatorname{Log}}
 \newcommand{\diag}{\operatorname{diag}}
 \newcommand{\Vol}{\operatorname{Vol}}
-\title{Holomorphic source asymptotics and volume limits\\for Conway closures}
+\title{Holomorphic source asymptotics and volume limits\\for strict Conway compositions}
 \author{}\date{}
 \begin{document}
 \maketitle
 \begin{abstract}
-We prove a nonzero asymptotic for the entire filling evaluation of a fixed completed-root Conway construction. The auxiliary filling integers are independently signed and sufficiently long, and are fixed before the level tends to infinity. An exact continuation of the finite Newton coefficients gives a holomorphic source near its complete maximum. For retained half twists, a finite recurrence with its original terminal condition yields an exponentially accurate index interpolation; its action is identified with the classical meridian shear, including its parameter-dependent constant. A finite lattice saddle retains all integer offsets and gives a nonzero amplitude at both parities. To evaluate fillings we expand each full physical crossing power into ordinary circles. This exact rearrangement places the resulting even Fourier polynomial under a real-action filling theorem without changing the knot. Combining that theorem with the independently established complementary-source bound and primitive geometric completion gives the stated volume limit at all sufficiently large integer levels.
+We prove a nonzero asymptotic for the entire filling evaluation of a fixed strict Conway composition with at least two crossing circles. The auxiliary filling integers are independently signed and sufficiently long, and are fixed before the level tends to infinity. Exact factorial interpolation of the pure source gives a holomorphic stationary action at every strict leaf index. Two finite lattice saddles retain the original integer offsets and give nonzero amplitudes at both parities. Expanding each full physical crossing power into ordinary circles puts the actual filling under a real-action whole-period theorem. A classical shear identity identifies its critical value with the volume of the original primitive filling, including odd crossing powers. We also retain a separate signed-leaf interpolation and signed source expansion for the completed-root subfamily. The enlarged volume theorem uses the pure source and does not require that additional signed expansion.
 \end{abstract}
 
 \section{The construction, the asymptotic and the inputs}\label{ca:intro}
 
-A completed Conway box is built from a stack of two elementary circle tangles by clockwise quarter turns, stacks of completed boxes, and attachments of one elementary piece to a completed box. We close two completed boxes cylindrically. Every elementary piece is a distinct auxiliary circle surrounding two main strands, with its original disk framing. This is precisely the grammar of \cite[Definition 2.1]{Newton}; a bare elementary piece at the closing root is excluded.
+An elementary box $h$ is the physical quarter-turn of a circle surrounding two main strands. Every occurrence has its own auxiliary circle, punctured disk and original disk framing. Form an ordered expression from distinct copies of $h$, products and clockwise physical quarter-turns $\Turn$, and close it as $C(FG)$.
+Endpoints are numbered $0,1,2,3$ cyclically from the bottom left. In a product with $F$ below $G$, join $F_2$ to $G_1$ and $F_3$ to $G_0$; the exposed tuple is $(F_0,F_1,G_2,G_3)$. A turn replaces a tuple by $(C_1,C_2,C_3,C_0)$, moving the entire box and its disks. Cylindrical closure joins $0$ to $3$ and $1$ to $2$.
 
-Fix such a finite construction with $b$ circles. At circle $\ell$ retain $\epsilon_\ell\in\{0,1,-1\}$ half twists and fill the original primitive slope $\mu_\ell+p_\ell\lambda_\ell$, where $\mu_\ell$ is its meridian and $\lambda_\ell$ its disk longitude. The physical crossing power is
+The expression is \emph{strict} if its original wire constraints have a state with leaf labels $0<a<1/2$, turn relation $x\mapsto1-x$, and
+\[
+                \max(x,y)<z<x+y<1
+\]
+at every product below the closing root. At the root the two outputs are complementary; its forced product is removed. This is the finite type condition of \cite[Lemma 2.2]{Profiles}. Strictness concerns this particular presentation, including its turns. It allows an elementary or turned elementary child at the closing root.
+
+Fix such an expression with $b\ge2$ circles. At circle $\ell$ retain $\epsilon_\ell\in\{0,1,-1\}$ half twists and fill the original primitive slope $\mu_\ell+p_\ell\lambda_\ell$, where $\mu_\ell$ is its meridian and $\lambda_\ell$ its disk longitude. The physical crossing power is
 \begin{equation}\label{ca:n}
  n_\ell=\epsilon_\ell-2p_\ell.
 \end{equation}
-Assume the endpoint pairing after these retained half twists has one main component. Full twists preserve that pairing, so the resulting main link is a knot $K_{\epsilon,\mathbf p}$. The circles and their fillings are those of the original construction; they are not substituted by a different surgery presentation.
+Assume the actual main-strand diagram after these retained half twists has exactly one component. This test counts any component closed inside a product as well as the final endpoint closure. Full twists preserve every endpoint connection and internal component, so the resulting main link is a knot $K_{\epsilon,\mathbf p}$. The circles and their fillings are those of the original construction; they are not substituted by a different surgery presentation.
 
 At level $N\ge3$ put $d=N-1$, $q=e^{\pi\ii/N}$ and
 $\kappa=q^{d^2/2}$, with $q^t=e^{\pi\ii t/N}$. Let $D$ be the oriented blackboard diagram of the filled knot, and let $w(D)$ denote its writhe. The actual reduced tensor evaluation is corrected to zero framing by
@@ -47,10 +54,9 @@ For another explicitly specified ribbon framing one uses that integer framing co
 
 The pure complete source has a unique strict stationary state. Write its value as $F_0$ and its leaf coordinates as $a_\ell$. The boundary parameters
 \[
- X_\ell=\cot(\pi a_\ell),\qquad
- \frac12<X_\ell<1
+ X_\ell=\cot(\pi a_\ell)>0
 \]
-come from \cite[Lemma 6.1]{Newton}. Section~\ref{ca:packet} constructs the holomorphic pure-color critical action $\Phi_0(t)$ with $\Phi_0(0)=F_0$. Its Fourier Legendre action is
+are defined at the strict optimizer of \cite[Theorem 3.3]{Profiles}. No lower bound $a_\ell>1/4$ is required for the main theorem. Section~\ref{ca:strict-pure-section} constructs the holomorphic pure-color critical action $\Phi_0(t)$ with $\Phi_0(0)=F_0$. Its Fourier Legendre action is
 \begin{equation}\label{ca:Psi}
  \nabla\Phi_0(\xi(z))+2\pi\ii z=0,\qquad
  \Psi_0(z)=\Phi_0(\xi(z))+2\pi\ii\,\xi(z)\cdot z.
@@ -58,7 +64,7 @@ come from \cite[Lemma 6.1]{Newton}. Section~\ref{ca:packet} constructs the holom
 All these germs are fixed by their complete values and the original logarithmic branches.
 
 \begin{theorem}[The entire filled evaluation]\label{ca:main}
-For the fixed construction and retained half-twist pattern there is $P_0$ such that the following holds for every fixed signed integer tuple with $|p_\ell|>P_0$ for every $\ell$. The phase
+For every fixed strict construction with $b\ge2$ and retained half-twist pattern satisfying the stated knot test, there is $P_0$ such that the following holds for every fixed signed integer tuple with $|p_\ell|>P_0$ for every $\ell$. The phase
 \[
  T_{\mathbf n}(z)=\Psi_0(z)+\pi\ii\sum_{\ell=1}^b n_\ell z_\ell^2
                            +2\pi\ii\sum_{\ell=1}^b z_\ell
@@ -85,9 +91,13 @@ The square root is the Gaussian branch with positive real quadratic form. The fo
 There is no bound on the ratios or relative signs of the filling integers. They do not grow with $N$.
 \end{theorem}
 
-We separate four inputs from the new analytic work. The exact Newton turn, trace, multiplication, circle split and crossing polynomial are \cite[Proposition 3.2, Theorem 3.3, Proposition 4.1 and equation (4.8)]{Newton}; its Proposition 5.3 supplies the strict stationary point and internal Hessian. Theorem 1.1 of \cite{Bounds} controls the sum of all complementary terms and the whole physical-color region outside a complete-color corridor. Theorem 1.1 of \cite{Filling} evaluates an exact periodic polynomial filling source once its real local action and shared global gap are proved. Finally \cite[Theorem 1.1]{Geometry} gives the original primitive fillings and their absolute volume in terms of a classical shear potential. We will identify that potential with the source action, not merely compare Hessians.
+The exact Newton turn, trace, multiplication, circle split and crossing polynomial are \cite[Proposition 3.2, Theorem 3.3, Proposition 4.1 and equation (4.8)]{Newton}. These finite local identities apply to the original expression. The enlarged variational inputs are \cite[Lemma 3.1 and Theorem 3.3]{Profiles}: primitive wire coordinates, a unique strict maximum and its negative definite Hessian. Theorem 1.1 of \cite{Bounds} controls the entire complementary source and every physical color a fixed fraction below complete color when $b\ge3$; its Corollary 9.1 supplies exactly these conclusions when $b=2$. We use both with all retained signs set to zero.
 
-There is a useful distinction in applying the filling theorem. A source with retained half twists has a complex local phase even at real color. The real-action hypothesis of \cite{Filling} cannot simply be assigned to it. We instead expand the full physical integer power $R^{n_\ell}$ at each disk into ordinary circles before taking any asymptotic limit. This finite identity uses the pure source. It preserves the actual knot and places its Fourier polynomial under the theorem's stated real-action hypotheses. The signed local expansion is still proved below, and its absolute shear identity connects the resulting action to the marked geometry.
+Theorem 1.1 of \cite{Filling} evaluates an exact periodic polynomial filling source after its real local action and shared global gap have been proved. Theorem 1.3 of \cite{StrictGeometry} constructs the original primitive fillings and their absolute metric volume for this same strict syntax. Its classical potential is defined directly from cells. We will identify it with the pure source action by an explicit shear, without importing a signed quantum expansion at a quarter-index leaf.
+
+For a separate local result we retain the \emph{completed-root} grammar of \cite[Definition 2.1]{Newton}: a completed box starts with a stack of two elementary pieces and is built by turns, stacks of completed boxes and attachment of an elementary piece to a completed box; both closing boxes are completed. Its stationary leaves lie above $1/4$. Section~\ref{ca:leaf} and Theorem~\ref{ca:packet-theorem} prove the signed local coefficient and source expansions in that scope. Theorem~\ref{ca:strict-pure} then proves the pure source expansion for every strict expression independently of those signed estimates.
+
+There is a useful distinction in applying the filling theorem. A source with retained half twists has a complex local phase even at real color. The real-action hypothesis of \cite{Filling} cannot simply be assigned to it. We instead expand the full physical integer power $R^{n_\ell}$ at each disk into ordinary circles before taking any asymptotic limit. This finite identity uses the pure source and preserves the actual knot. An odd power in that algebraic expansion is not interpreted as a half-integral Dehn filling of the pure augmented partner: the final geometric comparison uses the original retained half twist and the integer $p_\ell$ in \eqref{ca:n}.
 
 \input{factorial}
 \input{leaf}
@@ -104,17 +114,19 @@ from the repository root, optionally adding
 
 For levels $2$ through $12$, over two finite fields containing a primitive $8N$th root at each level, the program constructs the crossing from its normalized Newton polynomial. Ordinary polynomial division then forms its powers $-3,-2,-1,0,1,2,3$, using the extended Euclidean algorithm for negative powers. These polynomials are compared with the independently formed value and angular-normal data, their Fourier--Hermite inversion, and their expansion in ordinary circles. Three explicit even corridor sequences in each case test the midpoint formula, including its $h=0$ weight. There are $154$ integer-power cases and $462$ midpoint cases. The test does not assume a prime level or discard an odd simple node.
 
-The all-level algebraic argument is in Section~\ref{ca:filling}; the finite checks can detect transcription and normalization errors but are not its proof. They do not test the analytic continuation or the asymptotic estimates. The latter are established by the canonical interpolation, the exact recurrence endpoint, and the two finite-contour arguments above. The whole-charge theorem and the marked metric theorem are imported with their explicit hypotheses from the cited companions. Thus Theorem~\ref{ca:main} is a volume statement for this fixed completed-root grammar and independently sufficiently long fixed fillings, without an assertion about arbitrary Conway closures or growing constructions.
+The all-level algebraic argument is in Section~\ref{ca:filling}; the finite checks can detect transcription and normalization errors but are not its proof. They do not test analytic continuation, contour estimates or metric completion. The strict volume proof uses exact pure factorial interpolation, the strict variational theorem, the whole complementary-source bounds, the two finite-contour arguments, the whole-charge theorem and the marked metric theorem. The signed recurrence supplies the separate completed-root packet theorem. Theorem~\ref{ca:main} concerns each fixed strict presentation and independently sufficiently long fixed fillings. It does not assert a result for boundary-only presentations or for constructions that grow with $N$.
 
 \begin{thebibliography}{9}
 \bibitem{Newton}\emph{Newton coefficients and positive sources for Conway tangles}.
 Companion paper, \href{https://sashakolpakov.github.io/murakamis_dream/papers/newton-tangles.pdf}{repository edition}.
-\bibitem{Bounds}\emph{Complementary color bounds for Conway tangle sources}.
+\bibitem{Profiles}\emph{Stationary profiles of strict Newton trees}.
+Companion paper, \href{https://sashakolpakov.github.io/murakamis_dream/papers/strict-newton-profiles.pdf}{repository edition}.
+\bibitem{Bounds}\emph{Spectral estimates for Conway tangle sources}.
 Companion paper, \href{https://sashakolpakov.github.io/murakamis_dream/papers/conway-source-bounds.pdf}{repository edition}.
 \bibitem{Filling}\emph{Oscillatory filling sums with independently long twists}.
 Companion paper, \href{https://sashakolpakov.github.io/murakamis_dream/papers/oscillatory-fillings.pdf}{repository edition}.
-\bibitem{Geometry}\emph{Marked deformations and long fillings of Conway closures}.
-Companion paper, \href{https://sashakolpakov.github.io/murakamis_dream/papers/conway-fillings.pdf}{repository edition}.
+\bibitem{StrictGeometry}\emph{Marked geometry of strict Conway compositions}.
+Companion paper, \href{https://sashakolpakov.github.io/murakamis_dream/papers/strict-conway-geometry.pdf}{repository edition}.
 \bibitem{Finite}\emph{Finite spectral evaluation and uniform filling bounds}.
 Companion paper, \href{https://sashakolpakov.github.io/murakamis_dream/papers/filling-bounds.pdf}{repository edition}.
 \bibitem{DLMF} F. W. J. Olver et al., eds., \emph{NIST Digital Library of Mathematical Functions}, \href{https://dlmf.nist.gov/5.5}{\S5.5} and \href{https://dlmf.nist.gov/5.11}{\S5.11}.

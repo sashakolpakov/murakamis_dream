@@ -1,0 +1,203 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,booktabs,enumitem,xurl,tikz}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+\setlength{\emergencystretch}{2em}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\ZZ}{\mathbb Z}
+\newcommand{\T}{\mathsf T}
+\newcommand{\HH}{\mathcal H}
+\newcommand{\A}{\mathcal A}
+\newcommand{\arccot}{\operatorname{arccot}}
+\newcommand{\eps}{\varepsilon}
+\title{Stationary profiles of strict Newton trees}
+\author{}\date{}
+\begin{document}\maketitle
+\begin{abstract}
+The Newton evaluation of a finite Conway expression is a sum over
+integer labels on a tree. We characterize its exact positive support
+and its strict real states for arbitrary ordered products and turns.
+After adjacent product vertices are contracted, strictness is
+equivalent to having at most one turned leaf at each remaining
+vertex. The original wire lattice is primitive. A direct boundary
+argument proves that its complete positive action has a unique
+interior maximum, with negative definite Hessian, also on every
+admissible fixed-output slice.
+
+We determine the stationary boundary profiles and their additive
+constants. The profiles of the two one-sided output types differ
+from the elementary profile only by intrinsic satellite actions;
+their parameters obey an exact harmonic addition law. At every
+closed strict maximum the original leaf indices are at least one
+quarter. These statements retain the original integer support and
+the complete positive action, providing the variational data for
+separate source estimates and marked geometric constructions.
+\end{abstract}
+
+\section{Introduction and exact inputs}
+The boundary of a recursively constructed tangle need not behave
+like the boundary of a completed pair of elementary pieces. A turn
+can produce an output whose allowable indices occupy only the upper
+half of the interval. Such a piece can still be attached to a lower
+or unrestricted output, and the resulting closed expression can
+have a strict stationary state. This paper follows the actual
+integer supports through those operations and studies their
+stationary profiles.
+
+The underlying finite calculus is the Newton calculus of
+\cite{Newton}. We use its multiplication, turn, circle and closure
+identities, which hold in the full polynomial quotient, including
+the first derivatives at repeated spectral roots. We extend its
+variational argument from completed/completed roots to all strict
+ordered expressions. In particular, we give the endpoint descent
+and angle-map arguments on the enlarged syntax; interior existence
+is not inferred from a negative Hessian.
+
+The main finite and variational results are
+Theorems~\ref{st:reduced-junctions} and \ref{st:positive-action}.
+Theorems~\ref{st:profiles} and \ref{st:probe} determine the
+absolute boundary profiles. Theorem~\ref{st:quarter} places every
+closed stationary leaf in $[1/4,1/2)$.
+The elementary positive-sum limit in
+Theorem~\ref{st:positive-action} identifies that maximum with the
+rate of the original positive evaluation. All expressions and their
+number of leaves are fixed before $N\to\infty$.
+
+The analytic action below is a sum of elementary ideal-tetrahedron
+volume functions. Its concavity is the familiar angle-variable
+calculus discussed in \cite{FuterGueritaud}; we give the derivatives
+and the required boundary proof explicitly. The tangle convention
+is the ordered convention of \cite{Newton}, within the usual
+framework of Conway composition \cite{KauffmanLambropoulou}.
+No classification up to arbitrary tangle isotopy is needed.
+
+\subsection{The original expressions}
+Each occurrence of $h$ is a distinct turned auxiliary circle around
+two main strands. In a stack $FG$, $F$ lies below $G$.
+The endpoints, in cyclic order, are bottom left, bottom right, top
+right and top left; the exposed tuple after stacking is
+$(F_0,F_1,G_2,G_3)$, with joins $F_2G_1,F_3G_0$.
+The clockwise turn $\T$ sends the exposed tuple to
+$(F_1,F_2,F_3,F_0)$. Cylindrical closure $C(FG)$ joins bottom to top
+on both sides. The arbitrary open syntax considered here is
+\[
+ E::=h\mid \T E\mid E_1E_2.
+\]
+The original expression retains this order and every written leaf.
+Algebraic regroupings below compute its source; they do not discard
+physical circles or assert new isotopies.
+
+Fix $N\ge2$, and set
+\[
+ d=N-1,\quad M=\lfloor d/2\rfloor,\quad q=e^{\pi\ii/N},
+ \qquad S_r=\prod_{a=1}^r2\sin(\pi a/N),\quad S_0=1.
+\]
+Let $\mathsf C_N$ be the Chebyshev polynomial characterized by
+$\mathsf C_N(\cos t)=\cos Nt$. The full pair algebra is
+\[
+ \HH_N=\CC[z]/(P_N(z)),\qquad P_N(z)=2\mathsf C_N(z/2)+2.
+\]
+Its normalized Newton basis is
+\[
+ e_r(z)=S_r^{-2}\prod_{a=0}^{r-1}(c_a-z),\qquad
+ c_a=2\cos((2a+1)\pi/N),\quad 0\le r\le d.
+\]
+The nodes $c_a$ repeat, except for one simple node at odd level.
+Equality in $\HH_N$ includes the first derivatives at the double
+nodes.
+
+\begin{proposition}[Imported finite calculus]\label{st:imports}
+In this basis the actual turn, marked closure $\phi$ and
+multiplication satisfy
+\begin{align}
+ \T e_r&=e_{d-r},&
+ \phi(e_i e_j)&=\mathbf1_{i+j=d},\label{st:pairing}\\
+ e_i e_j&=\sum_{r=\max(i,j)}^{i+j}\mu_N(i,j,r)e_r
+ &&(i+j\le d),\notag\\
+ \mu_N(i,j,r)&=
+ \frac{S_{i+j}S_r}{S_iS_jS_{r-i}S_{r-j}S_{i+j-r}}>0,
+ & e_i e_j&=0\quad(i+j>d).\label{st:product}
+\end{align}
+The complete pure leaf is
+\begin{equation}\label{st:leaf}
+ h_N=\sum_{r=0}^M a_{N,r}e_r,\qquad
+ a_{N,r}=\frac{N^2S_{2r}}{S_r^4}>0.
+\end{equation}
+These are \cite[Proposition 3.2, Theorem 3.3, Proposition 4.1 and
+equation (4.3)]{Newton}. They use the original marked normalization.
+\end{proposition}
+For later colored expressions, write
+$L_j=(-1)^{j-1}U_{j-1}(z/2)$, where $U_n$ is the
+second-kind Chebyshev polynomial,
+$U_0=1$, $U_1(z/2)=z$ and
+$U_{n+1}(z/2)=zU_n(z/2)-U_{n-1}(z/2)$.
+It is the actual circle operator of color $j$.
+The actual positive crossing in the pair algebra is
+\[
+ R=\kappa\sum_{r=0}^d(-q)^r e_r,\qquad \kappa=q^{d^2/2},
+\]
+by \cite[equation (4.8)]{Newton}; its inverse is the
+negative crossing. Thus an independently colored
+leaf with retained sign $\eps$ means exactly
+$h_j^\eps=\T(R^\eps L_j)$. These definitions retain
+the physical colors and signs in the exact rerooting identities below.
+The positive source $Z_N^0$ is the scalar obtained from a fixed
+$C(FG)$ by these rules with every leaf equal to $h_N$.
+Its closing product has the exact coefficient-one relation
+$i+j=d$. We delete that forced gate only after imposing the
+relation. All other products remain.
+
+\input{syntax}
+\input{variation}
+\input{profiles}
+
+\section{Finite reproducibility and subsequent uses}
+The paper-local program \texttt{check.py} uses only the Python
+standard library. It compares multiplication in the full polynomial
+quotient with the stated Newton formula in finite fields, retaining
+the repeated roots. It separately enumerates integer supports,
+checks the multi-input support theorem under different
+parenthesizations, and verifies rational instances of the local
+port and harmonic identities. The output states the finite ranges.
+These checks detect coefficient and indexing errors; the all-level
+support, boundary, curvature and positive-sum limit proofs are the
+arguments above.
+
+The exported variational statements require no global geometric
+construction. A marked geometric application must assemble the
+original cells and peripheral curves. A signed-source application must separately establish the local
+coefficient asymptotics and control the complementary contributions.
+A full-invariant application must also perform the original filling
+transform and prove noncancellation. The constants $\Omega_Q$ are
+intrinsic optimized actions; replacing a profile by an effective
+leaf in Section~\ref{st:profile-section} does not replace its
+quantum polynomial or its independent physical colors.
+
+\begin{thebibliography}{9}
+\bibitem{Newton}
+\emph{Newton coefficients and positive sources for Conway tangles},
+companion paper, \href{https://sashakolpakov.github.io/murakamis_dream/papers/newton-tangles.pdf}{published PDF}.
+\bibitem{FuterGueritaud}
+D. Futer and F. Gu\'eritaud,
+From angled triangulations to hyperbolic structures,
+in \emph{Interactions between hyperbolic geometry, quantum topology
+and number theory}, Contemp. Math. \textbf{541} (2011), 159--182.
+\bibitem{KauffmanLambropoulou}
+L. H. Kauffman and S. Lambropoulou,
+On the classification of rational tangles,
+Adv. Appl. Math. \textbf{33} (2004), 199--237,
+\href{https://doi.org/10.1016/j.aam.2003.06.002}{doi:10.1016/j.aam.2003.06.002}.
+\end{thebibliography}
+\end{document}
