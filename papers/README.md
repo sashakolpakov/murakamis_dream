@@ -49,7 +49,7 @@ common core for several inserted diagrams also uses protected gluing.
 
 ## The current drafts
 
-The eleven papers total 175 pages, with individual lengths from 11 to
+The thirteen papers total 203 pages, with individual lengths from 11 to
 28 pages. They provide complete accounts of the results described below,
 with numbered companion imports. This is a partial extraction of the
 reference manuscript, rather than a replacement for all its theorem
@@ -85,8 +85,43 @@ Kashaev normalization. For the stated class of fixed Conway compositions,
 it then proves the positive complete auxiliary-color source's variational
 limit, strict interior maximum and stationary boundary bounds at both
 level parities. The positive source is not the signed filled invariant.
-The analytic estimates for that invariant remain separate, as does the
-finite adapter when the main meridian moves away from completeness.
+The analytic estimates for that invariant remain separate. The next two
+papers supply the moving-meridian formulas and the complete geometric
+interpretation, respectively.
+
+**Exact Newton calculus for tangles with a moving meridian.** 15 pages.
+[TeX source](meridian-tangles/main.tex) ·
+[PDF](../docs/papers/meridian-tangles.pdf)
+
+The parameter of the main strand now varies while the quantum level stays
+fixed. The paper starts with the physical representation matrices and
+computes the partial trace before identifying its polynomial form. It
+proves all six oriented quarter-turn formulas and keeps the derivatives
+needed when spectral roots coincide, including at the additional
+collisions away from the complete meridian. The closing scalar and
+crossing phases are retained. The resulting tree formula sums every
+index and gives the same contraction regardless of the order in which
+vertices are eliminated. These are exact finite identities; they do not
+show which part of the sum dominates as the level grows. The comparison
+with Kashaev's original normalization imports the finite spectral paper
+at levels at least three; the algebraic identities hold from level two.
+
+**Pyramids, prisms, and complete geometry of Conway closures.** 13 pages.
+[TeX source](conway-geometry/main.tex) ·
+[PDF](../docs/papers/conway-geometry.pdf)
+
+The positive-source maximum in the Newton paper determines ideal
+hyperbolic cells. This paper proves that the stationary equations match
+their entire ordered quadrilateral faces, and that successive attachments
+stay convex. It then identifies the assembled boundary with the original
+projection cut, checks the face maps and edge returns, and constructs
+compatible horospheres at every cusp. The metric is therefore on the
+specified augmented link complement. Its volume is twice the sum of the
+cell volumes, or \(2\pi\) times the source action. The original meridian
+and disk longitude form a primitive basis, also for the retained
+half-twist partners. The theorem uses the completed-root grammar of the
+Newton paper. A corollary identifies the positive complete source's rate
+with this volume; neither result asserts a signed filling asymptotic.
 
 **Uniform spectral bounds for local Casimir sources.** 14 pages.
 [TeX source](local-coefficients/main.tex) ·
@@ -252,9 +287,8 @@ purposes:
 
 | Subject | Result to explain and prove | Dependencies that must remain visible |
 | --- | --- | --- |
-| Moving-meridian finite evaluation | The deformed spectral relation and orientation-dependent turn factors give the exact source away from the complete meridian | The complete Newton calculus is available; the deformed adapter must be presented separately |
 | Recursive filled Conway closures | The completed-root theorem and the broader strict-tree extension require their respective signed source estimates | Exact tangle evaluation, boundary profiles, alias bounds, nonzero filled contributions and marked geometry |
-| Quantitative circle-tree asymptotics | Summed, local and directed degree-and-twist criteria give the full invariant's volume limit | Newton and classical geometric inputs are available; the exact tree-coordinate adapter and analytic subtree/filling estimates must be retained |
+| Quantitative circle-tree asymptotics | Summed, local and directed degree-and-twist criteria give the full invariant's volume limit | The exact moving-meridian tree formula and classical geometric inputs are available; the analytic subtree and filling estimates must be retained |
 | Geometric longitude and recurrences | All-order meridian expansions force the selected geometric factor to divide a classical symbol | The moving-meridian source, full expansion, normalization and preferred geometric longitude |
 
 The frozen reference manuscript's first theorem uses its completed-root
@@ -273,11 +307,12 @@ For a citation between papers, the exporting paper must state a numbered
 theorem with its normalization, degree restrictions, level parity and
 uniformity assumptions. The importing paper must name that theorem and
 check those hypotheses. A reference to a folder of calculations is not
-a substitute. The eleven drafts above now include terminal decoration,
-complete Newton tangle calculus and classical circle-tree filling, alongside
+a substitute. The thirteen drafts above now include terminal decoration,
+complete and moving-meridian Newton calculus, complete Conway geometry
+and classical circle-tree filling, alongside
 the planar criteria, two kinds of triangular assembly, the three-braid
 application and their foundations. The remaining signed tree estimates,
-recursive filled closures and meridian/longitude results still require
+recursive filled closures and meridian asymptotics and longitude results still require
 their own extraction and proof review. The dependency
 graph keeps those obligations visible.
 

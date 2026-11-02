@@ -325,16 +325,32 @@ The geometric Hall inequalities supplying the positive table are still
 written proofs. In the disk application with three fixed positive
 boundary values, their columns are combined into the one grounded
 coordinate, and their logarithms contribute fixed row constants.
-That geometric substitution, uniqueness and development of the resulting
-circle pattern remain written arguments.
+That geometric substitution and development of the resulting circle
+pattern remain written arguments.
 
-The optional package has seventeen definitions and sixty-six theorems.
-Its axiom audit covers all eighty-three declarations, separately from
-the Std-only project. Fourteen negative controls check that invalid
+The [strict-convexity module](../../formal-real/GroundedConvexity.lean)
+now supplies the uniqueness implication. It restricts the actual potential
+to the segment between two vectors with the fixed coordinate zero.
+The first derivative and the identity expressing its second derivative
+as the weighted graph energy are explicit hypotheses. Connected positive
+support makes that second derivative positive along every nonconstant
+segment. Lean derives the strict Jensen inequality and strict convexity,
+then proves that two minimizing points must coincide. Combining this
+with the transport module gives an existing, unique minimum of the same
+constructed potential. The geometric derivative calculation and the
+positive table needed to apply the result remain written proofs.
+
+The optional package has twenty definitions and seventy-four theorems.
+Its axiom audit covers all ninety-four declarations, separately from
+the Std-only project. Sixteen negative controls check that invalid
 inputs are rejected. The saddle estimates, whole-source gap and geometric
 volume identity remain written application inputs. The
 [tangle and tree review](../../repro/TANGLE_TREE_AUDIT.md) records the
 precise scope of the new paper readings and finite replays.
+The later [Conway geometry and meridian review](../../repro/CONWAY_MERIDIAN_AUDIT.md)
+records the complete geometry and moving-meridian papers, together with
+the strict-convexity module and the additional finite checks. Each review
+retains its own dated source snapshot; its counts refer to that execution.
 
 ## Joining certified diagrams
 

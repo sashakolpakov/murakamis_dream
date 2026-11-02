@@ -1,0 +1,236 @@
+\section{Cusp completeness and the absolute volume}
+\label{cg:complete}
+
+Take two oppositely oriented copies of $P_E$. Pair their white
+faces by the projection labels. For a pure leaf, pair its shaded
+triangles within each copy, fixing $O$ and sending
+$C_1\mapsto C_0$, $C_2\mapsto C_3$. For an odd leaf use
+\eqref{cg:odd-pairing}. Section~\ref{cg:topology} identifies the
+quotient with $Y^\eps_E$, and Section~\ref{cg:maps} proves
+smoothness away from the ideal vertices.
+
+At each ideal vertex a horosphere cuts out a Euclidean rectangle.
+Its two opposite shaded sides have equal length. A unique choice
+of horosphere makes both lengths one. Make this choice independently
+at the finitely many ideal vertices. Each shaded ideal triangle
+then has three horocyclic corner segments of length one. An
+isometry of ideal triangles carrying corresponding vertices to
+corresponding vertices preserves precisely this decoration,
+including every permutation in \eqref{cg:odd-pairing}.
+
+The white maps preserve the decoration as well: they are the
+label-preserving maps between the two identical copies of the
+polyhedron, and the shaded-side normalization agrees at each
+matched vertex. Thus each cusp link is assembled from Euclidean
+rectangles without dilation. The original topological identification
+makes it a compact torus. It is a smooth Euclidean torus, since
+the edge returns have already excluded cone singularities.
+
+A common shrinking factor makes all chosen horospheres disjoint
+and is preserved by all pairings. Beyond each link lies its
+complete horoball end. Their complement is compact, so the whole
+hyperbolic metric is complete. Equivalently the universal developing
+map is a complete local isometry to hyperbolic space and hence
+covers it. Every cell and cusp tail has finite volume. All
+attachments were unions with disjoint interiors, and the original
+cut has degree one. Therefore
+\[
+ \Vol(Y^\eps_E)=2\Vol(P_E)=2\pi F_0.
+ \]
+This proves the metric and volume assertions of
+Theorem~\ref{cg:main}. The equality is absolute: it follows by
+partitioning the actual metric into the displayed cells and using
+\eqref{cg:tetra}. No equality of volume derivatives or choice of
+an additive regulator constant is involved.
+
+\section{The original crossing-circle curves}
+\label{cg:peripheral}
+
+The crossing-circle torus has two rectangles, one from each cut
+ball. The disk longitude follows the twice-punctured crossing disk.
+The meridian goes once around the auxiliary circle. Both are
+marked before the cuts. We trace their words and check
+primitiveness against the full Euclidean cusp area.
+
+In the normalized chart \eqref{cg:normalized} these words are
+\begin{equation}\label{cg:peripheral-words}
+ \mu_0=S^{-1},\qquad \lambda=W_2^{-1}W_0 .
+\end{equation}
+For $\lambda$, leave one disk side through white face $0$ and
+return through face $2$ with its inverse. For $\mu_0$, cross
+the shaded identification once in the reverse direction.
+The two half-twist collars instead give
+\begin{equation}\label{cg:odd-meridians}
+ \mu_-=A^{-1}W_0,\qquad \mu_+=W_0^{-1}B .
+\end{equation}
+The first path passes through white face $0$ and returns through
+$A^{-1}$; the second passes through $B$ and returns through
+$W_0^{-1}$. These are the two half-disk rotations in the original
+disk frame. We label the first negative and the second positive.
+Equivalently the retained crossing $R^{-1}$ uses the first collar
+and $R$ uses the second. They give the same unmarked triangular
+pairing but differ by a full longitude in their meridian paths.
+This fixes the sign convention in \eqref{cg:cusp-shape} by
+peripheral paths.
+
+Return to \eqref{cg:leaf-coordinates}, where the auxiliary apex
+is $\infty$. The normalization is
+$M(z)=k(z-1)/(z-E)$ with $k=(1+E)/2$, and $M(\infty)=Z$.
+Conjugating the pure words by $M$ gives
+\begin{equation}\label{cg:translations}
+ \mu_0=E-1,\qquad \lambda=-2(E+1),\qquad
+ \mu_-=-2,\qquad \mu_+=2E
+\end{equation}
+as translations in the original coordinate. For a cross-copy
+word the target normalization is the reflected one; composing
+the two maps in \eqref{cg:odd-meridians} returns to the original
+chart before this conjugation. The matrices
+\eqref{cg:white} and \eqref{cg:shaded} give
+\eqref{cg:translations} by direct multiplication.
+Consequently
+\begin{equation}\label{cg:half-shear}
+ \mu_\eps=\mu_0-\eps\lambda/2
+\end{equation}
+as Euclidean vectors on the respective cusp developments.
+This compares the markings of different half-twist partners;
+it does not make half a longitude an integral curve on the pure
+torus.
+
+\begin{figure}[ht]
+\centering\input{figures/cusp-lattice}
+\caption{The crossing-circle cusp in the original leaf coordinate,
+after rotation by $e^{-\pi\ii a}$. Put $s=\sin\pi a$ and
+$c=\cos\pi a$. The pure meridian is $2s\,\ii$ and the disk
+longitude is $-4c$. Two rectangles of width $2c$ and height $2s$
+give one fundamental parallelogram. The dashed vectors are
+$\mu_-=\mu_0+\lambda/2$ and $\mu_+=\mu_0-\lambda/2$,
+each for its own half-twist partner.}
+\label{cg:fig-cusp}
+\end{figure}
+
+The adjacent sides of the original rectangle have lengths
+$|E-1|=2\sin\pi a$ and $|E+1|=2\cos\pi a$.
+The two rectangles of the cusp have total area
+$8\sin\pi a\cos\pi a=4\sin2\pi a$. On the other hand
+\begin{equation}\label{cg:lattice-area}
+ \left|\operatorname{Im}(\overline{\mu_0}\lambda)\right|
+       =4\sin2\pi a .
+\end{equation}
+The two traced closed curves span a sublattice of the actual cusp
+lattice; equality of areas makes its index one. Substitution of
+either odd meridian leaves the area unchanged, proving the
+primitive marking for those collars as well.
+
+Finally $(E+1)/(E-1)=-\ii\cot\pi a$.
+Equations \eqref{cg:translations}--\eqref{cg:half-shear} give
+\eqref{cg:cusp-shape}, with
+$\operatorname{Im}\tau_\eps=2c_\ell/(1+\eps^2c_\ell^2)>0$.
+The bound on $c_\ell$ is the imported leaf window
+\eqref{cg:leaf-window}. This completes Theorem~\ref{cg:main}.
+All main cusps were already included in the horocycle construction;
+no additional eigenvalue or deformation hypothesis is required.
+
+\section{Choosing a knot among the main components}
+\label{cg:knot}
+
+The construction kept every main component. A finite endpoint
+argument produces a one-component choice throughout the stated
+grammar.
+
+\begin{proposition}\label{cg:knot-choice}
+One can choose pure or odd leaves in every closed expression of
+Definition~\ref{cg:grammar} so that its main strands form one
+component. Either sign may be used at an odd leaf. Subsequent
+full twists preserve that component count.
+\end{proposition}
+\begin{proof}
+Write the three pairings of four cyclically ordered endpoints as
+\[
+ I=(0,3)(1,2),\qquad U=(0,1)(2,3),\qquad X=(0,2)(1,3).
+\]
+A pure leaf has pairing $U$, an odd leaf has pairing $X$, and
+turn exchanges $I,U$ and fixes $X$. Tracing the two stack
+connections gives
+\begin{center}
+\begin{tabular}{c|ccc}
+lower/upper & $I$ & $U$ & $X$\\ \hline
+$I$ & $I$ & $U$ & $X$\\
+$U$ & $U$ & $U$ and one internal circle & $U$\\
+$X$ & $X$ & $U$ & $I$
+\end{tabular}
+\end{center}
+Only $U\cdot U$ creates an internal component.
+The base $hh$ has loop-free possibilities $\{I,U\}$.
+Put $A=\{I,U\}$, $B=\{I,X\}$, $C=\{U,X\}$,
+$D=\{I,U,X\}$. All products, discarding $U\cdot U$, give
+\begin{center}
+\begin{tabular}{c|ccc}
+ & $A$ & $B$ & $C$\\ \hline
+$A$ & $A$ & $D$ & $C$\\
+$B$ & $D$ & $B$ & $D$\\
+$C$ & $C$ & $D$ & $A$
+\end{tabular}
+\end{center}
+Each result contains at least two choices, also if an input
+already contains all three. Attaching a leaf is the row or column
+$C$. A turn permutes the possibilities. Inductively every completed
+box, and the root stack, has at least two loop-free choices.
+At least one is $U$ or $X$, whose cylindrical closure is connected;
+the closure of $I$ has two components. Backtracking the choices
+specifies the required leaves. Both signs have pairing $X$,
+and full twists have even endpoint permutation.
+\end{proof}
+
+The last assertion concerns connectivity. Theorem~\ref{cg:main}
+proves hyperbolicity of the augmented exteriors, retaining the
+crossing circles. Hyperbolicity after filling those circles
+requires separate deformation and slope arguments.
+
+\section{Dependencies and finite algebra checks}\label{cg:checks}
+
+The variational existence, uniqueness and leaf interval are the
+numbered inputs from \cite{Newton} listed in Section~\ref{cg:intro}.
+The cell and complement construction, entire face maps, cusp
+decoration and primitive marking are proved here.
+The ideal-tetrahedron volume formula \eqref{cg:tetra} is classical
+background. The references on augmented links and variational
+geometry provide context and do not replace the ordered construction.
+No quantum asymptotic enters Theorem~\ref{cg:main}.
+Corollary~\ref{cg:source-volume} additionally uses the positive
+source limit of \cite[Corollary~5.4]{Newton}.
+
+The deterministic program \texttt{check.py} checks rational-function
+identities: nine prism maps, turn and closure compatibility, pure
+and odd edge returns, and the complete translations
+\eqref{cg:translations}. It enumerates the endpoint pairings
+independently of the tables in Section~\ref{cg:knot}. Its negative
+controls alter a vertex order and an odd meridian. The output
+records source hashes. These finite checks support the displayed
+algebra; they do not prove convexity, identify a manifold, establish
+completeness or supply the stationary-point theorem.
+
+\begin{thebibliography}{9}
+\bibitem{Newton}
+\emph{Newton coefficients and positive sources for Conway tangles},
+companion paper, Definition~2.1, Proposition~5.3,
+Corollary~5.4 and Lemma~6.1.
+\href{https://sashakolpakov.github.io/murakamis_dream/papers/newton-tangles.pdf}
+{Companion PDF}; source: \texttt{papers/newton-tangles/main.tex}.
+
+\bibitem{Milnor}
+J.~Milnor, Hyperbolic geometry: the first 150 years,
+\emph{Bull.\ Amer.\ Math.\ Soc.\ (N.S.)} \textbf{6} (1982), 9--24.
+\href{https://doi.org/10.1090/S0273-0979-1982-14958-8}
+{doi:10.1090/S0273-0979-1982-14958-8}.
+
+\bibitem{Purcell}
+J.~S.~Purcell, An introduction to fully augmented links,
+\emph{Contemp.\ Math.} \textbf{541} (2011), 205--220.
+\href{https://users.monash.edu.au/~jpurcell/papers/expos-auglinks.pdf}
+{Author's manuscript}.
+
+\bibitem{Rivin}
+I.~Rivin, Euclidean structures on simplicial surfaces and hyperbolic
+volume, \emph{Ann.\ of Math.} \textbf{139} (1994), 553--580.
+\href{https://doi.org/10.2307/2118572}{doi:10.2307/2118572}.
+\end{thebibliography}

@@ -1,0 +1,205 @@
+\section{Ordered face matching and convex assembly}
+\label{cg:assembly}
+
+\subsection{The whole quadrilateral, including its shear}
+For cyclically ordered points on a circle or line define
+\begin{equation}\label{cg:kappa}
+ \kap(a,b,c,d)=\frac{(a-b)(c-d)}{(a-d)(b-c)}>0,
+\end{equation}
+with limits at infinity. Sending three ordered vertices to
+$(\infty,0,1)$ shows that $\kap$ determines the ordered ideal
+quadrilateral up to isometry. It fixes its diagonal shear as well
+as its labels. A one-step cyclic shift, or reversal fixing the
+first vertex, inverts $\kap$. Full reversal
+$(a,b,c,d)\mapsto(d,c,b,a)$ preserves it.
+
+The prism coordinates give
+\begin{align}
+ \kap(F_x)&=\frac{\sin\pi x\sin\pi r}{\sin\pi w\sin\pi p}
+              =e^{-m_x},&
+ \kap(F_y)&=\frac{\sin\pi y\sin\pi r}{\sin\pi w\sin\pi q}
+              =e^{-m_y},\label{cg:input-kappa}\\
+ \kap(F_z)&=\frac{\sin\pi p\sin\pi q}{\sin\pi z\sin\pi r}
+              =e^{-m_z}.&&\label{cg:output-kappa}
+\end{align}
+Differentiating \eqref{cg:g} gives the leaf formula
+$\kap(C_0,C_1,C_2,C_3)=\tan^2(\pi a)=e^{-g'(a)}$.
+For a product $FG$ the actual attachment maps are
+\begin{equation}\label{cg:stack-maps}
+\begin{array}{c|cccc}
+ &C_0&C_1&C_2&C_3\\ \hline
+ F&v_0&v_1&P&\infty\\
+ G&\infty&P&v_2&v_3 .
+\end{array}
+\end{equation}
+The first is a cyclic shift of $F_x$, and the second is reversal
+fixing the first vertex of $F_y$. They invert the input value of
+$\kap$. If $f_F$ is the stationary output profile of the lower
+child, its wire equation is $f_F'(x)+m_x=0$; the upper equation
+is the same with $G,y$. Thus the output and input values of
+$\kap$ multiply to one, exactly the condition for the assignments
+\eqref{cg:stack-maps} to extend to whole-face isometries.
+The new profile has derivative $m_z$. This inductively proves
+the output formula $\kap=e^{-f_E'}$.
+A turn cyclically relabels the face and replaces $b$ by $1-b$,
+which has the same reciprocal effect.
+
+\subsection{Why successive attachments stay convex}
+Local angle equations do not by themselves exclude overlap of
+distant pieces. The following elementary argument controls the
+whole union.
+
+\begin{lemma}\label{cg:convex-union}
+Place two finite ideal convex polyhedra on opposite sides of the
+plane of an isometric maximal face. If every finite boundary seam
+of their union has total interior angle at most $\pi$, the union
+is convex. If the common face is a quadrilateral with strictly
+nonflat boundary edges in each piece, their ideal closures have
+no intersection other than the four recorded face vertices.
+\end{lemma}
+\begin{proof}
+The finite part of the union is closed in hyperbolic space and
+locally convex. At a seam edge this is exactly the angle condition;
+away from a seam it follows from convexity of the pieces.
+Any two finite points can be joined in the union by a finite-length
+path. A minimizing sequence with bounded length stays in a compact
+ambient hyperbolic ball. Constant-speed parametrization and a
+uniformly convergent subsequence give a shortest path in the
+union. Local convexity makes it an ambient geodesic near every
+point. It is therefore the unique ambient segment, proving
+convexity.
+
+The opposite closed half-spaces meet only in their supporting plane.
+Their ideal closures can meet only on its boundary circle.
+The intersection of either polyhedron with that plane is exactly
+its maximal face. An additional ideal vertex in the plane would
+enlarge the face across a boundary edge and make that edge flat,
+contrary to the strict hypothesis. In the Klein model the closure
+of an ideal quadrilateral meets the sphere at infinity at precisely
+its four vertices. This excludes every unrecorded ideal
+intersection.
+\end{proof}
+
+An elementary output has free angle $\pi a$ and cap angle
+$\pi(1/2-a)$. Inductively, a completed output $b$ has free angle
+$\pi b$ and cap angle $\pi(1-b)$. Attach the lower child first.
+At a cap seam a leaf gives total angle $\pi/2$, while a completed
+child gives $\pi$ and joins two white faces. The edge shared by the
+two prism inputs now has angle
+$\pi(w+x)=\pi(1-y)<\pi$. Thus the other input remains a maximal
+supported quadrilateral face. Lemma~\ref{cg:convex-union} applies
+again when the upper child is attached. We have not assumed
+nonintersection between two independently placed children.
+
+The final common input edge has angle $\pi(w+x+y)=\pi$.
+The free output seams have angles $\pi(p+x)=\pi z$ and
+$\pi(q+y)=\pi z$; the cap output edges have angle $\pi(1-z)$.
+Every remaining edge is an original shaded-triangle edge and is
+right angled. Flat seams join white faces. Strictness of the
+output parameter keeps its face maximal and supported, so the
+induction continues.
+
+There is a separate combinatorial check at ideal vertices.
+At every open stage the four exposed corners are four unpaired
+original terminal points. Product consumes the disjoint pairs
+$F_2/G_1$ and $F_3/G_0$ and never exposes them again; a turn merely
+permutes the unpaired points. Later identifications cannot extend
+a consumed pair into a longer chain. Each final main vertex is
+exactly a pair of original terminals, and a leaf's four corners
+stay distinct. Its crossing-circle apex is not among those
+terminals. Together with Lemma~\ref{cg:convex-union}, this shows
+that every leaf retains two distinct shaded triangles sharing only
+their original apex.
+
+\subsection{Closing the two completed children}
+At the root the outputs are $b,1-b$. The free root equation is
+$f_F'(b)=f_G'(1-b)$, so their ordered quadrilaterals have the same
+$\kap$. The closing map is
+\begin{equation}\label{cg:root}
+ C_j^F\longmapsto C_{3-j}^G,\qquad j\pmod4.
+\end{equation}
+Full reversal preserves $\kap$ and simultaneously realizes the
+two stack connections and the two outside closing connections.
+Each pair of free angles sums to $\pi$, as does each pair of cap
+angles. The last gluing thus joins white faces across flat seams.
+The result is a convex right-angled ideal polyhedron $P_E$, with
+\begin{equation}\label{cg:half-volume}
+ \Vol(P_E)=\pi\sum_\ell g(a_\ell)
+             +\pi\sum_{\text{products}}m(x,y,z)=\pi F_0 .
+\end{equation}
+There are $2H$ shaded triangles, $3H$ ideal vertices and $6H$
+edges; Euler's formula gives $H+2$ white faces. These counts are
+consequences of the assembly. The next section identifies its
+entire labeled boundary.
+
+\section{Recovering the original cut balls}
+\label{cg:topology}
+
+Place the pure main strands in the projection sphere, retaining
+the crossing disks in their disjoint elementary boxes. Cut the
+link exterior along that sphere. Each auxiliary circle becomes
+a semicircle in each projection ball, boundary-parallel along its
+original half crossing disk. Drilling a boundary-parallel semicircle
+introduces one handle; cutting along its half disk opens precisely
+that handle. The half disks are disjoint, so these cancellations
+can be performed successively in the original boxes. Each result
+is a ball with ideal vertices. Main strand segments lie on its
+boundary; their removal creates ideal corners and no interior
+handles.
+
+At a leaf the cut produces exactly
+$(O,C_1,C_2)$ and $(O,C_3,C_0)$ as its shaded triangles.
+The other faces are regions of the original projection sphere.
+We determine their full walks as follows. At $O$ keep the cyclic
+order $(C_0,C_1,C_2,C_3)$. At an outer corner each shaded triangle
+contributes the sector ordered by its next and previous neighbors.
+The identity strip joining two terminals concatenates their two
+sectors in planar order. A boundary walk entering a vertex along
+an oriented edge $(u,v)$ exits along the neighbor preceding $u$
+in the cyclic order at $v$. Thus the shaded triangles and terminal
+pairings determine every remaining white walk.
+
+The maps \eqref{cg:stack-maps} identify $F_2$ with $G_1$ at $P$,
+and $F_3$ with $G_0$ at $\infty$. Their exposed order is
+$(F_0,F_1,G_2,G_3)=(v_0,v_1,v_2,v_3)$. The prism's two white
+triangles insert exactly the intervening white sectors.
+At a completed cap seam those sectors merge across a flat
+white edge; at a leaf cap seam their boundary remains an original
+shaded edge. Turns transport the cyclic order, and
+\eqref{cg:root} realizes the original closing pairs. Hence the
+ribbon orders of the final nonflat graph are the orders of the
+literal projection cut. All faces, including every white walk,
+have the same labels and cyclic orders.
+
+This gives a label-preserving cellular homeomorphism of each
+cut-ball boundary with $\partial P_E$. A sphere homeomorphism
+extends over a ball, for example radially after choosing ball
+coordinates. Gluing the two extended balls along their prescribed
+white and shaded faces reverses exactly the original cuts.
+The quotient is $Y^0_E$, with degree one and the original disk
+curves retained.
+
+An ordered quadrilateral during assembly is auxiliary cut data.
+It is not the physical four-punctured boundary of the tangle box.
+We first used its modulus to assemble cells, and then used the
+closed ribbon identification to recover the physical complement.
+No boundary group representation is inferred from quadrilateral
+moduli alone.
+
+For a retained half twist, cut the twice-punctured disk and rotate
+one side through $\pi$. This interchanges both punctures and the
+upper and lower half disks. The two balls and white faces are
+unchanged. Superscripts distinguishing the projection copies give
+the new shaded maps
+\begin{equation}\label{cg:odd-pairing}
+\begin{array}{c|ccc}
+ S_0^+\longrightarrow S_1^-&O&C_1&C_2\\
+                          &O&C_3&C_0\\ \hline
+ S_1^+\longrightarrow S_0^-&O&C_3&C_0\\
+                          &O&C_1&C_2 .
+\end{array}
+\end{equation}
+The other maps are their inverses. Both signs give this unmarked
+pairing; the original meridian paths differ, as computed in
+Section~\ref{cg:peripheral}. The same labeled balls therefore give
+the original $Y^\eps_E$.

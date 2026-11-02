@@ -165,12 +165,13 @@ separate work.
 
 ## Reading and reproducing the work
 
-The [collection of research papers](papers/README.md) now contains eleven
-drafts, ranging from 11 to 28 pages and totaling 175 pages. Five develop
+The [collection of research papers](papers/README.md) now contains thirteen
+drafts, ranging from 11 to 28 pages. Five develop
 the finite algebra, local estimates, central asymptotics, oscillatory
-sums and geometric fillings. The other six treat Newton tangle
-coefficients, classical circle-tree geometry, shared-face criteria,
-terminal decorations, triangular insertions and long three-braids.
+sums and geometric fillings. The other eight treat complete and
+moving-meridian Newton formulas, complete Conway geometry, classical
+circle-tree geometry, shared-face criteria, terminal decorations,
+triangular insertions and long three-braids.
 Each paper states the companion results it uses.
 
 These papers extract selected results from the
@@ -179,7 +180,7 @@ replace it. The reference contains 93 pages of main text, 266 pages of
 appendices and 15 pages of front matter and references. Its length came
 from collecting several theorem families, repeated setup for separate
 proofs, and alternative constructions in one continuous account. The
-moving-meridian finite adapter, analytic circle-tree estimates, recursive
+analytic circle-tree estimates, recursive
 filled-closure arguments, and longitude and recurrence theorems still
 need their own complete papers. The reference remains frozen and is no
 longer presented as a single journal paper.

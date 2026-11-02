@@ -2,6 +2,7 @@ import RealTransfer
 import WeightedGraph
 import Flattening
 import TransportCoercivity
+import GroundedConvexity
 
 #print axioms VolumeLogic.RealModel.complexMagnitude
 #print axioms VolumeLogic.RealModel.constant_div_nat_rate
@@ -89,3 +90,15 @@ import TransportCoercivity
 #print axioms VolumeLogic.TransportCoercivity.grounded_sublevel_bounded
 #print axioms VolumeLogic.TransportCoercivity.grounded_sublevel_compact
 #print axioms VolumeLogic.TransportCoercivity.exists_grounded_minimizer
+
+#print axioms VolumeLogic.GroundedConvexity.grounded
+#print axioms VolumeLogic.GroundedConvexity.segment
+#print axioms VolumeLogic.GroundedConvexity.segmentValue
+#print axioms VolumeLogic.GroundedConvexity.convex_grounded
+#print axioms VolumeLogic.GroundedConvexity.segment_grounded
+#print axioms VolumeLogic.GroundedConvexity.strictConvexOn_Icc_of_second_pos
+#print axioms VolumeLogic.GroundedConvexity.segment_strictConvexOn
+#print axioms VolumeLogic.GroundedConvexity.segment_strict_jensen
+#print axioms VolumeLogic.GroundedConvexity.strictConvexOn_grounded
+#print axioms VolumeLogic.GroundedConvexity.grounded_minimizer_eq
+#print axioms VolumeLogic.GroundedConvexity.exists_unique_grounded_minimizer

@@ -7,7 +7,8 @@ existing Std-only package by the relative path `../formal`; its sources are
 not copied. The ordinary Std-only check does not need this package or Mathlib.
 The package also proves the real finite quadratic-form implication used in
 the circle-pattern Hessian argument, the one-variable calculus behind
-shared-weight flattening, and coercivity from a positive finite transport table.
+shared-weight flattening, coercivity from a positive finite transport table,
+and uniqueness from actual graph-valued second derivatives.
 
 ## What is proved
 
@@ -285,7 +286,9 @@ imply `𝓙(h) ≥ 𝓡(h) − Σ_t C_t`. Thus
 `Q t` is continuous, it is compact. `exists_grounded_minimizer` obtains an
 actual minimum from the nonempty sublevel through zero. A minimizer is
 not an input, and convexity is not needed for this existence statement.
-Uniqueness and differentiability of the minimum are not claimed.
+This module alone does not claim uniqueness or differentiability of the
+minimum. The next module derives uniqueness under explicit derivative and
+connected graph hypotheses.
 
 The application must still construct the strictly positive supported table
 from the disk's Hall inequalities, identify its prescribed margins (row
@@ -302,6 +305,72 @@ boundary vertices would not express that fixed-boundary problem. The
 two-zero supported limit already has the form `V = I ∪ {b}`, grounded at
 `b`. The Lean result proves the subsequent finite-sum, path,
 compactness and minimization implications without assuming their conclusion.
+
+## Strict convexity and the unique grounded minimum
+
+[GroundedConvexity.lean](GroundedConvexity.lean) contains three definitions
+and eight theorems in `VolumeLogic.GroundedConvexity`. It joins the preceding
+existence proof to the Hessian argument in
+[the triangular-insertion paper, Sections 2–4](../papers/triangular-insertion/main.tex).
+Neither strict convexity nor uniqueness is supplied as a premise.
+
+Let `P : (V → ℝ) → ℝ` be the actual potential, and fix a vertex `root`.
+The grounded set consists of all vertex functions `x` with `x root = 0`.
+For grounded endpoints `x,y`, the module constructs
+
+\[
+p_{x,y}(t)=(1-t)x+ty,\qquad g_{x,y}(t)=P(p_{x,y}(t)).
+\]
+
+An explicit real function `dg x y` supplies the first derivative:
+`HasDerivAt (segmentValue P x y) (dg x y t) t` on `0 ≤ t ≤ 1`.
+The second derivative is identified, for `0 < t < 1`, with
+
+\[
+\frac{d}{dt}dg_{x,y}(t)
+=\sum_{e\in E}w_e(p_{x,y}(t))
+\bigl((y-x)_{\operatorname{src}e}-(y-x)_{\operatorname{dst}e}\bigr)^2.
+\]
+
+Here `E` is a finite set of actual edge labels with endpoints `src e` and
+`dst e`. At each grounded point, the weights must be nonnegative and the
+positive-weight edges must connect all vertices by finite paths. Parallel
+edges, loops and zero weights are allowed. The positive support may change
+with the point; no uniform lower eigenvalue bound is assumed.
+
+If `x ≠ y`, then `y-x` is a nonzero grounded function. The proved
+`WeightedGraph.grounded_energy_pos` therefore makes the displayed second
+derivative strictly positive. The one-variable calculus theorem
+`strictConvexOn_Icc_of_second_pos` uses these actual derivatives and endpoint
+continuity to prove strict convexity on `[0,1]`. Consequently,
+`segment_strict_jensen` proves
+
+\[
+P((1-t)x+ty)<(1-t)P(x)+tP(y)\qquad(0<t<1).
+\]
+
+`strictConvexOn_grounded` assembles all grounded segments into Mathlib's
+`StrictConvexOn` statement. `grounded_minimizer_eq` then proves that two
+grounded global minima coincide. Finally,
+`exists_unique_grounded_minimizer` applies these results to the **same**
+constructed potential `TransportCoercivity.potential S α Q`. The positive
+transport table, connected row support, local vertex bounds and continuity
+give existence; the actual segment derivatives and connected conductance
+graph give uniqueness. The transport graph and Hessian graph need not have
+the same edge presentation, so both connectivity assumptions remain explicit.
+The one-vertex case is included: its grounded space is a singleton and no
+distinct segment must be considered.
+
+These derivative hypotheses are satisfied by a `C²` potential with the
+stated Hessian identity; the proof needs only the indicated derivatives,
+not continuity of the Hessian. Geometric differentiation, identification of
+the actual conductance graph and its positive connected support, and Hall
+feasibility of the transport table remain written inputs. In the
+fixed-boundary disk application, the boundary pool and prescribed offsets
+are those described above; the Hessian must be that of the resulting
+potential in the free interior coordinates. The module does not prove
+smooth dependence of the minimizer, the implicit function theorem's
+application, circle-pattern development or a volume identity.
 
 ## Pinned dependencies
 
@@ -373,8 +442,8 @@ whose logs are removed afterward. `--lake` can select a Lake executable;
 the executed Lean version must still match the pin.
 
 The checker rebuilds the Std-only path dependency, compiles
-`RealTransfer.lean`, `WeightedGraph.lean`, `Flattening.lean` and
-`TransportCoercivity.lean`, and runs
+`RealTransfer.lean`, `WeightedGraph.lean`, `Flattening.lean`,
+`TransportCoercivity.lean` and `GroundedConvexity.lean`, and runs
 [AxiomAudit.lean](AxiomAudit.lean). Every
 definition and theorem must appear exactly once in the audit. Only Lean's
 standard foundational axioms `propext`, `Classical.choice` and `Quot.sound`
@@ -383,19 +452,21 @@ are permitted; placeholders and additional axioms fail the check.
 `summary.json` records every declaration, its axioms, all dependency pins,
 and the SHA-256 hashes of the optional package, checker and Std-only sources.
 It contains relative paths and omits timestamps so identical inputs produce
-the same summary. Fourteen negative controls check altered pins, missing or
+the same summary. Sixteen negative controls check altered pins, missing or
 duplicate dependencies, an absolute local dependency, incomplete or
 duplicate declaration audits, an omitted graph module or grounded-energy
 audit entry, an omitted flattening module or quadratic-cost audit entry,
 an omitted transport module or grounded-coercivity audit entry,
+an omitted grounded-convexity module or unique-minimum audit entry,
 and an unexpected logical axiom. A failed run
 removes any old success summary in its output directory.
 
-The optional count is **seventeen definitions and sixty-six theorems**, separate
+The optional count is **twenty definitions and seventy-four theorems**, separate
 from the Std-only theorem count: `RealTransfer` has two definitions and
 twenty-two theorems, `WeightedGraph` has seven definitions and nineteen
-theorems, `Flattening` has one definition and nine theorems, and
-`TransportCoercivity` has seven definitions and sixteen theorems. The audit
+theorems, `Flattening` has one definition and nine theorems,
+`TransportCoercivity` has seven definitions and sixteen theorems, and
+`GroundedConvexity` has three definitions and eight theorems. The audit
 checks these proofs and the
 listed dependency pins; it does not certify that a particular knot family
 satisfies the remaining written analytic and geometric hypotheses.

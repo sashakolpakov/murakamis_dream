@@ -1,0 +1,142 @@
+\section{Entire face maps and edge returns}
+\label{cg:maps}
+
+The construction matches complete faces isometrically. We now
+give the complex-coordinate dictionary for their identifications.
+It records the shear and checks the entire edge return, including
+translation. Matrices are projective, and composition acts from
+right to left.
+
+\subsection{The leaf and its adjacent white faces}
+Normalize the ordered base of a leaf to $(0,\infty,1,R)$.
+At completeness,
+\begin{equation}\label{cg:normalized}
+ E=e^{2\pi\ii a},\qquad Z=\frac{1+E}{2},\qquad
+ R=\frac{(1+E)^2}{4E}=\cos^2(\pi a).
+\end{equation}
+The apices in the two charts are $Z$ and $Z/E=\overline Z$.
+Their white or completion maps are
+\begin{equation}\label{cg:white}
+\begin{aligned}
+ W_0&=\begin{pmatrix}1&0\\0&E\end{pmatrix},&
+ W_1&=\begin{pmatrix}1&E-1\\0&E\end{pmatrix},\\
+ W_2&=\begin{pmatrix}E-R&R(1-E)\\E-1&1-ER\end{pmatrix},&
+ W_3&=\begin{pmatrix}R&0\\1-E&ER\end{pmatrix}.
+\end{aligned}
+\end{equation}
+The elementary pyramid has actual white faces only at $W_0,W_2$.
+The expressions $W_1,W_3$ describe the maps supplied by the
+adjacent prism at its cap edges. This is proved below before
+using them in a group word.
+
+The pure within-copy shaded map and the odd cross-copy maps are
+\begin{equation}\label{cg:shaded}
+\begin{aligned}
+ S&=\begin{pmatrix}0&-ER\\1&-1-E\end{pmatrix},&
+ A&=\begin{pmatrix}R&-R\\1&ER-1-E\end{pmatrix},&
+ B&=\begin{pmatrix}R/E-1-1/E&R\\-1&R\end{pmatrix}.
+\end{aligned}
+\end{equation}
+Their vertex assignments are
+\[
+ S:(Z,\infty,1)\mapsto(Z,0,R),\quad
+ A:(Z,\infty,1)\mapsto(Z/E,R,0),\quad
+ B:(Z,R,0)\mapsto(Z/E,\infty,1).
+\]
+Three ordered vertices determine the maps; substitution of
+$Z^2-(1+E)Z+ER=0$ verifies their apex values. At the complete
+parameters all these matrices are invertible.
+
+\subsection{Compatibility across an entire prism}
+Use independent phase variables $\alpha,\beta,\gamma$ for
+$e^{2\pi\ii p},e^{2\pi\ii r},e^{2\pi\ii q}$.
+The world coordinates are
+\begin{equation}\label{cg:phase-coordinates}
+\begin{split}
+ v_0&=1,\quad v_1=\alpha,\quad
+ v_2=\alpha\beta,\quad v_3=\alpha\beta\gamma,\\
+ P&=1+\alpha-
+ \frac{\alpha[\alpha\beta(1+\gamma)-1-\alpha]}
+             {\alpha^2\beta^2\gamma-\alpha}.
+\end{split}
+\end{equation}
+Indeed the chord lines have equations
+$P+\alpha\overline P=1+\alpha$ and
+$P+\alpha^2\beta^2\gamma\overline P=\alpha\beta(1+\gamma)$,
+which give \eqref{cg:phase-coordinates}.
+For an ordered quadrilateral $(a,b,c,d)$ use
+\[
+ M_{a,b,c}(z)=\frac{(z-a)(c-b)}{(z-b)(c-a)},\qquad
+ R=M_{a,b,c}(d).
+\]
+Its world white map is $\overline M^{-1}W_j(E,R)M$.
+Here the bar reciprocates $\alpha,\beta,\gamma$; on the complete
+unit-circle chamber it is complex conjugation.
+For the lower, upper and output quadrilaterals in
+\eqref{cg:stack-maps} and \eqref{cg:prism-faces}, their wire
+phases are $\beta\gamma,\alpha\beta,\alpha\beta\gamma$.
+In these common world coordinates the entire maps obey
+\begin{equation}\label{cg:nine}
+\begin{aligned}
+ W_{F,1}=W_{G,1}=W_{o,1}&=W_{\rm top},&
+ W_{F,3}=W_{G,3}=W_{o,3}&=W_{\rm bottom},\\
+ W_{F,2}&=W_{G,0},&
+ W_{o,0}=W_{F,0},\qquad W_{o,2}&=W_{G,2}.
+\end{aligned}
+\end{equation}
+The subscript $o$ means output. The top and bottom maps take
+$(P,v_1,v_2)$ and $(\infty,v_0,v_3)$ to their reflected triples.
+To verify \eqref{cg:nine}, insert \eqref{cg:phase-coordinates}
+into $M$ and \eqref{cg:white} and cancel the projective scalar.
+Each side takes the same three distinct indicated vertices to
+their reflected partners. This proves equality of whole maps,
+not just of their multipliers. The formulas also give nine
+rational identities in the three independent variables: three
+top, three bottom and the three remaining equalities.
+
+Turns and closure have explicit compatibility as well.
+Put $T_Q(z)=(R-1)/(z-1)$ and $C_Q(z)=(z-R)/(z-1)$.
+Direct multiplication gives, with indices modulo four,
+\begin{equation}\label{cg:turn-closing}
+\begin{split}
+ T_QW_{j+1}(E,R)&=W_j(E^{-1},1-R)T_Q,\\
+ C_QW_j(E^{-1},R)&=W_{2-j}(E,R)C_Q.
+\end{split}
+\end{equation}
+Induction proves that all triangular pieces of a final white face
+have the same entire map. Every elementary completion expression
+$W_1,W_3$ is supplied by its parent prism. At the
+completed/completed root the closing seams merge white faces.
+Thus each $W_j$ used at a leaf is an actual white-face map of the
+closed cut. Matching $\kap$ alone would not establish this.
+
+\subsection{The full edge words}
+Write $\overline S=S(E^{-1},R)$. The pure identities are
+\begin{equation}\label{cg:pure-returns}
+ W_0S=\overline S W_0,\qquad
+ W_2S=\overline S W_2,\qquad
+ W_3S=\overline S W_1 .
+\end{equation}
+For an odd leaf they are
+\begin{equation}\label{cg:odd-returns}
+ W_0^{-1}BW_2^{-1}A=I,\quad
+ W_2^{-1}BW_0^{-1}A=I,\quad
+ W_1^{-1}BW_3^{-1}A=I .
+\end{equation}
+Direct matrix multiplication proves the projective equalities:
+the first two odd products are $-R/E$ times $I$, and the last
+is $(R-1)/E$ times $I$. The reverse cycles are inverses.
+Every final edge is an original shaded-triangle edge, so this
+list covers all edge orbits. The incidence proof of
+Section~\ref{cg:assembly} gives four distinct occurrences in each
+orbit. Each has angle $\pi/2$, and its full four-step return is
+the identity. The metric is smooth at every finite edge, with
+no axial translation hidden by the angle sum.
+
+This is also a group check on the literal manifold. The dual
+two-skeleton of the original cut balls has a generator for each
+paired face and a relation for each edge cycle. Equations
+\eqref{cg:pure-returns}--\eqref{cg:odd-returns} are precisely those
+relations, with white maps already identified by \eqref{cg:nine}.
+Thus the construction respects the original group presentation,
+rather than a presentation inferred from unrelated shape equations.

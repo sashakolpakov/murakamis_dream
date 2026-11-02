@@ -28,8 +28,11 @@ CHECKS = {
     "newton-tangles": "papers/newton-tangles/check.py",
     "terminal-decorations": "papers/terminal-decorations/check.py",
     "circle-tree-geometry": "papers/circle-tree-geometry/check.py",
+    "conway-geometry": "papers/conway-geometry/check.py",
+    "meridian-tangles": "papers/meridian-tangles/check.py",
 }
-DIRECTORY_CHECKS = {"planar-certificates", "triangular-insertion", "terminal-decorations"}
+DIRECTORY_CHECKS = {"planar-certificates", "triangular-insertion", "terminal-decorations",
+                    "meridian-tangles"}
 CERTIFICATE_INPUTS = (
     "repro/check_protected_sums.py",
     "experiments/audit_actual_sector_cover.py",

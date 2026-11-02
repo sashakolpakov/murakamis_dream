@@ -50,6 +50,12 @@ and an attained minimum. The geometric Hall inequalities constructing
 that table remain written proofs. For fixed positive boundary values,
 the application combines the boundary destinations into the grounded
 vertex and retains their prescribed logarithms as row constants.
+The strict-convexity module identifies the second derivative on an actual
+segment with connected weighted graph energy. It derives strict
+convexity, and hence uniqueness of that same potential's minimum. The
+geometric derivative identity and positive-table construction remain
+written inputs. Together the optional modules contain twenty definitions
+and seventy-four theorems, all included in the axiom audit.
 The optional command is separate from the Std-only
 check above; it requires
 Mathlib and its substantially larger compiled library.
@@ -62,13 +68,14 @@ python3 repro/check_paper_algebra.py --output repro/results/paper-algebra
 ~~~
 
 The runner requires SymPy, python-flint and NumPy. It saves each program's
-output and stops on a failed check. Its ten groups cover polynomial
+output and stops on a failed check. Its twelve groups cover polynomial
 resolvents and path partitions, positive-matrix identities and parity
 anchors, filling-sum normalization, symbolic peripheral coordinates,
 rational three-braid constants, the complete forty-branch planar
 certificate, its forty-five-branch extension at ordinary boundaries,
 physical Newton matrices at eight levels, the exact terminal fan
-recurrence, and symbolic tree-block and peripheral identities.
+recurrence, symbolic tree-block and peripheral identities, moving-meridian
+physical matrices, and complete Conway face maps and endpoint pairings.
 The two planar certificate groups use outward interval arithmetic with explicit
 Fourier tails. Their reports keep the finite assertions separate from
 the written all-length arguments.
@@ -76,9 +83,12 @@ The [planar and insertion review](PLANAR_INSERTION_AUDIT.md) records
 which written arguments were examined and which results they import.
 The [tangle and tree review](TANGLE_TREE_AUDIT.md) records the new papers'
 proof boundaries and the transport module's formal coverage.
+The subsequent [Conway geometry and meridian review](CONWAY_MERIDIAN_AUDIT.md)
+records the two additional papers, their proof corrections, and the
+formal derivation of strict convexity and uniqueness.
 
-Seven programs accept `--output` naming a JSON result file.
-The planar, triangular-insertion and terminal-decoration programs accept an output directory
+Eight programs accept `--output` naming a JSON result file.
+The planar, triangular-insertion, terminal-decoration and moving-meridian programs accept an output directory
 containing their summary and supporting records. The unified runner
 handles both conventions. These commands do not establish uniform
 large-level estimates, packing existence or metric completeness.

@@ -1881,11 +1881,19 @@
       "id": "tree_exact_edge_kernel",
       "title": "The original circle-tree kernel and its local bounds",
       "group": "diagram_evaluation",
-      "statement": "The full Newton pairing gives an exact boundary polynomial recursion; quantitative local complex and real bounds retain all high indices and original scalar factors.",
+      "statement": "The exact moving-meridian Newton pairing gives the original tree boundary-polynomial recursion with all indices, physical types and scalar factors retained. Its finite adapter is in the meridian companion; the quantitative local complex and real bounds, including high indices, remain the separate E/G proofs.",
       "sources": [
         {
-          "path": "manuscript/sections/E-quantitative-finite-sums.tex",
-          "anchor": "\\label{sec:q-coordinates}"
+          "path": "papers/meridian-tangles/main.tex",
+          "anchor": "\\label{mt:kernel-main}"
+        },
+        {
+          "path": "papers/meridian-tangles/main.tex",
+          "anchor": "\\label{mt:tree}"
+        },
+        {
+          "path": "papers/meridian-tangles/main.tex",
+          "anchor": "\\label{mt:scalar}"
         },
         {
           "path": "manuscript/sections/E-quantitative-finite-sums.tex",
@@ -1902,8 +1910,8 @@
       ],
       "depends_on": [
         {
-          "id": "recursive_finite_source",
-          "reason": "The actual pair algebra and physical turn provide the kernel; no scalar network is substituted."
+          "id": "finite_moving_meridian_tangle",
+          "reason": "Provides the exact typed pair algebra, paired Newton/Chebyshev kernel, degree bound and original scalar ledger. It does not supply the subsequent analytic bounds."
         }
       ]
     },
@@ -2507,28 +2515,48 @@
       "id": "recursive_angle_geometry",
       "title": "Complete geometry of the completed-root construction",
       "group": "recursive_tangles",
-      "statement": "For the completed-root grammar, the stationary leaf pyramids and multiplication prisms glue by their ordered face maps to the actual augmented complement. Its cusp links are complete and its volume is 2pi times the complete action. The isolated three-leaf case retains its separately stated calibration; the broader strict-mask geometry has separate nodes.",
+      "statement": "For the completed/completed root grammar, the strict stationary pyramids and prisms assemble convexly, and the final labeled ribbon cut is the original augmented exterior in S^3. Full edge returns and a common horocycle decoration give a complete finite-volume metric for every retained half-twist pattern. Its absolute volume is 2pi F0. The pure positive-source equality is an eventual all-integer limit; no isolated bare-root or broader strict-mask theorem is included.",
       "sources": [
         {
-          "path": "manuscript/sections/04-geometry.tex",
-          "anchor": "\\label{eq:ordered-stack}"
+          "path": "papers/conway-geometry/main.tex",
+          "anchor": "\\label{cg:grammar}"
         },
         {
-          "path": "manuscript/sections/04-geometry.tex",
-          "anchor": "\\label{eq:complete-volume}"
+          "path": "papers/conway-geometry/main.tex",
+          "anchor": "\\label{cg:main}"
         },
         {
-          "path": "manuscript/sections/D-marked-cell-calibration.tex",
-          "anchor": "\\label{app:marked-calibration}"
+          "path": "papers/conway-geometry/main.tex",
+          "anchor": "\\label{cg:source-volume}"
+        },
+        {
+          "path": "papers/conway-geometry/assembly.tex",
+          "anchor": "\\label{cg:convex-union}"
+        },
+        {
+          "path": "papers/conway-geometry/assembly.tex",
+          "anchor": "\\label{cg:half-volume}"
+        },
+        {
+          "path": "papers/conway-geometry/assembly.tex",
+          "anchor": "\\label{cg:topology}"
+        },
+        {
+          "path": "papers/conway-geometry/completion.tex",
+          "anchor": "\\label{cg:complete}"
         }
       ],
       "depends_on": [
         {
           "id": "recursive_positive_source",
-          "reason": "Supplies the strict action maximum, nondegenerate stationary data and boundary-parameter ranges; the actual geometric gluing and volume calibration remain the additional archive argument."
+          "reason": "Newton Proposition 5.3 gives the unique strict stationary point and analytic profiles; Lemma 6.1 supplies the cusp window. Corollary 5.4 is used only for the separate pure positive-source limit."
+        },
+        {
+          "id": "recursive_local_ideal_cells",
+          "reason": "Provides the actual convex cells, calibrated volumes and ordered full-face maps used by the global completed-root assembly."
         }
       ],
-      "coverage": "This node records the completed-root construction of Chapters 2–8, with its stated grammar. The broader strict-tree extension has separate nodes and additional inputs."
+      "coverage": "The companion proves this exact completed-root scope, including the literal same-manifold argument. General strict masks and nearby filled geometry retain their separate written inputs."
     },
     {
       "id": "recursive_local_packet_filling",
@@ -2583,7 +2611,7 @@
     },
     {
       "id": "recursive_marked_metric",
-      "title": "Primitive metric and volume for the completed-root construction",
+      "title": "Nearby primitive fillings and volume for the completed-root construction",
       "group": "recursive_tangles",
       "statement": "The labeled recursive cells give the actual peripheral words and signed logarithms. On the nearby independently long filling branch the original primitive slopes complete smoothly, the main cusp stays complete, and the calibrated filled critical action has real part equal to actual hyperbolic volume divided by 2pi. A regulator differential alone is not the conclusion.",
       "sources": [
@@ -2614,6 +2642,10 @@
           "reason": "Fixes the actual complete cells, topology, labels and absolute complete action."
         },
         {
+          "id": "recursive_complete_peripheral",
+          "reason": "Fixes the primitive complete collar basis, sign conventions and half-twist marking before the separate nearby logarithmic family and filling argument."
+        },
+        {
           "id": "recursive_local_packet_filling",
           "reason": "Identifies the selected source action and its actual primitive charge-one branch; geometric completion is not inferred merely from nonzero amplitude."
         },
@@ -2622,7 +2654,7 @@
           "reason": "Supplies the positive nearby compact-core/cusp and primitive solid-torus completion argument after the actual logarithmic slope equations are verified."
         }
       ],
-      "coverage": "This node records the completed-root construction of Chapters 2–8, with its stated grammar. The broader strict-tree extension has separate nodes and additional inputs."
+      "coverage": "The new complete-geometry companion supplies only the complete anchor and primitive basis. This nearby deformation, source-action calibration and filled metric remain the separate written D/07 arguments, with completed-root scope."
     },
     {
       "id": "open_general_remainder",
@@ -3302,8 +3334,8 @@
       ],
       "depends_on": [
         {
-          "id": "recursive_finite_source",
-          "reason": "Supplies only the complete-meridian finite algebra and normalization used as an anchor. The meridian-dependent source and typed turning factors are additional inputs in the cited H/M proofs, not conclusions of the Newton paper."
+          "id": "finite_moving_meridian_tangle",
+          "reason": "Provides the exact meridian-dependent polynomial identity, six typed turns and scalar ledger on |s|<1. The uniform continuation to shifted charts and every asymptotic order are additional H/M analytic proofs, not conclusions of the finite adapter."
         },
         {
           "id": "recursive_strict_source_gap",
@@ -3954,8 +3986,8 @@
           "reason": "Provides the strict state classification and the original ordered wire constraints."
         },
         {
-          "id": "recursive_angle_geometry",
-          "reason": "Uses the original local ideal cells and their calibrated actions; the edge-mask and terminal-accounting extension is the additional argument in the cited notes."
+          "id": "recursive_local_ideal_cells",
+          "reason": "Uses only the original local cells, calibrated actions and ordered maps. The arbitrary edge-mask, terminal accounting and global strict assembly are additional arguments in the cited strict-syntax notes."
         }
       ],
       "coverage": "Written extension in research notes. It is not the completed-root theorem of the frozen manuscript; its separate paper and detailed companion-level review remain to be completed."
@@ -4042,6 +4074,160 @@
         }
       ],
       "coverage": "Written extension in research notes. It is not the completed-root theorem of the frozen manuscript; its separate paper and detailed companion-level review remain to be completed."
+    },
+    {
+      "id": "recursive_local_ideal_cells",
+      "title": "Strict pyramid and prism cells with full ordered face maps",
+      "group": "recursive_tangles",
+      "statement": "For strict leaf and product parameters, the explicit ideal pyramid and convex triangular prism have the stated dihedral angles, absolute volumes pi g and pi m, and full ordered quadrilateral metrics. The entire white maps satisfy nine prism identities and the physical turn/closure identities. This local result assumes the strict parameter data; it does not supply a global optimizer or extend the completed-root grammar.",
+      "sources": [
+        {
+          "path": "papers/conway-geometry/main.tex",
+          "anchor": "\\label{cg:leaf-coordinates}"
+        },
+        {
+          "path": "papers/conway-geometry/main.tex",
+          "anchor": "\\label{cg:leaf-volume}"
+        },
+        {
+          "path": "papers/conway-geometry/main.tex",
+          "anchor": "\\label{cg:prism-P}"
+        },
+        {
+          "path": "papers/conway-geometry/main.tex",
+          "anchor": "\\label{cg:prism-volume}"
+        },
+        {
+          "path": "papers/conway-geometry/assembly.tex",
+          "anchor": "\\label{cg:stack-maps}"
+        },
+        {
+          "path": "papers/conway-geometry/maps.tex",
+          "anchor": "\\label{cg:nine}"
+        },
+        {
+          "path": "papers/conway-geometry/maps.tex",
+          "anchor": "\\label{cg:turn-closing}"
+        }
+      ],
+      "depends_on": [],
+      "coverage": "The ideal-tetrahedron Lobachevsky volume formula is the explicitly cited classical background. The cell, support and ordered-map calculations are written in the companion."
+    },
+    {
+      "id": "recursive_complete_peripheral",
+      "title": "Primitive cusp markings of the completed-root augmented exterior",
+      "group": "recursive_tangles",
+      "statement": "On the actual complete augmented exterior, the pure and odd collar paths have explicit peripheral words and translations. Their parallelogram has exactly the two-rectangle cusp area, proving an index-one meridian/longitude basis and the stated positive-imaginary cusp ratio. The half-longitude shear compares markings of different partners; it does not make a half longitude an integral curve or prove a nearby filled metric.",
+      "sources": [
+        {
+          "path": "papers/conway-geometry/completion.tex",
+          "anchor": "\\label{cg:peripheral-words}"
+        },
+        {
+          "path": "papers/conway-geometry/completion.tex",
+          "anchor": "\\label{cg:odd-meridians}"
+        },
+        {
+          "path": "papers/conway-geometry/completion.tex",
+          "anchor": "\\label{cg:translations}"
+        },
+        {
+          "path": "papers/conway-geometry/completion.tex",
+          "anchor": "\\label{cg:lattice-area}"
+        },
+        {
+          "path": "papers/conway-geometry/main.tex",
+          "anchor": "\\label{cg:cusp-shape}"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "recursive_angle_geometry",
+          "reason": "Fixes the original cut, complete cell metric, cusp tori and unit horocycle decoration on which the traced words are actual peripheral curves."
+        }
+      ]
+    },
+    {
+      "id": "finite_moving_meridian_tangle",
+      "title": "Exact moving-meridian Newton turns, trace and tree contraction",
+      "group": "diagram_evaluation",
+      "statement": "For every N>=2 and |s|<1, the equal and opposite main orientations use their actual distinct Chebyshev quotients. Pointwise pair commutants, all six typed turns, the pivotal closing moments, canonical crossing powers including repeated-root normals, the full original tree contraction, boundary degree <=N-1 and quadratic scalar ledger are exact. The complete reduced Kashaev comparison is used only for N>=3. No local asymptotic, translated-chart estimate or geometric volume statement is inferred.",
+      "sources": [
+        {
+          "path": "papers/meridian-tangles/main.tex",
+          "anchor": "\\label{mt:main}"
+        },
+        {
+          "path": "papers/meridian-tangles/main.tex",
+          "anchor": "\\label{mt:moments}"
+        },
+        {
+          "path": "papers/meridian-tangles/main.tex",
+          "anchor": "\\label{mt:centralizer}"
+        },
+        {
+          "path": "papers/meridian-tangles/main.tex",
+          "anchor": "\\label{mt:dual-bases}"
+        },
+        {
+          "path": "papers/meridian-tangles/main.tex",
+          "anchor": "\\label{mt:crossing}"
+        },
+        {
+          "path": "papers/meridian-tangles/main.tex",
+          "anchor": "\\label{mt:tree}"
+        },
+        {
+          "path": "papers/meridian-tangles/main.tex",
+          "anchor": "\\label{mt:scalar}"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "recursive_finite_source",
+          "reason": "Supplies the complete-meridian physical turn/closure calibration, crossing polynomial and circle coefficients (Newton Proposition 3.2, equation (4.8), Section 4). The moving typed objects and factors are the additional proof; no complete-product theorem is imported."
+        },
+        {
+          "id": "finite_remainder",
+          "reason": "Canonical monic reduction and its product compatibility keep the full polynomial algebra at collisions."
+        },
+        {
+          "id": "finite_invariant_normalization",
+          "reason": "Identifies the complete reduced scalar with the chosen Kashaev convention for N>=3; the moving module calculus itself is stated at N>=2."
+        }
+      ],
+      "coverage": "The standard nilpotent/unrolled ribbon-tangle framework is an explicitly cited ADO/GPT/CGP background input; the companion proves the physical normalization, duality, partial trace, typed turns and finite kernel rather than claiming every categorical Reidemeister fact is reproved."
+    },
+    {
+      "id": "analytic_grounded_strict_convexity",
+      "title": "Connected Hessian energy gives a unique grounded minimum",
+      "group": "finite_graph_energy",
+      "statement": "For an actual real potential with specified first segment derivatives and second derivatives equal to a connected nonnegative weighted graph energy, the grounded restriction is strictly convex. Combining this with the supported-transport coercivity hypotheses gives an attained unique grounded minimum. Identifying the geometric functions, their derivative formula, positive support and boundary offsets remains a written application; no smooth dependence or developing-map theorem is formalized here.",
+      "sources": [
+        {
+          "path": "formal-real/GroundedConvexity.lean",
+          "anchor": "theorem segment_strictConvexOn"
+        },
+        {
+          "path": "formal-real/GroundedConvexity.lean",
+          "anchor": "theorem strictConvexOn_grounded"
+        },
+        {
+          "path": "formal-real/GroundedConvexity.lean",
+          "anchor": "theorem exists_unique_grounded_minimizer"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "finite_weighted_graph_kernel",
+          "reason": "Connected positive-edge paths give strict positivity of the actual segment Hessian energy on nonzero grounded variations."
+        },
+        {
+          "id": "analytic_supported_transport_coercivity",
+          "reason": "The supported corner table, local lower bounds and continuity give an attained grounded minimum; strict convexity makes it unique."
+        }
+      ],
+      "coverage": "These real calculus and uniqueness implications are proved in the optional Mathlib package. Fixed-boundary pooling and row offsets are explicit hypotheses of the application, not silently discarded."
     }
   ]
 }

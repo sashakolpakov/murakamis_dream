@@ -1,0 +1,10 @@
+\begin{tikzpicture}[>=Latex,every node/.style={font=\small},
+ coupon/.style={draw,rounded corners=2pt,minimum width=2.9cm,minimum height=1cm}]
+\node[coupon] (p0) at (0,0) {$p_0\in\End(A)$};
+\node[coupon] (p1) at (-3.5,2.5) {$p_1\in\End(++)$};
+\node[coupon] (p2) at (3.5,2.5) {$p_2\in\End(--)$};
+\draw[->,thick] (p1.south) -- node[left,align=right,fill=white,inner sep=2pt] {$B\longrightarrow A$\\$k,\ q^{-s^2/2}H_N/W_k$} (p0.north west);
+\draw[->,thick] (p2.south) -- node[right,align=left,fill=white,inner sep=2pt] {$A\longrightarrow B$\\$l,\ q^{s^2/2}H_N/W_l$} (p0.north east);
+\draw[->,thick] (p0.south) -- ++(0,-.85) node[below] {$H_N\phi_0\quad\text{original reduced cut}$};
+\node at (0,3.6) {$A=+-,\qquad B=-+$};
+\end{tikzpicture}

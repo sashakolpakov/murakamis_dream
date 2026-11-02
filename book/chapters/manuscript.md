@@ -2,16 +2,17 @@
 
 The current PDF is a 374-page reference account. Its results are being
 rewritten as [papers organized by subject](../../papers/README.md), each at
-most 30 pages including references. Eleven drafts now total 175 pages,
-with individual lengths from 11 to 28 pages. Five cover finite spectral
+most 30 pages including references. Thirteen drafts have
+individual lengths from 11 to 28 pages. Five cover finite spectral
 evaluation, uniform local bounds, central source asymptotics, oscillatory
-fillings and geometric filling. Six cover Newton tangle coefficients,
-classical circle-tree geometry, shared-face criteria, terminal decoration,
-ordinary triangular insertion and the long three-braid application. Each
+fillings and geometric filling. Eight cover complete and moving-meridian
+Newton formulas, complete Conway geometry, classical circle-tree geometry,
+shared-face criteria, terminal decoration, ordinary triangular insertion
+and the long three-braid application. Each
 application names the results it imports and checks their hypotheses.
 
-These papers do not yet replace the reference account. The moving-meridian
-finite adapter, signed tree asymptotics, recursive filled closures, and
+These papers do not yet replace the reference account. Signed tree
+asymptotics, recursive filled closures, and
 longitude and recurrence results still need separate complete accounts.
 The reference PDF remains frozen. Its measured length is 93 pages of main
 text, 266 pages of appendices, and 15 pages of front matter and references.
@@ -342,10 +343,36 @@ specified finite compositions, it also proves the positive complete
 auxiliary-color source's variational limit and strict interior maximum.
 It imports the finite paper's operator and reduced-invariant
 normalization. Signed fillings require additional bounds and
-noncancellation; changing the main meridian requires a deformed finite
-adapter, since the spectral relation and some turn factors change.
+noncancellation.
+
+The [moving-meridian paper](../../docs/papers/meridian-tangles.pdf)
+proves the finite formulas needed when the main meridian parameter
+changes. Its first calculation is a physical partial trace, so the
+normalization is fixed before introducing a polynomial functional.
+It then derives each oriented turn from the evaluation and
+coevaluation maps of the strand representations. The argument keeps
+the entire polynomial algebra at collisions of spectral roots; values
+alone would discard the derivative terms. Finally it contracts an
+ordered tree, keeping every index, the edge factors and the single
+closing scalar. Reordering that finite contraction does not change
+the physical turn assigned to an edge. Estimating its growth is a
+subsequent analytic problem.
 
 The geometric part associates normalized state variables with angles of ideal pyramids and prisms. An ideal vertex lies at infinity in hyperbolic space. Strict angle inequalities produce genuine cells, and the ordered endpoint data determine their face identifications. A strictly concave angle functional has a unique geometric maximum. The proof then follows actual paths on the cusps to identify the meridian and longitude used for filling.
+
+The [complete Conway geometry paper](../../docs/papers/conway-geometry.pdf)
+gives this construction for the completed-root grammar. Matching edge
+angles is only one part of the argument: the stationary equations match
+the ordered quadrilateral faces, including their shear. The paper proves
+convexity after each attachment, recovers the actual projection cut from
+the boundary's cyclic orders, and checks the full face-pairing maps.
+Compatible horospheres then prove cusp completeness. Summing the cell
+volumes gives the absolute volume of the augmented complement. A separate
+cusp calculation follows the original meridian and disk longitude and
+uses the area of their parallelogram to prove that they form a primitive
+basis. Four illustrations show the tangle operations, the two cells and
+this cusp lattice. The resulting positive-source volume identity is
+distinct from the signed invariant after filling the crossing circles.
 
 The source estimates address a different issue: a signed sum can be much smaller than the sum of the absolute values of its terms. In the recursive tree proof, the exact reflection formula separates
 a principal contribution from extra terms called aliases. In the
@@ -384,9 +411,12 @@ The companion papers have a combined finite-check command:
 python3 repro/check_paper_algebra.py --output repro/results/paper-algebra
 ```
 
-It runs ten groups. The new groups check physical Newton identities over
+It runs twelve groups. They check physical Newton identities over
 exact finite fields, terminal curvature and endpoint identities, and
-circle-tree seam, peripheral and rational-bound formulas. The output
+circle-tree seam, peripheral and rational-bound formulas. The additional
+moving-meridian checks use physical matrices at both ordinary and
+colliding spectral parameters; the complete geometry checks verify
+rational face-map identities and the endpoint pairing tables. The output
 records their bounded scope and source hashes. These checks do not
 replace the proofs for every level, the all-length insertion argument,
 or the construction and completion of a hyperbolic metric. The
