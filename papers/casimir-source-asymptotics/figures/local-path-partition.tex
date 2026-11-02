@@ -1,0 +1,27 @@
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[x=.82cm,y=.68cm,>=Stealth,font=\small]
+ \fill[blue!6] (3.65,-.45) rectangle (4.35,3.5);
+ \foreach \j in {0,...,8}{
+  \node at (\j,3.8){\(\j\)};
+  \foreach \h in {0,1.5,3}{\fill[black!35] (\j,\h) circle(1.1pt);}
+ }
+ \draw[->,very thick] (3,3)--(2,3);
+ \draw[->,very thick] (2,3)--(0,3);
+ \node[left] at (-.4,3){left};
+ \draw[->,very thick,blue!65!black] (6,1.5)--(4,1.5);
+ \draw[->,very thick,blue!65!black] (4,1.5)--(2,1.5);
+ \draw[->,thick,dashed,red!65!black] (5,1.7) to[bend right=24] (3,1.7);
+ \node[left] at (-.4,1.5){central};
+ \draw[->,very thick] (8,0)--(7,0);
+ \draw[->,very thick] (7,0)--(5,0);
+ \node[left] at (-.4,0){right};
+ \node[below,align=center] at (4,-.6){middle row \(m=4\)\\
+           unused factor \(u\) on the dashed jump};
+\end{tikzpicture}
+\caption{The partition at the illustrative odd level \(N=9\).
+A central path may visit row \(m\), or skip it by \(m+1\to m-1\).
+The skipped row contributes its unused factor \(u\), retained in the
+exact central polynomial even though it vanishes at \(u=0\).}
+\label{lc:path-figure}
+\end{figure}

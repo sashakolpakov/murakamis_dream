@@ -30,6 +30,8 @@ complex exponential itself. A separate normalization module removes the
 common q-1 factor and proves that the resulting classical symbol is
 nonzero. The coefficient adapter connects that polynomial record to the
 finite Laurent expansions and derives its formal characteristic equation.
+The meridian substitution is proved to be an injective algebra map by
+a finite Vandermonde argument, so the formal symbol is also nonzero.
 The uniform-profile modules prove common nonvanishing thresholds
 and logarithmic rates, including the actual removable sine quotient and
 fixed quadratic scalar occurring in the circle-tree profiles.
@@ -1003,6 +1005,7 @@ lake exe cache get \
   Mathlib.LinearAlgebra.Matrix.ToLin \
   Mathlib.LinearAlgebra.Matrix.NonsingularInverse \
   Mathlib.LinearAlgebra.FiniteDimensional.Basic \
+  Mathlib.LinearAlgebra.Vandermonde \
   Mathlib.Topology.Order.Compact \
   Mathlib.Topology.MetricSpace.Pseudo.Basic \
   Mathlib.Topology.Order.Lattice \
@@ -1405,6 +1408,43 @@ of a geometric component or its volume, remain separate analytic and
 geometric arguments. No injectivity assertion about restriction to a
 selected geometric germ is made here.
 
+## Why meridian expansion preserves a nonzero polynomial
+
+[MeridianSeriesEmbedding.lean](MeridianSeriesEmbedding.lean) proves that
+the coefficient substitution used above is an injective complex algebra
+homomorphism. For a Laurent polynomial with finite support,
+$$
+ p(M)=\sum_{m\in E}c_mM^m,
+ \qquad \mathcal E(p)=\sum_{m\in E}c_me^{mu},
+$$
+its coefficient of $u^n$ is $(1/n!)\sum_{m\in E}c_mm^n$.
+The exponential here is the actual factorial formal power series.
+Its addition identity proves that $\mathcal E$ preserves multiplication,
+including negative meridian powers.
+
+If $k$ is the number of nonzero Laurent coefficients, vanishing of the
+first $k$ series coefficients gives a square Vandermonde system on the
+distinct integer exponents. The matrix is invertible, so every Laurent
+coefficient vanishes. The theorem
+`meridianSeries_eq_zero_of_initial_coefficients` proves this finite-jet
+statement. It implies `meridianSeries_injective`; the bundled map
+`meridianAlgHom` also preserves the complex constants.
+
+Applying the map to every coefficient of a polynomial in $L$ agrees
+exactly with `OperatorCoefficientAdapter.formalSymbol`. Thus a nonzero
+normalized classical symbol remains a nonzero polynomial in
+$\mathbb C[[u]][L]$. The theorem `normalized_characteristic_faithful`
+adds this conclusion to the previous recurrence theorem, with its
+source and analytic hypotheses unchanged.
+
+The support bound cannot be dropped. For every $k$, the nonzero
+polynomial $(M-1)^k$ has zero image coefficients below degree $k$.
+Nor is restriction to a selected longitude series injective: the
+nonzero polynomial $L+M$ vanishes after $M=e^u$, $L=-e^u$.
+The compiled controls retain both facts. The module proves neither
+analytic convergence nor identification of that longitude with a
+geometric branch.
+
 ## Uniform consequences of microscopic profiles
 
 [UniformProfile.lean](UniformProfile.lean) proves the uniform consequence
@@ -1527,8 +1567,8 @@ The checker rebuilds the Std-only path dependency, compiles
 `FormalCharacteristic.lean`, `UniformProfile.lean`, `ActualGauge.lean`,
 `RecurrenceExpansion.lean`, `RecurrenceGaugeExpansion.lean`,
 `MeridianExpansion.lean`, `LaurentExpansion.lean`,
-`OperatorNormalization.lean`, `OperatorCoefficientAdapter.lean` and
-`SineFactor.lean`, and runs
+`OperatorNormalization.lean`, `OperatorCoefficientAdapter.lean`,
+`MeridianSeriesEmbedding.lean` and `SineFactor.lean`, and runs
 [AxiomAudit.lean](AxiomAudit.lean). Every
 definition, abbreviation and theorem must appear exactly once in the audit. Only Lean's
 standard foundational axioms `propext`, `Classical.choice` and `Quot.sound`
@@ -1551,7 +1591,7 @@ an omitted triangle-balance module or unique-load-solution audit entry,
 an omitted cut-recession or cut-to-balance module or its main theorem audit,
 an omitted formal-shift, regrading, exponential, asymptotic-identity,
 gauge, characteristic, uniform-profile, Laurent-coefficient,
-operator-normalization, coefficient-adapter or explicit-factor module
+operator-normalization, coefficient-adapter, meridian-embedding or explicit-factor module
 or main-theorem audit,
 an omitted Laurent coefficient-type abbreviation, and an unexpected logical axiom. A failed run
 removes any old success summary in its output directory.

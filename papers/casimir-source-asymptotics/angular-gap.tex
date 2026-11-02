@@ -1,0 +1,153 @@
+\section{All face phases and the primitive Gaussian}\label{sa:angles}
+We prove a global angular bound, not just positive real convexity.
+For positive semidefinite matrices $X_j$ with $M=\sum X_j>0$, put
+$A_j=M^{-1/2}X_jM^{-1/2}$ and $B=\sum e^{\ii\vartheta_j}A_j$.
+The map $z\mapsto(A_j^{1/2}z)_j$ is an isometry, so $B$ is a
+contraction. Expanding its trace gives
+\begin{equation}\label{sa:det-gap}
+ |\det B|\le
+ \exp\left[-\frac12\sum_{j<k}|e^{\ii\vartheta_j}-e^{\ii\vartheta_k}|^2
+                                      \operatorname{Tr}(A_jA_k)\right].
+\end{equation}
+Indeed $\operatorname{Tr}(I-B^*B)$ is the sum displayed without
+$1/2$, and $\log t\le t-1$ for the squared singular values. Zero
+determinants follow by continuity. No commutativity is required.
+
+\begin{lemma}[Finite triangle phase loss]\label{sa:triangle-gap}
+For every $a_0>0$ and compact positive nonzero-face set, a triangle
+with at least two positive entries has a phase loss $e^{-cN}$ in
+$\mathcal D_a$ whenever their circular phase diameter is separated
+from zero, uniformly for $a_0N\le a\le J$.
+\end{lemma}
+\begin{proof}
+First let $b>0$ and use $M=bI+xH_-/2+yH_+/2$. For each positive
+outer summand $X$, its pair trace with $bI$ is
+$b\operatorname{Tr}(XM^{-2})$. Select every other Cholesky square
+of $H$ with indices in $[a_0N/4,a_0N/2]$. Their normalized vectors
+$w_j$ have disjoint supports; their pivots and row norms are bounded
+above and below, and there are at least $cN$ of them. Thus
+$X\ge c\sum w_jw_j^*$. On these supports
+$\langle w_j,Mw_j\rangle\le C$. Jensen's inequality for the spectral
+measure of $M$ gives
+$\langle w_j,M^{-2}w_j\rangle\ge C^{-2}$.
+Hence each applicable pair trace is at least $cN$.
+At three positive entries, one phase difference from $b$ is at
+least half their diameter. Equation~\eqref{sa:det-gap} proves the claim.
+
+If $b=0$ and $x,y>0$, the determinant has the exact expansion
+\begin{equation}\label{sa:202}
+ \mathcal D_a(x,0,y)=\beta_a^{-1}
+       \sum_{k=0}^a\left(\frac{S_a}{S_kS_{a-k}}\right)^2x^ky^{a-k},
+                   \qquad\beta_a=S_{2a}/S_a^2.
+\end{equation}
+It follows by substituting the coefficient ratios
+$s_{a-k}^2/s_{k+1}^2$ in the continuant
+\eqref{sa:Jacobi}, with its empty and one-row values.
+For its positive weights the adjacent ratio is
+$R(k)=(x/y)[\sin((a-k)\theta)/\sin((k+1)\theta)]^2$ and
+\[
+ (\log R)'(t)=
+ \frac{-2\theta\sin((a+1)\theta)}
+        {\sin((a-t)\theta)\sin((t+1)\theta)}.
+\]
+The mode stays $cN$ from both ends. This derivative is at most
+$-c/N$ everywhere and has absolute value at most $C/N$ near the mode.
+Multiplication of the ratios bounds the weights above by a Gaussian
+of width $\sqrt N$, and below by a fixed fraction of the modal weight
+on both shells at distances between $\sqrt N$ and $2\sqrt N$.
+The total mass is comparable to $\sqrt N$ times the modal weight.
+Two independent samples from these shells therefore have variance
+at least $cN$. The same variance is the log-radius Hessian of
+\eqref{sa:202}, hence the pair trace in \eqref{sa:det-gap}.
+This proves the remaining case. A one-variable triangle is a monomial
+and is explicitly exempt.
+\end{proof}
+
+\begin{lemma}[Terminal cofactor phase loss]\label{sa:cofactor-gap}
+If two positive triangle faces have separated phases, every required
+$R_{J-k}$, with $k$ fixed, has an exponential angular loss relative
+to its positive value at $u=0$, uniformly for all real $u\in[-4,0]$
+and on a sufficiently thin fixed complex $\delta$ strip.
+\end{lemma}
+\begin{proof}
+We first bound its actual nodes $u_a$, $a\le J-k$. Choose a small
+fixed $\delta_0>0$. For $a/N\ge1/2-\delta_0$, use
+\eqref{sa:node-id} and Lemma~\ref{sa:triangle-gap}; the remaining
+$K$ has nonnegative coefficients and its positive value is bounded
+by its all-monomer product. Both factors are bounded coefficientwise
+by their $u=0$ counterparts, as in Lemma~\ref{lc:nodal-positive}.
+
+For the far nodes $a/N\le1/2-\delta_0$, there is a strict loss even
+without a phase restriction. If $xy>0$, choose $cN$ disjoint pairs
+of steps in $[1/2-\delta_0/2,1/2-\delta_0/4]N$. At $u=0$, replacing
+either selected monomer pair by its dimer multiplies its weight by
+at least a fixed positive constant. The independent choices show
+$K_{a,j}(0)\ge e^{c'N}\prod_{v=a+1}^j s_v^2A$.
+But $K_{a,j}(u_a)$ is bounded by that monomer product. The product
+$K_{a,j}(0)R_a(0)$ is an actual subset of paths in $R_j(0)$,
+so the asserted nodal loss follows.
+If $xy=0,b>0$, write the zero-spectral starts as
+\[
+ W_i=b^i\prod_{r<i}a_r\prod_{v=i+1}^j s_v^2A.
+\]
+At a far node, starts $i>a$ vanish, and starts $i\ge\eta N$ cost
+$\prod_{r<i}(1-a_a/a_r)\le(1-c)^{\eta N}$.
+For small fixed $\eta$, the exact ratio
+$W_{i+1}/W_i=ba_i/(s_{i+1}^2A)$ is at least $1+c$ for
+$i\le2\eta N$. Every remaining short start is consequently
+exponentially below $W_{\lfloor2\eta N\rfloor}$.
+This covers all nonmonomial zero patterns.
+
+The spectral degree of $R_j$ is at most $j$. The full cosine-node
+interpolation on $u_0,\ldots,u_J$ has norm $O(\log N)$ by
+Lemma~\ref{lc:interpolation}. If $j<J$, interpolate instead
+$R_j(u)\prod_{a=j+1}^J(u+a_a)$; its unavailable node values are
+exactly zero. Removing these $k$ factors costs only a polynomial.
+Indeed a degree-$j$ polynomial $p$ has
+$\|p'\|\le C(j+1)^3\|p\|$ by its Chebyshev expansion. On a
+one-sided interval of length $c(j+1)^{-3}$ next to a maximum,
+$|p|\ge\|p\|/2$. Delete small neighborhoods of the $k$ roots,
+of less than half that length. At a remaining point every factor
+has modulus at least $c_k(j+1)^{-3}$. Division costs
+$C_k(j+1)^{3k}$. This works for complex coefficients and clustered roots.
+Thus the nodal loss extends to the whole real interval. Finally,
+for degree $j$,
+\[
+ |p(-4\sin^2\pi\delta)|\le
+       e^{2\pi j|\Im\delta|}\|p\|_{[-4,0]}.
+\]
+This is the exterior maximum principle applied to
+$w^{-j}p(-2-w-w^{-1})$, $|w|=e^{2\pi|\Im\delta|}$.
+A small fixed strip preserves half the loss.
+\end{proof}
+
+Delete the protected vertices $u,v$ from the ordinary graph. It remains
+connected: reroute a path around $u$ along its cyclic link, then around
+$v$ along its link with $u$ removed; the latter is a path or cycle and
+is connected. Every surviving edge is in a triangle with two ordinary
+positive entries. No matched edge is $uv$, so $x+y>0$ in every box.
+Each box has at least one nonmonomial triangle: if an outer variable
+is zero, the other protected variable can kill at most one middle.
+
+The active difference rows $e_f-e_g$ therefore contain a spanning tree
+of the $R$ ordinary vertices. They span the integer lattice
+$\{k\in\mathbb Z^R:\sum k_f=0\}$, not a proper sublattice. Fixing one
+face phase leaves an $(R-1)$-torus with no additional aliases.
+If its phase lies outside any neighborhood of zero, some active pair
+has a separated phase. Every term in \eqref{sa:even}--\eqref{sa:odd}
+contains a terminal cofactor from each triangle. Lemma~\ref{sa:cofactor-gap}
+therefore gives a loss in that term. All other factors obey the
+uniform coefficientwise central or cofactor bound from
+Proposition~\ref{lc:central-comparison} and Lemma~\ref{lc:interpolation}.
+The finitely many central
+prefactors compare to $P_{\mathrm C}(0)$: use
+$R_j(0)\ge s_j^2A R_{j-1}(0)$ and $A^2\ge2P$.
+Consequently, uniformly for every real spectral vector and a thin strip,
+\begin{equation}\label{sa:global-angular}
+ \left|\prod_eP_{\mathrm C,e}(\delta_e;\rho e^{\ii\vartheta})\right|
+ \le e^{-cN}\prod_eP_{\mathrm C,e}(0;\rho)
+\end{equation}
+on the complementary face torus. Polynomial factors have been
+absorbed by decreasing $c$. This proves an estimate for every central
+summand, not a choice of a favorable one.
+

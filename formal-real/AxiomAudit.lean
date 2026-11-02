@@ -25,6 +25,7 @@ import LaurentExpansion
 import OperatorNormalization
 import SineFactor
 import OperatorCoefficientAdapter
+import MeridianSeriesEmbedding
 
 #print axioms VolumeLogic.RealModel.complexMagnitude
 #print axioms VolumeLogic.RealModel.constant_div_nat_rate
@@ -606,3 +607,26 @@ import OperatorCoefficientAdapter
 #print axioms VolumeLogic.OperatorCoefficientAdapter.meridianUnit
 #print axioms VolumeLogic.OperatorCoefficientAdapter.meridianValue_eq_unit
 #print axioms VolumeLogic.OperatorCoefficientAdapter.normalized_characteristic_of_record
+
+#print axioms VolumeLogic.MeridianSeriesEmbedding.meridianSeries_C_mul_T
+#print axioms VolumeLogic.MeridianSeriesEmbedding.meridianSeries_T
+#print axioms VolumeLogic.MeridianSeriesEmbedding.exponential_linear_mul
+#print axioms VolumeLogic.MeridianSeriesEmbedding.meridianSeries_one
+#print axioms VolumeLogic.MeridianSeriesEmbedding.meridianSeries_mul
+#print axioms VolumeLogic.MeridianSeriesEmbedding.meridianRingHom
+#print axioms VolumeLogic.MeridianSeriesEmbedding.meridianRingHom_apply
+#print axioms VolumeLogic.MeridianSeriesEmbedding.meridianSeries_coeff
+#print axioms VolumeLogic.MeridianSeriesEmbedding.meridianSeries_T_coeff
+#print axioms VolumeLogic.MeridianSeriesEmbedding.moment_zero_of_coefficient_zero
+#print axioms VolumeLogic.MeridianSeriesEmbedding.meridianSeries_eq_zero_of_initial_coefficients
+#print axioms VolumeLogic.MeridianSeriesEmbedding.equal_of_initial_coefficients_on_support
+#print axioms VolumeLogic.MeridianSeriesEmbedding.meridianSeries_eq_zero_iff
+#print axioms VolumeLogic.MeridianSeriesEmbedding.meridianSeries_injective
+#print axioms VolumeLogic.MeridianSeriesEmbedding.meridianSeries_C
+#print axioms VolumeLogic.MeridianSeriesEmbedding.meridianAlgHom
+#print axioms VolumeLogic.MeridianSeriesEmbedding.meridianAlgHom_injective
+#print axioms VolumeLogic.MeridianSeriesEmbedding.formalSymbol_eq_map
+#print axioms VolumeLogic.MeridianSeriesEmbedding.formalSymbol_injective
+#print axioms VolumeLogic.MeridianSeriesEmbedding.formalSymbol_ne_zero
+#print axioms VolumeLogic.MeridianSeriesEmbedding.normalized_formalSymbol_ne_zero
+#print axioms VolumeLogic.MeridianSeriesEmbedding.normalized_characteristic_faithful

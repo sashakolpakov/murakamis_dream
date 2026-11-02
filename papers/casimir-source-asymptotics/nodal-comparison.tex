@@ -1,0 +1,108 @@
+\section{Exact nodal control of the central sector}\label{lc:nodal}
+For face polynomials, \(F\coefle G\) means that every coefficient of
+\(G-F\) is nonnegative real. The symbol \(\abscoef F\) replaces each
+coefficient by its modulus. Recall that \(J=\lfloor(N-1)/2\rfloor\).
+The \(J+1\) distinct physical nodes in the \(u\) coordinate are
+\[
+                         u_a=-a_a,\qquad 0\le a\le J.
+\]
+They include zero at odd level, but not at even level.
+
+\begin{lemma}[Nodal positivity and comparison]\label{lc:nodal-positive}
+For every \(0\le j,a\le J\),
+\[
+                    0\coefle R_j(b;u_a)\coefle R_j(b;0).
+\]
+\end{lemma}
+\begin{proof}
+If \(j\le a\), every diagonal factor used in \eqref{lc:R-recurrence}
+lies between zero and its value at \(u=0\); induction proves the claim.
+If \(j>a\), the inhomogeneous term vanishes after row \(a\).
+Every surviving path must visit row \(a\), so
+\[
+                    R_j(b;u_a)=K_{a,j}(u_a)R_a(b;u_a),
+\]
+with $K_{a,j}$ defined in \eqref{sa:path}.
+Normalize \(q_r=K_{a,a+r}/\prod_{v=a+1}^{a+r}s_v^2\).
+For \(r\ge2\), \(j=a+r\le J\), product-to-sum gives
+\[
+ a_{j-1}-a_a=-s_{j+a}s_{j-a-1},\qquad
+ s_js_{j-1}-s_{j+a}s_{j-a-1}=s_as_{a+1}.
+\]
+All the indicated sines are nonnegative. Thus
+\begin{equation}\label{lc:tail-node}
+ q_0=1,\quad q_1=x+y,\quad
+ q_r=(x+y)q_{r-1}-\gamma_rxyq_{r-2},\qquad
+ \gamma_r=1-\frac{s_as_{a+1}}{s_js_{j-1}}\in[0,1].
+\end{equation}
+The identity
+\[
+ q_r-xq_{r-1}
+ =y(q_{r-1}-xq_{r-2})+(1-\gamma_r)xyq_{r-2}
+\]
+proves simultaneous coefficientwise positivity, starting from
+\(q_0=1,q_1-xq_0=y\). Also \(q_r\coefle(x+y)^r\).
+At \(u=0\), the interval continuant contains this all-one-step term
+and other nonnegative terms. Hence \(K_{a,j}(u_a)\coefle K_{a,j}(0)\).
+The product \(K_{a,j}(0)R_a(b;0)\) is the subset of paths in \(R_j(b;0)\)
+whose start is at or below \(a\) and which visit \(a\). This proves
+the assertion without assuming positivity of the signed recurrence.
+\end{proof}
+
+\begin{lemma}[Exact interpolation bound]\label{lc:interpolation}
+An absolute constant \(C\) gives, for \(j\le J\),
+\begin{equation}\label{lc:cofactor-comparison}
+ \abscoef{R_j(b;u)}\coefle C(1+\log N)R_j(b;0),\qquad -4\le u\le0.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Each face coefficient is a polynomial in \(u\) of degree at most
+\(j\le J\). This interpolation is not applied to the degree-\(d\)
+full resolvent. Use \(z=-1-u/2\) and
+\(\phi_k=(2k+1)\pi/N\), \(0\le k<N\).
+For a polynomial \(p(z)\) of degree at most \(J\), discrete Fourier
+inversion gives
+\[
+ p(\cos t)=\frac1N\sum_{k=0}^{N-1}D_J(t-\phi_k)p(\cos\phi_k),
+ \qquad D_J(v)=\sum_{\ell=-J}^Je^{i\ell v}.
+\]
+The difference of any two retained modes has magnitude less than \(N\),
+so its grid average is a Kronecker delta. Pairing equal cosine nodes
+gives ordinary interpolation, with the unpaired point \(-1\) at odd \(N\).
+Since
+\[
+ |D_J(v)|\le\min(2J+1,|\sin(v/2)|^{-1}),
+\]
+the normalized sum of absolute kernel values on any translate of the
+grid is at most \(C(1+\log N)\). The two nearest points cost a constant;
+successive distances \(k/N\) cost at most \(C/k\). Pairing cannot
+increase this bound. Apply it to each coefficient and use
+Lemma~\ref{lc:nodal-positive}.
+\end{proof}
+
+\begin{proposition}[Central polynomial comparison]\label{lc:central-comparison}
+For an absolute \(C\) and every \(N\ge3\),
+\begin{equation}\label{lc:central-coefficientwise}
+ \abscoef{\mathcal P_{\mathrm C}(u)}
+ \coefle C(1+\log N)^2\mathcal P_{\mathrm C}(0),\qquad -4\le u\le0.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Apply \eqref{lc:cofactor-comparison} to the exact central factors.
+The scalar factors \(|u|,|a_{m-1}+u|\) are at most four.
+At even \(N\ge4\),
+\[
+ D_b(0)\coefge s_{m-1}^2(x+y)R_{m-2}(b;0),\qquad (x+y)^2\coefge2xy.
+\]
+The sine is uniformly bounded below. Thus either mixed term
+\(xyD_b(0)R_{m-2}(c;0)\) is bounded coefficientwise by a constant
+times \((x+y)D_b(0)D_c(0)\), already present at zero.
+At odd levels,
+\[
+ G_b(0)\coefge s_m^2(x+y)D_b(0),\qquad
+ G_b(0)G_c(0)\coefge2s_m^4xyD_b(0)D_c(0).
+\]
+Here \(s_m\) is bounded below, including \(N=3\).
+The skipped-middle term is therefore controlled as well.
+\end{proof}
+

@@ -1,0 +1,63 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools}
+\usepackage[a4paper,margin=30mm]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage{xcolor,xurl}
+\usepackage[unicode,colorlinks=true,linkcolor=blue!45!black,urlcolor=blue!55!black,citecolor=green!35!black]{hyperref}
+\setlength{\emergencystretch}{2em}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\coefle}{\preccurlyeq}
+\newcommand{\coefge}{\succcurlyeq}
+\newcommand{\abscoef}[1]{\left|#1\right|_{\rm coef}}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\Rea}{\operatorname{Re}}
+\newcommand{\Loga}{\operatorname{Log}}
+\newcommand{\calQ}{\mathcal Q}
+% Preserve the labels of equations consolidated from the earlier editions.
+\makeatletter
+\newcommand{\aliascurrentequation}[1]{\begingroup\edef\@currentlabel{\theequation}#1\endgroup}
+\makeatother
+\title{Spectral bounds and asymptotics of Casimir sources}
+\author{}\date{}
+\begin{document}\maketitle
+\begin{abstract}
+We study the finite Casimir face polynomial and the coefficients obtained
+by identifying its variables across a diagram. First we prove uniform
+exponential upper bounds for its central and one-sided degree sectors,
+over arbitrary face phases and the entire real spectral interval.
+The bounds are expressed by an explicitly normalized triangle
+variational problem. For a marked triangulated sphere with stationary
+positive face radii, we then prove a nonzero holomorphic Gaussian
+asymptotic for the shared central coefficient, together with a strict
+spectral gap away from zero. The proof combines exact cofactor algebra,
+signed transfer estimates, local analytic summation, and positive-matrix
+bounds on the other face phases. All integer levels, both parities,
+and variables fixed at zero are included. These results supply analytic
+inputs to a filling theorem; they do not estimate the full complementary
+source or identify the limiting action with a hyperbolic volume.
+\end{abstract}
+
+\input{local-bounds.tex}
+\input{finite-cofactors.tex}
+\input{nodal-comparison.tex}
+\input{signed-transfer.tex}
+\input{triangle-action.tex}
+\input{one-sided-envelope.tex}
+\input{face-phases.tex}
+\input{shared-coefficient.tex}
+\input{positive-matrices.tex}
+\input{complex-cofactors.tex}
+\input{angular-gap.tex}
+\input{shared-saddle.tex}
+\input{spectral-gap.tex}
+\input{filling-input.tex}
+\input{references.tex}
+\end{document}

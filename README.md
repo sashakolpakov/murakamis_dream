@@ -204,8 +204,8 @@ separate work.
 
 ## Reading and reproducing the work
 
-The [collection of research papers](papers/README.md) now contains twenty-two
-current drafts totaling 404 pages, ranging from 11 to 29 pages each.
+The [collection of research papers](papers/README.md) now contains twenty-one
+current drafts totaling 403 pages, ranging from 11 to 29 pages each.
 They separate the exact finite
 invariant, coefficient estimates, complex asymptotics and marked
 hyperbolic geometry from the application theorems. The strict
@@ -220,6 +220,12 @@ replace it. The reference contains 93 pages of main text, 266 pages of
 appendices and 15 pages of front matter and references. Its length came
 from collecting several theorem families, repeated setup for separate
 proofs, and alternative constructions in one continuous account.
+
+The local spectral bounds and central-source asymptotics now share a
+25-page paper. It defines their common finite polynomial once, then
+proves the uniform upper bounds and the nonzero central asymptotic in
+separate sections. This removes a repeated prerequisite from later
+papers without merging the two conclusions.
 
 The net-twist and zero-twist reductions now have a separate 15-page
 topological account. The marked nonparabolic representations and preferred
@@ -243,7 +249,7 @@ The open remainder estimate for unchanged general diagrams is not a
 premise of the restricted-family proofs.
 
 The [paper reproduction command](papers/README.md#building-and-reproducing-the-papers)
-runs twenty-five finite check groups. They compare exact matrix and
+runs twenty-two finite check groups. They compare exact matrix and
 polynomial formulas, replay rational certificate inequalities, and check
 normalizations and endpoint pairings. The source Fourier checks retain repeated-root derivatives and endpoint
 terms; the local recurrence checks retain both source components and
@@ -281,7 +287,10 @@ The root-of-unity recurrence calculation now derives the Laurent
 coefficient expansions, literal sine gauge, meridian factors and finite
 equation expansion. From a specified nonzero polynomial coefficient
 record, it removes the common $q-1$ factor and derives a nonzero classical
-symbol and its formal characteristic identity. The actual operator,
+symbol and its formal characteristic identity. The substitution $M=e^u$
+is proved injective on Laurent coefficients by a finite Vandermonde
+argument, so it preserves that nonzero symbol while $L$ remains an
+independent variable. The actual operator,
 its denominator chart, source normalization and nonvanishing, and the
 source-ratio asymptotics remain application inputs. Another theorem
 derives one common nonvanishing threshold and a uniform logarithmic

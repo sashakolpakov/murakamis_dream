@@ -1,0 +1,166 @@
+\section{The normalized triangle action}\label{lc:action}
+For \(b>0\), define
+\begin{equation}\label{lc:F}
+ F_b(\mu,\delta)=\mu\log b+
+ \int_0^\mu\log|a_\delta(t)|\,dt+
+ \int_\mu^{1/2}\log\lambda_\delta(t)\,dt .
+\end{equation}
+When \(b=0\), only \(\mu=0\) is allowed. Use the exact starting-row decomposition \eqref{sa:path}.
+Lemma~\ref{lc:slow-transfer}, \eqref{lc:riemann}, and at most \(N+1\)
+starts give, for \(n=N/2+O(1)\) and \(n\le m\),
+\begin{equation}\label{lc:cofactor-rate}
+ |R_n(b;u)|\le
+ \exp\left\{N\left[\max_{0\le\mu\le1/2}F_b(\mu,\delta)
+                                      +\varepsilon\right]\right\}
+\end{equation}
+uniformly for large \(N\). Replacing \(n/N\) by \(1/2\) costs \(o(N)\),
+since \(\lambda_\delta\) is uniformly positive at \(1/2\).
+
+For \(0\le\delta<1/2\), put \(s=\sin(\pi\delta)\), \(k=\cos(\pi\delta)\),
+and
+\[
+ T_b=\sqrt{bA+P+b^2s^2},\qquad
+ \mathcal D=A^2-4Ps^2,\qquad
+ \mathcal E_b=A+2bs^2+2sT_b.
+\]
+These scalar symbols are distinct from the finite cofactors \(D_b,E_b\).
+The stationary point before the sign change \(t_c=1/2-\delta\) is
+\begin{equation}\label{lc:mu}
+ \mu_b=\frac1\pi\arctan\frac{bk}{T_b},\qquad
+ \sin^2(\pi\mu_b)=\frac{k^2b^2}{(b+x)(b+y)}.
+\end{equation}
+For \(b=0\) set \(\mu_b=0\), and write
+\(Q_b(\delta)=F_b(\mu_b,\delta)\).
+
+\begin{lemma}[Calibration and spectral derivative]\label{lc:action-identity}
+For the allowed nonnegative weights,
+\begin{equation}\label{lc:calibration}
+                       Q_b(0)=\mathcal Q(x,b,y).
+\end{equation}
+For \(0<\delta<1/2\),
+\begin{equation}\label{lc:action-derivative}
+             Q_b'(\delta)=-\log(\mathcal E_b/\sqrt{\mathcal D})\le0.
+\end{equation}
+If \(b=P=0\), the action is the constant \(\frac12\log A\).
+The endpoint and zero-weight cases follow from the exact sole-start
+or one-step formulas and their continuous limits.
+\end{lemma}
+\begin{proof}
+The stationary equation is
+\(b\,a_\delta(\mu)=\lambda_\delta(\mu)\) where \(a_\delta>0\).
+Squaring its positive sides gives \eqref{lc:mu}.
+
+First fix the constant in \eqref{lc:calibration}. For \(0<a<1/2\),
+\[
+ e'(a)=\log\cot(\pi a),\qquad
+ e''(a)=-\frac{\pi}{\sin(\pi a)\cos(\pi a)}<0.
+\]
+At positive weights the entropy maximizer is unique and has loads
+\[
+ a_w=\frac1\pi\arctan\frac{w}{\sqrt{xb+xy+by}},
+                          \qquad w=x,b,y .
+\]
+The tangent addition identity makes their sum \(1/2\), and the
+three constrained derivatives are equal. Hence the derivative
+of \(\mathcal Q(x,b,y)\) with respect to \(\log b\) is
+\(a_b=\mu_b|_{\delta=0}\). The envelope rule gives the same
+derivative for \(F_b(\mu_b,0)\), so their difference is independent
+of \(b>0\). As \(b\to\infty\), both minus \(\frac12\log b\)
+tend to zero. For the entropy this follows also directly from the
+displayed loads: the other loads and their entropy terms tend to zero,
+and their products with \(\log b\) vanish. For the integral,
+\(1/2-\mu_b=O(b^{-1/2})\), the full prefix integral is zero,
+and the remaining logarithmic tails vanish.
+This proves equality without a geometric normalization.
+Zero weights follow by continuity on the constrained faces of
+the load simplex and by the dominated logarithmic integrals.
+
+For the derivative, \(\partial_{\log b}Q_b=\mu_b\), and
+direct differentiation gives
+\[
+ \partial_\delta\mu_b=-\frac{bs}{T_b},\qquad
+ \partial_{\log b}\log(\mathcal E_b/\sqrt{\mathcal D})
+                                      =\frac{bs}{T_b}.
+\]
+Thus \(Q_b'+\log(\mathcal E_b/\sqrt{\mathcal D})\) is independent
+of \(b\). Determine it at \(b=0\), retaining the integration constant.
+For \(P>0\), set \(\lambda=2\sqrt P/A\in(0,1]\).
+Differentiating the sole-start integral and putting
+\(\vartheta=\pi t\) gives
+\[
+ Q_0'=-\lambda^2sk\int_0^{\pi/2}
+ \frac{d\vartheta}{W(\vartheta)(\sin\vartheta+W(\vartheta))},
+ \quad W(\vartheta)=
+       \sqrt{(1-\lambda^2)\sin^2\vartheta+\lambda^2k^2}.
+\]
+Rationalization and \(z=\cos\vartheta\) turn this into
+\[
+ -sk\int_0^1\left\{\frac1{\sqrt{1-z^2}}-
+ \frac1{\sqrt{1-\lambda^2s^2-(1-\lambda^2)z^2}}\right\}
+                                  \frac{dz}{z^2-s^2}.
+\]
+The apparent pole at \(z=s\) is removable. For either term,
+\(B-Cs^2=k^2\), and differentiation verifies
+\[
+ \int\frac{dz}{(z^2-s^2)\sqrt{B-Cz^2}}
+ =\frac1{2sk}\log\left|
+     \frac{kz/\sqrt{B-Cz^2}-s}{kz/\sqrt{B-Cz^2}+s}\right|.
+\]
+Subtract the antiderivatives before evaluating. Their singularities
+at \(z=s\) cancel. At zero both are zero; at one the first tends to
+zero and the second gives the finite remaining term. The result is
+\[
+ Q_0'=-\operatorname{artanh}(\lambda s)
+ =-\log\frac{A+2s\sqrt P}{\sqrt{A^2-4Ps^2}} .
+\]
+This proves \eqref{lc:action-derivative} for all \(b\ge0\).
+When \(P=0\), the exact tail root is \(4A\sin^2(\pi t)\);
+direct differentiation gives the same formula. It also follows by
+dominated convergence as \(P\downarrow0\).
+If \(b=P=0\), the integral is \(\frac12\log A\).
+Finally \(\mathcal E_b\ge\sqrt{\mathcal D}>0\) in the open interval.
+The possible singularity at \(x=y,\delta=1/2\) is logarithmic and
+integrable.
+\end{proof}
+
+\begin{lemma}[The cofactor maximum]\label{lc:cofactor-max}
+For \(b>0\),
+\[
+ \max_{0\le\mu\le1/2}F_b(\mu,\delta)
+                =\max\{Q_b(\delta),\tfrac12\log b\}.
+\]
+For \(b=0\), the sole value is \(Q_0(\delta)\).
+\end{lemma}
+\begin{proof}
+At a regular point, \(\partial_\mu F_b=\log(b|a_\delta|/\lambda_\delta)\).
+Writing \(w=k^2/\sin^2(\pi\mu)\), the ratio is
+\[
+                  \frac{2b|w-1|}{A+\sqrt{(x-y)^2+4Pw}} .
+\]
+Before \(t_c\), \(w\) decreases from infinity to one and this ratio
+strictly decreases from infinity to zero. To check its monotonicity
+for \(w>1\), the positive derivative numerator after cancellation is
+\[
+             A+\frac{(x-y)^2+2Pw+2P}{\sqrt{(x-y)^2+4Pw}} .
+\]
+The case \(P=0\) is immediate. Thus the unique maximum there is
+\(\mu_b\). After \(t_c\) the ratio increases with \(\mu\), so
+every critical point is a minimum. The last endpoint has value
+\(\frac12\log b\) by \eqref{lc:prefix-zero}; the first is below
+the pre-sign-change maximum.
+At \(\delta=1/2\), the ratio is the constant \(b/\max(x,y)\),
+and the endpoint values prove the assertion. The continuous limit is
+\(Q_b(1/2)=\frac12\log\max(x,y)\).
+\end{proof}
+
+At \(\delta=0\), these lemmas and
+\(\mathcal Q(x,b,y)\ge\frac12\log b\) imply
+\[
+ R_{N/2+O(1)}(b;0)
+                  \le\exp\{N(\mathcal Q(x,b,y)+\varepsilon)\}.
+\]
+Use this in the exact central factorization at zero. The scalar
+coefficients and face monomials are bounded on each fixed compact.
+Proposition~\ref{lc:central-comparison} then proves the central
+part of Theorem~\ref{lc:main}, including arbitrary face phases.
+

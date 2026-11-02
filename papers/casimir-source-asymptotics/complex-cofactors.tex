@@ -1,0 +1,238 @@
+\section{Fixed complex cofactor neighborhoods}\label{sa:packets}
+We next prove the local analytic input for the actual polynomial,
+independently of its nodal samples. Positive face entries range in a
+fixed compact set; each zero entry stays zero. Write $n=N/2+O(1)$,
+$n\le\lfloor N/2\rfloor$, for any terminal row used in
+\eqref{sa:even}--\eqref{sa:odd}.
+Throughout this section $x+y>0$, as proved for every actual pair in
+Section~\ref{cs:shared}. The entropy in \eqref{sa:entropy} also allows the different
+singleton $(0,b,0)$, but that singleton is not an admissible cofactor
+chart here.
+
+\begin{proposition}[Actual local logarithms]\label{sa:local-log}
+Assume $x,y,b\ge0$ and $x+y>0$ at the real reference.
+On a fixed sufficiently small complex $u$ disk and fixed complex
+logarithmic neighborhood of the positive faces, every nonzero
+$R_n(b,u)$ is zero-free for all large $N$. Its logarithm, continued
+from positive faces at $u=0$, satisfies
+\begin{equation}\label{sa:log-limit}
+ N^{-1}\Loga R_n(b,u)\longrightarrow\psi_b(u)
+\end{equation}
+locally uniformly, with every fixed parameter derivative. The limit is
+\begin{align}
+ \psi_b(u)&=\phi(t_b(u);u),\notag\\
+ \phi(t;u)&=t\Loga b+\int_0^t\Loga(4\cos^2\pi v+u)\,dv
+                         +\int_t^{1/2}\Loga\lambda(v,u)\,dv,
+                                                       \label{sa:phase}\\
+ \lambda(v,u)&=2\sin\pi v\left[A\sin\pi v+
+       \sqrt{(x-y)^2\sin^2\pi v+(4+u)P}\right],\notag\\
+ \sin^2\pi t_b(u)&=\frac{(1+u/4)b^2}{(b+x)(b+y)}.\notag
+\end{align}
+For $b=0$, the expression means $\int_0^{1/2}\Loga\lambda$;
+the sole-variable case is the exact monomer product.
+All branches continue their positive values at $u=0$.
+\end{proposition}
+
+\subsection{An interior starting row}
+Suppose $b>0$. The starting saddle $t_b(0)$ lies strictly between
+zero and $1/2$. Choose $0<\ell<t_b(0)<r<1/2$ with fixed margins,
+uniformly over the face compact. On a complex neighborhood of
+$[\ell,1/2]$, the recurrence for $K$ has coefficients
+\[
+ p(t)=4\sin^2(\pi t)A,\qquad
+ q(t,h)=4\sin(\pi t)\sin(\pi(t-h))
+                      [4\cos^2(\pi(t-h/2))+u]P,
+                         \quad h=N^{-1}.
+\]
+Its dominant characteristic root is a unit, and the ratio of the
+other root to it has modulus at most $\kappa<1$. This remains true
+on fixed sufficiently small complex parameter neighborhoods. A zero
+upper diagonal can annihilate the smaller root and causes no problem.
+If $P=0$ the recurrence is first order.
+
+Here are the needed analytic error estimates. Starting with the
+characteristic root, iterate
+\[
+ r_{k+1}(t)=p(t)+q(t,h)/r_k(t-h)
+\]
+on nested rectangles, advancing their left margins by $h$. On an
+$O(h)$ neighborhood of the root, translation changes the root by
+$O(h)$ and the derivative in the denominator has modulus at most
+$\kappa'<1$. After $\lfloor cN\rfloor$ steps, with $c$ smaller than
+the original margin, the resulting analytic unit $r_N$ satisfies
+\begin{equation}\label{sa:riccati}
+ r_N(t)-p(t)-q(t,h)/r_N(t-h)=O(e^{-c_1N}),\qquad
+                         r_N(t)=\lambda(t,u)+O(h).
+\end{equation}
+One extra shifted rectangle is retained for the residual. The contraction
+is between nested domains; no translation-invariant analytic norm is
+assumed. The constants and Cauchy derivative bounds are uniform.
+
+Divide the actual $K_{i,j}$ by $\prod_{v=i+1}^j r_N(vh)$. In the
+zero-residual recurrence its consecutive differences multiply by
+$-k_N(jh)$, where
+$k_N(t)=q(t,h)/(r_N(t)r_N(t-h))$ has modulus at most $\kappa'$.
+The actual initial data $K_{i,i}=1,K_{i,i-1}=0$ consequently give
+\begin{align}
+ K_{i,n}&=a_N(ih)\prod_{v=i+1}^n r_N(vh)(1+O(e^{-c_2N})),
+                                                       \label{sa:tail-packet}\\
+ a_N(t)&=\sum_{l=0}^{\lfloor c_3N\rfloor}
+                  (-1)^l\prod_{v=1}^l k_N(t+vh).
+\end{align}
+The omitted geometric tail is exponential; $a_N$ tends to
+$(1+k_0(t))^{-1}$, a positive unit. The residual in
+\eqref{sa:riccati} adds $O(Ne^{-c_1N})$ by the same difference
+recurrence. This proves \eqref{sa:tail-packet} for every actual start
+$i/N\in[\ell,r]$, with its physical terminal row.
+
+Both logarithmic products in \eqref{sa:path} admit exponentially
+accurate analytic primitives on this starting interval. For clarity,
+the Euler--Maclaurin formula with its periodic Bernoulli remainder
+\cite[\S2.10(i)]{DLMF} gives, after $2K$ derivatives, the bound
+\[
+ C h^{2K-1}\frac{(2K)!}{(2\pi d_0)^{2K}}
+                   \le C h^{-1}(C_0Kh)^{2K}
+\]
+on a retained strip of width $d_0$. The midpoint formula obeys the
+same estimate. It follows from the periodic Bernoulli remainder and
+Cauchy's derivative bound; choose $K=\lfloor c_0/h\rfloor$ with
+$C_0c_0<1$. Anchor the prefix at zero and the tail at the actual
+$n/N$. Thus each starting term is
+$a_N(i/N)e^{N\phi_N(i/N)}(1+O(e^{-c_4N}))$, with analytic finite
+$\phi_N$ converging with derivatives to \eqref{sa:phase}.
+All endpoint half terms are retained in $\phi_N$.
+
+The omitted starts have a fixed rate loss at positive faces and $u=0$.
+Indeed Lemmas~\ref{lc:slow-transfer} and~\ref{lc:cofactor-max} give the uniform interval
+upper bound for \eqref{sa:path}, and its action has its unique strict
+maximum at $t_b(0)$. This loss persists on a fixed small complex
+parameter neighborhood. One direct quantitative check is to bound
+each unused diagonal by $a_j+|u|$. The product over distinct used
+lower rows costs at most $\exp\{N\omega(|u|)+O(\log N)\}$, with
+$\omega(v)\to0$: split rows where $a_j\le\sqrt v$ (at most
+$O(Nv^{1/4})+O(1)$), and use $\log(1+v/a_j)\le\sqrt v$ on the
+others; the endpoint log sum on the first set is integrable and
+$O(Nv^{1/4}|\log v|)+O(\log N)$.
+The odd cofactor never uses its central zero diagonal. A logarithmic
+face perturbation costs $e^{C\rho N}$ by homogeneous degree. Choose
+these neighborhoods smaller than the fixed starting-row loss.
+
+We record why the discrete saddle is a contributing one. Surround the
+kept integer grid by a rectangle with vertical sides on half-grid
+lines. For $w_N(t)=a_N(t)e^{N\phi_N(t)}$, residues give exactly
+\begin{equation}\label{sa:cot}
+ \sum_iw_N(i/N)=\frac{N}{2\ii}\oint\cot(\pi Nz)w_N(z)\,dz.
+\end{equation}
+On the upper and lower sides at fixed height $\eta$ the cotangent is
+$\mp\ii+O(e^{-2\pi\eta N})$; on the vertical sides its modulus is
+at most one. The latter retain the endpoint rate loss. The horizontal
+phase cost at the real reference is $O(\eta^2N)$, so choose $\eta$
+first with $2\pi\eta>C\eta^2$, then choose the parameter neighborhood.
+Cauchy's theorem compares \eqref{sa:cot} with $N$ times the actual
+integral, retaining exponentially smaller vertical currents.
+The holomorphic implicit function theorem gives its saddle $t_N$.
+Deforming to the horizontal line through $t_N$, with the same
+endpoint currents, and rescaling by $N^{-1/2}$ yields
+\begin{equation}\label{sa:interior-packet}
+ R_n=\frac{\sqrt{2\pi N}\,a_N(t_N)e^{N\phi_N(t_N)}}
+                  {\sqrt{-\phi_N''(t_N)}}(1+O(N^{-1})).
+\end{equation}
+The cubic Gaussian term integrates to zero; its square and the
+quartic term are $O(N^{-1})$. Exponential interpolation errors remain
+relative errors after the neighborhood is decreased once more.
+Uniform holomorphy gives the fixed derivative bounds. This proves
+zero exclusion and \eqref{sa:log-limit} for $b>0$.
+
+\subsection{A protected middle variable}
+If $b=0$ and $xy>0$, only start zero remains, so it must not be
+discarded by the preceding interior argument. Set $L_j=R_j/S_j$.
+Exactly,
+\[
+ \binom{L_j}{L_{j-1}}=T_h(jh)\binom{L_{j-1}}{L_{j-2}},\qquad
+ T_h(t)=\begin{pmatrix}2\sin(\pi t)A&P[4\cos^2(\pi(t-h/2))+u]\\1&0\end{pmatrix}.
+\]
+The initial vector is $(1,0)^{\mathsf T}$.
+Let $\lambda_\pm(t)$ be the two roots and $g=\lambda_+-\lambda_-$.
+The real discriminant at $h=u=0$ is
+$4\sin^2(\pi t)A^2+16\cos^2(\pi t)P>0$ on $[0,1/2]$.
+Thus $g$ and $\lambda_+$ are units on a fixed complex neighborhood.
+The ratio $r=\lambda_-/\lambda_+$ equals $-1$ at zero, while
+$r'(0)=2\pi A/\lambda_+(0)$ has positive real part. By compactness,
+\[
+ |r(t)|\le e^{-ct}\quad(0\le t\le1/2),\qquad |1-r(t)|\ge c.
+\]
+The equality of moduli at the initial point is not an eigenvalue
+collision.
+
+In the eigenbasis $E(t)=\bigl(\begin{smallmatrix}\lambda_+&\lambda_-\\1&1\end{smallmatrix}\bigr)$,
+let $B_j=E(jh)^{-1}E((j-1)h)$ and
+$C_j=(B_j)_{++}=(\lambda_+((j-1)h)-\lambda_-(jh))/g(jh)$.
+Divide out $\prod_{j=1}^n\lambda_+(jh)C_j$. The update is
+$\operatorname{diag}(1,d_j)+F_j$, with off-diagonal $F_j=O(h)$,
+$F_j'=O(h)$, $|1-d_j|\ge c$, and
+$|d_j|\le e^{Ch-cjh}$.
+Conjugate by $I+X_j$, where its two off-diagonal entries solve
+$\operatorname{diag}(1,d_j)X_j-X_j\operatorname{diag}(1,d_j)=-F_j$.
+Then $X_j=O(h)$ and $X_j-X_{j-1}=O(h^2)$, so the new error is
+$O(h^2)$. All partial products are bounded by $e^{Cnh}$; telescoping
+gives an $O(h)$ total error. The negative diagonal product is
+$O(e^{-c'N})$ for $n/N$ bounded away from zero.
+The initial eigenbasis coordinates are exactly $(1/g(0),-1/g(0))$.
+Inverting the final basis proves
+\begin{equation}\label{sa:protected-packet}
+ R_n=\frac{\lambda_+(nh)}{g(0)}
+      \prod_{j=1}^n\bigl[s_j\lambda_+(jh)C_j\bigr](1+O(N^{-1})).
+\end{equation}
+Its amplitude is a uniformly bounded unit, since $C_j=1+O(h)$.
+Riemann sums, with the integrable initial $\log\sin$ term, prove
+\eqref{sa:log-limit}; the analytic relative estimate gives all fixed
+derivatives. If $b=0,xy=0$, the exact answer is
+$R_n=A^n\prod_{j=1}^ns_j^2$, independent of $u$.
+This completes Proposition~\ref{sa:local-log}.
+
+\subsection{The exact central interpolant and its action}
+The terminal ratios in both proofs tend uniformly to
+\[
+ \frac{R_n}{R_{n-1}}\longrightarrow
+       \lambda_*=2\{A+\sqrt{A^2+uP}\}.
+\]
+For interior starts the terminal forcing is separated from their
+saddle and exponentially smaller; for a protected start it follows
+directly from \eqref{sa:protected-packet}.
+Consequently the exact central factors satisfy
+\begin{equation}\label{sa:central-unit}
+ \frac{P_{\mathrm C}}{D_bD_c}\longrightarrow4\sqrt{A^2+uP} (N\text{ even}),
+ \qquad
+ \frac{P_{\mathrm C}}{G_bG_c}\longrightarrow
+           \frac{2\sqrt{A^2+uP}}{A+\sqrt{A^2+uP}} (N\text{ odd}).
+\end{equation}
+These are units near zero, including one-outer-zero cases.
+Define the exact holomorphic interpolation
+\begin{equation}\label{sa:exact-B}
+ \mathcal B_N(\delta;L)=N^{-2}P_{\mathrm C}(u(\delta);L).
+\end{equation}
+It is zero-free on a fixed chart, is separately even in $\delta$,
+and is positive on its sufficiently small real positive-face chart.
+Its physical maximal-fold value is exactly \eqref{sa:anchor}/$N^2$.
+Its logarithm is therefore fixed without a fitted scalar. Equations
+\eqref{sa:log-limit} and \eqref{sa:central-unit} show
+\begin{equation}\label{sa:B-limit}
+ N^{-1}\Loga\mathcal B_N(\delta;L)
+                \longrightarrow Q_b(\delta;L)+Q_c(\delta;L),
+\end{equation}
+with fixed derivatives. Lemma~\ref{lc:action-identity} gives the absolute
+normalization and derivative
+\begin{align}
+ Q_b(0)&=\calQ(x,b,y),\notag\\
+ Q_b'(\delta)&=-\Loga\frac{\mathcal E_b(\delta)}{\sqrt{\mathcal D(\delta)}},
+ \quad\mathcal D=A^2-4P\sin^2\pi\delta,\label{sa:Q-derivative}\\
+ \mathcal E_b(\delta)&=A+2b\sin^2\pi\delta
+       +2\sin\pi\delta\sqrt{bA+P+b^2\sin^2\pi\delta}.\notag
+\end{align}
+That lemma proves its additive constant directly from the real
+cofactor action, using the entropy derivatives and the $b\to\infty$
+limit; it makes no volume normalization. Its formula on a real
+interval equals the limit \eqref{sa:phase}, and the identity theorem
+therefore supplies the same holomorphic branch in \eqref{sa:B-limit}.
+The constant triangle has $Q_b=\tfrac12\log A$.
+

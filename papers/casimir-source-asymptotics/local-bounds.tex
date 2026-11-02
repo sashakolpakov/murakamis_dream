@@ -1,0 +1,137 @@
+\section{Local polynomials and the two asymptotic questions}\label{cs:introduction}
+A Casimir source is a homogeneous polynomial obtained from a finite
+matrix operator associated with a pair of strands. A diagram combines
+these local polynomials by identifying their face variables and extracting
+one coefficient. There are two different analytic questions. First, how
+large can a local polynomial be over all face phases and the full real
+spectral interval? Second, does the shared coefficient have a nonzero
+leading term, and can one bound the rest of its spectral domain?
+
+We answer the first question for each of the three degree sectors of the
+local polynomial. For the second question we select the central sector
+at every matched edge of a triangulated sphere and assume that the
+associated triangle variational problem has stationary positive radii.
+Theorem~\ref{lc:main} gives the local upper bounds;
+Theorem~\ref{sa:main} gives a holomorphic Gaussian asymptotic for the
+shared central coefficient and a strict spectral gap away from zero.
+Their hypotheses and conclusions are kept separate. In particular, the
+second theorem does not estimate the complementary degree sectors.
+
+The proofs start with exact finite cofactor identities. Signed transfer
+matrices and logarithmic integrals give the uniform local bounds.
+For the nonzero asymptotic, Euler--Maclaurin summation with Cauchy
+estimates constructs local analytic actions, and a contour deformation
+selects their contributing Gaussian. Positive finite matrices then
+control the other face phases before a common coefficient is extracted.
+The one-variable summation and saddle formulas are recorded in
+\cite[\S2.10(i), \S2.4(iv)]{DLMF}; the uniform errors, contour
+contribution, and shared multivariable Gaussian are proved below.
+
+The variables of a local face polynomial have a prescribed order:
+\(x,y\) are the outer variables, \(b\) the input middle variable, and
+\(c\) the output middle variable. Variables shared by different boxes
+must later be identified. This paper estimates one actual polynomial
+before that shared extraction. The estimates hold for all phases of
+the four variables, rather than only at their positive real values.
+
+Fix an integer \(N\ge3\), and put
+\[
+ d=N-1,\quad m=\lfloor N/2\rfloor,\quad J=\lfloor d/2\rfloor,\quad
+ \theta=\pi/N,\quad q=e^{i\theta},\quad Q=q^2.
+\]
+The finite Fourier theorem in \cite[Proposition 4.1 and
+equations (4.4)--(4.5)]{FinitePaper} identifies the physical pair Casimir
+\(\Omega\), one \(N\)-dimensional residue block at a time, with the
+polynomial operator specified in Section~\ref{lc:source}. The identification
+uses a finite Fourier transform, a transpose and a diagonal change of basis;
+it is stated precisely below. It also proves \(\chi_N(\Omega)=0\), where
+\(\chi_N(z)=2T_N(z/2)+2\) and \(T_N(\cos t)=\cos Nt\).
+The full resolvent numerator is the polynomial
+\[
+ V_N(\sigma;\Omega)
+       =\frac{\chi_N(\sigma)-\chi_N(\Omega)}{\sigma-\Omega}.
+\]
+The fraction is polynomial division, not an inverse at a spectral root.
+Its degree in \(\sigma\) is \(d\); it retains the first derivatives at
+double roots as well as the values at distinct roots.
+
+Write \(H_V(x,b,c,y;\sigma)\) for its homogeneous face polynomial.
+Section~\ref{lc:source} gives a division-free definition and fixes its
+sign. A decreasing path from row \(j\) to row \(i\) contributes the
+middle monomial \(b^ic^{d-j}\). When \(N=2m\), its central sector
+has \(i\le m-1,j\ge m\); when \(N=2m+1\), it has \(i\le m,j\ge m\).
+The left sector has \(j<m\); the right consists of the remaining
+paths above the central cut. Denote these three polynomials by
+\(H_{V,\mathrm C},H_{V,\mathrm L},H_{V,\mathrm R}\).
+This is a partition of the full numerator paths, not a new spectral
+operator.
+
+Set
+\[
+ \mathcal B(t)=-\int_0^t\log|2\sin v|\,dv,\qquad
+ e(a)=\frac{\mathcal B(\pi a)+\mathcal B(\pi/2-\pi a)}{\pi},
+ \quad 0\le a\le\tfrac12.
+\]
+For nonnegative \(w_1,w_2,w_3\), not all zero, define
+\begin{equation}\label{lc:entropy}
+ \mathcal Q(w_1,w_2,w_3)=
+ \max_{\substack{a_i\ge0,\ \sum_i a_i=1/2\\a_i=0\ {\rm if}\ w_i=0}}
+ \left\{\sum_i e(a_i)+\sum_{w_i>0}a_i\log w_i\right\}.
+\end{equation}\aliascurrentequation{\label{sa:entropy}}
+A variable fixed at zero has exactly zero load. It is never replaced
+silently by a small positive radius. The logarithmic integrals are
+finite at their endpoints. To fix their normalization, put
+\(I=\int_0^{\pi/2}\log\sin t\,dt\). Reflection and the double-angle
+formula give \(2I=I-(\pi/2)\log2\). Hence
+\(\mathcal B(0)=\mathcal B(\pi/2)=0\), and \(e(0)=e(1/2)=0\).
+
+In the theorem the lowercase letters denote nonnegative moduli.
+For \(x+y>0\), put
+\begin{equation}\label{lc:rates}
+\begin{aligned}
+ Q_b&=\mathcal Q(x,b,y),&Q_c&=\mathcal Q(x,c,y),&X&=Q_b+Q_c,\\
+ A_{\mathrm L}&=\max\{\log c,Q_b+\tfrac12\log c\}&&(c>0),\\
+ A_{\mathrm R}&=\max\{\log b,Q_c+\tfrac12\log b\}&&(b>0).
+\end{aligned}
+\end{equation}
+If \(c=0\), the left polynomial is zero and its rate is interpreted
+as \(-\infty\); the same convention applies on the right when \(b=0\).
+
+\begin{theorem}[Uniform local sector bounds]\label{lc:main}
+Fix nonnegative face moduli \((x,b,c,y)\) with \(x+y>0\). For
+\(s=\mathrm C,\mathrm L,\mathrm R\),
+\begin{equation}\label{lc:main-rate}
+ \limsup_{N\to\infty}\frac1N
+ \log\sup_{\substack{\sigma\in[-2,2]\\
+ |X_0|=x,\ |B_0|=b,\ |C_0|=c,\ |Y_0|=y}}
+ |H_{V,s}(X_0,B_0,C_0,Y_0;\sigma)|
+ \le
+ \begin{cases}
+ X&s=\mathrm C,\\
+ A_{\mathrm L}&s=\mathrm L,\\
+ A_{\mathrm R}&s=\mathrm R.
+ \end{cases}
+\end{equation}
+The limit superior is over all integer levels, including both parities
+and composite levels. The statement is uniform when the zero pattern
+is fixed and every nonzero modulus varies in a fixed compact subset
+of \((0,\infty)\). Thus, for every \(\varepsilon>0\), there is one
+threshold \(N_0\) on such a compact set for which the indicated rate
+plus \(\varepsilon\) bounds the normalized logarithm at every \(N\ge N_0\).
+\end{theorem}
+
+The supremum precedes the limit, so sampled spectral zeros are included.
+The proof never divides a finite numerator by such a zero, and never
+replaces a negative tail coefficient by its absolute value inside the
+recurrence.
+
+The admissible vertex with load \(1/2\) on \(b\) gives
+\begin{equation}\label{lc:spectator}
+ \mathcal Q(x,b,y)\ge\tfrac12\log b\quad(b>0),\qquad
+ \max\{X,A_{\mathrm L},A_{\mathrm R}\}=\max\{X,\log b,\log c\},
+\end{equation}
+with undefined logarithms omitted. Each mixed expression in
+\eqref{lc:rates} is at most \(X\). This bounds the full local polynomial. A shared coefficient must still
+be estimated at one common set of face radii, because the same variable
+can occur in several local factors.
+

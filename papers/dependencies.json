@@ -204,7 +204,7 @@
       "id": "finite_filling_norm",
       "title": "Uniform full-Hermite filling norm and grid refinements",
       "group": "finite_spectral",
-      "statement": "For every integer crossing power n and level N ≥ 2, the filling functional has norm at most 1 + |n|/2 on polynomials of degree at most N − 1. Vanishing at every spectral node improves the bound to (N − 1)/N. Corresponding multivariable estimates retain separate degree bounds, with an improvement for vanishing on the product grid. This theorem assumes no diagram-evaluation identity.",
+      "statement": "For every integer crossing power n and level N \u2265 2, the filling functional has norm at most 1 + |n|/2 on polynomials of degree at most N \u2212 1. Vanishing at every spectral node improves the bound to (N \u2212 1)/N. Corresponding multivariable estimates retain separate degree bounds, with an improvement for vanishing on the product grid. This theorem assumes no diagram-evaluation identity.",
       "sources": [
         {
           "path": "papers/filling-bounds/main.tex",
@@ -294,7 +294,7 @@
       "id": "finite_global_source",
       "title": "Exact marked general-Morse coefficient source",
       "group": "diagram_evaluation",
-      "statement": "For level N ≥ 3, take a connected ordered matched spherical diagram in which each matched triangle pair is a quadrilateral with four distinct vertices. With the full polynomial operators, the prescribed turns and one reduced mark, the contraction equals the stated extraction of ordinary face powers after setting the two marked-face variables to zero. The proof retains integer degree bounds, parity shifts and winding numbers. Individual projected terms are not claimed to be invariant under changing the mark.",
+      "statement": "For level N \u2265 3, take a connected ordered matched spherical diagram in which each matched triangle pair is a quadrilateral with four distinct vertices. With the full polynomial operators, the prescribed turns and one reduced mark, the contraction equals the stated extraction of ordinary face powers after setting the two marked-face variables to zero. The proof retains integer degree bounds, parity shifts and winding numbers. Individual projected terms are not claimed to be invariant under changing the mark.",
       "sources": [
         {
           "path": "papers/filling-bounds/sections/diagram-evaluation.tex",
@@ -549,19 +549,19 @@
       "statement": "For the actual simple-sphere Morse source, the surviving ordinary graph is connected, the common-scale quotient has dimension R-1, the face-difference lattice is primitive, and the complete shared face critical point has positive Hessian on that quotient. Matching outer pairs cannot be the protected pair, so each factor has a nonmonomial triangle.",
       "sources": [
         {
-          "path": "papers/source-asymptotics/main.tex",
+          "path": "papers/casimir-source-asymptotics/shared-coefficient.tex",
           "anchor": "\\label{sa:stationarity}"
         },
         {
-          "path": "papers/source-asymptotics/main.tex",
+          "path": "papers/casimir-source-asymptotics/shared-saddle.tex",
           "anchor": "\\label{sa:laplacian}"
         },
         {
-          "path": "papers/source-asymptotics/main.tex",
+          "path": "papers/casimir-source-asymptotics/shared-saddle.tex",
           "anchor": "\\label{sa:Psi}"
         },
         {
-          "path": "papers/source-asymptotics/main.tex",
+          "path": "papers/casimir-source-asymptotics/shared-saddle.tex",
           "anchor": "\\label{sa:AH}"
         }
       ],
@@ -579,7 +579,7 @@
           "reason": "After differentiating the entropy, connected positive conductances make the grounded face Hessian positive definite."
         }
       ],
-      "article": "source-asymptotics"
+      "article": "casimir-source-asymptotics"
     },
     {
       "id": "analytic_fold_interpolation",
@@ -623,15 +623,15 @@
       "statement": "Exact cofactor interpolation and determinant contraction give a strict angular loss off the primitive shared angular saddle. The monomial-triangle exception is handled by the connected ordinary graph and at least one nonmonomial triangle at every crossing.",
       "sources": [
         {
-          "path": "papers/source-asymptotics/main.tex",
+          "path": "papers/casimir-source-asymptotics/angular-gap.tex",
           "anchor": "\\label{sa:triangle-gap}"
         },
         {
-          "path": "papers/source-asymptotics/main.tex",
+          "path": "papers/casimir-source-asymptotics/angular-gap.tex",
           "anchor": "\\label{sa:cofactor-gap}"
         },
         {
-          "path": "papers/source-asymptotics/main.tex",
+          "path": "papers/casimir-source-asymptotics/angular-gap.tex",
           "anchor": "\\label{sa:global-angular}"
         }
       ],
@@ -645,7 +645,7 @@
           "reason": "Supplies the finite coefficientwise comparison and nodal interpolation used to extend the positive determinant phase loss to every real spectrum."
         }
       ],
-      "article": "source-asymptotics"
+      "article": "casimir-source-asymptotics"
     },
     {
       "id": "analytic_morse_h1",
@@ -654,19 +654,19 @@
       "statement": "The common face coefficient has a nonzero Gaussian packet with finite holomorphic action A_N, face Hessian H_N, exact raw sign and N^(2R) factor, and a relative O(1/N) error on a fixed complex spectral chart. Its limiting action is even in every spectral variable and has strictly negative diagonal spectral Hessian at the complete point. The current direct proof defines A_N from the exact normalized polynomial; the archived fold-interpolation route is an alternative, not an additional required premise.",
       "sources": [
         {
-          "path": "papers/source-asymptotics/main.tex",
+          "path": "papers/casimir-source-asymptotics/shared-coefficient.tex",
           "anchor": "\\label{sa:main}"
         },
         {
-          "path": "papers/source-asymptotics/main.tex",
+          "path": "papers/casimir-source-asymptotics/shared-coefficient.tex",
           "anchor": "\\label{sa:H1}"
         },
         {
-          "path": "papers/source-asymptotics/main.tex",
+          "path": "papers/casimir-source-asymptotics/shared-saddle.tex",
           "anchor": "\\label{sa:saddle}"
         },
         {
-          "path": "papers/source-asymptotics/main.tex",
+          "path": "papers/casimir-source-asymptotics/complex-cofactors.tex",
           "anchor": "\\label{sa:exact-B}"
         }
       ],
@@ -684,7 +684,7 @@
           "reason": "Bounds the complementary shared Cauchy torus, so the local Gaussian has coefficient one."
         }
       ],
-      "article": "source-asymptotics"
+      "article": "casimir-source-asymptotics"
     },
     {
       "id": "analytic_signed_interval_transfer",
@@ -693,11 +693,11 @@
       "statement": "For the explicit local banded source, the signed interval continuant has a uniform upper rate given by the integral of its limiting spectral radius, including coincident roots and the endpoint t=0. The complete triangle action equals the entropy maximum with its absolute constant fixed. This is an upper estimate, not a nonzero asymptotic.",
       "sources": [
         {
-          "path": "papers/local-coefficients/main.tex",
+          "path": "papers/casimir-source-asymptotics/signed-transfer.tex",
           "anchor": "\\label{lc:slow-transfer}"
         },
         {
-          "path": "papers/local-coefficients/main.tex",
+          "path": "papers/casimir-source-asymptotics/triangle-action.tex",
           "anchor": "\\label{lc:action-identity}"
         }
       ],
@@ -707,7 +707,7 @@
           "reason": "Identifies the exact physical banded operator to which the written recurrence argument is applied."
         }
       ],
-      "article": "local-coefficients"
+      "article": "casimir-source-asymptotics"
     },
     {
       "id": "analytic_cross_spectral_gap",
@@ -716,15 +716,15 @@
       "statement": "The exact starting-row recurrence admits a uniform slow-transfer upper bound and prefix maximum. Away from the complete fold its optimized rate drops strictly for each nonmonomial triangle; this is a central-cofactor statement, not a bound for the full numerator.",
       "sources": [
         {
-          "path": "papers/source-asymptotics/main.tex",
+          "path": "papers/casimir-source-asymptotics/spectral-gap.tex",
           "anchor": "\\label{sa:real-upper}"
         },
         {
-          "path": "papers/source-asymptotics/main.tex",
+          "path": "papers/casimir-source-asymptotics/spectral-gap.tex",
           "anchor": "\\label{sa:spectral}"
         },
         {
-          "path": "papers/local-coefficients/main.tex",
+          "path": "papers/casimir-source-asymptotics/triangle-action.tex",
           "anchor": "\\label{lc:cofactor-max}"
         }
       ],
@@ -734,7 +734,7 @@
           "reason": "Supplies the uniform signed recurrence bound and normalized triangle action; the separated-gap argument additionally compares its spectral derivative and endpoint alternative."
         }
       ],
-      "article": "source-asymptotics"
+      "article": "casimir-source-asymptotics"
     },
     {
       "id": "analytic_morse_h2",
@@ -743,15 +743,15 @@
       "statement": "On the entire real spectral cube outside any fixed complete-fold neighborhood, the original shared central coefficient has a strict exponential gap below Phi; the gap persists on a fixed thin complex strip and for each fixed derivative. Constants depend on the fixed diagram and neighborhood.",
       "sources": [
         {
-          "path": "papers/source-asymptotics/main.tex",
+          "path": "papers/casimir-source-asymptotics/shared-coefficient.tex",
           "anchor": "\\label{sa:H2}"
         },
         {
-          "path": "papers/source-asymptotics/main.tex",
+          "path": "papers/casimir-source-asymptotics/spectral-gap.tex",
           "anchor": "\\label{sa:spectral}"
         },
         {
-          "path": "papers/source-asymptotics/main.tex",
+          "path": "papers/casimir-source-asymptotics/spectral-gap.tex",
           "anchor": "\\label{sa:Poisson}"
         }
       ],
@@ -769,7 +769,7 @@
           "reason": "Retains original common targets and spectral polynomial degrees needed for strip and derivative bounds."
         }
       ],
-      "article": "source-asymptotics"
+      "article": "casimir-source-asymptotics"
     },
     {
       "id": "analytic_conditional_filling",
@@ -905,7 +905,7 @@
       "statement": "For the original simple-sphere Morse source and each fixed sufficiently long signed filling tuple satisfying the original knot qualification, the entire central Fourier-Hermite period has the displayed nonzero first-charge asymptotic, exact chirp and parity cancellation, Gaussian power N^(R+1/2), finite action and exponentially smaller other charges. This theorem alone concerns the central contribution, not the full invariant.",
       "sources": [
         {
-          "path": "papers/source-asymptotics/main.tex",
+          "path": "papers/casimir-source-asymptotics/filling-input.tex",
           "anchor": "\\label{sa:export}"
         },
         {
@@ -943,7 +943,7 @@
           "reason": "Verifies the required shared global spectral gap; it is not inferred from local factor bounds."
         }
       ],
-      "article": "source-asymptotics"
+      "article": "casimir-source-asymptotics"
     },
     {
       "id": "geo_morse_deformed_pattern",
@@ -1173,11 +1173,11 @@
       "statement": "Combining the nonzero entire central period with the primitive metric calibration identifies its rate with the actual filled knot-complement volume at both parities. A separate whole complementary-source estimate is still required before concluding the full invariant has that rate.",
       "sources": [
         {
-          "path": "papers/source-asymptotics/main.tex",
+          "path": "papers/casimir-source-asymptotics/filling-input.tex",
           "anchor": "\\label{sa:export}"
         },
         {
-          "path": "papers/source-asymptotics/main.tex",
+          "path": "papers/casimir-source-asymptotics/complex-cofactors.tex",
           "anchor": "\\label{sa:Q-derivative}"
         },
         {
@@ -1412,7 +1412,7 @@
         },
         {
           "id": "analytic_morse_central_period",
-          "reason": "The source-asymptotics and oscillatory-fillings companions supply the actual nonzero entire central contribution at both parities."
+          "reason": "The Casimir-source and oscillatory-filling companions supply the actual nonzero entire central contribution at both parities."
         },
         {
           "id": "geo_morse_primitive_filling",
@@ -2141,7 +2141,7 @@
       "depends_on": [
         {
           "id": "tree_directed_volume",
-          "reason": "If both d_v<2^28 and |n_v|<2^27 held, the local ratio would exceed 2^-57; the stated 2^-120 condition therefore forces the directed theorem’s mixed alternative at every vertex."
+          "reason": "If both d_v<2^28 and |n_v|<2^27 held, the local ratio would exceed 2^-57; the stated 2^-120 condition therefore forces the directed theorem\u2019s mixed alternative at every vertex."
         }
       ],
       "article": "circle-tree-volume"
@@ -2483,23 +2483,23 @@
       "statement": "For the actual C/L/R partition of the full degree-(N-1) local numerator, all phases and real spectral values obey the uniform exponential envelopes A_C=Q(x,b,y)+Q(x,c,y), A_L=max(log c,Q(x,b,y)+log c/2), and its b/c-reflected right version. All unused rows, odd skipping and closing-cap terms remain; a one-sided sector overloaded onto a protected zero is identically zero. These are polynomial-modulus upper bounds, not coefficientwise domination.",
       "sources": [
         {
-          "path": "papers/local-coefficients/main.tex",
+          "path": "papers/casimir-source-asymptotics/local-bounds.tex",
           "anchor": "\\label{lc:main}"
         },
         {
-          "path": "papers/local-coefficients/main.tex",
+          "path": "papers/casimir-source-asymptotics/nodal-comparison.tex",
           "anchor": "\\label{lc:central-comparison}"
         },
         {
-          "path": "papers/local-coefficients/main.tex",
+          "path": "papers/casimir-source-asymptotics/one-sided-envelope.tex",
           "anchor": "\\label{lc:left-maximum}"
         },
         {
-          "path": "papers/local-coefficients/main.tex",
+          "path": "papers/casimir-source-asymptotics/face-phases.tex",
           "anchor": "\\label{lc:tail-positive}"
         },
         {
-          "path": "papers/local-coefficients/main.tex",
+          "path": "papers/casimir-source-asymptotics/face-phases.tex",
           "anchor": "\\label{lc:last-cap}"
         }
       ],
@@ -2513,7 +2513,7 @@
           "reason": "Bounds the signed interval tails and fixes their triangle entropy normalization before optimizing the two actual unused products."
         }
       ],
-      "article": "local-coefficients"
+      "article": "casimir-source-asymptotics"
     },
     {
       "id": "recursive_finite_source",
@@ -3821,6 +3821,10 @@
         {
           "path": "formal-real/OperatorCoefficientAdapter.lean",
           "anchor": "theorem normalized_characteristic_of_record"
+        },
+        {
+          "path": "formal-real/MeridianSeriesEmbedding.lean",
+          "anchor": "theorem normalized_characteristic_faithful"
         }
       ],
       "depends_on": [
@@ -3835,10 +3839,14 @@
         {
           "id": "finite_invariant_normalization",
           "reason": "Identifies the actual reduced/full meridian gauge and component sign before cancellation."
+        },
+        {
+          "id": "finite_meridian_series_embedding",
+          "reason": "Preserves the nonzero normalized classical symbol under M=exp(u), with L still independent, before evaluating the selected longitude series."
         }
       ],
       "article": "meridian-expansions",
-      "coverage": "The compiled theorem starts from a specified nonzero finite polynomial coefficient record and original root recurrence. It constructs the common q-1 quotient and derives its nonzero classical symbol, connects the exact finite Laurent encoding, proves all coefficient Taylor estimates and the sine/meridian gauge, and reconstructs the full classical symbol using the explicit shift-degree bound. Source-ratio asymptotics, normalization and eventual source nonvanishing remain inputs. Algebraic rational denominator clearing is separately proved; the actual physical denominator chart, operator existence, analytic germ and geometric-factor conclusion remain application steps."
+      "coverage": "The compiled theorem starts from a specified nonzero finite polynomial coefficient record and original root recurrence. It constructs the common q-1 quotient and derives its nonzero classical symbol, connects the exact finite Laurent encoding, proves all coefficient Taylor estimates and the sine/meridian gauge, and reconstructs the full classical symbol using the explicit shift-degree bound. Source-ratio asymptotics, normalization and eventual source nonvanishing remain inputs. Algebraic rational denominator clearing is separately proved; the actual physical denominator chart, operator existence, analytic germ and geometric-factor conclusion remain application steps. Finite Vandermonde reconstruction now proves that the complete formal symbol is nonzero before selected-longitude evaluation; it does not make that last evaluation injective."
     },
     {
       "id": "geometric_selected_factor_of_actual_recurrence",
@@ -3895,23 +3903,23 @@
       "statement": "For each fixed face zero pattern with x+y>0 and the other positive faces in a compact set, the actual terminal cofactors have zero-free fixed complex neighborhoods, normalized holomorphic logarithmic limits and fixed derivative convergence. The interior-start and protected-middle cases are proved separately. The exact central phase is defined from B_N=P_C/N^2, retaining the odd skipping term and both fold anchors.",
       "sources": [
         {
-          "path": "papers/source-asymptotics/main.tex",
+          "path": "papers/casimir-source-asymptotics/complex-cofactors.tex",
           "anchor": "\\label{sa:local-log}"
         },
         {
-          "path": "papers/source-asymptotics/main.tex",
+          "path": "papers/casimir-source-asymptotics/complex-cofactors.tex",
           "anchor": "\\label{sa:interior-packet}"
         },
         {
-          "path": "papers/source-asymptotics/main.tex",
+          "path": "papers/casimir-source-asymptotics/complex-cofactors.tex",
           "anchor": "\\label{sa:protected-packet}"
         },
         {
-          "path": "papers/source-asymptotics/main.tex",
+          "path": "papers/casimir-source-asymptotics/complex-cofactors.tex",
           "anchor": "\\label{sa:central-unit}"
         },
         {
-          "path": "papers/source-asymptotics/main.tex",
+          "path": "papers/casimir-source-asymptotics/complex-cofactors.tex",
           "anchor": "\\label{sa:exact-B}"
         }
       ],
@@ -3925,7 +3933,7 @@
           "reason": "Controls omitted starting rows and supplies the absolute limiting triangle action."
         }
       ],
-      "article": "source-asymptotics"
+      "article": "casimir-source-asymptotics"
     },
     {
       "id": "finite_weighted_graph_kernel",
@@ -3952,15 +3960,15 @@
       "statement": "The original cofactor recurrence factors at its actual folded nodes into a positive finite eigenpolynomial and a nonnegative tail. Chebyshev/Radau interpolation gives polynomial-factor comparison over the entire real spectral interval; the central numerator retains the odd skipped-row term.",
       "sources": [
         {
-          "path": "papers/local-coefficients/main.tex",
+          "path": "papers/casimir-source-asymptotics/nodal-comparison.tex",
           "anchor": "\\label{lc:nodal-positive}"
         },
         {
-          "path": "papers/local-coefficients/main.tex",
+          "path": "papers/casimir-source-asymptotics/nodal-comparison.tex",
           "anchor": "\\label{lc:interpolation}"
         },
         {
-          "path": "papers/local-coefficients/main.tex",
+          "path": "papers/casimir-source-asymptotics/nodal-comparison.tex",
           "anchor": "\\label{lc:central-comparison}"
         }
       ],
@@ -3970,7 +3978,7 @@
           "reason": "Supplies the actual banded operator and physical cofactor normalization."
         }
       ],
-      "article": "local-coefficients"
+      "article": "casimir-source-asymptotics"
     },
     {
       "id": "recursive_completed_source_gap",
@@ -4113,7 +4121,7 @@
           "reason": "Permits exposure of any original leaf while preserving the original finite evaluation and wire constraints."
         }
       ],
-      "coverage": "Theorems7.3–7.4, Corollary7.5 and Theorem8.1 of the combined Newton paper prove variational identities. They do not import a hyperbolic metric or a quantum asymptotic.",
+      "coverage": "Theorems7.3\u20137.4, Corollary7.5 and Theorem8.1 of the combined Newton paper prove variational identities. They do not import a hyperbolic metric or a quantum asymptotic.",
       "article": "newton-calculus"
     },
     {
@@ -4181,7 +4189,7 @@
           "reason": "After re-rooting the unflagged positive reference between completed expressions, verifies both the child and parent output bounds required by the scalar single-attachment inequality; no completed global source bound is imported."
         }
       ],
-      "coverage": "Source Bounds Sections 7–8 apply to arbitrary controlled input arrays. They do not assume an earlier global source estimate, a signed leaf recurrence or a circle-tree volume theorem.",
+      "coverage": "Source Bounds Sections 7\u20138 apply to arbitrary controlled input arrays. They do not assume an earlier global source estimate, a signed leaf recurrence or a circle-tree volume theorem.",
       "article": "conway-source-bounds"
     },
     {
@@ -4500,7 +4508,7 @@
       "id": "analytic_convex_flattening",
       "title": "Quadratic action cost and supporting-tangent gain",
       "group": "finite_graph_energy",
-      "statement": "Actual real derivative hypotheses 0≤g″≤E and g′(0)=0 imply 0≤g(t)−g(0)≤Et²/2. A differentiable convex triangle profile supplies its supporting-tangent bound at scale one. Applying it to both branches of the one-sided maximum gives the explicit balance-defect loss and strict sector comparison. Neither the cost nor the local gain is assumed as a premise.",
+      "statement": "Actual real derivative hypotheses 0\u2264g\u2033\u2264E and g\u2032(0)=0 imply 0\u2264g(t)\u2212g(0)\u2264Et\u00b2/2. A differentiable convex triangle profile supplies its supporting-tangent bound at scale one. Applying it to both branches of the one-sided maximum gives the explicit balance-defect loss and strict sector comparison. Neither the cost nor the local gain is assumed as a premise.",
       "sources": [
         {
           "path": "formal-real/Flattening.lean",
@@ -6401,6 +6409,33 @@
         }
       ],
       "coverage": "Bounds Lemma 7.2 only. Its proof precedes decorated-turn, macroscopic character loss and whole-component comparison, and uses no signed recurrence or quarter-index expansion."
+    },
+    {
+      "id": "finite_meridian_series_embedding",
+      "title": "Finite meridian jets recover Laurent coefficients",
+      "group": "geometric_longitude",
+      "statement": "For a fixed finite set E of integer exponents, the first |E| coefficients after M=exp(u) determine a Laurent polynomial supported on E. Factorials convert these coefficients to a Vandermonde system on distinct exponents. Thus the full meridian-series substitution is an injective complex algebra map, and mapping coefficients preserves a nonzero polynomial in an independent L. No fixed jet order works for arbitrary supports; substituting a selected L-series may have a kernel.",
+      "sources": [
+        {
+          "path": "formal-real/MeridianSeriesEmbedding.lean",
+          "anchor": "theorem equal_of_initial_coefficients_on_support"
+        },
+        {
+          "path": "formal-real/MeridianSeriesEmbedding.lean",
+          "anchor": "theorem meridianSeries_injective"
+        },
+        {
+          "path": "formal-real/MeridianSeriesEmbedding.lean",
+          "anchor": "theorem meridianAlgHom_injective"
+        },
+        {
+          "path": "formal-real/MeridianSeriesEmbedding.lean",
+          "anchor": "theorem formalSymbol_ne_zero"
+        }
+      ],
+      "depends_on": [],
+      "article": null,
+      "coverage": "These finite reconstruction and injectivity statements are compiled in Lean, using the actual exponential series and Vandermonde matrix. They neither construct a quantum recurrence nor prove that an actual source supplies its required expansions."
     }
   ],
   "articles": {
@@ -6446,11 +6481,13 @@
     },
     "local-coefficients": {
       "title": "Uniform spectral bounds for local Casimir sources",
-      "path": "papers/local-coefficients/main.tex"
+      "path": "papers/local-coefficients/main.tex",
+      "edition": "earlier"
     },
     "source-asymptotics": {
       "title": "Holomorphic asymptotics of central shared face coefficients",
-      "path": "papers/source-asymptotics/main.tex"
+      "path": "papers/source-asymptotics/main.tex",
+      "edition": "earlier"
     },
     "oscillatory-fillings": {
       "title": "Oscillatory filling sums with independently long twists",
@@ -6521,9 +6558,114 @@
     "newton-calculus": {
       "title": "Newton calculus and stationary profiles of Conway tangles",
       "path": "papers/newton-calculus/main.tex"
+    },
+    "casimir-source-asymptotics": {
+      "title": "Spectral bounds and asymptotics of Casimir sources",
+      "path": "papers/casimir-source-asymptotics/main.tex"
     }
   },
   "article_dependencies": [
+    {
+      "from": "casimir-source-asymptotics",
+      "to": "planar-certificates",
+      "witnesses": [
+        {
+          "path": [
+            "planar_sector_envelopes",
+            "planar_protected_sum_volume"
+          ],
+          "reason": "The uniform local estimates turn the preserved numerical certificate into a bound for every actual noncentral term, before the filling functional is applied (papers/planar-certificates/main.tex, Lemma 3.3, pc:remainder)."
+        },
+        {
+          "path": [
+            "planar_sector_envelopes",
+            "planar_seed17_certificate"
+          ],
+          "reason": "Defines the actual mixed spectator rates and anchor costs certified by the rational records."
+        },
+        {
+          "path": [
+            "planar_sector_envelopes",
+            "planar_weak_balance_gap"
+          ],
+          "reason": "These are the actual phase-uniform C/L/R rates; protected overloaded labels are exactly zero."
+        },
+        {
+          "path": [
+            "analytic_morse_central_period",
+            "planar_protected_sum_volume"
+          ],
+          "reason": "Supplies a nonzero central contribution for the new sphere."
+        },
+        {
+          "path": [
+            "analytic_morse_central_period",
+            "planar_weak_balance_volume"
+          ],
+          "reason": "Supplies the nonzero central contribution and a filled action arbitrarily close to Phi."
+        }
+      ]
+    },
+    {
+      "from": "casimir-source-asymptotics",
+      "to": "terminal-decorations",
+      "witnesses": [
+        {
+          "path": [
+            "planar_sector_envelopes",
+            "planar_terminal_fan_gap"
+          ],
+          "reason": "Controls all local face phases and all real spectra, not only positive endpoint values."
+        },
+        {
+          "path": [
+            "analytic_morse_central_period",
+            "planar_terminal_fan_volume"
+          ],
+          "reason": "The Casimir-source and oscillatory-filling companions supply the actual nonzero entire central contribution at both parities."
+        }
+      ]
+    },
+    {
+      "from": "casimir-source-asymptotics",
+      "to": "three-braids",
+      "witnesses": [
+        {
+          "path": [
+            "planar_sector_envelopes",
+            "braid_three_weight_gap"
+          ],
+          "reason": "Controls each actual C/L/R factor uniformly in all phases and spectra."
+        },
+        {
+          "path": [
+            "analytic_morse_central_period",
+            "braid_alternating_generator_volume"
+          ],
+          "reason": "Gives the nonzero complete central period with filled rate close to Phi."
+        }
+      ]
+    },
+    {
+      "from": "casimir-source-asymptotics",
+      "to": "triangular-insertion",
+      "witnesses": [
+        {
+          "path": [
+            "planar_sector_envelopes",
+            "planar_ordinary_insertion_certificate"
+          ],
+          "reason": "Gives uniform deprotected-label suppression and the three bridge comparisons."
+        },
+        {
+          "path": [
+            "analytic_morse_central_period",
+            "planar_ordinary_insertion_volume"
+          ],
+          "reason": "Provides the nonzero original geometric period."
+        }
+      ]
+    },
     {
       "from": "circle-tree-geometry",
       "to": "circle-tree-volume",
@@ -6785,6 +6927,68 @@
     },
     {
       "from": "filling-bounds",
+      "to": "casimir-source-asymptotics",
+      "witnesses": [
+        {
+          "path": [
+            "finite_local_fourier",
+            "analytic_signed_interval_transfer"
+          ],
+          "reason": "Identifies the exact physical banded operator to which the written recurrence argument is applied."
+        },
+        {
+          "path": [
+            "finite_local_fourier",
+            "finite_cofactor_nodal_bounds"
+          ],
+          "reason": "Supplies the actual banded operator and physical cofactor normalization."
+        },
+        {
+          "path": [
+            "finite_local_fourier",
+            "planar_sector_envelopes"
+          ],
+          "reason": "Supplies the exact face-polynomial adapter and full matrix resolvent, including repeated-root normals."
+        },
+        {
+          "path": [
+            "finite_global_source",
+            "analytic_morse_face_saddle"
+          ],
+          "reason": "Retains the shared face variables, original targets and total degree."
+        },
+        {
+          "path": [
+            "finite_global_source",
+            "analytic_morse_h2"
+          ],
+          "reason": "Retains original common targets and spectral polynomial degrees needed for strip and derivative bounds."
+        },
+        {
+          "path": [
+            "finite_invariant_normalization",
+            "analytic_morse_central_period"
+          ],
+          "reason": "Identifies the original raw/reduced/enhanced scalar; its retained modulus does not change the exponential rate."
+        },
+        {
+          "path": [
+            "finite_local_fourier",
+            "analytic_actual_cofactor_logs"
+          ],
+          "reason": "Identifies the exact local cofactor recurrence and its physical normalization."
+        },
+        {
+          "path": [
+            "finite_local_fourier",
+            "analytic_cofactor_angular_gap"
+          ],
+          "reason": "Provides the actual cofactors and their finite nodal eigenpolynomials."
+        }
+      ]
+    },
+    {
+      "from": "filling-bounds",
       "to": "circle-tree-volume",
       "witnesses": [
         {
@@ -6888,33 +7092,6 @@
             "recursive_spectral_norms"
           ],
           "reason": "Provides the physical signed crossing values and first normals; the conditioning argument retains both."
-        }
-      ]
-    },
-    {
-      "from": "filling-bounds",
-      "to": "local-coefficients",
-      "witnesses": [
-        {
-          "path": [
-            "finite_local_fourier",
-            "analytic_signed_interval_transfer"
-          ],
-          "reason": "Identifies the exact physical banded operator to which the written recurrence argument is applied."
-        },
-        {
-          "path": [
-            "finite_local_fourier",
-            "finite_cofactor_nodal_bounds"
-          ],
-          "reason": "Supplies the actual banded operator and physical cofactor normalization."
-        },
-        {
-          "path": [
-            "finite_local_fourier",
-            "planar_sector_envelopes"
-          ],
-          "reason": "Supplies the exact face-polynomial adapter and full matrix resolvent, including repeated-root normals."
         }
       ]
     },
@@ -7027,47 +7204,6 @@
     },
     {
       "from": "filling-bounds",
-      "to": "source-asymptotics",
-      "witnesses": [
-        {
-          "path": [
-            "finite_global_source",
-            "analytic_morse_face_saddle"
-          ],
-          "reason": "Retains the shared face variables, original targets and total degree."
-        },
-        {
-          "path": [
-            "finite_global_source",
-            "analytic_morse_h2"
-          ],
-          "reason": "Retains original common targets and spectral polynomial degrees needed for strip and derivative bounds."
-        },
-        {
-          "path": [
-            "finite_invariant_normalization",
-            "analytic_morse_central_period"
-          ],
-          "reason": "Identifies the original raw/reduced/enhanced scalar; its retained modulus does not change the exponential rate."
-        },
-        {
-          "path": [
-            "finite_local_fourier",
-            "analytic_actual_cofactor_logs"
-          ],
-          "reason": "Identifies the exact local cofactor recurrence and its physical normalization."
-        },
-        {
-          "path": [
-            "finite_local_fourier",
-            "analytic_cofactor_angular_gap"
-          ],
-          "reason": "Provides the actual cofactors and their finite nodal eigenpolynomials."
-        }
-      ]
-    },
-    {
-      "from": "filling-bounds",
       "to": "terminal-decorations",
       "witnesses": [
         {
@@ -7148,95 +7284,15 @@
       ]
     },
     {
-      "from": "local-coefficients",
-      "to": "planar-certificates",
+      "from": "marked-fillings",
+      "to": "casimir-source-asymptotics",
       "witnesses": [
         {
           "path": [
-            "planar_sector_envelopes",
-            "planar_protected_sum_volume"
+            "geo_simple_sphere_packing",
+            "analytic_morse_face_saddle"
           ],
-          "reason": "The uniform local estimates turn the preserved numerical certificate into a bound for every actual noncentral term, before the filling functional is applied (papers/planar-certificates/main.tex, Lemma 3.3, pc:remainder)."
-        },
-        {
-          "path": [
-            "planar_sector_envelopes",
-            "planar_seed17_certificate"
-          ],
-          "reason": "Defines the actual mixed spectator rates and anchor costs certified by the rational records."
-        },
-        {
-          "path": [
-            "planar_sector_envelopes",
-            "planar_weak_balance_gap"
-          ],
-          "reason": "These are the actual phase-uniform C/L/R rates; protected overloaded labels are exactly zero."
-        }
-      ]
-    },
-    {
-      "from": "local-coefficients",
-      "to": "source-asymptotics",
-      "witnesses": [
-        {
-          "path": [
-            "analytic_signed_interval_transfer",
-            "analytic_actual_cofactor_logs"
-          ],
-          "reason": "Controls omitted starting rows and supplies the absolute limiting triangle action."
-        },
-        {
-          "path": [
-            "analytic_signed_interval_transfer",
-            "analytic_cross_spectral_gap"
-          ],
-          "reason": "Supplies the uniform signed recurrence bound and normalized triangle action; the separated-gap argument additionally compares its spectral derivative and endpoint alternative."
-        },
-        {
-          "path": [
-            "finite_cofactor_nodal_bounds",
-            "analytic_cofactor_angular_gap"
-          ],
-          "reason": "Supplies the finite coefficientwise comparison and nodal interpolation used to extend the positive determinant phase loss to every real spectrum."
-        }
-      ]
-    },
-    {
-      "from": "local-coefficients",
-      "to": "terminal-decorations",
-      "witnesses": [
-        {
-          "path": [
-            "planar_sector_envelopes",
-            "planar_terminal_fan_gap"
-          ],
-          "reason": "Controls all local face phases and all real spectra, not only positive endpoint values."
-        }
-      ]
-    },
-    {
-      "from": "local-coefficients",
-      "to": "three-braids",
-      "witnesses": [
-        {
-          "path": [
-            "planar_sector_envelopes",
-            "braid_three_weight_gap"
-          ],
-          "reason": "Controls each actual C/L/R factor uniformly in all phases and spectra."
-        }
-      ]
-    },
-    {
-      "from": "local-coefficients",
-      "to": "triangular-insertion",
-      "witnesses": [
-        {
-          "path": [
-            "planar_sector_envelopes",
-            "planar_ordinary_insertion_certificate"
-          ],
-          "reason": "Gives uniform deprotected-label suppression and the three bridge comparisons."
+          "reason": "Supplies the positive stationary radii for the matched-sphere application; the analytic theorem states stationarity as a hypothesis."
         }
       ]
     },
@@ -7345,19 +7401,6 @@
             "planar_weak_balance_gap"
           ],
           "reason": "The exact triangle Hessian and homogeneity control the coupled action cost and positive entropy gain. Stationarity and the absolute normalization identify the complete minimum Phi."
-        }
-      ]
-    },
-    {
-      "from": "marked-fillings",
-      "to": "source-asymptotics",
-      "witnesses": [
-        {
-          "path": [
-            "geo_simple_sphere_packing",
-            "analytic_morse_face_saddle"
-          ],
-          "reason": "Supplies the positive stationary radii for the matched-sphere application; the analytic theorem states stationarity as a hypothesis."
         }
       ]
     },
@@ -7889,20 +7932,7 @@
     },
     {
       "from": "oscillatory-fillings",
-      "to": "conway-asymptotics",
-      "witnesses": [
-        {
-          "path": [
-            "analytic_conditional_filling",
-            "recursive_strict_filling_transfer"
-          ],
-          "reason": "Proves charge comparison, endpoint/current control and noncancellation for the whole period at independently long fixed signed powers."
-        }
-      ]
-    },
-    {
-      "from": "oscillatory-fillings",
-      "to": "source-asymptotics",
+      "to": "casimir-source-asymptotics",
       "witnesses": [
         {
           "path": [
@@ -7935,6 +7965,19 @@
             "analytic_morse_central_period"
           ],
           "reason": "Specifies the original signed chirp, charge weights and parity character whose saddle and reflected charges are compared. Then: Identifies the first-charge drop and finite local charge comparison used after the infinite tails have been removed. Then: Shows every other contribution of the original whole period is smaller."
+        }
+      ]
+    },
+    {
+      "from": "oscillatory-fillings",
+      "to": "conway-asymptotics",
+      "witnesses": [
+        {
+          "path": [
+            "analytic_conditional_filling",
+            "recursive_strict_filling_transfer"
+          ],
+          "reason": "Proves charge comparison, endpoint/current control and noncancellation for the whole period at independently long fixed signed powers."
         }
       ]
     },
@@ -7975,65 +8018,6 @@
             "geometric_selected_factor_of_actual_recurrence"
           ],
           "reason": "Strict bare-junction alternative: the same original gate/edge action and primitive first-charge mark give the whole classical stationary germ, including the half-label fold. Use the maximum of analytic and classical long-power thresholds."
-        }
-      ]
-    },
-    {
-      "from": "source-asymptotics",
-      "to": "planar-certificates",
-      "witnesses": [
-        {
-          "path": [
-            "analytic_morse_central_period",
-            "planar_protected_sum_volume"
-          ],
-          "reason": "Supplies a nonzero central contribution for the new sphere."
-        },
-        {
-          "path": [
-            "analytic_morse_central_period",
-            "planar_weak_balance_volume"
-          ],
-          "reason": "Supplies the nonzero central contribution and a filled action arbitrarily close to Phi."
-        }
-      ]
-    },
-    {
-      "from": "source-asymptotics",
-      "to": "terminal-decorations",
-      "witnesses": [
-        {
-          "path": [
-            "analytic_morse_central_period",
-            "planar_terminal_fan_volume"
-          ],
-          "reason": "The source-asymptotics and oscillatory-fillings companions supply the actual nonzero entire central contribution at both parities."
-        }
-      ]
-    },
-    {
-      "from": "source-asymptotics",
-      "to": "three-braids",
-      "witnesses": [
-        {
-          "path": [
-            "analytic_morse_central_period",
-            "braid_alternating_generator_volume"
-          ],
-          "reason": "Gives the nonzero complete central period with filled rate close to Phi."
-        }
-      ]
-    },
-    {
-      "from": "source-asymptotics",
-      "to": "triangular-insertion",
-      "witnesses": [
-        {
-          "path": [
-            "analytic_morse_central_period",
-            "planar_ordinary_insertion_volume"
-          ],
-          "reason": "Provides the nonzero original geometric period."
         }
       ]
     },

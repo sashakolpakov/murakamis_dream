@@ -2,12 +2,22 @@
 
 The current PDF is a 374-page reference account. Its results have been
 divided into [papers organized by subject](../../papers/README.md).
-The 22 current papers total 404 pages and range from 11 to 29 pages each,
+The 21 current papers total 403 pages and range from 11 to 29 pages each,
 including references. Their shared foundations cover
 finite spectral evaluation, coefficient estimates, source asymptotics,
 oscillatory sums and marked geometry. The application papers give their
 precise diagram and twist hypotheses and name the numbered statements
 they use.
+
+The local spectral bounds and the central shared-coefficient asymptotic
+now occupy one 25-page paper,
+[Spectral bounds and asymptotics of Casimir sources](../../docs/papers/casimir-source-asymptotics.pdf).
+It begins with the finite Casimir polynomial and its two parity formulas.
+The first part proves upper bounds over the full real spectral interval;
+the second proves a nonzero central asymptotic and a gap away from the
+central region, assuming the stated stationary radii. The latter result
+does not bound the noncentral terms of the original invariant. Later
+papers cite these two conclusions separately.
 
 The Newton calculus and stationary-profile arguments now share one
 26-page paper. It replaces two drafts totaling 32 pages by proving their

@@ -1,0 +1,897 @@
+\section{Exact evaluation of a marked diagram}
+\label{de:section}
+
+The local polynomial now has a global interpretation. A variable belongs
+to a face of the diagram, so all its occurrences at different boxes
+must be identified before a coefficient is taken. We prove that this
+shared coefficient is the reduced tensor evaluation, including its
+single marked cap. No positivity or limiting estimate enters the proof.
+
+\subsection{The ordered diagram and the coefficient theorem}
+
+Throughout this section \(N\ge3\), \(d=N-1\),
+\(q=e^{\pi i/N}\), \(Q=q^2\), and \(x_0=q^d\).
+Start with a finite connected triangulation of the oriented sphere and
+a perfect matching of its cubic dual. We allow a triangular
+cellulation, but require that the two triangles at each matching edge
+form an embedded quadrilateral disk with four distinct vertices.
+There are \(2R\) triangles, \(R\) matching edges and \(R+2\) vertices.
+The vertices will be called \emph{white faces}, because they index the
+complementary regions in the diagram below.
+
+Contract a small disk around each matched dual edge and its endpoints.
+The disks are disjoint, and the resulting embedded graph \(\Gamma\)
+is connected and four-valent, with \(R\) vertices and \(2R\) edges.
+Choose an ordered parametrization of every disk. Its four surrounding
+white faces have cyclic order
+\[
+                         (x,b,y,c);
+\]
+the matching diagonal is \(xy\). The coherently oriented triangles
+can be written \((x,b,y)\) and \((y,c,x)\). The polynomial of this box
+is \(H_f(x,b,c,y)\): \(b\) is its input middle face and \(c\) its
+output middle face.
+
+Here is the terminal convention. Write the four terminals as
+\(C_0,C_1,C_2,C_3\) in cyclic order, with input terminals
+\(C_1,C_2\) and output terminals \(C_0,C_3\). The matching halves
+group \((C_1,C_2)\) and \((C_3,C_0)\); the untwisted physical
+strands pair \((C_0,C_1)\) and \((C_2,C_3)\). These are different
+pairings. When side indices \(0,1,2,3\) are used for a quadrilateral,
+as in an annular braid drawing, they denote
+\[
+                 (C_1,C_2,C_3,C_0),
+\]
+respectively. In those indices the physical pairs are \((0,3)\)
+and \((1,2)\), and the matching halves are \((0,1)\) and \((2,3)\).
+
+Draw the two untwisted strands in each disk and join them along the
+uncontracted dual edges. The outside arcs are disjoint. They can be
+made Morse with respect to height, keeping the disk parametrizations
+fixed, so that each maximum or minimum is an ordinary cap or cup.
+Place the specified two-strand operator in each disk. A crossing
+power uses the checked crossing of Proposition~\ref{fb:crossing-polynomial};
+an arbitrary polynomial in the Casimir is also allowed. The local
+frames are part of the data and are not reset when an arc is bent.
+
+This construction is a literal planar tensor diagram. If crossing
+circles are desired, place one perpendicular circle around the two
+strands in each disjoint three-ball about a disk. Its crossing disk
+meets precisely those two strands. Thus the corresponding augmented
+link is embedded in \(S^3\); no geometric realization assumption is
+needed for the finite evaluation. An arbitrary polynomial coupon
+itself need not be a braid or define a knot.
+
+\begin{figure}[ht]
+ \centering
+ \input{figures/diagram-face-coordinates}
+ \caption{The ordered box has cyclic face order \((x,b,y,c)\) and
+ polynomial \(H_f(x,b,c,y)\). Its two inputs are \(C_1,C_2\), and
+ its outputs are \(C_0,C_3\). The matching diagonal \(xy\) is not a
+ physical strand. On a supported state the displayed head satisfies
+ \(i-d/2=\lambda_x-\lambda_b\); this fixes the sign of the face
+ potential. The alternative side numbering \(0,1,2,3\) refers to
+ \(C_1,C_2,C_3,C_0\).}
+ \label{de:figure}
+\end{figure}
+
+A main edge means one of the edges outside the box disks. Choose one
+as a marked edge and call its adjacent faces \(a,b\). They are
+distinct. Indeed a connected four-valent graph has no bridge:
+if removing a single edge separated a set of vertices, the sum of
+their degrees would be twice the number of internal edges plus one,
+contrary to its even parity. An edge incident to only one face of
+a spherical graph is a bridge.
+
+The matrices defining the turns and mark are given below. Let
+\(A_{\rm raw}(f_1,\ldots,f_R)\) be their contraction, with exactly
+one marked cap and with the full operators \(f_e(\Omega)\) in the
+recorded boxes. Each \(f_e\) is a finite polynomial; its coefficients
+may depend on \(N\) and on other parameters. In particular it may
+already include a signed crossing power through
+Proposition~\ref{fb:crossing-polynomial}. Set
+\[
+ \mathcal P(L)=\prod_{e=1}^R
+ H_{f_e}(L_{x_e},L_{b_e},L_{c_e},L_{y_e}).
+\]
+Every local factor is homogeneous of degree \(d\), so
+\(\deg\mathcal P=dR\).
+
+\begin{theorem}[The exact marked face coefficient]
+\label{de:coefficient-theorem}
+For the stated ordered diagram and the full polynomial coupons,
+\begin{equation}\label{de:coefficient}
+ A_{\rm raw}(f_1,\ldots,f_R)
+ =\left[\prod_{f\ne a,b}L_f^d\right]
+       \left.\mathcal P(L)\right|_{L_a=L_b=0}.
+\end{equation}
+This is an identity at each level, with no omitted power of \(N\).
+The reduced scalar is independent of the chosen main edge when the
+cut and its duality frames are transported as below. The theorem
+does not assert this independence for separate projections of a
+local polynomial onto selected monomials.
+\end{theorem}
+
+We prove the theorem in several finite steps. The first concerns
+the reduced cut; the remaining steps turn its state sum into the
+displayed coefficient.
+
+\subsection{Duality, turns and the unrestricted mark}
+
+For a generic nonzero parameter \(z\) which is not a root of unity,
+let \(V_L\) have basis \(v_0,\ldots,v_L\) and operators
+\[
+ Kv_i=z^{L-2i}v_i,\qquad
+ Fv_i=v_{i+1},\qquad
+ Ev_i=[i]_z[L-i+1]_zv_{i-1}.
+\]
+Endpoint vectors are zero. The coproducts are those used in
+Section~\ref{fb:crossing}, and the antipodes are
+\[
+ S(E)=-EK^{-1},\qquad S(F)=-KF,\qquad S(K)=K^{-1}.
+\]
+The dual action is obtained by transposing these antipode matrices.
+Put
+\begin{equation}\label{de:J}
+ J_zv_i=c_i(z)v_{L-i}^*,\qquad
+ c_i(z)=(-1)^iz^{i(i-L-1)}.
+\end{equation}
+This is an intertwining map from \(V_L\) to its dual. For \(F\),
+the required ratio is
+\[
+ c_{i+1}/c_i=-z^{-L+2i};
+\]
+the \(K\) equation reverses the weights, and the \(E\) equation then
+uses the same ratio and the displayed quantum integers. These
+checks also show that \(J_z\) and its inverse are regular near our
+root when \(L=d\).
+
+The integer-weight operator \(H\) satisfies \(K=z^H\). Since \(E\)
+and \(F\) change weights by two, \((-1)^H\) is central and
+group-like. Consequently
+\[
+              \widetilde g=(-1)^HK
+\]
+implements \(S^2\) on every tensor product and dual used here.
+In the given self-dual frame it is exactly the double-dual map:
+\[
+ J_z^{-t}J_z=\widetilde g,\qquad
+ \frac{c_i(z)}{c_{L-i}(z)}=(-1)^Lz^{L-2i}.
+\]
+At \(z=q\), every integral weight satisfies \(q^{-NH}=(-1)^H\).
+Thus the generic pivot specializes to the physical root pivot
+\begin{equation}\label{de:pivot}
+                       g=K^{1-N}.
+\end{equation}
+This specialization uses a regular generic pivot; it does not
+assert that \(K^{1-N}\) implements \(S^2\) for a generic \(z\).
+
+Take \(L=d\) and pass to the balanced basis
+\(e_i=v_i/(Q;Q)_i\) at the root. The product identity
+\begin{equation}\label{de:factorial-cancellation}
+ (Q;Q)_i(Q;Q)_{d-i}
+       =N(-1)^iQ^{i(i+1)/2}
+\end{equation}
+follows from \((Q;Q)_d=N\) and
+\(1-Q^{-j}=-Q^{-j}(1-Q^j)\).
+Since \(c_i(q)=q^{i^2}\), the factorials in \(J_q\) therefore
+cancel exactly. If the first tensor factor below is a dual factor,
+denote it by a superscript \(\vee\). The four ordered turns are
+\[
+\begin{aligned}
+ \operatorname{ev}_L(e_a^\vee\otimes e_b)
+      &=N^{-1}x_0^a\,\mathbf1_{a+b=d},&
+ \operatorname{coev}_L(1)
+      &=\sum_a Nx_0^{-a}e_{d-a}\otimes e_a^\vee,\\
+ \operatorname{ev}_R(e_b\otimes e_a^\vee)
+      &=N^{-1}x_0^ag_b\,\mathbf1_{a+b=d},&
+ \operatorname{coev}_R(1)
+      &=\sum_a Nx_0^{-a}g_{d-a}^{-1}
+                       e_a^\vee\otimes e_{d-a},
+\end{aligned}
+\]
+where
+\[
+                       g_j=q^{-d^2-2j}.
+\]
+Contraction of a turn with the opposite turn has a single matching
+index; its \(x_0\) and \(g\) factors cancel. This proves all four
+snake identities. Closing an endomorphism by the corresponding
+ordinary turns gives the pivotal trace \(\operatorname{Tr}(gA)\).
+
+In literal left-to-right physical head order \((i,j)\), both cups
+and both caps reduce to
+\begin{equation}\label{de:root-turns}
+ p_{ij}=Nq^{-d^2+di}\mathbf1_{i+j=d},
+ \qquad
+ \ell_{ij}=N^{-1}q^{di}\mathbf1_{i+j=d}.
+\end{equation}
+For example the right-cap ratio to the stated cap is
+\(q^{-2Ni}=1\), and the right-cup ratio is
+\(q^{2N(d-i)}=1\). These are equalities of the actual turn matrices,
+not independent rescalings of the local frames.
+
+Define the rank-one projector \(e=\psi\phi\) by
+\(\psi_i=1\), \(\phi_i=1/N\), so \(e^2=e\) and
+\(\operatorname{Tr}e=1\). At a right cut insert \(g^{-1}e\)
+on the primal input. For every matrix \(C\),
+\[
+                 \operatorname{Tr}(g\,g^{-1}eC)
+                           =\operatorname{Tr}(eC).
+\]
+At a left cut use the corresponding defect \(ge\). In physical
+left-to-right order the resulting marked rows are
+\begin{equation}\label{de:unrestricted-mark}
+ m_R(i,j)=\frac{x_0^j}{N^2},\qquad
+ m_L(i,j)=\frac{x_0^i g_{d-i}}{N^2}.
+\end{equation}
+For the right row, the only summand in
+\(\operatorname{ev}_R(g^{-1}e\,e_i\otimes e_j^\vee)\)
+has primal index \(d-j\), and its pivot times defect entry is
+\(1/N\). This gives the first formula; the left formula follows
+by the same single-index contraction. Neither marked row has a
+support restriction.
+
+Each complete marked cup-cap contraction is one. In a whole
+closed diagram with one marked cap, conservation forces the
+marked heads to satisfy \(i+j=d\): each box preserves the true
+integer sum of its two indices, every cup supplies \(d\), and
+every other cap consumes \(d\). On this forced support both
+rows in \eqref{de:unrestricted-mark} equal
+\begin{equation}\label{de:mark-on-support}
+                         m_{ij}=N^{-2}q^{dj}.
+\end{equation}
+We shall use \eqref{de:mark-on-support} only after this global
+conservation argument. Restricting the marked row in advance
+would be a different tensor.
+
+\subsection{Why the chosen reduced cut can be exposed}
+
+We next justify moving the marked edge to an exposed top cap
+while keeping every coupon disk and its ordered frame fixed.
+This is the only place where a closed spherical reading of the
+diagram is compared with a different planar reading.
+
+For the generic pivot \(\widetilde g\), the two traces agree on
+every intertwiner in the tensor-generated category:
+\begin{equation}\label{de:spherical-traces}
+ \operatorname{Tr}(\widetilde gA)
+       =\operatorname{Tr}(\widetilde g^{-1}A).
+\end{equation}
+Here is a direct proof including multiplicity spaces. First take
+real \(z>0\), \(z\ne1\). The involution
+\[
+                  K^*=K,\qquad E^*=KF,\qquad F^*=EK^{-1}
+\]
+is compatible with the stated coproducts. On \(V_L\), choose
+orthogonal basis vectors with squared norms
+\[
+ n_0=1,\qquad
+ n_i=[i]_z[L-i+1]_z\,z^{-L+2i}n_{i-1}>0.
+\]
+These give precisely the displayed adjoint relations. Tensor
+products are unitary for the tensor-product norm; duals are
+unitarized by \eqref{de:J}. An invariant subspace therefore has
+an invariant orthogonal complement.
+
+Every irreducible summand is one of the \(V_L\). Indeed choose a
+highest vector \(v\) of integral weight \(L\). The identity
+\[
+ EF^rv=[r]_z[L-r+1]_zF^{r-1}v
+\]
+shows that the first zero lowering occurs at \(r=L+1\); a
+negative highest weight would have no zero lowering. Bounded
+weights exclude that possibility. The preceding nonzero
+lowerings have distinct weights and span the irreducible
+summand. An intertwiner consequently has blocks
+\(I_{V_L}\otimes A_L\). On each such block both sides of
+\eqref{de:spherical-traces} equal
+\[
+                         (-1)^L[L+1]_z\operatorname{Tr}(A_L),
+\]
+because the weights \(L,L-2,\ldots,-L\) are symmetric.
+
+For a fixed diagram all matrix entries are rational in a fixed
+local square root of \(z\). Polynomial coupon coefficients are
+held fixed while taking this generic lift. The identity on an
+interval of positive real \(z\) proves the rational identity,
+and all original matrices are regular at \(q\). For the
+crossing this regularity was proved in
+Proposition~\ref{fb:crossing-polynomial}; its inverse is regular
+as well because its root value is invertible. Thus
+\eqref{de:spherical-traces} specializes to the actual diagram.
+No decomposition or projection onto the generic irreducible
+summands is specialized.
+
+Choose a point in face \(a\) and move it to the point at infinity
+along a path outside all coupon disks. A thin strip around that
+path gives a sphere isotopy which fixes the disks pointwise.
+The outside arcs may be crossed by the moving infinity, but no
+crossing or ribbon twist is introduced. Ordinary portions of the
+motion are tensor interchange and the four snake identities.
+When infinity passes an arc, the two planar readings close the
+same bent endomorphism by its two pivotal traces. Equality
+\eqref{de:spherical-traces} gives the same generic closed scalar.
+Face \(a\) is now exterior.
+
+The chosen edge borders that exterior face. Push a short subarc
+along a narrow strip within the face to a point above the
+remaining compact drawing. Its tip is a top cap; the strip
+introduces no crossing or extra component. The inside face is
+still \(b\). Perturb the other arcs to make their turns Morse.
+
+Leave the new cap open. After the actual cup identification,
+the remaining diagram is an endomorphism of \(V_d\) or its dual.
+Generically it is a scalar \(a(z)I\): commuting with the distinct
+\(K\) weights makes it diagonal, and commuting with the nonzero
+adjacent \(F\) arrows makes its diagonal constant. The scalar is
+regular at \(q\), since it is an entry of a regular open network.
+Closing it ordinarily gives
+\[
+                         (-1)^d[N]_z\,a(z).
+\]
+This factor is the same for every exposed cut, even on a
+different component, because every component has the same
+color. It is nonzero generically, so equal closed scalars have
+equal regular open scalars. Specialization gives their equality
+at \(q\), without division by \([N]_q=0\).
+The marked closure evaluates \(\operatorname{Tr}(e\,aI)=a\).
+This proves the required independence of the reduced cut.
+
+This argument does not commute the nonintertwining defect
+\(g^{-1}e\) through the boxes. It first transports the cut with
+its true cups and duality, and then identifies its reduced scalar.
+
+\subsection{The affine face lattice and the true support}
+
+We describe the state space before evaluating the turn factors.
+For a vertical head separating a left face \(f\) from a right
+face \(g\), use the convention
+\begin{equation}\label{de:centered-flow}
+ i-\frac d2=\lambda_f-\lambda_g,\qquad
+ L_f=\exp(2\pi i\lambda_f/N).
+\end{equation}
+At the first input of a box this reads
+\(Q^i=q^dL_x/L_b=-q^{-1}L_x/L_b\), exactly the first
+clock in the local Fourier proof. At the other input the ratio
+is \(q^dL_b/L_y\); the two output ratios use \(c\) in place of
+\(b\). Reversing an arc replaces its head \(i\) by \(d-i\),
+so its centered value changes sign.
+
+A physical state on the unmarked diagram is a choice of canonical
+heads \(0,\ldots,d\). At a turn the heads sum to \(d\); at every
+box the two input heads have the same integer sum as the two
+output heads. Centered heads thus define an antisymmetric flow
+on the edges of \(\Gamma\), with zero divergence at each vertex.
+Equivalently, they give a closed cochain on the dual face graph.
+
+For clarity, the required integral fact holds over every
+abelian group. A zero-divergence flow on a connected spherical
+graph is the difference of face potentials, unique after one
+potential is fixed. To prove it, integrate the dual cochain from
+the fixed face along dual edge paths. Two paths differ by a
+closed dual walk. Splitting repeated vertices reduces that walk
+to simple cycles; on the sphere each such cycle bounds a union
+of dual two-cells. Its cochain sum is the sum of the divergences
+at the enclosed primal vertices, hence zero. This proves
+path independence. Connectedness gives uniqueness. Integration
+uses only addition and subtraction, so it introduces no finite
+index or determinant factor.
+
+For odd \(N\), the centered heads are integral. Fix
+\(\lambda_a=0\); their potentials are then integers. For even
+\(N\), twice every centered head is odd. The corresponding
+parity cochain equals one on each main edge and zero on a
+matching diagonal: the boundary of each triangle has two
+main edges. It is closed, and the same spherical argument over
+\(\mathbb F_2\) gives unique face parities \(t_f\), with
+\[
+ t_a=0,\qquad t_b=1.
+\]
+Equivalently, the dual quadrilateral at each box has four odd
+edges and opposite vertices of the same parity. The exact
+potentials have the form
+\begin{equation}\label{de:affine-potentials}
+                  \lambda_f=p_f+\frac{t_f}{2},
+                  \qquad p_f\in\mathbb Z.
+\end{equation}
+For odd \(N\), use \(t_f=0\) throughout. These affine lattices are
+nonempty: the potential \(t_f/2\) itself gives centered flow
+\((t_f-t_g)/2\), and its heads lie in the physical range.
+The difference of any two lifts is an integral face potential.
+
+Reduce the \(p_f\) modulo \(N\), with \(p_a=0\). There are exactly
+\(N^{R+1}\) face-grid points
+\begin{equation}\label{de:face-grid}
+ L_a=1,\qquad L_f=q^{t_f}Q^{p_f}\quad(f\ne a).
+\end{equation}
+At every such point take the canonical head representing
+\(d/2+\lambda_f-\lambda_g\) modulo \(N\). At a turn the
+congruence \(i+j=d\pmod N\) forces the equality \(i+j=d\):
+neither \(d-N=-1\) nor \(d+N=2N-1\) lies in \([0,2d]\).
+
+At a box the residue total need not determine the true integer
+total. This is the place where physical support is essential.
+The local Fourier proposition expresses the actual residue
+block as a direct sum of its true-total blocks. Hence if the
+canonical input and output totals differ, the matrix entry
+vanishes, and \eqref{uf:physical-local-adapter} implies
+\begin{equation}\label{de:unsupported-zero}
+                    H_{f_e}(L_x,L_b,L_c,L_y)=0
+\end{equation}
+at that grid point. The prefactor there is nonzero.
+
+If no box violates the true total, the canonical heads form the
+closed centered flow just described. Integrating it gives unique
+exact potentials with \(\lambda_a=0\), and they reduce to the
+given grid point. Conversely every supported canonical state
+gives one grid point by this integration. Additional zeros of
+a coupon merely give zero weight on both sides. We have proved
+a bijection between supported states and supported grid points,
+and proved that all other grid points contribute zero.
+
+The exact potentials of a supported state, rather than arbitrary
+representatives \(0,\ldots,N-1\) for the \(p_f\), are used in
+intermediate half-powers. In particular at a box
+\[
+                 r-u=\lambda_b-\lambda_c
+\]
+is the canonical integer displacement, since \(b,c\) have the
+same parity. Thus
+\begin{equation}\label{de:coherent-adapter}
+ q^{-d(r-u)}c^{-d}=(bc)^{-d/2},\qquad
+ f_e(\Omega)_{r,s;u,v}
+        =\frac1N\frac{H_{f_e}(x,b,c,y)}{(bc)^{d/2}}.
+\end{equation}
+Here each fractional power means the exponential of the exact
+potential in \eqref{de:centered-flow}. At even \(N\) one has
+\(q^{d(p+N)}=-q^{dp}\); the proof has not asserted otherwise.
+An unsupported grid point needs no such lift, because its
+product already vanishes by \eqref{de:unsupported-zero}.
+
+\subsection{Winding, the single cut factor and coefficient extraction}
+
+Let \(M_f\) be the number of input and output middle occurrences
+of face \(f\) at the boxes. Let \(T_f\) count outside turn
+occurrences positively and inside turn occurrences negatively,
+temporarily treating the marked cap as ordinary.
+Then
+\begin{equation}\label{de:winding}
+ M_f-T_f=2\quad(f\ne a),\qquad M_a-T_a=-2.
+\end{equation}
+Indeed traverse each face boundary with the face on its left.
+Resolve repeated boundary passages by a narrow regular
+neighborhood. In the recorded local box resolution each middle
+passage reverses the vertical tangent and contributes \(\pi\);
+the two outer passages have net turn zero. An inside cup or cap
+contributes \(\pi\), and its outside passage contributes
+\(-\pi\). The intervening monotone arcs have zero net contribution
+after deformation to vertical tangents. This also follows by
+counting signed passages through a horizontal tangent direction.
+The bounded-face boundary has winding \(+1\), and the exterior
+boundary winding \(-1\), proving \eqref{de:winding}. Every repeated
+occurrence of a face is counted, and no restriction on the
+relative heights of different boxes was used.
+
+At a cup or cap with outside face \(o\) and inside face \(z\),
+the first head satisfies
+\[
+ q^{di}=q^{d^2/2}(L_o/L_z)^{d/2}.
+\]
+Thus an ordinary cup contributes \(Nq^{-d^2/2}\) times this
+face character and a cap contributes \(N^{-1}q^{d^2/2}\) times
+the same character. There are equally many cups and caps, so
+their constant phases and powers of \(N\) cancel before one cap
+is marked. At that exposed cap, \eqref{de:mark-on-support} gives
+\begin{equation}\label{de:mark-ratio}
+ \frac{m_{ij}}{\ell_{ij}}
+      =N^{-1}q^{d(j-i)}
+      =N^{-1}(L_b/L_a)^d.
+\end{equation}
+Equations \eqref{de:coherent-adapter} and \eqref{de:winding}
+therefore turn the whole literal marked summand into
+\begin{equation}\label{de:marked-summand}
+ N^{-R-1}\,
+       \frac{\mathcal P(L)}{\prod_{f\ne a,b}L_f^d}.
+\end{equation}
+Equivalently, with \(k\) cups, \(k-1\) ordinary caps and one
+marked cap, the turn count is
+\(N^kN^{-(k-1)}N^{-2}=N^{-1}\); each of the \(R\) local Fourier
+inversions supplies its separate \(N^{-1}\).
+This is the single reduced-cut normalization.
+
+All fractional face powers have disappeared from
+\eqref{de:marked-summand}. Changing any exact potential by a
+multiple of \(N\) leaves this whole expression unchanged. By
+the supported-state argument it can be summed over the entire
+grid \eqref{de:face-grid}, not just over a chosen lift.
+
+It remains to calculate this normalized grid average.
+A monomial of \(\mathcal P\) has nonnegative face exponents \(n_f\)
+with total \(dR\). Character orthogonality on each of the
+\(R+1\) independent \(N\)-point grids gives the conditions
+\[
+ n_b\equiv0\pmod N,\qquad n_f\equiv d\pmod N
+                       \quad(f\ne a,b).
+\]
+There are \(R\) ordinary faces, each with exponent at least \(d\).
+Their minimum already exhausts the total degree \(dR\).
+Consequently the only surviving exponents are
+\begin{equation}\label{de:unique-target}
+             n_a=n_b=0,\qquad n_f=d\quad(f\ne a,b).
+\end{equation}
+At this exponent the even-coset character is exactly one.
+The \(N^{R+1}\) grids cancel the denominator in
+\eqref{de:marked-summand}. This proves
+Theorem~\ref{de:coefficient-theorem}, with both parities and the
+entire normal data of every coupon retained.
+
+\subsection{Insertion of signed powers after the shared extraction}
+
+The preceding theorem is an equality for full polynomial
+operators. It may therefore be combined with resolvent
+reproduction before any estimate is taken. Define
+\begin{equation}\label{de:shared-numerator}
+ S_N(\boldsymbol\sigma)=
+ \left[\prod_{f\ne a,b}L_f^d\right]
+ \left.
+ \prod_{e=1}^R H_{V_N(\sigma_e;\Omega)}
+        (L_{x_e},L_{b_e},L_{c_e},L_{y_e})
+ \right|_{L_a=L_b=0}.
+\end{equation}
+Each spectral degree is at most \(d\). The extraction and
+multiplication in \eqref{de:shared-numerator} take place in the
+same face variables as in the original diagram.
+
+\begin{corollary}[Exact filling of the marked source]
+\label{de:exact-filling}
+For any fixed signed integer powers \(n_1,\ldots,n_R\), the
+raw marked evaluation with \(B_q^{n_e}\) in box \(e\) is
+\begin{equation}\label{de:tensor-filling}
+ A_{\rm raw}(\boldsymbol n)
+       =\left(\bigotimes_{e=1}^R\mathcal L_N^{n_e}\right)
+                                        S_N(\boldsymbol\sigma).
+\end{equation}
+If \(C_N\) is any other polynomial with the same separate spectral
+degree bound, then
+\[
+ \left|A_{\rm raw}(\boldsymbol n)
+       -\left(\bigotimes_e\mathcal L_N^{n_e}\right)C_N\right|
+ \le\prod_e(1+|n_e|/2)\,
+                   \|S_N-C_N\|_{[-2,2]^R}.
+\]
+The joint-grid improvement of Theorem~\ref{fb:main} applies when
+its vanishing hypothesis is satisfied.
+\end{corollary}
+
+\begin{proof}
+Proposition~\ref{prop:resolvent-reproduction} gives
+\(\mathcal L_N^{n_e}V_N(\sigma_e;\Omega)=
+\widetilde f_{n_e}(\Omega)\) in each individual box.
+Proposition~\ref{fb:crossing-polynomial} identifies the latter
+with \(B_q^{n_e}\). The ordered tensor contraction is multilinear
+in its local matrices, so these identities may be applied
+separately at every box and then
+Theorem~\ref{de:coefficient-theorem} gives
+\eqref{de:tensor-filling}. No commutation between boxes is used.
+Subtract the two full shared polynomials before applying
+Theorem~\ref{fb:main}; this proves the norm assertion.
+\end{proof}
+
+The exact coefficient identity and the last corollary contain
+no asymptotic remainder hypothesis. A strict bound for the
+particular polynomial \(S_N-C_N\), and any nonzero limiting
+contribution assigned to \(C_N\), remain separate analytic
+questions.
+
+
+\section{Comparison with the reduced Kashaev invariant}
+\label{de:normalization-section}
+
+We specify the invariant convention rather than leaving a phase or
+a change of basis implicit. This comparison is finite and applies
+at every \(N\ge2\). The global coefficient theorem above is used
+only at \(N\ge3\).
+
+Let \(\mathsf P\) exchange tensor factors. In this section set
+\(R=\mathscr R_q\) and \(B=B_q=\mathsf P R\), using the
+crossing defined in Section~\ref{fb:crossing}. Set
+\[
+ p_j=\prod_{r=1}^j(1-Q^r),\qquad
+ \bar p_j=\prod_{r=1}^j(1-Q^{-r}),\qquad p_0=\bar p_0=1.
+\]
+For an integer \(a\), let \([a]_N\) be its representative in
+\(\{0,\ldots,d\}\). The enhanced Kashaev crossing in the
+column-vector convention is
+\begin{equation}\label{de:K-crossing}
+ \begin{aligned}
+ (B_K)_{ce,ab}&=
+ \frac{NQ^{1+c-b+(a-e)(c-b)}
+       \mathbf1_{u+t<N}\mathbf1_{v+h<N}}
+      {p_u\bar p_vp_t\bar p_h},\\
+ (u,v,t,h)&=([b-a-1]_N,[a-c]_N,[c-e]_N,[e-b]_N).
+ \end{aligned}
+\end{equation}
+Its enhancement is
+\[
+ \mu_K=-qS,\qquad \alpha_K=-q,\qquad \beta_K=1,
+ \qquad Sv_j=v_{[j+1]_N}.
+\]
+These are the enhanced crossing and normalization of
+Murakami--Murakami~\cite[\S\S1,4]{MurakamiMurakami2001}, with
+their quantum parameter equal to \(Q\).
+A negative braid generator uses the actual inverse of
+\eqref{de:K-crossing}. The reduced value is obtained by cutting
+one strand, taking the \(\mu_K\)-weighted traces on the others,
+and multiplying by \(\alpha_K^{-w}\), where \(w\) is the
+writhe of the braid word. Its unknot value is one.
+We use the standard enhanced ribbon invariant defined by these
+data; the calculation below proves the normalization comparison
+rather than invoking its comparison theorem.
+
+\begin{theorem}[Exact normalization of the marked coefficient]
+\label{de:invariant-normalization}
+In the enhanced braid conventions just specified, a link \(L\)
+with \(c\) components satisfies
+\begin{equation}\label{de:enhanced-comparison}
+ F_N^g(L)=(-1)^{d(c-1)}K_N(L),
+ \qquad g=K^{1-N},
+\end{equation}
+where \(F_N^g\) is the reduced \(g\)-pivotal evaluation normalized
+by its positive curl. For a knot the sign is one.
+
+For a diagram \(D\) of a knot \(K\) in
+Theorem~\ref{de:coefficient-theorem}, with its boxes filled by
+the specified signed crossing powers, the zero-framed reduced
+invariant is
+\begin{equation}\label{de:raw-invariant}
+ K_N(K)=\zeta_{N,D}A_{\rm raw}(\boldsymbol n),
+              \qquad |\zeta_{N,D}|=1.
+\end{equation}
+The character \(\zeta_{N,D}\) consists of the recorded integer
+framing corrections. For a closed braid of writhe \(w\) in the
+same convention, it is \(\theta^{-w}\), where
+\(\theta=q^{-d^2/2}\).
+Consequently the right side of \eqref{de:tensor-filling}, with
+this same character, evaluates the original invariant.
+\end{theorem}
+
+\begin{proof}
+We first compare the matrices, keeping all factorial changes
+of basis. Define \(R^o=(\mathsf P B_K)^{\mathsf T}\) and the
+Fourier matrix \(\mathsf F_{ij}=Q^{ij}/\sqrt N\). Put
+\[
+ A=(\mathsf F^{-1}\otimes\mathsf F^{-1})R^o
+                         (\mathsf F\otimes\mathsf F).
+\]
+We claim that its only nonzero entries are
+\begin{equation}\label{de:triangular-Fourier}
+ A_{a-k,b+k;\,a,b}
+   =Q^{1+(a-k)(b+1)}
+      \frac{p_a p_{b+k}}{p_{a-k}p_b p_k},
+ \qquad 0\le k\le\min(a,d-b).
+\end{equation}
+In particular the conservation is equality of integer sums.
+
+Here is the finite calculation. For a nonzero entry of \(R^o\)
+introduce the residues
+\[
+ u=[j-i-1]_N,\quad v=[i-l]_N,\quad
+ t=[l-k]_N,\quad h=[k-j]_N.
+\]
+The two indicators say \(u+t<N\) and \(v+h<N\); their total
+is congruent to \(-1\) modulo \(N\), so
+\(u+v+t+h=d\). Conversely this composition and one free index
+\(j\) determine the original entry:
+\[
+ i=j-1-u,\quad k=j+h,\quad l=j+h+t\pmod N,\qquad
+ (R^o)_{ij,kl}
+ =\frac{NQ^{1-(t+h)(u+h)}}{p_u\bar p_vp_t\bar p_h}.
+\]
+Summing the free index in the Fourier transform gives the
+modular conservation delta. If
+\[
+ S_r(X)=\sum_{j=0}^r\frac{X^j}{p_j\bar p_{r-j}},
+\]
+the remaining sum is
+\begin{equation}\label{de:Fourier-sum}
+ A_{c,e;\,a,b}
+ =\mathbf1_{a+b\equiv c+e\pmod N}
+ \sum_{z=0}^d Q^{1+c-z^2+z(a+b)}
+             S_{d-z}(Q^{c-z})S_z(Q^{z-a}).
+\end{equation}
+Use
+\(\bar p_r=(-1)^rQ^{-r(r+1)/2}p_r\).
+Comparing coefficients in
+\((1-Q^r)S_r(X)=(X-Q^r)S_{r-1}(X)\) proves
+\[
+                    S_r(X)=\frac{\prod_{j=1}^r(X-Q^j)}{p_r}.
+\]
+The two factors in \eqref{de:Fourier-sum} now force
+\(c\le z\le a\). With \(k=a-c\), the surviving sum is
+\[
+ Q^{1+c(b+1)}\frac{p_a}{p_c}
+ \sum_{j=0}^k
+   \frac{(-1)^jQ^{j(j-1)/2}Q^{(b+1)j}}{p_jp_{k-j}}
+ =
+ Q^{1+c(b+1)}\frac{p_a}{p_c}
+                    \frac{(Q^{b+1};Q)_k}{p_k}.
+\]
+Here \((a;Q)_k=\prod_{r=0}^{k-1}(1-aQ^r)\), with empty
+product one. The last equality is the same finite product identity after
+reversing its coefficients. If \(b+k\ge N\), the numerator
+contains \(1-Q^N\) and is zero. Otherwise
+\((Q^{b+1};Q)_k=p_{b+k}/p_b\). This proves
+\eqref{de:triangular-Fourier} with its endpoint support.
+
+Define diagonal matrices and a scalar by
+\[
+ G_j=\frac{p_j}{(1-Q)^j}=q^{j(j-1)/2}[j]_q!,
+ \qquad D_j=(-q)^j,\qquad \gamma=Qq^{-d^2/2}.
+\]
+The coefficient of \(E^k\otimes F^k\) in the defining finite
+\(R\) has the factorial ratio
+\(([a]_q!/[a-k]_q!)^2/[k]_q!\).
+Substitute \(p_j=(1-Q)^jq^{j(j-1)/2}[j]_q!\), together with its
+Cartan factor. The resulting entry is exactly
+\eqref{de:triangular-Fourier}, giving
+\begin{equation}\label{de:factorial-similarity}
+ A=\gamma(DG\otimes G)R
+                 (G^{-1}\otimes G^{-1}D^{-1}).
+\end{equation}
+For example, at the entry in
+\eqref{de:triangular-Fourier} the multiplier is
+\(\gamma D_{a-k}G_{a-k}G_{b+k}/(G_aG_bD_b)\).
+This fixes the positions of the factorial gauges; no estimate
+on their condition numbers has been used.
+
+The Fourier calculation involves a transposed crossing. To
+compare it with the paper's \(B=\mathsf P R\), regard the
+root self-duality as the antidiagonal matrix
+\[
+ Jv_j=c_jv_{d-j},\qquad
+ c_j=(-1)^jq^{j(j-N)}.
+\]
+It obeys \(JKJ^{-1}=K^{-1}\) and
+\begin{equation}\label{de:transpose-bridge}
+ (J\otimes J)R(J^{-1}\otimes J^{-1})=R^{\mathsf T}.
+\end{equation}
+For an entry shifted from \((a,b)\) to \((a+k,b-k)\),
+reflection leaves the factorial ratio unchanged because
+\([N-j]_q=[j]_q\). Its \(J\)-ratio is
+\[
+ \frac{c_{d-a-k}c_{d-b+k}}{c_{d-a}c_{d-b}}
+                 =q^{2k(a-b)+2k^2}.
+\]
+The reflected Cartan exponent is
+\(H_aH_b/2+k(H_a-H_b)-2k^2\), with
+\(H_a-H_b=2(b-a)\); the extra exponents cancel. This proves
+\eqref{de:transpose-bridge} entry by entry, with the same
+endpoint zeros.
+
+For a braid on \(s\) strands put
+\[
+ U_s=(\mathsf F^{-1})^{\otimes s}
+             \bigotimes_{j=1}^s(G^{-1}D^{j-1}),
+ \qquad W_s=U_sJ^{\otimes s}.
+\]
+Transposing \eqref{de:factorial-similarity} gives the adjacent
+crossing identity for \(\mathsf P R^{\mathsf T}\).
+This crossing conserves the integer total, so it commutes with
+\(D\otimes D\). The powers of \(D\) therefore combine into
+the displayed single \(U_s\), valid at every adjacent position.
+For a signed braid word \(\beta\) of writhe \(w\), one obtains
+\begin{equation}\label{de:simultaneous-braid-gauge}
+ \rho_K(\beta)=\gamma^w W_s\rho_B(\beta)W_s^{-1},
+ \qquad
+ W_sK^{\otimes s}W_s^{-1}=\mu_K^{\otimes s}.
+\end{equation}
+For the enhancement identity, \(G,D\) commute with \(K^{-1}\),
+\(q^{-d}=-q\), and
+\(\mathsf F^{-1}\operatorname{diag}(Q^j)\mathsf F=S\).
+Negative generators are handled by inverting the same
+adjacent-generator identity.
+
+We give the cut-scalar argument explicitly. For an intertwiner
+\(T\) of a tensor prefix with one last factor, set
+\(C=\operatorname{Tr}_{\rm last}((I\otimes K)T)\).
+The ordinary last trace of
+\([T,E_{\rm prefix}\otimes K+I\otimes E]=0\)
+gives \([C,E_{\rm prefix}]=0\). The \(K\)-weighted last trace
+of the corresponding \(F\) equation gives
+\([C,F_{\rm prefix}]=0\): its other two terms cancel by
+cyclicity, using
+\[
+ T(K_{\rm prefix}^{-1}\otimes I)
+ =(K_{\rm prefix}^{-1}\otimes K^{-1})T(I\otimes K).
+\]
+Commutation with the prefix \(K\) is immediate. The argument
+can be iterated. Once only \(V_d\) remains, its distinct \(K\)
+weights and nonzero adjacent \(F\) arrows force the cut
+operator to be scalar.
+
+In particular the enhanced partial traces of the crossing are
+\begin{equation}\label{de:enhancement-traces}
+ \operatorname{Tr}_2(B^{\pm1}(I\otimes K))
+       =\alpha^{\pm1}I,\qquad
+ \alpha=q^{(N^2-1)/2},\qquad \gamma\alpha=-q=\alpha_K.
+\end{equation}
+For the positive trace, evaluate on \(v_0\): only the input
+pair \((0,0)\) contributes. For the inverse, evaluate on
+\(v_d\): only \((d,d)\) contributes. Their values are
+\(q^{d^2/2+d}\) and its inverse, which proves the formula.
+These inverse calculations can also be read from
+\[
+ R^{-1}=
+ \left(\sum_{k=0}^d
+   \frac{(-1)^kq^{-k(k-1)/2}(q-q^{-1})^k}{[k]_q!}
+                           E^k\otimes F^k\right)
+                             q^{-H\otimes H/2}.
+\]
+The finite binomial identity makes its two polynomial factors
+multiply to one below degree \(N\), and
+\((E\otimes F)^N=0\).
+
+Now take the \(K\)-weighted traces of every strand of a braid
+closure except the chosen first one. Its cut operator \(C_B\)
+is scalar by the preceding argument, irrespective of the number
+of link components. In \eqref{de:simultaneous-braid-gauge},
+all conjugations on traced factors cancel by cyclicity.
+The remaining conjugation cancels because \(C_B\) is scalar.
+Equation \eqref{de:enhancement-traces} cancels every writhe
+factor, so
+\begin{equation}\label{de:reduced-comparison}
+                    \alpha_K^{-w}C_K=\alpha^{-w}C_B.
+\end{equation}
+Thus the comparison is exact even when a factorial gauge is
+large, and it holds at even and composite levels.
+
+Finally change from the \(K\)-pivot to the pivot of the marked
+source. At completeness
+\[
+                   g=(-1)^dK,\qquad
+ \theta=(-1)^d\alpha=q^{-d^2/2},\qquad |\theta|=1.
+\]
+For an \(s\)-strand closure the \(s-1\) traced factors contribute
+\((-1)^{d(s-1)}\), and the curl normalization contributes
+\((-1)^{-dw}\). If the closure has \(c\) components, its braid
+permutation gives \(w\equiv s-c\pmod2\). Combining these signs
+with \eqref{de:reduced-comparison} proves
+\eqref{de:enhanced-comparison}. The turns and marked scalar
+are exactly those already computed in
+\eqref{de:root-turns}--\eqref{de:mark-on-support}.
+For the same framed tangle, its planar ribbon reading and its
+braid reading evaluate the same specified ribbon invariant.
+The actual reduced cut is independent of its exposed edge by
+the preceding source proof.
+
+For a knot, correcting an integer framing multiplies the raw
+scalar by the corresponding power of the unit \(\theta\);
+the component sign is one. This gives
+\eqref{de:raw-invariant}. For links with separately prescribed
+component framings, retain those integer twist corrections
+rather than replacing them by the total writhe, which also
+counts crossings between different components.
+\end{proof}
+
+The full one-cut modified convention has a further, separate
+normalization. If its modified dimension is defined by
+\[
+ d_N(\alpha)=-q^{N(1-N)/2}
+ \frac{q^{\alpha+1}-q^{-\alpha-1}}
+      {q^{N\alpha}-q^{-N\alpha}},
+\]
+then \(M=-q q^\alpha=e^u\), with the lift
+\(\alpha=d+u/\log q\), gives the whole germ
+\begin{equation}\label{de:modified-dimension}
+ \begin{aligned}
+ d_N\!\left(d+\frac{u}{\log q}\right)
+   &=i^{N+3}\frac{\sinh u}{\sinh Nu},\\
+ \lim_{u\to0}d_N\!\left(d+\frac{u}{\log q}\right)
+   &=\frac{i^{N+3}}N.
+ \end{aligned}
+\end{equation}
+The value at \(u=0\) is removable. It is attached once, to the
+selected cut component, and not to every auxiliary circle.
+This alternative convention is not used to change the
+normalization in \eqref{de:raw-invariant}.

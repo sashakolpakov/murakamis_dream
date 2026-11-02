@@ -775,7 +775,7 @@ theorem therefore no longer needs these two elementary factor limits as
 inputs. It still needs the source profile estimate, the base packet rate
 and its geometric calibration.
 
-The current optional replay compiles 113 definitions and abbreviations
+The replay published at `acd7e7d5` compiles 113 definitions and abbreviations
 and 441 theorems in 27 modules. Every declaration is included in the
 axiom inventory. There are 61 rejection controls for altered metadata
 or axiom inventories, and 73 compiled mathematical boundary assertions
@@ -785,3 +785,58 @@ The finite reproduction suite contains 23 groups and pins 208 inputs.
 These records describe the checked code and its precise assumptions;
 they do not certify an entire knot-family proof. The reference
 manuscript, its mathematical sources and its 374-page PDF remain frozen.
+
+## Local spectral bounds, shared asymptotics, and finite meridian jets
+
+The local-bound and shared-coefficient papers now form one 25-page
+article, [Spectral bounds and asymptotics of Casimir sources](../papers/casimir-source-asymptotics/main.tex).
+The common finite polynomial, both parity decompositions, and the
+normalized triangle action are introduced once. The first main theorem
+bounds the local sectors on the full real spectral interval. The second
+assumes the stated stationary radii and proves a nonzero central
+asymptotic together with a gap away from the central spectral region.
+Neither conclusion is relabeled as a bound for the entire invariant.
+All distinct proofs and both figures are retained. The four current
+consumer papers cite the combined account, with the central theorem now
+numbered 8.1 and the local bound still numbered 1.1. The earlier editions
+are unchanged. The current collection has 21 drafts and 403 pages; those
+figures describe an editorial inventory, not 21 publication decisions.
+
+The [mathematical reading](manuscript_audit/casimir-source/report.md)
+records the signed transfer argument, endpoint cases, protected initial
+mode, global angular and spectral estimates, finite Gaussian, and
+interfaces to the finite-source and oscillatory results. The record
+separates the written proofs from its finite symbolic and numerical
+checks. It does not audit the entire imported infinite-charge proof or
+supply the separate noncentral-source and volume comparisons. The
+consolidation was also checked against the original sections: duplicate
+setup is replaced by internal references, while the endpoint,
+complement and normalization arguments remain in the combined paper.
+
+The new Mathlib module proves that the actual substitution $M=e^u$
+is injective on finite Laurent polynomials. For a fixed exponent set of
+size $k$, the first $k$ coefficients are the moments of the unknown
+coefficients divided by factorials. The Vandermonde determinant on
+distinct integer exponents is nonzero, so these moments recover the
+polynomial. The coefficientwise map in an independent variable $L$
+therefore preserves the nonzero normalized classical symbol. The
+conditional characteristic theorem now retains this nonzero formal
+symbol explicitly. Its actual recurrence and source-ratio estimates
+remain hypotheses, and evaluation at the selected longitude can still
+have a kernel. Separate controls prove this limitation and the absence
+of a uniform jet bound when the exponent set is unrestricted.
+
+The registered replay compiles 115 definitions or abbreviations and
+461 theorems in 28 Mathlib modules, with foundational axioms only. It
+also checks 63 altered-inventory rejection cases and 77 mathematical
+boundary assertions, with one separately recorded helper. These are
+counts of compiled declarations and controls, not an end-to-end
+formalization of a knot-family theorem. The reference manuscript and
+its 374-page PDF remain frozen.
+
+The finite reproduction suite now has 22 groups and pins 227 inputs.
+The combined paper's wrapper invokes both retained component suites, so
+consolidating the group names does not remove any finite check. The five
+rebuilt PDFs have no unresolved references or overfull boxes. All 97
+original labels remain available in the combined paper; the consumer
+citations were checked against their new numbers.

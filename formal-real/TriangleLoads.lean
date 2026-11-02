@@ -14,8 +14,9 @@ Nonnegative corner coefficients and a positive radicand include both a fully
 positive triangle and a triangle with exactly one zero corner. The resulting
 Jacobian is identified with the explicit three-edge graph form.
 
-Identifying these loads with the gradient of the entropy-envelope potential,
-and identifying the geometric incidence data, remain written inputs.
+The downstream `TrianglePotential` and `TriangleBalance` modules construct
+the entropy-envelope potential and prove that these loads give its gradient.
+Identifying the geometric incidence data remains an application input.
 -/
 
 namespace VolumeLogic.TriangleLoads

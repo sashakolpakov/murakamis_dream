@@ -269,6 +269,46 @@ characteristic zero, divisibility by \(\Phi_n(q)^{k+1}\) means
 vanishing of all these derivatives through order \(k\) at every
 primitive \(n\)-th root.
 
+There is a more concrete finite-jet statement for the meridian
+coefficients of a fixed operator. A Laurent polynomial is a finite sum
+\[
+ p(M)=\sum_{m\in E}c_mM^m,
+ \qquad E\subset\mathbb Z\text{ finite},\quad c_m\in\mathbb C.
+\]
+Negative exponents are allowed. Substituting \(M=e^u\) gives the formal
+power series \(\mathcal E(p)=\sum_{m\in E}c_me^{mu}\). If the allowed
+exponent set \(E\) has \(k\) elements, its coefficients through degree
+\(k-1\) determine every \(c_m\). Indeed,
+\[
+ n!\,[u^n]\mathcal E(p)=\sum_{m\in E}c_m m^n,
+ \qquad 0\le n<k.
+\]
+Here \([u^n]\) means the coefficient of \(u^n\). After ordering the
+distinct exponents as \(m_1,\ldots,m_k\), these equations have the
+Vandermonde matrix \((m_j^n)_{0\le n<k,\,1\le j\le k}\). Its
+determinant is \(\prod_{i<j}(m_j-m_i)\ne0\), so the system has a
+unique solution. This proves that \(p\mapsto\mathcal E(p)\) is
+injective. The identity \(e^{mu}e^{nu}=e^{(m+n)u}\) also proves
+that it preserves multiplication.
+
+The exponent restriction is essential. For any prescribed jet order
+\(r\), the nonzero polynomial \((M-1)^{r+1}\) becomes
+\((e^u-1)^{r+1}\), whose coefficients through degree \(r\) vanish.
+Thus a finite jet gives uniqueness within a specified finite-dimensional
+space; no fixed jet order works for every Laurent polynomial. For a
+polynomial in a second variable \(L\), the same argument applies to
+each coefficient while \(L\) remains an independent variable.
+Subsequently setting \(L=\ell(u)\) can kill a nonzero polynomial:
+\(L+1\) vanishes at \(\ell(u)=-1\).
+
+This is the finite linear algebra needed to preserve the nonzero
+classical symbol under meridian expansion. The
+[Lean proof](../../formal-real/MeridianSeriesEmbedding.lean) formalizes
+the moment calculation, reconstruction and coefficientwise polynomial map.
+It does not construct the
+quantum recurrence or prove that the source supplies the required jets.
+Those remain separate steps in the operator argument.
+
 There is also an established uniqueness theorem for a different,
 precisely specified class. Habiro's cyclotomic completion is
 \[

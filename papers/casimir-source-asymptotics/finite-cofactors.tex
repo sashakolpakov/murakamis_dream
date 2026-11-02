@@ -1,0 +1,126 @@
+\section{The exact polynomial and its path partition}\label{lc:source}
+We import only the finite operator identification from \cite{FinitePaper}.
+The matrix needed in the estimates is explicit. On \(1,z,\ldots,z^d\),
+let
+\begin{equation}\label{lc:banded}
+ \mathsf C z^j=2\cos((2j+1)\theta)z^j
+       -s_j^2(x+y)z^{j-1}-s_js_{j-1}xy\,z^{j-2},
+ \qquad s_j=2\sin(j\theta).
+\end{equation}\aliascurrentequation{\label{sa:operator}}
+Negative powers vanish because \(s_0=0\). In the finite Fourier theorem
+\(\mathsf C=-T\). To specify the imported identification, let
+\(\Omega_s\) be the block of the physical pair operator on
+\[
+ e_u\otimes e_{[s-u]_N},\qquad 0\le u<N,\qquad 0\le s<N.
+\]
+Here \(e_0,\ldots,e_d\) is its standard one-strand basis, and
+\([v]_N\) is the representative in \(\{0,\ldots,N-1\}\).
+For \(y\ne0\), specialize \(x=Q^{s+1}y\), set
+\(\zeta_u=-q^{-1}xQ^{-u}\), and define
+\(\mathsf E_{uj}=\zeta_u^j\), \(G_{uu}=q^{du}\). Then
+\begin{equation}\label{lc:residue-adapter}
+ \mathsf E\mathsf C\mathsf E^{-1}
+                     =G^{-1}\Omega_s^{\mathsf T}G.
+\end{equation}
+The \(N\) blocks form the \(N^2\)-dimensional pair space. The identity
+includes their nilpotent parts, not just eigenvalues. The face
+polynomial retains independent \(x,y\); its specialized values recover
+the matrix entries by the adapter in \cite[equation (4.5)]{FinitePaper}.
+If \(f(\mathsf C)_{ij}\) is the coefficient from \(z^j\)
+to \(z^i\), the homogeneous polynomial is
+\[
+ H_f(x,b,c,y)=\sum_{0\le i\le j\le d}f(\mathsf C)_{ij}b^ic^{d-j}.
+\]
+Its entries are polynomials in \(x,y\), and its total face degree is \(d\).
+
+Set
+\begin{equation}\label{lc:diagonal}
+ \sigma=-2-u,\qquad a_j=2+2\cos((2j+1)\theta),\qquad
+ \alpha_j=a_j+u,\qquad A=x+y,\quad P=xy.
+\end{equation}
+The triangular matrix \(\mathsf M=2I+\mathsf C+uI\) has diagonal
+\(\alpha_j\), and lowering entries \(-s_j^2A\), \(-s_js_{j-1}P\).
+Its diagonal product is \((-1)^N\chi_N(-2-u)\). Consequently
+\begin{equation}\label{lc:adjugate}
+ \mathcal P_N(x,b,c,y;u):=(-1)^dH_V(x,b,c,y;-2-u)
+       =\sum_{i\le j}(\operatorname{adj}\mathsf M)_{ij}b^ic^{d-j}.
+\end{equation}
+The identity follows first where \(\mathsf M\) is invertible and then
+by polynomial equality, including every singular spectral value.
+
+Expand its triangular inverse by the strictly lowering part and
+multiply by all diagonal factors. A path \(j\to i\) uses steps of length
+one or two. Its weight is the product of \(s_r^2A\) for a step
+\(r\to r-1\), \(s_rs_{r-1}P\) for a step \(r\to r-2\), and
+\(\alpha_r\) for precisely the rows it does not visit.
+The middle monomial \(b^ic^{d-j}\) completes its term.
+This proves the path rule, including the case of a zero unused factor.
+
+Partition \(\mathcal P_N=\mathcal P_{\mathrm C}+\mathcal P_{\mathrm L}
++\mathcal P_{\mathrm R}\) by the sectors in the introduction.
+Their common sign relative to \(H_V\) does not affect modulus bounds.
+Every sector has spectral degree at most \(d\). At \(u=0\), every
+path weight is nonnegative. At odd \(N\), a path missing the middle
+row has its unused factor \(a_m=0\).
+
+\input{figures/local-path-partition.tex}
+
+\subsection{Cleared cofactors}
+Let \(R_j(b;u)\) be the determinant obtained from the block of
+\(\mathsf M\) on rows \(0,\ldots,j\) by replacing its last row with
+\((1,b,\ldots,b^j)\). Its path expansion gives
+\begin{equation}\label{lc:R-recurrence}
+\begin{split}
+ R_0&=1,\qquad R_{-1}=R_{-2}=0,\\
+ R_j(b;u)&=b^j\prod_{r<j}\alpha_r+s_j^2A R_{j-1}(b;u)
+                +s_js_{j-1}\alpha_{j-1}P R_{j-2}(b;u).
+\end{split}
+\end{equation}\aliascurrentequation{\label{sa:R}}
+Equivalently, group the paths by their starting row:
+\begin{equation}\label{sa:path}
+ \begin{gathered}
+ R_j=\sum_{i=0}^j b^i\prod_{r<i}\alpha_r K_{i,j},\qquad
+ K_{i,i}=1,\quad K_{i,i-1}=0,\\
+ K_{i,k}=s_k^2A K_{i,k-1}+s_ks_{k-1}\alpha_{k-1}P K_{i,k-2}.
+ \end{gathered}
+\end{equation}
+The interval polynomial $K_{i,j}$ sums the paths between rows $i$ and $j$.
+Both this formula and \eqref{lc:R-recurrence} are polynomial identities
+when a diagonal factor vanishes.
+
+The first term at \(j=0\) is the empty product one. Each \(R_j\)
+has face degree \(j\) and spectral degree at most \(j\). Put
+\[
+ D_b=R_{m-1}(b;u),\qquad E_b=\alpha_{m-1}R_{m-2}(b;u),
+\]
+with \(E_b=0\) when \(m=1\). Subscripts \(b,c\) here denote substitution
+of the middle variable, not differentiation.
+
+\begin{lemma}[Exact central factors]\label{lc:central-factors}
+At \(N=2m\),
+\begin{equation}\label{lc:even-factor}
+ \mathcal P_{\mathrm C}
+ =s_m^2A D_bD_c+s_ms_{m-1}P(D_bE_c+E_bD_c).
+\end{equation}\aliascurrentequation{\label{sa:even}}
+At \(N=2m+1\), with \(G_b=R_m(b;u)\),
+\begin{equation}\label{lc:odd-factor}
+ \mathcal P_{\mathrm C}=G_bG_c+u s_m^2P D_bD_c.
+\end{equation}\aliascurrentequation{\label{sa:odd}}
+Both are polynomial identities for every \(u\).
+\end{lemma}
+\begin{proof}
+An even central path crosses the cut exactly once, by \(m\to m-1\),
+\(m+1\to m-1\), or \(m\to m-2\). Their weights give the three
+terms. Reflection \(r\mapsto d-r\) identifies upper and lower
+cofactors: \(a_{d-r}=a_r\), and the reflected step products agree.
+At odd level, paths visiting \(m\) split there to give \(G_bG_c\).
+A path skipping it has the unique jump \(m+1\to m-1\), with weight
+\(s_{m+1}s_mP=s_m^2P\); its unused diagonal is \(u\).
+This proves the second term without dividing by \(u\).
+\end{proof}
+
+The same reflection interchanges the left and right sectors and \(b,c\).
+A one-step at \(r\) reflects to one at \(N-r\), with \(s_{N-r}=s_r\);
+a two-step reflects to one at \(N+1-r\), with product \(s_{r-1}s_r\).
+It therefore suffices to estimate the left sector.
+

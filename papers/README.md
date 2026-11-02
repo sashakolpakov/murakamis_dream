@@ -40,7 +40,7 @@ every subject in the collection. The route follows the named uses in
 the inventory; it does not automatically include every result from an
 article that supplies one lemma.
 
-The current source-asymptotics proof defines its finite action directly
+The current Casimir-source proof defines its finite action directly
 from the exact cofactor polynomial. The earlier fold interpolation
 remains in the reference account and guide as an alternative construction;
 the direct proof does not require both routes. This is one concrete way
@@ -59,10 +59,10 @@ common core for several inserted diagrams also uses protected gluing.
 
 ## The current drafts
 
-The twenty-two current papers total 404 pages, with individual lengths from
+The twenty-one current papers total 403 pages, with individual lengths from
 11 to 29 pages. Each gives the proofs of its stated results and names
-its numbered companion imports. Six earlier editions, totaling
-another 87 pages, are preserved below for existing citations. This is a
+its numbered companion imports. Eight earlier editions, totaling
+another 113 pages, are preserved below for existing citations. This is a
 division of the retained results into citable components; the reading
 routes are explained at the end of this guide. The aggregate page count
 is not a measure of compression: separate papers repeat their conventions
@@ -282,19 +282,36 @@ lattice hypotheses explicitly. These are local analytic results for use
 in broader Conway arguments; they do not bound a whole complementary
 source or prove a further knot-family volume theorem.
 
-**Uniform spectral bounds for local Casimir sources.** 14 pages.
-[TeX source](local-coefficients/main.tex) ·
-[PDF](../docs/papers/local-coefficients.pdf)
+**Spectral bounds and asymptotics of Casimir sources.** 25 pages.
+[TeX source](casimir-source-asymptotics/main.tex) ·
+[PDF](../docs/papers/casimir-source-asymptotics.pdf)
 
-This paper proves the estimates needed before applying Cauchy's coefficient
-formula to a collection of tangles. It defines the local polynomial by an
-explicit banded matrix and partitions its paths into three degree regions.
-Theorem 1.1 bounds all three regions over the entire real spectral interval
-and for arbitrary phases of the face variables. The proof includes the
-signed recurrence, both unused spectral products, the endpoint optimization,
-both level parities and face variables fixed exactly at zero. It imports
-the operator identification from the finite spectral paper. It does not
-assume a geometric saddle or a volume identity.
+This paper studies one finite Casimir face polynomial and the coefficients
+obtained by sharing its variables across a diagram. Theorem 1.1 bounds
+its central and two one-sided degree sectors uniformly over the entire
+real spectral interval and all face phases. The proof retains the signed
+recurrence, both unused spectral products, the endpoint optimization,
+both level parities and variables fixed exactly at zero. These are local
+upper bounds; the one-sided conclusions do not assert coefficientwise
+domination.
+
+Theorem 8.1 considers the shared central coefficient on a simple
+triangulated sphere with a dual perfect matching and a marked nonmatching
+edge. Given stationary positive radii for the ordinary faces, it proves
+a nonzero holomorphic Gaussian expansion and a strict spectral gap away
+from the complete point. Its finite action comes directly from the exact
+cofactor polynomial. Positive matrices control the complementary face
+phases, and the proof uses one common radius vector and the primitive
+ordinary phase lattice. The two figures illustrate the local path
+partition and a shared coefficient on a tetrahedral sphere.
+
+Section 14 supplies the exact normalized input to the oscillatory filling
+theorem. The local estimates and the central expansion now use one set
+of definitions and a single proof of the common nodal comparison. The
+former 14-page local-bound paper and 12-page central-source paper remain
+available as earlier editions. A bound on the other degree sectors and
+a geometric identification of the action are still separate inputs to
+a volume theorem.
 
 **Oscillatory filling sums with independently long twists.** 11 pages.
 [TeX source](oscillatory-fillings/main.tex) ·
@@ -311,22 +328,6 @@ finitely many integrals. An elementary polynomial example verifies both
 hypotheses explicitly. For a knot source, construction of those hypotheses
 and identification of the critical action with volume remain separate
 theorems.
-
-**Holomorphic asymptotics of central shared face coefficients.** 12 pages.
-[TeX source](source-asymptotics/main.tex) ·
-[PDF](../docs/papers/source-asymptotics.pdf)
-
-Theorem 1.1 supplies the two source estimates used by the filling-sum
-paper. Given positive stationary face weights, it proves a nonzero
-holomorphic Gaussian expansion for the actual central coefficient and
-a strict spectral bound away from its complete point. The proof treats
-the entire shared face torus, including the regions outside the Gaussian
-neighborhood. It retains both level parities, the original coefficient
-targets and the odd skipped-row term. A tetrahedral example illustrates
-why repeated face labels denote one variable and why the Gaussian measure
-has no extra integer-lattice factor. Section 7 states the exact normalized
-input to the oscillatory theorem. Bounding the other degree sectors of
-the invariant remains the task of an application theorem.
 
 **Circle patterns and primitive fillings of augmented links.** 18 pages.
 [TeX source](marked-fillings/main.tex) ·
@@ -556,9 +557,10 @@ It imports three explicitly stated results: the exact source identity,
 the uniform local coefficient estimates, and the nonzero geometric
 filling contribution with its absolute volume calibration. Those
 dependencies are substantial. The finite input and local upper bounds are
-proved in the finite spectral and local Casimir coefficient papers. The filling-sum paper proves the
-analytic implication once its local expansion and global gap are supplied.
-The source-asymptotics paper constructs that expansion and gap. The
+proved in the finite spectral and Casimir-source papers. The filling-sum
+paper proves the analytic implication once its local expansion and global
+gap are supplied. The Casimir-source paper constructs that expansion and
+gap under its stated stationary-radius hypothesis. The
 circle-pattern paper supplies the marked geometric volume comparison.
 The application now cites numbered statements in these companion papers,
 and checks their common normalization and hypotheses.
@@ -584,6 +586,17 @@ The 27-page current **Volume asymptotics for trees of crossing circles**
 contains both proofs. Current consumers cite that paper. The earlier
 source files and PDFs are unchanged; neither criterion has been removed
 or substituted for the other.
+
+The two earlier Casimir-source papers retain their numbering and addresses:
+
+- [Uniform spectral bounds for local Casimir sources](../docs/papers/local-coefficients.pdf), 14 pages: the phase-uniform central and one-sided bounds. [TeX source](local-coefficients/main.tex).
+- [Holomorphic asymptotics of central shared face coefficients](../docs/papers/source-asymptotics.pdf), 12 pages: the nonzero shared central asymptotic and the spectral gap. [TeX source](source-asymptotics/main.tex).
+
+The 25-page current **Spectral bounds and asymptotics of Casimir sources**
+contains both proofs. It defines their common operator, cofactors and
+triangle function once. Its local upper bounds and central asymptotic
+retain their distinct hypotheses; current consumers cite the combined
+account.
 
 The following two papers treat the narrower completed-root construction.
 They remain available for existing citations. The 21-page **Marked
@@ -645,6 +658,15 @@ criterion is not inferred from the summed one, and neither requires the
 strict Conway long-power hypothesis. Both routes supply the source
 estimates used by Meridian Expansions. The dependency graph retains their
 separate assumptions and theorem uses within the combined article.
+
+For the matched-sphere applications, **Spectral bounds and asymptotics
+of Casimir sources** gives the local sector estimates in Sections 1–7.
+Sections 8–13 prove the shared central expansion and spectral gap, and
+Section 14 passes their normalization to the oscillatory filling theorem.
+The circle-pattern paper supplies stationary radii and the marked volume
+comparison. The planar certificate, terminal-decoration, triangular-insertion
+and three-braid papers prove their own sufficient estimates for the full
+complementary source. A central Gaussian alone does not supply those estimates.
 
 The frozen reference manuscript's first theorem uses its completed-root
 grammar. The companion accounts now cover the larger strict syntax through
@@ -735,10 +757,10 @@ controls showing what a finite jet cannot determine. These calculations
 do not prove uniform analytic remainders, existence of an annihilator,
 or a geometric identification from sampled levels.
 
-The local-bound and filling-sum checks can also be run separately:
+The combined Casimir-source and filling-sum checks can also be run separately:
 
 ~~~sh
-python3 papers/local-coefficients/check.py --output repro/results/local-coefficients.json
+python3 papers/casimir-source-asymptotics/check.py --output repro/results/casimir-source-asymptotics
 python3 papers/oscillatory-fillings/check.py --output repro/results/oscillatory-fillings.json
 ~~~
 

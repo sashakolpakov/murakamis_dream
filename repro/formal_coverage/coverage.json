@@ -1,23 +1,26 @@
 {
-  "baseline_commit": "586d1efb35341ec779d00366de7e6ace4a32c61c",
-  "method": "Statement/interface audit of the 22 current papers, with separate summed and directed circle-tree criteria, exact source locators, and the final integrated Lean replay. Compiled generic implications are distinguished from the actual analytic, geometric and topological application inputs.",
-  "current_articles": 22,
+  "baseline_commit": "acd7e7d5bff5641537f0b6dc71684711ac68dda0",
+  "method": "Statement/interface audit of the 21 current papers, including the consolidated local and central Casimir source paper, exact source locators, and the final integrated Lean replay. Compiled generic implications remain distinct from actual analytic, geometric and topological application inputs.",
+  "current_articles": 21,
   "excluded_earlier_editions": [
     "newton-tangles",
     "strict-newton-profiles",
     "conway-geometry",
     "conway-fillings",
+    "local-coefficients",
+    "source-asymptotics",
     "circle-tree-asymptotics",
     "directed-tree-asymptotics"
   ],
   "compiled_record_counts": {
     "std_theorems": 241,
-    "real_theorems": 441,
-    "real_definitions": 113
+    "real_modules": 28,
+    "real_theorems": 461,
+    "real_definitions": 115
   },
-  "compiled_record_source_pin_count": 70,
+  "compiled_record_source_pin_count": 72,
   "compiled_record_source_mismatches": [],
-  "validated_locator_count": 374,
+  "validated_locator_count": 380,
   "rows": [
     {
       "article": "filling-bounds",
@@ -363,7 +366,7 @@
       "remaining_boundary": "No Lean tree-contraction object or physical-to-quotient adapter exists in this baseline; generic quotient algebra does not prove mt:tree or mt:scalar.",
       "catalog_import_statements": [
         "Complete physical turn/trace calibration, crossing polynomial and circle coefficients from Newton calculus and stationary profiles of Conway tangles, Proposition 3.2, equation (4.8) and Section 4. No complete-product theorem is imported.",
-        "Canonical polynomial reduction and product compatibility from Finite spectral evaluation and uniform filling bounds, Propositions 2.1\u20132.2; reduced Kashaev comparison from Theorem 10.1 only for N>=3.",
+        "Canonical polynomial reduction and product compatibility from Finite spectral evaluation and uniform filling bounds, Propositions 2.1–2.2; reduced Kashaev comparison from Theorem 10.1 only for N>=3.",
         "The standard nilpotent/unrolled ribbon-tangle framework is cited through ADO, GPT and CGP. The physical normalization, duality, partial trace, typed turns and finite kernel are proved in this companion; no claim is made to reprove every categorical Reidemeister fact."
       ],
       "written_dependency_locator_inventory": [
@@ -511,7 +514,7 @@
       "remaining_boundary": "No source-bound claim is obtained merely from the dependency graph. Its H>=3 theorem cannot formally or mathematically replace the written H=2 corollary.",
       "catalog_import_statements": [
         "Actual turn and trace, full Newton multiplication and colored-circle split from Newton calculus and stationary profiles of Conway tangles, Proposition 3.2, Theorem 3.3 and Proposition 4.1.",
-        "Reduced junctions, arbitrary-leaf rooting, unique strict optimizer and absolute boundary profiles from Newton calculus and stationary profiles of Conway tangles, Theorem 5.5, Corollary 5.6, Theorems 6.4 and 7.3\u20137.4, and Corollary 7.5.",
+        "Reduced junctions, arbitrary-leaf rooting, unique strict optimizer and absolute boundary profiles from Newton calculus and stationary profiles of Conway tangles, Theorem 5.5, Corollary 5.6, Theorems 6.4 and 7.3–7.4, and Corollary 7.5.",
         "Two rational supporting-plane certificates, with complete domain coverage. The complete-node norm, Fourier identity with all first normals, character cancellation and comparison induction are proved here. The signed recurrence is retained as a separate local result, not a premise of the whole-source theorem.",
         "Theorem 1.1 treats at least three leaves; Corollary 9.1 proves the two-leaf case separately. No nonzero filled asymptotic, quantum action comparison or geometric volume is imported or concluded."
       ],
@@ -2064,19 +2067,24 @@
       "paper_top_level_instantiated_in_lean": false
     },
     {
-      "article": "local-coefficients",
-      "title": "Uniform spectral bounds for local Casimir sources",
-      "conclusions": "Uniform C/L/R local spectral upper rates, both parities and fixed supported compact moduli.",
+      "article": "casimir-source-asymptotics",
+      "title": "Spectral bounds and asymptotics of Casimir sources",
+      "conclusions": "Uniform central and one-sided local spectral upper rates for both parities and fixed supported compact moduli; at stationary positive shared radii, a nonzero holomorphic central-coefficient Gaussian expansion and a shared spectral-strip gap at every sufficiently large integer level.",
       "conclusion_sources": [
         {
-          "path": "papers/local-coefficients/main.tex",
+          "path": "papers/casimir-source-asymptotics/local-bounds.tex",
           "anchor": "\\label{lc:main}",
-          "line": 108
+          "line": 100
         },
         {
-          "path": "papers/local-coefficients/main.tex",
+          "path": "papers/casimir-source-asymptotics/triangle-action.tex",
           "anchor": "\\label{lc:action-identity}",
-          "line": 550
+          "line": 35
+        },
+        {
+          "path": "papers/casimir-source-asymptotics/shared-coefficient.tex",
+          "anchor": "\\label{sa:main}",
+          "line": 99
         }
       ],
       "compiled_results": [
@@ -2109,13 +2117,45 @@
           "declaration": "VolumeLogic.TrianglePotential.potential_hasDerivAt",
           "anchor": "theorem potential_hasDerivAt",
           "line": 373
+        },
+        {
+          "path": "formal-real/TriangleHall.lean",
+          "declaration": "VolumeLogic.TriangleHall.exists_unique_minimizer",
+          "anchor": "theorem exists_unique_minimizer",
+          "line": 131
+        },
+        {
+          "path": "formal-real/TriangleHall.lean",
+          "declaration": "VolumeLogic.TriangleHall.exists_unique_balance",
+          "anchor": "theorem exists_unique_balance",
+          "line": 111
+        },
+        {
+          "path": "formal-real/WeightedGraph.lean",
+          "declaration": "VolumeLogic.WeightedGraph.grounded_laplacian_pos",
+          "anchor": "theorem grounded_laplacian_pos",
+          "line": 245
+        },
+        {
+          "path": "formal-real/GroundedLaplacian.lean",
+          "declaration": "VolumeLogic.GroundedLaplacian.reducedOperator_bijective",
+          "anchor": "theorem reducedOperator_bijective",
+          "line": 156
+        },
+        {
+          "path": "formal/VolumeLogic/FaceGridSupport.lean",
+          "declaration": "VolumeLogic.face_grid_unique_exponents",
+          "anchor": "theorem face_grid_unique_exponents",
+          "line": 64
         }
       ],
-      "actual_coverage": "Support arithmetic and the separately constructed triangle entropy potential/derivative are genuine compiled mathematics.",
-      "written_inputs": "Identification with the actual cofactor recurrence, finite determinant/transfer bounds, uniform interpolation at collisions, explicit normalization and all-phase suprema remain written.",
-      "remaining_boundary": "Formal potential calculus alone does not establish local spectral growth or its uniformity.",
+      "actual_coverage": "Support arithmetic, the supported triangle entropy and its derivative, strict-cut balance and grounded Hessian invertibility, and unique face-grid targets are proved. These generic algebraic and convexity results do not themselves establish the local spectral estimates or the central Gaussian and complementary-region bounds.",
+      "written_inputs": "Identification with the actual Casimir cofactor recurrence, finite nodal/transfer bounds, endpoint and protected-variable arguments, uniform interpolation, primitive phase lattice, complex cofactor logarithms and Gaussian contour, and shared global spectral exclusion remain written proofs. A stationary positive radius vector is an explicit hypothesis of the central theorem; applying the generic balance results requires verification of the actual incidence and cut hypotheses.",
+      "remaining_boundary": "No compiled theorem proves the local uniform spectral rates or the complete H1/H2 estimates. Their analytic proofs are retained in the paper, separately from the positive-radius hypothesis and from noncentral invariant control or geometric volume calibration. The shared Gaussian is not inferred from Hessian positivity alone.",
       "catalog_import_statements": [
-        "Finite Fourier/Casimir identification from Finite spectral evaluation and uniform filling bounds, Proposition 4.1 and equations (4.4)\u2013(4.5)."
+        "Finite Fourier/Casimir identification and marked coefficient identities from Finite spectral evaluation and uniform filling bounds, Proposition 4.1, equations (4.4)–(4.5), Theorem 9.1 and Corollary 9.2.",
+        "A positive stationary ordinary-radius vector is an explicit hypothesis of Theorem 8.1; geometric construction of such radii is a separate input.",
+        "Theorem 1.1 of Oscillatory filling sums with independently long twists is used in Section 14 to evaluate the central filling period."
       ],
       "written_dependency_locator_inventory": [
         {
@@ -2183,62 +2223,7 @@
               "line": 619
             }
           ]
-        }
-      ],
-      "paper_top_level_instantiated_in_lean": false
-    },
-    {
-      "article": "source-asymptotics",
-      "title": "Holomorphic asymptotics of central shared face coefficients",
-      "conclusions": "Actual central coefficient holomorphic packet H1 and shared strip gap H2, all sufficiently large integer levels.",
-      "conclusion_sources": [
-        {
-          "path": "papers/source-asymptotics/main.tex",
-          "anchor": "\\label{sa:main}",
-          "line": 138
-        }
-      ],
-      "compiled_results": [
-        {
-          "path": "formal-real/TriangleHall.lean",
-          "declaration": "VolumeLogic.TriangleHall.exists_unique_minimizer",
-          "anchor": "theorem exists_unique_minimizer",
-          "line": 131
         },
-        {
-          "path": "formal-real/TriangleHall.lean",
-          "declaration": "VolumeLogic.TriangleHall.exists_unique_balance",
-          "anchor": "theorem exists_unique_balance",
-          "line": 111
-        },
-        {
-          "path": "formal-real/WeightedGraph.lean",
-          "declaration": "VolumeLogic.WeightedGraph.grounded_laplacian_pos",
-          "anchor": "theorem grounded_laplacian_pos",
-          "line": 245
-        },
-        {
-          "path": "formal-real/GroundedLaplacian.lean",
-          "declaration": "VolumeLogic.GroundedLaplacian.reducedOperator_bijective",
-          "anchor": "theorem reducedOperator_bijective",
-          "line": 156
-        },
-        {
-          "path": "formal/VolumeLogic/FaceGridSupport.lean",
-          "declaration": "VolumeLogic.face_grid_unique_exponents",
-          "anchor": "theorem face_grid_unique_exponents",
-          "line": 64
-        }
-      ],
-      "actual_coverage": "Finite cuts imply actual supported triangle balance and grounded Hessian invertibility; target saturation is proved.",
-      "written_inputs": "The given geometric incidence must satisfy the cut/connectedness hypotheses; original positive cofactor expansion, primitive phase lattice, complex coefficient saddle and global spectral exclusion remain written.",
-      "remaining_boundary": "No compiled saddle or uniform H1/H2 theorem exists. Those are explicitly retained analytic inputs to the Fourier theorem, not inferred from Hessian positivity alone.",
-      "catalog_import_statements": [
-        "Exact local Fourier/Casimir and marked coefficient identities from Finite spectral evaluation and uniform filling bounds, Proposition 4.1 and Theorem 9.1.",
-        "Uniform cofactor bounds and the absolutely normalized triangle action from Uniform spectral bounds for local Casimir sources, Sections 3\u20135.",
-        "A positive stationary radius vector is an explicit analytic hypothesis; the classical packing theorem supplies it for matched spheres."
-      ],
-      "written_dependency_locator_inventory": [
         {
           "consumer_node": "analytic_morse_face_saddle",
           "input_node": "finite_global_source",
@@ -2348,19 +2333,19 @@
           "reason": "Supplies the finite coefficientwise comparison and nodal interpolation used to extend the positive determinant phase loss to every real spectrum.",
           "sources": [
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/nodal-comparison.tex",
               "anchor": "\\label{lc:nodal-positive}",
-              "line": 296
+              "line": 11
             },
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/nodal-comparison.tex",
               "anchor": "\\label{lc:interpolation}",
-              "line": 341
+              "line": 52
             },
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/nodal-comparison.tex",
               "anchor": "\\label{lc:central-comparison}",
-              "line": 372
+              "line": 83
             }
           ]
         },
@@ -2370,14 +2355,14 @@
           "reason": "Supplies the uniform signed recurrence bound and normalized triangle action; the separated-gap argument additionally compares its spectral derivative and endpoint alternative.",
           "sources": [
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/signed-transfer.tex",
               "anchor": "\\label{lc:slow-transfer}",
-              "line": 421
+              "line": 24
             },
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/triangle-action.tex",
               "anchor": "\\label{lc:action-identity}",
-              "line": 550
+              "line": 35
             }
           ]
         },
@@ -2599,14 +2584,14 @@
           "reason": "Controls omitted starting rows and supplies the absolute limiting triangle action.",
           "sources": [
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/signed-transfer.tex",
               "anchor": "\\label{lc:slow-transfer}",
-              "line": 421
+              "line": 24
             },
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/triangle-action.tex",
               "anchor": "\\label{lc:action-identity}",
-              "line": 550
+              "line": 35
             }
           ]
         }
@@ -2844,8 +2829,8 @@
       "remaining_boundary": "A source branch must separately reach the same actual positive filled anchor and primitive rows. Formal graph rank alone would not identify that branch.",
       "catalog_import_statements": [
         "The original ordered cut and positive angular octahedra from Positive octahedra and primitive fillings for trees of crossing circles, Proposition 2.1 and Lemma 3.1; its Theorems 1.1 and 7.1 supply the geometric anchors for the stated quantitative applications.",
-        "The physical positive odd meridian convention from Marked geometry of strict Conway compositions, Section 5, equations (5.1)\u2013(5.2). No global quantum estimate is imported.",
-        "The actual cusp-side rows and normal-flow intersection identity from Circle patterns and primitive fillings of augmented links, Section 7.1, equations (7.1)\u2013(7.2). The edge rank, polarized Jacobian and shape/representation inverse are proved here.",
+        "The physical positive odd meridian convention from Marked geometry of strict Conway compositions, Section 5, equations (5.1)–(5.2). No global quantum estimate is imported.",
+        "The actual cusp-side rows and normal-flow intersection identity from Circle patterns and primitive fillings of augmented links, Section 7.1, equations (7.1)–(7.2). The edge rank, polarized Jacobian and shape/representation inverse are proved here.",
         "Full local matrices, ordered conjugacies, global selected flags and primitive slope words are proved in this paper. A separately constructed branch must have the same actual positive filled anchor before its identification with the geometric germ."
       ],
       "written_dependency_locator_inventory": [
@@ -3051,7 +3036,7 @@
       "remaining_boundary": "This is an explicit geometric/algebraic input to the selected-factor corollary; it is not a conclusion of FormalShift or FormalRegrading.",
       "catalog_import_statements": [
         "Original marked all-circle representation and filled meridian germ from Nonparabolic holonomy of trees of crossing circles, Theorems 1.1, 1.2 and 3.1 and Proposition 6.1.",
-        "Original strict positive geometry and independently long signed primitive fillings from Marked geometry of strict Conway compositions, Theorems 1.2\u20131.3 and Sections 6\u20138; original auxiliary disk marking from Positive octahedra and primitive fillings for trees of crossing circles, Proposition 2.1.",
+        "Original strict positive geometry and independently long signed primitive fillings from Marked geometry of strict Conway compositions, Theorems 1.2–1.3 and Sections 6–8; original auxiliary disk marking from Positive octahedra and primitive fillings for trees of crossing circles, Proposition 2.1.",
         "Strict stationary response from Newton calculus and stationary profiles of Conway tangles, Theorem 6.4, Lemma 7.1 and Proposition 7.2; Newton turn/product identities and scalar factorial estimate from Newton calculus and stationary profiles of Conway tangles, Proposition 3.2, Theorem 3.3 and Lemma 6.2.",
         "Only the exact finite Fourier trace of Spectral estimates for Conway tangle sources, Lemma 6.1, is imported; its analytic color-loss theorem is not used.",
         "The constant-field and all-fiber arguments, preferred cusp word, integer surgery shear, spin sign and zero-circle elimination are proved here. No quantum expansion, recurrence existence, full A-polynomial identity or volume limit is asserted."
@@ -3867,7 +3852,7 @@
         "Canonical factorial interpolation from Holomorphic source asymptotics and volume limits for strict Conway compositions, Lemma 2.1 only; no Conway grammar or volume theorem is imported from that paper.",
         "Original positive geometric completion and absolute action-volume equality from Positive octahedra and primitive fillings for trees of crossing circles, Theorem 1.1. Each analytic criterion separately implies the geometric threshold and places its selected critical point in the same uniqueness chart.",
         "Theorem 1.1 proves the summed-condition volume asymptotic; Theorem 1.2 retains its explicit first microscopic meridian correction. Theorem 1.3 proves the directed-condition volume asymptotic and a centered ratio 1+O(1/N); Corollary 1.4 supplies the independent degree-or-twist alternative. The directed proof does not assume the summed theorem.",
-        "The unconditional full Newton bounds, complex edge sum and exact Fourier trace are proved once in Sections 2\u20135. The joint summed proof is in Section 6 and the normalized directed induction in Section 7. All-orders, preferred-longitude and fixed-meridian-neighborhood conclusions remain separate."
+        "The unconditional full Newton bounds, complex edge sum and exact Fourier trace are proved once in Sections 2–5. The joint summed proof is in Section 6 and the normalized directed induction in Section 7. All-orders, preferred-longitude and fixed-meridian-neighborhood conclusions remain separate."
       ],
       "written_dependency_locator_inventory": [
         {
@@ -4344,8 +4329,8 @@
       "remaining_boundary": "The Lean protected finite-assembly theorem assumes the accumulated comparison join. It does not construct a glued sphere or transfer omitted globally-zero strings. Unabridged coverage remains necessary.",
       "catalog_import_statements": [
         "Exact marked source and finite filling norm from Finite spectral evaluation and uniform filling bounds, Proposition 4.1 and Theorems 9.1 and 10.1.",
-        "Uniform local sector bounds from Uniform spectral bounds for local Casimir sources, Theorem 1.1.",
-        "The central expansion and entire filling sum from the source-asymptotics and oscillatory-fillings companions, with the original primitive volume calibration from Circle patterns and primitive fillings of augmented links."
+        "Uniform local sector bounds from Spectral bounds and asymptotics of Casimir sources, Theorem 1.1; central expansion and shared spectral gap from its Theorem 8.1, with the filling normalization in Section 14.",
+        "Entire filling-sum evaluation from Oscillatory filling sums with independently long twists, Theorem 1.1, with the original primitive volume calibration from Circle patterns and primitive fillings of augmented links."
       ],
       "written_dependency_locator_inventory": [
         {
@@ -4371,29 +4356,29 @@
           "reason": "These are the actual phase-uniform C/L/R rates; protected overloaded labels are exactly zero.",
           "sources": [
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/local-bounds.tex",
               "anchor": "\\label{lc:main}",
-              "line": 108
+              "line": 100
             },
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/nodal-comparison.tex",
               "anchor": "\\label{lc:central-comparison}",
-              "line": 372
+              "line": 83
             },
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/one-sided-envelope.tex",
               "anchor": "\\label{lc:left-maximum}",
-              "line": 726
+              "line": 45
             },
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/face-phases.tex",
               "anchor": "\\label{lc:tail-positive}",
-              "line": 857
+              "line": 6
             },
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/face-phases.tex",
               "anchor": "\\label{lc:last-cap}",
-              "line": 913
+              "line": 62
             }
           ]
         },
@@ -4447,9 +4432,9 @@
           "reason": "Supplies the nonzero central contribution and a filled action arbitrarily close to Phi.",
           "sources": [
             {
-              "path": "papers/source-asymptotics/main.tex",
+              "path": "papers/casimir-source-asymptotics/filling-input.tex",
               "anchor": "\\label{sa:export}",
-              "line": 871
+              "line": 4
             },
             {
               "path": "papers/oscillatory-fillings/main.tex",
@@ -4584,9 +4569,9 @@
           "reason": "Supplies a nonzero central contribution for the new sphere.",
           "sources": [
             {
-              "path": "papers/source-asymptotics/main.tex",
+              "path": "papers/casimir-source-asymptotics/filling-input.tex",
               "anchor": "\\label{sa:export}",
-              "line": 871
+              "line": 4
             },
             {
               "path": "papers/oscillatory-fillings/main.tex",
@@ -4650,29 +4635,29 @@
           "reason": "The uniform local estimates turn the preserved numerical certificate into a bound for every actual noncentral term, before the filling functional is applied (papers/planar-certificates/main.tex, Lemma 3.3, pc:remainder).",
           "sources": [
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/local-bounds.tex",
               "anchor": "\\label{lc:main}",
-              "line": 108
+              "line": 100
             },
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/nodal-comparison.tex",
               "anchor": "\\label{lc:central-comparison}",
-              "line": 372
+              "line": 83
             },
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/one-sided-envelope.tex",
               "anchor": "\\label{lc:left-maximum}",
-              "line": 726
+              "line": 45
             },
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/face-phases.tex",
               "anchor": "\\label{lc:tail-positive}",
-              "line": 857
+              "line": 6
             },
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/face-phases.tex",
               "anchor": "\\label{lc:last-cap}",
-              "line": 913
+              "line": 62
             }
           ]
         },
@@ -4719,29 +4704,29 @@
           "reason": "Defines the actual mixed spectator rates and anchor costs certified by the rational records.",
           "sources": [
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/local-bounds.tex",
               "anchor": "\\label{lc:main}",
-              "line": 108
+              "line": 100
             },
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/nodal-comparison.tex",
               "anchor": "\\label{lc:central-comparison}",
-              "line": 372
+              "line": 83
             },
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/one-sided-envelope.tex",
               "anchor": "\\label{lc:left-maximum}",
-              "line": 726
+              "line": 45
             },
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/face-phases.tex",
               "anchor": "\\label{lc:tail-positive}",
-              "line": 857
+              "line": 6
             },
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/face-phases.tex",
               "anchor": "\\label{lc:last-cap}",
-              "line": 913
+              "line": 62
             }
           ]
         },
@@ -4830,8 +4815,8 @@
       "remaining_boundary": "Neither original knot preservation nor an undeformed universal theorem follows; decoration may change the knot. No compiled topological constructor exists.",
       "catalog_import_statements": [
         "Complete packing and original primitive markings from Circle patterns and primitive fillings of augmented links, Proposition 2.1 and Section 2.",
-        "Actual shared source, full-Hermite filling norm and reduced-invariant normalization from Finite spectral evaluation and uniform filling bounds; all-phase and all-real-spectrum local envelopes from Uniform spectral bounds for local Casimir sources, Theorem 1.1.",
-        "The unabridged finite-certificate criterion from Shared face estimates and triangular gluing for planar link diagrams; the actual central expansion and whole filling sum from source-asymptotics and oscillatory-fillings; primitive completion and absolute volume from marked-fillings.",
+        "Actual shared source, full-Hermite filling norm and reduced-invariant normalization from Finite spectral evaluation and uniform filling bounds; local sector envelopes from Spectral bounds and asymptotics of Casimir sources, Theorem 1.1.",
+        "The finite-certificate criterion from Shared face estimates and triangular gluing for planar link diagrams; the central expansion from Spectral bounds and asymptotics of Casimir sources, Theorem 8.1 and Section 14; the whole filling sum from Oscillatory filling sums with independently long twists; primitive completion and absolute volume from Circle patterns and primitive fillings of augmented links.",
         "The decoration and original pairing are fixed before the level. All old and new powers must be independently sufficiently long; the knot type can change."
       ],
       "written_dependency_locator_inventory": [
@@ -4905,29 +4890,29 @@
           "reason": "Controls all local face phases and all real spectra, not only positive endpoint values.",
           "sources": [
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/local-bounds.tex",
               "anchor": "\\label{lc:main}",
-              "line": 108
+              "line": 100
             },
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/nodal-comparison.tex",
               "anchor": "\\label{lc:central-comparison}",
-              "line": 372
+              "line": 83
             },
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/one-sided-envelope.tex",
               "anchor": "\\label{lc:left-maximum}",
-              "line": 726
+              "line": 45
             },
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/face-phases.tex",
               "anchor": "\\label{lc:tail-positive}",
-              "line": 857
+              "line": 6
             },
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/face-phases.tex",
               "anchor": "\\label{lc:last-cap}",
-              "line": 913
+              "line": 62
             }
           ]
         },
@@ -5001,9 +4986,9 @@
           "reason": "The source-asymptotics and oscillatory-fillings companions supply the actual nonzero entire central contribution at both parities.",
           "sources": [
             {
-              "path": "papers/source-asymptotics/main.tex",
+              "path": "papers/casimir-source-asymptotics/filling-input.tex",
               "anchor": "\\label{sa:export}",
-              "line": 871
+              "line": 4
             },
             {
               "path": "papers/oscillatory-fillings/main.tex",
@@ -5195,7 +5180,7 @@
       "remaining_boundary": "The scalar theorem keeps the whole-block Boolean; a central attaching label alone is insufficient. Its hypotheses do not by themselves prove the actual geometric insertion or uniform boundary extension.",
       "catalog_import_statements": [
         "The definition of a certificate covering every locally allowed sector string, and its full-invariant volume consequence, from Shared face estimates and triangular gluing for planar link diagrams.",
-        "Complete marked circle geometry, local spectral envelopes, exact finite filling norms and central asymptotics from the five foundational companions.",
+        "Complete marked circle geometry from Circle patterns and primitive fillings of augmented links; local envelopes and central asymptotics from Spectral bounds and asymptotics of Casimir sources, Theorems 1.1 and 8.1; exact norms from Finite spectral evaluation and uniform filling bounds; the central filling sum from Oscillatory filling sums with independently long twists.",
         "The committed seventeen-region rational certificates for the explicit infinite sequence; the fixed-boundary and all-length arguments are proved in the paper."
       ],
       "written_dependency_locator_inventory": [
@@ -5254,29 +5239,29 @@
           "reason": "Gives uniform deprotected-label suppression and the three bridge comparisons.",
           "sources": [
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/local-bounds.tex",
               "anchor": "\\label{lc:main}",
-              "line": 108
+              "line": 100
             },
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/nodal-comparison.tex",
               "anchor": "\\label{lc:central-comparison}",
-              "line": 372
+              "line": 83
             },
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/one-sided-envelope.tex",
               "anchor": "\\label{lc:left-maximum}",
-              "line": 726
+              "line": 45
             },
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/face-phases.tex",
               "anchor": "\\label{lc:tail-positive}",
-              "line": 857
+              "line": 6
             },
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/face-phases.tex",
               "anchor": "\\label{lc:last-cap}",
-              "line": 913
+              "line": 62
             }
           ]
         },
@@ -5320,9 +5305,9 @@
           "reason": "Provides the nonzero original geometric period.",
           "sources": [
             {
-              "path": "papers/source-asymptotics/main.tex",
+              "path": "papers/casimir-source-asymptotics/filling-input.tex",
               "anchor": "\\label{sa:export}",
-              "line": 871
+              "line": 4
             },
             {
               "path": "papers/oscillatory-fillings/main.tex",
@@ -5558,8 +5543,8 @@
       "remaining_boundary": "No formal all-m trigonometric certificate or braid construction is present; finite numerical/reproduction checks are not those proofs.",
       "catalog_import_statements": [
         "Exact source identity, invariant normalization and uniform Hermite filling norm from Finite spectral evaluation and uniform filling bounds.",
-        "Uniform local sector estimates from Uniform spectral bounds for local Casimir sources, Theorem 1.1.",
-        "Actual central expansion and shared spectral gap from Holomorphic asymptotics of central shared face coefficients, Theorem 1.1; entire-sum evaluation from Oscillatory filling sums with independently long twists, Theorem 1.1.",
+        "Uniform local sector estimates from Spectral bounds and asymptotics of Casimir sources, Theorem 1.1; nonzero central expansion and shared spectral gap from its Theorem 8.1; exact central filling normalization in its Section 14.",
+        "Entire-sum evaluation from Oscillatory filling sums with independently long twists, Theorem 1.1.",
         "Original primitive completion and absolute volume from Circle patterns and primitive fillings of augmented links, Theorem 1.1."
       ],
       "written_dependency_locator_inventory": [
@@ -5569,29 +5554,29 @@
           "reason": "Controls each actual C/L/R factor uniformly in all phases and spectra.",
           "sources": [
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/local-bounds.tex",
               "anchor": "\\label{lc:main}",
-              "line": 108
+              "line": 100
             },
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/nodal-comparison.tex",
               "anchor": "\\label{lc:central-comparison}",
-              "line": 372
+              "line": 83
             },
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/one-sided-envelope.tex",
               "anchor": "\\label{lc:left-maximum}",
-              "line": 726
+              "line": 45
             },
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/face-phases.tex",
               "anchor": "\\label{lc:tail-positive}",
-              "line": 857
+              "line": 6
             },
             {
-              "path": "papers/local-coefficients/main.tex",
+              "path": "papers/casimir-source-asymptotics/face-phases.tex",
               "anchor": "\\label{lc:last-cap}",
-              "line": 913
+              "line": 62
             }
           ]
         },
@@ -5682,9 +5667,9 @@
           "reason": "Gives the nonzero complete central period with filled rate close to Phi.",
           "sources": [
             {
-              "path": "papers/source-asymptotics/main.tex",
+              "path": "papers/casimir-source-asymptotics/filling-input.tex",
               "anchor": "\\label{sa:export}",
-              "line": 871
+              "line": 4
             },
             {
               "path": "papers/oscillatory-fillings/main.tex",
@@ -5948,7 +5933,7 @@
       "catalog_import_statements": [
         "Full crossing polynomial and trace, actual typed tree contraction and scalar ledger from Exact Newton calculus for tangles with a moving meridian, Proposition 6.1, equation (6.4), Theorem 7.1 and Proposition 8.1.",
         "Exact positive complete Newton multiplication from Newton calculus and stationary profiles of Conway tangles, Theorem 3.3; its uniform real factorial estimate supplies the closed-support rates.",
-        "Strict syntax and optimizer from Newton calculus and stationary profiles of Conway tangles, Lemma 5.2, Theorems 5.5 and 6.4; stationary responses and absolute boundary budgets from Lemma 7.1, Proposition 7.2, Theorems 7.3\u20137.4 and Corollary 7.5.",
+        "Strict syntax and optimizer from Newton calculus and stationary profiles of Conway tangles, Lemma 5.2, Theorems 5.5 and 6.4; stationary responses and absolute boundary budgets from Lemma 7.1, Proposition 7.2, Theorems 7.3–7.4 and Corollary 7.5.",
         "Only complete Hermite conditioning and the low-Newton angular estimate of Spectral estimates for Conway tangle sources, Lemmas 2.1 and 7.2. The present paper proves the reflected comparison, simultaneous high-boundary reassembly and polynomial angular prefactor.",
         "Only the canonical factorial interpolation of Holomorphic source asymptotics and volume limits for strict Conway compositions, Lemma 2.1. The present paper proves its own joint charge and endpoint estimates directly from the actual trace; no volume or longitude theorem is assumed."
       ],
@@ -6679,17 +6664,53 @@
           "declaration": "VolumeLogic.OperatorCoefficientAdapter.normalized_characteristic_of_record",
           "anchor": "theorem normalized_characteristic_of_record",
           "line": 203
+        },
+        {
+          "path": "formal-real/MeridianSeriesEmbedding.lean",
+          "anchor": "theorem equal_of_initial_coefficients_on_support",
+          "line": 133,
+          "declaration": "VolumeLogic.MeridianSeriesEmbedding.equal_of_initial_coefficients_on_support"
+        },
+        {
+          "path": "formal-real/MeridianSeriesEmbedding.lean",
+          "anchor": "theorem meridianSeries_injective",
+          "line": 154,
+          "declaration": "VolumeLogic.MeridianSeriesEmbedding.meridianSeries_injective"
+        },
+        {
+          "path": "formal-real/MeridianSeriesEmbedding.lean",
+          "anchor": "theorem meridianAlgHom_injective",
+          "line": 170,
+          "declaration": "VolumeLogic.MeridianSeriesEmbedding.meridianAlgHom_injective"
+        },
+        {
+          "path": "formal-real/MeridianSeriesEmbedding.lean",
+          "anchor": "theorem formalSymbol_ne_zero",
+          "line": 184,
+          "declaration": "VolumeLogic.MeridianSeriesEmbedding.formalSymbol_ne_zero"
+        },
+        {
+          "path": "formal-real/MeridianSeriesEmbedding.lean",
+          "anchor": "theorem formalSymbol_injective",
+          "line": 179,
+          "declaration": "VolumeLogic.MeridianSeriesEmbedding.formalSymbol_injective"
+        },
+        {
+          "path": "formal-real/MeridianSeriesEmbedding.lean",
+          "anchor": "theorem normalized_characteristic_faithful",
+          "line": 197,
+          "declaration": "VolumeLogic.MeridianSeriesEmbedding.normalized_characteristic_faithful"
         }
       ],
-      "actual_coverage": "A specified nonzero finite polynomial coefficient record and its original root recurrence yield a nonzero complete classical symbol and its formal characteristic identity. Common q-1 normalization, exact injective Laurent coefficient encoding, actual Taylor estimates, sine/meridian gauge and full shift-support reconstruction are proved; original coefficient expansions and representation equivalence are no longer hypotheses.",
-      "written_inputs": "The actual annihilating recurrence, exact source normalization and eventual nonvanishing, all-orders shifted source-ratio expansions, identification of the rational operator with its cleared polynomial record on a nonvanishing denominator chart, analytic-germ realization and selected geometric-factor identification remain written/application inputs. Laurent coefficient Taylor expansion, maximal q-1 removal, nonzero classical specialization and the exact coefficient-record adapter are compiled.",
-      "remaining_boundary": "Actual operator existence and its rational denominator chart, source normalization/nonvanishing and shifted source-ratio asymptotics remain application inputs. The explicit normalized shift-degree bound ensures the whole symbol is retained. The convergent germ and selected geometric factor remain written conclusions, not consequences of source hashes.",
+      "actual_coverage": "A specified nonzero finite polynomial coefficient record and its original root recurrence yield a nonzero complete classical symbol and a nonzero formal polynomial satisfying the characteristic identity. Common q-1 normalization, exact finite Laurent encoding, actual coefficient Taylor estimates, sine/meridian gauge and full shift-support reconstruction are proved. Finite Vandermonde reconstruction proves that substitution M=exp(u) is an injective complex algebra map and preserves the nonzero polynomial in independent L.",
+      "written_inputs": "The actual annihilating recurrence, exact source normalization and eventual nonvanishing, all-orders shifted source-ratio expansions, identification of the rational operator with its cleared polynomial record on a nonvanishing denominator chart, analytic-germ realization and selected geometric-factor identification remain written/application inputs. Laurent coefficient Taylor expansion, maximal q-1 removal, nonzero classical specialization, exact coefficient-record conversion and faithfulness of the meridian-series map are compiled.",
+      "remaining_boundary": "Actual operator existence and its rational denominator chart, source normalization/nonvanishing and shifted source-ratio asymptotics remain application inputs. The normalized shift-degree bound retains the whole symbol. A finite-jet bound requires a fixed finite exponent set; subsequent evaluation at a selected longitude series need not be injective. The convergent germ and selected geometric factor remain written conclusions.",
       "catalog_import_statements": [
-        "Strict-source alternative: Moving-meridian source estimates for strict Conway tangles, Theorems 1.1\u20131.2, including its primitive local packet, all charges, source errors and exact normalization.",
-        "Circle-tree alternatives from Volume asymptotics for trees of crossing circles: Theorems 1.1\u20131.2 and Sections 2\u20136 for the summed source; or Theorem 1.3, Corollary 1.4, equations (7.3), (7.8), (7.9), and Sections 7.1\u20137.6 for the directed source. The all-orders proof extends the normalized directed induction without replacing its criterion by the summed condition.",
+        "Strict-source alternative: Moving-meridian source estimates for strict Conway tangles, Theorems 1.1–1.2, including its primitive local packet, all charges, source errors and exact normalization.",
+        "Circle-tree alternatives from Volume asymptotics for trees of crossing circles: Theorems 1.1–1.2 and Sections 2–6 for the summed source; or Theorem 1.3, Corollary 1.4, equations (7.3), (7.8), (7.9), and Sections 7.1–7.6 for the directed source. The all-orders proof extends the normalized directed induction without replacing its criterion by the summed condition.",
         "Exact Newton calculus for tangles with a moving meridian, Proposition 6.1, Theorem 7.1 and Proposition 8.1; complete Hermite conditioning from Spectral estimates for Conway tangle sources, Lemma 2.1; canonical factorial interpolation from Holomorphic source asymptotics and volume limits for strict Conway compositions, Lemma 2.1 only.",
         "The full modified dimension of Finite spectral evaluation and uniform filling bounds, equation (10.11), fixes the exact reduced/full gauge. The proof assumes a specified fixed operator annihilating the whole state at every sufficiently large level; it does not construct one.",
-        "Only the geometric corollary imports Nonparabolic holonomy of trees of crossing circles, Theorem 1.2 and Corollary 7.1, and Preferred longitudes of Conway tree complements, Theorems 1.2\u20131.3. In the strict class it takes the maximum of the analytic and classical filling thresholds.",
+        "Only the geometric corollary imports Nonparabolic holonomy of trees of crossing circles, Theorem 1.2 and Corollary 7.1, and Preferred longitudes of Conway tree complements, Theorems 1.2–1.3. In the strict class it takes the maximum of the analytic and classical filling thresholds.",
         "Translated compact estimates, finite-order remainders, directed normalized induction, polynomial filtration, gauge, injective regrading and the selected-factor implication are proved here. No fixed-M asymptotic, full A-polynomial equality or recurrence-existence claim is made."
       ],
       "written_dependency_locator_inventory": [
@@ -7119,21 +7140,49 @@
               "line": 294
             }
           ]
+        },
+        {
+          "consumer_node": "analytic_actual_operator_classical_germ",
+          "input_node": "finite_meridian_series_embedding",
+          "reason": "Finite Vandermonde reconstruction preserves the nonzero normalized classical symbol under M=exp(u), with L still independent. Selected-longitude evaluation is a separate, potentially noninjective operation.",
+          "sources": [
+            {
+              "path": "formal-real/MeridianSeriesEmbedding.lean",
+              "anchor": "theorem equal_of_initial_coefficients_on_support",
+              "line": 133
+            },
+            {
+              "path": "formal-real/MeridianSeriesEmbedding.lean",
+              "anchor": "theorem meridianSeries_injective",
+              "line": 154
+            },
+            {
+              "path": "formal-real/MeridianSeriesEmbedding.lean",
+              "anchor": "theorem meridianAlgHom_injective",
+              "line": 170
+            },
+            {
+              "path": "formal-real/MeridianSeriesEmbedding.lean",
+              "anchor": "theorem formalSymbol_ne_zero",
+              "line": 184
+            }
+          ]
         }
       ],
       "paper_top_level_instantiated_in_lean": false
     }
   ],
   "input_sha256": {
-    "README.md": "240963bb4f761b03eb21ea9f35d46563f7b05b4ab3f437884ee4b05c738c0395",
-    "book/chapters/audits.md": "04973f4d937c75b45450d34c77e9c0002899692de0b78e4c67d42fd3d70c0271",
-    "book/chapters/manuscript.md": "32e4889ca42b3bcc929b3e9dc3120482b084b032d94274ce76b05a1a3590341e",
+    "README.md": "16dd6e8219b7cd5f674be91c3bc5921cecfe9fb7809c75b6766ab22897fb9892",
+    "book/chapters/algebraic.md": "24013f77c486f6efa364eb47f5511dd71f9e665adf350da18c107c0a216ba4dd",
+    "book/chapters/audits.md": "659f8249381117056c559ecbb4b9d4687b1b3283bfa9016507996c14c9cd20a0",
+    "book/chapters/manuscript.md": "d3f813e353fd87559f44b6867122b7e21a0751d889d9357ceaaf7b11e52c3db9",
     "experiments/actual_sector_cover_certificate.json": "54f6087e25e9e6c48e123ea61497cab2a2bb2eb3e4d92a2eb3f9b6e76452eadb",
     "experiments/actual_shared_radius_anchor_obstruction_certificate.json": "8e9ca9b9baf9383449a54840a4204ac4008b20cd9a56684ffc9a0a45c65bba27",
     "formal-real/.gitignore": "fde850d24186b6e99c8c0debd641fb3ab85198b109eb66f71a1fea02bd6ea1b3",
     "formal-real/ActualGauge.lean": "1181028103ba4eae7878a7308c89ad10124ebc59e17279371e964b6ccfa6b7ca",
     "formal-real/AsymptoticIdentity.lean": "6b4f19fa90db28f0ae2bbe080936e384b9f1383676ddc522a3e16dc140e59fea",
-    "formal-real/AxiomAudit.lean": "01d56f4113aef566e04dbb78406d97dcd6c2fb60594637fa231847cb4928c206",
+    "formal-real/AxiomAudit.lean": "a37d68f5dc248787d583367f84813e8c870ae97df585435245096696eeacddf8",
     "formal-real/Flattening.lean": "a15977f5e3234d9f56217aee2e875c3a6ec8542b4140bfdf74f78d0b35e0f9cc",
     "formal-real/FormalCharacteristic.lean": "e9959ce488552cd93ed0a289a04bb0b9333c46c4f79d295749da45d157b8d9d4",
     "formal-real/FormalExp.lean": "7110bb7dc22a5ab3bdb84152e8000cd8b23bf0a9fd8ef47d863fff2737a54a1c",
@@ -7145,9 +7194,10 @@
     "formal-real/HallRecession.lean": "3b518ee62e07565c074f09029c55d2b14879c64ad48ee7de6c01f456b9dbfc21",
     "formal-real/LaurentExpansion.lean": "3efee1ee3315639815ea5977bab5e5b67e853143127204ea1a7f7d7ccf01c704",
     "formal-real/MeridianExpansion.lean": "066e4c215167e998cdf79c3727185af41d8e6f82d5e8f12de4257d34b8ee401f",
+    "formal-real/MeridianSeriesEmbedding.lean": "031d15d47aee62b865ab8c04f1ab4098d4b4f2d7c4e03fd52eb6df4f2555664e",
     "formal-real/OperatorCoefficientAdapter.lean": "584e73cd9d3b581f40475ceef4feff1648ecbc14508ae0036d34624ba4172b7c",
     "formal-real/OperatorNormalization.lean": "f56e42a6991ed842c0bba08fa274aef19c135babd66f88ea18d2b6a6750c7b36",
-    "formal-real/README.md": "678f5f8c260005a64c3ff22241854674ae68b29d0f8ed6f075ac3f0bf0e315f9",
+    "formal-real/README.md": "b3a9cfdd774746a5e40781f6dc9eddf880bb18a4a24a644d21d622abf4467a8a",
     "formal-real/RealTransfer.lean": "fd41a1469999ec0e455e64a08c5d81a947a38797054c8f850a3a2371023c545a",
     "formal-real/RecurrenceExpansion.lean": "44288f038ee42002f2af36e393861fdf236b834979bfe39c930783a83a67a408",
     "formal-real/RecurrenceGaugeExpansion.lean": "af99b72056f941561f95cd681e5009b1e589a32aa5c457e9395ce5167901d7c1",
@@ -7155,13 +7205,13 @@
     "formal-real/TransportCoercivity.lean": "ec8acf6a1b32c5299e070e49485e2ffb4dd44f3a0a7e916ef02cdd901151b1d3",
     "formal-real/TriangleBalance.lean": "3e999774f80923f626bdcd872b6a0be7405c2e4b123d00d8d76dfb101b9216f6",
     "formal-real/TriangleHall.lean": "09513da3ef9483ae09615e078543779c6e8de1038e126ed0985e815a55e7af55",
-    "formal-real/TriangleLoads.lean": "5f35fff0cb8d440cfec1c5613818bb964acb029b4dd1d0b1fc5cb5181249e963",
+    "formal-real/TriangleLoads.lean": "d2c16f307e0c54cb55de5ca8d8de3a7b4f6dbff92cb44a1a10a0c7d29da0341a",
     "formal-real/TriangleMinimizer.lean": "59267e5c1d4610dbecacd81786a3ab608efc226080d372905edda217b38849d8",
     "formal-real/TrianglePotential.lean": "e4254cbdbbc0a8ae7a2a574e752a519c83c137613d938c218c235d781098dcc4",
     "formal-real/UniformProfile.lean": "9ff6d34509b935e6202ac50b9811ff74ecc40341d7407c3df7c7fc2ad80f97b1",
     "formal-real/WeightedGraph.lean": "3e3d77275515fcc861bc861ac8b5e4988e5c5d2775636931ee561db7ce56fecf",
     "formal-real/lake-manifest.json": "e4b572de88e8c9a6bf79817a5b36f982d825c86725f6d161e65bad42aadd6b5b",
-    "formal-real/lakefile.toml": "ed39ceeb4708b121b17f957c4c954169a2ed07bfec9d70ac9ce8b287df41896d",
+    "formal-real/lakefile.toml": "4f500be3effd82a19c7637e993deb311858dcafc0d0b079a9c5f7cd5a829ceee",
     "formal-real/lean-toolchain": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
     "formal/AxiomAudit.lean": "a841c6a46feb787c4cb25025e68b1398e6af97d9f52437329a7697c6e0fc07b6",
     "formal/README.md": "02acd0b531c3d97887004978761193482199d3a1db5e280d0441e045b038622e",
@@ -7190,8 +7240,28 @@
     "notes/actual_complete_augmented_source_normalization.md": "29541886b2d34dfe0ce3cd60123344085988732d54ecc26b7ce9e54186d24f2f",
     "notes/research_arbitrary_main_edge_mark_transport.md": "7a7c9efdca1e9f7907dc5baf5dfe8ba12e2345ee5f2df2ed94240e95ee69112a",
     "notes/research_matched_sphere_morse_source.md": "8fdfde4a0d83220f3709048f00cd9373cfbc9d14b05943e9f16f58ab50777f4f",
-    "papers/README.md": "6a67eaee8ba9925b740ae4555bad34cb80f08d770e55bd8c7028bc1b12f09a70",
-    "papers/catalog.json": "2161e9b4d8153a9523d919ced71c0db169889f7e4211351de70dbeeaa6fc90a1",
+    "papers/README.md": "7ea5da83f46395f54bb29a35b127841b242207491344013c91bc4e5df9d604be",
+    "papers/casimir-source-asymptotics/README.md": "284a6035911c13a5ebd5326125904a102a7a3884654074d007a8d124648e1507",
+    "papers/casimir-source-asymptotics/angular-gap.tex": "db6dc387d8c7ff3cd762b2887753dad51c1106c238e074bb96f023e04af340fc",
+    "papers/casimir-source-asymptotics/check.py": "afec3204d4d01aa28e1cb8b87944ee0db0f70545065675f7621effd73d056e1f",
+    "papers/casimir-source-asymptotics/complex-cofactors.tex": "a79f5643425f14107a3937ad5f02bbcac0e8751586fab7258e15da79f7d0a668",
+    "papers/casimir-source-asymptotics/face-phases.tex": "6f5a49b2c3bfa9428d779d0b629fac49624a705d366c2b85955a783f9923e94e",
+    "papers/casimir-source-asymptotics/figures/local-path-partition.tex": "6710f811437bce9837be14c52c6444f76be2100ee36225dddb4f45c9f93a4d19",
+    "papers/casimir-source-asymptotics/figures/shared-tetrahedral-coefficient.tex": "c9d6f50c9ecac7735f09a1954c124d57cb5ccfbbfe9226c32ad6694a6bdbae78",
+    "papers/casimir-source-asymptotics/filling-input.tex": "d548f9a0c722529b2797010a1f060cda7b270999f1ea6ea51aa2d4435960a32f",
+    "papers/casimir-source-asymptotics/finite-cofactors.tex": "73cd4b6a1a6a0ce594fb5ad26993c06a99bced593083db9949cdeeffc9b6c979",
+    "papers/casimir-source-asymptotics/local-bounds.tex": "9c588c11372e4605d9eb762a9010b02b6e6b079052fd8154fd4c5070c7e29ed1",
+    "papers/casimir-source-asymptotics/main.tex": "b25ecc4b8050c4905704f805938d747bbcaf052216b6ac3c4a5c37d70ef6e620",
+    "papers/casimir-source-asymptotics/nodal-comparison.tex": "6b4532ba51c381d331f37f2f3ad0a424bcdc3c3c3801b5ca26d7dddebe56b61c",
+    "papers/casimir-source-asymptotics/one-sided-envelope.tex": "ed5da634fdc47c51d5cfa3b7dea00ee215297069434eb66e3c8c47e5bdf7630d",
+    "papers/casimir-source-asymptotics/positive-matrices.tex": "acd767103e7ebcd8a50b12822d042e29864e999caa1dbcb4781c65eda897b9dd",
+    "papers/casimir-source-asymptotics/references.tex": "bc2d4e6136aa45178d39c5d69e692c6e05cc8d216ed4e4af4a369cd7c0e7e786",
+    "papers/casimir-source-asymptotics/shared-coefficient.tex": "74a274d220a065bd8f3557eaf66f9766ab41c13d91c0f2725ba1758650b91012",
+    "papers/casimir-source-asymptotics/shared-saddle.tex": "bf8f5ef593da9f2026108f539b51e9a06ebfb61171a32aa977888c8073493d98",
+    "papers/casimir-source-asymptotics/signed-transfer.tex": "c2b9180a54f7236f549ed0884d6cac8e98f4eb95d25162eda31cbb1d0d2a6917",
+    "papers/casimir-source-asymptotics/spectral-gap.tex": "f8a347b78d8633caddc3d0236a0cf0bbe50e081386cb9ffb938fe5378efa1b53",
+    "papers/casimir-source-asymptotics/triangle-action.tex": "db81b011ec734b5963f7b43895edddef5582b6b25a10e7e2b6b1bf6c8689d2b2",
+    "papers/catalog.json": "3a0d87e28e1f9ba9b965ed754a13a6bbb944f80b6d3204d0c10a0cbc62e38b67",
     "papers/circle-tree-asymptotics/README.md": "5e80817e82ae2b78f3d889e7b32cf2f40be00ebafd0f6232897b965119d8b8ab",
     "papers/circle-tree-asymptotics/conclusion.tex": "13185fcea97d31f528daf323527a04a903794b13f3055713196a938c00cdffe8",
     "papers/circle-tree-asymptotics/edge-packet.tex": "53eb6dbfbda3ca639db35911ed50947c29655840337f9d1f1ce909d435013dbb",
@@ -7237,7 +7307,7 @@
     "papers/conway-source-bounds/main.tex": "7776205358839357f2484cd37aaeaf3e8655e27ecec56410fbc5c2cf2d21bf22",
     "papers/conway-source-bounds/norms.tex": "11a0534f538ab3d9932cdf3e1a5f9974950185f75f7ce4fcc24c3a27ec4bbefb",
     "papers/conway-source-bounds/probe.tex": "e355e63ae3354e9e8d569fd99cf8c473e7d0b2ffdad75b24773cd0f32be17bfc",
-    "papers/dependencies.json": "9fde70611e2a2eb6ecdc5e792ce36912044b7327481dfc144f634c5dfd8b9f4b",
+    "papers/dependencies.json": "ef447ea15d520d28bd44c7728960a90dc5901553d6d9c0d914358ca731a3efc0",
     "papers/directed-tree-asymptotics/README.md": "664f1ef1948de9277222b1dafd3a812315d64666d4d5042612a3fce921346f0e",
     "papers/directed-tree-asymptotics/applications.tex": "4fba94e89e75f841abacecd286181b296127e6fc4cef490ce353aca3460f810b",
     "papers/directed-tree-asymptotics/criterion.tex": "2b3fe8971c6a1f35820ea964877c6655900666268ee45d988b39600772ec26db",
@@ -7300,7 +7370,7 @@
     "papers/oscillatory-fillings/main.tex": "275d76a8e12d963c6a4fc45bb828e0b7742761c94e4242272f15c64b56f3f203",
     "papers/planar-certificates/figures/protected-triangle.tex": "261167439d5c8286561b49b2e7a88a5526c1af2ff9b7d7da9d88bb04deb0459f",
     "papers/planar-certificates/figures/shared-weight-gain.tex": "409ce51af472f6f12d2b45a9f36b590e76e31a8b61dcd10329ad477c6755cf2f",
-    "papers/planar-certificates/main.tex": "375034a5db9443aa762a504b49f79f344b5f85cad4d70e228242cfa163afad39",
+    "papers/planar-certificates/main.tex": "866da6f8d230fcdb7a91038bb1e0d4c032f88f1c9ed67aeba5744c36ad70acbc",
     "papers/preferred-longitudes/README.md": "4b05ff9b81a3a78ec2cefd6a6fd61326c3990c1aae394d770413c86ea79f11cf",
     "papers/preferred-longitudes/algebra.tex": "f1057b4b6c410569783758a5d88a8787d1f640ff3bc2a176552594eee0a1d91c",
     "papers/preferred-longitudes/bare.tex": "0a805d4de443cafdcb26ec90ff4420b0c2e3bfd45e78e4223afc8780e4d136ae",
@@ -7339,15 +7409,15 @@
     "papers/terminal-decorations/figures/even-pairing.tex": "93eb46e61f46fa1d97f14975861490266c83b28ea8dc76b37a95a783c880a505",
     "papers/terminal-decorations/figures/interstice.tex": "42f9b557b270485445538eff675364037f45faf61f62c05f4f6919397464d0cb",
     "papers/terminal-decorations/figures/stellar-patch.tex": "2c058f9ff4e7bee5693e2786f24d7511978a0f550823c31373bae4d150dd1d15",
-    "papers/terminal-decorations/main.tex": "c6d3ac2d173d4833e36c58c2599d7dccc07a1dfa872a749a427897869a0c0db6",
+    "papers/terminal-decorations/main.tex": "a795f9dad909814122957cfe8c11f4d123467bcf2803b7c4ed18645f50abddc1",
     "papers/three-braids/README.md": "0cb574768ae25aac225ae0c857e515c5fbd047050bb49ab63b511a0632ee099a",
     "papers/three-braids/figures/matching-annular-braid.tex": "202b09fabe5ca069b9360cc2f49c2f07c3d3cf2b2f64da93ca7c1824e378652f",
-    "papers/three-braids/main.tex": "9bad961bfcb9893bf0b6035a084d95436e0c146b3acda10850ba7d374a832c76",
+    "papers/three-braids/main.tex": "0af0b2df8917bae6da269ec787d0e125475fa4d936a4f57ec6ba85eb24b8494a",
     "papers/triangular-insertion/figures/ordinary-triangular-zigzag.tex": "9d57e46501d8cbec11b7815c1db5af9c9cc10822cd485cb49290b44679e7e9d6",
     "papers/triangular-insertion/figures/triangular-boundary-insertion.tex": "ac91a3ed2ecb25506f7313e2240518cc79252ae61cef623cf694b166f3d7ba4b",
-    "papers/triangular-insertion/main.tex": "8cff26e709bc8037a75fa3efd6316a08ee9475d965eb23afbea76be2409fa352",
-    "repro/PAPER_FORMAL_COVERAGE.md": "e70acb45c2124b440354c13ef3f2e0f54c621ecf58af50965ac0474f2452c92e",
-    "repro/check_concrete_limits.py": "920cdaf6bf34dcc05b468ebf5e07863a6f68d2bdf3315f7f94915cefde6da4b8",
+    "papers/triangular-insertion/main.tex": "28dd4f2dd87cfbd58872eb1cbd02e7a1a4485b102bc8a385a2013f13d2d5dd7d",
+    "repro/PAPER_FORMAL_COVERAGE.md": "f13d54fe8745d50a022780de9b5a2db5471f8d628005da41858e9e83acb80e13",
+    "repro/check_concrete_limits.py": "85b649aea453cfe078e5e60829c43b47cc9a90a89a6e196259448621c0d85ee7",
     "repro/check_proof_logic.py": "d792928f9cbbe05ebd47fb3622d416768f1432cf7e1fa22ab12c3db819d1c3bd",
     "repro/check_protected_sums.py": "7d27a51862c83f55e0115798eef896f7eb8770c97c52864395e07a4abef8bc0e",
     "repro/lean/actual-gauge-controls.lean": "01f213676da5a010cdc2463cb9330cd3f193f7387a88b19207340286bc21ac35",
@@ -7360,17 +7430,34 @@
     "repro/lean/hall-controls.lean": "8a07caaec7b67fac96f70d696bd4604b8f2c6155a5509c0197c24c887a1eb5b3",
     "repro/lean/laurent-expansion-controls.lean": "65c7dbbeada5f470c0e3270f7a02cbb93895175bcf21ff13d861c174cd48c6b2",
     "repro/lean/meridian-expansion-controls.lean": "0c3b816abc77e1d2ff798e43ad52343289a6709332a4463c78cad3cff8fae3e0",
+    "repro/lean/meridian-series-embedding-controls.lean": "b074647a0abd7c55f5aad6a7203e8535a9d5f048e61a6d92fad7ff49b3114dd7",
     "repro/lean/operator-coefficient-adapter-controls.lean": "a0417403c08d382776a7f0c9fef64cb76a364dc31718426eabd85e7d4a8cffe8",
     "repro/lean/operator-normalization-controls.lean": "9790f18cc56d101a576b46338ec411a4c52ae755abcb89c715b6f96442fc26e0",
     "repro/lean/recurrence-expansion-controls.lean": "0a6f058e579de8e74b2c8146c089a035ca3b9292ea7ac8cd9d34f6cd3675c3cf",
     "repro/lean/sine-factor-controls.lean": "ec51fa8caed5f447e08e4314426ac20148dbdd245aaabb47acc4fd2834e8ac6a",
     "repro/lean/uniform-profile-controls.lean": "a7124ecc0a2a0e5474ad1c1d422ef66af1c599e807154f0ab261de01fa60f371",
+    "repro/manuscript_audit/casimir-source/README.md": "2a4e92f1749111e8c3a0bff0030860f08b98ec44ec619fe02d1850970dff1b65",
+    "repro/manuscript_audit/casimir-source/counterchecks.json": "2c65b975f5efa6964a1606aa31c5ddcff437fb3a5f9c3a2da79e2e6a710614c0",
+    "repro/manuscript_audit/casimir-source/counterchecks.py": "87b0e5c2c0c5996c678cb493345bee05231183e23cea7d6dcbc1f611b3174ab7",
+    "repro/manuscript_audit/casimir-source/handoff.json": "f88bbce36db0732c0dd2e2ce6f975b87e084fd41f9f8701267b509ca591345b5",
+    "repro/manuscript_audit/casimir-source/local-exact-check.json": "15eac724bbe2a4b881906bf71bac593604ef8061db9391d976bbc7a2c28db51e",
+    "repro/manuscript_audit/casimir-source/report.md": "3846dbc0736f56b2be2ead4e2239ff4cbc3cbc2104c7f4eac4a541d8306db90d",
+    "repro/manuscript_audit/casimir-source/snapshot/papers/filling-bounds/main.tex": "9a67a699cc3da18aa13c1e703ff3f6b1af9422f135c6f9af7e6c07cbca4b367d",
+    "repro/manuscript_audit/casimir-source/snapshot/papers/filling-bounds/sections/diagram-evaluation.tex": "e15dd221c24d2d0c37c4e8330e36ff718f8622f48055d813f7e51fa0b99ba125",
+    "repro/manuscript_audit/casimir-source/snapshot/papers/local-coefficients/check.py": "5e39e5eecbe0ea367d0a34a6d1fa3f03ff3335d32a7c4f926cb636d5b04ef358",
+    "repro/manuscript_audit/casimir-source/snapshot/papers/local-coefficients/main.tex": "86da78c17f6535c58d7d17d919f10914f8eb9452143a66c2fb2e2fa7b7b5965c",
+    "repro/manuscript_audit/casimir-source/snapshot/papers/oscillatory-fillings/main.tex": "275d76a8e12d963c6a4fc45bb828e0b7742761c94e4242272f15c64b56f3f203",
+    "repro/manuscript_audit/casimir-source/snapshot/papers/source-asymptotics/check.py": "3d1ace779659e8adb24c8b92b1add572c30e1cf9f3e27e837ecdd532d2db9a5e",
+    "repro/manuscript_audit/casimir-source/snapshot/papers/source-asymptotics/figures/shared-tetrahedral-coefficient.tex": "c9d6f50c9ecac7735f09a1954c124d57cb5ccfbbfe9226c32ad6694a6bdbae78",
+    "repro/manuscript_audit/casimir-source/snapshot/papers/source-asymptotics/main.tex": "b39a4b036ed8c7acd9966d224bd5a8055b183b1ee6307354174119bc15bd2808",
+    "repro/manuscript_audit/casimir-source/source-exact-check.json": "bff87fd048a850a48d1d1b3de406e346257adbd05ad425ae7f2e25c1b3a4b4cf",
+    "repro/manuscript_audit/casimir-source/sources.json": "2db1b8839e3a488a721c8b734b74e0ba9e595e0c988cd89498af3f0247b7889e",
     "repro/manuscript_logic.json": "0ab21ec6f9e2daffa4e34821d247e23cf893190a30cc6dc699e0868a82618cc2",
-    "repro/results/concrete-limits/summary.json": "7341aae770b2780525eff25bdaf2a1fda131a9641d54fb753e25870e08231993",
+    "repro/results/concrete-limits/summary.json": "18408bb491616f356344b1614fdeaa97fa6bf402791c6c7a543db2ae6e5363ac",
     "repro/results/manuscript-logic/summary.json": "9436a7d6e28ff9807776498568be0ce4bd47c32eb2cd72513042031bcf6dceec",
     "repro/results/proof-logic/summary.json": "b99e2aef605b44f589faf7468c14a8603b1f964653820e43af98ac770826d1c3"
   },
-  "integration_state": "Integrated with the final 27-module replay; all registered source hashes and literal locators checked against the current working tree.",
+  "integration_state": "Integrated with the final 28-module replay and the accepted Casimir-source consolidation; all registered source hashes and literal locators checked against the current working tree.",
   "historical_baseline": {
     "commit": "70f6e8165809177f07bf8f73755de8c546e8c7da",
     "coverage_sha256": "9a86a40792a37fbad60e488b04004d9a5c24fd575987f74617459914c0884278",
@@ -7446,6 +7533,11 @@
       "definitions": 4,
       "namespace": "VolumeLogic.SineFactor",
       "theorems": 23
+    },
+    "MeridianSeriesEmbedding": {
+      "definitions": 2,
+      "namespace": "VolumeLogic.MeridianSeriesEmbedding",
+      "theorems": 20
     }
   }
 }

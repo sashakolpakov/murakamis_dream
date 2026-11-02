@@ -1,0 +1,110 @@
+\section{Positive matrices at the finite spectral nodes}\label{sa:finite}
+We use the cofactors $R_j$ and interval polynomials $K_{i,j}$ of
+\eqref{lc:R-recurrence}--\eqref{sa:path}. Throughout the remaining
+sections, $u(\delta)=-4\sin^2(\pi\delta)$ denotes the spectral coordinate;
+it is distinct from the protected vertex $u$ of the triangulation.
+We also write $P_{\mathrm C}=\mathcal P_{\mathrm C}=(-1)^dH_{V,\mathrm C}$.
+The central factorizations \eqref{lc:even-factor}--\eqref{lc:odd-factor}
+retain the odd skipped-row term, including its derivative at $u=0$.
+
+We give the finite positive representation needed for phase estimates.
+Let $S_j=\prod_{r=1}^j s_r$, $S_0=1$, and, for $0\le a\le J$,
+let $H_\pm^{(a)}$ be the Hermitian tridiagonal matrices with
+\begin{align}
+ (H_\pm)_{n,n}&=\frac1{\cos(n\theta)\cos((n+1)\theta)},
+                              &&0\le n<a,\notag\\
+ (H_\pm)_{n-1,n}&=\sqrt{b_n}\{\sin(n\theta)\pm\ii\cos(n\theta)\},
+                              &&1\le n<a,\label{sa:H}\\[-6pt]
+ b_n&=\frac{\sin^2(n\theta)}{\cos^2(n\theta)
+                  \sin((2n-1)\theta)\sin((2n+1)\theta)}.\notag
+\end{align}
+Empty matrices have determinant one. Put
+\begin{equation}\label{sa:D}
+ \mathcal D_a(x,b,y)=\det[bI+xH_-^{(a)}/2+yH_+^{(a)}/2].
+\end{equation}
+
+\begin{lemma}[Exact node adapter]\label{sa:node}
+For $u_a=-a_a$ and $a\le j\le J$,
+\begin{equation}\label{sa:node-id}
+ R_a(b,u_a)=S_{2a}\mathcal D_a(x,b,y),\qquad
+ R_j(b,u_a)=K_{a,j}(u_a)R_a(b,u_a).
+\end{equation}
+Both $H_\pm^{(a)}$ are positive definite. The polynomials
+$\mathcal D_a$ and $K_{a,j}(u_a)$ have nonnegative face coefficients.
+\end{lemma}
+\begin{proof}
+At $u_a$, the cofactor column on rows $0,\ldots,a$ is a null vector
+of the original triangular matrix. If its coefficients are $r_i$, its
+row equations are
+\[
+ (a_i-a_a)r_i=s_{i+1}^2A r_{i+1}+s_{i+2}s_{i+1}P r_{i+2}.
+\]
+The leading coefficient is
+$\prod_{r<a}(a_r-a_a)=S_{2a}$, by
+$a_r-a_a=4\sin((a+r+1)\theta)\sin((a-r)\theta)$.
+Define $\partial_q b^j=s_j b^{j-1}$. Since
+$a_i-a_a=s_as_{a+1}-s_is_{i+1}$, the normalized monic polynomial
+is the unique degree-$a$ eigenpolynomial of
+\[
+ \mathcal L=\partial_q\bigl((b^2+Ab+P)\partial_q\bigr),
+                     \qquad\lambda_a=s_as_{a+1}.
+\]
+The eigenvalues through $J$ are distinct: their successive differences
+are $4\sin(2a\theta)\sin\theta>0$.
+
+For completeness its monic eigenpolynomials $p_a$ obey
+\begin{equation}\label{sa:Jacobi}
+ p_a=\left(b+\frac{A}{2\cos((a-1)\theta)\cos(a\theta)}\right)p_{a-1}
+       -\frac{b_{a-1}}4\{A^2-4P\cos^2((a-1)\theta)\}p_{a-2}.
+\end{equation}
+Here $p_0=1,p_1=b+A/(2\cos\theta)$.
+One elementary derivation also checks that no lower-degree terms were
+dropped. Normalize $[j]=s_j/s_1$ and define moments by
+\[
+ \mu_0=1,\quad\mu_{-1}=0,\qquad
+ [r+1]\mu_r+A[r]\mu_{r-1}+P[r-1]\mu_{r-2}=0
+                              \quad(1\le r\le2J-1).
+\]
+The sine addition formulas make $\mathcal L$ symmetric for
+$\langle b^i,b^j\rangle=\mu_{i+j}$. Distinct eigenvalues therefore
+make the $p_a$ orthogonal on the available degrees. Multiplication
+by $b$ is symmetric as well, so $bp_{a-1}-p_a$ has only the two
+previous components. Comparison of the two highest coefficients,
+using the displayed row equations, gives \eqref{sa:Jacobi}.
+Their norm recurrence has its nonzero second coefficient for generic
+$(A,P)$, starting from norm one. This justifies the induction before
+polynomial continuation to all $A,P$; no positive moment assumption
+is used. All denominators have index less than $N$.
+The tridiagonal determinant \eqref{sa:D} has precisely
+\eqref{sa:Jacobi}, proving the first identity.
+
+The Cholesky pivots of either $H$ are
+\[
+ p_{n-1}^{H}=\frac{\sin(n\theta)}
+                     {\cos(n\theta)\sin((2n-1)\theta)}>0,
+                         \qquad1\le n\le a.
+\]
+Writing $d_n=(H_\pm)_{nn}$ and $h_n=(H_\pm)_{n-1,n}$, substitution
+in $d_n-|h_n|^2/p_{n-1}^{H}=p_n^{H}$ verifies the
+factorization, including the last physical row. Thus both matrices
+are positive. Cauchy--Binet applied to their Cholesky factors proves
+coefficient positivity of \eqref{sa:D}.
+The second identity and coefficient positivity of $K_{a,j}(u_a)$
+were proved in Lemma~\ref{lc:nodal-positive}: after row $a$ the forcing
+vanishes, and the solutions of the normalized recurrence
+\eqref{lc:tail-node} have nonnegative face coefficients despite its
+signed second term.
+\end{proof}
+
+At the maximal physical fold the scalar can be read without any
+interpolation. For $\delta_*=0$ at odd levels and $\delta_*=1/(2N)$
+at even levels, \eqref{sa:even}--\eqref{sa:node-id} give
+\begin{equation}\label{sa:anchor}
+ P_{\mathrm C}(\delta_*)=N^2\beta_J^2
+          \mathcal D_J(x,b,y)\mathcal D_J(x,c,y)(x+y)^{d-2J},
+                       \qquad \beta_J=S_{2J}/S_J^2.
+\end{equation}
+Indeed $S_{N-1}=N$, $S_J^2=N$ at odd levels; at even levels
+$S_{N-2}=N/(2\sin\theta)$, $S_J^2=N/2$, and $s_m=2$.
+Thus both the even forced factor and the odd simple node are literal.
+

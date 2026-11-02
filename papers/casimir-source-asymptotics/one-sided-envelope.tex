@@ -1,0 +1,170 @@
+\section{The one-sided envelope with both unused products}\label{lc:left}
+For \(0\le i\le j<m\), the exact left summand is
+\begin{equation}\label{lc:left-summand}
+ A_{\rm rest}(u)b^ic^{d-j}
+       \left(\prod_{r<i}\alpha_r\right)
+       \left(\prod_{j<r<m}\alpha_r\right)K_{i,j}(u),
+\end{equation}
+where \(A_{\rm rest}=\prod_{r=m}^d\alpha_r\) is the whole omitted
+upper-half product. On the real interval it has no positive
+exponential cost. At \(N=2m\),
+\[
+ A_{\rm rest}(u)=2(-1)^mT_m(\sigma/2),\qquad |A_{\rm rest}|\le2.
+\]
+Its roots and leading coefficient prove the identity.
+At \(N=2m+1\), it is, up to sign, \((\sigma+2)P_m(\sigma)\), where
+\[
+ P_m(2\cos t)=\frac{\cos((m+1/2)t)}{\cos(t/2)}.
+\]
+The quotient is a finite alternating sum of \(m\) paired exponentials
+and one constant, so \(|P_m|\le2m+1=N\).
+Hence \(|A_{\rm rest}|\le4N\), including the removable endpoint.
+These are the original unused products, not auxiliary normalizations.
+
+For \(b,c>0\), apply the transfer and Riemann estimates separately
+to the two outside products in \eqref{lc:left-summand}. Only then
+use \eqref{lc:prefix-zero}. With \(\mu=i/N,\nu=j/N\), the upper
+action becomes
+\begin{equation}\label{lc:left-action}
+\begin{split}
+ F_{\mathrm L}(\mu,\nu,\delta)
+ &=\mu\log b+(1-\nu)\log c+
+                   \int_\mu^\nu\log L_\delta(t)\,dt,\\
+ L_\delta(t)&=\frac{\lambda_\delta(t)}{|a_\delta(t)|},
+                      \qquad0\le\mu\le\nu\le\tfrac12.
+\end{split}
+\end{equation}
+This quotient is only continuum notation. No finite division by
+\(\alpha_r\) occurred. Moving an endpoint by \(O(N^{-1})\) changes
+the integrals by \(o(1)\) uniformly, by logarithmic integrability.
+There are at most \(N^2\) pairs \((i,j)\), contributing only \(o(N)\).
+If \(b=0\), the finite sum has only \(i=0\), so only \(\mu=0\)
+is allowed. If \(c=0\), the left polynomial vanishes because
+\(d-j\ge\lfloor N/2\rfloor>0\).
+
+\begin{proposition}[Exact continuum envelope]\label{lc:left-maximum}
+For \(c>0,b\ge0\),
+\begin{equation}\label{lc:left-envelope}
+ \sup_{\substack{0\le\delta\le1/2\\0\le\mu\le\nu\le1/2}}
+ F_{\mathrm L}(\mu,\nu,\delta)
+       =\max\{\log c,\mathcal Q(x,b,y)+\tfrac12\log c\}.
+\end{equation}
+For \(b=0\) restrict the left side to \(\mu=0\).
+This is an equality of continuum upper envelopes, not a lower
+bound for an oscillatory finite polynomial.
+\end{proposition}
+\begin{proof}
+First assume \(b>0\), \(0<\delta<1/2\), and set
+\(z=\sin^2(\pi\delta)\), \(\mathcal D=A^2-4Pz\).
+The ratio calculation in Lemma~\ref{lc:cofactor-max} shows that
+\(L_\delta\) increases from zero to infinity before \(t_c\) and
+decreases from infinity to
+\[
+                         L_{\rm end}=\frac{A+\sqrt{\mathcal D}}{2z}
+\]
+afterward. The endpoint derivatives are
+\[
+ \partial_\mu F_{\mathrm L}=\log b-\log L_\delta(\mu),\qquad
+ \partial_\nu F_{\mathrm L}=\log L_\delta(\nu)-\log c.
+\]
+A stationary \(\nu<t_c\) is a minimum, and a stationary \(\mu>t_c\)
+is a minimum. The logarithmic singularity creates no maximum:
+the derivative in \(\nu\) is positive on both sides near \(t_c\),
+and that in \(\mu\) is negative. The boundary \(\mu=0\) is excluded
+for \(b>0,\nu>0\) by its positive initial derivative.
+Apart from the diagonal \(\mu=\nu\), the possible maxima therefore
+have \(\mu=\mu_b\) and either \(\nu=1/2\) or a stationary
+\(\nu_c>t_c\).
+
+The diagonal contributes at most
+\(\max(\log c,\frac12\log b+\frac12\log c)\).
+The terminal value is \(Q_b(\delta)+\frac12\log c\), because the
+complete prefix integral is zero. Both are bounded by the proposed
+answer, using Lemma~\ref{lc:action-identity} and
+\(\mathcal Q(x,b,y)\ge\frac12\log b\).
+
+A post-change stationary endpoint exists precisely when
+\(c\ge L_{\rm end}\). If \(c\le\max(x,y)\), this never occurs
+in the open interval. Otherwise it begins at \(\delta_c\), where
+\begin{equation}\label{lc:nu-c}
+ \sin^2(\pi\delta_c)=\frac Ac-\frac P{c^2},\qquad
+ \sin^2(\pi\nu_c)
+       =\frac{c^2\cos^2(\pi\delta)}{(c-x)(c-y)}.
+\end{equation}
+At entry \(\nu_c=1/2\), and afterward \(t_c<\nu_c<1/2\).
+Define
+\[
+ J_c(\delta)=\nu_c\log c+
+ \int_0^{\nu_c}\log|a_\delta(t)|\,dt+
+ \int_{\nu_c}^{1/2}\log\lambda_\delta(t)\,dt.
+\]
+The straddling value is exactly
+\begin{equation}\label{lc:straddling}
+                  S_{\mathrm L}=Q_b(\delta)+\log c-J_c(\delta).
+\end{equation}
+Subtracting the displayed integrals and using
+\eqref{lc:prefix-zero} proves this with no additive constant.
+
+Put \(T_c^-=\sqrt{c^2z-cA+P}\) and
+\(\mathcal H_c=2cz-A+2\sqrt z\,T_c^-\). On the strict branch,
+\begin{equation}\label{lc:J-derivative}
+                  J_c'=-\log(\mathcal H_c/\sqrt{\mathcal D}).
+\end{equation}
+Here is a normalization proof. The stationary envelope rule gives
+\(\partial_{\log c}J_c=\nu_c\), while direct differentiation gives
+\[
+ \partial_\delta\nu_c=-\frac{c\sin(\pi\delta)}{T_c^-},\qquad
+ \partial_{\log c}\log\mathcal H_c=
+                         \frac{c\sin(\pi\delta)}{T_c^-}.
+\]
+Thus the difference in \eqref{lc:J-derivative} is independent of
+\(c\) for each \(\delta\). At \(c\downarrow L_{\rm end}\), one has
+\(\nu_c\to1/2\), \(T_c^-\to0\), and \(\mathcal H_c\to\sqrt{\mathcal D}\).
+The complete prefix integral has zero derivative. The remaining
+tail shrinks where \(a_\delta(1/2)\ne0\), so \(J_c'\to0\).
+This fixes the constant. To justify differentiation despite the
+interior logarithmic zero, write \(\ell(t)=\log|2\cos(\pi t)|\).
+At fixed \(\nu>t_c\), the prefix integral is
+\[
+ \int_\delta^{\nu+\delta}\ell(t)\,dt+
+ \int_{-\delta}^{\nu-\delta}\ell(t)\,dt.
+\]
+Its derivative is
+\(\ell(\nu+\delta)-\ell(\nu-\delta)\); the two terms at
+\(\pm\delta\) cancel. The moving zero lies strictly inside the
+integration interval, while all its endpoints are regular.
+Thus this primitive differentiates normally on the strict branch.
+At \(\nu=1/2\) its derivative is zero. The tail integral has
+smooth integrand there, so the stated branch-entry limit follows.
+
+It follows that \(S_{\mathrm L}'=\log(\mathcal H_c/\mathcal E_b)\).
+Both positive quantities are larger roots with the same product
+\(\mathcal D\):
+\[
+\begin{aligned}
+ \mathcal E_b&=C_b+\sqrt{C_b^2-\mathcal D},&C_b&=A+2bz,\\
+ \mathcal H_c&=C_c+\sqrt{C_c^2-\mathcal D},&C_c&=2cz-A.
+\end{aligned}
+\]
+Both \(C_b,C_c\ge\sqrt{\mathcal D}\). The larger-root function is
+increasing, and hence
+\[
+             \operatorname{sign}S_{\mathrm L}'
+                      =\operatorname{sign}((c-b)z-A).
+\]
+As \(z\) increases, this sign can pass only from negative to positive.
+There is no interior spectral maximum. At branch entry the value
+is the terminal value already bounded. At \(\delta\to1/2\), both
+\(\mu_b,\nu_c\to0\), and logarithmic integrability gives
+\(S_{\mathrm L}\to\log c\). The upper bound follows.
+
+The continuum candidates are attained: \(\mu=\nu=0\) gives \(\log c\),
+and \(\delta=0,\nu=1/2,\mu=\mu_b\) gives
+\(\mathcal Q(x,b,y)+\frac12\log c\).
+For \(b=0\), use its sole start or the continuous limiting formulas.
+For \(P=0\), the exact one-step root gives the same identities
+without division by \(P\). The exceptional \(\mathcal D=0\) occurs
+only at \(x=y,\delta=1/2\), where the computed continuous endpoint
+values apply.
+\end{proof}
+

@@ -1,0 +1,114 @@
+\section{A signed interval transfer estimate}\label{lc:transfer}
+This section bounds the signed recurrence. It is not a Perron estimate
+for its entrywise absolute value. Parametrize the real interval by
+\[
+ \sigma=-2\cos(2\pi\delta),\qquad u=-4\sin^2(\pi\delta),
+                    \qquad0\le\delta\le\tfrac12.
+\]
+For positive outer sum \(A=x+y\) and \(P=xy\ge0\), define
+\begin{equation}\label{lc:continuous-coefficients}
+\begin{aligned}
+ a_\delta(t)&=4(\cos^2(\pi t)-\sin^2(\pi\delta)),\\
+ \rho_\delta(t)&=A\sin(\pi t)+
+   \sqrt{(x-y)^2\sin^2(\pi t)+4P\cos^2(\pi\delta)},\\
+ \lambda_\delta(t)&=2\sin(\pi t)\rho_\delta(t).
+\end{aligned}
+\end{equation}
+On each compact set of allowed moduli,
+\begin{equation}\label{lc:endpoint-size}
+ ct\le\rho_\delta(t)\le C,\qquad ct^2\le\lambda_\delta(t)\le C,
+                          \qquad0<t\le\tfrac12,
+\end{equation}
+uniformly in \(\delta\).
+
+\begin{lemma}[Uniform signed transfer]\label{lc:slow-transfer}
+For every \(\varepsilon>0\), all sufficiently large \(N\) satisfy
+\begin{equation}\label{lc:transfer-estimate}
+ |K_{i,j}|\le
+ \exp\left\{N\int_{i/N}^{j/N}\log\lambda_\delta(t)\,dt+\varepsilon N\right\},
+                      \qquad0\le i\le j\le m.
+\end{equation}
+The threshold is uniform in endpoints, real spectral parameter,
+and each fixed compact set of allowed moduli.
+\end{lemma}
+\begin{proof}
+Normalize \(L_{i,j}=K_{i,j}/\prod_{r=i+1}^js_r\). Its step matrix is
+\[
+ T_h(t,\delta)=
+ \begin{pmatrix}
+ 2A\sin(\pi t)&4P[\cos^2(\pi(t-h/2))-\sin^2(\pi\delta)]\\1&0
+ \end{pmatrix},\quad h=N^{-1},\quad t=jh.
+\]
+The limiting matrix has real eigenvalues
+\[
+ A\sin(\pi t)\ \pm\
+       \sqrt{(x-y)^2\sin^2(\pi t)+4P\cos^2(\pi\delta)}.
+\]
+Its spectral radius is \(\rho_\delta(t)\), including coincident roots.
+Use the Euclidean operator norm. Fix \(\eta>0\) and restrict to
+\(t\in[\eta,1/2]\), where
+\(\rho_\delta(t)\ge c_\eta>0\). Cayley--Hamilton gives uniformly
+\begin{equation}\label{lc:constant-power}
+                    \|T^k\|\le C_\eta(k+1)\rho(T)^k .
+\end{equation}
+For distinct eigenvalues the power divided difference is a sum of
+\(k\) terms, each bounded by \(\rho^{k-1}\). The polynomial identity
+extends to coincident eigenvalues by its derivative value. Bounded
+entries and the positive lower bound on \(\rho\) give \(C_\eta\).
+No eigenbasis or its condition number is used.
+
+Choose a fixed block length \(k\) for which
+\(\log(2C_\eta(k+1))/k\) is smaller than a prescribed error.
+Within a block, the exact matrices differ from its first limiting
+matrix by \(O_k(N^{-1})\). Expanding the finite product one factor
+at a time bounds its difference from \(T^k\) by the same order.
+For large \(N\) this is at most \(C_\eta(k+1)\rho^k\).
+Multiplying block bounds and using uniform continuity of \(\log\rho\)
+gives its integral plus the prescribed error. Incomplete blocks have
+at most \(2k\) factors and cost \(o(N)\), uniformly in the endpoints.
+
+For \(0<t<\eta\), bounded entries cost at most \(C^{\eta N+O(1)}\).
+The omitted logarithmic integral has absolute value at most
+\(C\eta\log(2/\eta)\), by \eqref{lc:endpoint-size}.
+The exact scalar factors \(s_r\) have the same integrable endpoint
+bound, and their logarithmic Riemann sums converge uniformly over
+subintervals. Choose \(\eta\) first, then the fixed block length,
+and finally \(N\). Restoring these factors proves the estimate.
+If a perturbation of the reference matrices is wanted, it must be
+chosen after the block length; a sufficiently small fixed perturbation
+then fits the same finite-product error. No complex perturbation is
+needed for the theorem here.
+\end{proof}
+
+\subsection{Unused spectral rows}
+The exact diagonals are \(\alpha_r=a_\delta((r+1/2)/N)\).
+Uniformly in \(\delta\) and interval endpoints,
+\begin{equation}\label{lc:riemann}
+ \sum_{r=l}^{k-1}\log|\alpha_r|
+ \le N\int_{l/N}^{k/N}\log|a_\delta(t)|\,dt+o(N).
+\end{equation}
+A sampled zero makes the left side \(-\infty\), which causes no
+upper-bound problem. This convention describes a zero product;
+no finite division by it is made.
+
+For a proof, truncate the logarithm from below at \(-M\).
+The truncated function is jointly continuous, so its Riemann sums
+converge uniformly. The factorization
+\[
+ a_\delta(t)=4\cos(\pi(t+\delta))\cos(\pi(t-\delta))
+\]
+shows that \(\{|a_\delta|<r\}\) has length at most \(C\sqrt r\),
+uniformly in \(\delta\). Integrating this distribution bounds the
+omitted logarithmic tails uniformly by a quantity tending to zero
+as \(M\to\infty\). The argument applies to every subinterval.
+
+There is also the exact complete-prefix identity
+\begin{equation}\label{lc:prefix-zero}
+                   \int_0^{1/2}\log|a_\delta(t)|\,dt=0 .
+\end{equation}
+Shift the two cosine integrals and use the reflection and period
+of \(\log|2\cos(\pi t)|\). Together they have the integral of a full
+period, which is zero. Integrability includes \(\delta=0,1/2\).
+We use this identity only after both actual unused products have
+been bounded separately.
+

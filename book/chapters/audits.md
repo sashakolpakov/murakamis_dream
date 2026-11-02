@@ -615,6 +615,26 @@ The actual rational denominator chart remains an application input. The passage 
 selected holomorphic and geometric germ remains a written argument in
 the [meridian-expansion paper](../../docs/papers/meridian-expansions.pdf).
 
+The [meridian substitution proof](../../formal-real/MeridianSeriesEmbedding.lean)
+also checks that replacing $M$ by $e^u$ preserves a nonzero Laurent
+polynomial. If its allowed exponents are the distinct integers
+$m_1,\ldots,m_k$, the first $k$ coefficients of its image are
+\[
+ [u^n]\sum_{j=1}^k c_j e^{m_j u}
+ =\frac{1}{n!}\sum_{j=1}^k c_j m_j^n,
+ \qquad 0\le n<k.
+\]
+Multiplying by $n!$ gives a Vandermonde system with nonzero determinant.
+Lean proves this reconstruction and applies it coefficientwise in $L$.
+The normalized classical symbol therefore remains nonzero before one
+substitutes the selected longitude series. That last substitution need
+not be injective: a nonzero relation can vanish on the selected curve.
+Nor is there a fixed jet order valid for all Laurent polynomials;
+$(M-1)^r$ has $r$ initial zero coefficients after $M=e^u$.
+The registered controls check both distinctions. The actual annihilating
+operator and the source estimates remain hypotheses of the
+characteristic theorem.
+
 A different [uniform-profile theorem](../../formal-real/UniformProfile.lean)
 addresses the compact-parameter conclusions of the circle-tree papers.
 If

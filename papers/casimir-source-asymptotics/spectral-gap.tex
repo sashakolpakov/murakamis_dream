@@ -1,0 +1,74 @@
+\section{The entire spectral interval and a fixed strip}\label{sa:spectral}
+The local spectral decrease uses the actual signed transfer, not
+coefficientwise domination by a positive endpoint. From
+Lemmas~\ref{lc:slow-transfer} and~\ref{lc:cofactor-max}, for every terminal row $N/2+O(1)$,
+\begin{equation}\label{sa:real-upper}
+ \limsup\frac1N\log|R_j(b,u(\delta))|
+                  \le\max\{Q_b(\delta),\tfrac12\log b\}
+                       \quad(0\le\delta\le1/2).
+\end{equation}
+For $b=0$ the second branch is omitted. The bound is uniform on the
+whole interval. By \eqref{sa:Q-derivative}, $Q_b$ decreases strictly
+when $b>0$ or $xy>0$. Also $Q_b(0)>\tfrac12\log b$ in that case:
+the endpoint load is not the maximizer of the strictly concave entropy
+when another entry is positive. The possible endpoint logarithmic
+singularity at $x=y,\delta=1/2$ is integrable. Thus a separated
+$|\delta|\ge\eta$ gives a fixed loss in every nonmonomial triangle.
+
+We specify the small complex face extension used in sewing this bound.
+In the proof of Lemma~\ref{lc:slow-transfer}, first remove a small initial
+interval, then choose a fixed block length so the Cayley--Hamilton
+bound for each two-dimensional transfer power is within any prescribed
+exponential error of its spectral radius. Only after choosing that
+length, perturb the face parameters. Matrix powers over this fixed
+length vary continuously, so the same block bound persists. The
+initial interval has the same integrable logarithmic allowance.
+The scalar unused products are unchanged by face phases. Hence
+\eqref{sa:real-upper}, with any prescribed error, holds on a fixed
+sufficiently small complex face neighborhood. This argument neither
+inverts an eigenbasis at a repeated root nor assumes phase positivity.
+
+Fix the original radii $\rho$. On the small common-face-phase
+neighborhood, one separated spectral coordinate supplies the above
+loss in its nonmonomial triangle; the other factors have their
+complete upper rates with errors whose finite sum is smaller than
+half that loss. Equations \eqref{sa:even}--\eqref{sa:odd} retain both
+triangle cofactors in each term, and their remaining prefactors are
+bounded. On the complementary face torus use
+\eqref{sa:global-angular}, uniform for every real spectral vector.
+The Cauchy target factor is the same $\prod\rho_f^{-d}$ in both
+regions. Its complete rate is precisely $\Phi$ from
+\eqref{sa:stationarity}. We have therefore proved a real-cube gap
+for the shared coefficient, not a sum of separately optimized factors.
+The same argument without a loss, or the coefficientwise central
+comparison, gives
+\begin{equation}\label{sa:global-real}
+ \sup_{\delta\in[-1/2,1/2]^R}|C_N(\delta)|
+                                      \le e^{N(\Phi+o(1))}.
+\end{equation}
+
+For clarity a final elementary argument supplies a fixed complex strip
+directly for this shared polynomial. A Laurent polynomial $F$ of
+degree at most $d$ in each angular coordinate has, in either
+half-plane of each variable, the subharmonic estimate
+\begin{equation}\label{sa:Poisson}
+ \log|F(x+\ii y)|\le
+ (\mathcal P_y*\log|F|)(x)+2\pi d\sum_e|y_e|.
+\end{equation}
+Here $\mathcal P_y$ is the product of the circle Poisson kernels
+at radii $e^{-2\pi|y_e|}$; a zero height denotes a point mass.
+To prove it, multiply by the appropriate $z_e^d$ in each coordinate,
+apply the disk subharmonic inequality successively, and subtract the
+known monomial logarithms. Zeros follow by regularization, or by
+using a continuous upper majorant on the boundary.
+
+Apply the real gap with separation $\eta/2$ and
+\eqref{sa:global-real}. If $|x_j|\ge\eta$, the one-coordinate
+Poisson mass in $|t_j|\ge\eta/2$ tends uniformly to one as
+$|y_j|\to0$. Choose the strip so it is at least $3/4$, and so
+$2\pi R|y|$ and the $o(1)$ term together cost less than a quarter
+of the real loss. Inequality \eqref{sa:Poisson} proves
+\eqref{sa:H2}, possibly with a smaller constant. Cauchy's formula on
+smaller disks and strips gives the fixed derivative assertions.
+This completes Theorem~\ref{sa:main}.
+

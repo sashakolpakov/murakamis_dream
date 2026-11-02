@@ -18,8 +18,7 @@ import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
 CHECKS = {
-    "local-coefficients": "papers/local-coefficients/check.py",
-    "source-asymptotics": "papers/source-asymptotics/check.py",
+    "casimir-source-asymptotics": "papers/casimir-source-asymptotics/check.py",
     "oscillatory-fillings": "papers/oscillatory-fillings/check.py",
     "marked-fillings": "papers/marked-fillings/check.py",
     "cyclic-source-constants": "repro/check_cyclic_source_constants.py",
@@ -45,8 +44,11 @@ CHECKS = {
 DIRECTORY_CHECKS = {"planar-certificates", "triangular-insertion", "terminal-decorations",
                     "meridian-tangles", "conway-source-bounds", "conway-asymptotics",
                     "quarter-index-asymptotics", "newton-calculus", "conway-reductions",
-                    "moving-meridian-sources", "meridian-expansions", "circle-tree-volume"}
+                    "moving-meridian-sources", "meridian-expansions", "circle-tree-volume",
+                    "casimir-source-asymptotics"}
 CERTIFICATE_INPUTS = (
+    "papers/local-coefficients/check.py",
+    "papers/source-asymptotics/check.py",
     "papers/newton-tangles/check.py",
     "papers/strict-newton-profiles/check.py",
     "papers/circle-tree-asymptotics/check.py",
