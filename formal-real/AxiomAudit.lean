@@ -1,6 +1,7 @@
 import RealTransfer
 import WeightedGraph
 import Flattening
+import TransportCoercivity
 
 #print axioms VolumeLogic.RealModel.complexMagnitude
 #print axioms VolumeLogic.RealModel.constant_div_nat_rate
@@ -64,3 +65,27 @@ import Flattening
 #print axioms VolumeLogic.Flattening.side_loss_from_convexity
 #print axioms VolumeLogic.Flattening.flattening_sector_gap
 #print axioms VolumeLogic.Flattening.weak_balance_sector_gap
+
+#print axioms VolumeLogic.TransportCoercivity.rowMass
+#print axioms VolumeLogic.TransportCoercivity.demand
+#print axioms VolumeLogic.TransportCoercivity.rowMax
+#print axioms VolumeLogic.TransportCoercivity.recession
+#print axioms VolumeLogic.TransportCoercivity.rowStep
+#print axioms VolumeLogic.TransportCoercivity.connected
+#print axioms VolumeLogic.TransportCoercivity.sum_demand
+#print axioms VolumeLogic.TransportCoercivity.recession_eq_gaps
+#print axioms VolumeLogic.TransportCoercivity.recession_nonneg
+#print axioms VolumeLogic.TransportCoercivity.recession_zero_iff
+#print axioms VolumeLogic.TransportCoercivity.equal_of_row_path
+#print axioms VolumeLogic.TransportCoercivity.recession_zero
+#print axioms VolumeLogic.TransportCoercivity.grounded_recession_pos
+#print axioms VolumeLogic.TransportCoercivity.continuous_recession
+#print axioms VolumeLogic.TransportCoercivity.recession_smul
+#print axioms VolumeLogic.TransportCoercivity.grounded_recession_coercive
+#print axioms VolumeLogic.TransportCoercivity.potential
+#print axioms VolumeLogic.TransportCoercivity.recession_sub_le_potential
+#print axioms VolumeLogic.TransportCoercivity.grounded_potential_coercive
+#print axioms VolumeLogic.TransportCoercivity.continuous_potential
+#print axioms VolumeLogic.TransportCoercivity.grounded_sublevel_bounded
+#print axioms VolumeLogic.TransportCoercivity.grounded_sublevel_compact
+#print axioms VolumeLogic.TransportCoercivity.exists_grounded_minimizer

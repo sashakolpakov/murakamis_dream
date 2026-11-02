@@ -1,0 +1,31 @@
+\begin{tikzpicture}[scale=.94,>=Latex,
+  v/.style={circle,fill=black,inner sep=1.6pt},
+  match/.style={line width=1.5pt,blue!70!black}]
+\begin{scope}
+\coordinate (x) at (-2,0); \coordinate (y) at (2,0);
+\coordinate (b) at (0,1.6); \coordinate (c) at (0,-1.6);
+\fill[blue!5] (x)--(b)--(y)--cycle;
+\draw (x)--(b)--(y)--(c)--cycle;
+\draw[match] (x)--(y);
+\draw[->,gray] (-1.12,.86)--(-.65,1.24);
+\draw[->,gray] (.65,1.24)--(1.12,.86);
+\foreach \p/\pos in {x/left,y/right,b/above,c/below}
+ \node[v,label=\pos:$\p$] at (\p) {};
+\node at (0,-2.15) {before insertion};
+\end{scope}
+\draw[->,thick] (2.55,0)--(3.35,0);
+\begin{scope}[xshift=6cm]
+\coordinate (x) at (-2,0); \coordinate (y) at (2,0);
+\coordinate (b) at (0,1.6); \coordinate (c) at (0,-1.6);
+\coordinate (w) at (0,.57);
+\fill[blue!5] (x)--(w)--(y)--(c)--cycle;
+\fill[orange!12] (x)--(b)--(y)--(w)--cycle;
+\draw (x)--(b)--(y)--(c)--cycle;
+\draw (x)--(w)--(y);
+\draw[match] (x)--(y) (b)--(w);
+\foreach \p/\pos in {x/left,y/right,b/above,c/below}
+ \node[v,label=\pos:$\p$] at (\p) {};
+\node[v,label=right:$w$] at (w) {};
+\node at (0,-2.15) {after insertion};
+\end{scope}
+\end{tikzpicture}

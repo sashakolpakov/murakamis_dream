@@ -25,8 +25,11 @@ CHECKS = {
     "cyclic-source-constants": "repro/check_cyclic_source_constants.py",
     "planar-certificates": "papers/planar-certificates/check.py",
     "triangular-insertion": "repro/check_triangular_boundary_certificate.py",
+    "newton-tangles": "papers/newton-tangles/check.py",
+    "terminal-decorations": "papers/terminal-decorations/check.py",
+    "circle-tree-geometry": "papers/circle-tree-geometry/check.py",
 }
-DIRECTORY_CHECKS = {"planar-certificates", "triangular-insertion"}
+DIRECTORY_CHECKS = {"planar-certificates", "triangular-insertion", "terminal-decorations"}
 CERTIFICATE_INPUTS = (
     "repro/check_protected_sums.py",
     "experiments/audit_actual_sector_cover.py",
@@ -34,6 +37,9 @@ CERTIFICATE_INPUTS = (
     "experiments/audit_actual_original_marked_face_coefficient.py",
     "experiments/actual_sector_cover_certificate.json",
     "experiments/actual_shared_radius_anchor_obstruction_certificate.json",
+    "experiments/audit_actual_balanced_terminal_fans.py",
+    "experiments/audit_two_octahedron_angular_edge_block.py",
+    "experiments/audit_all_circle_vertexwise_geometry.py",
 )
 
 

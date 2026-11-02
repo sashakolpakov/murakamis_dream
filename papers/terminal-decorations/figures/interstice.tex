@@ -1,0 +1,23 @@
+\begin{tikzpicture}[scale=1.15]
+\begin{scope}
+\clip (-1.4,-.55) rectangle (3.7,2.55);
+\fill[gray!13] (-1.4,-.55) rectangle (3.7,0);
+\fill[gray!13] (-1.4,2) rectangle (3.7,2.55);
+\fill[gray!13] (0,1) circle (1);
+\fill[orange!15] (2,1) circle (1);
+\draw[black,thick] (-1.4,0)--(3.7,0) (-1.4,2)--(3.7,2);
+\draw[black,thick] (0,1) circle (1);
+\draw[orange!80!black,thick] (2,1) circle (1);
+\draw[blue!65!black] (1,0) circle (1) (1,2) circle (1);
+\draw[blue!65!black] (2,-.55)--(2,2.55);
+\draw[dashed,gray,thick] (0,-.55)--(0,2.55);
+\foreach \x/\y in {0/0,0/2,1/1,2/0,2/2}
+ \fill[black] (\x,\y) circle (.035);
+\end{scope}
+\node at (-.28,1) {$\ii$};
+\node at (2.36,1) {$2+\ii$};
+\node[anchor=west] at (3.8,2) {$\Im z=2$};
+\node[anchor=west] at (3.8,0) {$\Im z=0$};
+\node[gray,anchor=north] at (0,-.62) {$\Re z=0$};
+\node[blue!65!black,anchor=north] at (2,-.62) {$\Re z=2$};
+\end{tikzpicture}

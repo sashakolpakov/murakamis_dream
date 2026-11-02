@@ -1,0 +1,25 @@
+% Logarithmic peripheral periods, with p=2 in the drawn lattice.
+\begin{tikzpicture}[x=1cm,y=1cm,>=Latex,font=\small]
+ \draw[->,gray] (-5,0)--(5,0) node[right] {$\Re f_v$};
+ \draw[->,gray] (0,-3.8)--(0,1.7) node[above] {$\Im f_v$};
+ \coordinate (O) at (0,0);
+ \coordinate (V) at (2,.55);
+ \coordinate (U) at (-4,-3.2);
+ \coordinate (S) at (0,-2.1);
+ \fill[blue!7] (O)--(V)--(-2,-2.65)--(U)--cycle;
+ \draw[gray,dashed] (V)--(-2,-2.65)--(U);
+ \draw[->,line width=1pt,blue!65!black] (O)--(V)
+    node[pos=.72,above] {$V_v$};
+ \draw[->,line width=1pt,blue!65!black] (O)--(U)
+    node[pos=.55,above,sloped] {$U_v$};
+ \draw[->,line width=.8pt,blue!65!black] (U)--(-2,-2.65)
+    node[midway,below,sloped] {$V_v$};
+ \draw[->,line width=.8pt,blue!65!black] (-2,-2.65)--(S)
+    node[midway,below,sloped] {$V_v$};
+ \draw[->,line width=1.2pt,red!70!black] (O)--(S)
+    node[midway,right=5pt,align=left] {$U_v+2V_v$\\$=-2\pi\ii c$};
+ \draw[<->] (0,1.1)--(2,1.1)
+    node[midway,above] {$\ell_v=\Re V_v>0$};
+ \foreach \p in {O,V,U,S}{\fill (\p) circle (1.3pt);}
+ \node[above left] at (O) {$0$};
+\end{tikzpicture}

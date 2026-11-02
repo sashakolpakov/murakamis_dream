@@ -9,7 +9,7 @@
     },
     "diagram_evaluation": {
       "title": "Exact diagram evaluation",
-      "count": 7,
+      "count": 8,
       "open": false
     },
     "complete_geometry": {
@@ -19,12 +19,12 @@
     },
     "marked_geometry": {
       "title": "Marked geometric deformations",
-      "count": 6,
+      "count": 7,
       "open": false
     },
     "local_asymptotics": {
       "title": "Uniform coefficient asymptotics",
-      "count": 9,
+      "count": 10,
       "open": false
     },
     "central_period": {
@@ -74,7 +74,7 @@
     },
     "finite_graph_energy": {
       "title": "Real variational estimates",
-      "count": 2,
+      "count": 3,
       "open": false
     }
   },
@@ -1125,6 +1125,26 @@
       ]
     },
     {
+      "id": "geo_local_peripheral_volume_differential",
+      "title": "Local peripheral differential of an oriented positive ideal chain",
+      "group": "marked_geometry",
+      "statement": "For an oriented positive ideal triangulation satisfying the full edge and face equations, actual continued affine-similarity logarithms along primitive torus bases give dV_rho=(1/2) sum(Re V dIm U-Re U dIm V). The cusp side-scale telescope, normal-path intersection pairing and edge-row quotient fix its factor and orientation. Ends need not be complete and total peripheral logs need not be small.",
+      "sources": [
+        {
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:normal-flow}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/marked-fillings/main.tex#L1116"
+        },
+        {
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:volume-differential}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/marked-fillings/main.tex#L1176"
+        }
+      ],
+      "depends_on": [],
+      "coverage": "Local chain calculus only. Identification of the original group and primitive paths, existence of a positive family, completion of the metric and the absolute volume constant are separate application proofs."
+    },
+    {
       "id": "geo_morse_action_regulator",
       "title": "Primitive action and absolute regulator normalization",
       "group": "marked_geometry",
@@ -1158,6 +1178,10 @@
         {
           "id": "geo_morse_deformed_pattern",
           "reason": "Identifies the classical critical action with the same geometric representation family."
+        },
+        {
+          "id": "geo_local_peripheral_volume_differential",
+          "reason": "Supplies the local similarity-log volume differential; the Morse word dictionary and complete normalization identify the actual primitive regulator."
         }
       ]
     },
@@ -1396,17 +1420,47 @@
       "id": "planar_terminal_fan_balance",
       "title": "Literal terminal fans enforce strict balance",
       "group": "planar_criteria",
-      "statement": "Finite even terminal insertions preserve chosen endpoint pairings and produce a simple matched sphere whose complete packing is strictly balanced. The knot generally changes.",
+      "statement": "Finite even terminal insertions at both shaded sides preserve the chosen endpoint pairing, create no internal main component and produce a simple matched sphere whose complete packing fixes all old circles and is strictly balanced at every retained and added region. The actual refinement preserves old source targets and adds one ordinary target per new circle. The filled knot can change.",
       "sources": [
         {
-          "path": "manuscript/sections/L-balanced-terminal-fans.tex",
-          "anchor": "\\label{bl:the-explicit-two-sided-fan-construction}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/L-balanced-terminal-fans.tex#L180"
+          "path": "papers/terminal-decorations/main.tex",
+          "anchor": "\\label{td:main}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/terminal-decorations/main.tex#L126"
         },
         {
-          "path": "manuscript/sections/L-balanced-terminal-fans.tex",
-          "anchor": "\\label{bl:the-full-finite-source-at-both-level-parities}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/L-balanced-terminal-fans.tex#L500"
+          "path": "papers/terminal-decorations/main.tex",
+          "anchor": "\\label{td:patch}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/terminal-decorations/main.tex#L309"
+        },
+        {
+          "path": "papers/terminal-decorations/main.tex",
+          "anchor": "\\label{td:parity}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/terminal-decorations/main.tex#L402"
+        },
+        {
+          "path": "papers/terminal-decorations/main.tex",
+          "anchor": "\\label{td:interstice}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/terminal-decorations/main.tex#L427"
+        },
+        {
+          "path": "papers/terminal-decorations/main.tex",
+          "anchor": "\\label{td:counts}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/terminal-decorations/main.tex#L555"
+        },
+        {
+          "path": "papers/terminal-decorations/main.tex",
+          "anchor": "\\label{td:retained}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/terminal-decorations/main.tex#L655"
+        },
+        {
+          "path": "papers/terminal-decorations/main.tex",
+          "anchor": "\\label{td:added}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/terminal-decorations/main.tex#L699"
+        },
+        {
+          "path": "papers/terminal-decorations/main.tex",
+          "anchor": "\\section{The actual refined source and the filled limit}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/terminal-decorations/main.tex#L737"
         }
       ],
       "depends_on": [
@@ -1424,27 +1478,27 @@
       "id": "planar_terminal_fan_gap",
       "title": "Strict complete balance controls the full fan remainder",
       "group": "planar_criteria",
-      "statement": "At the one complete face vector every surviving one-sided factor has a fixed loss; finite sector summation gives a real-cube and thin-strip gap.",
+      "statement": "For the fixed decorated source, the single complete face vector is an unabridged certificate: every locally allowed noncentral string has a common strict shared rate loss, including globally vanishing strings. Uniform local estimates and finite sector summation give a whole real-spectral-cube complementary-source gap with the original protected zeros and targets.",
       "sources": [
         {
-          "path": "manuscript/sections/L-balanced-terminal-fans.tex",
-          "anchor": "\\label{bl:B3}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/L-balanced-terminal-fans.tex#L1311"
+          "path": "papers/terminal-decorations/main.tex",
+          "anchor": "\\label{td:imports}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/terminal-decorations/main.tex#L191"
         },
         {
-          "path": "manuscript/sections/L-balanced-terminal-fans.tex",
-          "anchor": "\\label{bl:B4}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/L-balanced-terminal-fans.tex#L1317"
+          "path": "papers/terminal-decorations/main.tex",
+          "anchor": "\\label{td:source}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/terminal-decorations/main.tex#L208"
         },
         {
-          "path": "manuscript/sections/L-balanced-terminal-fans.tex",
-          "anchor": "\\label{bl:B5}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/L-balanced-terminal-fans.tex#L1327"
+          "path": "papers/terminal-decorations/main.tex",
+          "anchor": "\\label{td:rates}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/terminal-decorations/main.tex#L226"
         },
         {
-          "path": "manuscript/sections/L-balanced-terminal-fans.tex",
-          "anchor": "\\label{bl:restoring-the-full-invariant-under-balance}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/L-balanced-terminal-fans.tex#L1301"
+          "path": "papers/terminal-decorations/main.tex",
+          "anchor": "\\label{td:certificate}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/terminal-decorations/main.tex#L775"
         }
       ],
       "depends_on": [
@@ -1469,24 +1523,19 @@
       "statement": "The newly decorated knot satisfies the full volume limit for all independent sufficiently long fixed signed fillings, including its old circles.",
       "sources": [
         {
-          "path": "manuscript/sections/L-balanced-terminal-fans.tex",
-          "anchor": "\\label{bl:T1}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/L-balanced-terminal-fans.tex#L39"
+          "path": "papers/terminal-decorations/main.tex",
+          "anchor": "\\label{td:volume}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/terminal-decorations/main.tex#L148"
         },
         {
-          "path": "manuscript/sections/L-balanced-terminal-fans.tex",
-          "anchor": "\\label{bl:B6}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/L-balanced-terminal-fans.tex#L1340"
+          "path": "papers/terminal-decorations/main.tex",
+          "anchor": "\\label{td:imports}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/terminal-decorations/main.tex#L191"
         },
         {
-          "path": "manuscript/sections/L-balanced-terminal-fans.tex",
-          "anchor": "\\label{bl:B7}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/L-balanced-terminal-fans.tex#L1349"
-        },
-        {
-          "path": "manuscript/sections/L-balanced-terminal-fans.tex",
-          "anchor": "\\label{bl:B8}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/L-balanced-terminal-fans.tex#L1356"
+          "path": "papers/terminal-decorations/main.tex",
+          "anchor": "\\label{td:certificate}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/terminal-decorations/main.tex#L775"
         }
       ],
       "depends_on": [
@@ -1495,16 +1544,16 @@
           "reason": "Provides the full complementary-source gap."
         },
         {
-          "id": "planar_fourier_remainder",
-          "reason": "The written L.9 proof uses whole-domain integration by parts, retained endpoint currents and spectral degree to bound the actual filled remainder."
+          "id": "finite_remainder_transfer",
+          "reason": "The new paper uses the full degree-(N-1) tensor Hermite norm to transfer the whole real-cube source gap. The cost is constant for each fixed signed filling vector; no endpoint-localization argument is substituted."
         },
         {
           "id": "analytic_morse_central_period",
-          "reason": "The nonzero central rate is supplied by L.6--L.8/O.1."
+          "reason": "The source-asymptotics and oscillatory-fillings companions supply the actual nonzero entire central contribution at both parities."
         },
         {
           "id": "geo_morse_primitive_filling",
-          "reason": "L.10--L.11/O.2 supply original primitive filling and absolute metric volume."
+          "reason": "The marked-fillings companion supplies smooth primitive completion of the refined original diagram for independently sufficiently long fixed signed fillings."
         },
         {
           "id": "geo_morse_volume_calibration",
@@ -1514,7 +1563,8 @@
           "id": "elementary_rate_transfer",
           "reason": "A bound for the entire remainder, the nonzero central contribution and the original scalar normalization are combined to obtain the rate of the invariant."
         }
-      ]
+      ],
+      "coverage": "The terminal paper proves the literal decoration and applies the stated companion criterion. All original and new powers must be sufficiently long and fixed before N; preserving the endpoint pairing does not preserve the knot type."
     },
     {
       "id": "planar_protected_sum_certificate",
@@ -1744,7 +1794,11 @@
       "depends_on": [
         {
           "id": "geo_simple_sphere_packing",
-          "reason": "Supplies strict concavity, the supported Laplacian and exact homogeneous normalization. Uses the fixed-boundary Hall/development proof for disks, not a volume theorem for decorated knots."
+          "reason": "Supplies the normalized triangle action and complete packing calibration. Disk-specific Hall feasibility, support connectivity and geometric development are proved in the cited insertion sections."
+        },
+        {
+          "id": "analytic_supported_transport_coercivity",
+          "reason": "The strictly supported table gives the actual recession margin and attained minimum after boundary pooling or supported grounding. The written disk proof must still supply the table, its half-row/unit-face margins, connectivity and local potential bounds."
         }
       ]
     },
@@ -2102,37 +2156,32 @@
       "id": "tree_positive_completion",
       "title": "Positive angular cells and actual circle-tree completion",
       "group": "tree_criteria",
-      "statement": "The original ordered page cut supplies two octahedra per edge; a small positive angular path gives actual primitive cone fillings and a smooth c=1 knot exterior, with absolute metric volume.",
+      "statement": "For an actual ordered circle tree with L_v>=630 at every vertex, or the stated heterogeneous-radius criterion, the positive cells and full primitive periods give cone angle 2pi c and a smooth complete finite-volume endpoint at c=1. The same fundamental chain identifies the absolute metric volume with 2pi times the real classical stationary action. A knot conclusion requires the original endpoint matching to give one main component; no quantum limit or moving-meridian adapter is asserted.",
       "sources": [
         {
-          "path": "manuscript/sections/F-quantitative-octahedral-geometry.tex",
-          "anchor": "\\label{sec:ft}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/F-quantitative-octahedral-geometry.tex#L34"
+          "path": "papers/circle-tree-geometry/main.tex",
+          "anchor": "\\label{ctg:main}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-geometry/main.tex#L113"
         },
         {
-          "path": "manuscript/sections/F-quantitative-octahedral-geometry.tex",
-          "anchor": "\\label{sec:fa}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/F-quantitative-octahedral-geometry.tex#L229"
+          "path": "papers/circle-tree-geometry/main.tex",
+          "anchor": "\\label{ctg:tube-metric}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-geometry/main.tex#L737"
         },
         {
-          "path": "manuscript/sections/F-quantitative-octahedral-geometry.tex",
-          "anchor": "\\label{sec:fg}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/F-quantitative-octahedral-geometry.tex#L405"
+          "path": "papers/circle-tree-geometry/main.tex",
+          "anchor": "\\label{ctg:chain-volume}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-geometry/main.tex#L878"
         },
         {
-          "path": "manuscript/sections/G-local-tree-messages.tex",
-          "anchor": "\\section{A vertexwise geometric criterion}\\label{sec:vg-derivatives}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/G-local-tree-messages.tex#L264"
+          "path": "papers/circle-tree-geometry/main.tex",
+          "anchor": "\\label{ctg:cancellation}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-geometry/main.tex#L887"
         },
         {
-          "path": "manuscript/sections/F-quantitative-octahedral-geometry.tex",
-          "anchor": "\\label{sec:fg-5}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/F-quantitative-octahedral-geometry.tex#L542"
-        },
-        {
-          "path": "manuscript/sections/F-quantitative-octahedral-geometry.tex",
-          "anchor": "\\label{eq:fg-19}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/F-quantitative-octahedral-geometry.tex#L657"
+          "path": "papers/circle-tree-geometry/main.tex",
+          "anchor": "\\label{ctg:heterogeneous}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-geometry/main.tex#L933"
         }
       ],
       "depends_on": [
@@ -2151,8 +2200,13 @@
         {
           "id": "geo_circle_primitive_periods",
           "reason": "The actual primitive slope winds once at c=1, so the completion is smooth; the same marked periods enter the regulator boundary cancellation."
+        },
+        {
+          "id": "geo_local_peripheral_volume_differential",
+          "reason": "The sole specialized companion import is the local oriented-chain identity in marked-fillings Eq. (7.3). The new tree paper proves its own winding, cone completion and same-chain absolute-volume comparison; it does not import a long-filling existence theorem."
         }
-      ]
+      ],
+      "coverage": "Classical all-circle geometry only. Quantitative analytic remainder estimates and completed-root filled-invariant conclusions remain archive dependencies; the nonparabolic moving-meridian/longitude adapter remains in its separate I/J nodes."
     },
     {
       "id": "tree_summed_volume",
@@ -2569,7 +2623,8 @@
           "id": "finite_spectral_source",
           "reason": "The original scalar, sine factors and charge period must belong to the actual invariant; abstract polynomial bounds alone do not identify that period."
         }
-      ]
+      ],
+      "coverage": "Retained older archive route. It is not a premise of the new terminal-decoration paper, whose whole complementary estimate uses the finite Hermite norm."
     },
     {
       "id": "planar_sector_envelopes",
@@ -2618,74 +2673,159 @@
       "id": "recursive_finite_source",
       "title": "Exact Newton algebra for the ordered recursive tangle source",
       "group": "diagram_evaluation",
-      "statement": "For the literal completed-root tangle expression at every level, physical turns, closure, polynomial multiplication, colored circle operators, core/alias split and signed filling Fourier transform evaluate the original one-mark invariant. Newton multiplication has its full triangular support; whole crossing and repeated-root normals are retained.",
+      "statement": "At every level N>=2, the physical complete-meridian pair commutant is the full Hermite Casimir algebra. Literal turns, cylindrical closure, positive Newton multiplication, colored-circle expansions, the core/alias split and retained signed half twists are exact, including repeated-root normals. The positive-source theorem is restricted separately to the stated completed-root grammar; moving-meridian identities and the whole filled sum are not consequences of this node.",
+      "sources": [
+        {
+          "path": "papers/newton-tangles/main.tex",
+          "anchor": "\\label{lem:commutant}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/newton-tangles/main.tex#L211"
+        },
+        {
+          "path": "papers/newton-tangles/main.tex",
+          "anchor": "\\label{prop:newton-turn}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/newton-tangles/main.tex#L278"
+        },
+        {
+          "path": "papers/newton-tangles/main.tex",
+          "anchor": "\\label{nt:generic-trace}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/newton-tangles/main.tex#L340"
+        },
+        {
+          "path": "papers/newton-tangles/main.tex",
+          "anchor": "\\label{thm:positive-product}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/newton-tangles/main.tex#L374"
+        },
+        {
+          "path": "papers/newton-tangles/main.tex",
+          "anchor": "\\label{prop:circle}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/newton-tangles/main.tex#L410"
+        },
+        {
+          "path": "papers/newton-tangles/main.tex",
+          "anchor": "\\label{eq:core-alias}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/newton-tangles/main.tex#L443"
+        },
+        {
+          "path": "papers/newton-tangles/main.tex",
+          "anchor": "\\label{eq:low-alias}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/newton-tangles/main.tex#L448"
+        },
+        {
+          "path": "papers/newton-tangles/main.tex",
+          "anchor": "\\label{nt:crossing-newton}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/newton-tangles/main.tex#L548"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "finite_crossing",
+          "reason": "Identifies the actual physical crossing by its full Hermite values and normals; the new generic triangular-matrix proof derives its Newton expansion."
+        },
+        {
+          "id": "finite_invariant_normalization",
+          "reason": "Fixes the enhanced reduced convention and actual physical gauge. The new paper proves its pair turn and cylindrical trace directly, rather than importing a different invariant."
+        }
+      ],
+      "coverage": "The complete-meridian finite algebra is proved in the Newton paper. Its exact circle-basis filling expansion remains a separate archive input; no moving-meridian adapter is supplied here."
+    },
+    {
+      "id": "recursive_exact_filling_source",
+      "title": "Exact circle-basis filling of the recursive source",
+      "group": "diagram_evaluation",
+      "statement": "For each fixed original marked recursive diagram, insert the full Fourier-Hermite circle-basis expansion of every R^(-2p) before taking the unchanged closure. This gives the exact signed color sum with its original unit character, Cartan powers and both value and normal interpolation data. It is a finite identity, not a source gap or an asymptotic statement.",
       "sources": [
         {
           "path": "manuscript/sections/02-finite-source.tex",
-          "anchor": "\\label{lem:commutant}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/02-finite-source.tex#L84"
-        },
-        {
-          "path": "manuscript/sections/02-finite-source.tex",
-          "anchor": "\\label{prop:newton-turn}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/02-finite-source.tex#L121"
-        },
-        {
-          "path": "manuscript/sections/02-finite-source.tex",
-          "anchor": "\\label{thm:positive-product}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/02-finite-source.tex#L148"
-        },
-        {
-          "path": "manuscript/sections/02-finite-source.tex",
-          "anchor": "\\label{prop:circle}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/02-finite-source.tex#L184"
+          "anchor": "\\label{eq:exact-filling}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/02-finite-source.tex#L242"
         },
         {
           "path": "manuscript/sections/02-finite-source.tex",
           "anchor": "\\label{eq:whole-filling-source}",
           "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/02-finite-source.tex#L249"
+        },
+        {
+          "path": "manuscript/sections/A-finite-identities.tex",
+          "anchor": "\\label{app:fourier}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/A-finite-identities.tex#L136"
         }
       ],
       "depends_on": [
         {
-          "id": "finite_local_fourier",
-          "reason": "Supplies the all-level physical annihilator used in the full polynomial algebra."
+          "id": "recursive_finite_source",
+          "reason": "Provides the actual circle basis, physical half twists, tensor operations and unchanged closing functional."
         },
         {
           "id": "finite_crossing",
-          "reason": "Supplies the actual signed crossing multiplier with both values and first normals."
+          "reason": "Provides every signed crossing power with full confluent data."
         },
         {
           "id": "finite_hermite",
-          "reason": "The scalar quotient trace and spectral interpolation retain repeated nodes."
+          "reason": "The Fourier-Hermite interpolation preserves the repeated-node derivative terms."
         },
         {
           "id": "finite_invariant_normalization",
-          "reason": "Identifies the specified reduced invariant with the physical one-cut scalar and recorded unit phase."
+          "reason": "Restores the exact original reduced scalar and framing character."
         }
-      ]
+      ],
+      "coverage": "Retained written archive dependency from Chapter 2 and Appendix A. The new Newton paper does not claim the whole filled-source formula or its analytic estimates."
+    },
+    {
+      "id": "recursive_positive_source",
+      "title": "Completed-root positive source and stationary boundary bounds",
+      "group": "local_asymptotics",
+      "statement": "For the fixed completed/completed closure grammar, the positive complete auxiliary-color source has a primitive lattice of dimension 2H-3, a unique strict action maximum and a nondegenerate Hessian. Uniform factorial estimates and strict integer rounding give its logarithmic rate at both level parities. Fixed-output profiles are analytic, and every stationary leaf lies strictly between 1/4 and arctan(2)/pi. No signed filling or metric-volume conclusion is asserted.",
+      "sources": [
+        {
+          "path": "papers/newton-tangles/main.tex",
+          "anchor": "\\label{def:grammar}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/newton-tangles/main.tex#L116"
+        },
+        {
+          "path": "papers/newton-tangles/main.tex",
+          "anchor": "\\label{lem:strict-feasible}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/newton-tangles/main.tex#L609"
+        },
+        {
+          "path": "papers/newton-tangles/main.tex",
+          "anchor": "\\label{eq:lattice-dimension}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/newton-tangles/main.tex#L622"
+        },
+        {
+          "path": "papers/newton-tangles/main.tex",
+          "anchor": "\\label{lem:factorial-action}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/newton-tangles/main.tex#L649"
+        },
+        {
+          "path": "papers/newton-tangles/main.tex",
+          "anchor": "\\label{prop:strict-maximum}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/newton-tangles/main.tex#L687"
+        },
+        {
+          "path": "papers/newton-tangles/main.tex",
+          "anchor": "\\label{cor:complete-limit}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/newton-tangles/main.tex#L698"
+        },
+        {
+          "path": "papers/newton-tangles/main.tex",
+          "anchor": "\\label{lem:port-bounds}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/newton-tangles/main.tex#L751"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "recursive_finite_source",
+          "reason": "The actual positive complete-color coefficients, Newton product support and closing target determine the shared action and its integer lattice."
+        }
+      ],
+      "coverage": "This is the completed-root positive-source theorem in the new paper. Arbitrary strict syntax, complementary signed colors, moving meridians and filled invariant limits require their separate recorded proofs."
     },
     {
       "id": "recursive_angle_geometry",
       "title": "Complete geometry of the completed-root construction",
       "group": "recursive_tangles",
-      "statement": "The literal completed-root grammar has a nonempty strict angle polytope and unique interior maximum with the displayed boundary-parameter bounds. The stationary leaf pyramids and multiplication prisms glue by their ordered face maps to the actual augmented complement; cusp links are complete and its volume is 2pi times the complete action. The isolated three-leaf case retains its stated separate calibration.",
+      "statement": "For the completed-root grammar, the stationary leaf pyramids and multiplication prisms glue by their ordered face maps to the actual augmented complement. Its cusp links are complete and its volume is 2pi times the complete action. The isolated three-leaf case retains its separately stated calibration; the broader strict-mask geometry has separate nodes.",
       "sources": [
-        {
-          "path": "manuscript/sections/03-entropy.tex",
-          "anchor": "\\label{lem:strict-feasible}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/03-entropy.tex#L40"
-        },
-        {
-          "path": "manuscript/sections/03-entropy.tex",
-          "anchor": "\\label{prop:strict-maximum}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/03-entropy.tex#L113"
-        },
-        {
-          "path": "manuscript/sections/03-entropy.tex",
-          "anchor": "\\label{lem:port-bounds}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/03-entropy.tex#L150"
-        },
         {
           "path": "manuscript/sections/04-geometry.tex",
           "anchor": "\\label{eq:ordered-stack}",
@@ -2704,8 +2844,8 @@
       ],
       "depends_on": [
         {
-          "id": "recursive_finite_source",
-          "reason": "The exact Newton support and factorial weights give the leaf/gate action and primitive wire constraints whose stationary geometry is assembled."
+          "id": "recursive_positive_source",
+          "reason": "Supplies the strict action maximum, nondegenerate stationary data and boundary-parameter ranges; the actual geometric gluing and volume calibration remain the additional archive argument."
         }
       ],
       "coverage": "This node records the completed-root construction of Chapters 2–8, with its stated grammar. The broader strict-tree extension has separate nodes and additional inputs."
@@ -2749,12 +2889,12 @@
       ],
       "depends_on": [
         {
-          "id": "recursive_finite_source",
-          "reason": "Defines the actual continued coefficients, integer offsets and exact whole filling transform."
+          "id": "recursive_exact_filling_source",
+          "reason": "Provides the exact original signed color sum and unchanged full-normal interpolation before the local analytic reduction; the Newton algebra is its prerequisite."
         },
         {
-          "id": "recursive_angle_geometry",
-          "reason": "Provides the unique strict saddle, nonsingular Hessian and boundary parameter window."
+          "id": "recursive_positive_source",
+          "reason": "Supplies the completed-root shared-wire action, unique strict saddle, nonsingular Hessian and stationary leaf window. A geometric volume identity is not needed for this analytic estimate."
         },
         {
           "id": "recursive_completed_source_gap",
@@ -2951,27 +3091,28 @@
       "statement": "The actual closing and turn maps, left/right ordered child lists and original circle coupons yield the ordered two-octahedron edge decomposition. Terminal insertion and the retained distinguished half-twist seam establish the original link and full primitive access paths; physical turns are not replaced by scalar identities.",
       "sources": [
         {
-          "path": "manuscript/sections/F-quantitative-octahedral-geometry.tex",
-          "anchor": "\\label{sec:ft-1}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/F-quantitative-octahedral-geometry.tex#L44"
+          "path": "papers/circle-tree-geometry/main.tex",
+          "anchor": "\\label{ctg:cut}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-geometry/main.tex#L214"
         },
         {
-          "path": "manuscript/sections/F-quantitative-octahedral-geometry.tex",
-          "anchor": "\\label{sec:ft-3}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/F-quantitative-octahedral-geometry.tex#L114"
+          "path": "papers/circle-tree-geometry/main.tex",
+          "anchor": "\\label{ctg:right-insertion}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-geometry/main.tex#L227"
         },
         {
-          "path": "manuscript/sections/F-quantitative-octahedral-geometry.tex",
-          "anchor": "\\label{sec:ft-4}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/F-quantitative-octahedral-geometry.tex#L156"
+          "path": "papers/circle-tree-geometry/main.tex",
+          "anchor": "\\label{ctg:left-insertion}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-geometry/main.tex#L257"
         },
         {
-          "path": "manuscript/sections/F-quantitative-octahedral-geometry.tex",
-          "anchor": "\\label{sec:ft-5}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/F-quantitative-octahedral-geometry.tex#L173"
+          "path": "papers/circle-tree-geometry/main.tex",
+          "anchor": "\\label{ctg:collar-topology}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-geometry/main.tex#L312"
         }
       ],
-      "depends_on": []
+      "depends_on": [],
+      "coverage": "Classical ordered circle trees with at least one edge and a crossing-circle coupon at every junction. Bare Conway product junctions are not part of this construction."
     },
     {
       "id": "geo_circle_positive_edge_charts",
@@ -2980,19 +3121,24 @@
       "statement": "The two-octahedron angular chart is positive on the explicit complex bidisk, and its disk-side pants depend only on the shared angular longitude and the original puncture matching. Full complex seam ratios, including the distinguished odd seam, are retained.",
       "sources": [
         {
-          "path": "manuscript/sections/F-quantitative-octahedral-geometry.tex",
-          "anchor": "\\label{sec:fa-3}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/F-quantitative-octahedral-geometry.tex#L309"
+          "path": "papers/circle-tree-geometry/main.tex",
+          "anchor": "\\label{ctg:positive-chart}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-geometry/main.tex#L392"
         },
         {
-          "path": "manuscript/sections/F-quantitative-octahedral-geometry.tex",
-          "anchor": "\\label{sec:fa-4}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/F-quantitative-octahedral-geometry.tex#L334"
+          "path": "papers/circle-tree-geometry/main.tex",
+          "anchor": "\\label{ctg:pants}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-geometry/main.tex#L465"
         },
         {
-          "path": "manuscript/sections/F-quantitative-octahedral-geometry.tex",
-          "anchor": "\\label{sec:fa-6}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/F-quantitative-octahedral-geometry.tex#L395"
+          "path": "papers/circle-tree-geometry/main.tex",
+          "anchor": "\\label{ctg:pure-returns}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-geometry/main.tex#L507"
+        },
+        {
+          "path": "papers/circle-tree-geometry/main.tex",
+          "anchor": "\\label{ctg:odd-returns}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-geometry/main.tex#L512"
         }
       ],
       "depends_on": [
@@ -3004,32 +3150,43 @@
     },
     {
       "id": "analytic_circle_charge_path",
-      "title": "Classical charge path inside the positive angular chart",
+      "title": "Classical circle-tree filling path in the positive chart",
       "group": "marked_geometry",
-      "statement": "The common classical critical equations have a holomorphic path from charge zero to charge one with small angular coordinates and Im(tau_v)<0. The summed criterion and the vertexwise contraction are alternative sufficient hypotheses; directed conditional stationary values are identified with this branch by backward substitution into the simultaneous uniqueness polydisk. No volume conclusion is imported to construct the path. This is a classical continuation inside the stated positive angular chart, not a quantum asymptotic estimate.",
+      "statement": "For an actual fixed ordered circle tree, L_v=sqrt(d_v^2+n_v^2)>=630 at every vertex, or the explicit heterogeneous-radius contraction criterion, gives the unique holomorphic classical filling path in its positive angular polydisk. It starts at zero and has Im(tau_v)<0 for real 0<c<=1, including either sign and permitted zero powers. The summed, local and directed quantum criteria imply this geometric size bound; selecting this branch from an invariant remains a separate analytic argument.",
       "sources": [
         {
-          "path": "manuscript/sections/E-quantitative-finite-sums.tex",
-          "anchor": "\\label{sec:qe-7}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/E-quantitative-finite-sums.tex#L323"
+          "path": "papers/circle-tree-geometry/main.tex",
+          "anchor": "\\label{ctg:charge}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-geometry/main.tex#L116"
         },
         {
-          "path": "manuscript/sections/G-local-tree-messages.tex",
-          "anchor": "\\label{sec:vg-3}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/G-local-tree-messages.tex#L300"
+          "path": "papers/circle-tree-geometry/main.tex",
+          "anchor": "\\label{ctg:error-bound}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-geometry/main.tex#L590"
         },
         {
-          "path": "manuscript/sections/K-directed-circle-messages.tex",
-          "anchor": "\\label{dk:sec-7}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/K-directed-circle-messages.tex#L621"
+          "path": "papers/circle-tree-geometry/main.tex",
+          "anchor": "\\label{ctg:contraction-bounds}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-geometry/main.tex#L625"
         },
         {
-          "path": "manuscript/sections/F-quantitative-octahedral-geometry.tex",
-          "anchor": "\\label{eq:fg-3}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/F-quantitative-octahedral-geometry.tex#L454"
+          "path": "papers/circle-tree-geometry/main.tex",
+          "anchor": "\\label{ctg:sign}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-geometry/main.tex#L645"
+        },
+        {
+          "path": "papers/circle-tree-geometry/main.tex",
+          "anchor": "\\label{ctg:heterogeneous}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-geometry/main.tex#L933"
+        },
+        {
+          "path": "papers/circle-tree-geometry/main.tex",
+          "anchor": "\\label{ctg:scope}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-geometry/main.tex#L995"
         }
       ],
-      "depends_on": []
+      "depends_on": [],
+      "coverage": "A classical contraction theorem, not a noncancellation or filled-invariant asymptotic. The new paper does not replace the archived E/G/K source estimates or their backward-restoration arguments."
     },
     {
       "id": "geo_circle_primitive_periods",
@@ -3038,24 +3195,24 @@
       "statement": "Local logarithmic increments concatenate in the actual ordered disk frame to U_v=-2 pi Psi_tau_v-i epsilon_v tau_v and V_v=2 i tau_v. Continuous log-link periods start at zero and agree with these lifts along the path; U_v+p_v V_v=-2 pi i c is an actual primitive winding statement, not merely an exponentiated relation.",
       "sources": [
         {
-          "path": "manuscript/sections/F-quantitative-octahedral-geometry.tex",
-          "anchor": "\\label{sec:ft-6}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/F-quantitative-octahedral-geometry.tex#L183"
+          "path": "papers/circle-tree-geometry/main.tex",
+          "anchor": "\\label{ctg:primitive-words}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-geometry/main.tex#L530"
         },
         {
-          "path": "manuscript/sections/F-quantitative-octahedral-geometry.tex",
-          "anchor": "\\label{sec:fa-5}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/F-quantitative-octahedral-geometry.tex#L369"
+          "path": "papers/circle-tree-geometry/main.tex",
+          "anchor": "\\label{ctg:increment}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-geometry/main.tex#L551"
         },
         {
-          "path": "manuscript/sections/F-quantitative-octahedral-geometry.tex",
-          "anchor": "\\label{eq:fg-5}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/F-quantitative-octahedral-geometry.tex#L469"
+          "path": "papers/circle-tree-geometry/main.tex",
+          "anchor": "\\label{ctg:actual-periods}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-geometry/main.tex#L701"
         },
         {
-          "path": "manuscript/sections/F-quantitative-octahedral-geometry.tex",
-          "anchor": "\\label{sec:fg-4}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/F-quantitative-octahedral-geometry.tex#L515"
+          "path": "papers/circle-tree-geometry/main.tex",
+          "anchor": "\\label{ctg:period-limit}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-geometry/main.tex#L720"
         }
       ],
       "depends_on": [
@@ -3555,7 +3712,7 @@
       "depends_on": [
         {
           "id": "recursive_finite_source",
-          "reason": "For the strict long-filling case, fixes the whole original meridian-dependent source, physical edges, full normals and signed trace before interpolation."
+          "reason": "Supplies only the complete-meridian finite algebra and normalization used as an anchor. The meridian-dependent source and typed turning factors are additional inputs in the cited H/M proofs, not conclusions of the Newton paper."
         },
         {
           "id": "recursive_strict_source_gap",
@@ -3878,8 +4035,8 @@
           "reason": "Uses the actual Newton multiplication, turn and closing functional, with their full repeated-root data."
         },
         {
-          "id": "recursive_angle_geometry",
-          "reason": "The completed construction supplies the stationary shared-wire action and the proper local parameter ranges."
+          "id": "recursive_positive_source",
+          "reason": "Supplies the completed-root shared-wire action, unique strict saddle, nonsingular Hessian and stationary leaf window. A geometric volume identity is not needed for this analytic estimate."
         }
       ],
       "coverage": "This node records the completed-root construction of Chapters 2–8, with its stated grammar. The broader strict-tree extension has separate nodes and additional inputs."
@@ -4213,8 +4370,8 @@
           "reason": "Supplies the specified nonzero holomorphic interpolation with its fixed complex neighborhood."
         },
         {
-          "id": "finite_crossing",
-          "reason": "The full circle-basis identity inserts the original signed twists with all repeated-root terms."
+          "id": "recursive_exact_filling_source",
+          "reason": "The exact all-input circle-basis identity inserts the original signed twists and unchanged closure, including all repeated-root terms; it is applied to this extended syntax before asymptotic estimates."
         }
       ],
       "coverage": "Written extension in research notes. It is not the completed-root theorem of the frozen manuscript; its separate paper and detailed companion-level review remain to be completed."
@@ -4319,6 +4476,41 @@
       "coverage": "These real calculus implications have Lean proofs in the optional Mathlib package. Identifying the actual geometric functions, computing their Hessians and stationary point, and proving positive triangle entropy remain written inputs."
     },
     {
+      "id": "analytic_supported_transport_coercivity",
+      "title": "Supported transport gives grounded coercivity and a minimum",
+      "group": "finite_graph_energy",
+      "statement": "For actual finite nonempty row supports and strictly positive supported corner loads, row supplies and column demands are constructed from the same table. Finite co-occurrence path connectivity and one grounded vertex imply a uniform positive norm bound for the resulting maximum-minus-linear recession. Local vertex lower bounds then give coercivity of the actual potential, bounded sublevels, compact sublevels under continuity and an attained grounded minimum, including an empty grounded unit sphere.",
+      "sources": [
+        {
+          "path": "formal-real/TransportCoercivity.lean",
+          "anchor": "theorem recession_eq_gaps",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/TransportCoercivity.lean#L55"
+        },
+        {
+          "path": "formal-real/TransportCoercivity.lean",
+          "anchor": "theorem grounded_recession_coercive",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/TransportCoercivity.lean#L150"
+        },
+        {
+          "path": "formal-real/TransportCoercivity.lean",
+          "anchor": "theorem grounded_potential_coercive",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/TransportCoercivity.lean#L206"
+        },
+        {
+          "path": "formal-real/TransportCoercivity.lean",
+          "anchor": "theorem grounded_sublevel_compact",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/TransportCoercivity.lean#L249"
+        },
+        {
+          "path": "formal-real/TransportCoercivity.lean",
+          "anchor": "theorem exists_grounded_minimizer",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/TransportCoercivity.lean#L264"
+        }
+      ],
+      "depends_on": [],
+      "coverage": "These finite real, path and compactness implications are proved in the optional Mathlib package. Hall feasibility, prescribed geometric margins, the connected support and actual triangle vertex bounds remain written inputs. For three fixed boundary vertices, the application pools boundary destinations and retains their fixed logarithms as row offsets; grounding one unpooled boundary vertex is not the claimed application."
+    },
+    {
       "id": "recursive_quarter_leaf_expansion",
       "title": "Source-selected leaf expansion through the quarter index",
       "group": "recursive_tangles",
@@ -4350,8 +4542,8 @@
   ],
   "analysis": {
     "scope": "Consistency and source-location checks on the declared mathematical dependency graph, not proof verification.",
-    "nodes": 105,
-    "edges": 250,
+    "nodes": 109,
+    "edges": 256,
     "component_edges": [
       [
         "action_volume",
@@ -4475,10 +4667,6 @@
       ],
       [
         "finite_spectral",
-        "recursive_tangles"
-      ],
-      [
-        "finite_spectral",
         "tree_criteria"
       ],
       [
@@ -4518,6 +4706,10 @@
         "planar_criteria"
       ],
       [
+        "local_asymptotics",
+        "recursive_tangles"
+      ],
+      [
         "marked_geometry",
         "action_volume"
       ],
@@ -4537,6 +4729,7 @@
     "topological_order": [
       "analytic_circle_charge_path",
       "analytic_convex_flattening",
+      "analytic_supported_transport_coercivity",
       "braid_literal_matched_sphere",
       "elementary_rate_transfer",
       "finite_bernstein",
@@ -4565,6 +4758,7 @@
       "geo_circle_positive_edge_charts",
       "geo_circle_primitive_periods",
       "geo_complete_marked_metric_identification",
+      "geo_local_peripheral_volume_differential",
       "geo_nearby_metric_completion",
       "geo_nonparabolic_edge_character",
       "geo_nonparabolic_tree_sewing",
@@ -4606,9 +4800,11 @@
       "planar_weak_balance_gap",
       "planar_weak_balance_volume",
       "recursive_finite_source",
+      "recursive_exact_filling_source",
+      "recursive_local_leaf_estimates",
+      "recursive_positive_source",
       "recursive_angle_geometry",
       "recursive_completed_source_gap",
-      "recursive_local_leaf_estimates",
       "recursive_local_packet_filling",
       "recursive_marked_metric",
       "recursive_completed_volume",
@@ -4644,31 +4840,31 @@
     "shared_prerequisites": [
       {
         "id": "finite_local_fourier",
-        "downstream": 65
+        "downstream": 67
       },
       {
         "id": "finite_remainder",
-        "downstream": 59
+        "downstream": 61
       },
       {
         "id": "finite_hermite",
-        "downstream": 57
+        "downstream": 59
       },
       {
         "id": "finite_crossing",
-        "downstream": 53
+        "downstream": 55
       },
       {
         "id": "finite_pivotal_mark",
-        "downstream": 52
+        "downstream": 54
       },
       {
         "id": "finite_global_source",
-        "downstream": 51
+        "downstream": 53
       },
       {
         "id": "finite_invariant_normalization",
-        "downstream": 38
+        "downstream": 40
       },
       {
         "id": "geo_simple_sphere_packing",
@@ -4676,11 +4872,19 @@
       },
       {
         "id": "recursive_finite_source",
-        "downstream": 28
+        "downstream": 30
       },
       {
         "id": "analytic_signed_interval_transfer",
         "downstream": 23
+      },
+      {
+        "id": "geo_local_peripheral_volume_differential",
+        "downstream": 20
+      },
+      {
+        "id": "recursive_positive_source",
+        "downstream": 20
       },
       {
         "id": "finite_weighted_graph_kernel",
@@ -4691,11 +4895,11 @@
         "downstream": 19
       },
       {
-        "id": "recursive_angle_geometry",
-        "downstream": 19
+        "id": "geo_nearby_metric_completion",
+        "downstream": 17
       },
       {
-        "id": "geo_nearby_metric_completion",
+        "id": "recursive_angle_geometry",
         "downstream": 17
       },
       {
@@ -4775,6 +4979,10 @@
         "downstream": 11
       },
       {
+        "id": "recursive_exact_filling_source",
+        "downstream": 11
+      },
+      {
         "id": "recursive_quarter_leaf_expansion",
         "downstream": 11
       },
@@ -4815,6 +5023,10 @@
         "downstream": 9
       },
       {
+        "id": "finite_bernstein",
+        "downstream": 9
+      },
+      {
         "id": "finite_spectral_source",
         "downstream": 9
       },
@@ -4835,7 +5047,7 @@
         "downstream": 8
       },
       {
-        "id": "finite_bernstein",
+        "id": "finite_filling_norm",
         "downstream": 8
       },
       {
@@ -4853,10 +5065,6 @@
       {
         "id": "tree_exact_edge_kernel",
         "downstream": 8
-      },
-      {
-        "id": "finite_filling_norm",
-        "downstream": 7
       },
       {
         "id": "geo_longitude_ratio_differential",
@@ -4887,6 +5095,10 @@
         "downstream": 6
       },
       {
+        "id": "finite_remainder_transfer",
+        "downstream": 5
+      },
+      {
         "id": "geo_all_main_reconstruction_units",
         "downstream": 5
       },
@@ -4903,7 +5115,7 @@
         "downstream": 4
       },
       {
-        "id": "finite_remainder_transfer",
+        "id": "analytic_supported_transport_coercivity",
         "downstream": 4
       },
       {
@@ -4983,10 +5195,6 @@
         "downstream": 1
       },
       {
-        "id": "planar_fourier_remainder",
-        "downstream": 1
-      },
-      {
         "id": "planar_terminal_fan_gap",
         "downstream": 1
       },
@@ -5016,6 +5224,10 @@
       },
       {
         "id": "open_general_volume",
+        "downstream": 0
+      },
+      {
+        "id": "planar_fourier_remainder",
         "downstream": 0
       },
       {
@@ -5081,7 +5293,7 @@
       "notes/actual_cross_cofactor_interpolant_rigidity.md": "85c5d2a0da2c504c0c8965b374f87b7b9405c2c7892ffb5204ff4c0307d10f5d",
       "papers/local-coefficients/main.tex": "86da78c17f6535c58d7d17d919f10914f8eb9452143a66c2fb2e2fa7b7b5965c",
       "papers/planar-certificates/main.tex": "375034a5db9443aa762a504b49f79f344b5f85cad4d70e228242cfa163afad39",
-      "manuscript/sections/L-balanced-terminal-fans.tex": "4c5b03317602d547a44028908a99e8cd449922f391c27ba80e8dafd5156f4775",
+      "papers/terminal-decorations/main.tex": "c6d3ac2d173d4833e36c58c2599d7dccc07a1dfa872a749a427897869a0c0db6",
       "experiments/actual_sector_cover_certificate.json": "54f6087e25e9e6c48e123ea61497cab2a2bb2eb3e4d92a2eb3f9b6e76452eadb",
       "experiments/actual_shared_radius_anchor_obstruction_certificate.json": "8e9ca9b9baf9383449a54840a4204ac4008b20cd9a56684ffc9a0a45c65bba27",
       "repro/check_protected_sums.py": "7d27a51862c83f55e0115798eef896f7eb8770c97c52864395e07a4abef8bc0e",
@@ -5093,7 +5305,7 @@
       "notes/actual_conway_arbitrary_closure_volume.md": "4962c4945f286df0beff9624a433e98371a634fd9058f00d9260bcc7e1d8c954",
       "manuscript/sections/E-quantitative-finite-sums.tex": "a8061a355a1426ca475df29455c8a06c16ead89322f49fe36f4e385ed71bea78",
       "manuscript/sections/G-local-tree-messages.tex": "9a169d6aeff06df5887952c18c22a0aef470bbcda9e18610d4f57f016e2dbdce",
-      "manuscript/sections/F-quantitative-octahedral-geometry.tex": "4348d40531fe83415223b88e26b1e3aedcb01daa9c6e17f030ae596000f8f268",
+      "papers/circle-tree-geometry/main.tex": "2404285044d7efb8376b3fdeaa3a6da6f2d36bc29da6a7e176f09f8230339301",
       "manuscript/sections/08a-quantitative-circle-trees.tex": "cfd7fa0dafd66bdc0e0e5151f415b2bc6b28c49a63ad6d1e0a244829b1db70f0",
       "manuscript/sections/K-directed-circle-messages.tex": "7eff3a7658079dff75802b8044d7213e040795eeff89c7795bb1476aee04c03a",
       "papers/three-braids/main.tex": "9bad961bfcb9893bf0b6035a084d95436e0c146b3acda10850ba7d374a832c76",
@@ -5101,8 +5313,10 @@
       "manuscript/sections/I-geometric-characteristic.tex": "d6e7a10052866edca5369cce3aeb3a4b9758a7b9807386af2d08816da57313f2",
       "manuscript/sections/J-strict-tree-geometric-characteristic.tex": "a7abe912fbc16874f19818551fc737926375dcf0b4a3f8a8e9104e9e52a6642b",
       "notes/actual_global_diagonal_spectral_sector_gap.md": "fb8353e00968dedcf0e9563a6e1d6057a38162714e8aa1bbaf234d4042cac79f",
+      "manuscript/sections/L-balanced-terminal-fans.tex": "4c5b03317602d547a44028908a99e8cd449922f391c27ba80e8dafd5156f4775",
+      "papers/newton-tangles/main.tex": "a6bf0e36b0c508ffde6874d88922e9f49d78436e97e81cf5e9c93b06ad19560c",
       "manuscript/sections/02-finite-source.tex": "232936be01555db658f818b3ed0539c31fe4f2deb3386cc0ed8df5497d8b65e2",
-      "manuscript/sections/03-entropy.tex": "ae82af904a99907206b8756b2fa8c6a0448ff1af5af6dbae8a2cba6799599226",
+      "manuscript/sections/A-finite-identities.tex": "c1e125117c6f1ebc790ec1e8f662d451c78f9b42c29be1a86baf0261d3861abb",
       "manuscript/sections/04-geometry.tex": "56ff38ece93d261dbb8d431f4210b6174a8543de1741e6aa940a349604d29744",
       "manuscript/sections/D-marked-cell-calibration.tex": "e6c3270bd8c8e0e61d79cf0c036943e39d476197d4700a9a9ce19440c3959286",
       "manuscript/sections/06-packet.tex": "8a5b6bd7b108cc357a9e602db49bfa3480f0c2d4b47decfacaed04c82e8a12d8",
@@ -5113,6 +5327,7 @@
       "formal/VolumeLogic/VolumeTransfer.lean": "862e17ea64b46022fc830610c491c3f25dc0f09e6e6f7650f4b73e81f34401dc",
       "formal-real/RealTransfer.lean": "fd41a1469999ec0e455e64a08c5d81a947a38797054c8f850a3a2371023c545a",
       "notes/general_marked_multicusp_gluing_rigidity.md": "f882d2c7d1f723590391d3cc03dcd9bba7a12d13c2e006c6dea570e1b4af1b42",
+      "manuscript/sections/F-quantitative-octahedral-geometry.tex": "4348d40531fe83415223b88e26b1e3aedcb01daa9c6e17f030ae596000f8f268",
       "notes/actual_fejer_unique_geometric_maximizer.md": "231c22c5bd4f0c1527a84c4db92d83cc13b7f7b56627c47631644addb98f8ec4",
       "notes/actual_complete_core_geometric_deformation.md": "6b3be9bb1c1f79f2d3b4a679a8cfa5f6f5df37640354add9ab04fdb8f8c4f580",
       "manuscript/sections/M-directed-all-orders.tex": "90bde811854ea8d259b9086516703bde0684a6de7d07b99e92a56e0adab49986",
@@ -5133,8 +5348,9 @@
       "manuscript/sections/B2-global-core-envelope.tex": "4717743e7577bd3729673e27f718242f344d18a0fcb6d70ce9e5dab11eff5cc3",
       "notes/actual_conway_general_strict_mask_geometry.md": "980413284c4d9bd6d383c97b07cba017b3f2d23a0e642148e30e53371e6f0f31",
       "formal-real/Flattening.lean": "a15977f5e3234d9f56217aee2e875c3a6ec8542b4140bfdf74f78d0b35e0f9cc",
+      "formal-real/TransportCoercivity.lean": "ec8acf6a1b32c5299e070e49485e2ffb4dd44f3a0a7e916ef02cdd901151b1d3",
       "notes/actual_conway_quarter_index_color_packet.md": "f9416e1fa09c040089c131d2dd4c5a8018f4fe7082e4a033d6bf4d9f50501aa4",
-      "papers/dependencies.json": "0a1b96aeaa8d537109ce77ecd4b5995955ee2366e2c952598efd5dc14717f6a8"
+      "papers/dependencies.json": "d354ce0bf426473e54264a0e97aab0c48ae3a8df5dc377a6f2b131d6b47628eb"
     }
   }
 }

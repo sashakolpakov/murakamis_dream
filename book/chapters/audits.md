@@ -301,10 +301,40 @@ it does not assume the quadratic cost or linear gain as premises.
 Identifying these functions and their derivatives with the geometric
 triangle potential remains a written calculation.
 
-The optional package has ten definitions and fifty theorems. Its axiom
-audit covers all sixty declarations, separately from the Std-only
-project. The saddle estimates, whole-source gap and geometric volume
-identity remain written application inputs.
+The [transport module](../../formal-real/TransportCoercivity.lean)
+proves an existence argument for potentials built from a finite positive
+table. Each row has a specified support and positive entries; its supply
+is their sum, and each column demand is the sum of its entries. For a
+vector of logarithmic variables $h$, the recession is
+
+\[
+ R(h)=\sum_t m_t\max_{i\in S_t}h_i-\sum_i d_i h_i.
+\]
+
+Here $S_t$ is the support of row $t$, $m_t$ its supply, and $d_i$ the
+column demand. Rewriting $R$ as a sum of nonnegative supported gaps shows
+that equality forces all values in each row to agree. If the row
+incidences connect every vertex, and one coordinate is fixed to zero,
+$R(h)>0$ for every nonzero $h$. Lean uses continuity, homogeneity and
+compactness of the finite-dimensional unit sphere to derive
+$R(h)\ge c\lVert h\rVert$ for some $c>0$. From the stated row bounds
+on the actual potential, it then proves compactness of sublevel sets
+and existence of a minimizing point.
+
+The geometric Hall inequalities supplying the positive table are still
+written proofs. In the disk application with three fixed positive
+boundary values, their columns are combined into the one grounded
+coordinate, and their logarithms contribute fixed row constants.
+That geometric substitution, uniqueness and development of the resulting
+circle pattern remain written arguments.
+
+The optional package has seventeen definitions and sixty-six theorems.
+Its axiom audit covers all eighty-three declarations, separately from
+the Std-only project. Fourteen negative controls check that invalid
+inputs are rejected. The saddle estimates, whole-source gap and geometric
+volume identity remain written application inputs. The
+[tangle and tree review](../../repro/TANGLE_TREE_AUDIT.md) records the
+precise scope of the new paper readings and finite replays.
 
 ## Joining certified diagrams
 

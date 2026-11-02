@@ -113,7 +113,7 @@ the large assembled diagram or prove its asymptotic volume limit.
 
 The planar wrapper also records its NumPy dependency, removes a stale
 success summary before replay, and invokes its child checker in isolated
-mode. The publication's completed seven-group replay now includes both
+mode. The publication's seven-group replay at the time of this review included both
 current checkers and the changed protected-sum helper:
 
 - [Consolidated finite-check record](results/paper-algebra/summary.json).
@@ -145,8 +145,11 @@ The executed optional-package replay checked all **60 declarations**
 (10 definitions and 50 theorems), including the nine new theorems, with
 zero compiler warnings. All nine dependency pins were retained; twelve
 negative controls were rejected. The full axiom inventory permits only
-Lean's standard foundational axioms. The source and output hashes match
-[the recorded summary](results/concrete-limits/summary.json).
+Lean's standard foundational axioms. The hashes of that replay are
+retained in this review's snapshot. The
+[current summary](results/concrete-limits/summary.json) additionally
+includes the later transport-coercivity module; its scope is described
+in the [tangle and tree review](TANGLE_TREE_AUDIT.md).
 
 Geometric differentiation, the complete stationary point, the directional
 Hessian bound, entropy and pure-corner identities, and identification with

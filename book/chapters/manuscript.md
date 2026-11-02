@@ -2,13 +2,24 @@
 
 The current PDF is a 374-page reference account. Its results are being
 rewritten as [papers organized by subject](../../papers/README.md), each at
-most 30 pages including references. Eight drafts separate finite spectral
+most 30 pages including references. Eleven drafts now total 175 pages,
+with individual lengths from 11 to 28 pages. Five cover finite spectral
 evaluation, uniform local bounds, central source asymptotics, oscillatory
-fillings, geometric filling, shared-face criteria, ordinary triangular
-insertion, and the long three-braid application. Each application names
-the results it imports and checks their hypotheses. The terminal
-decoration, recursive Conway, quantitative circle-tree and longitude
-results still need separate accounts. The reference PDF remains frozen.
+fillings and geometric filling. Six cover Newton tangle coefficients,
+classical circle-tree geometry, shared-face criteria, terminal decoration,
+ordinary triangular insertion and the long three-braid application. Each
+application names the results it imports and checks their hypotheses.
+
+These papers do not yet replace the reference account. The moving-meridian
+finite adapter, signed tree asymptotics, recursive filled closures, and
+longitude and recurrence results still need separate complete accounts.
+The reference PDF remains frozen. Its measured length is 93 pages of main
+text, 266 pages of appendices, and 15 pages of front matter and references.
+Several theorem families and their separate dependencies accumulated in
+that file. Repeated definitions and setup made individual appendices
+readable on their own, while alternative constructions added further
+length. The new division groups related proofs and imports their shared
+foundations by numbered statement.
 
 The broader strict-tree extension in the research notes requires arguments
 beyond the manuscript's completed-root grammar. The dependency graph
@@ -49,8 +60,17 @@ tangles preserve this pairing and generally change the knot type. The
 theorem does not require a tree of tangle operations or compare the
 relative magnitudes of the long twists.
 
-The chapter explains the local construction and the inequality it
-establishes. Its appendix gives the full proof: the variational packing,
+The new [terminal-decoration paper](../../docs/papers/terminal-decorations.pdf)
+gives this construction in 13 pages. It proves the endpoint parity,
+packing extension, exact recurrence and strict inequalities for every
+old and added region. Its complete shared weights provide the certificate
+required by the planar companion. The finite evaluation, nonzero central
+filling contribution and primitive volume comparison are imported by
+numbered theorem. The powers and the decorated diagram are fixed before
+the quantum level grows.
+
+The reference chapter explains the local construction and the inequality
+it establishes. Its appendix gives the full proof: the variational packing,
 the exact coefficient with its original mark and parity, the local
 geometric contribution, all Fourier tails and boundary terms, and
 completion to the actual smooth knot complement. The
@@ -250,7 +270,18 @@ defines every framing factor and gives numerical sufficient bounds.
 Some short powers are allowed at sufficiently high-degree vertices;
 the earlier long-twist chapters retain their own construction class.
 
-The chapter illustrates an actual octahedral attachment and explains
+The classical part now has its own 15-page paper,
+[Positive octahedra and primitive fillings for trees of crossing circles](../../docs/papers/circle-tree-geometry.pdf).
+It proves the literal ordered cut, full peripheral maps and primitive
+completion whenever $\sqrt{d_v^2+n_v^2}\ge630$ at every vertex. This
+condition allows zero powers at high degree. It also identifies the
+absolute critical action with the completed metric volume. The paper
+uses only the geometric foundation's local peripheral-volume differential;
+it does not impose that foundation's separate long-twist hypothesis or
+claim a nonzero quantum asymptotic. The summed and directed analytic
+source estimates still need their own companion paper.
+
+The reference chapter illustrates an actual octahedral attachment and explains
 why it recovers the original exterior. Positive tetrahedra continue
 along the filling path until the primitive cone angle is \(2\pi\).
 This constructs the smooth knot complement whose volume appears in
@@ -304,6 +335,16 @@ calculation; a circle is a topological component carrying such a
 label. Summing colors changes the evaluation and filling changes the
 diagram, so the two operations must be distinguished. The source formula retains values and first derivatives at repeated spectral points, which explains the use of Hermite interpolation. Newton polynomials make the allowed integer indices at a product explicit. These support conditions are kept before taking a continuum limit.
 
+The 18-page [Newton tangle paper](../../docs/papers/newton-tangles.pdf)
+now proves the complete-meridian product, physical turn, closure and
+colored-circle formulas with their repeated-root derivatives. For its
+specified finite compositions, it also proves the positive complete
+auxiliary-color source's variational limit and strict interior maximum.
+It imports the finite paper's operator and reduced-invariant
+normalization. Signed fillings require additional bounds and
+noncancellation; changing the main meridian requires a deformed finite
+adapter, since the spectral relation and some turn factors change.
+
 The geometric part associates normalized state variables with angles of ideal pyramids and prisms. An ideal vertex lies at infinity in hyperbolic space. Strict angle inequalities produce genuine cells, and the ordered endpoint data determine their face identifications. A strictly concave angle functional has a unique geometric maximum. The proof then follows actual paths on the cusps to identify the meridian and longitude used for filling.
 
 The source estimates address a different issue: a signed sum can be much smaller than the sum of the absolute values of its terms. In the recursive tree proof, the exact reflection formula separates
@@ -336,6 +377,21 @@ volume conclusion. The new scalar comparisons are formalized in Lean;
 the disk geometry and the analytic inputs remain written proofs.
 
 ## Reproduce the finite certificates
+
+The companion papers have a combined finite-check command:
+
+```sh
+python3 repro/check_paper_algebra.py --output repro/results/paper-algebra
+```
+
+It runs ten groups. The new groups check physical Newton identities over
+exact finite fields, terminal curvature and endpoint identities, and
+circle-tree seam, peripheral and rational-bound formulas. The output
+records their bounded scope and source hashes. These checks do not
+replace the proofs for every level, the all-length insertion argument,
+or the construction and completion of a hyperbolic metric. The
+[paper source guide](../../papers/README.md#building-and-reproducing-the-papers)
+lists the software requirements and individual commands.
 
 The quantitative chapter uses `python3 repro/run_research_checks.py curvature-fillings`. The [checks chapter](audits.md#checks-for-the-quantitative-volume-theorem) describes its three programs and their finite scope.
 

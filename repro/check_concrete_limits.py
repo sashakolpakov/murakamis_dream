@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check the optional Mathlib transfer, graph energy and flattening proofs.
+"""Check optional Mathlib transfer, graph energy, flattening and coercivity.
 
 The Std-only package is a path dependency and remains independently usable.
 This checker never downloads dependencies or updates the manifest. Provision
@@ -28,6 +28,7 @@ MODULE_NAMESPACES = {
     "RealTransfer": "VolumeLogic.RealModel",
     "WeightedGraph": "VolumeLogic.WeightedGraph",
     "Flattening": "VolumeLogic.Flattening",
+    "TransportCoercivity": "VolumeLogic.TransportCoercivity",
 }
 ALLOWED_AXIOMS = {"propext", "Classical.choice", "Quot.sound"}
 # The complete expected Git dependency set, not merely the direct Mathlib pin.
@@ -182,6 +183,13 @@ def negative_controls(manifest: dict, names: dict[str, str], audit: str) -> list
         raise ValueError("The registered quadratic-cost theorem is missing.")
     reject("omitted_quadratic_cost_audit", validate_audit, names,
            audit.replace("#print axioms " + cost_name, ""))
+    reject("omitted_transport_coercivity_module", declaration_inventory,
+           [PACKAGE / (m + ".lean") for m in MODULE_NAMESPACES if m != "TransportCoercivity"])
+    coercivity_name = "VolumeLogic.TransportCoercivity.grounded_recession_coercive"
+    if coercivity_name not in names:
+        raise ValueError("The registered transport-coercivity theorem is missing.")
+    reject("omitted_grounded_coercivity_audit", validate_audit, names,
+           audit.replace("#print axioms " + coercivity_name, ""))
     return checks
 
 
@@ -266,8 +274,8 @@ def main() -> None:
             if any(sha256(ROOT / path) != digest for path, digest in hashes.items()):
                 raise ValueError("A recorded source changed during this replay; rerun on stable inputs.")
             report = {
-                "scope": "Concrete complex modulus and real logarithmic level scale; finite-residue packet assembly, whole-remainder noncancellation and conditional volume transfer; actual finite real weighted graph energy, positive-edge paths, constant kernel, grounded strict positivity and the explicit Laplacian quadratic identity; actual one-variable derivative bounds imply stationary quadratic cost, convex supporting-tangent gains and a strict two-branch sector margin.",
-                "explicit_inputs_remaining": ["the actual invariant's exact finite source identity", "the nonzero packet coefficient and finite-action convergence (a common limit, or a limit on every residue class with equal real action)", "a strict bound for the whole complementary remainder", "the actual geometric action-volume equality", "geometric Hessian differentiation, conductance signs, and identification of the connected ordinary-face graph", "identification of the shared-weight path and its stationary point, directional second-derivative bound, triangle entropy and pure-corner inequalities, and the actual source envelopes"],
+                "scope": "Concrete complex modulus and real logarithmic level scale; finite-residue packet assembly, whole-remainder noncancellation and conditional volume transfer; actual finite real weighted graph energy, positive-edge paths, constant kernel, grounded strict positivity and the explicit Laplacian quadratic identity; actual one-variable derivative bounds imply stationary quadratic cost, convex supporting-tangent gains and a strict two-branch sector margin; an actual positive finite corner table and connected co-occurrence paths give a uniform grounded max-minus-linear recession bound, coercivity of its vertex-bounded potential, compact sublevels and an attained minimum.",
+                "explicit_inputs_remaining": ["the actual invariant's exact finite source identity", "the nonzero packet coefficient and finite-action convergence (a common limit, or a limit on every residue class with equal real action)", "a strict bound for the whole complementary remainder", "the actual geometric action-volume equality", "geometric Hessian differentiation, conductance signs, and identification of the connected ordinary-face graph", "identification of the shared-weight path and its stationary point, directional second-derivative bound, triangle entropy and pure-corner inequalities, and the actual source envelopes", "Hall feasibility of the geometric corner table, its prescribed row and column margins, identification of the connected grounded support, and the triangle potential vertex bound including fixed boundary constants"],
                 "residue_assembly": {"period": "any fixed positive natural number", "denominator": "original level N, including on N=p*n+r", "amplitudes": "each residue limit is nonzero; the complex limits may differ", "actions": "the complex residue limits may differ; their real parts agree", "unit_character": "may depend arbitrarily on N and need not converge", "conclusion": "ordinary all-integer-level convergence and eventual nonvanishing"},
                 "toolchain": TOOLCHAIN,
                 "dependency_pins": materialized,
@@ -291,6 +299,7 @@ def main() -> None:
         print(f"Validated all {len(EXPECTED_GIT)} Git dependency pins and {len(controls)} negative controls.")
         print("The exact source, uniform analytic estimates and geometric calibration remain explicit inputs.")
         print("The geometric Hessian identity, connected conductance graph and source interpretation of flattening remain written inputs.")
+        print("Geometric transport feasibility, margins, support connectivity and local vertex bounds remain written inputs.")
         if args.output:
             print(f"Report: {output / 'summary.json'}")
 

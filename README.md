@@ -53,7 +53,11 @@ The resulting knot is hyperbolic and its reduced Kashaev invariant has
 the knot-complement volume limit through all integer levels. The added
 tangles preserve the chosen endpoint pairing, but generally change the
 knot. The theorem concerns this decorated knot; the original core’s
-powers must also be sufficiently long. The
+powers must also be sufficiently long. The companion paper
+[Balanced circle packings from terminal tangle decorations](docs/papers/terminal-decorations.pdf)
+proves the literal insertion, the packing recurrence and strict balance
+at every old and new region. It imports the finite evaluation, analytic
+and geometric results stated in the foundation papers. The
 [statement and construction](https://sashakolpakov.github.io/murakamis_dream/guide/results.html#decorating-a-planar-diagram)
 explain the quantifiers and the geometric condition that the decoration
 establishes.
@@ -107,7 +111,7 @@ explain the boundary condition and the exact coefficient demands.
 
 ## Ordered tangle trees and explicit bounds
 
-The paper also develops Conway’s algebraic, or arborescent, constructions
+The reference account also develops Conway’s algebraic, or arborescent, constructions
 by stacking and turning rational tangles. A reduction combines twist
 boxes that can be brought together. Sufficiently large surviving *net*
 twists give the volume limit; large individual counts alone need not
@@ -128,6 +132,20 @@ particular tree, and explains the exact net-twist and closure reductions.
 These explicit tree bounds and the planar decoration theorem have
 different hypotheses; neither is a classification of all hyperbolic knots.
 
+Two new companions extract separate inputs to the tree proofs.
+[Newton coefficients and positive sources for Conway tangles](docs/papers/newton-tangles.pdf)
+proves the exact turn, product, closure and circle formulas, including
+repeated-root derivatives, and the variational limit of the positive
+complete auxiliary-color source. Signed fillings still require their
+own remainder and noncancellation estimates.
+[Positive octahedra and primitive fillings for trees of crossing circles](docs/papers/circle-tree-geometry.pdf)
+constructs the actual filled hyperbolic metric whenever
+$\sqrt{d_v^2+n_v^2}\ge630$ at every vertex. This geometric criterion permits
+zero powers at high degree; it does not by itself prove a quantum limit.
+Its peripheral-volume input is a local differential from the geometric
+foundation, so no independently long-twist assumption is imposed on
+these zero-power cases.
+
 ## The meridian and the A-polynomial
 
 For the covered strict-tree constructions and the directed circle-tree
@@ -147,21 +165,38 @@ separate work.
 
 ## Reading and reproducing the work
 
-The [collection of research papers](papers/README.md) now contains eight
-drafts, ranging from 11 to 28 pages. Five develop the finite algebra,
-local estimates, central asymptotics, oscillatory sums and geometric
-fillings. Three apply these results to shared-face criteria, triangular
-insertions and long three-braids. Each paper states the companion results
-it uses. The tree, terminal-decoration and longitude results still need
-separate papers. The
-[reference manuscript](manuscript/README.md) retains the 374-page
-continuous account; it is no longer presented as a single journal paper.
+The [collection of research papers](papers/README.md) now contains eleven
+drafts, ranging from 11 to 28 pages and totaling 175 pages. Five develop
+the finite algebra, local estimates, central asymptotics, oscillatory
+sums and geometric fillings. The other six treat Newton tangle
+coefficients, classical circle-tree geometry, shared-face criteria,
+terminal decorations, triangular insertions and long three-braids.
+Each paper states the companion results it uses.
+
+These papers extract selected results from the
+[374-page reference manuscript](manuscript/README.md); they do not yet
+replace it. The reference contains 93 pages of main text, 266 pages of
+appendices and 15 pages of front matter and references. Its length came
+from collecting several theorem families, repeated setup for separate
+proofs, and alternative constructions in one continuous account. The
+moving-meridian finite adapter, analytic circle-tree estimates, recursive
+filled-closure arguments, and longitude and recurrence theorems still
+need their own complete papers. The reference remains frozen and is no
+longer presented as a single journal paper.
 Chapter 1 separates full volume theorems from completed partial results:
 a finite filling estimate and a theorem about one geometric contribution
 do not assert the volume limit for an arbitrary original invariant.
 Each full-invariant theorem names the estimate that bounds its remaining terms. A completed implication retains its hypothesis; it is not counted as a proof that the hypothesis holds for every diagram.
 The open remainder estimate for unchanged general diagrams is not a
 premise of the restricted-family proofs.
+
+The [paper reproduction command](papers/README.md#building-and-reproducing-the-papers)
+now runs ten finite check groups. The three new groups compare physical
+Newton operators with their formulas, check terminal insertion and
+pairing identities, and check the circle-tree peripheral matrices and
+rational bounds. These checks accompany the written all-level,
+topological and analytic proofs; they do not establish those proofs by
+sampling levels or diagrams.
 
 The [manuscript audit](repro/MANUSCRIPT_AUDIT.md) records the proof
 dependencies, corrections, and precise extent of the review. The

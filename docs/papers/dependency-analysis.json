@@ -1,7 +1,7 @@
 {
   "scope": "Consistency and source-location checks on the declared mathematical dependency graph, not proof verification.",
-  "nodes": 105,
-  "edges": 250,
+  "nodes": 109,
+  "edges": 256,
   "component_edges": [
     [
       "action_volume",
@@ -125,10 +125,6 @@
     ],
     [
       "finite_spectral",
-      "recursive_tangles"
-    ],
-    [
-      "finite_spectral",
       "tree_criteria"
     ],
     [
@@ -168,6 +164,10 @@
       "planar_criteria"
     ],
     [
+      "local_asymptotics",
+      "recursive_tangles"
+    ],
+    [
       "marked_geometry",
       "action_volume"
     ],
@@ -187,6 +187,7 @@
   "topological_order": [
     "analytic_circle_charge_path",
     "analytic_convex_flattening",
+    "analytic_supported_transport_coercivity",
     "braid_literal_matched_sphere",
     "elementary_rate_transfer",
     "finite_bernstein",
@@ -215,6 +216,7 @@
     "geo_circle_positive_edge_charts",
     "geo_circle_primitive_periods",
     "geo_complete_marked_metric_identification",
+    "geo_local_peripheral_volume_differential",
     "geo_nearby_metric_completion",
     "geo_nonparabolic_edge_character",
     "geo_nonparabolic_tree_sewing",
@@ -256,9 +258,11 @@
     "planar_weak_balance_gap",
     "planar_weak_balance_volume",
     "recursive_finite_source",
+    "recursive_exact_filling_source",
+    "recursive_local_leaf_estimates",
+    "recursive_positive_source",
     "recursive_angle_geometry",
     "recursive_completed_source_gap",
-    "recursive_local_leaf_estimates",
     "recursive_local_packet_filling",
     "recursive_marked_metric",
     "recursive_completed_volume",
@@ -294,31 +298,31 @@
   "shared_prerequisites": [
     {
       "id": "finite_local_fourier",
-      "downstream": 65
+      "downstream": 67
     },
     {
       "id": "finite_remainder",
-      "downstream": 59
+      "downstream": 61
     },
     {
       "id": "finite_hermite",
-      "downstream": 57
+      "downstream": 59
     },
     {
       "id": "finite_crossing",
-      "downstream": 53
+      "downstream": 55
     },
     {
       "id": "finite_pivotal_mark",
-      "downstream": 52
+      "downstream": 54
     },
     {
       "id": "finite_global_source",
-      "downstream": 51
+      "downstream": 53
     },
     {
       "id": "finite_invariant_normalization",
-      "downstream": 38
+      "downstream": 40
     },
     {
       "id": "geo_simple_sphere_packing",
@@ -326,11 +330,19 @@
     },
     {
       "id": "recursive_finite_source",
-      "downstream": 28
+      "downstream": 30
     },
     {
       "id": "analytic_signed_interval_transfer",
       "downstream": 23
+    },
+    {
+      "id": "geo_local_peripheral_volume_differential",
+      "downstream": 20
+    },
+    {
+      "id": "recursive_positive_source",
+      "downstream": 20
     },
     {
       "id": "finite_weighted_graph_kernel",
@@ -341,11 +353,11 @@
       "downstream": 19
     },
     {
-      "id": "recursive_angle_geometry",
-      "downstream": 19
+      "id": "geo_nearby_metric_completion",
+      "downstream": 17
     },
     {
-      "id": "geo_nearby_metric_completion",
+      "id": "recursive_angle_geometry",
       "downstream": 17
     },
     {
@@ -425,6 +437,10 @@
       "downstream": 11
     },
     {
+      "id": "recursive_exact_filling_source",
+      "downstream": 11
+    },
+    {
       "id": "recursive_quarter_leaf_expansion",
       "downstream": 11
     },
@@ -465,6 +481,10 @@
       "downstream": 9
     },
     {
+      "id": "finite_bernstein",
+      "downstream": 9
+    },
+    {
       "id": "finite_spectral_source",
       "downstream": 9
     },
@@ -485,7 +505,7 @@
       "downstream": 8
     },
     {
-      "id": "finite_bernstein",
+      "id": "finite_filling_norm",
       "downstream": 8
     },
     {
@@ -503,10 +523,6 @@
     {
       "id": "tree_exact_edge_kernel",
       "downstream": 8
-    },
-    {
-      "id": "finite_filling_norm",
-      "downstream": 7
     },
     {
       "id": "geo_longitude_ratio_differential",
@@ -537,6 +553,10 @@
       "downstream": 6
     },
     {
+      "id": "finite_remainder_transfer",
+      "downstream": 5
+    },
+    {
       "id": "geo_all_main_reconstruction_units",
       "downstream": 5
     },
@@ -553,7 +573,7 @@
       "downstream": 4
     },
     {
-      "id": "finite_remainder_transfer",
+      "id": "analytic_supported_transport_coercivity",
       "downstream": 4
     },
     {
@@ -633,10 +653,6 @@
       "downstream": 1
     },
     {
-      "id": "planar_fourier_remainder",
-      "downstream": 1
-    },
-    {
       "id": "planar_terminal_fan_gap",
       "downstream": 1
     },
@@ -666,6 +682,10 @@
     },
     {
       "id": "open_general_volume",
+      "downstream": 0
+    },
+    {
+      "id": "planar_fourier_remainder",
       "downstream": 0
     },
     {
@@ -731,7 +751,7 @@
     "notes/actual_cross_cofactor_interpolant_rigidity.md": "85c5d2a0da2c504c0c8965b374f87b7b9405c2c7892ffb5204ff4c0307d10f5d",
     "papers/local-coefficients/main.tex": "86da78c17f6535c58d7d17d919f10914f8eb9452143a66c2fb2e2fa7b7b5965c",
     "papers/planar-certificates/main.tex": "375034a5db9443aa762a504b49f79f344b5f85cad4d70e228242cfa163afad39",
-    "manuscript/sections/L-balanced-terminal-fans.tex": "4c5b03317602d547a44028908a99e8cd449922f391c27ba80e8dafd5156f4775",
+    "papers/terminal-decorations/main.tex": "c6d3ac2d173d4833e36c58c2599d7dccc07a1dfa872a749a427897869a0c0db6",
     "experiments/actual_sector_cover_certificate.json": "54f6087e25e9e6c48e123ea61497cab2a2bb2eb3e4d92a2eb3f9b6e76452eadb",
     "experiments/actual_shared_radius_anchor_obstruction_certificate.json": "8e9ca9b9baf9383449a54840a4204ac4008b20cd9a56684ffc9a0a45c65bba27",
     "repro/check_protected_sums.py": "7d27a51862c83f55e0115798eef896f7eb8770c97c52864395e07a4abef8bc0e",
@@ -743,7 +763,7 @@
     "notes/actual_conway_arbitrary_closure_volume.md": "4962c4945f286df0beff9624a433e98371a634fd9058f00d9260bcc7e1d8c954",
     "manuscript/sections/E-quantitative-finite-sums.tex": "a8061a355a1426ca475df29455c8a06c16ead89322f49fe36f4e385ed71bea78",
     "manuscript/sections/G-local-tree-messages.tex": "9a169d6aeff06df5887952c18c22a0aef470bbcda9e18610d4f57f016e2dbdce",
-    "manuscript/sections/F-quantitative-octahedral-geometry.tex": "4348d40531fe83415223b88e26b1e3aedcb01daa9c6e17f030ae596000f8f268",
+    "papers/circle-tree-geometry/main.tex": "2404285044d7efb8376b3fdeaa3a6da6f2d36bc29da6a7e176f09f8230339301",
     "manuscript/sections/08a-quantitative-circle-trees.tex": "cfd7fa0dafd66bdc0e0e5151f415b2bc6b28c49a63ad6d1e0a244829b1db70f0",
     "manuscript/sections/K-directed-circle-messages.tex": "7eff3a7658079dff75802b8044d7213e040795eeff89c7795bb1476aee04c03a",
     "papers/three-braids/main.tex": "9bad961bfcb9893bf0b6035a084d95436e0c146b3acda10850ba7d374a832c76",
@@ -751,8 +771,10 @@
     "manuscript/sections/I-geometric-characteristic.tex": "d6e7a10052866edca5369cce3aeb3a4b9758a7b9807386af2d08816da57313f2",
     "manuscript/sections/J-strict-tree-geometric-characteristic.tex": "a7abe912fbc16874f19818551fc737926375dcf0b4a3f8a8e9104e9e52a6642b",
     "notes/actual_global_diagonal_spectral_sector_gap.md": "fb8353e00968dedcf0e9563a6e1d6057a38162714e8aa1bbaf234d4042cac79f",
+    "manuscript/sections/L-balanced-terminal-fans.tex": "4c5b03317602d547a44028908a99e8cd449922f391c27ba80e8dafd5156f4775",
+    "papers/newton-tangles/main.tex": "a6bf0e36b0c508ffde6874d88922e9f49d78436e97e81cf5e9c93b06ad19560c",
     "manuscript/sections/02-finite-source.tex": "232936be01555db658f818b3ed0539c31fe4f2deb3386cc0ed8df5497d8b65e2",
-    "manuscript/sections/03-entropy.tex": "ae82af904a99907206b8756b2fa8c6a0448ff1af5af6dbae8a2cba6799599226",
+    "manuscript/sections/A-finite-identities.tex": "c1e125117c6f1ebc790ec1e8f662d451c78f9b42c29be1a86baf0261d3861abb",
     "manuscript/sections/04-geometry.tex": "56ff38ece93d261dbb8d431f4210b6174a8543de1741e6aa940a349604d29744",
     "manuscript/sections/D-marked-cell-calibration.tex": "e6c3270bd8c8e0e61d79cf0c036943e39d476197d4700a9a9ce19440c3959286",
     "manuscript/sections/06-packet.tex": "8a5b6bd7b108cc357a9e602db49bfa3480f0c2d4b47decfacaed04c82e8a12d8",
@@ -763,6 +785,7 @@
     "formal/VolumeLogic/VolumeTransfer.lean": "862e17ea64b46022fc830610c491c3f25dc0f09e6e6f7650f4b73e81f34401dc",
     "formal-real/RealTransfer.lean": "fd41a1469999ec0e455e64a08c5d81a947a38797054c8f850a3a2371023c545a",
     "notes/general_marked_multicusp_gluing_rigidity.md": "f882d2c7d1f723590391d3cc03dcd9bba7a12d13c2e006c6dea570e1b4af1b42",
+    "manuscript/sections/F-quantitative-octahedral-geometry.tex": "4348d40531fe83415223b88e26b1e3aedcb01daa9c6e17f030ae596000f8f268",
     "notes/actual_fejer_unique_geometric_maximizer.md": "231c22c5bd4f0c1527a84c4db92d83cc13b7f7b56627c47631644addb98f8ec4",
     "notes/actual_complete_core_geometric_deformation.md": "6b3be9bb1c1f79f2d3b4a679a8cfa5f6f5df37640354add9ab04fdb8f8c4f580",
     "manuscript/sections/M-directed-all-orders.tex": "90bde811854ea8d259b9086516703bde0684a6de7d07b99e92a56e0adab49986",
@@ -783,7 +806,8 @@
     "manuscript/sections/B2-global-core-envelope.tex": "4717743e7577bd3729673e27f718242f344d18a0fcb6d70ce9e5dab11eff5cc3",
     "notes/actual_conway_general_strict_mask_geometry.md": "980413284c4d9bd6d383c97b07cba017b3f2d23a0e642148e30e53371e6f0f31",
     "formal-real/Flattening.lean": "a15977f5e3234d9f56217aee2e875c3a6ec8542b4140bfdf74f78d0b35e0f9cc",
+    "formal-real/TransportCoercivity.lean": "ec8acf6a1b32c5299e070e49485e2ffb4dd44f3a0a7e916ef02cdd901151b1d3",
     "notes/actual_conway_quarter_index_color_packet.md": "f9416e1fa09c040089c131d2dd4c5a8018f4fe7082e4a033d6bf4d9f50501aa4",
-    "papers/dependencies.json": "0a1b96aeaa8d537109ce77ecd4b5995955ee2366e2c952598efd5dc14717f6a8"
+    "papers/dependencies.json": "d354ce0bf426473e54264a0e97aab0c48ae3a8df5dc377a6f2b131d6b47628eb"
   }
 }

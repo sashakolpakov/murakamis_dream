@@ -49,7 +49,13 @@ common core for several inserted diagrams also uses protected gluing.
 
 ## The current drafts
 
-**Finite spectral evaluation and uniform filling bounds.**
+The eleven papers total 175 pages, with individual lengths from 11 to
+28 pages. They provide complete accounts of the results described below,
+with numbered companion imports. This is a partial extraction of the
+reference manuscript, rather than a replacement for all its theorem
+families.
+
+**Finite spectral evaluation and uniform filling bounds.** 28 pages.
 [TeX source](filling-bounds/main.tex) ·
 [PDF](../docs/papers/filling-bounds.pdf)
 
@@ -66,7 +72,23 @@ framing factor. These results supply the finite formulas used by later
 papers. They do not estimate the large-level invariant or identify an
 exponential rate with volume.
 
-**Uniform spectral bounds for local Casimir sources.**
+**Newton coefficients and positive sources for Conway tangles.** 18 pages.
+[TeX source](newton-tangles/main.tex) ·
+[PDF](../docs/papers/newton-tangles.pdf)
+
+This paper supplies the additional finite calculus for composing turned
+two-strand tangles. It proves the Newton product, physical quarter-turn,
+closure and colored-circle formulas in the full Casimir quotient,
+retaining the derivatives at repeated spectral roots and the retained
+half-twist factors. It uses the finite paper's operator and reduced
+Kashaev normalization. For the stated class of fixed Conway compositions,
+it then proves the positive complete auxiliary-color source's variational
+limit, strict interior maximum and stationary boundary bounds at both
+level parities. The positive source is not the signed filled invariant.
+The analytic estimates for that invariant remain separate, as does the
+finite adapter when the main meridian moves away from completeness.
+
+**Uniform spectral bounds for local Casimir sources.** 14 pages.
 [TeX source](local-coefficients/main.tex) ·
 [PDF](../docs/papers/local-coefficients.pdf)
 
@@ -77,10 +99,10 @@ Theorem 1.1 bounds all three regions over the entire real spectral interval
 and for arbitrary phases of the face variables. The proof includes the
 signed recurrence, both unused spectral products, the endpoint optimization,
 both level parities and face variables fixed exactly at zero. It imports
-the finite operator identification from the preceding paper. It does not
+the operator identification from the finite spectral paper. It does not
 assume a geometric saddle or a volume identity.
 
-**Oscillatory filling sums with independently long twists.**
+**Oscillatory filling sums with independently long twists.** 11 pages.
 [TeX source](oscillatory-fillings/main.tex) ·
 [PDF](../docs/papers/oscillatory-fillings.pdf)
 
@@ -96,7 +118,7 @@ hypotheses explicitly. For a knot source, construction of those hypotheses
 and identification of the critical action with volume remain separate
 theorems.
 
-**Holomorphic asymptotics of central shared face coefficients.**
+**Holomorphic asymptotics of central shared face coefficients.** 12 pages.
 [TeX source](source-asymptotics/main.tex) ·
 [PDF](../docs/papers/source-asymptotics.pdf)
 
@@ -112,7 +134,7 @@ has no extra integer-lattice factor. Section 7 states the exact normalized
 input to the oscillatory theorem. Bounding the other degree sectors of
 the invariant remains the task of an application theorem.
 
-**Circle patterns and primitive fillings of augmented links.**
+**Circle patterns and primitive fillings of augmented links.** 18 pages.
 [TeX source](marked-fillings/main.tex) ·
 [PDF](../docs/papers/marked-fillings.pdf)
 
@@ -128,7 +150,25 @@ it does not assume a quantum asymptotic. Two drawings explain the single
 disk pairing and the logarithmic torus periods. The final corollary
 states the exact action comparison used by the quantum applications.
 
-**Shared face estimates and triangular gluing for planar link diagrams.**
+**Positive octahedra and primitive fillings for trees of crossing circles.** 15 pages.
+[TeX source](circle-tree-geometry/main.tex) ·
+[PDF](../docs/papers/circle-tree-geometry.pdf)
+
+For an ordered tree with an original crossing circle at every vertex,
+this paper builds the actual two-octahedron block for each edge and
+retains its ordered disk pages, half twists and primitive curves. With
+$d_v$ the vertex degree and $n_v$ the signed crossing power, the condition
+$\sqrt{d_v^2+n_v^2}\ge630$ at every vertex gives a positive cone
+path ending at a smooth complete filling, together with an absolute
+action-volume identity and quantitative core-length and volume-loss
+bounds. A more flexible criterion uses different radii at the vertices.
+The theorem allows zero power at a sufficiently high-degree vertex. Its
+only specialized companion import is the geometric foundation's local
+peripheral-volume differential, not that paper's long-filling existence
+theorem. It supplies geometry for subsequent asymptotic applications;
+it does not select a nonzero contribution to a quantum invariant.
+
+**Shared face estimates and triangular gluing for planar link diagrams.** 15 pages.
 [TeX source](planar-certificates/main.tex) ·
 [PDF](../docs/papers/planar-certificates.pdf)
 
@@ -143,7 +183,24 @@ rational certificates show that this gluing theorem applies beyond weak
 balance. The full volume conclusion imports the five numbered foundation
 results; the source estimates and their transport are proved here.
 
-**Triangular insertion and volume limits for augmented diagrams.**
+**Balanced circle packings from terminal tangle decorations.** 13 pages.
+[TeX source](terminal-decorations/main.tex) ·
+[PDF](../docs/papers/terminal-decorations.pdf)
+
+Starting from a simple marked matched sphere, the paper gives an explicit
+finite number of terminal insertions on both sides of each original
+crossing circle. It proves their literal endpoint connections, constructs
+the packing extension while fixing all old circles, and solves the
+curvature recurrence. The resulting inequalities establish strict balance
+at every original and added region. Even stacks of odd terminal tangles
+preserve a chosen knot pairing, while generally changing the knot type.
+The strict-balance criterion in the planar paper then gives the full
+reduced Kashaev volume limit after independently sufficiently long fixed
+signed powers at all regions. The exact source, central asymptotic and
+primitive volume inputs are named foundation results; the insertion and
+all-length balance arguments are proved here.
+
+**Triangular insertion and volume limits for augmented diagrams.** 17 pages.
 [TeX source](triangular-insertion/main.tex) ·
 [PDF](../docs/papers/triangular-insertion.pdf)
 
@@ -159,7 +216,7 @@ list of certified inputs. The proof includes the exact recurrence and
 all-length inequalities; interval arithmetic checks the finitely many
 constants and certificate inequalities used in the example.
 
-**Volume limits for long alternating-generator three-braids.**
+**Volume limits for long alternating-generator three-braids.** 14 pages.
 [TeX source](three-braids/main.tex) ·
 [PDF](../docs/papers/three-braids.pdf)
 
@@ -195,10 +252,10 @@ purposes:
 
 | Subject | Result to explain and prove | Dependencies that must remain visible |
 | --- | --- | --- |
-| Terminal tangle decorations | Finite even insertions preserve endpoint pairings and enforce strict packing balance | The exact circle recurrence, literal insertion and shared-face criterion |
-| Recursive Conway constructions | The completed-root theorem and the broader strict-tree extension have different source arguments | Exact tangle evaluation, boundary profiles, core estimates and marked geometry |
-| Quantitative circle trees | Summed, local and directed degree-and-twist criteria give the volume limit | The exact tree kernel, analytic subtree estimates and positive geometric completion |
-| Geometric longitude and recurrences | All-order meridian expansions force the selected geometric factor to divide a classical symbol | The full expansion, its normalization and the geometric longitude |
+| Moving-meridian finite evaluation | The deformed spectral relation and orientation-dependent turn factors give the exact source away from the complete meridian | The complete Newton calculus is available; the deformed adapter must be presented separately |
+| Recursive filled Conway closures | The completed-root theorem and the broader strict-tree extension require their respective signed source estimates | Exact tangle evaluation, boundary profiles, alias bounds, nonzero filled contributions and marked geometry |
+| Quantitative circle-tree asymptotics | Summed, local and directed degree-and-twist criteria give the full invariant's volume limit | Newton and classical geometric inputs are available; the exact tree-coordinate adapter and analytic subtree/filling estimates must be retained |
+| Geometric longitude and recurrences | All-order meridian expansions force the selected geometric factor to divide a classical symbol | The moving-meridian source, full expansion, normalization and preferred geometric longitude |
 
 The frozen reference manuscript's first theorem uses its completed-root
 grammar. The research notes extend this to more general strict ordered
@@ -216,10 +273,12 @@ For a citation between papers, the exporting paper must state a numbered
 theorem with its normalization, degree restrictions, level parity and
 uniformity assumptions. The importing paper must name that theorem and
 check those hypotheses. A reference to a folder of calculations is not
-a substitute. The eight drafts above separate the planar criteria, two kinds of
-triangular assembly, the three-braid application and their foundations.
-The other retained knot families and the longitude results
-still require the remaining editorial and proof review. The dependency
+a substitute. The eleven drafts above now include terminal decoration,
+complete Newton tangle calculus and classical circle-tree filling, alongside
+the planar criteria, two kinds of triangular assembly, the three-braid
+application and their foundations. The remaining signed tree estimates,
+recursive filled closures and meridian/longitude results still require
+their own extraction and proof review. The dependency
 graph keeps those obligations visible.
 
 The illustrated guide retains the broader approaches and unsuccessful
@@ -255,19 +314,25 @@ It generates the interactive graph, vector overview and source-hash
 record in `docs/papers/`. These checks validate the declared dependency
 record, not the proofs at its nodes.
 
-Replay the papers' finite identities and the three-braid rational constants
-with one command, using Python and SymPy:
+Replay the papers' finite identities and rational certificate constants
+with one command:
 
 ```sh
 python3 repro/check_paper_algebra.py --output repro/results/paper-algebra
 ```
 
 The runner requires SymPy, python-flint and NumPy. It saves a separate
-record and log for each of seven checks, and stops on failure. The planar
-certificate groups retain their supporting interval records in separate
-subdirectories. The constant verifier uses outward rational bounds with explicit
-series remainders. The argument for every even number of factors is
-written in the paper; it is not inferred from computations for finitely
+record and log for each of ten check groups, and stops on failure. The
+planar certificate groups retain their supporting interval records in
+separate subdirectories. The new Newton group compares physical matrix
+turns, traces, circle coefficients and crossing normals with the stated
+formulas over exact finite fields. The terminal group checks symbolic
+curvature identities, oriented insertions and literal pairing graphs;
+its finite count examples supplement the written construction for every
+length. The circle-tree group checks rational seam and peripheral
+identities and the displayed numerical bounds. The constant verifier
+uses outward rational bounds with explicit series remainders. The argument
+for every even number of braid factors is written in the three-braid paper; it is not inferred from computations for finitely
 many braid lengths. The finite checks complement the written proofs of
 the analytic estimates and geometric constructions.
 

@@ -1,0 +1,25 @@
+\begin{tikzpicture}[scale=.83,>=Latex,
+ p/.style={circle,fill=black,inner sep=1.7pt}]
+\draw[rounded corners,gray] (-1.45,-.2) rectangle (1.45,1.55);
+\draw[rounded corners,gray] (-1.45,2.1) rectangle (1.45,3.85);
+\node at (-2.05,.7) {$F$};
+\node at (-2.05,3) {$G$};
+\coordinate (f0) at (-1,0); \coordinate (f1) at (1,0);
+\coordinate (f2) at (1,1.35); \coordinate (f3) at (-1,1.35);
+\coordinate (g0) at (-1,2.3); \coordinate (g1) at (1,2.3);
+\coordinate (g2) at (1,3.65); \coordinate (g3) at (-1,3.65);
+\draw[blue!70!black,line width=1.3pt] (f0)--(f2)--(g1)--(g3);
+\draw[red!70!black,line width=1.3pt] (f1)--(f3)--(g0)--(g2);
+\foreach \p/\label/\pos in {f0/F_0/below,f1/F_1/below,f2/F_2/right,
+ f3/F_3/left,g0/G_0/left,g1/G_1/right,g2/G_2/above,g3/G_3/above}
+ \node[p,label=\pos:$\label$] at (\p) {};
+\draw[->,thick] (2.1,1.8)--(3.6,1.8);
+\begin{scope}[xshift=5.2cm]
+\draw[blue!70!black,line width=1.3pt] (-.8,0)--(-.8,3.65);
+\draw[red!70!black,line width=1.3pt] (.8,0)--(.8,3.65);
+\foreach \x/\y/\label/\pos in {-.8/0/0/below,.8/0/1/below,
+ .8/3.65/2/above,-.8/3.65/3/above}
+ \node[p,label=\pos:$\label$] at (\x,\y) {};
+\node at (0,1.8) {$I$};
+\end{scope}
+\end{tikzpicture}

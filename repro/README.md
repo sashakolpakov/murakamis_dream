@@ -42,6 +42,14 @@ written argument. The real-calculus module also derives the quadratic
 action cost from actual second derivatives, the supporting-tangent
 entropy gain, and the resulting two-branch strict sector estimate.
 The geometric derivative and entropy formulas remain written inputs.
+The transport module starts with an actual positive table of corner
+loads. If its supported incidence graph is connected, grounding one
+vertex gives a strictly positive recession in every nonzero direction.
+Compactness then supplies a uniform norm bound, compact sublevel sets
+and an attained minimum. The geometric Hall inequalities constructing
+that table remain written proofs. For fixed positive boundary values,
+the application combines the boundary destinations into the grounded
+vertex and retains their prescribed logarithms as row constants.
 The optional command is separate from the Std-only
 check above; it requires
 Mathlib and its substantially larger compiled library.
@@ -54,19 +62,23 @@ python3 repro/check_paper_algebra.py --output repro/results/paper-algebra
 ~~~
 
 The runner requires SymPy, python-flint and NumPy. It saves each program's
-output and stops on a failed check. Its seven groups cover polynomial
+output and stops on a failed check. Its ten groups cover polynomial
 resolvents and path partitions, positive-matrix identities and parity
 anchors, filling-sum normalization, symbolic peripheral coordinates,
 rational three-braid constants, the complete forty-branch planar
-certificate, and its forty-five-branch extension at ordinary boundaries.
-The last two groups use outward interval arithmetic with explicit
+certificate, its forty-five-branch extension at ordinary boundaries,
+physical Newton matrices at eight levels, the exact terminal fan
+recurrence, and symbolic tree-block and peripheral identities.
+The two planar certificate groups use outward interval arithmetic with explicit
 Fourier tails. Their reports keep the finite assertions separate from
 the written all-length arguments.
 The [planar and insertion review](PLANAR_INSERTION_AUDIT.md) records
 which written arguments were examined and which results they import.
+The [tangle and tree review](TANGLE_TREE_AUDIT.md) records the new papers'
+proof boundaries and the transport module's formal coverage.
 
-The five algebra programs accept `--output` naming a JSON result file.
-The planar and triangular-insertion programs accept an output directory
+Seven programs accept `--output` naming a JSON result file.
+The planar, triangular-insertion and terminal-decoration programs accept an output directory
 containing their summary and supporting records. The unified runner
 handles both conventions. These commands do not establish uniform
 large-level estimates, packing existence or metric completeness.

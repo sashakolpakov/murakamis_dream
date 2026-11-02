@@ -1,4 +1,4 @@
-# Concrete analytic transfer, graph energy and flattening
+# Concrete analytic transfer, graph energy and variational estimates
 
 This optional Lean package realizes the elementary analytic interfaces of
 [VolumeTransfer](../formal/VolumeLogic/VolumeTransfer.lean) using Mathlib's
@@ -6,8 +6,8 @@ complex numbers, complex modulus and real logarithm. It depends on the
 existing Std-only package by the relative path `../formal`; its sources are
 not copied. The ordinary Std-only check does not need this package or Mathlib.
 The package also proves the real finite quadratic-form implication used in
-the circle-pattern Hessian argument, and the one-variable calculus behind
-shared-weight flattening.
+the circle-pattern Hessian argument, the one-variable calculus behind
+shared-weight flattening, and coercivity from a positive finite transport table.
 
 ## What is proved
 
@@ -214,6 +214,95 @@ not formalize those geometric formulas, coefficient asymptotics, or the
 invariant's volume limit. It proves the intervening real-calculus and
 finite-sector implications.
 
+## Coercivity from supported transport
+
+[TransportCoercivity.lean](TransportCoercivity.lean) contains seven
+definitions and sixteen theorems in `VolumeLogic.TransportCoercivity`.
+It proves the finite-dimensional coercivity argument used in
+[the triangular-insertion paper, Sections 2–4](../papers/triangular-insertion/main.tex).
+The corner table and its graph are actual finite data, rather than an assumed
+constant-kernel property or an assumed coercivity bound.
+
+Let `T` be a finite set of rows, `V` a finite set of vertices, and `S t` a
+nonempty finite set of supported vertices in row `t`. A real table entry
+`α t i` is strictly positive whenever `i ∈ S t`; entries outside that
+support are ignored. The definitions construct the row supply and column
+demand from the same table:
+
+\[
+m_t=\sum_{i\in S_t}\alpha_{ti},\qquad
+d_i=\sum_{t:\,i\in S_t}\alpha_{ti}.
+\]
+
+For a real vertex function `h : V → ℝ`, the actual recession function is
+
+\[
+\mathcal R(h)=\sum_t m_t\max_{i\in S_t}h_i-\sum_i d_i h_i
+=\sum_t\sum_{i\in S_t}\alpha_{ti}
+\left(\max_{j\in S_t}h_j-h_i\right).
+\]
+
+The last equality is proved by finite summation. Nonnegativity follows
+term by term. Because the supported entries are positive, equality holds
+exactly when every supported value equals its row maximum. A graph step
+joins two vertices belonging to one row, and `connected` requires an
+actual finite path of such steps between every pair of vertices. Induction
+on that path propagates equality. After fixing one vertex `root` and
+requiring `h root = 0`, every nonzero `h` therefore has positive recession.
+
+`grounded_recession_coercive` proves the stronger uniform conclusion
+
+\[
+\exists c>0\quad\forall h\text{ with }h_{\rm root}=0,
+\qquad \mathcal R(h)\ge c\lVert h\rVert.
+\]
+
+Here the norm is the finite function space's supremum norm. Finite maxima
+make `𝓡` continuous, and its positive homogeneity is proved directly.
+Compactness of the grounded unit sphere supplies `c`; scaling then gives
+the bound for every grounded direction. The compactness lemma explicitly
+allows an empty sphere, as happens with a single vertex: any positive
+constant works because the only grounded function is zero. Empty row
+supports are excluded by hypothesis. No quantitative value of `c`, or
+uniformity over different transport tables, is asserted.
+
+For actual functions `Q t : (V → ℝ) → ℝ` and fixed real row constants
+`C t`, the definition `potential` is
+
+\[
+\mathcal J(h)=\sum_t Q_t(h)-\sum_i d_i h_i.
+\]
+
+The explicit local hypotheses
+
+\[
+Q_t(h)\ge m_t\max_{i\in S_t}h_i-C_t
+\]
+
+imply `𝓙(h) ≥ 𝓡(h) − Σ_t C_t`. Thus
+`grounded_potential_coercive` derives
+`𝓙(h) ≥ c ‖h‖ − Σ_t C_t`. Every grounded sublevel is bounded; if each
+`Q t` is continuous, it is compact. `exists_grounded_minimizer` obtains an
+actual minimum from the nonempty sublevel through zero. A minimizer is
+not an input, and convexity is not needed for this existence statement.
+Uniqueness and differentiability of the minimum are not claimed.
+
+The application must still construct the strictly positive supported table
+from the disk's Hall inequalities, identify its prescribed margins (row
+supply `1/2` and the required face demands), and verify the connected
+grounded support. It must also identify the geometric potential with the
+displayed `𝓙` and prove its local vertex bounds. Fixed boundary logarithms
+may enter the constants `C_t`; any identification of fixed boundary
+directions with the grounded coordinates is part of that written
+application. For a disk with three positive fixed boundary weights, pool
+the boundary destinations into the single grounded root, aggregating the
+table entries at repeated boundary corners and retaining their prescribed
+logarithms as row offsets. Grounding just one of three separately retained
+boundary vertices would not express that fixed-boundary problem. The
+two-zero supported limit already has the form `V = I ∪ {b}`, grounded at
+`b`. The Lean result proves the subsequent finite-sum, path,
+compactness and minimization implications without assuming their conclusion.
+
 ## Pinned dependencies
 
 - Lean: `leanprover/lean4:v4.32.2`.
@@ -240,6 +329,10 @@ MATHLIB_NO_CACHE_ON_UPDATE=1 lake update volumeLogic mathlib
 lake exe cache get \
   Mathlib.Analysis.Complex.Basic \
   Mathlib.Analysis.Convex.Deriv \
+  Mathlib.Analysis.Normed.Module.FiniteDimension \
+  Mathlib.Topology.Order.Compact \
+  Mathlib.Topology.Order.Lattice \
+  Mathlib.Algebra.Order.GroupWithZero.Finset \
   Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic \
   Mathlib.Analysis.SpecialFunctions.Pow.Real \
   Mathlib.Analysis.SpecialFunctions.Log.Basic \
@@ -280,7 +373,8 @@ whose logs are removed afterward. `--lake` can select a Lake executable;
 the executed Lean version must still match the pin.
 
 The checker rebuilds the Std-only path dependency, compiles
-`RealTransfer.lean`, `WeightedGraph.lean` and `Flattening.lean`, and runs
+`RealTransfer.lean`, `WeightedGraph.lean`, `Flattening.lean` and
+`TransportCoercivity.lean`, and runs
 [AxiomAudit.lean](AxiomAudit.lean). Every
 definition and theorem must appear exactly once in the audit. Only Lean's
 standard foundational axioms `propext`, `Classical.choice` and `Quot.sound`
@@ -289,17 +383,19 @@ are permitted; placeholders and additional axioms fail the check.
 `summary.json` records every declaration, its axioms, all dependency pins,
 and the SHA-256 hashes of the optional package, checker and Std-only sources.
 It contains relative paths and omits timestamps so identical inputs produce
-the same summary. Twelve negative controls check altered pins, missing or
+the same summary. Fourteen negative controls check altered pins, missing or
 duplicate dependencies, an absolute local dependency, incomplete or
 duplicate declaration audits, an omitted graph module or grounded-energy
 audit entry, an omitted flattening module or quadratic-cost audit entry,
+an omitted transport module or grounded-coercivity audit entry,
 and an unexpected logical axiom. A failed run
 removes any old success summary in its output directory.
 
-The optional count is **ten definitions and fifty theorems**, separate
+The optional count is **seventeen definitions and sixty-six theorems**, separate
 from the Std-only theorem count: `RealTransfer` has two definitions and
 twenty-two theorems, `WeightedGraph` has seven definitions and nineteen
-theorems, and `Flattening` has one definition and nine theorems. The audit
+theorems, `Flattening` has one definition and nine theorems, and
+`TransportCoercivity` has seven definitions and sixteen theorems. The audit
 checks these proofs and the
 listed dependency pins; it does not certify that a particular knot family
 satisfies the remaining written analytic and geometric hypotheses.
