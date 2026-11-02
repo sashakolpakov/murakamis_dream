@@ -1,0 +1,244 @@
+\section{Whole traces and reflected high indices}\label{ms:fourier}
+The following comparisons concern the actual top-coefficient trace.
+They retain all its Fourier aliases, including the alternating signs
+at even levels. Put $\epsilon=(-1)^{N+1}$.
+
+\begin{lemma}[The finite Fourier trace]\label{ms:Fourier}
+If $F(-u-u^{-1})=\sum a_k u^k$, then
+\begin{equation}\label{ms:Fourier-trace}
+ \phi_s(F)=N^2\sum_{l\ge1}\epsilon^{l+1}
+    (a_{lN-1}-a_{lN+1})U_{l-1}(\cos2\pi s).
+\end{equation}
+Only finitely many summands occur. The formula holds at every
+collision with the full normal functional.
+\end{lemma}
+\begin{proof}
+At generic $s$ choose $u_j^N=\epsilon e^{2\pi\ii s}$ and put
+$z_j=-u_j-u_j^{-1}$. These are the distinct roots of $P_s$, and
+\[
+ P_s'(z_j)=\frac{2\ii N\sin2\pi s}{u_j-u_j^{-1}},\qquad
+ \phi_s(F)=\frac{\epsilon N}{2\ii\sin2\pi s}
+       \sum_j(u_j-u_j^{-1})F(-u_j-u_j^{-1}).
+\]
+The root sum selects multiples of $N$. Pairing opposite exponents
+gives \eqref{ms:Fourier-trace}, since $a_{-k}=a_k$. Both sides are
+polynomials in $2\cos2\pi s$: the left by monic reduction, the right
+by the finite Chebyshev sum. Polynomial continuation proves the
+collision assertion, including all first normals.
+\end{proof}
+
+For low $n$, the exact coefficients are positive:
+\begin{equation}\label{ms:low-coefficients}
+ [u^k]e_n(-u-u^{-1})=
+ \frac{S_{2n}}{S_n^2S_{n+k}S_{n-k}},\qquad |k|\le n.
+\end{equation}
+Indeed the numerator is
+$u^{-n}\prod_{a<n}(1+q^{2a+1}u)(1+q^{-2a-1}u)$.
+Expand the consecutive geometric factors by the finite binomial
+identity, proved by multiplying by its last factor. The phases
+cancel and give \eqref{ms:low-coefficients}. Every factorial index
+is less than $N$. Symmetry is explicit; the successive ratio on the
+nonnegative side is
+$\sin((n-k)\pi/N)/\sin((n+k+1)\pi/N)\le1$.
+Thus these sequences are symmetric and unimodal. Their convolutions
+are too: write a symmetric unimodal sequence as a nonnegative sum
+of centered interval indicators.
+
+We will also use an elementary quantitative tail fact. If $a$ is
+the convolution of $B$ nonnegative symmetric unimodal sequences
+supported in $[-m,m]$, then
+\begin{equation}\label{ms:interval-tail}
+ a_k\le(2m+1)^B(a_k-a_{k+2}),\qquad k\ge m.
+\end{equation}
+To prove it after the interval decomposition, let $C$ be the
+convolution of integer interval indicators, with largest radius $r$.
+Write $C=\mathbf1_{[-r,r]}*H$. For $k\ge r$,
+$C(k)-C(k+1)=H(k-r)-H(k+r+1)$. If $C(k)>0$, the first
+argument is in the support. If the second is outside, the difference
+is positive. Otherwise induction makes its last step strict, since
+$k+r$ is at least every radius in $H$; unimodality handles the other
+steps. The one-factor case is immediate. The positive integer
+difference is at least one, while $C(k)\le(2m+1)^B$. Sum the
+interval decompositions to obtain \eqref{ms:interval-tail}.
+
+\begin{proposition}[Same-level low trace comparison]\label{ms:low-trace}
+For fixed $B$ and any bounded set of complex $s$,
+\begin{equation}\label{ms:low-trace-bound}
+ |\phi_s(e_{n_1}\cdots e_{n_B})|
+       \le C N^A\phi_0(e_{n_1}\cdots e_{n_B}),\qquad n_i\le m.
+\end{equation}
+A zero on the right forces the left to vanish. Both parities are
+included, and all factors on the right are at the original level.
+\end{proposition}
+\begin{proof}
+Write $D=\sum n_i$ and $a_k$ for the product coefficients.
+All $d_l=a_{lN-1}-a_{lN+1}$ are nonnegative. The number of aliases
+in \eqref{ms:Fourier-trace} is at most $B$, and
+\[
+ |U_{l-1}(\cos2\pi s)|\le l e^{2\pi(l-1)|\Im s|}.
+\]
+For odd $N$ this proves the result directly, since all complete
+alias signs are positive. If $D<N-1$, both traces vanish by degree.
+It remains to consider even $N\ge4$, $D\ge N-1$.
+
+Put $L=N-1$, an odd level; its low bound is the same $m=(N-2)/2$.
+Concavity of sine and reflection about $\pi/2$ give, for
+$0\le r\le N-2$,
+\begin{equation}\label{ms:adjacent-products}
+ \left(\frac N{N-1}\right)^r\frac{N-1-r}{N-1}
+ \le\frac{S_r^{(L)}}{S_r^{(N)}}
+ \le\left(\frac N{N-1}\right)^r.
+\end{equation}
+For the lower estimate multiply
+$\sin(\pi a/(N-1))/\sin(\pi a/N)
+\ge N(N-1-a)/((N-1)(N-a))$; the product telescopes.
+The upper estimate follows from decreasing $\sin t/t$.
+All these ratios and their inverses are polynomial in $N$.
+Changing an allowed factorial index by one also costs at most a
+polynomial, since $4/N\le2\sin(\pi a/N)\le2$.
+Consequently \eqref{ms:low-coefficients} and convolution give
+$a_k^{(N)}\le N^A a_k^{(L)}$ at every index, with exactly the
+same support. Unimodality and \eqref{ms:interval-tail}, now at
+$k=lL-1\ge m$, imply
+\[
+ d_l^{(N)}\le N^A a_{lN-1}^{(L)}
+ \le N^A a_{lL-1}^{(L)}
+ \le N^{A+B}(a_{lL-1}^{(L)}-a_{lL+1}^{(L)}).
+\]
+The odd complete trace therefore bounds the absolute even trace
+up to a polynomial.
+
+We must return to the original level. The complete multiplication
+law, \cite[Theorem 3.3]{Newton}, is positive on
+\begin{equation}\label{ms:level-gate}
+ \mu_K(i,j;r)=
+ \frac{S_{i+j}^{(K)}S_r^{(K)}}
+ {S_i^{(K)}S_j^{(K)}S_{r-i}^{(K)}S_{r-j}^{(K)}S_{i+j-r}^{(K)}},
+ \quad i+j<K,\quad\max(i,j)\le r\le i+j;
+\end{equation}
+it is zero otherwise. A successive odd-level trace path starts at
+$r_1=n_1$, ends at $r_B=N-2$, and has nonnegative gate slacks
+$r_{j-1}+n_j-r_j$. Their sum is $D-(N-2)\ge1$. At its first
+positive slack raise that output and every subsequent running
+output by one. At the first gate the slack permits the increase;
+at later gates the input sum and output both increase by one, so
+all support inequalities persist and input sums remain at most
+$N-1$. The new path closes at $N-1$, the even trace target.
+Every image has at most $B-1$ preimages, since specifying the first
+changed gate recovers the path. Each factorial index changes by at
+most one. Equation \eqref{ms:adjacent-products} thus bounds each
+old positive path weight by a polynomial times its image weight.
+Summing proves $\phi_{L,0}\le N^A\phi_{N,0}$, completing the proof.
+This level comparison is only an estimate, not an identification of
+invariants at different levels.
+\end{proof}
+
+\begin{proposition}[A reflected high trace]\label{ms:reflected}
+Let $h>m$, $r=d-h$ and $F=\prod_{j=1}^B e_{n_j}$, $n_j\le m$.
+For fixed $B$ and bounded $s$,
+\begin{equation}\label{ms:reflection-bound}
+ |(\phi_s-\phi_0)(e_hF)|
+ \le C N^A|\Delta_s|\,\phi_0(e_rF),
+ \qquad \Delta_s=2\cos2\pi s-2.
+\end{equation}
+If $n_j/N\in[\delta,1/2-\delta]$ and $r/N\ge\delta>0$,
+the right side can be multiplied by $e^{-\kappa N}$, with
+$\kappa>0$ independent of the meridian compact.
+\end{proposition}
+\begin{proof}
+Set $a=N-h$, $v=2h-N\ge0$. Removing one complete cycle of
+geometric factors from the Newton numerator gives
+\[
+ \prod_{j<h}(1+q^{2j+1}u)(1+q^{-2j-1}u)
+ =(1-\epsilon u^N)\prod_{j=0}^{v-1}(1-q^{2j-v+1}u).
+\]
+The last product has coefficient $(-1)^l S_v/(S_lS_{v-l})$.
+Thus the Laurent coefficients $A_k$ of $e_h(-u-u^{-1})$ are
+zero for $|k|<a$, and otherwise
+\begin{equation}\label{ms:high-coefficients}
+ A_k=(-1)^{h-|k|}
+       \frac{S_{2h-N}}{S_h^2S_{|k|-a}S_{h-|k|}},
+       \qquad a\le|k|\le h.
+\end{equation}
+At even $h=N/2$ the only coefficients are
+$A_h=A_{-h}=S_h^{-2}$. By \eqref{ms:basis-norm} and polynomial
+conditioning, the interval norm of this high polynomial is
+polynomial; its Laurent coefficients are cosine coefficients, so
+$\sum|A_k|\le N^A$.
+
+Write $F(-u-u^{-1})=\sum f_k u^k$. Its coefficients are positive
+and unimodal. Alias one in \eqref{ms:Fourier-trace} is independent
+of $s$ and cancels in the difference. All others have frequencies
+at least $2N-1$, so convolution gives a bound by
+$N^A f_{2N-1-h}=N^A f_{N+r}$. Moreover
+$U_{l-1}(\cos2\pi s)-l$ is divisible by $\Delta_s$ with bounded
+quotient for the fixed finite set of aliases. This proves
+\begin{equation}\label{ms:high-tail}
+ |(\phi_s-\phi_0)(e_hF)|\le C N^A|\Delta_s|f_{N+r}.
+\end{equation}
+If $C=e_rF=\sum c_k u^k$, the endpoint coefficient of $e_r$ is
+$S_r^{-2}$, and $S_r^2\le N$ on the low range. Hence
+\[
+ c_{N-1}\ge S_r^{-2}f_{N-1-r}\ge N^{-1}f_{N+r}.
+\]
+The tail lemma bounds $c_{N-1}$ by a polynomial times
+$d_1=c_{N-1}-c_{N+1}$. To bound this first difference by the
+complete trace even when its aliases alternate, form
+$Q(X)=\sum_l\epsilon^{l+1}d_lU_{l-1}(X)$.
+Its degree is bounded by $B$. Evaluate at $B+1$ fixed distinct
+values $X_j=\cos2\pi s_j$, $0\le s_j<1/8$. The inverse
+evaluation matrix is fixed, so
+$d_1\le C\max_j|Q(X_j)|\le N^A\phi_0(C)$ by
+Proposition~\ref{ms:low-trace}. This proves
+\eqref{ms:reflection-bound} at the same original level.
+
+For strictness retain the two different frequencies above. Define
+\[
+ b_u(t)=J(2u)-2J(u)-J(u+t)-J(u-t),\quad |t|\le u.
+\]
+On $u\in[\delta,1/2-\delta]$,
+\[
+ b_u''(t)=-\frac{\pi\sin(2\pi u)}
+                 {\sin\pi(u+t)\sin\pi(u-t)}\le-\lambda_\delta<0.
+\]
+The constrained convolution action
+$\mathcal B(t)=\max_{\sum t_j=t}\sum b_{u_j}(t_j)$
+is even and strongly concave with constant $\lambda_\delta/B$,
+by Cauchy--Schwarz on the coordinate differences of two maximizers.
+It follows that
+\begin{equation}\label{ms:convolution-drop}
+ \mathcal B(t_2)-\mathcal B(t_1)
+ \le-\frac{\lambda_\delta}{2B}(t_2^2-t_1^2),\quad 0\le t_1\le t_2.
+\end{equation}
+Uniform sine-factorial estimates give
+$\log f_k=N\mathcal B(k/N)+O(\log N)$ on the support.
+For the lower bound round a maximizing tuple, preserving its integer
+sum: floor all coordinates and raise the required number with
+nonzero fractional parts. The integer endpoints remain admissible.
+The modulus $|J(x+h)-J(x)|\le C|h|\log(e/|h|)$ controls even
+endpoint rounding; the upper bound counts polynomially many tuples.
+Apply \eqref{ms:convolution-drop} at
+$(N-1-r)/N$ and $(N+r)/N$. When the latter coefficient is nonzero,
+\[
+ f_{N+r}\le N^A e^{-2\lambda_\delta r/B+O(1)}f_{N-1-r}.
+\]
+Since $r\ge\delta N$, this supplies the asserted strict factor
+in the preceding comparison. If it is zero, the difference is zero.
+\end{proof}
+
+\begin{corollary}[Regular low windows]\label{ms:regular-trace}
+If all $n_j/N\in[\delta,1/2-\delta]$ and $\sum n_j/N>1+\delta$,
+then $\phi_s(F)/\phi_0(F)=1+O(e^{-\kappa N})$ uniformly on any
+fixed meridian compact, with fixed derivatives. For at most four
+low factors the traces agree exactly, without a window assumption.
+\end{corollary}
+\begin{proof}
+Use the same convolution action at $t_1=1-1/N$ and
+$t_2=l-1/N$, $l\ge2$. Their squared difference is at least two.
+The tail lemma gives $d_1\ge N^{-B}a_{N-1}>0$, so the sum of all
+other $d_l$ is exponentially smaller. Formula
+\eqref{ms:Fourier-trace} at $s$ and at zero proves the assertion,
+including the even signs. With four low factors the raw degree is
+at most $4m\le2N-2$, so there is no second alias. Cauchy's estimate
+on a larger fixed meridian compact proves the derivative statement.
+\end{proof}

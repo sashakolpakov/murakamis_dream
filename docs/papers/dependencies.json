@@ -24,7 +24,7 @@
     },
     "local_asymptotics": {
       "title": "Uniform coefficient asymptotics",
-      "count": 21,
+      "count": 27,
       "open": false
     },
     "central_period": {
@@ -4019,112 +4019,89 @@
       "statement": "For each covered fixed strict long-filling presentation, summed/local circle-tree presentation, or directed-certificate circle tree, the actual normalized meridian state Z_N(s)=F_N(q_N^s)/(F_N(1) H_N(s)) has every prescribed finite asymptotic order, uniformly on each fixed compact of the upper half-plane and its finitely many required integer translates. Its logarithmic coefficient at order N^(-r) is a polynomial in s of degree at most r+1, whose top coefficient is supplied by the same marked critical action. Both parity normalizations and the exact framing factor are retained. This is proved from canonical factorial interpolation, exact source gaps and normalized saddle induction, not inferred from a volume limit or from a first-order profile. The source cases are alternatives, not simultaneous assumptions on one presentation.",
       "sources": [
         {
-          "path": "manuscript/sections/H-filtered-characteristic.tex",
-          "anchor": "\\label{fc:sec-1}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/H-filtered-characteristic.tex#L22"
+          "path": "papers/meridian-expansions/main.tex",
+          "anchor": "\\label{me:all-orders}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/meridian-expansions/main.tex#L113"
         },
         {
-          "path": "manuscript/sections/H-filtered-characteristic.tex",
-          "anchor": "\\label{fc:sec-2}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/H-filtered-characteristic.tex#L64"
+          "path": "papers/meridian-expansions/main.tex",
+          "anchor": "\\label{me:expansion}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/meridian-expansions/main.tex#L117"
         },
         {
-          "path": "manuscript/sections/H-filtered-characteristic.tex",
-          "anchor": "\\label{fc:sec-3}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/H-filtered-characteristic.tex#L105"
+          "path": "papers/meridian-expansions/main.tex",
+          "anchor": "\\label{me:diagonal}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/meridian-expansions/main.tex#L126"
         },
         {
-          "path": "manuscript/sections/H-filtered-characteristic.tex",
-          "anchor": "\\label{fc:sec-4}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/H-filtered-characteristic.tex#L134"
+          "path": "papers/meridian-expansions/analytic.tex",
+          "anchor": "\\label{me:translated}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/meridian-expansions/analytic.tex#L30"
         },
         {
-          "path": "manuscript/sections/H-filtered-characteristic.tex",
-          "anchor": "\\label{fc:sec-4-1}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/H-filtered-characteristic.tex#L172"
+          "path": "papers/meridian-expansions/analytic.tex",
+          "anchor": "\\label{me:local-expansion}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/meridian-expansions/analytic.tex#L154"
         },
         {
-          "path": "manuscript/sections/M-directed-all-orders.tex",
-          "anchor": "\\label{dao:sec-3}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/M-directed-all-orders.tex#L106"
+          "path": "papers/meridian-expansions/directed.tex",
+          "anchor": "\\label{me:directed-orders}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/meridian-expansions/directed.tex#L69"
         },
         {
-          "path": "manuscript/sections/M-directed-all-orders.tex",
-          "anchor": "\\label{dao:sec-4}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/M-directed-all-orders.tex#L170"
-        },
-        {
-          "path": "manuscript/sections/M-directed-all-orders.tex",
-          "anchor": "\\label{dao:sec-5}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/M-directed-all-orders.tex#L229"
-        },
-        {
-          "path": "manuscript/sections/M-directed-all-orders.tex",
-          "anchor": "\\label{dao:sec-6}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/M-directed-all-orders.tex#L262"
+          "path": "papers/meridian-expansions/filtration.tex",
+          "anchor": "\\label{me:log-family}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/meridian-expansions/filtration.tex#L38"
         }
       ],
       "depends_on": [
         {
           "id": "finite_moving_meridian_tangle",
-          "reason": "Provides the exact meridian-dependent polynomial identity, six typed turns and scalar ledger on |s|<1. The uniform continuation to shifted charts and every asymptotic order are additional H/M analytic proofs, not conclusions of the finite adapter."
+          "reason": "Actual full tree contraction, quotient/normal data, physical turn edges and exact scalar ledger; the new paper itself proves the translated-chart and every-order extensions."
         },
         {
-          "id": "recursive_strict_source_gap",
-          "reason": "For that strict case, supplies the discarded whole-component source bounds on which H proves the translated-chart extension; it does not supply all orders by itself."
+          "id": "recursive_spectral_norms",
+          "reason": "Complete-node Hermite conditioning controls the actual canonical polynomials on translated microscopic charts, retaining the odd simple value and all repeated-node normals."
         },
         {
-          "id": "recursive_local_packet_filling",
-          "reason": "Supplies the signed local expansion and fixed-contour estimates for the completed-root alternative. The whole-period and all-order refinements are separate recorded inputs; no all-order conclusion is inferred from a volume limit."
+          "id": "analytic_canonical_factorial",
+          "reason": "Only Conway Asymptotics Lemma 2.1: the canonical product, normalization, reflections and every finite bulk order with derivatives. No signed local packet is needed."
         },
         {
-          "id": "tree_exact_edge_kernel",
-          "reason": "For the quantitative circle cases, fixes the common exact physical meridian insertion and kernel."
+          "id": "analytic_moving_joint_source",
+          "reason": "Strict-source alternative: the actual whole moving bare-component source and nonzero joint first charge, before the separate arbitrary-order refinement."
+        },
+        {
+          "id": "analytic_circle_joint_source",
+          "reason": "Summed circle-tree alternative: the all-index source, complex edge integral, joint charges and fixed additive gaps; the arbitrary-order proof is supplied in the new article."
         },
         {
           "id": "analytic_directed_conditional_estimates",
-          "reason": "For the new directed cases, supplies the strict local and global exact-message margins needed by the arbitrary-order induction; M proves their translated-chart extension."
+          "reason": "Directed circle-tree alternative: exact normalized conditional messages, regenerated envelopes and strict endpoint/charge margins. The new induction restores constants and proves every local order without replacing the criterion by the summed one."
         },
         {
           "id": "finite_invariant_normalization",
-          "reason": "Keeps the exact reduced cut, full modified dimension and framing factors; their cancellation in Z_N is calculated, not postulated."
-        },
-        {
-          "id": "recursive_strict_core_packet",
-          "reason": "For the extended strict alternative, fixes the actual local interpolation and primitive stationary variables; the all-orders proof must additionally establish its translated parameter estimates."
-        },
-        {
-          "id": "recursive_strict_filling_transfer",
-          "reason": "For that alternative, supplies the whole-charge and endpoint estimates used before the separate all-orders refinement."
+          "reason": "The original reduced/full convention fixes the single H_N conversion and unchanged complete scalar; the new proof calculates its exact shifted gauge."
         }
       ],
-      "article": null
+      "article": "meridian-expansions",
+      "coverage": "The strict, summed and directed source inputs are alternatives. The graph inventories all cases; it does not require one diagram to meet all three criteria. Geometry and recurrence existence are not premises of this analytic expansion."
     },
     {
       "id": "analytic_filtered_coefficient_regrading",
       "title": "Recovering the formal two-parameter series from all microscopic orders",
       "group": "geometric_longitude",
-      "statement": "The proved degree filtration regrades the logarithm as h^(-1) S(u)+sum h^j A_j(u), with u=h s and no other negative h-power. Substitution B(h,u) -> B(h,h s) on nonnegative bivariate series is injective by the exact coefficient recovery B_(a,b)=[h^(a+b) s^b]B(h,h s). A shift u -> u+j h has constant ratio exp(j S prime(u)); lower amplitudes cannot alter it. Only coefficient recovery and the finite-order distinction are machine checked in FormalRegrading; the analytic filtration and formal shift/exponential calculations remain the stated written proofs.",
+      "statement": "The proved degree filtration regrades the logarithm as h^(-1) S(u)+sum h^j A_j(u), with u=h s and no other negative h-power. Substitution B(h,u) -> B(h,h s) on nonnegative bivariate series is injective by the coefficient recovery B_(a,b)=[h^(a+b) s^b]B(h,h s). FormalRegrading checks this coefficient recovery and the finite-order distinction. The optional Mathlib module FormalShift constructs the actual substitution S(u+j h), proves divisibility of S(u+j h)-S(u) by h, and proves that the full logarithmic shift has h^0 coefficient j S prime(u); the regular amplitude contributes zero. The ring interpretation of u=h s, formal exponentiation giving exp(j S prime(u)), and the analytic/operator correspondence remain written proofs.",
       "sources": [
         {
-          "path": "manuscript/sections/H-filtered-characteristic.tex",
-          "anchor": "\\label{fc:sec-6}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/H-filtered-characteristic.tex#L226"
+          "path": "papers/meridian-expansions/operators.tex",
+          "anchor": "\\label{me:regrading}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/meridian-expansions/operators.tex#L54"
         },
         {
-          "path": "manuscript/sections/H-filtered-characteristic.tex",
-          "anchor": "\\label{fc:eq-22}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/H-filtered-characteristic.tex#L233"
-        },
-        {
-          "path": "manuscript/sections/H-filtered-characteristic.tex",
-          "anchor": "\\label{fc:eq-23}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/H-filtered-characteristic.tex#L239"
-        },
-        {
-          "path": "manuscript/sections/M-directed-all-orders.tex",
-          "anchor": "\\label{dao:eq-32}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/M-directed-all-orders.tex#L399"
+          "path": "papers/meridian-expansions/operators.tex",
+          "anchor": "\\label{me:coefficient-recovery}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/meridian-expansions/operators.tex#L73"
         },
         {
           "path": "formal/VolumeLogic/FormalRegrading.lean",
@@ -4140,6 +4117,16 @@
           "path": "formal/VolumeLogic/FormalRegrading.lean",
           "anchor": "theorem regrade_finite_order_iff",
           "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal/VolumeLogic/FormalRegrading.lean#L75"
+        },
+        {
+          "path": "formal-real/FormalShift.lean",
+          "anchor": "theorem principalDifference_division",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/FormalShift.lean#L100"
+        },
+        {
+          "path": "formal-real/FormalShift.lean",
+          "anchor": "theorem logarithmicShift_atHZero",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/FormalShift.lean#L212"
         }
       ],
       "depends_on": [
@@ -4148,7 +4135,7 @@
           "reason": "Supplies every asymptotic coefficient and its degree filtration; a fixed finite jet would not justify recovery of the full bivariate identity."
         }
       ],
-      "article": null
+      "article": "meridian-expansions"
     },
     {
       "id": "analytic_actual_operator_classical_germ",
@@ -4157,44 +4144,44 @@
       "statement": "Conditional on a specified nonzero fixed rational Ore operator P(q,M,T) annihilating the actual whole reduced function at every sufficiently large level, clear fixed denominators and remove its common q-1 valuation to obtain P0 != 0. The exact reduced/full gauge changes the j-th coefficient by (-1)^j f(M)/f(q^j M), f=M-M^(-1). Its cleared classical symbol is f(M)^r P0(M,-L). Uniform expansions on every required shift give a coefficient identity; injective regrading yields f(e^u)^r P0(e^u,-exp(S prime(u)))=0, and the nonzero meridian factor is canceled only in that proved domain identity. Thus the source-selected nonconstant meridian germ lies on P0. Operator existence is an explicit premise here, not derived by fitting values, finite jets or an appended geometric factor.",
       "sources": [
         {
-          "path": "manuscript/sections/H-filtered-characteristic.tex",
-          "anchor": "\\label{fc:sec-5}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/H-filtered-characteristic.tex#L197"
+          "path": "papers/meridian-expansions/main.tex",
+          "anchor": "\\label{me:symbol}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/meridian-expansions/main.tex#L153"
         },
         {
-          "path": "manuscript/sections/H-filtered-characteristic.tex",
-          "anchor": "\\label{fc:eq-19}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/H-filtered-characteristic.tex#L211"
+          "path": "papers/meridian-expansions/main.tex",
+          "anchor": "\\label{me:operator}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/meridian-expansions/main.tex#L139"
         },
         {
-          "path": "manuscript/sections/H-filtered-characteristic.tex",
-          "anchor": "\\label{fc:eq-20}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/H-filtered-characteristic.tex#L217"
+          "path": "papers/meridian-expansions/main.tex",
+          "anchor": "\\label{me:longitude-formula}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/meridian-expansions/main.tex#L162"
         },
         {
-          "path": "manuscript/sections/H-filtered-characteristic.tex",
-          "anchor": "\\label{fc:eq-24}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/H-filtered-characteristic.tex#L245"
+          "path": "papers/meridian-expansions/operators.tex",
+          "anchor": "\\label{me:modified-dimension}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/meridian-expansions/operators.tex#L4"
         },
         {
-          "path": "manuscript/sections/H-filtered-characteristic.tex",
-          "anchor": "\\label{fc:eq-25}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/H-filtered-characteristic.tex#L249"
+          "path": "papers/meridian-expansions/operators.tex",
+          "anchor": "\\label{me:gauge-ratio}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/meridian-expansions/operators.tex#L12"
         },
         {
-          "path": "manuscript/sections/M-directed-all-orders.tex",
-          "anchor": "\\label{dao:sec-8}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/M-directed-all-orders.tex#L362"
+          "path": "papers/meridian-expansions/operators.tex",
+          "anchor": "\\label{me:full-operator}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/meridian-expansions/operators.tex#L23"
         },
         {
-          "path": "manuscript/sections/M-directed-all-orders.tex",
-          "anchor": "\\label{dao:eq-30}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/M-directed-all-orders.tex#L382"
+          "path": "papers/meridian-expansions/operators.tex",
+          "anchor": "\\label{me:gauged-symbol}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/meridian-expansions/operators.tex#L29"
         },
         {
-          "path": "manuscript/sections/M-directed-all-orders.tex",
-          "anchor": "\\label{dao:eq-33}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/M-directed-all-orders.tex#L435"
+          "path": "papers/meridian-expansions/operators.tex",
+          "anchor": "\\label{me:symbol-identity}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/meridian-expansions/operators.tex#L93"
         }
       ],
       "depends_on": [
@@ -4211,64 +4198,60 @@
           "reason": "Identifies the actual reduced/full meridian gauge and component sign before cancellation."
         }
       ],
-      "article": null
+      "article": "meridian-expansions"
     },
     {
       "id": "geometric_selected_factor_of_actual_recurrence",
       "title": "Conditional selected geometric factor of every genuine classical symbol",
       "group": "geometric_longitude",
-      "statement": "For the covered strict long-filling and quantitative circle-tree source classes, including every directed-certificate case proved in M, and for a genuine operator satisfying the preceding explicit all-level hypothesis, the first nonzero classical symbol is divisible by the irreducible Laurent factor of the actual preferred geometric meridian-longitude germ through (1,-1), over C. For rational operator coefficients, the contracted germ prime over Q supplies the rational factor, possibly containing the complex conjugate components required by that field. This asserts neither multiplicity, equality with the full A-polynomial, equality of operator ideals, uniformity across ordinary resonances, nor a fixed-M quantum asymptotic.",
+      "statement": "For the covered strict long-filling and quantitative circle-tree source classes, including every case satisfying the directed theorem and its local or mixed corollaries, and for a genuine operator satisfying the explicit all-level hypothesis, the first nonzero classical symbol is divisible by the irreducible Laurent factor of the actual preferred geometric meridian-longitude germ through (1,-1), over C. For rational operator coefficients, contraction of the germ prime over Q supplies the rational factor, possibly containing the conjugate components required by that field. The strict-class threshold is the maximum of the analytic and classical thresholds. This asserts neither multiplicity, equality with the full A-polynomial, equality of operator ideals, uniformity across ordinary resonances, nor a fixed-M quantum asymptotic.",
       "sources": [
         {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\label{gi:the-source-hypotheses-and-the-factor-statement}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L2298"
+          "path": "papers/meridian-expansions/geometric.tex",
+          "anchor": "\\label{me:geometric-factor}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/meridian-expansions/geometric.tex#L83"
         },
         {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\label{gi:the-irreducible-factor-and-its-field-of-definition}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L2557"
+          "path": "papers/meridian-expansions/geometric.tex",
+          "anchor": "\\label{me:edge-equation}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/meridian-expansions/geometric.tex#L21"
         },
         {
-          "path": "manuscript/sections/J-strict-tree-geometric-characteristic.tex",
-          "anchor": "\\label{gj:the-geometric-factor-selected-by-the-actual-recurrence}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/J-strict-tree-geometric-characteristic.tex#L566"
+          "path": "papers/meridian-expansions/geometric.tex",
+          "anchor": "\\label{me:angle-log}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/meridian-expansions/geometric.tex#L26"
         },
         {
-          "path": "manuscript/sections/J-strict-tree-geometric-characteristic.tex",
-          "anchor": "\\label{gj:proof-and-normalization}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/J-strict-tree-geometric-characteristic.tex#L632"
+          "path": "papers/meridian-expansions/geometric.tex",
+          "anchor": "\\label{me:primitive}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/meridian-expansions/geometric.tex#L35"
         },
         {
-          "path": "manuscript/sections/M-directed-all-orders.tex",
-          "anchor": "\\label{dao:sec-7}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/M-directed-all-orders.tex#L293"
-        },
-        {
-          "path": "manuscript/sections/M-directed-all-orders.tex",
-          "anchor": "\\label{dao:eq-34}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/M-directed-all-orders.tex#L443"
+          "path": "papers/meridian-expansions/main.tex",
+          "anchor": "\\label{me:deformed-action}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/meridian-expansions/main.tex#L105"
         }
       ],
       "depends_on": [
         {
           "id": "analytic_actual_operator_classical_germ",
-          "reason": "Provides vanishing of the actual first symbol on the whole source-selected germ, with the original divisor and sign retained."
+          "reason": "The actual all-level operator and all translated source coefficients give vanishing on the entire analytic germ, retaining its divisor and sign."
         },
         {
           "id": "geometric_longitude_circle_trees",
-          "reason": "Identifies that entire germ with the actual preferred geometric longitude in the all-circle cases; M section 7 checks its positive-path and filled-germ hypotheses for every directed certificate."
+          "reason": "All-circle alternative: after the new paper checks the exact edge and primitive logarithmic equations at the original positive anchor, the rational preferred-longitude formula fixes its exponent and determinant-one sign."
         },
         {
           "id": "geometric_longitude_strict_trees",
-          "reason": "For strict presentations with bare junctions, exact zero-circle stationary elimination preserves the whole action germ and original physical edges, and the full marked group argument identifies the original geometric germ."
+          "reason": "Strict bare-junction alternative: the same original gate/edge action and primitive first-charge mark give the whole classical stationary germ, including the half-label fold. Use the maximum of analytic and classical long-power thresholds."
         },
         {
-          "id": "geo_filled_meridian_germ",
-          "reason": "For the circle-tree cases, ensures a genuine nonconstant meridian coordinate using the positive augmented triangulation rather than an assumed filled positive triangulation; M verifies the directed hypotheses. The strict bare-junction case instead uses the whole-germ identification supplied by the preceding strict-tree node. Together with the nonzero symbol, the relevant nonconstant germ gives the height-one prime argument."
+          "id": "geo_marked_branch_identification",
+          "reason": "All-circle branch identification uses the actual filled endpoint, original group and eigenflag, and U+pV=-2pi i before exponentiation. The new section verifies these hypotheses; agreement of derivatives alone would be insufficient."
         }
       ],
-      "article": null
+      "article": "meridian-expansions",
+      "coverage": "Analytic source classes remain alternatives. The new section directly checks the original edge equation, logarithmic slope, actual restored anchor and nonconstant main parameter. Strict geometric use increases the fixed power threshold to the maximum of the analytic and classical thresholds. Existence of one genuine all-level annihilator is still an explicit premise, not an imported or proved theorem."
     },
     {
       "id": "analytic_actual_cofactor_logs",
@@ -6820,6 +6803,287 @@
           "reason": "Supplies the old complete marked holonomy to pull back along the literal zero-meridian quotient."
         }
       ]
+    },
+    {
+      "id": "analytic_moving_trace_comparison",
+      "title": "Whole moving traces and strict reflected high-index comparison",
+      "group": "local_asymptotics",
+      "sources": [
+        {
+          "path": "papers/moving-meridian-sources/fourier.tex",
+          "anchor": "\\label{ms:reflected}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/moving-meridian-sources/fourier.tex#L136"
+        },
+        {
+          "path": "papers/moving-meridian-sources/fourier.tex",
+          "anchor": "\\label{ms:low-trace}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/moving-meridian-sources/fourier.tex#L64"
+        },
+        {
+          "path": "papers/moving-meridian-sources/fourier.tex",
+          "anchor": "\\label{ms:regular-trace}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/moving-meridian-sources/fourier.tex#L229"
+        },
+        {
+          "path": "papers/moving-meridian-sources/fourier.tex",
+          "anchor": "\\label{ms:Fourier}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/moving-meridian-sources/fourier.tex#L6"
+        },
+        {
+          "path": "papers/moving-meridian-sources/fourier.tex",
+          "anchor": "\\label{ms:low-coefficients}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/moving-meridian-sources/fourier.tex#L31"
+        },
+        {
+          "path": "papers/moving-meridian-sources/fourier.tex",
+          "anchor": "\\label{ms:convolution-drop}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/moving-meridian-sources/fourier.tex#L209"
+        }
+      ],
+      "statement": "All-parity whole low traces have same-level positive majorants; one-high differences are compared to the complementary reflected tensor, with a strict regular-window Fourier loss. All normal channels retained.",
+      "depends_on": [
+        {
+          "id": "finite_moving_meridian_tangle",
+          "reason": "Actual deformed top trace and fixed Newton coordinates."
+        },
+        {
+          "id": "recursive_finite_source",
+          "reason": "Exact positive complete multiplication and support, including the adjacent-level return path."
+        },
+        {
+          "id": "recursive_spectral_norms",
+          "reason": "Polynomial control of high Laurent coefficients retains derivative-only data."
+        },
+        {
+          "id": "recursive_factorial_rate",
+          "reason": "The same-level Laurent tail/rounding proof uses the uniform real sine-factorial rate through supported endpoints. This is the Newton real-rate lemma, not a signed quantum asymptotic."
+        }
+      ],
+      "article": "moving-meridian-sources"
+    },
+    {
+      "id": "recursive_moving_component_pressure",
+      "title": "Coupled turn deletion and simultaneous half-boundary pressure",
+      "group": "local_asymptotics",
+      "sources": [
+        {
+          "path": "papers/moving-meridian-sources/pressure.tex",
+          "anchor": "\\label{ms:deletion}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/moving-meridian-sources/pressure.tex#L98"
+        },
+        {
+          "path": "papers/moving-meridian-sources/pressure.tex",
+          "anchor": "\\label{ms:half-boundaries}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/moving-meridian-sources/pressure.tex#L183"
+        },
+        {
+          "path": "papers/moving-meridian-sources/pressure.tex",
+          "anchor": "\\label{ms:pressure-existence}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/moving-meridian-sources/pressure.tex#L23"
+        },
+        {
+          "path": "papers/moving-meridian-sources/pressure.tex",
+          "anchor": "\\label{ms:cardinal-action}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/moving-meridian-sources/pressure.tex#L189"
+        }
+      ],
+      "statement": "Actual unturned profiles compare whole fused pressures, while simultaneous marked high boundaries move to half and the exact odd projector calibrates cardinal actions, with supported integer approximation.",
+      "depends_on": [
+        {
+          "id": "recursive_strict_boundary_profiles",
+          "reason": "Stationary response laws with absolute profile constants."
+        },
+        {
+          "id": "recursive_strict_optimizer",
+          "reason": "Primitive gate/leaf action and strict optimizer framework; the enlarged constrained boundary proof is supplied here."
+        },
+        {
+          "id": "recursive_finite_source",
+          "reason": "Exact complete metric, positive products and odd projector identity."
+        },
+        {
+          "id": "recursive_factorial_rate",
+          "reason": "The odd-projector calibration and supported lattice rounding identify the cardinal action V_D with the uniform closed sine-factorial rate. This is a direct use of the real Newton estimate, even though it is also reachable through the optimizer."
+        }
+      ],
+      "article": "moving-meridian-sources"
+    },
+    {
+      "id": "recursive_moving_component_gap",
+      "title": "Whole moving bare-component gap with correlated high sectors",
+      "group": "local_asymptotics",
+      "sources": [
+        {
+          "path": "papers/moving-meridian-sources/components.tex",
+          "anchor": "\\label{ms:component}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/moving-meridian-sources/components.tex#L7"
+        }
+      ],
+      "statement": "Every fixed bare component has its original complete clean contraction plus an additive exponentially smaller full-Hermite remainder. Reflection edges form a matching; multi-high vertices are reassembled simultaneously; equality saddles use the additional Fourier loss.",
+      "depends_on": [
+        {
+          "id": "analytic_moving_trace_comparison",
+          "reason": "All-low, reflected one-high and strict local Fourier bounds."
+        },
+        {
+          "id": "recursive_moving_component_pressure",
+          "reason": "Comparison of the complete coupled tree without independent arm maxima."
+        },
+        {
+          "id": "finite_moving_meridian_tangle",
+          "reason": "Actual typed nonadjacency, turn coefficients, full pairing and source scalars."
+        },
+        {
+          "id": "recursive_strict_boundary_profiles",
+          "reason": "Original probe/root budgets and retained constants."
+        }
+      ],
+      "article": "moving-meridian-sources"
+    },
+    {
+      "id": "analytic_moving_strict_packet",
+      "title": "Original moving-meridian primitive wire packet and angular bounds",
+      "group": "local_asymptotics",
+      "sources": [
+        {
+          "path": "papers/moving-meridian-sources/main.tex",
+          "anchor": "\\label{ms:packet-main}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/moving-meridian-sources/main.tex#L115"
+        },
+        {
+          "path": "papers/moving-meridian-sources/packet.tex",
+          "anchor": "\\label{ms:finite-packet}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/moving-meridian-sources/packet.tex#L118"
+        },
+        {
+          "path": "papers/moving-meridian-sources/finite.tex",
+          "anchor": "\\label{ms:coupon-bound}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/moving-meridian-sources/finite.tex#L32"
+        },
+        {
+          "path": "papers/moving-meridian-sources/packet.tex",
+          "anchor": "\\label{ms:dimension}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/moving-meridian-sources/packet.tex#L27"
+        },
+        {
+          "path": "papers/moving-meridian-sources/packet.tex",
+          "anchor": "\\label{ms:summand}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/moving-meridian-sources/packet.tex#L171"
+        }
+      ],
+      "statement": "Actual whole source reduces to one finite primitive wire window with original offsets and physical edge weights; holomorphic nonzero wire Gaussian and full real-angular strip bound hold on fixed microscopic charts.",
+      "depends_on": [
+        {
+          "id": "recursive_moving_component_gap",
+          "reason": "Whole high/reflected/bare corrections are bounded before circle contours move."
+        },
+        {
+          "id": "analytic_canonical_factorial",
+          "reason": "Exact canonical interpolation and uniform complex bulk derivatives."
+        },
+        {
+          "id": "recursive_strict_optimizer",
+          "reason": "Original shared strict maximum, primitive lattice and complement gap."
+        },
+        {
+          "id": "finite_moving_meridian_tangle",
+          "reason": "Original fixed powers, circles, tree contraction and scalar ledger."
+        },
+        {
+          "id": "recursive_spectral_norms",
+          "reason": "Actual fixed-power polynomial bounds and full-normal conditioning."
+        },
+        {
+          "id": "analytic_low_newton_angular_bound",
+          "reason": "Uses only the compact low-Newton angular estimate of Bounds Lemma7.2; the local zero-free product argument here upgrades its prefactor. No whole complete-source gap is imported as a moving-source bound."
+        }
+      ],
+      "article": "moving-meridian-sources",
+      "coverage": "A finite fixed diagram with H>=2 and its original strict positive action, primitive wires, turns and powers. Full-source errors precede circle contours; the exceptional half physical wire is retained. The only Source Bounds imports are complete conditioning and its low Newton angular lemma. No signed/quarter-index recurrence, completed-root packet or geometry is imported."
+    },
+    {
+      "id": "analytic_moving_joint_source",
+      "title": "The entire moving-meridian filling sum and its nonzero first charge",
+      "group": "local_asymptotics",
+      "sources": [
+        {
+          "path": "papers/moving-meridian-sources/main.tex",
+          "anchor": "\\label{ms:filled-main}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/moving-meridian-sources/main.tex#L157"
+        },
+        {
+          "path": "papers/moving-meridian-sources/filling.tex",
+          "anchor": "\\label{ms:joint-loss}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/moving-meridian-sources/filling.tex#L158"
+        },
+        {
+          "path": "papers/moving-meridian-sources/filling.tex",
+          "anchor": "\\label{ms:trace}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/moving-meridian-sources/filling.tex#L16"
+        },
+        {
+          "path": "papers/moving-meridian-sources/filling.tex",
+          "anchor": "\\label{ms:charges}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/moving-meridian-sources/filling.tex#L63"
+        },
+        {
+          "path": "papers/moving-meridian-sources/filling.tex",
+          "anchor": "\\label{ms:source-to-functional}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/moving-meridian-sources/filling.tex#L29"
+        },
+        {
+          "path": "papers/moving-meridian-sources/filling.tex",
+          "anchor": "\\label{ms:filled-packet}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/moving-meridian-sources/filling.tex#L189"
+        }
+      ],
+      "statement": "All original fixed signed crossing traces have a nonzero joint first-charge asymptotic for independently long powers, on the stated fixed microscopic and translated nonreal charts. Fixed source-tail losses, joint charge comparison, all endpoint currents, both parities and the exact H_N and q^(a(D)s^2/2) normalization are retained. The proof is given here from the finite trace; it does not invoke a geometric volume or preferred-longitude theorem.",
+      "depends_on": [
+        {
+          "id": "analytic_moving_strict_packet",
+          "reason": "Actual local finite packet, full real cube and retained source remainder."
+        },
+        {
+          "id": "finite_moving_meridian_tangle",
+          "reason": "Exact shifted-grid full trace, collision normals, physical references and scalar ledger."
+        }
+      ],
+      "article": "moving-meridian-sources"
+    },
+    {
+      "id": "analytic_low_newton_angular_bound",
+      "title": "Angular localization of one low Newton polynomial",
+      "group": "local_asymptotics",
+      "article": "conway-source-bounds",
+      "statement": "For a low Newton index in a compact subinterval of (0,1/2), truncated logarithmic Riemann sums and the strict centered sine-integral comparison give the real angular gap and a negative angular quadratic with positive quadratic strip-height cost. The initial prefactor is subexponential; the moving-source paper supplies its local polynomial-prefactor upgrade.",
+      "sources": [
+        {
+          "path": "papers/conway-source-bounds/characters.tex",
+          "anchor": "\\label{cs:low-strip}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-source-bounds/characters.tex#L34"
+        },
+        {
+          "path": "papers/conway-source-bounds/characters.tex",
+          "anchor": "\\label{cs:low-gaussian}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-source-bounds/characters.tex#L37"
+        },
+        {
+          "path": "papers/conway-source-bounds/characters.tex",
+          "anchor": "\\label{cs:B-action}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-source-bounds/characters.tex#L90"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "recursive_finite_source",
+          "reason": "Fixes the exact Newton numerator product and factorial normalization used in the angular integral."
+        },
+        {
+          "id": "recursive_factorial_rate",
+          "reason": "Supplies the uniform real denominator/weight rate, including endpoints; the complex angular argument is proved directly in this lemma."
+        }
+      ],
+      "coverage": "Bounds Lemma 7.2 only. Its proof precedes decorated-turn, macroscopic character loss and whole-component comparison, and uses no signed recurrence or quarter-index expansion."
     }
   ],
   "articles": {
@@ -6944,6 +7208,16 @@
       "title": "Preferred longitudes of Conway tree complements",
       "path": "papers/preferred-longitudes/main.tex",
       "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/main.tex"
+    },
+    "moving-meridian-sources": {
+      "title": "Moving-meridian source estimates for strict Conway tangles",
+      "path": "papers/moving-meridian-sources/main.tex",
+      "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/moving-meridian-sources/main.tex"
+    },
+    "meridian-expansions": {
+      "title": "Meridian expansions and classical symbols of quantum recurrences",
+      "path": "papers/meridian-expansions/main.tex",
+      "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/meridian-expansions/main.tex"
     }
   },
   "article_dependencies": [
@@ -6957,6 +7231,19 @@
             "analytic_directed_conditional_estimates"
           ],
           "reason": "Uses the unconditional all-index Newton estimates and actual complex edge asymptotic, independently of either global twist criterion."
+        }
+      ]
+    },
+    {
+      "from": "circle-tree-asymptotics",
+      "to": "meridian-expansions",
+      "witnesses": [
+        {
+          "path": [
+            "analytic_circle_joint_source",
+            "analytic_shifted_filtered_all_orders"
+          ],
+          "reason": "Summed circle-tree alternative: the all-index source, complex edge integral, joint charges and fixed additive gaps; the arbitrary-order proof is supplied in the new article."
         }
       ]
     },
@@ -6983,6 +7270,32 @@
             "tree_directed_volume"
           ],
           "reason": "The restored stationary vector is in the common positive angular uniqueness chart, including short/zero powers at high degree."
+        }
+      ]
+    },
+    {
+      "from": "circle-tree-geometry",
+      "to": "nonparabolic-tree-geometry",
+      "witnesses": [
+        {
+          "path": [
+            "geo_circle_ordered_cut",
+            "geo_nonparabolic_edge_character"
+          ],
+          "reason": "Fixes the native puncture paths and ordered local topology; a scalar or trace-only comparison would not identify the original group."
+        }
+      ]
+    },
+    {
+      "from": "circle-tree-geometry",
+      "to": "preferred-longitudes",
+      "witnesses": [
+        {
+          "path": [
+            "geo_circle_ordered_cut",
+            "geo_preferred_longitude_monomial"
+          ],
+          "reason": "Fixes the original primitive disk filling and pairwise-unlinked auxiliary-circle surgery basis."
         }
       ]
     },
@@ -7030,6 +7343,32 @@
             "recursive_terminal_factor_selection"
           ],
           "reason": "Only the hyperbolicity assertion of the strict companion is used to classify sufficiently long strict terminal factors here; no quantum asymptotic is used in the group argument."
+        }
+      ]
+    },
+    {
+      "from": "conway-asymptotics",
+      "to": "meridian-expansions",
+      "witnesses": [
+        {
+          "path": [
+            "analytic_canonical_factorial",
+            "analytic_shifted_filtered_all_orders"
+          ],
+          "reason": "Only Conway Asymptotics Lemma 2.1: the canonical product, normalization, reflections and every finite bulk order with derivatives. No signed local packet is needed."
+        }
+      ]
+    },
+    {
+      "from": "conway-asymptotics",
+      "to": "moving-meridian-sources",
+      "witnesses": [
+        {
+          "path": [
+            "analytic_canonical_factorial",
+            "analytic_moving_strict_packet"
+          ],
+          "reason": "Exact canonical interpolation and uniform complex bulk derivatives."
         }
       ]
     },
@@ -7097,6 +7436,72 @@
             "recursive_local_leaf_estimates"
           ],
           "reason": "Supplies the separately proved all-physical-color global envelope; the nonzero holomorphic high-index expansion is proved in the Conway asymptotics companion."
+        }
+      ]
+    },
+    {
+      "from": "conway-source-bounds",
+      "to": "meridian-expansions",
+      "witnesses": [
+        {
+          "path": [
+            "recursive_spectral_norms",
+            "analytic_shifted_filtered_all_orders"
+          ],
+          "reason": "Complete-node Hermite conditioning controls the actual canonical polynomials on translated microscopic charts, retaining the odd simple value and all repeated-node normals."
+        }
+      ]
+    },
+    {
+      "from": "conway-source-bounds",
+      "to": "moving-meridian-sources",
+      "witnesses": [
+        {
+          "path": [
+            "analytic_low_newton_angular_bound",
+            "analytic_moving_strict_packet"
+          ],
+          "reason": "Uses only the compact low-Newton angular estimate of Bounds Lemma7.2; the local zero-free product argument here upgrades its prefactor. No whole complete-source gap is imported as a moving-source bound."
+        },
+        {
+          "path": [
+            "recursive_spectral_norms",
+            "analytic_moving_strict_packet"
+          ],
+          "reason": "Actual fixed-power polynomial bounds and full-normal conditioning."
+        },
+        {
+          "path": [
+            "recursive_spectral_norms",
+            "analytic_moving_trace_comparison"
+          ],
+          "reason": "Polynomial control of high Laurent coefficients retains derivative-only data."
+        }
+      ]
+    },
+    {
+      "from": "conway-source-bounds",
+      "to": "preferred-longitudes",
+      "witnesses": [
+        {
+          "path": [
+            "recursive_complete_fourier_trace",
+            "geo_bare_hub_legendre"
+          ],
+          "reason": "Only this exact finite winding identity is used; no global SourceBounds estimate or quantum knot asymptotic enters."
+        }
+      ]
+    },
+    {
+      "from": "directed-tree-asymptotics",
+      "to": "meridian-expansions",
+      "witnesses": [
+        {
+          "path": [
+            "analytic_directed_conditional_estimates",
+            "analytic_shifted_filtered_all_orders"
+          ],
+          "reason": "Directed circle-tree alternative: exact normalized conditional messages, regenerated envelopes and strict endpoint/charge margins. The new induction restores constants and proves every local order without replacing the criterion by the summed one."
         }
       ]
     },
@@ -7238,6 +7643,26 @@
             "planar_sector_envelopes"
           ],
           "reason": "Supplies the exact face-polynomial adapter and full matrix resolvent, including repeated-root normals."
+        }
+      ]
+    },
+    {
+      "from": "filling-bounds",
+      "to": "meridian-expansions",
+      "witnesses": [
+        {
+          "path": [
+            "finite_invariant_normalization",
+            "analytic_actual_operator_classical_germ"
+          ],
+          "reason": "Identifies the actual reduced/full meridian gauge and component sign before cancellation."
+        },
+        {
+          "path": [
+            "finite_invariant_normalization",
+            "analytic_shifted_filtered_all_orders"
+          ],
+          "reason": "The original reduced/full convention fixes the single H_N conversion and unchanged complete scalar; the new proof calculates its exact shifted gauge."
         }
       ]
     },
@@ -7585,6 +8010,19 @@
     },
     {
       "from": "marked-fillings",
+      "to": "nonparabolic-tree-geometry",
+      "witnesses": [
+        {
+          "path": [
+            "geo_tetrahedral_normal_flow_rows",
+            "geo_positive_marked_gluing"
+          ],
+          "reason": "Imports the actual normal-path row/intersection identity; the new paper proves rank, polarized Jacobian and the rational shape/representation inverse itself."
+        }
+      ]
+    },
+    {
+      "from": "marked-fillings",
       "to": "planar-certificates",
       "witnesses": [
         {
@@ -7800,6 +8238,66 @@
       ]
     },
     {
+      "from": "meridian-tangles",
+      "to": "meridian-expansions",
+      "witnesses": [
+        {
+          "path": [
+            "finite_moving_meridian_tangle",
+            "analytic_shifted_filtered_all_orders"
+          ],
+          "reason": "Actual full tree contraction, quotient/normal data, physical turn edges and exact scalar ledger; the new paper itself proves the translated-chart and every-order extensions."
+        }
+      ]
+    },
+    {
+      "from": "meridian-tangles",
+      "to": "moving-meridian-sources",
+      "witnesses": [
+        {
+          "path": [
+            "finite_moving_meridian_tangle",
+            "analytic_moving_joint_source"
+          ],
+          "reason": "Exact shifted-grid full trace, collision normals, physical references and scalar ledger."
+        },
+        {
+          "path": [
+            "finite_moving_meridian_tangle",
+            "analytic_moving_strict_packet"
+          ],
+          "reason": "Original fixed powers, circles, tree contraction and scalar ledger."
+        },
+        {
+          "path": [
+            "finite_moving_meridian_tangle",
+            "analytic_moving_trace_comparison"
+          ],
+          "reason": "Actual deformed top trace and fixed Newton coordinates."
+        },
+        {
+          "path": [
+            "finite_moving_meridian_tangle",
+            "recursive_moving_component_gap"
+          ],
+          "reason": "Actual typed nonadjacency, turn coefficients, full pairing and source scalars."
+        }
+      ]
+    },
+    {
+      "from": "moving-meridian-sources",
+      "to": "meridian-expansions",
+      "witnesses": [
+        {
+          "path": [
+            "analytic_moving_joint_source",
+            "analytic_shifted_filtered_all_orders"
+          ],
+          "reason": "Strict-source alternative: the actual whole moving bare-component source and nonzero joint first charge, before the separate arbitrary-order refinement."
+        }
+      ]
+    },
+    {
       "from": "newton-tangles",
       "to": "conway-asymptotics",
       "witnesses": [
@@ -7929,6 +8427,53 @@
     },
     {
       "from": "newton-tangles",
+      "to": "moving-meridian-sources",
+      "witnesses": [
+        {
+          "path": [
+            "recursive_factorial_rate",
+            "analytic_moving_trace_comparison"
+          ],
+          "reason": "The same-level Laurent tail/rounding proof uses the uniform real sine-factorial rate through supported endpoints. This is the Newton real-rate lemma, not a signed quantum asymptotic."
+        },
+        {
+          "path": [
+            "recursive_factorial_rate",
+            "recursive_moving_component_pressure"
+          ],
+          "reason": "The odd-projector calibration and supported lattice rounding identify the cardinal action V_D with the uniform closed sine-factorial rate. This is a direct use of the real Newton estimate, even though it is also reachable through the optimizer."
+        },
+        {
+          "path": [
+            "recursive_finite_source",
+            "analytic_moving_trace_comparison"
+          ],
+          "reason": "Exact positive complete multiplication and support, including the adjacent-level return path."
+        },
+        {
+          "path": [
+            "recursive_finite_source",
+            "recursive_moving_component_pressure"
+          ],
+          "reason": "Exact complete metric, positive products and odd projector identity."
+        }
+      ]
+    },
+    {
+      "from": "newton-tangles",
+      "to": "preferred-longitudes",
+      "witnesses": [
+        {
+          "path": [
+            "recursive_factorial_rate",
+            "geo_bare_hub_legendre"
+          ],
+          "reason": "Supplies the uniform scalar sine-factorial coefficient rate including boundary offsets."
+        }
+      ]
+    },
+    {
+      "from": "newton-tangles",
       "to": "quarter-index-asymptotics",
       "witnesses": [
         {
@@ -7957,6 +8502,32 @@
             "recursive_strict_normal_form"
           ],
           "reason": "The full Newton product, turn and closure identities determine the literal supports and the unchanged re-rooted evaluation."
+        }
+      ]
+    },
+    {
+      "from": "nonparabolic-tree-geometry",
+      "to": "meridian-expansions",
+      "witnesses": [
+        {
+          "path": [
+            "geo_marked_branch_identification",
+            "geometric_selected_factor_of_actual_recurrence"
+          ],
+          "reason": "All-circle branch identification uses the actual filled endpoint, original group and eigenflag, and U+pV=-2pi i before exponentiation. The new section verifies these hypotheses; agreement of derivatives alone would be insufficient."
+        }
+      ]
+    },
+    {
+      "from": "nonparabolic-tree-geometry",
+      "to": "preferred-longitudes",
+      "witnesses": [
+        {
+          "path": [
+            "geo_filled_meridian_germ",
+            "geometric_longitude_circle_trees"
+          ],
+          "reason": "Identifies the actual nonconstant filled meridian germ with original flags and logarithmic slopes."
         }
       ]
     },
@@ -8028,6 +8599,26 @@
             "planar_ordinary_insertion_examples"
           ],
           "reason": "Provides the seventeen-region block certificate and localized balance failure. The protected-gluing input for the separate finite-list core construction is recorded as its own prerequisite."
+        }
+      ]
+    },
+    {
+      "from": "preferred-longitudes",
+      "to": "meridian-expansions",
+      "witnesses": [
+        {
+          "path": [
+            "geometric_longitude_circle_trees",
+            "geometric_selected_factor_of_actual_recurrence"
+          ],
+          "reason": "All-circle alternative: after the new paper checks the exact edge and primitive logarithmic equations at the original positive anchor, the rational preferred-longitude formula fixes its exponent and determinant-one sign."
+        },
+        {
+          "path": [
+            "geometric_longitude_strict_trees",
+            "geometric_selected_factor_of_actual_recurrence"
+          ],
+          "reason": "Strict bare-junction alternative: the same original gate/edge action and primitive first-charge mark give the whole classical stationary germ, including the half-label fold. Use the maximum of analytic and classical long-power thresholds."
         }
       ]
     },
@@ -8104,6 +8695,32 @@
       ]
     },
     {
+      "from": "strict-conway-geometry",
+      "to": "nonparabolic-tree-geometry",
+      "witnesses": [
+        {
+          "path": [
+            "recursive_strict_local_maps",
+            "geo_nonparabolic_tree_sewing"
+          ],
+          "reason": "The reference positive odd collar is calibrated against the original physical R versus R-inverse meridian words (StrictGeometry Section 5); the new Hurwitz and global decoration proof remains local and independent of a longitude formula."
+        }
+      ]
+    },
+    {
+      "from": "strict-conway-geometry",
+      "to": "preferred-longitudes",
+      "witnesses": [
+        {
+          "path": [
+            "recursive_strict_marked_metric",
+            "geometric_longitude_strict_trees"
+          ],
+          "reason": "Supplies the actual original positive long-filled anchor with the declared knot/parity conditions."
+        }
+      ]
+    },
+    {
       "from": "strict-newton-profiles",
       "to": "conway-asymptotics",
       "witnesses": [
@@ -8158,6 +8775,53 @@
     },
     {
       "from": "strict-newton-profiles",
+      "to": "moving-meridian-sources",
+      "witnesses": [
+        {
+          "path": [
+            "recursive_strict_boundary_profiles",
+            "recursive_moving_component_gap"
+          ],
+          "reason": "Original probe/root budgets and retained constants."
+        },
+        {
+          "path": [
+            "recursive_strict_boundary_profiles",
+            "recursive_moving_component_pressure"
+          ],
+          "reason": "Stationary response laws with absolute profile constants."
+        },
+        {
+          "path": [
+            "recursive_strict_optimizer",
+            "analytic_moving_strict_packet"
+          ],
+          "reason": "Original shared strict maximum, primitive lattice and complement gap."
+        },
+        {
+          "path": [
+            "recursive_strict_optimizer",
+            "recursive_moving_component_pressure"
+          ],
+          "reason": "Primitive gate/leaf action and strict optimizer framework; the enlarged constrained boundary proof is supplied here."
+        }
+      ]
+    },
+    {
+      "from": "strict-newton-profiles",
+      "to": "preferred-longitudes",
+      "witnesses": [
+        {
+          "path": [
+            "recursive_stationary_port_identities",
+            "geo_bare_hub_legendre"
+          ],
+          "reason": "Gives the exact response inequalities establishing the physical-label window and exceptional half edge."
+        }
+      ]
+    },
+    {
+      "from": "strict-newton-profiles",
       "to": "strict-conway-geometry",
       "witnesses": [
         {
@@ -8189,130 +8853,13 @@
           "reason": "Its nondegenerate stationary-wire Hessian gives the local classical stationary branch."
         }
       ]
-    },
-    {
-      "from": "circle-tree-geometry",
-      "to": "nonparabolic-tree-geometry",
-      "witnesses": [
-        {
-          "path": [
-            "geo_circle_ordered_cut",
-            "geo_nonparabolic_edge_character"
-          ],
-          "reason": "Fixes the native puncture paths and ordered local topology; a scalar or trace-only comparison would not identify the original group."
-        }
-      ]
-    },
-    {
-      "from": "circle-tree-geometry",
-      "to": "preferred-longitudes",
-      "witnesses": [
-        {
-          "path": [
-            "geo_circle_ordered_cut",
-            "geo_preferred_longitude_monomial"
-          ],
-          "reason": "Fixes the original primitive disk filling and pairwise-unlinked auxiliary-circle surgery basis."
-        }
-      ]
-    },
-    {
-      "from": "conway-source-bounds",
-      "to": "preferred-longitudes",
-      "witnesses": [
-        {
-          "path": [
-            "recursive_complete_fourier_trace",
-            "geo_bare_hub_legendre"
-          ],
-          "reason": "Only this exact finite winding identity is used; no global SourceBounds estimate or quantum knot asymptotic enters."
-        }
-      ]
-    },
-    {
-      "from": "marked-fillings",
-      "to": "nonparabolic-tree-geometry",
-      "witnesses": [
-        {
-          "path": [
-            "geo_tetrahedral_normal_flow_rows",
-            "geo_positive_marked_gluing"
-          ],
-          "reason": "Imports the actual normal-path row/intersection identity; the new paper proves rank, polarized Jacobian and the rational shape/representation inverse itself."
-        }
-      ]
-    },
-    {
-      "from": "newton-tangles",
-      "to": "preferred-longitudes",
-      "witnesses": [
-        {
-          "path": [
-            "recursive_factorial_rate",
-            "geo_bare_hub_legendre"
-          ],
-          "reason": "Supplies the uniform scalar sine-factorial coefficient rate including boundary offsets."
-        }
-      ]
-    },
-    {
-      "from": "nonparabolic-tree-geometry",
-      "to": "preferred-longitudes",
-      "witnesses": [
-        {
-          "path": [
-            "geo_filled_meridian_germ",
-            "geometric_longitude_circle_trees"
-          ],
-          "reason": "Identifies the actual nonconstant filled meridian germ with original flags and logarithmic slopes."
-        }
-      ]
-    },
-    {
-      "from": "strict-conway-geometry",
-      "to": "nonparabolic-tree-geometry",
-      "witnesses": [
-        {
-          "path": [
-            "recursive_strict_local_maps",
-            "geo_nonparabolic_tree_sewing"
-          ],
-          "reason": "The reference positive odd collar is calibrated against the original physical R versus R-inverse meridian words (StrictGeometry Section 5); the new Hurwitz and global decoration proof remains local and independent of a longitude formula."
-        }
-      ]
-    },
-    {
-      "from": "strict-conway-geometry",
-      "to": "preferred-longitudes",
-      "witnesses": [
-        {
-          "path": [
-            "recursive_strict_marked_metric",
-            "geometric_longitude_strict_trees"
-          ],
-          "reason": "Supplies the actual original positive long-filled anchor with the declared knot/parity conditions."
-        }
-      ]
-    },
-    {
-      "from": "strict-newton-profiles",
-      "to": "preferred-longitudes",
-      "witnesses": [
-        {
-          "path": [
-            "recursive_stationary_port_identities",
-            "geo_bare_hub_legendre"
-          ],
-          "reason": "Gives the exact response inequalities establishing the physical-label window and exceptional half edge."
-        }
-      ]
     }
   ],
   "article_scope": "Article ownership names the publication that proves a recorded statement. Null-owned nodes are explicit archival, formal or cross-article assemblies. Article edges retain nearest-owned theorem paths through null-owned inputs; they do not infer imports from bibliography entries. Standard external citations and unrecorded local lemmas are not automatically checked.",
   "analysis": {
     "scope": "Consistency, article ownership, witnessed import and source-location checks on the declared inventory, not proof verification or exhaustive dependency discovery.",
-    "nodes": 149,
-    "edges": 339,
+    "nodes": 155,
+    "edges": 360,
     "component_edges": [
       [
         "action_volume",
@@ -8601,6 +9148,7 @@
       "recursive_complete_fourier_trace",
       "recursive_exact_filling_source",
       "recursive_factorial_rate",
+      "analytic_low_newton_angular_bound",
       "recursive_local_ideal_cells",
       "recursive_local_deformed_maps",
       "recursive_positive_source",
@@ -8610,6 +9158,7 @@
       "recursive_marked_metric",
       "recursive_scalar_comparisons",
       "recursive_spectral_norms",
+      "analytic_moving_trace_comparison",
       "recursive_character_fourier",
       "recursive_strict_local_cells",
       "recursive_strict_local_maps",
@@ -8625,6 +9174,10 @@
       "recursive_strict_angle_geometry",
       "geo_bare_zero_circle_reconstruction",
       "recursive_strict_boundary_profiles",
+      "recursive_moving_component_pressure",
+      "recursive_moving_component_gap",
+      "analytic_moving_strict_packet",
+      "analytic_moving_joint_source",
       "recursive_strict_component_bounds",
       "recursive_strict_marked_metric",
       "geo_direct_preferred_cusp_word",
@@ -8669,46 +9222,58 @@
     "shared_prerequisites": [
       {
         "id": "finite_local_fourier",
-        "downstream": 91
+        "downstream": 97
       },
       {
         "id": "finite_remainder",
-        "downstream": 85
+        "downstream": 91
       },
       {
         "id": "finite_hermite",
-        "downstream": 83
+        "downstream": 89
       },
       {
         "id": "finite_crossing",
-        "downstream": 79
+        "downstream": 85
       },
       {
         "id": "finite_pivotal_mark",
-        "downstream": 78
+        "downstream": 84
       },
       {
         "id": "finite_global_source",
-        "downstream": 77
+        "downstream": 83
       },
       {
         "id": "finite_invariant_normalization",
-        "downstream": 64
+        "downstream": 70
       },
       {
         "id": "recursive_finite_source",
-        "downstream": 54
+        "downstream": 60
+      },
+      {
+        "id": "recursive_factorial_rate",
+        "downstream": 35
+      },
+      {
+        "id": "recursive_strict_normal_form",
+        "downstream": 35
       },
       {
         "id": "geo_tetrahedral_normal_flow_rows",
         "downstream": 33
       },
       {
+        "id": "recursive_strict_optimizer",
+        "downstream": 32
+      },
+      {
         "id": "geo_local_peripheral_volume_differential",
         "downstream": 31
       },
       {
-        "id": "recursive_strict_normal_form",
+        "id": "recursive_stationary_port_identities",
         "downstream": 31
       },
       {
@@ -8716,28 +9281,16 @@
         "downstream": 30
       },
       {
-        "id": "recursive_factorial_rate",
-        "downstream": 29
-      },
-      {
-        "id": "recursive_strict_optimizer",
-        "downstream": 28
-      },
-      {
-        "id": "recursive_stationary_port_identities",
-        "downstream": 27
-      },
-      {
         "id": "finite_weighted_graph_kernel",
         "downstream": 26
       },
       {
-        "id": "geo_nearby_metric_completion",
-        "downstream": 24
+        "id": "analytic_canonical_factorial",
+        "downstream": 25
       },
       {
-        "id": "analytic_canonical_factorial",
-        "downstream": 23
+        "id": "geo_nearby_metric_completion",
+        "downstream": 24
       },
       {
         "id": "analytic_signed_interval_transfer",
@@ -8752,43 +9305,31 @@
         "downstream": 23
       },
       {
-        "id": "finite_fourier_period",
-        "downstream": 22
-      },
-      {
         "id": "recursive_strict_local_maps",
         "downstream": 22
       },
       {
-        "id": "recursive_positive_source",
-        "downstream": 20
-      },
-      {
-        "id": "analytic_conditional_filling",
-        "downstream": 19
-      },
-      {
         "id": "recursive_spectral_norms",
-        "downstream": 17
+        "downstream": 21
       },
       {
         "id": "recursive_strict_boundary_profiles",
-        "downstream": 17
+        "downstream": 21
       },
       {
-        "id": "recursive_character_fourier",
+        "id": "finite_fourier_period",
+        "downstream": 18
+      },
+      {
+        "id": "recursive_positive_source",
         "downstream": 16
       },
       {
-        "id": "recursive_completed_port_bounds",
-        "downstream": 16
+        "id": "analytic_conditional_filling",
+        "downstream": 15
       },
       {
-        "id": "recursive_scalar_comparisons",
-        "downstream": 16
-      },
-      {
-        "id": "recursive_strict_component_bounds",
+        "id": "finite_moving_meridian_tangle",
         "downstream": 15
       },
       {
@@ -8809,10 +9350,6 @@
       },
       {
         "id": "recursive_strict_angle_geometry",
-        "downstream": 14
-      },
-      {
-        "id": "recursive_strict_source_gap",
         "downstream": 14
       },
       {
@@ -8848,6 +9385,18 @@
         "downstream": 12
       },
       {
+        "id": "recursive_character_fourier",
+        "downstream": 12
+      },
+      {
+        "id": "recursive_completed_port_bounds",
+        "downstream": 12
+      },
+      {
+        "id": "recursive_scalar_comparisons",
+        "downstream": 12
+      },
+      {
         "id": "recursive_strict_marked_metric",
         "downstream": 12
       },
@@ -8864,15 +9413,11 @@
         "downstream": 11
       },
       {
-        "id": "finite_moving_meridian_tangle",
-        "downstream": 11
-      },
-      {
         "id": "geo_morse_primitive_words",
         "downstream": 11
       },
       {
-        "id": "recursive_strict_pure_packet",
+        "id": "recursive_strict_component_bounds",
         "downstream": 11
       },
       {
@@ -8892,7 +9437,7 @@
         "downstream": 10
       },
       {
-        "id": "recursive_exact_filling_source",
+        "id": "recursive_strict_source_gap",
         "downstream": 10
       },
       {
@@ -8924,14 +9469,6 @@
         "downstream": 9
       },
       {
-        "id": "recursive_strict_filling_transfer",
-        "downstream": 9
-      },
-      {
-        "id": "recursive_uniform_leaf_envelopes",
-        "downstream": 9
-      },
-      {
         "id": "tree_positive_completion",
         "downstream": 9
       },
@@ -8952,8 +9489,8 @@
         "downstream": 8
       },
       {
-        "id": "recursive_local_leaf_estimates",
-        "downstream": 8
+        "id": "analytic_moving_trace_comparison",
+        "downstream": 7
       },
       {
         "id": "geo_longitude_ratio_differential",
@@ -8964,11 +9501,19 @@
         "downstream": 7
       },
       {
-        "id": "analytic_backward_diagonalization",
-        "downstream": 6
+        "id": "recursive_moving_component_pressure",
+        "downstream": 7
+      },
+      {
+        "id": "recursive_strict_pure_packet",
+        "downstream": 7
       },
       {
         "id": "analytic_directed_conditional_estimates",
+        "downstream": 6
+      },
+      {
+        "id": "analytic_low_newton_angular_bound",
         "downstream": 6
       },
       {
@@ -8978,6 +9523,22 @@
       {
         "id": "geo_source_constant_field",
         "downstream": 6
+      },
+      {
+        "id": "recursive_exact_filling_source",
+        "downstream": 6
+      },
+      {
+        "id": "recursive_moving_component_gap",
+        "downstream": 6
+      },
+      {
+        "id": "analytic_circle_joint_source",
+        "downstream": 5
+      },
+      {
+        "id": "analytic_moving_strict_packet",
+        "downstream": 5
       },
       {
         "id": "finite_remainder_transfer",
@@ -8992,16 +9553,20 @@
         "downstream": 5
       },
       {
-        "id": "recursive_completed_source_gap",
-        "downstream": 5
-      },
-      {
-        "id": "recursive_quarter_leaf_expansion",
+        "id": "recursive_strict_filling_transfer",
         "downstream": 5
       },
       {
         "id": "recursive_strict_pure_action",
         "downstream": 5
+      },
+      {
+        "id": "recursive_uniform_leaf_envelopes",
+        "downstream": 5
+      },
+      {
+        "id": "analytic_moving_joint_source",
+        "downstream": 4
       },
       {
         "id": "analytic_triangle_load_derivatives",
@@ -9024,15 +9589,11 @@
         "downstream": 4
       },
       {
-        "id": "recursive_local_packet_filling",
+        "id": "recursive_local_leaf_estimates",
         "downstream": 4
       },
       {
         "id": "recursive_ordered_tangle_normalization",
-        "downstream": 4
-      },
-      {
-        "id": "recursive_strict_core_packet",
         "downstream": 4
       },
       {
@@ -9073,6 +9634,10 @@
       },
       {
         "id": "analytic_actual_triangle_minimum",
+        "downstream": 2
+      },
+      {
+        "id": "analytic_backward_diagonalization",
         "downstream": 2
       },
       {
@@ -9120,10 +9685,6 @@
         "downstream": 1
       },
       {
-        "id": "analytic_circle_joint_source",
-        "downstream": 1
-      },
-      {
         "id": "analytic_morse_geometric_contribution",
         "downstream": 1
       },
@@ -9137,6 +9698,10 @@
       },
       {
         "id": "geo_complete_marked_metric_identification",
+        "downstream": 1
+      },
+      {
+        "id": "geo_marked_branch_identification",
         "downstream": 1
       },
       {
@@ -9161,6 +9726,14 @@
       },
       {
         "id": "recursive_complete_peripheral",
+        "downstream": 1
+      },
+      {
+        "id": "recursive_completed_source_gap",
+        "downstream": 1
+      },
+      {
+        "id": "recursive_quarter_leaf_expansion",
         "downstream": 1
       },
       {
@@ -9189,10 +9762,6 @@
       },
       {
         "id": "geo_circle_preferred_cusp",
-        "downstream": 0
-      },
-      {
-        "id": "geo_marked_branch_identification",
         "downstream": 0
       },
       {
@@ -9244,6 +9813,10 @@
         "downstream": 0
       },
       {
+        "id": "recursive_local_packet_filling",
+        "downstream": 0
+      },
+      {
         "id": "recursive_marked_metric",
         "downstream": 0
       },
@@ -9253,6 +9826,10 @@
       },
       {
         "id": "recursive_source_action_comparison",
+        "downstream": 0
+      },
+      {
+        "id": "recursive_strict_core_packet",
         "downstream": 0
       },
       {
@@ -9334,10 +9911,14 @@
       "papers/directed-tree-asymptotics/kernels.tex": "6f18f35d3167e9e81358b91a7ad4ad6d18bd58cf0d79d8050c38bc0e1db710c5",
       "papers/directed-tree-asymptotics/recursion.tex": "65f031c99575ca457f353535b703211cb3b04e5425779514137ac6c42b16801e",
       "manuscript/sections/M-directed-all-orders.tex": "90bde811854ea8d259b9086516703bde0684a6de7d07b99e92a56e0adab49986",
-      "manuscript/sections/H-filtered-characteristic.tex": "8e8eda6cf1412a08581be941ac3cd63f792786636dc32edbf3ed4b6ffecc61ec",
+      "papers/meridian-expansions/main.tex": "1a43ef00525f09a4f7c5a6e3e01fac561a4ccd14026a3cf4090c715303a17521",
+      "papers/meridian-expansions/analytic.tex": "2e6c5b36390e1894622d4788ee216128c40656de7a83b31fff5b82738f9858f3",
+      "papers/meridian-expansions/directed.tex": "08be30c66e3d42b5c79af3a75fadf4750abc2cfb5d58913dc104b92cb6646e60",
+      "papers/meridian-expansions/filtration.tex": "2a9f4ea4ed9e8c98e0365bc2c2cb4fc70cc293ce9c4a4bd441eeaaeaac869e99",
+      "papers/meridian-expansions/operators.tex": "eb9cc280c7c95e3f533eb8130c46e67443834191e610f3cc7536cef3291336f8",
       "formal/VolumeLogic/FormalRegrading.lean": "9fe0b604cfe2857cc26569442ee9c608c214307adb5fdfd666e154fcbadc7a2c",
-      "manuscript/sections/I-geometric-characteristic.tex": "d6e7a10052866edca5369cce3aeb3a4b9758a7b9807386af2d08816da57313f2",
-      "manuscript/sections/J-strict-tree-geometric-characteristic.tex": "a7abe912fbc16874f19818551fc737926375dcf0b4a3f8a8e9104e9e52a6642b",
+      "formal-real/FormalShift.lean": "bee3c96faa1c552dc91276b89233079f2d6d9cc512b9dd7554584e148e8064d9",
+      "papers/meridian-expansions/geometric.tex": "30c4fd64731cb1a982450f52c2eff270d75e8961aeeb183d5208a9209beba309",
       "formal-real/WeightedGraph.lean": "3e3d77275515fcc861bc861ac8b5e4988e5c5d2775636931ee561db7ce56fecf",
       "papers/strict-newton-profiles/syntax.tex": "73794d02369c60405780877fd5754f1b8f5fc170cd67f4cec115ccf135b653d2",
       "papers/strict-newton-profiles/profiles.tex": "52f2b672dad53dc029e94406fb04049edc82a38c73e7650032bcdb9f00e2d7c7",
@@ -9380,17 +9961,28 @@
       "formal-real/HallRecession.lean": "3b518ee62e07565c074f09029c55d2b14879c64ad48ee7de6c01f456b9dbfc21",
       "formal-real/TriangleHall.lean": "09513da3ef9483ae09615e078543779c6e8de1038e126ed0985e815a55e7af55",
       "papers/preferred-longitudes/cusp.tex": "ddfaaf3972443892f5b014e14e6d52d45af19f21184da388743477c944c08de7",
+      "papers/moving-meridian-sources/fourier.tex": "dd93ea12d354fab81fa6e177b2a553550c931106187fd9e4de63d926fcd060c6",
+      "papers/moving-meridian-sources/pressure.tex": "911da0b591b3e5d4ed4afcca249a8dd1cdb3538b8b2d47446dc620e526316954",
+      "papers/moving-meridian-sources/components.tex": "e03ea3220c5ea2c172a806d87518cc1b246cad8eaa4e66c1a1906d0c8a3a2d79",
+      "papers/moving-meridian-sources/main.tex": "ba0c5da2cb85d6764818607a6caf54efbfa9b6e1044b51a884cf8360110e0a95",
+      "papers/moving-meridian-sources/packet.tex": "f9062d4a132f921c0d54e4bd25a5d56481c203f15c5f7b5533c192be063a67c8",
+      "papers/moving-meridian-sources/finite.tex": "3edc64aaa7114fe8775c0a753fb410e63f68f43b767daa2cc66aa3e11f39ab5a",
+      "papers/moving-meridian-sources/filling.tex": "69a57bba241285ef6c249b7fdd0205e64f57468e166306f58786288460f42445",
       "papers/strict-newton-profiles/main.tex": "1b3ce59bf16a638f11c15bd5ea0e137fa1f9b15de5f66f1cd63221213fb27eab",
-      "papers/dependencies.json": "06b6e0f52c10aa809013646709dcb6994cd50794d82015884f866d2f61cb0046",
+      "papers/dependencies.json": "7338411e0800762efc80c53b511fe2fdaec8143e0866f509ebb57ee3c0fecb8f",
       "tools/build_dependency_graph.py": "c52c2bd644ac0fcb191789247c8a00007a85ac8798e3d25f71df9955ec0de84b"
     },
-    "articles": 24,
-    "owned_statements": 124,
-    "unowned_statements": 25,
+    "articles": 26,
+    "owned_statements": 134,
+    "unowned_statements": 21,
     "article_edges": [
       [
         "circle-tree-asymptotics",
         "directed-tree-asymptotics"
+      ],
+      [
+        "circle-tree-asymptotics",
+        "meridian-expansions"
       ],
       [
         "circle-tree-geometry",
@@ -9418,6 +10010,14 @@
       ],
       [
         "conway-asymptotics",
+        "meridian-expansions"
+      ],
+      [
+        "conway-asymptotics",
+        "moving-meridian-sources"
+      ],
+      [
+        "conway-asymptotics",
         "quarter-index-asymptotics"
       ],
       [
@@ -9430,7 +10030,19 @@
       ],
       [
         "conway-source-bounds",
+        "meridian-expansions"
+      ],
+      [
+        "conway-source-bounds",
+        "moving-meridian-sources"
+      ],
+      [
+        "conway-source-bounds",
         "preferred-longitudes"
+      ],
+      [
+        "directed-tree-asymptotics",
+        "meridian-expansions"
       ],
       [
         "filling-bounds",
@@ -9455,6 +10067,10 @@
       [
         "filling-bounds",
         "local-coefficients"
+      ],
+      [
+        "filling-bounds",
+        "meridian-expansions"
       ],
       [
         "filling-bounds",
@@ -9553,6 +10169,18 @@
         "directed-tree-asymptotics"
       ],
       [
+        "meridian-tangles",
+        "meridian-expansions"
+      ],
+      [
+        "meridian-tangles",
+        "moving-meridian-sources"
+      ],
+      [
+        "moving-meridian-sources",
+        "meridian-expansions"
+      ],
+      [
         "newton-tangles",
         "conway-asymptotics"
       ],
@@ -9574,6 +10202,10 @@
       ],
       [
         "newton-tangles",
+        "moving-meridian-sources"
+      ],
+      [
+        "newton-tangles",
         "preferred-longitudes"
       ],
       [
@@ -9583,6 +10215,10 @@
       [
         "newton-tangles",
         "strict-newton-profiles"
+      ],
+      [
+        "nonparabolic-tree-geometry",
+        "meridian-expansions"
       ],
       [
         "nonparabolic-tree-geometry",
@@ -9599,6 +10235,10 @@
       [
         "planar-certificates",
         "triangular-insertion"
+      ],
+      [
+        "preferred-longitudes",
+        "meridian-expansions"
       ],
       [
         "source-asymptotics",
@@ -9642,6 +10282,10 @@
       ],
       [
         "strict-newton-profiles",
+        "moving-meridian-sources"
+      ],
+      [
+        "strict-newton-profiles",
         "preferred-longitudes"
       ],
       [
@@ -9668,8 +10312,10 @@
       "circle-tree-asymptotics",
       "conway-reductions",
       "directed-tree-asymptotics",
+      "moving-meridian-sources",
       "nonparabolic-tree-geometry",
       "preferred-longitudes",
+      "meridian-expansions",
       "quarter-index-asymptotics",
       "terminal-decorations",
       "three-braids",

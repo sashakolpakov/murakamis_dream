@@ -1,0 +1,134 @@
+\section{All orders in the directed subtree contraction}\label{me:directed}
+We recall exactly what the directed certificate controls. Put
+$a_0=1/(2\pi)$, $k_0=2^{-16}$, $R_0=1/8$, $b_0=2^{-11}$,
+$r_0=1/16$, $t_0=2^{-14}$ and $\chi=1-\cos r_0$.
+Choose a root and, at every nonroot vertex, $0<c_v<k_0$ and
+$\delta_v=\min\{b_0/2,c_v\chi/[4(1+c_v)]\}$. Let $q_v$ be
+one at a nonroot vertex and zero at the root. With children
+$\operatorname{Ch}(v)$ define
+\begin{align}
+ a_v&=\frac{d_v}{2\pi},& b_v&=\frac{n_v}{2\pi},&D_v&=a_v-\ii b_v,
+       \notag\\
+ A_v&=\frac2{\pi^2}\left(q_vk_0+\frac12\sum_{w\in\operatorname{Ch}(v)}c_w\right),&
+ B_v&=16q_v+|\operatorname{Ch}(v)|,&
+ C_v&=B_v+\frac{b_v^2}{4A_v}.\label{me:directed-data}
+\end{align}
+All $A_v,B_v$ are positive because the tree has an edge. Put
+$\delta_v^{\rm in}=\min(\{b_0\}\cup\{\delta_w:w\in\operatorname{Ch}(v)\})$,
+\begin{align}
+ y_v&=\min\left\{\frac{\delta_v^{\rm in}}2,
+ \frac{t_0|D_v|}{4C_v},
+ \frac{A_v\pi^2}{8(\pi|b_v|+t_0|D_v|)},
+ \sqrt{\frac{A_v\pi^2}{8B_v}}\right\},\notag\\
+ \beta_v&=\frac{210}{361}\frac{a_v}{|D_v|^2},\qquad
+ \eta_v=\min\left\{\tfrac12t_0|D_v|y_v,
+ \tfrac12 A_v\pi^2,A_vr_0^2,\tfrac18a_vr_0^2\right\}.
+ \label{me:directed-losses}
+\end{align}
+The criterion is $t_0|D_v|\ge2$ and $\beta_v<\eta_v/2$ at every
+vertex, and $\beta_v<(k_0-c_v)\chi$ at each nonroot vertex.
+These are the same finite inequalities as in \cite{Directed}.
+
+The full edge polynomial is
+\begin{equation}\label{me:full-kernel}
+ \mathscr K_N(t,u;s)=\sum_{k=0}^{N-1}
+       e_k(-2\cos t)e_k(-2\cos u)\frac{H_N(s)}{W_k(s)}.
+\end{equation}
+Its trigonometric degree in either angle is at most $N-1$;
+there is no high-index truncation in this definition. Let
+$M_{v,N}(u;s)$ denote the exact polynomial sent by a subtree to
+its parent angle $u$. It is the actual trace of the parent kernel
+times the exact child messages, with the original typed scalar.
+At the root the parent kernel is absent. This is an evaluation
+order for a fixed contraction, not a new diagram.
+
+The written induction in \cite[Sections 5--7]{Directed} proves,
+on the parent rectangle $|\Re u|\le R_0$, $|\Im u|\le b_0$,
+a nonzero conditional first-charge saddle. Its local real second
+derivative is at most $-(19/20)a_v$ and its complex Hessian modulus
+is at least $(19/20)|D_v|$. All tail, endpoint, truncation and
+connector errors are below that first charge by a positive margin
+at least $\eta_v-\beta_v$. Each retained charge $\ell\ge2$ has
+additional loss
+\begin{equation}\label{me:directed-charge-loss}
+ \frac{190}{441}\frac{a_v}{|D_v|^2}(\ell^2-1).
+\end{equation}
+The outgoing real-envelope margin is
+$(k_0-c_v)\chi-\beta_v>0$ when an outgoing edge exists. There is
+no outgoing requirement at the root. These assertions are the
+conditional conclusions of that proof, not consequences inferred
+solely from its final scalar asymptotic. The full kernel, all
+normal data and the exact child scalars are retained there.
+Lemma~\ref{me:translated} verifies these same finite interfaces
+on the translated parameter compacts. For one fixed finite tree
+all these finitely many positive margins have positive minimum.
+The infinite charge tail is one geometric series, not a minimum
+of infinitely many unrelated gaps.
+
+\begin{proposition}[Normalized induction to arbitrary order]
+\label{me:directed-orders}
+Every fixed directed certificate above gives all relative orders
+of the actual normalized subtree messages on smaller parent
+rectangles and the meridian compacts of Theorem~\ref{me:all-orders}.
+Their phase is stationary elimination of \eqref{me:base-action},
+with the exact scalar factors restored at the root.
+\end{proposition}
+\begin{proof}
+Strengthen the induction to
+\begin{equation}\label{me:message-orders}
+ \frac{M_{v,N}(u;s)}{M_{v,N}(0;s)}
+ =e^{Nh_v(u)}\frac{\alpha_v(u)}{\alpha_v(0)}
+ \left(1+\sum_{j=1}^L N^{-j}a_{v,j}(u,s)
+                          +O(N^{-L-1})\right).
+\end{equation}
+Here $h_v(0)=0$, $\alpha_v$ is nonzero, and the coefficients and
+remainders are holomorphic. The exact denominator is nonzero
+for all sufficiently large levels by the conditional first-charge
+estimate. It is never replaced by an estimate for its modulus.
+
+For a terminal vertex, Lemma~\ref{me:local-expansion} applied to
+its full kernel and trace proves \eqref{me:message-orders}; its
+complement and currents retain the original positive margins.
+Suppose it holds for all children. Their finite product has an
+expansion to every chosen relative order, with a nonzero normalized
+leading amplitude. On the first-charge local contour use that
+expansion and the canonical parent-kernel expansion. The conditional
+Hessian and sine factor are nonzero. Absolute Gaussian domination
+from Lemma~\ref{me:local-expansion} preserves the relative remainder,
+and extra derivatives are obtained by beginning at a higher order.
+This proves the first-charge expansion and its exact normalization
+at $u=0$.
+
+Outside that contour continue to use the exact child polynomials
+and their established real and strip envelopes. Taylor polynomials
+for the child expansion are not substituted on a tail. Nonminimal
+charges are their local contributions plus additive errors already
+below the first charge; a relative expansion at an exponentially
+small nonminimal saddle is unnecessary. Inequality
+\eqref{me:directed-charge-loss} and the original endpoint and
+regeneration margins make these errors smaller than any prescribed
+relative inverse power. The outgoing-envelope step again uses the
+exact normalized message. It is unaffected by the additional local
+Taylor coefficients. This closes the induction on the finite tree.
+
+To identify the joint phase, restore the wire variables in each
+parent kernel. Their Hessian blocks are invertible. At each angular
+elimination the conditional Hessian is invertible by the displayed
+bound. The block determinant identity therefore proves that the
+original joint Hessian is invertible, and back-substitution recovers
+its selected critical point. No equation for a fixed total action
+was guessed from the local critical values. Exact factors
+$M_{v,N}(0;s)$ restore every constant subtracted in the normalized
+messages. At any finite order, repeated Gaussian integration gives
+the same moments as the joint local integral: integrating an
+invertible block Gaussian and then its Schur complement is the
+usual completion of the square, and differentiation generates all
+polynomial moments. The uniform absolute bounds already proved
+justify that finite repeated integration. Thus both the phase and
+the lower coefficients belong to the original joint source.
+\end{proof}
+
+This argument allows constants depending on the fixed tree's size
+and depth, as an all-orders theorem for one fixed diagram should.
+It neither strengthens the directed criterion nor applies the
+summed criterion to a tree which only satisfies local inequalities.

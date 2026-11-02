@@ -1,0 +1,82 @@
+\section{The stationary deformation and the polynomial filtration}
+\label{me:filtration}
+Set $\delta=1/N$ and introduce an independent small variable $t$.
+Equation~\eqref{me:factorial-expansion} gives, to every chosen finite
+order,
+\begin{equation}\label{me:insertion-log}
+ \log\mathcal I_N(x,s)=\delta^{-1}\Kern(x,t)+B_0(x,t)
+               +\sum_{j=1}^L\delta^j B_j(x,t)+O(\delta^{L+1}),
+ \qquad t=\delta s.
+\end{equation}
+Each $B_j$ is holomorphic, even in $t$, and zero at $t=0$.
+The $\log N$ terms cancel. Explicitly, $B_0$ is half the same
+second difference of $\log(2\sin\pi x)$; the further terms are
+second differences of the $b_j$. For a literal argument
+$x=\ell(X)+\delta c$, expansion of the leading term contributes
+$c\Kern_x(\ell,t)$ to $B_0$ and further holomorphic terms to the
+lower coefficients. This preserves every $d$ and midpoint offset
+without changing the leading phase.
+
+In the local first-charge integral replace the physical insertion
+by the same canonical ratio at $s=Nt$ for small independent $t$.
+All its arguments remain bulk. This defines an auxiliary analytic
+family whose leading phase is exactly
+\eqref{me:deformed-action}: the last quadratic term is the exact
+scalar $q^{a(D)s^2/2}$. It defines no global asymptotic statement
+for a physical parameter growing with $N$. All global estimates
+were established for bounded $s$ first. On restricting $t=\delta s$
+the auxiliary local family equals the original local integrand.
+
+The joint Hessian of $\Phi$ is invertible, by the source theorem
+in the strict and summed cases and by
+Proposition~\ref{me:directed-orders} in the directed case. Thus
+$X_*(t)$ is analytic and even. Apply the finite-order Gaussian
+construction of Lemma~\ref{me:local-expansion} to the auxiliary
+local family, uniformly for small $t$. The nonzero leading
+amplitude has a fixed local logarithm. It gives holomorphic germs
+$C_j(t)$ with
+\begin{equation}\label{me:log-family}
+ \log\Z_N(s)\sim N\{S(s/N)-S(0)\}
+       +\sum_{j\ge0}N^{-j}\{C_j(s/N)-C_j(0)\}.
+\end{equation}
+The equality means every specified finite truncation with a
+uniform asymptotic remainder on the charts already proved.
+For the directed proof the iterated local family has precisely
+these coefficients: its block stationary elimination and Gaussian
+moments were identified in Proposition~\ref{me:directed-orders}.
+Exact child constants are restored, not suppressed in
+\eqref{me:log-family}. In every class the powers of $N$ and all
+$s$-independent scalar factors cancel in the ratio at $s=0$.
+
+Every coefficient in this local family is even in $t$. Uniqueness
+of the critical branch preserves that symmetry, as do the exact
+edge ratios and the scalar. Hence the $C_j$ and $S$ are even.
+Possible lower-coefficient parity dependence can be carried
+through this construction separately; its leading phase is the
+same. Expand the germs in \eqref{me:log-family}. A term $t^k$ in
+$N(S-S(0))$ contributes $N^{1-k}s^k$, while a term $t^k$ in
+$N^{-j}(C_j-C_j(0))$ contributes $N^{-j-k}s^k$. At order $N^{-r}$
+only the first expression can have degree $r+1$; all the others
+have degree at most $r$. This proves the filtration and
+\eqref{me:diagonal}. It is a coefficient calculation at every
+finite order, not an inference from the first correction.
+
+All discarded terms have fixed exponential losses on each fixed
+chart, so they and their fixed derivatives are smaller than every
+requested inverse power. The coefficients on translated charts
+are the same because they were constructed from the same canonical
+local family and scalar. No continuation of an asymptotic estimate
+through the real resonances is used. Since $\Z_N\to1$ uniformly
+on each chart, the logarithm tending to zero is unique for large
+$N$. This proves Theorem~\ref{me:all-orders}.
+
+The first coefficient has no lower-amplitude contribution:
+$C_0'(0)=0$ by evenness, and normalization removes the constant.
+Moreover $\Phi_{Xt}(X_0,0)=0$, so stationary differentiation gives
+\[
+ S''(0)=\Phi_{tt}(X_0,0)
+       =\pi\ii a(D)-2\sum_eJ''(x_e(X_0))
+       =\pi\ii a(D)-2\pi\sum_e\cot\pi x_e(X_0).
+\]
+This proves \eqref{me:first-coefficient} without a geometric
+identification of the resulting complex number.

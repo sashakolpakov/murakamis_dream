@@ -1,8 +1,9 @@
 # A guide to the manuscript
 
-The current PDF is a 374-page reference account. Its results are being
-rewritten as [papers organized by subject](../../papers/README.md), each at
-most 30 pages including references. Their shared foundations cover
+The current PDF is a 374-page reference account. Its results have been
+divided into [papers organized by subject](../../papers/README.md).
+The 24 current papers total 413 pages and range from 11 to 29 pages each,
+including references. Their shared foundations cover
 finite spectral evaluation, coefficient estimates, source asymptotics,
 oscillatory sums and marked geometry. The application papers give their
 precise diagram and twist hypotheses and name the numbered statements
@@ -22,10 +23,13 @@ available for citations, but are no longer prerequisites of that account.
 The directed circle-tree paper likewise makes the older local criterion
 a consequence of one more general argument.
 
-These papers do not yet replace the reference account. In particular,
-the moving-source estimates and all-orders recurrence results still need
-separate published accounts. The nonparabolic representation and
-preferred-longitude proofs now have 22- and 29-page papers.
+The moving-source estimates and all-orders recurrence implication now
+have separate 20- and 13-page accounts. They use the exact moving finite
+calculus, then prove the analytic estimates needed on the original
+shared source. The nonparabolic representation and preferred-longitude
+proofs have separate 22- and 29-page papers and enter only when the
+analytic germ is identified geometrically. The operator implication
+retains the hypothesis of a genuine fixed all-level annihilator.
 The reference PDF remains frozen. Its measured length is 93 pages of main
 text, 266 pages of appendices, and 15 pages of front matter and references.
 Several theorem families and their separate dependencies accumulated in
@@ -131,21 +135,70 @@ long fixed signed fillings. The
 [illustrated explanation](results.md#joining-diagrams-with-a-shared-weight-certificate)
 defines the variables and follows the cancellation at the joining face.
 
-## The directed full expansion
+## Moving the meridian and obtaining every expansion order
 
-The final analytic chapter proves every finite order of the microscopic
-meridian expansion for the directed tree criterion. Here the meridian
-is \(M=q_N^s\), with \(q_N=e^{\pi i/N}\) and \(s\) in a fixed
-parameter neighborhood, so \(M\) approaches completeness as \(N\) grows.
-The proof works on all fixed translated nonreal charts needed by a
-fixed recurrence. Derivatives at repeated spectral nodes and all
-crossing and framing scalar factors are retained. The first
-correction is the preferred cusp shape, and the highest-degree
-coefficients recover the full preferred longitude germ.
+A meridian goes once around the main knot strand. Its eigenvalue is
+\(M\); completeness corresponds to \(M=1\) in the chosen lift.
+The microscopic parameter is \(s\), defined by
+\(M=q_N^s\) and \(q_N=e^{\pi i/N}\). Keeping \(s\) in a fixed
+parameter set therefore makes \(M\) approach one as the level grows.
 
-This adds every directed certificate to the selected geometric-factor
-theorem. It does not identify the full A-polynomial or extend the
-moving-meridian theorem to the decorated planar class.
+[Moving-meridian source estimates for strict Conway tangles](../../docs/papers/moving-meridian-sources.pdf)
+proves estimates for the whole source in this regime. A product junction
+without a crossing circle is called a bare junction. Such junctions can
+be adjacent, so their shared indices must be estimated together. The
+paper compares a deformed high-index trace with a reflected complete
+trace, then reassembles the adjacent junctions using the exact finite
+pairing. Its pressure, the maximum of the positive action over the
+entire connected group, includes the action
+already supplied by every attached branch. This avoids replacing shared
+indices by independently chosen maxima.
+
+Theorem 1.1 bounds all discarded terms before changing the filling
+contours, and gives a nonzero holomorphic Gaussian expansion of the
+retained finite wire sum. Theorem 1.2 evaluates every original filling
+trace for sufficiently long fixed signed powers, with no restriction on
+their ratios. It retains all Fourier charges, endpoint terms and
+repeated-root derivatives. This is the source input for the strict case
+of the next theorem; the summed and directed circle-tree cases have
+their own source inputs.
+
+[Meridian expansions and classical symbols of quantum recurrences](../../docs/papers/meridian-expansions.pdf),
+Theorem 1.1, proves every prescribed expansion order for each of those
+three source classes. Write \(F_N(M)\) for the original reduced
+meridian function and \(K_N=F_N(1)\). The source theorems make
+\(K_N\) nonzero for all sufficiently large levels. The exact reduced/full
+conversion is
+\[
+ H_N(s)=\frac{\sin\pi s}{N\sin(\pi s/N)},\qquad H_N(0)=1.
+\]
+For every fixed positive integer \(L\), the normalized expansion is
+\[
+ \log\frac{F_N(q_N^s)}{K_NH_N(s)}
+   =\sum_{r=1}^{L}N^{-r}p_r(s)+O(N^{-L-1}),
+ \qquad \deg p_r\le r+1.
+\]
+The logarithm is the branch tending to zero. Each \(p_r\) is even and
+vanishes at zero. The estimate holds uniformly on each disk
+\(|s|\le R<1\), and on fixed compact sets in the upper half-plane
+and their required integer translates. The proof treats both level
+parities; lower coefficients may depend on parity, while their
+highest-degree action coefficients agree.
+
+The directed case needs an additional argument. Each subtree is divided
+by its exact value at zero before it is passed to its parent. The
+all-orders induction keeps this normalization and restores those
+constants at the root. The established conditional error margins remain
+in force outside the local saddle. The proof therefore does not replace
+the directed criterion by the summed condition, and it retains the
+allowed high-degree vertices with zero crossing power.
+
+The highest-degree coefficients above determine the stationary action
+germ. A later geometric identification turns its derivative into the
+preferred longitude and identifies the first correction with the cusp
+shape. The expansion itself uses no longitude theorem. It is microscopic,
+not a large-level estimate at a fixed \(M\ne1\), and it makes no
+moving-meridian claim for the decorated planar class.
 
 ## Completed results with narrower conclusions
 
@@ -340,24 +393,44 @@ action, including at a possible half-edge fold. The argument
 therefore identifies the full marked representation germ of
 the original long-filled knot.
 
-Appendix H supplies the full microscopic expansion and its
-implication for a genuine all-level recurrence. Appendix I
-contains the circle-tree geometry, algebraic rigidity and
-Seifert-surface sign. Appendix J gives the strict-tree extension,
-the zero-crossing collar and the intrinsic transfer to covered
-net-twist and arbitrary-closure presentations.
+The analytic implication is now Theorem 1.2 of the
+[meridian-expansion paper](../../docs/papers/meridian-expansions.pdf).
+Its hypothesis is a specified fixed, nonzero operator
+\[
+ P(q,M,T)=\sum_{j=0}^{r_P}a_j(q,M)T^j,\qquad TM=qMT,
+\]
+where the coefficients \(a_j\) are rational functions and \(T\)
+replaces \(M\) by \(qM\). The same operator must annihilate the
+whole function \(F_N(M)\) at every sufficiently large integer level.
+An equation only for \(F_N(1)\), a fitted finite collection of levels,
+or a finite meridian jet does not meet that hypothesis.
 
-Together these results identify the selected complex geometric
-irreducible factor in the first nonzero classical symbol for
-every covered strict long-filling source, as well as the
-circle-tree sources under the summed condition, the local bound
-\(2^{-120}\), or any directed certificate. Appendix M supplies the
-full translated-chart expansion needed for the last extension.
-The implication starts with an existing fixed, nonzero all-level
-annihilator. It uses the full expansion and its shifted parameter
-neighborhoods, not just the leading meridian profile.
-No assertion identifies the entire A-polynomial, the
-multiplicities of its factors or the entire recurrence ideal.
+The exact equation requires the source at \(s,s+1,\ldots,s+r_P\).
+The translated estimates supply all these values. After the exact
+reduced/full gauge is included, comparison at every inverse-level order
+gives a formal identity. The coefficient at degree \(h^{a+b}s^b\)
+recovers the coefficient of \(h^a u^b\) before the substitution
+\(u=hs\), where \(h=\log q\) and \(u=\log M\). This is why all
+orders are needed. After clearing denominators and removing the common
+power of \(q-1\), the first nonzero classical symbol consequently
+vanishes on the selected analytic germ.
+
+Corollary 8.1 makes the separate geometric identification. It checks the
+original group, eigenflag and primitive logarithmic filling equations
+before applying Nonparabolic Geometry Theorem 1.2 and Corollary 7.1 and
+Preferred Longitudes Theorems 1.2–1.3. In the strict class, the fixed
+power threshold is the larger of the analytic and classical thresholds.
+The conclusion is that the selected geometric irreducible factor divides
+the first nonzero classical symbol, with the preferred exponent and
+negative determinant-one sign retained.
+
+These statements cover the strict long-filling sources and circle trees
+under the summed condition or any directed certificate, including its
+local \(2^{-120}\) corollary. They do not construct an annihilator,
+identify the entire A-polynomial or factor multiplicities, or prove the
+full AJ conjecture or equality of recurrence ideals. The frozen reference
+locates the earlier arguments in Appendices H and M (expansions), I
+(circle-tree geometry and longitude), and J (bare-junction extension).
 
 ## How to read the proof
 
@@ -475,17 +548,21 @@ The companion papers have a combined finite-check command:
 python3 repro/check_paper_algebra.py --output repro/results/paper-algebra
 ```
 
-It runs the groups registered in the paper-check runner. They check physical Newton identities over
+It runs 25 finite groups registered in the paper-check runner. They check physical Newton identities over
 exact finite fields, terminal curvature and endpoint identities, and
 circle-tree seam, peripheral and rational-bound formulas. The additional
 moving-meridian checks use physical matrices at both ordinary and
 colliding spectral parameters; the complete geometry checks verify
-rational face-map identities and the endpoint pairing tables. The newest
-groups reproduce the two complementary-color certificates and the
-classical filling's symbolic periods, Hessian and volume boundary term. The output
+rational face-map identities and the endpoint pairing tables. Other
+groups reproduce the complementary-color certificates and the
+classical filling's symbolic periods, Hessian and volume boundary term.
+The two new groups check whole moving Fourier traces, reflected pairings,
+the exact reduced/full gauge and formal coefficient recovery. The output
 records their bounded scope and source hashes. These checks do not
 replace the proofs for every level, the all-length insertion argument,
-or the construction and completion of a hyperbolic metric. The
+or the construction and completion of a hyperbolic metric. In particular,
+they do not prove recurrence existence or replace the uniform all-orders
+remainder argument. The
 [paper source guide](../../papers/README.md#building-and-reproducing-the-papers)
 lists the software requirements and individual commands.
 

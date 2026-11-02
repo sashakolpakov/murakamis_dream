@@ -1,7 +1,7 @@
 {
   "scope": "Consistency, article ownership, witnessed import and source-location checks on the declared inventory, not proof verification or exhaustive dependency discovery.",
-  "nodes": 149,
-  "edges": 339,
+  "nodes": 155,
+  "edges": 360,
   "component_edges": [
     [
       "action_volume",
@@ -290,6 +290,7 @@
     "recursive_complete_fourier_trace",
     "recursive_exact_filling_source",
     "recursive_factorial_rate",
+    "analytic_low_newton_angular_bound",
     "recursive_local_ideal_cells",
     "recursive_local_deformed_maps",
     "recursive_positive_source",
@@ -299,6 +300,7 @@
     "recursive_marked_metric",
     "recursive_scalar_comparisons",
     "recursive_spectral_norms",
+    "analytic_moving_trace_comparison",
     "recursive_character_fourier",
     "recursive_strict_local_cells",
     "recursive_strict_local_maps",
@@ -314,6 +316,10 @@
     "recursive_strict_angle_geometry",
     "geo_bare_zero_circle_reconstruction",
     "recursive_strict_boundary_profiles",
+    "recursive_moving_component_pressure",
+    "recursive_moving_component_gap",
+    "analytic_moving_strict_packet",
+    "analytic_moving_joint_source",
     "recursive_strict_component_bounds",
     "recursive_strict_marked_metric",
     "geo_direct_preferred_cusp_word",
@@ -358,46 +364,58 @@
   "shared_prerequisites": [
     {
       "id": "finite_local_fourier",
-      "downstream": 91
+      "downstream": 97
     },
     {
       "id": "finite_remainder",
-      "downstream": 85
+      "downstream": 91
     },
     {
       "id": "finite_hermite",
-      "downstream": 83
+      "downstream": 89
     },
     {
       "id": "finite_crossing",
-      "downstream": 79
+      "downstream": 85
     },
     {
       "id": "finite_pivotal_mark",
-      "downstream": 78
+      "downstream": 84
     },
     {
       "id": "finite_global_source",
-      "downstream": 77
+      "downstream": 83
     },
     {
       "id": "finite_invariant_normalization",
-      "downstream": 64
+      "downstream": 70
     },
     {
       "id": "recursive_finite_source",
-      "downstream": 54
+      "downstream": 60
+    },
+    {
+      "id": "recursive_factorial_rate",
+      "downstream": 35
+    },
+    {
+      "id": "recursive_strict_normal_form",
+      "downstream": 35
     },
     {
       "id": "geo_tetrahedral_normal_flow_rows",
       "downstream": 33
     },
     {
+      "id": "recursive_strict_optimizer",
+      "downstream": 32
+    },
+    {
       "id": "geo_local_peripheral_volume_differential",
       "downstream": 31
     },
     {
-      "id": "recursive_strict_normal_form",
+      "id": "recursive_stationary_port_identities",
       "downstream": 31
     },
     {
@@ -405,28 +423,16 @@
       "downstream": 30
     },
     {
-      "id": "recursive_factorial_rate",
-      "downstream": 29
-    },
-    {
-      "id": "recursive_strict_optimizer",
-      "downstream": 28
-    },
-    {
-      "id": "recursive_stationary_port_identities",
-      "downstream": 27
-    },
-    {
       "id": "finite_weighted_graph_kernel",
       "downstream": 26
     },
     {
-      "id": "geo_nearby_metric_completion",
-      "downstream": 24
+      "id": "analytic_canonical_factorial",
+      "downstream": 25
     },
     {
-      "id": "analytic_canonical_factorial",
-      "downstream": 23
+      "id": "geo_nearby_metric_completion",
+      "downstream": 24
     },
     {
       "id": "analytic_signed_interval_transfer",
@@ -441,43 +447,31 @@
       "downstream": 23
     },
     {
-      "id": "finite_fourier_period",
-      "downstream": 22
-    },
-    {
       "id": "recursive_strict_local_maps",
       "downstream": 22
     },
     {
-      "id": "recursive_positive_source",
-      "downstream": 20
-    },
-    {
-      "id": "analytic_conditional_filling",
-      "downstream": 19
-    },
-    {
       "id": "recursive_spectral_norms",
-      "downstream": 17
+      "downstream": 21
     },
     {
       "id": "recursive_strict_boundary_profiles",
-      "downstream": 17
+      "downstream": 21
     },
     {
-      "id": "recursive_character_fourier",
+      "id": "finite_fourier_period",
+      "downstream": 18
+    },
+    {
+      "id": "recursive_positive_source",
       "downstream": 16
     },
     {
-      "id": "recursive_completed_port_bounds",
-      "downstream": 16
+      "id": "analytic_conditional_filling",
+      "downstream": 15
     },
     {
-      "id": "recursive_scalar_comparisons",
-      "downstream": 16
-    },
-    {
-      "id": "recursive_strict_component_bounds",
+      "id": "finite_moving_meridian_tangle",
       "downstream": 15
     },
     {
@@ -498,10 +492,6 @@
     },
     {
       "id": "recursive_strict_angle_geometry",
-      "downstream": 14
-    },
-    {
-      "id": "recursive_strict_source_gap",
       "downstream": 14
     },
     {
@@ -537,6 +527,18 @@
       "downstream": 12
     },
     {
+      "id": "recursive_character_fourier",
+      "downstream": 12
+    },
+    {
+      "id": "recursive_completed_port_bounds",
+      "downstream": 12
+    },
+    {
+      "id": "recursive_scalar_comparisons",
+      "downstream": 12
+    },
+    {
       "id": "recursive_strict_marked_metric",
       "downstream": 12
     },
@@ -553,15 +555,11 @@
       "downstream": 11
     },
     {
-      "id": "finite_moving_meridian_tangle",
-      "downstream": 11
-    },
-    {
       "id": "geo_morse_primitive_words",
       "downstream": 11
     },
     {
-      "id": "recursive_strict_pure_packet",
+      "id": "recursive_strict_component_bounds",
       "downstream": 11
     },
     {
@@ -581,7 +579,7 @@
       "downstream": 10
     },
     {
-      "id": "recursive_exact_filling_source",
+      "id": "recursive_strict_source_gap",
       "downstream": 10
     },
     {
@@ -613,14 +611,6 @@
       "downstream": 9
     },
     {
-      "id": "recursive_strict_filling_transfer",
-      "downstream": 9
-    },
-    {
-      "id": "recursive_uniform_leaf_envelopes",
-      "downstream": 9
-    },
-    {
       "id": "tree_positive_completion",
       "downstream": 9
     },
@@ -641,8 +631,8 @@
       "downstream": 8
     },
     {
-      "id": "recursive_local_leaf_estimates",
-      "downstream": 8
+      "id": "analytic_moving_trace_comparison",
+      "downstream": 7
     },
     {
       "id": "geo_longitude_ratio_differential",
@@ -653,11 +643,19 @@
       "downstream": 7
     },
     {
-      "id": "analytic_backward_diagonalization",
-      "downstream": 6
+      "id": "recursive_moving_component_pressure",
+      "downstream": 7
+    },
+    {
+      "id": "recursive_strict_pure_packet",
+      "downstream": 7
     },
     {
       "id": "analytic_directed_conditional_estimates",
+      "downstream": 6
+    },
+    {
+      "id": "analytic_low_newton_angular_bound",
       "downstream": 6
     },
     {
@@ -667,6 +665,22 @@
     {
       "id": "geo_source_constant_field",
       "downstream": 6
+    },
+    {
+      "id": "recursive_exact_filling_source",
+      "downstream": 6
+    },
+    {
+      "id": "recursive_moving_component_gap",
+      "downstream": 6
+    },
+    {
+      "id": "analytic_circle_joint_source",
+      "downstream": 5
+    },
+    {
+      "id": "analytic_moving_strict_packet",
+      "downstream": 5
     },
     {
       "id": "finite_remainder_transfer",
@@ -681,16 +695,20 @@
       "downstream": 5
     },
     {
-      "id": "recursive_completed_source_gap",
-      "downstream": 5
-    },
-    {
-      "id": "recursive_quarter_leaf_expansion",
+      "id": "recursive_strict_filling_transfer",
       "downstream": 5
     },
     {
       "id": "recursive_strict_pure_action",
       "downstream": 5
+    },
+    {
+      "id": "recursive_uniform_leaf_envelopes",
+      "downstream": 5
+    },
+    {
+      "id": "analytic_moving_joint_source",
+      "downstream": 4
     },
     {
       "id": "analytic_triangle_load_derivatives",
@@ -713,15 +731,11 @@
       "downstream": 4
     },
     {
-      "id": "recursive_local_packet_filling",
+      "id": "recursive_local_leaf_estimates",
       "downstream": 4
     },
     {
       "id": "recursive_ordered_tangle_normalization",
-      "downstream": 4
-    },
-    {
-      "id": "recursive_strict_core_packet",
       "downstream": 4
     },
     {
@@ -762,6 +776,10 @@
     },
     {
       "id": "analytic_actual_triangle_minimum",
+      "downstream": 2
+    },
+    {
+      "id": "analytic_backward_diagonalization",
       "downstream": 2
     },
     {
@@ -809,10 +827,6 @@
       "downstream": 1
     },
     {
-      "id": "analytic_circle_joint_source",
-      "downstream": 1
-    },
-    {
       "id": "analytic_morse_geometric_contribution",
       "downstream": 1
     },
@@ -826,6 +840,10 @@
     },
     {
       "id": "geo_complete_marked_metric_identification",
+      "downstream": 1
+    },
+    {
+      "id": "geo_marked_branch_identification",
       "downstream": 1
     },
     {
@@ -850,6 +868,14 @@
     },
     {
       "id": "recursive_complete_peripheral",
+      "downstream": 1
+    },
+    {
+      "id": "recursive_completed_source_gap",
+      "downstream": 1
+    },
+    {
+      "id": "recursive_quarter_leaf_expansion",
       "downstream": 1
     },
     {
@@ -878,10 +904,6 @@
     },
     {
       "id": "geo_circle_preferred_cusp",
-      "downstream": 0
-    },
-    {
-      "id": "geo_marked_branch_identification",
       "downstream": 0
     },
     {
@@ -933,6 +955,10 @@
       "downstream": 0
     },
     {
+      "id": "recursive_local_packet_filling",
+      "downstream": 0
+    },
+    {
       "id": "recursive_marked_metric",
       "downstream": 0
     },
@@ -942,6 +968,10 @@
     },
     {
       "id": "recursive_source_action_comparison",
+      "downstream": 0
+    },
+    {
+      "id": "recursive_strict_core_packet",
       "downstream": 0
     },
     {
@@ -1023,10 +1053,14 @@
     "papers/directed-tree-asymptotics/kernels.tex": "6f18f35d3167e9e81358b91a7ad4ad6d18bd58cf0d79d8050c38bc0e1db710c5",
     "papers/directed-tree-asymptotics/recursion.tex": "65f031c99575ca457f353535b703211cb3b04e5425779514137ac6c42b16801e",
     "manuscript/sections/M-directed-all-orders.tex": "90bde811854ea8d259b9086516703bde0684a6de7d07b99e92a56e0adab49986",
-    "manuscript/sections/H-filtered-characteristic.tex": "8e8eda6cf1412a08581be941ac3cd63f792786636dc32edbf3ed4b6ffecc61ec",
+    "papers/meridian-expansions/main.tex": "1a43ef00525f09a4f7c5a6e3e01fac561a4ccd14026a3cf4090c715303a17521",
+    "papers/meridian-expansions/analytic.tex": "2e6c5b36390e1894622d4788ee216128c40656de7a83b31fff5b82738f9858f3",
+    "papers/meridian-expansions/directed.tex": "08be30c66e3d42b5c79af3a75fadf4750abc2cfb5d58913dc104b92cb6646e60",
+    "papers/meridian-expansions/filtration.tex": "2a9f4ea4ed9e8c98e0365bc2c2cb4fc70cc293ce9c4a4bd441eeaaeaac869e99",
+    "papers/meridian-expansions/operators.tex": "eb9cc280c7c95e3f533eb8130c46e67443834191e610f3cc7536cef3291336f8",
     "formal/VolumeLogic/FormalRegrading.lean": "9fe0b604cfe2857cc26569442ee9c608c214307adb5fdfd666e154fcbadc7a2c",
-    "manuscript/sections/I-geometric-characteristic.tex": "d6e7a10052866edca5369cce3aeb3a4b9758a7b9807386af2d08816da57313f2",
-    "manuscript/sections/J-strict-tree-geometric-characteristic.tex": "a7abe912fbc16874f19818551fc737926375dcf0b4a3f8a8e9104e9e52a6642b",
+    "formal-real/FormalShift.lean": "bee3c96faa1c552dc91276b89233079f2d6d9cc512b9dd7554584e148e8064d9",
+    "papers/meridian-expansions/geometric.tex": "30c4fd64731cb1a982450f52c2eff270d75e8961aeeb183d5208a9209beba309",
     "formal-real/WeightedGraph.lean": "3e3d77275515fcc861bc861ac8b5e4988e5c5d2775636931ee561db7ce56fecf",
     "papers/strict-newton-profiles/syntax.tex": "73794d02369c60405780877fd5754f1b8f5fc170cd67f4cec115ccf135b653d2",
     "papers/strict-newton-profiles/profiles.tex": "52f2b672dad53dc029e94406fb04049edc82a38c73e7650032bcdb9f00e2d7c7",
@@ -1069,17 +1103,28 @@
     "formal-real/HallRecession.lean": "3b518ee62e07565c074f09029c55d2b14879c64ad48ee7de6c01f456b9dbfc21",
     "formal-real/TriangleHall.lean": "09513da3ef9483ae09615e078543779c6e8de1038e126ed0985e815a55e7af55",
     "papers/preferred-longitudes/cusp.tex": "ddfaaf3972443892f5b014e14e6d52d45af19f21184da388743477c944c08de7",
+    "papers/moving-meridian-sources/fourier.tex": "dd93ea12d354fab81fa6e177b2a553550c931106187fd9e4de63d926fcd060c6",
+    "papers/moving-meridian-sources/pressure.tex": "911da0b591b3e5d4ed4afcca249a8dd1cdb3538b8b2d47446dc620e526316954",
+    "papers/moving-meridian-sources/components.tex": "e03ea3220c5ea2c172a806d87518cc1b246cad8eaa4e66c1a1906d0c8a3a2d79",
+    "papers/moving-meridian-sources/main.tex": "ba0c5da2cb85d6764818607a6caf54efbfa9b6e1044b51a884cf8360110e0a95",
+    "papers/moving-meridian-sources/packet.tex": "f9062d4a132f921c0d54e4bd25a5d56481c203f15c5f7b5533c192be063a67c8",
+    "papers/moving-meridian-sources/finite.tex": "3edc64aaa7114fe8775c0a753fb410e63f68f43b767daa2cc66aa3e11f39ab5a",
+    "papers/moving-meridian-sources/filling.tex": "69a57bba241285ef6c249b7fdd0205e64f57468e166306f58786288460f42445",
     "papers/strict-newton-profiles/main.tex": "1b3ce59bf16a638f11c15bd5ea0e137fa1f9b15de5f66f1cd63221213fb27eab",
-    "papers/dependencies.json": "06b6e0f52c10aa809013646709dcb6994cd50794d82015884f866d2f61cb0046",
+    "papers/dependencies.json": "7338411e0800762efc80c53b511fe2fdaec8143e0866f509ebb57ee3c0fecb8f",
     "tools/build_dependency_graph.py": "c52c2bd644ac0fcb191789247c8a00007a85ac8798e3d25f71df9955ec0de84b"
   },
-  "articles": 24,
-  "owned_statements": 124,
-  "unowned_statements": 25,
+  "articles": 26,
+  "owned_statements": 134,
+  "unowned_statements": 21,
   "article_edges": [
     [
       "circle-tree-asymptotics",
       "directed-tree-asymptotics"
+    ],
+    [
+      "circle-tree-asymptotics",
+      "meridian-expansions"
     ],
     [
       "circle-tree-geometry",
@@ -1107,6 +1152,14 @@
     ],
     [
       "conway-asymptotics",
+      "meridian-expansions"
+    ],
+    [
+      "conway-asymptotics",
+      "moving-meridian-sources"
+    ],
+    [
+      "conway-asymptotics",
       "quarter-index-asymptotics"
     ],
     [
@@ -1119,7 +1172,19 @@
     ],
     [
       "conway-source-bounds",
+      "meridian-expansions"
+    ],
+    [
+      "conway-source-bounds",
+      "moving-meridian-sources"
+    ],
+    [
+      "conway-source-bounds",
       "preferred-longitudes"
+    ],
+    [
+      "directed-tree-asymptotics",
+      "meridian-expansions"
     ],
     [
       "filling-bounds",
@@ -1144,6 +1209,10 @@
     [
       "filling-bounds",
       "local-coefficients"
+    ],
+    [
+      "filling-bounds",
+      "meridian-expansions"
     ],
     [
       "filling-bounds",
@@ -1242,6 +1311,18 @@
       "directed-tree-asymptotics"
     ],
     [
+      "meridian-tangles",
+      "meridian-expansions"
+    ],
+    [
+      "meridian-tangles",
+      "moving-meridian-sources"
+    ],
+    [
+      "moving-meridian-sources",
+      "meridian-expansions"
+    ],
+    [
       "newton-tangles",
       "conway-asymptotics"
     ],
@@ -1263,6 +1344,10 @@
     ],
     [
       "newton-tangles",
+      "moving-meridian-sources"
+    ],
+    [
+      "newton-tangles",
       "preferred-longitudes"
     ],
     [
@@ -1272,6 +1357,10 @@
     [
       "newton-tangles",
       "strict-newton-profiles"
+    ],
+    [
+      "nonparabolic-tree-geometry",
+      "meridian-expansions"
     ],
     [
       "nonparabolic-tree-geometry",
@@ -1288,6 +1377,10 @@
     [
       "planar-certificates",
       "triangular-insertion"
+    ],
+    [
+      "preferred-longitudes",
+      "meridian-expansions"
     ],
     [
       "source-asymptotics",
@@ -1331,6 +1424,10 @@
     ],
     [
       "strict-newton-profiles",
+      "moving-meridian-sources"
+    ],
+    [
+      "strict-newton-profiles",
       "preferred-longitudes"
     ],
     [
@@ -1357,8 +1454,10 @@
     "circle-tree-asymptotics",
     "conway-reductions",
     "directed-tree-asymptotics",
+    "moving-meridian-sources",
     "nonparabolic-tree-geometry",
     "preferred-longitudes",
+    "meridian-expansions",
     "quarter-index-asymptotics",
     "terminal-decorations",
     "three-braids",

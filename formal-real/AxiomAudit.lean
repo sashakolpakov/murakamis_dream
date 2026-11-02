@@ -10,6 +10,7 @@ import TriangleMinimizer
 import TriangleBalance
 import HallRecession
 import TriangleHall
+import FormalShift
 
 #print axioms VolumeLogic.RealModel.complexMagnitude
 #print axioms VolumeLogic.RealModel.constant_div_nat_rate
@@ -313,3 +314,33 @@ import TriangleHall
 #print axioms VolumeLogic.TriangleHall.exists_positive_table
 #print axioms VolumeLogic.TriangleHall.exists_unique_balance
 #print axioms VolumeLogic.TriangleHall.exists_unique_minimizer
+
+#print axioms VolumeLogic.FormalShift.index
+#print axioms VolumeLogic.FormalShift.index_zero
+#print axioms VolumeLogic.FormalShift.index_one
+#print axioms VolumeLogic.FormalShift.bc
+#print axioms VolumeLogic.FormalShift.shiftArgument
+#print axioms VolumeLogic.FormalShift.argument_hasSubst
+#print axioms VolumeLogic.FormalShift.shiftPrincipal
+#print axioms VolumeLogic.FormalShift.shiftPrincipal_rescale
+#print axioms VolumeLogic.FormalShift.shiftPrincipal_coeff
+#print axioms VolumeLogic.FormalShift.bc_sub
+#print axioms VolumeLogic.FormalShift.divideH
+#print axioms VolumeLogic.FormalShift.divideH_coeff
+#print axioms VolumeLogic.FormalShift.principalDifference
+#print axioms VolumeLogic.FormalShift.principalDifference_zero
+#print axioms VolumeLogic.FormalShift.principalDifference_first
+#print axioms VolumeLogic.FormalShift.principalDifference_division
+#print axioms VolumeLogic.FormalShift.atHZero
+#print axioms VolumeLogic.FormalShift.principalDifference_symbol
+#print axioms VolumeLogic.FormalShift.principalDifference_origin
+#print axioms VolumeLogic.FormalShift.zeroVariables
+#print axioms VolumeLogic.FormalShift.zeroVariables_hasSubst
+#print axioms VolumeLogic.FormalShift.atHZero_eq_subst
+#print axioms VolumeLogic.FormalShift.shiftVariables
+#print axioms VolumeLogic.FormalShift.shiftVariables_hasSubst
+#print axioms VolumeLogic.FormalShift.shiftRegular
+#print axioms VolumeLogic.FormalShift.shiftRegular_atHZero
+#print axioms VolumeLogic.FormalShift.logarithmicShift
+#print axioms VolumeLogic.FormalShift.logarithmicShift_atHZero
+#print axioms VolumeLogic.FormalShift.logarithmicShift_origin

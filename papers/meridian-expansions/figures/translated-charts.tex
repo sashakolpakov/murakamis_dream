@@ -1,0 +1,13 @@
+\begin{tikzpicture}[x=1.55cm,y=1.3cm,>=Latex,every node/.style={font=\small}]
+\draw[->](-.6,0)--(6.2,0) node[right]{$\operatorname{Re}s$};
+\draw[->](-.5,-.2)--(-.5,1.8) node[above]{$\operatorname{Im}s$};
+\foreach \j in {0,1,2,3,4,5}{\fill(\j,0)circle(1.1pt);}
+\foreach \j/\name in {0/D,1/{D+1},2/{D+2},5/{D+r_P}}{
+ \draw[fill=blue!8] (\j,1)ellipse(.27 and .32);
+ \node[above]at(\j,1.35){$\name$};
+}
+\node at(3.5,1){$\cdots$};
+\draw[->,thick](.3,.95)--(.7,.95);
+\node[below]at(.5,.48){$s\mapsto s+1$};
+\node[below]at(0,0){$0$};\node[below]at(1,0){$1$};
+\end{tikzpicture}

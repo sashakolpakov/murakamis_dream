@@ -82,12 +82,20 @@ one half the number of triangles. The finite-cut modules now derive the
 positive table, connectivity and unique full balance from strict cut
 inequalities and total mass compatibility. The cut conditions must still
 be checked for the particular geometric incidence and demands. Together
-the optional modules contain 57 definitions and 234 theorems, all 291
-declarations included in the axiom audit; 30 negative controls check invalid
+the optional modules contain 68 definitions and 252 theorems, all 320
+declarations included in the axiom audit; 32 negative controls check invalid
 metadata and axiom inventories. Seven compiled mathematical controls check
 the half-mass convention, repeated destinations, arbitrary root demand,
 the role of connectedness, a strict-cut balance, and failures when either
-strictness or total mass compatibility is dropped.
+strictness or total mass compatibility is dropped. The formal-shift module
+also constructs substitution in actual power series, proves that
+\(S(u+jh)-S(u)\) is divisible by \(h\), and identifies the quotient at
+\(h=0\) with \(jS'(u)\). An arbitrary regular logarithmic amplitude
+contributes zero at that order. Five further compiled controls retain the
+shift factor and sign, the divisibility hypothesis, the first derivative
+at the origin, and the nonzero higher-order amplitude change. Formal
+exponentiation and the connection to the analytic source and its
+recurrence remain written arguments.
 The optional command is separate from the Std-only
 check above; it requires
 Mathlib and its substantially larger compiled library.
@@ -102,7 +110,7 @@ python3 repro/check_paper_algebra.py --output repro/results/paper-algebra
 The runner requires SymPy, python-flint, NumPy and mpmath. It saves each program's
 output and stops on a failed check. Its source record covers all registered
 papers, including earlier editions, and the scripts used by those checks.
-Unregistered working drafts are excluded from that publication record. Its twenty-three groups cover polynomial
+Unregistered working drafts are excluded from that publication record. Its twenty-five groups cover polynomial
 resolvents and path partitions, positive-matrix identities and parity
 anchors, filling-sum normalization, symbolic peripheral coordinates,
 rational three-braid constants, the complete forty-branch planar
@@ -122,6 +130,12 @@ endpoint pairings and peripheral identities. The consolidated source
 group also checks its full Fourier formula and derivative terms, including
 examples whose values vanish at every spectral node while their normals
 do not.
+The moving-source group checks the full Fourier trace in both parities,
+ordered dual pairings, fusion and the odd-level projector identities at
+the stated finite levels. The meridian-expansion group checks the sine
+factor, the reduced-to-full gauge, denominator clearing, coefficient
+regrading and finite-jet counterexamples. Neither group replaces the
+uniform estimates or the all-orders argument in the papers.
 The two planar certificate groups use outward interval arithmetic with explicit
 Fourier tails. Their reports keep the finite assertions separate from
 the written all-length arguments.

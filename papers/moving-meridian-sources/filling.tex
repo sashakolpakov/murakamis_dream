@@ -1,0 +1,236 @@
+\section{All charges of the original crossing traces}\label{ms:filling}
+The powers $n_v$ are fixed signed integers. In the primitive filling
+convention they are $n_v=\epsilon_v-2p_v$; odd powers are included.
+This section proves Theorem~\ref{ms:filled-main} analytically. It
+does not identify a geometric action.
+
+\subsection{The full finite functional and its currents}
+For an even polynomial $f(\tau)=f^\sharp(-2\cos\tau)$ define
+$\mathcal D_{n,\sigma,N}f=\phi_\sigma(R_\sigma^n f^\sharp)$.
+The full crossing data in \cite[Proposition 6.1 and equation (6.4)]{Meridian}
+give, with $\eta=(-1)^d$,
+\begin{align}
+ \mathcal D_{n,\sigma,N}f
+ &=\frac{\eta N C_{N,n}(\sigma)}{\sin2\pi\sigma}
+ \sum_{r=0}^{N-1}\sin\tau_r\,f(\tau_r)
+                  e^{\ii nN\tau_r^2/(4\pi)},\label{ms:trace}\\
+ \tau_r&=\frac{2\pi}{N}(d/2+\sigma-r),\qquad
+ C_{N,n}(\sigma)=q^{n(d^2/4-\sigma^2/2)}.
+\end{align}
+This is first written off the collisions. Its removable limit is
+the full Hermite functional, not just the node values. In
+particular inverse powers use the same formula.
+
+Introduce independent formal grid parameters $\sigma_v$ temporarily;
+the actual assignments are $0,s,-s$. If $\zeta_N$ is the original
+closing and framing scalar and $\rho_{v,N}$ the reference scalar
+for its orientation type, set $\widehat\zeta_N=\zeta_N\prod_v\rho_{v,N}$.
+The exact source reduction already proved has the form
+\begin{equation}\label{ms:source-to-functional}
+ F_N(q^s)=\widehat\zeta_N(s)H_N(s)
+       \left(\prod_v\mathcal D_{n_v,\sigma_v,N}^{(v)}\right)
+       B_N(\boldsymbol\tau,s)
+       +O(N^A e^{N(F_0-\eta_0)}).
+\end{equation}
+Each factor acts in its own variable; this is tensor evaluation,
+not commutation of physical crossing operators. Edge scalars are
+already in $B_N$ and are not counted in $\widehat\zeta_N$.
+
+Choose $R<R'<1$, $R'\ne1/2$, and initially take
+$|\sigma_v|=R'$. For one coordinate use the exact pole kernel
+\[
+ K_\sigma(\tau)=\frac{\ii N e^{\ii N\tau}}
+              {e^{\ii N\tau}-\eta e^{2\pi\ii\sigma}}.
+\]
+It has residue one at precisely the shifted grid points. Integrate
+it times $\sin\tau f(\tau)e^{\ii nN\tau^2/(4\pi)}$ around a
+rectangle translated by $2\pi\sigma/N$ enclosing those $N$ poles.
+On its vertical sides
+\[
+ K_\sigma(\pm\pi+\ii v+2\pi\sigma/N)
+                  =\frac{\ii N e^{-Nv}}{1+e^{-Nv}}.
+\]
+On horizontal sides expand the denominator geometrically. After
+reflecting the upper side by $\tau\mapsto-\tau$, the odd sine
+factor pairs the positive and negative frequencies. Their parameter
+multiplier is
+\[
+ \frac{e^{2\pi\ii\ell\sigma}-e^{-2\pi\ii\ell\sigma}}
+      {e^{2\pi\ii\sigma}-e^{-2\pi\ii\sigma}}
+       =U_{\ell-1}(\cos2\pi\sigma).
+\]
+The grid sign and the contour orientations give
+\begin{equation}\label{ms:charges}
+ c_{\ell,N}(\sigma)=\eta^{\ell-1}
+                 U_{\ell-1}(\cos2\pi\sigma),\qquad c_{1,N}=1.
+\end{equation}
+The zero-frequency real integral vanishes by oddness. Its endpoint
+currents, and the connectors from the translated endpoints, remain
+in the contour identity. This calculation explains why replacing
+the repeated-node functional by values would lose the factor
+$c_{\ell,N}(0)=\eta^{\ell-1}\ell$.
+
+Choose $t_0>0$ small and put
+$L_v=\lfloor t_0|n_v|\rfloor$, $y_v=A_0t_0/|n_v|$.
+The finite real functional retained from this exact contour is
+\begin{equation}\label{ms:finite-charges}
+ \mathcal P_{n,\sigma,N}^{L}f
+ =-\frac{N^2 C_{N,n}(\sigma)}{\pi\ii}
+ \sum_{\ell=1}^{L}c_{\ell,N}(\sigma)
+ \int_{-\pi}^{\pi}\sin\tau f(\tau)
+             e^{\ii nN\tau^2/(4\pi)-\ii\ell N\tau}\,d\tau.
+\end{equation}
+Here is a uniform bound for what was omitted. On the lower
+horizontal side the packet and chirp have real rate at most
+\[
+ F_0-ct^2+\frac{|n||t|y}{2\pi}-\ell y+Cy^2.
+\]
+The maximum of the two $t$ terms is $n^2y^2/(16\pi^2c)$.
+For $\ell>L$ the resulting upper rate is
+\[
+ F_0+t_0^2\left(\frac{A_0^2}{16\pi^2c}-A_0
+                         +\frac{CA_0^2}{n^2}\right)
+                         -(\ell-L-1)y.
+\]
+First choose $A_0$ so its first positive term is at most $A_0/4$,
+then a lower threshold for $|n|$ so the last one is also at most
+$A_0/4$. The loss is at least $A_0t_0^2/2$, independently of $n$.
+The bound $|c_{\ell,N}(\sigma)|\le\ell e^{2\pi R'(\ell-1)}$
+makes the remaining geometric sum convergent for all sufficiently
+large $N$. Constants depending on fixed $n$ do not change this rate.
+
+At the vertical endpoints the angular loss is fixed. Their chirp
+cost is $O(N|n|y)=O(Nt_0)$, and the retained-charge connector cost
+is $O(NLy)=O(Nt_0^2)$. Decrease $t_0$ to preserve the loss. This
+also controls the zero-mode current. All spectator variables can
+remain real or on their physical translated grids: those grid
+heights are $O(1/N)$ and their fixed chirps have bounded modulus.
+Use the exact telescoping identity
+\[
+ \prod_v\mathcal D_v-\prod_v\mathcal P_v
+ =\sum_j(\prod_{v<j}\mathcal P_v)
+                   (\mathcal D_j-\mathcal P_j)
+                   (\prod_{v>j}\mathcal D_v).
+\]
+The other $\mathcal P$'s are finite real integrals of polynomial
+operator cost, and the other $\mathcal D$'s are finite physical
+grid sums. Thus every telescoping term has rate $F_0-\gamma$ for
+one fixed $\gamma>0$. No spectator is moved to a slope-dependent
+complex height during another coordinate's tail estimate.
+
+The whole trace-minus-finite-approximation is holomorphic in each
+$\sigma_v$. Apply the maximum principle successively to extend
+the estimate from the parameter circles to $|\sigma_v|\le R$.
+This includes all normal limits at $0,\pm1/2$. For any fixed
+upper-half-plane compact use the same translated contour directly;
+its sine denominator is bounded away from zero and its endpoint
+translation is still $O(1/N)$. Constant vertices can independently
+be brought to zero by the preceding disk argument. Fixed
+derivatives follow on smaller compacts.
+
+\subsection{A common critical branch for every retained charge}
+After truncating the real integral to a small angular box, with
+fixed loss, its phase is
+\[
+ T_{\boldsymbol\ell}(\boldsymbol\tau)
+ =\Psi(\boldsymbol\tau)
+       +\frac{\ii}{4\pi}\sum_v n_v\tau_v^2
+       -\ii\sum_v\ell_v\tau_v.
+\]
+Set $\varepsilon_v=1/n_v$, $t_v=\ell_v/n_v$. Its critical equation
+and a removable stationary expression are
+\begin{align}
+ \tau_v&=2\pi t_v+2\pi\ii\varepsilon_v\Psi_v(\boldsymbol\tau),
+       \label{ms:joint-critical}\\
+ W(\mathbf t,\boldsymbol\varepsilon)
+ &=\Psi(\boldsymbol\tau)
+                -\ii\pi\sum_v\varepsilon_v\Psi_v(\boldsymbol\tau)^2.
+\end{align}
+The implicit function theorem gives one holomorphic branch on a
+fixed polydisk about $(0,0)$. The critical action is
+$-\ii\pi\sum t_v^2/\varepsilon_v+W$; the first term is purely
+imaginary for the real signed data. Separate evenness makes $W$
+even in each $t_v$. At $\boldsymbol\varepsilon=0$,
+$W(\mathbf t,0)=\Psi(2\pi\mathbf t)$, so
+$\partial_{t_v^2}\Re W(0,0)=-2\pi^2 a_v$.
+Shrink the polydisk until all these derivatives are at most
+$-\pi^2a_v$. Integration in the squared coordinates gives
+\begin{equation}\label{ms:joint-loss}
+ \Re T_{\boldsymbol\ell}(\boldsymbol\tau_{\boldsymbol\ell})
+ \le\Re T_{\mathbf1}(\boldsymbol\tau_{\mathbf1})
+       -\sum_v\frac{\pi^2a_v}{n_v^2}(\ell_v^2-1).
+\end{equation}
+Choose $t_0$ inside this polydisk and then increase the single
+lower threshold for all $|n_v|$. This covers every retained charge
+without a restriction on their slope ratios.
+
+Write $\Psi_v=\tau_v Q_v(\tau_1^2,\ldots,\tau_H^2)$, with
+$\Re Q_v<0$ in that neighborhood. Then
+\begin{equation}\label{ms:critical-angle}
+ \tau_{\boldsymbol\ell,v}=
+ \frac{2\pi t_v}{1-2\pi\ii\varepsilon_v Q_v},\qquad
+ \Im\tau_{\boldsymbol\ell,v}
+ =\frac{4\pi^2\ell_v\Re Q_v}
+              {n_v^2|1-2\pi\ii\varepsilon_vQ_v|^2}<0.
+\end{equation}
+Every angle and every sine in the amplitude is nonzero. Translate
+the small real box to this critical point. The real part of its
+Hessian on real tangent vectors is that of $\Psi''$, since the
+chirp Hessian is purely imaginary, and stays negative definite.
+The connectors preserve the face loss: their heights are at most
+$C|t_v|/|n_v|$, their chirp cost on a face of size $\rho$ is at
+most $CN\rho|t_v|$, and their Fourier factors decrease under the
+downward displacement. Choose $t_0$ small compared with the fixed
+face loss before increasing the slope threshold.
+
+Use the holomorphic packet expansion on this contour, not a real
+pointwise remainder. Gaussian integration and
+\eqref{ms:dimension} give for the entire retained contraction
+\begin{equation}\label{ms:filled-packet}
+ \left(\prod_v\mathcal D_v\right)B_N
+ =\left(\prod_v C_{N,n_v}(\sigma_v)\right)
+   \Gamma_{e,N}(s)N^{3/2}D_{\mathbf n}
+   e^{N T_{\mathbf1}(\boldsymbol\tau_{\mathbf1})}
+                         (1+O(N^{-1})),
+\end{equation}
+where
+\[
+ D_{\mathbf n}=\left(-\frac1{\pi\ii}\right)^H(2\pi)^{H/2}
+ \frac{a(\boldsymbol\tau_{\mathbf1})\prod_v\sin\tau_{\mathbf1,v}}
+ {\sqrt{\det[-T_{\mathbf1}''(\boldsymbol\tau_{\mathbf1})]}}\ne0.
+\]
+The branch is fixed by the translated real Gaussian. There are
+only finitely many charges for fixed powers. Equation
+\eqref{ms:joint-loss} suppresses every one except $\mathbf1$,
+whose coefficient is exactly one by \eqref{ms:charges}. The
+reflected signs have already been paired, leaving no equal-action
+terms with an unexamined relative sign. The wire Hessian and this
+angular Schur complement are invertible, hence so is the full
+joint Hessian.
+
+The first action tends to $F_0$ as $\max_v|1/n_v|\to0$.
+Increase the common threshold to put its real part above $F_0$
+minus half each fixed source, contour-tail and off-window loss.
+Those additive errors are then negligible. The charge-dependent
+losses were instead compared to this same filled action in
+\eqref{ms:joint-loss}; a smallest local loss is never compared
+with a total complete-to-filled drop.
+
+Finally restrict $\sigma_v$ to the actual types. The finite scalar
+ledger \cite[Proposition 8.1]{Meridian}, which retains every typed
+turn, monodromy, crossing carrier and framing correction, says
+\[
+ \frac{\widehat\zeta_N(s)}{\widehat\zeta_N(0)}
+ \Gamma_{e,N}(s)\prod_v q^{-n_v\sigma_v(s)^2/2}
+                       =q^{a(D)s^2/2},\qquad
+ a(D)=-w(D)-\sum_v n_v.
+\]
+There is still exactly one main-cut factor $H_N$ in
+\eqref{ms:source-to-functional}. This proves
+\eqref{ms:filled-leading}. Removing these exact scalars leaves
+only the product of \eqref{ms:exact-insertion} on the original
+physical edges in the joint integral. The zero-meridian amplitude
+and all its offsets are common, so no first-order scalar is hidden
+in that assertion. Every choice of an exponential margin or a
+slope threshold preceded the choice of a meridian compact; only
+bounded factors and starting levels depend on that compact.

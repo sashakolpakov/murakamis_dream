@@ -1,0 +1,196 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,microtype,mathrsfs,tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\Z}{\mathcal Z}
+\newcommand{\Kern}{\mathcal K}
+\title{Meridian expansions and classical symbols of quantum recurrences}
+\author{}\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+For fixed strict Conway diagrams with independently long powers, and
+for circle trees satisfying a summed or directed degree--twist
+criterion, we prove meridian expansions to every inverse-level
+order. They hold on fixed translated microscopic charts and retain
+the full normal coordinates at repeated spectral roots. At order
+$N^{-r}$ the logarithmic coefficient has degree at most $r+1$ in
+the microscopic parameter. Its highest degree is the stationary
+value of an explicit analytic deformation of the original source.
+We then prove that every specified fixed recurrence annihilating
+the whole reduced invariant at all sufficiently large levels has
+this analytic characteristic germ in its first nonzero classical
+symbol. The reduced-to-full gauge retains both its meridian divisor
+and its sign. A separate marked geometric identification determines
+when the germ is the preferred meridian--longitude branch.
+\end{abstract}
+
+\section{Fixed diagrams, normalization and conclusions}\label{me:intro}
+Throughout, a diagram is one fixed literal ordered tangle expression,
+with its physical turns, original crossing circles, endpoint orders,
+cut and zero-framing convention. Its closure is one knot and no
+component is closed inside a proper tangle. All signed integer
+crossing powers $n_v$ are fixed before $N$ tends to infinity. We use
+one of the following already proved source classes:
+\begin{enumerate}
+\item a strict Conway expression with at least two original circle
+vertices and all $|n_v|$ above the single diagram-dependent threshold
+of \cite[Theorem 1.2]{MovingSources};
+\item an all-circle tree with at least one edge, degrees $d_v$ and
+$\sum_v d_v/(d_v^2+n_v^2)\le2^{-25}$, as in
+\cite[Theorems 1.1--1.2]{Summed};
+\item an all-circle tree with a root and numbers $c_v$ satisfying
+\cite[equations (2.3), (2.8), (2.9), Theorem 1.1]{Directed}.
+\end{enumerate}
+The last is a finite criterion, not a condition on an unknown
+invariant. It includes, by \cite[Corollary 1.2]{Directed}, the
+separate alternative $d_v\ge2^{28}$ or $|n_v|\ge2^{27}$ at every
+vertex, and the local condition
+$\max_v d_v/(d_v^2+n_v^2)\le2^{-120}$. In these all-circle cases
+large degree can permit $n_v=0$. No long-power assumption is added
+to them here. The explicit directed inequalities are recalled in
+Section~\ref{me:directed}; no summed hypothesis is substituted for
+that criterion.
+
+Let $F_N(M)$ be the actual zero-framed reduced state of
+\cite{Meridian}, with $q_N=e^{\pi\ii/N}$ and marked meridian
+$M=q_N^s$. In its highest-weight coordinate the pointing is
+$M=-q_Nx$; the source flag has eigenvalue $M^{-1}$. Put
+\begin{equation}\label{me:normalization}
+ K_N=F_N(1),\qquad H_N(s)=\frac{\sin\pi s}{N\sin(\pi s/N)},
+ \qquad \Z_N(s)=\frac{F_N(q_N^s)}{K_NH_N(s)}.
+\end{equation}
+The value of $H_N$ at zero is one. The imported source theorems
+prove $K_N\ne0$ for all sufficiently large levels, in both parities.
+For $N\ge3$ it is the reduced Kashaev value with the fixed complete
+normalization. The one factor $H_N$ is the actual reduced/full
+conversion, not an adjustable regularization.
+
+The local action needs its full normalization. Let $X$ collect
+all original physical wire coordinates $x_e$, all hidden unturned
+product coordinates where present, and the original circle angles
+$\tau_v$. Define
+\begin{align}
+ J(x)&=\int_0^x\log(2\sin\pi u)\,du,\notag\\
+ b(x,\tau)&=\int_0^x\log(2\cos2\pi u+2\cos\tau)\,du-2J(x),\notag\\
+ m(x,y,z)&=J(x+y)+J(z)-J(x)-J(y)
+                 -J(z-x)-J(z-y)-J(x+y-z).\label{me:local-actions}
+\end{align}
+The logarithms continue the original positive complete branch.
+For strict Conway sources retain the complete bare gates and set
+\begin{equation}\label{me:base-action}
+ \Phi(X)=\sum_{\text{bare gates}}m(x,y,z)
+  +\sum_{v\text{ circle}}\sum_{e\ni v}b(x_e,\tau_v)
+  +\frac{\ii}{4\pi}\sum_vn_v\tau_v^2-\ii\sum_v\tau_v.
+\end{equation}
+For all-circle trees the first sum is absent. The last term is the
+original first Fourier charge and is part of the mark. Write $X_0$
+for its selected filled critical point. The source theorems prove
+its nondegeneracy; in the directed case the joint statement follows
+also from the conditional Hessians in Section~\ref{me:directed}.
+Let $\mathcal E_T$ denote only the original physical turn edges,
+not the hidden unturned resolution wires. Set
+\begin{align}
+ \Kern(x,t)&=2J(x)-J(x+t)-J(x-t),\notag\\
+ a(D)&=-w(D)-\sum_v n_v,\notag\\
+ \Phi_t(X)&=\Phi(X)+\sum_{e\in\mathcal E_T}\Kern(x_e,t)
+                          +\frac{\pi\ii a(D)}2t^2,\label{me:deformed-action}\\
+ S(t)&=\Phi_t(X_*(t)),\qquad X_*(0)=X_0.\notag
+\end{align}
+The analytic implicit function theorem defines this stationary
+branch for small $t$. It is an auxiliary local family, not an
+assertion about the physical invariant with $s=Nt$.
+
+\begin{theorem}[All orders on translated microscopic charts]
+\label{me:all-orders}
+For each source above, every $L\ge1$, every compact disk
+$|s|\le R<1$, and every fixed compact $K$ in the open upper
+half-plane,
+\begin{equation}\label{me:expansion}
+ \log\Z_N(s)=\sum_{r=1}^L N^{-r}p_r(s)+O(N^{-L-1}),
+ \qquad \deg p_r\le r+1.
+\end{equation}
+The logarithm is the branch tending uniformly to zero. The estimate
+holds with every prescribed finite number of derivatives on smaller
+compacts. The coefficients are the same on all these charts. They
+may be separated by level parity if a lower amplitude requires it;
+their highest-degree coefficients agree. More precisely,
+\begin{equation}\label{me:diagonal}
+ [s^{r+1}]p_r(s)=[t^{r+1}](S(t)-S(0)).
+\end{equation}
+All coefficient polynomials are even and vanish at zero. In particular
+\begin{equation}\label{me:first-coefficient}
+ p_1(s)=\frac12S''(0)s^2,\qquad
+ S''(0)=\pi\ii a(D)-2\pi\sum_{e\in\mathcal E_T}\cot(\pi x_e(X_0)).
+\end{equation}
+The constants can depend on the fixed diagram, powers, certificate,
+compact, derivative order and expansion order.
+\end{theorem}
+
+A recurrence here means a specified finite operator
+\begin{equation}\label{me:operator}
+ P(q,M,T)=\sum_{j=0}^{r_P}a_j(q,M)T^j,\qquad TM=qMT,
+ \qquad a_j\in\mathbb C(q,M),
+\end{equation}
+which annihilates the whole reduced function $F_N(M)$ for every
+sufficiently large integer level. Neither interpolation from finitely
+many levels nor an equation for the values $F_N(1)$ is this hypothesis.
+Negative shifts can first be removed by multiplication by a power
+of $T$. Clear its fixed rational denominators and divide by the
+largest common power of $q-1$. Its nonzero specialization is
+$P_0(M,L)$. No existence claim for a recurrence is needed for the
+following implication.
+
+\begin{theorem}[A classical germ forced by the actual recurrence]
+\label{me:symbol}
+For every operator \eqref{me:operator} with the stated all-level
+property, define
+\[
+ \mathcal S(u)=\pi\ii\{S(u/(\pi\ii))-S(0)\},\qquad
+ L_{\rm an}(e^u)=-e^{\mathcal S'(u)}.
+\]
+Then $P_0(e^u,L_{\rm an}(e^u))=0$ as a holomorphic germ. Moreover,
+writing $M=e^{\pi\ii t}$ and $E_e(M)=e^{2\pi\ii x_e(X_*(t))}$,
+\begin{equation}\label{me:longitude-formula}
+ L_{\rm an}(M)=-M^{a(D)}\prod_{e\in\mathcal E_T}
+                          \frac{M^2-E_e(M)}{1-M^2E_e(M)}.
+\end{equation}
+The selected irreducible Laurent-polynomial factor of this germ
+therefore divides every such $P_0$. This conclusion does not
+identify a full polynomial, multiplicity or recurrence ideal.
+\end{theorem}
+
+The analytic assertion is proved without a representation-variety
+argument. Section~\ref{me:geometric} states the additional marked
+geometric input that identifies $L_{\rm an}$ with the preferred
+longitude, rather than identifying two germs from a common tangent.
+
+The broader comparison of quantum recurrences with peripheral curves
+is the subject of the AJ conjecture. In its colored-Jones formulation,
+the conjecture compares the minimal color-shift recurrence at $q=1$
+with the $A$-polynomial, with the coordinate convention and factors
+depending only on the meridian treated explicitly
+\cite[Section 2.2, Conjecture 2]{AJ}; see also the factor formulation
+in \cite[Section 1.1]{DiagrammaticAJ}. Here the hypothesis is an operator
+identity for the whole meridian function at every sufficiently large
+root-of-unity level. The conclusion selects one analytic germ and,
+after the separate geometric argument, its preferred-longitude factor.
+It neither supplies that operator nor identifies the minimal
+colored-Jones recurrence or the other character components. These
+references explain the comparison; their proofs are not inputs below.
+
+\input{analytic.tex}
+\input{directed.tex}
+\input{filtration.tex}
+\input{operators.tex}
+\input{geometric.tex}
+\input{references.tex}
+\end{document}

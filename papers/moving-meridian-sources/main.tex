@@ -1,0 +1,208 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,microtype,tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,shapes.geometric}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\rem}{\operatorname{rem}}
+\newcommand{\Turn}{\mathcal T}
+\newcommand{\normJ}[1]{\lVert #1\rVert_{\mathrm J}}
+\newcommand{\poly}{\operatorname{poly}}
+\title{Moving-meridian source estimates for strict Conway tangles}
+\author{}\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+We estimate the actual Newton contraction of a fixed ordered Conway
+tangle when its main meridian moves on the scale of the inverse level.
+At a product junction the deformed trace need not be bounded by its
+complete value at the same indices. We prove a reflected-index
+comparison instead, and assemble it over arbitrary connected regions
+of product junctions. The resulting error has a strict exponential
+loss at the original shared pressure. The retained finite sum has
+primitive wire coordinates, a nonzero holomorphic saddle and a shared
+angular bound. Its actual crossing traces have one nonzero joint
+first-charge contribution for independently long fixed signed powers.
+The proof includes both level parities, all first normal coordinates,
+and fixed translated nonreal meridian charts. It supplies the analytic
+source needed for higher meridian expansions; no longitude
+identification is used.
+\end{abstract}
+
+\section{The actual source and the assertions}\label{ms:intro}
+Fix a literal ordered expression in products, physical quarter-turns
+and crossing boxes. Consecutive products without a turn are combined
+into one junction. A junction carrying an original crossing operator
+is a \emph{circle vertex}; a junction with no such operator is
+\emph{bare}. Every bare junction has valence at least three, counting
+its external attachments. The reduced graph is a tree. Its endpoint
+orders, orientations, closing cut and framing remain fixed. Identity
+coupons at bare vertices are not additional crossing circles.
+
+We require the expression to be strict in the sense of
+\cite[Lemma 2.2 and Theorem 2.5]{Profiles}. Explicitly its positive
+Newton state has leaf labels in $(0,1/2)$ and, after deleting only the
+forced final flat gate, each multiplication has
+\[
+ \max(x,y)<z<x+y<1.
+\]
+All hidden indices in an ordered binary resolution are retained.
+Theorem 3.3 of \cite{Profiles} proves that the resulting compact
+positive action has a unique strict maximum, with negative definite
+Hessian. Write its value as $F_0$. If a knot invariant is mentioned,
+the original endpoint tracing must give one knot, with no component
+closed inside a proper tangle. There are $H\ge2$ original circle
+vertices. The diagram and its integer powers are fixed before the
+level tends to infinity.
+
+Here are the exact finite conventions. For $N\ge2$ put
+\begin{equation}\label{ms:finite-data}
+\begin{gathered}
+ q=e^{\pi\ii/N},\quad d=N-1,\quad m=\lfloor d/2\rfloor,
+ \quad S_r=\prod_{a=1}^r2\sin(\pi a/N),\\
+ c_j=2\cos((2j+1)\pi/N),\qquad
+ e_r(z)=S_r^{-2}\prod_{j<r}(c_j-z).
+\end{gathered}
+\end{equation}
+The empty product is one. A low index satisfies $r\le m$; a high
+index satisfies $r>m$. These are basis indices, not ordinary circle
+colors. Let $\mathsf T_N(u+u^{-1})=u^N+u^{-N}$ and define
+\begin{equation}\label{ms:quotient}
+ P_\sigma(z)=\mathsf T_N(z)+2\cos(2\pi\sigma),\qquad
+ \phi_\sigma(F)=(-1)^dN^2[z^d]\rem_{P_\sigma}F.
+\end{equation}
+The parameter of an actual vertex is $\sigma=s,-s$, or $0$, according
+to its ordered orientation type. Moving equal-color vertices are
+nonadjacent across physical turns; constant vertices may be adjacent.
+This follows from the six domain/codomain types in
+\cite[Theorem 1.1]{Meridian}, not from an assumed bipartite coloring.
+
+The same finite theorem supplies the full pairing
+$\phi_\sigma(e_i e_j)=\mathbf1_{i+j=d}$. After lowering its two
+indices, an original physical turn edge has weight
+\begin{equation}\label{ms:edge}
+ \mathbf1_{i=j}\gamma_{e,N}(s)\frac{H_N(s)}{W_i(s)},\qquad
+ H_N(s)=\frac{\sin\pi s}{N\sin(\pi s/N)},\qquad
+ W_i(s)=\prod_{a=1}^i
+ \left(1-\frac{\sin^2(\pi s/N)}{\sin^2(\pi a/N)}\right).
+\end{equation}
+Here $\gamma_{e,N}\in\{1,q^{s^2/2},q^{-s^2/2}\}$ is the prescribed
+typed scalar. The quotient and its carriers at each vertex are those
+of its actual ordered object. Theorem 7.1 of \cite{Meridian} gives
+the finite contraction with all $0\le i<N$, and exactly one outside
+factor $H_N$ for the reduced cut. It allows identity coupons, arbitrary
+valence and any summation root.
+
+The elementary action functions used throughout are
+\begin{align}
+ J(x)&=\int_0^x\log(2\sin\pi t)\,dt,&
+ g(x)&=J(2x)-4J(x),\quad 0\le x\le\tfrac12,\label{ms:actions}\\
+ m(x,y,z)&=J(x+y)+J(z)-J(x)-J(y)\notag\\
+ &\hspace{9mm}-J(z-x)-J(z-y)-J(x+y-z).
+\end{align}
+$J$ is continuous on $[0,1]$, with $J(1-x)=-J(x)$. An ordinary
+boundary branch has profile $g+c$, where the constant $c$ records
+the entire action already accumulated in that branch. Such constants
+will always be restored, rather than assigned independently to an
+edge.
+
+\begin{theorem}[The original finite packet]\label{ms:packet-main}
+For every fixed strict expression there are a primitive rectangular
+wire window $\mathcal W$, a number $\eta>0$ and a holomorphic finite
+packet $B_N(\boldsymbol\tau,s)$ with the following properties.
+The exact reduced source, with its actual fixed crossing powers,
+equals its circle trace functionals applied to $B_N$, with the original
+closing, reference and framing scalars and the single factor $H_N$,
+up to $N^A e^{N(F_0-\eta)}$. Its exponential loss is independent of
+the magnitudes of the fixed crossing powers. Constants and starting
+levels may depend on those powers.
+
+The packet retains every original physical edge factor
+\eqref{ms:edge}, every ordered complete bare gate and every $d=N-1$
+offset. Uniformly on a fixed complex angular neighborhood,
+\begin{equation}\label{ms:packet-leading}
+ B_N(\boldsymbol\tau,s)=N^{3(1-H)/2}
+    \Bigl(\prod_e\gamma_{e,N}(s)\Bigr)
+    a(\boldsymbol\tau)e^{N\Psi(\boldsymbol\tau)}
+    (1+O(N^{-1})),
+\end{equation}
+where $a$ is holomorphic and nonzero. The real action $\Psi$ is
+separately even, $\Psi(0)=F_0$, and
+\[
+ \Psi_{\tau_v\tau_w}(0)=-\delta_{vw}a_v,
+ \qquad a_v=\frac1{2\pi}\sum_{e\ni v}\tan(\pi x_e^*)>0.
+\]
+On a fixed strip about the whole real angular cube it obeys
+\begin{equation}\label{ms:packet-strip}
+ |B_N(\mathbf t+\ii\mathbf y,s)|
+ \le N^A e^{N(F_0-c\lVert\mathbf t\rVert^2+C\lVert\mathbf y\rVert^2)},
+ \qquad |t_v|\le\pi,\quad |y_v|\le y_0.
+\end{equation}
+All statements hold on each fixed disk $|s|\le R<1$ and on each
+fixed compact subset of the open upper half-plane, with fixed
+derivatives on smaller compacts and with both level parities.
+\end{theorem}
+
+The formulas for this packet and its lattice appear in
+Section~\ref{ms:packet}. The source error is bounded before moving
+the circle contours. In particular its proof does not multiply
+relative errors at several independently filled local saddles.
+
+\begin{theorem}[The joint filled source]\label{ms:filled-main}
+For each fixed strict knot expression there is a constant $B$ such
+that all fixed signed powers $|n_v|>B$ have a nonzero joint first-charge
+asymptotic. No ratio between the $|n_v|$ is restricted. On the same
+meridian compacts as above,
+\begin{equation}\label{ms:filled-leading}
+ \frac{F_N(q^s)}{F_N(1)}=H_N(s)
+  q^{a(D)s^2/2}(1+O(N^{-1})),\qquad
+ a(D)=-w(D)-\sum_v n_v.
+\end{equation}
+The leading coefficient before normalization is nonzero and its
+joint wire-and-angle Hessian is invertible. After the scalar in
+\eqref{ms:filled-leading} is removed, the only meridian dependence
+in the retained local integral is the product over original physical
+edges of
+\begin{equation}\label{ms:exact-insertion}
+ \mathcal I_N(x_e,s)=
+ \frac{G_N(Nx_e)^2}{G_N(Nx_e-s)G_N(Nx_e+s)}.
+\end{equation}
+$G_N$ is the canonical sine-factorial interpolation of
+\cite[Lemma 2.1]{Asymptotics}; the exact affine edge index is used in
+\eqref{ms:exact-insertion}. All other charges and endpoint currents
+have a fixed exponential loss relative to the joint first charge.
+The threshold $B$ is chosen before the meridian compact.
+\end{theorem}
+
+The state $F_N$ is the zero-framed reduced moving-meridian invariant
+of \cite{Meridian}; at $s=0$ it is the reduced Kashaev value for
+$N\ge3$. We prove an analytic source theorem. Geometric action and
+preferred-longitude identifications, and the extraction of all
+inverse-level coefficients, are separate consequences.
+
+\input{finite.tex}
+\input{fourier.tex}
+\input{pressure.tex}
+\input{components.tex}
+\input{packet.tex}
+\input{filling.tex}
+
+\begin{thebibliography}{9}
+\bibitem{Meridian}\emph{Exact Newton calculus for tangles with a moving meridian}, companion paper,
+\href{https://sashakolpakov.github.io/murakamis_dream/papers/meridian-tangles.pdf}{repository edition}.
+\bibitem{Newton}\emph{Newton coefficients and positive sources for Conway tangles}, companion paper,
+\href{https://sashakolpakov.github.io/murakamis_dream/papers/newton-tangles.pdf}{repository edition}.
+\bibitem{Profiles}\emph{Stationary profiles of strict Newton trees}, companion paper,
+\href{https://sashakolpakov.github.io/murakamis_dream/papers/strict-newton-profiles.pdf}{repository edition}.
+\bibitem{Bounds}\emph{Spectral estimates for Conway tangle sources}, companion paper,
+\href{https://sashakolpakov.github.io/murakamis_dream/papers/conway-source-bounds.pdf}{repository edition}.
+\bibitem{Asymptotics}\emph{Holomorphic source asymptotics and volume limits for strict Conway compositions}, companion paper,
+\href{https://sashakolpakov.github.io/murakamis_dream/papers/conway-asymptotics.pdf}{repository edition}.
+\end{thebibliography}
+\end{document}

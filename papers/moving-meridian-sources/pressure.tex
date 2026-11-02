@@ -1,0 +1,276 @@
+\section{Positive pressures with shared boundaries}\label{ms:pressure}
+The estimates just proved have different complete tensors on their
+right sides. This section compares their entire contractions. The
+comparison does not assert an isotopy of the corresponding tangles.
+
+Let $\mathcal G$ be a finite tree of bare junctions, each of full
+valence at least three. Its internal edges are physical turns and
+its ordinary external profiles are $g+c_j$. A covariant junction
+label is the index inserted in its trace; its rooted ordinary output
+is the complementary label. Thus a physical edge identifies equal
+covariant labels, while a hidden unturned resolution edge identifies
+complementary ones. The cubic action is symmetric:
+\begin{equation}\label{ms:cubic-action}
+ t(x,y,z)=m(x,y,1-z)
+ =J(x+y)+J(x+z)+J(y+z)-J(x)-J(y)-J(z)-J(x+y+z-1).
+\end{equation}
+Choose an ordered binary resolution at each junction. Let
+$V_D(a_1,\ldots,a_D)$ denote the maximum of its gate action with
+the covariant boundary labels fixed, and let $F(\mathcal G)$ be
+the maximum after including all ordinary profiles and shared edges.
+
+\begin{lemma}[Strict resolutions and constrained maxima]
+\label{ms:pressure-existence}
+The strict support of a whole junction is
+\begin{equation}\label{ms:whole-support}
+ a_i>0,\qquad a_i+a_j<1\ (i\ne j),\qquad \sum_i a_i>1.
+\end{equation}
+Every prescribed binary resolution realizes that support. The tree
+pressure has a unique strict maximum. The same assertion holds if
+at most one external incidence of each whole junction is fixed at
+$1/2$, including small independent variations of those fixed labels.
+The constrained pressure is analytic there with negative definite
+Hessian in its free boundary labels.
+\end{lemma}
+\begin{proof}
+For a product of inputs $a_i$, its strict output interval is
+\[
+ \max_i a_i<b<\min(1,\sum_i a_i),\qquad a_i+a_j<1.
+\]
+One proves this for any binary association by induction. A composite
+child has output interval $(L_S,U_S)$ with
+$L_S=\max_{i\in S}a_i$, $U_S=\min(1,\sum_{i\in S}a_i)$;
+a singleton is fixed. Choose the two child outputs below $b$ with
+sum between $b$ and one. Their lower sum is below one by the pair
+condition and their upper sum exceeds $b$. The singleton cases use
+the same inequalities directly. Conversely the gate at which two
+inputs first meet forces their pair sum below one. Closing the last
+incidence makes $b=1-a_D$ and gives \eqref{ms:whole-support}.
+Its closed version follows by the same finite interval rules.
+
+Assign $3/8$ to every physical edge and ordinary boundary. This is
+a strict witness at every junction. If one boundary at a junction
+is fixed at half, its largest pair is $7/8$ and its total is at least
+$5/4$; otherwise these bounds are $3/4$ and $9/8$. The witness
+persists under small independent variations of the fixed halves.
+
+Here the endpoint argument must also retain those fixed boundaries.
+For positive triples of sum one put
+$\mathcal V(a,b,c)=-\pi(J(a)+J(b)+J(c))$. Its Hessian is
+negative definite on the angle plane: the diagonal cotangent sums
+are positive and
+$\cot\pi a\cot\pi b+\cot\pi b\cot\pi c+
+\cot\pi c\cot\pi a=1$.
+If $p=z-x$, $q=z-y$, $r=x+y-z$, $w=1-x-y$, then
+\begin{equation}\label{ms:gate-atoms}
+ \pi m(x,y,z)=\mathcal V(y,x,w)
+   +\mathcal V(p,q,2r+w)+\mathcal V(p+q,r,r+w).
+\end{equation}
+The first atom's zero quadratic form forces $dx=dy=0$ and the
+second then forces $dz=0$. Thus a strict gate has a negative
+definite Hessian in all three variables. Also
+$g'(a)=2\log\cot\pi a$ and $g''<0$ on $(0,1/2)$.
+
+At a nonvertex flat triple $(0,a,1-a)$ an inward segment has
+derivative $+\infty$, because $J(tu)=tu\log t+O(t)$.
+At a vertex flat triple the $t\log t$ terms cancel, so no negative
+infinite term can cancel this barrier. Root the resolved tree at an
+output or a fixed half incidence. Output zero forces both product
+inputs to zero. Output one either has two interior inputs summing to
+one, which supplies a nonvertex flat atom, or propagates an endpoint
+to a child. A physical turn exchanges zero and one; an unturned
+resolution edge preserves the ordinary endpoint. Following this
+descent in a finite tree reaches an ordinary leaf endpoint, where
+the inward derivative of $g$ is infinite, or an interior pair summing
+to one. It cannot terminate at an interior fixed boundary. No
+maximizer therefore has an endpoint wire. With all wires interior,
+any remaining equality in the gate support supplies a nonvertex
+flat atom in \eqref{ms:gate-atoms}. The maximum is strict.
+
+Every free coordinate appears in a strict gate or a leaf term, so
+the summed Hessian is negative definite. Concavity gives uniqueness.
+Including the variable prescribed boundaries in that quadratic form
+and taking a Schur complement proves the asserted strict concavity
+of their pressure. The implicit function theorem and compactness
+give the analytic local maximizing branch.
+\end{proof}
+
+\begin{lemma}[Reflection and deletion of turns]\label{ms:deletion}
+An unturned rooted side with ordinary boundaries has profile $f$ on
+$(0,1)$ satisfying $f(b)\ge f(1-b)$ for $b\ge1/2$.
+The inequality is strict above half unless the entire rooted side
+is one trivalent junction with two ordinary leaves. Consequently
+deleting any set $S$ of physical turns and fusing their adjacent
+ordered junctions gives
+\begin{equation}\label{ms:pressure-deletion}
+ F(\mathcal G/S)\le F(\mathcal G).
+\end{equation}
+Every internal physical label at the original maximum is at most
+half. Equality occurs only for the one internal edge of the entire
+two-trivalent-junction tree with two ordinary leaves on each side.
+\end{lemma}
+\begin{proof}
+We use the stationary response equations of
+\cite[Lemma 4.1 and Proposition 4.2]{Profiles}, recording their
+inequality consequence to preserve the constants. Put
+\[
+ B=\cot\pi b,\quad \kappa=e^{-f'(b)},\quad
+ X^2=\frac{1+B^2}{1+\kappa},\quad Y^2=\kappa X^2.
+\]
+An ordinary leaf has $(B,X,Y)=(B,B,1)$. A composite has
+$-Y<B<X$. At a product the inputs and output have common $X$ and
+\begin{equation}\label{ms:response}
+ B_o=\frac{B_1B_2+X^2-1}{B_1+B_2},\qquad
+ Y_o=\frac{Y_1Y_2}{B_1+B_2},\qquad B_1+B_2>0.
+\end{equation}
+A physical turn sends $(B,X,Y)$ to $(-B,Y,X)$. Proper responses
+remain proper. To check the possible signs directly, for $X\ge1$
+the input inequalities force $B_i>0$ and
+$B_o-X=((X-B_1)(X-B_2)-1)/(B_1+B_2)<0$.
+For $X<1$, write $B_i=\sqrt{1-X^2}\cot\alpha_i$,
+$Y_i=\sqrt{1-X^2}\csc\alpha_i$; the denominator gives
+$\alpha_1+\alpha_2<\pi$ and the product response has this angle.
+The asserted inequalities follow. Thus these formulas also apply
+to every turned composite side in the present tree.
+
+At the last gate of an unturned product,
+\[
+ Y^2=(B_1-B)(B_2-B)\le(X-B)^2,
+ \qquad X\ge X_2(B):=\frac{B+\sqrt{B^2+2}}2.
+\]
+The factors are positive by strict support. Since
+$\log(X^2/(1+B^2-X^2))$ increases with $X$,
+\begin{equation}\label{ms:profile-derivative}
+ f'(b)\ge f_2'(b)=2\log(2X_2(B)^2),
+\end{equation}
+strictly when either input is composite. The actual two-leaf
+profile $f_2$ is symmetric, because $X_2(B)X_2(-B)=1/2$.
+Integrating \eqref{ms:profile-derivative} from $1-b$ to $b$
+proves the reflection statement, with all additive constants
+unchanged. The exceptional side is precisely the two ordinary
+leaves. At $b=1/2$ its derivative is zero; every other side has
+positive derivative there.
+
+Across an original edge the two ordinary outputs are both $1-z$,
+so its cut pressure is $f_A(1-z)+f_B(1-z)$. Above half it
+decreases strictly; at half it decreases unless both sides are
+exceptional. This proves the internal-label statement. The
+boundary labels themselves remain strictly between zero and half.
+
+Exact fusion is supplied by the full metric:
+\begin{equation}\label{ms:fusion}
+ \sum_{i=0}^d\phi_0(Ae_i)\phi_0(e_{d-i}B)=\phi_0(AB).
+\end{equation}
+Indeed expand $A=\sum_i\phi_0(Ae_i)e_{d-i}$. Reflecting one
+endpoint of an equal-index physical edge gives exactly this
+complementary pairing. The induced order is the boundary order of
+the two vertex disks and their joining band; it substitutes the
+child product in its original position. No attached branches are
+permuted. The pressures before and after this fusion are
+\[
+ F_T=\max_b(f_A(b)+f_B(b)),\qquad
+ F_I=\max_b(f_A(b)+f_B(1-b)).
+\]
+For $b\ge1/2$ use reflection on $B$, and for $b\le1/2$ use it
+on $A$ at $1-b$. Thus $F_I\le F_T$. A fused junction has valence
+$D_1+D_2-2\ge4$, retains ordinary boundary constants, and remains
+in the same class. Apply this argument successively to the actual
+profiles of each current fused tree to obtain
+\eqref{ms:pressure-deletion}. Equality is possible; no strict
+source loss has yet been inferred.
+\end{proof}
+
+\begin{lemma}[Several high boundaries]\label{ms:half-boundaries}
+Fix marked covariant boundary labels $z_i\ge1/2$, at most one at
+each retained whole junction, without leaf actions on those marks.
+Let $\Psi(\mathbf z)$ be the maximum of the same complete action.
+Then $\Psi(\mathbf z)\le\Psi(\tfrac12,\ldots,\tfrac12)$.
+Moreover, if a whole junction has $k\ge2$ half incidences, then
+\begin{equation}\label{ms:cardinal-action}
+ V_D(\underbrace{\tfrac12,\ldots,\tfrac12}_{k},x_1,\ldots,x_{D-k})
+       =\sum_j g(x_j),\qquad 0\le x_j\le\tfrac12.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Lemma~\ref{ms:pressure-existence} gives a strict analytic constrained
+maximum at the all-half point. Root there at mark $i$. Each other
+fixed half terminal has $B=0$ and the positive response
+$\kappa=e^{m_x}$ supplied by its incident strict gate; hence it
+is proper, $-Y<B<X$. This response is not a new leaf action.
+Propagate it by \eqref{ms:response}. The final product has ordinary
+output half and two inputs below half, so $B_1,B_2>0$ and
+\[
+ Y^2=1-X^2=B_1B_2\le X^2,
+ \qquad \partial_{z_i}\Psi=-\log(X^2/Y^2)\le0.
+\]
+The symmetric cubic action \eqref{ms:cubic-action} shows that
+rerooting changes no constrained pressure. Its joint concavity
+therefore gives the claimed simultaneous bound by the supporting
+plane at the all-half point. Closed boundary states follow by
+continuity. No assertion of coordinate monotonicity with other
+marks already above half is needed.
+
+For the second assertion use odd levels $N=2m+1$ solely to
+calibrate the real action. The polynomial $e_m^2$ is the full
+Hermite projector at the simple node $-2$: it vanishes with both
+jets at every double node, and
+\[
+ e_m(-2)=1,\qquad\phi_0(e_m^2)=1,\qquad
+ \phi_0(e_m^2F)=F(-2).
+\]
+For example $S_m^2=N$ and $P_0'(-2)=N^2$ give the first value;
+the top coefficient of $e_m^2$ gives the second. Hence
+$\phi_0(e_m^k\prod e_{n_j})=\prod e_{n_j}(-2)$ for $k\ge2$.
+Take its uniform closed factorial rate, using the positive ordered
+resolution \eqref{ms:gate}. Here is a support-preserving approximation,
+including the saturated pair faces. Keep every half index exactly
+$m=d/2$ and set the other inputs to $n_j=\lfloor d x_j\rfloor$.
+All pair sums are at most $d$, and the two retained halves make
+the total at least $d$. The integer interval rules of the complete
+product therefore give at least one supported resolution.
+In a sequential resolution its running outputs obey only integer
+difference inequalities: $r_a-r_{a-1}\in[0,n_a]$,
+$r_a\ge n_a$, $r_{a-1}\le d-n_a$, with the fixed first and last
+outputs. Encode bounds by a further coordinate $r_0=0$.
+
+For an arbitrary real supported resolution let $Y_a$ be its
+outputs multiplied by $d$, and $Y_0=0$. Every rounded difference
+inequality $r_j-r_i\le b_{ij}$ is violated by $Y$ by at most two.
+The integer system is feasible, so its directed constraint graph
+has no negative cycle. Let $d_{ij}$ be its shortest-path lengths;
+all coordinates are bounded, so these lengths are finite. A
+shortest path can be taken simple, with at most $D$ edges, giving
+$d_{ij}\ge Y_j-Y_i-2D$. The integer vector
+$z_j=\min_i(\lfloor Y_i\rfloor+d_{ij})$ satisfies every difference
+inequality and $Y_j-2D-1\le z_j\le Y_j$. Subtracting $z_0$ fixes
+the zero coordinate without changing any inequality. The resulting
+supported integer outputs differ from $Y$ by at most $2D+1$ and
+satisfy both prescribed endpoint outputs exactly. Thus every real
+resolved state has supported lattice approximants within $O(1/d)$.
+Conversely every lattice state is a point of the same limiting
+closed support. Uniform closed factorial estimates give $O(\log N)$
+errors for these bounded displacements. Positive state counting
+then identifies the exact finite rate with the maximum action.
+This proves
+\eqref{ms:cardinal-action} in its relative interior, and continuity
+adds zero arms and further half arms. The real action is independent
+of parity; no even-level simple-node projector is asserted.
+\end{proof}
+
+These two lemmas give a useful reassembly principle. Remove a
+nonempty collection of pairwise nonadjacent moving junctions, each
+with at least two high incidences, and bound each by the sum of
+$g$ on its low incidences and zero on the high ones. The neighboring
+retained complete hubs have at most one high incidence by their
+pairwise support. Mark those high boundaries and charge a single
+$g$ to each low arm of a removed hub. Optimize each coupled old
+region, move all its marks to half by Lemma~\ref{ms:half-boundaries},
+then reinsert the removed hubs by \eqref{ms:cardinal-action}.
+Their cardinal action consumes the charged $g$ profiles exactly
+once. Original low external profiles $g+c_j$ remain in addition;
+original high external arrays keep their constant $c_j$ and acquire
+$g(1/2)=0$. This gives a feasible state of the original complete
+tree with at least one pair sum equal to one. That finite union of
+closed boundary faces misses the unique strict maximum. Compactness
+therefore supplies a fixed strict gap. This argument also treats a
+single removed hub with only external arms and all closed endpoints.

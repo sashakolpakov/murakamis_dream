@@ -151,38 +151,63 @@ now proves the full invariant asymptotic under the summed condition
 $\sum_v d_v/(d_v^2+n_v^2)\le2^{-25}$. It retains every Newton index,
 Fourier charge and repeated-root derivative, and gives a uniform
 microscopic meridian profile. This analytic condition implies the
-geometric threshold above. The different local and directed conditions
-still have their own proofs in the reference account.
+geometric threshold above. The
+[directed circle-tree paper](docs/papers/directed-tree-asymptotics.pdf)
+proves its different conditional criterion and derives the older local
+bound as a corollary.
 
-For the completed-root Conway construction,
-[Holomorphic source asymptotics and volume limits for Conway closures](docs/papers/conway-asymptotics.pdf)
-proves the nonzero leading term of the entire filled invariant. It
-imports the complementary-color bound and geometric completion by
-numbered theorem, proves the intervening complex estimates, and fixes
-the absolute action comparison. This is the narrower completed-root
-class; the broader strict-tree extension remains a separate extraction.
+For every fixed strict Conway expression with at least two original
+crossing circles,
+[Holomorphic source asymptotics and volume limits for strict Conway compositions](docs/papers/conway-asymptotics.pdf)
+proves the nonzero leading term of the entire filled invariant and its
+volume limit, provided the actual closure is a knot and all signed powers
+are independently sufficiently long. It imports the strict optimizer,
+whole complementary-source bound and marked geometry by numbered theorem,
+then proves the pure-source expansion and absolute action comparison.
+Its separate signed local results and the quarter-index paper are not
+premises of this volume theorem.
 
 ## The meridian and the A-polynomial
 
-For the covered strict-tree constructions and the directed circle-tree
-criterion, the original reduced invariant has a full expansion on the
-required microscopic meridian charts. Its first correction is determined
-by the preferred cusp shape. The highest-degree terms of that expansion
-recover the preferred geometric longitude.
+The 20-page
+[moving-meridian source paper](docs/papers/moving-meridian-sources.pdf)
+controls the actual finite source when the main meridian is
+$M=q_N^s$, with $s$ in the stated fixed microscopic parameter sets.
+It treats arbitrary strict product junctions, retains their shared
+indices and proves a nonzero joint filling contribution for independently
+long fixed signed powers. This supplies the error bounds needed to
+expand the whole invariant, rather than only its selected local term.
 
-Consequently the selected geometric irreducible factor divides the first
-nonzero classical symbol of every genuine fixed operator annihilating
-the whole reduced invariant at all sufficiently large levels. This
-retains the exact peripheral normalization; it does not identify every
-A-polynomial factor, its multiplicity, or the full recurrence ideal.
+The 13-page
+[meridian-expansion paper](docs/papers/meridian-expansions.pdf)
+then proves every inverse-level order for these strict sources and,
+separately, for circle trees satisfying the summed or directed criterion.
+The estimates hold on the translated parameter sets needed by a fixed
+recurrence. The degree of each logarithmic coefficient identifies its
+highest-degree term with the stationary action. A separate classical
+argument identifies the resulting germ with the preferred longitude;
+in particular, the first correction is determined by the preferred cusp
+shape. The analytic expansion itself does not assume that geometric
+identification.
+
+Theorem 1.2 and Corollary 8.1 give a conditional consequence: start with a
+specified fixed nonzero operator annihilating the **whole reduced
+meridian function at every sufficiently large integer level**. Its first
+nonzero classical symbol contains the selected geometric irreducible
+factor. The proof retains the meridian divisor and sign in the exact
+reduced/full normalization. It does not construct such an operator,
+identify every A-polynomial factor or its multiplicity, or establish the
+full AJ conjecture. For strict sources, the geometric corollary takes
+the larger of the analytic and classical filling thresholds.
 The new decorated planar theorem concerns the complete meridian value;
 a corresponding moving-meridian theorem for that larger class remains
 separate work.
 
 ## Reading and reproducing the work
 
-The [collection of research papers](papers/README.md) now contains twenty-two current
-drafts, ranging from 11 to 29 pages. They separate the exact finite
+The [collection of research papers](papers/README.md) now contains twenty-four
+current drafts totaling 413 pages, ranging from 11 to 29 pages each.
+They separate the exact finite
 invariant, coefficient estimates, complex asymptotics and marked
 hyperbolic geometry from the application theorems. The strict
 Conway theorem and the summed and directed circle-tree criteria have
@@ -200,9 +225,11 @@ proofs, and alternative constructions in one continuous account.
 The net-twist and zero-twist reductions now have a separate 15-page
 topological account. The marked nonparabolic representations and preferred
 longitudes have separate 22- and 29-page accounts. They prove the
-geometric statements without importing quantum asymptotics. The
-moving-source and all-orders recurrence arguments are still being
-prepared for publication. The consolidated 21-page strict geometry
+geometric statements without importing quantum asymptotics. The new
+20-page moving-source and 13-page meridian-expansion papers supply the
+analytic steps and conditional recurrence implication described above.
+Their theorem statements make these one-way dependencies explicit.
+The consolidated 21-page strict geometry
 paper includes the local proofs previously spread over three articles;
 the two earlier editions remain available for existing citations. The
 older local tree criterion now follows from the directed paper, without repeating its
@@ -217,11 +244,13 @@ The open remainder estimate for unchanged general diagrams is not a
 premise of the restricted-family proofs.
 
 The [paper reproduction command](papers/README.md#building-and-reproducing-the-papers)
-runs twenty-three finite check groups. They compare exact matrix and
+runs twenty-five finite check groups. They compare exact matrix and
 polynomial formulas, replay rational certificate inequalities, and check
 normalizations and endpoint pairings. The source Fourier checks retain repeated-root derivatives and endpoint
 terms; the local recurrence checks retain both source components and
-both level parities. These computations
+both level parities. The new groups also check whole moving traces,
+reflected pairings and exact reduced/full gauge and coefficient-recovery
+identities. These computations
 supplement the written analytic and geometric proofs; sampling levels
 or diagrams does not establish those proofs.
 

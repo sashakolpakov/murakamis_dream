@@ -1,0 +1,109 @@
+\section{Uniform finite bounds with all normal data}\label{ms:finite}
+For a canonical polynomial of degree less than $N$, let $\normJ F$
+be the largest absolute value at a distinct complete node and the
+largest first derivative at a double node. At odd levels $-2$ is
+simple and contributes only its value. Complete-node conditioning,
+\cite[Lemma 2.1]{Bounds}, proves polynomial equivalence of this norm,
+the interval norm and the Chebyshev coefficient sum. It also proves
+\begin{equation}\label{ms:basis-norm}
+ \normJ{e_r}\le N^A w_r,\qquad
+ w_r=\begin{cases}e_r(-2),&r\le m,\\1,&r>m,\end{cases}
+ \qquad \log w_r=Ng(r/N)+O(\log N)\quad(r\le m).
+\end{equation}
+The high polynomials have zero complete values but generally nonzero
+first normals. No argument below discards those derivatives.
+
+Write $C_j(u+u^{-1})=(u^j+u^{-j})/2$, with $C_0=1$. Their
+coefficient sum is submultiplicative, since
+$2C_iC_j=C_{i+j}+C_{|i-j|}$. In the quotient $P_\sigma$,
+$C_N=-b$, where $b=\cos(2\pi\sigma)$, and
+\[
+ C_{N+r}\equiv-2bC_r-C_{N-r},\qquad
+ C_{kN+r}\equiv-2bC_{(k-1)N+r}-C_{(k-2)N+r}.
+\]
+For $r=0$ start with $1,-b$. Thus reducing a polynomial of degree
+at most $hN$ costs at most $(2|b|+1)^h$ in this norm. The integer
+$h$ is bounded by the fixed vertex valence. Since the top monomial
+coefficient of $C_d$ is $1/2$, both the full trace and fixed-valence
+quotient products have polynomial cost in $\normJ{\cdot}$. This
+proves these statements at collisions as polynomial identities.
+
+\begin{lemma}[Physical coupons on a fixed microscopic chart]
+\label{ms:coupon-bound}
+Every fixed signed crossing power has polynomial canonical norm,
+uniformly on $|s|\le R<1$ and on fixed nonreal compacts. The same
+holds after multiplication by any ordinary circle polynomial
+$L_j=(-1)^{j-1}U_{j-1}(z/2)$, $1\le j\le N$. Every typed turned
+coupon with input $E$ has coefficients bounded by
+\begin{equation}\label{ms:cone}
+ |[e_k]\Turn(pE)|\le C N^A\normJ E\,w_k.
+\end{equation}
+Constants may depend on the fixed word and compact, not on $N,j,k$.
+\end{lemma}
+\begin{proof}
+For an equal-color power the full crossing polynomial is
+$\kappa_\sigma^n r_{N,\sigma}^{[n]}$, where
+\[
+ \kappa_\sigma=q^{(d+\sigma)^2/2},\quad
+ t_j=q^{-2j-1+2\sigma},\quad c_j(\sigma)=t_j+t_j^{-1},\quad
+ \lambda_j=(-1)^jq^{j(j+1)-2\sigma j}.
+\]
+Proposition 6.1 of \cite{Meridian} identifies its values and full
+collision normals. Away from $U-U^{-1}=0$, $U=e^{2\pi\ii\sigma}$,
+its exact polynomial interpolation is
+\begin{equation}\label{ms:crossing-interpolation}
+ r_{N,\sigma}^{[n]}(z)=
+ -\frac1{N(U-U^{-1})}\sum_{j=0}^{N-1}
+ \lambda_j^n(t_j-t_j^{-1})\frac{P_\sigma(z)}{z-c_j(\sigma)}.
+\end{equation}
+The last quotient is a divided difference of $\mathsf T_N$.
+The nodes lie in a Bernstein ellipse of angular height $O(N^{-1})$;
+the first two derivatives of $\mathsf T_N$ there are $O(N^2)$ and
+$O(N^4)$. Integrating along a segment from a real point to a node
+bounds both the polynomial and its derivative by $C N^4$ on a
+compact avoiding the displayed denominator. All $\lambda_j^{\pm n}$
+and $\kappa_\sigma^{\pm n}$ have bounded modulus there.
+
+Inside $|\sigma|<1$, colliding distinct nodes occur at
+$0,\pm1/2$. Their indices satisfy $j+l+1-2\sigma=N$, whence
+\[
+ \lambda_l/\lambda_j=(-1)^{l-j}
+ q^{(l-j)(j+l+1-2\sigma)}=1.
+\]
+The node difference has a simple zero and the value difference
+vanishes. The divided differences and the confluent interpolation
+extend holomorphically. A larger parameter circle of radius less
+than one, different from $1/2$, and the maximum principle give the
+same polynomial bound throughout each smaller disk. This also
+handles negative powers. Nonreal compacts use
+\eqref{ms:crossing-interpolation} directly. Mixed words are the
+fixed powers of the constant-channel crossing, times the exact
+monodromy phases in \cite[Section 8]{Meridian}; their norms have the
+same bound. Since $|U_{j-1}(z/2)|\le j$ on $[-2,2]$, polynomial
+conditioning and quotient reduction prove the assertion for $p$.
+
+For completeness the paired factors have uniformly bounded upper
+and inverse bounds on these charts. Euler's product gives
+\begin{equation}\label{ms:subset-product}
+ W_k(s)=\prod_{\substack{1\le r\le k\\a\in\mathbb Z}}
+             \left(1-\frac{s^2}{(r+aN)^2}\right).
+\end{equation}
+The integers appearing here are distinct and nonzero. Outside a
+fixed finite set the logarithms are bounded by $C/|r+aN|^2$.
+The finite remaining factors stay away from zero on the stated
+compacts. Products of their minima with one and maxima with one
+bound every subset uniformly. Also $H_N$ converges uniformly to
+$\sin(\pi s)/(\pi s)$, nonzero there; the value at zero is removable.
+The exact identities $W_kW_{d-k}=H_N^2$ and
+\begin{equation}\label{ms:turned-probe}
+ [e_k]\Turn(pE)=\gamma\frac{W_{d-k}}{H_N}
+                      \phi_\sigma(e_kpE)
+\end{equation}
+now prove \eqref{ms:cone} by the full norm and quotient estimates.
+\end{proof}
+
+A coefficient loss in $E$ is inherited linearly in
+\eqref{ms:cone}; there is no substitution of independent branch
+maxima. Conversely a bare turned output will be estimated by its
+actual complete probe profile, rather than repeatedly charging the
+coarser cost $2\max g$.

@@ -1,0 +1,127 @@
+\section{Identifying the preferred longitude}\label{me:geometric}
+The preceding theorems construct an analytic characteristic from
+an actual source and a specified recurrence. Its geometric
+identification uses two separately proved classical statements.
+For all-circle trees, \cite[Theorem 1.2 and Corollary 7.1]{Nonparabolic}
+construct the full original-group filled germ at its positive
+hyperbolic endpoint, with the $M^{-1}$ flag and primitive
+logarithms. They give uniqueness after the actual endpoint and
+those marks have been identified. For strict sources with bare
+junctions, \cite[Theorem 1.3]{Longitudes} identifies the stationary
+branch of precisely \eqref{me:deformed-action}, retaining the
+original physical edges and all bare junctions. Its proof uses
+classical zero-circle insertion and elimination; it includes the
+half-label fold and makes no quantum asymptotic assumption.
+
+We spell out the all-circle interface to avoid replacing a group
+identification by an equality of second derivatives. Put
+$Q_v=e^{\ii\tau_v}$ and $E_e=e^{2\pi\ii x_e}$. Differentiating
+\eqref{me:local-actions} and using \eqref{me:sine-ratios}, the
+wire stationary equation is exactly
+\begin{equation}\label{me:edge-equation}
+ (E_e+Q_v)(E_e+Q_v^{-1})(E_e+Q_w)(E_e+Q_w^{-1})
+ =(E_e-1)^2(1-E_eM^2)(1-E_e/M^2).
+\end{equation}
+The local source log satisfies
+\begin{equation}\label{me:angle-log}
+ -2\pi b_\tau(x,\tau)=
+          \log\frac{Q+E}{1+QE}.
+\end{equation}
+To check its branch as well as its derivative, differentiate both
+sides in $x$: both derivatives are
+$2\pi\sin\tau/(\cos2\pi x+\cos\tau)$; both sides vanish at
+$x=0$. Continue from the same complete chart. The original angle
+stationarity therefore gives
+\begin{equation}\label{me:primitive}
+ \sum_{e\ni v}\log\frac{Q_v+E_e}{1+Q_vE_e}
+       -n_v\log Q_v=-2\pi\ii,
+ \qquad n_v=\epsilon_v-2p_v.
+\end{equation}
+These are exactly $U_v+p_vV_v=-2\pi\ii$, with
+$U_v=\sum\log((Q_v+E_e)/(1+Q_vE_e))-\epsilon_v\log Q_v$
+and $V_v=2\log Q_v$. The linear first-charge term in
+\eqref{me:base-action} fixed the right side before exponentiation.
+
+At $t=0$ the selected source point is the positive smooth endpoint
+identified by the original summed or directed source theorem;
+\cite[Section 8]{Directed} includes its backwards restoration from
+conditional saddles. The summed criterion gives
+$\sqrt{d_v^2+n_v^2}\ge\sqrt{2^{25}d_v}>630$ at every vertex,
+and the directed criterion gives
+$\sqrt{d_v^2+n_v^2}=2\pi|D_v|\ge2\pi\,2^{15}>630$.
+Thus the marked geometric theorem applies also to high-degree
+vertices with zero twist. Its full-group reconstruction uses
+\eqref{me:edge-equation} and the original flags, not just traces.
+At that endpoint $Q_v^2\ne1$ for each filled disk. It persists on
+a neighborhood, so a slope word commuting with its semisimple
+longitude and having eigenvalue ratio one is projectively identity.
+Consequently the reconstructed branch is a branch of the actual
+filled group. The endpoint, flag and primitive logarithmic
+conditions now meet the hypotheses of
+\cite[Corollary 7.1]{Nonparabolic}, which identifies the branch.
+
+For the geometric conclusion in the strict class, enlarge its
+fixed power threshold to the maximum of the analytic threshold in
+\cite[Theorem 1.2]{MovingSources} and the classical positive-filling
+and longitude threshold in \cite[Theorem 1.3]{Longitudes}. Both
+are constants of the same fixed original diagram, so this preserves
+independent signed powers and imposes no ratio condition. The
+analytic theorems above themselves require only their analytic
+source threshold. No inequality between the two thresholds is
+being assumed.
+
+For a strict source beyond this common threshold the classical action in
+\cite[Theorem 1.3]{Longitudes} is the sum of the same $m$ and $b$
+functions, with their absolute primitives, the same chirp and the
+same first-charge term. Hidden unturned wires can be retained
+before its stationary elimination. Its original physical-edge
+set is $\mathcal E_T$. The nondegenerate source branch proved
+here therefore equals that classical branch by the local implicit
+uniqueness theorem; no individual half-edge elimination is used
+at a folded label.
+
+\begin{corollary}[The selected geometric factor]\label{me:geometric-factor}
+For every fixed source in Section~\ref{me:intro}, with the strict-class
+threshold enlarged to the common threshold just specified, the germ
+$L_{\rm an}$ is its preferred-longitude eigenvalue on the $M$
+line, equivalently the inverse value on the source $M^{-1}$ line.
+It has lift $L_{\rm an}(1)=-1$. Every specified actual all-level
+annihilator in Theorem~\ref{me:symbol} contains this selected
+geometric factor in its first nonzero classical symbol. If
+$\tau_K=\left.\frac{d}{du}\log[-L_{\rm an}(e^u)]\right|_{u=0}$,
+then uniformly on the stated charts,
+\[
+ \frac{F_N(q_N^s)}{K_NH_N(s)}
+       =1+\frac{\pi\ii\tau_K s^2}{2N}+O(N^{-2}).
+\]
+\end{corollary}
+\begin{proof}
+The branch identification just established permits the marked
+longitude formulas \cite[Theorems 1.2--1.3]{Longitudes}. Their
+rational product is \eqref{me:longitude-formula}, including its
+integer exponent $a(D)$ and negative determinant-one sign. Those
+constants are fixed there by peripheral and framing calculations,
+not by the quantum tangent. Hence $\tau_K=\mathcal S''(0)
+=S''(0)/(\pi\ii)$. Theorem~\ref{me:symbol} proves the factor
+statement, and \eqref{me:first-coefficient} gives the expansion.
+\end{proof}
+
+\section{Finite reproduction and boundaries}\label{me:checks}
+The accompanying \texttt{check.py} checks the finite rational
+reduced/full gauge for several operator orders, the rational sine
+ratios in \eqref{me:sine-ratios}, and coefficient recovery and
+finite-jet truncation for sparse formal polynomials. These are
+algebraic checks of displayed identities. They do not establish
+analytic remainders, global source gaps, existence of a recurrence,
+or a geometric branch by testing levels. Those are the written
+proofs and explicitly named companion inputs above.
+
+The expansion is microscopic on each fixed compact in $s$.
+The auxiliary $t$ family organizes its local coefficients and
+creates an analytic germ, but does not supply a global asymptotic
+for fixed $M\ne1$. The recurrence hypothesis is one fixed finite
+operator valid for the whole function at all sufficiently large
+levels. The conclusion selects one germ and one irreducible factor;
+it does not assert equality with a full $A$-polynomial or an
+operator ideal. None of these distinctions alters the original
+all-level and both-parity source conclusions.

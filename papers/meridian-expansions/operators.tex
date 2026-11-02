@@ -1,0 +1,131 @@
+\section{The exact reduced-to-full gauge}\label{me:gauge}
+The full modified dimension in the normalization of
+\cite[equation (10.11)]{Finite} is
+\begin{equation}\label{me:modified-dimension}
+ d_N(M)=\ii^{N+3}\frac{M-M^{-1}}{M^N-M^{-N}},\qquad
+ d_N(1)=\frac{\ii^{N+3}}N.
+\end{equation}
+The value at one is a limit in $M$. It satisfies
+$d_N(q_N^s)/d_N(1)=H_N(s)^{-1}$. Thus \eqref{me:normalization}
+is the full state divided by its value at one. Write $f(M)=M-M^{-1}$.
+Since $q_N^N=-1$, for every integer $j$,
+\begin{equation}\label{me:gauge-ratio}
+ \frac{d_N(q_N^jM)}{d_N(M)}
+          =(-1)^j\frac{f(q_N^jM)}{f(M)},\qquad
+ \frac{H_N(s+j)}{H_N(s)}=(-1)^j\frac{f(M)}{f(q_N^jM)}.
+\end{equation}
+These are exact identities, including the meridian divisor.
+
+Let $P$ be as in \eqref{me:operator}, after clearing its original
+rational denominators and removing its common $q-1$ valuation.
+Substituting $F_N(q_N^s)=K_NH_N(s)\Z_N(s)$ in its actual equation
+shows that $\Z$ satisfies the fixed rational Ore operator
+\begin{equation}\label{me:full-operator}
+ \widetilde P=\sum_{j=0}^{r_P}a_j(q,M)(-1)^j
+                           \frac{f(M)}{f(q^jM)}T^j.
+\end{equation}
+Multiplication on the left by $\prod_{j=1}^{r_P}f(q^jM)$ clears
+these added denominators. The first nonzero classical symbol is
+\begin{equation}\label{me:gauged-symbol}
+                     f(M)^{r_P}P_0(M,-L).
+\end{equation}
+It is nonzero as a Laurent polynomial. No meridian factor is
+removed by a convention about the reduced invariant.
+
+Choose an open disk $D$ in the upper half-plane and apply
+Theorem~\ref{me:all-orders} to slightly enlarged compact disks
+covering $D,D+1,\ldots,D+r_P$. The exact cleared equation holds
+there for every sufficiently large level, and $\Z$ is nonzero.
+Divide by $\Z_N(s)$ and compare successive powers of $N^{-1}$.
+The uniqueness of asymptotic coefficients follows by multiplying
+by the first putative nonzero power and taking the limit; it holds
+along either parity sequence. Every resulting coefficient vanishes
+on $D$. Since the coefficient is a polynomial in $s$, obtained
+by the finite shifts and the Taylor series of Laurent polynomial
+coefficients at $(q,M)=(1,1)$, it vanishes identically.
+This step uses expansions at all the shifted arguments of the
+actual equation. Complete values or a chart restricted to $|s|<1$
+would not justify an operator of arbitrary fixed order.
+
+\section{Recovering the classical characteristic}\label{me:formal}
+Put $h=\log q$ and $u=\log M$, so the physical substitution is
+$u=hs$ and $h=\pi\ii/N$. The filtration gives a unique regrading
+of the formal logarithm as
+\begin{equation}\label{me:regrading}
+             h^{-1}\mathcal S(u)+\sum_{a\ge0}h^a A_a(u),
+ \qquad\mathcal S(u)=\pi\ii\{S(u/(\pi\ii))-S(0)\}.
+\end{equation}
+Indeed a monomial $h^r s^k$ becomes $h^{r-k}u^k$;
+$k\le r+1$ permits just the one negative power $h^{-1}$.
+For each exponent of $h$ its coefficient is a formal series in
+$u$. Its leading part is fixed by \eqref{me:diagonal}.
+Under the $j$th shift, $u$ changes to $u+jh$. The difference of
+\eqref{me:regrading} has no negative power of $h$, because
+$\mathcal S(u+jh)-\mathcal S(u)$ is divisible by $h$. Its
+constant coefficient is $j\mathcal S'(u)$. The lower $A_a$
+contribute no constant coefficient. Consequently the formal
+shift ratio belongs to $\mathbb C[[h,u]]$ and has constant
+$h$-coefficient $e^{j\mathcal S'(u)}$. Its exponential is
+well defined because $\mathcal S'(0)=0$.
+
+We give the needed injectivity explicitly. For
+$B(h,u)=\sum_{a,b\ge0}B_{a,b}h^au^b$, substitution $u=hs$ gives
+\begin{equation}\label{me:coefficient-recovery}
+ [h^ns^b]B(h,hs)=
+ \begin{cases}B_{n-b,b},&b\le n,\\0,&b>n.\end{cases}
+ \qquad B_{a,b}=[h^{a+b}s^b]B(h,hs).
+\end{equation}
+At each $n$ there are finitely many terms, so this is a well-defined
+ring map into $\mathbb C[s][[h]]$, and the second equality proves
+injectivity. Agreement through order $h^L$ recovers exactly the
+triangle $a+b\le L$, not all coefficients. For example $h^{L+1}$
+is invisible at that finite order. We need, and have proved, every
+finite asymptotic order.
+
+The formal operator equation from Section~\ref{me:gauge} therefore
+holds before substitution. Take its constant $h$-coefficient and
+use \eqref{me:gauged-symbol} to obtain
+\[
+ f(e^u)^{r_P}P_0(e^u,-e^{\mathcal S'(u)})=0.
+\]
+The ring of formal series is a domain and $f(e^u)$ is nonzero.
+Cancel it in this identity, without altering the operator, to get
+\begin{equation}\label{me:symbol-identity}
+                  P_0(e^u,-e^{\mathcal S'(u)})=0.
+\end{equation}
+The germ $S$ is analytic by its local implicit construction, so
+this formal equality is also an equality of holomorphic germs.
+
+Stationary differentiation of \eqref{me:deformed-action} gives
+its exact rational form. With $M=e^{\pi\ii t}$ and
+$E=e^{2\pi\ii x}$,
+\begin{equation}\label{me:sine-ratios}
+ e^{\Kern_x(x,t)}=\frac{(1-E)^2}{(1-EM^2)(1-E/M^2)},\qquad
+ e^{\Kern_t(x,t)}=\frac{M^2-E}{1-M^2E}.
+\end{equation}
+These follow by substituting $2\sin\pi z$ in
+$\Kern_x=2J'(x)-J'(x+t)-J'(x-t)$ and
+$\Kern_t=J'(x-t)-J'(x+t)$; their logarithms are zero at $t=0$.
+The derivative of the stationary value differentiates only the
+explicit parameter. Thus
+$\mathcal S'(u)=S'(u/(\pi\ii))$ and
+\eqref{me:longitude-formula} follows. All denominators are units
+near the selected point since the original filled bulk labels
+have $E_e\ne1$; a half label $E_e=-1$ is harmless.
+This proves the analytic part of Theorem~\ref{me:symbol}.
+
+For any one specified operator in that theorem, evaluation on
+this germ is a homomorphism
+$\mathbb C[M^{\pm1},L^{\pm1}]\to\mathbb C\{u\}$ with prime
+kernel. The kernel is nonzero by \eqref{me:symbol-identity}.
+It contains no nonzero Laurent polynomial in $M$ alone because
+$M=e^u$ is nonconstant. Its height is therefore one: a height-two
+prime in this two-dimensional Laurent polynomial ring would give
+an algebraic constant value of $M$. This ring is a unique
+factorization domain, so its height-one prime is generated by
+one irreducible Laurent polynomial, up to a monomial unit.
+Every $P_0$ in the theorem belongs to it. Over a smaller coefficient
+field the contraction of this prime can include conjugate factors;
+no claim that an individual complex factor is defined over that
+field is needed. The conclusion concerns the selected germ and
+its factor, not all components or their multiplicities.

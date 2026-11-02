@@ -1,4 +1,4 @@
-# Concrete analytic transfer, graph energy and variational estimates
+# Concrete analytic, variational and formal-series proofs
 
 This optional Lean package realizes the elementary analytic interfaces of
 [VolumeTransfer](../formal/VolumeLogic/VolumeTransfer.lean) using Mathlib's
@@ -22,6 +22,8 @@ equations and proves that their grounded solution is unique.
 The finite-cut modules remove the assumed transport table: strict cut
 inequalities and compatible total demand imply existence of the actual
 loads, their unique grounded balance, and the positive table itself.
+A separate formal-series module constructs meridian shifts and proves
+which part of a shifted logarithm survives at order zero.
 
 ## What is proved
 
@@ -987,6 +989,8 @@ lake exe cache get \
   Mathlib.Analysis.SpecialFunctions.Sqrt \
   Mathlib.Analysis.SpecialFunctions.Trigonometric.ArctanDeriv \
   Mathlib.Data.Fin.VecNotation \
+  Mathlib.RingTheory.PowerSeries.Derivative \
+  Mathlib.RingTheory.MvPowerSeries.Rename \
   Mathlib.Tactic.FieldSimp \
   Mathlib.Tactic.FinCases \
   Mathlib.Tactic.Positivity \
@@ -1014,6 +1018,51 @@ selected cache size have not been measured. With that cache present, the
 bridge itself compiled in seconds. No cache download is part of routine
 replay, and a missing dependency produces setup instructions.
 
+## Formal meridian shifts
+
+[FormalShift.lean](FormalShift.lean) proves a formal-algebra step in
+[the meridian expansion paper](../papers/meridian-expansions/operators.tex).
+Let \(R\) be a commutative ring, \(S(u)\in R[[u]]\),
+\(A(h,u)\in R[[h,u]]\), and \(j\in R\). Using Mathlib's actual
+power-series substitution, the module constructs
+
+\[
+ D_jS(h,u)=\frac{S(u+jh)-S(u)}{h}.
+\]
+
+The quotient is constructed by shifting coefficients, and the proof
+checks the identity obtained by multiplying it by \(h\). Divisibility
+is therefore a conclusion, not a division operation assumed to exist.
+The binomial coefficient formula gives
+
+\[
+ [h^a u^b]S(u+jh)
+   =j^a\binom{a+b}{a}[u^{a+b}]S(u).
+\]
+
+It follows that \(D_jS(0,u)=jS'(u)\). The map taking \(h=0\)
+is identified with the admissible substitution \((h,u)\mapsto(0,u)\).
+The module then constructs \(A(h,u+jh)\) and proves that its value at
+\(h=0\) equals that of \(A(h,u)\). Combining the two gives
+
+\[
+ \left[D_jS(h,u)+A(h,u+jh)-A(h,u)\right]_{h=0}=jS'(u).
+\]
+
+Thus the regular logarithmic amplitude does not change this leading
+shift. When \(S'(0)=0\), the constructed logarithmic shift also has
+zero constant term at the joint origin.
+
+This proof covers substitution and the logarithmic shift. It does not
+formalize the subsequent exponential or the recurrence-symbol argument.
+The separate Std-only [FormalRegrading](../formal/VolumeLogic/FormalRegrading.lean)
+module proves coefficient-table recovery and its finite-order limit; it
+does not identify that table operation with a power-series ring map.
+The analytic expansion, that remaining adapter, formal exponentiation,
+and the actual operator and geometric identifications remain written
+arguments. The two modules must not be described as a formal proof of
+the complete recurrence theorem.
+
 ## Replay and audit record
 
 From the repository root:
@@ -1031,7 +1080,7 @@ The checker rebuilds the Std-only path dependency, compiles
 `TransportCoercivity.lean`, `GroundedConvexity.lean` and
 `GroundedLaplacian.lean`, `TriangleLoads.lean`, `TrianglePotential.lean`
 `TriangleMinimizer.lean`, `TriangleBalance.lean`, `HallRecession.lean`
-and `TriangleHall.lean`, and runs
+`TriangleHall.lean` and `FormalShift.lean`, and runs
 [AxiomAudit.lean](AxiomAudit.lean). Every
 definition and theorem must appear exactly once in the audit. Only Lean's
 standard foundational axioms `propext`, `Classical.choice` and `Quot.sound`
@@ -1040,7 +1089,7 @@ are permitted; placeholders and additional axioms fail the check.
 `summary.json` records every declaration, its axioms, all dependency pins,
 and the SHA-256 hashes of the optional package, checker and Std-only sources.
 It contains relative paths and omits timestamps so identical inputs produce
-the same summary. Thirty negative controls check altered pins, missing or
+the same summary. Negative controls check altered pins, missing or
 duplicate dependencies, an absolute local dependency, incomplete or
 duplicate declaration audits, an omitted graph module or grounded-energy
 audit entry, an omitted flattening module or quadratic-cost audit entry,
@@ -1052,24 +1101,15 @@ an omitted triangle-potential module or actual supremum-gradient audit entry,
 an omitted triangle-minimizer module or actual prescribed-minimum audit entry,
 an omitted triangle-balance module or unique-load-solution audit entry,
 an omitted cut-recession or cut-to-balance module or its main theorem audit,
+an omitted formal-shift module or leading-shift audit,
 and an unexpected logical axiom. A failed run
 removes any old success summary in its output directory.
 
-The optional count is **fifty-seven definitions and two hundred thirty-four theorems**, separate
-from the Std-only theorem count: `RealTransfer` has two definitions and
-twenty-two theorems, `WeightedGraph` has seven definitions and nineteen
-theorems, `Flattening` has one definition and nine theorems,
-`TransportCoercivity` has seven definitions and sixteen theorems,
-`GroundedConvexity` has three definitions and eight theorems, and
-`GroundedLaplacian` has four definitions and eighteen theorems, and
-`TriangleLoads` has ten definitions and twenty-four theorems, and
-`TrianglePotential` has eight definitions and forty-one theorems, and
-`TriangleMinimizer` has six definitions and thirty-two theorems, and
-`TriangleBalance` has three definitions and nineteen theorems,
-`HallRecession` has six definitions and seventeen theorems, and
-`TriangleHall` has nine theorems. Seven compiled
-mathematical boundary controls have their own recorded axiom inventory and
-are not added to these reusable-library counts. The audit
-checks these proofs and the
-listed dependency pins; it does not certify that a particular knot family
-satisfies the remaining written analytic and geometric hypotheses.
+The result record gives the declaration counts for each module. Compiled
+mathematical boundary controls have a separate axiom inventory and are
+not added to the reusable-library counts. These controls include examples
+where a missing mass hypothesis changes the balance conclusion and where
+omitting the meridian shift changes its leading derivative. The audit
+checks the stated Lean proofs and dependency pins. It does not establish
+that a knot family satisfies the remaining written analytic and geometric
+hypotheses.

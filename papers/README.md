@@ -51,12 +51,12 @@ common core for several inserted diagrams also uses protected gluing.
 
 ## The current drafts
 
-The twenty-two current papers total 380 pages, with individual lengths from
+The twenty-four current papers total 413 pages, with individual lengths from
 11 to 29 pages. Each gives the proofs of its stated results and names
 its numbered companion imports. Two earlier geometry editions, totaling
 another 25 pages, are preserved below for existing citations. This is a
-partial extraction of the reference manuscript; the remaining theorem
-families are listed at the end of this guide. The aggregate page count
+division of the retained results into citable components; the reading
+routes are explained at the end of this guide. The aggregate page count
 is not a measure of compression: separate papers repeat their conventions
 and references, and some supply arguments only sketched in the reference.
 The aim is to make each proof independently readable and citable while
@@ -208,6 +208,40 @@ The signed local coefficient and completed-root source expansions remain
 proved in the same article as separate reusable results. The strict
 volume route does not require those signed expansions or the
 quarter-index recurrence theorem.
+
+**Moving-meridian source estimates for strict Conway tangles.** 20 pages.
+[TeX source](moving-meridian-sources/main.tex) ·
+[PDF](../docs/papers/moving-meridian-sources.pdf)
+
+The exact moving-meridian formulas describe a finite sum. This paper
+proves which part of that sum dominates for a fixed strict expression,
+including connected groups of product junctions without crossing circles.
+The main meridian is \(M=q_N^s\), where \(q_N=e^{\pi i/N}\) and
+\(s\) stays in a fixed disk \(|s|\le R<1\) or a fixed compact
+subset of the upper half-plane. All original turns,
+crossing powers and shared indices remain in the calculation.
+
+A high Newton index at a deformed junction cannot always be bounded by
+the complete junction at the same index. The proof reflects that index
+and joins the two adjacent tensors using their exact pairing. It then
+compares the maximum of the positive action, called its pressure, for
+the whole connected group, retaining the
+constants supplied by its attached branches. Simultaneous high indices
+are treated together. This gives an exponentially smaller error before
+any filling contour is moved. Theorem 1.1 constructs the remaining
+primitive wire sum, proves its nonzero holomorphic Gaussian term and
+bounds it on the whole real angular domain.
+
+Theorem 1.2 evaluates all original filling traces for independently long
+fixed signed powers. It retains every Fourier charge, endpoint term and
+repeated-root derivative, and proves that the joint first charge is
+nonzero through both level parities. The estimates hold on the fixed
+translated nonreal parameter sets needed by a recurrence. Its imports
+are the finite moving-meridian calculus, the positive Newton product,
+the strict stationary profiles, Source Bounds Lemmas 2.1 and 7.2, and
+the canonical factorial of Conway Asymptotics Lemma 2.1. The signed
+quarter-index expansion is not required. The conclusion is an analytic
+source theorem; it makes no additional volume or longitude claim.
 
 **Ordered tangle reductions and long net twists.** 15 pages.
 [TeX source](conway-reductions/main.tex) ·
@@ -372,7 +406,46 @@ from the classical action, including at the allowed half-label
 singularity. It imports finite Newton identities and the exact Fourier
 trace, but no quantum asymptotic. The conclusion identifies a geometric
 longitude germ. Applying it to a recurrence requires a separate
-all-orders expansion and an actual annihilating operator.
+all-orders expansion and an actual annihilating operator, as specified
+in the following paper.
+
+**Meridian expansions and classical symbols of quantum recurrences.** 13 pages.
+[TeX source](meridian-expansions/main.tex) ·
+[PDF](../docs/papers/meridian-expansions.pdf)
+
+Theorem 1.1 proves every prescribed inverse-level order of the normalized
+meridian state. It covers three alternatives: strict Conway sources with
+independently long fixed powers, circle trees satisfying the summed
+criterion, and circle trees satisfying the directed criterion. These
+conditions are not imposed simultaneously. The directed proof keeps
+each subtree divided by its exact zero-parent value, so its constants
+and error margins survive the induction to higher orders. The permitted
+high-degree, zero-power cases remain included.
+
+The expansion holds for \(M=q_N^s\) on fixed microscopic parameter
+sets and their required integer translates. At order \(N^{-r}\),
+the logarithmic coefficient is an even polynomial in \(s\) of degree
+at most \(r+1\). Its highest-degree term is determined by the same
+stationary action on the original physical edges. The proof needs
+the nonzero source theorem and its full error bounds; a volume limit
+or a first-order meridian profile alone would not supply these estimates.
+
+Theorem 1.2 begins with a specified fixed nonzero operator that
+annihilates the **whole reduced meridian function at every sufficiently
+large integer level**. It retains the exact reduced/full meridian
+divisor and sign, recovers a two-variable formal identity from all the
+microscopic coefficients, and proves that the first nonzero classical
+symbol vanishes on the selected analytic germ. Corollary 8.1 identifies
+that germ with the preferred longitude by importing the separate
+nonparabolic and longitude theorems. For strict sources it uses the
+larger of the analytic and classical filling thresholds.
+
+These are distinct steps: the moving-source paper controls the entire
+finite sum and its errors; this paper constructs all orders and uses
+them in an operator identity. It does not prove that such an operator
+exists, identify the full A-polynomial or its multiplicities, or prove
+the full AJ conjecture. The expansion remains microscopic; it is not
+an asymptotic at a fixed meridian value different from one.
 
 **Degree and twist estimates for circle-tree invariants.** 15 pages.
 [TeX source](circle-tree-asymptotics/main.tex) ·
@@ -528,15 +601,23 @@ absolute filled volume. Its proof does not use a quantum asymptotic.
 The [reference errata](../manuscript/ERRATA.md) explain the corrected
 factor in the filling Jacobian.
 
-## What still needs its own paper
+## Reading routes and retained boundaries
 
-The division should follow results rather than cut the reference text
-into equal lengths. The following groups have different mathematical
-purposes:
+The volume-limit and recurrence arguments use different outputs of the
+shared foundations. For a strict Conway volume limit, follow the finite
+Newton calculus and stationary profiles, the complete-source estimates,
+the strict marked geometry, and the strict volume theorem in Conway
+Asymptotics. For a meridian expansion, the moving finite calculus leads
+instead to the moving-source comparison and its nonzero joint filling
+term. Meridian Expansions then supplies every inverse-level order.
+Its final geometric-factor corollary adds the nonparabolic and preferred
+longitude results; its analytic expansion does not depend on them.
 
-| Subject | Result to explain and prove | Dependencies that must remain visible |
-| --- | --- | --- |
-| Moving-meridian estimates and recurrence factors | Estimate the full source on moving-parameter charts, then show that an actual recurrence has the selected geometric factor in its classical symbol | Exact moving-meridian calculus, uniform all-orders expansion, normalization, and the geometric longitude theorem |
+The circle-tree alternatives enter this last route through their own
+summed or directed source estimates. They do not need the strict
+long-power hypothesis, and the directed criterion is not inferred from
+the summed one. The dependency graph records these as alternative
+source cases, with exact theorem uses visible within each article.
 
 The frozen reference manuscript's first theorem uses its completed-root
 grammar. The companion accounts now cover the larger strict syntax through
@@ -547,20 +628,17 @@ written twists may cancel to a small net twist, and a vanishing net twist may ch
 the closure or produce additional components. The proof of those
 isotopies is distinct from the strict asymptotic theorem.
 
-These remaining subjects still need their own complete accounts. Each
-candidate needs a precise theorem, complete proofs of its own claims,
-defined notation, and an explicit list of imported theorems.
-
 For a citation between papers, the exporting paper must state a numbered
 theorem with its normalization, degree restrictions, level parity and
 uniformity assumptions. The importing paper must name that theorem and
 check those hypotheses. A reference to a folder of calculations is not
 a substitute. The current drafts include the strict Conway volume theorem,
-the summed and directed circle-tree criteria, and the local quarter-index
-expansion, together with their finite and geometric foundations. The
-longitude theorem now has its own account; the moving-source and
-all-orders recurrence arguments remain under extraction and proof review.
-The dependency graph keeps those obligations visible.
+the summed and directed circle-tree criteria, the local quarter-index
+expansion, and the moving-source, all-orders and preferred-longitude
+arguments, together with their finite and geometric foundations.
+The conditional operator conclusion retains its all-level hypothesis.
+Neither it nor the restricted volume theorems resolve the complementary
+source estimate for every unchanged planar diagram.
 
 The illustrated guide retains the broader approaches and unsuccessful
 comparisons. The reference manuscript remains available for the existing
@@ -607,7 +685,8 @@ with one command:
 python3 repro/check_paper_algebra.py --output repro/results/paper-algebra
 ```
 
-The runner requires SymPy, python-flint and NumPy. It saves a separate
+The runner has 25 finite check groups and requires SymPy, python-flint
+and NumPy. It saves a separate
 record and log for each registered check group, and stops on failure. The
 planar certificate groups retain their supporting interval records in
 separate subdirectories. The new Newton group compares physical matrix
@@ -621,6 +700,14 @@ uses outward rational bounds with explicit series remainders. The argument
 for every even number of braid factors is written in the three-braid paper; it is not inferred from computations for finitely
 many braid lengths. The finite checks complement the written proofs of
 the analytic estimates and geometric constructions.
+
+The moving-source group checks full Fourier traces, Newton Laurent
+coefficients, reflected pairings, fusion and the odd-node projector.
+The meridian-expansion group checks the exact reduced/full gauge,
+rational sine identities and recovery of formal coefficients, with
+controls showing what a finite jet cannot determine. These calculations
+do not prove uniform analytic remainders, existence of an annihilator,
+or a geometric identification from sampled levels.
 
 The local-bound and filling-sum checks can also be run separately:
 

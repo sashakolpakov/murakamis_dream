@@ -1,0 +1,218 @@
+\section{Finite source estimates on the shifted charts}\label{me:analytic}
+The exact moving finite calculus is imported from
+\cite[Proposition 6.1, Theorem 7.1 and Proposition 8.1]{Meridian}:
+these are respectively the full crossing polynomial and trace,
+the original tree contraction, and its scalar ledger. In its fixed
+Newton basis, with $d=N-1$,
+\[
+ e_k(z)=S_k^{-2}\prod_{j<k}(c_j-z),\quad
+ S_k=\prod_{r=1}^k2\sin(\pi r/N),\quad
+ c_j=2\cos((2j+1)\pi/N),
+\]
+the quotient is $P_\sigma=\mathsf T_N+2\cos2\pi\sigma$,
+$\mathsf T_N(u+u^{-1})=u^N+u^{-N}$. The metric is
+$\phi_\sigma(e_i e_j)=\mathbf1_{i+j=d}$ with
+$\phi_\sigma=(-1)^dN^2[z^d]\operatorname{rem}_{P_\sigma}$.
+An original physical edge, in lower-index convention, has equal
+indices and coefficient $\gamma_{e,N}(s)H_N(s)/W_k(s)$, where
+\begin{equation}\label{me:W}
+ W_k(s)=\prod_{r=1}^k
+       \left(1-\frac{\sin^2(\pi s/N)}{\sin^2(\pi r/N)}\right),
+ \qquad\gamma_{e,N}\in\{1,q^{s^2/2},q^{-s^2/2}\}.
+\end{equation}
+The complete Hermite norm uses all distinct node values and the
+first derivative at each double node. The odd node $-2$ is simple.
+Polynomial equivalence with interval and Chebyshev norms is
+\cite[Lemma 2.1]{Bounds}; quotient products of fixed valence are
+first reduced, so the assertion does not identify the full matrix
+algebra with a commutative polynomial algebra.
+
+\begin{lemma}[Translated compact sets]\label{me:translated}
+For every source class in Section~\ref{me:intro}, the local selected
+source, its nonzero leading coefficient, and all fixed exponential
+error margins hold on a fixed compact $K\subset\{\Im s>0\}$.
+Only bounded or polynomial prefactors and starting levels change.
+The same is true on a finite union of translates $K+j$.
+\end{lemma}
+\begin{proof}
+For strict Conway sources this is part of
+\cite[Theorems 1.1--1.2]{MovingSources}. We give the finite argument
+also needed for the all-circle classes. Euler's sine product gives
+\begin{equation}\label{me:subset}
+ W_k(s)=\prod_{\substack{1\le r\le k\\a\in\mathbb Z}}
+                  \left(1-\frac{s^2}{(r+aN)^2}\right).
+\end{equation}
+The nonzero integers are distinct. On $K\cup(-K)$ the finitely
+many small factors are bounded above and away from zero, and the
+logarithms of all remaining factors are bounded by $C_K/m^2$.
+Products of the minima with one and maxima with one give bounds
+for every subset, uniformly in $N,k$. Thus $W_k$, its inverse,
+$H_N$ and its inverse are uniformly bounded. Positivity in the
+all-circle estimates is used only for the complete Newton factors;
+these bounded multipliers do not change their exponential budgets.
+
+For clarity the exact fixed-power interpolation is
+\begin{equation}\label{me:crossing}
+ r_{N,\sigma}^{[n]}(z)=
+ -\frac1{N(U-U^{-1})}\sum_{j=0}^{N-1}
+ \lambda_j^n(t_j-t_j^{-1})\frac{P_\sigma(z)}{z-c_j(\sigma)},
+\end{equation}
+where $U=e^{2\pi\ii\sigma}$,
+$t_j=q^{-2j-1+2\sigma}$, $c_j(\sigma)=t_j+t_j^{-1}$ and
+$\lambda_j=(-1)^jq^{j(j+1)-2\sigma j}$.
+The full power includes $\kappa_\sigma^n$ with
+$\kappa_\sigma=q^{(d+\sigma)^2/2}$. The denominator is bounded
+away from zero on the nonreal compact. Nodes are in a Chebyshev
+ellipse of angular height $O_K(1/N)$. The divided difference and
+its derivative have polynomial bounds there, while the fixed
+positive or negative powers of the eigenvalues and carrier have
+bounded modulus. This proves the same full-polynomial bounds as
+on a disk. Exact Chebyshev folding costs a bounded factor per
+fold; the number of folds is fixed by the vertex valence.
+
+At a constant opposite-color vertex keep a separate formal
+$\sigma$ and use its whole trace on a parameter circle avoiding
+collisions. Its confluent normals are removable by the finite
+crossing theorem. The maximum principle for the whole trace
+minus its finite approximation brings this formal parameter to
+zero, while the edge parameter $s$ stays independent. This is not
+an identification of constant and moving orientation types.
+
+The actual trace grid is shifted by $2\pi\sigma/N$. Its exact
+pole kernel has vertical-side value
+$\ii N e^{-Nv}/(1+e^{-Nv})$ after that translation. Thus the
+endpoint action loss survives the $O_K(1/N)$ displacement. A
+translated chart $s+j$ may wrap finitely many grid points across
+$\pm\pi$; retain those entries and their chirps. Their endpoint
+loss persists, but the chirp itself is not periodic. Paired charge
+coefficients are
+\begin{equation}\label{me:charge}
+ (-1)^{d(\ell-1)}U_{\ell-1}(\cos2\pi\sigma),\qquad
+ |U_{\ell-1}(\cos2\pi\sigma)|
+       \le\ell e^{2\pi|\Im\sigma|(\ell-1)}.
+\end{equation}
+The added fixed exponential in $\ell$ is absorbed by the original
+$e^{-N\ell y}$ tail at every fixed positive contour height $y$.
+The first coefficient stays exactly one. Real/strip estimates
+in \cite[Sections 2--6]{Summed} and the conditional estimates in
+\cite[Sections 3--7]{Directed} use precisely these bounded
+multipliers, polynomial finite norms and geometric tails. All
+exponential margins therefore persist. This verifies their source
+hypotheses on $K$ directly; it is not analytic continuation of
+an asymptotic estimate through resonant real parameters.
+\end{proof}
+
+\begin{figure}[t]
+\centering\input{figures/translated-charts.tex}
+\caption{A fixed disk $D$ above the real parameter axis and its
+translates $D+j$ provide the arguments in an order-$r_P$ recurrence.
+The real dots are integer resonances; no contour crosses them.
+The physical meridians are $M=q_N^s$, so every fixed disk still
+shrinks to $M=1$ as $N$ grows.}
+\label{me:chart-figure}
+\end{figure}
+
+\section{Canonical local integrals to every order}\label{me:local-orders}
+The canonical factorial is
+\begin{equation}\label{me:factorial}
+ G_N(z)=\left(\frac{2\pi}{N}\right)^z\Gamma(z+1)
+ \prod_{a\ge1}\frac{\Gamma(Na+z+1)}
+                      {\Gamma(Na-z)(Na)^{2z+1}}.
+\end{equation}
+We use the complete proof in \cite[Lemma 2.1]{Asymptotics},
+including its fixed normalization, sine shift and reflection:
+\[
+ G_N(k)=S_k,\qquad G_N(z)G_N(N-1-z)=N,
+ \qquad G_N(s)G_N(-s)=H_N(s)^{-1}.
+\]
+On every smaller complex bulk compact it supplies, with all fixed
+derivatives and every requested finite order,
+\begin{equation}\label{me:factorial-expansion}
+ \log G_N(Nx)=NJ(x)+\tfrac12\log(2N\sin\pi x)
+           +\sum_{j=1}^{L}N^{-j}b_j(x)+O(N^{-L-1}).
+\end{equation}
+This is an asymptotic expansion, with no convergence assertion.
+The summable Gamma remainders in that lemma justify the infinite
+product before differentiation.
+
+The exact local circle factor and the physical edge insertion are
+\begin{align}
+ \mathcal E_N(x,\tau)&=
+ \frac{G_N(d/2+u)G_N(d/2-u)}
+ {G_N(d/2-Nx+u)G_N(d/2-Nx-u)G_N(Nx)^2},
+ \quad u=\frac{N\tau}{2\pi},\label{me:E}\\
+ \mathcal I_N(x,s)&=\frac{G_N(Nx)^2}{G_N(Nx-s)G_N(Nx+s)}.
+                                                        \label{me:I}
+\end{align}
+The sine shift proves their equality with
+$e_k(-2\cos\tau)$ and $H_N/W_k$ at $x=k/N$.
+In particular the reflection factor in \eqref{me:factorial} puts
+$H_N$ in the numerator of the edge weight. Hidden complete gates
+are ratios of the same factorials. Every argument, including
+$d/2=N/2-1/2$ and every $d-k$ offset, remains exact.
+
+\begin{lemma}[Uniform local expansion]\label{me:local-expansion}
+On the selected primitive wire contours and the selected local
+angular contours, the canonical integrals have expansions to every
+relative inverse-level order. Their coefficients and remainders
+are holomorphic on the stated smaller parameter compacts. This
+applies to a conditional edge integral with its parent angle still
+free, and to a joint strict Conway or summed-circle integral.
+\end{lemma}
+\begin{proof}
+All factorial arguments lie in fixed bulk complex tubes on these
+contours. For strict sources this is proved in
+\cite[Section 6]{MovingSources}; hidden unturned indices need not
+be below half. The exceptional half physical edge is bulk and
+causes no pole. For all-circle sources the edge saddle is in the
+fixed tube about $1/5<x<3/10$, as proved in
+\cite[Section 3]{Summed} and \cite[Section 3]{Directed}.
+Substitute \eqref{me:factorial-expansion} into the exact ratios.
+Powers of $N$, integer offsets and square-root marks give the
+original leading amplitude and complete inverse-power expansions.
+
+The finite lattice is handled before asymptotic integration.
+Enclose each primitive coordinate interval by half-grid rectangles
+and use $\pi N\cot(\pi Nz)$. On horizontal sides the difference
+from its constant value is $O(e^{-2\pi Nh})$; on vertical sides
+it is bounded. Choose the height $h$ before the parameter tube,
+with the phase gain $C h^2$ less than both a fixed fraction of the
+boundary loss and $\pi h$. Thus nonconstant modes and boundary
+currents have a fixed exponential loss. The constant terms give
+exactly $N^K$ times the local integral, up to those errors. The
+primitive lattice and all offsets are the ones in the imported
+finite source, so no sublattice multiplicity is introduced.
+
+Translate the local contour to its selected critical point. Its
+real quadratic part is uniformly negative on compact parameter
+sets; its inverse Hessian and leading amplitude are bounded and
+nonzero there. To obtain relative order $L$, Taylor expand phase
+and amplitude to a sufficiently high finite order, set
+$X-X_*=N^{-1/2}Y$, and split at $|X-X_*|=N^{-\epsilon}$,
+with $0<\epsilon<1/6$ chosen first. Outside this shrinking region
+the quadratic bound is $e^{-cN^{1-2\epsilon}}$. Inside it expand
+the exponential of the cubic and higher terms with its integral
+remainder. Taking enough Taylor terms makes that remainder at most
+$N^{-L-1}$ times an integrable polynomial times
+$e^{-c|Y|^2/2}$. The finitely many Gaussian moments give integer
+relative powers: odd total moments vanish. Fixed derivatives are
+obtained by starting with more terms and using a smaller tube.
+
+The absolute Gaussian integral is bounded by a constant times the
+modulus of its nonzero leading complex integral. Thus a uniform
+holomorphic relative remainder stays of the same order after
+integration. The bound may depend on fixed degrees and powers,
+which is permitted. This proves the claim directly, rather than
+promoting a first-order estimate to all orders without a remainder
+argument. Conditional angular and edge integrations use the same
+proof with the unevaluated parent coordinate as parameter.
+\end{proof}
+
+For the strict Conway and summed-circle classes the fixed global
+source and charge gaps are already below the same joint first
+charge. Lemmas~\ref{me:translated}--\ref{me:local-expansion}
+therefore give their entire source to every relative order. The
+source error is kept additive until that comparison; it is never
+compared with a product of separately damped local contributions.
+The directed case requires one additional normalized induction,
+which we now give.

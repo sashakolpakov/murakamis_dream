@@ -524,10 +524,38 @@ application. Three additional compiled checks retain a zero corner and
 repeated destinations, and show why weak cuts or incompatible total mass
 cannot replace the hypotheses.
 
-The optional package has 57 definitions and 234 theorems.
-Its axiom audit covers all 291 declarations, separately from
-the Std-only project. Thirty negative controls check that invalid
-metadata or axiom inventories are rejected. The saddle estimates, whole-source gap and geometric
+The [formal-shift module](../../formal-real/FormalShift.lean) addresses
+a different step: extracting a classical equation from a meridian
+expansion. Here \(h\) and \(u\) are independent formal variables,
+\(S(u)\) is a power series over a commutative ring, and \(j\) is a
+scalar. The module constructs the substitution \(S(u+jh)\) and proves
+that its difference from \(S(u)\) is divisible by \(h\). It then proves
+\[
+ \left.\frac{S(u+jh)-S(u)}{h}\right|_{h=0}=jS'(u).
+\]
+For any regular bivariate series \(A(h,u)\), the difference
+\(A(h,u+jh)-A(h,u)\) vanishes at \(h=0\). Thus adding the regular
+logarithmic amplitude does not change the displayed coefficient.
+These are identities of actual formal power series. Five compiled
+examples distinguish this result from false variants: omitting \(j\),
+ignoring its sign, dividing the principal series before taking a
+difference, dropping the condition \(S'(0)=0\) at the joint origin,
+or discarding higher-order changes in the regular amplitude.
+
+This module does not formalize the exponential of that logarithmic
+shift or connect it to a quantum recurrence. The substitution \(u=hs\)
+is checked separately at the level of coefficient tables in the
+Std-only package; its interpretation as a ring map remains written.
+The [meridian-expansion paper](../../docs/papers/meridian-expansions.pdf) supplies
+the analytic expansion and the written recurrence argument. That
+argument assumes an exact recurrence for the original finite functions
+at every sufficiently large level; it does not construct one.
+
+The optional package has 68 definitions and 252 theorems.
+Its axiom audit covers all 320 declarations, separately from
+the Std-only project. Thirty-two negative controls check that invalid
+metadata or axiom inventories are rejected. Twelve compiled mathematical
+controls check the distinctions described above. The saddle estimates, whole-source gap and geometric
 volume identity remain written application inputs. The
 [tangle and tree review](../../repro/TANGLE_TREE_AUDIT.md) records the
 precise scope of the new paper readings and finite replays.
@@ -547,12 +575,16 @@ The [analytic tree review](../../repro/ANALYTIC_TREE_AUDIT.md) follows the
 completed-root Conway asymptotic and the summed circle-tree criterion.
 It records how the actual finite sums meet the analytic hypotheses,
 where the volume comparison enters, and which broader tree statements
-still need separate papers. It also records the triangle-load
+were outside that review. It also records the triangle-load
 differentiation and the limits of that formalization. The
 [directed and quarter-index review](../../repro/DIRECTED_QUARTER_AUDIT.md)
 records the newer subtree induction, local recurrence argument and
 supported-potential formalization. Its source snapshot distinguishes
 proof readings from finite algebra checks and Lean compilation.
+The later [manuscript review](../../repro/MANUSCRIPT_AUDIT.md#moving-meridians-and-the-classical-equation)
+records the two papers on moving meridians and the classical equation,
+the corrections made during their extraction, and the scope of the
+new formal-series module.
 
 ## Joining certified diagrams
 

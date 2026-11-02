@@ -14,6 +14,11 @@ name a later one. The directed-tree and all-orders reviews began at
 `cfc8a9295dca45562634f6021415d0d80dc5f745`. The current TeX includes the corrections. Source
 hashes in the records distinguish the versions actually read.
 
+The final section records the subsequent extraction of the moving-meridian
+and all-orders arguments. Numerical inventories in earlier sections refer
+to those earlier replays; the current optional Lean and finite-check
+inventories are stated in that final section and their saved reports.
+
 The [planar and insertion paper review](PLANAR_INSERTION_AUDIT.md)
 records the later extraction of Appendices P--R, the corrected octahedral
 boundary weights, and the precise scope of the written, interval and
@@ -484,8 +489,9 @@ The dependency graph now records those inputs separately and distinguishes
 the completed-root source bound, filling theorem and metric from their
 strict-tree extensions. The geometric longitude argument in Appendix J
 uses the marked strict-tree geometry; it does not require the full quantum
-volume limit or its global alias estimate. The broader source notes still
-need their own companion paper and detailed review. Acyclicity and valid
+volume limit or its global alias estimate. The broader source arguments now have companion accounts in
+Conway Asymptotics and Moving-meridian Sources, with their separate
+proof reviews. Acyclicity and valid
 source locations do not establish those mathematical arguments.
 
 ## Where this research phase ends
@@ -535,3 +541,86 @@ optimizing the chain length, enlarging the knot class, and pursuing the
 archived cap, transport and torsor proposals are separate projects.
 Finding a defect in the retained proof reopens only the affected
 argument and its dependent conclusions.
+
+## Moving meridians and the classical equation
+
+Two further papers separate the analytic steps that were spread through
+the reference appendices. [Moving-meridian source estimates for strict Conway tangles](../papers/moving-meridian-sources/main.tex)
+has 20 pages. [Meridian expansions and classical symbols of quantum
+recurrences](../papers/meridian-expansions/main.tex) has 13 pages. The
+reference manuscript and its PDF remain frozen. The extraction does not
+enlarge a theorem's knot class or remove a hypothesis from a recurrence.
+
+The first paper starts with the actual finite quotient algebra and its
+trace. It retains derivative evaluations when spectral roots coincide,
+then proves the estimates needed when several high-color components
+occur together. Deleting such a component gives only a weak inequality
+for the variational maximum; a separate Fourier estimate supplies the
+strict loss where equality can occur. The remaining part of the sum is
+treated with its original integer lattice and complete normalization.
+The filling argument retains every Fourier charge and compares the
+selected critical point with all remaining contributions. The result
+applies to a fixed strict Conway expression with independently sufficiently
+large fixed signed powers. The threshold is chosen before the meridian
+parameter ranges over a compact set.
+
+The second paper extends the local estimates to every inverse-level
+order on fixed translated microscopic charts. It treats three stated
+source classes: the strict Conway class of the first paper, the summed
+circle-tree criterion, and the directed circle-tree criterion. The
+directed case uses conditional subtree estimates and restores the
+normalizing constants when those estimates are assembled. It does not
+replace the directed criterion by the stronger summed condition. At each
+order the logarithmic coefficient is a polynomial with a prescribed
+degree bound. The highest-degree terms recover one analytic stationary
+action. This auxiliary action is not an asymptotic theorem for the
+physical invariant at a fixed noncomplete meridian.
+
+The recurrence implication needs an exact finite operator annihilating
+the whole reduced function for every sufficiently large integer level.
+Values at the complete meridian, or a recurrence fitted at finitely many
+levels, do not satisfy that hypothesis. Clearing denominators and
+removing the common power of the level parameter gives a nonzero
+classical symbol. The proof retains the reduced-to-full meridian divisor
+and sign, uses every asymptotic order, and shows that the symbol contains
+the selected analytic branch. It proves neither existence of such an
+operator nor equality with every factor of the A-polynomial. The
+geometric corollary additionally imports the marked metric and the
+preferred-longitude identification. For strict Conway expressions its
+threshold is the maximum of the analytic and classical thresholds.
+
+All mathematical sections of both papers were read during this
+extraction, along with the cited factorial interpolation, the relevant
+directed induction, and the hypotheses of the numbered imports. Four
+points were corrected or expanded before publication:
+
+1. At simultaneous half-index boundaries, an integer approximation must
+   preserve all support inequalities. The proof now gives the required
+   difference constraints and their integer solution.
+2. The polynomial angular prefactor is proved from the exact central
+   product and the strict bound away from the center. It is not attributed
+   to a weaker imported estimate.
+3. The modified-dimension formula now cites its actual defining equation.
+4. The geometric corollary keeps both required thresholds.
+
+The registered finite replay now has 25 groups. The new moving-source
+group checks Laurent coefficients, full Fourier traces, ordered pairings,
+fusion and odd projector identities at 11 levels. The expansion group
+checks the sine and gauge formulas, the cleared classical symbol,
+coefficient recovery and finite-jet limitations. Its cases do not prove
+the uniform analytic bounds. The saved reports pin the mathematical
+sources used in that execution.
+
+The new optional Lean module `FormalShift` works with actual formal
+power series over a commutative ring. It constructs \(S(u+jh)\), proves
+that \(S(u+jh)-S(u)\) is divisible by \(h\), and evaluates the quotient
+at \(h=0\) as \(jS'(u)\). It also proves that a regular logarithmic
+amplitude contributes zero at that order. Together with the earlier
+coefficient-table recovery, this checks two internal steps of the
+written argument. The ring interpretation of \(u=hs\), exponentiation,
+and the connection between the analytic expansion and the actual
+recurrence remain written proofs. The optional replay covers 68
+definitions and 252 theorems, checks 32 invalid metadata or axiom
+inventories, and compiles 12 mathematical boundary examples. Those
+figures describe the scope of the replay, not a machine verification of
+either complete paper.

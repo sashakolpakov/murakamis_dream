@@ -1,0 +1,18 @@
+\begin{tikzpicture}[scale=.85,>=Latex,every node/.style={font=\small}]
+\node[circle,draw,minimum size=10mm] (m) at (0,0) {$\delta V_\sigma$};
+\node[circle,draw,minimum size=10mm] (c) at (2.5,0) {$V_0$};
+\draw[thick] (m)--node[above]{$h,h$}(c);
+\draw (m)--(-.9,.9) node[above]{$a_1$};
+\draw (m)--(-.9,-.9) node[below]{$a_2$};
+\draw (c)--(3.4,1) node[above]{$b_1$};
+\draw (c)--(3.6,0) node[right]{$b_2$};
+\draw (c)--(3.4,-1) node[below]{$b_3$};
+\draw[->,thick] (4.5,0)--node[above]{$r=d-h$}(6,0);
+\node[draw,ellipse,minimum width=22mm,minimum height=15mm] (f) at (7.5,0) {$V_0^{\mathrm{fused}}$};
+\draw (f)--(6.4,1) node[above]{$a_1$};
+\draw (f)--(6.4,-1) node[below]{$a_2$};
+\draw (f)--(8.7,1) node[above]{$b_1$};
+\draw (f)--(9.1,0) node[right]{$b_2$};
+\draw (f)--(8.7,-1) node[below]{$b_3$};
+\node at (7.5,-1.8) {$\displaystyle\sum_{r=0}^{d}V_0(\mathbf a,r)V_0(d-r,\mathbf b)$};
+\end{tikzpicture}

@@ -1,0 +1,241 @@
+\section{The original finite wire packet}\label{ms:packet}
+We now construct the packet in Theorem~\ref{ms:packet-main}. Let
+$J_b$ be the number of bare vertices and $E=H+J_b-1$ the number
+of physical edges. Denote the sums of the circle and bare valences
+by $D_c,D_b$, so $D_c+D_b=2E$.
+
+The exact positive product coefficient, from the finite Newton
+calculus \cite[Theorem 3.3]{Newton}, is
+\begin{equation}\label{ms:gate}
+ \mu_{ij}^{r}=\frac{S_{i+j}S_r}
+ {S_iS_jS_{r-i}S_{r-j}S_{i+j-r}},\qquad
+ i+j\le d,\quad\max(i,j)\le r\le i+j,
+\end{equation}
+and is zero outside this support. At a bare vertex with ordered
+labels $n_1,\ldots,n_D$, put $r_1=n_1$, $r_{D-1}=d-n_D$.
+Associativity within this one polynomial algebra gives
+\begin{equation}\label{ms:resolved-trace}
+ \phi_0(\prod_{a=1}^D e_{n_a})
+   =\sum_{r_2,\ldots,r_{D-2}}
+                   \prod_{a=2}^{D-1}\mu_{r_{a-1},n_a}^{r_a}.
+\end{equation}
+The last pairing with $e_{n_D}$ has coefficient one. There are
+$D-3$ hidden variables and $D-2$ gates, not an extra closing
+variable. The physical edge labels and these hidden labels are
+independent integer coordinates before inequalities are imposed.
+Their number and the gate count are
+\begin{equation}\label{ms:dimension}
+ K=E+D_b-3J_b,\qquad G=D_b-2J_b,
+ \qquad -D_c-\tfrac32G+\tfrac12K=\tfrac32(1-H).
+\end{equation}
+All other indices are integral affine functions of them, with
+the literal complements $d-n=N(1-n/N)-1$. The lattice is
+$\mathbb Z^K$ for both parities. The tree creates no additional
+closing constraint or lattice-index Gaussian factor.
+
+\subsection{The absolute action and the original window}
+For $E_0=\prod_{a=1}^D e_{n_a}$ with all $n_a\le m$, the complete
+ordinary-circle trace is
+\begin{equation}\label{ms:circle-positive}
+ \phi_0(L_NE_0)=N\sum_{r=0}^{N-1}E_0(c_r),\qquad
+ N(\pi/4)^D E_0(-2)\le\phi_0(L_NE_0)\le N^2E_0(-2).
+\end{equation}
+The root sum is the complete trace formula of
+\cite[Section 6]{Meridian}. Its terms are nonnegative. At odd
+levels the node $-2$ proves the lower bound with constant one.
+At even levels the nearest node satisfies
+\[
+ \frac{e_n(-2\cos(\pi/N))}{e_n(-2)}
+ =\prod_{a=0}^{n-1}
+ \frac{\cos(a\pi/N)\cos((a+1)\pi/N)}
+      {\cos^2((a+1/2)\pi/N)}
+ \ge\frac N2\tan\frac\pi{2N}\ge\frac\pi4.
+\]
+Each ratio in the product is at most one, and its endpoint value
+is the displayed telescoping sine product. This proves both parity
+bounds without a simple-node assumption at even levels.
+
+The pure leaf has exact coefficients
+$[e_r]h_N=N^2S_{2r}/S_r^4$ for $r\le m$, and zero otherwise:
+the root sum picks the zero Laurent coefficient because $r<N$;
+high $e_r$ vanish at every complete node. Expanding $E_0$ by
+\eqref{ms:gate} is therefore the same positive expansion of
+$\phi_0(L_NE_0)$ obtained by adjoining that leaf. Uniform
+factorial rates and polynomial state counting in
+\eqref{ms:circle-positive} identify its conditional maximum
+exactly as $\sum_a g(n_a/N)$. At the original strict state the
+eliminated variables have negative definite Hessian. Analytic
+elimination consequently identifies this function and all its
+derivatives near the projected state, including its additive
+constant.
+
+The grouped zero-angle action is thus
+\begin{equation}\label{ms:grouped-action}
+ \mathcal A(\mathbf y,0)=\sum_{\text{bare gates}}m(x,y,z)
+                  +\sum_{v\text{ circle}}\sum_{e\ni v}g(x_e).
+\end{equation}
+Its unique maximum is the original $F_0$. Its Hessian in the
+primitive coordinates is negative definite: each circle incidence
+is covered by $g''<0$, and every other variable by a strict gate
+whose Hessian was proved negative in \eqref{ms:gate-atoms}.
+The original complete positive expansion gives a strict compact
+complement gap, including its closed faces.
+
+Choose a small rectangular box $\mathcal W$ about this maximum.
+All gate factorial arguments are bulk, every circle-incident label
+lies in a compact subinterval of $(0,1/2)$, and the incident sum
+at each bare vertex is greater than one by a fixed amount. The
+last assertion also follows by summing $x+y-z>0$ over its gates.
+Lemma~\ref{ms:deletion} makes all bare physical labels strictly
+low except for the internal edge of the entire two-trivalent-hub
+component, which is half. Keep that edge in a compact subinterval
+of $(0,1)$; both cubic traces are exactly unchanged there. Hidden
+unturned indices need not be low. Every integer point of the
+entire box is supported for all sufficiently large $N$.
+
+Before continuing any angle, discard the component errors of
+Theorem~\ref{ms:component}. For the clean contraction the actual
+fixed-power circle trace satisfies
+\begin{equation}\label{ms:fixed-power-positive}
+ |\phi_\sigma(R_\sigma^n E_0)|
+       \le C_{n,R,D}N\phi_0(L_NE_0).
+\end{equation}
+Indeed at a shifted root the angular imaginary part is $O(1/N)$.
+Positive Laurent coefficients bound $|E_0|$ there by $C E_0(-2)$;
+the fixed-power chirp has bounded modulus. The exact root formula
+gives $C N^2E_0(-2)$ on a larger parameter circle avoiding
+$\sin2\pi\sigma=0$. Divide by \eqref{ms:circle-positive} and
+use the maximum principle for the whole holomorphic trace to
+include collisions. Fixed nonreal compacts use the root formula
+directly. Constant orientation types retain their recorded scalar.
+Thus the clean resolved sum outside $\mathcal W$ has the original
+positive compact gap. This bounds arbitrary subsets of the
+resolved positive sum, rather than inferring an uncontracted
+estimate from a scalar norm. All these source losses are fixed
+before the powers and the meridian compact.
+
+The retained exact packet is
+\begin{equation}\label{ms:finite-packet}
+ B_N(\boldsymbol\tau,s)=
+ \sum_{\mathbf k/N\in\mathcal W}
+ \left(\prod_g\mu_{N,g}\right)
+ \left(\prod_{v\text{ circle}}\prod_{e\ni v}
+                    e_{n_e}( -2\cos\tau_v)\right)
+ \left(\prod_e\gamma_{e,N}(s)\frac{H_N(s)}{W_{n_e}(s)}\right).
+\end{equation}
+It is separately even and periodic in every angle. Crossing
+chirps and sine trace factors are not part of this definition.
+
+\subsection{A holomorphic interpolation of this finite sum}
+Use the fixed canonical $G_N$ of \cite[Lemma 2.1]{Asymptotics},
+which interpolates $S_k$, satisfies its sine shift and has uniform
+bulk expansions with all fixed derivatives. For fixed $c$,
+\begin{equation}\label{ms:factorial-bulk}
+ G_N(Nx+c)=\sqrt{2N\sin\pi x}\,e^{NJ(x)}
+              (2\sin\pi x)^c(1+O(N^{-1})).
+\end{equation}
+Replace every factorial in \eqref{ms:gate} by this function at
+its exact affine argument. For a circle incidence set
+$u=N\tau/(2\pi)$ and
+\begin{equation}\label{ms:circle-interpolant}
+ \mathcal E_N(x,\tau)=
+ \frac{G_N(d/2+u)G_N(d/2-u)}
+ {G_N(d/2-Nx+u)G_N(d/2-Nx-u)G_N(Nx)^2}.
+\end{equation}
+The shift identity proves equality with $e_n(-2\cos\tau)$ at
+$x=n/N$. Keeping $d/2=N/2-1/2$ in
+\eqref{ms:factorial-bulk} gives
+\begin{align}
+ \mathcal E_N(x,\tau)&=
+   \frac{e^{Nb(x,\tau)}}{2N\sin\pi x}(1+O(N^{-1})),\label{ms:circle-bulk}\\
+ b(x,\tau)&=\int_0^x\log(2\cos2\pi t+2\cos\tau)\,dt-2J(x).
+\end{align}
+The branch continues the positive real integrand at $\tau=0$;
+$b(x,0)=g(x)$. An index $N\ell+c$ contributes the amplitude
+$e^{c b_x(\ell,\tau)}$. All these fixed offsets are retained.
+
+The edge interpolation is exactly \eqref{ms:exact-insertion}:
+the sine shift and $G_N(s)G_N(-s)=1/H_N(s)$ give
+$\mathcal I_N(n/N,s)=H_N(s)/W_n(s)$. On the fixed bulk tube,
+\begin{equation}\label{ms:insertion-first}
+ \mathcal I_N(x,s)=1-\frac{\pi s^2}{N}\cot\pi x+O(N^{-2}).
+\end{equation}
+In fact, if $L_N=\log G_N$, then
+$2L_N(Nx)-L_N(Nx-s)-L_N(Nx+s)
+=-s^2L_N''(Nx)+O(N^{-3})$ and
+$L_N''(Nx)=\pi\cot(\pi x)/N+O(N^{-2})$.
+
+Let $\mathcal A(\mathbf y,\boldsymbol\tau)$ be the sum of the
+gate actions and these $b$'s. Dividing the exact interpolated
+summand by $\Gamma_{e,N}=\prod_e\gamma_{e,N}$ gives
+\begin{equation}\label{ms:summand}
+ N^{-D_c-3G/2}\beta_N(\mathbf y,\boldsymbol\tau)
+ e^{N\mathcal A(\mathbf y,\boldsymbol\tau)}
+                   \prod_e\mathcal I_N(n_e/N,s),
+\end{equation}
+where $\beta_N=\beta+O(N^{-1})$ is holomorphic and
+$\beta(\mathbf y^*,0)>0$. The implicit function theorem gives a
+unique local wire saddle $y_*(\boldsymbol\tau)$ and invertible
+$Q=-\mathcal A_{yy}(y_*,\boldsymbol\tau)$, with $Q(0)>0$.
+
+Here is the finite-sum justification of the Gaussian. Enclose each
+retained integer interval by a rectangle with half-grid vertical
+sides and horizontal heights $\pm h$. The product residue formula
+with kernels $\pi N\cot(\pi Nz)$ is exactly the lattice sum.
+On a vertical side $|\cot|\le1$, while on the horizontal sides
+\[
+ \cot(\pi N(x\pm\ii h))=\mp\ii+O(e^{-2\pi Nh}).
+\]
+At zero angles the phase gain under the imaginary shift is at
+most $C h^2$ and the real boundary has a fixed loss $\delta$.
+Choose $h$ with $C h^2<\min(\delta/4,\pi h)$, then shrink the
+angular polydisk. Every vertical side and every nonconstant
+cotangent mode is exponentially smaller. The constant terms give
+$N^K$ times the real-box integral; its endpoint displacements of
+$O(1/N)$ have the same boundary loss. Translate that box to its
+complex saddle. Its connecting sides retain the loss, and its real
+tangent plane has negative real Hessian. Gaussian expansion gives
+\[
+ \Psi(\boldsymbol\tau)=\mathcal A(y_*,\boldsymbol\tau),\qquad
+ a(\boldsymbol\tau)=
+ \frac{(2\pi)^{K/2}\beta(y_*,\boldsymbol\tau)}{\sqrt{\det Q}}.
+\]
+The square root starts at the positive real Gaussian and never
+vanishes on a smaller polydisk. Equation~\eqref{ms:dimension}
+gives the claimed power of $N$. Odd Gaussian terms integrate to
+zero, so the relative remainder is $O(1/N)$, uniformly holomorphic.
+Separate evenness and uniqueness imply
+$\mathcal A_{y\tau_v}(\mathbf y,0)=0$. Direct differentiation
+gives $b_{\tau\tau}(x,0)=-\tan(\pi x)/(2\pi)$, proving the
+diagonal angular Hessian in Theorem~\ref{ms:packet-main}.
+
+\subsection{The whole real angular cube}
+For $n/N$ in a fixed compact subset of $(0,1/2)$, the exact product
+gives the following strengthening of \cite[Lemma 7.2]{Bounds}:
+\[
+ |e_n(-2\cos(t+\ii y))|
+ \le N^A e^{Ng(n/N)-Nct^2+NCy^2},\qquad |t|\le\pi.
+\]
+Indeed near zero the logarithm of
+$e_n(-2\cos w)/e_n(-2)$ is even, has second derivative
+$-2\sum_{j<n}(c_j+2)^{-1}\le-cN$, and all fixed higher
+derivatives are $O(N)$ on one uniform zero-free disk. Taylor's
+formula gives $-cNt^2+CNy^2$ there. On the remaining compact
+real interval the imported lemma gives a strict real gap, including
+sampled numerator zeros, by truncated logarithmic Riemann upper
+sums. Shrink the complex height and reduce $c$ so a fixed part of
+that gap remains; it absorbs the uniform $e_N=o(1)$ error in
+the imported estimate. Finally
+$e_n(-2)=\exp(Ng(n/N)+O(\log N))$ supplies the polynomial
+prefactor. Thus no polynomial error bound at arbitrary numerator
+collisions is assumed. All bare factors in
+\eqref{ms:finite-packet} are nonnegative and the edge ratios are
+bounded. The positive zero-angle sum has rate $F_0$ and polynomial
+prefactor by the Gaussian just proved. Every circle has an incident
+edge, so summing the bound proves \eqref{ms:packet-strip} with a
+positive loss in every angle. Endpoints translated by $O(1/N)$
+retain it by periodicity: the squared distance to $2\pi\mathbb Z$
+changes by $O(1/N)$. Fixed derivatives cost powers of $N$ by Cauchy
+estimates on radius-$1/N$ circles. This completes the proof of
+Theorem~\ref{ms:packet-main}, including its actual finite source
+error before any crossing contour is moved.

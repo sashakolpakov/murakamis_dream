@@ -1,0 +1,161 @@
+\section{The whole bare component}\label{ms:components}
+An estimate of a tensor with one high incidence cannot generally use
+the complete tensor at that same index. The reflection in
+Lemma~\ref{ms:reflected} changes the pairing across that edge. We
+now keep that change throughout the neighboring component.
+
+\begin{theorem}[Component comparison]\label{ms:component}
+Let $A$ be a fixed unturned bare component, and $Q=\Turn(A)$ its
+typed output. Suppose its incoming full coefficient arrays obey
+\begin{equation}\label{ms:incoming}
+ |f_{j,r}|\le e^{N(c_j+o(1))}
+ \begin{cases}e^{Ng(r/d)},&r\le m,\\1,&r>m,\end{cases}
+\end{equation}
+uniformly on a stated meridian compact. Let $A^0$ be its original
+complete positive reference with ordinary boundary profiles $g$,
+and put $\Omega=\Phi_{C(hA^0)}+\sum_jc_j$, using the actual output
+probe of \cite[Theorem 4.4]{Profiles}. Then
+\[
+ Q=Q^{\mathrm{clean}}+E,\qquad
+ \normJ Q\le e^{N(\Omega+o(1))},\qquad
+ \normJ E\le e^{N(\Omega-\eta+o(1))}
+\]
+for some $\eta>0$. In the clean term all bare tensors are complete,
+all original external inputs and the output are low, and every
+complete-supported internal index is retained. Actual low arrays,
+physical edge weights and typed scalars are retained. A loss in one
+entire incoming array is inherited without change.
+\end{theorem}
+\begin{proof}
+Expand each moving vertex as $V_\sigma=V_0+\delta V_\sigma$, then
+partition every index into its low and high bands. There are only
+finitely many patterns. Unselected and constant vertices retain their
+positive complete tensors. The complete pair support permits at most
+one high incidence at each such vertex.
+
+For a selected difference use the all-low estimate
+of Lemma~\ref{ms:low-trace}, the one-high reflected estimate of
+Lemma~\ref{ms:reflected}, or the full norm bound
+\begin{equation}\label{ms:several-high}
+ |\delta\phi_\sigma(\prod_i e_{n_i})|
+       \le N^A\prod_{n_i\le m}w_{n_i}.
+\end{equation}
+The last inequality follows from \eqref{ms:basis-norm}, fixed-valence
+quotient reduction and the polynomial trace norm. It retains the
+high normals, even when all their values vanish.
+
+Consider a selected one-high difference whose high incidence is
+internal. Its neighboring vertex is constant because moving
+equal-color vertices are nonadjacent. Each endpoint has only this
+one high incidence. Hence all such selected edges form a matching
+$S$. Reflect $h$ to $r=d-h$ at the moving endpoint and use
+\eqref{ms:fusion}. Summing the complementary pair fuses the two
+whole vertices in their induced order. Removing its band restriction
+only enlarges the positive sum. Every fused vertex has valence at
+least four and low exterior incidences. The restored complementary
+label remains one hidden unturned wire in a positive resolution.
+No other branch is replaced by an independent maximum. By
+Lemma~\ref{ms:deletion} the resulting pressure is at most the original
+pressure. For a one-high external incidence there is no fusion:
+reflection makes its array rate $c_j$ while the low reference has
+rate $c_j+g(r/d)$. Keep the nonnegative surplus $g(r/d)$.
+
+Selected vertices with several high incidences are not fused.
+They remain nonadjacent. Remove them using \eqref{ms:several-high},
+assigning one $g$ to each low arm and marking every high arm in the
+retained old region. Mark also an unreflected high original input
+or output. Every retained whole vertex has at most one mark; the
+matching fusions did not create high exterior incidences.
+The reassembly following Lemma~\ref{ms:half-boundaries} moves these
+marks simultaneously to half and reinserts the removed vertices.
+Each charged $g$ is consumed once by their cardinal action. All
+original constants remain once. The result is a boundary state of
+the same fused complete tree: either a pair sum is one or an
+ordinary external leaf is half. Its unique strict maximum avoids
+this closed set, so it has a fixed loss. This includes a component
+consisting of a single removed vertex. With no removed vertex the
+same half-boundary argument gives the high-input or high-output
+loss directly.
+
+It remains to consider a nonempty difference pattern with no such
+boundary. Its positive comparison is a fused tree $\mathcal G/S$.
+Outside a small neighborhood of its unique strict resolved maximum,
+compactness gives a fixed loss. Inside that neighborhood there are
+three possibilities. An externally reflected label lies strictly
+between zero and half, so its saved $g$ is strictly positive. If
+an internal reflection occurs, the fused tree has a vertex of
+valence at least four. It cannot be the exceptional entire
+two-trivalent-vertex tree of Lemma~\ref{ms:deletion}. Every physical
+exterior label of that fused pair is therefore in a compact low
+interval. Its restored wire $r/d$ is strictly positive. A maximum
+above half is separated from the sector $r\le m$; otherwise the
+strict part of Lemma~\ref{ms:reflected} applies, including at a
+limiting half wire. Finally, with no reflection, every selected
+difference is all-low in the original tree. The strict whole-vertex
+support gives a positive total slack. Lemma~\ref{ms:regular-trace}
+then gives a loss. In the two-trivalent-vertex exception the raw
+cubic degree on the entire strict neighborhood is less than
+$2N-1$, so its trace difference is exactly zero instead.
+
+These cases exhaust the nonempty difference patterns. One strict
+factor is enough; all other factors retain their polynomial
+majorants. Uniform factorial estimates on the closed support
+polytope give $O(\log N)$ errors and only polynomially many states.
+Take the minimum of the finitely many positive losses and decrease
+it once to absorb those errors.
+
+For the output use the exact identity \eqref{ms:turned-probe}:
+\[
+ \normJ Q\le C N^A\sum_{r=0}^d
+                     w_r|\phi_\sigma(e_r A)|.
+\]
+This is precisely the ordinary low probe $g$ and the zero-rate high
+probe already treated. Its action is $\Omega$, by
+\cite[Theorems 4.3--4.4]{Profiles}; it is not a newly inserted
+physical circle. In the empty difference pattern with low external
+indices, the positive complete coefficients and bounded edge
+weights give the original positive reference, including its full
+low-output profile. Every internal complete-supported index stays
+in that term. This proves the asserted decomposition. Multilinearity
+preserves a loss in one full array in all comparisons, and shifts
+the corresponding constant $c_j$ without changing any optimizer.
+\end{proof}
+
+\begin{figure}[t]
+\centering
+\input{figures/reflected-pair.tex}
+\caption{A selected high incidence joins a moving trace (left disk)
+to a constant trace. The original covariant labels agree, $h,h$.
+Reflection changes only the left label to $r=d-h$. The complete
+metric then pairs $r$ with $d-r$ and fuses the disks in their
+boundary order. Every other arm remains in the same contraction.
+The picture depicts the tensor calculation used for an upper bound.}
+\label{ms:reflection-figure}
+\end{figure}
+
+We explain how this component statement is used in the original
+tree. A circle vertex, including its fixed signed crossing and
+typed turn, converts the actual incoming spectral norm into
+\eqref{ms:incoming} by Lemma~\ref{ms:coupon-bound}. A maximal bare
+component uses Theorem~\ref{ms:component} and preserves its full
+clean low profile. Thus a small spectral-norm error is converted
+to a coefficient cone at a circle interface, where the exact
+extractor proves that conversion. It is never converted by an
+unsupported inversion of the Newton coefficient matrix inside a
+bare component. The mutual induction terminates because the
+original reduced graph is a finite tree. The root budgets of
+\cite[Corollary 4.5]{Profiles} identify its accumulated pressure
+with $F_0$, retaining every additive constant.
+
+This also gives fresh angular localization at any exposed circle.
+The clean output-probe profile is $f_A(1-u)+g(u)+\sum c_j$, with a
+unique maximizing $u\in(0,1/2)$. Outside a compact interval about
+it there is a strict loss. Within it the low Newton angular estimate
+\cite[Lemma 7.2]{Bounds} gives a negative quadratic angular term.
+Errors have a strict spectral-norm gap, so complete Hermite
+conditioning and the degree-$d$ Bernstein bound absorb them on a
+sufficiently small complex strip. This uses the actual accumulated
+pressure and works for an entirely bare-rooted expression by
+exposing any original circle through the typed adjunction. For
+$H=2$ the same exact pairing is the two-leaf pure source; no
+nonexistent bare component is inserted.
