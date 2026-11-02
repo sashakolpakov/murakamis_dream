@@ -1,0 +1,15 @@
+\begin{tikzpicture}[line cap=round,thick,every node/.style={font=\small},
+ bit/.style={fill=white,inner sep=2pt}]
+\coordinate (v) at (0,0);\coordinate (w) at (4.6,0);
+\draw (v)--node[bit,above] {$1$}(w);
+\foreach \name/\x/\y/\b in {1/-1.5/1.4/0,2/-1.5/0/0,3/-1.5/-1.4/1}{
+ \draw (v)--node[bit] {$\b$}(\x,\y);
+ \fill (\x,\y) circle(1.7pt);\node[left] at(\x,\y){$\name$};}
+\foreach \name/\x/\y/\b in {4/6.1/1.4/0,5/6.1/0/0,6/6.1/-1.4/1}{
+ \draw(w)--node[bit] {$\b$}(\x,\y);
+ \fill(\x,\y)circle(1.7pt);\node[right]at(\x,\y){$\name$};}
+\fill(v)circle(2.6pt);\fill(w)circle(2.6pt);
+\node[above right]at(v){$v$};\node[above left]at(w){$w$};
+\node[below]at(0,-1.9){$I_v=\{1,2\}$};
+\node[below]at(4.6,-1.9){$I_w=\{4,5\}$};
+\end{tikzpicture}

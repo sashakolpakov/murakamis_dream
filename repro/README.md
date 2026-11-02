@@ -73,9 +73,17 @@ global minimum after one coordinate is fixed. Repeated corner destinations
 retain their separate coefficients; the prescribed demands need agree
 with the table only at free vertices. Geometric Hall feasibility,
 incidence, row connectivity and support-changing limits remain written
-application inputs. Together the optional modules contain forty-eight definitions and
-189 theorems, all 237 declarations included in the axiom audit; 24 negative
-controls check invalid inputs.
+application inputs. The load-equation module then proves that the actual
+coordinate derivative is the aggregate corner load minus the prescribed
+demand. The grounded minimum is equivalent to the free load equations,
+and is their unique solution under the same table and connectivity
+hypotheses. The root equation holds precisely when total demand equals
+one half the number of triangles. Together the optional modules contain
+51 definitions and 208 theorems, all 259 declarations included in the
+axiom audit; 26 negative controls check invalid metadata and axiom
+inventories. Four additional compiled mathematical controls retain the
+half-mass convention, repeated destinations, arbitrary root demand and
+the role of connectedness.
 The optional command is separate from the Std-only
 check above; it requires
 Mathlib and its substantially larger compiled library.
@@ -125,7 +133,9 @@ corrected Jacobian and formal reduced-Laplacian inverse.
 The [strict Conway review](STRICT_CONWAY_AUDIT.md) records the larger
 variational and geometric arguments, the consolidated whole-source proof,
 the pure-source filling route and the formal minimum of the actual
-triangle potential.
+triangle potential. The later [reduction and geometry review](CONWAY_REDUCTION_AUDIT.md)
+records the consolidated local geometry proofs, the actual net-twist
+and zero-cap reductions, and the formal Euler/load equations.
 
 The programs use either a JSON output file or an output directory, as
 registered in the single runner.
@@ -143,8 +153,9 @@ python3 repro/check_manuscript_logic.py --output repro/results/manuscript-logic
 ```
 
 It checks the declared premise roles, retained assumptions, level scope,
-references and absence of cycles. Fourteen deliberately invalid maps must
-be rejected. The unrestricted matched-sphere route retains its open
+references and absence of cycles. Its 61 declared steps include the
+strict Conway route and the separate two-leaf source bound. Nineteen
+deliberately invalid maps must be rejected. The unrestricted matched-sphere route retains its open
 remainder requirement. This is a check of the dependency record, not a
 formal proof of the mathematical claims it records.
 

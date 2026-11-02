@@ -3,7 +3,7 @@
 \usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,booktabs,array,xurl}
 \usepackage[a4paper,margin=28mm]{geometry}
 \usepackage{tikz}
-\usetikzlibrary{arrows.meta,calc,positioning}
+\usetikzlibrary{arrows.meta,calc,positioning,intersections}
 \usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
 \numberwithin{equation}{section}
 \setlength{\emergencystretch}{2em}
@@ -207,59 +207,7 @@ two children have a common $X$, and, writing $S=B_1+B_2>0$,
 These are scalar variational identities; they do not identify an
 open quadrilateral with a physical four-punctured tangle boundary.
 
-The local geometric inputs are the explicit cells of
-\cite[Section~2]{Geometry}. They require only the strict inequalities,
-not the completed grammar. A leaf $a$ is the convex ideal pyramid
-\begin{equation}\label{sm:leaf}
- O=\infty,\qquad (C_0,C_1,C_2,C_3)=(1,E,-1,-E),
-                  \qquad E=e^{2\pi\ii a}.
-\end{equation}
-Its base is an ordered quadrilateral gluing face. The side triangles
-$(O,C_1,C_2)$ and $(O,C_3,C_0)$ are shaded; the other two are white.
-The four apex edges are right angled. On the base, edges $01,23$
-have angle $\pi a$ and edges $12,30$ have angle $\pi(1/2-a)$.
-The pyramid volume is $\pi g(a)$.
-
-For a product put $p=z-x$, $q=z-y$, $r=x+y-z$, $w=1-x-y$.
-All are positive. The prism has ideal vertices
-\begin{align}
- v_0&=1,&v_1&=e^{2\pi\ii p},&v_2&=e^{2\pi\ii(p+r)},&
- v_3&=e^{2\pi\ii(p+r+q)},\label{sm:prism-vertices}\\
- P&=v_1+\frac{\sin\pi x\sin\pi r}{\sin\pi w\sin\pi p}(v_1-v_0),
- &&&&\notag
-\end{align}
-and $\infty$. Its two triangular faces are white. Its ordered
-attachment and output tuples are
-\begin{equation}\label{sm:stack-map}
- F:C\mapsto(v_0,v_1,P,\infty),\quad
- G:C\mapsto(\infty,P,v_2,v_3),\quad
- C^o=(v_0,v_1,v_2,v_3).
-\end{equation}
-The angle table from the explicit supporting planes is
-\begin{equation}\label{sm:prism-angles}
-\begin{array}{c|ccccc}
-\text{edge}&Pv_1,\infty v_0&Pv_2,\infty v_3&v_1v_2,v_0v_3&P\infty&v_0v_1,\ v_2v_3\\\hline
-\text{angle}/\pi&x&y&1-z&w&p,\ q
-\end{array}.
-\end{equation}
-The prism volume is $\pi m(x,y,z)$. These volume normalizations
-follow by subdivision into positive ideal tetrahedra and the
-Lobachevsky formula, \cite[equation~(2.1)]{Geometry}.
-
-For an ordered quadrilateral let
-\[
- \kap(a,b,c,d)=\frac{(a-b)(c-d)}{(a-d)(b-c)}.
-\]
-It determines the whole ideal face, including shear. The local
-calculation \cite[equations~(3.2)--(3.3)]{Geometry} gives input
-cross ratios $e^{-m_x},e^{-m_y}$ and output $e^{-m_z}$ in the
-canonical prism order. The first two assignments in
-\eqref{sm:stack-map} invert the canonical input ratios.
-Consequently $f_F'(x)+m_x=0$ and $f_G'(y)+m_y=0$ match all four
-ordered vertices. Full reversal $C_j^F\mapsto C_{3-j}^G$ preserves
-$\kap$, so the closing equation $f_F'(b)=f_G'(1-b)$ matches the
-entire closing face as well. No comparison of absolute values replaces
-these isometries.
+\input{local-cells}
 
 \input{complete}
 \input{deformation}

@@ -1,0 +1,20 @@
+\begin{tikzpicture}[x=1.25cm,y=1.25cm,>=Latex,every node/.style={font=\small}]
+\coordinate(O) at (0,0);
+\coordinate(L) at (-4,0);
+\coordinate(M) at (0,2);
+\fill[blue!8] (-4,0) rectangle (-2,2);
+\fill[blue!15] (-2,0) rectangle (0,2);
+\draw[thick] (-4,0) rectangle (0,2);
+\draw[thick] (-2,0)--(-2,2);
+\draw[->,very thick] (O)--(L) node[midway,below=5pt] {$\lambda=-4c$};
+\draw[->,very thick] (O)--(M) node[right=5pt] {$\mu_0=2s\,\ii$};
+\draw[->,thick,dashed] (O)--(-2,2) node[above=4pt] {$\mu_-$};
+\draw[->,thick,dashed] (O)--(2,2) node[above=4pt] {$\mu_+$};
+\draw[gray,dotted] (0,2)--(2,2)--(2,0)--(0,0);
+\node at (-3,1) {first rectangle};
+\node[align=center,text width=1.5cm] at (-1.3,.4) {second\\rectangle};
+\node at (-3,-.7) {$2c$};
+\node at (-1,-.7) {$2c$};
+\fill(O) circle(1.5pt);
+\node[below right] at(O) {$0$};
+\end{tikzpicture}

@@ -259,9 +259,8 @@ on the edge. The angle sum is $4(\pi/2)=2\pi$.
 An odd pairing changes the copy permutation in this return.
 It still has four distinct occurrences, since the two shaded
 triangles have no common edge and the two cut copies are distinct.
-The local pure and odd return identities of
-\cite[equations~(5.7)--(5.8)]{Geometry}, written again in
-\eqref{sm:edge-words} below, show that the full return is identity.
+The local pure and odd return identities proved in
+\eqref{sm:edge-words} below show that the full return is identity.
 Thus the quotient has neither an edge cone angle nor a residual
 translation along an edge.
 
@@ -294,10 +293,9 @@ Theorem~\ref{sm:complete}, including the two-leaf strict case.
 The auxiliary apex retains its original leaf rectangle throughout
 the construction. In \eqref{sm:leaf} its adjacent sides have lengths
 $2\sin\pi a$ and $2\cos\pi a$. The cusp has exactly two such
-rectangles. The original disk paths in
-\cite[Section~7, equations~(7.1)--(7.5)]{Geometry} are local to this
-unchanged collar. We recall the path and area checks so that no
-global completed-root marking is being imported.
+rectangles. We trace the original disk paths in this unchanged
+collar and compare their lattice with its full two-rectangle area.
+This determines a primitive basis before considering a deformation.
 
 Normalize the ordered leaf base to $(0,\infty,1,R)$.
 Let $W_j$ be the white transition at edge $j$ between projection
@@ -309,18 +307,43 @@ as defined in Section~\ref{sm:maps}. The traced paths are
  \mu_-=A^{-1}W_0,\qquad
  \mu_+=W_0^{-1}B.
 \end{equation}
-The longitude crosses white face $0$ and returns through $2$.
+The longitude follows the twice-punctured disk: it crosses white
+face $0$ and returns through $2$.
 The pure meridian crosses the shaded identification once in the
 reverse direction. The odd paths cross the respective half-disk
-pairing and white face $0$. The retained negative crossing uses
+pairing and white face $0$: $\mu_-$ first crosses $W_0$ and then
+$A^{-1}$, while $\mu_+$ first crosses $B$ and then $W_0^{-1}$.
+These are the two original rotations through a half turn of the
+cut disk. They interchange the punctures and the two half disks,
+giving the same unmarked triangular pairing but meridians that
+differ by a full longitude. The retained negative crossing uses
 $\mu_-$ and the positive crossing uses $\mu_+$ in the original
 disk frame. A physical turn transports the whole collar, not its sign.
 
-Conjugation back to the original apex at infinity gives the translations
+At completeness the normalization from \eqref{sm:leaf} is
+\[
+ M(z)=\frac{1+E}{2}\frac{z-1}{z-E},
+ \qquad
+ R=\frac{(1+E)^2}{4E},\qquad Z=M(\infty)=\frac{1+E}{2}.
+\]
+For each word $L$ in \eqref{sm:peripheral-words}, substitute this
+$R$ into \eqref{sm:W}, \eqref{sm:shaded} and conjugate:
+$M^{-1}LM$ is proportional to
+$\left(\begin{smallmatrix}1&t_L\\0&1\end{smallmatrix}\right)$.
+The four resulting translations are
 \begin{equation}\label{sm:translations}
  \mu_0=E-1,\qquad \lambda=-2(E+1),\qquad
  \mu_-=-2,\qquad \mu_+=2E.
 \end{equation}
+For example $S^{-1}$ may be represented by
+$\left(\begin{smallmatrix}-1-E&ER\\-1&0\end{smallmatrix}\right)$,
+and $\lambda$ by
+$\left(\begin{smallmatrix}1-ER&ER(E-1)\\1-E&E(E-R)\end{smallmatrix}\right)$.
+Their conjugations give respectively $E-1$ and $-2(E+1)$.
+Using $A^{-1}W_0$ and $W_0^{-1}B$ gives $-2$ and $2E$.
+The cross-copy words first return to the initial normalized
+chart, so this is one conjugation by $M$, not a mixture of the
+two projection frames.
 The actual torus area is $8\sin\pi a\cos\pi a=4\sin2\pi a$,
 and
 $|\Ima(\overline{\mu_0}\lambda)|=4\sin2\pi a$.
@@ -337,6 +360,18 @@ Since $(E+1)/(E-1)=-\ii\cot\pi a$, the ratio
 $\lambda/\mu_\eps$ is \eqref{sm:tau}.
 This proves the remaining marking assertion of
 Theorem~\ref{sm:complete}.
+
+\begin{figure}[ht]
+\centering\input{figures/cusp-lattice}
+\caption{The original crossing-circle collar, rotated by
+$e^{-\pi\ii a}$. Write $s=\sin\pi a$ and $c=\cos\pi a$.
+The pure meridian is $2s\,\ii$, the disk longitude is $-4c$,
+and the two rectangles of width $2c$ and height $2s$ give the
+full fundamental area. The dashed meridians
+$\mu_-=\mu_0+\lambda/2$ and $\mu_+=\mu_0-\lambda/2$ belong
+to their respective half-twist partners.}
+\label{sm:collar-figure}
+\end{figure}
 
 \begin{proposition}\label{sm:knot-choice}
 Every strict expression admits a choice of pure or odd leaves for

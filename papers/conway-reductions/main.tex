@@ -1,0 +1,137 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,xurl}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\setlength{\emergencystretch}{2em}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Turn}{\mathcal T}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\ii}{\mathrm i}
+\title{Ordered tangle reductions and long net twists}
+\author{}\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+We give a finite reduction of ordered two-strand tangle expressions that keeps the signed sum and original labels of every fused twist region. For a cylindrical product closure, the surviving label partition is independent of the twist parities; the parities determine the rotations and orders in the resulting presentation. Allowing either closure and vanishing sums gives a tree of explicitly marked connected sums. The reduction uses ambient isotopies with prescribed collars and retains every closed component. Combining it with the volume theorem for strict Conway compositions gives an all-integer-level volume limit whenever the surviving strict factors have sufficiently long net twists and the input knot is hyperbolic. Under the same longness condition the terminal factors also give a finite criterion for hyperbolicity. The original expression is arbitrary but fixed, and longness is imposed on the surviving sums, not on the written summands.
+\end{abstract}
+
+\section{The question and the precise input}\label{cr:introduction}
+
+Two large twist regions can cancel. For example, replacing an integral braid $R^a$ by $R^{a+2k}R^{-2k}$ changes neither the tangle nor its closure, while both new written counts tend to infinity with $|k|$. A useful long-twist statement must therefore specify which sums of the original counts survive the tangle operations. We do this before invoking a geometric or quantum theorem.
+
+The constructions belong to the algebraic tangle calculus introduced by Conway~\cite{Conway}. Rational tangles and their flip and flype operations are treated by Kauffman--Lambropoulou~\cite{KL}; the broader arborescent classification is developed by Bonahon--Siebenmann~\cite{BS}. Our reduction keeps the ordered expression and its labelled twist sums. It need not be canonical among all presentations of the same link. In particular, we retain a rotation of an arbitrary subtangle rather than use flip invariance available in special rational cases. Hyperbolicity of much broader arborescent classes is studied by Volz~\cite{Volz}. The argument here needs only the long strict factors furnished by the following companion theorem and an elementary group obstruction to having two such nontrivial summands.
+
+\subsection{Boxes, signs and closures}
+
+Place a two-strand tangle in a ball with four specified boundary points. A tangle consists of two arcs and possibly finitely many closed components. All the latter are part of the link. In the diagram plane label the points
+\[
+ 0=\text{lower left},\quad1=\text{lower right},\quad
+ 2=\text{upper right},\quad3=\text{upper left}.
+\]
+Depth is the $y$ coordinate and the vertical stack axis is $z$. The product $FG$ puts $F$ below $G$ and joins $F_2$ to $G_1$ and $F_3$ to $G_0$. Its exposed ordered tuple is $(F_0,F_1,G_2,G_3)$. Products are ordered; brackets may be changed by rescaling the empty stack collars.
+
+The clockwise quarter-turn $\Turn$ is the spatial rotation
+\[
+             \Turn(x,y,z)=(z,y,-x).
+\]
+It carries the whole ball, including its closed components. The new endpoint tuple is $(F_1,F_2,F_3,F_0)$. Write $R^n$ for the standard integral two-braid with $n\in\mathbb Z$ signed half twists, and define a labelled elementary piece by
+\begin{equation}\label{cr:leaf}
+                    h_i(n_i)=\Turn(R^{n_i}).
+\end{equation}
+Positive and negative powers refer to this one fixed braid convention. A label $i$ occurs exactly once in the expression. Turns and products of the pieces \eqref{cr:leaf} are the allowed operations.
+
+The cylindrical closure $C(E)$ connects $E_0$ to $E_3$ and $E_1$ to $E_2$ by the fixed empty outside arcs. The cap closure $D(E)$ connects $E_0$ to $E_1$ and $E_2$ to $E_3$. Rotating the closed picture identifies
+\begin{equation}\label{cr:two-closures}
+                         D(E)=C(\Turn E).
+\end{equation}
+Here and below equality of such diagrams means the displayed actual isotopy class, with these outside arcs. A four-point permutation alone would not specify a closure: one could otherwise insert a boundary Dehn twist.
+
+\subsection{Strict expressions and the imported theorem}
+
+The formal strictness test does not inspect the numerical twist counts. The possible open types are
+\[
+ L=(0,1/2),\qquad H=(1/2,1),\qquad A=(0,1).
+\]
+Each formal $h$ has type $L$. A turn exchanges $L,H$ and fixes $A$. The product table is
+\begin{equation}\label{cr:type-table}
+\begin{array}{c|ccc}
+ &L&H&A\\\hline
+ L&A&H&A\\
+ H&H&\varnothing&H\\
+ A&A&H&A
+\end{array}
+\end{equation}
+The allowed closing pairs are $AA,AL,AH,LH$, in either order. An expression $C(FG)$ is \emph{strict} if every product and its closing pair pass this test. The intervals are the possible normalized output states of the positive Newton variational problem. Their exact support interpretation and the equivalence with a strict interior state are \cite[Lemma 2.2 and Theorem 2.5]{Profiles}. This test concerns the written formal expression. A formal piece with count zero still has its formal type; no geometric conclusion for a zero filling follows from that convention.
+
+\begin{proposition}[The strict-volume input]\label{cr:import}
+Fix a literal strict expression with at least two leaves. Fix a retained half-twist pattern $\epsilon_i\in\{0,1\}$ whose complete strand pairing, including internal circles, has one component. There is $P_0$ such that every fixed signed integer tuple with $|p_i|>P_0$, and physical crossing powers
+\begin{equation}\label{cr:power-slope}
+                         n_i=\epsilon_i-2p_i,
+\end{equation}
+gives a hyperbolic knot $K$ and
+\begin{equation}\label{cr:volume-limit}
+ \lim_{N\to\infty}\frac{2\pi}{N}\log|K_N(K)|
+                          =\Vol(S^3\setminus K).
+\end{equation}
+The limit includes every sufficiently large integer level. The signs and relative sizes of the $p_i$ are unrestricted, and the tuple and expression are fixed before taking this limit.
+\end{proposition}
+
+This is \cite[Theorem 1.1]{Asymptotics}. The invariant $K_N$ is the reduced enhanced Kashaev invariant with unknot value one and the recorded zero-framing normalization; its comparison with the physical evaluation is \cite[Theorem 10.1]{Finite}, at $N\ge3$. All subsequent invariant identities can be restricted to these levels. The missing single level $N=2$ has no bearing on \eqref{cr:volume-limit}. For a fixed strict template $\sigma$, define
+\[
+ P_\sigma=\max\bigl(\{0\}\cup
+   \{P_{\sigma,\epsilon}:\epsilon\text{ gives one component}\}\bigr).
+\]
+The set of parity patterns is finite; the definition also covers a template admitting no knot-producing pattern. A crossing-weight threshold is
+\begin{equation}\label{cr:crossing-threshold}
+                         B_\sigma=2P_\sigma+1.
+\end{equation}
+Indeed $|n_i|>B_\sigma$ implies $|p_i|=|\epsilon_i-n_i|/2>P_\sigma$. This is the only asymptotic input to this paper.
+
+\subsection{The conclusions}
+
+Fix a finite expression on labels $\{1,\ldots,m\}$. For a nonempty block of labels $B$, put
+\begin{equation}\label{cr:net}
+                         W_B=\sum_{i\in B}n_i.
+\end{equation}
+A formal piece remembers $B$ even when its evaluated weight is zero.
+
+\begin{theorem}[Ordered product normalization]\label{cr:ordered}
+Suppose the input is $\mathcal E=C(FG)$, with $m\ge2$. There is a partition of its original labels into nonempty disjoint blocks. For each original parity vector, a deterministic finite procedure produces either a strict cylindrical product expression on those net blocks, or the integral braid closure $C(R^{\sum_i n_i})$. The partition is independent of the parity vector; the orders and recorded rotations of subexpressions can depend on it. For every integer assignment of that parity, including zero weights and zero sums, the output is ambient isotopic to the input in oriented $S^3$.
+
+There is a finite constant $B(\mathcal E)$ such that, if the output is strict, the input has one component, and every surviving $|W_B|>B(\mathcal E)$, then the input is hyperbolic and satisfies \eqref{cr:volume-limit}.
+\end{theorem}
+
+An arbitrary closure may require cap splitting before this theorem applies. It can also lie on a wall where some final net sum vanishes. The next result records these possibilities.
+
+\begin{theorem}[Either closure and zero sums]\label{cr:arbitrary}
+Fix a finite expression $E$ with $m\ge1$ and choose $C(E)$ or $D(E)$. A deterministic finite procedure gives an exhibited tree of componentwise connected sums of strict cylindrical product expressions with nonzero net weights, integral braid closures, and unknots. Surviving and deleted net blocks partition the original labels. Only the original parities and the zero/nonzero pattern of their finitely many subset sums choose the output templates.
+
+There is a finite $B_E$ such that the following holds. Suppose the input has one component and every weight on every surviving strict factor has magnitude greater than $B_E$. Then the input is hyperbolic if and only if exactly one terminal factor is strict and all other terminal factors are unknots. In that case it is ambient isotopic to the strict factor and satisfies \eqref{cr:volume-limit}.
+\end{theorem}
+
+The condition is on surviving strict weights only. Elementary factors can have small weights. Without the longness condition the decomposition remains valid, but this theorem does not decide the geometry of a short strict factor. Sections~\ref{cr:rotations}--\ref{cr:partition} prove the ordered normalization. Sections~\ref{cr:zeros}--\ref{cr:groups} prove the all-root reduction and its hyperbolic criterion. The last section transports the invariant and volume and states useful numerical sufficient conditions.
+
+\input{moves}
+\input{normalization}
+\input{closures}
+\input{application}
+
+\begin{thebibliography}{9}
+\bibitem{Conway} J. H. Conway, \emph{An enumeration of knots and links, and some of their algebraic properties}, in Computational Problems in Abstract Algebra, Pergamon, 1970, 329--358. \href{https://doi.org/10.1016/B978-0-08-012975-4.50034-5}{doi:10.1016/B978-0-08-012975-4.50034-5}.
+\bibitem{KL} L. H. Kauffman and S. Lambropoulou, \emph{On the classification of rational tangles}, Adv. Appl. Math. \textbf{33} (2004), 199--237. \href{https://doi.org/10.1016/j.aam.2003.06.002}{doi:10.1016/j.aam.2003.06.002}.
+\bibitem{BS} F. Bonahon and L. C. Siebenmann, \emph{New Geometric Splittings of Classical Knots and the Classification and Symmetries of Arborescent Knots}, manuscript, version of January 26, 2016. \href{https://dornsife.usc.edu/francis-bonahon/wp-content/uploads/sites/205/2023/06/BonSieb-compressed.pdf}{Authors' edition}.
+\bibitem{Volz} K. Reif Volz, \emph{Hyperbolicity of arborescent tangles and arborescent links}, Topology Appl. \textbf{156} (2009), 963--978. \href{https://doi.org/10.1016/j.topol.2008.11.014}{doi:10.1016/j.topol.2008.11.014}.
+\bibitem{Profiles} \emph{Stationary profiles of strict Newton trees}. Companion paper, \href{https://sashakolpakov.github.io/murakamis_dream/papers/strict-newton-profiles.pdf}{repository edition}.
+\bibitem{Asymptotics} \emph{Holomorphic source asymptotics and volume limits for strict Conway compositions}. Companion paper, \href{https://sashakolpakov.github.io/murakamis_dream/papers/conway-asymptotics.pdf}{repository edition}.
+\bibitem{Finite} \emph{Finite spectral evaluation and uniform filling bounds}. Companion paper, \href{https://sashakolpakov.github.io/murakamis_dream/papers/filling-bounds.pdf}{repository edition}.
+\end{thebibliography}
+\end{document}

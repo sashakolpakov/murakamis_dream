@@ -163,6 +163,21 @@ def negative_controls(data: dict) -> list[str]:
     broken = deepcopy(data)
     broken["conclusions"]["decorated_volume"]["assumptions"].remove("terminal_decoration")
     cases.append(("actual knot-changing decoration omitted", broken))
+    broken = deepcopy(data)
+    broken["nodes"]["strict_conway_source_gap"]["requires"]["source_gap_two"] = "strict_conway_gap_many"
+    cases.append(("three-or-more-leaf bound substituted for the two-leaf case", broken))
+    broken = deepcopy(data)
+    broken["nodes"]["strict_conway_volume"]["requires"]["exact_invariant"] = "recursive_source"
+    cases.append(("completed-root construction substituted into the strict route", broken))
+    broken = deepcopy(data)
+    broken["conclusions"]["strict_conway_volume"]["assumptions"].remove("strict_conway_construction")
+    cases.append(("strict Conway construction omitted from the conclusion", broken))
+    broken = deepcopy(data)
+    broken["nodes"]["strict_conway_pure_window"]["levels"] = "odd"
+    cases.append(("odd-only pure expansion used for the all-level strict theorem", broken))
+    broken = deepcopy(data)
+    broken["nodes"]["strict_conway_volume"]["requires"]["full_remainder"] = "strict_conway_source_gap"
+    cases.append(("unfilled source bound substituted for the filled remainder", broken))
     rejected = []
     for name, broken in cases:
         try:
@@ -178,12 +193,14 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
+    # A failed replay must not leave an earlier successful summary in place.
+    args.output.mkdir(parents=True, exist_ok=True)
+    (args.output / "summary.json").unlink(missing_ok=True)
     data = json.loads(MANIFEST.read_text())
     report = check(data)
     report["negative_controls_rejected"] = negative_controls(data)
     for path in (MANIFEST, Path(__file__).resolve()):
         report["source_sha256"][str(path.relative_to(ROOT))] = hashlib.sha256(path.read_bytes()).hexdigest()
-    args.output.mkdir(parents=True, exist_ok=True)
     (args.output / "summary.json").write_text(json.dumps(report, indent=2) + "\n")
     print(f"Checked {report['nodes_checked']} declared proof steps and {len(report['negative_controls_rejected'])} invalid substitutions.")
     print("The general remainder remains open. The mathematical nodes retain their written proofs.")

@@ -7,6 +7,7 @@ import GroundedLaplacian
 import TriangleLoads
 import TrianglePotential
 import TriangleMinimizer
+import TriangleBalance
 
 #print axioms VolumeLogic.RealModel.complexMagnitude
 #print axioms VolumeLogic.RealModel.constant_div_nat_rate
@@ -253,3 +254,26 @@ import TriangleMinimizer
 #print axioms VolumeLogic.TriangleMinimizer.root_demand_difference
 #print axioms VolumeLogic.TriangleMinimizer.grounded_demand_eq
 #print axioms VolumeLogic.TriangleMinimizer.exists_unique_prescribed_minimizer
+
+#print axioms VolumeLogic.TriangleBalance.supportedLoad
+#print axioms VolumeLogic.TriangleBalance.supportedLoad_regular
+#print axioms VolumeLogic.TriangleBalance.not_regular_singleton
+#print axioms VolumeLogic.TriangleBalance.supportedLoad_singleton
+#print axioms VolumeLogic.TriangleBalance.supportedLoad_feasible
+#print axioms VolumeLogic.TriangleBalance.potential_eq_supportedLoad
+#print axioms VolumeLogic.TriangleBalance.potential_supporting
+#print axioms VolumeLogic.TriangleBalance.potential_path_derivative
+#print axioms VolumeLogic.TriangleBalance.vertexLoad
+#print axioms VolumeLogic.TriangleBalance.residual
+#print axioms VolumeLogic.TriangleBalance.column_pairing
+#print axioms VolumeLogic.TriangleBalance.sum_vertexLoad
+#print axioms VolumeLogic.TriangleBalance.sum_residual
+#print axioms VolumeLogic.TriangleBalance.root_residual
+#print axioms VolumeLogic.TriangleBalance.root_balance_iff_total
+#print axioms VolumeLogic.TriangleBalance.summedPotential_path_derivative
+#print axioms VolumeLogic.TriangleBalance.coordinate_derivative
+#print axioms VolumeLogic.TriangleBalance.minimizer_balance
+#print axioms VolumeLogic.TriangleBalance.summedPotential_supporting
+#print axioms VolumeLogic.TriangleBalance.balance_minimizer
+#print axioms VolumeLogic.TriangleBalance.grounded_minimizer_iff_balance
+#print axioms VolumeLogic.TriangleBalance.exists_unique_balance

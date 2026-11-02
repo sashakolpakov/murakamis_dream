@@ -83,18 +83,33 @@ pairing assigned to that shaded triangle.
 
 \subsection{Universal local formulas}
 Normalize the four ordered face flags to $(0,\infty,1,R)$.
-For the mixed leaf the relevant coordinates are
+For the mixed leaf this is the explicit Möbius map
+\[
+ M_{x,t}(z)=
+ \frac{1+E}{1+T}\,\frac{z-1}{z-E/T}.
+\]
+It sends $(1,E/T,-1/T)$ to $(0,\infty,1)$.
+Applying it to the fourth corner and the apex gives
 \begin{equation}\label{sm:flags}
  R=\frac{\cos^2\pi x}{\cos^2\pi t}
    =\frac{T(1+E)^2}{E(1+T)^2},\qquad
  Z=\frac{1+E}{1+T},\qquad
  Z^2-(1+E)Z+ER=0.
 \end{equation}
-Its ordered cross ratio is $R^{-1}-1=e^{-g_x}$.
+In particular its ordered cross ratio is
+\[
+ R^{-1}-1=
+ \frac{\sin\pi(x-t)\sin\pi(x+t)}{\cos^2\pi x}=e^{-g_x}.
+\]
+The sine quotient follows by subtracting the four phase coordinates;
+the derivative equality follows from \eqref{sm:mixed-g}.
 The first apex is $Z$ and the second-copy apex is $Z/E$:
 the latter is the reflected minus-$t$ chart.
 Reflection here means inversion of the phase coefficients, not
-complex conjugation of free parameters. Every defining triple of
+complex conjugation of free parameters. Indeed the minus-$t$
+apex before reflection is $(1+E)/(1+T^{-1})$; replacing
+$E,T$ by $E^{-1},T^{-1}$ gives $Z/E$.
+Every defining triple of
 face flags is distinct at completeness and remains so nearby.
 The two roots $Z,TZ$ of the auxiliary fixed-point equation may
 coalesce at completeness; we require no distinctness of that pair
@@ -115,9 +130,8 @@ send $Z$ to $Z/E$. The apex equation verifies the statement for
 $W_2$. The other two matrices are completion maps at its shaded
 cap bases.
 
-We use the rational prism identities of
-\cite[equation~(5.5)]{Geometry}, equivalently
-\cite[equation~(3.7)]{Fillings}. To specify their charts, put
+We prove the whole prism identities in common world coordinates.
+Put
 $\alpha=e^{2\pi\ii(z-x)}$, $\beta=e^{2\pi\ii(x+y-z)}$,
 $\gamma=e^{2\pi\ii(z-y)}$. The world prism is
 \begin{equation}\label{sm:complex-prism}
@@ -128,13 +142,83 @@ $\gamma=e^{2\pi\ii(z-y)}$. The world prism is
       {\alpha^2\beta^2\gamma-\alpha}.
 \end{split}
 \end{equation}
+For real strict parameters the two chord equations are
+\[
+ P+\alpha\overline P=1+\alpha,\qquad
+ P+\alpha^2\beta^2\gamma\overline P=\alpha\beta(1+\gamma).
+\]
+Eliminating $\overline P$ gives \eqref{sm:complex-prism},
+so it is the same intersection as \eqref{sm:prism-P}, not
+a second prism prescription. The formula now continues
+holomorphically in three independent phase variables.
 For an ordered quadruple $(a,b,c,d)$ let
 $M(z)=(z-a)(c-b)/((z-b)(c-a))$ and $R=M(d)$, with the
 usual limits at infinity. Its world transition is
 $(M^\#)^{-1}W_jM$, where $\#$ reciprocates the three phase
 variables. Use the ordered tuples \eqref{sm:stack-map}, with
 wire phases $\beta\gamma,\alpha\beta,\alpha\beta\gamma$.
-The resulting entire maps satisfy
+Here is a full rational verification. Set
+$\Omega=\alpha\beta\gamma$ and $D=\alpha\beta^2\gamma-1$.
+In this notation
+\[
+ P=\frac{\alpha\beta(\Omega+\beta\gamma-\gamma-1)}{D},
+ \qquad
+ \begin{array}{c|c}
+ \text{face}&M(z)\\\hline
+ F&\displaystyle\frac{(z-1)(P-\alpha)}{(z-\alpha)(P-1)}\\[2mm]
+ G&\displaystyle\frac{\alpha\beta-P}{z-P}\\[2mm]
+ o&\displaystyle\frac{(z-1)(\alpha\beta-\alpha)}
+                         {(z-\alpha)(\alpha\beta-1)}
+ \end{array}.
+\]
+The fourth normalized vertex is always $M(d)$.
+Define the following five projective matrices:
+\begin{equation}\label{sm:world-matrices}
+\begin{aligned}
+ K_0&=\begin{pmatrix}
+ \Omega-1&1-\alpha\Omega\\
+ \alpha(\beta\gamma-1)&\alpha(1-\Omega)
+ \end{pmatrix},\\
+ K_1&=\begin{pmatrix}
+ \Omega-1&\alpha\beta(1-\alpha\gamma)\\
+ \alpha D&\alpha^2\beta(1-\Omega)
+ \end{pmatrix},\\
+ K_2&=\begin{pmatrix}
+ \Omega-1&\alpha\beta(1-\Omega\gamma)\\
+ \Omega(\alpha\beta-1)&\alpha\beta\Omega(1-\Omega)
+ \end{pmatrix},\\
+ K_3&=\begin{pmatrix}-1&\Omega+1\\0&\Omega\end{pmatrix},
+ &K_*&=\begin{pmatrix}-1&P+\Omega P^\#\\0&\Omega\end{pmatrix}.
+\end{aligned}
+\end{equation}
+Substitute each displayed $M$ and its fourth vertex into
+$(M^\#)^{-1}W_jM$. Multiplication and cancellation of a scalar
+give the entire table
+\begin{equation}\label{sm:world-table}
+ \begin{array}{c|cccc}
+ &j=0&j=1&j=2&j=3\\\hline
+ F&K_0&K_1&K_*&K_3\\
+ G&K_*&K_1&K_2&K_3\\
+ o&K_0&K_1&K_2&K_3
+ \end{array}.
+\end{equation}
+These cancellations are polynomial identities: insert the expression
+for $P$, clear $D$ and the three normalization denominators, and
+compare the four matrix entries up to their common scalar.
+For example the shared-edge entry is the affine map
+$z\mapsto P^\#+(P-z)/\Omega$ from both $F,2$ and $G,0$;
+the output cap entry $o,3$ is
+$z\mapsto1+\Omega^{-1}-z/\Omega$.
+The displayed representatives specify every other entry without
+an unspecified map.
+
+To identify the actual white triangles, $K_1$ sends
+$(P,\alpha,\alpha\beta)$ to
+$(P^\#,\alpha^{-1},(\alpha\beta)^{-1})$, as substitution
+in its two linear rows verifies. Similarly $K_3$ sends
+$(\infty,1,\Omega)$ to $(\infty,1,\Omega^{-1})$.
+Thus they are the complete triangle maps, including translation.
+The table proves
 \begin{equation}\label{sm:prism-maps}
 \begin{aligned}
  W_{F,1}=W_{G,1}=W_{o,1}&=W_{\rm top},&
@@ -143,10 +227,14 @@ The resulting entire maps satisfy
  W_{o,0}=W_{F,0},\qquad W_{o,2}&=W_{G,2}.
 \end{aligned}
 \end{equation}
-The top and bottom maps are the actual white prism triangles.
-The cited proof is an identity in independent complex phase variables,
-so it applies also to a wire above $1/2$. No completed-child
-hypothesis enters that local calculation.
+with $W_{\rm top}=K_1$ and $W_{\rm bottom}=K_3$.
+All normalizations are invertible on the real strict chamber:
+for instance $D=e^{-2\pi\ii w}-1\ne0$,
+$\beta\gamma=e^{2\pi\ii x}\ne1$ and
+$\alpha\beta=e^{2\pi\ii y}\ne1$.
+The geometric triples are distinct there. They remain so nearby.
+The rational identities hold off the real chamber as well and
+include a wire above $1/2$ without a completed-child assumption.
 
 For turns and closure the corresponding identities are
 \begin{equation}\label{sm:turn-maps}
@@ -156,8 +244,21 @@ For turns and closure the corresponding identities are
  C_QW_j(E^{-1},R)&=W_{2-j}(E,R)C_Q .
 \end{split}
 \end{equation}
-They are \cite[equation~(5.6)]{Geometry}. They retain all translations,
-not only derivatives at endpoints.
+The first matrix sends the newly ordered first three corners
+to $0,\infty,1$ after the cyclic shift; its fourth corner is
+$1-R$. The second does the same for the full reversed closing
+order with the reciprocal wire phase. Inserting the four
+matrices \eqref{sm:W} into either side gives equal projective
+matrices for each $j=0,1,2,3$. For example at $j=0$ the first
+identity has matrices
+\[
+ \begin{pmatrix}0&E(R-1)\\1&-1\end{pmatrix}
+ \quad\hbox{and}\quad
+ \begin{pmatrix}0&R-1\\E^{-1}&-E^{-1}\end{pmatrix},
+\]
+whose scalar ratio is $E$. The other entries follow by the
+same two-row multiplication; no endpoint derivative replaces
+the full map in \eqref{sm:turn-maps}.
 
 \subsection{The mask induction for the entire maps}
 We prove the following strengthened statement simultaneously through
@@ -222,8 +323,14 @@ With $S^\#=S(E^{-1},R)$, direct multiplication gives
  W_2^{-1}BW_0^{-1}A=I,\quad W_1^{-1}BW_3^{-1}A=I .
 \end{gathered}
 \end{equation}
-Equalities are in the projective group. These local identities are
-\cite[equations~(5.7)--(5.8)]{Geometry}, for independent $E,R$.
+Equalities are in the projective group. In the displayed matrix
+representatives the scalar ratios in the first row are respectively
+$E,E,ER$. The three products in the second row are respectively
+$-R/E$, $-R/E$ and $(R-1)/E$ times the identity matrix.
+This proves the full identities by matrix multiplication for
+independent $E,R$; all these scalars are nonzero on the strict
+complete chamber and nearby. Reverse cycles give the inverse
+relations.
 The actual/ completion-map induction is what permits their use on
 the enlarged syntax.
 
@@ -285,10 +392,34 @@ similarity multipliers of the four words are
         \lambda:Q^2,\qquad \mu_0:\rho,\qquad
         \mu_-:\rho Q,\qquad \mu_+:\rho/Q.
 \end{equation}
-At a finite fixed flag, this multiplier is the reciprocal of the
-Möbius derivative. Substitution of \eqref{sm:flags} into
-$\det M/(cZ+d)^2$ verifies these formulas. They are the local
-identities \cite[equations~(4.2)--(4.3)]{Fillings}.
+For completeness, the following computation fixes every square
+and sign in \eqref{sm:multipliers}. Replace each inverse in
+\eqref{sm:peripheral-words} by its adjugate; this changes only
+a projective scalar. The resulting representatives are
+\[
+\begin{array}{c|c}
+\lambda&\begin{pmatrix}1-ER&ER(E-1)\\1-E&E(E-R)\end{pmatrix}\\[2mm]
+\mu_0&\begin{pmatrix}-E-1&ER\\-1&0\end{pmatrix}\\[2mm]
+\mu_-&\begin{pmatrix}ER-E-1&ER\\-1&ER\end{pmatrix}\\[2mm]
+\mu_+&\begin{pmatrix}R-E-1&ER\\-1&R\end{pmatrix}
+\end{array}.
+\]
+For a matrix $(a\ b;c\ d)$ fixing $Z$, the derivative is
+$\det M/(cZ+d)^2$. Sending $Z$ to infinity makes the affine
+similarity multiplier its reciprocal. With
+$Z=(1+E)/(1+T)$ and $R=T(1+E)^2/[E(1+T)^2]$, the needed
+determinants and denominator eigenvalues are
+\begin{equation}\label{sm:multiplier-calculation}
+\begin{array}{c|c|c}
+ &\det M&cZ+d\\\hline
+\lambda&E^2(R-1)^2&(ET-1)^2/(T+1)^2\\
+\mu_0&ER&-(E+1)/(T+1)\\
+\mu_-&E^2R(R-1)&(E+1)(ET-1)/(T+1)^2\\
+\mu_+&R(R-1)&-(E+1)(E-T)/[E(T+1)^2]
+\end{array}.
+\end{equation}
+The quotient $(cZ+d)^2/\det M$ in each row is exactly the
+corresponding factor in \eqref{sm:multipliers}.
 Since $\rho=e^{-2\pi\ii t}$ and $Q=e^{-v}$, their small logarithms are
 \begin{equation}\label{sm:logs}
  U=-2\pi\ii t+\eps v=-2\pi\ii\chi,\qquad V=-2v.

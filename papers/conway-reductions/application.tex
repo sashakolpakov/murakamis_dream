@@ -1,0 +1,73 @@
+\section{Uniform thresholds, invariant and volume}\label{cr:application}
+
+For a fixed cylindrical product input, the symbolic normalization uses only the original parities. There are at most $2^m$ resulting ordered templates. For every strict one choose the crossing threshold \eqref{cr:crossing-threshold}, taking the maximum over its knot-producing parity choices if necessary. Define
+\begin{equation}\label{cr:product-threshold}
+ B(\mathcal E)=\max\bigl(\{2\}\cup
+                \{B_\sigma:\sigma\text{ is a strict output}\}\bigr).
+\end{equation}
+If there is no strict output the maximum is simply $2$. For a knot with a strict output whose net weights exceed this number, Proposition~\ref{cr:import} supplies its complete hyperbolic metric and its invariant limit. The isotopies constructed above give the same conclusion for the input. This completes the second assertion of Theorem~\ref{cr:ordered}. If the input is already known to be hyperbolic, its elementary output is impossible by Lemma~\ref{cr:hyperbolic-centralizer}.
+
+For either closure and the evaluated zero-aware reduction, Proposition~\ref{cr:patterns} gives a finite set $\mathcal S_E$ of possible strict terminal templates. Define
+\begin{equation}\label{cr:all-threshold}
+ B_E=\max\bigl(\{2\}\cup\{B_\sigma:\sigma\in\mathcal S_E\}\bigr).
+\end{equation}
+This threshold works simultaneously on every realized parity and subset-sum zero pattern of the fixed input. The construction is finite but does not provide a numerical value for the analytic thresholds in Proposition~\ref{cr:import}. There is no bound uniform over expressions with an increasing number of operations.
+
+If the input has one component and its strict terminal weights exceed \eqref{cr:all-threshold}, Proposition~\ref{cr:one-factor} proves both directions of the hyperbolicity criterion in Theorem~\ref{cr:arbitrary}. For clarity, its terminal test is completely specified: $D(R^s)$ is always an unknot, and among knot closures $C(R^s)$ exactly $s=\pm1$ are unknots. Odd $|s|\ge3$ are the nontrivial torus factors in Lemma~\ref{cr:factors}. Even $s$ cannot occur for a one-component input. Thus the last classification step requires the two tests $s=\pm1$ in addition to the parity and zero tests which chose the templates.
+
+\subsection{The same filled knot and its normalization}
+
+Let the surviving strict knot be $K_*$. The reductions provide an orientation-preserving ambient isotopy of $S^3$ carrying the input knot to $K_*$. Carry a knot orientation, a marked point and a small tubular neighborhood along it. The resulting exterior homeomorphism sends a meridian to a meridian, since its disk still meets the core once, and sends the preferred longitude to the preferred longitude, since the primitive zero-linking condition is preserved. No extra meridional power is inserted into that longitude.
+
+The reduced invariant of the same zero-framed knot is therefore exactly
+\begin{equation}\label{cr:invariant}
+                   K_N(K)=K_N(K_*),\qquad N\ge3.
+\end{equation}
+This uses the normalized knot invariant in Proposition~\ref{cr:import}, not an equality of two unnormalized colored sources. If intermediate ribbons are recorded, their transported framing can differ from the standard blackboard ribbon of the output by an integer. At complete color the twist is
+\[
+ \theta=q^{-d^2/2},\qquad q=e^{\pi\ii/N},\quad d=N-1,
+                  \qquad |\theta|=1,
+\]
+by \cite[Theorem 10.1]{Finite}. Its integer power is removed by zero-framing and would in any case leave the exponential rate unchanged. The full one-cut modified convention, if chosen on both sides, retains its single factor $\ii^{N+3}/N$. Fusion does not create a modified dimension for each new twist region.
+
+Pull back the strict knot's complete hyperbolic metric along the exterior homeomorphism. The resulting metric on the input complement has exactly the same volume. Equation~\eqref{cr:invariant} and Proposition~\ref{cr:import} prove \eqref{cr:volume-limit} for this original knot, completing Theorem~\ref{cr:arbitrary}. No connected-sum multiplicativity formula for the invariant, or additivity of its exponential rate, has been used.
+
+The comparison is made after filling. Several filled boxes can fuse into a single box with a different auxiliary crossing circle. We have neither identified their unfilled augmented complements nor collapsed several independent quantum colors into one. The output strict presentation supplies its own actual primitive fillings; the already filled knots are the ones related by the constructed isotopy.
+
+\subsection{Conditions directly on the original integers}
+
+Theorem~\ref{cr:arbitrary} is strongest when the specified reduction is performed, because only its surviving strict weights are tested. There is also a convenient sufficient condition which does not require deciding which sums will survive.
+
+\begin{corollary}[Separated nonzero subset sums]\label{cr:separated}
+Fix $E$ and its closure. Suppose that for every nonempty original label set $B$,
+\begin{equation}\label{cr:separated-formula}
+                       W_B=0\quad\text{or}\quad|W_B|>B_E.
+\end{equation}
+Every hyperbolic knot given by that assignment satisfies \eqref{cr:volume-limit}. In particular, fix an integer vector $\mathbf a$ and put $\mathbf n=t\mathbf a$. For every fixed integer $t$ with $|t|>B_E$, each hyperbolic knot on this ray has the asserted limit.
+\end{corollary}
+\begin{proof}
+Each surviving strict weight is a nonzero subset sum. Thus \eqref{cr:separated-formula} implies the exact longness condition of Theorem~\ref{cr:arbitrary}. On the ray, a nonzero sum is $t\sum_{i\in B}a_i$, whose magnitude is at least $|t|$. Zero entries and exact cancellations in $\mathbf a$ are allowed. The scale $t$ is fixed before $N$ tends to infinity.
+\end{proof}
+
+The corollary does not assert that every ray contains hyperbolic knots. The terminal criterion decides the alternative once the longness condition holds. A simpler sufficient case of \eqref{cr:separated-formula} is that all original nonzero counts have the same sign and magnitude greater than $B_E$.
+
+If one writes the original counts as $n_i=\epsilon_i-2p_i$, a block has
+\begin{equation}\label{cr:net-slope}
+ W_B=\epsilon_B-2p_B,\qquad
+ p_B=\sum_{i\in B}p_i+
+             \frac{\epsilon_B-\sum_{i\in B}\epsilon_i}{2},
+\end{equation}
+where $\epsilon_B\in\{0,1\}$ has the parity of $W_B$. The correction is integral and fixed by the retained parity data. Independent longness of the original $p_i$ does not force longness of $p_B$ when signs cancel. The identity $R^a\simeq R^{a+2k}R^{-2k}$ is an actual example of this distinction, not a counterexample to a volume-conjecture equality.
+
+\section{Finite reproduction and the limits of the reduction}\label{cr:reproduction}
+
+The accompanying \texttt{check.py} uses only Python's standard library. From the repository root run
+\[
+ \texttt{python3 -I papers/conway-reductions/check.py}
+\]
+and optionally choose \texttt{--output /path/to/directory}.
+The program removes an old summary before validation and records its input hashes. It checks the spatial rotation matrices and endpoint permutations, the compatibility of the closing reflection with a quarter-turn, and the arithmetic of the original label unions. It independently evaluates endpoint pairings and closed-component counts on finite expressions and compares the local sliding, closed-turn, cap-sum and zero-deletion identities. In these checks the closed components are retained; a control example shows that deleting a zero piece as a through identity changes the count. Further checks compare a parity-independent junction partition with a labelled symbolic reduction on bounded trees.
+
+These are finite consistency tests of the conventions and bookkeeping. Endpoint pairings alone do not determine a tangle isotopy, and the checker makes no such inference. The actual isotopies are proved by the spatial collars, closing-sphere rotations and two-punctured cap spheres above. The tests do not prove the inherited analytic theorem or hyperbolic metric existence, nor do bounded trees prove termination for arbitrary size; the decreasing live-block argument does that.
+
+The output is an exhibited reduction for one prescribed expression, not a prime decomposition or a classification of all presentations of the same knot. It can recognize more input expressions without enlarging the set of long strict knot types supplied by Proposition~\ref{cr:import}: each hyperbolic knot covered here is explicitly isotopic to one of those strict knots. Short surviving strict weights, growing expressions, pointed recurrence reconstruction and meridian or longitude asymptotics remain outside this paper.

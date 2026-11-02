@@ -17,6 +17,8 @@ gradient of the literal integral-entropy supremum, including singleton rows.
 The triangle-minimizer module combines those actual derivatives with
 proved local bounds, continuity and finite corner-table identities to
 obtain a unique grounded minimum from the supported table and row paths.
+The triangle-balance module then derives the concrete free-vertex Euler
+equations and proves that their grounded solution is unique.
 
 ## What is proved
 
@@ -779,6 +781,86 @@ implicit-function results, circle development or the action-volume
 identity. The earlier general coercivity and convexity modules remain
 applicable to other potentials with their own explicit inputs.
 
+## Euler equations for the actual triangle potential
+
+[TriangleBalance.lean](TriangleBalance.lean) contains three definitions and
+nineteen theorems in `VolumeLogic.TriangleBalance`. It identifies the minimum
+just constructed with a unique solution of the concrete free-vertex load
+equations. It uses the same `TrianglePotential.summedPotential`, not a new
+potential defined by a desired gradient.
+
+Let `T` and `V` be finite sets of triangles and vertices. Corner `i : Fin 3`
+of triangle `t` has destination `c t i` and nonnegative fixed coefficient
+`a t i`. Each row has nonempty positive support. For `q : V → ℝ`, put
+`w_(t,i) = a_(t,i) exp(q_(c(t,i)))`. On a row with at least two positive
+corner coefficients, the maximizing load is the actual formula
+
+\[
+\alpha_{t,i}(q)=\frac1\pi\arctan\!
+ \frac{w_{t,i}}{\sqrt{w_{t,0}w_{t,1}+w_{t,1}w_{t,2}+w_{t,2}w_{t,0}}}.
+\]
+
+On a singleton row, the sole active corner has load `1/2` and the other
+corners have load zero. `supportedLoad` combines these two cases;
+`potential_eq_supportedLoad` proves that it attains the original supported
+entropy supremum. The cases are determined by the fixed coefficients,
+so differentiation never changes support.
+
+The vertex load and residual are
+
+\[
+ L_v(q)=\sum_{t}\sum_{i:\,c(t,i)=v}\alpha_{t,i}(q),
+ \qquad R_v(q)=L_v(q)-d_v,
+\]
+
+where `d : V → ℝ` is the prescribed demand. All corner contributions are
+retained when destinations coincide. The entropy optimization continues to
+use the three distinct corner variables; only their loads are aggregated
+at the shared vertex. Fixed boundary offsets remain in the coefficients
+`a`, including when multiple boundary corners are pooled at one root.
+
+For the actual shared potential
+`P(q) = summedPotential c a d q`, the module proves
+
+\[
+ \left.\frac{d}{ds}P(q+s h)\right|_{s=u}
+   =\sum_v R_v(q+u h)h_v.
+\]
+
+Thus varying one coordinate gives precisely `R_v(q)`. The proof applies
+the previously proved arctangent and singleton derivatives, then expands
+the finite incidence sums. It does not assume a gradient identity.
+
+| Theorem | Content |
+| --- | --- |
+| `potential_supporting` and `summedPotential_supporting` | The maximizing loads at `q` are feasible competitors at every `p`; their objective difference gives `P(p) ≥ P(q) + Σ_v R_v(q)(p_v−q_v)`. No convexity premise is supplied. |
+| `summedPotential_path_derivative` and `coordinate_derivative` | Actual affine-path and coordinate derivatives equal the residual pairing and single-vertex residual. |
+| `minimizer_balance` | A minimum on `q_root = 0` satisfies `L_v(q)=d_v` for every `v ≠ root`, by the derivative at a one-variable minimum. |
+| `balance_minimizer` and `grounded_minimizer_iff_balance` | Conversely, those free equations make the supporting inequality nonnegative on every grounded displacement, proving a global grounded minimum. This equivalence needs only nonnegative coefficients and nonempty rows, not a transport table or connectedness. |
+| `exists_unique_balance` | An explicit positive supported corner table of row mass `1/2`, matching the demands away from the root, together with actual connected row paths, gives exactly one grounded solution of all free load equations. Existence and uniqueness reuse the proved minimum theorem. |
+| `sum_vertexLoad`, `root_residual` and `root_balance_iff_total` | Total load is exactly `card T / 2`. After the free equations hold, the root residual is `card T / 2 − Σ_v d_v`; hence its equation holds exactly when the total demand matches. |
+
+The last point preserves the physical boundary convention. Grounding a
+coordinate does not impose its Euler equation. The root demand can be
+arbitrary, just as in `exists_unique_prescribed_minimizer`. With a single
+vertex there are no free equations, but the grounded solution is still
+unique. Without connected support, unused free coordinates can give
+multiple solutions.
+
+The checker compiles four exact boundary controls: a triangle has total
+load `1/2`, repeated destinations retain the sum of their corner loads, a
+one-vertex grounded minimum need not satisfy the root equation, and
+disconnected support can admit distinct grounded solutions. These are
+small mathematical counterexamples to stronger unsupported conclusions,
+not sampled tests of the general theorem. Their axioms are audited
+separately from the reusable module's declaration inventory.
+
+The corner table's existence and its free columns, actual incidence and
+row connectivity remain explicit inputs. Hall feasibility, geometric
+identification/development and limits that change support are not proved
+by this module. No stationary point, coercivity, strict convexity or
+Hessian formula is assumed as a substitute for the actual load equations.
+
 ## Pinned dependencies
 
 - Lean: `leanprover/lean4:v4.32.2`.
@@ -808,6 +890,7 @@ lake exe cache get \
   Mathlib.Analysis.SpecialFunctions.Integrals.LogTrigonometric \
   Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus \
   Mathlib.Analysis.Calculus.Deriv.Shift \
+  Mathlib.Analysis.Calculus.LocalExtr.Basic \
   Mathlib.Analysis.Normed.Module.FiniteDimension \
   Mathlib.LinearAlgebra.Matrix.ToLin \
   Mathlib.LinearAlgebra.Matrix.NonsingularInverse \
@@ -865,7 +948,7 @@ The checker rebuilds the Std-only path dependency, compiles
 `RealTransfer.lean`, `WeightedGraph.lean`, `Flattening.lean`,
 `TransportCoercivity.lean`, `GroundedConvexity.lean` and
 `GroundedLaplacian.lean`, `TriangleLoads.lean`, `TrianglePotential.lean`
-and `TriangleMinimizer.lean`, and runs
+`TriangleMinimizer.lean` and `TriangleBalance.lean`, and runs
 [AxiomAudit.lean](AxiomAudit.lean). Every
 definition and theorem must appear exactly once in the audit. Only Lean's
 standard foundational axioms `propext`, `Classical.choice` and `Quot.sound`
@@ -874,7 +957,7 @@ are permitted; placeholders and additional axioms fail the check.
 `summary.json` records every declaration, its axioms, all dependency pins,
 and the SHA-256 hashes of the optional package, checker and Std-only sources.
 It contains relative paths and omits timestamps so identical inputs produce
-the same summary. Twenty-four negative controls check altered pins, missing or
+the same summary. Twenty-six negative controls check altered pins, missing or
 duplicate dependencies, an absolute local dependency, incomplete or
 duplicate declaration audits, an omitted graph module or grounded-energy
 audit entry, an omitted flattening module or quadratic-cost audit entry,
@@ -884,10 +967,11 @@ an omitted grounded-Laplacian module or unique-linear-solution audit entry,
 an omitted triangle-load module or shared-load derivative audit entry,
 an omitted triangle-potential module or actual supremum-gradient audit entry,
 an omitted triangle-minimizer module or actual prescribed-minimum audit entry,
+an omitted triangle-balance module or unique-load-solution audit entry,
 and an unexpected logical axiom. A failed run
 removes any old success summary in its output directory.
 
-The optional count is **forty-eight definitions and one hundred eighty-nine theorems**, separate
+The optional count is **fifty-one definitions and two hundred eight theorems**, separate
 from the Std-only theorem count: `RealTransfer` has two definitions and
 twenty-two theorems, `WeightedGraph` has seven definitions and nineteen
 theorems, `Flattening` has one definition and nine theorems,
@@ -896,7 +980,10 @@ theorems, `Flattening` has one definition and nine theorems,
 `GroundedLaplacian` has four definitions and eighteen theorems, and
 `TriangleLoads` has ten definitions and twenty-four theorems, and
 `TrianglePotential` has eight definitions and forty-one theorems, and
-`TriangleMinimizer` has six definitions and thirty-two theorems. The audit
+`TriangleMinimizer` has six definitions and thirty-two theorems, and
+`TriangleBalance` has three definitions and nineteen theorems. Four compiled
+mathematical boundary controls have their own recorded axiom inventory and
+are not added to these reusable-library counts. The audit
 checks these proofs and the
 listed dependency pins; it does not certify that a particular knot family
 satisfies the remaining written analytic and geometric hypotheses.

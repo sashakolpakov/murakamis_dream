@@ -34,6 +34,7 @@ MODULE_NAMESPACES = {
     "TriangleLoads": "VolumeLogic.TriangleLoads",
     "TrianglePotential": "VolumeLogic.TrianglePotential",
     "TriangleMinimizer": "VolumeLogic.TriangleMinimizer",
+    "TriangleBalance": "VolumeLogic.TriangleBalance",
 }
 ALLOWED_AXIOMS = {"propext", "Classical.choice", "Quot.sound"}
 # The complete expected Git dependency set, not merely the direct Mathlib pin.
@@ -49,6 +50,85 @@ EXPECTED_GIT = {
     "Cli": ("https://github.com/leanprover/lean4-cli", "88679d088c9720c27ebdf2ba4dafe17341747f94"),
 }
 
+
+# Compiled counterexamples delimit mathematical strengthening, not just metadata.
+BALANCE_BOUNDARY_CONTROLS = r'''
+import TriangleBalance
+
+open scoped BigOperators
+open VolumeLogic
+open TriangleBalance TriangleMinimizer TrianglePotential TriangleLoads
+namespace VolumeLogic.TriangleBalanceControls
+
+-- Wrong half-mass normalization is rejected by an actual supported row.
+theorem half_mass : ¬ ((∑ v : Unit,
+    vertexLoad (fun (_ : Unit) (_ : Fin 3) => ()) (fun _ => ![1,0,0])
+      (fun _ => 0) v) = 1) := by
+  have he := sum_vertexLoad (fun (_ : Unit) (_ : Fin 3) => ())
+    (fun _ => ![1,0,0]) (fun _ => 0)
+    (by intro t i; fin_cases i <;> norm_num)
+    (by intro t; exact ⟨0, by norm_num⟩)
+  norm_num at he
+  simp only [Fintype.sum_unique]
+  rw [he]
+  norm_num
+
+-- Repeated active destinations keep both corner loads, not one of them.
+theorem repeated_destination : vertexLoad (fun (_ : Unit) (_ : Fin 3) => (1 : Fin 2))
+    (fun _ => ![1,1,0]) (fun _ => 0) 1 = 1/2 := by
+  have he := sum_vertexLoad (fun (_ : Unit) (_ : Fin 3) => (1 : Fin 2))
+    (fun _ => ![1,1,0]) (fun _ => 0)
+    (by intro t i; fin_cases i <;> norm_num)
+    (by intro t; exact ⟨0, by norm_num⟩)
+  simpa [Fin.sum_univ_two, vertexLoad, column, aggregate] using he
+
+-- The one-vertex grounded problem has a minimum but no zero root residual
+-- when the chosen root demand is zero.
+theorem arbitrary_root :
+    (∀ p : Unit → ℝ, p () = 0 →
+      summedPotential (fun (_ : Unit) (_ : Fin 3) => ()) (fun _ => ![1,0,0])
+        (fun _ => 0) (fun _ => 0) ≤
+      summedPotential (fun (_ : Unit) (_ : Fin 3) => ()) (fun _ => ![1,0,0])
+        (fun _ => 0) p) ∧
+    residual (fun (_ : Unit) (_ : Fin 3) => ()) (fun _ => ![1,0,0])
+      (fun _ => 0) (fun _ => 0) () ≠ 0 := by
+  constructor
+  · intro p hp
+    have he : p = fun _ => (0 : ℝ) := by funext v; cases v; exact hp
+    rw [he]
+  · have he := root_residual (fun (_ : Unit) (_ : Fin 3) => ())
+      (fun _ => ![1,0,0]) (fun _ => 0) (fun _ => 0)
+      (by intro t i; fin_cases i <;> norm_num)
+      (by intro t; exact ⟨0, by norm_num⟩) ()
+      (by intro v hv; cases v; exact False.elim (hv rfl))
+    norm_num at he
+    rw [he]
+    norm_num
+
+-- Without connected support, a free unused vertex admits distinct solutions.
+theorem disconnected_support : ∃ q p : Fin 2 → ℝ, q ≠ p ∧ q 0 = 0 ∧ p 0 = 0 ∧
+    (∀ v, v ≠ 0 → vertexLoad (fun (_ : Unit) (_ : Fin 3) => (0 : Fin 2))
+      (fun _ => ![1,0,0]) q v = 0) ∧
+    (∀ v, v ≠ 0 → vertexLoad (fun (_ : Unit) (_ : Fin 3) => (0 : Fin 2))
+      (fun _ => ![1,0,0]) p v = 0) := by
+  refine ⟨![0,0], ![0,1], ?_, by norm_num, by norm_num, ?_, ?_⟩
+  · intro he
+    have hh := congrFun he 1
+    norm_num at hh
+  all_goals
+    intro v hv
+    fin_cases v
+    · exact False.elim (hv rfl)
+    · simp [vertexLoad, column, aggregate]
+
+end VolumeLogic.TriangleBalanceControls
+#print axioms VolumeLogic.TriangleBalanceControls.half_mass
+#print axioms VolumeLogic.TriangleBalanceControls.repeated_destination
+#print axioms VolumeLogic.TriangleBalanceControls.arbitrary_root
+#print axioms VolumeLogic.TriangleBalanceControls.disconnected_support
+'''
+
+BALANCE_CONTROL_NAMES = ['half_mass', 'repeated_destination', 'arbitrary_root', 'disconnected_support']
 
 def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -230,6 +310,13 @@ def negative_controls(manifest: dict, names: dict[str, str], audit: str) -> list
         raise ValueError("The registered actual triangle-minimum theorem is missing.")
     reject("omitted_actual_triangle_minimum_audit", validate_audit, names,
            audit.replace("#print axioms " + minimum_name, ""))
+    reject("omitted_triangle_balance_module", declaration_inventory,
+           [PACKAGE / (m + ".lean") for m in MODULE_NAMESPACES if m != "TriangleBalance"])
+    balance_name = "VolumeLogic.TriangleBalance.exists_unique_balance"
+    if balance_name not in names:
+        raise ValueError("The registered actual triangle-balance theorem is missing.")
+    reject("omitted_actual_triangle_balance_audit", validate_audit, names,
+           audit.replace("#print axioms " + balance_name, ""))
     return checks
 
 
@@ -311,10 +398,20 @@ def main() -> None:
                 if result.returncode or re.search(r"\b(?:warning|error)(?:\([^)]*\))?:", result.stdout):
                     raise ValueError(result.stdout + "\nLean did not compile without warnings.")
             axioms = parse_axioms(names, logs["axioms.txt"])
+            boundary_source = output / "triangle-balance-controls.lean"
+            boundary_source.write_text(BALANCE_BOUNDARY_CONTROLS)
+            boundary_run = subprocess.run([args.lake, "env", "lean", str(boundary_source)],
+                cwd=PACKAGE, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+            (output / "triangle-balance-controls.txt").write_text(boundary_run.stdout)
+            if boundary_run.returncode or re.search(r"\b(?:warning|error)(?:\([^)]*\))?:", boundary_run.stdout):
+                raise ValueError(boundary_run.stdout + "\nTriangle-balance boundary controls failed.")
+            boundary_axioms = parse_axioms(
+                {"VolumeLogic.TriangleBalanceControls." + n: "theorem" for n in BALANCE_CONTROL_NAMES},
+                boundary_run.stdout)
             if any(sha256(ROOT / path) != digest for path, digest in hashes.items()):
                 raise ValueError("A recorded source changed during this replay; rerun on stable inputs.")
             report = {
-                "scope": "Concrete complex modulus and real logarithmic level scale; finite-residue packet assembly, whole-remainder noncancellation and conditional volume transfer; actual finite real weighted graph energy, positive-edge paths, constant kernel, grounded strict positivity and the explicit Laplacian quadratic identity; actual one-variable derivative bounds imply stationary quadratic cost, convex supporting-tangent gains and a strict two-branch sector margin; an actual positive finite corner table and connected co-occurrence paths give a uniform grounded max-minus-linear recession bound, coercivity of its vertex-bounded potential, compact sublevels and an attained minimum; actual segment derivatives with second derivative equal to connected graph energy imply strict convexity and uniqueness of that same grounded minimum; the actual reduced principal graph Laplacian has its constructed bilinear form, trivial kernel, nonzero determinant and a linear inverse, yielding a unique solution of every grounded linear equation; actual exponential triangle weights, square roots and arctangent loads have the proved directional conductance Jacobian, and their finite shared-vertex pairing is the explicit graph energy, including a zero corner; the literal Lobachevsky integral defines a continuous concave triangle entropy, the supported supremum is attained at the explicit arctangent loads, its actual affine-path first derivative is their pairing, and the actual shared-potential second derivative at every path point is the graph energy; the same supported supremum gives singleton affine rows, which are retained together with nonsingletons in a mixed-row shared-sum theorem; actual pure-corner lower bounds and fixed-support multivariate Lipschitz continuity, exact corner-table aggregation, and row-to-conductance paths give a unique grounded minimum of this explicit potential, including fixed boundary coefficients and physical demands matched only away from the root.",
+                "scope": "Concrete complex modulus and real logarithmic level scale; finite-residue packet assembly, whole-remainder noncancellation and conditional volume transfer; actual finite real weighted graph energy, positive-edge paths, constant kernel, grounded strict positivity and the explicit Laplacian quadratic identity; actual one-variable derivative bounds imply stationary quadratic cost, convex supporting-tangent gains and a strict two-branch sector margin; an actual positive finite corner table and connected co-occurrence paths give a uniform grounded max-minus-linear recession bound, coercivity of its vertex-bounded potential, compact sublevels and an attained minimum; actual segment derivatives with second derivative equal to connected graph energy imply strict convexity and uniqueness of that same grounded minimum; the actual reduced principal graph Laplacian has its constructed bilinear form, trivial kernel, nonzero determinant and a linear inverse, yielding a unique solution of every grounded linear equation; actual exponential triangle weights, square roots and arctangent loads have the proved directional conductance Jacobian, and their finite shared-vertex pairing is the explicit graph energy, including a zero corner; the literal Lobachevsky integral defines a continuous concave triangle entropy, the supported supremum is attained at the explicit arctangent loads, its actual affine-path first derivative is their pairing, and the actual shared-potential second derivative at every path point is the graph energy; the same supported supremum gives singleton affine rows, which are retained together with nonsingletons in a mixed-row shared-sum theorem; actual pure-corner lower bounds and fixed-support multivariate Lipschitz continuity, exact corner-table aggregation, and row-to-conductance paths give a unique grounded minimum of this explicit potential, including fixed boundary coefficients and physical demands matched only away from the root; the aggregate actual maximizing loads are the coordinate derivatives, grounded minimization is equivalent to all free-vertex load equations, and the explicit positive table and connected support yield a unique grounded balance solution; the unforced root residual is exactly the total mass discrepancy.",
                 "explicit_inputs_remaining": ["the actual invariant's exact finite source identity", "the nonzero packet coefficient and finite-action convergence (a common limit, or a limit on every residue class with equal real action)", "a strict bound for the whole complementary remainder", "the actual geometric action-volume equality", "identification of the geometric/source potential with the proved supported entropy supremum and its incidence graph; application-specific nonnegative corner coefficients and identification of the actual supported incidence", "identification of the shared-weight path and its stationary point, directional second-derivative bound, additional entropy sign inequalities for the sector criterion, and the actual source envelopes", "Hall feasibility of the geometric corner table and its prescribed free-vertex columns, identification of the actual supported incidence and row-path connectivity; the triangle vertex bound and fixed-coefficient continuity are now proved", "identification of the geometric potential with the finite shared sum and its fixed boundary corner coefficients; the explicit table gives nonempty support and the fixed row partition, and row paths give conductance connectivity; no support-changing minimizer limit or nonlinear geometric development is claimed"],
                 "residue_assembly": {"period": "any fixed positive natural number", "denominator": "original level N, including on N=p*n+r", "amplitudes": "each residue limit is nonzero; the complex limits may differ", "actions": "the complex residue limits may differ; their real parts agree", "unit_character": "may depend arbitrarily on N and need not converge", "conclusion": "ordinary all-integer-level convergence and eventual nonvanishing"},
                 "toolchain": TOOLCHAIN,
@@ -329,6 +426,13 @@ def main() -> None:
                 "theorems": sorted(n for n, kind in names.items() if kind == "theorem"),
                 "axioms": dict(sorted(axioms.items())),
                 "negative_controls": controls,
+                "mathematical_boundary_controls": {
+                    "cases": BALANCE_CONTROL_NAMES,
+                    "source": "triangle-balance-controls.lean",
+                    "source_sha256": sha256(boundary_source),
+                    "axioms": boundary_axioms,
+                    "scope": "Compiled exact checks of half mass, repeated incidence, arbitrary grounded root demand, and nonuniqueness without connected support.",
+                },
                 "source_sha256": hashes,
                 "result": "All optional declarations compiled; every definition and theorem has only the permitted foundational axioms.",
             }
@@ -341,6 +445,7 @@ def main() -> None:
         print("The supported entropy supremum gradient is proved; geometric/source identification, connected support and flattening application remain written inputs.")
         print("Geometric transport feasibility, free-vertex margins and row connectivity remain written inputs; actual triangle vertex bounds, continuity and unique grounded minimization are proved.")
         print("Actual integral entropy, supported maximization, its gradient and shared-potential second derivatives are proved; packing and source identification remain written.")
+        print("Actual grounded load balance and unique solution are proved; the root equation additionally requires total demand compatibility.")
         print("Grounded finite graph inversion is proved; geometric Hessian identification, quantitative inverse bounds and nonlinear deformation remain outside this theorem.")
         if args.output:
             print(f"Report: {output / 'summary.json'}")

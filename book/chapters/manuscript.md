@@ -2,23 +2,29 @@
 
 The current PDF is a 374-page reference account. Its results are being
 rewritten as [papers organized by subject](../../papers/README.md), each at
-most 30 pages including references. Nineteen drafts have individual
-lengths from 11 to 28 pages. Their shared foundations cover finite
-spectral evaluation, coefficient estimates, source asymptotics,
+most 30 pages including references. Their shared foundations cover
+finite spectral evaluation, coefficient estimates, source asymptotics,
 oscillatory sums and marked geometry. The application papers give their
 precise diagram and twist hypotheses and name the numbered statements
 they use.
 
-The directed circle-tree paper now gives the conditional subtree
-estimates independently of the summed criterion. Its mixed degree-or-twist
-condition also implies the older local theorem, so there is no need to
-repeat that earlier induction. The quarter-index paper supplies a local
-recurrence estimate needed beyond the completed-root Conway grammar;
-it does not by itself prove the broader tree theorem.
+The current Conway papers cover every fixed strict expression, rather
+than only the reference manuscript's completed-root grammar. The proof
+uses its own strict variational problem, bounds for the entire source,
+pure-source asymptotic and marked filling geometry. The separate signed
+recurrence paper near the quarter index is a reusable local result; it
+is not a premise of this pure-source volume proof.
 
-These papers do not yet replace the reference account. The broader
-strict-tree construction and the all-orders meridian, longitude and
-recurrence results still need separate complete accounts.
+The geometric account now includes its local pyramid and prism
+constructions, complete face maps and primitive collar calculations in
+21 pages. The two earlier completed-root geometry editions remain
+available for citations, but are no longer prerequisites of that account.
+The directed circle-tree paper likewise makes the older local criterion
+a consequence of one more general argument.
+
+These papers do not yet replace the reference account. In particular,
+the all-orders meridian, longitude and recurrence results still need
+separate complete accounts.
 The reference PDF remains frozen. Its measured length is 93 pages of main
 text, 266 pages of appendices, and 15 pages of front matter and references.
 Several theorem families and their separate dependencies accumulated in
@@ -28,12 +34,12 @@ length. The new division groups related proofs and imports their shared
 foundations by numbered statement. The
 [errata](../../manuscript/ERRATA.md) record corrections to the frozen account.
 
-The broader strict-tree extension in the research notes requires arguments
-beyond the manuscript's completed-root grammar. The dependency graph
-records its normal form, boundary profiles, spectral estimates and marked
-geometry separately. The quarter-index input now has a companion paper; the other additional
-arguments retain their own review obligations. The narrower completed-root
-theorem is not being used as a proof of the broader construction.
+The [dependency graph](../../docs/papers/dependencies.html) records the
+strict construction's normal form, boundary profiles, spectral estimates
+and marked geometry separately. It also distinguishes the independent
+local results from the premises of the final volume theorem. The
+narrower completed-root theorem is not used to justify the broader
+construction.
 
 [Read the manuscript PDF](../../manuscript/build/main.pdf). The [editable sources and build instructions](../../manuscript/README.md) are available alongside it.
 
@@ -405,26 +411,29 @@ to reduce two important estimates to finite rational certificates.
 Appendix O deliberately evaluates only the central planar contribution,
 as described above.
 
-The 16-page [complementary-color paper](../../docs/papers/conway-source-bounds.pdf)
-now supplies the two strict comparisons and their propagation for the
-completed-root grammar. The proof retains cancellation inside the exact
-leaf recurrence, bounds both characteristic roots through collisions,
-and checks supporting planes over the full allowed slope domains.
-It bounds the sum of all complementary sectors, as well as the entire
-source when one color remains far from complete color. These are upper
-bounds; a nonzero leading term still requires the subsequent asymptotic
-argument.
+The 28-page [source-bound paper](../../docs/papers/conway-source-bounds.pdf)
+now proves the whole-source bound for every fixed strict expression.
+Theorem 1.1 treats three or more leaves; Corollary 9.1 proves the
+separate two-leaf case. Its exact Fourier identities retain the first
+derivatives at repeated spectral roots and all endpoint terms. Positive
+comparison sums keep shared indices. Two supporting-plane inequalities
+and the absolute boundary profiles then propagate the estimates through
+the expression. The older signed local recurrence bounds remain useful
+exports, but are not premises of this global argument.
 
 The [Conway asymptotics paper](../../docs/papers/conway-asymptotics.pdf)
-supplies this next step. It constructs a normalized holomorphic factorial
-interpolation, retains the terminal condition of the signed leaf recurrence,
-and proves a nonzero local expansion for the shared integer sum. The exact
-full crossing powers are expanded before filling, so the Fourier source
-satisfies the real-action hypothesis of the oscillatory companion. The
-result is an asymptotic for the entire invariant, through both parities,
-for the completed-root grammar. Its comparison with the classical shear
-potential fixes the additive function of the color parameter at the actual
-terminal index; agreement of Hessians alone is not used as a volume proof.
+constructs a holomorphic interpolation of the pure source's actual
+factorials and sums over its original integer lattice. This gives a
+nonzero local expansion, including when a leaf index is one quarter.
+The exact full crossing powers are expanded in ordinary colored circles
+before filling. A second finite Fourier sum supplies the real-action
+expansion and global bound required by the oscillatory filling theorem.
+The physical source error is controlled separately. The resulting
+asymptotic holds for the entire original invariant through both level
+parities, for independently long fixed signed twists on any fixed strict
+expression whose actual closure is a knot. A classical shear calculation
+identifies its action, including the additive constant and primitive
+integer slope, with the volume of that knot complement.
 
 ![Supporting tangents used to control a single-piece attachment over its entire allowed state region.](../../manuscript/build/figures/attachment-tangents.png)
 
@@ -452,7 +461,7 @@ The companion papers have a combined finite-check command:
 python3 repro/check_paper_algebra.py --output repro/results/paper-algebra
 ```
 
-It runs fourteen groups. They check physical Newton identities over
+It runs the groups registered in the paper-check runner. They check physical Newton identities over
 exact finite fields, terminal curvature and endpoint identities, and
 circle-tree seam, peripheral and rational-bound formulas. The additional
 moving-meridian checks use physical matrices at both ordinary and

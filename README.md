@@ -181,7 +181,7 @@ separate work.
 
 ## Reading and reproducing the work
 
-The [collection of research papers](papers/README.md) now contains twenty-one
+The [collection of research papers](papers/README.md) now contains twenty current
 drafts, ranging from 11 to 28 pages. They separate the exact finite
 invariant, coefficient estimates, complex asymptotics and marked
 hyperbolic geometry from the application theorems. The strict
@@ -195,9 +195,14 @@ These papers extract selected results from the
 replace it. The reference contains 93 pages of main text, 266 pages of
 appendices and 15 pages of front matter and references. Its length came
 from collecting several theorem families, repeated setup for separate
-proofs, and alternative constructions in one continuous account. The net-twist and zero-twist topological reductions and the all-orders
-meridian and longitude theorems still need their own complete papers. The older local tree
-criterion now follows from the directed paper, without repeating its
+proofs, and alternative constructions in one continuous account.
+
+The net-twist and zero-twist reductions now have a separate 15-page
+topological account. The all-orders meridian and longitude theorems still
+need their own complete papers. The consolidated 21-page strict geometry
+paper includes the local proofs previously spread over three articles;
+the two earlier editions remain available for existing citations. The
+older local tree criterion now follows from the directed paper, without repeating its
 separate induction. The reference remains frozen and is no
 longer presented as a single journal paper. Its
 [errata](manuscript/ERRATA.md) record corrections found during extraction.

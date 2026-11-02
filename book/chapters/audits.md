@@ -109,6 +109,16 @@ are still interpreted on the original half-twisted geometric partner,
 with integer primitive surgery slopes. The exact shear calculation,
 including its constant, is part of the final comparison.
 
+The later [reduction and geometry review](../../repro/CONWAY_REDUCTION_AUDIT.md)
+records two further changes. The geometric construction now includes its
+local cell, full face-map and collar proofs in one 21-page paper; the
+older geometry editions are retained for citations. A separate 15-page
+paper proves the actual ordered tangle reductions, their zero-cap
+splitting and the terminal-factor criterion. Its volume conclusion
+imports the strict theorem only after the surviving net twists and
+original knot condition have been checked. The graph records these
+topological steps separately from the asymptotic application.
+
 ## Checking the implications in Lean
 
 The current audit also records a machine-readable dependency map for
@@ -127,9 +137,12 @@ matched-sphere route still has an open remainder premise.
 
 The checker detects missing premises, circular dependencies, changes
 of level scope and substitutions between incompatible diagram families.
-Fourteen deliberately invalid versions are also tested,
-including a substitution of an odd-level bound into an all-level
-argument. This checks the consistency of the written dependency map;
+Nineteen deliberately invalid versions are also tested. They include
+using an odd-level bound in an all-level argument, substituting the
+three-or-more-leaf estimate for the separate two-leaf case, and treating
+an unfilled source bound as a bound for the whole filled remainder.
+The strict Conway route has its own construction context; the narrower
+completed-root theorem cannot be substituted for it. This checks the consistency of the written dependency map;
 it does not verify the mathematical claims assigned to its vertices.
 The saved report identifies the current source files by their hashes.
 
@@ -466,10 +479,36 @@ actual incidence is connected, and developing the circle pattern remain
 written application steps. The theorem does not take a limit in which
 the positive support changes.
 
-The optional package has forty-eight definitions and 189 theorems.
-Its axiom audit covers all 237 declarations, separately from
-the Std-only project. Twenty-four negative controls check that invalid
-inputs are rejected. The saddle estimates, whole-source gap and geometric
+The [load-equation module](../../formal-real/TriangleBalance.lean)
+then proves what the minimum means. Let \(\alpha_{ti}(q)\) be the
+maximizing corner loads already obtained from the arctangent formula,
+or the load \(1/2\) at the sole active corner of a singleton row.
+Define
+
+\[
+ L_v(q)=\sum_{t,i:\,c(t,i)=v}\alpha_{ti}(q).
+\]
+
+Differentiating the actual potential gives
+\(\partial P_d/\partial q_v=L_v(q)-d_v\). The module also derives
+a global supporting inequality by using the maximizing loads at one
+point as feasible competitors at another. Consequently a grounded point
+is a global minimum exactly when \(L_v(q)=d_v\) at every free vertex.
+The positive supported table and connected incidence therefore give a
+unique grounded solution of these equations.
+
+The root equation is different because that coordinate is fixed.
+Every triangle contributes total load \(1/2\), even when corners share
+a destination. After the free equations hold, the root residual equals
+\(\lvert T\rvert/2-\sum_vd_v\). Thus the root equation holds if and
+only if the total demand is compatible. Four compiled examples check
+this distinction, the half-mass normalization, repeated destinations
+and the failure of uniqueness without connected support.
+
+The optional package has 51 definitions and 208 theorems.
+Its axiom audit covers all 259 declarations, separately from
+the Std-only project. Twenty-six negative controls check that invalid
+metadata or axiom inventories are rejected. The saddle estimates, whole-source gap and geometric
 volume identity remain written application inputs. The
 [tangle and tree review](../../repro/TANGLE_TREE_AUDIT.md) records the
 precise scope of the new paper readings and finite replays.

@@ -1,0 +1,127 @@
+\section{Zero pieces and the two-punctured cap sphere}\label{cr:zeros}
+
+We now evaluate the weights. A zero integral box $R^0$ is the through identity, whereas
+\[
+                     h(0)=\Turn R^0
+\]
+is the cup-cap tangle. Interchanging them would give incorrect component counts. In a cylindrical product with at least two leaves, Lemma~\ref{cr:expose} puts a chosen zero ordinary leaf in the form $C(h(0)Q)$. Its two arcs are exactly the two caps of the other tangle, so
+\begin{equation}\label{cr:zero-delete}
+                         C(h(0)Q)\simeq D(Q).
+\end{equation}
+No isolated component is discarded in this isotopy.
+
+\begin{lemma}[Cap splitting with its components]\label{cr:cap-split}
+For arbitrary tangles $F,G$,
+\begin{equation}\label{cr:cap-rules}
+ D(\Turn F)\simeq C(\tau F),\qquad
+ D(FG)\simeq D(F)\mathbin{\#}_{u_F,l_G}D(G).
+\end{equation}
+The subscripts specify the component containing the upper cap of $F$ and that containing the lower cap of $G$. The second equality is a componentwise connected sum exhibited by a sphere meeting the link in two points.
+\end{lemma}
+\begin{proof}
+The first equality follows from \eqref{cr:two-closures}, retaining the actual half-turn. For the second, put the lower $F$ and upper $G$ in disjoint balls. Their interface consists of two short vertical arcs in an otherwise empty collar. Make the lower cap of $F$ and upper cap of $G$. A horizontal disk through the collar can be closed around the lower ball and its cap in the empty exterior. Its resulting sphere meets exactly the two interface arcs, once each, and no other component; see Figure~\ref{cr:closure-figure}.
+
+Cut this sphere and cap its two punctures on each side by a trivial arc. The lower link is $D(F)$, with its new upper cap; the upper is $D(G)$, with its new lower cap. Rejoining those particular arcs recovers the original diagram. This proves the componentwise assertion as well as its reversibility. Internal closed components remain in their respective balls. A mark or ribbon is carried during the operation; nothing requires the upper and lower caps of a general tangle to lie on the same component.
+\end{proof}
+
+There are four elementary endings:
+\begin{equation}\label{cr:endings}
+\begin{array}{c|c}
+\text{closure}&\text{actual link}\\\hline
+C(R^s)&\text{the }(2,s)\text{ torus braid closure}\\
+D(R^s)&\text{an unknot}\\
+C(h(s))&D(R^s)\\
+D(h(s))&C(R^s).
+\end{array}
+\end{equation}
+For the last identity use $\tau R^s=R^s$. Every one-leaf expression reduces to one of these cases by shortening turn chains and resolving $\tau$ on that leaf. To see the second assertion, pull each successive braid crossing toward an end cap and remove the resulting curl. This is an unframed isotopy; a transported ribbon keeps the associated integer twists until the final framing correction. In particular $C(R^0)$ is the two-component unlink. A last zero box must be treated by \eqref{cr:endings} before applying any zero-deletion rule. There is no unspecified empty diagram at termination.
+
+\subsection{The all-root algorithm}
+
+Keep a closure flag $C$ or $D$ and the original attaching arcs with each pending factor. Give the one-box rule priority. A top turn changes $C(\Turn F)$ to $D(F)$; for $D(\Turn F)$ use \eqref{cr:cap-rules} and propagate $\tau$. A cap-closed product splits into its two children, both cap closed, with its specified connected-sum edge. A cylindrical product is normalized by Theorem~\ref{cr:ordered}. If the resulting strict factor has a zero net weight, expose that formal leaf by Lemma~\ref{cr:expose} and use \eqref{cr:zero-delete}; then continue. Apply the same rules separately in each pending factor. A definite traversal order makes every choice deterministic.
+
+Every fusion or zero deletion decreases the number of live label blocks. Between such events, a top-turn reduction or cap splitting removes an operation vertex from the finite expression forest. Exposing one selected zero takes finitely many path steps and never copies a sibling. The normalization of a cylindrical product already terminates. These observations give termination by induction on the live-block count, with a finite amount of structural work between successive decreases. Each connected-sum edge is created by splitting one pending factor into two. Thus the recorded edges form a tree, and all subsequent moves take place in those factors with their attaching arcs retained.
+
+At termination the strict factors have nonzero weights, the integral closures have their full integer exponents, and the cap closures in \eqref{cr:endings} are unknots. Deleting a zero block removes its live piece but records its original labels. Every other step either preserves a block or replaces disjoint blocks by their union. Surviving and deleted blocks therefore partition the original labels. This proves the topological part of Theorem~\ref{cr:arbitrary}.
+
+\begin{proposition}[Finitely many evaluated templates]\label{cr:patterns}
+For a fixed original expression, the all-root algorithm has only finitely many structural outputs. Each is fixed by
+\begin{equation}\label{cr:pattern-data}
+ \bigl(n_i\bmod2\bigr)_{i=1}^m,\qquad
+ \bigl(\mathbf1_{W_B=0}\bigr)_{\varnothing\ne B\subseteq\{1,\ldots,m\}}.
+\end{equation}
+The ordered templates, their attaching components and their surviving/deleted blocks are constant on every realized pattern.
+\end{proposition}
+\begin{proof}
+A rotation is determined by the parity of the moved sum. A deletion is determined by the vanishing of the current block weight. Rotations preserve crossing signs, fusion takes an ordinary sum and no step duplicates a label. Every integer quantity tested is therefore one of the subset sums in \eqref{cr:pattern-data}. With a fixed schedule, induction on the finite sequence of operations gives the assertion. There are at most $2^m2^{2^m-1}$ patterns, and unrealized patterns can be ignored. This crude bound is used only for finiteness.
+\end{proof}
+
+Tests for $s=1$ and $s=-1$ are not needed to choose these templates. They will be needed to decide which terminal elementary knots are trivial. Different additional zero relations can change the label partition, as the example in Section~\ref{cr:partition} shows.
+
+\section{Components and the obstruction to two nontrivial factors}\label{cr:groups}
+
+\subsection{What a one-component input implies}
+
+The component bookkeeping is elementary and exact. At a product trace the joined strands, retain the pairing of the four remaining endpoints and record every new closed circle. At a turn permute the four endpoints. At closure add the cycles formed by its two closing arcs. An internal circle never rejoins a later endpoint.
+
+For the connected-sum tree, if $c_v\ge1$ is the number of components of terminal factor $v$ and there are $r$ factors, Lemma~\ref{cr:cap-split} gives
+\begin{equation}\label{cr:component-count}
+               c(K)=\sum_v c_v-(r-1)
+                    =1+\sum_v(c_v-1).
+\end{equation}
+It follows that a one-component input forces every terminal factor to be a knot. It also forbids an internal closed circle in a proper subtree of any terminal expression: that circle could never reconnect, while the four remaining endpoints eventually close to at least one further component. Thus the literal knot test required in Proposition~\ref{cr:import} is satisfied for each strict terminal factor.
+
+Under its longness hypothesis, a strict terminal factor is a hyperbolic knot. A terminal elementary knot is either an unknot or a $(2,s)$ torus knot with odd $|s|\ge3$. The even braid closures, including $s=0$, are excluded by \eqref{cr:component-count}. We will use only these known kinds of factors; no primeness theorem for arbitrary short tangles is required.
+
+\subsection{A meridian-centralizer calculation}
+
+Write $X_K=S^3\setminus\operatorname{int}\nu K$ for a knot exterior, where $\nu K$ is a tubular neighborhood. A meridian $\mu$ has linking number one with the oriented knot and generates its infinite cyclic abelianization. Thus $\langle\mu\rangle\cong\mathbb Z$ injects into its group. Van Kampen on the meridional annulus of a connected sum gives
+\begin{equation}\label{cr:amalgam}
+ \pi_1(X_{K_1\#K_2})
+       =\pi_1(X_{K_1})*_{\langle\mu\rangle}\pi_1(X_{K_2}).
+\end{equation}
+Transport the knot orientation through each attaching arc, so the meridians are identified consistently. If an inverse convention occurs, replacing that meridian by its inverse leaves the following centralizer argument unchanged.
+
+We recall the group-theoretic fact used in \eqref{cr:amalgam}. Choose representatives of cosets of the common subgroup in each factor, including the identity. Moving subgroup elements across a syllable and collecting successive syllables from the same factor reduces a word to an alternating list of nonidentity coset representatives and a final subgroup element. The resulting lists define a group on which each factor acts by multiplication and reduction; the action obeys exactly the identifications of the common subgroup. In particular a nonempty reduced alternating list cannot represent the identity. This proves the injectivity of the factor maps and the usual reduced-word property of the amalgam. Iterating along the sum tree preserves each factor group. For $u,v$ in different factors, neither in $\langle\mu\rangle$, the word
+\begin{equation}\label{cr:commutator}
+                            uvu^{-1}v^{-1}
+\end{equation}
+is reduced and nontrivial.
+
+\begin{lemma}[Commuting elements in the terminal groups]\label{cr:factors}
+Every nontrivial terminal knot under the longness hypothesis has an element outside $\langle\mu\rangle$ commuting with its meridian.
+\end{lemma}
+\begin{proof}
+For a hyperbolic factor, use its preferred longitude. The complete cusp is a quotient of a horoball by a rank-two translation lattice. In the faithful complete holonomy its peripheral group is $\mathbb Z^2$, so the longitude is not a power of the meridian and commutes with it.
+
+For a $(2,s)$ torus knot, with odd $|s|\ge3$, the two solid tori on either side of the standard torus meet along the annulus left after removing the knot neighborhood. Its core winds twice around one solid-torus core and $s$ times around the other. Van Kampen gives
+\begin{equation}\label{cr:torus-group}
+                 G_s=\langle a,b\mid a^2=b^s\rangle,
+                       \qquad z=a^2=b^s.
+\end{equation}
+The element $z$ commutes with both generators. Abelianization is infinite cyclic: with a generator $t$ one has $[a]=s t$, $[b]=2t$ and $[z]=2s t$. In particular $z$ is nontrivial, while a meridian has class $\pm t$.
+
+The quotient by $\langle z\rangle$ is $C_2*C_{|s|}$, whose abelianization is cyclic of order $2|s|$. The image of a meridian generates that abelianization. A finite-order element of this free product is conjugate into one of its factors: a cyclically reduced word of length at least two has powers of strictly increasing reduced length. Its finite order would consequently divide $2$ or $|s|$, whereas the meridian's abelianization has order $2|s|$. The image of the meridian therefore has infinite order.
+
+If $z=\mu^k$, abelianization forces $k=\pm2s\ne0$, contradicting that infinite order after quotienting by $z$. Thus the central element $z$ lies outside $\langle\mu\rangle$ and has the required property. This proof does not need a formula for the torus knot's preferred longitude.
+\end{proof}
+
+\begin{lemma}[Hyperbolic meridian centralizers]\label{cr:hyperbolic-centralizer}
+In a complete finite-volume hyperbolic knot group the centralizer of a meridian is abelian and the center is trivial. Neither an unknot nor a nontrivial torus knot is a hyperbolic knot.
+\end{lemma}
+\begin{proof}
+Faithful complete holonomy sends the meridian to a nontrivial parabolic. Conjugate it to $z\mapsto z+1$ on the Riemann sphere. A commuting M\"obius map fixes its unique fixed point $\infty$, so it is $z\mapsto az+b$. Commutation gives $a=1$. All such translations commute, proving the centralizer assertion.
+
+If a nonidentity group element were central, the same calculation makes it a nontrivial translation. Commuting with it would then force the whole holonomy group to consist of translations. A discrete translation group has rank at most two. Its quotient of all of hyperbolic three-space has infinite volume: in the rank-two case an upper half-space fundamental region has a positive constant Euclidean horizontal area and volume proportional to $\int_0^\infty t^{-3}\,dt$; in lower rank the horizontal area is already infinite. This contradicts finite volume. The cyclic unknot group cannot be such a group either, since its meridian would generate a rank-one parabolic group. The nontrivial torus groups have the nonidentity center element from \eqref{cr:torus-group}, so they are excluded as well.
+\end{proof}
+
+\begin{proposition}[Selection of one strict factor]\label{cr:one-factor}
+Under the longness hypothesis on all surviving strict factors, a hyperbolic input knot has exactly one strict terminal factor and all other terminal factors are unknots. It is ambient isotopic to that strict factor. Conversely this terminal configuration gives a hyperbolic input knot.
+\end{proposition}
+\begin{proof}
+Every terminal factor is a knot by \eqref{cr:component-count}. If two are nontrivial, take their elements from Lemma~\ref{cr:factors}. Both commute with the common meridian in \eqref{cr:amalgam}, but their commutator is nontrivial by \eqref{cr:commutator}. This contradicts Lemma~\ref{cr:hyperbolic-centralizer}. There is at most one nontrivial factor.
+
+If all factors are unknots, their iterated connected sum is an unknot. If the sole nontrivial factor is torus, the input is that torus knot. Both alternatives are excluded by the preceding lemma. The remaining possibility is exactly one long strict factor.
+
+Connected sum with an exhibited unknot can be removed by straightening its summing arc across a spanning disk. One may take a spanning disk for the unknot closure and remove innermost intersections with the separating sphere; the remaining disk makes the arc in that ball boundary parallel. This is an ambient isotopy in the sum ball, and it preserves every other factor. Apply it successively along terminal edges of the sum tree. The input is thereby isotopic to the strict knot. Conversely that strict knot is hyperbolic by Proposition~\ref{cr:import}, and the same isotopies transport its metric to the input complement.
+\end{proof}

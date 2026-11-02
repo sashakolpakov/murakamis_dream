@@ -484,7 +484,7 @@ degree condition.
 
 Fix an ordered construction from two-strand twist boxes, quarter-turns and stacking, followed by the cylindrical closure of a product of two boxes. Each original twist box has its own integer $n_i$. The number of boxes and the depth of their nesting may be arbitrary, but remain fixed in the theorem.
 
-The [net-twist theorem](../../notes/actual_conway_net_twist_volume.md) gives a finite reduction of this construction. It partitions the original boxes into disjoint groups $B_1,\ldots,B_s$ and assigns each surviving box the sum
+Theorem 1.2 of [Ordered tangle reductions and long net twists](../../docs/papers/conway-reductions.pdf) gives a finite reduction of this construction. The [original note](../../notes/actual_conway_net_twist_volume.md) remains available alongside the paper. It partitions the original boxes into disjoint groups $B_1,\ldots,B_s$ and assigns each surviving box the sum
 
 $$
 W_j=\sum_{i\in B_j}n_i.
@@ -512,7 +512,7 @@ Here $R^a$ and $R^b$ are integral braid boxes in the same stack. They can be bro
 
 The knot condition concerns all strands, including any circles already closed inside an intermediate box. Checking only the pairing of its four exposed endpoints can miss such a component. The proof retains the component count. A one-component closed link has no internal closed circle, because that circle would remain separate from the component formed by closing the remaining arcs.
 
-The reduction is an ambient isotopy of the filled link. It therefore preserves the reduced invariant at every level and identifies the knot exteriors. Applying the strict theorem to the output supplies a complete hyperbolic metric; pulling that metric back to the original exterior gives exactly the volume in the equality. The argument compares the filled knots. Their auxiliary augmented links need not be the same.
+The reduction is an ambient isotopy of the filled link. It therefore preserves the normalized reduced invariant at every level covered by the finite comparison, namely \(N\ge3\), and identifies the knot exteriors. Applying the strict theorem to the output supplies a complete hyperbolic metric; pulling that metric back to the original exterior gives exactly the volume in the equality. The argument compares the filled knots. Their auxiliary augmented links need not be the same.
 
 This gives a theorem for arbitrary fixed ordered cylindrical compositions with sufficiently long net twists, subject to the knot condition and the elementary exception. It does not prove the conjecture for every short-twist arborescent knot. The following extension handles cap closures and exact cancellations explicitly.
 
@@ -528,11 +528,11 @@ The two pieces are joined along the components containing the cut arcs. If the i
 
 ![Cutting a cap-closed stack along a sphere meeting its two connecting strands gives the specified cap closures of the lower and upper tangles.](../figures/conway-cap-splitting.png)
 
-The [arbitrary-closure theorem](../../notes/actual_conway_arbitrary_closure_volume.md) repeatedly makes these cuts, combines twists, and removes zero sums. It retains all components and all labels. Its terminal factors are strict presentations, two-strand torus braid closures, or explicit unknots. Every surviving strict weight is still a sum of a disjoint group of original integers. The groups can now change when a sum vanishes. There are only finitely many possibilities for a fixed expression, so one threshold covers them all.
+Theorem 1.3 of the [tangle-reduction paper](../../docs/papers/conway-reductions.pdf) repeatedly makes these cuts, combines twists, and removes zero sums. Its [earlier note](../../notes/actual_conway_arbitrary_closure_volume.md) records the same construction. It retains all components and all labels. Its terminal factors are strict presentations, two-strand torus braid closures, or explicit unknots. Every surviving strict weight is still a sum of a disjoint group of original integers. The groups can now change when a sum vanishes. There are only finitely many possibilities for a fixed expression, so one threshold covers them all.
 
 Suppose the original knot is hyperbolic and every surviving strict weight exceeds this threshold in absolute value. Then there is exactly one strict factor, and all other factors are unknots. To see why, take a meridian in each nontrivial factor. Both a hyperbolic factor and a torus-knot factor contain another commuting element outside the cyclic meridian subgroup. Two such factors would produce two elements which commute with the common meridian but not with each other. In a complete hyperbolic knot group this is impossible: the centralizer of a nontrivial parabolic consists of commuting translations. A sole torus factor is excluded by its nontrivial center.
 
-Removing the unknot summands now gives an actual isotopy to the long strict knot. This proves the volume equality for the original complement, as well as the same pointed quantum A-period and Gram limits. It is a broader test for presentations of already covered knot types; the analytic theorem for the strict factor is unchanged.
+Removing the unknot summands now gives an actual isotopy to the long strict knot. This proves the complete-meridian volume equality for the original complement. It is a broader test for presentations of already covered knot types; the analytic theorem for the strict factor is unchanged. The pointed quantum A-period, Gram and moving-meridian conclusions described later use their own additional statements; they are not asserted in the tangle-reduction paper.
 
 An optional sufficient condition is especially simple. For every nonempty set $B$ of original boxes, require
 

@@ -51,11 +51,12 @@ common core for several inserted diagrams also uses protected gluing.
 
 ## The current drafts
 
-The twenty-one papers total 335 pages, with individual lengths from 11 to
-28 pages. They provide complete accounts of the results described below,
-with numbered companion imports. This is a partial extraction of the
-reference manuscript, rather than a replacement for all its theorem
-families.
+The twenty current papers total 329 pages, with individual lengths from
+11 to 28 pages. Each gives the proofs of its stated results and names
+its numbered companion imports. Two earlier geometry editions, totaling
+another 25 pages, are preserved below for existing citations. This is a
+partial extraction of the reference manuscript; the remaining theorem
+families are listed at the end of this guide.
 
 **Finite spectral evaluation and uniform filling bounds.** 28 pages.
 [TeX source](filling-bounds/main.tex) ·
@@ -127,23 +128,6 @@ show which part of the sum dominates as the level grows. The comparison
 with Kashaev's original normalization imports the finite spectral paper
 at levels at least three; the algebraic identities hold from level two.
 
-**Pyramids, prisms, and complete geometry of Conway closures.** 13 pages.
-[TeX source](conway-geometry/main.tex) ·
-[PDF](../docs/papers/conway-geometry.pdf)
-
-The positive-source maximum in the Newton paper determines ideal
-hyperbolic cells. This paper proves that the stationary equations match
-their entire ordered quadrilateral faces, and that successive attachments
-stay convex. It then identifies the assembled boundary with the original
-projection cut, checks the face maps and edge returns, and constructs
-compatible horospheres at every cusp. The metric is therefore on the
-specified augmented link complement. Its volume is twice the sum of the
-cell volumes, or \(2\pi\) times the source action. The original meridian
-and disk longitude form a primitive basis, also for the retained
-half-twist partners. The theorem uses the completed-root grammar of the
-Newton paper. A corollary identifies the positive complete source's rate
-with this volume; neither result asserts a signed filling asymptotic.
-
 **Spectral estimates for Conway tangle sources.** 28 pages.
 [TeX source](conway-source-bounds/main.tex) ·
 [PDF](../docs/papers/conway-source-bounds.pdf)
@@ -167,23 +151,7 @@ estimates remain available as local results; they are not premises of
 this global argument. The conclusion is a bound before filling, with no
 claim here about a nonzero filled invariant or its volume.
 
-**Marked deformations and long fillings of Conway closures.** 12 pages.
-[TeX source](conway-fillings/main.tex) ·
-[PDF](../docs/papers/conway-fillings.pdf)
-
-Starting with the complete Conway metric, this paper defines a classical
-cell potential and continues the full face maps and group relations.
-The original meridian and disk longitude give the primitive logarithmic
-filling equations. One neighborhood works for independently long signed
-slopes, without restrictions on their ratios. The metric completion
-keeps the main cusps complete and adds smooth solid tori along the
-original auxiliary slopes. The complete volume fixes the action's
-constant, and a comparison of the same fundamental chain gives the
-absolute filled volume. Its proof does not use a quantum asymptotic.
-The [reference errata](../manuscript/ERRATA.md) explain the corrected
-factor in the filling Jacobian.
-
-**Marked geometry of strict Conway compositions.** 17 pages.
+**Marked geometry of strict Conway compositions.** 21 pages.
 [TeX source](strict-conway-geometry/main.tex) ·
 [PDF](../docs/papers/strict-conway-geometry.pdf)
 
@@ -199,9 +167,14 @@ The complex face maps then give a marked deformation with complete main
 cusps. Solving the primitive filling equations in one neighborhood permits
 independently long twists of either sign. Smooth completion and a
 comparison of the same oriented fundamental chain identify the absolute
-filled volume. The proof uses local cell calculations from the earlier
-geometric accounts, but proves the larger assembly directly. It has no
-quantum asymptotic premise.
+filled volume. The local cell construction is included: supporting
+planes, dihedral angles, tetrahedron volumes and the entire ordered
+face maps are derived explicitly. The paper also computes the original
+collar translations and their deformed multipliers. The two earlier
+geometry papers are no longer prerequisites. The remaining companion
+imports are the stationary-profile theorem and the general primitive
+completion and volume differential. There is no quantum asymptotic
+premise.
 
 **Holomorphic source asymptotics and volume limits for strict Conway compositions.** 20 pages.
 [TeX source](conway-asymptotics/main.tex) ·
@@ -231,6 +204,30 @@ The signed local coefficient and completed-root source expansions remain
 proved in the same article as separate reusable results. The strict
 volume route does not require those signed expansions or the
 quarter-index recurrence theorem.
+
+**Ordered tangle reductions and long net twists.** 15 pages.
+[TeX source](conway-reductions/main.tex) ·
+[PDF](../docs/papers/conway-reductions.pdf)
+
+Large written twists can cancel. This paper determines the signed sums
+that survive an ordered tangle construction before applying a long-twist
+theorem. It proves the actual collar isotopy that slides a twist box past
+a tangle, retaining the resulting rotation. An unrooted tree records
+which original labels fuse. The net blocks are independent of crossing
+parities, although their order and the recorded rotations can depend on
+those parities.
+
+A vanishing net weight needs a separate treatment: the turned zero box
+is a cup and a cap. Deleting it changes the closure, and a sphere through
+two connecting strands can split a cap-closed product. The proof tracks
+every component and shows that the resulting reduction terminates.
+For sufficiently long surviving strict weights, an elementary
+meridian-centralizer argument shows that a hyperbolic input has exactly
+one strict terminal factor and only unknot factors beside it. The input
+is isotopic to that strict knot, so the strict companion's volume limit
+applies. The paper gives a criterion on terminal factors and a sufficient
+condition on all nonzero subset sums. It supplies no numerical universal
+twist threshold and makes no claim about all short-twist arborescent knots.
 
 **Asymptotics of signed Newton coefficients near the quarter index.** 11 pages.
 [TeX source](quarter-index-asymptotics/main.tex) ·
@@ -441,6 +438,47 @@ circle-pattern paper supplies the marked geometric volume comparison.
 The application now cites numbered statements in these companion papers,
 and checks their common normalization and hypotheses.
 
+## Earlier geometry editions
+
+The following two papers treat the narrower completed-root construction.
+They remain available for existing citations. The 21-page **Marked
+geometry of strict Conway compositions** now contains the local proofs
+and the broader complete and filled constructions, so these editions are
+not part of its required reading.
+
+**Pyramids, prisms, and complete geometry of Conway closures.** 13 pages.
+[TeX source](conway-geometry/main.tex) ·
+[PDF](../docs/papers/conway-geometry.pdf)
+
+The positive-source maximum in the Newton paper determines ideal
+hyperbolic cells. This paper proves that the stationary equations match
+their entire ordered quadrilateral faces, and that successive attachments
+stay convex. It then identifies the assembled boundary with the original
+projection cut, checks the face maps and edge returns, and constructs
+compatible horospheres at every cusp. The metric is therefore on the
+specified augmented link complement. Its volume is twice the sum of the
+cell volumes, or \(2\pi\) times the source action. The original meridian
+and disk longitude form a primitive basis, also for the retained
+half-twist partners. The theorem uses the completed-root grammar of the
+Newton paper. A corollary identifies the positive complete source's rate
+with this volume; neither result asserts a signed filling asymptotic.
+
+**Marked deformations and long fillings of Conway closures.** 12 pages.
+[TeX source](conway-fillings/main.tex) ·
+[PDF](../docs/papers/conway-fillings.pdf)
+
+Starting with the complete Conway metric, this paper defines a classical
+cell potential and continues the full face maps and group relations.
+The original meridian and disk longitude give the primitive logarithmic
+filling equations. One neighborhood works for independently long signed
+slopes, without restrictions on their ratios. The metric completion
+keeps the main cusps complete and adds smooth solid tori along the
+original auxiliary slopes. The complete volume fixes the action's
+constant, and a comparison of the same fundamental chain gives the
+absolute filled volume. Its proof does not use a quantum asymptotic.
+The [reference errata](../manuscript/ERRATA.md) explain the corrected
+factor in the filling Jacobian.
+
 ## What still needs its own paper
 
 The division should follow results rather than cut the reference text
@@ -449,17 +487,16 @@ purposes:
 
 | Subject | Result to explain and prove | Dependencies that must remain visible |
 | --- | --- | --- |
-| Reducing an ordered tangle presentation | Combine twists along the same strands and treat vanishing net twists and changes of closure | Actual tangle isotopies, original endpoint pairings, termination and the strict volume theorem for the surviving presentation |
 | Geometric longitude and recurrences | All-order meridian expansions force the selected geometric factor to divide a classical symbol | The moving-meridian source, full expansion, normalization and preferred geometric longitude |
 
 The frozen reference manuscript's first theorem uses its completed-root
 grammar. The companion accounts now cover the larger strict syntax through
 its own variational, source and marked-geometry arguments. A further
 topological reduction can change the written expression before this
-theorem is applied. That step still needs its own account: large written
-twists may cancel to a small net twist, and a vanishing net twist may
-change the closure or produce additional components. The strict theorem
-cannot by itself justify those reductions.
+theorem is applied. The tangle-reduction paper supplies that step: large
+written twists may cancel to a small net twist, and a vanishing net twist may change
+the closure or produce additional components. The proof of those
+isotopies is distinct from the strict asymptotic theorem.
 
 These remaining subjects still need their own complete accounts. Each
 candidate needs a precise theorem, complete proofs of its own claims,
@@ -469,11 +506,11 @@ For a citation between papers, the exporting paper must state a numbered
 theorem with its normalization, degree restrictions, level parity and
 uniformity assumptions. The importing paper must name that theorem and
 check those hypotheses. A reference to a folder of calculations is not
-a substitute. The twenty-one drafts include the strict Conway volume theorem,
+a substitute. The current drafts include the strict Conway volume theorem,
 the summed and directed circle-tree criteria, and the local quarter-index
 expansion, together with their finite and geometric foundations. The
-net-twist and zero-twist topological reductions and the all-orders meridian
-and longitude results still require their own extraction and proof review.
+all-orders meridian and longitude results still require their own
+extraction and proof review.
 The dependency graph keeps those obligations visible.
 
 The illustrated guide retains the broader approaches and unsuccessful

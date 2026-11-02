@@ -49,7 +49,7 @@
     },
     "recursive_tangles": {
       "title": "Recursive Conway constructions",
-      "count": 22,
+      "count": 27,
       "open": false
     },
     "braid_application": {
@@ -74,7 +74,7 @@
     },
     "finite_graph_energy": {
       "title": "Real variational estimates",
-      "count": 8,
+      "count": 9,
       "open": false
     }
   },
@@ -2109,43 +2109,51 @@
       "statement": "The fixed ordered product closure reduces by explicit proper rotations/slides to a strict template or an integral braid closure; the disjoint net blocks are fixed before integer evaluation.",
       "sources": [
         {
-          "path": "notes/actual_conway_net_twist_volume.md",
-          "anchor": "## 2. Actual rotations and the twist-sliding isotopy",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_conway_net_twist_volume.md#L82"
+          "path": "papers/conway-reductions/main.tex",
+          "anchor": "\\label{cr:ordered}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-reductions/main.tex#L107"
         },
         {
-          "path": "notes/actual_conway_net_twist_volume.md",
-          "anchor": "## 3. The closing sphere and moving a turn through it",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_conway_net_twist_volume.md#L139"
+          "path": "papers/conway-reductions/main.tex",
+          "anchor": "\\label{cr:import}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-reductions/main.tex#L75"
         },
         {
-          "path": "notes/actual_conway_net_twist_volume.md",
-          "anchor": "## 4. A terminating symbolic normalization",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_conway_net_twist_volume.md#L180"
+          "path": "papers/conway-reductions/main.tex",
+          "anchor": "\\label{cr:crossing-threshold}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-reductions/main.tex#L94"
         },
         {
-          "path": "notes/actual_conway_net_twist_volume.md",
-          "anchor": "## 5. The final root and the fixed output template",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_conway_net_twist_volume.md#L209"
+          "path": "papers/conway-reductions/application.tex",
+          "anchor": "\\label{cr:product-threshold}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-reductions/application.tex#L4"
         },
         {
-          "path": "notes/actual_conway_net_twist_volume.md",
-          "anchor": "## 6. Peripheral curves, marked evaluation and framing",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_conway_net_twist_volume.md#L249"
+          "path": "papers/conway-reductions/application.tex",
+          "anchor": "\\label{cr:invariant}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-reductions/application.tex#L23"
         },
         {
-          "path": "notes/actual_conway_net_twist_volume.md",
-          "anchor": "## 7. The threshold and the elementary alternative",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_conway_net_twist_volume.md#L284"
+          "path": "papers/conway-reductions/application.tex",
+          "anchor": "\\label{cr:net-slope}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-reductions/application.tex#L55"
         }
       ],
       "depends_on": [
         {
+          "id": "recursive_ordered_tangle_normalization",
+          "reason": "Provides the actual isotopy and fixed net-label partition before any volume theorem is used."
+        },
+        {
           "id": "recursive_strict_volume",
-          "reason": "Only the final volume corollary uses the inherited strict threshold; the topological normalization is proved independently."
+          "reason": "Supplies the all-level volume limit for each long strict output, after taking the finite maximum of its parity thresholds."
+        },
+        {
+          "id": "finite_invariant_normalization",
+          "reason": "The same zero-framed original invariant is transported by the ambient isotopy, with the exact comparison used only at levels at least three."
         }
       ],
-      "article": null
+      "article": "conway-reductions"
     },
     {
       "id": "recursive_arbitrary_closure_reduction",
@@ -2154,52 +2162,50 @@
       "statement": "For a hyperbolic knot input with sufficiently long surviving strict weights, the finite zero-aware decomposition has exactly one nontrivial strict factor and all others unknots. This does not give unconditional hyperbolicity on zero walls.",
       "sources": [
         {
-          "path": "notes/actual_conway_arbitrary_closure_volume.md",
-          "anchor": "## 2. The actual reductions and their termination",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_conway_arbitrary_closure_volume.md#L92"
+          "path": "papers/conway-reductions/main.tex",
+          "anchor": "\\label{cr:arbitrary}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-reductions/main.tex#L115"
         },
         {
-          "path": "notes/actual_conway_arbitrary_closure_volume.md",
-          "anchor": "## 3. Finitely many output types and one threshold",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_conway_arbitrary_closure_volume.md#L200"
+          "path": "papers/conway-reductions/application.tex",
+          "anchor": "\\label{cr:all-threshold}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-reductions/application.tex#L11"
         },
         {
-          "path": "notes/actual_conway_arbitrary_closure_volume.md",
-          "anchor": "## 4. A knot input makes every terminal factor a knot",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_conway_arbitrary_closure_volume.md#L242"
+          "path": "papers/conway-reductions/application.tex",
+          "anchor": "\\label{cr:invariant}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-reductions/application.tex#L23"
         },
         {
-          "path": "notes/actual_conway_arbitrary_closure_volume.md",
-          "anchor": "## 5. The group obstruction to two nontrivial factors",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_conway_arbitrary_closure_volume.md#L270"
+          "path": "papers/conway-reductions/application.tex",
+          "anchor": "\\label{cr:separated}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-reductions/application.tex#L41"
         },
         {
-          "path": "notes/actual_conway_arbitrary_closure_volume.md",
-          "anchor": "## 6. Selecting the strict factor and transporting the conclusion",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_conway_arbitrary_closure_volume.md#L356"
-        },
-        {
-          "path": "notes/actual_conway_arbitrary_closure_volume.md",
-          "anchor": "## 7. Scope of the extension",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_conway_arbitrary_closure_volume.md#L400"
-        },
-        {
-          "path": "notes/actual_conway_arbitrary_closure_volume.md",
-          "anchor": "## 8. A finite topological criterion and simple conditions on the integers",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_conway_arbitrary_closure_volume.md#L426"
+          "path": "papers/conway-reductions/application.tex",
+          "anchor": "\\label{cr:net-slope}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-reductions/application.tex#L55"
         }
       ],
       "depends_on": [
         {
-          "id": "recursive_net_twist_reduction",
-          "reason": "Supplies literal slides/closed-turn moves and the strict normalization."
+          "id": "recursive_zero_cap_decomposition",
+          "reason": "Supplies finitely many actual terminal templates, retaining zeros, closure changes and every component."
+        },
+        {
+          "id": "recursive_terminal_factor_selection",
+          "reason": "Selects the one strict knot and gives the ambient isotopy after the longness and hyperbolicity conditions are checked."
         },
         {
           "id": "recursive_strict_volume",
-          "reason": "Supplies hyperbolicity and volume of each long strict terminal factor; the meridian-centralizer argument then selects the unique one."
+          "reason": "Supplies the volume limit for that selected strict knot; its fixed threshold is maximized over the finitely many possible terminal templates."
+        },
+        {
+          "id": "finite_invariant_normalization",
+          "reason": "Transfers the normalized original invariant of the same filled knot, retaining its single reduced cut and zero-framing convention."
         }
       ],
-      "article": null
+      "article": "conway-reductions"
     },
     {
       "id": "tree_exact_edge_kernel",
@@ -4567,12 +4573,12 @@
         {
           "path": "papers/strict-conway-geometry/deformation.tex",
           "anchor": "\\label{sm:marked-deformation}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/strict-conway-geometry/deformation.tex#L198"
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/strict-conway-geometry/deformation.tex#L299"
         },
         {
           "path": "papers/strict-conway-geometry/deformation.tex",
           "anchor": "\\label{sm:logs}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/strict-conway-geometry/deformation.tex#L293"
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/strict-conway-geometry/deformation.tex#L424"
         },
         {
           "path": "papers/strict-conway-geometry/fillings.tex",
@@ -4610,8 +4616,8 @@
           "reason": "Its nondegenerate stationary-wire Hessian gives the local classical stationary branch."
         },
         {
-          "id": "recursive_local_deformed_maps",
-          "reason": "Supplies the full local complex-coordinate maps and primitive multiplier identities, with translations retained."
+          "id": "recursive_strict_local_maps",
+          "reason": "Uses the full local complex-coordinate maps and primitive multiplier derivations now proved in the same strict-geometry paper."
         },
         {
           "id": "geo_nearby_metric_completion",
@@ -4626,7 +4632,7 @@
           "reason": "Compares the regulator and the metric on the same original fundamental chain, fixing absolute volume."
         }
       ],
-      "coverage": "Strict Conway Geometry Theorem 1.3 and Sections 5–8. It has no quantum source-asymptotic premise.",
+      "coverage": "Strict Conway Geometry Theorem 1.3 and its local deformation, primitive filling and same-chain volume proofs. It has no quantum source-asymptotic premise.",
       "article": "strict-conway-geometry"
     },
     {
@@ -4755,7 +4761,7 @@
       "id": "recursive_strict_angle_geometry",
       "title": "Complete marked geometry for arbitrary strict individual masks",
       "group": "recursive_tangles",
-      "statement": "The stationary port identities and exact remaining-input support determine every asymmetric mask. Convex cells and terminal-pair accounting yield the literal original two-ball cut. Full face maps, primitive words and a common decoration prove the complete marked exterior and absolute volume 2pi F0 for the original strict expression.",
+      "statement": "The stationary face identities and exact remaining-input support determine every asymmetric mask. Convex cells and terminal-pair accounting yield the literal original two-ball cut. Full face maps, primitive words and a common decoration prove the complete marked exterior and absolute volume 2pi F0 for the original strict expression.",
       "sources": [
         {
           "path": "papers/strict-conway-geometry/main.tex",
@@ -4795,12 +4801,12 @@
         {
           "path": "papers/strict-conway-geometry/complete.tex",
           "anchor": "\\label{sm:peripheral-words}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/strict-conway-geometry/complete.tex#L306"
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/strict-conway-geometry/complete.tex#L304"
         },
         {
           "path": "papers/strict-conway-geometry/complete.tex",
           "anchor": "\\label{sm:translations}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/strict-conway-geometry/complete.tex#L320"
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/strict-conway-geometry/complete.tex#L334"
         }
       ],
       "depends_on": [
@@ -4817,11 +4823,15 @@
           "reason": "Supplies the stationary type and remaining-input identities used in convex assembly."
         },
         {
-          "id": "recursive_local_ideal_cells",
-          "reason": "Supplies the local convex cells, calibrated volumes and full ordered face maps."
+          "id": "recursive_strict_local_cells",
+          "reason": "Uses the cell support, all dihedral angles, absolute volumes and ordered face matching proved locally in this same strict-geometry paper."
+        },
+        {
+          "id": "recursive_strict_local_maps",
+          "reason": "The complete specialization gives the actual whole face maps, edge returns and original collar translations before the global quotient and primitive area comparison."
         }
       ],
-      "coverage": "Strict Conway Geometry Theorem 1.2 and Sections 3–4. No signed or pure quantum packet is an input to this classical theorem.",
+      "coverage": "Strict Conway Geometry Theorem 1.2 and its local-cell, mask, cut and cusp proofs. No signed or pure quantum expansion is an input to this classical theorem.",
       "article": "strict-conway-geometry"
     },
     {
@@ -6007,6 +6017,300 @@
         }
       ],
       "article": "newton-tangles"
+    },
+    {
+      "id": "analytic_actual_triangle_balance",
+      "title": "The grounded minimum solves the actual load equations",
+      "group": "finite_graph_energy",
+      "statement": "For fixed nonnegative corner coefficients with nonempty row support, the derivative of the actual triangle-entropy sum in each shared vertex coordinate equals the aggregate maximizing load minus demand. A grounded point is a global minimum if and only if all free loads balance. A positive supported half-mass table and connected row incidence give a unique grounded solution. Its root equation holds exactly when total demand is half the number of triangles; repeated destinations and singleton rows are retained.",
+      "sources": [
+        {
+          "path": "formal-real/TriangleBalance.lean",
+          "anchor": "theorem potential_supporting",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/TriangleBalance.lean#L74"
+        },
+        {
+          "path": "formal-real/TriangleBalance.lean",
+          "anchor": "theorem column_pairing",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/TriangleBalance.lean#L108"
+        },
+        {
+          "path": "formal-real/TriangleBalance.lean",
+          "anchor": "theorem sum_vertexLoad",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/TriangleBalance.lean#L124"
+        },
+        {
+          "path": "formal-real/TriangleBalance.lean",
+          "anchor": "theorem coordinate_derivative",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/TriangleBalance.lean#L196"
+        },
+        {
+          "path": "formal-real/TriangleBalance.lean",
+          "anchor": "theorem grounded_minimizer_iff_balance",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/TriangleBalance.lean#L259"
+        },
+        {
+          "path": "formal-real/TriangleBalance.lean",
+          "anchor": "theorem exists_unique_balance",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/TriangleBalance.lean#L268"
+        },
+        {
+          "path": "formal-real/TriangleBalance.lean",
+          "anchor": "theorem root_balance_iff_total",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/TriangleBalance.lean#L160"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "analytic_actual_triangle_minimum",
+          "reason": "Supplies existence and uniqueness of the actual grounded minimum from the supported corner table and row connectivity."
+        },
+        {
+          "id": "analytic_supported_triangle_potential",
+          "reason": "Supplies the actual regular and singleton maximizing loads and their derivatives; the new module derives the shared load equations and supporting inequality."
+        }
+      ],
+      "coverage": "The derivative, minimum/balance equivalence, uniqueness and root compatibility have Lean proofs. Hall feasibility of the application table, its geometric incidence and development remain written inputs. No limit that changes support is claimed.",
+      "article": null
+    },
+    {
+      "id": "recursive_strict_local_cells",
+      "title": "Local ideal cells and whole-face matching in the strict geometry paper",
+      "group": "recursive_tangles",
+      "statement": "The explicitly constructed ideal leaf pyramid and multiplication prism are convex on the entire strict parameter domain. Their support planes give every dihedral angle, their positive tetrahedron subdivisions give the absolute cell volumes, and their ordered cross ratios match under the stationary product, turn and closing equations.",
+      "sources": [
+        {
+          "path": "papers/strict-conway-geometry/local-cells.tex",
+          "anchor": "\\label{sm:tetra}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/strict-conway-geometry/local-cells.tex#L10"
+        },
+        {
+          "path": "papers/strict-conway-geometry/local-cells.tex",
+          "anchor": "\\label{sm:leaf}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/strict-conway-geometry/local-cells.tex#L24"
+        },
+        {
+          "path": "papers/strict-conway-geometry/local-cells.tex",
+          "anchor": "\\label{sm:prism-P}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/strict-conway-geometry/local-cells.tex#L78"
+        },
+        {
+          "path": "papers/strict-conway-geometry/local-cells.tex",
+          "anchor": "\\label{sm:prism-angles}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/strict-conway-geometry/local-cells.tex#L135"
+        },
+        {
+          "path": "papers/strict-conway-geometry/local-cells.tex",
+          "anchor": "\\label{sm:prism-volume}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/strict-conway-geometry/local-cells.tex#L156"
+        },
+        {
+          "path": "papers/strict-conway-geometry/local-cells.tex",
+          "anchor": "\\label{sm:kappa}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/strict-conway-geometry/local-cells.tex#L172"
+        },
+        {
+          "path": "papers/strict-conway-geometry/local-cells.tex",
+          "anchor": "\\label{sm:input-kappa}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/strict-conway-geometry/local-cells.tex#L188"
+        },
+        {
+          "path": "papers/strict-conway-geometry/local-cells.tex",
+          "anchor": "\\label{sm:output-kappa}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/strict-conway-geometry/local-cells.tex#L190"
+        }
+      ],
+      "depends_on": [],
+      "coverage": "The classical normalized ideal-tetrahedron volume formula is the stated external input. The local support, volume and cross-ratio proofs are written in this consolidated paper, independently of the earlier Conway geometry editions.",
+      "article": "strict-conway-geometry"
+    },
+    {
+      "id": "recursive_strict_local_maps",
+      "title": "Full local face maps and peripheral multipliers in the strict geometry paper",
+      "group": "recursive_tangles",
+      "statement": "Explicit normalized and world-coordinate matrices give the complete prism map table, turn and closure relations, pure and odd edge returns, and the primitive peripheral multiplier formulas in independent complex variables. Specializing and conjugating the original collar gives all four complete translations. These are local identities before any global strict assembly.",
+      "sources": [
+        {
+          "path": "papers/strict-conway-geometry/deformation.tex",
+          "anchor": "\\label{sm:flags}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/strict-conway-geometry/deformation.tex#L93"
+        },
+        {
+          "path": "papers/strict-conway-geometry/deformation.tex",
+          "anchor": "\\label{sm:world-matrices}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/strict-conway-geometry/deformation.tex#L176"
+        },
+        {
+          "path": "papers/strict-conway-geometry/deformation.tex",
+          "anchor": "\\label{sm:world-table}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/strict-conway-geometry/deformation.tex#L197"
+        },
+        {
+          "path": "papers/strict-conway-geometry/deformation.tex",
+          "anchor": "\\label{sm:turn-maps}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/strict-conway-geometry/deformation.tex#L240"
+        },
+        {
+          "path": "papers/strict-conway-geometry/deformation.tex",
+          "anchor": "\\label{sm:edge-words}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/strict-conway-geometry/deformation.tex#L319"
+        },
+        {
+          "path": "papers/strict-conway-geometry/deformation.tex",
+          "anchor": "\\label{sm:multiplier-calculation}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/strict-conway-geometry/deformation.tex#L412"
+        },
+        {
+          "path": "papers/strict-conway-geometry/complete.tex",
+          "anchor": "\\label{sm:peripheral-words}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/strict-conway-geometry/complete.tex#L304"
+        },
+        {
+          "path": "papers/strict-conway-geometry/complete.tex",
+          "anchor": "\\label{sm:translations}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/strict-conway-geometry/complete.tex#L334"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "recursive_strict_local_cells",
+          "reason": "Fixes the original local cell coordinates, ordered faces and strict nondegenerate chart domain."
+        }
+      ],
+      "coverage": "Full rational matrix identities retain translation as well as derivative and are proved in the consolidated strict paper. Actual global topology, the complete cusp lattice area and filled metric completion remain separate steps.",
+      "article": "strict-conway-geometry"
+    },
+    {
+      "group": "recursive_tangles",
+      "article": "conway-reductions",
+      "id": "recursive_ordered_tangle_normalization",
+      "title": "Actual ordered isotopies and parity-independent net blocks",
+      "statement": "Proper spatial rotations, a cutoff collar isotopy and the fixed closing reflection give twist sliding, closed turn transfer and closed cyclicity. A terminating labelled fusion procedure takes a cylindrical product to a strict template or an integral braid closure. Contracting zero-turn edges in its unrooted syntax tree gives net label blocks independent of crossing parities; parities retain the actual order reversals.",
+      "sources": [
+        {
+          "path": "papers/conway-reductions/moves.tex",
+          "anchor": "\\label{cr:rotation-rules}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-reductions/moves.tex#L10"
+        },
+        {
+          "path": "papers/conway-reductions/moves.tex",
+          "anchor": "\\label{cr:slide}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-reductions/moves.tex#L25"
+        },
+        {
+          "path": "papers/conway-reductions/moves.tex",
+          "anchor": "\\label{cr:closed-moves}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-reductions/moves.tex#L57"
+        },
+        {
+          "path": "papers/conway-reductions/moves.tex",
+          "anchor": "\\label{cr:expose}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-reductions/moves.tex#L76"
+        },
+        {
+          "path": "papers/conway-reductions/normalization.tex",
+          "anchor": "\\label{cr:normalization}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-reductions/normalization.tex#L1"
+        },
+        {
+          "path": "papers/conway-reductions/normalization.tex",
+          "anchor": "\\label{cr:reduced-stacks}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-reductions/normalization.tex#L15"
+        },
+        {
+          "path": "papers/conway-reductions/normalization.tex",
+          "anchor": "\\label{cr:blocks}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-reductions/normalization.tex#L43"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "recursive_strict_normal_form",
+          "reason": "The interval/type theorem identifies the literal product and closing tests required by the strict companion; the rotations, collar isotopies and termination are proved here."
+        }
+      ],
+      "coverage": "The proof retains every internal component and all original labels, does not replace arbitrary rotated tangles by the original tangles, and never deletes a numerical zero in this symbolic stage."
+    },
+    {
+      "group": "recursive_tangles",
+      "article": "conway-reductions",
+      "id": "recursive_zero_cap_decomposition",
+      "title": "Zero-sum cap splitting and finite terminal templates",
+      "statement": "The zero ordinary piece is a cup-cap, so removing it changes cylindrical closure to cap closure. A two-punctured separating sphere splits a cap-closed product along specified components. The resulting finite algorithm retains elementary one-box endings, terminates, and records a tree of componentwise sums. Its structural outputs depend only on original parities and the finite subset-sum zero pattern.",
+      "sources": [
+        {
+          "path": "papers/conway-reductions/closures.tex",
+          "anchor": "\\label{cr:zero-delete}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-reductions/closures.tex#L8"
+        },
+        {
+          "path": "papers/conway-reductions/closures.tex",
+          "anchor": "\\label{cr:cap-split}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-reductions/closures.tex#L13"
+        },
+        {
+          "path": "papers/conway-reductions/closures.tex",
+          "anchor": "\\label{cr:endings}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-reductions/closures.tex#L28"
+        },
+        {
+          "path": "papers/conway-reductions/closures.tex",
+          "anchor": "\\label{cr:patterns}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-reductions/closures.tex#L47"
+        },
+        {
+          "path": "papers/conway-reductions/closures.tex",
+          "anchor": "\\label{cr:component-count}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-reductions/closures.tex#L68"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "recursive_ordered_tangle_normalization",
+          "reason": "Supplies literal exposure of a chosen zero leaf, ordered cylindrical normalization and the rotations retained when the closure changes."
+        }
+      ],
+      "coverage": "This is a topological reduction with exact component counts, not a prime decomposition or an invariant multiplicativity assertion. It requires no longness condition."
+    },
+    {
+      "group": "recursive_tangles",
+      "article": "conway-reductions",
+      "id": "recursive_terminal_factor_selection",
+      "title": "Meridian centralizers select the unique long strict factor",
+      "statement": "A one-component input forces every terminal factor to be a knot. When all strict terminal weights are sufficiently long, each nontrivial factor is hyperbolic or a nontrivial two-strand torus knot. Its meridian centralizer contains an element outside the meridian subgroup. Two nontrivial factors yield a nonabelian meridian centralizer in the connected-sum amalgam, impossible for a complete hyperbolic knot. Thus hyperbolicity is equivalent to one strict factor and all other factors unknots under the stated longness condition.",
+      "sources": [
+        {
+          "path": "papers/conway-reductions/closures.tex",
+          "anchor": "\\label{cr:amalgam}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-reductions/closures.tex#L79"
+        },
+        {
+          "path": "papers/conway-reductions/closures.tex",
+          "anchor": "\\label{cr:factors}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-reductions/closures.tex#L91"
+        },
+        {
+          "path": "papers/conway-reductions/closures.tex",
+          "anchor": "\\label{cr:hyperbolic-centralizer}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-reductions/closures.tex#L109"
+        },
+        {
+          "path": "papers/conway-reductions/closures.tex",
+          "anchor": "\\label{cr:one-factor}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-reductions/closures.tex#L118"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "recursive_zero_cap_decomposition",
+          "reason": "Provides the actual connected-sum tree, its attaching components, elementary endings and exact component count."
+        },
+        {
+          "id": "recursive_strict_volume",
+          "reason": "Only the hyperbolicity assertion of the strict companion is used to classify sufficiently long strict terminal factors here; no quantum asymptotic is used in the group argument."
+        }
+      ],
+      "coverage": "The proof gives an ambient isotopy to the selected strict knot. It makes no assertion that every ray or every short terminal expression is hyperbolic."
     }
   ],
   "articles": {
@@ -6033,6 +6337,7 @@
     "conway-geometry": {
       "title": "Pyramids, prisms, and complete geometry of Conway closures",
       "path": "papers/conway-geometry/main.tex",
+      "edition": "earlier",
       "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-geometry/main.tex"
     },
     "conway-source-bounds": {
@@ -6043,6 +6348,7 @@
     "conway-fillings": {
       "title": "Marked deformations and long fillings of Conway closures",
       "path": "papers/conway-fillings/main.tex",
+      "edition": "earlier",
       "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-fillings/main.tex"
     },
     "strict-conway-geometry": {
@@ -6114,6 +6420,11 @@
       "title": "Local degree and twist bounds for circle-tree volume limits",
       "path": "papers/directed-tree-asymptotics/main.tex",
       "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/directed-tree-asymptotics/main.tex"
+    },
+    "conway-reductions": {
+      "title": "Ordered tangle reductions and long net twists",
+      "path": "papers/conway-reductions/main.tex",
+      "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-reductions/main.tex"
     }
   },
   "article_dependencies": [
@@ -6178,6 +6489,33 @@
     },
     {
       "from": "conway-asymptotics",
+      "to": "conway-reductions",
+      "witnesses": [
+        {
+          "path": [
+            "recursive_strict_volume",
+            "recursive_net_twist_reduction"
+          ],
+          "reason": "Supplies the all-level volume limit for each long strict output, after taking the finite maximum of its parity thresholds."
+        },
+        {
+          "path": [
+            "recursive_strict_volume",
+            "recursive_arbitrary_closure_reduction"
+          ],
+          "reason": "Supplies the volume limit for that selected strict knot; its fixed threshold is maximized over the finitely many possible terminal templates."
+        },
+        {
+          "path": [
+            "recursive_strict_volume",
+            "recursive_terminal_factor_selection"
+          ],
+          "reason": "Only the hyperbolicity assertion of the strict companion is used to classify sufficiently long strict terminal factors here; no quantum asymptotic is used in the group argument."
+        }
+      ]
+    },
+    {
+      "from": "conway-asymptotics",
       "to": "quarter-index-asymptotics",
       "witnesses": [
         {
@@ -6186,19 +6524,6 @@
             "recursive_quarter_leaf_expansion"
           ],
           "reason": "Supplies the shared high-index normalization and analytic finite-factorial machinery; the quarter-index channel control is the additional proof."
-        }
-      ]
-    },
-    {
-      "from": "conway-fillings",
-      "to": "strict-conway-geometry",
-      "witnesses": [
-        {
-          "path": [
-            "recursive_local_deformed_maps",
-            "recursive_strict_marked_metric"
-          ],
-          "reason": "Supplies the full local complex-coordinate maps and primitive multiplier identities, with translations retained."
         }
       ]
     },
@@ -6226,19 +6551,6 @@
             "recursive_local_deformed_maps"
           ],
           "reason": "Provides the full local pyramid/prism face maps and ordered cell conventions from which the complex-coordinate formulas are derived."
-        }
-      ]
-    },
-    {
-      "from": "conway-geometry",
-      "to": "strict-conway-geometry",
-      "witnesses": [
-        {
-          "path": [
-            "recursive_local_ideal_cells",
-            "recursive_strict_angle_geometry"
-          ],
-          "reason": "Supplies the local convex cells, calibrated volumes and full ordered face maps."
         }
       ]
     },
@@ -6320,6 +6632,26 @@
             "recursive_strict_filling_transfer"
           ],
           "reason": "Restores the exact reduced invariant, original framing and scalar factors."
+        }
+      ]
+    },
+    {
+      "from": "filling-bounds",
+      "to": "conway-reductions",
+      "witnesses": [
+        {
+          "path": [
+            "finite_invariant_normalization",
+            "recursive_net_twist_reduction"
+          ],
+          "reason": "The same zero-framed original invariant is transported by the ambient isotopy, with the exact comparison used only at levels at least three."
+        },
+        {
+          "path": [
+            "finite_invariant_normalization",
+            "recursive_arbitrary_closure_reduction"
+          ],
+          "reason": "Transfers the normalized original invariant of the same filled knot, retaining its single reduced cut and zero-framing convention."
         }
       ]
     },
@@ -7267,6 +7599,19 @@
     },
     {
       "from": "strict-newton-profiles",
+      "to": "conway-reductions",
+      "witnesses": [
+        {
+          "path": [
+            "recursive_strict_normal_form",
+            "recursive_ordered_tangle_normalization"
+          ],
+          "reason": "The interval/type theorem identifies the literal product and closing tests required by the strict companion; the rotations, collar isotopies and termination are proved here."
+        }
+      ]
+    },
+    {
+      "from": "strict-newton-profiles",
       "to": "conway-source-bounds",
       "witnesses": [
         {
@@ -7330,8 +7675,8 @@
   "article_scope": "Article ownership names the publication that proves a recorded statement. Null-owned nodes are explicit archival, formal or cross-article assemblies. Article edges retain nearest-owned theorem paths through null-owned inputs; they do not infer imports from bibliography entries. Standard external citations and unrecorded local lemmas are not automatically checked.",
   "analysis": {
     "scope": "Consistency, article ownership, witnessed import and source-location checks on the declared inventory, not proof verification or exhaustive dependency discovery.",
-    "nodes": 134,
-    "edges": 304,
+    "nodes": 140,
+    "edges": 316,
     "component_edges": [
       [
         "action_volume",
@@ -7564,6 +7909,7 @@
       "analytic_triangle_load_derivatives",
       "analytic_supported_triangle_potential",
       "analytic_actual_triangle_minimum",
+      "analytic_actual_triangle_balance",
       "finite_grounded_inverse",
       "geo_circle_ordered_cut",
       "geo_circle_positive_edge_charts",
@@ -7625,7 +7971,10 @@
       "recursive_scalar_comparisons",
       "recursive_spectral_norms",
       "recursive_character_fourier",
+      "recursive_strict_local_cells",
+      "recursive_strict_local_maps",
       "recursive_strict_normal_form",
+      "recursive_ordered_tangle_normalization",
       "recursive_strict_optimizer",
       "recursive_stationary_port_identities",
       "recursive_strict_angle_geometry",
@@ -7640,13 +7989,15 @@
       "recursive_strict_volume",
       "recursive_completed_volume",
       "recursive_net_twist_reduction",
-      "recursive_arbitrary_closure_reduction",
       "recursive_uniform_leaf_envelopes",
       "recursive_local_leaf_estimates",
       "recursive_local_packet_filling",
       "recursive_quarter_leaf_expansion",
       "recursive_source_action_comparison",
       "recursive_strict_core_packet",
+      "recursive_zero_cap_decomposition",
+      "recursive_terminal_factor_selection",
+      "recursive_arbitrary_closure_reduction",
       "tree_exact_edge_kernel",
       "analytic_circle_edge_kernel",
       "analytic_circle_joint_source",
@@ -7669,35 +8020,35 @@
     "shared_prerequisites": [
       {
         "id": "finite_local_fourier",
-        "downstream": 81
+        "downstream": 84
       },
       {
         "id": "finite_remainder",
-        "downstream": 75
+        "downstream": 78
       },
       {
         "id": "finite_hermite",
-        "downstream": 73
+        "downstream": 76
       },
       {
         "id": "finite_crossing",
-        "downstream": 69
+        "downstream": 72
       },
       {
         "id": "finite_pivotal_mark",
-        "downstream": 68
+        "downstream": 71
       },
       {
         "id": "finite_global_source",
-        "downstream": 67
+        "downstream": 70
       },
       {
         "id": "finite_invariant_normalization",
-        "downstream": 54
+        "downstream": 57
       },
       {
         "id": "recursive_finite_source",
-        "downstream": 44
+        "downstream": 47
       },
       {
         "id": "geo_simple_sphere_packing",
@@ -7705,90 +8056,94 @@
       },
       {
         "id": "geo_local_peripheral_volume_differential",
-        "downstream": 27
+        "downstream": 28
       },
       {
         "id": "finite_weighted_graph_kernel",
-        "downstream": 24
+        "downstream": 25
+      },
+      {
+        "id": "recursive_strict_normal_form",
+        "downstream": 25
+      },
+      {
+        "id": "analytic_canonical_factorial",
+        "downstream": 23
       },
       {
         "id": "analytic_signed_interval_transfer",
         "downstream": 23
       },
       {
-        "id": "analytic_canonical_factorial",
-        "downstream": 22
-      },
-      {
         "id": "recursive_factorial_rate",
-        "downstream": 22
-      },
-      {
-        "id": "recursive_strict_normal_form",
-        "downstream": 22
+        "downstream": 23
       },
       {
         "id": "finite_fourier_period",
-        "downstream": 21
+        "downstream": 22
       },
       {
         "id": "recursive_strict_optimizer",
-        "downstream": 21
+        "downstream": 22
       },
       {
         "id": "recursive_stationary_port_identities",
+        "downstream": 21
+      },
+      {
+        "id": "geo_nearby_metric_completion",
         "downstream": 20
+      },
+      {
+        "id": "recursive_positive_source",
+        "downstream": 20
+      },
+      {
+        "id": "analytic_conditional_filling",
+        "downstream": 19
       },
       {
         "id": "geo_circle_ordered_cut",
         "downstream": 19
       },
       {
-        "id": "geo_nearby_metric_completion",
-        "downstream": 19
-      },
-      {
-        "id": "recursive_positive_source",
-        "downstream": 19
-      },
-      {
-        "id": "analytic_conditional_filling",
-        "downstream": 18
-      },
-      {
         "id": "recursive_spectral_norms",
-        "downstream": 16
+        "downstream": 17
       },
       {
         "id": "recursive_strict_boundary_profiles",
-        "downstream": 16
+        "downstream": 17
       },
       {
         "id": "recursive_character_fourier",
-        "downstream": 15
+        "downstream": 16
       },
       {
         "id": "recursive_completed_port_bounds",
-        "downstream": 15
+        "downstream": 16
       },
       {
         "id": "recursive_scalar_comparisons",
+        "downstream": 16
+      },
+      {
+        "id": "recursive_strict_component_bounds",
         "downstream": 15
+      },
+      {
+        "id": "elementary_rate_transfer",
+        "downstream": 14
       },
       {
         "id": "finite_cofactor_nodal_bounds",
         "downstream": 14
       },
       {
-        "id": "recursive_strict_component_bounds",
+        "id": "recursive_strict_source_gap",
         "downstream": 14
       },
       {
         "id": "analytic_cofactor_angular_gap",
-        "downstream": 13
-      },
-      {
-        "id": "elementary_rate_transfer",
         "downstream": 13
       },
       {
@@ -7797,14 +8152,6 @@
       },
       {
         "id": "geo_morse_original_exterior",
-        "downstream": 13
-      },
-      {
-        "id": "recursive_local_ideal_cells",
-        "downstream": 13
-      },
-      {
-        "id": "recursive_strict_source_gap",
         "downstream": 13
       },
       {
@@ -7848,6 +8195,14 @@
         "downstream": 11
       },
       {
+        "id": "recursive_strict_local_cells",
+        "downstream": 11
+      },
+      {
+        "id": "recursive_strict_pure_packet",
+        "downstream": 11
+      },
+      {
         "id": "analytic_morse_h2",
         "downstream": 10
       },
@@ -7864,7 +8219,15 @@
         "downstream": 10
       },
       {
-        "id": "recursive_strict_pure_packet",
+        "id": "geo_same_filled_chain",
+        "downstream": 10
+      },
+      {
+        "id": "recursive_exact_filling_source",
+        "downstream": 10
+      },
+      {
+        "id": "recursive_strict_local_maps",
         "downstream": 10
       },
       {
@@ -7900,11 +8263,11 @@
         "downstream": 9
       },
       {
-        "id": "geo_same_filled_chain",
+        "id": "recursive_strict_angle_geometry",
         "downstream": 9
       },
       {
-        "id": "recursive_exact_filling_source",
+        "id": "recursive_strict_filling_transfer",
         "downstream": 9
       },
       {
@@ -7928,20 +8291,16 @@
         "downstream": 8
       },
       {
-        "id": "recursive_local_deformed_maps",
-        "downstream": 8
-      },
-      {
         "id": "recursive_local_leaf_estimates",
         "downstream": 8
       },
       {
-        "id": "recursive_strict_angle_geometry",
+        "id": "recursive_strict_marked_metric",
         "downstream": 8
       },
       {
-        "id": "recursive_strict_filling_transfer",
-        "downstream": 8
+        "id": "analytic_supported_transport_coercivity",
+        "downstream": 7
       },
       {
         "id": "geo_longitude_ratio_differential",
@@ -7956,19 +8315,11 @@
         "downstream": 7
       },
       {
-        "id": "recursive_strict_marked_metric",
-        "downstream": 7
-      },
-      {
         "id": "analytic_backward_diagonalization",
         "downstream": 6
       },
       {
         "id": "analytic_directed_conditional_estimates",
-        "downstream": 6
-      },
-      {
-        "id": "analytic_supported_transport_coercivity",
         "downstream": 6
       },
       {
@@ -8000,6 +8351,10 @@
         "downstream": 5
       },
       {
+        "id": "recursive_strict_pure_action",
+        "downstream": 5
+      },
+      {
         "id": "geo_filled_meridian_germ",
         "downstream": 4
       },
@@ -8008,7 +8363,15 @@
         "downstream": 4
       },
       {
+        "id": "recursive_local_ideal_cells",
+        "downstream": 4
+      },
+      {
         "id": "recursive_local_packet_filling",
+        "downstream": 4
+      },
+      {
+        "id": "recursive_ordered_tangle_normalization",
         "downstream": 4
       },
       {
@@ -8016,11 +8379,15 @@
         "downstream": 4
       },
       {
-        "id": "recursive_strict_pure_action",
+        "id": "recursive_strict_volume",
         "downstream": 4
       },
       {
         "id": "analytic_shifted_filtered_all_orders",
+        "downstream": 3
+      },
+      {
+        "id": "analytic_triangle_load_derivatives",
         "downstream": 3
       },
       {
@@ -8036,10 +8403,6 @@
         "downstream": 3
       },
       {
-        "id": "recursive_strict_volume",
-        "downstream": 3
-      },
-      {
         "id": "analytic_convex_flattening",
         "downstream": 2
       },
@@ -8048,7 +8411,11 @@
         "downstream": 2
       },
       {
-        "id": "analytic_triangle_load_derivatives",
+        "id": "analytic_grounded_strict_convexity",
+        "downstream": 2
+      },
+      {
+        "id": "analytic_supported_triangle_potential",
         "downstream": 2
       },
       {
@@ -8076,7 +8443,15 @@
         "downstream": 2
       },
       {
+        "id": "recursive_zero_cap_decomposition",
+        "downstream": 2
+      },
+      {
         "id": "analytic_actual_operator_classical_germ",
+        "downstream": 1
+      },
+      {
+        "id": "analytic_actual_triangle_minimum",
         "downstream": 1
       },
       {
@@ -8084,15 +8459,7 @@
         "downstream": 1
       },
       {
-        "id": "analytic_grounded_strict_convexity",
-        "downstream": 1
-      },
-      {
         "id": "analytic_morse_geometric_contribution",
-        "downstream": 1
-      },
-      {
-        "id": "analytic_supported_triangle_potential",
         "downstream": 1
       },
       {
@@ -8120,7 +8487,7 @@
         "downstream": 1
       },
       {
-        "id": "recursive_net_twist_reduction",
+        "id": "recursive_terminal_factor_selection",
         "downstream": 1
       },
       {
@@ -8128,7 +8495,7 @@
         "downstream": 1
       },
       {
-        "id": "analytic_actual_triangle_minimum",
+        "id": "analytic_actual_triangle_balance",
         "downstream": 0
       },
       {
@@ -8188,7 +8555,15 @@
         "downstream": 0
       },
       {
+        "id": "recursive_local_deformed_maps",
+        "downstream": 0
+      },
+      {
         "id": "recursive_marked_metric",
+        "downstream": 0
+      },
+      {
+        "id": "recursive_net_twist_reduction",
         "downstream": 0
       },
       {
@@ -8233,8 +8608,8 @@
       "papers/conway-source-bounds/assembly.tex": "e0a1581c350315a13b4b9801f546b07304562c4f790db0d620f3be36972789ea",
       "papers/conway-asymptotics/main.tex": "d84c6be58a3e83796ad17998ef0833ec254d0819d86f8d5f85b085c840e2333e",
       "papers/conway-asymptotics/filling.tex": "215c5d27ef5c0d1e8abbeaae379ef6bdfbbb63ae92a654722b222f685b0c6036",
-      "notes/actual_conway_net_twist_volume.md": "cd76d2d1f9b0ce2961308343d80098ec3336dd367248fbe36ee811e959fbcfa2",
-      "notes/actual_conway_arbitrary_closure_volume.md": "4962c4945f286df0beff9624a433e98371a634fd9058f00d9260bcc7e1d8c954",
+      "papers/conway-reductions/main.tex": "9541ba439d3e3329cbba7da756a813ad30dd1b10f546ede41721cff0ff333f4d",
+      "papers/conway-reductions/application.tex": "577606bb74e4aaf0f11e37fc4e35b1db567dff57605b430f6e0e9fba05fdd59e",
       "papers/meridian-tangles/main.tex": "d3b7d4804e532f46a52ac5142118d4793c48ea06b86d95f34215e887971ccfd4",
       "papers/circle-tree-geometry/main.tex": "2404285044d7efb8376b3fdeaa3a6da6f2d36bc29da6a7e176f09f8230339301",
       "papers/circle-tree-asymptotics/main.tex": "ba6e5ffb622ec103ba07e8418117553f3b12b12330ccc45047aa241470b1e562",
@@ -8274,12 +8649,12 @@
       "papers/conway-source-bounds/characters.tex": "df142364761ca3aeb874adefd7931ad65c75cf65d128b55158699b84c451d998",
       "papers/conway-source-bounds/probe.tex": "3757208665bb47c8b80abbeed563dc0518bb18126d1fdce93ba30152fb58d918",
       "notes/actual_conway_general_core_packet_and_gap.md": "11968f7f6856179322d49dcf8fe4bcf7200ae524231dced812661e5b1459c16b",
-      "papers/strict-conway-geometry/main.tex": "34993c790428b54b5f12808fdc7007f325452a93a3aa90dc60b8e394d7495372",
-      "papers/strict-conway-geometry/deformation.tex": "41dd97cfb113a192c77903e5e34874098871075b722dfcb383f4ed10671a8e6b",
-      "papers/strict-conway-geometry/fillings.tex": "442eed437e204e0196e65130b8b747c8b5bca2834e0249c5fab359278acee2b2",
+      "papers/strict-conway-geometry/main.tex": "b57cb5388280c09f45fe827b4505f6c96fbef86ac1e530dea3c9dd2799696af1",
+      "papers/strict-conway-geometry/deformation.tex": "b8d294abc0fc61612ea8353df2cbb5fa5964d45605b2780827fc268c631db84d",
+      "papers/strict-conway-geometry/fillings.tex": "251276856a2d0ed39a3a0462d99e8823444c50e2854710908c379dcd9baaee94",
       "papers/conway-asymptotics/leaf.tex": "e038d58048a3077cdc98f3b284ded96bbb89bee7f2c3a51c7b5a5d519c1d716a",
       "papers/conway-source-bounds/local.tex": "c8faf78eebaf72c7767d6c41e08b13e74a15fe9be66a9979f93bfbcc1f6eff1f",
-      "papers/strict-conway-geometry/complete.tex": "cbf7b571d74452cb1c2ef71c3dc16f8be56b2b1ed282fa16790a603cf98a58a3",
+      "papers/strict-conway-geometry/complete.tex": "1f47dda3c60cb7fd1b38e79961c4f6df45f6b5d7439b1ce1f85aaf1879b2063d",
       "formal-real/Flattening.lean": "a15977f5e3234d9f56217aee2e875c3a6ec8542b4140bfdf74f78d0b35e0f9cc",
       "formal-real/TransportCoercivity.lean": "ec8acf6a1b32c5299e070e49485e2ffb4dd44f3a0a7e916ef02cdd901151b1d3",
       "papers/quarter-index-asymptotics/main.tex": "99548439758d362811e984032412afe7f0fc6c4d51b9a0408dfae0cd8a831333",
@@ -8302,13 +8677,18 @@
       "papers/conway-source-bounds/norms.tex": "11a0534f538ab3d9932cdf3e1a5f9974950185f75f7ce4fcc24c3a27ec4bbefb",
       "papers/conway-source-bounds/fourier.tex": "f3f411c054887d6366b355a6d79918a1a6424814103d713555ee7f3cc68176a6",
       "papers/conway-asymptotics/pure-window.tex": "2ebd4f8b34ec98d03ee4fed85bcb8a8a42b530572ad7a6875cc50e71638c5fc9",
+      "formal-real/TriangleBalance.lean": "3e999774f80923f626bdcd872b6a0be7405c2e4b123d00d8d76dfb101b9216f6",
+      "papers/strict-conway-geometry/local-cells.tex": "3b8d80b4cd044973de972c88a8734d12ff6616cf8c49c950925e5f77666392d5",
+      "papers/conway-reductions/moves.tex": "f3411d129266688ecc059c013f5cc45a128e18736b1c6605f52f5151b3bf156a",
+      "papers/conway-reductions/normalization.tex": "92ba449d741cdcf5703b240e2f31cd592db648ba397491297615029d27e892f3",
+      "papers/conway-reductions/closures.tex": "d792e8bc9103129d8f5406220b0f9976941a2c72d347cd3b3e44b1f0127cadab",
       "papers/strict-newton-profiles/main.tex": "1b3ce59bf16a638f11c15bd5ea0e137fa1f9b15de5f66f1cd63221213fb27eab",
-      "papers/dependencies.json": "a5a6b5173846139ccb4e9bb7402831fd405d810f1bd448db7ad525de97f44957",
-      "tools/build_dependency_graph.py": "e1df29f89543eadd4c98c9d99c15219135285fb6ea4d8dfd3acee257422823bc"
+      "papers/dependencies.json": "de8e9ff28a4aff4e5976748f8b44d44bc62f51180a1b77a82cb915e38d06495d",
+      "tools/build_dependency_graph.py": "c52c2bd644ac0fcb191789247c8a00007a85ac8798e3d25f71df9955ec0de84b"
     },
-    "articles": 21,
-    "owned_statements": 99,
-    "unowned_statements": 35,
+    "articles": 22,
+    "owned_statements": 106,
+    "unowned_statements": 34,
     "article_edges": [
       [
         "circle-tree-asymptotics",
@@ -8328,19 +8708,15 @@
       ],
       [
         "conway-asymptotics",
-        "quarter-index-asymptotics"
+        "conway-reductions"
       ],
       [
-        "conway-fillings",
-        "strict-conway-geometry"
+        "conway-asymptotics",
+        "quarter-index-asymptotics"
       ],
       [
         "conway-geometry",
         "conway-fillings"
-      ],
-      [
-        "conway-geometry",
-        "strict-conway-geometry"
       ],
       [
         "conway-source-bounds",
@@ -8353,6 +8729,10 @@
       [
         "filling-bounds",
         "conway-asymptotics"
+      ],
+      [
+        "filling-bounds",
+        "conway-reductions"
       ],
       [
         "filling-bounds",
@@ -8524,6 +8904,10 @@
       ],
       [
         "strict-newton-profiles",
+        "conway-reductions"
+      ],
+      [
+        "strict-newton-profiles",
         "conway-source-bounds"
       ],
       [
@@ -8548,6 +8932,7 @@
       "strict-conway-geometry",
       "conway-asymptotics",
       "circle-tree-asymptotics",
+      "conway-reductions",
       "directed-tree-asymptotics",
       "quarter-index-asymptotics",
       "terminal-decorations",

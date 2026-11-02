@@ -85,7 +85,7 @@ The [manuscript guide](manuscript.md) gives drawings, worked examples, and the p
 
 ## The volume theorem and its quantifiers
 
-The [net-twist theorem](../../notes/actual_conway_net_twist_volume.md) first simplifies the actual tangle diagram. Integral twist boxes that can be brought together are combined by adding their signed twist numbers. Moving a twist box past a tangle carries a specified half-turn of that tangle, which the reduction retains. The result is either an elementary two-strand braid closure or a presentation passing the strict angle-feasibility test described in the [results chapter](results.md).
+The [tangle-reduction paper](../../docs/papers/conway-reductions.pdf), Theorem 1.2, first simplifies the actual tangle diagram. Integral twist boxes that can be brought together are combined by adding their signed twist numbers. Moving a twist box past a tangle carries a specified half-turn of that tangle, which the reduction retains. The result is either an elementary two-strand braid closure or a presentation passing the strict angle-feasibility test described in the [results chapter](results.md).
 
 For each fixed input construction $\mathcal E$, the reduction partitions the original pieces into disjoint groups $B_1,\ldots,B_s$. Their surviving twist numbers are
 
@@ -113,7 +113,7 @@ Choose the entire construction and all twist integers first; then let $N$ grow t
 
 This covers arbitrarily large fixed compositions when their reduced twists satisfy the bound. It does not cover arbitrary short twists or classify every arborescent knot up to all possible presentation changes. The earlier chapters of the TeX manuscript prove an included family; the companion strict-tree estimates and exact tangle reduction give this extension. A further manuscript chapter proves the quantitative circle-tree result below. The [manuscript page](manuscript.md) distinguishes those scopes.
 
-The [closure extension](../../notes/actual_conway_arbitrary_closure_volume.md) also permits cap closures, which join each upper and lower endpoint pair, and twist sums that vanish exactly. Removing these zero sums can split the diagram into connected-sum factors. If the input is hyperbolic and every surviving strict factor has long net twists, the proof shows that just one strict factor remains and all others are unknots. The original knot is isotopic to that covered factor. The [results chapter](results.md#cap-closures-and-exact-cancellations) gives the precise criterion, including a sufficient condition on the original subset sums.
+The same paper's Theorem 1.3 also permits cap closures, which join each upper and lower endpoint pair, and twist sums that vanish exactly. Removing these zero sums can split the diagram into connected-sum factors. If the input is hyperbolic and every surviving strict factor has long net twists, the proof shows that just one strict factor remains and all others are unknots. The original knot is isotopic to that covered factor. The [results chapter](results.md#cap-closures-and-exact-cancellations) gives the precise criterion, including a sufficient condition on the original subset sums.
 
 ## Numerical conditions for trees of crossing circles
 

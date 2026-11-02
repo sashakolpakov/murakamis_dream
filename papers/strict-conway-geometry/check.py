@@ -18,10 +18,8 @@ def digest(path):
 def inputs():
     own = [HERE / "check.py", *HERE.glob("*.tex"), *HERE.glob("figures/*.tex")]
     imports = [
-        "papers/conway-geometry/main.tex", "papers/conway-geometry/maps.tex",
-        "papers/conway-geometry/completion.tex",
-        "papers/conway-fillings/main.tex", "papers/conway-fillings/deformation.tex",
         "papers/marked-fillings/main.tex",
+        "papers/strict-newton-profiles/main.tex",
         "papers/strict-newton-profiles/syntax.tex",
         "papers/strict-newton-profiles/variation.tex",
         "papers/strict-newton-profiles/profiles.tex",
@@ -173,6 +171,84 @@ def W(E, R):
     ]
 
 
+def chart(a, b, c):
+    """Normalize the actual ordered triple to 0,infinity,1."""
+    if a is None:
+        return s.Matrix([[0, c - b], [1, -b]])
+    if b is None:
+        return s.Matrix([[1, -a], [0, c - a]])
+    if c is None:
+        return s.Matrix([[1, -a], [1, -b]])
+    return s.Matrix([[c - b, -a * (c - b)],
+                     [c - a, -b * (c - a)]])
+
+
+def image(matrix, z):
+    if z is None:
+        return s.cancel(matrix[0, 0] / matrix[1, 0])
+    return s.cancel((matrix[0, 0] * z + matrix[0, 1]) /
+                    (matrix[1, 0] * z + matrix[1, 1]))
+
+
+def prism_checks():
+    alpha, beta, gamma = s.symbols("alpha beta gamma", nonzero=True)
+    reciprocal = {alpha: 1 / alpha, beta: 1 / beta, gamma: 1 / gamma}
+
+    def reflected(x):
+        if isinstance(x, s.MatrixBase):
+            return x.applyfunc(reflected)
+        return s.sympify(x).xreplace(reciprocal)
+
+    omega = alpha * beta * gamma
+    den = alpha * beta**2 * gamma - 1
+    # Solve the original two chord-line equations, independently of the
+    # simplified P used in the displayed world-matrix table.
+    chord_matrix = s.Matrix([[1, alpha], [1, alpha**2 * beta**2 * gamma]])
+    chord_rhs = s.Matrix([1 + alpha, alpha * beta * (1 + gamma)])
+    solved = (chord_matrix.inv() * chord_rhs).applyfunc(s.cancel)
+    P = solved[0]
+    assert s.cancel(solved[1] - reflected(P)) == 0
+    P_table = alpha * beta * (omega + beta * gamma - gamma - 1) / den
+    assert s.cancel(P - P_table) == 0
+    coordinates = [None, P, 1, alpha, alpha * beta, omega]
+    orders = [(2, 3, 1, 0), (0, 1, 4, 5), (2, 3, 4, 5)]
+    phases = [beta * gamma, alpha * beta, omega]
+    worlds = []
+    for order, phase in zip(orders, phases):
+        values = [coordinates[i] for i in order]
+        norm = chart(*values[:3])
+        fourth = image(norm, values[3])
+        worlds.append([
+            (reflected(norm).adjugate() * w * norm).applyfunc(s.cancel)
+            for w in W(phase, fourth)])
+
+    table_matrices = [
+        s.Matrix([[omega - 1, 1 - alpha * omega],
+                  [alpha * (beta * gamma - 1), alpha * (1 - omega)]]),
+        s.Matrix([[omega - 1, alpha * beta * (1 - alpha * gamma)],
+                  [alpha * den, alpha**2 * beta * (1 - omega)]]),
+        s.Matrix([[omega - 1, alpha * beta * (1 - omega * gamma)],
+                  [omega * (alpha * beta - 1), alpha * beta * omega * (1 - omega)]]),
+        s.Matrix([[-1, omega + 1], [0, omega]]),
+        s.Matrix([[-1, P_table + omega * reflected(P_table)], [0, omega]]),
+    ]
+    for row, names in zip(worlds, [(0, 1, 4, 3), (4, 1, 2, 3), (0, 1, 2, 3)]):
+        for matrix, name in zip(row, names):
+            assert proj_equal(matrix, table_matrices[name])
+    # Independently recover the actual two white triangles from their triples.
+    for ids, name in [((1, 3, 4), 1), ((0, 2, 5), 3)]:
+        source = [coordinates[i] for i in ids]
+        target = [None if z is None else reflected(z) for z in source]
+        actual = chart(*target).adjugate() * chart(*source)
+        assert proj_equal(actual, table_matrices[name])
+    wrong_norm = chart(1, alpha * beta, alpha)  # reverses only two output corners
+    wrong_fourth = image(wrong_norm, omega)
+    wrong = reflected(wrong_norm).adjugate() * W(omega, wrong_fourth)[0] * wrong_norm
+    assert not proj_equal(wrong, worlds[0][0])
+    return {"independent_chord_solution": 2, "world_table_entries": 12,
+            "actual_triangle_maps": 2, "negative_controls": 1}
+
+
 def word_checks():
     E, R, T = s.symbols("E R T", nonzero=True)
     ws = W(E, R)
@@ -183,8 +259,14 @@ def word_checks():
     checks = []
     for j, k in [(0, 0), (2, 2), (3, 1)]:
         checks.append(proj_equal(ws[j] * S, Sbar * ws[k]))
+    for (j, k), factor in zip([(0, 0), (2, 2), (3, 1)], [E, E, E * R]):
+        assert (ws[j] * S - factor * Sbar * ws[k]).applyfunc(s.cancel) == s.zeros(2)
     for j, k in [(0, 2), (2, 0), (1, 3)]:
         checks.append(proj_equal(ws[j].inv() * B * ws[k].inv() * A, s.eye(2)))
+    for (j, k), factor in zip([(0, 2), (2, 0), (1, 3)],
+                              [-R / E, -R / E, (R - 1) / E]):
+        actual = ws[j].inv() * B * ws[k].inv() * A
+        assert (actual - factor * s.eye(2)).applyfunc(s.cancel) == s.zeros(2)
     turn = s.Matrix([[0, R - 1], [1, -1]])
     closing = s.Matrix([[1, -R], [1, -1]])
     for j in range(4):
@@ -207,8 +289,15 @@ def word_checks():
         assert s.cancel(flag_image - Z) == 0
         similarity = s.cancel(mat[1, 0] * Z + mat[1, 1])**2 / s.cancel(mat.det())
         assert s.cancel(similarity - multiplier) == 0
+    norm = s.Matrix([[(1 + E) / 2, -(1 + E) / 2], [1, -E]])
+    complete_R = (1 + E)**2 / (4 * E)
+    for matrix, translation in zip(words, [-2 * (E + 1), E - 1, -2, 2 * E]):
+        actual = norm.adjugate() * matrix.subs(R, complete_R) * norm
+        assert proj_equal(actual, s.Matrix([[1, translation], [0, 1]]))
+    assert not proj_equal(words[1].subs(R, complete_R), words[2].subs(R, complete_R))
     return {"projective_word_identities": len(checks),
-            "peripheral_flag_and_multiplier_pairs": 4, "negative_controls": 1}
+            "exact_return_scalars": 6, "complete_collar_translations": 4,
+            "peripheral_flag_and_multiplier_pairs": 4, "negative_controls": 2}
 
 
 def normalizations():
@@ -247,10 +336,11 @@ def main():
         raise SystemExit("Missing pinned input: " + ", ".join(missing))
     before = {str(p.relative_to(ROOT)): digest(p) for p in paths}
     result = {"masks": masks(), "endpoint_pairings": pairings(),
+              "prism_world_maps": prism_checks(),
               "projective_words": word_checks(), "normalizations": normalizations()}
     assert before == {str(p.relative_to(ROOT)): digest(p) for p in paths}, "Inputs changed"
     record = {
-        "scope": "Exact finite mask closure, original endpoint graph, rational projective words and classical normalizations. No proof of variational existence, topology, convexity, completeness, analytic uniformity or volume comparison.",
+        "scope": "Exact finite mask closure, original endpoint graph, independent chord/world-map table, actual triangle assignments, projective words, collar translations and classical normalizations. No proof of variational existence, topology, convexity, completeness, analytic uniformity or volume comparison.",
         "input_sha256": before, "inputs_unchanged": True, "results": result,
         "python": sys.version.split()[0], "sympy": s.__version__,
     }

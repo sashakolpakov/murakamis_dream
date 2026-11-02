@@ -1,5 +1,5 @@
 {
-  "scope": "Statement-level interfaces for the retained recursive, quantitative and directed tree, decorated planar, weak-balance, and certified-composition volume theorems. The graph records theorem assembly; it does not verify the written analytic and geometric assertions at its nodes.",
+  "scope": "Statement-level interfaces for the frozen manuscript and the current strict-Conway companions. The map records family, level and premise compatibility; it does not verify the written analytic or geometric proofs.",
   "assumptions": {
     "marked_sphere": "A fixed finite simple triangulated sphere with at least four vertices, its actual perfect dual matching, and a nonmatching marked edge; retain cyclic orders and primitive crossing-disk framings.",
     "fixed_data": "The whole diagram, retained half twists and integer crossing powers are fixed before N tends to infinity. The invariant and framing use the recorded original normalization.",
@@ -13,7 +13,8 @@
     "summed_tree_criterion": "The actual fixed ordered tree satisfies sum_v d_v/(d_v^2+n_v^2) <= 2^(-25). This is a sufficient criterion, not an assertion for arbitrary short powers.",
     "local_tree_criterion": "The actual fixed ordered tree satisfies max_v d_v/(d_v^2+n_v^2) <= 2^(-120). The geometry and analytic induction use this same tree and these same powers.",
     "directed_tree_criterion": "The fixed rooted ordered tree has the complete directed certificate of Appendix K, including the conditional rectangle, every outgoing decay requirement and the separate final-root condition. The degree-or-twist test is a proved sufficient special case.",
-    "terminal_decoration": "The actual finite terminal insertions of Appendix L have been made on both sides of every original region with their required parities. All original and added powers are subject to the final long-twist threshold; the knot can change."
+    "terminal_decoration": "The actual finite terminal insertions of Appendix L have been made on both sides of every original region with their required parities. All original and added powers are subject to the final long-twist threshold; the knot can change.",
+    "strict_conway_construction": "A fixed literal ordered Conway expression with at least two distinct leaves, strict leaf/product inequalities and complementary closing outputs. Original turns, crossing disks, primitive framings and all internal components are retained."
   },
   "nodes": {
     "exact_source": {
@@ -1000,6 +1001,273 @@
         "rate_transfer": "rate_transfer"
       },
       "assumptions": []
+    },
+    "strict_conway_source": {
+      "statement": "Exact expansion of each full integer crossing power in ordinary colored circles and original reduced Kashaev normalization, at N>=3. The omitted finite initial level does not affect an all-integer-level limit.",
+      "status": "written",
+      "levels": "all",
+      "context": "strict_conway",
+      "location": {
+        "path": "papers/conway-asymptotics/filling.tex",
+        "anchor": "\\label{ca:crossing-split}"
+      },
+      "provides": [
+        "exact_invariant"
+      ],
+      "requires": {},
+      "assumptions": [
+        "strict_conway_construction",
+        "fixed_data"
+      ],
+      "supporting_locations": [
+        {
+          "path": "papers/filling-bounds/sections/diagram-evaluation.tex",
+          "anchor": "\\label{de:invariant-normalization}",
+          "scope": "Original enhancement, single cut and framing normalization; not a large-level estimate."
+        }
+      ]
+    },
+    "strict_conway_variational": {
+      "statement": "The original primitive wire lattice has a unique strict maximum with negative definite Hessian, including two leaves. Its boundary profiles are obtained without a global metric or a signed-source asymptotic.",
+      "status": "written",
+      "levels": "independent",
+      "context": "strict_conway",
+      "location": {
+        "path": "papers/strict-newton-profiles/variation.tex",
+        "anchor": "\\label{st:positive-action}"
+      },
+      "provides": [
+        "strict_stationary_data"
+      ],
+      "requires": {},
+      "assumptions": [
+        "strict_conway_construction",
+        "fixed_data"
+      ],
+      "supporting_locations": [
+        {
+          "path": "papers/strict-newton-profiles/variation.tex",
+          "anchor": "\\label{st:lattice}",
+          "scope": "Independent integer coordinates and their primitive lattice, including all original affine offsets."
+        }
+      ]
+    },
+    "strict_conway_gap_many": {
+      "statement": "For at least three leaves, the whole-source upper bound, physical-color deficit gap and entire source-minus-core gap hold at all sufficiently large levels. This is the H>=3 case of the final H>=2 argument.",
+      "status": "written",
+      "levels": "all",
+      "context": "strict_conway",
+      "location": {
+        "path": "papers/conway-source-bounds/main.tex",
+        "anchor": "\\label{cs:main}"
+      },
+      "provides": [
+        "source_gap_at_least_three"
+      ],
+      "requires": {
+        "exact_invariant": "strict_conway_source",
+        "strict_stationary_data": "strict_conway_variational"
+      },
+      "assumptions": []
+    },
+    "strict_conway_gap_two": {
+      "statement": "For exactly two leaves, the separate original pairing proof gives the same whole-source, physical-color and source-minus-core gaps at rate twice the leaf maximum.",
+      "status": "written",
+      "levels": "all",
+      "context": "strict_conway",
+      "location": {
+        "path": "papers/conway-source-bounds/assembly.tex",
+        "anchor": "\\label{cs:two-leaf-source}"
+      },
+      "provides": [
+        "source_gap_two"
+      ],
+      "requires": {
+        "exact_invariant": "strict_conway_source",
+        "strict_stationary_data": "strict_conway_variational"
+      },
+      "assumptions": []
+    },
+    "strict_conway_source_gap": {
+      "statement": "The two-leaf and at-least-three-leaf cases together supply the complete physical-color and full-minus-core estimates for every strict expression with at least two leaves.",
+      "status": "written",
+      "levels": "all",
+      "context": "strict_conway",
+      "location": {
+        "path": "papers/conway-asymptotics/main.tex",
+        "anchor": "\\label{ca:intro}"
+      },
+      "provides": [
+        "physical_source_gap"
+      ],
+      "requires": {
+        "source_gap_two": "strict_conway_gap_two",
+        "source_gap_at_least_three": "strict_conway_gap_many"
+      },
+      "assumptions": []
+    },
+    "strict_conway_pure_window": {
+      "statement": "Exact canonical factorial interpolation on the primitive grid gives a nonzero holomorphic pure-window expansion at every strict leaf index, including quarter. The original physical complement is exponentially bounded.",
+      "status": "written",
+      "levels": "all",
+      "context": "strict_conway",
+      "location": {
+        "path": "papers/conway-asymptotics/pure-window.tex",
+        "anchor": "\\label{ca:strict-pure}"
+      },
+      "provides": [
+        "pure_local_expansion",
+        "selected_pure_action"
+      ],
+      "requires": {
+        "exact_invariant": "strict_conway_source",
+        "strict_stationary_data": "strict_conway_variational"
+      },
+      "assumptions": [],
+      "supporting_locations": [
+        {
+          "path": "papers/conway-asymptotics/factorial.tex",
+          "anchor": "\\label{ca:factorial}",
+          "scope": "Canonical sine-factorial continuation agreeing exactly with integer factorials; no signed recurrence input."
+        }
+      ]
+    },
+    "strict_conway_fourier": {
+      "statement": "The actual finite Fourier polynomial has the required separate degree, a nonzero local amplitude with real pure action, and a shared complex-strip gap on the whole torus.",
+      "status": "written",
+      "levels": "all",
+      "context": "strict_conway",
+      "location": {
+        "path": "papers/conway-asymptotics/packet.tex",
+        "anchor": "\\label{ca:Fourier-theorem}"
+      },
+      "provides": [
+        "filling_source_estimates"
+      ],
+      "requires": {
+        "pure_local_expansion": "strict_conway_pure_window",
+        "physical_source_gap": "strict_conway_source_gap"
+      },
+      "assumptions": []
+    },
+    "strict_conway_leading": {
+      "statement": "The whole-period theorem applied to that exact pure polynomial gives the nonzero filled leading term, including both parities, all signed integer powers, all Fourier charges and endpoint currents.",
+      "status": "written",
+      "levels": "all",
+      "context": "strict_conway",
+      "location": {
+        "path": "papers/conway-asymptotics/filling.tex",
+        "anchor": "Its nonzero leading expression, multiplied by"
+      },
+      "provides": [
+        "nonzero_contribution"
+      ],
+      "requires": {
+        "exact_invariant": "strict_conway_source",
+        "filling_source_estimates": "strict_conway_fourier"
+      },
+      "assumptions": [
+        "long_twists"
+      ],
+      "supporting_locations": [
+        {
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:midpoint}",
+          "scope": "Exact midpoint inversion includes odd powers, zero-color multiplicity and all first normals."
+        },
+        {
+          "path": "papers/oscillatory-fillings/main.tex",
+          "anchor": "\\label{of:main}",
+          "scope": "Conditional entire-sum theorem after the actual real-phase and shared-gap hypotheses have been checked."
+        }
+      ]
+    },
+    "strict_conway_remainder": {
+      "statement": "The polynomial cost of the full crossing expansion transfers the entire physical source error. Independently long fixed powers make the filled action drop smaller than the fixed source gap, while the whole-period theorem controls its other charges and joins.",
+      "status": "written",
+      "levels": "all",
+      "context": "strict_conway",
+      "location": {
+        "path": "papers/conway-asymptotics/filling.tex",
+        "anchor": "\\label{ca:filled-error}"
+      },
+      "provides": [
+        "full_remainder"
+      ],
+      "requires": {
+        "exact_invariant": "strict_conway_source",
+        "physical_source_gap": "strict_conway_source_gap",
+        "filling_source_estimates": "strict_conway_fourier",
+        "nonzero_contribution": "strict_conway_leading"
+      },
+      "assumptions": []
+    },
+    "strict_conway_metric": {
+      "statement": "The original marked strict exterior has smooth primitive signed fillings with all main cusps complete, on the specified knot complement. Its classical proof has no quantum asymptotic premise.",
+      "status": "written",
+      "levels": "independent",
+      "context": "strict_conway",
+      "location": {
+        "path": "papers/strict-conway-geometry/main.tex",
+        "anchor": "\\label{sm:fillings}"
+      },
+      "provides": [
+        "specified_metric"
+      ],
+      "requires": {
+        "strict_stationary_data": "strict_conway_variational"
+      },
+      "assumptions": [
+        "knot_pairing",
+        "long_twists"
+      ]
+    },
+    "strict_conway_absolute_volume": {
+      "statement": "The explicit classical shear identifies the pure selected action with the original retained-half-twist filling action, including its additive constant and integer primitive slope. The same-chain metric comparison gives its absolute volume.",
+      "status": "written",
+      "levels": "all",
+      "context": "strict_conway",
+      "location": {
+        "path": "papers/conway-asymptotics/filling.tex",
+        "anchor": "\\label{ca:classical-action}"
+      },
+      "provides": [
+        "absolute_volume"
+      ],
+      "requires": {
+        "specified_metric": "strict_conway_metric",
+        "selected_pure_action": "strict_conway_pure_window"
+      },
+      "assumptions": [],
+      "supporting_locations": [
+        {
+          "path": "papers/strict-conway-geometry/main.tex",
+          "anchor": "\\label{sm:filled-volume}",
+          "scope": "Absolute volume of the actual smooth filling, not only a representation volume or an equality of differentials."
+        }
+      ]
+    },
+    "strict_conway_volume": {
+      "statement": "For every fixed strict original knot presentation with at least two leaves and independently long fixed signed powers, the all-integer-level reduced Kashaev rate is the volume of its actual complement.",
+      "status": "written",
+      "levels": "all",
+      "context": "strict_conway",
+      "location": {
+        "path": "papers/conway-asymptotics/main.tex",
+        "anchor": "\\label{ca:volume}"
+      },
+      "provides": [
+        "volume_limit"
+      ],
+      "requires": {
+        "exact_invariant": "strict_conway_source",
+        "nonzero_contribution": "strict_conway_leading",
+        "full_remainder": "strict_conway_remainder",
+        "specified_metric": "strict_conway_metric",
+        "absolute_volume": "strict_conway_absolute_volume",
+        "rate_transfer": "rate_transfer"
+      },
+      "assumptions": []
     }
   },
   "conclusions": {
@@ -1097,6 +1365,15 @@
         "long_twists",
         "knot_pairing",
         "terminal_decoration"
+      ],
+      "unresolved": []
+    },
+    "strict_conway_volume": {
+      "assumptions": [
+        "strict_conway_construction",
+        "fixed_data",
+        "long_twists",
+        "knot_pairing"
       ],
       "unresolved": []
     }
