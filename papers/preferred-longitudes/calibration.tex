@@ -1,0 +1,106 @@
+\section{Determining the monomial and the preferred framing}\label{pl:determining-the-monomial-and-the-preferred-framing}
+
+By Section~\ref{pl:the-constant-field-of-the-source-equations} the discrepancy is a rational function of \(M\).
+By Section~\ref{pl:regular-reconstruction-at-every-nonzero-main-value} its pullback is a regular unit along a local section
+through every \(M_0\ne0\). If it had a zero or pole at \(M_0\),
+that nonzero order would persist on the section. Therefore it has
+no zero or pole on \(\mathbb C^*\), and
+
+\begin{equation}\label{pl:F1}
+\frac{L_{\mathrm{aug}}^2}{\prod_e f_e^2}=cM^k,\qquad
+                  c\ne0,\quad k\in\mathbb Z.
+\end{equation}
+
+This is the elementary classification of units of
+\(\mathbb C[M,M^{-1}]\). At the complete main cusp every
+\(f_e=1\) and \(L_{\mathrm{aug}}^2=1\), so \(c=1\).
+
+The calculation in Section~\ref{pl:cusp} is a marked face-word calculation on the same original exterior:
+
+\begin{equation}\label{pl:F2}
+\tau_{\mathrm{main}}
+      =a_{\mathrm{aug}}+2i\sum_e\cot(\pi x_e),\qquad
+ X_e=e^{2\pi ix_e},\qquad
+ a_{\mathrm{aug}}=-w_\epsilon-\sum_v\epsilon_v.
+\end{equation}
+
+The integer includes the retained half twists and the preferred
+zero-linking correction. It is not inferred from \eqref{pl:F1}.
+
+For completeness, the cusp shape equals the logarithmic slope
+of this geometric eigenvalue curve. Near a noncentral parabolic
+meridian write a commuting determinant-one longitude as
+\(aI+b\mu\). Its eigenvalues are \(a+bM^{\pm1}\).
+At \(M=1\), its projective translation divided by the
+meridian translation is \(b/(a+b)\). Differentiating the
+determinant-one relation shows that
+\(d\log L/d\log M\) has the same value. Thus \eqref{pl:F2}
+computes this derivative with the specified marking.
+
+Since \(f_e(1,X)=1\) for every \(X\), its first
+derivative receives no contribution from the derivative
+of the wire:
+
+\begin{equation}\label{pl:F3}
+\left.\frac{d\log f_e}{d\log M}\right|_{M=1}
+       =2\frac{1+X_e}{1-X_e}
+       =2i\cot(\pi x_e).
+\end{equation}
+
+Equations \eqref{pl:F1}--\eqref{pl:F3} give \(k=2a_{\mathrm{aug}}\), proving
+\eqref{pl:T4}. Tangent agreement fixes the exponent only after the
+preceding argument has excluded every other rational factor.
+
+Now let \(\ell_v=\operatorname{lk}(K,C_v)\).
+The crossing disk has exactly two main punctures, so
+\(\ell_v=0\) for opposite local strand directions and
+\(\ell_v=\pm2\) for parallel directions. In the augmented
+exterior,
+
+\begin{equation}\label{pl:F4}
+[\lambda_{\mathrm{aug}}]=\sum_v\ell_v[\mu_v],
+             \qquad [\lambda_v]=\ell_v[\mu_K].
+\end{equation}
+
+After filling \(\mu_v+p_v\lambda_v\), its meridian has
+class \(-p_v\ell_v[\mu_K]\). The original main-boundary
+word that becomes the preferred filled longitude is therefore
+
+\begin{equation}\label{pl:F5}
+\lambda_{\mathrm{fill}}
+       =\lambda_{\mathrm{aug}}\,
+                       \mu_K^{\sum_vp_v\ell_v^2}.
+\end{equation}
+
+This is a primitive integral basis change on the same main
+torus. It is not an assertion that the augmented longitude
+was already zero linking after surgery.
+
+
+
+\begin{figure}[tb]
+\centering\input{figures/cusp-shear}
+\caption{The image of the augmented longitude and the preferred filled longitude differ by the integral meridian shear in \eqref{pl:F5}. The example shows $p=1$, $\ell=2$, hence shear four; in general it is $\sum_vp_v\ell_v^2$. Both parallelograms generate the same filled cusp lattice.}
+\end{figure}
+
+Write \(o_v=1\) for parallel and \(o_v=-1\) for
+opposite strand directions in the fixed physical convention.
+Then
+\[
+ \ell_v^2=2(1+o_v),\qquad
+ w_\epsilon=\sum_vo_v\epsilon_v,\qquad
+ w(D)=w_\epsilon-2\sum_vo_vp_v.
+\]
+Consequently
+
+\begin{equation}\label{pl:F6}
+\begin{aligned}
+ a_{\mathrm{aug}}+\sum_vp_v\ell_v^2
+  &=-w_\epsilon-\sum_v\epsilon_v+2\sum_vp_v(1+o_v)\\
+  &=-w(D)-\sum_v(\epsilon_v-2p_v)=a(D).
+\end{aligned}
+\end{equation}
+
+Combining \eqref{pl:T4} with \eqref{pl:F5}--\eqref{pl:F6} proves the squared filled
+identity \eqref{pl:T6}, with the original primitive slopes and
+preferred longitude.

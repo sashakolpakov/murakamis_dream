@@ -1,0 +1,177 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,booktabs,array,xurl}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\numberwithin{equation}{section}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\dd}{\mathrm d}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\Log}{\operatorname{Log}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\title{Nonparabolic holonomy of trees of crossing circles}
+\author{}\date{}
+\begin{document}\maketitle
+\begin{abstract}
+We construct marked holonomy for an ordered tree of crossing circles
+while allowing the main meridian to become nonparabolic.
+An explicit two-octahedron chart gives all face maps, the two primitive
+auxiliary similarities and a regular four-puncture character chart.
+The disk-side shear ratios sew in the original page order. Retained
+half twists require the full Hurwitz action on the puncture generators,
+followed by a compatible choice of eigenflags.
+At a positive primitive filling point the original augmented
+triangulation supplies an unramified one-dimensional filled
+representation germ. The proof keeps logarithmic filling marks and
+distinguishes killing a slope word from merely setting its eigenvalue
+ratio to one. No quantum asymptotic or preferred-longitude formula is
+assumed.
+\end{abstract}
+
+\section{The original diagram and the statements}\label{ng:introduction}
+
+A crossing circle bounds a disk punctured twice by the main strands.
+We retain that disk, its framing, and the ordered endpoints of its
+two-strand tangle. A finite tree $\mathcal T$ has at least one edge.
+Each vertex has its own crossing-circle tangle; every tree edge is a
+physical quarter-turn attachment of ordered stacks. There are no
+product junctions without a crossing circle. Products, rotations,
+endpoint frames and the cylindrical closing map are part of the
+specified diagram. At circle $v$ retain a crossing
+$R^{\epsilon_v}$ with $\epsilon_v\in\{-1,0,1\}$.
+Assume that the main strands form one component, and orient it.
+Write $Y^\epsilon$ for this original augmented link exterior in $S^3$.
+
+The ordered cut of \cite[Proposition~2.1]{Circle} gives two projection
+balls. Each edge contributes a pair of octahedra. Around a circle,
+its disk-side pages occur in the original cyclic order; one
+distinguished seam carries its retained half twist. This topological
+result includes the inverse cut, the original peripheral paths and
+the primitive crossing-circle basis. We use that specific cut,
+not an arbitrary collection of algebraically matching octahedra.
+
+The positive main meridian has determinant-one eigenvalues $M,M^{-1}$.
+We select the $M^{-1}$ eigenline. The auxiliary disk longitude at
+circle $v$ has selected eigenvalue $-Q_v$, and therefore projective
+similarity $Q_v^2$ in the chart sending that flag to infinity.
+A projective similarity means the dilation multiplier of an affine
+map in this chart. It is the ratio of the selected eigenvalue to the
+other one, not an unspecified primitive square root.
+
+For each edge $e=vw$ introduce $X_e$ and impose
+\begin{equation}\label{ng:T1}
+ (X_e+Q_v)(X_e+Q_v^{-1})(X_e+Q_w)(X_e+Q_w^{-1})
+ =(X_e-1)^2(1-X_eM^2)(1-X_e/M^2).
+\end{equation}
+The selected branch passes through $M=Q_v=1$, $X_e=\ii$.
+Set
+\begin{equation}\label{ng:T2}
+ \rho_{v,e}=\frac{Q_v+X_e}{1+Q_vX_e},
+ \qquad f_e=\frac{M^2-X_e}{1-M^2X_e}.
+\end{equation}
+All rational statements are on the open sets where their displayed
+denominators are nonzero. They continue on the same irreducible
+component; clearing a denominator does not add a geometric branch.
+
+\begin{theorem}[The marked augmented representation]\label{ng:representation}
+For each fixed ordered tree and retained half-twist pattern,
+\eqref{ng:T1} constructs a holomorphic framed representation of the
+original $\pi_1(Y^\epsilon)$ near its marked complete structure.
+It uses the selected main eigenflag and the original primitive
+auxiliary curves. Their similarity logarithms, centered at completeness,
+are
+\begin{equation}\label{ng:T3}
+ U_v=\sum_{e\ni v}\log\rho_{v,e}-\epsilon_v\log Q_v,
+ \qquad V_v=2\log Q_v .
+\end{equation}
+The family is the local decorated representation germ, modulo
+simultaneous projective conjugation, with coordinates
+$(\log M,(\log Q_v)_v)$.
+Its actual ideal triangulation remains positive nearby.
+The same construction and marking continue to the positive
+circle-filling endpoints supplied by \cite[Theorem~1.1 or
+Theorem~7.1]{Circle}.
+\end{theorem}
+
+Here a decorated representation retains a common fixed flag for each
+peripheral subgroup and its exact eigenvalue character.
+At a nonparabolic main cusp the structure is incomplete; the theorem
+does not assert a complete metric there. The explicit character
+matrices in Theorem~\ref{ng:character} also give rational full-group
+identities away from the initial face-coordinate chart.
+
+Fill circle $v$ along its original primitive slope
+$\mu_v+p_v\lambda_v$, and put $n_v=\epsilon_v-2p_v$.
+The surgery is the original disk twist: cutting the twice-punctured
+disk, rotating through $p_v$ full turns and removing its circle inserts
+$R^{n_v}$ in that same frame. It takes place in $S^3$.
+Exponentiating the primitive slope equation gives
+\begin{equation}\label{ng:T5}
+             \prod_{e\ni v}\rho_{v,e}=Q_v^{n_v}.
+\end{equation}
+
+\begin{theorem}[The marked filled meridian germ]\label{ng:filled-germ}
+Suppose an original primitive filling has a positive retained
+augmented triangulation and its endpoint is the actual complete
+filled holonomy. Suppose also that every filled auxiliary longitude
+has distinct eigenvalues. Near that endpoint, imposing the continued
+logarithmic equations
+\begin{equation}\label{ng:A2}
+                  U_v+p_vV_v=-2\pi\ii
+\end{equation}
+is exactly imposing the projective filled-group relations.
+If there is one unfilled main cusp, the resulting decorated germ,
+modulo simultaneous conjugation, is smooth and one-dimensional,
+with coordinate $\log M$ and the prescribed $M^{-1}$ flag.
+
+For the present trees these hypotheses hold whenever
+$\sqrt{d_v^2+n_v^2}\ge630$ at every circle, where $d_v$ is its tree
+degree, and also under the heterogeneous certificate of
+\cite[Theorem~7.1]{Circle}. In these cases the germ is that of the
+original filled knot exterior. Independently long signed powers
+satisfy the first condition for every fixed tree. The theorem also
+allows a small or zero power when the stated geometric criterion holds.
+\end{theorem}
+
+The first paragraph is a general local statement about an original
+positive augmented triangulation. It does not require a newly added
+subdivision to be positive, nor a positive ideal triangulation of the
+filled manifold. This form permits its use with another independently
+constructed positive anchor.
+
+For $Q_v^2\ne1$, equation \eqref{ng:T5} makes the slope word
+projectively identity, because it commutes with the semisimple
+longitude. At $Q_v=\pm1$ that assertion fails in general:
+a nontrivial parabolic matrix also has eigenvalue ratio one.
+Likewise, an arbitrary exponentiated solution does not specify the
+logarithmic mark \eqref{ng:A2} or prove metric completion.
+Theorem~\ref{ng:filled-germ} retains the actual smooth endpoint.
+
+The proofs below use three classical companion inputs:
+the ordered cut and positive geometric anchors of \cite{Circle};
+the original positive odd-meridian convention of
+\cite[Section~5, equations~(5.1)--(5.2)]{Strict}; and the
+normal-path row/intersection identity of
+\cite[Section~7.1, equation~(7.2)]{Marked}.
+The last input will be used only for the real gluing-row ranks and
+polarization, not for any quantum source or longitude conclusion.
+We prove the needed local rigidity on the retained triangulation.
+
+\input{faces}
+\input{character}
+\input{sewing}
+\input{rigidity}
+\input{references}
+\end{document}

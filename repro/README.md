@@ -100,7 +100,9 @@ python3 repro/check_paper_algebra.py --output repro/results/paper-algebra
 ~~~
 
 The runner requires SymPy, python-flint, NumPy and mpmath. It saves each program's
-output and stops on a failed check. Its twenty groups cover polynomial
+output and stops on a failed check. Its source record covers all registered
+papers, including earlier editions, and the scripts used by those checks.
+Unregistered working drafts are excluded from that publication record. Its twenty-three groups cover polynomial
 resolvents and path partitions, positive-matrix identities and parity
 anchors, filling-sum normalization, symbolic peripheral coordinates,
 rational three-braid constants, the complete forty-branch planar

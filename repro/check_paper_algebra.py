@@ -31,6 +31,8 @@ CHECKS = {
     "conway-reductions": "papers/conway-reductions/check.py",
     "terminal-decorations": "papers/terminal-decorations/check.py",
     "circle-tree-geometry": "papers/circle-tree-geometry/check.py",
+    "nonparabolic-tree-geometry": "papers/nonparabolic-tree-geometry/check.py",
+    "preferred-longitudes": "papers/preferred-longitudes/check.py",
     "conway-geometry": "papers/conway-geometry/check.py",
     "meridian-tangles": "papers/meridian-tangles/check.py",
     "conway-source-bounds": "papers/conway-source-bounds/check.py",
@@ -62,6 +64,9 @@ CERTIFICATE_INPUTS = (
     "experiments/audit_actual_all_circle_directed_volume.py",
     "experiments/audit_all_circle_local_message_recursion.py",
     "experiments/audit_main_meridian_direct_fillings.py",
+    "experiments/audit_all_circle_nonparabolic_edge.py",
+    "experiments/audit_all_circle_four_punctured_adapter.py",
+    "experiments/audit_all_circle_hurwitz_line_transport.py",
 )
 
 
@@ -74,11 +79,23 @@ def replay(output: Path) -> None:
     summary = output / "summary.json"
     summary.unlink(missing_ok=True)
     sources = [ROOT / script for script in CHECKS.values()]
-    sources += sorted(p for p in (ROOT / "papers").rglob("*")
-                      if p.suffix in {".tex", ".bib"} and "build" not in p.parts)
+    # Register publication inputs explicitly: an unrelated working draft may
+    # change while this suite runs. Earlier registered editions remain covered.
+    catalog_path = ROOT / "papers" / "catalog.json"
+    catalog_bytes = catalog_path.read_bytes()
+    catalog = json.loads(catalog_bytes)
+    for paper in catalog["papers"]:
+        directory = (ROOT / "papers" / paper["directory"]).resolve()
+        if not directory.is_relative_to(ROOT / "papers") or not directory.is_dir():
+            raise SystemExit(f"Invalid registered paper directory: {paper['directory']}")
+        sources += sorted(p for p in directory.rglob("*")
+                          if p.suffix in {".tex", ".bib"} and "build" not in p.parts)
+    sources.append(catalog_path)
     sources += [ROOT / path for path in CERTIFICATE_INPUTS]
     sources.append(Path(__file__).resolve())
     before = {str(p.relative_to(ROOT)): digest(p) for p in sources}
+    if before["papers/catalog.json"] != hashlib.sha256(catalog_bytes).hexdigest():
+        raise SystemExit("The paper catalog changed while collecting inputs.")
     records = []
     for name, script in CHECKS.items():
         destination = output / name if name in DIRECTORY_CHECKS else output / (name + ".json")

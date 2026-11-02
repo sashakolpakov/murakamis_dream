@@ -1,0 +1,313 @@
+\section{The positive anchor and the continued filling mark}
+\label{ng:anchor}
+
+We first identify the family at $M=1$ with the original positive
+geometric family, including the endpoint of its filling path.
+This step does not follow just from agreement at the complete point.
+
+Put $Q=e^{\ii t}$, $P=e^{\ii u}$ with $|t|,|u|\le10^{-2}$,
+and write $y=\tan(t/2)$, $z=\tan(u/2)$ and
+$k=(1+y^2+z^2)^{-1/2}$, with $k=1$ at zero.
+The angular chart of \cite[Section~3, equations~(3.3)--(3.5)]{Circle}
+has
+\begin{equation}\label{ng:angular-match}
+ E=\frac{1+\ii k}{1-\ii k},\qquad
+ R=\frac{1+z^2}{2+y^2+z^2},\qquad
+ H_0=\frac{1-ky}{1+ky},\quad H_1=\frac{1-kz}{1+kz}.
+\end{equation}
+At $m=1$, equation \eqref{ng:N16} becomes
+\[
+ X+X^{-1}=\frac{4-\beta\gamma}{\beta+\gamma+4}
+       =\frac{2(y^2+z^2)}{2+y^2+z^2}.
+\]
+Thus $X=E_0=E$ on the branch through $\ii$.
+The first apex is
+$(E+Q)/(1+Q)=(1+E)/(1+H_0)$.
+Writing $Z_1=(1+E)/(1+H_1)$, the second is
+$P(1-E)/(P+1)=RZ_1/(Z_1-(1-R))$.
+These are exactly the ordered apices of the angular block.
+The four matrices \eqref{ng:N3} specialize projectively to its
+four white maps. For example $W_2$ differs from the representative
+in \cite[equation~(3.8)]{Circle} only by a scalar.
+The pure shaded maps agree because they have the same three ordered
+images. Equation \eqref{ng:S14} identifies the odd collar for all
+nearby $E,Q$, so it also agrees along this angular family.
+The entire marked representation, rather than just its peripheral
+trace, is therefore the same one.
+
+For clarity, these formulas are regular throughout the stated angular
+bidisk. The elementary Taylor bounds give
+$|Q-1|,|P-1|<11/1000$ and
+$|\beta-2|,|\gamma-2|<1/9000$.
+Indeed $e^r-1\le r/(1-r)$ and
+$2(\cosh r-1)\le r^2/(1-r^2)$ for $r=1/100$.
+Hence $|X+X^{-1}|<1/16000$; the root through $\ii$ has
+$|X-\ii|<1/1000$.
+For the last assertion write
+$X=A_0/2+\ii\sqrt{1-A_0^2/4}$ with $A_0=X+X^{-1}$,
+using the square-root branch at one.
+At $m=1$,
+$R=(X+X^{-1}+\beta)/(\beta+2)$, so $|R-1/2|<1/1000$.
+The apices in \eqref{ng:N5} differ from their complete values by
+less than $1/50$. The finite defining vertices therefore stay
+distinct, and all displayed denominators stay nonzero.
+Moreover
+\[
+ G|_{m=1}=PQ(\beta+\gamma+4)
+              \{E_0^2-(X+X^{-1})E_0+1\}
+\]
+has a simple root on this bidisk. The change \eqref{ng:N12}
+has derivative one in $E_0$ at $m=1$.
+Thus the native charts extend holomorphically in $M$ around every
+point of the angular family. For a fixed finite tree, compactness of
+its charge path supplies finitely many overlapping such charts.
+No unspecified complete-point radius is substituted for this path.
+
+Let $\Psi(\boldsymbol\tau)=\sum_{vw}\psi(\tau_v,\tau_w)$ be the
+classical angular potential of \cite[equation~(1.3)]{Circle};
+its normalization and its derivatives are
+\[
+ \psi(0,0)=v_{\rm oct}/\pi,\qquad
+ \psi_t(t,u)=-\frac1\pi
+       \operatorname{arsinh}\bigl(\tan(t/2)\cos(u/2)\bigr).
+\]
+The actual auxiliary increments in that paper give
+\begin{equation}\label{ng:anchor-logs}
+ U_v=-2\pi\Psi_{\tau_v}-\ii\epsilon_v\tau_v,\qquad
+ V_v=2\ii\tau_v,\qquad Q_v=e^{\ii\tau_v}.
+\end{equation}
+This is the specialization of \eqref{ng:T3}, with the same
+curves and logarithms, since the local maps just matched.
+The charge path satisfies
+\begin{equation}\label{ng:charge-path}
+ \Psi_{\tau_v}+\frac{\ii n_v}{2\pi}\tau_v=\ii c
+ \quad\Longleftrightarrow\quad
+ U_v+p_vV_v=-2\pi\ii c,\qquad 0\le c\le1.
+\end{equation}
+The logarithms are continued from $c=0$, not reset to principal
+values. The constant on the right records one primitive winding
+at $c=1$.
+
+Under either geometric criterion in Theorem~\ref{ng:filled-germ},
+\cite[Theorems~1.1 and~7.1]{Circle} constructs this positive
+path, identifies the full log-link periods, and proves smooth
+completion at $c=1$ on the original filled exterior.
+It also proves $\operatorname{Im}\tau_v(c)<0$ for $c>0$.
+Consequently $|Q_v|>1$ there, so every filled longitude has
+distinct eigenvalues. Intermediate $0<c<1$ has cone angle
+$2\pi c$ and generally does not descend to the smooth filled group.
+Only the endpoint is used below.
+
+\section{Local rigidity on the retained augmented triangulation}
+\label{ng:rigidity}
+
+We give the local rigidity argument with hypotheses that can be checked
+on another original positive augmented triangulation as well.
+There is no assertion that an arbitrary hyperbolic manifold has the
+particular positive triangulation required here.
+
+\begin{proposition}[Marked positive gluing]\label{ng:positive-germ}
+Let an oriented ideal triangulation of a specified manifold have $t$
+tetrahedra, all with positive shapes, and $c$ torus ends. Retain all
+actual face pairings, peripheral paths, developed flags and continuous
+edge-log branches. The ends may be incomplete. Suppose the edge
+equations hold and all face triples are distinct.
+Choose one nonzero primitive peripheral class on each torus.
+Its $c$ similarity logarithms are local holomorphic coordinates on
+the decorated representation germ modulo simultaneous projective
+conjugation. The shape and decorated-representation descriptions are
+inverse also over local Artin algebras with this residue point.
+\end{proposition}
+
+\subsection{The real row space}
+For each positively ordered tetrahedron use
+\begin{equation}\label{ng:shape-coordinates}
+ u_j=\log z_j,\qquad v_j=-\log(1-z_j),\qquad
+ T_j=\frac{\dd v_j}{\dd u_j}=\frac{z_j}{1-z_j},
+ \qquad \operatorname{Im}T_j>0 .
+\end{equation}
+Logarithms continue from the given solution. The original edge and
+peripheral equations are affine linear in these logs. Their constants
+need not be small.
+
+Here is the rank calculation. The number of global edges is $t$:
+coning off the $c$ torus boundaries gives Euler characteristic $c$,
+whereas its cell count is $c-e+2t-t$. A linear dependence among edge
+rows assigns numbers $\lambda_{ij}$ to the six edges of each
+tetrahedron with the three opposite-pair sums equal.
+Those equations are equivalent over $\RR$ to
+$\lambda_{ij}=s_i+s_j$. For example
+$s_0=(\lambda_{01}+\lambda_{02}-\lambda_{12})/2$ and the
+other $s_i$ follow; the opposite-sum conditions give the remaining
+three edges. The three edge values on a face determine its three
+$s_i$ uniquely, so the values descend to one per ideal vertex.
+Conversely every such vertex assignment is a dependence.
+The assignment is injective, since the three zero endpoint sums
+on one triangle force all three vertex values to vanish.
+The edge-row space $\mathcal E$ therefore has dimension $t-c$.
+
+We use the actual normal-path identity proved in
+\cite[Section~7.1, equations~(7.1)--(7.2)]{Marked}.
+It identifies each path row with its developed similarity logarithm
+and proves that the row pairing is twice oriented intersection,
+up to its fixed coordinate sign. Briefly, the local outgoing-flow
+formula is a sum of two-coordinate determinants plus one skew form
+on each face. Paired face forms cancel under the orientation-reversing
+face identifications. A small normal circle about an edge endpoint
+is that edge's incidence row and is null-homologous on the cusp.
+Thus $\mathcal E$ is isotropic and orthogonal to every peripheral
+row. The $2c$ rows of primitive peripheral bases are independent
+in $\mathcal E^\perp/\mathcal E$, because their pairings are
+nonzero on each torus and zero between different tori.
+Its dimension is $2c$, so those rows form a basis.
+
+The cited calculation uses $(u,v_{\rm old})=(\log z,\log(1-z^{-1}))$.
+Here $v_{\rm old}=-u-v+\text{constant}$; the real coordinate
+change has determinant $-1$. It reverses the pairing sign but
+preserves all ranks and isotropy. Thus the same conclusions hold
+for \eqref{ng:shape-coordinates}. No longitude divisibility or
+special knot homology assertion is used.
+
+The chosen one-per-torus classes are independent modulo
+$\mathcal E$ and pair to zero. Append them to $t-c$ independent
+edge rows. The resulting real $t$-row matrix $(A\ B)$ satisfies
+\begin{equation}\label{ng:real-rows}
+ \operatorname{rank}(A\ B)=t,\qquad
+ AB^{\mathsf T}=BA^{\mathsf T}.
+\end{equation}
+Its kernel is spanned by $(-B^{\mathsf T}y,A^{\mathsf T}y)$ and
+is a real Lagrangian space for
+$\Omega((a,b),(a',b'))=a\cdot b'-b\cdot a'$.
+
+\subsection{Positive polarization and the actual representation germ}
+The selected logarithmic Jacobian is
+$J=A+B\diag(T_j)$.
+If $Jx=0$, then
+$w=(x,\diag(T_j)x)$ and $\overline w$ belong to the
+complexified real Lagrangian kernel. But
+\begin{equation}\label{ng:polarization}
+ \frac{\ii}{2}\Omega(w,\overline w)
+              =\sum_j\operatorname{Im}T_j\,|x_j|^2 .
+\end{equation}
+Its left side is zero, and its right side is positive for $x\ne0$.
+Thus $J$ is invertible. Dependent edge rows have compatible affine
+constants because the given point satisfies all original equations.
+The holomorphic implicit-function theorem proves the asserted
+coordinate statement for the shape germ.
+
+This is the actual decorated representation germ. Normalize one
+ordered developed triple. The shapes develop successive tetrahedra
+across their paired faces by the unique map of three distinct
+vertices. An edge return fixes its two distinct endpoints and
+has multiplier one by the actual edge equation; hence it is
+projectively identity. The dual two-skeleton of the original
+triangulation presents its fundamental group. The constructed
+face maps therefore give a representation of that group, with
+the prescribed peripheral fixed flags and path logarithms.
+
+Conversely a nearby representation $\rho$ with selected peripheral
+flags $\xi_v$ develops every ideal vertex $gP_v$ as
+$\rho(g)\xi_v$, where $P_v$ is its peripheral subgroup.
+This is well defined because $P_v$ fixes $\xi_v$.
+The distinct face triples and tetrahedral quadruples remain
+distinct nearby. Their cross-ratios recover the shapes; the
+face transformations agree on three points, and edge products
+telescope. The two constructions are inverse after the same
+triple normalization. All denominators are units at the given
+point, so they remain inverse over local Artin algebras.
+Here an Artin algebra is a finite-dimensional local complex
+algebra with nilpotent maximal ideal; it records infinitesimal
+as well as ordinary nearby deformations.
+
+At a parabolic peripheral matrix it is essential to retain the
+exact eigenvalue character. For
+$\left(\begin{smallmatrix}1&1\\0&1\end{smallmatrix}\right)$,
+the invariant line generated by $(1,\eta)$ can move when
+$\eta^2=0$, but its eigenvalue becomes $1+\eta$.
+Fixing the exact eigenvalue one forces $\eta=0$.
+In general a unit off-diagonal entry gives the selected eigenvector
+$(\mu_{12},\lambda-\mu_{11})$ and the same unique free eigenline.
+The similarity logs in the proposition retain that character,
+not only the unmarked trace. A separately prescribed determinant-one
+lift keeps its central signs on its local sign cover.
+This proves Proposition~\ref{ng:positive-germ}.
+
+\section{Filling words and the one-dimensional geometric germ}
+\label{ng:filling-germ-proof}
+
+At the augmented complete structure choose the main meridian and
+the auxiliary longitudes in Proposition~\ref{ng:positive-germ}.
+Their logarithms are $-2\log M$ and $2\log Q_v$ in our selected
+flags. The explicitly constructed family has these very
+coordinates. It therefore exhausts the nearby decorated
+augmented representation germ. This completes the local assertion
+of Theorem~\ref{ng:representation}. The continuation and positive
+anchor in Section~\ref{ng:anchor} prove its endpoint assertion.
+
+Now let $\rho_*$ be a positive primitive filled endpoint as in
+Theorem~\ref{ng:filled-germ}. Use the original augmented
+triangulation at this endpoint. Its auxiliary ends are incomplete;
+the proof of Proposition~\ref{ng:positive-germ} did not require
+their completeness or the faithfulness of the augmented representation.
+Choose the main meridian and the original slopes
+$\sigma_v=\mu_v+p_v\lambda_v$ as its peripheral coordinates.
+Each is a primitive nonzero class on a different torus.
+Their log rows are real and satisfy exactly the hypotheses of
+the proposition. Fixing the $R$ auxiliary slope logs leaves a
+smooth one-dimensional shape and decorated representation germ.
+
+We must still identify this condition with the filled group.
+A slope word commutes projectively with the auxiliary longitude.
+The latter has distinct eigenvalues by hypothesis. Choose a local
+representative of the slope whose residue is identity. If its
+commutator with the longitude has scalar $c_0$, determinants give
+$c_0^2=1$, while $c_0\equiv1$ at the residue point.
+Because $c_0+1$ is a unit, $c_0=1$, also over local Artin algebras.
+The longitude eigenspaces split the rank-two module because their
+eigenvalue difference is a unit. Strict commutation kills both
+off-diagonal entries of the slope in that basis.
+Equation \eqref{ng:A2} gives eigenvalue ratio one, so the slope
+matrix is scalar and hence projectively identity.
+This normalization does not reset the signs of a separately
+retained determinant-one group lift.
+
+Conversely, a nearby representation of the filled group pulls
+back to one whose slopes are projectively identity.
+On the continued branch at $\rho_*$ their logarithms are precisely
+$-2\pi\ii$, not another multiple of $2\pi\ii$.
+The auxiliary eigenflags are uniquely selected by the longitude
+branches. At the main cusp retain the exact eigenvalue $M^{-1}$;
+the formula for its eigenvector in the preceding proof remains
+regular at its noncentral parabolic basepoint.
+Thus filled representations and the fixed-slope decorated shape
+germ are the same local object, modulo simultaneous conjugation.
+Its coordinate is $\log M$, since the main similarity logarithm
+on that line is $-2\log M$, a nonzero scalar multiple.
+
+For the tree endpoints, Section~\ref{ng:anchor} supplied the
+original smooth metric holonomy and the nonunit auxiliary
+longitudes. This proves Theorem~\ref{ng:filled-germ}, without
+assuming rigidity from a new positive triangulation of the filled
+manifold.
+
+\begin{corollary}[Identification of an independently constructed branch]
+\label{ng:branch-identification}
+Suppose another holomorphic construction reconstructs the same
+original augmented representation at this positive endpoint,
+keeps its main eigenflag and primitive logarithmic slope words,
+and satisfies \eqref{ng:A2} nearby with the same variable $M$.
+Its local representation branch is the geometric meridian germ
+of Theorem~\ref{ng:filled-germ}. This holds also for infinitesimal
+branches with the exact marked characters retained.
+\end{corollary}
+\begin{proof}
+Both branches lie in the same decorated filled germ, and $\log M$
+is a local coordinate on it, including over local Artin algebras.
+\end{proof}
+
+In a stationary-source application, nondegeneracy of that source
+critical point is one way to supply the independent holomorphic
+branch in the corollary. It is not a premise of the geometric
+construction or a consequence of a volume derivative. The
+preferred main longitude, its framing monomial and a quantum
+annihilator remain separate identifications.

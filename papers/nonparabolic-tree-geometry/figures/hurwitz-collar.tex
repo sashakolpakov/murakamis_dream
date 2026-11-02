@@ -1,0 +1,13 @@
+\begin{tikzpicture}[>=Latex,every node/.style={font=\small},scale=.9]
+\draw[rounded corners=8pt,gray](-1.7,-.4)rectangle(1.7,3.4);
+\draw[very thick,->] (1,0)--(.12,1.32);
+\draw[very thick,->] (-.12,1.68)--(-1,3);
+\draw[white,line width=6pt] (-1,0)--(1,3);
+\draw[blue!65!black,very thick,->](-1,0)--(1,3);
+\node[below]at(-1,0){$a$};\node[below]at(1,0){$b$};
+\node[above]at(-1,3){$a^{-1}ba$};
+\node[above]at(1,3){$a$};
+\node[align=left,anchor=west]at(2.5,1.6)
+ {$P=ba$\\[5pt]$H=P^{-1}-I$\\[5pt]
+  $HaH^{-1}=a^{-1}ba$\\[3pt]$HbH^{-1}=a$};
+\end{tikzpicture}

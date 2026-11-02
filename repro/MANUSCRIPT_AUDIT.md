@@ -20,6 +20,47 @@ boundary weights, and the precise scope of the written, interval and
 Lean checks for those drafts. The reference manuscript stays frozen;
 its appendix locators remain useful for the earlier review below.
 
+## Separate accounts of the representation and longitude proofs
+
+The classical arguments of Appendices I and J now have two companion
+accounts: [Nonparabolic holonomy of trees of crossing circles](../papers/nonparabolic-tree-geometry/main.tex)
+(22 pages) and [Preferred longitudes of Conway tree complements](../papers/preferred-longitudes/main.tex)
+(29 pages). The first proves the original group reconstruction and the
+positive filled meridian germ. The second proves the rational longitude
+formula, its preferred framing and its extension across bare junctions.
+The reference PDF and its mathematical sources remain unchanged.
+
+The dependency graph assigns the representation and rigidity lemmas to
+the first paper and the constant-field, regularity, cusp and sign
+arguments to the second. It distinguishes the exact finite Fourier trace
+from the later source estimate: only the finite trace is imported into
+the bare-junction calculation. It likewise separates the tetrahedral
+normal-flow identity from the later volume theorem. Neither classical
+paper depends on a quantum asymptotic or an all-orders recurrence result.
+
+The longitude extraction supplies an explicit interval-count induction
+in the proof of angular elimination. If an interval convolution is
+written as \(C=1_{[-r,r]}*H\), its adjacent difference is
+\(C(k)-C(k+1)=H(k-r)-H(k+r+1)\). Choosing the largest radius
+\(r\) and inducting on the remaining factors proves the strict
+integer drop in the required tail. The resulting polynomial comparison
+justifies the equality of exponential rates; a finite sample of
+coefficients would not establish it. The proof also keeps the possible
+half-label fold and uses the original positive triangulation for local
+rigidity, rather than requiring the newly drilled subdivision to be
+positive.
+
+The registered finite suite now replays the local character, seam,
+Hurwitz, cusp and framing identities from both papers. Its
+[source record](results/paper-algebra/summary.json) pins the registered
+TeX sources and checker inputs. The two PDF build records pin their
+sources, page counts and stated companion imports. These computations
+check algebra and typesetting; the topological reconstruction,
+constant-field argument, local analytic inverse and surface-frame sign
+remain written proofs. The existing Lean results cover specific algebraic
+and analytic implications; they do not formally verify either new
+geometric paper.
+
 ## The five requirements of a volume proof
 
 Fix the diagram, endpoint order, primitive peripheral curves, retained

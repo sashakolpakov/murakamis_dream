@@ -1,0 +1,373 @@
+\section{Regular reconstruction at every nonzero main value}\label{pl:regular-reconstruction-at-every-nonzero-main-value}
+
+\subsection{A uniform algebraic open set in every fiber}\label{pl:a-uniform-algebraic-open-set-in-every-fiber}
+
+For one edge write
+
+\begin{equation}\label{pl:G1}
+m=M^2,\quad D=m+m^{-1},\quad
+ \beta=Q+Q^{-1},\quad\gamma=P+P^{-1},\quad
+ S=\beta+\gamma+D+2.
+\end{equation}
+
+Use \(X\) for the source wire coordinate. Its equation is the
+quadratic
+
+\begin{equation}\label{pl:G2}
+F(X)=S(X^2+1)+(\beta\gamma-2D)X=0.
+\end{equation}
+
+This is equivalent, on \(X\ne0\), to the original degree-four
+effective edge equation after its cancellation. Define
+
+\begin{equation}\label{pl:G3}
+J=\beta\gamma-2\beta-2\gamma-4D-4.
+\end{equation}
+
+The discriminant of \eqref{pl:G2} is
+
+\begin{equation}\label{pl:G4}
+\Delta=(\beta+2)(\gamma+2)J.
+\end{equation}
+
+Consider the open conditions
+
+\begin{equation}\label{pl:G5}
+\begin{gathered}
+ QP\ne0,\qquad
+ (\beta+2)(\gamma+2)(\beta+D)(\gamma+D)\ne0,\\
+ S\ne0,\qquad \Delta\ne0.
+\end{gathered}
+\end{equation}
+
+For every fixed \(M_0\in\mathbb C^*\), these conditions define
+a nonempty Zariski open subset of the \(Q,P\) torus. Indeed each
+excluded expression is a nonzero polynomial in the independent
+variables \(\beta,\gamma\). For a fixed finite tree the same
+conditions can be imposed simultaneously at every edge, since
+their product is again a nonzero Laurent polynomial in the
+vertex parameters \(Q_v\).
+
+On \eqref{pl:G5}, both roots of \eqref{pl:G2} are finite, nonzero and distinct.
+Several useful evaluations are
+
+\begin{equation}\label{pl:G6}
+\begin{aligned}
+ F(1)&=(\beta+2)(\gamma+2),&
+ F(-1)&=-J,\\
+ F(m)&=m(\beta+D)(\gamma+D),&
+ F(m^{-1})&=m^{-1}(\beta+D)(\gamma+D).
+\end{aligned}
+\end{equation}
+
+Hence neither root is \(1,-1,m,m^{-1}\). In particular
+
+\begin{equation}\label{pl:G7}
+f=\frac{m-X}{1-mX}
+\end{equation}
+
+is a finite nonzero function at every point under consideration.
+The auxiliary factors \((Q+X)/(1+QX)\) and
+\((P+X)/(1+PX)\) are also finite and nonzero. To see this,
+substitute \(X=-Q\) or \(X=-Q^{-1}\) in the original edge
+equation. A zero can occur only when \(Q=-1\) or
+\(Q=-m^{\pm1}\), excluded by \eqref{pl:G5}; the other endpoint is
+identical.
+
+\subsection{The actual character matrices remain regular}\label{pl:the-actual-character-matrices-remain-regular}
+
+Put \(t=M+M^{-1}\), \(p=-\beta\), \(q=-\gamma\), and
+\(\mathcal X=2+SX\). The character adapter uses
+
+\begin{equation}\label{pl:G8}
+A=\begin{pmatrix}M&1\\0&M^{-1}\end{pmatrix},\qquad
+ B=\begin{pmatrix}M^{-1}&0\\p-2&M\end{pmatrix}.
+\end{equation}
+
+Its matrix \(C\) is given by
+
+\begin{equation}\label{pl:G9}
+\begin{gathered}
+ h=M-M^{-1},\qquad
+ c=\frac{M\mathcal X+M^{-1}q-2t}{D-p},\\
+ d=\frac{q-M^2-1+hc}{p-2},\qquad
+ e=\mathcal X-1-M^{-2}-hc,\qquad
+ C=\begin{pmatrix}c&d\\e&t-c\end{pmatrix},\\
+                         D_0=(ABC)^{-1}.
+\end{gathered}
+\end{equation}
+
+The only denominators in \eqref{pl:G8}--\eqref{pl:G9}, besides powers of \(M\),
+are \(p-2=-(\beta+2)\) and \(D-p=D+\beta\).
+They are units on \eqref{pl:G5}. The four matrices have determinant one
+and trace \(t\), with
+\(\operatorname{tr}(AB)=-\beta\) and
+\(\operatorname{tr}(BC)=-\gamma\), by \eqref{pl:G2}.
+The formulas contain no division by \(M-M^{-1}\) or by \(t\).
+
+The pure auxiliary transports are
+
+\begin{equation}\label{pl:G10}
+V=AB-\frac{1+X(\beta+1)}{1-X}I,\qquad
+ T=BC+\frac{X+\gamma+1}{1-X}I.
+\end{equation}
+
+They satisfy the full puncture conjugacies, not just the trace
+equations. Their determinants simplify on \eqref{pl:G2} to
+
+\begin{equation}\label{pl:G11}
+\det V=\frac{X(\beta+2)^2(\beta+D)}{S(X-1)^2},\qquad
+ \det T=\frac{X(\gamma+2)^2(\gamma+D)}{S(X-1)^2}.
+\end{equation}
+
+For example the first determinant before reduction is
+\[
+ \frac{(\beta+2)(X^2+\beta X+1)}{(X-1)^2}.
+\]
+Equation \eqref{pl:G2} implies
+\(X+X^{-1}+\beta=(\beta+2)(\beta+D)/S\), giving \eqref{pl:G11}.
+The second computation is the same with \(\gamma\).
+Thus both full transport matrices and their inverses are regular
+on \eqref{pl:G5}, on either root of the source equation.
+
+Every disk boundary pair is irreducible there. For the first
+pair the standard direct trace calculation gives
+
+\begin{equation}\label{pl:G12}
+\operatorname{tr}[A,B]-2=(\beta+2)(\beta+D)\ne0.
+\end{equation}
+
+The second has the corresponding \(\gamma\) formula.
+One can also derive \eqref{pl:G12} directly from the two matrices \eqref{pl:G8}.
+For determinant-one two-generator representations this
+nonzero expression excludes a common invariant line. In
+particular neither generator is central.
+
+The positive odd collar uses \(H=P_{\mathrm{disk}}^{-1}-I\)
+with the original ordered disk product. Since
+\(\operatorname{tr}P_{\mathrm{disk}}=-\beta\),
+
+\begin{equation}\label{pl:G13}
+\det H=2+\beta\ne0.
+\end{equation}
+
+The same holds at the other endpoint. The actual positive and
+negative Hurwitz generators and all fixed powers remain
+invertible. Thus odd seams introduce no exceptional fixed
+value of \(M\).
+
+\subsection{Sewing finitely many blocks uses a rational finite atlas}\label{pl:sewing-finitely-many-blocks-uses-a-rational-finite-atlas}
+
+The ordered page construction glues two boundary pairs whose
+matrices are explicit rational functions of the edge variables.
+Their identification is the actual one in the native table;
+where a loop is inverted or its order reversed, that operation
+is included before asking for an intertwiner.
+
+After those marked identifications, the two ordered boundary
+pairs have the same three traces and are irreducible by \eqref{pl:G12}.
+Their intertwiner is the solution line of
+
+\begin{equation}\label{pl:G14}
+G a=a'G,\qquad G b=b'G.
+\end{equation}
+
+The solution line is one-dimensional, and every nonzero solution
+is invertible. Indeed a nontrivial kernel or image would be an
+invariant line for one of the two irreducible pairs. Existence
+can be proved without using ideal vertices. For an irreducible
+pair the four matrices \(I,a,b,ab\) span
+\(\operatorname{Mat}_2\). Their multiplication table is
+determined by the common trace \(t\) and product trace \(p\):
+
+\begin{equation}\label{pl:G14a}
+a^2=ta-I,\quad b^2=tb-I,\quad
+ ab+ba=t(a+b)+(p-t^2)I.
+\end{equation}
+
+The same table for the primed pair gives an isomorphism of
+the two full matrix algebras, hence conjugation by an
+invertible matrix. Equivalently put both pairs in the
+explicit form \eqref{pl:G8}; irreducibility ensures that the two
+selected generator flags are distinct and that the
+off-diagonal entry used to normalize the frame is nonzero.
+Either proof retains the ordered generators, not just the
+individual conjugacy classes.
+
+Equation \eqref{pl:G14} is a finite linear system with rational entries.
+Choose a nonzero maximal minor and normalize one coordinate
+on its one-dimensional kernel. This gives a rational
+intertwiner regular in a neighborhood of that point.
+No single choice of minor has to work at all parameters.
+The finitely many choices form a rational atlas; the resulting
+representation and peripheral eigenvalue ratios are independent
+of the scalar normalization of an intertwiner.
+
+Start with one edge block. The actual page insertion joins each
+new block to the preceding union along one marked disk side.
+Its attaching graph is a tree of blocks, so this inductively
+constructs a representation of the entire page-cut object with
+all matrices regular. The distinguished pure or odd seam at
+each circle is then installed using \eqref{pl:G10}, \eqref{pl:G13}, and the two
+full generator conjugacies of its actual mapping cylinder.
+Those formulas preserve its outer disk product. Van Kampen
+therefore gives the representation of the original augmented
+exterior. No arbitrary pants permutation or commutativity of
+tangles is used.
+
+For any fixed finite tree, intersecting the finitely many
+necessary open charts gives a nonempty open set over the
+fixed \(M_0\). Equivalently, at any good point one may choose
+each nonzero intertwiner minor in succession, obtaining a
+regular neighborhood of that point. This proves existence of
+the required actual rational \(\mathrm{PGL}_2\) reconstruction
+at every nonzero main parameter.
+
+This step requires the actual marked boundary conjugacies,
+not just a formal family of characters. They were identified
+with the original cut in the page/collar proof and remain
+rational identities on the present open sets.
+
+\subsection{The exceptional-looking main parameters}\label{pl:the-exceptional-looking-main-parameters}
+
+At \(M=\pm1\), one has \(D=2\). Conditions \eqref{pl:G5} simply
+exclude \(\beta=-2,\gamma=-2\), together with the stated
+nonzero discriminant and denominator. The main matrix in
+\eqref{pl:G8} is a noncentral parabolic. Nothing in \eqref{pl:G8}--\eqref{pl:G14} divides
+by its eigenvalue difference, so the reconstruction is regular.
+
+At \(M=\pm i\), one has \(D=-2\). The source discriminant
+becomes
+
+\begin{equation}\label{pl:G15}
+\Delta=(\beta^2-4)(\gamma^2-4).
+\end{equation}
+
+With \(\beta=Q+Q^{-1}\) and \(\gamma=P+P^{-1}\),
+this is a square in \(\mathbb C(Q,P)\). The fiber therefore
+splits; generic-fiber irreducibility must not be asserted
+at these two values. Nevertheless \eqref{pl:G5} gives two distinct
+simple roots at generic \(Q,P\), and all matrices \eqref{pl:G8}--\eqref{pl:G14}
+are regular. The main punctures are semisimple, with
+eigenvalues \(i,-i\) or \(-i,i\), and remain noncentral.
+The two roots can be written explicitly as
+
+\begin{equation}\label{pl:G15a}
+X=-\frac{Q+P}{1+QP},\qquad
+             X=-\frac{1+QP}{Q+P}.
+\end{equation}
+
+For generic \(Q,P\) they differ and avoid \(1,-1\).
+Fixing these auxiliary values, the implicit-function theorem
+for \eqref{pl:G2} therefore continues either root holomorphically in
+\(M\) through \(M_0=i\) or \(-i\).
+
+The native ideal cell chart explains a possible false alarm.
+At \(m=-1\), its preliminary white coordinate \(E_0\)
+satisfies
+
+\begin{equation}\label{pl:G16}
+(E_0P-E_0Q-PQ+1)(E_0PQ-E_0-P+Q)=0.
+\end{equation}
+
+On one branch the two minus-copy circle apices coincide; on
+the other the plus-copy apices coincide. Thus that particular
+eight-tetrahedron ideal subdivision degenerates. This does
+not make the actual group matrices singular: \eqref{pl:G8}--\eqref{pl:G14} are
+an explicit regular reconstruction at precisely those points.
+The rigidity argument needs the latter, not a positive
+triangulation at every complex value of \(M\).
+
+\subsection{A regular nonzero main eigenvalue ratio}\label{pl:a-regular-nonzero-main-eigenvalue-ratio}
+
+Every main peripheral word is a fixed finite product of the
+regular invertible group matrices just constructed. Hence its
+matrix and inverse are regular at the chosen point.
+The main meridian is noncentral.
+
+There is one important trace-zero detail. Commutation in
+\(\mathrm{PGL}_2\) alone would allow a longitude to
+exchange the two eigenlines of a trace-zero meridian.
+Use the matrices on the local section through nearby \(M\).
+Normalize the meridian \(\mu\) to determinant one.
+Its projective commutation with a regular invertible
+longitude representative \(L\) gives
+\(L\mu L^{-1}=\kappa\mu\), where
+\(\kappa^2=1\) by determinants. At the nearby parameters
+with \(M+M^{-1}\ne0\), taking traces gives \(\kappa=1\).
+Consequently the exact matrix identity
+
+\begin{equation}\label{pl:G16a}
+L\mu=\mu L.
+\end{equation}
+
+extends to the trace-zero point. The undesired
+anticommuting component is not part of this continued
+representation. This also follows as a rational identity
+on the integral generic source family.
+
+At \(M_0\ne\pm1\), choose
+its specified eigenline locally; its eigenvalue on a commuting
+peripheral word is finite and nonzero. The ratio of the two
+peripheral eigenvalues is therefore a regular unit.
+
+The same conclusion holds at \(M_0=\pm1\), without
+diagonalizing the meridian. In a frame in which its
+upper-right entry is a unit, a commuting matrix \(L\) has
+the form
+
+\begin{equation}\label{pl:G17}
+L=aI+b\mu.
+\end{equation}
+
+Here \(b=L_{12}/\mu_{12}\) and
+\(a=L_{11}-b\mu_{11}\) are regular. Its two selected
+eigenvalues are \(a+bM\) and \(a+bM^{-1}\). Both are
+nonzero at the point because \(\det L\ne0\).
+Their ratio is therefore regular and nonzero through the
+parabolic value. Scalar changes of the representative \(L\)
+cancel from the ratio.
+
+The selected meridian eigenline itself is regular as well:
+in this frame it is spanned by
+\((\mu_{12},M-\mu_{11})\), or by
+\((\mu_{12},M^{-1}-\mu_{11})\) for the other selection.
+The first coordinate is a unit, including at \(M=\pm1\).
+Thus coalescence of the two flags does not create a pole in
+the marked eigenvalue ratio.
+
+This directly applies to the square of a determinant-one
+preferred-longitude eigenvalue, with the chosen inverse
+convention if necessary. It does not require choosing a
+global square root of a projective matrix determinant.
+Every factor \eqref{pl:G7}, and every framing monomial in \(M\),
+is likewise a unit at the point.
+
+\subsection{Local sections and the integral total family}\label{pl:local-sections-and-the-integral-total-family}
+
+More concretely, fix generic numerical auxiliary values
+\(Q_v=q_v\) satisfying all the open conditions at \(M_0\),
+and choose a simple root of every edge equation. The implicit
+function theorem gives simultaneous holomorphic roots
+\(X_e(M)\) near \(M_0\). At the chosen point select a
+nonzero minor in each linear gluing system \eqref{pl:G14}. Those same
+minors remain nonzero nearby. All actual group matrices,
+their inverses and the main eigenvalue ratio are then
+holomorphic along this local section. This is stronger than
+the existence of an isolated good point in a special fiber.
+
+The split trace-zero fibers do not invalidate this argument.
+Let \(B\) be the Laurent coordinate ring in \(M,Q_v\),
+localized at all \(S_e\). Dividing \eqref{pl:G2} by \(S_e\) makes
+every edge polynomial monic with constant term one. The
+simultaneous source algebra is therefore free over \(B\),
+with basis the products \(\prod_e X_e^{\epsilon_e}\),
+\(\epsilon_e\in\{0,1\}\). The independent generic edge
+squareclasses imply that its generic localization is a
+single field of degree \(2^{|\mathcal E|}\). Freeness embeds the
+source algebra into that field; in particular the total
+source variety is integral and has no additional vertical
+component. Its simple points at \(M=\pm i\) belong to
+the closure of the same generic family. A rational identity
+proved there therefore holds on the regular local section
+just constructed.

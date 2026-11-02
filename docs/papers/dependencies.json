@@ -9,12 +9,12 @@
     },
     "diagram_evaluation": {
       "title": "Exact diagram evaluation",
-      "count": 11,
+      "count": 12,
       "open": false
     },
     "complete_geometry": {
       "title": "Complete augmented geometry",
-      "count": 7,
+      "count": 8,
       "open": false
     },
     "marked_geometry": {
@@ -59,7 +59,7 @@
     },
     "geometric_longitude": {
       "title": "Geometric longitude and recurrences",
-      "count": 15,
+      "count": 20,
       "open": false
     },
     "general_open": {
@@ -1171,7 +1171,12 @@
           "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/marked-fillings/main.tex#L1176"
         }
       ],
-      "depends_on": [],
+      "depends_on": [
+        {
+          "id": "geo_tetrahedral_normal_flow_rows",
+          "reason": "The explicit row/tangent pairing supplies the sign and factor in the local volume differential."
+        }
+      ],
       "coverage": "Local chain calculus only. Identification of the original group and primitive paths, existence of a positive family, completion of the metric and the absolute volume constant are separate application proofs.",
       "article": "marked-fillings"
     },
@@ -2607,101 +2612,104 @@
       "id": "geometric_longitude_circle_trees",
       "title": "The exact preferred longitude of a circle tree",
       "group": "geometric_longitude",
-      "statement": "The nonparabolic original block maps and full ordered sewing determine the preferred geometric longitude on the source-selected filled germ, including its determinant-one sign.",
+      "statement": "For the original ordered all-circle tree, the squared preferred longitude is an identity on the integral rational source variety. At an actual complete hyperbolic filled-knot anchor, its connected geometric meridian germ has the exact determinant-one formula with negative sign and original exponent -w(D)-sum n. Exponentiated filling ratios alone need a semisimple auxiliary longitude or the actual slope-word relation. No quantum branch existence is asserted.",
       "sources": [
         {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\label{gi:the-local-face-maps}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L127"
+          "path": "papers/preferred-longitudes/main.tex",
+          "anchor": "\\label{pl:all-circle}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/main.tex#L61"
         },
         {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\label{gi:the-complete-anchor-and-the-primitive-filling-equations}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L1233"
+          "path": "papers/preferred-longitudes/main.tex",
+          "anchor": "\\label{pl:T4}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/main.tex#L68"
         },
         {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\section{Boundary isotropy and the edge differential}\\label{gi:boundary-isotropy-and-the-edge-differential}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L1408"
+          "path": "papers/preferred-longitudes/main.tex",
+          "anchor": "\\label{pl:T6}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/main.tex#L70"
         },
         {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\section{The constant field of the source equations}\\label{gi:the-constant-field-of-the-source-equations}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L1529"
-        },
-        {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\section{Regular reconstruction at every nonzero main value}\\label{gi:regular-reconstruction-at-every-nonzero-main-value}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L1590"
-        },
-        {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\section{Determining the monomial and the preferred framing}\\label{gi:determining-the-monomial-and-the-preferred-framing}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L1964"
-        },
-        {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\section{The determinant-one sign at the complete filled knot}\\label{gi:the-determinant-one-sign-at-the-complete-filled-knot}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L2076"
+          "path": "papers/preferred-longitudes/main.tex",
+          "anchor": "\\label{pl:T7}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/main.tex#L73"
         }
       ],
       "depends_on": [
         {
-          "id": "tree_positive_completion",
-          "reason": "Provides the actual filled complete anchor and positive retained cells; the longitude identity does not follow from cusp tangent data alone."
-        },
-        {
-          "id": "geo_nonparabolic_tree_sewing",
-          "reason": "The source edge equations are realized by the full original augmented group and transported main flags."
-        },
-        {
-          "id": "geo_filled_meridian_germ",
-          "reason": "The selected meridian family is the actual geometric filled germ, rather than only a rational algebraic branch."
-        },
-        {
           "id": "geo_preferred_longitude_monomial",
-          "reason": "Boundary isotropy, the constant field, all-main-value regularity and the independent cusp calculation fix the exact squared preferred-longitude formula."
+          "reason": "Proves the exact rational squared identity and preferred surgery exponent."
         },
         {
           "id": "geo_preferred_longitude_negative_lift",
-          "reason": "The Seifert-frame sign and original surgery lift fix the unsquared identity."
+          "reason": "Fixes the determinant-one sign at the actual filled anchor."
+        },
+        {
+          "id": "geo_filled_meridian_germ",
+          "reason": "Identifies the actual nonconstant filled meridian germ with original flags and logarithmic slopes."
         }
       ],
-      "article": null
+      "article": "preferred-longitudes"
     },
     {
       "id": "geometric_longitude_strict_trees",
       "title": "Bare-junction extension of the geometric longitude",
       "group": "geometric_longitude",
-      "statement": "Literal zero-circle insertion and full stationary elimination recover the original strict source, with the x=1/2 fold retained; long strict fillings have the same preferred geometric germ.",
+      "statement": "For each fixed strict ordered knot presentation, including arbitrary adjacent bare junctions and the allowed half-edge fold, sufficiently long independently signed original fillings have the exact preferred longitude on their actual geometric meridian germ. Whole-hub zero-circle elimination preserves the original classical action and physical edges. The exact slope mark and classical reciprocal-twist Jacobian are proved directly; no quantum Hessian or all-orders theorem is an input.",
       "sources": [
         {
-          "path": "manuscript/sections/J-strict-tree-geometric-characteristic.tex",
-          "anchor": "\\label{gj:the-literal-insertion}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/J-strict-tree-geometric-characteristic.tex#L118"
+          "path": "papers/preferred-longitudes/main.tex",
+          "anchor": "\\label{pl:strict-longitude}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/main.tex#L79"
         },
         {
-          "path": "manuscript/sections/J-strict-tree-geometric-characteristic.tex",
-          "anchor": "\\label{gj:exact-elimination-of-the-angular-action}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/J-strict-tree-geometric-characteristic.tex#L224"
+          "path": "papers/preferred-longitudes/main.tex",
+          "anchor": "\\label{pl:deformed-action}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/main.tex#L84"
         },
         {
-          "path": "manuscript/sections/J-strict-tree-geometric-characteristic.tex",
-          "anchor": "\\label{gj:stationary-elimination-at-a-nonparabolic-main-meridian}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/J-strict-tree-geometric-characteristic.tex#L495"
+          "path": "papers/preferred-longitudes/bare.tex",
+          "anchor": "\\label{plb:stationary-elimination-at-a-nonparabolic-main-meridian}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/bare.tex#L474"
+        },
+        {
+          "path": "papers/preferred-longitudes/bare.tex",
+          "anchor": "\\label{plb:23a}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/bare.tex#L540"
+        },
+        {
+          "path": "papers/preferred-longitudes/bare.tex",
+          "anchor": "\\label{plb:24}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/bare.tex#L574"
         }
       ],
       "depends_on": [
         {
-          "id": "geometric_longitude_circle_trees",
-          "reason": "Supplies the rational longitude identity before zero-circle elimination."
+          "id": "geo_preferred_longitude_monomial",
+          "reason": "Uses its rational squared identity before imposing the zero fillings; it does not assume the new drilled diagram has a positive metric."
+        },
+        {
+          "id": "geo_preferred_longitude_negative_lift",
+          "reason": "Fixes the sign at the same original complete filled knot."
+        },
+        {
+          "id": "geo_bare_hub_legendre",
+          "reason": "Preserves the whole classical action, absolute constant and nonsingular eliminated blocks."
+        },
+        {
+          "id": "geo_bare_zero_circle_reconstruction",
+          "reason": "Identifies every original generator and marking after killing the added meridians."
         },
         {
           "id": "recursive_strict_marked_metric",
-          "reason": "Appendix J explicitly imports the general marked-mask geometry for the original strict construction before zero-circle elimination."
+          "reason": "Supplies the actual original positive long-filled anchor with the declared knot/parity conditions."
+        },
+        {
+          "id": "geo_positive_marked_gluing",
+          "reason": "The same main/auxiliary mixed coordinates identify the reconstructed family on the original positive triangulation; the added flat subdivision is not used for rigidity."
         }
       ],
-      "article": null
+      "article": "preferred-longitudes"
     },
     {
       "id": "planar_fourier_remainder",
@@ -3429,21 +3437,31 @@
       "id": "geo_positive_marked_gluing",
       "title": "Positive all-cusp marked gluing is unramified",
       "group": "complete_geometry",
-      "statement": "For an actual positive ideal triangulation with a full primitive marked peripheral system, edge/peripheral rank and the real Lagrangian relations give an invertible polarized shape Jacobian. Nondegenerate developed triples identify the shape germ with the decorated representation germ, including first-order/Artin information. This theorem requires the stated positive triangulation and full marking.",
+      "statement": "For an actual positive ideal triangulation with torus ends, possibly incomplete, actual face pairings and nondegenerate decorated triples, one nonzero primitive peripheral logarithm per torus gives local holomorphic coordinates. The direct edge-rank and positive-polarization proof identifies the shape and decorated-representation germs, also over local Artin algebras with exact eigencharacters, modulo simultaneous conjugation.",
       "sources": [
         {
-          "path": "notes/general_marked_multicusp_gluing_rigidity.md",
-          "anchor": "## 2. The all-cusp marked Jacobian is invertible",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/general_marked_multicusp_gluing_rigidity.md#L54"
+          "path": "papers/nonparabolic-tree-geometry/rigidity.tex",
+          "anchor": "\\label{ng:positive-germ}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/nonparabolic-tree-geometry/rigidity.tex#L109"
         },
         {
-          "path": "notes/general_marked_multicusp_gluing_rigidity.md",
-          "anchor": "## 3. This is the actual decorated representation germ, also infinitesimally",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/general_marked_multicusp_gluing_rigidity.md#L129"
+          "path": "papers/nonparabolic-tree-geometry/rigidity.tex",
+          "anchor": "\\label{ng:real-rows}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/nonparabolic-tree-geometry/rigidity.tex#L174"
+        },
+        {
+          "path": "papers/nonparabolic-tree-geometry/rigidity.tex",
+          "anchor": "\\label{ng:polarization}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/nonparabolic-tree-geometry/rigidity.tex#L188"
         }
       ],
-      "depends_on": [],
-      "article": null
+      "depends_on": [
+        {
+          "id": "geo_tetrahedral_normal_flow_rows",
+          "reason": "Imports the actual normal-path row/intersection identity; the new paper proves rank, polarized Jacobian and the rational shape/representation inverse itself."
+        }
+      ],
+      "article": "nonparabolic-tree-geometry"
     },
     {
       "id": "geo_complete_marked_metric_identification",
@@ -3533,14 +3551,39 @@
       "statement": "The actual two-octahedron white maps and peripheral words produce the source edge equation after the explicit rational character-coordinate change. The native main M-inverse flag and the transported character frame are distinguished, with actual auxiliary similarities retained.",
       "sources": [
         {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\label{gi:the-local-face-maps}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L127"
+          "path": "papers/nonparabolic-tree-geometry/faces.tex",
+          "anchor": "\\label{ng:the-local-face-maps}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/nonparabolic-tree-geometry/faces.tex#L1"
         },
         {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\label{gi:a-regular-character-chart-for-the-same-piece}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L435"
+          "path": "papers/nonparabolic-tree-geometry/faces.tex",
+          "anchor": "\\label{ng:N9}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/nonparabolic-tree-geometry/faces.tex#L145"
+        },
+        {
+          "path": "papers/nonparabolic-tree-geometry/faces.tex",
+          "anchor": "\\label{ng:N18}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/nonparabolic-tree-geometry/faces.tex#L270"
+        },
+        {
+          "path": "papers/nonparabolic-tree-geometry/character.tex",
+          "anchor": "\\label{ng:character}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/nonparabolic-tree-geometry/character.tex#L27"
+        },
+        {
+          "path": "papers/nonparabolic-tree-geometry/character.tex",
+          "anchor": "\\label{ng:C17}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/nonparabolic-tree-geometry/character.tex#L156"
+        },
+        {
+          "path": "papers/nonparabolic-tree-geometry/character.tex",
+          "anchor": "\\label{ng:C25}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/nonparabolic-tree-geometry/character.tex#L235"
+        },
+        {
+          "path": "papers/nonparabolic-tree-geometry/character.tex",
+          "anchor": "\\label{ng:C33}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/nonparabolic-tree-geometry/character.tex#L327"
         }
       ],
       "depends_on": [
@@ -3549,7 +3592,7 @@
           "reason": "Fixes the native puncture paths and ordered local topology; a scalar or trace-only comparison would not identify the original group."
         }
       ],
-      "article": null
+      "article": "nonparabolic-tree-geometry"
     },
     {
       "id": "geo_nonparabolic_tree_sewing",
@@ -3558,14 +3601,34 @@
       "statement": "The complete boundary tuples are intertwined by pure page maps and the correctly oriented braid mapping cylinder. Global redecoration retains the actual selected main eigenflags, including opposite-flag Weyl switches. Van Kampen yields representations of the original ordered augmented group, not only local character data.",
       "sources": [
         {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\label{gi:ordered-pages-and-the-half-twist-collar}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L848"
+          "path": "papers/nonparabolic-tree-geometry/main.tex",
+          "anchor": "\\label{ng:representation}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/nonparabolic-tree-geometry/main.tex#L88"
         },
         {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\label{gi:representation-gluing-followed-by-global-decoration}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L1144"
+          "path": "papers/nonparabolic-tree-geometry/sewing.tex",
+          "anchor": "\\label{ng:ordered-pages-and-the-half-twist-collar}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/nonparabolic-tree-geometry/sewing.tex#L1"
+        },
+        {
+          "path": "papers/nonparabolic-tree-geometry/sewing.tex",
+          "anchor": "\\label{ng:S14b}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/nonparabolic-tree-geometry/sewing.tex#L226"
+        },
+        {
+          "path": "papers/nonparabolic-tree-geometry/sewing.tex",
+          "anchor": "\\label{ng:S14d}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/nonparabolic-tree-geometry/sewing.tex#L262"
+        },
+        {
+          "path": "papers/nonparabolic-tree-geometry/sewing.tex",
+          "anchor": "\\label{ng:representation-gluing-followed-by-global-decoration}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/nonparabolic-tree-geometry/sewing.tex#L304"
+        },
+        {
+          "path": "papers/nonparabolic-tree-geometry/sewing.tex",
+          "anchor": "\\label{ng:S16}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/nonparabolic-tree-geometry/sewing.tex#L372"
         }
       ],
       "depends_on": [
@@ -3576,9 +3639,13 @@
         {
           "id": "geo_circle_ordered_cut",
           "reason": "Specifies which tuples, odd seams and access paths are actually sewn in the original tree."
+        },
+        {
+          "id": "recursive_strict_local_maps",
+          "reason": "The reference positive odd collar is calibrated against the original physical R versus R-inverse meridian words (StrictGeometry Section 5); the new Hurwitz and global decoration proof remains local and independent of a longitude formula."
         }
       ],
-      "article": null
+      "article": "nonparabolic-tree-geometry"
     },
     {
       "id": "geo_filled_meridian_germ",
@@ -3587,36 +3654,36 @@
       "statement": "At the actual filled endpoint, the positive incomplete augmented triangulation remains available. Choosing main meridian and primitive auxiliary filling slopes as rows gives a smooth one-dimensional decorated filled germ with log main eigenvalue as coordinate. Distinct auxiliary longitude eigenvalues turn unit slope ratio into the full group relation, also over local Artin rings. No positive triangulation of the filled manifold is assumed.",
       "sources": [
         {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\label{gi:the-complete-anchor-and-the-primitive-filling-equations}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L1233"
+          "path": "papers/nonparabolic-tree-geometry/main.tex",
+          "anchor": "\\label{ng:filled-germ}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/nonparabolic-tree-geometry/main.tex#L125"
         },
         {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\label{gi:positive-augmented-filled-germ}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L1306"
+          "path": "papers/nonparabolic-tree-geometry/main.tex",
+          "anchor": "\\label{ng:A2}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/nonparabolic-tree-geometry/main.tex#L131"
         },
         {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\label{gi:A2d}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L1342"
+          "path": "papers/nonparabolic-tree-geometry/rigidity.tex",
+          "anchor": "\\label{ng:filling-germ-proof}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/nonparabolic-tree-geometry/rigidity.tex#L236"
         }
       ],
       "depends_on": [
         {
-          "id": "tree_positive_completion",
-          "reason": "Provides the positive incomplete augmented shape endpoint, actual filled representation and distinct auxiliary longitude eigenvalues."
+          "id": "geo_positive_marked_gluing",
+          "reason": "On the original positive augmented triangulation, primitive slope rows plus the main meridian are local coordinates."
         },
         {
-          "id": "geo_positive_marked_gluing",
-          "reason": "Supplies the all-cusp row rank, polarization and decorated representation/shape correspondence."
+          "id": "geo_nonparabolic_positive_anchor",
+          "reason": "For the circle-tree application supplies the actual positive filled residue point with its logarithmic mark. The general local statement is conditional on such an original positive anchor."
         },
         {
           "id": "geo_nonparabolic_tree_sewing",
-          "reason": "Retains the original filled-group marking and selected main flag in the nonparabolic family."
+          "reason": "Retains the actual original group words and flags; commuting with a distinct-eigenvalue auxiliary longitude upgrades a scalar slope ratio to the full PGL relation, including over Artin rings."
         }
       ],
-      "article": null
+      "article": "nonparabolic-tree-geometry"
     },
     {
       "id": "geo_longitude_ratio_differential",
@@ -3625,24 +3692,29 @@
       "statement": "The rational edge equation gives its exact closed peripheral differential. Cochain Stokes applied to the original assembled representation gives the boundary isotropy relation with the required eigenvalue-versus-ratio factors. Their difference shows the squared preferred-longitude/product discrepancy is independent of every auxiliary variable.",
       "sources": [
         {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\label{gi:boundary-isotropy-and-the-edge-differential}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L1408"
+          "path": "papers/preferred-longitudes/algebra.tex",
+          "anchor": "\\label{pl:R3}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/algebra.tex#L31"
         },
         {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\label{gi:R4}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L1448"
+          "path": "papers/preferred-longitudes/algebra.tex",
+          "anchor": "\\label{pl:R4}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/algebra.tex#L41"
         },
         {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\label{gi:R6}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L1482"
+          "path": "papers/preferred-longitudes/algebra.tex",
+          "anchor": "\\label{pl:R6}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/algebra.tex#L75"
         },
         {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\label{gi:R8}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L1520"
+          "path": "papers/preferred-longitudes/algebra.tex",
+          "anchor": "\\label{pl:R7}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/algebra.tex#L105"
+        },
+        {
+          "path": "papers/preferred-longitudes/algebra.tex",
+          "anchor": "\\label{pl:R8}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/algebra.tex#L113"
         }
       ],
       "depends_on": [
@@ -3655,7 +3727,7 @@
           "reason": "Makes the local data a representation of one original exterior, so the full boundary Stokes identity and original periods apply."
         }
       ],
-      "article": null
+      "article": "preferred-longitudes"
     },
     {
       "id": "geo_source_constant_field",
@@ -3664,19 +3736,24 @@
       "statement": "For distinct unordered edges, irreducible edge discriminant primes give independent squareclasses over the algebraic closure of C(M). The generic source fiber is geometrically integral; elements killed by all auxiliary derivations lie in C(M). Therefore the squared longitude discrepancy is a rational function of M alone.",
       "sources": [
         {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\label{gi:the-constant-field-of-the-source-equations}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L1529"
+          "path": "papers/preferred-longitudes/algebra.tex",
+          "anchor": "\\label{pl:the-constant-field-of-the-source-equations}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/algebra.tex#L122"
         },
         {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\label{gi:R10}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L1545"
+          "path": "papers/preferred-longitudes/algebra.tex",
+          "anchor": "\\label{pl:R10}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/algebra.tex#L138"
         },
         {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\label{gi:R12}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L1582"
+          "path": "papers/preferred-longitudes/algebra.tex",
+          "anchor": "\\label{pl:R11}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/algebra.tex#L149"
+        },
+        {
+          "path": "papers/preferred-longitudes/algebra.tex",
+          "anchor": "\\label{pl:R12}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/algebra.tex#L175"
         }
       ],
       "depends_on": [
@@ -3689,7 +3766,7 @@
           "reason": "Supplies the auxiliary-derivative vanishing to which the constant-field theorem is applied."
         }
       ],
-      "article": null
+      "article": "preferred-longitudes"
     },
     {
       "id": "geo_all_main_reconstruction_units",
@@ -3698,19 +3775,39 @@
       "statement": "A rational projective character reconstruction has invertible full sewing matrices on a nonempty generic-auxiliary open set above every M0 != 0, including M0=+/-1 and +/-i. Local sections and unit peripheral eigenvalue ratios rule out every zero or pole of the meridian discrepancy; this is representation-level regularity, not positivity of all those cells.",
       "sources": [
         {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\label{gi:regular-reconstruction-at-every-nonzero-main-value}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L1590"
+          "path": "papers/preferred-longitudes/regularity.tex",
+          "anchor": "\\label{pl:regular-reconstruction-at-every-nonzero-main-value}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/regularity.tex#L1"
         },
         {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\label{gi:determining-the-monomial-and-the-preferred-framing}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L1964"
+          "path": "papers/preferred-longitudes/regularity.tex",
+          "anchor": "\\label{pl:G5}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/regularity.tex#L35"
         },
         {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\label{gi:F1}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L1972"
+          "path": "papers/preferred-longitudes/regularity.tex",
+          "anchor": "\\label{pl:G14a}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/regularity.tex#L183"
+        },
+        {
+          "path": "papers/preferred-longitudes/regularity.tex",
+          "anchor": "\\label{pl:G16a}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/regularity.tex#L300"
+        },
+        {
+          "path": "papers/preferred-longitudes/regularity.tex",
+          "anchor": "\\label{pl:G17}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/regularity.tex#L319"
+        },
+        {
+          "path": "papers/preferred-longitudes/regularity.tex",
+          "anchor": "\\label{pl:local-sections-and-the-integral-total-family}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/regularity.tex#L346"
+        },
+        {
+          "path": "papers/preferred-longitudes/calibration.tex",
+          "anchor": "\\label{pl:F1}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/calibration.tex#L9"
         }
       ],
       "depends_on": [
@@ -3723,7 +3820,7 @@
           "reason": "Reduces the discrepancy to C(M), so fiberwise regular unit sections exclude its nonmonomial zeros and poles."
         }
       ],
-      "article": null
+      "article": "preferred-longitudes"
     },
     {
       "id": "geo_preferred_longitude_monomial",
@@ -3732,79 +3829,101 @@
       "statement": "Only after all other rational factors are excluded, the complete cusp calculation fixes the remaining monomial exponent. The original integral surgery shear changes the augmented longitude to the preferred filled longitude and gives the exact framed exponent a(D).",
       "sources": [
         {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\label{gi:determining-the-monomial-and-the-preferred-framing}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L1964"
+          "path": "papers/preferred-longitudes/calibration.tex",
+          "anchor": "\\label{pl:F1}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/calibration.tex#L9"
         },
         {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\label{gi:F3}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L2008"
+          "path": "papers/preferred-longitudes/calibration.tex",
+          "anchor": "\\label{pl:F2}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/calibration.tex#L20"
         },
         {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\label{gi:F5}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L2033"
+          "path": "papers/preferred-longitudes/calibration.tex",
+          "anchor": "\\label{pl:F3}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/calibration.tex#L44"
         },
         {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\label{gi:F6}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L2064"
+          "path": "papers/preferred-longitudes/calibration.tex",
+          "anchor": "\\label{pl:F4}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/calibration.tex#L60"
+        },
+        {
+          "path": "papers/preferred-longitudes/calibration.tex",
+          "anchor": "\\label{pl:F5}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/calibration.tex#L69"
+        },
+        {
+          "path": "papers/preferred-longitudes/calibration.tex",
+          "anchor": "\\label{pl:F6}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/calibration.tex#L96"
+        },
+        {
+          "path": "papers/preferred-longitudes/main.tex",
+          "anchor": "\\label{pl:T4}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/main.tex#L68"
+        },
+        {
+          "path": "papers/preferred-longitudes/main.tex",
+          "anchor": "\\label{pl:T6}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/main.tex#L70"
         }
       ],
       "depends_on": [
         {
           "id": "geo_all_main_reconstruction_units",
-          "reason": "Shows the discrepancy is a Laurent monomial, so tangent calibration determines it globally on the selected component."
+          "reason": "Excludes all nonmonomial zeros and poles before using a cusp derivative."
         },
         {
-          "id": "geo_circle_preferred_cusp",
-          "reason": "Provides the independently computed actual cusp slope and original framing integer."
+          "id": "geo_direct_preferred_cusp_word",
+          "reason": "Gives the independently calculated actual cusp slope and writhe integer."
         },
         {
           "id": "geo_circle_ordered_cut",
-          "reason": "Provides the primitive surgery basis and crossing-linking ledger."
+          "reason": "Fixes the original primitive disk filling and pairwise-unlinked auxiliary-circle surgery basis."
         }
       ],
-      "article": null
+      "article": "preferred-longitudes"
     },
     {
       "id": "geo_preferred_longitude_negative_lift",
       "title": "Negative determinant-one preferred longitude lift",
       "group": "geometric_longitude",
-      "statement": "At the complete filled knot, a once-bordered Seifert surface frame has odd boundary winding, fixing the preferred longitude lift to the negative unipotent sign. The original augmented lift agrees after the explicit mod-two surgery calculation. This fixes the sign of the holomorphic squared identity on the actual filled germ.",
+      "statement": "Given an actual complete filled knot and its anchored connected geometric germ, a once-bordered Seifert frame fixes the preferred longitude lift to the negative unipotent sign. The actual augmented surgery word is even in homology modulo two, so every local augmented determinant-one lift has the same longitude sign. Combined with the squared identity, this fixes its unsquared formula; existence of the geometric anchor remains an application premise.",
       "sources": [
         {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\label{gi:the-determinant-one-sign-at-the-complete-filled-knot}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L2076"
+          "path": "papers/preferred-longitudes/sign.tex",
+          "anchor": "\\label{pl:L1}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/sign.tex#L34"
         },
         {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\label{gi:compatibility-with-the-original-augmented-representation}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L2201"
+          "path": "papers/preferred-longitudes/sign.tex",
+          "anchor": "\\label{pl:L4}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/sign.tex#L104"
         },
         {
-          "path": "manuscript/sections/I-geometric-characteristic.tex",
-          "anchor": "\\label{gi:fixing-a-holomorphic-squared-longitude-identity}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/I-geometric-characteristic.tex#L2256"
+          "path": "papers/preferred-longitudes/sign.tex",
+          "anchor": "\\label{pl:L6}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/sign.tex#L143"
+        },
+        {
+          "path": "papers/preferred-longitudes/sign.tex",
+          "anchor": "\\label{pl:L7}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/sign.tex#L152"
+        },
+        {
+          "path": "papers/preferred-longitudes/sign.tex",
+          "anchor": "\\label{pl:L9}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/sign.tex#L203"
         }
       ],
       "depends_on": [
         {
-          "id": "tree_positive_completion",
-          "reason": "Supplies the actual complete filled knot and peripheral geometry where the sign is calibrated."
-        },
-        {
           "id": "geo_preferred_longitude_monomial",
-          "reason": "Supplies the correctly marked squared identity and surgery word whose sign remains to be fixed."
-        },
-        {
-          "id": "geo_filled_meridian_germ",
-          "reason": "Allows continuation of the chosen negative lift as an identity on the actual marked holomorphic germ."
+          "reason": "Provides the squared identity and original surgery word. The surface-frame sign proof is general for an actual complete filled knot; its existence is supplied at the final application, not by quantum asymptotics."
         }
       ],
-      "article": null
+      "article": "preferred-longitudes"
     },
     {
       "id": "analytic_directed_conditional_estimates",
@@ -6407,6 +6526,300 @@
       ],
       "coverage": "The complete implication for the fixed supported entropy potential is formalized. Applications still supply geometric incidence, coefficients, demands and proof of the cut inequalities. No developing-map theorem, changing-support limit or knot volume identity follows from this result alone.",
       "article": null
+    },
+    {
+      "id": "geo_tetrahedral_normal_flow_rows",
+      "title": "Actual cusp-side rows and normal-flow intersection identity",
+      "group": "complete_geometry",
+      "statement": "The positively ordered tetrahedron (0,infinity,1,z), its explicit cusp-side log table and telescoping triangle scales give actual peripheral similarity rows. The finite normal-flow identity cancels face terms, yields the oriented intersection factor and makes edge rows isotropic. This is local linear/marked geometry, before any metric-completion or volume theorem.",
+      "article": "marked-fillings",
+      "sources": [
+        {
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:cusp-side-table}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/marked-fillings/main.tex#L1078"
+        },
+        {
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:normal-flow}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/marked-fillings/main.tex#L1116"
+        }
+      ],
+      "depends_on": []
+    },
+    {
+      "id": "geo_nonparabolic_positive_anchor",
+      "title": "Continuation to the original positive circle-tree filling anchor",
+      "group": "geometric_longitude",
+      "statement": "At M=1, the rational source coordinates and original angular octahedral coordinates agree by explicit formulas on the full small positive angular chart. Full white and shaded maps, selected logs and original primitive curves agree. The original quantitative classical filling path therefore supplies the actual positive endpoint of the nonparabolic representation.",
+      "article": "nonparabolic-tree-geometry",
+      "sources": [
+        {
+          "path": "papers/nonparabolic-tree-geometry/rigidity.tex",
+          "anchor": "\\label{ng:anchor}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/nonparabolic-tree-geometry/rigidity.tex#L2"
+        },
+        {
+          "path": "papers/nonparabolic-tree-geometry/rigidity.tex",
+          "anchor": "\\label{ng:angular-match}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/nonparabolic-tree-geometry/rigidity.tex#L13"
+        },
+        {
+          "path": "papers/nonparabolic-tree-geometry/rigidity.tex",
+          "anchor": "\\label{ng:anchor-logs}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/nonparabolic-tree-geometry/rigidity.tex#L75"
+        },
+        {
+          "path": "papers/nonparabolic-tree-geometry/rigidity.tex",
+          "anchor": "\\label{ng:charge-path}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/nonparabolic-tree-geometry/rigidity.tex#L82"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "geo_nonparabolic_tree_sewing",
+          "reason": "Supplies the full marked source representation to compare, not only its traces."
+        },
+        {
+          "id": "geo_circle_positive_edge_charts",
+          "reason": "Supplies the positive angular cell chart and exact original seams."
+        },
+        {
+          "id": "tree_positive_completion",
+          "reason": "Supplies the actual complete filled endpoint for the declared geometric criterion; the new argument proves the exact coordinate/marking match."
+        }
+      ]
+    },
+    {
+      "id": "geo_marked_branch_identification",
+      "title": "Identifying an independently reconstructed branch with the filled germ",
+      "group": "geometric_longitude",
+      "statement": "A separately constructed holomorphic or Artin family is the geometric filled meridian germ if it has the same actual complete filled anchor, original group and primitive slope words/logs, selected main eigenflag and main parameter. This is conditional branch identification, not existence or a nonzero quantum amplitude.",
+      "article": "nonparabolic-tree-geometry",
+      "sources": [
+        {
+          "path": "papers/nonparabolic-tree-geometry/rigidity.tex",
+          "anchor": "\\label{ng:branch-identification}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/nonparabolic-tree-geometry/rigidity.tex#L294"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "geo_filled_meridian_germ",
+          "reason": "The proved one-dimensional unramified local germ gives the uniqueness with the exact main coordinate and actual filled-group relations."
+        }
+      ]
+    },
+    {
+      "id": "geo_direct_preferred_cusp_word",
+      "title": "Direct original cusp word and integral framing calculation",
+      "group": "geometric_longitude",
+      "statement": "Full parabolic-main face transports, signed endpoint displacements, product rebasing, quarter turns and literal closure give the main peripheral translation. Original odd paths have explicitly computed homology, so the preferred correction is the actual writhe. This directly proves tau_main=-w_epsilon-sum epsilon+2i sum cot(pi x), without importing a separate global complete-model rigidity theorem.",
+      "article": "preferred-longitudes",
+      "sources": [
+        {
+          "path": "papers/preferred-longitudes/cusp.tex",
+          "anchor": "\\label{pl:cusp}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/cusp.tex#L2"
+        },
+        {
+          "path": "papers/preferred-longitudes/cusp.tex",
+          "anchor": "\\label{plc:10}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/cusp.tex#L93"
+        },
+        {
+          "path": "papers/preferred-longitudes/cusp.tex",
+          "anchor": "\\label{plc:17}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/cusp.tex#L179"
+        },
+        {
+          "path": "papers/preferred-longitudes/cusp.tex",
+          "anchor": "\\label{plc:20}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/cusp.tex#L199"
+        },
+        {
+          "path": "papers/preferred-longitudes/cusp.tex",
+          "anchor": "\\label{plc:23}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/cusp.tex#L217"
+        },
+        {
+          "path": "papers/preferred-longitudes/cusp.tex",
+          "anchor": "\\label{plc:29}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/cusp.tex#L264"
+        },
+        {
+          "path": "papers/preferred-longitudes/cusp.tex",
+          "anchor": "\\label{plc:32}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/cusp.tex#L300"
+        },
+        {
+          "path": "papers/preferred-longitudes/cusp.tex",
+          "anchor": "\\label{plc:37}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/cusp.tex#L348"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "recursive_strict_local_maps",
+          "reason": "Provides the actual local white/shaded matrices, full world maps, turn and closure conventions used in the explicit word calculation."
+        },
+        {
+          "id": "recursive_strict_marked_metric",
+          "reason": "Supplies the actual-versus-completion-map identification at the closed original peripheral paths and the marked positive geometric branch."
+        },
+        {
+          "id": "geo_nonparabolic_edge_character",
+          "reason": "At M=1 identifies these matrices and physical wire labels with the rational all-circle family."
+        }
+      ]
+    },
+    {
+      "id": "recursive_complete_fourier_trace",
+      "title": "Exact full-winding Fourier formula for the complete top trace",
+      "group": "diagram_evaluation",
+      "statement": "The unreduced polynomial top trace is the exact finite symmetric-Laurent winding sum, with the zero coefficient of winding -1 and full double/simple-node multiplicities. This finite identity is independent of the subsequent spectral-strip or macroscopic-color-loss theorem.",
+      "article": "conway-source-bounds",
+      "sources": [
+        {
+          "path": "papers/conway-source-bounds/fourier.tex",
+          "anchor": "\\label{cs:character-fourier}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-source-bounds/fourier.tex#L7"
+        },
+        {
+          "path": "papers/conway-source-bounds/fourier.tex",
+          "anchor": "\\label{cs:fourier-exact}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-source-bounds/fourier.tex#L13"
+        },
+        {
+          "path": "papers/conway-source-bounds/fourier.tex",
+          "anchor": "\\label{cs:sampling}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-source-bounds/fourier.tex#L20"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "recursive_finite_source",
+          "reason": "Identifies the physical top trace and Chebyshev quotient; the Fourier formula follows by its coefficient at infinity."
+        }
+      ]
+    },
+    {
+      "id": "geo_bare_hub_legendre",
+      "title": "Exact whole-hub angular elimination with absolute constant",
+      "group": "geometric_longitude",
+      "statement": "For each strict bare hub, the original physical labels obey the declared below-half window with its one possible half-label exception. The zero-power angular equation has a unique y>0 solution. Its stationary value equals the original whole-hub action, including the absolute constant, by the exact finite Newton/Fourier trace and a positive scalar coefficient limit. Holomorphic continuation and the whole-hub Schur complement retain the half-edge fold.",
+      "article": "preferred-longitudes",
+      "sources": [
+        {
+          "path": "papers/preferred-longitudes/bare.tex",
+          "anchor": "\\label{plb:a-unique-regular-zero-power-angular-saddle}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/bare.tex#L46"
+        },
+        {
+          "path": "papers/preferred-longitudes/bare.tex",
+          "anchor": "\\label{plb:6}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/bare.tex#L130"
+        },
+        {
+          "path": "papers/preferred-longitudes/bare.tex",
+          "anchor": "\\label{plb:8}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/bare.tex#L154"
+        },
+        {
+          "path": "papers/preferred-longitudes/bare.tex",
+          "anchor": "\\label{plb:10}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/bare.tex#L232"
+        },
+        {
+          "path": "papers/preferred-longitudes/bare.tex",
+          "anchor": "\\label{plb:12}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/bare.tex#L251"
+        },
+        {
+          "path": "papers/preferred-longitudes/bare.tex",
+          "anchor": "\\label{plb:23a}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/bare.tex#L540"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "recursive_strict_optimizer",
+          "reason": "Supplies strict whole-hub fixed-output optimization, its Hessian and primitive finite lattice."
+        },
+        {
+          "id": "recursive_stationary_port_identities",
+          "reason": "Gives the exact response inequalities establishing the physical-label window and exceptional half edge."
+        },
+        {
+          "id": "recursive_finite_source",
+          "reason": "Supplies positive Newton multiplication and the absolute complete top trace."
+        },
+        {
+          "id": "recursive_factorial_rate",
+          "reason": "Supplies the uniform scalar sine-factorial coefficient rate including boundary offsets."
+        },
+        {
+          "id": "recursive_complete_fourier_trace",
+          "reason": "Only this exact finite winding identity is used; no global SourceBounds estimate or quantum knot asymptotic enters."
+        }
+      ]
+    },
+    {
+      "id": "geo_bare_zero_circle_reconstruction",
+      "title": "Literal meridian-filled zero circles recover the original strict group",
+      "group": "geometric_longitude",
+      "statement": "Inserting unturned R^0 at each bare hub and then killing its original primitive meridian fixes the framed collar, ordered access paths and every original physical edge. At completeness the actual added disk-longitude word has trace -(Q+Q inverse), Q>1; the normalized white maps and two full ordered puncture conjugacies identify the pulled-back old holonomy with the all-circle source representation, also at the possible flat half-edge fold.",
+      "article": "preferred-longitudes",
+      "sources": [
+        {
+          "path": "papers/preferred-longitudes/bare.tex",
+          "anchor": "\\label{plb:the-literal-insertion}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/bare.tex#L1"
+        },
+        {
+          "path": "papers/preferred-longitudes/bare.tex",
+          "anchor": "\\label{plb:17}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/bare.tex#L309"
+        },
+        {
+          "path": "papers/preferred-longitudes/bare.tex",
+          "anchor": "\\label{plb:20}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/bare.tex#L339"
+        },
+        {
+          "path": "papers/preferred-longitudes/bare.tex",
+          "anchor": "\\label{plb:22c}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/bare.tex#L363"
+        },
+        {
+          "path": "papers/preferred-longitudes/bare.tex",
+          "anchor": "\\label{plb:22a}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/bare.tex#L446"
+        },
+        {
+          "path": "papers/preferred-longitudes/bare.tex",
+          "anchor": "\\label{plb:22b}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/bare.tex#L456"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "geo_bare_hub_legendre",
+          "reason": "Computes the same regular added longitude parameter from the original hub action."
+        },
+        {
+          "id": "geo_nonparabolic_tree_sewing",
+          "reason": "Provides the literal ordered full-pair page and Hurwitz identities."
+        },
+        {
+          "id": "recursive_strict_local_maps",
+          "reason": "Identifies the full old white maps, retained scalars and actual disk words."
+        },
+        {
+          "id": "recursive_strict_angle_geometry",
+          "reason": "Supplies the old complete marked holonomy to pull back along the literal zero-meridian quotient."
+        }
+      ]
     }
   ],
   "articles": {
@@ -6521,6 +6934,16 @@
       "title": "Ordered tangle reductions and long net twists",
       "path": "papers/conway-reductions/main.tex",
       "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-reductions/main.tex"
+    },
+    "nonparabolic-tree-geometry": {
+      "title": "Nonparabolic holonomy of trees of crossing circles",
+      "path": "papers/nonparabolic-tree-geometry/main.tex",
+      "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/nonparabolic-tree-geometry/main.tex"
+    },
+    "preferred-longitudes": {
+      "title": "Preferred longitudes of Conway tree complements",
+      "path": "papers/preferred-longitudes/main.tex",
+      "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/preferred-longitudes/main.tex"
     }
   },
   "article_dependencies": [
@@ -7766,13 +8189,130 @@
           "reason": "Its nondegenerate stationary-wire Hessian gives the local classical stationary branch."
         }
       ]
+    },
+    {
+      "from": "circle-tree-geometry",
+      "to": "nonparabolic-tree-geometry",
+      "witnesses": [
+        {
+          "path": [
+            "geo_circle_ordered_cut",
+            "geo_nonparabolic_edge_character"
+          ],
+          "reason": "Fixes the native puncture paths and ordered local topology; a scalar or trace-only comparison would not identify the original group."
+        }
+      ]
+    },
+    {
+      "from": "circle-tree-geometry",
+      "to": "preferred-longitudes",
+      "witnesses": [
+        {
+          "path": [
+            "geo_circle_ordered_cut",
+            "geo_preferred_longitude_monomial"
+          ],
+          "reason": "Fixes the original primitive disk filling and pairwise-unlinked auxiliary-circle surgery basis."
+        }
+      ]
+    },
+    {
+      "from": "conway-source-bounds",
+      "to": "preferred-longitudes",
+      "witnesses": [
+        {
+          "path": [
+            "recursive_complete_fourier_trace",
+            "geo_bare_hub_legendre"
+          ],
+          "reason": "Only this exact finite winding identity is used; no global SourceBounds estimate or quantum knot asymptotic enters."
+        }
+      ]
+    },
+    {
+      "from": "marked-fillings",
+      "to": "nonparabolic-tree-geometry",
+      "witnesses": [
+        {
+          "path": [
+            "geo_tetrahedral_normal_flow_rows",
+            "geo_positive_marked_gluing"
+          ],
+          "reason": "Imports the actual normal-path row/intersection identity; the new paper proves rank, polarized Jacobian and the rational shape/representation inverse itself."
+        }
+      ]
+    },
+    {
+      "from": "newton-tangles",
+      "to": "preferred-longitudes",
+      "witnesses": [
+        {
+          "path": [
+            "recursive_factorial_rate",
+            "geo_bare_hub_legendre"
+          ],
+          "reason": "Supplies the uniform scalar sine-factorial coefficient rate including boundary offsets."
+        }
+      ]
+    },
+    {
+      "from": "nonparabolic-tree-geometry",
+      "to": "preferred-longitudes",
+      "witnesses": [
+        {
+          "path": [
+            "geo_filled_meridian_germ",
+            "geometric_longitude_circle_trees"
+          ],
+          "reason": "Identifies the actual nonconstant filled meridian germ with original flags and logarithmic slopes."
+        }
+      ]
+    },
+    {
+      "from": "strict-conway-geometry",
+      "to": "nonparabolic-tree-geometry",
+      "witnesses": [
+        {
+          "path": [
+            "recursive_strict_local_maps",
+            "geo_nonparabolic_tree_sewing"
+          ],
+          "reason": "The reference positive odd collar is calibrated against the original physical R versus R-inverse meridian words (StrictGeometry Section 5); the new Hurwitz and global decoration proof remains local and independent of a longitude formula."
+        }
+      ]
+    },
+    {
+      "from": "strict-conway-geometry",
+      "to": "preferred-longitudes",
+      "witnesses": [
+        {
+          "path": [
+            "recursive_strict_marked_metric",
+            "geometric_longitude_strict_trees"
+          ],
+          "reason": "Supplies the actual original positive long-filled anchor with the declared knot/parity conditions."
+        }
+      ]
+    },
+    {
+      "from": "strict-newton-profiles",
+      "to": "preferred-longitudes",
+      "witnesses": [
+        {
+          "path": [
+            "recursive_stationary_port_identities",
+            "geo_bare_hub_legendre"
+          ],
+          "reason": "Gives the exact response inequalities establishing the physical-label window and exceptional half edge."
+        }
+      ]
     }
   ],
   "article_scope": "Article ownership names the publication that proves a recorded statement. Null-owned nodes are explicit archival, formal or cross-article assemblies. Article edges retain nearest-owned theorem paths through null-owned inputs; they do not infer imports from bibliography entries. Standard external citations and unrecorded local lemmas are not automatically checked.",
   "analysis": {
     "scope": "Consistency, article ownership, witnessed import and source-location checks on the declared inventory, not proof verification or exhaustive dependency discovery.",
-    "nodes": 142,
-    "edges": 319,
+    "nodes": 149,
+    "edges": 339,
     "component_edges": [
       [
         "action_volume",
@@ -7940,6 +8480,10 @@
       ],
       [
         "local_asymptotics",
+        "geometric_longitude"
+      ],
+      [
+        "local_asymptotics",
         "planar_criteria"
       ],
       [
@@ -8013,12 +8557,8 @@
       "geo_circle_positive_edge_charts",
       "geo_circle_primitive_periods",
       "geo_complete_marked_metric_identification",
-      "geo_local_peripheral_volume_differential",
       "geo_nearby_metric_completion",
       "geo_nonparabolic_edge_character",
-      "geo_nonparabolic_tree_sewing",
-      "geo_longitude_ratio_differential",
-      "geo_positive_marked_gluing",
       "geo_same_filled_chain",
       "geo_simple_sphere_packing",
       "analytic_morse_face_saddle",
@@ -8029,13 +8569,14 @@
       "geo_morse_original_exterior",
       "geo_morse_deformed_pattern",
       "geo_morse_primitive_words",
-      "geo_morse_action_regulator",
       "geo_morse_classical_filling_solution",
       "geo_morse_primitive_filling",
+      "geo_tetrahedral_normal_flow_rows",
+      "geo_local_peripheral_volume_differential",
+      "geo_morse_action_regulator",
       "geo_morse_volume_calibration",
       "analytic_morse_geometric_contribution",
-      "geo_source_constant_field",
-      "geo_all_main_reconstruction_units",
+      "geo_positive_marked_gluing",
       "open_general_remainder",
       "open_general_volume",
       "planar_fourier_remainder",
@@ -8057,6 +8598,7 @@
       "planar_weak_balance_volume",
       "recursive_finite_source",
       "finite_moving_meridian_tangle",
+      "recursive_complete_fourier_trace",
       "recursive_exact_filling_source",
       "recursive_factorial_rate",
       "recursive_local_ideal_cells",
@@ -8071,14 +8613,24 @@
       "recursive_character_fourier",
       "recursive_strict_local_cells",
       "recursive_strict_local_maps",
+      "geo_nonparabolic_tree_sewing",
+      "geo_longitude_ratio_differential",
+      "geo_source_constant_field",
+      "geo_all_main_reconstruction_units",
       "recursive_strict_normal_form",
       "recursive_ordered_tangle_normalization",
       "recursive_strict_optimizer",
       "recursive_stationary_port_identities",
+      "geo_bare_hub_legendre",
       "recursive_strict_angle_geometry",
+      "geo_bare_zero_circle_reconstruction",
       "recursive_strict_boundary_profiles",
       "recursive_strict_component_bounds",
       "recursive_strict_marked_metric",
+      "geo_direct_preferred_cusp_word",
+      "geo_preferred_longitude_monomial",
+      "geo_preferred_longitude_negative_lift",
+      "geometric_longitude_strict_trees",
       "recursive_strict_source_gap",
       "recursive_completed_source_gap",
       "recursive_strict_pure_packet",
@@ -8105,11 +8657,10 @@
       "analytic_actual_operator_classical_germ",
       "tree_positive_completion",
       "geo_circle_preferred_cusp",
+      "geo_nonparabolic_positive_anchor",
       "geo_filled_meridian_germ",
-      "geo_preferred_longitude_monomial",
-      "geo_preferred_longitude_negative_lift",
+      "geo_marked_branch_identification",
       "geometric_longitude_circle_trees",
-      "geometric_longitude_strict_trees",
       "geometric_selected_factor_of_actual_recurrence",
       "tree_directed_volume",
       "tree_local_volume",
@@ -8118,51 +8669,71 @@
     "shared_prerequisites": [
       {
         "id": "finite_local_fourier",
-        "downstream": 84
+        "downstream": 91
       },
       {
         "id": "finite_remainder",
-        "downstream": 78
+        "downstream": 85
       },
       {
         "id": "finite_hermite",
-        "downstream": 76
+        "downstream": 83
       },
       {
         "id": "finite_crossing",
-        "downstream": 72
+        "downstream": 79
       },
       {
         "id": "finite_pivotal_mark",
-        "downstream": 71
+        "downstream": 78
       },
       {
         "id": "finite_global_source",
-        "downstream": 70
+        "downstream": 77
       },
       {
         "id": "finite_invariant_normalization",
-        "downstream": 57
+        "downstream": 64
       },
       {
         "id": "recursive_finite_source",
-        "downstream": 47
+        "downstream": 54
+      },
+      {
+        "id": "geo_tetrahedral_normal_flow_rows",
+        "downstream": 33
+      },
+      {
+        "id": "geo_local_peripheral_volume_differential",
+        "downstream": 31
+      },
+      {
+        "id": "recursive_strict_normal_form",
+        "downstream": 31
       },
       {
         "id": "geo_simple_sphere_packing",
         "downstream": 30
       },
       {
-        "id": "geo_local_peripheral_volume_differential",
+        "id": "recursive_factorial_rate",
+        "downstream": 29
+      },
+      {
+        "id": "recursive_strict_optimizer",
         "downstream": 28
+      },
+      {
+        "id": "recursive_stationary_port_identities",
+        "downstream": 27
       },
       {
         "id": "finite_weighted_graph_kernel",
         "downstream": 26
       },
       {
-        "id": "recursive_strict_normal_form",
-        "downstream": 25
+        "id": "geo_nearby_metric_completion",
+        "downstream": 24
       },
       {
         "id": "analytic_canonical_factorial",
@@ -8173,7 +8744,11 @@
         "downstream": 23
       },
       {
-        "id": "recursive_factorial_rate",
+        "id": "geo_circle_ordered_cut",
+        "downstream": 23
+      },
+      {
+        "id": "recursive_strict_local_cells",
         "downstream": 23
       },
       {
@@ -8181,16 +8756,8 @@
         "downstream": 22
       },
       {
-        "id": "recursive_strict_optimizer",
+        "id": "recursive_strict_local_maps",
         "downstream": 22
-      },
-      {
-        "id": "recursive_stationary_port_identities",
-        "downstream": 21
-      },
-      {
-        "id": "geo_nearby_metric_completion",
-        "downstream": 20
       },
       {
         "id": "recursive_positive_source",
@@ -8198,10 +8765,6 @@
       },
       {
         "id": "analytic_conditional_filling",
-        "downstream": 19
-      },
-      {
-        "id": "geo_circle_ordered_cut",
         "downstream": 19
       },
       {
@@ -8237,15 +8800,23 @@
         "downstream": 14
       },
       {
+        "id": "geo_nonparabolic_edge_character",
+        "downstream": 14
+      },
+      {
+        "id": "geo_same_filled_chain",
+        "downstream": 14
+      },
+      {
+        "id": "recursive_strict_angle_geometry",
+        "downstream": 14
+      },
+      {
         "id": "recursive_strict_source_gap",
         "downstream": 14
       },
       {
         "id": "analytic_cofactor_angular_gap",
-        "downstream": 13
-      },
-      {
-        "id": "geo_circle_positive_edge_charts",
         "downstream": 13
       },
       {
@@ -8257,11 +8828,11 @@
         "downstream": 12
       },
       {
-        "id": "analytic_circle_charge_path",
+        "id": "analytic_morse_face_saddle",
         "downstream": 12
       },
       {
-        "id": "analytic_morse_face_saddle",
+        "id": "geo_circle_positive_edge_charts",
         "downstream": 12
       },
       {
@@ -8269,8 +8840,20 @@
         "downstream": 12
       },
       {
+        "id": "geo_nonparabolic_tree_sewing",
+        "downstream": 12
+      },
+      {
         "id": "planar_sector_envelopes",
         "downstream": 12
+      },
+      {
+        "id": "recursive_strict_marked_metric",
+        "downstream": 12
+      },
+      {
+        "id": "analytic_circle_charge_path",
+        "downstream": 11
       },
       {
         "id": "analytic_cross_spectral_gap",
@@ -8285,15 +8868,7 @@
         "downstream": 11
       },
       {
-        "id": "geo_circle_primitive_periods",
-        "downstream": 11
-      },
-      {
         "id": "geo_morse_primitive_words",
-        "downstream": 11
-      },
-      {
-        "id": "recursive_strict_local_cells",
         "downstream": 11
       },
       {
@@ -8313,11 +8888,7 @@
         "downstream": 10
       },
       {
-        "id": "geo_nonparabolic_edge_character",
-        "downstream": 10
-      },
-      {
-        "id": "geo_same_filled_chain",
+        "id": "geo_circle_primitive_periods",
         "downstream": 10
       },
       {
@@ -8325,15 +8896,7 @@
         "downstream": 10
       },
       {
-        "id": "recursive_strict_local_maps",
-        "downstream": 10
-      },
-      {
         "id": "tree_exact_edge_kernel",
-        "downstream": 10
-      },
-      {
-        "id": "tree_positive_completion",
         "downstream": 10
       },
       {
@@ -8361,19 +8924,15 @@
         "downstream": 9
       },
       {
-        "id": "geo_nonparabolic_tree_sewing",
-        "downstream": 9
-      },
-      {
-        "id": "recursive_strict_angle_geometry",
-        "downstream": 9
-      },
-      {
         "id": "recursive_strict_filling_transfer",
         "downstream": 9
       },
       {
         "id": "recursive_uniform_leaf_envelopes",
+        "downstream": 9
+      },
+      {
+        "id": "tree_positive_completion",
         "downstream": 9
       },
       {
@@ -8397,19 +8956,11 @@
         "downstream": 8
       },
       {
-        "id": "recursive_strict_marked_metric",
-        "downstream": 8
-      },
-      {
         "id": "geo_longitude_ratio_differential",
         "downstream": 7
       },
       {
         "id": "geo_morse_volume_calibration",
-        "downstream": 7
-      },
-      {
-        "id": "geo_positive_marked_gluing",
         "downstream": 7
       },
       {
@@ -8421,7 +8972,7 @@
         "downstream": 6
       },
       {
-        "id": "geo_complete_marked_metric_identification",
+        "id": "geo_positive_marked_gluing",
         "downstream": 6
       },
       {
@@ -8437,7 +8988,7 @@
         "downstream": 5
       },
       {
-        "id": "geo_circle_preferred_cusp",
+        "id": "geo_direct_preferred_cusp_word",
         "downstream": 5
       },
       {
@@ -8457,11 +9008,15 @@
         "downstream": 4
       },
       {
-        "id": "geo_filled_meridian_germ",
+        "id": "geo_nonparabolic_positive_anchor",
         "downstream": 4
       },
       {
         "id": "geo_preferred_longitude_monomial",
+        "downstream": 4
+      },
+      {
+        "id": "recursive_complete_fourier_trace",
         "downstream": 4
       },
       {
@@ -8497,6 +9052,14 @@
         "downstream": 3
       },
       {
+        "id": "geo_bare_hub_legendre",
+        "downstream": 3
+      },
+      {
+        "id": "geo_filled_meridian_germ",
+        "downstream": 3
+      },
+      {
         "id": "geo_preferred_longitude_negative_lift",
         "downstream": 3
       },
@@ -8525,7 +9088,7 @@
         "downstream": 2
       },
       {
-        "id": "geometric_longitude_circle_trees",
+        "id": "geo_bare_zero_circle_reconstruction",
         "downstream": 2
       },
       {
@@ -8573,6 +9136,14 @@
         "downstream": 1
       },
       {
+        "id": "geo_complete_marked_metric_identification",
+        "downstream": 1
+      },
+      {
+        "id": "geometric_longitude_circle_trees",
+        "downstream": 1
+      },
+      {
         "id": "geometric_longitude_strict_trees",
         "downstream": 1
       },
@@ -8614,6 +9185,14 @@
       },
       {
         "id": "finite_grounded_inverse",
+        "downstream": 0
+      },
+      {
+        "id": "geo_circle_preferred_cusp",
+        "downstream": 0
+      },
+      {
+        "id": "geo_marked_branch_identification",
         "downstream": 0
       },
       {
@@ -8726,8 +9305,8 @@
       "manuscript/sections/K-directed-circle-messages.tex": "7eff3a7658079dff75802b8044d7213e040795eeff89c7795bb1476aee04c03a",
       "papers/three-braids/main.tex": "9bad961bfcb9893bf0b6035a084d95436e0c146b3acda10850ba7d374a832c76",
       "repro/check_cyclic_source_constants.py": "302e25fa4a42784e67ecd502f004bfe98c9c08a1246c4ff64019bda46e5cee05",
-      "manuscript/sections/I-geometric-characteristic.tex": "d6e7a10052866edca5369cce3aeb3a4b9758a7b9807386af2d08816da57313f2",
-      "manuscript/sections/J-strict-tree-geometric-characteristic.tex": "a7abe912fbc16874f19818551fc737926375dcf0b4a3f8a8e9104e9e52a6642b",
+      "papers/preferred-longitudes/main.tex": "4c3dbd8921da66c12b84c576d3446be2163500a017dbc364defa71b857ee6cba",
+      "papers/preferred-longitudes/bare.tex": "febcd792b55d955b02941a38067240af9219eaff4b0a252cc7c7402d50d8a846",
       "notes/actual_global_diagonal_spectral_sector_gap.md": "fb8353e00968dedcf0e9563a6e1d6057a38162714e8aa1bbaf234d4042cac79f",
       "manuscript/sections/L-balanced-terminal-fans.tex": "4c5b03317602d547a44028908a99e8cd449922f391c27ba80e8dafd5156f4775",
       "papers/newton-tangles/main.tex": "1d6dc27ef5129b98012530b3e750f42ecf986c81e1cfd0aefe9b9581e6544af6",
@@ -8740,15 +9319,25 @@
       "papers/conway-fillings/metric-volume.tex": "721d492f743a17b0a9a0b4008447c4a2dea507840f6bb0dff821b2aefcadc2e6",
       "formal/VolumeLogic/VolumeTransfer.lean": "862e17ea64b46022fc830610c491c3f25dc0f09e6e6f7650f4b73e81f34401dc",
       "formal-real/RealTransfer.lean": "fd41a1469999ec0e455e64a08c5d81a947a38797054c8f850a3a2371023c545a",
-      "notes/general_marked_multicusp_gluing_rigidity.md": "f882d2c7d1f723590391d3cc03dcd9bba7a12d13c2e006c6dea570e1b4af1b42",
+      "papers/nonparabolic-tree-geometry/rigidity.tex": "0a64ebd907bc427a22e52534d151f235520da90dfbace471ada27e1868065816",
       "manuscript/sections/F-quantitative-octahedral-geometry.tex": "4348d40531fe83415223b88e26b1e3aedcb01daa9c6e17f030ae596000f8f268",
       "notes/actual_fejer_unique_geometric_maximizer.md": "231c22c5bd4f0c1527a84c4db92d83cc13b7f7b56627c47631644addb98f8ec4",
       "notes/actual_complete_core_geometric_deformation.md": "6b3be9bb1c1f79f2d3b4a679a8cfa5f6f5df37640354add9ab04fdb8f8c4f580",
+      "papers/nonparabolic-tree-geometry/faces.tex": "99c02aa1c6c493ee312d9ed95748c31f4f953f3c5c830c8da9e017f03226da50",
+      "papers/nonparabolic-tree-geometry/character.tex": "d5c15ce2e2be3edb38bc73aa9699dedd5a98dc8f3bf11cd45d023b1cff8b7b0d",
+      "papers/nonparabolic-tree-geometry/main.tex": "68286eb8ff7e651b11ad40cad3d810a03b800faa1132a05bb46d1340b3416b68",
+      "papers/nonparabolic-tree-geometry/sewing.tex": "d37da63fe6d270f3e0c5e487cdbe0dc076dc283e86eb682cd9c02dcbb4732396",
+      "papers/preferred-longitudes/algebra.tex": "f1057b4b6c410569783758a5d88a8787d1f640ff3bc2a176552594eee0a1d91c",
+      "papers/preferred-longitudes/regularity.tex": "bdc8533a325a94cc9917ae8fd1cf6bc57785dcc17e05ccdba18b2bf053b70f03",
+      "papers/preferred-longitudes/calibration.tex": "176b7650d14baf4228217aa75a73296ef2031eeec5b500bde89cbf5e98dcf8ea",
+      "papers/preferred-longitudes/sign.tex": "68ab4292270e666db2cf00d8da8050fdc6b890b2ad2d61e5dfa0d32490197b09",
       "papers/directed-tree-asymptotics/kernels.tex": "6f18f35d3167e9e81358b91a7ad4ad6d18bd58cf0d79d8050c38bc0e1db710c5",
       "papers/directed-tree-asymptotics/recursion.tex": "65f031c99575ca457f353535b703211cb3b04e5425779514137ac6c42b16801e",
       "manuscript/sections/M-directed-all-orders.tex": "90bde811854ea8d259b9086516703bde0684a6de7d07b99e92a56e0adab49986",
       "manuscript/sections/H-filtered-characteristic.tex": "8e8eda6cf1412a08581be941ac3cd63f792786636dc32edbf3ed4b6ffecc61ec",
       "formal/VolumeLogic/FormalRegrading.lean": "9fe0b604cfe2857cc26569442ee9c608c214307adb5fdfd666e154fcbadc7a2c",
+      "manuscript/sections/I-geometric-characteristic.tex": "d6e7a10052866edca5369cce3aeb3a4b9758a7b9807386af2d08816da57313f2",
+      "manuscript/sections/J-strict-tree-geometric-characteristic.tex": "a7abe912fbc16874f19818551fc737926375dcf0b4a3f8a8e9104e9e52a6642b",
       "formal-real/WeightedGraph.lean": "3e3d77275515fcc861bc861ac8b5e4988e5c5d2775636931ee561db7ce56fecf",
       "papers/strict-newton-profiles/syntax.tex": "73794d02369c60405780877fd5754f1b8f5fc170cd67f4cec115ccf135b653d2",
       "papers/strict-newton-profiles/profiles.tex": "52f2b672dad53dc029e94406fb04049edc82a38c73e7650032bcdb9f00e2d7c7",
@@ -8790,13 +9379,14 @@
       "papers/conway-reductions/closures.tex": "d792e8bc9103129d8f5406220b0f9976941a2c72d347cd3b3e44b1f0127cadab",
       "formal-real/HallRecession.lean": "3b518ee62e07565c074f09029c55d2b14879c64ad48ee7de6c01f456b9dbfc21",
       "formal-real/TriangleHall.lean": "09513da3ef9483ae09615e078543779c6e8de1038e126ed0985e815a55e7af55",
+      "papers/preferred-longitudes/cusp.tex": "ddfaaf3972443892f5b014e14e6d52d45af19f21184da388743477c944c08de7",
       "papers/strict-newton-profiles/main.tex": "1b3ce59bf16a638f11c15bd5ea0e137fa1f9b15de5f66f1cd63221213fb27eab",
-      "papers/dependencies.json": "e6f159523f2b22175cdd17af42d09fcebdda30348aaf931a0a07a550eb8396b7",
+      "papers/dependencies.json": "06b6e0f52c10aa809013646709dcb6994cd50794d82015884f866d2f61cb0046",
       "tools/build_dependency_graph.py": "c52c2bd644ac0fcb191789247c8a00007a85ac8798e3d25f71df9955ec0de84b"
     },
-    "articles": 22,
-    "owned_statements": 106,
-    "unowned_statements": 36,
+    "articles": 24,
+    "owned_statements": 124,
+    "unowned_statements": 25,
     "article_edges": [
       [
         "circle-tree-asymptotics",
@@ -8809,6 +9399,14 @@
       [
         "circle-tree-geometry",
         "directed-tree-asymptotics"
+      ],
+      [
+        "circle-tree-geometry",
+        "nonparabolic-tree-geometry"
+      ],
+      [
+        "circle-tree-geometry",
+        "preferred-longitudes"
       ],
       [
         "conway-asymptotics",
@@ -8829,6 +9427,10 @@
       [
         "conway-source-bounds",
         "conway-asymptotics"
+      ],
+      [
+        "conway-source-bounds",
+        "preferred-longitudes"
       ],
       [
         "filling-bounds",
@@ -8916,6 +9518,10 @@
       ],
       [
         "marked-fillings",
+        "nonparabolic-tree-geometry"
+      ],
+      [
+        "marked-fillings",
         "planar-certificates"
       ],
       [
@@ -8968,11 +9574,19 @@
       ],
       [
         "newton-tangles",
+        "preferred-longitudes"
+      ],
+      [
+        "newton-tangles",
         "quarter-index-asymptotics"
       ],
       [
         "newton-tangles",
         "strict-newton-profiles"
+      ],
+      [
+        "nonparabolic-tree-geometry",
+        "preferred-longitudes"
       ],
       [
         "oscillatory-fillings",
@@ -9007,6 +9621,14 @@
         "conway-asymptotics"
       ],
       [
+        "strict-conway-geometry",
+        "nonparabolic-tree-geometry"
+      ],
+      [
+        "strict-conway-geometry",
+        "preferred-longitudes"
+      ],
+      [
         "strict-newton-profiles",
         "conway-asymptotics"
       ],
@@ -9017,6 +9639,10 @@
       [
         "strict-newton-profiles",
         "conway-source-bounds"
+      ],
+      [
+        "strict-newton-profiles",
+        "preferred-longitudes"
       ],
       [
         "strict-newton-profiles",
@@ -9042,6 +9668,8 @@
       "circle-tree-asymptotics",
       "conway-reductions",
       "directed-tree-asymptotics",
+      "nonparabolic-tree-geometry",
+      "preferred-longitudes",
       "quarter-index-asymptotics",
       "terminal-decorations",
       "three-braids",

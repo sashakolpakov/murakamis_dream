@@ -1,0 +1,55 @@
+\section{Finite verification and scope}\label{ng:scope}
+
+The accompanying \texttt{check.py} replays exact rational identities
+for the local face maps, all six edge returns, the meridian wire
+change, both seam tables, the character matrices and their
+auxiliary transports. It checks the Hurwitz action and its
+eigenflag qualification and the elementary polarization identity.
+It includes incorrect fixed-white and eigenflag alternatives as
+negative controls. With \texttt{--output} it writes a source-hashed
+JSON record only after all checks finish and the inputs are
+verified unchanged.
+
+These finite identities support the displayed algebra. They do
+not prove the inverse-cut topology, positive metric completion,
+the full gluing-row rank theorem or the analytic inverse-function
+theorem. The paper supplies its own arguments or exact named
+imports for those steps. In particular, neither an exponentiated
+slope equation nor a character trace calculation is substituted
+for a marked group representation or a smooth filling.
+
+The method sits within the classical deformation and peripheral
+framework of Neumann--Zagier \cite{NZ}. Our actual row convention
+and its geometric meaning are supplied by the direct calculation
+in \cite{Marked}; no unspecified rigidity theorem is imported.
+The statements here concern the literal ordered trees and the
+explicitly stated general positive-germ lemma, not arbitrary
+matching graphs or arbitrary incomplete hyperbolic structures.
+
+\begin{thebibliography}{9}
+\bibitem{Circle}
+\emph{Positive octahedra and primitive fillings for trees of crossing circles},
+companion paper, Proposition~2.1, Lemma~3.1 and
+Theorems~1.1 and~7.1.
+\href{https://sashakolpakov.github.io/murakamis_dream/papers/circle-tree-geometry.pdf}
+{Companion PDF}.
+
+\bibitem{Strict}
+\emph{Marked geometry of strict Conway compositions},
+companion paper, Section~5, equations~(5.1)--(5.2).
+\href{https://sashakolpakov.github.io/murakamis_dream/papers/strict-conway-geometry.pdf}
+{Companion PDF}.
+
+\bibitem{Marked}
+\emph{Circle patterns and primitive fillings of augmented links},
+companion paper, Section~7.1, equations~(7.1)--(7.2).
+\href{https://sashakolpakov.github.io/murakamis_dream/papers/marked-fillings.pdf}
+{Companion PDF}.
+
+\bibitem{NZ}
+W.~D.~Neumann and D.~Zagier,
+Volumes of hyperbolic three-manifolds,
+\emph{Topology} \textbf{24} (1985), 307--332.
+\href{https://doi.org/10.1016/0040-9383(85)90004-7}
+{doi:10.1016/0040-9383(85)90004-7}.
+\end{thebibliography}

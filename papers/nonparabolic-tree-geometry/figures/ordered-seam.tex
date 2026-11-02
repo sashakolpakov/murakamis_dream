@@ -1,0 +1,19 @@
+\begin{tikzpicture}[scale=.85,>=Latex,every node/.style={font=\small}]
+\coordinate(A) at(0,2.1);\coordinate(R) at(-1.4,0);
+\coordinate(Z) at(1.4,0);
+\coordinate(B) at(6,2.1);\coordinate(O) at(4.6,0);
+\coordinate(I) at(7.4,0);
+\fill[blue!8] (A)--(R)--(Z)--cycle;
+\fill[blue!8] (B)--(O)--(I)--cycle;
+\draw[thick] (A)--(R)--(Z)--cycle;
+\draw[thick] (B)--(O)--(I)--cycle;
+\foreach \p/\lab/\pos in {A/A/above,R/R/below left,Z/0/below right,B/A'/above,O/1/below left,I/\infty/below right}
+ {\fill(\p)circle(1.5pt);\node[\pos]at(\p){$\lab$};}
+\draw[->,thick] (2,1)--(4,1);
+\node[above,align=center] at(3,1.05){original\\seam};
+\node at(0,-.8){outgoing $(A,R,0)$};
+\node at(6,-.8){incoming $(A',1,\infty)$};
+\node[align=center] at(3,-1.6)
+ {$(-mQ,-Q^{-1},-Q/m)$ pairs with\\
+  $(-1/(mQ),-Q,-m/Q)$ in this displayed order.};
+\end{tikzpicture}

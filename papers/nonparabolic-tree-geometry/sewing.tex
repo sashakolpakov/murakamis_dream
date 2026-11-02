@@ -1,0 +1,387 @@
+\section{Ordered pages and the half-twist collar}\label{ng:ordered-pages-and-the-half-twist-collar}
+
+At the second end of an edge, in the same native face notation,
+the incoming triangle is \((B,R,1)\) and the outgoing triangle
+is \((B,\infty,0)\). Their neighboring third vertices are
+
+\begin{equation}\label{ng:S0}
+W_3^{-1}(1),\ W_2^{-1}(b),\ W_1^{-1}(S),\qquad
+ W_1^{-1}(0),\ W_0^{-1}(b),\ W_3^{-1}(\infty).
+\end{equation}
+
+Substitution gives the tables
+
+\begin{equation}\label{ng:S0a}
+I(m^{-1},P)=(-1/(Pm),-P,-m/P),\qquad
+ O(m^{-1},P)=(-P/m,-1/P,-Pm).
+\end{equation}
+
+At the first end use \(I(m,Q),O(m,Q)\) from \eqref{ng:N18}.
+The original reversed triangle matching pairs outgoing entries with
+the incoming entries in reverse order, and every product is one.
+Thus both the angles and the complex shears match.
+
+\subsection{An arbitrary finite pure page tree}\label{ng:an-arbitrary-finite-pure-page-tree}
+
+Let the original tree have no retained odd seam. Choose one
+bipartition sign \(\sigma_v\in\{1,-1\}\), so adjacent
+vertices have opposite signs. At an edge with first endpoint
+\(v\), use the local chart with \(m_e=m^{\sigma_v}\).
+Its other endpoint then has parameter \(m^{\sigma_w}\) by
+\eqref{ng:S0a}. Every incident page at a fixed vertex therefore has the
+same table \(I(m^{\sigma_v},Q_v),O(m^{\sigma_v},Q_v)\).
+
+For each circle, sew these pages in the original cyclic order,
+using the three ordered punctures in \eqref{ng:N18}. Start with a terminal
+edge and use the literal left and right insertion operations of
+\cite[Proposition~2.1, equations~(2.2) and~(2.4)]{Circle}. Every insertion attaches the doubled
+two-triangle disk side just described. Formula \eqref{ng:N18} verifies the
+new seam, and no preceding seam is altered. The actual turns
+and any half-turn frame decoration carry all the labels and maps.
+No open-tangle commutativity is used.
+
+This proves that the charts assemble on every finite pure ordered
+page tree. The endpoint-inverted parameter causes no ambiguity in
+the source wire: its equation depends on \(m+m^{-1}\), and its
+branch through \(X=i\) is unique. The same \(X_e\) is therefore
+used at the two ends. The auxiliary meridian increment of edge
+\(e\) at circle \(v\) is
+
+\begin{equation}\label{ng:S5}
+\frac{Q_v+X_e}{1+Q_vX_e},
+\end{equation}
+
+and its disk longitude has similarity \(Q_v^2\).
+Multiplication of the successive increments is in the original
+circle order. Since each is measured in that same eigenflag,
+their similarities multiply without an additional scalar.
+
+The maps give an actual nearby representation of the original
+pure exterior. Indeed the face returns within every edge block
+are the six identities in the local chart, and the newly created
+page-edge returns are \eqref{ng:N18}. These are precisely the relations
+obtained by the reversible projection/disk cut. Positive
+tetrahedral shapes persist for a sufficiently small neighborhood
+depending on the fixed tree.
+
+\begin{figure}[ht]
+\centering\input{figures/ordered-seam}
+\caption{One pure seam uses the original reversed main-puncture order:
+$(A,R,0)$ on the outgoing page is matched with $(A',1,\infty)$
+on the incoming page. The three edge ratios multiply to one in
+reverse order, so both triangles of the disk side match, including
+complex shear. The letters refer to the two local coordinate charts.}
+\label{ng:seam-figure}
+\end{figure}
+
+\subsection{Positive main meridians and their flags}\label{ng:positive-main-meridians-and-their-flags}
+
+The bipartition signs describe native page coordinates. They are
+not extra choices of the knot orientation. At a main boundary
+vertex, take the actual small oriented meridian word supplied by
+the physical collar. Its local derivative at the displayed ideal
+point is \(m\) or \(m^{-1}\), depending on whether that native
+meridian is the positive one or its inverse. Transport the word
+and its eigenflag together through each face map.
+
+For a main component, choose its orientation at one segment.
+The same oriented small meridian propagates by the actual
+annular collar conjugacies. The geometric ideal flag propagates
+by those same conjugacies, so its chosen eigenvalue stays fixed.
+There is no freedom to exchange it after returning around the
+component: for generic \(M\), the peripheral longitude commutes
+with a nonparabolic meridian and hence preserves both eigenlines.
+At \(M=1\) use the analytic limit of this transported flag.
+Thus one can record which global component orientation makes
+the displayed flag the \(M^{-1}\) source flag. For a knot this
+is one global orientation choice, not a separate reset at each
+edge. A comparison with an already specified positive
+meridian must make this initial choice explicitly.
+
+This identifies the auxiliary products for the pure tree. It makes no identification of the preferred main longitude.
+
+\subsection{The reference map at a parabolic main meridian}\label{ng:parabolic-reference-map}
+
+To fix the sign of the braid collar, we will compare it at \(m=1\)
+with the original marked three-point map. In the coordinates above,
+the map \((A,R,0)\mapsto(a,\infty,1)\) is represented by
+\begin{equation}\label{ng:S6}
+ B_{\mathrm o}=
+ \begin{pmatrix}(a(A-R)+R)/A&-R\\1&-R\end{pmatrix}.
+\end{equation}
+Direct substitution gives its three specified values. This reference
+map is used in \eqref{ng:S14} to calibrate the physical crossing at
+the parabolic main meridian. For the nonparabolic deformation we
+construct the braid action on the two puncture generators and
+transport their eigenflags and adjacent charts together.
+
+\subsection{A regular matrix implementing the actual positive braid collar}\label{ng:a-regular-matrix-implementing-the-actual-positive-braid-collar}
+
+Let \(a,b\in\mathrm{SL}_2(\mathbb C)\) be the two ordered
+puncture meridians in the physical braid frame. They have the
+same trace \(M+M^{-1}\). The original positive crossing
+convention is
+
+\begin{equation}\label{ng:S8}
+(a,b)\longmapsto(a^{-1}ba,a),\qquad P=ba.
+\end{equation}
+
+To read the convention, the first strand passes over the second;
+its based meridian remains $a$, while moving the other basing path
+under it conjugates $b$ to $a^{-1}ba$. The strands exchange their
+positions. This is the Wirtinger rule in the original endpoint frame,
+and it preserves $ba$, not $ab$.
+\begin{figure}[ht]
+\centering\input{figures/hurwitz-collar}
+\caption{The retained positive collar and its ordered meridians.
+The first strand passes over the second; the output tuple is
+$(a^{-1}ba,a)$. The outside disk word $P=ba$ is preserved.
+The inverse crossing uses the inverse automorphism.}
+\label{ng:hurwitz-figure}
+\end{figure}
+
+Put
+
+\begin{equation}\label{ng:S9}
+H=P^{-1}-I.
+\end{equation}
+
+Near the auxiliary complete lift \(P\), whose trace is \(-2\),
+\(\det H=2-\operatorname{tr}P\) is near \(4\).
+There is no singular diagonalizing frame.
+The Cayley--Hamilton identities for \(a,b\), with their equal
+traces, give
+
+\begin{equation}\label{ng:S10}
+(P-I)a=b(P-I),\qquad
+ (P-I)^2=(\operatorname{tr}P-2)P.
+\end{equation}
+
+Consequently \(H\) is projectively \((P-I)^{-1}\), it
+commutes with \(P\), and
+
+\begin{equation}\label{ng:S11}
+HaH^{-1}=a^{-1}ba,\qquad HbH^{-1}=a.
+\end{equation}
+
+This is the exact positive collar rule \eqref{ng:S8}. Its inverse realizes
+the negative crossing.
+
+Suppose the selected auxiliary flag has \(P\)-eigenvalue
+\(-Q\). The eigenvalue ratio of \(H\) at that flag is
+
+\begin{equation}\label{ng:S12}
+\frac{-Q^{-1}-1}{-Q-1}=Q^{-1}.
+\end{equation}
+
+Thus composing a pure auxiliary meridian with \(H^\epsilon\)
+changes its similarity by \(Q^{-\epsilon}\). It keeps the
+disk longitude \(P\) and its chosen flag.
+
+There is an independent matrix calibration against the original
+geometric collar. In the local chart set
+
+\begin{equation}\label{ng:S13}
+P=m^{-1}W_2^{-1}W_0.
+\end{equation}
+
+This is the determinant-one disk word and has selected
+eigenvalue \(-Q\). At \(m=1\), for all nearby \(E_0,Q\),
+not just at the complete point,
+
+\begin{equation}\label{ng:S14}
+S_v^{-1}(P^{-1}-I)=W_0^{-1}B_{\mathrm o}
+                        \quad\text{projectively}.
+\end{equation}
+
+The right side is the original physical positive-\(R\)
+meridian of \cite[Section~5, equations~(5.1)--(5.2)]{Strict}.
+That local collar traces the same incoming and outgoing ordered
+triangles; only its coordinate normalization differs.
+The inverse crossing follows the oppositely signed half-twist path.
+Equations \eqref{ng:S8} and \eqref{ng:S14} fix both the braid sign and the actual
+copy/collar marking; the sign has not been chosen from a desired
+source formula.
+
+\subsection{The full ordered boundary groups in the actual edge chart}\label{ng:the-full-ordered-boundary-groups-in-the-actual-edge-chart}
+
+Let \(N_j=W_{j-1}^{-1}W_j\), with indices modulo four.
+Their determinant-one lifts, in the order of the original
+equatorial boundary, are
+
+\begin{equation}\label{ng:S14a}
+A_g=M^{-3}N_3,\qquad B_g=MN_0,\qquad
+ C_g=MN_1,\qquad D_g=MN_2,\qquad
+                    A_gB_gC_gD_g=I.
+\end{equation}
+
+Each trace is \(M+M^{-1}\). These lifts follow from
+\(\det W_0=L,\det W_1=L/m,\det W_2=L/m^2,\det W_3=Lm\).
+They include the native loop directions, which need not all be
+positive main meridians.
+
+The pure edge returns give the following complete boundary
+intertwinings:
+
+\begin{equation}\label{ng:S14b}
+\begin{array}{c|c|c|c|c}
+ \text{circle}&(a,b)\text{ on the input side}
+ &(a',b')\text{ on the output side}&C_0&P=ba=b'a'\\ \hline
+ v&(B_g,A_g)&(C_g^{-1},D_g^{-1})&S_v^{-1}&A_gB_g\\
+ w&(B_g^{-1},C_g^{-1})&(A_g,D_g)&S_w^{-1}&(B_gC_g)^{-1}.
+\end{array}
+\end{equation}
+
+Here \(C_0aC_0^{-1}=a'\) and \(C_0bC_0^{-1}=b'\).
+For example the first row is equivalent to
+
+\begin{equation}\label{ng:S14c}
+S_v C_g S_v^{-1}=B_g^{-1},\qquad
+ S_v D_g S_v^{-1}=A_g^{-1}.
+\end{equation}
+
+The second is equivalently
+\(S_w A_gS_w^{-1}=B_g^{-1}\) and
+\(S_w D_gS_w^{-1}=C_g^{-1}\).
+These are consequences of the full white/shaded returns;
+they may also be checked by direct multiplication of the local
+matrices. The product columns agree because
+\(D_g^{-1}C_g^{-1}=A_gB_g\) and
+\(D_gA_g=(B_gC_g)^{-1}\).
+
+The disk convention \(P=ba\) is therefore explicit at both
+ends, including the inversions caused by the turned second
+circle. The same table transports under the actual conjugating
+frames in a tree; an orientation reversal transports the whole
+tuple and its disk word. It does not silently replace \(P\)
+by a different boundary product.
+
+For the positive braid put \(H=P^{-1}-I\) in the input
+frame. Then \(C_+=C_0H\) satisfies
+
+\begin{equation}\label{ng:S14d}
+\begin{aligned}
+ C_+aC_+^{-1}&=a'^{-1}b'a',\\
+ C_+bC_+^{-1}&=a',\\
+ C_+PC_+^{-1}&=P .
+\end{aligned}
+\end{equation}
+
+For the negative braid use \(H^{-1}\) and the inverse
+automorphism. Thus the construction checks both generators of
+the actual twice-punctured disk and its outer boundary word;
+it is stronger than checking a peripheral similarity or three
+traces. Formula \eqref{ng:S14} fixes the positive crossing in the
+original physical convention.
+
+\subsection{The opposite-eigenflag qualification}\label{ng:the-opposite-eigenflag-qualification}
+
+Let \(F_a,F_b\) be the two displayed puncture flags, with
+eigenvalues \(\lambda_a,\lambda_b\). The natural braid output
+flags for \eqref{ng:S8} are
+
+\begin{equation}\label{ng:S15}
+(a^{-1}F_b,F_a).
+\end{equation}
+
+Their eigenvalues are \((\lambda_b,\lambda_a)\), since
+the strands have exchanged positions. By contrast,
+\((HF_a,HF_b)\) has eigenvalues
+\((\lambda_a,\lambda_b)\) on that same output tuple.
+If the selected eigenvalues agree, the two descriptions coincide
+by uniqueness of the relevant eigenline. If they differ, use
+\(H\) on the opposite input eigenlines to obtain \eqref{ng:S15}.
+At a native pure circle the geometric flags on its two main
+punctures have opposite selections \(M^{-1},M\).
+The qualification is therefore essential.
+
+This identifies the error in an unqualified instruction to
+transport both displayed flags by \(H\). The intertwiner is
+correct; the displayed decorated triangle needs the accompanying
+Weyl change. The two eigenlines coalesce at the parabolic point,
+so the complete figure alone cannot distinguish the operations.
+
+\subsection{Representation gluing followed by global decoration}\label{ng:representation-gluing-followed-by-global-decoration}
+
+The following construction keeps that distinction explicit.
+First perform the actual collar gluing at the level of
+representations; then select the geometric eigenflags on the
+resulting original link group.
+
+The half-twist is the actual mapping cylinder of the two-punctured
+disk, fixing its outer boundary. Its two boundary generator
+tuples are related by \eqref{ng:S8}. If \(C\) is the pure boundary
+intertwiner, replacing it by \(CH^\epsilon\), with the side
+and composition order fixed by \eqref{ng:S14}, supplies the new
+intertwiner. Equation \eqref{ng:S11} verifies the two puncture relations;
+\([H,P]=0\) verifies the outer disk-boundary relation. These
+are the generators and relation of the twice-punctured disk.
+The van Kampen presentation of that actual cut therefore gives
+the representation of the reglued exterior. It uses the one
+distinguished disk seam at that circle, once.
+
+Apply the operation in every original circle's transported
+puncture frame. The other cyclic page seams remain those of
+the pure-page construction above. At this stage no assertion is made that the old
+pure ideal vertices still provide the correct decoration.
+
+For each resulting main component, choose its actual positive
+meridian and its \(M^{-1}\) eigenflag. At a corner whose
+native loop is the inverse, take the corresponding \(M\)
+eigenflag. Transport these choices by the original paths in the
+completed cut. Peripheral commutation makes the choice independent
+of a peripheral path. Keep the already selected disk-longitude
+flag on each auxiliary circle.
+
+These choices are holomorphic near the complete structure.
+For example, for a noncentral matrix
+\(\left(\begin{smallmatrix}a&b\\c&d\end{smallmatrix}\right)\)
+with \(b\ne0\), an eigenline with prescribed holomorphic
+eigenvalue \(\lambda\) is represented by
+\((b,\lambda-a)\). The opposite eigenline is obtained by
+replacing \(\lambda\) by \(\lambda^{-1}\).
+Both approach the unique parabolic flag at the complete point.
+A change of coordinate handles a chart with \(b=0\).
+The same argument applies to the selected auxiliary eigenvalue
+\(-Q\).
+
+Develop the original topological ideal triangulation from these
+global flags and the constructed representation. The map of
+each triangle is the unique map of its transported ordered
+triple. The adjacent white maps are defined from these transported
+triples as well, so they carry the same eigenflag choices.
+Equivariance gives every edge return. At the complete parameter,
+\eqref{ng:S14} and the original collar convention identify the actual odd
+development. Its positively oriented tetrahedra therefore remain
+positive in a sufficiently small neighborhood of the fixed
+finite tree. This is a local decorated representation
+construction, not a global completeness assertion for a
+nonparabolic main cusp.
+
+The tuple with \(P=ba\) is exactly \eqref{ng:S14b}, transported in the
+original physical collar. The positive main loops are chosen
+in the completed cut. For the canonical four-segment traversal,
+they are \(C_g,B_g^{-1},A_g,D_g^{-1}\) at
+\(\infty,0,R,1\), respectively; all four select their geometric
+corner with eigenvalue \(M^{-1}\). A reversed physical route
+transports both its loop direction and its flag. The preceding
+opposite-eigenflag calculation describes the required Weyl change.
+
+At representation level the primitive auxiliary increment is
+
+\begin{equation}\label{ng:S16}
+U_v^{\exp}
+       =Q_v^{-\epsilon_v}
+          \prod_{e\ni v}\frac{Q_v+X_e}{1+Q_vX_e},\qquad
+ V_v^{\exp}=Q_v^2.
+\end{equation}
+
+It is unchanged by the main-flag redecoration. The exponentiated filling
+equation with \(n_v=\epsilon_v-2p_v\) is then
+
+\begin{equation}\label{ng:S17}
+\prod_{e\ni v}\frac{Q_v+X_e}{1+Q_vX_e}
+                                =Q_v^{n_v}.
+\end{equation}
+
+The auxiliary formulas retain the original circle words. The argument does not replace a boundary word by a scalar merely because the local representation has the correct traces. The remaining issue for the local filled germ is rigidity with the primitive logarithmic mark; we establish it next.

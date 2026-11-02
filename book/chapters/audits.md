@@ -731,6 +731,16 @@ by extrapolating finite levels.
 
 ## Checking the geometric longitude formulas
 
+The two geometric papers can be reproduced through the single
+[paper-check command](../../papers/README.md#building-and-reproducing-the-papers).
+Their scripts check the rational face maps, ordered conjugacies,
+Hurwitz transport, cusp translations and integer framing correction.
+The [manuscript dependency review](../../repro/MANUSCRIPT_AUDIT.md#separate-accounts-of-the-representation-and-longitude-proofs)
+explains the proof division and the interval-count argument added during
+extraction. The topology, algebraic regularity and analytic germ theorems
+are written arguments; the finite checks do not establish them by sampling.
+
+
 With Python and SymPy installed, run the four exact-algebra programs
 through one command:
 

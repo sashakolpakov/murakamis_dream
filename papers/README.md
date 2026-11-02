@@ -51,12 +51,16 @@ common core for several inserted diagrams also uses protected gluing.
 
 ## The current drafts
 
-The twenty current papers total 329 pages, with individual lengths from
-11 to 28 pages. Each gives the proofs of its stated results and names
+The twenty-two current papers total 380 pages, with individual lengths from
+11 to 29 pages. Each gives the proofs of its stated results and names
 its numbered companion imports. Two earlier geometry editions, totaling
 another 25 pages, are preserved below for existing citations. This is a
 partial extraction of the reference manuscript; the remaining theorem
-families are listed at the end of this guide.
+families are listed at the end of this guide. The aggregate page count
+is not a measure of compression: separate papers repeat their conventions
+and references, and some supply arguments only sketched in the reference.
+The aim is to make each proof independently readable and citable while
+removing duplicated arguments from its prerequisites.
 
 **Finite spectral evaluation and uniform filling bounds.** 28 pages.
 [TeX source](filling-bounds/main.tex) ·
@@ -325,6 +329,51 @@ peripheral-volume differential, not that paper's long-filling existence
 theorem. It supplies geometry for subsequent asymptotic applications;
 it does not select a nonzero contribution to a quantum invariant.
 
+**Nonparabolic holonomy of trees of crossing circles.** 22 pages.
+[TeX source](nonparabolic-tree-geometry/main.tex) ·
+[PDF](../docs/papers/nonparabolic-tree-geometry.pdf)
+
+This paper allows the main meridian holonomy to move away from its
+complete parabolic value. It constructs matrices for the original
+augmented-link group and proves the ordered conjugacy relations used to
+join the pieces. Selected eigenlines, half twists and primitive peripheral
+curves are followed through that construction. Agreement of matrix
+traces alone would not suffice.
+
+A second argument proves local rigidity on a positive ideal triangulation:
+one primitive peripheral logarithm per cusp gives local coordinates.
+The proof computes the edge-row rank, uses positivity to prove that the
+gluing Jacobian is invertible, and constructs inverse maps between shape
+parameters and decorated representations. With the auxiliary filling
+slopes fixed, the remaining coordinate is the main meridian. The
+circle-tree geometry paper supplies the actual positive filling point;
+the present paper identifies its coordinates and markings. These results
+neither determine the preferred longitude nor estimate a quantum source.
+
+**Preferred longitudes of Conway tree complements.** 29 pages.
+[TeX source](preferred-longitudes/main.tex) ·
+[PDF](../docs/papers/preferred-longitudes.pdf)
+
+For each physical quarter-turn edge, the formula contributes
+\((M^2-X_e)/(1-M^2X_e)\), where \(M\) is the meridian eigenvalue
+and \(X_e\) is the edge shape coordinate. The proof first shows that
+the ratio between this product and the actual longitude depends only on
+\(M\). It then constructs regular representations at every nonzero
+meridian value, excluding additional zeros and poles. The remaining
+factor is a monomial. A direct cusp-path calculation determines its
+exponent, including the writhe and surgery correction; a Seifert-surface
+frame argument fixes the determinant-one sign.
+
+The final section treats junctions without crossing circles. Inserting
+an identity box inside an auxiliary circle and filling that circle's
+meridian restores the original tangle. The proof follows the group
+words through this operation and eliminates the added angular variable
+from the classical action, including at the allowed half-label
+singularity. It imports finite Newton identities and the exact Fourier
+trace, but no quantum asymptotic. The conclusion identifies a geometric
+longitude germ. Applying it to a recurrence requires a separate
+all-orders expansion and an actual annihilating operator.
+
 **Degree and twist estimates for circle-tree invariants.** 15 pages.
 [TeX source](circle-tree-asymptotics/main.tex) ·
 [PDF](../docs/papers/circle-tree-asymptotics.pdf)
@@ -487,7 +536,7 @@ purposes:
 
 | Subject | Result to explain and prove | Dependencies that must remain visible |
 | --- | --- | --- |
-| Geometric longitude and recurrences | All-order meridian expansions force the selected geometric factor to divide a classical symbol | The moving-meridian source, full expansion, normalization and preferred geometric longitude |
+| Moving-meridian estimates and recurrence factors | Estimate the full source on moving-parameter charts, then show that an actual recurrence has the selected geometric factor in its classical symbol | Exact moving-meridian calculus, uniform all-orders expansion, normalization, and the geometric longitude theorem |
 
 The frozen reference manuscript's first theorem uses its completed-root
 grammar. The companion accounts now cover the larger strict syntax through
@@ -509,8 +558,8 @@ check those hypotheses. A reference to a folder of calculations is not
 a substitute. The current drafts include the strict Conway volume theorem,
 the summed and directed circle-tree criteria, and the local quarter-index
 expansion, together with their finite and geometric foundations. The
-all-orders meridian and longitude results still require their own
-extraction and proof review.
+longitude theorem now has its own account; the moving-source and
+all-orders recurrence arguments remain under extraction and proof review.
 The dependency graph keeps those obligations visible.
 
 The illustrated guide retains the broader approaches and unsuccessful

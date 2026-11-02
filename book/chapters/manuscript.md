@@ -23,8 +23,9 @@ The directed circle-tree paper likewise makes the older local criterion
 a consequence of one more general argument.
 
 These papers do not yet replace the reference account. In particular,
-the all-orders meridian, longitude and recurrence results still need
-separate complete accounts.
+the moving-source estimates and all-orders recurrence results still need
+separate published accounts. The nonparabolic representation and
+preferred-longitude proofs now have 22- and 29-page papers.
 The reference PDF remains frozen. Its measured length is 93 pages of main
 text, 266 pages of appendices, and 15 pages of front matter and references.
 Several theorem families and their separate dependencies accumulated in
@@ -309,12 +310,25 @@ calculations separately.
 
 ## The geometric longitude and the quantum recurrence
 
-The geometric-characteristic chapter identifies the longitude
-selected by the source with the preferred geometric longitude
-of the knot complement. It first constructs nonparabolic
-representations for trees of crossing circles, retaining the
-puncture eigenlines through each half twist. A rational-function
-argument then determines the remaining framing factor.
+Two companion papers give the geometric part of this argument.
+[Nonparabolic holonomy of trees of crossing circles](../../docs/papers/nonparabolic-tree-geometry.pdf)
+constructs representations of the original augmented-link group while
+the main meridian varies. It proves full ordered conjugacy relations,
+follows the chosen eigenlines through half twists, and identifies a
+one-dimensional geometric germ after the auxiliary slopes are fixed.
+The proof uses a positive ideal triangulation and its actual primitive
+peripheral coordinates; equality of traces or slope eigenvalues alone
+would leave necessary group relations unproved.
+
+[Preferred longitudes of Conway tree complements](../../docs/papers/preferred-longitudes.pdf)
+then determines the preferred longitude on that germ. Dividing it by
+the explicit edge factors leaves a rational function of the meridian
+alone. Regular reconstruction at every nonzero meridian value rules out
+additional zeros and poles, so the discrepancy is a monomial. An explicit
+cusp path determines the exponent, and a Seifert-surface frame argument
+fixes the sign. The proof therefore does more than match the value and
+first derivative at the complete point. Neither paper assumes a quantum
+asymptotic or asserts a full A-polynomial identity.
 
 The [strict-tree extension](../../notes/actual_strict_tree_geometric_characteristic.md)
 allows product junctions without crossing circles, of arbitrary

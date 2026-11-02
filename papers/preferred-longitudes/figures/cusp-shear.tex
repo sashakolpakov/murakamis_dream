@@ -1,0 +1,13 @@
+\begin{tikzpicture}[>=Stealth,scale=.82,font=\small]
+\coordinate (O) at (0,0);\coordinate (U) at (.6,0);
+\coordinate (A) at (.65,2.3);\coordinate (F) at (3.05,2.3);
+\fill[blue!8] (O)--(U)--($(U)+(A)$)--(A)--cycle;
+\fill[orange!12] (O)--(U)--($(U)+(F)$)--(F)--cycle;
+\draw[blue!65!black] (O)--(U)--($(U)+(A)$)--(A)--cycle;
+\draw[orange!75!black] (O)--(U)--($(U)+(F)$)--(F)--cycle;
+\draw[->,thick] (O)--(U) node[midway,below] {$\mu_K$};
+\draw[->,thick,blue!65!black] (O)--(A) node[pos=.7,left] {$\lambda_{\rm aug}$};
+\draw[->,thick,orange!75!black] (O)--(F) node[pos=.58,right] {$\lambda_{\rm fill}$};
+\draw[->,dashed] (A)--(F) node[midway,above] {$4\mu_K$};
+\node[align=left,anchor=west] at (5,.95) {Same cusp and meridian.\\Different preferred basis\\after disk filling.};
+\end{tikzpicture}

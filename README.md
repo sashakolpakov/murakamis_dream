@@ -181,8 +181,8 @@ separate work.
 
 ## Reading and reproducing the work
 
-The [collection of research papers](papers/README.md) now contains twenty current
-drafts, ranging from 11 to 28 pages. They separate the exact finite
+The [collection of research papers](papers/README.md) now contains twenty-two current
+drafts, ranging from 11 to 29 pages. They separate the exact finite
 invariant, coefficient estimates, complex asymptotics and marked
 hyperbolic geometry from the application theorems. The strict
 Conway theorem and the summed and directed circle-tree criteria have
@@ -198,8 +198,11 @@ from collecting several theorem families, repeated setup for separate
 proofs, and alternative constructions in one continuous account.
 
 The net-twist and zero-twist reductions now have a separate 15-page
-topological account. The all-orders meridian and longitude theorems still
-need their own complete papers. The consolidated 21-page strict geometry
+topological account. The marked nonparabolic representations and preferred
+longitudes have separate 22- and 29-page accounts. They prove the
+geometric statements without importing quantum asymptotics. The
+moving-source and all-orders recurrence arguments are still being
+prepared for publication. The consolidated 21-page strict geometry
 paper includes the local proofs previously spread over three articles;
 the two earlier editions remain available for existing citations. The
 older local tree criterion now follows from the directed paper, without repeating its
@@ -214,7 +217,7 @@ The open remainder estimate for unchanged general diagrams is not a
 premise of the restricted-family proofs.
 
 The [paper reproduction command](papers/README.md#building-and-reproducing-the-papers)
-runs twenty finite check groups. They compare exact matrix and
+runs twenty-three finite check groups. They compare exact matrix and
 polynomial formulas, replay rational certificate inequalities, and check
 normalizations and endpoint pairings. The source Fourier checks retain repeated-root derivatives and endpoint
 terms; the local recurrence checks retain both source components and

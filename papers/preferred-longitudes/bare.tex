@@ -1,0 +1,591 @@
+\section{The literal insertion}\label{plb:the-literal-insertion}
+
+Use the reduced tree of original product junctions, with consecutive unturned products already grouped. A bare vertex has full valence at least three. Its incident edges are the original quarter-turns; a binary resolution used to describe its positive kernel does not add physical edges.
+
+At a bare vertex insert the literal unturned box \(R^0=I\), at the distinguished position immediately before the original ordered child product. Encircle its two strands by a new crossing circle. Keep every child in its original order. Put
+
+\begin{equation}\label{plb:1}
+\epsilon_v=p_v=n_v=0
+\end{equation}
+
+at this new circle. Filling its original primitive meridian removes the auxiliary circle and restores the literal identity box. Thus the filled tangle, its endpoints, its framed main strands and its original peripheral curves are unchanged. No new quarter-turn is inserted. Repeating the operation at all bare vertices produces a literal all-circle tree on the same physical edge set.
+
+
+
+\begin{figure}[tb]
+\centering\input{figures/zero-collar}
+\caption{A new circle surrounds the two straight strands in the fixed product collar. Its disk longitude retains the ordered word $ba$. Meridian filling deletes the circle and restores the same framed collar, with the same access paths. This is a filling operation, not an isotopy of the unfilled exteriors.}
+\end{figure}
+
+The fixed access paths make these ordered equalities precise. They
+are constructed in Section~\ref{plb:what-the-edge-equations-see-at-the-complete-bare-representation}; the figure records the collar without
+choosing additional paths.
+
+For a holonomy representation, the added meridian must be projectively
+identity: its matrix must be a scalar. An eigenvalue ratio of one would
+also permit a nontrivial parabolic matrix. Section~\ref{plb:a-unique-regular-zero-power-angular-saddle} excludes this
+ambiguity by exhibiting an auxiliary longitude with distinct eigenvalues.
+
+The original crossing powers, writhe and integer
+
+\begin{equation}\label{plb:2}
+a(D)=-w(D)-\sum_v n_v.
+\end{equation}
+
+are unchanged. The added circles have filling parameter zero, so their preferred-longitude surgery correction \(p_v\ell_v^2\) also vanishes.
+
+
+
+After the zero-power circles have been inserted, the
+ordered all-circle cut of \cite{Nonparabolic}
+joins the edge blocks in the original page order. The labels fix every attachment.
+The representation comparison below also permits a flat added
+subdivision; it uses the original strict geometry to identify the knot
+holonomy.
+
+\section{A unique regular zero-power angular saddle}\label{plb:a-unique-regular-zero-power-angular-saddle}
+
+Let a bare hub have \(m\ge3\) incident covariant labels \(x_1,\ldots,x_m\), with
+
+\begin{equation}\label{plb:3}
+0<x_j\le\tfrac12,\qquad
+ \#\{j:x_j=\tfrac12\}\le1,\qquad
+                         \sum_jx_j>1.
+\end{equation}
+
+Here is the complete-state window needed for this assertion; it is a
+classical consequence of the stationary profiles, not an analytic source
+estimate. Remove the original circle operators at the complete state.
+An exposed circle-side profile is $g(a)+c$, where
+$g(a)=J(2a)-4J(a)$, by \cite[Proposition 4.2]{Profiles}.
+Consider a connected bare component with these profiles at its external
+incidences. At any rooted ordinary output $b$ put
+\[
+ B=\cot\pi b,\quad \kappa=e^{-f'(b)},\quad
+ X^2=\frac{1+B^2}{1+\kappa},\quad Y^2=\kappa X^2.
+\]
+The stationary product and turn formulas of \cite[Lemma 4.1]{Profiles}
+are
+\[
+ B_o=\frac{B_1B_2+X^2-1}{B_1+B_2},\quad
+ Y_o=\frac{Y_1Y_2}{B_1+B_2},\quad
+ B_1+B_2>0,\qquad (B,X,Y)\longmapsto(-B,Y,X).
+\]
+Rigid inputs have $(B,B,1)$, and every composite input is proper:
+$-Y<B<X$. At the last binary product, strict support gives
+$B_o<B_i\le X$. The identity
+\[
+ Y_o^2=(B_1-B_o)(B_2-B_o)\le(X-B_o)^2
+\]
+therefore implies
+\[
+ X\ge X_2(B_o):=\frac{B_o+\sqrt{B_o^2+2}}2,
+ \qquad f'(b)\ge 2\log(2X_2(\cot\pi b)^2).
+\]
+The inequalities are strict if either child is composite. In particular
+$f'(b)>0$ for $b<1/2$, and $f'(1/2)\ge0$, with equality only for the
+single trivalent hub with two rigid external inputs. The equality
+profile $f_2+c$ is symmetric under $b\mapsto1-b$, since
+$X_2(B)X_2(-B)=1/2$.
+
+Cut a physical edge between bare hubs. Its full pressure is
+$f_A(1-x)+f_B(1-x)$, so it strictly decreases for $x>1/2$.
+At $x=1/2$ its derivative is strictly negative unless both sides are
+single trivalent hubs with two rigid external inputs. In that exception
+it is $2f_2(1-x)+c$ and strict concavity makes its unique maximum
+$x=1/2$. Edges incident to a circle have $0<x<1/2$ by the strict leaf
+interval after exposing that incidence. Hence only the indicated
+internal edge can reach half, and at most one such edge meets a hub.
+Finally the exact whole-hub support in \cite[Lemma 2.4]{Profiles} is
+$x_i+x_j<1$ and $\sum_jx_j>1$, so it supplies the last condition
+of \eqref{plb:3}. Hidden binary-resolution labels are not physical edges.
+
+
+The angular variable \(\tau\) describes the auxiliary disk longitude
+by \(Q=e^{i\tau}\). The
+circle-incidence action
+is
+
+\begin{equation}\label{plb:4}
+b(x,\tau)=\int_0^x
+       \log(2\cos(2\pi r)+2\cos\tau)\,dr-2J(x),
+ \qquad J'(x)=\log(2\sin\pi x).
+\end{equation}
+
+Here \(J(0)=0\); its derivative specifies its continued branch. For \(\tau=-iy\), \(y>0\), every logarithm in the integral is real and finite. Put \(k=\tanh(y/2)\). Direct integration gives
+
+\begin{equation}\label{plb:5}
+b_\tau(x,-iy)=\frac{i}{\pi}
+             \arctan\bigl(k\tan(\pi x)\bigr),
+ \quad 0<x<\tfrac12,
+\end{equation}
+
+with value \(i/2\) at \(x=1/2\). Indeed
+\[
+ \int_0^x\frac{\sinh y}{\cosh y+\cos2\pi r}\,dr
+   =\frac1\pi\arctan\bigl(k\tan\pi x\bigr).
+\]
+The zero-power first-charge equation is therefore
+
+\begin{equation}\label{plb:6}
+\sum_jb_\tau(x_j,\tau)-i=0
+ \quad\Longleftrightarrow\quad
+ \sum_j\arctan(k\tan\pi x_j)=\pi.
+\end{equation}
+
+A half label contributes \(\pi/2\). The left side is strictly increasing for \(0<k<1\), starts at zero or \(\pi/2\), and tends to \(\pi\sum_jx_j>\pi\). Thus \eqref{plb:6} has exactly one solution \(0<k<1\). Consequently
+
+\begin{equation}\label{plb:7}
+y=2\operatorname{arctanh}k>0,\qquad
+ Q=e^{i\tau}=e^y=\frac{1+k}{1-k}>1.
+\end{equation}
+
+At least two labels are strictly below half. Differentiating \eqref{plb:6} shows that its derivative is strictly positive, so the angular Hessian is nonzero. The saddle and its selected logarithms extend holomorphically to a complex neighborhood of the fixed label tuple. The half-label case causes no singularity: the integrand of \eqref{plb:4} remains nonzero at \(y>0\), and \eqref{plb:6}'s derivative still has the contributions of the other labels.
+
+In particular the new auxiliary longitude has distinct eigenvalues. If its meridian has similarity one and commutes with that longitude, it is projectively identity. The possible unipotent ambiguity at \(Q^2=1\) is absent.
+
+\section{Exact elimination of the angular action}\label{plb:exact-elimination-of-the-angular-action}
+
+Let \(V_m(\mathbf x)\) be the complete positive action of the whole hub.
+It is defined by the ordered product kernel of \cite{Profiles}: resolve the original ordered product by any fixed binary association, sum its cubic gate actions, and optimize the hidden complementary labels. The conditional optimizer is strict and has negative definite Hessian on the strict whole-hub support.
+
+Then on \eqref{plb:3},
+
+\begin{equation}\label{plb:8}
+V_m(\mathbf x)=
+ \underset{\tau}{\operatorname{stat}}
+       \left\{\sum_jb(x_j,\tau)-i\tau\right\},
+ \qquad \tau=-iy \text{ from \eqref{plb:6}}.
+\end{equation}
+
+The equality includes its constant.
+
+Here is one derivation retaining the exact complete normalization. The Newton factors are the finite polynomial basis used for the
+tangle evaluation. For a factor with normalized index \(0<x<1/2\),
+the logarithm of its Laurent coefficient at normalized exponent \(r\),
+divided by the level, has rate
+
+\begin{equation}\label{plb:9}
+B_x(r)=J(2x)-2J(x)-J(x+r)-J(x-r),\qquad |r|\le x.
+\end{equation}
+
+To see exactly which finite equality is used, set
+$S_r=\prod_{j=1}^r2\sin(\pi j/N)$ and
+\[
+ e_n(z)=S_n^{-2}\prod_{j=0}^{n-1}
+       (2\cos((2j+1)\pi/N)-z),\qquad n<N/2.
+\]
+The finite sine-binomial identity gives
+\[
+ e_n(-u-u^{-1})=\sum_{r=-n}^n
+ \frac{S_{2n}}{S_n^2S_{n+r}S_{n-r}}u^r.
+\]
+All coefficients are positive. For a fixed number $m$ of factors,
+write their convolution coefficients $a_r$, and put
+$d_\ell=a_{\ell N-1}-a_{\ell N+1}$. The exact complete top trace is
+\[
+ \phi_0\Bigl(\prod_j e_{n_j}\Bigr)
+ =N^2\sum_{\ell\ge1}(-1)^{(N-1)(\ell+1)}\ell d_\ell.
+\]
+This is the finite Fourier formula of \cite[Lemma 6.1]{SourceBounds};
+it is the same positive binary-resolution trace obtained from
+\cite[Proposition 3.2 and Theorem 3.3]{Newton}.
+The primitive internal coefficient lattice makes the latter's logarithmic
+rate precisely $V_m$ by finite Laplace summation.
+
+For completeness, no cancellation assertion about a knot invariant is
+needed to extract the rate on the other side. Take $n_j/N\to x_j<1/2$
+with $\sum x_j>1$. The sine-factorial estimate
+of \cite[Lemma 5.2]{Newton} gives the uniform coefficient
+rate $B_{x_j}(r)$ in \eqref{plb:9}, with $O(\log N)$ errors, including
+the endpoints. Rounding a constrained maximizing tuple while preserving
+its total gives
+\[
+ N^{-1}\log a_{k}\longrightarrow
+ \mathcal B(k/N),\qquad
+ \mathcal B(s)=\max_{\sum r_j=s}\sum_jB_{x_j}(r_j).
+\]
+Uniformly on a compact neighborhood of this strict tuple,
+$B_x''(r)=-\pi\sin(2\pi x)/[\sin\pi(x+r)\sin\pi(x-r)]$
+is bounded above by a negative constant. Thus $\mathcal B$ is even
+and strongly concave, and its values at integers $\ell\ge2$ are
+strictly below $\mathcal B(1)$.
+Each factor's coefficient sequence is symmetric unimodal. Decompose it
+into nonnegative multiples of interval indicators. For an interval
+convolution of $m$ factors with radii at most $M_N=\lfloor(N-1)/2\rfloor$,
+its nonzero count at $k\ge M_N$ strictly drops by step two, and that
+integer drop is at least one; the count is at most $(2M_N+1)^m$.
+Here is the counting argument. Let $r$ be the largest interval radius
+and write its convolution as $C=\mathbf1_{[-r,r]}*H$. Then
+$C(k)-C(k+1)=H(k-r)-H(k+r+1)$. If $k\ge r$ and $C(k)>0$,
+$k-r$ lies in the interval support of $H$. If $k+r+1$ is outside
+that support, the difference is positive. Otherwise $k+r$ lies
+in the support and is at least every radius occurring in $H$.
+Induction on the number of intervals gives
+$H(k+r)>H(k+r+1)$; unimodality gives $H(k-r)\ge H(k+r)$.
+The one-interval case is immediate. Thus the step-one decrease,
+and hence the step-two decrease, is a positive integer in this range.
+Summing the decompositions gives
+$a_{N-1}\le N^m d_1$. Thus $d_1>0$ has rate $\mathcal B(1)$,
+whereas the finitely many $d_\ell$ with $\ell\ge2$ are exponentially
+smaller. The displayed alternating finite trace therefore has rate
+\begin{equation}\label{plb:10}
+ V_m(\mathbf x)=\max_{\substack{\sum_jr_j=1\\ |r_j|\le x_j}}
+                              \sum_jB_{x_j}(r_j).
+\end{equation}
+This uses only the finite trace and scalar sine products. It is
+independent of all quantum asymptotic and filled-volume theorems.
+
+For \(0<x<1/2\),
+\[
+ B_x'(r)=\log\frac{\sin\pi(x-r)}{\sin\pi(x+r)}.
+\]
+The unique maximizer of \(B_x(r)+yr\) is
+
+\begin{equation}\label{plb:11}
+r=\frac1\pi\arctan\bigl(\tanh(y/2)\tan\pi x\bigr).
+\end{equation}
+
+Moreover
+
+\begin{equation}\label{plb:12}
+b(x,-iy)=\max_{|r|\le x}\{B_x(r)+yr\}.
+\end{equation}
+
+To verify the constant, at \(y=0\) both sides are
+\(J(2x)-4J(x)\). Their \(y\)-derivatives are the same \(r\) by \eqref{plb:5} and \eqref{plb:11}. The constrained maximizer \eqref{plb:10} has common multiplier \(y>0\), determined by \(\sum r_j=1\). Equations \eqref{plb:10}--\eqref{plb:12} prove \eqref{plb:8}. A half label follows by continuity. Equivalently \(B_{1/2}(r)=0\), so its tilted maximum is \(y/2\), as also follows directly from \eqref{plb:4}.
+
+For a cubic vertex one can avoid the finite trace altogether. The old action is
+
+\begin{equation}\label{plb:13}
+t(x_1,x_2,x_3)=
+ \sum_{i<j}J(x_i+x_j)-\sum_iJ(x_i)-J(x_1+x_2+x_3-1).
+\end{equation}
+
+Writing \(a_j=\tan\pi x_j\), equation \eqref{plb:6} gives
+\(k^2=(a_1+a_2+a_3)/(a_1a_2a_3)\).
+The derivative of the right side of \eqref{plb:8} in \(x_j\) is
+
+\begin{equation}\label{plb:14}
+\log\frac{\cosh y+\cos2\pi x_j}{2\sin^2\pi x_j}
+   =\log\frac{k^2+\cot^2\pi x_j}{1-k^2},
+\end{equation}
+
+which is exactly \(\partial_jt\). As \(\sum x_j\downarrow1\), \(y\to\infty\), and both actions tend to \(-2\sum_jJ(x_j)\). This proves the cubic identity with its absolute constant.
+
+Both sides of \eqref{plb:8} are holomorphic near the fixed strict tuple. Their equality on an open real set proves equality of the continued germs. At the possible half label, use their holomorphic continuation from labels below half; both Hessians remain invertible there.
+
+\section{The actual added longitude in the old prism geometry}\label{plb:the-actual-added-longitude-in-the-old-prism-geometry}
+
+The previous section identifies actions. The following matrix calculation identifies the new circle inside the
+original marked geometry. A white map is the full Möbius transition
+between a white face in one projection copy and its partner in the
+other copy. Its translation as well as its fixed points is retained.
+
+At an ordinary output face of the bare product write
+\[
+ E=e^{2\pi ib},\qquad R=\frac1{1+\kappa},\qquad
+ \kappa=e^{-f'(b)}.
+\]
+The marked construction \cite[Section 7]{StrictGeometry}
+gives the universal white maps
+
+\begin{equation}\label{plb:15}
+W_1=\begin{pmatrix}1&E-1\\0&E\end{pmatrix},\qquad
+ W_3=\begin{pmatrix}R&0\\1-E&ER\end{pmatrix}.
+\end{equation}
+
+They are the top and bottom white-face maps at a bare product. Through every original binary product, the full matrix identities give
+
+\begin{equation}\label{plb:16}
+W_{F,1}=W_{G,1}=W_{o,1},\qquad
+ W_{F,3}=W_{G,3}=W_{o,3}
+\end{equation}
+
+in the common coordinate frame. Consequently the same ordered side word is seen at every boundary face of that hub.
+
+Insert the zero-crossing box in the original disk frame. Its primitive disk-longitude path crosses these two white sides, giving \(W_1^{-1}W_3\), up to the inversion required when the circle's orientation is reversed. The determinant-one normalization is
+
+\begin{equation}\label{plb:17}
+P=\frac1R W_1^{-1}W_3,\qquad
+ \operatorname{tr}P
+   =2-\frac{4\sin^2\pi b}{R}.
+\end{equation}
+
+This is the same \(W_1^{-1}W_3\) disk word used at the corresponding end of an all-circle edge; it is not a trace chosen to fit \eqref{plb:6}.
+
+The response metric records the ordered quadrilateral shape at a
+product boundary. Its coordinate \(X_{\mathrm{met}}\) is distinct
+from the exponential wire variable \(X_e=e^{2\pi ix_e}\). It is
+\[
+ X_{\mathrm{met}}^2=\frac{1+\cot^2\pi b}{1+\kappa}.
+\]
+Therefore
+
+\begin{equation}\label{plb:18}
+\operatorname{tr}P=2-\frac4{X_{\mathrm{met}}^2}.
+\end{equation}
+
+At a boundary incidence with covariant label \(x\), the ordinary output is \(b=1-x\), and the conditional action satisfies \(f'(b)=-\partial_xV_m\). Using \eqref{plb:14}, valid at any valence by the envelope identity \eqref{plb:8}, gives
+
+\begin{equation}\label{plb:19}
+X_{\mathrm{met}}^2
+ =\frac1{\sin^2\pi x\,[1+\exp(\partial_xV_m)]}
+ =\operatorname{sech}^2(y/2)=1-k^2.
+\end{equation}
+
+Thus
+
+\begin{equation}\label{plb:20}
+\operatorname{tr}P=-2\cosh y=-(Q+Q^{-1}).
+\end{equation}
+
+This proves that the actual added longitude has the regular eigenvalues required by the angular saddle. The proof retains the old group word, and shows why a bare hub has a common \(Q\) across all its pages.
+
+When an incidence is viewed through its physical turn, the old identity
+\(T W_{j+1}(E,R)=W_j(E^{-1},1-R)T\)
+takes the \(W_1^{-1}W_3\) word to the appropriate inverse of the \(W_2^{-1}W_0\) word. Its trace is unchanged. The auxiliary flag may be selected on the eigenvalue \(-Q\), \(Q>1\); the main meridian flags are not changed by this auxiliary choice.
+
+\section{What the edge equations see at the complete bare representation}\label{plb:what-the-edge-equations-see-at-the-complete-bare-representation}
+
+Pull the original complete holonomy back along the exact filling quotient obtained in Section~\ref{plb:the-literal-insertion}. This gives a representation of the enlarged augmented link with every newly added meridian equal to identity. It is a representation-theoretic pullback; no assertion that the drilled link carries this metric is needed.
+
+\subsection{The marked zero-crossing collar}\label{plb:the-marked-zero-crossing-collar}
+
+Choose the box in a framed ball \(D^2\times[0,1]\), with its two strands
+\(\{p_1,p_2\}\times[0,1]\). Choose a basepoint \(z_*\in\partial D^2\),
+an ordered pair of disjoint access paths from it to small circles around
+\(p_1,p_2\), and transport that entire system by the product framing.
+Orient and name the resulting based puncture loops \(a,b\) so that
+the oriented disk-boundary word is \(ba\). The boundary basepath is
+\(\{z_*\}\times[0,1]\). Transport across this literal zero-crossing box gives
+
+\begin{equation}\label{plb:22c}
+a_{\mathrm{out}}=a_{\mathrm{in}},\qquad
+                        b_{\mathrm{out}}=b_{\mathrm{in}}.
+\end{equation}
+
+These are equalities in the based fundamental group, before taking any
+representation. No permutation of punctures, turn of an access path,
+or power of the disk-boundary curve is included.
+
+Place the new auxiliary circle at the disk boundary in the middle
+of this collar, with the original disk framing. Its longitude is
+the parallel copy of that boundary and retains the based word \(ba\).
+The meridian filling deletes the auxiliary circle and returns exactly
+the framed collar just described. Its quotient on fundamental groups
+fixes \(a,b\), their access paths, and the boundary basepath. Thus it
+also fixes the ordered maps by which this collar is joined to all
+earlier and later product factors. This remains true when there are
+several child factors: transport the same system through them in
+their recorded order. It never requires the factors to commute.
+
+For comparison with a pair of projection faces, transport the framed
+loops to the face basepoints along the original specified paths.
+If the old transport is \(C_0\), \eqref{plb:22c} becomes the simultaneous
+conjugacy \(C_0aC_0^{-1}=a'\), \(C_0bC_0^{-1}=b'\).
+Reading the other side of a puncture changes the corresponding
+native generator to its inverse. Those inversions are recorded
+explicitly in \eqref{plb:22b} below; they do not change \eqref{plb:22c} into a braid.
+This is the marked van Kampen statement used at every added seam.
+Only a retained nonzero half twist changes \eqref{plb:22c}, by the separately
+calibrated Hurwitz action.
+
+Each boundary chart here is the ordered quadrilateral supplied by the
+original cell construction. It is not assumed to be a new
+four-punctured topological boundary. On a physical turn edge use its
+original coordinate \((0,\infty,1,R)\) and its phase \(E=e^{2\pi ix}\).
+This is the transported physical-edge frame from the last paragraph
+of Section~\ref{plb:the-actual-added-longitude-in-the-old-prism-geometry}; its phase is the reciprocal of the ordinary-output
+phase \(e^{2\pi ib}\), with the corresponding change \(R\mapsto1-R\).
+At \(M=1\) the four native all-circle white matrices of \cite{Nonparabolic} are exactly the universal old \(W_j(E,R)\), projectively. This follows by putting \(m=1\) in the explicit native chart, without specializing the auxiliary eigenvalues to one.
+
+The two disk words have normalized traces \(-\beta,-\gamma\), where
+
+\begin{equation}\label{plb:21}
+\beta=\frac{2R-(E+E^{-1})}{1-R},\qquad
+ \gamma=\frac{2-(E+E^{-1})-2R}{R}.
+\end{equation}
+
+At an inserted hub these are supplied by \eqref{plb:20}; at an original circle they are its original marked longitude trace. Eliminating \(R\) yields
+
+\begin{equation}\label{plb:22}
+A=\frac{4-\beta\gamma}{\beta+\gamma+4},
+ \qquad A=E+E^{-1},
+\end{equation}
+
+which is exactly the all-circle edge equation at \(M=1\). Thus the old phase is one of its two reciprocal roots. The native white maps retain \(E\) itself, not just \(E+E^{-1}\); the existing native/character comparison identifies the all-circle source variable with that \(E\).
+
+All character-chart denominators are units at this point: \(\beta,\gamma\ge2\), \(E\ne1\), and the displayed quadrilateral vertices are distinct. The allowed value \(E=-1\) on the two-hub half edge does not cause a character-matrix singularity. In that case the edge quadratic may ramify over its endpoint parameters; one must use the full stationary branch or another local coordinate, not assert that \(E\) is a simple quadratic root.
+
+Indeed \(E=-1\) gives
+
+\begin{equation}\label{plb:22e}
+(\beta-2)(\gamma-2)=16
+ \quad\Longleftrightarrow\quad
+ X_{\mathrm{met},v}^{\,2}+X_{\mathrm{met},w}^{\,2}=1,
+\end{equation}
+
+by \eqref{plb:18}. This is the possible half-edge fold of the old geometry.
+The normalized matrices and the two irreducible puncture pairs
+below remain regular there.
+
+Here is the boundary-group comparison, including the tuple that has to be retained. First choose the normalized native matrix representatives for the four old projective white maps. In terms of the raw universal representatives used in \eqref{plb:15}, their scalar factors are respectively
+
+\begin{equation}\label{plb:22d}
+E^{-1},\quad E^{-1},\quad
+                [E(1-R)]^{-1},\quad (ER)^{-1}.
+\end{equation}
+
+Each normalized matrix has determinant \(E^{-1}\) at \(M=1\).
+The raw universal representatives do not all have that determinant:
+in particular the factors involving \(R\) and \(1-R\) cannot be
+discarded when taking an SL trace. With \(W_j\) now denoting these
+normalized native representatives, put in each original edge frame
+
+\begin{equation}\label{plb:22a}
+N_j=W_{j-1}^{-1}W_j,\qquad
+ (A,B,C,D)=(N_3,N_0,N_1,N_2)
+\end{equation}
+
+with the subsequent determinant-one puncture normalizations from the
+all-circle chart. These subsequent powers of \(M\), not the scalar
+factors in \eqref{plb:22d}, are one at \(M=1\). Thus every \(N_j\) has determinant
+one and trace two. The actual page table is
+
+\begin{equation}\label{plb:22b}
+\begin{array}{c|c|c|c}
+\text{end}&(a,b)&(a',b')&ba=b'a'\\ \hline
+v&(B,A)&(C^{-1},D^{-1})&AB\\
+w&(B^{-1},C^{-1})&(A,D)&(BC)^{-1}.
+\end{array}
+\end{equation}
+
+The entries refer to paths, with the inverse on each puncture determined by its side of the disk. They are exactly the table of the literal all-circle cut, not a new identification of equal traces.
+
+To apply that table to the old holonomy, first insert the zero-crossing box in the actual diagram, before assigning matrices. The main strands and their ordered endpoint paths are unchanged. Add the new circle and perform the literal projection/disk cut. The filling quotient takes every old main meridian and its old basepath to itself and kills the new circle meridian. In particular the four small corner paths reduce to the original consecutive-white words in \eqref{plb:22a}. A white face split by the added cut retains the same transport on both of its pieces: crossing the extra cut and returning differs by the new meridian, whose image is identity. This is also the full-map invariant \eqref{plb:16} through every prism of the original product. Thus the developed four white transitions of the pulled-back representation are exactly the four \(W_j\) already compared above.
+
+The paths across the added disk pages are still the paths of this cut. By van Kampen they intertwine both generators in the appropriate row of \eqref{plb:22b}, with precisely the displayed inversions; the product column is their original primitive disk boundary. The inserted box has no crossing, so no Hurwitz exchange is made at its distinguished seam. The old retained half twists keep their original exchanges.
+
+At \(M=1\), either input pair in \eqref{plb:22b} is irreducible. Both punctures have trace two, and the products in the two rows have traces \(-\beta\) and \(-\gamma\), respectively, with \(\beta,\gamma\ge2\). Their irreducibility obstructions are \((\beta+2)^2\ne0\) and \((\gamma+2)^2\ne0\). Two intertwiners of either full ordered pair differ by its scalar centralizer. Therefore the pulled-back page transport equals the native pure transport in PGL. At an original odd seam the same argument is applied after the already calibrated full Hurwitz action. The corner flags on the main cusp are the old parabolic flags, and the extra auxiliary flags are chosen from \eqref{plb:20}; these choices do not alter a group generator.
+
+All white and shaded generators of the cut now agree, in their original tree frames. This proves equality of the complete representations, not only of the local character triples or the main-cusp translation. It identifies the selected all-circle algebraic point with the pullback of the original bare-tree holonomy. The newly introduced ideal vertices need not form positive tetrahedra in this pulled-back representation. In particular an edge with \(E=-1\) can make that added subdivision flat. No metric on the enlarged unfilled exterior is asserted or required.
+
+\section{Stationary elimination at a nonparabolic main meridian}\label{plb:stationary-elimination-at-a-nonparabolic-main-meridian}
+
+Let \(t\) be the actual main deformation parameter, \(M=e^{\pi it}\).
+In the existing strict-tree filtered action it enters only through
+
+\begin{equation}\label{plb:23}
+\sum_{e\in\mathcal E_T}
+       \{2J(x_e)-J(x_e+t)-J(x_e-t)\}
+       +\frac{\pi i a(D)}2t^2.
+\end{equation}
+
+It does not enter the old bare tensor action or its hidden resolution wires.
+
+The enlarged all-circle action replaces a bare hub by
+\(\sum_jb(x_j,\tau_v)-i\tau_v\), with \(n_v=0\).
+Eliminating \(\tau_v\) by \eqref{plb:8} returns exactly the old whole-hub action, including its constant, for complex physical wires in the regular neighborhood. The edge set and \eqref{plb:23} do not change, and neither does \(a(D)\). Hence the two full critical-value germs are equal after stationary elimination.
+
+The stationary equations are the original marked ones. Indeed,
+\[
+ \begin{aligned}
+ &\exp\!\left(\partial_x\{b(x,\tau_v)+b(x,\tau_w)
+             +2J(x)-J(x+t)-J(x-t)\}\right)\\
+ &\qquad=\frac{(X+Q_v)(X+Q_v^{-1})(X+Q_w)(X+Q_w^{-1})}
+ {(X-1)^2(1-XM^2)(1-X/M^2)}.
+ \end{aligned}
+\]
+Thus the wire equation is \eqref{pl:T1}. The continued logarithms obey
+$\log\rho_{v,e}=-2\pi b_\tau(x_e,\tau_v)$: differentiate in $x_e$
+and fix the integration constant at $x_e=0$, where both sides vanish.
+The circle equation
+$\sum_{e\ni v}b_\tau+\ii n_v\tau_v/(2\pi)-\ii=0$
+is consequently exactly $U_v+p_vV_v=-2\pi\ii$, including the original
+logarithmic constant. At an added circle it has $p_v=n_v=\epsilon_v=0$.
+
+Here the required nondegeneracy can be checked entirely classically.
+Eliminate each added zero-power angle by \eqref{plb:8}. At the original
+augmented point all original circle angles are zero and the remaining
+wire action is the strict complete action. Its wire Hessian is negative
+definite by \cite[Theorem 3.3]{Profiles}. Direct differentiation gives
+\[
+ b_\tau(x,0)=0,\qquad b_{x\tau}(x,0)=0,\qquad
+ b_{\tau\tau}(x,0)=-\frac{\tan\pi x}{2\pi}.
+\]
+For each original circle put $\eta_v=1/n_v$ and multiply its first-charge
+equation by $\eta_v$. At $\boldsymbol\eta=0$ the system is the strict
+wire equations together with $\tau_v=0$; its Jacobian is block diagonal,
+with the strict wire Hessian and $(\ii/2\pi)I$. The holomorphic
+implicit-function theorem gives its unique solution for all sufficiently
+small independently signed real $\eta_v$. The unscaled Hessian is
+invertible whenever these $\eta_v$ are nonzero, since scaling its circle
+rows gives the just-described invertible Jacobian. The equation for
+circle $v$ has $\sum b_\tau(x_e,\tau_v)=\tau_v h_v$, with $h_v$
+holomorphic, and hence
+$\tau_v=2\pi\eta_v/(1-2\pi\ii\eta_v h_v)\ne0$.
+These small angles give $Q_v^2\ne1$. Introducing the main parameter
+$t$ in \eqref{pl:deformed-action} is a further holomorphic perturbation
+of this nonsingular system. All neighborhoods concern a fixed diagram;
+no relation between the sizes or signs of its different twists is used.
+
+The new angular Hessian at each bare hub is nonzero. To state the
+comparison precisely, first eliminate the old hidden binary-resolution
+variables. Their conditional Hessian is invertible by strictness.
+Let \(z\) collect the remaining original variables and let
+\(\tau_{\mathrm{new}}\) collect only the added angular variables.
+The enlarged Hessian has blocks
+
+\begin{equation}\label{plb:23a}
+H_{\mathrm{new}}=
+ \begin{pmatrix}
+ H_{zz}&H_{z\tau}\\ H_{\tau z}&H_{\tau\tau}
+ \end{pmatrix},\qquad
+ H_{\mathrm{old,red}}
+   =H_{zz}-H_{z\tau}H_{\tau\tau}^{-1}H_{\tau z}.
+\end{equation}
+
+The block \(H_{\tau\tau}\) is diagonal over the added hubs, with
+nonzero entries from \eqref{plb:6}. Equality \eqref{plb:8} identifies its Schur
+complement with the old reduced Hessian. The original full Hessian
+and its eliminated hidden block are invertible, so
+\(\det H_{\mathrm{new}}
+ =\det H_{\tau\tau}\det H_{\mathrm{old,red}}\ne0\).
+No individual edge Hessian is inverted, including at \eqref{plb:22e}.
+
+The enlarged analytic branch therefore exists with all the original
+logarithms retained. Original sufficiently long fillings keep their
+auxiliary \(Q_v^2\ne1\); every added zero-power circle has
+\(Q_v^2\ne1\) by \eqref{plb:7}, and this persists near the complete branch.
+
+By Section~\ref{plb:what-the-edge-equations-see-at-the-complete-bare-representation} this branch reconstructs the original filled knot representation, rather than only an algebraic solution of the slope eigenvalue equations. Near the old augmented complete point, use the mixed coordinate tuple
+consisting of the main meridian logarithm and the original auxiliary
+longitude logarithms $V_v=2\log Q_v$. The reconstructed and original
+positive families have the same values of this tuple and the same
+selected flags. The positive marked gluing theorem therefore identifies
+them as nearby representations; equality at the complete point alone
+would not suffice. The added zero-circle meridians have already been
+killed, so this uniqueness statement is applied on the original augmented
+manifold and its positive triangulation. The original sufficiently long filling point lies on that same small branch. There every original filled circle, as well as every added zero circle, has \(Q_v^2\ne1\); the filling words are projectively identity by Section~\ref{plb:a-unique-regular-zero-power-angular-saddle}. The nondegenerate main-meridian branch is then the geometric germ of the original filled knot.
+
+The all-circle squared longitude identity is a rational identity on its integral source variety. It extends to this regular representation, including the half-edge fold, without solving for an individual edge root. The added zero fillings contribute no surgery exponent, the Seifert sign is that of the same original complete knot, and stationary elimination leaves the effective longitude unchanged. Consequently
+
+\begin{equation}\label{plb:24}
+L_{\mathrm{geom}}(M)
+   =-M^{a(D)}
+      \prod_{e\in\mathcal E_T}
+                \frac{M^2-X_e(M)}{1-M^2X_e(M)}
+\end{equation}
+
+on the original strict-tree filled branch, with \(X_e=e^{2\pi ix_e}\).
+
+This proves Theorem~\ref{pl:strict-longitude} on the geometric germ of the original
+filled knot. The same physical edges occur before and after the
+zero-circle elimination, and the added circles contribute neither
+a crossing power nor a preferred-longitude shear.
+
+The geometric identification uses the full ordered boundary-group
+comparison in Section~\ref{plb:what-the-edge-equations-see-at-the-complete-bare-representation}. The equality of actions in Section~\ref{plb:exact-elimination-of-the-angular-action} supplies
+the stationary branch, while the marked face maps identify its
+representation. These are distinct parts of the proof. This argument supplies no estimate for a quantum invariant or for short fillings.

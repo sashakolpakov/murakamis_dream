@@ -1,0 +1,350 @@
+\section{The actual preferred-cusp
+translation}\label{pl:cusp}
+
+We use the actual parabolic-main face maps in \cite[Section 7]{StrictGeometry}.
+They also compute the cusp tangent of the all-circle family: at $M=1$
+the native chart of \cite{Nonparabolic} has its preliminary white
+coordinate equal to $X$, and its four white matrices are the matrices
+below up to the stated projective normalizations. The full ordered disk
+conjugacies identify the shaded transports as well. Alternatively, the
+positive marked gluing germ identifies both constructions with the same
+original complete holonomy for prescribed auxiliary longitude logs.
+Both descriptions retain the same physical wire labels. Thus the
+following calculation is of the actual main peripheral word, not a
+comparison of critical values.
+
+\subsection{Meridians, endpoint signs, and additive
+displacement}\label{meridians-endpoint-signs-and-additive-displacement}
+
+Normalize each ordered quadrilateral to
+\((C_0,C_1,C_2,C_3)=(0,\infty,1,R)\), and put \(E=e^{2\pi i b}\). In
+these charts, a white face is a piece of an original projection region;
+the other, shaded faces are pieces of the crossing disks. Use the actual
+white matrices \begin{equation}
+\begin{aligned}
+W_0&=\begin{pmatrix}1&0\\0&E\end{pmatrix},
+&W_1&=\begin{pmatrix}1&E-1\\0&E\end{pmatrix},\\
+W_2&=\begin{pmatrix}E-R&R(1-E)\\E-1&1-ER\end{pmatrix},
+&W_3&=\begin{pmatrix}R&0\\1-E&ER\end{pmatrix}.
+\end{aligned}
+\label{plc:4}
+\end{equation} At an open shaded boundary some of these are completion maps. The
+marked geometry input in Proposition~\ref{pl:imports} proves that every occurrence used in the final
+closed peripheral paths is supplied by the actual adjacent white face.
+
+Set \(d_j=(-1)^j\) and \begin{equation}
+\mu_j=(W_{j-1}^{-1}W_j)^{d_j}.
+\label{plc:5}
+\end{equation} The coordinates \begin{equation}
+\begin{aligned}
+\xi_0(z)&=\frac{ER}{(E-1)z},
+&\xi_1(z)&=-\frac{z}{E-1},\\
+\xi_2(z)&=-\frac{E(R-1)}{(E-1)(z-1)},
+&\xi_3(z)&=-\frac{R(R-1)}{(E-1)(z-R)}
+\end{aligned}
+\label{plc:6}
+\end{equation} send the corresponding corner to infinity and send \(\mu_j\) to
+\(u\mapsto u+1\). These identities follow by multiplying \eqref{plc:4}.
+
+The endpoint sign has a geometric meaning. Orient a main arc into its
+leaf at corner \(j\). Its positively oriented small meridian is
+\(\mu_j^{d_j}\); orient the arc out of the leaf and it is
+\(\mu_j^{-d_j}\). This is the right-hand meridian convention in the
+ordered projection chart \(0,1,2,3\): crossing one white sector and
+returning through the preceding one gives \(W_{j-1}^{-1}W_j\) for an
+inward arc. Formula \eqref{plc:5} therefore supplies exactly the displayed signs.
+At infinity use the finite local coordinate \(1/z\). Reversing the
+strand orientation reverses both its meridian and the direction of its
+longitude.
+
+Consider an open main arc from corner \(j\) to corner \(k\), including
+its specified peripheral push-off. In the local coordinates its actual
+transport has the form \begin{equation}
+u_k=-d_jd_k\,u_j+\beta.
+\label{plc:7}
+\end{equation} The multiplier follows by transporting the same oriented meridian: it
+is \(d_j\) times the local unit at the incoming endpoint and \(-d_k\)
+times the local unit at the outgoing endpoint. Define the displacement
+of this arc to be \begin{equation}
+D_{\mathrm{arc}}=-d_k\beta.
+\label{plc:8}
+\end{equation} This definition does not depend on the direction in which the arc is
+followed. The inverse affine map has translation \(-\beta/(-d_jd_k)\),
+and its displacement is \(-d_j[-\beta/(-d_jd_k)]=-d_k\beta\). This
+simultaneously reverses the path and the oriented meridian; it does not
+add raw translations from incompatible meridian frames.
+
+When two endpoints are joined by an actual identity segment, its
+coordinate change from \(j\) to \(k\) has the same affine multiplier
+\(-d_jd_k\). Its contribution is instead \begin{equation}
+D_{\mathrm{join}}=d_k\beta.
+\label{plc:9}
+\end{equation} Here the path leaves the first arc and enters the next. The same
+inverse-map calculation proves direction independence.
+
+These displacements add under concatenation. For an arc \(i\to j\), a
+joining segment \(j\to k\), and an arc \(k\to l\), write their shifts as
+\(\beta_X,\beta_J,\beta_Y\). Multiplying the three affine maps gives
+shift \begin{equation}
+(-d_kd_l)(-d_jd_k)\beta_X
+       +(-d_kd_l)\beta_J+\beta_Y.
+\end{equation} Multiplying by \(-d_l\) gives exactly \begin{equation}
+-d_j\beta_X+d_k\beta_J-d_l\beta_Y.
+\label{plc:10}
+\end{equation} The product multiplier is \(-d_id_l\), as required. The same identity
+applies when a join creates a closed component. A closed component has
+multiplier one and its displacement is its actual longitude translation
+in the consistently oriented unit-meridian frame.
+
+Let \(S(Q)\) be the sum of these displacements for the two open arcs and
+any already closed main components inside a tangle. If a boundary
+coordinate at a corner changes by \(u'_j=\alpha_j u_j+\beta_j\), with
+\(\alpha_j=d_j/d'_j\), then \begin{equation}
+S(Q')-S(Q)=-\sum_{\text{four endpoints }j}d'_j\beta_j.
+\label{plc:11}
+\end{equation} This follows from \eqref{plc:8}, once at each endpoint. Closed components do
+not change. Equations \eqref{plc:7}--\eqref{plc:11} are a local chain lemma: they apply
+regardless of how many odd leaves a component visits or which direction
+is used to evaluate it.
+
+For an open expression, this is boundary-chart bookkeeping in the
+original two-ball cut, with its completion maps still labeled as such.
+It does not declare its metric quadrilateral to be a physical
+four-punctured tangle boundary or assign virtual white maps to new group
+generators. The product identities transport this bookkeeping. At the
+final closure every used white completion is the actual adjacent
+original white transition, by the marked geometry input. Only then do the
+assembled paths give the asserted closed peripheral words.
+
+Equivalently, for any one step write
+\(\xi_bF\xi_a^{-1}(w)=\kappa w+\beta\), and let the globally oriented
+meridian be the local unit raised to \(\alpha_a,\alpha_b\in\{1,-1\}\).
+Consistency is \(\alpha_b\kappa=\alpha_a\); the actual translation
+contribution is \(\alpha_b\beta\). Reversing the traversal replaces the
+shift by \(-\beta/\kappa\), and reversing the oriented meridian replaces
+the target sign by \(-\alpha_a\). Their product is again
+\(\alpha_b\beta\). Equations \eqref{plc:8} and \eqref{plc:9} are this rule at an arc and a
+joining segment respectively. This explicitly includes the
+multiplier-minus-one odd routes below.
+
+\subsection{The exact product
+potential}\label{the-exact-product-potential}
+
+Define the boundary potential \begin{equation}
+P(E,R)=\frac{E+R}{E-1},\qquad I(Q)=S(Q)-P(E,R).
+\label{plc:12}
+\end{equation} For the original ordered product prism we claim \begin{equation}
+I(FG)=I(F)+I(G).
+\label{plc:13}
+\end{equation} This is an identity of actual coordinate transports, not an equality
+of their absolute values.
+
+Here is a rational verification retaining every translation. Write the
+prism angle phases as \(a,b,c\), so its vertices are \begin{equation}
+v_0=1,\quad v_1=a,\quad v_2=ab,\quad v_3=abc,\qquad
+ P_*=
+ 1+a-a\,\frac{ab(1+c)-1-a}{a^2b^2c-a}.
+\label{plc:14}
+\end{equation} The lower, upper and output ordered quadrilaterals are
+\((1,a,P_*,\infty)\), \((\infty,P_*,ab,abc)\), and \((1,a,ab,abc)\).
+Their \(E\) parameters are \(bc,ab,abc\). Their normalized fourth
+vertices are \begin{equation}
+\begin{aligned}
+ R_F&=\frac{a(b-1)(bc-1)}{(ab-1)(abc-1)},\\
+ R_G&=\frac{c(b-1)(ab-1)}{(bc-1)(abc-1)},\\
+ R_o&=\frac{(b-1)(abc-1)}{(ab-1)(bc-1)}.
+\end{aligned}
+\label{plc:15}
+\end{equation} Apply \eqref{plc:6} after the unique normalized three-point map for each
+quadrilateral. The two joining and four external rebasing maps all have
+multiplier one. Their translations are \begin{equation}
+\begin{array}{c|c}
+F_2\longrightarrow G_1&bc/(bc-1)\\
+F_3\longrightarrow G_0&-a(b-1)/[(ab-1)(abc-1)]\\
+F_0\longrightarrow o_0&0\\
+F_1\longrightarrow o_1&0\\
+G_2\longrightarrow o_2&ab(c-1)/[(ab-1)(abc-1)]\\
+G_3\longrightarrow o_3&(b-1)(c-1)/[(ab-1)(bc-1)(abc-1)].
+\end{array}
+\label{plc:16}
+\end{equation} For example a world quadrilateral \((q_0,q_1,q_2,q_3)\) is normalized
+by \((z-q_0)(q_2-q_1)/[(z-q_1)(q_2-q_0)]\), with the corresponding
+limits at infinity. Inserting this map into \eqref{plc:6} gives \eqref{plc:16}.
+
+By \eqref{plc:9} and \eqref{plc:11}, the correction \(S(FG)-S(F)-S(G)\) is minus the first
+entry of \eqref{plc:16}, plus the second, minus the fifth and plus the sixth.
+Substituting \eqref{plc:15} into \eqref{plc:12} gives exactly that expression: \begin{equation}
+S(FG)-S(F)-S(G)
+                  =P(abc,R_o)-P(bc,R_F)-P(ab,R_G).
+\label{plc:17}
+\end{equation} This proves \eqref{plc:13}. All variables in \eqref{plc:14}--\eqref{plc:17} are independent
+wherever the displayed charts are nondegenerate. Thus the identity
+continues to the original complex deformed branch. In particular hidden
+binary resolutions inside a product hub contribute no uncancelled term.
+
+\subsection{Turns and the final
+closure}\label{turns-and-the-final-closure}
+
+The actual quarter-turn is \begin{equation}
+T_Q(z)=\frac{R-1}{z-1},\qquad
+ (E,R)\longmapsto(E^{-1},1-R),\qquad j\longmapsto j-1.
+\label{plc:18}
+\end{equation} In the coordinates \eqref{plc:6}, the four rebasing maps have multiplier minus
+one. In old corner order \(j=0,1,2,3\), their shifts are \begin{equation}
+\frac{ER}{E-1},\quad-\frac1{E-1},\quad0,\quad\frac R{E-1}.
+\label{plc:19}
+\end{equation} Equation \eqref{plc:11} gives \(S(TQ)-S(Q)=(ER-R+1)/(E-1)\). Subtract the two
+potentials in \eqref{plc:12}. The result is \begin{equation}
+I(TQ)-I(Q)=\frac{2(E+1)}{E-1}=-2i\cot(\pi b).
+\label{plc:20}
+\end{equation} This calculation retains the minus multipliers in \eqref{plc:19}; summing their
+shifts without \eqref{plc:11} would give the wrong sign.
+
+At the final reverse-order closing gluing, the two input parameters are
+\((E,R)\) and \((E^{-1},R)\), and the actual map from the second to the
+first is \begin{equation}
+C_Q(z)=\frac{z-R}{z-1},\qquad j\longmapsto3-j.
+\label{plc:21}
+\end{equation} Its four affine multipliers are one. In old corner order their shifts
+are \begin{equation}
+\frac R{E-1},\quad-\frac E{E-1},
+                       \quad-\frac1{E-1},\quad\frac{ER}{E-1}.
+\label{plc:22}
+\end{equation} The joining correction \eqref{plc:9} is \(R-1\), whereas
+\(P(E,R)+P(E^{-1},R)=1-R\). Therefore the total translation of the
+closed main components is exactly \begin{equation}
+I(F)+I(G).
+\label{plc:23}
+\end{equation} The original closed component decomposition is retained throughout.
+When the main strands form a knot, \eqref{plc:23} is the translation of one
+primitive longitudinal traversal.
+
+\subsection{Pure and odd leaf paths}\label{pure-and-odd-leaf-paths}
+
+The actual pure and odd shaded maps are \begin{equation}
+S=\begin{pmatrix}0&-ER\\1&-1-E\end{pmatrix},\quad
+ A=\begin{pmatrix}R&-R\\1&ER-1-E\end{pmatrix},\quad
+ B=\begin{pmatrix}R/E-1-1/E&R\\-1&R\end{pmatrix}.
+\label{plc:24}
+\end{equation} The pure arcs \(0\to1\) and \(2\to3\) use \(S^{-1}\) and \(S\). From
+\eqref{plc:6}, the translations of \(S:1\to0\) and \(S:2\to3\) are \((E+1)/(E-1)\)
+and \((R-1)/(E-1)\). Thus \begin{equation}
+S(h_0)=\frac{R-E-2}{E-1},\qquad
+ I(h_0)=-\frac{2(E+1)}{E-1}=2i\cot(\pi x).
+\label{plc:25}
+\end{equation}
+
+At an odd leaf the main arcs pair \(0\) with \(2\) and \(1\) with \(3\).
+The shaded maps \(B:0^+\to2^-\), \(A:1^+\to3^-\) switch projection
+balls. To express a path again in the plus frame, use the indicated
+actual adjacent white return. For the physical sign \(\epsilon=+1\),
+choose \begin{equation}
+L_{02}^{+}=W_1^{-1}B,\qquad L_{13}^{+}=W_2^{-1}A.
+\label{plc:26}
+\end{equation} For \(\epsilon=-1\), choose \begin{equation}
+L_{02}^{-}=W_2^{-1}B,\qquad L_{13}^{-}=W_3^{-1}A.
+\label{plc:27}
+\end{equation} These are specified peripheral paths. We will determine their framing
+by homology rather than assuming that an adjacent white-side choice is
+the preferred longitude.
+
+In the plus \(\xi\) coordinates, all four maps have multiplier minus
+one, as \eqref{plc:7} requires for equal-parity endpoints. Their shifts, in the
+order \(02,13\), are \begin{equation}
+\begin{aligned}
+\epsilon=+1:\quad&
+  \frac E{E-1},\quad\frac{R-E-1}{E-1},\\
+\epsilon=-1:\quad&
+  \frac1{E-1},\quad\frac{R-2}{E-1}.
+\end{aligned}
+\label{plc:28}
+\end{equation} Using \eqref{plc:8}, rather than summing these raw shifts, gives \begin{equation}
+S(h_\epsilon)=S(h_0)-\epsilon,\qquad
+                  I(h_\epsilon)=2i\cot(\pi x)-\epsilon.
+\label{plc:29}
+\end{equation} The relations hold at independent nearby \(E,R\). The selected hidden
+auxiliary color affects \(R\) but does not change \eqref{plc:29}.
+
+Every original \(h_\epsilon\) is the turn of its unturned
+crossing-circle piece \(p_\epsilon\). Its input label is \(1-x\).
+Equation \eqref{plc:20} therefore says \(I(p_\epsilon)=-\epsilon\). Equations
+\eqref{plc:13}, \eqref{plc:20} and \eqref{plc:23} now prove for the specified closed longitudinal path
+\begin{equation}
+\tau_{\mathrm{path}}
+        =2i\sum_{e\in\mathcal E_T}\cot(\pi x_e)-\sum_i\epsilon_i.
+\label{plc:30}
+\end{equation} This explains precisely why the sum is over physical turn edges, not
+arbitrary unturned edges in a binary product resolution. Lowering a turn
+makes its covariant index \(x_e\) complementary to its unturned input.
+Consecutive double turns contribute opposite cotangents and may be
+suppressed. Root changes merely reassociate this same geometric sum.
+
+\subsection{The integer framing of the constructed
+path}\label{the-integer-framing-of-the-constructed-path}
+
+The original marked threading calculation identifies the actual
+auxiliary meridians as \begin{equation}
+M_+=W_0^{-1}B\quad\text{for physical }R,\qquad
+ M_-=A^{-1}W_0\quad\text{for physical }R^{-1}.
+\label{plc:31}
+\end{equation} These signs are fixed geometrically in the marked geometric
+deformation \cite[Sections 5 and 8]{StrictGeometry}, from the original threading word; they are not
+chosen from a quantum asymptotic.
+
+The exact odd edge relations give \begin{equation}
+\begin{array}{c|cc}
+ &L_{02}&L_{13}\\ \hline
+R&\mu_1M_+&M_+^{-1}\\
+R^{-1}&M_-&\mu_0M_-^{-1}.
+\end{array}
+\label{plc:32}
+\end{equation} For example \(W_2^{-1}A=M_+^{-1}\), and
+\(W_1^{-1}B=(W_1^{-1}W_0)M_+=\mu_1M_+\). For the second row use
+\(W_2^{-1}BW_0^{-1}A=I\) and \(W_3^{-1}W_0=\mu_0\). These are identities
+of actual group paths, using the already established edge words, and
+hence also identities in homology.
+
+Orient the main knot. At an odd leaf let \(t_0,t_1\in\{1,-1\}\) record
+whether it follows the canonical arcs \(0\to2\), \(1\to3\) or their
+reverses. By the endpoint convention in Section~\ref{pl:cusp}, \begin{equation}
+[\mu_0]=t_0[\mu_K],\qquad
+                        [\mu_1]=-t_1[\mu_K].
+\label{plc:33}
+\end{equation} The first row of \eqref{plc:32}, traversed with these signs, contributes \begin{equation}
+-t_0t_1[\mu_K]+(t_0-t_1)[M_+]
+\label{plc:34}
+\end{equation} to the longitudinal homology. The second contributes \begin{equation}
+t_0t_1[\mu_K]+(t_0-t_1)[M_-].
+\label{plc:35}
+\end{equation} The same coefficient \(t_0-t_1\) is the oriented intersection of the
+main strands with the original crossing disk. Thus it is their linking
+number with the circle.
+
+The main-meridian coefficients in \eqref{plc:34}--\eqref{plc:35} are exactly the oriented
+writhe contributions. To check the convention, undo the literal
+quarter-turn \(h=T(R^\epsilon)\). Parallel upward strands of the
+unturned positive braid become \(t_0=1,t_1=-1\): one diagonal is
+reversed by this quarter-turn. Hence the positive crossing has sign
+\(-t_0t_1\), and the negative crossing has sign \(t_0t_1\). Reversing
+just one strand reverses both signs. This is the usual oriented crossing
+definition, applied to the actual ordered terminal map.
+
+For a pure leaf its auxiliary meridian is \(M_0=S^{-1}\). Its two paths
+are \(M_0,M_0^{-1}\), so their homology contributes only
+\((t_0-t_1)[M_0]\), and no main-meridian term. Products and turns
+outside the leaf boxes are actual crossing-free identity strips and
+rotations. They do not introduce an additional homology contribution.
+Thus the full path from \eqref{plc:30} has \begin{equation}
+[L_{\mathrm{path}}]
+          =w_\epsilon[\mu_K]+\sum_i\ell_i[\mu_i].
+\label{plc:36}
+\end{equation} It traverses the main knot once because every original segment and
+disk puncture is followed once in its actual oriented component.
+Therefore it differs from the preferred augmented longitude by exactly
+\(w_\epsilon\) main meridians: \begin{equation}
+\lambda_K=L_{\mathrm{path}}\mu_K^{-w_\epsilon},\qquad
+        \tau_{\lambda_K}
+          =2i\sum_e\cot(\pi x_e)-\sum_i\epsilon_i-w_\epsilon.
+\label{plc:37}
+\end{equation} This step determines the integer part; parabolicity alone would not
+do so.

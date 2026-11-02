@@ -1,0 +1,181 @@
+\section{Boundary isotropy and the edge differential}\label{pl:boundary-isotropy-and-the-edge-differential}
+
+\subsection{The edge equation and a closed differential}\label{pl:the-edge-equation-and-a-closed-differential}
+
+For an edge with endpoint variables \(Q,P\), let \(X\) satisfy
+
+\begin{equation}\label{pl:R1}
+(X+Q)(X+Q^{-1})(X+P)(X+P^{-1})
+      =(X-1)^2(1-XM^2)(1-X/M^2).
+\end{equation}
+
+The variables are nonzero. We work first where all displayed factors
+are nonzero and the selected root is simple. Write
+
+\begin{equation}\label{pl:R2}
+\begin{gathered}
+ u=\log M,\quad q=\log Q,\quad p=\log P,\quad z=\log X,\\
+ f=\frac{M^2-X}{1-M^2X},\quad
+ \rho_Q=\frac{Q+X}{1+QX},\quad
+ \rho_P=\frac{P+X}{1+PX}.
+ \end{gathered}
+\end{equation}
+
+Only the differentials of the logarithms will be used. Their branches
+therefore do not affect the identities below.
+
+Let \(F\) be the logarithm of the quotient of the two sides of
+\eqref{pl:R1}, holding \(z,q,p,u\) independent before differentiating.
+Direct differentiation gives
+
+\begin{equation}\label{pl:R3}
+F_u=2(\log f)_z,\qquad
+ F_q=-(\log\rho_Q)_z,\qquad
+ F_p=-(\log\rho_P)_z.
+\end{equation}
+
+On the edge surface \(dF=0\). Moreover \(f\) has no direct
+\(q,p\) dependence, and each \(\rho\) has no direct
+\(u\) dependence or dependence on the other endpoint. Thus
+
+\begin{equation}\label{pl:R4}
+\begin{aligned}
+ &du\wedge d\log f+
+   \tfrac12d\log\rho_Q\wedge dq+
+   \tfrac12d\log\rho_P\wedge dp\\
+ &\quad=\tfrac12(F_u\,du+F_q\,dq+F_p\,dp)\wedge dz=0.
+ \end{aligned}
+\end{equation}
+
+This proof uses the rational equation itself. It does not identify a
+geometric volume by comparing numerical critical values. Since \eqref{pl:R4} is
+an identity of rational differential forms, it holds on every smooth
+part of the same algebraic component.
+
+\subsection{The actual boundary pairing}\label{pl:the-actual-boundary-pairing}
+
+The marked reconstruction input in Proposition~\ref{pl:imports} has assembled the ordered pieces into a representation
+of the original augmented link exterior. Let \(L\) be the
+eigenvalue of its preferred main longitude on the main
+\(M\)-eigenline. At each auxiliary circle let \(U_v\) be the
+logarithm of the primitive meridian similarity, and let the selected
+longitude eigenvalue be \(-Q_v\). The exact local construction and
+the original half-twist convention give
+
+\begin{equation}\label{pl:R5}
+U_v=\sum_{e\ni v}\log\rho_{v,e}-\epsilon_v\log Q_v,
+ \qquad \epsilon_v\in\{-1,0,1\},
+\end{equation}
+
+up to locally constant logarithmic periods. The summands and the
+primitive word must be established by the actual boundary gluing.
+
+The infinitesimal boundary pairing is
+
+\begin{equation}\label{pl:R6}
+du\wedge d\log L+
+             \tfrac12\sum_v dU_v\wedge d\log Q_v=0.
+\end{equation}
+
+Here all tori use the meridian--longitude orientations induced by the
+same oriented exterior. The factor one half occurs because \(U_v\)
+is a logarithm of an eigenvalue ratio, whereas \(\log Q_v\) is
+a logarithm of a single determinant-one eigenvalue.
+
+For completeness, \eqref{pl:R6} has a direct topological proof. Infinitesimal
+variations of a representation are one-cocycles with values in its
+adjoint local system. Pair two such cocycles by
+\(\operatorname{tr}(XY)\) and take their cup product. The result
+is a closed ordinary two-cochain, because the trace pairing is
+invariant under conjugation. Its total evaluation on the boundary
+of a fundamental three-chain is zero by the cochain Stokes identity.
+On a torus with commuting diagonal holonomies, write their logarithms
+as \(x\operatorname{diag}(1,-1)\) and
+\(y\operatorname{diag}(1,-1)\). The alternating trace pairing
+is \(2(dx\wedge dy)\). Summing over the boundary tori gives
+\(\sum dx\wedge dy=0\). Substitute
+\((x,y)=(u,\log L)\) at the main torus and
+\((x,y)=(U_v/2,\log Q_v)\) at the auxiliary tori. This proves
+\eqref{pl:R6} where the peripheral matrices are diagonalizable. The rational
+identity extends over the remaining points where its terms are defined.
+
+Subtract the sum of \eqref{pl:R4} over all edges from \eqref{pl:R6}. The half-twist term
+in \eqref{pl:R5} has zero wedge product with \(d\log Q_v\). The result is
+
+\begin{equation}\label{pl:R7}
+du\wedge d\log\left(\frac{L}{\prod_e f_e}\right)=0.
+\end{equation}
+
+In particular, the discrepancy has no infinitesimal dependence on any
+auxiliary variable. To avoid choosing determinant-one lifts globally,
+use the squared discrepancy
+
+\begin{equation}\label{pl:R8}
+R=\frac{L^2}{\prod_e f_e^2}.
+\end{equation}
+
+It is a rational function whenever the original projective peripheral
+representation is rational on the source variety: \(L^2\) is the
+ratio of the two eigenvalues of the main longitude, with its ordered
+main flag retained.
+
+\section{The constant field of the source equations}\label{pl:the-constant-field-of-the-source-equations}
+
+\subsection{Why the discrepancy is rational in the main meridian}\label{pl:why-the-discrepancy-is-rational-in-the-main-meridian}
+
+Let \(k=\mathbb C(M)\), and let the graph have distinct unordered
+edges. In particular this applies to a tree. The edge quadratic
+gives, on putting \(Z=X+X^{-1}\):
+
+\begin{equation}\label{pl:R9}
+Z=\frac{2(M^2+M^{-2})-(Q+Q^{-1})(P+P^{-1})}
+ {Q+Q^{-1}+P+P^{-1}+M^2+M^{-2}+2}.
+\end{equation}
+
+Work on the open set where these denominators are invertible; it
+contains the complete branch. The squareclass of \(Z^2-4\) is
+
+\begin{equation}\label{pl:R10}
+H_e=(Q_v-1)^2(Q_w-1)^2
+                  -4(M+M^{-1})^2Q_vQ_w.
+\end{equation}
+
+To see that the edge squareclasses are independent, extend the
+coefficient field to an algebraic closure \(\overline{k}\).
+Put \(t=(M+M^{-1})^2\ne0\) in this field. As a quadratic in
+\(Y\), the polynomial
+\((X-1)^2(Y-1)^2-4tXY\) has discriminant
+
+\begin{equation}\label{pl:R11}
+16tX[X^2+(t-2)X+1].
+\end{equation}
+
+Its order of vanishing at \(X=0\) is one, so it is not a square
+in \(\overline{k}(X)\). Its coefficients in \(Y\) have no
+common factor: at \(X=1\) the middle coefficient is \(-4t\).
+It is therefore irreducible in \(\overline{k}[X,Y]\).
+
+Different edges give different such prime polynomials, since they
+involve different pairs of independent vertex variables. The valuation
+at the prime \(H_e\) is odd for its own squareclass and zero for
+every other edge. Hence every nonempty product of edge squareclasses
+is nonsquare. Adjoining their square roots has degree \(2^{|\mathcal E|}\)
+even after extending \(k\) to \(\overline{k}\). This proves
+geometric integrality of the generic source fiber over \(M\).
+In particular \(k\) is algebraically closed in its function
+field \(\mathcal F\).
+
+The logarithmic derivatives in all the \(Q_v\) extend uniquely
+to the finite separable field \(\mathcal F\). If an element of
+\(\mathcal F\) is killed by every such derivative, its relative
+differential over \(k\) vanishes. In characteristic zero it is
+algebraic over \(k\), and therefore belongs to \(k\) by the
+preceding paragraph. Applying this to \eqref{pl:R7}--\eqref{pl:R8} gives
+
+\begin{equation}\label{pl:R12}
+R\in\mathbb C(M)^*.
+\end{equation}
+
+The specialization of \eqref{pl:R10} at \(M=\pm i\) is a square. This
+does not invalidate the generic integrality proof; it does mean that
+those fibers need the separate check in Section~\ref{pl:regular-reconstruction-at-every-nonzero-main-value}.

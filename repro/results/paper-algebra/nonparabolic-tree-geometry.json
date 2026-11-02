@@ -1,0 +1,480 @@
+{
+  "scope": "Exact rational face/character/Hurwitz identities and finite row/polarization algebra. No proof by sampling; no verification of inverse-cut topology, global gluing rank, metric completion, analytic uniformity, or preferred-longitude/quantum conclusions.",
+  "input_sha256": {
+    "experiments/audit_all_circle_four_punctured_adapter.py": "725e19744965b94b2f5f27f5a551d9f49bf8d97e4f1aac1b3c8183d7625a5a29",
+    "experiments/audit_all_circle_hurwitz_line_transport.py": "ae2b68c820d25c308dbcd89160d17dda139d5e82a43ea2a9f423880e9074a227",
+    "experiments/audit_all_circle_nonparabolic_edge.py": "5b055d9ce7109b45144d1090e3f1ca40cd52ff30127bde938ca1370fbb7c64df",
+    "papers/circle-tree-geometry/main.tex": "2404285044d7efb8376b3fdeaa3a6da6f2d36bc29da6a7e176f09f8230339301",
+    "papers/marked-fillings/main.tex": "a0d792eea4336ea0bbe7c9c274780539db2b57e80836525210ba16728661000e",
+    "papers/nonparabolic-tree-geometry/character.tex": "d5c15ce2e2be3edb38bc73aa9699dedd5a98dc8f3bf11cd45d023b1cff8b7b0d",
+    "papers/nonparabolic-tree-geometry/check.py": "92e77fbed4d281330b2bf7a6bcfbd99166e99171ad7eb2267c2a923005ea08b7",
+    "papers/nonparabolic-tree-geometry/faces.tex": "99c02aa1c6c493ee312d9ed95748c31f4f953f3c5c830c8da9e017f03226da50",
+    "papers/nonparabolic-tree-geometry/figures/hurwitz-collar.tex": "8d73a78f3134bb25ed18e1b1496380d293bc6ec7528fdf2a7e8146c9feeff85c",
+    "papers/nonparabolic-tree-geometry/figures/ordered-seam.tex": "5e14c33819c9a2a6616f97d220d873d0ff3c21c36483cdce4c53b93adc6768f0",
+    "papers/nonparabolic-tree-geometry/main.tex": "68286eb8ff7e651b11ad40cad3d810a03b800faa1132a05bb46d1340b3416b68",
+    "papers/nonparabolic-tree-geometry/references.tex": "214a83448ae0a4c3af591ec4149a9f2039d4002e54394f83c348b7c15410857e",
+    "papers/nonparabolic-tree-geometry/rigidity.tex": "0a64ebd907bc427a22e52534d151f235520da90dfbace471ada27e1868065816",
+    "papers/nonparabolic-tree-geometry/sewing.tex": "d37da63fe6d270f3e0c5e487cdbe0dc076dc283e86eb682cd9c02dcbb4732396",
+    "papers/strict-conway-geometry/complete.tex": "1f47dda3c60cb7fd1b38e79961c4f6df45f6b5d7439b1ce1f85aaf1879b2063d",
+    "papers/strict-conway-geometry/deformation.tex": "b8d294abc0fc61612ea8353df2cbb5fa5964d45605b2780827fc268c631db84d",
+    "papers/strict-conway-geometry/main.tex": "b57cb5388280c09f45fe827b4505f6c96fbef86ac1e530dea3c9dd2799696af1"
+  },
+  "inputs_unchanged": true,
+  "replays": [
+    {
+      "script": "experiments/audit_all_circle_nonparabolic_edge.py",
+      "result": {
+        "purpose": "Exact local marked face/peripheral identities; no substitute for the global cut proof",
+        "checks": 64,
+        "identities": [
+          "v apex W0",
+          "v apex W2",
+          "w apex W1",
+          "v return0 01",
+          "v return0 10",
+          "v return0 diag",
+          "v return2 01",
+          "v return2 10",
+          "v return2 diag",
+          "v cross-return 01",
+          "v cross-return 10",
+          "v cross-return diag",
+          "w apex W3",
+          "w return1 01",
+          "w return1 10",
+          "w return1 diag",
+          "w return3 01",
+          "w return3 10",
+          "w return3 diag",
+          "w cross-return 01",
+          "w cross-return 10",
+          "w cross-return diag",
+          "main corner 0 fixed",
+          "main corner 0 multiplier",
+          "main corner infinity fixes infinity",
+          "main corner 1 multiplier",
+          "main corner 2 fixed",
+          "main corner 2 multiplier",
+          "main corner 3 fixed",
+          "main corner 3 multiplier",
+          "v meridian",
+          "w meridian",
+          "v longitude",
+          "w longitude",
+          "v source coordinate",
+          "w source coordinate",
+          "common source coordinate",
+          "source edge equation",
+          "complete wire coordinate",
+          "pants seam 0",
+          "pants seam 1",
+          "pants seam 2",
+          "pants seam 3",
+          "pants seam 4",
+          "pants seam 5",
+          "reversed pants cancellation 0",
+          "reversed pants cancellation 1",
+          "reversed pants cancellation 2",
+          "other endpoint seam 0",
+          "other endpoint seam 1",
+          "other endpoint seam 2",
+          "other endpoint seam 3",
+          "other endpoint seam 4",
+          "other endpoint seam 5",
+          "fixed-white odd defect lower entry",
+          "fixed-white odd defect dilation",
+          "fixed-white odd defect translation",
+          "positive odd collar calibration 01",
+          "positive odd collar calibration 10",
+          "positive odd collar calibration diag",
+          "main word fixes infinity",
+          "main word selected diagonal",
+          "main word opposite diagonal",
+          "complete main word and central sign"
+        ],
+        "all_exact": true,
+        "complete_main_word": "Matrix([[-1, 2 + 2*I], [0, -1]])"
+      }
+    },
+    {
+      "script": "experiments/audit_all_circle_four_punctured_adapter.py",
+      "result": {
+        "scope": "Exact rational matrix identities, native complete branch, fixed-white odd-return obstruction and decorated-line algebra; no global topological marking or geometric conclusion.",
+        "arithmetic": "symbolic rational functions over Q(M,beta,E), with independent trace variables for the initial determinant identity",
+        "checks": [
+          {
+            "name": "trace A",
+            "passed": true
+          },
+          {
+            "name": "trace B",
+            "passed": true
+          },
+          {
+            "name": "trace C",
+            "passed": true
+          },
+          {
+            "name": "trace AB",
+            "passed": true
+          },
+          {
+            "name": "trace BC",
+            "passed": true
+          },
+          {
+            "name": "trace AC",
+            "passed": true
+          },
+          {
+            "name": "trace ABC",
+            "passed": true
+          },
+          {
+            "name": "determinant gives character quadratic",
+            "passed": true
+          },
+          {
+            "name": "source to character identity",
+            "passed": true
+          },
+          {
+            "name": "character discriminant",
+            "passed": true
+          },
+          {
+            "name": "det C on edge variety",
+            "passed": true
+          },
+          {
+            "name": "det D0",
+            "passed": true
+          },
+          {
+            "name": "trace D0",
+            "passed": true
+          },
+          {
+            "name": "four puncture product[0,0]",
+            "passed": true
+          },
+          {
+            "name": "four puncture product[0,1]",
+            "passed": true
+          },
+          {
+            "name": "four puncture product[1,0]",
+            "passed": true
+          },
+          {
+            "name": "four puncture product[1,1]",
+            "passed": true
+          },
+          {
+            "name": "V A = D0 inverse V[0,0]",
+            "passed": true
+          },
+          {
+            "name": "V A = D0 inverse V[0,1]",
+            "passed": true
+          },
+          {
+            "name": "V A = D0 inverse V[1,0]",
+            "passed": true
+          },
+          {
+            "name": "V A = D0 inverse V[1,1]",
+            "passed": true
+          },
+          {
+            "name": "V B = C inverse V[0,0]",
+            "passed": true
+          },
+          {
+            "name": "V B = C inverse V[0,1]",
+            "passed": true
+          },
+          {
+            "name": "V B = C inverse V[1,0]",
+            "passed": true
+          },
+          {
+            "name": "V B = C inverse V[1,1]",
+            "passed": true
+          },
+          {
+            "name": "T B = A inverse T[0,0]",
+            "passed": true
+          },
+          {
+            "name": "T B = A inverse T[0,1]",
+            "passed": true
+          },
+          {
+            "name": "T B = A inverse T[1,0]",
+            "passed": true
+          },
+          {
+            "name": "T B = A inverse T[1,1]",
+            "passed": true
+          },
+          {
+            "name": "T C = D0 inverse T[0,0]",
+            "passed": true
+          },
+          {
+            "name": "T C = D0 inverse T[0,1]",
+            "passed": true
+          },
+          {
+            "name": "T C = D0 inverse T[1,0]",
+            "passed": true
+          },
+          {
+            "name": "T C = D0 inverse T[1,1]",
+            "passed": true
+          },
+          {
+            "name": "V determinant",
+            "passed": true
+          },
+          {
+            "name": "T determinant",
+            "passed": true
+          },
+          {
+            "name": "v selected auxiliary ratio",
+            "passed": true
+          },
+          {
+            "name": "w oppositely oriented selected ratio",
+            "passed": true
+          },
+          {
+            "name": "main commutator certificate[0,0]",
+            "passed": true
+          },
+          {
+            "name": "main commutator certificate[0,1]",
+            "passed": true
+          },
+          {
+            "name": "main commutator certificate[1,0]",
+            "passed": true
+          },
+          {
+            "name": "main commutator certificate[1,1]",
+            "passed": true
+          },
+          {
+            "name": "main determinant",
+            "passed": true
+          },
+          {
+            "name": "main commutes with puncture[0,0]",
+            "passed": true
+          },
+          {
+            "name": "main commutes with puncture[0,1]",
+            "passed": true
+          },
+          {
+            "name": "main commutes with puncture[1,0]",
+            "passed": true
+          },
+          {
+            "name": "main commutes with puncture[1,1]",
+            "passed": true
+          },
+          {
+            "name": "main source-flag eigenvalue",
+            "passed": true
+          },
+          {
+            "name": "complete main upper right",
+            "passed": true
+          },
+          {
+            "name": "native complete source branch",
+            "passed": true
+          },
+          {
+            "name": "fixed-white odd return defect[0,0]",
+            "passed": true
+          },
+          {
+            "name": "fixed-white odd return defect[0,1]",
+            "passed": true
+          },
+          {
+            "name": "fixed-white odd return defect[1,0]",
+            "passed": true
+          },
+          {
+            "name": "fixed-white odd return defect[1,1]",
+            "passed": true
+          },
+          {
+            "name": "third odd return remains identity[0,0]",
+            "passed": true
+          },
+          {
+            "name": "third odd return remains identity[0,1]",
+            "passed": true
+          },
+          {
+            "name": "third odd return remains identity[1,0]",
+            "passed": true
+          },
+          {
+            "name": "third odd return remains identity[1,1]",
+            "passed": true
+          },
+          {
+            "name": "equal-line inverse-collar tensor 0",
+            "passed": true
+          },
+          {
+            "name": "equal-line forward-collar tensor 0",
+            "passed": true
+          },
+          {
+            "name": "equal-line inverse-collar tensor 1",
+            "passed": true
+          },
+          {
+            "name": "equal-line forward-collar tensor 1",
+            "passed": true
+          },
+          {
+            "name": "equal-line inverse-collar tensor 2",
+            "passed": true
+          },
+          {
+            "name": "equal-line forward-collar tensor 2",
+            "passed": true
+          },
+          {
+            "name": "equal-line inverse-collar tensor 3",
+            "passed": true
+          },
+          {
+            "name": "equal-line forward-collar tensor 3",
+            "passed": true
+          },
+          {
+            "name": "opposite-line second coordinate",
+            "passed": true
+          }
+        ],
+        "count": 66,
+        "all_passed": true,
+        "script_sha256": "725e19744965b94b2f5f27f5a551d9f49bf8d97e4f1aac1b3c8183d7625a5a29"
+      }
+    },
+    {
+      "script": "experiments/audit_all_circle_hurwitz_line_transport.py",
+      "result": {
+        "scope": "Local rational transport only; no global peripheral identification.",
+        "count": 20,
+        "scalar_entries": 111,
+        "checks": [
+          {
+            "name": "equal puncture traces",
+            "entries": 1
+          },
+          {
+            "name": "regular determinant",
+            "entries": 1
+          },
+          {
+            "name": "ordered K B = A K",
+            "entries": 4
+          },
+          {
+            "name": "ordered first Hurwitz image",
+            "entries": 4
+          },
+          {
+            "name": "K preserves disk longitude",
+            "entries": 4
+          },
+          {
+            "name": "projective half-longitude",
+            "entries": 4
+          },
+          {
+            "name": "full twist on both tensor factors",
+            "entries": 16
+          },
+          {
+            "name": "projective scale independence",
+            "entries": 16
+          },
+          {
+            "name": "transport determinant",
+            "entries": 1
+          },
+          {
+            "name": "A plus eigenvector",
+            "entries": 2
+          },
+          {
+            "name": "A minus eigenvector",
+            "entries": 2
+          },
+          {
+            "name": "B plus eigenvector",
+            "entries": 2
+          },
+          {
+            "name": "B minus eigenvector",
+            "entries": 2
+          },
+          {
+            "name": "half twist on ++",
+            "entries": 4
+          },
+          {
+            "name": "half twist on +-",
+            "entries": 4
+          },
+          {
+            "name": "half twist on -+",
+            "entries": 4
+          },
+          {
+            "name": "half twist on --",
+            "entries": 4
+          },
+          {
+            "name": "equal-line raw tensor comparison",
+            "entries": 4
+          },
+          {
+            "name": "parabolic full twist",
+            "entries": 16
+          },
+          {
+            "name": "inverse twist",
+            "entries": 16
+          }
+        ],
+        "all_exact": true,
+        "script_sha256": "ae2b68c820d25c308dbcd89160d17dda139d5e82a43ea2a9f423880e9074a227"
+      }
+    }
+  ],
+  "supplementary": {
+    "angular_chart_identities": 5,
+    "correct_seam_products": 3,
+    "edge_dependence_identities": 3,
+    "polarization_and_coordinate_change": 2,
+    "negative_controls": {
+      "unreversed_seam_rejected": true,
+      "parabolic_ratio_does_not_kill_word": true,
+      "fixed_white_odd_return_is_not_identity": true
+    }
+  },
+  "python": "3.14.6"
+}

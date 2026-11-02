@@ -1,0 +1,112 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,xurl,booktabs}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\setlength{\emergencystretch}{2em}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\stat}{\operatorname{stat}}
+\title{Preferred longitudes of Conway tree complements}
+\author{}\date{}
+\begin{document}\maketitle
+\begin{abstract}
+We identify the preferred-longitude eigenvalue of the geometric meridian germ of an ordered Conway tree. Each physical quarter-turn edge contributes a rational factor, and the original writhe and crossing powers determine the remaining meridian monomial. Boundary isotropy first makes the discrepancy independent of the auxiliary variables. A constant-field calculation and regular reconstruction at every nonzero main parameter then exclude additional rational factors; the argument includes the split trace-zero fibers. An explicit cusp-path calculation fixes the monomial and a Seifert-surface frame calculation fixes the determinant-one sign. Inserting meridian-filled zero-crossing circles extends the formula to arbitrary strict product junctions, including adjacent bare junctions and a folded half-label edge. The proof concerns marked representations and classical stationary actions. It uses no invariant asymptotic or recurrence hypothesis.
+\end{abstract}
+
+\section{The marked curve and the theorem}\label{pl:introduction}
+A meridian eigenvalue does not determine a preferred longitude merely by fixing its value and tangent at the complete cusp. A nonconstant rational factor could have the same value and first derivative there. The proof below first excludes all such factors, then uses the cusp tangent to determine an integer exponent. This separation is essential at main parameters where an ideal cell chart degenerates although the group representation remains regular.
+
+\subsection{The original diagram and its peripheral curves}
+Take an ordered two-string Conway construction: products stack two tangles in their recorded order, physical quarter-turns rotate the whole four-point boundary, and the prescribed cylindrical closing pairs the final endpoints. Its main strands must form one knot, including any component already closed inside a subtangle. A crossing circle is an auxiliary component bounding the specified disk with two main punctures. Its retained half twist is $\epsilon_v\in\{-1,0,1\}$; filling the primitive slope $\mu_v+p_v\lambda_v$ gives signed crossing power
+\begin{equation}\label{pl:power} n_v=\epsilon_v-2p_v.\end{equation}
+All product orders, disk basepaths and endpoint flags remain part of the diagram. The auxiliary circles are pairwise unlinked.
+
+Group consecutive products with no intervening physical turn into junctions. An \emph{all-circle tree} has a crossing circle at every junction; its finite underlying graph has at least one edge. A \emph{bare junction} has none. The strict class is defined by a nonempty angle domain: each original leaf has $0<a<1/2$, and each retained binary product with inputs $x,y$ and output $b$ has
+\begin{equation}\label{pl:strict} \max(x,y)<b<x+y<1.\end{equation}
+The forced final flat product is replaced by its exact complementary-label pairing. Any binary resolution of a bare junction keeps its original order; its hidden unturned wires are not physical edges. These support statements and the unique strict stationary state are proved in \cite[Sections 2--4]{Profiles}. Retain the original knot/parity test. In the strict two-leaf knot case at least one retained disk is pure ($\epsilon=0$); the two-odd pattern is a link and is excluded.
+
+Let $\mathcal E$ denote the physical quarter-turn edges. Their covariant angle label $x_e$ is the one shared by the two ends in the symmetric product action; its ordinary output label is $1-x_e$. Set $X_e=e^{2\pi\ii x_e}$. The main positive meridian has eigenvalue $M$. The recorded source flag is its $M^{-1}$ eigenline; throughout this paper $L$ is the inverse longitude eigenvalue on that line, equivalently the longitude eigenvalue on the $M$ line. At circle $v$ the selected primitive disk-longitude eigenvalue is $-Q_v$. We use eigenvalue ratios for projective representations, so its longitude similarity is $Q_v^2$.
+
+\subsection{The exact geometric inputs}
+\begin{proposition}[Companion inputs, with their scope]\label{pl:imports}
+The following marked statements are used.
+\begin{enumerate}
+\item The all-circle edge equation
+\begin{equation}\label{pl:T1}
+(X_e+Q_v)(X_e+Q_v^{-1})(X_e+Q_w)(X_e+Q_w^{-1})
+ =(X_e-1)^2(1-X_eM^2)(1-X_e/M^2)
+\end{equation}
+reconstructs the original ordered augmented group near its complete point $M=Q_v=1$, $X_e=\ii$. The full puncture-pair conjugacies, primitive words and selected global flag are those of \cite[Theorems 1.1 and 3.1]{Nonparabolic}. In particular
+\begin{equation}\label{pl:T3}
+ e^{U_v}=Q_v^{-\epsilon_v}\prod_{e\ni v}\frac{Q_v+X_e}{1+Q_vX_e},\qquad V_v=2\log Q_v.
+\end{equation}
+The rational character formulas and their full ordered conjugacies, not only their traces, are part of this input.
+\item The strict construction has its original positive complete geometry, actual white and shaded maps, primitive collar paths and sufficiently long independently signed fillings, as in \cite[Theorems 1.2--1.3 and Sections 6--8]{StrictGeometry}. Fixed crossing counts, including all their signs, are chosen before considering a deformation. The main cusp remains unfilled.
+\item At a positive filled endpoint in the \emph{original augmented} triangulation, fixed primitive slope logarithms and the main meridian logarithm give the full local decorated representation germ. Thus the filled germ is smooth of dimension one, with coordinate $\log M$. This is the positive augmented germ statement of \cite[Theorem 1.2 and Proposition 6.1]{Nonparabolic}. A reconstructed representation must first be identified with that endpoint; slope eigenvalues alone do not supply the anchor. No positive triangulation of a newly drilled bare-junction diagram is required.
+\end{enumerate}
+\end{proposition}
+These inputs identify the group representation and its metric; none asserts a main preferred-longitude formula. Section~\ref{plb:exact-elimination-of-the-angular-action} also uses the finite turn and multiplication identities of \cite[Proposition 3.2 and Theorem 3.3]{Newton}, the scalar factorial estimate of \cite[Lemma 5.2]{Newton}, and the exact Fourier trace of \cite[Lemma 6.1]{SourceBounds}. It does not use the later color-loss theorem in that paper or an asymptotic of a knot invariant.
+
+\begin{theorem}[All-circle longitude]\label{pl:all-circle}
+For the literal all-circle tree, put
+\begin{equation}\label{pl:f}
+ f_e=\frac{M^2-X_e}{1-M^2X_e},\qquad
+ a_{\rm aug}=-w_\epsilon-\sum_v\epsilon_v.
+\end{equation}
+Here $w_\epsilon$ is the oriented writhe of the retained-crossing augmented diagram. On the integral source variety, the preferred main-longitude ratio satisfies
+\begin{equation}\label{pl:T4} L_{\rm aug}^2=M^{2a_{\rm aug}}\prod_e f_e^2.\end{equation}
+After the original disk fillings, its preferred filled peripheral word satisfies
+\begin{equation}\label{pl:T6} L_{\rm fill}^2=M^{2a(D)}\prod_e f_e^2,
+\qquad a(D)=-w(D)-\sum_v n_v.\end{equation}
+This is a rational identity for that word before imposing fillings. On a connected geometric germ anchored at the actual complete hyperbolic filled knot it has the determinant-one form
+\begin{equation}\label{pl:T7}
+ \boxed{L_{\rm geom}(M)=-M^{a(D)}\prod_e\frac{M^2-X_e(M)}{1-M^2X_e(M)}.}
+\end{equation}
+The branch retains the original logarithms $U_v+p_vV_v=-2\pi\ii$. If one uses only the exponentiated equations, descent to the filled group additionally needs $Q_v^2\ne1$ at every filled circle, or the actual slope-word identity. A parabolic word with eigenvalue ratio one is not necessarily identity.
+\end{theorem}
+
+\begin{theorem}[Bare junctions and the original strict action]\label{pl:strict-longitude}
+For every fixed strict ordered construction with the original knot qualification and sufficiently long independently signed original fillings, formula~\eqref{pl:T7} holds on its geometric meridian germ. The product is over its original physical edges, including edges between bare junctions. No restriction is imposed on bare-junction valence or adjacency.
+
+More precisely, put $M=e^{\pi\ii t}$ and
+$J(x)=\int_0^x\log(2\sin\pi r)\,dr$, continued from $0<x<1$. If $\Phi$ is the classical joint first-charge action of the same construction at $M=1$, the continued stationary branch is that of
+\begin{equation}\label{pl:deformed-action}
+ \Phi_t=\Phi+\sum_{e\in\mathcal E}
+ [2J(x_e)-J(x_e+t)-J(x_e-t)]+\frac{\pi\ii a(D)}2t^2.
+\end{equation}
+Each circle contributes $\sum_{e\ni v}b(x_e,\tau_v)+\ii n_v\tau_v^2/(4\pi)-\ii\tau_v$, with $b$ defined in \eqref{plb:4}; each bare hub contributes the optimized sum of its original cubic gate actions~\eqref{plb:13}. Each physical edge has its one shared variable. This defines $\Phi$ with its constants and primitive first charge. Hidden binary-resolution variables may equivalently be retained before stationarity.
+\end{theorem}
+The proof identifies this classical critical branch with the original group representation; it makes no quantum estimate. In particular it does not assert an annihilator, an $A$-polynomial equality or a volume limit.
+
+\input{algebra}
+\input{regularity}
+\input{cusp}
+\input{calibration}
+\input{sign}
+\input{bare}
+
+\section{Reproduction and boundaries of the result}\label{pl:checks}
+The accompanying \texttt{check.py} verifies the finite rational identities used in the proof: the edge discriminant and evaluations, character determinants and transports, differential identities, cusp rebasing and sign-sensitive translations, the bare-hub white word, and the integer framing shear. It reduces polynomial identities modulo the actual edge quadratic. It does not establish geometric integrality, the existence of a nonempty algebraic open set, the topological cusp paths, or the analytic implicit-function statements by finite examples; those are the written arguments above. Run the script in a Python environment containing SymPy, with \texttt{--output} followed by a fresh JSON path.
+
+The geometric completion and marked local representation theorem remain the explicit inputs in Proposition~\ref{pl:imports}. Our use of them is independent of quantum asymptotics. All matrices use the same original group and ordered paths. The sign is fixed on an anchored connected germ; the global source identity is squared and makes no choice of a rational determinant-one lift. Short fillings, changing combinatorics and multiple main-component surgery matrices are outside the stated theorem.
+
+\begin{thebibliography}{9}
+\bibitem{Nonparabolic} \emph{Nonparabolic holonomy of trees of crossing circles}, companion paper, \href{https://sashakolpakov.github.io/murakamis_dream/papers/nonparabolic-tree-geometry.pdf}{source and proof}.
+\bibitem{StrictGeometry} \emph{Marked geometry of strict Conway compositions}, companion paper, \href{https://sashakolpakov.github.io/murakamis_dream/papers/strict-conway-geometry.pdf}{source and proof}.
+\bibitem{Profiles} \emph{Stationary profiles of strict Newton trees}, companion paper, \href{https://sashakolpakov.github.io/murakamis_dream/papers/strict-newton-profiles.pdf}{source and proof}.
+\bibitem{Newton} \emph{Newton coefficients and positive sources for Conway tangles}, companion paper, \href{https://sashakolpakov.github.io/murakamis_dream/papers/newton-tangles.pdf}{source and proof}.
+\bibitem{SourceBounds} \emph{Spectral estimates for Conway tangle sources}, companion paper, \href{https://sashakolpakov.github.io/murakamis_dream/papers/conway-source-bounds.pdf}{source and proof}.
+\bibitem{MFP} P. Menal-Ferrer and J. Porti, \emph{Twisted cohomology for hyperbolic three manifolds}, Osaka J. Math. \textbf{49} (2012), 741--769, especially Corollary 3.10. \href{https://doi.org/10.18910/23151}{doi:10.18910/23151}.
+\end{thebibliography}
+\end{document}
