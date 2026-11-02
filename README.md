@@ -146,15 +146,14 @@ Its peripheral-volume input is a local differential from the geometric
 foundation, so no independently long-twist assumption is imposed on
 these zero-power cases.
 
-The [degree-and-twist paper](docs/papers/circle-tree-asymptotics.pdf)
-now proves the full invariant asymptotic under the summed condition
-$\sum_v d_v/(d_v^2+n_v^2)\le2^{-25}$. It retains every Newton index,
-Fourier charge and repeated-root derivative, and gives a uniform
-microscopic meridian profile. This analytic condition implies the
-geometric threshold above. The
-[directed circle-tree paper](docs/papers/directed-tree-asymptotics.pdf)
-proves its different conditional criterion and derives the older local
-bound as a corollary.
+[Volume asymptotics for trees of crossing circles](docs/papers/circle-tree-volume.pdf)
+proves two distinct sufficient conditions in one 27-page account. The
+summed condition is $\sum_v d_v/(d_v^2+n_v^2)\le2^{-25}$; the directed
+condition uses local estimates along the tree. The proofs share their
+finite kernel and Fourier trace, then establish their own remainder and
+noncancellation estimates. Both give a uniform microscopic meridian
+profile. The explicit first correction is retained under the summed
+condition alone. Each proof verifies the geometric threshold above.
 
 For every fixed strict Conway expression with at least two original
 crossing circles,
@@ -205,8 +204,8 @@ separate work.
 
 ## Reading and reproducing the work
 
-The [collection of research papers](papers/README.md) now contains twenty-three
-current drafts totaling 407 pages, ranging from 11 to 29 pages each.
+The [collection of research papers](papers/README.md) now contains twenty-two
+current drafts totaling 404 pages, ranging from 11 to 29 pages each.
 They separate the exact finite
 invariant, coefficient estimates, complex asymptotics and marked
 hyperbolic geometry from the application theorems. The strict
@@ -278,10 +277,13 @@ cut inequalities for the particular geometric incidence remains a
 written application step.
 The package now also proves the actual regrading ring map, formal
 exponential projection and meridian denominator-clearing calculation.
-The root-of-unity recurrence calculation derives the whole equation’s
-expansion from the original coefficient and source-ratio estimates,
-including the literal sine normalization and meridian factors. It then
-gives the conditional classical polynomial identity. Another theorem
+The root-of-unity recurrence calculation now derives the Laurent
+coefficient expansions, literal sine gauge, meridian factors and finite
+equation expansion. From a specified nonzero polynomial coefficient
+record, it removes the common $q-1$ factor and derives a nonzero classical
+symbol and its formal characteristic identity. The actual operator,
+its denominator chart, source normalization and nonvanishing, and the
+source-ratio asymptotics remain application inputs. Another theorem
 derives one common nonvanishing threshold and a uniform logarithmic
 rate from a uniform microscopic profile. The
 [paper-by-paper coverage record](repro/PAPER_FORMAL_COVERAGE.md) separates

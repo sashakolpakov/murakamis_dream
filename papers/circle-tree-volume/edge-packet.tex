@@ -1,0 +1,268 @@
+\section{An exact complex edge sum}\label{cta:edge}
+
+\subsection{The interpolation and its normalization}
+We use the canonical factorial lemma
+\cite[Lemma~2.1]{ConwayAnalysis}, whose statement we record.
+On \(-1<\Rea z<N\),
+\begin{equation}\label{cta:G}
+ G_N(z)=\left(\frac{2\pi}{N}\right)^z\Gamma(z+1)
+       \prod_{a\ge1}
+       \frac{\Gamma(Na+z+1)}
+            {\Gamma(Na-z)(Na)^{2z+1}}
+\end{equation}
+is holomorphic and nonzero, with positive-base powers.
+It satisfies \(G_N(0)=1\), \(G_N(k)=S_k\), and
+\[
+ \frac{G_N(z+1)}{G_N(z)}=2\sin\frac{\pi(z+1)}N,\qquad
+ G_N(z)G_N(d-z)=N,\qquad G_N(s)G_N(-s)=H_N(s)^{-1}.
+\]
+On every compact subset of \(0<\Rea x<1\),
+\begin{equation}\label{cta:G-asymptotic}
+ \log G_N(Nx)=NJ(x)+\tfrac12\Log(2N\sin\pi x)
+             +\frac{\pi\cot\pi x}{12N}+O(N^{-3}).
+\end{equation}
+All fixed derivatives, and any fixed further inverse-power order,
+are uniform on smaller compact sets. Logarithms and square roots
+are continued from the positive real interval. This numbered
+lemma includes the convergent product and summable Stirling proof;
+no periodic factor may be inserted into \eqref{cta:G}.
+For background on those classical expansions see \cite[Section~5.11]{DLMF}.
+
+The shift equation now proves the exact interpolation needed here.
+For \(u=Nt/(2\pi)\), define
+\begin{equation}\label{cta:interpolant}
+ \mathcal B_N(x,t)=
+ \frac{G_N(d/2+u)G_N(d/2-u)}
+ {G_N(d/2-Nx+u)G_N(d/2-Nx-u)G_N(Nx)^2}.
+\end{equation}
+At \(x=k/N\) this equals \(e_k(-2\cos t)\).
+Indeed successive quotients are the original cosine numerator
+and sine-factorial denominator of \eqref{cta:basis}.
+The exact edge insertion is
+\begin{equation}\label{cta:insertion}
+ \mathcal I_N(x,s)=
+ \frac{G_N(Nx)^2}{G_N(Nx-s)G_N(Nx+s)},\qquad
+ \mathcal I_N(k/N,s)=\frac{H_N(s)}{W_k(s)}.
+\end{equation}
+The second identity follows by iterating the same shift equation
+and using \(G_N(s)G_N(-s)=H_N^{-1}\).
+
+Put
+\begin{equation}\label{cta:b}
+ b(x,t)=\int_0^x\Log(2\cos(2\pi v)+2\cos t)\,\dd v-2J(x).
+\end{equation}
+Branches start at real \(x\in I,t=0\).
+On a fixed complex tube about \(I\), \eqref{cta:G-asymptotic} gives
+\begin{equation}\label{cta:bulk}
+ \begin{split}
+ \mathcal B_N(x,t)
+   &=\frac{e^{Nb(x,t)}}{2N\sin\pi x}
+          (1+N^{-1}b_1(x,t)+O(N^{-2})),\\
+ \mathcal I_N(x,s)
+   &=1-\frac{\pi s^2}{N}\cot\pi x+O_R(N^{-2}).
+ \end{split}
+\end{equation}
+The first correction \(b_1\) is independent of \(s\).
+To check the leading constant, each argument \(d/2\pm u\)
+has the shift \(-1/2\), so its square-root factor is \(\sqrt N\);
+the analogous denominator factors cancel these, leaving
+\((2N\sin\pi x)^{-1}\). Thus no midpoint shift has been discarded.
+For the second identity use
+\((\log G_N)''(Nx)=\pi\cot(\pi x)/N+O(N^{-2})\)
+in the symmetric difference. All remainders are holomorphic
+with uniform fixed derivatives on a smaller tube.
+
+\subsection{The exact stationary phase and an available contour}
+For \(A(x,t,u)=b(x,t)+b(x,u)\), its critical branch satisfies
+\begin{equation}\label{cta:critical-wire}
+ \cos(2\pi x)=\frac{1-\cos t\cos u}{2+\cos t+\cos u},
+ \qquad x(0,0)=1/4.
+\end{equation}
+This is equivalent to \eqref{cta:wire}. It follows by writing
+\(A_x=0\), squaring the products of the nonzero factors, and
+choosing the branch at zero; the original unsquared equation
+holds there and hence nearby.
+Substitute \(z=\tan\pi v\) into the \(t\)-derivative of
+\eqref{cta:b}. At its critical \(x\), the resulting logarithmic
+antiderivative is
+\(-\pi^{-1}\operatorname{arsinh}(\tan(t/2)\cos(u/2))\).
+Thus \(\psi=\stat_x A\) is exactly \eqref{cta:psi-definition}.
+In particular \(\psi\) is separately even.
+
+We need a domain for the finite sum, not just this limiting phase.
+On \(|t|,|u|\le1/4\), \(|\tan(t/2)|<0.128\); the tangent form
+of \eqref{cta:critical-wire} implies
+\[
+ |\cos(2\pi x)|<0.017,\qquad |x(t,u)-1/4|<0.003.
+\]
+On \(\Rea x\in I,\ |\Ima x|\le1/50\), direct differentiation gives
+\begin{equation}\label{cta:Axx}
+ A_{xx}=\sum_{\xi=t,u}
+ \left[-\frac{2\pi\sin2\pi x}{\cos2\pi x+\cos\xi}
+                         -2\pi\cot\pi x\right],
+ \qquad |A_{xx}|<44,\quad \Rea A_{xx}<-12.
+\end{equation}
+Here are sufficient elementary bounds: \(|\cos2\pi x|<0.338\),
+\(|\cos\xi-1|<0.032\), \(|\sin2\pi x|<1.009\), and
+\(\Rea\cot\pi x>0.72\).
+The real part of
+\(\sin2\pi x/(\cos2\pi x+\cos\xi)\) exceeds \(0.328\):
+its conjugated numerator is at least
+\(0.95(0.655)-0.040(0.159)\), and its squared denominator is
+at most \(1.37^2\). These also prove the modulus bound.
+
+Enclose precisely the retained integers \(k\) by a rectangle in
+the \(x\)-plane with vertical half-grid sides and horizontal
+height \(h=1/500\). The residue formula with
+\(\pi N\cot(\pi Nx)\) equals the finite sum exactly.
+On a vertical half-grid side the cotangent has modulus at most
+one. On horizontal sides it equals \(\mp\ii+O(e^{-2\pi Nh})\).
+If \(X=\Rea(x-x_*),Y=\Ima(x-x_*)\), Taylor's formula and
+\eqref{cta:Axx} imply
+\begin{equation}\label{cta:contour-bound}
+ \Rea\{A(x)-A(x_*)\}\le-6X^2+44|XY|+22Y^2.
+\end{equation}
+On a vertical side, for all large \(N\),
+\(|X|\ge0.047-o(1)\) and \(|Y|\le0.005\);
+the right side is below \(-0.002+o(1)\).
+On a horizontal side its maximum in \(X\) is at most
+\((308/3)Y^2\le77/30000\), less than
+\(2\pi h=\pi/250\). All nonconstant cotangent modes and
+vertical currents therefore have a fixed exponential loss
+relative to \(e^{N\psi}\).
+
+The constant horizontal terms give \(N\) times a real integral.
+Translate this integral to the real tangent through \(x_*\).
+Its endpoint connectors have the same loss, and
+\(\Rea A_{xx}<-12\) gives a nondegenerate Gaussian. The
+ordinary Taylor proof of the saddle expansion applies uniformly:
+outside a fixed small saddle interval there is a fixed loss;
+inside it put \(x-x_*=N^{-1/2}z\), expand, and integrate
+the Gaussian-dominated remainder. Odd terms integrate to zero.
+This also gives any fixed order and its parameter derivatives.
+All Gamma arguments in \eqref{cta:interpolant} stay in regular
+bulk strips throughout these contours.
+
+It follows that
+\begin{equation}\label{cta:edge-expansion}
+ \begin{split}
+ K_N(t,u;0)&=N^{-3/2}a_e(t,u)e^{N\psi(t,u)}
+                     (1+N^{-1}a_{e,1}(t,u)+O(N^{-2})),\\
+ a_e&=\frac{\sqrt{2\pi}}
+       {4\sin^2(\pi x_*)\sqrt{-A_{xx}(x_*,t,u)}} .
+ \end{split}
+\end{equation}
+The square root is positive at zero and continued on the disk;
+no factor vanishes there. In particular \(a_e(0,0)=1/4\).
+Applying the same contour to \eqref{cta:insertion} proves
+\begin{equation}\label{cta:packet-expansion}
+ \begin{split}
+ B_N(\boldsymbol\tau,0)&=
+   N^{-3e/2}a(\boldsymbol\tau)e^{N\Psi(\boldsymbol\tau)}
+           (1+N^{-1}a_1(\boldsymbol\tau)+O(N^{-2})),\\
+ \frac{B_N(\boldsymbol\tau,s)}{B_N(\boldsymbol\tau,0)}
+   &=1-\frac{\pi s^2}{N}\sum_{vw\in E}
+             \cot(\pi x(\tau_v,\tau_w))+O_R(N^{-2}),
+ \qquad a=\prod_e a_e .
+ \end{split}
+\end{equation}
+For a holomorphic insertion, its first saddle correction is
+\(O(N^{-1})\), since the linear Gaussian term is odd.
+Multiplication by its prefactor \(1/N\) in
+\eqref{cta:bulk} therefore makes the last remainder \(O(N^{-2})\).
+The common \(a_1\) cancels in this ratio.
+
+\section{Angular bounds and weighted curvature}\label{cta:angular}
+
+\subsection{A bound on the entire real angular period}
+Let \(N\ge160\), \(k/N\in I\), and
+\(r_j=\cos((2j+1)\pi/N)\). The exact product is
+\[
+ \frac{e_k(-2\cos z)}{e_k(-2)}
+   =\prod_{j<k}Q_{r_j}(z),\qquad
+ Q_r(z)=\frac{r+\cos z}{1+r}.
+\]
+Reserve the first \(m_0=\lfloor N/32\rfloor\) factors, where
+\(r_j>\cos(\pi/16)>9/10\).
+There are at most \(N/20+1\) negative parameters, all \(>-2/5\).
+Pair them injectively with parameters among the next
+\(N/20+1\) positions, which are \(>7/10\); these positions
+are disjoint from the negative ones since \(m_0+N/20+1\le N/8\).
+All remaining unpaired parameters are nonnegative.
+
+For a pair \(r>-2/5,s>7/10\), the coefficients of
+\[
+ (z^2+2rz+1)(z^2+2sz+1)
+\]
+are \(1,2(r+s),2+4rs,2(r+s),1\), all positive.
+Normalized at \(z=1\), with its central Laurent power removed,
+it is a symmetric probability measure on
+\(\{-2,-1,0,1,2\}\).
+A remaining single factor has the analogous interpretation
+on \(\{-1,0,1\}\). Its complex-angular modulus is at most
+\(\cosh(by)\le e^{b^2y^2/2}\), where \(b\) is its Laurent degree.
+
+For a reserved factor, put \(w=\sin^2(t/2)\). The two linear
+pieces of \(|1-2w/(1+r)|\) give
+\(|Q_r(t)|\le1-w/2\). For \(|y|\le1/4\),
+\[
+ |r+\cos(t+\ii y)|^2
+ =(r+\cos t)^2+2r\cos t(\cosh y-1)+\sinh^2 y .
+\]
+Since \(2(\cosh y-1)+\sinh^2y\le4y^2\), each reserved
+factor is bounded by \(\exp(-w/4+2y^2)\).
+Use \(m_0\ge N/40\), then multiply the paired and reserved
+estimates:
+\begin{equation}\label{cta:raw}
+ \left|\frac{e_k(-2\cos(t+\ii y))}{e_k(-2)}\right|
+ \le\exp N\left(-\frac{\sin^2(t/2)}{160}+4y^2\right).
+\end{equation}
+This pairing precedes absolute values. Individual Laurent
+factors need not have nonnegative coefficients.
+
+Set \(a_v=d_v/(2\pi)\). On \(|t_v|\le\pi,\ |y_v|\le1/4\),
+\(\sin^2(t_v/2)\ge t_v^2/\pi^2\), so \eqref{cta:raw},
+the bounded edge insertions, and the positive zero-angle sum give
+\begin{equation}\label{cta:global-Gaussian}
+ |B_N(\mathbf t+\ii\mathbf y,s)|
+ \le C_RN^A\exp N\left\{
+ F_0-\frac1{400}\sum_va_vt_v^2+70\sum_va_vy_v^2\right\}.
+\end{equation}
+The stronger incidence constants are \(1/(80\pi)>1/400\)
+and \(8\pi<70\).
+Endpoint translations \(O_R(N^{-1})\) and derivatives cost
+only polynomial factors for the fixed tree; one may apply
+Cauchy's formula on radius \(1/N\) disks. This is a bound on
+the entire angular period, not only near its maximum.
+
+\subsection{The local nonlinear terms}
+With
+\(Q=\sqrt{1-\sin^2(t/2)\sin^2(u/2)}\), differentiation gives
+\begin{equation}\label{cta:edge-Hessian}
+ \psi_{tt}=-\frac{\cos(u/2)}{2\pi\cos(t/2)Q},\qquad
+ \psi_{tu}=\frac{\sin(t/2)\sin(u/2)}{2\pi Q},\qquad
+ \det\psi''=\frac1{4\pi^2}.
+\end{equation}
+Consequently
+\[
+ \Psi=F_0-\frac12\sum_v a_v\tau_v^2+\calE(\boldsymbol\tau).
+ \]
+On the polydisk \(|\tau_v|\le1/4\), put
+\(\delta=1/50,\ \varepsilon=1/25\). Then
+\begin{equation}\label{cta:error}
+ \left|\frac{\calE_v}{\tau_v}\right|\le\delta a_v,\qquad
+ \sum_w|\calE_{vw}|\le\varepsilon a_v,\qquad
+ |\calE|\le\frac{\varepsilon}{2}\sum_v a_v|\tau_v|^2 .
+\end{equation}
+The quotient extends at zero by separate evenness.
+For explicit bounds write
+\(k=\cosh(1/8)-1<0.008\), \(\sigma=\sinh(1/8)<0.126\),
+and \(C=(1-\sigma^4)^{-1/2}\).
+The normalized diagonal error in \eqref{cta:edge-Hessian}
+is at most \(2kC/(1-k)+C-1<1/50\), and the off-diagonal
+bound is \(\sigma^2C\); their sum is \(<1/25\).
+Summing over incident edges proves the row estimate.
+Integrate the diagonal error while fixing the other variables
+to prove the first estimate. For the last, sum the edge
+quadratic forms and use \(2|zw|\le|z|^2+|w|^2\).
+No estimate grows with the number of vertices.

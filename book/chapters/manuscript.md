@@ -2,7 +2,7 @@
 
 The current PDF is a 374-page reference account. Its results have been
 divided into [papers organized by subject](../../papers/README.md).
-The 23 current papers total 407 pages and range from 11 to 29 pages each,
+The 22 current papers total 404 pages and range from 11 to 29 pages each,
 including references. Their shared foundations cover
 finite spectral evaluation, coefficient estimates, source asymptotics,
 oscillatory sums and marked geometry. The application papers give their
@@ -14,6 +14,13 @@ The Newton calculus and stationary-profile arguments now share one
 common support, lattice and maximization results once. The finite tangle
 identities and the stronger completed-root leaf bound are retained, and
 both earlier editions remain available for their existing citations.
+
+The two circle-tree asymptotic papers now share a 27-page account,
+[Volume asymptotics for trees of crossing circles](../../docs/papers/circle-tree-volume.pdf).
+Their finite kernel, edge phase and Fourier trace are developed once.
+The summed and directed conditions retain separate proofs and conclusions;
+only the summed theorem gives the explicit first meridian correction.
+The earlier 15-page editions remain available for existing citations.
 
 The current Conway papers cover every fixed strict expression, rather
 than only the reference manuscript's completed-root grammar. The proof
@@ -352,11 +359,12 @@ condition allows zero powers at high degree. It also identifies the
 absolute critical action with the completed metric volume. The paper
 uses only the geometric foundation's local peripheral-volume differential;
 it does not impose that foundation's separate long-twist hypothesis or
-claim a nonzero quantum asymptotic. The summed analytic criterion now has
-its own [degree-and-twist paper](../../docs/papers/circle-tree-asymptotics.pdf).
-It proves the entire finite-sum asymptotic and the centered meridian profile,
-including all Fourier tails and endpoint terms. The different local and
-directed criteria still require their own accounts.
+claim a nonzero quantum asymptotic. The combined
+[circle-tree volume paper](../../docs/papers/circle-tree-volume.pdf)
+proves the full finite-sum asymptotic under either of its two stated
+analytic criteria. The summed proof estimates the joint Fourier sum;
+the directed proof evaluates subtrees with their exact normalization.
+They share the finite algebra but use different global estimates.
 
 The reference chapter illustrates an actual octahedral attachment and explains
 why it recovers the original exterior. Positive tetrahedra continue
@@ -421,18 +429,26 @@ orders are needed. After clearing denominators and removing the common
 power of \(q-1\), the first nonzero classical symbol consequently
 vanishes on the selected analytic germ.
 
-The optional Lean package now connects an original root-of-unity
-recurrence to the formal characteristic calculation. Its
-[entry theorem](../../formal-real/MeridianExpansion.lean) proves the
-literal sine gauge, shifted denominator exclusions, meridian-factor
-expansion and assembly of the finite equation. Coefficient uniqueness,
-injective regrading and cancellation then give the classical identity.
-The original recurrence and source normalization remain hypotheses,
-together with eventual nonvanishing and the all-orders expansions of
-the original coefficients and actual shifted source ratios. It does
-not construct an annihilator or prove nonzero classical specialization.
-The [coverage record](../../repro/PAPER_FORMAL_COVERAGE.md) lists the
-remaining written inputs for every current paper.
+The optional Lean package connects an original root-of-unity
+recurrence to the formal characteristic calculation. The
+[Laurent-coefficient theorem](../../formal-real/LaurentExpansion.lean)
+proves every coefficient expansion from its finite Laurent sum, including
+negative powers. The literal sine gauge, shifted denominator exclusions,
+meridian-factor expansion and finite equation assembly are also proved.
+The actual recurrence, exact source normalization, eventual nonvanishing
+and all-orders shifted source-ratio expansion remain inputs.
+
+The [normalization theorem](../../formal-real/OperatorNormalization.lean)
+constructs the quotient by the maximal common power of $q-1$ in a finite
+polynomial coefficient record. It proves that the quotient has a nonzero
+classical symbol and preserves the recurrence at the physical roots.
+The [coefficient adapter](../../formal-real/OperatorCoefficientAdapter.lean)
+connects this record to the finite Laurent theorem and reconstructs its
+entire classical symbol. The actual rational denominator chart and the
+passage to the selected holomorphic and geometric germ remain application
+steps. No annihilator is constructed here.
+The [coverage record](../../repro/PAPER_FORMAL_COVERAGE.md) states these
+boundaries for every current paper.
 
 Corollary 8.1 makes the separate geometric identification. It checks the
 original group, eigenflag and primitive logarithmic filling equations
@@ -567,7 +583,7 @@ The companion papers have a combined finite-check command:
 python3 repro/check_paper_algebra.py --output repro/results/paper-algebra
 ```
 
-It runs 24 finite groups registered in the paper-check runner. They check physical Newton identities over
+It runs 23 finite groups registered in the paper-check runner. They check physical Newton identities over
 exact finite fields, terminal curvature and endpoint identities, and
 circle-tree seam, peripheral and rational-bound formulas. The additional
 moving-meridian checks use physical matrices at both ordinary and

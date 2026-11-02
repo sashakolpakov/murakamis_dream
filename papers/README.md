@@ -59,10 +59,10 @@ common core for several inserted diagrams also uses protected gluing.
 
 ## The current drafts
 
-The twenty-three current papers total 407 pages, with individual lengths from
+The twenty-two current papers total 404 pages, with individual lengths from
 11 to 29 pages. Each gives the proofs of its stated results and names
-its numbered companion imports. Four earlier editions, totaling
-another 57 pages, are preserved below for existing citations. This is a
+its numbered companion imports. Six earlier editions, totaling
+another 87 pages, are preserved below for existing citations. This is a
 division of the retained results into citable components; the reading
 routes are explained at the end of this guide. The aggregate page count
 is not a measure of compression: separate papers repeat their conventions
@@ -446,42 +446,46 @@ exists, identify the full A-polynomial or its multiplicities, or prove
 the full AJ conjecture. The expansion remains microscopic; it is not
 an asymptotic at a fixed meridian value different from one.
 
-**Degree and twist estimates for circle-tree invariants.** 15 pages.
-[TeX source](circle-tree-asymptotics/main.tex) ·
-[PDF](../docs/papers/circle-tree-asymptotics.pdf)
+**Volume asymptotics for trees of crossing circles.** 27 pages.
+[TeX source](circle-tree-volume/main.tex) ·
+[PDF](../docs/papers/circle-tree-volume.pdf)
 
-For the literal ordered circle tree, this paper proves the full invariant's
-volume limit when the sum of $d_v/(d_v^2+n_v^2)$ is at most $2^{-25}$.
-It permits zero crossing power at a sufficiently high-degree vertex.
-The proof retains the first derivatives at repeated spectral roots when
-bounding discarded Newton indices. A complex edge-sum calculation gives
-the local action and amplitude. A joint Fourier argument controls all
-charges and endpoint terms, keeping other variables on real integrals
-or their physical grids while estimating each infinite tail. The first
-charge has a nonzero coefficient at both parities. The positive-octahedra
-companion identifies its action with the original knot-complement volume.
-A second theorem gives the first centered microscopic meridian correction,
-including its physical framing. Local and directed degree criteria, and
-the all-orders longitude statements, are separate results.
+For a fixed literal ordered tree of crossing circles, the paper proves
+two sufficient conditions for the volume limit of the whole reduced
+invariant. Both start from the same finite Newton contraction, keeping
+all first derivatives at repeated spectral roots. Sections 2–5 develop
+the common polynomial bounds, complex edge sum and exact Fourier trace.
+The diagram must close to one knot, with no component already closed
+inside an intermediate tangle. Its powers are fixed before the level
+tends to infinity.
 
-**Local degree and twist bounds for circle-tree volume limits.** 15 pages.
-[TeX source](directed-tree-asymptotics/main.tex) ·
-[PDF](../docs/papers/directed-tree-asymptotics.pdf)
+Theorem 1.1 assumes that the sum of $d_v/(d_v^2+n_v^2)$ is at most
+$2^{-25}$. Its proof estimates the joint Fourier integral, retaining
+all charges, endpoints and connecting contours. Other variables remain
+on real integrals or their physical grids while each infinite tail is
+bounded. The first charge has a nonzero coefficient at both level
+parities. Theorem 1.2 gives the explicit first centered microscopic
+meridian correction under this same summed condition, with the physical
+framing factor retained.
 
-The finite tree contraction is evaluated one vertex at a time. Each
-subtree polynomial is divided by its exact value at zero before the next
-trace, so earlier complex contributions remain in the calculation.
-A conditional kernel estimate and a fresh real-domain bound let the
-induction continue without a loss proportional to tree depth. All Fourier
-charges, repeated-root derivatives and endpoint terms are retained.
-The explicit directed criterion implies the volume limit and a centered
-microscopic meridian profile. One consequence requires, at every vertex,
-either degree at least \(2^{28}\) or absolute signed crossing power at
-least \(2^{27}\); the alternatives may differ between vertices.
-The older uniform local condition follows as a corollary, making its
-separate tiny-disk induction unnecessary here. The summed criterion has
-its own proof and a sharper meridian correction; neither theorem is
-substituted for the other.
+Theorem 1.3 instead uses a finite directed criterion. It evaluates the
+contraction one vertex at a time and divides each subtree polynomial by
+its exact value at zero before taking the next trace. A conditional
+kernel estimate and a renewed real-domain bound close the induction
+without an exponential loss proportional to the depth. One consequence
+requires, independently at every vertex, degree at least $2^{28}$ or
+absolute signed crossing power at least $2^{27}$. Large-degree vertices
+may keep zero power. This proof gives a centered meridian ratio
+$1+O(N^{-1})$; the sharper correction in Theorem 1.2 is not assigned to
+it. The simpler uniform local ratio condition remains a corollary.
+
+Each proof checks the hypotheses of the positive-octahedra companion,
+which identifies its selected action with the volume of the original
+knot complement. The two earlier 15-page asymptotic papers are combined
+here, with their shared definitions and Fourier calculation given once.
+Their separate sufficient conditions, proof arguments and three
+illustrations remain. The all-orders meridian and longitude results
+require the separate companion theorems.
 
 **Shared face estimates and triangular gluing for planar link diagrams.** 15 pages.
 [TeX source](planar-certificates/main.tex) ·
@@ -570,6 +574,17 @@ so their numbered citations still identify the statements intended:
 Their proofs are combined in the 26-page current Newton paper. Current
 companions cite that account; the earlier files are unchanged.
 
+The earlier circle-tree asymptotic papers also retain their original
+numbering and addresses:
+
+- [Degree and twist estimates for circle-tree invariants](../docs/papers/circle-tree-asymptotics.pdf), 15 pages: the summed degree-and-twist criterion and its explicit first microscopic meridian correction. [TeX source](circle-tree-asymptotics/main.tex).
+- [Local degree and twist bounds for circle-tree volume limits](../docs/papers/directed-tree-asymptotics.pdf), 15 pages: the directed recursion, independent degree-or-twist alternative and its endpoint constructions. [TeX source](directed-tree-asymptotics/main.tex).
+
+The 27-page current **Volume asymptotics for trees of crossing circles**
+contains both proofs. Current consumers cite that paper. The earlier
+source files and PDFs are unchanged; neither criterion has been removed
+or substituted for the other.
+
 The following two papers treat the narrower completed-root construction.
 They remain available for existing citations. The 21-page **Marked
 geometry of strict Conway compositions** now contains the local proofs
@@ -621,11 +636,15 @@ term. Meridian Expansions then supplies every inverse-level order.
 Its final geometric-factor corollary adds the nonparabolic and preferred
 longitude results; its analytic expansion does not depend on them.
 
-The circle-tree alternatives enter this last route through their own
-summed or directed source estimates. They do not need the strict
-long-power hypothesis, and the directed criterion is not inferred from
-the summed one. The dependency graph records these as alternative
-source cases, with exact theorem uses visible within each article.
+For the circle-tree alternatives, read the common finite and edge
+estimates in Sections 2–5 of **Volume asymptotics for trees of crossing
+circles**, then follow Section 6 for the summed condition or Section 7
+for the directed condition. Each route checks its own geometric threshold
+before invoking the primitive circle-tree filling theorem. The directed
+criterion is not inferred from the summed one, and neither requires the
+strict Conway long-power hypothesis. Both routes supply the source
+estimates used by Meridian Expansions. The dependency graph retains their
+separate assumptions and theorem uses within the combined article.
 
 The frozen reference manuscript's first theorem uses its completed-root
 grammar. The companion accounts now cover the larger strict syntax through
@@ -693,11 +712,10 @@ with one command:
 python3 repro/check_paper_algebra.py --output repro/results/paper-algebra
 ```
 
-The runner has 24 finite check groups and requires SymPy, python-flint
-and NumPy. It saves a separate
+The finite check runner requires SymPy, python-flint and NumPy. It saves a separate
 record and log for each registered check group, and stops on failure. The
 planar certificate groups retain their supporting interval records in
-separate subdirectories. The new Newton group compares physical matrix
+separate subdirectories. The Newton group compares physical matrix
 turns, traces, circle coefficients and crossing normals with the stated
 formulas over exact finite fields. The terminal group checks symbolic
 curvature identities, oriented insertions and literal pairing graphs;

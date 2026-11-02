@@ -1,0 +1,242 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,booktabs,array,xurl}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\setlength{\emergencystretch}{2em}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\dd}{\mathrm d}
+\newcommand{\Rea}{\operatorname{Re}}
+\newcommand{\Ima}{\operatorname{Im}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Log}{\operatorname{Log}}
+\newcommand{\stat}{\operatorname{stat}}
+\newcommand{\rem}{\operatorname{rem}}
+\newcommand{\Turn}{\mathsf T}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\calC}{\mathcal C}
+\newcommand{\calE}{\mathcal E}
+\newcommand{\Ch}{\operatorname{Ch}}
+\title{Volume asymptotics for trees of crossing circles}
+\author{}\date{}
+\begin{document}\maketitle
+\begin{abstract}
+We prove two sufficient conditions for the volume asymptotic of the
+reduced invariant of a fixed ordered tree of crossing circles. One
+bounds the sum of \(d_v/(d_v^2+n_v^2)\), where \(d_v\) is degree and
+\(n_v\) is the signed crossing power. The other assigns a decay bound
+to each directed edge and imposes a finite condition at each vertex.
+In particular, the latter holds when every vertex has degree at least
+\(2^{28}\) or absolute crossing power at least \(2^{27}\). Both conditions
+permit zero powers at vertices of large degree. The common analysis
+retains the full finite Newton contraction and its repeated-root
+derivatives. A joint Fourier calculation proves the summed theorem;
+a normalized subtree recursion proves the directed theorem without
+accumulating an exponential loss with depth. Both give a nonzero
+leading coefficient at every sufficiently large integer level, and
+the classical primitive-filling theorem identifies the selected action
+with the volume of the original knot complement. We also prove a
+centered microscopic meridian limit and, under the summed condition,
+its explicit first correction.
+\end{abstract}
+
+\section{The diagrams and the two sufficient conditions}\label{cta:intro}\label{dt:intro}
+
+A crossing circle is an auxiliary component bounding a disk punctured
+by two main strands. Filling it restores an integer power of the
+crossing in that disk's original frame. Consider the following literal
+ordered construction, as in \cite[Section~1]{Geometry}. A finite tree
+\(\mathcal T=(V,E)\) has at least one edge. Every vertex has its own
+crossing-circle tangle \(P_v\). A rooted expression is
+\begin{equation}\label{cta:word}
+ W_v=\left(\prod_{w\in I_v^-}\Turn(W_w)\right)P_v
+             \left(\prod_{w\in I_v^+}\Turn(W_w)\right).
+\end{equation}
+The lists have their specified orders. The turn rotates the whole
+tangle and its disk frame; it is not just a scalar change of variable.
+Choose a terminal root and the prescribed cylindrical closure. Keep
+the actual strand orientations, a reduced cut on a main strand, and
+zero framing. Require that the endpoint tracing gives one main
+component and no internal closed component. There are no bare product
+junctions. This is an input condition on the diagram, not a consequence
+of the abstract graph.
+
+Write \(r=|V|\), \(e=|E|=r-1\), and \(d_v\ge1\) for graph degree.
+At vertex \(v\) the physical crossing power is \(n_v\in\mathbb Z\).
+The diagram, all powers and orientations are fixed throughout.
+Only the level \(N\ge3\) tends to infinity. Let \(F_N(M)\) be its
+reduced zero-framed ADO invariant, with unknot value one, in the
+physical convention of \cite{Meridian}. At \(M=1\) it is the reduced
+Kashaev invariant of the same knot \(K_{\mathbf n}\). Put
+\[
+ q_N=e^{\pi\ii/N},\qquad d=N-1,\qquad M=q_N^s,\qquad |s|\le R<1.
+\]
+For every complex \(z\), the power means
+\(q_N^z=\exp(\pi\ii z/N)\); all fractional and complex powers
+below use this exponential lift.
+The level degree \(d\) is unrelated to \(d_v\).
+
+The first sufficient condition bounds a sum over all vertices:
+\begin{equation}\label{cta:sum}
+ \mathfrak S=\sum_{v\in V}\frac{d_v}{d_v^2+n_v^2}\le2^{-25}.
+\end{equation}
+Neither the number of vertices nor the signs or relative sizes of
+the fixed powers are bounded. A power can be zero when its degree is
+large enough. The constants in the asymptotic and the initial level
+may depend on the whole fixed diagram.
+
+Define \(J(x)=\int_0^x\log(2\sin\pi u)\,\dd u\),
+\(g(x)=J(2x)-4J(x)\), and \(G_0=g(1/4)\). Near \(t=u=0\) let
+\begin{equation}\label{cta:psi-definition}
+ \psi(0,0)=2G_0,\qquad
+ \psi_t(t,u)=-\frac1\pi
+     \operatorname{arsinh}\!\left(\tan(t/2)\cos(u/2)\right),
+ \qquad\psi_u(t,u)=\psi_t(u,t).
+\end{equation}
+Branches continue from zero. The mixed derivatives agree, as checked
+in Section~\ref{cta:edge}. Set
+\[
+ \Psi(\boldsymbol\tau)=\sum_{vw\in E}\psi(\tau_v,\tau_w),
+ \qquad F_0=2eG_0,\qquad
+ \Phi_{\boldsymbol\ell}(\boldsymbol\tau)
+ =\Psi(\boldsymbol\tau)+\frac{\ii}{4\pi}
+       \sum_v n_v\tau_v^2-\ii\sum_v\ell_v\tau_v .
+\]
+Let \(\boldsymbol\tau_*\) be the small critical point for
+\(\boldsymbol\ell=\mathbf1\), and
+\(\calC(\mathbf1)=\Phi_{\mathbf1}(\boldsymbol\tau_*)\).
+Existence and uniqueness in the needed chart are proved below.
+
+\begin{theorem}[Summed degree-and-twist condition]\label{cta:main}
+For the fixed marked knot diagram above, suppose \eqref{cta:sum}.
+There is a constant \(D_{\mathcal T,\mathbf n}\ne0\), independent
+of the level parity, such that
+\begin{equation}\label{cta:leading}
+ F_N(1)=\Omega_N N^{3/2}D_{\mathcal T,\mathbf n}
+            e^{N\calC(\mathbf1)}(1+O(N^{-1})),\qquad
+ \Omega_N=q_N^{\,d^2(2w(D)+\sum_vn_v)/4}.
+\end{equation}
+Here \(w(D)\) is the oriented writhe of the original diagram and
+\(|\Omega_N|=1\).
+The original knot complement is hyperbolic and
+\begin{equation}\label{cta:volume}
+ \lim_{N\to\infty}\frac{2\pi}{N}\log|F_N(1)|
+       =2\pi\Rea\calC(\mathbf1)
+       =\Vol(S^3\setminus K_{\mathbf n}).
+\end{equation}
+Both level parities are included.
+\end{theorem}
+
+For the centered profile put
+\begin{equation}\label{dt:scalars}
+ H_N(s)=\frac{\sin\pi s}{N\sin(\pi s/N)},\qquad
+ A_N(s)=q_N^{(-w(D)-\sum_vn_v)s^2/2}.
+\end{equation}
+The value at zero is removable. For each edge let
+\(x_{vw}^*=x(\tau_{*,v},\tau_{*,w})\), where the branch \(x(0,0)=1/4\)
+is specified by
+\begin{equation}\label{cta:wire}
+ \tan^2(\pi x(t,u))
+     =\frac1{1+\tan^2(t/2)+\tan^2(u/2)}.
+\end{equation}
+
+\begin{theorem}[First meridian correction under the summed condition]\label{cta:profile}
+Under the same hypothesis, \(F_N(q_N^s)\) is nonzero on
+\(|s|\le R<1\) for all sufficiently large \(N\), and uniformly there
+\begin{equation}\label{cta:profile-formula}
+ \frac{F_N(q_N^s)}{A_N(s)H_N(s)F_N(1)}
+ =1-\frac{\pi s^2}{N}\sum_{vw\in E}\cot(\pi x_{vw}^*)
+                                      +O_R(N^{-2}).
+\end{equation}
+Consequently the limit in \eqref{cta:volume} also holds uniformly
+with \(F_N(1)\) replaced by \(F_N(q_N^s)\).
+\end{theorem}
+
+
+The second sufficient condition evaluates the finite contraction one
+vertex at a time. Choose any vertex as the last one to be evaluated
+and direct every edge toward it. At each nonroot vertex choose a
+number \(0<c_v<2^{-16}\). This number bounds the decay of the
+polynomial sent to the parent after division by its value at zero.
+Section~\ref{dt:criterion} gives explicit inequalities in the degrees,
+powers and numbers \(c_v\). They require no knowledge of the invariant
+or its critical value, and they contain no sum over the whole tree.
+
+\begin{theorem}[Directed degree-and-twist condition]\label{dt:main}
+Suppose the chosen root and numbers \(c_v\) satisfy
+\eqref{dt:eq-3}, \eqref{dt:eq-8} and \eqref{dt:eq-9}.
+Then the asymptotic \eqref{cta:leading} and the volume equality
+\eqref{cta:volume} hold, with a nonzero coefficient independent of
+level parity. With the same physical scalars as in \eqref{dt:scalars},
+one also has
+\begin{equation}\label{dt:profile}
+ \frac{F_N(q_N^s)}{A_N(s)H_N(s)F_N(1)}=1+O_R(N^{-1}),
+ \qquad |s|\le R<1.
+\end{equation}
+These values are nonzero for every sufficiently large \(N\), and
+\eqref{cta:volume} holds uniformly with \(F_N(q_N^s)\) in place
+of \(F_N(1)\).
+\end{theorem}
+
+\begin{corollary}\label{dt:mixed}
+Theorem~\ref{dt:main} holds if, independently at each vertex,
+\[
+ d_v\ge2^{28}\qquad\hbox{or}\qquad |n_v|\ge2^{27}.
+\]
+It also holds under the uniform local condition
+\(\max_v d_v/(d_v^2+n_v^2)\le2^{-120}\).
+\end{corollary}
+
+The proof of the corollary is in Section~\ref{dt:sec-8} and treats
+all degrees. A vertex of sufficiently large degree may have zero
+power. The root used for the directed criterion only orders the
+finite scalar contractions; it need not be the terminal root used
+to draw the original knot. No tangle or framing is changed by that
+choice.
+
+The two criteria have separate proofs. The summed condition gives the
+explicit correction in Theorem~\ref{cta:profile}; the directed proof
+establishes \eqref{dt:profile} without asserting that sharper expansion.
+In both cases the tree and all powers are fixed before \(N\) tends
+to infinity. The implied constants and initial levels may depend on
+that fixed diagram and on \(R\). The curvature bounds in the directed
+proof do not acquire a factor from the depth of the tree.
+These are microscopic meridian statements: \(s\) is bounded and
+\(q_N^s\) tends to one. No expansion on a fixed neighborhood of
+\(M=1\) or all-orders annihilator theorem is asserted here.
+
+The exact finite inputs are \cite[Proposition~6.1, Theorem~7.1 and
+Proposition~8.1]{Meridian}: the crossing polynomials and traces, the
+original tree contraction, and its scalar factors. The canonical
+factorial of \cite[Lemma~2.1]{ConwayAnalysis} fixes the holomorphic
+interpolation. Sections~\ref{cta:finite}--\ref{ct:trace-section}
+prove the polynomial estimates, edge asymptotic and exact Fourier
+trace used by both arguments; they assume neither degree-and-twist
+condition. Section~\ref{ct:summed-section} proves the summed theorem,
+and Section~\ref{dt:criterion} proves the directed theorem.
+The classical geometric input is \cite[Theorem~1.1]{Geometry}.
+Each analytic proof checks its threshold and identifies its own
+critical point with the original primitive filled metric.
+
+\input{finite-bounds}
+\input{edge-packet}
+\input{fourier-trace}
+\input{summed-filling}
+\input{summed-conclusion}
+\input{directed-criterion}
+\input{directed-kernels}
+\input{directed-recursion}
+\input{directed-applications}
+\input{reproduction}
+\input{references}
+\end{document}

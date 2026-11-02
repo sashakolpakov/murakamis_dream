@@ -1,0 +1,15 @@
+\begin{tikzpicture}[x=1cm,y=1cm,>=Stealth,vertex/.style={circle,draw,fill=white,minimum size=7mm,inner sep=1pt},every node/.style={font=\small}]
+\node[vertex] (a) at (-4,1.6) {$w_1$};
+\node[vertex] (b) at (-2.2,1.6) {$w_2$};
+\node[vertex] (v) at (-3.1,0) {$v$};
+\node[vertex] (p) at (-3.1,-1.5) {$p$};
+\draw[->] (a)--node[left] {$M_{w_1,N}$} (v);
+\draw[->] (b)--node[right] {$M_{w_2,N}$} (v);
+\draw[->,thick] (v)--node[right] {$M_{v,N}(u)$} (p);
+\node[anchor=west,align=left,text width=7.4cm] at (-.7,.8)
+ {$\widehat M_{w,N}(t)=M_{w,N}(t)/M_{w,N}(0)$\\[4pt]
+ $M_{v,N}(u)=\gamma_{e_v}\!\left(\prod_wM_{w,N}(0)\right)$\\[2pt]
+ $\displaystyle\hspace{7mm}\cdot\mathcal D_v\!\left[K_N(t,u)\prod_w\widehat M_{w,N}(t)\right]$};
+\node[draw,rounded corners,align=left,text width=6.8cm,inner sep=7pt] at (2.8,-1.2)
+ {At the final root: omit $K_N(t,u)$ and $\gamma_{e_v}$. There is no outgoing polynomial.};
+\end{tikzpicture}

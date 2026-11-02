@@ -972,7 +972,7 @@ construction.
 
 ## Keeping exact subtree values in the directed tree argument
 
-The [directed tree paper](../../docs/papers/directed-tree-asymptotics.pdf)
+The [directed criterion in the circle-tree volume paper](../../docs/papers/circle-tree-volume.pdf)
 uses another way to control a large finite sum. Fix an ordered tree of
 crossing-circle tangles and choose a vertex at which to finish evaluating
 its closed contraction. For a nonroot vertex \(v\), let \(M_{v,N}(u)\)

@@ -23,11 +23,16 @@ The finite-cut modules remove the assumed transport table: strict cut
 inequalities and compatible total demand imply existence of the actual
 loads, their unique grounded balance, and the positive table itself.
 The formal-series modules construct meridian shifts, regrading and
-exponentiation, then derive a classical identity from the stated
-all-orders estimates for the original coefficients and source ratios
-of an actual finite recurrence. A separate analytic module
-proves common nonvanishing thresholds and uniform logarithmic rates
-from uniform microscopic profiles.
+exponentiation, then derive a classical identity from an actual finite
+recurrence and the stated all-orders source-ratio estimates. For fixed
+finite Laurent coefficients, their expansions are proved from the
+complex exponential itself. A separate normalization module removes the
+common q-1 factor and proves that the resulting classical symbol is
+nonzero. The coefficient adapter connects that polynomial record to the
+finite Laurent expansions and derives its formal characteristic equation.
+The uniform-profile modules prove common nonvanishing thresholds
+and logarithmic rates, including the actual removable sine quotient and
+fixed quadratic scalar occurring in the circle-tree profiles.
 
 ## What is proved
 
@@ -109,9 +114,9 @@ nineteen theorems in `VolumeLogic.WeightedGraph`. An edge label `e` has
 endpoints `src e` and `dst e`, a real weight `w e`, and a real vertex
 function `f`. The constructed energy is
 
-\[
+$$
 E(f)=\sum_e w_e\bigl(f(\operatorname{src}e)-f(\operatorname{dst}e)\bigr)^2.
-\]
+$$
 
 Edge labels are retained, so parallel edges are allowed. A loop contributes
 zero. Connectivity means that every pair of vertices is joined by a finite
@@ -142,11 +147,11 @@ identifies its Hessian with this energy. Its vertices are ordinary faces,
 and an edge is a triangle together with an unordered pair of its ordinary
 corners. If those corners have positive curvatures `w_i,w_j`, their weight is
 
-\[
+$$
 \kappa^t_{ij}=\frac{w_iw_j}{2\pi D_t(w_i+w_j)},
 \qquad
 D_t^2=\sum_{\{a,b\}\subset t}w_aw_b,
-\]
+$$
 
 where the sum is over ordinary corner pairs. A triangle with only one
 ordinary corner contributes no edge. Different triangles may supply
@@ -171,9 +176,9 @@ the hypotheses `HasDerivAt g (dg x) x` and `HasDerivAt dg (ddg x) x`
 identify their derivatives. If `t ≥ 0`, `dg 0 = 0`, and
 `0 ≤ ddg x ≤ E` throughout that interval, `stationary_quadratic_cost` proves
 
-\[
+$$
 0\le g(t)-g(0)\le \frac{Et^2}{2}.
-\]
+$$
 
 Nonnegative second derivative makes `g` convex. The constructed function
 `E*x²/2 − g x` also has nonnegative second derivative and is stationary at
@@ -192,10 +197,10 @@ explicitly identified by the hypotheses.
 For an actual convex real function `Q` on `[0,1]`, differentiable at `1`
 with derivative `dQ`, `convex_support_at_one` proves
 
-\[
+$$
 Q(\beta)\ge \beta Q(1)+(1-\beta)\bigl(Q(1)-dQ\bigr),
 \qquad 0\le\beta\le1.
-\]
+$$
 
 This is the supporting line at `1`. The application identifies the intercept
 `Q(1)-dQ` with triangle entropy. The theorem proves the inequality from
@@ -206,19 +211,19 @@ branches. Write `Qk` for the retained triangle potential, `Qo` for the
 overloaded triangle potential, `z` for the overloaded corner's complete
 logarithmic weight, and `β=1-t`. The local loss is
 
-\[
+$$
 L(t)=Q_k(\beta)+Q_o(\beta)
 -\max\{\beta z,\ Q_k(\beta)+\beta z/2\}.
-\]
+$$
 
 From the convex supporting lines, nonnegative retained entropy and the
 pure-corner inequality `Qo(1) ≥ z/2`, `side_loss_from_convexity` derives
 
-\[
+$$
 L(t)\ge th-(1-t)\delta,\qquad
 h=Q_o(1)-Q_o'(1),\qquad
 \delta=\max\{0,z-Q_k(1)-Q_o(1)\}.
-\]
+$$
 
 Here the defect `δ` is constructed from the complete values; the loss bound
 is proved for both branches of the maximum. `flattening_sector_gap` combines
@@ -251,18 +256,18 @@ nonempty finite set of supported vertices in row `t`. A real table entry
 support are ignored. The definitions construct the row supply and column
 demand from the same table:
 
-\[
+$$
 m_t=\sum_{i\in S_t}\alpha_{ti},\qquad
 d_i=\sum_{t:\,i\in S_t}\alpha_{ti}.
-\]
+$$
 
 For a real vertex function `h : V → ℝ`, the actual recession function is
 
-\[
+$$
 \mathcal R(h)=\sum_t m_t\max_{i\in S_t}h_i-\sum_i d_i h_i
 =\sum_t\sum_{i\in S_t}\alpha_{ti}
 \left(\max_{j\in S_t}h_j-h_i\right).
-\]
+$$
 
 The last equality is proved by finite summation. Nonnegativity follows
 term by term. Because the supported entries are positive, equality holds
@@ -274,10 +279,10 @@ requiring `h root = 0`, every nonzero `h` therefore has positive recession.
 
 `grounded_recession_coercive` proves the stronger uniform conclusion
 
-\[
+$$
 \exists c>0\quad\forall h\text{ with }h_{\rm root}=0,
 \qquad \mathcal R(h)\ge c\lVert h\rVert.
-\]
+$$
 
 Here the norm is the finite function space's supremum norm. Finite maxima
 make `𝓡` continuous, and its positive homogeneity is proved directly.
@@ -291,15 +296,15 @@ uniformity over different transport tables, is asserted.
 For actual functions `Q t : (V → ℝ) → ℝ` and fixed real row constants
 `C t`, the definition `potential` is
 
-\[
+$$
 \mathcal J(h)=\sum_t Q_t(h)-\sum_i d_i h_i.
-\]
+$$
 
 The explicit local hypotheses
 
-\[
+$$
 Q_t(h)\ge m_t\max_{i\in S_t}h_i-C_t
-\]
+$$
 
 imply `𝓙(h) ≥ 𝓡(h) − Σ_t C_t`. Thus
 `grounded_potential_coercive` derives
@@ -340,19 +345,19 @@ Let `P : (V → ℝ) → ℝ` be the actual potential, and fix a vertex `root`.
 The grounded set consists of all vertex functions `x` with `x root = 0`.
 For grounded endpoints `x,y`, the module constructs
 
-\[
+$$
 p_{x,y}(t)=(1-t)x+ty,\qquad g_{x,y}(t)=P(p_{x,y}(t)).
-\]
+$$
 
 An explicit real function `dg x y` supplies the first derivative:
 `HasDerivAt (segmentValue P x y) (dg x y t) t` on `0 ≤ t ≤ 1`.
 The second derivative is identified, for `0 < t < 1`, with
 
-\[
+$$
 \frac{d}{dt}dg_{x,y}(t)
 =\sum_{e\in E}w_e(p_{x,y}(t))
 \bigl((y-x)_{\operatorname{src}e}-(y-x)_{\operatorname{dst}e}\bigr)^2.
-\]
+$$
 
 Here `E` is a finite set of actual edge labels with endpoints `src e` and
 `dst e`. At each grounded point, the weights must be nonnegative and the
@@ -367,9 +372,9 @@ derivative strictly positive. The one-variable calculus theorem
 continuity to prove strict convexity on `[0,1]`. Consequently,
 `segment_strict_jensen` proves
 
-\[
+$$
 P((1-t)x+ty)<(1-t)P(x)+tP(y)\qquad(0<t<1).
-\]
+$$
 
 `strictConvexOn_grounded` assembles all grounded segments into Mathlib's
 `StrictConvexOn` statement. `grounded_minimizer_eq` then proves that two
@@ -410,41 +415,41 @@ are `0 ≤ w e` for every edge and connectivity by actual finite paths whose
 edge weights are strictly positive, as defined in `WeightedGraph.connected`.
 Loops, parallel edges and zero weights remain allowed. Put
 
-\[
+$$
 I=\{v\in V:v\ne\mathrm{root}\},\qquad
 B_{ev}=\mathbf 1_{\operatorname{src}e=v}
        -\mathbf 1_{\operatorname{dst}e=v},\qquad
 L_{uv}=\sum_e w_e B_{eu}B_{ev}.
-\]
+$$
 
 The definition `reducedMatrix` is precisely the principal matrix
-\(L^\circ=(L_{uv})_{u,v\in I}\), and `reducedOperator` is multiplication by
+$L^\circ=(L_{uv})_{u,v\in I}$, and `reducedOperator` is multiplication by
 this matrix. For `f : I → ℝ`, `extend root f` is the vertex function
-\(\bar f\) equal to `f` away from the root and zero at the root.
+$\bar f$ equal to `f` away from the root and zero at the root.
 The theorem `reduced_bilinear` proves
 
-\[
+$$
 \sum_{u\in I} f_u(L^\circ g)_u
 =\sum_e w_e(\bar f_{\operatorname{src}e}-\bar f_{\operatorname{dst}e})
              (\bar g_{\operatorname{src}e}-\bar g_{\operatorname{dst}e}).
-\]
+$$
 
 The self-pairing is therefore exactly the previously constructed graph
 energy. If `f ≠ 0`, connected positive support and grounding make that
 energy strictly positive. This proves the kernel is zero and the operator
 is injective. Finite dimensionality gives surjectivity, after which
 `reducedEquiv` constructs a real linear equivalence and hence its inverse.
-`reducedMatrix_det_ne_zero` also proves \(\det L^\circ\ne0\).
+`reducedMatrix_det_ne_zero` also proves $\det L^\circ\ne0$.
 
 The two main solvability statements are
 `exists_unique_reduced_solution` and `exists_unique_grounded_solution`.
 The latter says that for **every** right-hand side `b : V → ℝ` there is a
 unique `f : V → ℝ` satisfying
 
-\[
+$$
 f_{\mathrm{root}}=0,\qquad
 \sum_{v\in V}L_{uv}f_v=b_u\quad(u\ne\mathrm{root}).
-\]
+$$
 
 The root equation is omitted: its value is the reaction to the grounding
 condition, so no zero-sum compatibility condition is imposed on `b`.
@@ -470,59 +475,59 @@ equations `ti:eq-4`–`ti:eq-5` in
 The derivative formula is a conclusion, not a supplied Hessian identity.
 
 For corners indexed by `Fin 3`, fix nonnegative real coefficients
-\(a_i\) and logarithmic coordinates \(q_i\). The definitions are
+$a_i$ and logarithmic coordinates $q_i$. The definitions are
 
-\[
+$$
 w_i=a_i e^{q_i},\qquad
 S=w_0w_1+w_1w_2+w_2w_0,\qquad D=\sqrt S,\qquad
 \alpha_i=\frac1\pi\arctan\frac{w_i}{D}.
-\]
+$$
 
-The load theorem assumes \(S>0\). This covers both three positive
+The load theorem assumes $S>0$. This covers both three positive
 corners and two positive corners with one zero coefficient.
-`radicand_pos_of_positive_pair` proves positivity of \(S\) from any two
+`radicand_pos_of_positive_pair` proves positivity of $S$ from any two
 distinct positive weights and nonnegativity of the others.
-`pair_sum_pos` proves \(w_i+w_j>0\) for distinct corners under the
+`pair_sum_pos` proves $w_i+w_j>0$ for distinct corners under the
 load theorem's hypotheses. Thus the off-diagonal denominators below
 are nonzero even at a zero corner. No limiting argument or division by
 that corner's weight is used.
 
-For every real direction \(h\), `load_hasDerivAt` proves the derivative
-of the **actual** function \(t\mapsto\alpha_i(a,q+t h)\) at zero:
+For every real direction $h$, `load_hasDerivAt` proves the derivative
+of the **actual** function $t\mapsto\alpha_i(a,q+t h)$ at zero:
 
-\[
+$$
 \alpha_i'(0)=\sum_j\kappa_{ij}(h_i-h_j),\qquad
 \kappa_{ij}=\frac{w_iw_j}{2\pi D(w_i+w_j)}\quad(i\ne j).
-\]
+$$
 
-The proof first differentiates the exponential weights and \(D\), then
+The proof first differentiates the exponential weights and $D$, then
 uses Mathlib's quotient and arctangent chain rules. The algebraic step
 uses the exact identity
-\(D^2+w_i^2=(w_i+w_j)(w_i+w_k)\) for the three distinct corners.
+$D^2+w_i^2=(w_i+w_j)(w_i+w_k)$ for the three distinct corners.
 `load_off_diagonal_hasDerivAt` specializes to the coordinate direction
-\(h=e_j\), giving \(\partial_{q_j}\alpha_i=-\kappa_{ij}\) for
-\(i\ne j\). A common shift has zero Jacobian action. Conductances are
+$h=e_j$, giving $\partial_{q_j}\alpha_i=-\kappa_{ij}$ for
+$i\ne j$. A common shift has zero Jacobian action. Conductances are
 nonnegative, and they are strictly positive when both endpoint weights
 are positive. Diagonal values of the helper `conductance` do not matter:
-they multiply \(h_i-h_i=0\), and are never edges in the graph form.
+they multiply $h_i-h_i=0$, and are never edges in the graph form.
 
-The graph has three explicit edge labels, for the pairs \(01,02,12\).
+The graph has three explicit edge labels, for the pairs $01,02,12$.
 `jacobian_pairing` identifies its full bilinear form with
-\(\sum_i h_i(Jk)_i\); `jacobian_energy` consequently gives
+$\sum_i h_i(Jk)_i$; `jacobian_energy` consequently gives
 
-\[
+$$
 \sum_i h_i\alpha_i'(0)
 =\kappa_{01}(h_0-h_1)^2+
   \kappa_{02}(h_0-h_2)^2+
   \kappa_{12}(h_1-h_2)^2.
-\]
+$$
 
 `load_pairing_hasDerivAt` proves this equality as the derivative of
-\(\sum_i h_i\alpha_i(a,q+t h)\), so the graph interpretation is tied
+$\sum_i h_i\alpha_i(a,q+t h)$, so the graph interpretation is tied
 to an actual function. `sum_load_pairing_hasDerivAt` then treats any
 finite collection of triangles with a corner map into one common vertex
 type. It differentiates the sum using the **same** vertex functions
-\(q,h\) at every occurrence. Its graph edge type is the product of the
+$q,h$ at every occurrence. Its graph edge type is the product of the
 triangle labels and the three pair labels. Parallel edges and coincident
 corner labels are retained, and every unordered local pair is counted
 once. There is no choice of independent coordinates for each occurrence
@@ -530,11 +535,11 @@ of a shared face.
 
 A zero corner has identically zero load. A singleton is handled separately
 by `singletonLoad`: its sole supported corner has the constant load
-\(1/2\), with zero derivative. This is not an evaluation of the
-arctangent formula at \(D=0\). All-zero triangles are not part of the
+$1/2$, with zero derivative. This is not an evaluation of the
+arctangent formula at $D=0$. All-zero triangles are not part of the
 positive-radicand theorem. Singleton rows add no Hessian energy.
 
-This module alone does not identify these \(\alpha_i\) with a
+This module alone does not identify these $\alpha_i$ with a
 potential gradient. The next module proves that identification from the
 actual integral entropy and supported constrained maximum. With the
 actual supported incidence graph identified, the derivative above is the
@@ -559,12 +564,12 @@ gradient is not an assumption or a definition.
 
 The first three definitions are
 
-\[
+$$
 \Lambda(x)=-\int_0^x\log|2\sin u|\,du,\qquad
 f(t)=\frac{\Lambda(\pi t)+\Lambda(\pi/2-\pi t)}{\pi},\qquad
 f'(t)=\log\cos(\pi t)-\log\sin(\pi t)
 \quad(0<t<1/2).
-\]
+$$
 
 Here the integral is Mathlib's actual real interval integral. The proof
 uses integrability of the logarithmic sine singularities, the fundamental
@@ -579,16 +584,16 @@ For fixed nonnegative coefficients `a : Fin 3 → ℝ`, put
 `w_i = a_i exp(q_i)`. The supported feasible set consists of vectors
 `α : Fin 3 → ℝ` satisfying
 
-\[
+$$
 \alpha_i\ge0,\qquad \sum_i\alpha_i=1/2,\qquad
  a_i=0\Longrightarrow\alpha_i=0.
-\]
+$$
 
 The actual definition `potential a q` is the supremum of
 
-\[
+$$
 \sum_i f(\alpha_i)+\sum_{i:a_i>0}\alpha_i(\log a_i+q_i)
-\]
+$$
 
 over that set. The helper `logWeight` assigns zero at inactive corners,
 whose feasible loads are already zero, so no logarithm of a zero weight
@@ -597,12 +602,12 @@ to be `log w_i`.
 
 When `D²=w_0w_1+w_1w_2+w_2w_0>0`, the proof establishes directly that
 
-\[
+$$
 \alpha_i^*=\frac1\pi\arctan\frac{w_i}{D},\qquad
 \sum_i\alpha_i^*=\frac12,
 \qquad
  f'(\alpha_i^*)+\log w_i=\log D\quad(a_i>0).
-\]
+$$
 
 The arctangent sum is proved for three nonnegative weights with positive
 `D²`, including one zero weight. Active loads lie strictly between zero
@@ -616,10 +621,10 @@ envelope differentiation theorem or an assumed optimizer.
 Differentiating the resulting explicit value along the actual path
 `q+t h` gives
 
-\[
+$$
 \frac{d}{dt}Q(a,q+t h)
  =\sum_i h_i\alpha_i(a,q+t h).
-\]
+$$
 
 The terms containing derivatives of the loads cancel because their sum
 is zero. `potential_path_hasDerivAt` proves this at every real path
@@ -630,11 +635,11 @@ A singleton uses the **same** feasible-set and supremum definitions.
 If `a_active>0` and every other coefficient vanishes, feasibility forces
 its sole load to be one half. The module proves
 
-\[
+$$
 Q(a,q)=\tfrac12(\log a_{\mathrm{active}}+q_{\mathrm{active}}),\qquad
 \frac{d}{dt}Q(a,q+t h)=\tfrac12 h_{\mathrm{active}},\qquad
 \frac{d^2}{dt^2}Q(a,q+t h)=0.
-\]
+$$
 
 It never evaluates `atan(w_i/D)` at `D=0` to produce that convention.
 The all-zero case is outside the stated hypotheses.
@@ -642,10 +647,10 @@ The all-zero case is outside the stated hypotheses.
 The definition `summedPotential` retains one common vertex function and
 the actual face-demand term:
 
-\[
+$$
 \mathcal P(q)=\sum_{t\in T}Q(a^t,q\circ c_t)
                    -\sum_{v\in V}\delta_v q_v.
-\]
+$$
 
 Here `T,V` are finite types, `c_t : Fin 3 → V` is the corner map, and
 `δ_v` is the specified demand. The first shared-sum theorems require
@@ -689,22 +694,22 @@ Let `T,V` be finite triangle and vertex types, `root : V` the grounded
 vertex, and `c : T → Fin 3 → V` the corner map. The fixed corner
 coefficients `a_ti` are nonnegative. An actual table `β_ti` must satisfy
 
-\[
+$$
 \beta_{ti}>0\quad(a_{ti}>0),\qquad
 \beta_{ti}=0\quad(a_{ti}=0),\qquad
 \sum_{i=0}^2\beta_{ti}=\frac12.
-\]
+$$
 
 In the Lean statement the zero condition is written for every corner
 without a strictly positive coefficient; nonnegativity of `a` makes these
 the same inactive corners. These conditions themselves imply that each
 row has nonempty support. Define
 
-\[
+$$
 S_t=\{c_t(i):a_{ti}>0\},\quad
 \alpha_{tv}=\sum_{i:c_t(i)=v}\beta_{ti},\quad
 d_v=\sum_t\alpha_{tv}.
-\]
+$$
 
 The proofs retain repeated corners. `aggregate_rowMass` gives the exact
 half-row masses, `aggregate_demand` identifies the actual column demands,
@@ -716,24 +721,24 @@ an unrelated vector.
 The local lower bound is proved by putting the full feasible mass `1/2`
 at any active corner. Its entropy is zero, so
 
-\[
+$$
 Q(a,q)\ge\frac{\log a_i+q_i}{2}\qquad(a_i>0).
-\]
+$$
 
 The explicit row constant
 
-\[
+$$
 C_t=\frac12\sum_{i:a_{ti}>0}|\log a_{ti}|
-\]
+$$
 
 therefore gives `Q_t(q) ≥ (1/2) max_(v∈S_t) q_v − C_t` for every q.
 This is the precise lower-bound input of `TransportCoercivity`; it includes
 fixed boundary offsets and needs no uniform bound on their magnitudes.
 The module also proves the quantitative fixed-support estimate
 
-\[
+$$
 |Q(a,q)-Q(a,p)|\le\frac12\lVert q-p\rVert_\infty.
-\]
+$$
 
 For any feasible load, the two objective values differ by
 `Σ_i α_i(q_i−p_i)`; comparing the attained maximizers in both directions
@@ -757,18 +762,18 @@ Together with the proved vertex bound, continuity and finite table
 identities, `GroundedConvexity.exists_unique_grounded_minimizer` yields
 exactly one grounded minimum of
 
-\[
+$$
 \mathcal P_d(q)=\sum_t Q(a^t,q\circ c_t)-\sum_v d_vq_v.
-\]
+$$
 
 For a prescribed physical demand `δ`, only the free-vertex equalities
 `δ_v=d_v` for `v≠root` are required. The theorem
 `root_demand_difference` keeps the exact identity
 
-\[
+$$
 \mathcal P_\delta(q)-\mathcal P_d(q)
 =(d_{\mathrm{root}}-\delta_{\mathrm{root}})q_{\mathrm{root}}.
-\]
+$$
 
 Thus the two functions agree on `q_root=0`, and
 `exists_unique_prescribed_minimizer` proves the unique minimum for the
@@ -805,10 +810,10 @@ of triangle `t` has destination `c t i` and nonnegative fixed coefficient
 `w_(t,i) = a_(t,i) exp(q_(c(t,i)))`. On a row with at least two positive
 corner coefficients, the maximizing load is the actual formula
 
-\[
+$$
 \alpha_{t,i}(q)=\frac1\pi\arctan\!
  \frac{w_{t,i}}{\sqrt{w_{t,0}w_{t,1}+w_{t,1}w_{t,2}+w_{t,2}w_{t,0}}}.
-\]
+$$
 
 On a singleton row, the sole active corner has load `1/2` and the other
 corners have load zero. `supportedLoad` combines these two cases;
@@ -818,10 +823,10 @@ so differentiation never changes support.
 
 The vertex load and residual are
 
-\[
+$$
  L_v(q)=\sum_{t}\sum_{i:\,c(t,i)=v}\alpha_{t,i}(q),
  \qquad R_v(q)=L_v(q)-d_v,
-\]
+$$
 
 where `d : V → ℝ` is the prescribed demand. All corner contributions are
 retained when destinations coincide. The entropy optimization continues to
@@ -832,10 +837,10 @@ at the shared vertex. Fixed boundary offsets remain in the coefficients
 For the actual shared potential
 `P(q) = summedPotential c a d q`, the module proves
 
-\[
+$$
  \left.\frac{d}{ds}P(q+s h)\right|_{s=u}
    =\sum_v R_v(q+u h)h_v.
-\]
+$$
 
 Thus varying one coordinate gives precisely `R_v(q)`. The proof applies
 the previously proved arctangent and singleton derivatives, then expands
@@ -879,17 +884,17 @@ Let (T) be a finite set of triangle rows, (V) their finite set of
 vertex destinations, and (S_t\subseteq V) the nonempty active support of
 row (t). For (A\subseteq V), define its available supply and deficit by
 
-\[
+$$
  C(A)=\frac12\#\{t:S_t\cap A\ne\varnothing\},\qquad
  \delta(A)=C(A)-\sum_{v\in A}d_v.
-\]
+$$
 
 The hypotheses are explicit:
 
-\[
+$$
  \sum_vd_v=\frac{|T|}{2},\qquad
  \delta(A)>0\quad(\varnothing\ne A\subsetneq V).
-\]
+$$
 
 The first identity matches the demand to the total supply. The strict
 inequalities are stronger than weak feasibility at the boundary. They
@@ -900,17 +905,17 @@ it does not affect the grounded potential.
 
 Here is the finite argument formalized in `HallRecession`. Define
 
-\[
+$$
  R(q)=\frac12\sum_t\max_{v\in S_t}q_v-\sum_vd_vq_v.
-\]
+$$
 
 For a nonnegative vector (q), let (A=\{v:q_v>0\}) and let (a)
 be its least positive value. Subtract (a) at every vertex of (A),
 obtaining (q'). Then
 
-\[
+$$
  R(q)=R(q')+a\delta(A).
-\]
+$$
 
 The positive support gets smaller. Induction proves nonnegativity from
 weak cuts, and positivity when a proper positive support meets a strict
@@ -925,9 +930,9 @@ deficits whose sum is zero, so the same cuts also imply connectivity.
 `TriangleHall` applies this bound to the literal Lobachevsky envelope
 already defined in `TrianglePotential`. Its proved vertex bound gives
 
-\[
+$$
  P_d(q)\ge R(q)-\sum_t C_t,
-\]
+$$
 
 where (C_t) is the fixed logarithmic offset cost. The continuous
 potential therefore attains a grounded minimum. Its actual coordinate
@@ -978,6 +983,15 @@ lake exe cache get \
   Mathlib.Analysis.SpecificLimits.Basic \
   Mathlib.RingTheory.PowerSeries.Trunc \
   Mathlib.Algebra.Polynomial.Div \
+  Mathlib.Algebra.Polynomial.Bivariate \
+  Mathlib.Algebra.Polynomial.Laurent \
+  Mathlib.Algebra.Polynomial.RingDivision \
+  Mathlib.RingTheory.PowerSeries.Order \
+  Mathlib.RingTheory.Localization.Integer \
+  Mathlib.RingTheory.Localization.FractionRing \
+  Mathlib.Analysis.Calculus.DSlope \
+  Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv \
+  Mathlib.Analysis.Normed.Group.Bounded \
   Mathlib.Topology.Algebra.Polynomial \
   Mathlib.Tactic.FieldSimp \
   Mathlib.Analysis.Convex.Deriv \
@@ -1039,170 +1053,170 @@ replay, and a missing dependency produces setup instructions.
 
 [FormalShift.lean](FormalShift.lean) proves a formal-algebra step in
 [the meridian expansion paper](../papers/meridian-expansions/operators.tex).
-Let \(R\) be a commutative ring, \(S(u)\in R[[u]]\),
-\(A(h,u)\in R[[h,u]]\), and \(j\in R\). Using Mathlib's actual
+Let $R$ be a commutative ring, $S(u)\in R[[u]]$,
+$A(h,u)\in R[[h,u]]$, and $j\in R$. Using Mathlib's actual
 power-series substitution, the module constructs
 
-\[
+$$
  D_jS(h,u)=\frac{S(u+jh)-S(u)}{h}.
-\]
+$$
 
 The quotient is constructed by shifting coefficients, and the proof
-checks the identity obtained by multiplying it by \(h\). Divisibility
+checks the identity obtained by multiplying it by $h$. Divisibility
 is therefore a conclusion, not a division operation assumed to exist.
 The binomial coefficient formula gives
 
-\[
+$$
  [h^a u^b]S(u+jh)
    =j^a\binom{a+b}{a}[u^{a+b}]S(u).
-\]
+$$
 
-It follows that \(D_jS(0,u)=jS'(u)\). The map taking \(h=0\)
-is identified with the admissible substitution \((h,u)\mapsto(0,u)\).
-The module then constructs \(A(h,u+jh)\) and proves that its value at
-\(h=0\) equals that of \(A(h,u)\). Combining the two gives
+It follows that $D_jS(0,u)=jS'(u)$. The map taking $h=0$
+is identified with the admissible substitution $(h,u)\mapsto(0,u)$.
+The module then constructs $A(h,u+jh)$ and proves that its value at
+$h=0$ equals that of $A(h,u)$. Combining the two gives
 
-\[
+$$
  \left[D_jS(h,u)+A(h,u+jh)-A(h,u)\right]_{h=0}=jS'(u).
-\]
+$$
 
 Thus the regular logarithmic amplitude does not change this leading
-shift. When \(S'(0)=0\), the constructed logarithmic shift also has
+shift. When $S'(0)=0$, the constructed logarithmic shift also has
 zero constant term at the joint origin.
 
 ## Regrading and exponentiation
 
 [FormalRegradingRing.lean](FormalRegradingRing.lean) constructs the
 algebra homomorphism
-\[
+$$
  \rho:R[[h,u]]\longrightarrow R[s][[h]],\qquad
  \rho(h)=h,\quad \rho(u)=hs.
-\]
-Its target has a polynomial in \(s\) at each \(h\)-coefficient.
+$$
+Its target has a polynomial in $s$ at each $h$-coefficient.
 The proof derives the coefficient formula from actual admissible
 substitution:
-\[
+$$
  [s^b][h^n]\rho(B)=
  \begin{cases}[h^{n-b}u^b]B,&b\le n,\\0,&b>n.\end{cases}
-\]
-Thus \([h^a u^b]B=[s^b][h^{a+b}]\rho(B)\), which proves injectivity.
+$$
+Thus $[h^a u^b]B=[s^b][h^{a+b}]\rho(B)$, which proves injectivity.
 The module proves multiplication compatibility, identifies the existing
 Std-only coefficient table with this ring map, and shows that agreement
-through \(h^L\) recovers exactly the triangle \(a+b\le L\). Fixing
-one value of \(s\) would lose injectivity even if all \(h\)-orders
+through $h^L$ recovers exactly the triangle $a+b\le L$. Fixing
+one value of $s$ would lose injectivity even if all $h$-orders
 were retained.
 
 [FormalExp.lean](FormalExp.lean) works over a commutative
-\(\mathbb Q\)-algebra. For a formal series \(B\) with zero constant
-term it defines \(\exp B\) by substituting \(B\) into Mathlib's
+$\mathbb Q$-algebra. For a formal series $B$ with zero constant
+term it defines $\exp B$ by substituting $B$ into Mathlib's
 factorial exponential series. The coefficient sums have finite support;
 the result has constant coefficient one and is a unit. Evaluation at
-\(h=0\) is a bundled algebra homomorphism, and admissible substitution
+$h=0$ is a bundled algebra homomorphism, and admissible substitution
 proves
-\[
+$$
  (\exp B)|_{h=0}=\exp(B|_{h=0}).
-\]
+$$
 Applied to the logarithmic shift above, this gives
-\[
+$$
  \exp\bigl(D_jS+A(h,u+jh)-A(h,u)\bigr)|_{h=0}
        =\exp(jS'(u)).
-\]
-The hypothesis \(S'(0)=0\) makes this formal exponential admissible.
-For natural shifts \(j\), the module also proves
-\(\exp(jS')=(\exp S')^j\). The regular amplitude contributes one
+$$
+The hypothesis $S'(0)=0$ makes this formal exponential admissible.
+For natural shifts $j$, the module also proves
+$\exp(jS')=(\exp S')^j$. The regular amplitude contributes one
 only after projection; its higher-order terms remain in the full series.
 
 ## From an exact equation to a classical identity
 
 [AsymptoticIdentity.lean](AsymptoticIdentity.lean) proves uniqueness of
 coefficients for actual complex-valued asymptotic expansions. Let
-\(h_N\to0\), with \(h_N\ne0\) eventually, along a nontrivial
-filter. Suppose \(F_N(s)=0\) eventually for each \(s\) in an
-infinite set \(D\), and for every \(m\ge0\),
-\[
+$h_N\to0$, with $h_N\ne0$ eventually, along a nontrivial
+filter. Suppose $F_N(s)=0$ eventually for each $s$ in an
+infinite set $D$, and for every $m\ge0$,
+$$
  F_N(s)-\sum_{i=0}^{m}p_i(s)h_N^i=O(h_N^{m+1}),
  \qquad p_i\in\mathbb C[s].
-\]
-The constants and thresholds may depend on \(s\) and \(m\).
-Induction proves every \(p_i(s)=0\): after removing the earlier
-coefficients, divide by \(h_N^i\) and take the limit. A polynomial
-vanishing on the infinite set \(D\) is zero, so the entire series in
-\(\mathbb C[s][[h]]\) vanishes. The proof permits complex scales,
-including \(h_N=\pi i/N\), and cofinal parity subsequences. When an
-expansion was originally written in powers of \(N^{-1}\), its
-coefficients must be rescaled by \((\pi i)^{-i}\) before this application.
+$$
+The constants and thresholds may depend on $s$ and $m$.
+Induction proves every $p_i(s)=0$: after removing the earlier
+coefficients, divide by $h_N^i$ and take the limit. A polynomial
+vanishing on the infinite set $D$ is zero, so the entire series in
+$\mathbb C[s][[h]]$ vanishes. The proof permits complex scales,
+including $h_N=\pi i/N$, and cofinal parity subsequences. When an
+expansion was originally written in powers of $N^{-1}$, its
+coefficients must be rescaled by $(\pi i)^{-i}$ before this application.
 
 [FormalGauge.lean](FormalGauge.lean) constructs the denominator clearing
 used by the reduced-to-full conversion. Define
-\[
+$$
  f_j=\exp(u+jh)-\exp(-u-jh),\qquad
  D_r=\prod_{k=1}^{r}f_k.
-\]
-For coefficients \(a_j(h,u)\), the cleared coefficients are
-\[
+$$
+For coefficients $a_j(h,u)$, the cleared coefficients are
+$$
  \widetilde a_0=D_r a_0,\qquad
  \widetilde a_j=(-1)^j f_0
     \prod_{\substack{1\le k\le r\\k\ne j}}f_k\,a_j
        \quad(1\le j\le r).
-\]
+$$
 The module proves the multiplied denominator identity, including
-\(j=0\), without inverting any series. Projection sends every
-\(f_j\) to \(f=\exp u-\exp(-u)\), hence
-\[
+$j=0$, without inverting any series. Projection sends every
+$f_j$ to $f=\exp u-\exp(-u)$, hence
+$$
  \widetilde a_j|_{h=0}=f^r(-1)^j(a_j|_{h=0}).
-\]
+$$
 All meridian factors are retained in this calculation.
 
 [FormalCharacteristic.lean](FormalCharacteristic.lean) assembles these
 results. It constructs the finite shifted equation
-\[
+$$
  Q(h,u)=\sum_{j=0}^{r}\widetilde a_j(h,u)
        \exp\bigl(D_jS+A(h,u+jh)-A(h,u)\bigr).
-\]
-Its main theorem assumes that the coefficient polynomials of \(\rho(Q)\)
+$$
+Its main theorem assumes that the coefficient polynomials of $\rho(Q)$
 are the all-orders coefficients of an eventually zero complex equation,
-as specified above. Coefficient uniqueness gives \(\rho(Q)=0\),
-injectivity gives \(Q=0\), and projection gives
-\[
+as specified above. Coefficient uniqueness gives $\rho(Q)=0$,
+injectivity gives $Q=0$, and projection gives
+$$
  f^r\sum_{j=0}^{r}(a_j|_{h=0})(-\exp S'(u))^j=0.
-\]
-The coefficient of \(u\) in \(f\) is two. Thus \(f\ne0\), and
-cancellation in the domain \(\mathbb C[[u]]\) gives the classical
+$$
+The coefficient of $u$ in $f$ is two. Thus $f\ne0$, and
+cancellation in the domain $\mathbb C[[u]]$ gives the classical
 polynomial identity. This cancellation is inside a proved identity;
-\(f\) is not a unit at the complete meridian.
+$f$ is not a unit at the complete meridian.
 
 ## The actual finite recurrence at roots of unity
 
 [ActualGauge.lean](ActualGauge.lean) starts with the actual finite
 recurrence, before any expansion. Write its shifted values as
-\[
+$$
  F_N(s+j)=K_N H_N(s+j)Z_N(s+j),\qquad
  H_N(s)=\frac{\sin\pi s}{N\sin(\pi s/N)}.
-\]
+$$
 Here the quotient is used on a nonreal parameter set. Every shifted
 sine denominator is nonzero there; this fact is proved. The function's
 removable extension at zero is a separate definition and is not needed
-in this argument. With \(q_N=e^{\pi i/N}\), \(M_N=q_N^s\), put
-\[
+in this argument. With $q_N=e^{\pi i/N}$, $M_N=q_N^s$, put
+$$
  f_{N,j}=q_N^jM_N-(q_N^jM_N)^{-1}.
-\]
+$$
 The module proves the root identity, the meridian shift and the exact
 multiplied normalization identity
-\[
+$$
  H_N(s+j)f_{N,j}=(-1)^jH_N(s)f_{N,0}.
-\]
+$$
 The original recurrence therefore implies the equation with the cleared
 coefficients defined above, divided by the nonzero unshifted source
-\(Z_N(s)\). The exceptional zeroth coefficient keeps the full product
+$Z_N(s)$. The exceptional zeroth coefficient keeps the full product
 of shifted factors. No inverse of the unshifted meridian factor is used.
 
 [RecurrenceExpansion.lean](RecurrenceExpansion.lean) proves how to expand
-that finite equation. An actual function has formal expansion \(P\)
-when its remainder after degree \(m\) is \(O(h^{m+1})\) for every
-\(m\). The module proves closure under finite sums and products.
+that finite equation. An actual function has formal expansion $P$
+when its remainder after degree $m$ is $O(h^{m+1})$ for every
+$m$. The module proves closure under finite sums and products.
 For products, the order-zero estimate gives boundedness. The difference
 between the product of two truncated polynomials and the truncation of
-the formal product is divisible by \(h^{m+1}\); evaluating its
+the formal product is divisible by $h^{m+1}$; evaluating its
 polynomial quotient gives the needed remainder estimate. This keeps
 all mixed coefficients of the product.
 
@@ -1213,64 +1227,283 @@ equation is a conclusion, rather than an additional application premise.
 Its exact zero value comes from the original recurrence and normalization.
 
 [MeridianExpansion.lean](MeridianExpansion.lean) supplies the remaining
-elementary meridian expansion. It proves that substitution \(u=hs\)
+elementary meridian expansion. It proves that substitution $u=hs$
 commutes with the admissible formal exponential, then uses the actual
 complex exponential remainder estimate to identify every coefficient of
-\[
+$$
  f_{N,j}=e^{(s+j)h_N}-e^{-(s+j)h_N},\qquad h_N=\pi i/N.
-\]
+$$
 The scale tends to zero and is eventually nonzero along every cofinal
 sequence of levels, including either parity. The theorem
 `characteristic_at_roots` joins these steps with the formal
 characteristic calculation.
 
-Its remaining analytic inputs are the expansions of the original
-operator coefficients and of the actual source ratios
-\(Z_N(s+j)/Z_N(s)\), with the formal action and amplitude specified.
-The recurrence itself, the exact source normalization, and eventual
-nonvanishing of \(K_N\) and \(Z_N(s)\) are also explicit inputs.
-These source estimates are not consequences of finite scalar algebra.
-The theorem does not construct an operator or prove that its classical
-polynomial is nonzero. Clearing its original rational denominators,
-removing the common \(q-1\) valuation, passing to a holomorphic germ
-and identifying the geometric factor remain written application steps.
+At this interface the expansions of the original operator coefficients
+and of the actual source ratios $Z_N(s+j)/Z_N(s)$ remain inputs,
+with the formal action and amplitude specified. The next module supplies
+the coefficient expansions for fixed finite Laurent polynomials. The
+recurrence itself, the exact source normalization, and eventual
+nonvanishing of $K_N$ and $Z_N(s)$ still have to come from the
+actual invariant. The source-ratio estimates are separate analytic
+results; the finite scalar identities do not establish them.
+
+## Finite Laurent coefficients at the actual roots
+
+[LaurentExpansion.lean](LaurentExpansion.lean) constructs the expansions
+of the original coefficients rather than asking for them as hypotheses.
+Let $E\subset\mathbb Z^2$ be finite and let $c_{km}\in\mathbb C$
+be fixed. The coefficient is the actual Laurent polynomial
+$$
+ a(q,M)=\sum_{(k,m)\in E}c_{km}q^kM^m.
+$$
+The finite support and coefficient values are independent of the level.
+Both exponents may be negative. At $q=e^h$, $M=e^u$, the
+module constructs its complete formal series
+$$
+ \widehat a(h,u)=\sum_{(k,m)\in E}c_{km}\exp(kh+mu).
+$$
+The identity $(e^z)^k=e^{kz}$ holds for every integer $k$, so
+this series corresponds to the literal Laurent evaluation, including
+negative powers. After $u=hs$, its coefficients are
+$$
+ [h^n]\widehat a(h,hs)
+   =\sum_{(k,m)\in E}c_{km}\frac{(k+ms)^n}{n!}.
+$$
+The complex exponential remainder estimate and finite summation prove
+every finite asymptotic order. This is an estimate for the actual
+complex-valued coefficient, with its constructed formal coefficients.
+Projection to $h=0$ retains the full meridian dependence:
+$$
+ \widehat a(0,u)=\sum_{(k,m)\in E}c_{km}e^{mu}.
+$$
+
+`characteristic_of_laurent_recurrence` applies these expansions to each
+coefficient of the finite recurrence and invokes the physical-root
+theorem. Its only remaining expansion hypothesis concerns the actual
+source ratios. It still requires the original recurrence, normalization,
+nonzero source values, a cofinal level sequence and an infinite nonreal
+parameter set. A nonzero Laurent coefficient can specialize to zero at
+$q=1$; the example $q-1$ is included among the controls. The
+next module addresses that separate normalization problem.
+
+## Removing the common q-1 factor
+
+[OperatorNormalization.lean](OperatorNormalization.lean) records a finite
+operator as $P(q,L)\in R[L][q]$, where the intended coefficient
+ring is $R=\mathbb C[M^{\pm1}]$. The outer variable is $q$;
+the exponent of $L$ records which shifted source value a coefficient
+multiplies. This is a record of the coefficients of a recurrence. The
+module makes no identification between multiplication of these
+commutative polynomials and multiplication of Ore operators.
+
+For $P\ne0$, let $k$ be its root multiplicity at $q=1$.
+Actual monic polynomial division constructs $Q$ and proves
+$$
+ P(q,L)=(q-1)^kQ(q,L),\qquad
+ P_0(M,L)=Q(1,L)\ne0.
+$$
+The order $k$ is maximal: the next power of $q-1$ does not
+divide $P$. Thus nonzero classical specialization is a conclusion.
+For example, directly evaluating $(q-1)^3(L+M)$ at $q=1$
+loses every coefficient; division by its full common factor leaves
+$L+M$.
+
+Mapping the coefficient ring to a scalar target, evaluating $q$,
+and taking each $L^j$-coefficient gives the actual finite identity
+$$
+ \sum_j a_j(q)v_j=(q-1)^k\sum_j \widetilde a_j(q)v_j.
+$$
+In a target without zero divisors, the two recurrences are equivalent
+when $q\ne1$. The actual roots used here satisfy
+$q_N^N=-1$, so this cancellation is valid at every positive level.
+Substitution $L\mapsto-L$ is an involution. Since
+$f=M-M^{-1}$ is nonzero in the Laurent ring, the retained gauged
+symbol $f^rP_0(M,-L)$ is nonzero there too. This assertion precedes
+any evaluation at the complete meridian $M=1$.
+
+The normalization agrees with the formal parameter $h=\log q$.
+The module constructs the full series
+$$
+ e^h-1=hU(h),\qquad
+ U(h)=\sum_{n\ge0}\frac{h^n}{(n+1)!},\qquad U(0)=1,
+$$
+proves that $U$ is a unit, and derives
+$$
+ P(e^h,L)=h^kU(h)^kQ(e^h,L).
+$$
+Every lower $h$-coefficient vanishes, and the coefficient at degree
+$k$ is exactly $P_0$. The order in $h$ therefore equals
+the removed common order in $q-1$, with $M$ and $L$ still
+retained in the coefficient ring.
+
+A separate theorem constructs a common nonzero denominator and a
+nonzero cleared family for any nonzero finite family of fractions over
+an integral domain. In the intended application the domain is
+$\mathbb C[M^{\pm1}][q]$. Negative powers of $q$ are already fractions
+in this domain, so common denominator clearing also removes them. The
+chosen denominator must remain nonzero on the analytic chart where the
+recurrence is evaluated. This is an application hypothesis: an arbitrary
+specialization of $q$ and $M$ does not extend to a total evaluation
+homomorphism on the entire fraction field. The next module connects the
+resulting polynomial record directly to the Laurent expansion theorem.
+
+## From the operator record to its characteristic equation
+
+[OperatorCoefficientAdapter.lean](OperatorCoefficientAdapter.lean)
+connects the two representations of the recurrence coefficients. For a
+polynomial $p(q)\in\mathbb C[M^{\pm1}][q]$, it constructs the finite
+coefficient table
+$$
+ p(q,M)=\sum_{n\ge0,\,m\in\mathbb Z}c_{nm}q^nM^m
+ \quad\longmapsto\quad ((n,m)\mapsto c_{nm}).
+$$
+The table is injective as a representation of $p$: each original
+coefficient can be recovered from it. Its finite Laurent evaluation is
+proved equal to evaluation of the original polynomial, for every complex
+$q$ and nonzero meridian $M$.
+
+To apply this construction to $P(q,L)$, the module transposes the two
+polynomial variables and extracts each $L^j$-coefficient. This produces
+the coefficient tables used by `LaurentExpansion`. The corresponding
+classical coefficient is exactly the expansion at $M=e^u$ of the
+$q=1$ specialization. More explicitly, define
+$$
+ \mathcal E\left(\sum_{j,m}b_{jm}M^mL^j\right)
+   =\sum_j\left(\sum_m b_{jm}e^{mu}\right)L^j
+   \in\mathbb C[[u]][L].
+$$
+This is a finite sum of explicitly constructed formal exponential
+series. The module proves the equality coefficient by coefficient;
+it does not assume a relation between the two representations.
+
+Let $Q=P/(q-1)^k$ be the normalized record and let $r$ bound its
+degree in $L$. The degree bound is an explicit hypothesis. The module
+proves that coefficients above $r$ vanish and that summing the
+coefficients from $0$ to $r$ reconstructs the whole formal symbol
+$\mathcal E(P_0)$, where $P_0(M,L)=Q(1,L)$. Thus the finite
+recurrence cannot silently omit a nonzero shift coefficient.
+
+The theorem `normalized_characteristic_of_record` starts with the
+actual recurrence for $P$, the sine normalization of its source, and
+the all-orders source-ratio expansions specified by formal action $S$
+and amplitude $A$. It assumes $P\ne0$, $S'(0)=0$, a cofinal level
+sequence, an infinite set of nonreal microscopic parameters, and the
+stated eventual nonvanishing of the normalization and base source.
+It then proves
+$$
+ P_0\ne0,\qquad
+ \mathcal E(P_0)\bigl(-\exp(S'(u))\bigr)=0.
+$$
+The proof cancels the common factor at the actual roots, converts the
+normalized coefficients to their finite Laurent tables, applies their
+proved asymptotic expansions, and reconstructs the complete classical
+symbol. The original operator, its annihilating equation, and the
+source-ratio estimates remain inputs. Applying the result to rational
+coefficients also requires the denominator chart described above.
+Passage from this formal identity to a holomorphic germ, and selection
+of a geometric component or its volume, remain separate analytic and
+geometric arguments. No injectivity assertion about restriction to a
+selected geometric germ is made here.
 
 ## Uniform consequences of microscopic profiles
 
 [UniformProfile.lean](UniformProfile.lean) proves the uniform consequence
 used by the summed and directed circle-tree papers. Write their exact
-profile on a fixed parameter set \(K\) as
-\[
+profile on a fixed parameter set $K$ as
+$$
  F_N(s)=A_N(s)H_N(s)K_N(1+r_N(s)).
-\]
-The moving factors \(A_N\) and \(H_N\) remain in this equality.
-Suppose \(K_N\) is eventually nonzero, its logarithmic rate tends to
-\(v\), the product \(A_NH_N\) has fixed positive lower and upper
-norm bounds \(c,C\), and \(r_N\to0\) uniformly on \(K\).
-One threshold makes \(\lVert r_N(s)\rVert\le1/2\) for every
-\(s\in K\). Consequently
-\[
+$$
+The moving factors $A_N$ and $H_N$ remain in this equality.
+Suppose $K_N$ is eventually nonzero, its logarithmic rate tends to
+$v$, the product $A_NH_N$ has fixed positive lower and upper
+norm bounds $c,C$, and $r_N\to0$ uniformly on $K$.
+One threshold makes $\lVert r_N(s)\rVert\le1/2$ for every
+$s\in K$. Consequently
+$$
  \frac c2\lVert K_N\rVert\le\lVert F_N(s)\rVert
        \le\frac{3C}{2}\lVert K_N\rVert.
-\]
+$$
 Taking actual real logarithms gives an explicit uniform bound
-\[
+$$
  \left|\frac{\log\lVert F_N(s)\rVert}{N}
        -\frac{\log\lVert K_N\rVert}{N}\right|
  \le \frac{|\log(c/2)|+|\log(3C/2)|}{N}.
-\]
+$$
 This proves one eventual nonvanishing threshold and
 `TendstoUniformlyOn` for the logarithmic rate. The module also restores
-\(2\pi\), using the written geometric equality \(2\pi v=V\).
+$2\pi$, using the written geometric equality $2\pi v=V$.
 
-For a compact \(K\), the module derives the positive factor bounds
+For a compact $K$, the module derives the positive factor bounds
 from uniform convergence to continuous nonvanishing limits; the empty
-set is included. Bounds of the form \(C_1/N+C_2/N^2\) imply uniform
-vanishing of the remainder. These results apply to the actual profiles
-once their uniform estimates and factor limits are supplied. They do not
-prove the source expansion or the limit of the sine quotient defining
-\(H_N\), and pointwise convergence alone is not a substitute for the
-stated uniform hypotheses.
+set is included. Bounds of the form $C_1/N+C_2/N^2$ imply uniform
+vanishing of the remainder. This general interface takes the factor
+limits as hypotheses. The next module proves them for the two explicit
+factors in the circle-tree papers. The source profile and its uniform
+error estimate remain inputs; pointwise estimates alone do not supply
+the common threshold used here.
+
+## The removable sine factor and fixed quadratic scalar
+
+[SineFactor.lean](SineFactor.lean) starts with the actual complex function
+$$
+ \operatorname{sinc}z=
+ \begin{cases}\sin z/z,&z\ne0,\\1,&z=0.\end{cases}
+$$
+Its continuity at zero follows from the derivative of complex sine.
+Put
+$$
+ h(s)=\operatorname{sinc}(\pi s),\qquad
+ H_N(s)=\frac{\operatorname{sinc}(\pi s)}
+                  {\operatorname{sinc}(\pi s/N)}.
+$$
+For nonzero $N,s$, this equals the original literal sine quotient.
+At $s=0$ it equals one and is continuous, and the original quotient
+is proved to tend to one on the punctured neighborhood. The ratio is
+used on the chart where its sinc denominator is nonzero. No global
+extension at other finite-level cancellations is required.
+
+On a bounded complex set $K$, the arguments $\pi s/N$ tend
+uniformly to zero. Continuity of sinc therefore makes the denominator
+tend uniformly to one, and one threshold bounds its norm below by
+$1/2$ throughout $K$. Every fixed compact eventually lies in
+the denominator chart. For compact $K$, the numerator is bounded,
+and the exact quotient identity gives
+$$
+ \lVert H_N(s)-h(s)\rVert
+ \le 2\lVert h(s)\rVert
+       \lVert 1-\operatorname{sinc}(\pi s/N)\rVert.
+$$
+Consequently $H_N\to h$ uniformly on every complex compact.
+The only zeros of $h$ are the nonzero integers. Positive uniform
+lower bounds for $H_N$ follow on compacts avoiding those integers,
+including every closed disk $|s|\le R<1$ used by the summed and
+directed tree profiles. The origin remains included.
+
+The other explicit scalar in those profiles is
+$$
+ A_N(s)=q_N^{(-w(D)-\sum_vn_v)s^2/2}
+       =\exp\!\left(\frac{cs^2}{N}\right),\qquad
+ c=\frac{\pi i}{2}\left(-w(D)-\sum_vn_v\right).
+$$
+Here $w(D)$ is the diagram's oriented writhe and $n_v$ are its
+fixed signed crossing powers. The paper's convention is
+$q_N^a=\exp(\pi ia/N)$; the equality is proved with this
+convention and retains the complete scalar. The diagram and powers,
+hence $c$, are fixed before $N$ varies. The compact image of
+$K$ under $s\mapsto s^2$ is bounded, so continuity of the
+complex exponential at zero proves $A_N\to1$ uniformly on $K$.
+The norm need not be one for complex parameters.
+
+`compact_sine_volume_transfer` supplies the sine-factor limit to the
+general uniform-profile theorem while retaining an arbitrary moving
+$A_N$. `compact_quadratic_sine_volume_transfer` supplies both
+explicit factors. Its remaining inputs are the actual source profile,
+a uniform error bound $C_1/N+C_2/N^2$, eventual nonvanishing and
+the logarithmic rate of the base invariant, and the absolute geometric
+calibration $2\pi v=V$. For the directed first-order profile one
+sets $C_2=0$; for the summed profile $C_1$ bounds its displayed
+first-order coefficient and $C_2$ its remainder. These scalar
+calculations do not replace the analytic proof of either source profile.
 
 ## Replay and audit record
 
@@ -1292,10 +1525,12 @@ The checker rebuilds the Std-only path dependency, compiles
 `TriangleHall.lean`, `FormalShift.lean`, `FormalRegradingRing.lean`,
 `FormalExp.lean`, `AsymptoticIdentity.lean`, `FormalGauge.lean`,
 `FormalCharacteristic.lean`, `UniformProfile.lean`, `ActualGauge.lean`,
-`RecurrenceExpansion.lean`, `RecurrenceGaugeExpansion.lean` and
-`MeridianExpansion.lean`, and runs
+`RecurrenceExpansion.lean`, `RecurrenceGaugeExpansion.lean`,
+`MeridianExpansion.lean`, `LaurentExpansion.lean`,
+`OperatorNormalization.lean`, `OperatorCoefficientAdapter.lean` and
+`SineFactor.lean`, and runs
 [AxiomAudit.lean](AxiomAudit.lean). Every
-definition and theorem must appear exactly once in the audit. Only Lean's
+definition, abbreviation and theorem must appear exactly once in the audit. Only Lean's
 standard foundational axioms `propext`, `Classical.choice` and `Quot.sound`
 are permitted; placeholders and additional axioms fail the check.
 
@@ -1315,8 +1550,10 @@ an omitted triangle-minimizer module or actual prescribed-minimum audit entry,
 an omitted triangle-balance module or unique-load-solution audit entry,
 an omitted cut-recession or cut-to-balance module or its main theorem audit,
 an omitted formal-shift, regrading, exponential, asymptotic-identity,
-gauge, characteristic or uniform-profile module or main-theorem audit,
-and an unexpected logical axiom. A failed run
+gauge, characteristic, uniform-profile, Laurent-coefficient,
+operator-normalization, coefficient-adapter or explicit-factor module
+or main-theorem audit,
+an omitted Laurent coefficient-type abbreviation, and an unexpected logical axiom. A failed run
 removes any old success summary in its output directory.
 
 The result record gives the declaration counts for each module. Compiled

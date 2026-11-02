@@ -88,12 +88,12 @@ the half-mass convention, repeated destinations, arbitrary root demand,
 the role of connectedness, a strict-cut balance, and failures when either
 strictness or total mass compatibility is dropped. The formal-shift module
 also constructs substitution in actual power series, proves that
-\(S(u+jh)-S(u)\) is divisible by \(h\), and identifies the quotient at
-\(h=0\) with \(jS'(u)\). An arbitrary regular logarithmic amplitude
+$S(u+jh)-S(u)$ is divisible by $h$, and identifies the quotient at
+$h=0$ with $jS'(u)$. An arbitrary regular logarithmic amplitude
 contributes zero at that order. Five further compiled controls retain the
 shift factor and sign, the divisibility hypothesis, the first derivative
 at the origin, and the nonzero higher-order amplitude change. The later
-modules construct the actual ring map \(u=hs\), prove its injectivity,
+modules construct the actual ring map $u=hs$, prove its injectivity,
 construct formal exponentials, and prove coefficient uniqueness for
 actual complex asymptotic expansions. Their finite gauge construction
 retains all meridian factors and the sign. The characteristic theorem
@@ -101,14 +101,17 @@ combines these into a classical identity. The actual recurrence modules
 now derive the sine normalization, denominator clearing and whole finite
 expansion from estimates for the original coefficients and source ratios.
 They also prove the literal meridian-factor expansion at the physical
-root-of-unity scale. Operator existence,
-nonzero classical normalization and geometric factor identification
-remain application arguments.
+root-of-unity scale. The later Laurent module constructs all original
+coefficient Taylor estimates. Common $q-1$ division and an exact coefficient
+adapter then yield a nonzero complete classical symbol with its formal
+characteristic identity. Actual operator existence, the rational
+denominator chart, source-ratio estimates and geometric factor
+identification remain application arguments.
 
 The uniform-profile module proves a common nonvanishing threshold and
 uniform logarithmic rate from the actual uniform profile estimates.
 Compactness and a continuous nonvanishing limit supply the factor bounds;
-pointwise convergence alone does not. The
+pointwise convergence alone does not. The explicit removable sine and fixed quadratic diagram factors now have their own proved uniform limits, including the value at zero and the nonzero-integer zero set. The
 [paper coverage record](PAPER_FORMAL_COVERAGE.md) names the compiled
 implications and written inputs for all current papers.
 The optional command is separate from the Std-only
@@ -125,7 +128,7 @@ python3 repro/check_paper_algebra.py --output repro/results/paper-algebra
 The runner requires SymPy, python-flint, NumPy and mpmath. It saves each program's
 output and stops on a failed check. Its source record covers all registered
 papers, including earlier editions, and the scripts used by those checks.
-Unregistered working drafts are excluded from that publication record. Its twenty-four groups cover polynomial
+Unregistered working drafts are excluded from that publication record. Its twenty-three groups cover polynomial
 resolvents and path partitions, positive-matrix identities and parity
 anchors, filling-sum normalization, symbolic peripheral coordinates,
 rational three-braid constants, the complete forty-branch planar
@@ -225,7 +228,7 @@ The written proof explains why concavity and affine parameter dependence reduce 
 
 The research notes give a strict bound for one signed contribution in the
 recorded 54-region diagram. The selected cap parameter may vary throughout
-\([-2,2]\); all other spectral parameters remain \(-2\), and the exterior
+$[-2,2]$; all other spectral parameters remain $-2$, and the exterior
 factorization used in the proof requires odd levels. Run its certificates
 with one command:
 

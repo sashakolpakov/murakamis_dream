@@ -724,10 +724,64 @@ inputs. It does not assume an expansion of the already assembled equation.
 Operator existence, the nonzero classical specialization, and the analytic
 and geometric germ identifications remain written application steps.
 
-The fresh optional replay covers 91 definitions and 362 theorems in
+The replay published at `586d1efb` covers 91 definitions and 362 theorems in
 23 modules, with every declaration included in the axiom audit. It checks
 52 rejected metadata or axiom inventories and 53 mathematical boundary
 assertions with one separately identified helper. These counts describe
 the checked libraries; no actual knot family is asserted to have an
 end-to-end Lean proof. The 374-page reference manuscript and its PDF
 remain unchanged.
+
+## Shared preliminaries for circle trees and a nonzero classical symbol
+
+The two 15-page circle-tree papers are now one 27-page paper,
+[Volume asymptotics for trees of crossing circles](../papers/circle-tree-volume/main.tex).
+The finite contraction and common estimates are developed once. The
+summed-source criterion and the directed-source criterion keep separate
+statements and proofs. In particular, the explicit first meridian
+correction belongs to the summed result; combining the papers does not
+extend that conclusion to the directed criterion. The three figures and
+the earlier editions are retained. The moving-meridian paper now cites
+the combined account, with its numbered references checked against the
+new labels. Both PDFs compile without unresolved references or overfull
+boxes. The current collection contains 22 papers, totalling 404 pages;
+this aggregate includes the preliminaries needed to read each separately.
+
+Four further Mathlib modules remove several inputs from the recurrence
+argument. A finite Laurent polynomial is evaluated at the actual
+microscopic variables, and its expansion to every fixed order follows
+from the complex exponential remainder estimate. Negative exponents are
+retained. A separate algebraic construction removes the maximal common
+$q-1$ factor from a nonzero polynomial coefficient record and proves that
+the resulting classical symbol is nonzero. An injective encoding connects
+that record to the Laurent coefficients in the root recurrence. The
+final theorem derives the formal characteristic identity for the whole
+symbol; its explicit degree hypothesis prevents omission of a shift
+coefficient.
+
+These statements still require a specified annihilating recurrence,
+the exact source normalization and eventual nonvanishing, and the
+all-orders shifted source-ratio estimates. Applying a rational operator
+also requires its identification with the cleared record on a chart
+where the denominators do not vanish. Realization as an analytic germ
+and identification of the selected geometric factor remain written
+application steps. No operator is constructed for a new knot family.
+
+The fourth module proves compact uniform convergence of the actual
+removable sine factor and the fixed quadratic diagram factor. It
+distinguishes the removable value at zero from Lean's totalized literal
+quotient and retains the zeros at nonzero integers. The profile-to-volume
+theorem therefore no longer needs these two elementary factor limits as
+inputs. It still needs the source profile estimate, the base packet rate
+and its geometric calibration.
+
+The current optional replay compiles 113 definitions and abbreviations
+and 441 theorems in 27 modules. Every declaration is included in the
+axiom inventory. There are 61 rejection controls for altered metadata
+or axiom inventories, and 73 compiled mathematical boundary assertions
+with one separately identified helper. Per-module counts now follow
+source files, so modules sharing a namespace are not counted repeatedly.
+The finite reproduction suite contains 23 groups and pins 208 inputs.
+These records describe the checked code and its precise assumptions;
+they do not certify an entire knot-family proof. The reference
+manuscript, its mathematical sources and its 374-page PDF remain frozen.

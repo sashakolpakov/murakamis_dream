@@ -2054,24 +2054,36 @@
       "statement": "For each fixed literal all-circle tree satisfying the original knot-component test and sum d_v/(d_v^2+n_v^2)<=2^-25, the full reduced invariant is eventually nonzero and has the knot-complement volume rate at all sufficiently large integer levels. A centered microscopic main-meridian expansion is uniform on each fixed |s|<=R<1. Zero powers at sufficiently high degree are allowed.",
       "sources": [
         {
-          "path": "papers/circle-tree-asymptotics/main.tex",
+          "path": "papers/circle-tree-volume/main.tex",
           "anchor": "\\label{cta:word}"
         },
         {
-          "path": "papers/circle-tree-asymptotics/main.tex",
+          "path": "papers/circle-tree-volume/main.tex",
           "anchor": "\\label{cta:main}"
         },
         {
-          "path": "papers/circle-tree-asymptotics/main.tex",
+          "path": "papers/circle-tree-volume/main.tex",
           "anchor": "\\label{cta:profile}"
         },
         {
-          "path": "papers/circle-tree-asymptotics/conclusion.tex",
+          "path": "papers/circle-tree-volume/summed-conclusion.tex",
           "anchor": "\\label{cta:conclusion}"
         },
         {
           "path": "formal-real/UniformProfile.lean",
           "anchor": "theorem compact_microscopic_volume_transfer"
+        },
+        {
+          "path": "formal-real/SineFactor.lean",
+          "anchor": "theorem factor_tendsto"
+        },
+        {
+          "path": "formal-real/SineFactor.lean",
+          "anchor": "theorem quadraticPhase_tendsto"
+        },
+        {
+          "path": "formal-real/SineFactor.lean",
+          "anchor": "theorem compact_quadratic_sine_volume_transfer"
         }
       ],
       "depends_on": [
@@ -2088,8 +2100,8 @@
           "reason": "The nonzero coefficient and lower exponential error give the all-level logarithmic rate with the retained physical normalization."
         }
       ],
-      "coverage": "Proved in the degree-and-twist companion with its explicit summed condition. The preferred-cusp interpretation and all-orders longitude statements remain separate. The compiled UniformProfile theorem derives one common nonvanishing threshold and the uniform logarithmic rate from the written microscopic profile, actual moving-factor limits and base volume rate. It does not prove the tree-specific source estimates or geometry.",
-      "article": "circle-tree-asymptotics"
+      "coverage": "Proved in the circle-tree volume paper with its explicit summed condition, separately from the directed theorem. The preferred-cusp interpretation and all-orders longitude statements remain separate. The compiled UniformProfile theorem derives one common nonvanishing threshold and the uniform logarithmic rate from the written microscopic profile, actual moving-factor limits and base volume rate. It does not prove the tree-specific source estimates or geometry. SineFactor now proves both actual scalar limits, including the removable origin and the nonzero-integer zero set. The compact profile implication no longer assumes those limits for the fixed quadratic diagram scalar; source estimates, nonzero base packet and absolute geometry remain application inputs.",
+      "article": "circle-tree-volume"
     },
     {
       "id": "tree_local_volume",
@@ -2098,7 +2110,7 @@
       "statement": "The uniform local condition max_v d_v/(d_v^2+n_v^2)<=2^-120 implies the mixed degree-or-twist condition. It therefore inherits the volume and centered meridian conclusions of the directed theorem. Its older tiny-disk induction is retained in the frozen reference account but is unnecessary for this corollary.",
       "sources": [
         {
-          "path": "papers/directed-tree-asymptotics/applications.tex",
+          "path": "papers/circle-tree-volume/directed-applications.tex",
           "anchor": "\\label{dt:local}"
         },
         {
@@ -2132,7 +2144,7 @@
           "reason": "If both d_v<2^28 and |n_v|<2^27 held, the local ratio would exceed 2^-57; the stated 2^-120 condition therefore forces the directed theorem’s mixed alternative at every vertex."
         }
       ],
-      "article": "directed-tree-asymptotics"
+      "article": "circle-tree-volume"
     },
     {
       "id": "tree_directed_volume",
@@ -2141,11 +2153,11 @@
       "statement": "Variable edge budgets and a freely chosen final vertex give the finite directed certificate, including d_v>=2^28 or |n_v|>=2^27 at each vertex.",
       "sources": [
         {
-          "path": "papers/directed-tree-asymptotics/main.tex",
+          "path": "papers/circle-tree-volume/main.tex",
           "anchor": "\\label{dt:main}"
         },
         {
-          "path": "papers/directed-tree-asymptotics/main.tex",
+          "path": "papers/circle-tree-volume/main.tex",
           "anchor": "\\label{dt:mixed}"
         },
         {
@@ -2183,6 +2195,18 @@
         {
           "path": "formal-real/UniformProfile.lean",
           "anchor": "theorem compact_microscopic_volume_transfer"
+        },
+        {
+          "path": "formal-real/SineFactor.lean",
+          "anchor": "theorem factor_tendsto"
+        },
+        {
+          "path": "formal-real/SineFactor.lean",
+          "anchor": "theorem quadraticPhase_tendsto"
+        },
+        {
+          "path": "formal-real/SineFactor.lean",
+          "anchor": "theorem compact_quadratic_sine_volume_transfer"
         }
       ],
       "depends_on": [
@@ -2199,8 +2223,8 @@
           "reason": "A bound for the entire remainder, the nonzero central contribution and the original scalar normalization are combined to obtain the rate of the invariant."
         }
       ],
-      "article": "directed-tree-asymptotics",
-      "coverage": " The compiled UniformProfile theorem derives one common nonvanishing threshold and the uniform logarithmic rate from the written microscopic profile, actual moving-factor limits and base volume rate. It does not prove the tree-specific source estimates or geometry."
+      "article": "circle-tree-volume",
+      "coverage": " The compiled UniformProfile theorem derives one common nonvanishing threshold and the uniform logarithmic rate from the written microscopic profile, actual moving-factor limits and base volume rate. It does not prove the tree-specific source estimates or geometry. SineFactor now proves both actual scalar limits, including the removable origin and the nonzero-integer zero set. The compact profile implication no longer assumes those limits for the fixed quadratic diagram scalar; source estimates, nonzero base packet and absolute geometry remain application inputs."
     },
     {
       "id": "braid_literal_matched_sphere",
@@ -3514,26 +3538,26 @@
       "id": "analytic_directed_conditional_estimates",
       "title": "Direct conditional estimates for the directed source criterion",
       "group": "tree_criteria",
-      "statement": "Under the explicit directed certificate, the actual finite tree recurrence has nondegenerate conditional first-charge saddles, exact nonzero first Fourier coefficient, strict whole-trace endpoint/connector/tail margins, and regenerated outgoing real envelopes. These are estimates of exact normalized messages; after restoring their exact zero-parent constants, Schur elimination recovers the original joint action. The directed companion derives these bounds before identifying the restored critical action with geometric volume.",
+      "statement": "Under the explicit directed certificate, the actual finite tree recurrence has nondegenerate conditional first-charge saddles, exact nonzero first Fourier coefficient, strict whole-trace endpoint/connector/tail margins, and regenerated outgoing real envelopes. These are estimates of exact normalized messages; after restoring their exact zero-parent constants, Schur elimination recovers the original joint action. The directed proof derives these bounds before identifying the restored critical action with geometric volume.",
       "sources": [
         {
-          "path": "papers/directed-tree-asymptotics/kernels.tex",
+          "path": "papers/circle-tree-volume/directed-kernels.tex",
           "anchor": "\\label{dt:eq-15}"
         },
         {
-          "path": "papers/directed-tree-asymptotics/recursion.tex",
+          "path": "papers/circle-tree-volume/directed-recursion.tex",
           "anchor": "\\label{dt:eq-28}"
         },
         {
-          "path": "papers/directed-tree-asymptotics/recursion.tex",
+          "path": "papers/circle-tree-volume/directed-recursion.tex",
           "anchor": "\\label{dt:eq-37}"
         },
         {
-          "path": "papers/directed-tree-asymptotics/recursion.tex",
+          "path": "papers/circle-tree-volume/directed-recursion.tex",
           "anchor": "\\label{dt:sec-5}"
         },
         {
-          "path": "papers/directed-tree-asymptotics/recursion.tex",
+          "path": "papers/circle-tree-volume/directed-recursion.tex",
           "anchor": "\\label{dt:sec-6}"
         },
         {
@@ -3583,7 +3607,7 @@
           "reason": "Uses the unconditional all-index Newton estimates and actual complex edge asymptotic, independently of either global twist criterion."
         }
       ],
-      "article": "directed-tree-asymptotics"
+      "article": "circle-tree-volume"
     },
     {
       "id": "analytic_shifted_filtered_all_orders",
@@ -3777,6 +3801,26 @@
         {
           "path": "formal-real/MeridianExpansion.lean",
           "anchor": "theorem characteristic_at_roots"
+        },
+        {
+          "path": "formal-real/LaurentExpansion.lean",
+          "anchor": "theorem characteristic_of_laurent_recurrence"
+        },
+        {
+          "path": "formal-real/OperatorNormalization.lean",
+          "anchor": "theorem classicalSymbol_ne_zero"
+        },
+        {
+          "path": "formal-real/OperatorNormalization.lean",
+          "anchor": "theorem recurrence_at_root_iff"
+        },
+        {
+          "path": "formal-real/OperatorNormalization.lean",
+          "anchor": "theorem qTaylor_order"
+        },
+        {
+          "path": "formal-real/OperatorCoefficientAdapter.lean",
+          "anchor": "theorem normalized_characteristic_of_record"
         }
       ],
       "depends_on": [
@@ -3794,7 +3838,7 @@
         }
       ],
       "article": "meridian-expansions",
-      "coverage": "The compiled theorem now starts with the original recurrence and exact sine-factor source normalization. It proves denominator exclusions, the retained gauge and sign, finite expansion assembly and the literal meridian expansion at pi*i/N on any cofinal level sequence. The original coefficient and shifted source-ratio expansions, eventual nonvanishing, and action/amplitude identification remain inputs. The fixed operator is assumed to exist; its denominator/q-1 normalization, nonzero Laurent specialization, analytic germ and geometric irreducible-factor conclusion remain written."
+      "coverage": "The compiled theorem starts from a specified nonzero finite polynomial coefficient record and original root recurrence. It constructs the common q-1 quotient and derives its nonzero classical symbol, connects the exact finite Laurent encoding, proves all coefficient Taylor estimates and the sine/meridian gauge, and reconstructs the full classical symbol using the explicit shift-degree bound. Source-ratio asymptotics, normalization and eventual source nonvanishing remain inputs. Algebraic rational denominator clearing is separately proved; the actual physical denominator chart, operator existence, analytic germ and geometric-factor conclusion remain application steps."
     },
     {
       "id": "geometric_selected_factor_of_actual_recurrence",
@@ -4917,47 +4961,47 @@
       "statement": "For the literal fixed all-circle tree with sum d_v/(d_v^2+n_v^2)<=2^-25, the full Newton source has a nonzero first-charge asymptotic through both level parities. The proof bounds every discarded index with full repeated-root normals, constructs the normalized complex edge sum, controls all charge tails with real/grid spectators, and retains every endpoint and connecting contour. The centered microscopic insertion has an O(N^-2) expansion after its exact physical scalar is removed.",
       "sources": [
         {
-          "path": "papers/circle-tree-asymptotics/finite-bounds.tex",
+          "path": "papers/circle-tree-volume/finite-bounds.tex",
           "anchor": "\\label{cta:norms}"
         },
         {
-          "path": "papers/circle-tree-asymptotics/finite-bounds.tex",
+          "path": "papers/circle-tree-volume/finite-bounds.tex",
           "anchor": "\\label{cta:discard}"
         },
         {
-          "path": "papers/circle-tree-asymptotics/edge-packet.tex",
+          "path": "papers/circle-tree-volume/edge-packet.tex",
           "anchor": "\\label{cta:interpolant}"
         },
         {
-          "path": "papers/circle-tree-asymptotics/edge-packet.tex",
+          "path": "papers/circle-tree-volume/edge-packet.tex",
           "anchor": "\\label{cta:packet-expansion}"
         },
         {
-          "path": "papers/circle-tree-asymptotics/edge-packet.tex",
+          "path": "papers/circle-tree-volume/edge-packet.tex",
           "anchor": "\\label{cta:global-Gaussian}"
         },
         {
-          "path": "papers/circle-tree-asymptotics/joint-filling.tex",
+          "path": "papers/circle-tree-volume/summed-filling.tex",
           "anchor": "\\label{cta:charge-order}"
         },
         {
-          "path": "papers/circle-tree-asymptotics/joint-filling.tex",
+          "path": "papers/circle-tree-volume/summed-filling.tex",
           "anchor": "\\label{cta:telescoping}"
         },
         {
-          "path": "papers/circle-tree-asymptotics/joint-filling.tex",
+          "path": "papers/circle-tree-volume/summed-filling.tex",
           "anchor": "\\label{cta:finite-charges}"
         },
         {
-          "path": "papers/circle-tree-asymptotics/joint-filling.tex",
+          "path": "papers/circle-tree-volume/summed-filling.tex",
           "anchor": "\\label{cta:connector}"
         },
         {
-          "path": "papers/circle-tree-asymptotics/joint-filling.tex",
+          "path": "papers/circle-tree-volume/summed-filling.tex",
           "anchor": "\\label{cta:budget}"
         },
         {
-          "path": "papers/circle-tree-asymptotics/conclusion.tex",
+          "path": "papers/circle-tree-volume/summed-conclusion.tex",
           "anchor": "\\label{cta:amplitude}"
         }
       ],
@@ -4976,7 +5020,7 @@
         }
       ],
       "coverage": "The summed criterion is proved here. It is distinct from the local and directed criteria, whose separate source estimates are not inferred from it. Geometry is used only in the subsequent volume identification.",
-      "article": "circle-tree-asymptotics"
+      "article": "circle-tree-volume"
     },
     {
       "id": "analytic_circle_edge_kernel",
@@ -4985,23 +5029,23 @@
       "statement": "The full Newton norms retain all repeated-root derivatives. Discarded edge indices have a strict loss, and the retained finite edge sum has a nonzero holomorphic asymptotic with its original midpoint normalization. The angular product bound controls the full real domain. These edge estimates impose neither the summed nor the directed degree-and-twist condition.",
       "sources": [
         {
-          "path": "papers/circle-tree-asymptotics/finite-bounds.tex",
+          "path": "papers/circle-tree-volume/finite-bounds.tex",
           "anchor": "\\label{cta:norms}"
         },
         {
-          "path": "papers/circle-tree-asymptotics/finite-bounds.tex",
+          "path": "papers/circle-tree-volume/finite-bounds.tex",
           "anchor": "\\label{cta:discard}"
         },
         {
-          "path": "papers/circle-tree-asymptotics/edge-packet.tex",
+          "path": "papers/circle-tree-volume/edge-packet.tex",
           "anchor": "\\label{cta:interpolant}"
         },
         {
-          "path": "papers/circle-tree-asymptotics/edge-packet.tex",
+          "path": "papers/circle-tree-volume/edge-packet.tex",
           "anchor": "\\label{cta:packet-expansion}"
         },
         {
-          "path": "papers/circle-tree-asymptotics/edge-packet.tex",
+          "path": "papers/circle-tree-volume/edge-packet.tex",
           "anchor": "\\label{cta:raw}"
         }
       ],
@@ -5016,7 +5060,7 @@
         }
       ],
       "coverage": "These unconditional edge lemmas are shared by the separate summed and directed proofs; a volume theorem is not imported to prove its own analytic premises.",
-      "article": "circle-tree-asymptotics"
+      "article": "circle-tree-volume"
     },
     {
       "id": "analytic_backward_diagonalization",
@@ -6420,9 +6464,14 @@
       "title": "Positive octahedra and primitive fillings for trees of crossing circles",
       "path": "papers/circle-tree-geometry/main.tex"
     },
+    "circle-tree-volume": {
+      "title": "Volume asymptotics for trees of crossing circles",
+      "path": "papers/circle-tree-volume/main.tex"
+    },
     "circle-tree-asymptotics": {
       "title": "Degree and twist estimates for circle-tree invariants",
-      "path": "papers/circle-tree-asymptotics/main.tex"
+      "path": "papers/circle-tree-asymptotics/main.tex",
+      "edition": "earlier"
     },
     "planar-certificates": {
       "title": "Shared face estimates and triangular gluing for planar link diagrams",
@@ -6446,7 +6495,8 @@
     },
     "directed-tree-asymptotics": {
       "title": "Local degree and twist bounds for circle-tree volume limits",
-      "path": "papers/directed-tree-asymptotics/main.tex"
+      "path": "papers/directed-tree-asymptotics/main.tex",
+      "edition": "earlier"
     },
     "conway-reductions": {
       "title": "Ordered tangle reductions and long net twists",
@@ -6475,34 +6525,8 @@
   },
   "article_dependencies": [
     {
-      "from": "circle-tree-asymptotics",
-      "to": "directed-tree-asymptotics",
-      "witnesses": [
-        {
-          "path": [
-            "analytic_circle_edge_kernel",
-            "analytic_directed_conditional_estimates"
-          ],
-          "reason": "Uses the unconditional all-index Newton estimates and actual complex edge asymptotic, independently of either global twist criterion."
-        }
-      ]
-    },
-    {
-      "from": "circle-tree-asymptotics",
-      "to": "meridian-expansions",
-      "witnesses": [
-        {
-          "path": [
-            "analytic_circle_joint_source",
-            "analytic_shifted_filtered_all_orders"
-          ],
-          "reason": "Summed circle-tree alternative: the all-index source, complex edge integral, joint charges and fixed additive gaps; the arbitrary-order proof is supplied in the new article."
-        }
-      ]
-    },
-    {
       "from": "circle-tree-geometry",
-      "to": "circle-tree-asymptotics",
+      "to": "circle-tree-volume",
       "witnesses": [
         {
           "path": [
@@ -6510,13 +6534,7 @@
             "tree_summed_volume"
           ],
           "reason": "The summed condition implies the actual geometric threshold; the matching action has the same derivatives and complete constant."
-        }
-      ]
-    },
-    {
-      "from": "circle-tree-geometry",
-      "to": "directed-tree-asymptotics",
-      "witnesses": [
+        },
         {
           "path": [
             "tree_positive_completion",
@@ -6553,8 +6571,28 @@
       ]
     },
     {
+      "from": "circle-tree-volume",
+      "to": "meridian-expansions",
+      "witnesses": [
+        {
+          "path": [
+            "analytic_circle_joint_source",
+            "analytic_shifted_filtered_all_orders"
+          ],
+          "reason": "Summed circle-tree alternative: the all-index source, complex edge integral, joint charges and fixed additive gaps; the arbitrary-order proof is supplied in the new article."
+        },
+        {
+          "path": [
+            "analytic_directed_conditional_estimates",
+            "analytic_shifted_filtered_all_orders"
+          ],
+          "reason": "Directed circle-tree alternative: exact normalized conditional messages, regenerated envelopes and strict endpoint/charge margins. The new induction restores constants and proves every local order without replacing the criterion by the summed one."
+        }
+      ]
+    },
+    {
       "from": "conway-asymptotics",
-      "to": "circle-tree-asymptotics",
+      "to": "circle-tree-volume",
       "witnesses": [
         {
           "path": [
@@ -6746,21 +6784,8 @@
       ]
     },
     {
-      "from": "directed-tree-asymptotics",
-      "to": "meridian-expansions",
-      "witnesses": [
-        {
-          "path": [
-            "analytic_directed_conditional_estimates",
-            "analytic_shifted_filtered_all_orders"
-          ],
-          "reason": "Directed circle-tree alternative: exact normalized conditional messages, regenerated envelopes and strict endpoint/charge margins. The new induction restores constants and proves every local order without replacing the criterion by the summed one."
-        }
-      ]
-    },
-    {
       "from": "filling-bounds",
-      "to": "circle-tree-asymptotics",
+      "to": "circle-tree-volume",
       "witnesses": [
         {
           "path": [
@@ -6768,6 +6793,27 @@
             "tree_summed_volume"
           ],
           "reason": "The nonzero coefficient and lower exponential error give the all-level logarithmic rate with the retained physical normalization."
+        },
+        {
+          "path": [
+            "elementary_rate_transfer",
+            "tree_directed_volume"
+          ],
+          "reason": "A bound for the entire remainder, the nonzero central contribution and the original scalar normalization are combined to obtain the rate of the invariant."
+        },
+        {
+          "path": [
+            "finite_invariant_normalization",
+            "analytic_directed_conditional_estimates"
+          ],
+          "reason": "Fixes the physical scalar ledger, cut and framing retained when the normalized subtree constants are restored."
+        },
+        {
+          "path": [
+            "finite_local_fourier",
+            "analytic_directed_conditional_estimates"
+          ],
+          "reason": "Provides the original fixed-power trace and all repeated-node normal channels and parity coefficients used inside the recursion."
         }
       ]
     },
@@ -6842,33 +6888,6 @@
             "recursive_spectral_norms"
           ],
           "reason": "Provides the physical signed crossing values and first normals; the conditioning argument retains both."
-        }
-      ]
-    },
-    {
-      "from": "filling-bounds",
-      "to": "directed-tree-asymptotics",
-      "witnesses": [
-        {
-          "path": [
-            "elementary_rate_transfer",
-            "tree_directed_volume"
-          ],
-          "reason": "A bound for the entire remainder, the nonzero central contribution and the original scalar normalization are combined to obtain the rate of the invariant."
-        },
-        {
-          "path": [
-            "finite_invariant_normalization",
-            "analytic_directed_conditional_estimates"
-          ],
-          "reason": "Fixes the physical scalar ledger, cut and framing retained when the normalized subtree constants are restored."
-        },
-        {
-          "path": [
-            "finite_local_fourier",
-            "analytic_directed_conditional_estimates"
-          ],
-          "reason": "Provides the original fixed-power trace and all repeated-node normal channels and parity coefficients used inside the recursion."
         }
       ]
     },
@@ -7459,7 +7478,7 @@
     },
     {
       "from": "meridian-tangles",
-      "to": "circle-tree-asymptotics",
+      "to": "circle-tree-volume",
       "witnesses": [
         {
           "path": [
@@ -7474,13 +7493,7 @@
             "analytic_circle_edge_kernel"
           ],
           "reason": "Fixes the original finite edge sum, paired insertion and canonical polynomial degree."
-        }
-      ]
-    },
-    {
-      "from": "meridian-tangles",
-      "to": "directed-tree-asymptotics",
-      "witnesses": [
+        },
         {
           "path": [
             "tree_exact_edge_kernel",
@@ -7621,6 +7634,19 @@
             "recursive_angle_geometry"
           ],
           "reason": "Newton Proposition 5.3 gives the unique strict stationary point and analytic profiles; Lemma 6.1 supplies the cusp window. Corollary 5.4 is used only for the separate pure positive-source limit."
+        }
+      ]
+    },
+    {
+      "from": "newton-calculus",
+      "to": "conway-reductions",
+      "witnesses": [
+        {
+          "path": [
+            "recursive_strict_normal_form",
+            "recursive_ordered_tangle_normalization"
+          ],
+          "reason": "The interval/type theorem identifies the literal product and closing tests required by the strict companion; the rotations, collar isotopies and termination are proved here."
         }
       ]
     },
@@ -7798,6 +7824,40 @@
             "recursive_quarter_leaf_expansion"
           ],
           "reason": "Fixes the actual finite source, its two recurrence channels and the exact source anchor."
+        }
+      ]
+    },
+    {
+      "from": "newton-calculus",
+      "to": "strict-conway-geometry",
+      "witnesses": [
+        {
+          "path": [
+            "recursive_stationary_port_identities",
+            "recursive_strict_angle_geometry"
+          ],
+          "reason": "Supplies the stationary type and remaining-input identities used in convex assembly."
+        },
+        {
+          "path": [
+            "recursive_strict_normal_form",
+            "recursive_strict_angle_geometry"
+          ],
+          "reason": "Fixes the literal strict tree and its support/terminal types."
+        },
+        {
+          "path": [
+            "recursive_strict_optimizer",
+            "recursive_strict_angle_geometry"
+          ],
+          "reason": "Provides the actual strict stationary point and its positive action."
+        },
+        {
+          "path": [
+            "recursive_strict_optimizer",
+            "recursive_strict_marked_metric"
+          ],
+          "reason": "Its nondegenerate stationary-wire Hessian gives the local classical stationary branch."
         }
       ]
     },
@@ -8013,53 +8073,6 @@
             "geometric_longitude_strict_trees"
           ],
           "reason": "Supplies the actual original positive long-filled anchor with the declared knot/parity conditions."
-        }
-      ]
-    },
-    {
-      "from": "newton-calculus",
-      "to": "conway-reductions",
-      "witnesses": [
-        {
-          "path": [
-            "recursive_strict_normal_form",
-            "recursive_ordered_tangle_normalization"
-          ],
-          "reason": "The interval/type theorem identifies the literal product and closing tests required by the strict companion; the rotations, collar isotopies and termination are proved here."
-        }
-      ]
-    },
-    {
-      "from": "newton-calculus",
-      "to": "strict-conway-geometry",
-      "witnesses": [
-        {
-          "path": [
-            "recursive_stationary_port_identities",
-            "recursive_strict_angle_geometry"
-          ],
-          "reason": "Supplies the stationary type and remaining-input identities used in convex assembly."
-        },
-        {
-          "path": [
-            "recursive_strict_normal_form",
-            "recursive_strict_angle_geometry"
-          ],
-          "reason": "Fixes the literal strict tree and its support/terminal types."
-        },
-        {
-          "path": [
-            "recursive_strict_optimizer",
-            "recursive_strict_angle_geometry"
-          ],
-          "reason": "Provides the actual strict stationary point and its positive action."
-        },
-        {
-          "path": [
-            "recursive_strict_optimizer",
-            "recursive_strict_marked_metric"
-          ],
-          "reason": "Its nondegenerate stationary-wire Hessian gives the local classical stationary branch."
         }
       ]
     }

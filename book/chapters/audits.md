@@ -579,13 +579,41 @@ exponential remainder at \(h_N=\pi i/N\). Thus the exact scalar gauge,
 finite expansion assembly and meridian-factor estimate are proved parts
 of the argument.
 
-The application still supplies the original recurrence, its exact source
-normalization, eventual nonvanishing, and the all-orders expansions of
-the original coefficients and actual shifted source ratios. The theorem
-does not construct an annihilator or establish nonzero classical
-specialization. The [meridian-expansion paper](../../docs/papers/meridian-expansions.pdf)
-gives the remaining application argument, the normalization in \(q-1\),
-and the separate passage to the selected holomorphic and geometric germ.
+The [Laurent expansion](../../formal-real/LaurentExpansion.lean) now
+supplies the original coefficient estimates as well. Write a coefficient
+as the finite sum
+\[
+ a(q,M)=\sum_{k,m\in\mathbb Z}c_{km}q^kM^m.
+\]
+At $q=e^h$, $M=e^{sh}$, its summand is
+$c_{km}\exp((k+ms)h)$. The complex exponential remainder proves every
+Taylor order, and the finite sum agrees with the constructed bivariate
+formal coefficient. Negative exponents and mixed Taylor terms are
+retained. The recurrence theorem therefore needs the actual source-ratio
+expansion, not an additional Taylor assumption on these coefficients.
+
+The [operator normalization](../../formal-real/OperatorNormalization.lean)
+addresses a different issue: direct specialization can erase a nonzero
+operator. For its finite coefficient record $P$, it constructs
+\[
+ P=(q-1)^\nu Q,\qquad Q(1,M,L)\ne0,
+\]
+where $\nu$ is the maximal common multiplicity. The proof uses actual
+monic polynomial division. It shows that the original and normalized
+recurrences are equivalent wherever $q\ne1$, including the physical
+roots. Under $q=e^h$, the identity $e^h-1=hU(h)$ with $U(0)=1$ proves
+that the first nonzero $h$ coefficient is precisely $Q(1,M,L)$.
+The retained meridian factor and the substitution $L\mapsto-L$ preserve
+nonzero polynomials before evaluating $M=1$.
+
+The application still supplies an actual operator, its exact source
+normalization, source nonvanishing and source-ratio asymptotics. The
+[coefficient adapter](../../formal-real/OperatorCoefficientAdapter.lean)
+now connects the polynomial and finite Laurent representations exactly.
+Its explicit shift-degree bound reconstructs the entire classical symbol.
+The actual rational denominator chart remains an application input. The passage from formal identities to the
+selected holomorphic and geometric germ remains a written argument in
+the [meridian-expansion paper](../../docs/papers/meridian-expansions.pdf).
 
 A different [uniform-profile theorem](../../formal-real/UniformProfile.lean)
 addresses the compact-parameter conclusions of the circle-tree papers.
@@ -601,8 +629,22 @@ bounds give
 for a constant \(B\) independent of \(s\) and \(N\). Thus the base
 rate transfers uniformly. The module derives the factor bounds from
 continuous nonvanishing compact limits and retains the actual moving
-\(A_N,H_N\). The source estimates and sine-factor limit remain written
-inputs. Compiled examples show why pointwise convergence, even on
+\(A_N,H_N\). The [explicit-factor proof](../../formal-real/SineFactor.lean)
+now supplies both limits used in the circle-tree application. It defines
+$\operatorname{sinc}(z)=\sin(z)/z$ for $z\ne0$ and
+$\operatorname{sinc}(0)=1$, then proves
+\[
+ H_N(s)=\frac{\operatorname{sinc}(\pi s)}
+                {\operatorname{sinc}(\pi s/N)}
+ \longrightarrow\operatorname{sinc}(\pi s)
+\]
+uniformly on every complex compact set. Its limiting zeros are exactly
+the nonzero integers, so the disks $|s|\le R<1$ have one positive lower
+bound for all large levels. The actual fixed diagram factor
+$A_N(s)=\exp(cs^2/N)$ converges uniformly to one on those compacts.
+This argument does not assign it unit modulus for complex $s$.
+The source estimates, base rate and geometric calibration remain inputs.
+Compiled examples show why pointwise convergence, even on
 \([0,1]\), cannot replace a uniform estimate.
 
 The [paper-by-paper coverage record](../../repro/PAPER_FORMAL_COVERAGE.md)

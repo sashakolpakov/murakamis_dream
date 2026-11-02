@@ -1,0 +1,42 @@
+\section{Finite reproduction and the scope of the estimates}\label{dt:reproduction}
+
+The exact finite identities and numerical budgets have a combined
+reproduction command. From the repository root, run
+\begin{verbatim}
+python3 -I papers/circle-tree-volume/check.py \
+    --output /tmp/circle-tree-volume-check
+\end{verbatim}
+The runner delegates to the two retained suites, in
+\path{papers/circle-tree-asymptotics/check.py} and
+\path{papers/directed-tree-asymptotics/check.py}. It records both
+results together with the sources of this paper; the implementations
+of the checks are not copied into a third suite.
+The first script checks four symbolic edge identities, finite complex
+products, and the summed-condition budgets. Its rational enclosures
+use convergent series for \(\pi\), \(\sinh\) and \(\cosh\), and its
+negative controls reject altered budgets. The second checks the
+directed rational inequalities, endpoint pairings, and finite
+recursions against full root-grid evaluations with first normals.
+The recursion comparisons use formal independent vertex parameters;
+they test the finite algebra and do not establish the existence of
+additional knot diagrams. Its negative controls include an incorrect
+outgoing condition at the final root and an odd stack of added leaves.
+Both records retain the hashes of the sources they check.
+
+These finite calculations do not prove the uniform complex estimates,
+the Fourier-tail bounds, or the geometric identification. The analytic
+arguments are written in Sections~\ref{cta:edge}--\ref{dt:sec-7};
+the geometric input and its quantitative hypotheses are stated where
+each theorem uses them. Background for the residue and Gaussian
+calculations can be found in \cite[Sections~2.4(iii)--(iv)]{DLMF}.
+The contours, endpoint terms and strict losses needed for the finite
+invariant are specified in the proofs above.
+
+The results concern fixed literal ordered circle trees. In particular,
+they require the endpoint condition of Section~\ref{cta:intro}, and do
+not apply solely from the abstract graph. The degree-and-twist
+conditions do not address a tree that grows with \(N\). Neither proof
+extends a short-twist subtree to an arbitrary multi-boundary tangle:
+that would require additional conditional estimates for its boundary
+variables. These are separate questions from the two volume theorems
+proved here.

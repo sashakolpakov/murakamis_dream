@@ -21,6 +21,10 @@ import AsymptoticIdentity
 import FormalGauge
 import FormalCharacteristic
 import UniformProfile
+import LaurentExpansion
+import OperatorNormalization
+import SineFactor
+import OperatorCoefficientAdapter
 
 #print axioms VolumeLogic.RealModel.complexMagnitude
 #print axioms VolumeLogic.RealModel.constant_div_nat_rate
@@ -497,3 +501,108 @@ import UniformProfile
 #print axioms VolumeLogic.RecurrenceExpansion.sineMeridian_linear_expansion
 #print axioms VolumeLogic.RecurrenceExpansion.sineMeridian_expansion
 #print axioms VolumeLogic.RecurrenceExpansion.characteristic_at_roots
+
+#print axioms VolumeLogic.LaurentExpansion.Coefficient
+#print axioms VolumeLogic.LaurentExpansion.evaluate
+#print axioms VolumeLogic.LaurentExpansion.monomialArgument
+#print axioms VolumeLogic.LaurentExpansion.formalCoefficient
+#print axioms VolumeLogic.LaurentExpansion.monomialArgument_origin
+#print axioms VolumeLogic.LaurentExpansion.microscopic_constant
+#print axioms VolumeLogic.LaurentExpansion.microscopic_monomialArgument
+#print axioms VolumeLogic.LaurentExpansion.microscopic_formalCoefficient
+#print axioms VolumeLogic.LaurentExpansion.evaluate_exp
+#print axioms VolumeLogic.LaurentExpansion.classicalCoefficient
+#print axioms VolumeLogic.LaurentExpansion.project_monomialArgument
+#print axioms VolumeLogic.LaurentExpansion.project_formalCoefficient
+#print axioms VolumeLogic.LaurentExpansion.evaluate_single
+#print axioms VolumeLogic.LaurentExpansion.microscopic_single
+#print axioms VolumeLogic.LaurentExpansion.classicalCoefficient_add
+#print axioms VolumeLogic.LaurentExpansion.classicalCoefficient_single
+#print axioms VolumeLogic.LaurentExpansion.coefficient_expansion
+#print axioms VolumeLogic.LaurentExpansion.coefficient_expansion_at_roots
+#print axioms VolumeLogic.LaurentExpansion.characteristic_of_laurent_recurrence
+
+#print axioms VolumeLogic.OperatorNormalization.exists_nonzero_cleared_family
+#print axioms VolumeLogic.OperatorNormalization.commonOrder
+#print axioms VolumeLogic.OperatorNormalization.normalize
+#print axioms VolumeLogic.OperatorNormalization.classicalSymbol
+#print axioms VolumeLogic.OperatorNormalization.factorization
+#print axioms VolumeLogic.OperatorNormalization.classicalSymbol_ne_zero
+#print axioms VolumeLogic.OperatorNormalization.maximal_common_order
+#print axioms VolumeLogic.OperatorNormalization.common_order_iff
+#print axioms VolumeLogic.OperatorNormalization.normalized_common_order_zero
+#print axioms VolumeLogic.OperatorNormalization.actualCoefficient
+#print axioms VolumeLogic.OperatorNormalization.coefficient_factorization
+#print axioms VolumeLogic.OperatorNormalization.recurrence_factorization
+#print axioms VolumeLogic.OperatorNormalization.recurrence_iff
+#print axioms VolumeLogic.OperatorNormalization.sign_substitution_ne_zero
+#print axioms VolumeLogic.OperatorNormalization.gauged_symbol_ne_zero
+#print axioms VolumeLogic.OperatorNormalization.meridian
+#print axioms VolumeLogic.OperatorNormalization.meridian_ne_zero
+#print axioms VolumeLogic.OperatorNormalization.laurent_gauged_symbol_ne_zero
+#print axioms VolumeLogic.OperatorNormalization.levelRoot_ne_one
+#print axioms VolumeLogic.OperatorNormalization.recurrence_at_root_iff
+#print axioms VolumeLogic.OperatorNormalization.qTaylor
+#print axioms VolumeLogic.OperatorNormalization.qTaylor_constant
+#print axioms VolumeLogic.OperatorNormalization.exponentialUnit
+#print axioms VolumeLogic.OperatorNormalization.exponentialUnit_constant
+#print axioms VolumeLogic.OperatorNormalization.exp_sub_one_factorization
+#print axioms VolumeLogic.OperatorNormalization.exponentialUnit_isUnit
+#print axioms VolumeLogic.OperatorNormalization.qTaylor_factorization
+#print axioms VolumeLogic.OperatorNormalization.qTaylor_leading_coefficient
+#print axioms VolumeLogic.OperatorNormalization.qTaylor_lower_coefficients
+#print axioms VolumeLogic.OperatorNormalization.qTaylor_order
+
+#print axioms VolumeLogic.SineFactor.sinc
+#print axioms VolumeLogic.SineFactor.sinc_zero
+#print axioms VolumeLogic.SineFactor.sinc_of_ne_zero
+#print axioms VolumeLogic.SineFactor.sinc_eq_dslope
+#print axioms VolumeLogic.SineFactor.continuous_sinc
+#print axioms VolumeLogic.SineFactor.limitingFactor
+#print axioms VolumeLogic.SineFactor.factor
+#print axioms VolumeLogic.SineFactor.factor_zero
+#print axioms VolumeLogic.SineFactor.continuous_limitingFactor
+#print axioms VolumeLogic.SineFactor.factor_eq_literal
+#print axioms VolumeLogic.SineFactor.continuousAt_factor_zero
+#print axioms VolumeLogic.SineFactor.literal_tendsto_zero
+#print axioms VolumeLogic.SineFactor.uniform_scaled_continuous
+#print axioms VolumeLogic.SineFactor.denominator_tendsto
+#print axioms VolumeLogic.SineFactor.denominator_bounds
+#print axioms VolumeLogic.SineFactor.factor_tendsto
+#print axioms VolumeLogic.SineFactor.limiting_zero_iff
+#print axioms VolumeLogic.SineFactor.limiting_ne_zero_of_avoids
+#print axioms VolumeLogic.SineFactor.limiting_ne_zero_of_norm_lt_one
+#print axioms VolumeLogic.SineFactor.compact_factor_bounds
+#print axioms VolumeLogic.SineFactor.disk_factor_bounds
+#print axioms VolumeLogic.SineFactor.compact_sine_volume_transfer
+#print axioms VolumeLogic.SineFactor.quadraticPhase
+#print axioms VolumeLogic.SineFactor.quadraticPhase_eq_diagram_scalar
+#print axioms VolumeLogic.SineFactor.quadraticPhase_ne_zero
+#print axioms VolumeLogic.SineFactor.quadraticPhase_tendsto
+#print axioms VolumeLogic.SineFactor.compact_quadratic_sine_volume_transfer
+
+#print axioms VolumeLogic.OperatorCoefficientAdapter.encode
+#print axioms VolumeLogic.OperatorCoefficientAdapter.encode_coefficient
+#print axioms VolumeLogic.OperatorCoefficientAdapter.encode_injective
+#print axioms VolumeLogic.OperatorCoefficientAdapter.encode_zero
+#print axioms VolumeLogic.OperatorCoefficientAdapter.encode_sum
+#print axioms VolumeLogic.OperatorCoefficientAdapter.meridian_evaluation_sum
+#print axioms VolumeLogic.OperatorCoefficientAdapter.evaluate_encode
+#print axioms VolumeLogic.OperatorCoefficientAdapter.shiftPolynomial
+#print axioms VolumeLogic.OperatorCoefficientAdapter.operatorFamily
+#print axioms VolumeLogic.OperatorCoefficientAdapter.actualCoefficient_eq_shiftPolynomial
+#print axioms VolumeLogic.OperatorCoefficientAdapter.actualCoefficient_eq_evaluate
+#print axioms VolumeLogic.OperatorCoefficientAdapter.meridianSeries
+#print axioms VolumeLogic.OperatorCoefficientAdapter.classicalCoefficient_encode
+#print axioms VolumeLogic.OperatorCoefficientAdapter.classical_record_coefficient
+#print axioms VolumeLogic.OperatorCoefficientAdapter.classical_record_map
+#print axioms VolumeLogic.OperatorCoefficientAdapter.classicalCoefficient_normalized
+#print axioms VolumeLogic.OperatorCoefficientAdapter.formalSymbol
+#print axioms VolumeLogic.OperatorCoefficientAdapter.formalSymbol_as_range
+#print axioms VolumeLogic.OperatorCoefficientAdapter.normalized_symbol_degree_bound
+#print axioms VolumeLogic.OperatorCoefficientAdapter.normalized_formalSymbol
+#print axioms VolumeLogic.OperatorCoefficientAdapter.omitted_shift_coefficients_zero
+#print axioms VolumeLogic.OperatorCoefficientAdapter.levelRoot_eq_exp_scale
+#print axioms VolumeLogic.OperatorCoefficientAdapter.meridianUnit
+#print axioms VolumeLogic.OperatorCoefficientAdapter.meridianValue_eq_unit
+#print axioms VolumeLogic.OperatorCoefficientAdapter.normalized_characteristic_of_record

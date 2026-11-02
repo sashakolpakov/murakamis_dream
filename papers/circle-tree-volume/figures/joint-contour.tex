@@ -1,0 +1,17 @@
+\begin{tikzpicture}[x=1cm,y=1cm,>=Latex,
+ every node/.style={font=\small}]
+ \draw[->,gray!65] (-4,0)--(4,0) node[right] {$\Re\tau_v$};
+ \draw[->,gray!65] (0,-2.3)--(0,.65) node[above] {$\Im\tau_v$};
+ \draw[very thick,blue!65!black,->] (-3,0)--(3,0);
+ \draw[very thick,orange!80!black,->] (-3,-1.6)--(3,-1.6);
+ \draw[dashed,thick] (-3,0)--(-3,-1.6);
+ \draw[dashed,thick] (3,-1.6)--(3,0);
+ \node[above] at(-3,0){$-\rho$};
+ \node[above] at(3,0){$\rho$};
+ \node[above left] at(0,0){$0$};
+ \fill (1.0,-1.6) circle(2pt);
+ \node[below right] at(1,-1.6){$\tau_{\boldsymbol\ell,v}$};
+ \node[left] at(-3.1,-.8){connector};
+ \node[right] at(3.1,-.8){connector};
+ \node[below left] at(0,-1.6){$-v_v$};
+\end{tikzpicture}

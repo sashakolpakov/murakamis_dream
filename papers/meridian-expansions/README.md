@@ -9,8 +9,7 @@ Theorem 1.2 starts with a specified fixed finite recurrence annihilating the **w
 The main imports are precise and one-way:
 
 - *Moving-meridian source estimates for strict Conway tangles*, Theorems 1.1–1.2: whole-source reduction, primitive local packet, real-angular bounds, all charges and nonzero joint first contribution.
-- *Degree and twist estimates for circle-tree invariants*, Theorems 1.1–1.2 and Sections 2–6: the summed source and its exact full kernel/contours.
-- *Local degree and twist bounds for circle-tree volume limits*, Theorem 1.1, Corollary 1.2, equations (2.3), (2.8), (2.9), Sections 3–8: the actual conditional messages, positive error margins, regeneration and restored original endpoint. Its criterion is recalled in full in Section 4 of this paper.
+- *Volume asymptotics for trees of crossing circles*, Theorems 1.1–1.2 and Sections 2–6: the summed source, full Newton kernel and joint Fourier contours. Its Theorem 1.3, Corollary 1.4, equations (7.3), (7.8), (7.9), and Sections 7.1–7.6 supply the directed conditional recursion, error margins, regenerated bounds and restored original endpoint. The directed criterion is recalled in full in Section 4 of this paper.
 - *Finite spectral evaluation and uniform filling bounds*, equation (10.11): the full modified-dimension convention, including its $N$-only phase.
 - *Exact Newton calculus for tangles with a moving meridian*, Proposition 6.1, Theorem 7.1 and Proposition 8.1: full spectral normals, actual contraction and scalar ledger.
 - *Spectral estimates for Conway tangle sources*, Lemma 2.1: finite complete Hermite conditioning.

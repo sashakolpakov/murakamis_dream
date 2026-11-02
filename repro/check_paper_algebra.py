@@ -37,19 +37,20 @@ CHECKS = {
     "conway-source-bounds": "papers/conway-source-bounds/check.py",
     "conway-fillings": "papers/conway-fillings/check.py",
     "conway-asymptotics": "papers/conway-asymptotics/check.py",
-    "circle-tree-asymptotics": "papers/circle-tree-asymptotics/check.py",
+    "circle-tree-volume": "papers/circle-tree-volume/check.py",
     "quarter-index-asymptotics": "papers/quarter-index-asymptotics/check.py",
-    "directed-tree-asymptotics": "papers/directed-tree-asymptotics/check.py",
     "moving-meridian-sources": "papers/moving-meridian-sources/check.py",
     "meridian-expansions": "papers/meridian-expansions/check.py",
 }
 DIRECTORY_CHECKS = {"planar-certificates", "triangular-insertion", "terminal-decorations",
                     "meridian-tangles", "conway-source-bounds", "conway-asymptotics",
                     "quarter-index-asymptotics", "newton-calculus", "conway-reductions",
-                    "moving-meridian-sources", "meridian-expansions"}
+                    "moving-meridian-sources", "meridian-expansions", "circle-tree-volume"}
 CERTIFICATE_INPUTS = (
     "papers/newton-tangles/check.py",
     "papers/strict-newton-profiles/check.py",
+    "papers/circle-tree-asymptotics/check.py",
+    "papers/directed-tree-asymptotics/check.py",
     "papers/conway-source-bounds/check_fourier.py",
     "repro/check_protected_sums.py",
     "experiments/audit_actual_sector_cover.py",

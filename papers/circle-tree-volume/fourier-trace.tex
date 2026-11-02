@@ -1,0 +1,67 @@
+\section{The exact Fourier trace and its endpoint currents}\label{ct:trace-section}
+The identities in this section hold for every fixed finite tree and every signed crossing power. Neither of the two degree-and-twist conditions is used.
+
+For an even trigonometric polynomial
+\(f(t)=f^\sharp(-2\cos t)\), define the exact trace
+\(\mathcal D_{n,\sigma,N}[f]=\phi_\sigma(R_\sigma^n f^\sharp)\).
+There is no restriction on the degree of \(f^\sharp\).
+The actual crossing formula of
+\cite[Proposition~6.1 and equation~(6.4)]{Meridian} gives
+\begin{equation}\label{cta:trace}
+ \mathcal D_{n,\sigma,N}[f]
+ =\frac{\eta N C_{N,n}(\sigma)}{\sin(2\pi\sigma)}
+   \sum_{j=0}^{N-1}
+     \sin\tau_j\, f(\tau_j)e^{\ii nN\tau_j^2/(4\pi)},
+ \quad
+ \begin{cases}
+ \tau_j=\dfrac{2\pi}{N}(d/2+\sigma-j),\\
+ C_{N,n}(\sigma)=q_N^{n(d^2/4-\sigma^2/2)} .
+ \end{cases}
+\end{equation}
+It is initially written off the colliding grids. Its holomorphic
+limit is the full trace, including first normals and the odd
+simple-node value; it is not a distinct-node approximation.
+
+Fix \(R<R'<1\), with \(R'\ne1/2\), and first put the formal
+parameters \(\sigma_v\) on \(|\sigma_v|=R'\).
+Their denominators are then bounded away from zero.
+The grid kernel
+\[
+ \mathcal K_\sigma(t)=
+ \frac{\ii N e^{\ii Nt}}{e^{\ii Nt}-\eta e^{2\pi\ii\sigma}}
+\]
+has residue one at each grid point. Integrate it around the
+rectangle with sides \(\pm\pi\pm\ii y+2\pi\sigma/N\).
+It encloses exactly the \(N\) points in \eqref{cta:trace}.
+On its vertical sides,
+\[
+ \mathcal K_\sigma(\pm\pi+\ii v+2\pi\sigma/N)
+           =\frac{\ii N e^{-Nv}}{1+e^{-Nv}}.
+\]
+Thus no argument-dependent pole separation is assumed.
+The upper and lower horizontal expansions are respectively
+\[
+ -\ii N\sum_{\ell\ge1}
+     \eta^\ell e^{-2\pi\ii\ell\sigma}e^{\ii\ell Nt},
+ \qquad
+ \ii N\left(1+\sum_{\ell\ge1}
+     \eta^\ell e^{2\pi\ii\ell\sigma}e^{-\ii\ell Nt}\right).
+\]
+Each term has an entire integrand, so its translated path can
+be moved to the fixed horizontal segment, retaining the short
+endpoint connectors. This is not a deformation of a meromorphic
+kernel through its moving poles.
+
+The function \(\sin t\,f(t)e^{\ii nNt^2/(4\pi)}\) is odd.
+Reflect the upper side by \(t\mapsto-t\), with its actual
+boundary orientation. Combining the two coefficients leaves
+\begin{equation}\label{dt:eq-39}
+ c_{\ell,N}(\sigma)=
+   \eta^{\ell-1}U_{\ell-1}(\cos2\pi\sigma),\qquad c_{1,N}=1.
+\end{equation}
+The zero-mode integral on the real segment is zero, but moving
+it there leaves its endpoint currents. The resulting
+nonzero-charge prefactor is \(-N^2C_{N,n}/(\pi\ii)\).
+In particular the reflected charges have already been paired;
+there will be no later unexamined sum of equal-action signs.
+

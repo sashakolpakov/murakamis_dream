@@ -462,7 +462,7 @@ constant fixed at the complete augmented link. The finite-sum proof
 then supplies the nonzero contribution and bounds every competing
 region. Neither of these two arguments is left as a hypothesis.
 
-The [degree-and-twist paper](../../docs/papers/circle-tree-asymptotics.pdf)
+The [circle-tree volume paper](../../docs/papers/circle-tree-volume.pdf)
 gives the analytic proof of this summed criterion. It begins with the full
 finite Newton contraction, including derivatives at repeated spectral roots.
 Indices outside a fixed interval are bounded before any contour is moved.
