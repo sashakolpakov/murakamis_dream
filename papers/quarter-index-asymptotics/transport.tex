@@ -1,0 +1,114 @@
+\section{Exponential diagonalization on a fixed analytic domain}\label{qi:diagonalization}
+
+We need a matrix estimate before choosing the length over which it will be used. A domain of fixed complex width gives an exponential remainder; a shorter real interval will subsequently keep its relative-action amplification below that exponent. All norms in this section are fixed finite-dimensional matrix norms, enlarged by harmless dimension constants when taking diagonal and off-diagonal parts.
+
+\begin{lemma}[Backward analytic diagonalization]\label{qi:diagonal}
+Let $J$ be a compact real interval and $\mathcal U_{2R}$ its complex stadium of radius $2R$. Let $T_N(x,t)$ and $T_0(x,t)$ be holomorphic on this stadium and a fixed parameter polydisk, with
+\[
+ \|T_0\|\le M_0,\qquad \|T_N-T_0\|\le C_0/N.
+\]
+Suppose a specified holomorphic eigenframe $V_0$ satisfies
+\[
+ V_0^{-1}T_0V_0=\diag(\lambda_1,\ldots,\lambda_m),\qquad
+ \|V_0\|+\|V_0^{-1}\|\le K,
+\]
+and, uniformly there, $|\lambda_i|\ge m_0>0$ and
+$|\lambda_i-\lambda_j|\ge\delta_0>0$ for $i\ne j$.
+Then on a smaller fixed stadium there are holomorphic $V_N,D_N,R_N$, with $D_N$ diagonal, such that exactly
+\begin{equation}\label{qi:diagonal-identity}
+ V_N(x,t)^{-1}T_N(x,t)V_N(x+1/N,t)=D_N(x,t)+R_N(x,t),
+\end{equation}
+and
+\begin{align}
+ \|V_N-V_0\|+\|V_N^{-1}-V_0^{-1}\|&=O(N^{-1}),\notag\\
+ D_N&=\diag(\lambda_1,\ldots,\lambda_m)+O(N^{-1}),&
+ \|R_N\|&\le C e^{-\sigma N}\label{qi:diagonal-bounds}
+\end{align}
+for a fixed $\sigma>0$. Both the domains and all constants depend only on the displayed analytic bounds. They are chosen before any shorter real propagation interval.
+\end{lemma}
+
+\begin{proof}
+Put $e=1/N$. The first change of basis gives
+$B_N=V_0(x)^{-1}T_N(x)V_0(x+e)=D_0+O(e)$ by Cauchy's estimate.
+Set $D=\diag B_N$ and $R=B_N-D$.
+Initially the diagonal gap is at least $3\delta_0/4$ and
+$\eta=\|R\|=O(e)$. Suppress the parameter, since all estimates are uniform on its fixed disk.
+
+Maintain $\|D\|\le M$ and a gap $g=\delta_0/2$, taking $M$ larger than twice the initial bound. Solve the algebraic commutator equation
+\[
+ [D,X]=-R,\qquad X_{ii}=0,\qquad
+ X_{ij}=-\frac{R_{ij}}{D_{ii}-D_{jj}}.
+\]
+Then $\|X\|\le A\eta$ for a fixed $A$, for example $m/g$ after fixing a compatible norm. Narrow the current domain by $\Delta\ge2e$, and write $X^+(x)=X(x+e)$. Cauchy's estimate gives
+$\|X^+-X\|\le2A\eta e/\Delta$. The backward-shift conjugation is exactly
+\begin{equation}\label{qi:one-step}
+ (I+X)^{-1}(D+R)(I+X^+)=D+F,\qquad
+ F=(I+X)^{-1}\{D(X^+-X)+RX^+\}.
+\end{equation}
+No approximate cancellation is hidden in this formula. If $A\eta\le1/2$, its off-diagonal part obeys
+\begin{equation}\label{qi:eta-step}
+ \eta_{\rm new}\le
+       (8MAe/\Delta+4A\eta)\eta
+\end{equation}
+after increasing fixed dimension constants. Its diagonal part is
+$O(\eta^2)$, with a uniform constant when $e/\Delta$ is bounded:
+$D(X^+-X)$ is off-diagonal, so its contribution to $\diag F$ requires the additional factor $(I+X)^{-1}-I=O(\eta)$.
+The term $RX^+$ is already quadratic. This diagonal estimate prevents accumulation of an order-one drift.
+
+Choose a fixed sufficiently small
+\[
+ c_*\le\min\{R/8,\ R/(128MA)\},\qquad
+ p_N=\lfloor c_*N\rfloor,\qquad \Delta=R/(2p_N).
+\]
+For large $N$, $\Delta\ge4e$ and $\eta_0\le1/(32A)$.
+Equation \eqref{qi:eta-step} then decreases $\eta$ by at least a factor $1/2$ at every step. The accumulated diagonal change is
+$O(\sum\eta_j^2)=O(e^2)$, so the stated gap and bound persist.
+The total domain loss is $R/2$. The basis correction is the product of $I+X_j$ at the same variable; since
+$\sum\|X_j\|=O(e)$, this product and its inverse are $I+O(e)$.
+The remaining off-diagonal part is $O(e2^{-p_N})$, so one may take
+$\sigma=c_*\log2/2$. This proves \eqref{qi:diagonal-identity}--\eqref{qi:diagonal-bounds}, including holomorphic dependence on the parameters.
+\end{proof}
+
+Apply the lemma to the actual companion matrix
+\[
+ T_N(x,t)=
+ \begin{pmatrix}p(x,t,1/N)&q_c(x,t,1/N)\\1&0\end{pmatrix},
+ \qquad
+ V_0(x,t)=
+ \begin{pmatrix}\mu_s(x,t)&\mu_f(x,t)\\1&1\end{pmatrix}.
+\]
+All its hypotheses hold on a fixed small joint neighborhood of $(1/4,0)$.
+The denominator of \eqref{qi:recurrence} is nonzero there, and the two roots are separated and nonzero. Thus the actual coefficient functions, not an unrelated model matrix, supply the analytic bounds. Write
+\[
+ D_N=\diag(d_s,d_f).
+\]
+Both entries and the first component of the selected column of $V_N$ are nonzero for large $N$. The entire construction is even in $t$, because the original rational coefficients, the labeled roots and each commutator correction are even.
+
+\subsection{The interaction identity and the needed action width}
+
+For any physical anchor $b_N$ and target $r\le b_N$ in this domain, set
+\[
+ G_i(r)=\prod_{j=r}^{b_N-1}d_i(j/N,t),\qquad
+ G_i(b_N)=1,\qquad G_r=\diag(G_s(r),G_f(r)).
+\]
+If $X_r=T_N(r/N,t)X_{r+1}$ and $Y_r=V_N(r/N,t)^{-1}X_r$, then
+\begin{equation}\label{qi:interaction}
+ G_r^{-1}Y_r=(I+E_r)G_{r+1}^{-1}Y_{r+1},\qquad
+ E_r=G_r^{-1}R_N(r/N,t)G_{r+1}.
+\end{equation}
+This identity is valid for both components of every initial vector.
+
+Suppose every partial relative product on the propagation interval satisfies
+\begin{equation}\label{qi:width}
+ \left|\log|G_f(j)/G_s(j)|\right|\le WN+C,\qquad W<\sigma.
+\end{equation}
+The ratios between $G_r$ and $G_{r+1}$ contribute only bounded factors, since $d_s,d_f$ are bounded away from zero. Consequently
+$\|E_r\|\le C e^{-(\sigma-W)N}$.
+Over $O(N)$ steps the ordered product obeys
+\begin{equation}\label{qi:interaction-product}
+ \prod_{j=r}^{b_N-1}(I+E_j)
+   =I+O\!\left(N e^{-(\sigma-W)N}\right).
+\end{equation}
+Indeed its distance from the identity is at most
+$\prod(1+\|E_j\|)-1$.
+The width in \eqref{qi:width} concerns all intermediate positions, not just the final relative action. This is the control that an isolated eigenvalue gap does not supply.

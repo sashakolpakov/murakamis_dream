@@ -5,6 +5,7 @@ import TransportCoercivity
 import GroundedConvexity
 import GroundedLaplacian
 import TriangleLoads
+import TrianglePotential
 
 #print axioms VolumeLogic.RealModel.complexMagnitude
 #print axioms VolumeLogic.RealModel.constant_div_nat_rate
@@ -162,3 +163,53 @@ import TriangleLoads
 #print axioms VolumeLogic.TriangleLoads.load_zero_corner
 #print axioms VolumeLogic.TriangleLoads.singletonLoad
 #print axioms VolumeLogic.TriangleLoads.singletonLoad_hasDerivAt
+
+#print axioms VolumeLogic.TrianglePotential.lobachevsky
+#print axioms VolumeLogic.TrianglePotential.entropy
+#print axioms VolumeLogic.TrianglePotential.entropySlope
+#print axioms VolumeLogic.TrianglePotential.lobachevsky_eq_log_sin
+#print axioms VolumeLogic.TrianglePotential.lobachevsky_continuous
+#print axioms VolumeLogic.TrianglePotential.lobachevsky_hasDerivAt
+#print axioms VolumeLogic.TrianglePotential.lobachevsky_zero
+#print axioms VolumeLogic.TrianglePotential.lobachevsky_half_pi
+#print axioms VolumeLogic.TrianglePotential.entropy_continuous
+#print axioms VolumeLogic.TrianglePotential.entropy_zero
+#print axioms VolumeLogic.TrianglePotential.entropy_half
+#print axioms VolumeLogic.TrianglePotential.entropy_hasDerivAt
+#print axioms VolumeLogic.TrianglePotential.entropySlope_hasDerivAt
+#print axioms VolumeLogic.TrianglePotential.entropy_concave
+#print axioms VolumeLogic.TrianglePotential.entropy_tangent
+#print axioms VolumeLogic.TrianglePotential.arctan_sum
+#print axioms VolumeLogic.TrianglePotential.loads_sum
+#print axioms VolumeLogic.TrianglePotential.load_mem_Ioo
+#print axioms VolumeLogic.TrianglePotential.load_nonneg
+#print axioms VolumeLogic.TrianglePotential.logWeight
+#print axioms VolumeLogic.TrianglePotential.Feasible
+#print axioms VolumeLogic.TrianglePotential.objective
+#print axioms VolumeLogic.TrianglePotential.potential
+#print axioms VolumeLogic.TrianglePotential.logWeight_eq_log
+#print axioms VolumeLogic.TrianglePotential.loads_feasible
+#print axioms VolumeLogic.TrianglePotential.feasible_mem_Icc
+#print axioms VolumeLogic.TrianglePotential.entropySlope_at_load
+#print axioms VolumeLogic.TrianglePotential.objective_le_loads
+#print axioms VolumeLogic.TrianglePotential.potential_eq_loads
+#print axioms VolumeLogic.TrianglePotential.sum_jacobianAction
+#print axioms VolumeLogic.TrianglePotential.jacobianAction_zero_corner
+#print axioms VolumeLogic.TrianglePotential.exists_positive_pair
+#print axioms VolumeLogic.TrianglePotential.radicand_pos_all_coordinates
+#print axioms VolumeLogic.TrianglePotential.objective_loads_hasDerivAt
+#print axioms VolumeLogic.TrianglePotential.potential_hasDerivAt
+#print axioms VolumeLogic.TrianglePotential.potential_path_hasDerivAt
+#print axioms VolumeLogic.TrianglePotential.potential_path_second_hasDerivAt
+#print axioms VolumeLogic.TrianglePotential.singleton_feasible
+#print axioms VolumeLogic.TrianglePotential.feasible_singleton_unique
+#print axioms VolumeLogic.TrianglePotential.objective_singleton
+#print axioms VolumeLogic.TrianglePotential.potential_singleton
+#print axioms VolumeLogic.TrianglePotential.potential_singleton_hasDerivAt
+#print axioms VolumeLogic.TrianglePotential.potential_singleton_second_hasDerivAt
+#print axioms VolumeLogic.TrianglePotential.summedPotential
+#print axioms VolumeLogic.TrianglePotential.summedPotential_path_hasDerivAt
+#print axioms VolumeLogic.TrianglePotential.summedPotential_path_second_hasDerivAt
+#print axioms VolumeLogic.TrianglePotential.summedPotential_path_second_at
+#print axioms VolumeLogic.TrianglePotential.summedPotential_mixed_hasDerivAt
+#print axioms VolumeLogic.TrianglePotential.summedPotential_mixed_second_at

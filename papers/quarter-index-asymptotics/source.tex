@@ -1,0 +1,171 @@
+\section{Propagating the original source across quarter}\label{qi:source-proof}
+
+We now choose the interval after the analytic barrier $\sigma$ in Lemma~\ref{qi:diagonal} has been fixed. Let $x_0=1/4$, choose a small $\delta>0$, and put
+\[
+ h_0=\delta/4,\qquad b_N=\lceil N(x_0+2\delta)\rceil,\qquad x_b=b_N/N.
+\]
+The letter $h_0$ is a width, distinct from the color index $h=Nt$.
+Targets lie in $|r/N-x_0|\le h_0$. The whole interval from target to anchor remains in the regular matrix domain.
+
+\subsection{A strict cumulative loss, uniform for complex colors}
+
+At $t=0$ the relative logarithmic modulus is
+\begin{equation}\label{qi:f}
+ f(x)=\log|\mu_f(x,0)/\mu_s(x,0)|
+          =2\log\cot(\pi x),\qquad
+ f(x_0)=0,\quad f'(x)=-\frac{4\pi}{\sin(2\pi x)}.
+\end{equation}
+Shorten $\delta$ until $-8\pi\le f'\le-4\pi$ on the propagation interval. For $x\le x_0$, the possible positive contribution between $x$ and $x_0$ is at most $4\pi h_0^2$; the contribution from $x_0$ to $x_0+2\delta$ is at most $-8\pi\delta^2$. For $x\ge x_0$, integration directly from $x$ to $x_0+2\delta$ gives at most
+$-2\pi(4\delta^2-h_0^2)$. Thus uniformly on the entire target interval,
+\begin{equation}\label{qi:negative-action}
+ \int_x^{x_b}\log|\mu_f(u,0)/\mu_s(u,0)|\dd u
+      \le-7\pi\delta^2+O(N^{-1}).
+\end{equation}
+For every intermediate starting point $y$ between the lowest target and the anchor, the absolute value of this integral is at most
+$C_0\delta^2+O(N^{-1})$, where $C_0=40\pi$ suffices.
+
+The nonzero root ratio has an analytic logarithm on the fixed regular domain. Its even dependence on $t$ gives a uniform estimate
+\begin{equation}\label{qi:color-continuity}
+ \left|\Log(\mu_f/\mu_s)(x,t)
+       -\Log(\mu_f/\mu_s)(x,0)\right|\le C_1|t|^2.
+\end{equation}
+Taking real parts controls the actual moduli for complex $t$, not just for real colors. Choose $\delta$ first with
+$C_0\delta^2<\sigma/8$, and then choose $t_0>0$ with
+$3C_1\delta t_0^2<\pi\delta^2$. Ordinary uniform Riemann estimates, nonvanishing roots, and $d_i=\mu_i+O(N^{-1})$ give
+\begin{align}
+ |G_f(r)/G_s(r)|&\le C e^{-6\pi\delta^2N}
+             &&\text{for target }r,\label{qi:target-ratio}\\
+ \left|\log|G_f(j)/G_s(j)|\right|&\le \sigma N/4+C
+             &&\text{at every intermediate }j.\label{qi:partial-ratio}
+\end{align}
+The rounding of $b_N$ and all diagonal corrections contribute $O(1)$ to the logarithms. The two inequalities have different roles: \eqref{qi:target-ratio} suppresses the actual competing source, whereas \eqref{qi:partial-ratio} bounds conversions anywhere along its propagation.
+
+\begin{figure}[ht]
+ \centering\input{figures/quarter-action}
+ \caption{The relative logarithmic modulus $f(x)=2\log\cot(\pi x)$ changes sign at $x_0=1/4$. Both roots are nonzero and distinct there. The short positive area below quarter is outweighed by the negative area up to the fixed anchor $x_b$ for every target in $[x_0-\delta/4,x_0+\delta/4]$. The proof additionally bounds the absolute action accumulated to every intermediate index, so a conversion at such an index is controlled. Horizontal distances in the drawing are rescaled; the fixed width is chosen only after the analytic remainder barrier.}\label{qi:action-figure}
+\end{figure}
+
+\subsection{Both initial components come from the finite sum}
+
+Shrink $t_0$ further to lie in the color disk of the high-index result on a fixed interval containing the anchor and its next index. This preserves all preceding action inequalities. At $x_b$ the high-index result of \cite[Section 3.2--3.3]{Conway} applies on a fixed compact interval above quarter and uniformly for complex $|t|<t_0$. Set
+\[
+ X_r=(U_{Nt,r},U_{Nt,r+1})^{\mathsf T},\qquad
+ \begin{pmatrix}a_{s,N}(t)\\a_{f,N}(t)\end{pmatrix}
+       =V_N(x_b,t)^{-1}X_{b_N}.
+\]
+These are exact entries defined from \eqref{qi:source}. The high-index theorem and $V_N=V_0+O(N^{-1})$ give
+\begin{equation}\label{qi:anchor}
+ a_{s,N}(t)=
+ \frac{C(x_b,t)}{\mu_s(x_b,t)}
+       e^{NS(x_b,t)}(1+O(N^{-1})),\qquad
+ |a_{f,N}/a_{s,N}|\le C/N.
+\end{equation}
+To check the projection, the high-index ratio is
+$U_{Nt,b_N}/U_{Nt,b_N+1}=\mu_s(x_b,t)+O(N^{-1})$.
+Therefore $X_{b_N}$ is
+$U_{Nt,b_N}\mu_s(x_b,t)^{-1}(\mu_s(x_b,t),1)^{\mathsf T}$
+plus a relative $O(N^{-1})$ vector. Applying $V_N^{-1}$ gives
+\eqref{qi:anchor}. In particular $a_{s,N}$ is holomorphic and nonzero on the fixed smaller disk. No conclusion about source overlap was drawn from the eigenvalues alone, and the second component is not set to zero.
+
+By \eqref{qi:interaction} and \eqref{qi:partial-ratio},
+\[
+ \|E_j\|\le C e^{-3\sigma N/4},\qquad
+ G_r^{-1}Y_r=
+ \left[I+O(Ne^{-3\sigma N/4})\right]
+       \begin{pmatrix}a_{s,N}\\a_{f,N}\end{pmatrix}.
+\]
+Let $v_1(x,t)=[V_N(x,t)]_{1,s}$. The first component after restoring $V_NG_r$ is therefore
+\begin{equation}\label{qi:selected-source}
+ U_{Nt,r}=a_{s,N}(t)v_1(r/N,t)G_s(r)
+                 (1+O(e^{-c_1N}))
+\end{equation}
+for target indices and some $c_1>0$.
+Indeed the direct fast term has relative size at most
+$C N^{-1}e^{-6\pi\delta^2N}$ by \eqref{qi:anchor} and \eqref{qi:target-ratio}. The interaction error was bounded with the full partial-action width; at the target its fast output is smaller again. Bounded endpoint frames and their nonzero selected first component preserve these estimates. This proves a relative assertion for the original finite source with both channels retained.
+
+\subsection{A fixed complex interpolation of the selected product}
+
+Let $l_N(x,t)=\Log d_s(x,t)$, continuing $\Log\mu_s$. On a smaller fixed tube these logarithms are uniformly bounded and satisfy
+$|\partial_x^j l_N|\le B j! a^{-j}$. Put $K_N=\lfloor c_2N\rfloor$, with $c_2>0$ sufficiently small, and define
+\begin{align}
+ E_N^s(x,t)={}&N\int_x^{x_b}l_N(u,t)\dd u
+       +\frac{l_N(x,t)-l_N(x_b,t)}2\notag\\
+ &+\sum_{k=1}^{K_N}\frac{B_{2k}N^{1-2k}}{(2k)!}
+ \{\partial_x^{2k-1}l_N(x_b,t)
+                 -\partial_x^{2k-1}l_N(x,t)\}.
+ \label{qi:EM}
+\end{align}
+Here the Bernoulli numbers use $z/(e^z-1)=\sum B_jz^j/j!$.
+The Euler--Maclaurin formula with periodic Bernoulli remainder
+\cite[equation (2.10.1)]{DLMF}, applied separately to real and imaginary parts, gives the remainder for the actual product from $r$ to $b_N-1$. The Fourier series of the periodic Bernoulli polynomial
+\cite[equation (24.8.1)]{DLMF} bounds its absolute value by
+$4(2k)!/(2\pi)^{2k}$. Combining this with the Cauchy derivative estimate bounds the remainder by
+\[
+ CN\left(\frac{K_N}{\pi aN}\right)^{2K_N}\le C'e^{-c_3N};
+\]
+this follows from the displayed Cauchy bound and
+$|B_{2k}|\le4(2k)!/(2\pi)^{2k}$.
+It holds uniformly for the physical index grid and complex colors. Hence the explicit function
+\begin{equation}\label{qi:I}
+ I_N(x,t)=a_{s,N}(t)v_1(x,t)e^{E_N^s(x,t)}
+\end{equation}
+is holomorphic and nonzero on a fixed smaller joint domain, and
+\eqref{qi:selected-source} proves \eqref{qi:grid}.
+The anchor is an explicitly specified finite coefficient, not an unknown closed invariant. There is no interpolation of a moving support cutoff.
+
+\subsection{Recovering the same leading amplitude}
+
+It remains to show that \eqref{qi:I} has the leading expression in
+\eqref{qi:complex}, including its normalization. The selected diagonal column of \eqref{qi:diagonal-identity} obeys the actual scalar recurrence up to an exponentially small relative defect. Its one-step scalar ratio is
+\[
+ v_{s,N}(x,t)=d_s(x,t)\frac{v_1(x,t)}{v_1(x+e,t)}.
+\]
+Both rows of the exact matrix identity imply
+\begin{equation}\label{qi:Riccati}
+ v_{s,N}(x,t)
+ =p(x,t,e)+\frac{q_c(x,t,e)}{v_{s,N}(x+e,t)}
+                        +O(e^{-\sigma' N})
+\end{equation}
+on a fixed smaller tube, for some $\sigma'>0$.
+For example the second row gives
+$v_1(x+e)=d_s(x)[V_N(x)]_{2,s}+O(e^{-\sigma N})$;
+substitution in the first row, at $x$ and $x+e$, gives
+\eqref{qi:Riccati}. All divisions use uniformly nonzero factors.
+
+We know $v_{s,N}=\mu_s+O(e)$ with derivative bounds, but have not assumed a formal power series for it. Write $v_{s,N}=\mu_s+w_N$.
+Cauchy's estimate gives $w_N'=O(e)$, so expanding
+\eqref{qi:Riccati} yields
+\[
+ (1+q_0/\mu_s^2)w_N
+ =e\{p_1+q_1/\mu_s-q_0\mu_{s,x}/\mu_s^2\}+O(e^2).
+\]
+The coefficient is $1-\mu_f/\mu_s$, uniformly separated from zero and equal to $2$ at quarter and $t=0$. Consequently
+\begin{equation}\label{qi:first-correction}
+ v_{s,N}=\mu_s+e\nu+O(e^2).
+\end{equation}
+Since $v_1=\mu_s+O(e)$ and $v_1'=\mu_s'+O(e)$, this implies
+\[
+ d_s=\mu_s+e(\nu+\mu_s')+O(e^2).
+\]
+Insert this expansion directly into \eqref{qi:EM}. Its higher Bernoulli terms have total size $O(N^{-1})$ on the smaller complex tube, by the same factorial estimates used for the exponential remainder. The extra integral of $\mu_s'/\mu_s$ equals
+$\Log\mu_s(x_b)-\Log\mu_s(x)$. Combining it with the half-endpoint term and $v_1(x)/v_1(x_b)$ gives
+\begin{align}
+ \frac{v_1(x,t)e^{E_N^s(x,t)}}{v_1(x_b,t)}
+ ={}&\sqrt{\frac{\mu_s(x,t)}{\mu_s(x_b,t)}}\notag\\
+ &\times\exp\left\{
+ N\int_x^{x_b}\Log\mu_s\,\dd u
+       +\int_x^{x_b}\frac{\nu}{\mu_s}\,\dd u\right\}
+       (1+O(N^{-1})).\label{qi:selected-leading}
+\end{align}
+This calculation holds at complex $x$; it is not a uniqueness argument on a finite mesh. At the anchor,
+$a_{s,N}v_1(x_b)=C(x_b,t)e^{NS(x_b,t)}(1+O(N^{-1}))$
+by \eqref{qi:anchor}. Multiplication in \eqref{qi:selected-leading} proves
+\eqref{qi:complex} with exactly the $C,S$ of \eqref{qi:SC}.
+Normalized remainders are holomorphic and uniformly bounded, so Cauchy's formula supplies the derivative statement. This completes the proof of Theorem~\ref{qi:main}.
+
+At $t=0$ the values inherited from the original high-index normalization are, on both sides of quarter,
+\[
+ S(x,0)=\pi\ii(1/2-x)^2,\qquad
+ C(x,0)=\sqrt{\sin\pi x}\,e^{-3\pi\ii(1/2-x)/2}.
+\]
+No connection constant or parity-dependent factor has been chosen at the crossing.

@@ -1,0 +1,170 @@
+\section{Signed leaves and strict finite wire windows}\label{qi:signed}
+
+The preceding theorem was stated for a normalized scalar recurrence. We now restore its actual tangle coefficient. Let
+$S_r=\prod_{a=1}^r2\sin(\pi a/N)$.
+For an integer wire $r$ near quarter and $h=Nt$, the original pure coefficient and its retained half twist are
+\begin{align}
+ A_N(r,t)&=\frac{N^2S_{2r}}
+ {S_r^2G_N(r-Nt)G_N(r+Nt)},\notag\\
+ d_N^\epsilon(r,t)&=\kappa^\epsilon
+ \sum_{v=r}^M(-1)^v q^{\epsilon v(r+1)}
+                   \frac{S_v}{S_rS_{v-r}}A_N(v,t),
+       \quad\epsilon=\pm1,\qquad d_N^0=A_N.\label{qi:signed-source}
+\end{align}
+The sign $\epsilon$ denotes a physical retained crossing and is distinct from the step $e=1/N$. Put
+$\ell_N^\epsilon=e^{-\pi\ii\epsilon d/4}d_N^\epsilon$.
+
+\begin{corollary}[The signed coefficient and its absolute action]\label{qi:signed-corollary}
+The coefficients $\ell_N^\epsilon$ admit nonzero holomorphic interpolants
+$I_N^\epsilon(x,t)$ on a fixed joint neighborhood of $(1/4,0)$ with
+\[
+ \ell_N^\epsilon(r,t)=I_N^\epsilon(r/N,t)
+                     (1+O(e^{-cN})),\qquad
+ I_N^\epsilon=N^{1/2}b_\epsilon e^{Nf_\epsilon}
+                     (1+O(N^{-1})).
+\]
+The first assertion is on the physical index grid and the second on a fixed complex domain. The amplitudes are nonzero, the functions are even in $t$, and
+\begin{align}
+ g(x,t)&=J(2x)-2J(x)-J(x-t)-J(x+t),\notag\\
+ f_0&=g,\qquad f_-=g+S(x,t)-S(x,0),\qquad
+ f_+(x,t)=\overline{f_-(\bar x,\bar t)}.\label{qi:actions}
+\end{align}
+Here $J'(z)=\Log(2\sin\pi z)$ is normalized by $J(0)=0$.
+Equivalently, the small solution of
+\begin{equation}\label{qi:shear}
+ t=s-\frac{\epsilon g_s(x,s)}{2\pi\ii}
+\end{equation}
+satisfies the exact identity
+\begin{equation}\label{qi:absolute-shear}
+ f_\epsilon(x,t)=g(x,s)
+                   -\frac{\epsilon g_s(x,s)^2}{4\pi\ii}.
+\end{equation}
+In particular
+\[
+ \frac{b_\epsilon(x,0)}{b_0(x,0)}
+   =\sqrt{\sin\pi x}\,e^{-\epsilon\pi\ii x/2}
+       \quad(\epsilon=\pm1),\qquad
+ (f_\epsilon)_{tt}(x,0)
+       =-\frac{2\pi\cot(\pi x)}{1-\epsilon\ii\cot(\pi x)}.
+\]
+\end{corollary}
+
+\begin{proof}
+Define
+\begin{align}
+ A_N^{\rm hol}(x,t)
+ &=\frac{N^2G_N(2Nx)}
+        {G_N(Nx)^2G_N(N(x-t))G_N(N(x+t))},\notag\\
+ P_N^{\rm ch}(x)
+ &=\frac{\kappa^{-1}e^{\pi\ii d/4}}
+        {e^{-\pi\ii Nx+\pi\ii Nx(Nx+1)/N}},\notag\\
+ I_N^-&=A_N^{\rm hol}P_N^{\rm ch}I_N,\qquad
+ I_N^+(x,t)=\overline{I_N^-(\bar x,\bar t)},\qquad
+ I_N^0=A_N^{\rm hol}.\label{qi:actual-interpolants}
+\end{align}
+The finite algebra connecting \eqref{qi:source} and
+\eqref{qi:signed-source} is unchanged at quarter. Explicitly,
+\[
+ q^{h^2}\frac{D_{h,r}}{D_{0,r}}
+   =\frac{G_N(r)^2}{G_N(r-h)G_N(r+h)}.
+\]
+The chirp $q^{h^2}$ is therefore retained in
+\eqref{qi:actual-interpolants}. Substitution gives the claimed exponentially accurate grid identity by Theorem~\ref{qi:main}. All factorial arguments now lie on fixed regular compact substrips, so the canonical bulk expansion \cite[Lemma 2.1]{Conway} applies. It gives \eqref{qi:actions} and the explicit nonzero densities
+\begin{align}
+ b_0(x,t)&=
+ \frac{\sqrt{\sin2\pi x}}
+ {2^{3/2}\sin\pi x\sqrt{\sin\pi(x-t)\sin\pi(x+t)}},\notag\\
+ b_-(x,t)&=b_0(x,t)e^{\pi\ii(3/4-x)}C(x,t),\qquad
+ b_+(x,t)=\overline{b_-(\bar x,\bar t)}.\label{qi:density}
+\end{align}
+All marks continue those fixed at the upper endpoint; no new square-root choice is made here.
+
+For $x$ above quarter the absolute identity
+\eqref{qi:absolute-shear} is \cite[Proposition 3.1]{Conway}, including its additive function of color. Both sides extend holomorphically to the connected neighborhood just constructed. The derivative of \eqref{qi:shear} in $s$ at zero is
+$1-\epsilon\ii\cot(\pi x)$, which stays nonzero there. The identity theorem therefore extends the already normalized equality through quarter. It is not an inference from the second derivative alone.
+Formula \eqref{qi:density} and the complete $C$ at the end of Section~\ref{qi:source-proof} give the amplitude ratio. Differentiating the exact shear gives the displayed color Hessian.
+\end{proof}
+
+\subsection{An application with explicit local hypotheses}
+
+The following consequence concerns an exact finite window in an original Newton contraction. It has no assumption about the contribution outside that window.
+
+\begin{corollary}[A local finite-window Gaussian]\label{qi:window}
+Fix a finite Newton contraction with $b$ leaf factors
+\eqref{qi:signed-source}, $g$ retained multiplication gates, and $k$ free primitive integer wire coordinates. Suppose a strict real state $y_0$ has the following properties:
+\begin{enumerate}
+ \item Every wire has its actual form $r_w=NL_w(y)+\delta_w$, with $L_w$ integral affine and $\delta_w$ a fixed integer. The retained summation lattice is all of $\mathbb Z^k$ in these coordinates.
+ \item All factorial arguments of every retained gate are strictly between $0$ and $N$ at the limiting state, and every leaf coordinate lies in the union of the quarter neighborhood of Theorem~\ref{qi:main} and fixed compact intervals in $(1/4,1/2)$.
+ \item The pure limiting phase is stationary at $y_0$ and has negative definite Hessian there.
+\end{enumerate}
+Choose a sufficiently small fixed rectangular window about $y_0$, and let $C_N^\epsilon(t)$ be its exact finite sum with the normalized leaves $\ell_N^\epsilon$ and the original integer gate coefficients. There are nonzero holomorphic $a_\epsilon(t)$ and even holomorphic $\Phi_\epsilon(t)$ on a fixed polydisk such that
+\begin{equation}\label{qi:window-asymptotic}
+ C_N^\epsilon(t)=
+ N^{b/2-3g/2+k/2}a_\epsilon(t)e^{N\Phi_\epsilon(t)}
+                         (1+O(N^{-1}))
+\end{equation}
+uniformly there, with both level parities retained. For a binary cylindrical closure with one eliminated closing equation, $g=b-2$ and $k=2b-3$, so the power is $3/2$. The original unnormalized window has the additional factor
+$e^{\pi\ii d\sum\epsilon_\ell/4}$.
+Its diagonal color Hessian is
+\[
+ (\Phi_\epsilon)_{t_\ell t_j}(0)=
+ -\frac{2\pi\cot(\pi a_\ell)}
+       {1-\epsilon_\ell\ii\cot(\pi a_\ell)}\,
+       \mathbf1_{\ell=j},
+ \qquad a_\ell=L_\ell(y_0).
+\]
+\end{corollary}
+
+\begin{proof}
+The multiplication formula of \cite[Theorem 3.3]{Newton} is
+\[
+ \mu_N(i,j,r)=
+ \frac{S_{i+j}S_r}{S_iS_jS_{r-i}S_{r-j}S_{i+j-r}},
+ \qquad \max(i,j)\le r\le i+j\le d .
+\]
+In a strict window its canonical interpolation has power $N^{-3/2}$,
+nonzero leading density, and phase
+\[
+ m(x,y,z)=J(x+y)+J(z)-J(x)-J(y)
+                  -J(z-x)-J(z-y)-J(x+y-z).
+\]
+Together with Corollary~\ref{qi:signed-corollary} and the high-index theorem this gives an interpolated summand
+\[
+ N^{b/2-3g/2}b_\epsilon(y,t)e^{NF_\epsilon(y,t)}
+                         (1+O(N^{-1})).
+\]
+Here $F_\epsilon$ is the sum of the actual leaf actions and gate actions. The density multiplies the leaf and gate densities and every offset factor:
+$e^{\delta_\ell\partial_xf_{\epsilon_\ell}}$ for a leaf and
+$e^{\delta_i m_x+\delta_j m_y+\delta_r m_z}$ for a gate.
+They are evaluated at the changed variables, not at the complete point. All are nonzero.
+
+The difference from the exact finite summand is exponentially small relative to the product of absolute local factors. On the real complete window its total absolute sum is bounded by
+$N^C e^{N(F_0-c)}$, where $F_0=F_\epsilon(y_0,0)$ and $c>0$ is smaller than the finite minimum of the interpolation exponents. For complex small colors the bound is
+$N^C e^{N(F_0+C_1\|t\|^2-c)}$.
+Shrinking the color disk keeps this error below the selected critical action. Thus the errors were estimated before the complex saddle, not appended after a potentially cancelling sum.
+
+At zero the phase is independent of the retained signs and has the specified negative definite Hessian. The holomorphic implicit-function theorem supplies its unique nearby critical point $y_*(t)$. Put
+\[
+ \Phi_\epsilon(t)=F_\epsilon(y_*(t),t),\qquad
+ a_\epsilon(t)=
+ \frac{(2\pi)^{k/2}b_\epsilon(y_*(t),t)}
+ {\sqrt{\det[-(F_\epsilon)_{yy}(y_*(t),t)]}}.
+\]
+To identify its coefficient in the finite sum, enclose each index interval by a rectangle with vertical half-grid sides and heights $\pm a$. The exact residue kernel $\pi N\cot(\pi Nz)$ has residue one at each retained $j/N$. Vertical sides keep the fixed real boundary loss. Horizontal sides have constant terms $\mp\ii$ and error $O(e^{-2\pi Na})$. Choose $a$ first so its $O(a^2)$ phase cost is less than one quarter of the real boundary gap and less than $\pi a$; then shrink the complex color disk. All boundary and nonconstant-kernel terms are exponentially smaller. Iterating gives $N^k$ times the ordinary integral over the rectangle with exponentially small error. Because the integer coordinates are primitive, there is no extra density factor.
+
+Translate the integral to the parallel real contour through $y_*(t)$. Its connecting boundary faces retain the loss; the local negative Hessian has positive real part. Gaussian integration gives the coefficient and power in \eqref{qi:window-asymptotic}. Odd Taylor terms have zero Gaussian integral, so the relative error is $O(N^{-1})$, uniformly holomorphically. At zero the density differs from the positive pure density by
+$\prod_{\epsilon_\ell\ne0}\sqrt{\sin\pi a_\ell}
+ e^{-\epsilon_\ell\pi\ii a_\ell/2}$, which is nonzero.
+Finally evenness makes all mixed wire--color derivatives vanish at zero, and the local color Hessian in Corollary~\ref{qi:signed-corollary} gives the displayed formula.
+\end{proof}
+
+\section{Reproduction and limits of the conclusion}\label{qi:checks}
+
+The paper-local command
+\[
+ \texttt{python3 -I papers/quarter-index-asymptotics/check.py}
+\]
+uses Python's standard library and writes a JSON record to its paper-local build directory; \texttt{--output} selects another directory.
+It checks the recurrence directly from the original finite factorial sum over finite fields at both parities, including its terminal zero. Independently chosen rational matrices test the exact backward conjugation formula and the two-channel interaction reconstruction, retaining both input components. Input hashes are recorded before and after the run and an earlier summary is removed before validation.
+
+These are finite algebra checks of the direction, normalization and endpoint identities. They do not prove the analytic bounds or infer an all-level theorem from examples. The analytic proof chooses a fixed recurrence domain and its exponential barrier first, then the shorter crossing width, then the complex color disk, and only then lets $N$ grow. It controls a short regular modulus crossing. It does not continue the selected solution arbitrarily far below quarter, pass through colliding roots, discard a global alias, or evaluate an entire filled invariant. Any such application requires its own global source and geometric inputs.

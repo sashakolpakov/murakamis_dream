@@ -337,8 +337,9 @@ support makes that second derivative positive along every nonconstant
 segment. Lean derives the strict Jensen inequality and strict convexity,
 then proves that two minimizing points must coincide. Combining this
 with the transport module gives an existing, unique minimum of the same
-constructed potential. The positive table and the identification of the
-potential's first derivative remain written application inputs.
+constructed potential. The positive table remains a geometric application input. The triangle
+potential module described below now proves the first derivative of the
+actual supported entropy maximum.
 
 The [reduced-Laplacian module](../../formal-real/GroundedLaplacian.lean)
 also constructs the matrix obtained by fixing one vertex and deleting
@@ -372,14 +373,35 @@ Pairing with \(h\) gives the three-edge graph energy. Summing over
 triangles uses one common value at every shared vertex and preserves
 parallel edges. The proof also covers a triangle with one zero corner;
 a singleton's load is defined separately as the constant \(1/2\).
-To apply this to the geometric potential, one must still prove that its
-first derivative is the pairing with these loads and that the positive
-edges connect the required vertices. These are not consequences of the
-arctangent calculation alone.
+The [triangle-potential module](../../formal-real/TrianglePotential.lean)
+now proves the missing variational identification. It defines
 
-The optional package has thirty-four definitions and 116 theorems.
-Its axiom audit covers all 150 declarations, separately from
-the Std-only project. Twenty negative controls check that invalid
+\[
+\Lambda(x)=-\int_0^x\log|2\sin u|\,du,\qquad
+ e(t)=\frac{\Lambda(\pi t)+\Lambda(\pi/2-\pi t)}{\pi},
+\]
+
+and defines the potential as the supremum of
+\(\sum_i[e(\alpha_i)+\alpha_i\log w_i]\) over nonnegative loads
+with sum \(1/2\), requiring a zero load wherever the weight is zero.
+The logarithmic term is taken only on the positive support. Lean proves
+entropy continuity and concavity, then shows that the stated arctangent
+loads attain this supremum. Differentiating that proved equality yields
+the actual first derivative; the multiplier terms cancel because the
+loads sum to \(1/2\).
+
+If only one weight is positive, the same supremum is
+\(\tfrac12\log w_i\). Its derivative and zero Hessian are proved
+separately. The mixed-support assembly combines these singleton rows
+with the positive-radicand rows in the same potential sum. It retains
+shared vertex variables, the face demands and the zero singleton edge
+weights. Geometric incidence, connected positive support and the
+transport table remain application inputs. Changes of support in a
+geometric degeneration are not covered by these fixed-support theorems.
+
+The optional package has forty-two definitions and 157 theorems.
+Its axiom audit covers all 199 declarations, separately from
+the Std-only project. Twenty-two negative controls check that invalid
 inputs are rejected. The saddle estimates, whole-source gap and geometric
 volume identity remain written application inputs. The
 [tangle and tree review](../../repro/TANGLE_TREE_AUDIT.md) records the
@@ -401,7 +423,11 @@ completed-root Conway asymptotic and the summed circle-tree criterion.
 It records how the actual finite sums meet the analytic hypotheses,
 where the volume comparison enters, and which broader tree statements
 still need separate papers. It also records the triangle-load
-differentiation and the limits of that formalization.
+differentiation and the limits of that formalization. The
+[directed and quarter-index review](../../repro/DIRECTED_QUARTER_AUDIT.md)
+records the newer subtree induction, local recurrence argument and
+supported-potential formalization. Its source snapshot distinguishes
+proof readings from finite algebra checks and Lean compilation.
 
 ## Joining certified diagrams
 

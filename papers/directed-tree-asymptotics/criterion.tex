@@ -1,0 +1,115 @@
+\section{A finite criterion on directed edges}\label{dt:criterion}
+The root in this section is an order for evaluating the closed finite
+contraction. It need not be the terminal root used to draw the original
+knot. A nonroot vertex sends one polynomial to its parent; the last
+vertex sends none. The following constants and inequalities reflect
+that difference.
+
+Put
+
+\begin{equation}\label{dt:eq-1}
+\begin{gathered}
+a_0=\frac1{2\pi},\qquad k_0=2^{-16},\qquad
+ R_0=\frac18,\qquad b_0=2^{-11},\qquad\\
+ r_0=\frac1{16},\qquad t_0=2^{-14},\qquad
+ \chi=1-\cos r_0.
+\end{gathered}
+\end{equation}
+
+The parent-variable rectangle is
+
+\begin{equation}\label{dt:eq-2}
+\mathcal R=\{u:|\Re u|\le R_0,\ |\Im u|\le b_0\}.
+\end{equation}
+
+Choose any vertex as root and direct all edges toward it. For every
+nonroot vertex choose a number
+
+\begin{equation}\label{dt:eq-3}
+0<c_v<k_0,
+ \qquad
+ \delta_v=\min\left\{\frac{b_0}2,
+               \frac{c_v\chi}{4(1+c_v)}\right\}.
+\end{equation}
+
+These are parameters of the criterion. They can differ at every edge.
+They are not asymptotic quantities to be inferred from the invariant.
+
+Write \(q_v=1\) at a nonroot vertex and \(q_v=0\) at the root. If \(\mathrm{Ch}(v)\) is the
+set of children, define
+
+\begin{equation}\label{dt:eq-4}
+\begin{aligned}
+ a_v&=\frac{d_v}{2\pi},& b_v&=\frac{n_v}{2\pi},&
+ D_v&=a_v-i b_v,\\
+ A_v&=\frac2{\pi^2}
+       \left(q_vk_0+\frac12\sum_{w\in\mathrm{Ch}(v)}c_w\right),&
+ B_v&=16q_v+|\mathrm{Ch}(v)|,&
+ C_v&=B_v+\frac{b_v^2}{4A_v}.
+\end{aligned}
+\end{equation}
+
+There is at least one incidence at every vertex, so \(A_v,B_v\) are positive.
+Let
+
+\begin{equation}\label{dt:eq-5}
+\delta_v^{\mathrm{in}}
+      =\min\bigl(\{b_0\}\cup
+                     \{\delta_w:w\in\mathrm{Ch}(v)\}\bigr)
+\end{equation}
+
+and set
+
+\begin{equation}\label{dt:eq-6}
+y_v=\min\left\{
+ \frac{\delta_v^{\mathrm{in}}}2,
+ \frac{t_0|D_v|}{4C_v},
+ \frac{A_v\pi^2}{8(\pi|b_v|+t_0|D_v|)},
+ \sqrt{\frac{A_v\pi^2}{8B_v}}
+ \right\}.
+\end{equation}
+
+Finally define two action quantities
+
+\begin{equation}\label{dt:eq-7}
+\beta_v=\frac{210}{361}\frac{a_v}{|D_v|^2},
+ \qquad
+ \eta_v=\min\left\{
+ \frac12t_0|D_v|y_v,
+ \frac12A_v\pi^2,
+ A_vr_0^2,
+ \frac18a_vr_0^2
+ \right\}.
+\end{equation}
+
+The criterion consists of the strict inequalities
+
+\begin{equation}\label{dt:eq-8}
+\boxed{\quad t_0|D_v|\ge2,\qquad
+                 \beta_v<\frac{\eta_v}{2}\quad
+                      \text{at every vertex},\quad}
+\end{equation}
+
+and, only at nonroot vertices,
+
+\begin{equation}\label{dt:eq-9}
+\boxed{\qquad
+       \beta_v<(k_0-c_v)\chi.\qquad}
+\end{equation}
+
+It is a finite elementary test in the degrees, signed powers, root and
+positive numbers \(c_v\). It uses no value of an unknown quantum invariant
+and no assumed dominance of a global saddle. Its quantities are local:
+\(A_v\) and the available strip depend on the child budgets, while the exact
+child scalar will be divided out rather than estimated.
+
+
+We say that the chosen root and numbers \(c_v\) satisfy the directed
+criterion when \eqref{dt:eq-3}, \eqref{dt:eq-8} and \eqref{dt:eq-9} hold.
+No numerical estimate of an invariant enters this definition.
+The number \(\beta_v\) bounds the action lost in evaluating just the
+current trace after exact child constants are divided out. The four
+entries of \(\eta_v\) pay, respectively, for the infinite charge tail,
+the original endpoints, localization to a real interval, and its
+vertical connecting paths. The extra comparison \eqref{dt:eq-9} is used
+only to produce an outgoing real bound.

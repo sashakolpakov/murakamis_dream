@@ -1,0 +1,133 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,xurl}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,patterns}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\setlength{\emergencystretch}{2em}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\Log}{\operatorname{Log}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\eps}{\varepsilon}
+\title{Asymptotics of signed Newton coefficients near the quarter index}
+\author{}\date{}
+\begin{document}\maketitle
+
+\begin{abstract}
+A signed Newton coefficient in a root-of-unity tangle evaluation satisfies a second-order finite recurrence. At one quarter of the level its two characteristic roots have equal modulus but remain distinct. We prove a holomorphic asymptotic for the actual finite coefficient on a fixed neighborhood crossing that boundary. An analytic matrix reduction has exponentially small off-diagonal error on a domain chosen before the crossing width. The original high-index source supplies both initial channels. A strict cumulative action estimate suppresses its competing channel and every mode-conversion error, even for small complex color parameters. The selected product then admits exponentially accurate index interpolation, with the same nonzero amplitude, endpoint normalization and absolute shear action at both level parities. A local finite-window corollary retains the original affine lattice offsets. No estimate of the complementary global source or of a whole filling sum is asserted.
+\end{abstract}
+
+\section{The finite coefficient and the question}\label{qi:intro}
+
+Rigorous asymptotics for finite-order recurrences form an established discrete WKB theory; see Costin and Costin \cite{CostinCostin} for a general treatment with smooth coefficients. We give the analytic matrix reduction used here directly, then identify the particular finite quantum source by its original endpoint. No novelty is claimed for the general diagonalization procedure.
+
+Equal characteristic moduli do not by themselves determine an asymptotic of a finite recurrence. Below the equality point a locally smaller branch can become larger; an initially small component can then grow. We prove a local statement in which the actual source at a higher index, the cumulative relative actions and all conversions between the two branches are controlled together.
+
+Fix an integer $N\ge2$, and put
+\[
+ d=N-1,\quad M=\lfloor d/2\rfloor,\quad q=e^{\pi\ii/N},
+ \quad Q=q^2,\quad \kappa=q^{d^2/2},\quad
+ F_j=(Q;Q)_j=\prod_{a=1}^j(1-Q^a).
+\]
+Complex powers of $q,Q$ mean their displayed exponential lifts.
+Let $G_N$ be the canonical factorial of \cite[Lemma 2.1]{Conway}, and set
+\[
+ \widehat F_N(z)=e^{\pi\ii z(z+1)/(2N)-\pi\ii z/2}G_N(z).
+\]
+Thus $G_N(j)=\prod_{a=1}^j2\sin(\pi a/N)$ and
+$\widehat F_N(z+1)=(1-Q^{z+1})\widehat F_N(z)$ exactly.
+For the color deficit $h=Nt$ and integer index $r$ near $N/4$ define
+\begin{align}
+ A_{h,r}
+ &=\sum_{v=r}^{M}
+ \frac{Q^{-vr}F_{2v}}
+ {F_v\widehat F_N(v-h)\widehat F_N(v+h)F_{v-r}},\notag\\
+ D_{h,r}
+ &=\frac{Q^{-r^2}F_{2r}}
+ {F_r\widehat F_N(r-h)\widehat F_N(r+h)},\qquad
+ U_{h,r}=A_{h,r}/D_{h,r}.\label{qi:source}
+\end{align}
+Only the two color-shifted factorials are continued. For physical integer $0\le h\le r$ this is the normalization of the actual signed low-core Newton coefficient; its finite derivation is \cite[Section 3.1]{Conway}, from the circle and crossing identities of \cite[Proposition 4.1 and equation (4.8)]{Newton}. For a fixed small complex disk in $t$, all factorial arguments in \eqref{qi:source} remain regular. Hence the finite source is holomorphic and even in $t$.
+
+Here is its exact recurrence. With $e=1/N$, $x=r/N$, $Y=e^{2\pi\ii x}$, $H=e^{2\pi\ii t}$ and
+$\operatorname{den}(x)=(1-QY/H)(1-QYH)$,
+\begin{align}
+ U_r&=p(x,t,e)U_{r+1}+q_c(x,t,e)U_{r+2},\label{qi:recurrence}\\
+ p&=-\frac{Q^{-2}Y^{-1}[(H+H^{-1})Q^3Y^2+Q+1]}
+                {\operatorname{den}(x)},\notag\\
+ q_c&=-\frac{Q^{-4}Y^{-2}(1-Q^2Y)(1-Q^3Y^2)(1+Q^2Y)}
+                {\operatorname{den}(x)\operatorname{den}(x+e)}.\notag
+\end{align}
+The upper endpoint is
+\begin{equation}\label{qi:wall}
+ U_M=1,\qquad q_c((M-1)/N,t,1/N)=0,\qquad U_{M-1}=p((M-1)/N,t,1/N).
+\end{equation}
+For odd $N$ the factor $1-Q^3Y^2$ vanishes in that row; for even $N$ the factor is $1+Q^2Y$. No value $D_{h,M+1}$ is introduced. The exact telescoping certificate in \cite[equations (3.3)--(3.5)]{Conway} proves \eqref{qi:recurrence} for this complex-color factorial continuation, not just at its physical colors.
+
+Let $p_0=p(x,t,0)$ and $q_0=q_c(x,t,0)$, and label the roots of
+$\mu^2-p_0\mu-q_0=0$ by
+\begin{equation}\label{qi:roots}
+ \mu_s(x,0)=-e^{-2\pi\ii x},\qquad
+ \mu_f(x,0)=e^{-2\pi\ii x}\cot^2(\pi x).
+\end{equation}
+At $x_0=1/4$ these roots are $\ii$ and $-\ii$. They extend as distinct nonzero holomorphic functions of $(x,t)$ on a fixed neighborhood.
+Use the logarithm of $\mu_s$ continued from its value zero at
+$(x,t)=(1/2,0)$; in fact $\mu_s(1/2,t)=1$ for all small $t$.
+Define, by continuation from the high-index domain,
+\begin{align}
+ S(x,t)&=\int_x^{1/2}\Log\mu_s(u,t)\dd u,\notag\\
+ \nu(x,t)&=
+ \frac{p_1+q_1/\mu_s-q_0(\partial_x\mu_s)/\mu_s^2}
+                   {1+q_0/\mu_s^2},\notag\\
+ C(x,t)&=\sqrt{\mu_s(x,t)}
+       \exp\!\int_x^{1/2}\frac{\nu(u,t)}{\mu_s(u,t)}\dd u.\label{qi:SC}
+\end{align}
+Here $p_1=\partial_ep(x,t,0)$ and $q_1=\partial_eq_c(x,t,0)$.
+The square root is one at $1/2$. The denominator
+$1-\mu_f/\mu_s$ is nonzero, including at quarter.
+
+\begin{theorem}[The actual source across quarter]\label{qi:main}
+There are fixed constants $h_0,a_0,t_0,c>0$ and, for all sufficiently large $N$ of either parity, a nonzero holomorphic function $I_N(x,t)$ on
+\[
+ |\Re x-1/4|<h_0,\qquad |\Im x|<a_0,\qquad |t|<t_0,
+\]
+such that on a smaller real index interval, uniformly for all physical integers $r$ there and all complex $|t|<t_0$,
+\begin{equation}\label{qi:grid}
+ U_{Nt,r}=I_N(r/N,t)(1+O(e^{-cN})).
+\end{equation}
+On a smaller fixed joint complex domain,
+\begin{equation}\label{qi:complex}
+ I_N(x,t)=C(x,t)e^{NS(x,t)}(1+O(N^{-1})).
+\end{equation}
+Every fixed derivative of the normalized remainder satisfies the same bound on smaller domains. The first estimate concerns the original finite source on its integer index set. The second concerns the explicitly constructed holomorphic interpolation. All constants are independent of $N$.
+\end{theorem}
+
+The high-index input is \cite[Section 3.2--3.3]{Conway}: on every compact interval in $(1/4,1/2)$ the same source has its exact upper-endpoint-selected ratio, its nonzero holomorphic leading expression $C e^{NS}$, and exponentially accurate index interpolation. We use that result only at a fixed anchor strictly above quarter. Its proof cannot be applied below quarter, where $|\mu_f/\mu_s|$ can exceed one. Sections~\ref{qi:diagonalization}--\ref{qi:source-proof} supply that additional argument.
+
+\input{transport}
+\input{source}
+\input{signed}
+
+\begin{thebibliography}{9}
+\bibitem{Conway}\emph{Holomorphic source asymptotics and volume limits for Conway closures}.
+Companion paper, \href{https://sashakolpakov.github.io/murakamis_dream/papers/conway-asymptotics.pdf}{repository edition}.
+\bibitem{Newton}\emph{Newton coefficients and positive sources for Conway tangles}.
+Companion paper, \href{https://sashakolpakov.github.io/murakamis_dream/papers/newton-tangles.pdf}{repository edition}.
+\bibitem{CostinCostin} O. Costin and R. D. Costin,
+\emph{Rigorous WKB for finite-order linear recurrence relations with smooth coefficients},
+SIAM J. Math. Anal. \textbf{27} (1996), no.~1, 110--134;
+\href{https://arxiv.org/abs/math/0608413}{author preprint}.
+\bibitem{DLMF} F. W. J. Olver et al., eds.,
+\emph{NIST Digital Library of Mathematical Functions},
+\href{https://dlmf.nist.gov/2.10.E1}{equation (2.10.1)} and
+\href{https://dlmf.nist.gov/24.8.E1}{equation (24.8.1)}.
+\end{thebibliography}
+\end{document}

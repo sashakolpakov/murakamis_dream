@@ -41,7 +41,8 @@ vertex. Identifying that matrix with the geometric Hessian remains a
 written argument. The real-calculus module also derives the quadratic
 action cost from actual second derivatives, the supporting-tangent
 entropy gain, and the resulting two-branch strict sector estimate.
-The geometric derivative and entropy formulas remain written inputs.
+The triangle-potential module below now proves the local entropy derivative;
+its substitution into the geometric application is stated separately.
 The transport module starts with an actual positive table of corner
 loads. If its supported incidence graph is connected, grounding one
 vertex gives a strictly positive recession in every nonzero direction.
@@ -53,17 +54,22 @@ vertex and retains their prescribed logarithms as row constants.
 The strict-convexity module identifies the second derivative on an actual
 segment with connected weighted graph energy. It derives strict
 convexity, and hence uniqueness of that same potential's minimum. The
-geometric derivative identity and positive-table construction remain
-written inputs. The reduced-Laplacian module identifies the actual free
+positive-table construction and geometric incidence remain written inputs;
+the actual supported triangle derivatives are now supplied by the later
+potential module. The reduced-Laplacian module identifies the actual free
 matrix with that energy, constructs its inverse, and proves uniqueness
 of every grounded linear solution. It does not prove a quantitative
 inverse estimate or a nonlinear deformation theorem. The triangle-load module now differentiates the actual exponential,
 square-root and arctangent expressions and identifies their shared-vertex
-pairing with that edge energy. It includes one-zero triangles. Identifying
-these loads as the gradient of the geometric potential and verifying its
-positive support remain written application inputs. Together the
-optional modules contain thirty-four definitions and 116 theorems,
-all included in the axiom audit.
+pairing with that edge energy. It includes one-zero triangles. The
+triangle-potential module starts with the actual Lobachevsky integral and
+supported supremum, proves attainment by those loads, and derives the
+first and second derivatives. Its mixed assembly includes singleton rows
+and retains shared variables and demands. Geometric incidence, connected
+positive support and support-changing limits remain written application
+inputs. Together the optional modules contain forty-two definitions and
+157 theorems, all 199 declarations included in the axiom audit; 22 negative
+controls check invalid inputs.
 The optional command is separate from the Std-only
 check above; it requires
 Mathlib and its substantially larger compiled library.
@@ -76,7 +82,7 @@ python3 repro/check_paper_algebra.py --output repro/results/paper-algebra
 ~~~
 
 The runner requires SymPy, python-flint, NumPy and mpmath. It saves each program's
-output and stops on a failed check. Its sixteen groups cover polynomial
+output and stops on a failed check. Its eighteen groups cover polynomial
 resolvents and path partitions, positive-matrix identities and parity
 anchors, filling-sum normalization, symbolic peripheral coordinates,
 rational three-braid constants, the complete forty-branch planar
@@ -85,7 +91,11 @@ physical Newton matrices at eight levels, the exact terminal fan
 recurrence, symbolic tree-block and peripheral identities, moving-meridian
 physical matrices, complete Conway face maps and endpoint pairings,
 the two complementary-color certificates, and the classical Conway
-filling's symbolic peripheral and volume identities.
+filling's symbolic peripheral and volume identities. The quarter-index
+group compares the literal finite factorial source with its recurrence
+and terminal walls, and checks two-channel transport identities. The
+directed-tree group verifies its rational budgets, endpoint pairings and
+finite quotient-versus-normal trace calculations.
 The two planar certificate groups use outward interval arithmetic with explicit
 Fourier tails. Their reports keep the finite assertions separate from
 the written all-length arguments.

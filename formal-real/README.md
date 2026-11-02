@@ -12,6 +12,8 @@ uniqueness from actual graph-valued second derivatives, and invertibility
 of the actual graph Laplacian after grounding one coordinate. The triangle
 load module derives the local derivative and its assembled graph energy
 from the exponential, square-root and arctangent formulas themselves.
+The triangle-potential module then proves that these loads are the
+gradient of the literal integral-entropy supremum, including singleton rows.
 
 ## What is proved
 
@@ -134,10 +136,12 @@ D_t^2=\sum_{\{a,b\}\subset t}w_aw_b,
 
 where the sum is over ordinary corner pairs. A triangle with only one
 ordinary corner contributes no edge. Different triangles may supply
-parallel edges. The geometric differentiation giving this Hessian formula,
-positivity of its conductances, and identification of the connected
-ordinary-face graph remain **written inputs**. The actual finite real
-quadratic-form implication from those inputs is proved here. This module
+parallel edges. The `TriangleLoads` and `TrianglePotential` modules below now prove
+this differentiation for the displayed entropy-envelope potential and
+positivity of its conductances. Identifying that potential and its
+connected ordinary-face graph in the geometric application remains a
+**written input**. The actual finite real quadratic-form implication
+from those inputs is proved here. This module
 does not formalize circle-pattern existence, the rest of the geometric
 Jacobian argument, or an implicit function theorem.
 
@@ -366,9 +370,10 @@ distinct segment must be considered.
 
 These derivative hypotheses are satisfied by a `C²` potential with the
 stated Hessian identity; the proof needs only the indicated derivatives,
-not continuity of the Hessian. Geometric differentiation, identification of
-the actual conductance graph and its positive connected support, and Hall
-feasibility of the transport table remain written inputs. In the
+not continuity of the Hessian. For the explicit triangle entropy-envelope sum, `TrianglePotential`
+below now supplies the derivatives, including singleton rows. Identifying
+the geometric potential and its positive connected conductance support,
+and Hall feasibility of the transport table, remain written inputs. In the
 fixed-boundary disk application, the boundary pool and prescribed offsets
 are those described above; the Hessian must be that of the resulting
 potential in the free interior coordinates. The module does not prove
@@ -513,11 +518,10 @@ by `singletonLoad`: its sole supported corner has the constant load
 arctangent formula at \(D=0\). All-zero triangles are not part of the
 positive-radicand theorem. Singleton rows add no Hessian energy.
 
-The remaining potential-level input is the identification of these
-\(\alpha_i\) with the gradient of the actual entropy-envelope potential.
-The module does not formalize that constrained maximization or its
-Lagrange-multiplier solution. Once that identification and the actual
-supported incidence graph are supplied, the proved derivative is the
+This module alone does not identify these \(\alpha_i\) with a
+potential gradient. The next module proves that identification from the
+actual integral entropy and supported constrained maximum. With the
+actual supported incidence graph identified, the derivative above is the
 displayed Hessian energy. Existing `WeightedGraph` and
 `GroundedLaplacian` results apply when positive-weight paths connect the
 actual supported vertex space and the appropriate coordinate is grounded.
@@ -525,6 +529,134 @@ Zero-weight corners do not create positive edges; inactive coordinates
 or pooled boundary data must be treated according to the application.
 Neither graph connectivity, packing existence nor nonlinear deformation
 is inferred solely from the local formula.
+
+## The integral entropy and its variational gradient
+
+[TrianglePotential.lean](TrianglePotential.lean) contains eight definitions
+and forty-one theorems in `VolumeLogic.TrianglePotential`. It identifies
+the actual supported triangle envelope in equation `pc:Q` of
+[the planar-certificates paper](../papers/planar-certificates/main.tex)
+and equations `ti:eq-1`, `ti:eq-4`–`ti:eq-5` of
+[the triangular-insertion paper](../papers/triangular-insertion/main.tex).
+The potential is defined by the integral and supremum themselves; its
+gradient is not an assumption or a definition.
+
+The first three definitions are
+
+\[
+\Lambda(x)=-\int_0^x\log|2\sin u|\,du,\qquad
+f(t)=\frac{\Lambda(\pi t)+\Lambda(\pi/2-\pi t)}{\pi},\qquad
+f'(t)=\log\cos(\pi t)-\log\sin(\pi t)
+\quad(0<t<1/2).
+\]
+
+Here the integral is Mathlib's actual real interval integral. The proof
+uses integrability of the logarithmic sine singularities, the fundamental
+theorem of calculus away from those singularities, and the evaluated
+log-sine integral on `[0,π/2]`. It derives continuity of `Λ` and `f`,
+`f(0)=f(1/2)=0`, the displayed interior derivative, and concavity of `f`
+on the closed interval `[0,1/2]`. The supporting-tangent inequality
+therefore includes competitors at the endpoints; it does not require an
+entropy derivative at either endpoint.
+
+For fixed nonnegative coefficients `a : Fin 3 → ℝ`, put
+`w_i = a_i exp(q_i)`. The supported feasible set consists of vectors
+`α : Fin 3 → ℝ` satisfying
+
+\[
+\alpha_i\ge0,\qquad \sum_i\alpha_i=1/2,\qquad
+ a_i=0\Longrightarrow\alpha_i=0.
+\]
+
+The actual definition `potential a q` is the supremum of
+
+\[
+\sum_i f(\alpha_i)+\sum_{i:a_i>0}\alpha_i(\log a_i+q_i)
+\]
+
+over that set. The helper `logWeight` assigns zero at inactive corners,
+whose feasible loads are already zero, so no logarithm of a zero weight
+is used as a boundary penalty. For positive `a_i`, its value is proved
+to be `log w_i`.
+
+When `D²=w_0w_1+w_1w_2+w_2w_0>0`, the proof establishes directly that
+
+\[
+\alpha_i^*=\frac1\pi\arctan\frac{w_i}{D},\qquad
+\sum_i\alpha_i^*=\frac12,
+\qquad
+ f'(\alpha_i^*)+\log w_i=\log D\quad(a_i>0).
+\]
+
+The arctangent sum is proved for three nonnegative weights with positive
+`D²`, including one zero weight. Active loads lie strictly between zero
+and one half. Applying the entropy tangent inequality to every active
+corner and summing cancels the common multiplier `log D`, because all
+competitors have the same total mass. `objective_le_loads` bounds every
+feasible objective by the explicit one; `potential_eq_loads` then proves
+that the supremum is attained there. This does not rely on a general
+envelope differentiation theorem or an assumed optimizer.
+
+Differentiating the resulting explicit value along the actual path
+`q+t h` gives
+
+\[
+\frac{d}{dt}Q(a,q+t h)
+ =\sum_i h_i\alpha_i(a,q+t h).
+\]
+
+The terms containing derivatives of the loads cancel because their sum
+is zero. `potential_path_hasDerivAt` proves this at every real path
+parameter. The conductance Jacobian from `TriangleLoads` consequently
+gives the second derivative as the actual graph energy.
+
+A singleton uses the **same** feasible-set and supremum definitions.
+If `a_active>0` and every other coefficient vanishes, feasibility forces
+its sole load to be one half. The module proves
+
+\[
+Q(a,q)=\tfrac12(\log a_{\mathrm{active}}+q_{\mathrm{active}}),\qquad
+\frac{d}{dt}Q(a,q+t h)=\tfrac12 h_{\mathrm{active}},\qquad
+\frac{d^2}{dt^2}Q(a,q+t h)=0.
+\]
+
+It never evaluates `atan(w_i/D)` at `D=0` to produce that convention.
+The all-zero case is outside the stated hypotheses.
+
+The definition `summedPotential` retains one common vertex function and
+the actual face-demand term:
+
+\[
+\mathcal P(q)=\sum_{t\in T}Q(a^t,q\circ c_t)
+                   -\sum_{v\in V}\delta_v q_v.
+\]
+
+Here `T,V` are finite types, `c_t : Fin 3 → V` is the corner map, and
+`δ_v` is the specified demand. The first shared-sum theorems require
+positive radicand in every row. The final theorems
+`summedPotential_mixed_hasDerivAt` and
+`summedPotential_mixed_second_at` allow a fixed partition into those
+rows and singleton rows with explicitly supplied active corners. They
+prove the actual first derivative, including each singleton's affine
+term, and the actual second derivative at **every** point of the path.
+Its graph edge type is `T × Fin 3`, retaining the three unordered corner
+pairs in each triangle. Nonsingleton weights are the proved conductances;
+singleton weights are zero. Repeated shared corners and parallel edges
+are preserved. The demand term contributes to the first derivative and
+has zero second derivative.
+
+Thus the entropy-gradient identification is now proved for this concrete
+potential, including mixed supported rows. To apply `GroundedConvexity`,
+write a segment as `q+t h` and supply connectivity of the actual positive
+conductance support and the appropriate grounding. The derivative identity
+itself no longer needs to be supplied for this potential. The geometric
+or source interpretation of `Q`, the incidence maps, fixed-boundary
+pooling and offsets, Hall transport feasibility, and graph connectivity
+remain written application inputs. No continuity theorem as the fixed
+coefficients `a_i` change support is claimed; the one-zero and singleton
+cases are proved directly at their own fixed supports. Packing existence,
+nonlinear deformation and the volume identity are not conclusions of
+this module.
 
 ## Pinned dependencies
 
@@ -552,6 +684,9 @@ MATHLIB_NO_CACHE_ON_UPDATE=1 lake update volumeLogic mathlib
 lake exe cache get \
   Mathlib.Analysis.Complex.Basic \
   Mathlib.Analysis.Convex.Deriv \
+  Mathlib.Analysis.SpecialFunctions.Integrals.LogTrigonometric \
+  Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus \
+  Mathlib.Analysis.Calculus.Deriv.Shift \
   Mathlib.Analysis.Normed.Module.FiniteDimension \
   Mathlib.LinearAlgebra.Matrix.ToLin \
   Mathlib.LinearAlgebra.Matrix.NonsingularInverse \
@@ -608,7 +743,8 @@ the executed Lean version must still match the pin.
 The checker rebuilds the Std-only path dependency, compiles
 `RealTransfer.lean`, `WeightedGraph.lean`, `Flattening.lean`,
 `TransportCoercivity.lean`, `GroundedConvexity.lean` and
-`GroundedLaplacian.lean` and `TriangleLoads.lean`, and runs
+`GroundedLaplacian.lean`, `TriangleLoads.lean` and `TrianglePotential.lean`,
+and runs
 [AxiomAudit.lean](AxiomAudit.lean). Every
 definition and theorem must appear exactly once in the audit. Only Lean's
 standard foundational axioms `propext`, `Classical.choice` and `Quot.sound`
@@ -617,7 +753,7 @@ are permitted; placeholders and additional axioms fail the check.
 `summary.json` records every declaration, its axioms, all dependency pins,
 and the SHA-256 hashes of the optional package, checker and Std-only sources.
 It contains relative paths and omits timestamps so identical inputs produce
-the same summary. Twenty negative controls check altered pins, missing or
+the same summary. Twenty-two negative controls check altered pins, missing or
 duplicate dependencies, an absolute local dependency, incomplete or
 duplicate declaration audits, an omitted graph module or grounded-energy
 audit entry, an omitted flattening module or quadratic-cost audit entry,
@@ -625,17 +761,19 @@ an omitted transport module or grounded-coercivity audit entry,
 an omitted grounded-convexity module or unique-minimum audit entry,
 an omitted grounded-Laplacian module or unique-linear-solution audit entry,
 an omitted triangle-load module or shared-load derivative audit entry,
+an omitted triangle-potential module or actual supremum-gradient audit entry,
 and an unexpected logical axiom. A failed run
 removes any old success summary in its output directory.
 
-The optional count is **thirty-four definitions and one hundred sixteen theorems**, separate
+The optional count is **forty-two definitions and one hundred fifty-seven theorems**, separate
 from the Std-only theorem count: `RealTransfer` has two definitions and
 twenty-two theorems, `WeightedGraph` has seven definitions and nineteen
 theorems, `Flattening` has one definition and nine theorems,
 `TransportCoercivity` has seven definitions and sixteen theorems,
 `GroundedConvexity` has three definitions and eight theorems, and
 `GroundedLaplacian` has four definitions and eighteen theorems, and
-`TriangleLoads` has ten definitions and twenty-four theorems. The audit
+`TriangleLoads` has ten definitions and twenty-four theorems, and
+`TrianglePotential` has eight definitions and forty-one theorems. The audit
 checks these proofs and the
 listed dependency pins; it does not certify that a particular knot family
 satisfies the remaining written analytic and geometric hypotheses.

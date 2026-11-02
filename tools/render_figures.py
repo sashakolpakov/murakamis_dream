@@ -4,6 +4,7 @@
 Requires pdfLaTeX with TikZ and PyMuPDF. TeX intermediates stay temporary.
 """
 from pathlib import Path
+import argparse
 import shutil
 import subprocess
 import tempfile
@@ -11,16 +12,25 @@ import tempfile
 
 def main():
     import pymupdf
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("figures", nargs="*", help="Figure stems; omit to render all figures.")
+    args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
     figures = root / "book" / "figures"
     if not shutil.which("pdflatex"):
         raise SystemExit("pdfLaTeX is required to render the TikZ figures.")
-    for source in sorted(figures.glob("*.tex")):
+    available = {source.stem: source for source in figures.glob("*.tex")}
+    unknown = set(args.figures) - available.keys()
+    if unknown:
+        raise SystemExit("Unknown figure: " + ", ".join(sorted(unknown)))
+    selected = sorted(args.figures or available)
+    for name in selected:
+        source = available[name]
         with tempfile.TemporaryDirectory(prefix="murakamis-figure-") as tmp:
             subprocess.run(
                 ["pdflatex", "-interaction=nonstopmode", "-halt-on-error",
                  "-output-directory", tmp, str(source)],
-                check=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                check=True, cwd=root, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
             )
             pdf = Path(tmp) / (source.stem + ".pdf")
             with pymupdf.open(pdf) as document:

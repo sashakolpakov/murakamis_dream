@@ -34,9 +34,12 @@ CHECKS = {
     "conway-fillings": "papers/conway-fillings/check.py",
     "conway-asymptotics": "papers/conway-asymptotics/check.py",
     "circle-tree-asymptotics": "papers/circle-tree-asymptotics/check.py",
+    "quarter-index-asymptotics": "papers/quarter-index-asymptotics/check.py",
+    "directed-tree-asymptotics": "papers/directed-tree-asymptotics/check.py",
 }
 DIRECTORY_CHECKS = {"planar-certificates", "triangular-insertion", "terminal-decorations",
-                    "meridian-tangles", "conway-source-bounds", "conway-asymptotics"}
+                    "meridian-tangles", "conway-source-bounds", "conway-asymptotics",
+                    "quarter-index-asymptotics"}
 CERTIFICATE_INPUTS = (
     "repro/check_protected_sums.py",
     "experiments/audit_actual_sector_cover.py",
@@ -52,6 +55,9 @@ CERTIFICATE_INPUTS = (
     "experiments/verify_conway_single_leaf_attachment_certificate.py",
     "experiments/conway_single_leaf_attachment_certificate.json",
     "experiments/audit_all_circle_curvature_packet.py",
+    "experiments/audit_actual_all_circle_directed_volume.py",
+    "experiments/audit_all_circle_local_message_recursion.py",
+    "experiments/audit_main_meridian_direct_fillings.py",
 )
 
 

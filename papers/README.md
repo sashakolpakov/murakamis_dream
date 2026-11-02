@@ -49,7 +49,7 @@ common core for several inserted diagrams also uses protected gluing.
 
 ## The current drafts
 
-The seventeen papers total 262 pages, with individual lengths from 11 to
+The nineteen papers total 288 pages, with individual lengths from 11 to
 28 pages. They provide complete accounts of the results described below,
 with numbered companion imports. This is a partial extraction of the
 reference manuscript, rather than a replacement for all its theorem
@@ -173,6 +173,22 @@ identifies it with the independently constructed filled metric volume.
 The knot diagram and independently long signed powers are fixed before
 the level tends to infinity. The broader strict-tree syntax is separate.
 
+**Asymptotics of signed Newton coefficients near the quarter index.** 11 pages.
+[TeX source](quarter-index-asymptotics/main.tex) ·
+[PDF](../docs/papers/quarter-index-asymptotics.pdf)
+
+At one quarter of the level, the two roots of the signed leaf recurrence
+have equal modulus. The earlier high-index contraction no longer applies
+across that point. This paper first reduces the actual matrix recurrence
+on a fixed complex domain, then chooses a short propagation interval
+whose relative action cannot amplify the exponentially small remainder.
+Both initial components come from the original finite sum. The resulting
+holomorphic interpolation retains the same nonzero amplitude and absolute
+shear action. A local Gaussian consequence states its wire-window and
+lattice hypotheses explicitly. These are local analytic results for use
+in broader Conway arguments; they do not bound a whole complementary
+source or prove a further knot-family volume theorem.
+
 **Uniform spectral bounds for local Casimir sources.** 14 pages.
 [TeX source](local-coefficients/main.tex) ·
 [PDF](../docs/papers/local-coefficients.pdf)
@@ -271,6 +287,25 @@ A second theorem gives the first centered microscopic meridian correction,
 including its physical framing. Local and directed degree criteria, and
 the all-orders longitude statements, are separate results.
 
+**Local degree and twist bounds for circle-tree volume limits.** 15 pages.
+[TeX source](directed-tree-asymptotics/main.tex) ·
+[PDF](../docs/papers/directed-tree-asymptotics.pdf)
+
+The finite tree contraction is evaluated one vertex at a time. Each
+subtree polynomial is divided by its exact value at zero before the next
+trace, so earlier complex contributions remain in the calculation.
+A conditional kernel estimate and a fresh real-domain bound let the
+induction continue without a loss proportional to tree depth. All Fourier
+charges, repeated-root derivatives and endpoint terms are retained.
+The explicit directed criterion implies the volume limit and a centered
+microscopic meridian profile. One consequence requires, at every vertex,
+either degree at least \(2^{28}\) or absolute signed crossing power at
+least \(2^{27}\); the alternatives may differ between vertices.
+The older uniform local condition follows as a corollary, making its
+separate tiny-disk induction unnecessary here. The summed criterion has
+its own proof and a sharper meridian correction; neither theorem is
+substituted for the other.
+
 **Shared face estimates and triangular gluing for planar link diagrams.** 15 pages.
 [TeX source](planar-certificates/main.tex) ·
 [PDF](../docs/papers/planar-certificates.pdf)
@@ -356,7 +391,6 @@ purposes:
 | Subject | Result to explain and prove | Dependencies that must remain visible |
 | --- | --- | --- |
 | General strict Conway trees | Extend the completed-root argument to the broader syntax, including bare junctions | Exact normal form, boundary profiles, signed component bounds, quarter-index expansions and marked geometry |
-| Local and directed circle-tree criteria | Prove the separate subtree estimates that remove the summed-condition restriction | Exact moving-meridian tree calculus, conditional source bounds, outgoing estimates and classical completion |
 | Geometric longitude and recurrences | All-order meridian expansions force the selected geometric factor to divide a classical symbol | The moving-meridian source, full expansion, normalization and preferred geometric longitude |
 
 The frozen reference manuscript's first theorem uses its completed-root
@@ -364,8 +398,9 @@ grammar. The research notes extend this to more general strict ordered
 trees, with extra normal-form, boundary-profile and spectral-propagation
 arguments. The dependency graph now records those extra steps separately.
 It does not treat the narrower manuscript chapters as proofs of the
-broader extension. The extension still needs its own paper and detailed
-review of those additional inputs.
+broader extension. The quarter-index estimate now has its own paper. The remaining normal-form,
+comparison and marked-geometry arguments still need a complete account
+and detailed review before the broader extension has companion-paper coverage.
 
 These remaining subjects still need their own complete accounts. Each
 candidate needs a precise theorem, complete proofs of its own claims,
@@ -375,11 +410,11 @@ For a citation between papers, the exporting paper must state a numbered
 theorem with its normalization, degree restrictions, level parity and
 uniformity assumptions. The importing paper must name that theorem and
 check those hypotheses. A reference to a folder of calculations is not
-a substitute. The seventeen drafts now include the completed-root Conway volume theorem
-and the summed circle-tree criterion, together with their separate finite,
-analytic and geometric foundations. The broader strict-tree extension,
-the local and directed circle-tree estimates, and the all-orders meridian
-and longitude results still require their own extraction and proof review.
+a substitute. The nineteen drafts now include the completed-root Conway volume theorem,
+the summed and directed circle-tree criteria, and the local quarter-index
+expansion, together with their finite and geometric foundations. The
+broader strict-tree extension and the all-orders meridian and longitude
+results still require their own extraction and proof review.
 The dependency graph keeps those obligations visible.
 
 The illustrated guide retains the broader approaches and unsuccessful

@@ -834,6 +834,107 @@ The same distinction matters for slowly varying recurrences. Distinct instantane
 
 Local stationary-phase methods are treated in [Hörmander, *The Analysis of Linear Partial Differential Operators I*](https://link.springer.com/book/10.1007/978-3-642-61497-2). A related root-of-unity asymptotic problem is [Garoufalidis and Zagier's Nahm-sum analysis](https://arxiv.org/abs/1812.07690). Its fixed-root radial limit and hypotheses differ from the growing-order roots and finite knot sums here; no identification of those objects is assumed.
 
+## Following the actual recurrence through the quarter index
+
+The [quarter-index paper](../../docs/papers/quarter-index-asymptotics.pdf)
+settles one local instance of the transport problem just described.
+Let \(N\) be the quantum level, \(r\) the integer index of a signed
+Newton coefficient, and \(x=r/N\). Normalize the coefficient by its first
+summand and call the result \(U_{h,r}\), where \(h\) is the color deficit.
+The paper defines this finite sum explicitly before deriving its
+second-order recurrence. The upper terminal row fixes its solution.
+
+At zero color deficit the two characteristic roots of that recurrence are
+
+\[
+\mu_s(x)=-e^{-2\pi i x},\qquad
+\mu_f(x)=e^{-2\pi i x}\cot^2(\pi x).
+\]
+
+The subscripts label the branch selected by the known high-index source
+and the competing branch. At \(x_0=1/4\), their values are \(i\) and
+\(-i\). They have equal modulus but do not coincide. Above \(x_0\), the
+ratio \(|\mu_f/\mu_s|\) is less than one; below it, the ratio is greater
+than one. This explains why the preceding high-index contraction does
+not simply extend across quarter.
+
+![The relative action changes sign at quarter. The actual source is transported from an anchor above quarter, retaining both components. The negative accumulated action must also dominate the possible amplification of coupling errors.](../figures/quarter-index-action.png)
+
+The proof first works on a fixed complex neighborhood where the two
+roots remain distinct. Repeated analytic changes of basis reduce the
+coupling between them to \(O(e^{-\sigma N})\), with a fixed
+\(\sigma>0\). Only then is a shorter interval chosen. An anchor
+\(x_b>1/4\) lies in the region where the actual source is already known.
+For every target near quarter, the integral
+
+\[
+\int_x^{x_b}\log|\mu_f(u)/\mu_s(u)|\,du
+\]
+
+is strictly negative. In addition, its absolute value at every
+intermediate starting point is kept below \(\sigma/4\). The first
+comparison suppresses the competing initial component. The second
+prevents an exponentially small coupling created in the middle of the
+interval from becoming significant later. Both comparisons are needed.
+
+The selected product is then interpolated by Euler–Maclaurin summation,
+with a truncation order proportional to \(N\). Analytic derivative
+bounds make the interpolation error exponentially small on the integer
+grid. The [Euler–Maclaurin formula with remainder](https://dlmf.nist.gov/2.10.E1)
+is used explicitly. [Costin and Costin](https://arxiv.org/abs/math/0608413)
+provide background on asymptotics of finite-order recurrences; the paper
+proves the required reduction and actual source selection directly.
+
+The result supplies a nonzero local coefficient expansion and a Gaussian
+formula for a specified strict wire window. It gives no estimate for the
+rest of a knot's state sum. Those complementary terms remain the subject
+of a separate theorem when this local result is used in a broader Conway
+construction.
+
+## Keeping exact subtree values in the directed tree argument
+
+The [directed tree paper](../../docs/papers/directed-tree-asymptotics.pdf)
+uses another way to control a large finite sum. Fix an ordered tree of
+crossing-circle tangles and choose a vertex at which to finish evaluating
+its closed contraction. For a nonroot vertex \(v\), let \(M_{v,N}(u)\)
+be the polynomial obtained after evaluating its entire subtree, leaving
+the parent angle \(u\) free. Its trigonometric degree is at most \(N-1\),
+regardless of the number of vertices in that subtree.
+
+Write \(K_N(t,u)\) for the exact two-variable edge kernel and
+\(\mathcal D_v\) for the original crossing trace at \(v\). Their finite
+formulas retain derivatives at repeated spectral roots. If \(w\) runs
+through the children of \(v\), define
+\(\widehat M_{w,N}(t)=M_{w,N}(t)/M_{w,N}(0)\). The recursion is exactly
+
+\[
+M_{v,N}(u)=\gamma_{e_v}
+ \left(\prod_w M_{w,N}(0)\right)
+ \mathcal D_v\!\left[K_N(t,u)\prod_w\widehat M_{w,N}(t)\right].
+\]
+
+Here \(e_v\) is the edge to the parent and \(\gamma_{e_v}\) is its
+prescribed orientation scalar. The theorem proves that the denominators
+\(M_{w,N}(0)\) are nonzero for sufficiently large levels; it does not
+assume this about an arbitrary subtree.
+
+![The exact values at zero are retained as factors. A normalized polynomial passes to the parent; the final root evaluates a scalar and needs no outgoing polynomial bound.](../figures/normalized-tree-recursion.png)
+
+This normalization separates two tasks. The exact factors retain the
+complex values accumulated inside the children. The normalized
+polynomials satisfy local complex estimates and a real-domain decay
+bound. Evaluating the next trace produces a nonzero leading contribution
+and a new decay bound for the polynomial sent onward. Thus the proof
+pays the loss at the current vertex, rather than repeatedly estimating
+all earlier subtree values by absolute upper bounds.
+
+The final root sends no polynomial to a parent. It must satisfy the
+trace-tail estimate, but it has no outgoing decay requirement. This is
+why the directed criterion distinguishes the root. The proof keeps every
+Fourier charge and endpoint contribution before comparing the dominant
+term with the error. A separate geometric theorem identifies the restored
+joint action with the actual knot-complement volume.
+
 ## Quantum recurrences, the A-polynomial, and the selected solution
 
 The classical \(A\)-polynomial records peripheral eigenvalue pairs of representations of the knot group, after the chosen convention about reducible factors. Write \(M,L\in\mathbb C^\times\) for the meridian and longitude eigenvalues. A branch of

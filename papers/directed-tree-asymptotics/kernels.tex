@@ -1,0 +1,185 @@
+\section{The full kernel with a fixed parent angle}\label{dt:sec-2}
+
+The fixed Newton polynomials are
+
+\begin{equation}\label{dt:eq-N1}
+\begin{gathered}
+ d=N-1,\qquad c_j=2\cos((2j+1)\pi/N),\qquad
+ S_k=\prod_{r=1}^k2\sin(\pi r/N),\\
+ e_k(z)=S_k^{-2}\prod_{j<k}(c_j-z),\qquad 0\le k<N.
+ \end{gathered}
+\end{equation}
+
+Let \(\mathcal T_N(2\cos\theta)=2\cos(N\theta)\), and put
+\(P_\sigma(z)=\mathcal T_N(z)+2\cos(2\pi\sigma)\). The normalized
+polynomial trace is
+
+\begin{equation}\label{dt:eq-N2}
+\phi_\sigma(F)=(-1)^dN^2[z^d]\operatorname{rem}_{P_\sigma}F,
+ \qquad \phi_\sigma(e_i e_j)=\mathbf1_{i+j=d}.
+\end{equation}
+
+The remainder has degree less than \(N\). This is the full polynomial
+functional, including its derivative values when roots coalesce.
+\cite[Theorem~7.1]{Meridian}
+retains the paired factors
+
+\begin{equation}\label{dt:eq-N3}
+W_k(s)=\prod_{r=1}^k
+     \left(1-\frac{\sin^2(\pi s/N)}{\sin^2(\pi r/N)}\right).
+\end{equation}
+
+After lowering the pairing \eqref{dt:eq-N2}, a physical turn gives the equal-index
+weight \(\gamma_e(s)H_N(s)/W_k(s)\). The factor \(\gamma_e\) is the
+original scalar prescribed by that edge's orientation type. It stays in
+the exact scalar ledger.
+
+For the edge action write
+
+\begin{equation}\label{dt:eq-N4}
+\begin{gathered}
+ J(x)=\int_0^x\log(2\sin\pi v)\,dv,\qquad
+ g(x)=J(2x)-4J(x),\qquad G_0=g(1/4),\\
+ b(x,t)=\int_0^x\log(2\cos(2\pi v)+2\cos t)\,dv-2J(x),\\
+ \psi(t,u)=\operatorname{stat}_x[b(x,t)+b(x,u)],
+                       \qquad\psi(0,0)=2G_0.
+ \end{gathered}
+\end{equation}
+
+The logarithms and stationary branch are continued from
+\(x=1/4,t=u=0\). The canonical factorial interpolation is \cite[Lemma~2.1]{Factorial}.
+Its midpoint application and the finite complex edge contour are proved
+in \cite[Section~3]{Summed}. The full polynomial and repeated-root
+bounds are \cite[Lemma~2.1]{Summed}. These statements precede the
+summed hypothesis in their proofs and hold independently of it.
+Use the exact full kernel
+
+\begin{equation}\label{dt:eq-13}
+K_N(t,u;s)=\sum_{k=0}^{N-1}
+       e_k(-2\cos t)e_k(-2\cos u)\frac{H_N(s)}{W_k(s)}.
+\end{equation}
+
+The definitions of \(e_k,W_k\) and the fixed anti-diagonal trace metric are
+unchanged. It is a polynomial of degree at most \(N-1\) in each of
+\(-2\cos t\) and \(-2\cos u\), hence has trigonometric degree at most
+\(N-1\) in either angle.
+The paired factors and their inverses are bounded for fixed \(|s|\le R<1\).
+Every inequality below permits a polynomial factor in N.
+
+The full-kernel real estimate is
+
+\begin{equation}\label{dt:eq-14}
+|K_N(t,u;s)|\le C_RN^{A_R}
+   e^{N\{2G_0-k_0[(1-\cos t)+(1-\cos u)]\}},
+                 \qquad t,u\in[-\pi,\pi].
+\end{equation}
+
+To verify this, split the sum at \(I=[1/5,3/10]\).
+On \(I\), \cite[equation~(4.1)]{Summed} gives angular loss
+\(\sin^2(t/2)/160\) at each end. The positive zero-angle sum
+has rate \(2G_0\). Outside \(I\), the full polynomial bound
+has loss \(\eta_K=\pi/200\), including high-index derivatives.
+Since \(4k_0<\eta_K\) and \(2k_0<1/160\), both parts obey
+\eqref{dt:eq-14}. The bounded paired insertion changes only its
+polynomial prefactor.
+
+The conditional estimate needed here is
+
+\begin{equation}\label{dt:eq-15}
+|K_N(t+iy,u;s)|\le C_RN^{A_R}
+ e^{N\{\Re\psi(0,u)-k_0(1-\cos t)+16y^2\}},
+ \quad u\in\mathcal R,\quad t\in[-\pi,\pi],\quad |y|\le b_0.
+\end{equation}
+
+Thus the parent compact is a long, thin rectangle, rather than the old
+disk of radius \(2^{-12}\). The constant term is the actual conditional phase
+\(\psi(0,u)\), not its upper bound \(2G_0+O(|u|^2)\).
+
+Here is a proof from the original finite kernel. Split the indices into
+\(I=[1/5,3/10]\) and its complement. The complementary full polynomial, by \cite[Lemma~2.1 and equation~(2.7)]{Summed}, has the single-edge loss \(\eta_K=\pi/200\), including high
+indices and their complete derivatives. Its ellipse bound is
+
+\begin{equation}\label{dt:eq-16}
+C_RN^{A_R}
+       e^{N\{2G_0-\eta_K+|y|+|\Im u|\}}.
+\end{equation}
+
+The edge Hessian in \cite[equation~(4.3)]{Summed} gives, on the radius 1/4 bidisk,
+
+\begin{equation}\label{dt:eq-17}
+|\psi_{tt}+a_0|\le a_0/50,
+ \quad |\psi_{uu}+a_0|\le a_0/50,
+ \quad |\psi_{tu}|\le a_0/50,
+ \quad \psi_t(0,u)=\psi_u(t,0)=0.
+\end{equation}
+
+In particular \(|\psi(0,u)-2G_0|\le |u|^2/10\). Hence \eqref{dt:eq-16} is smaller
+than \eqref{dt:eq-15}: the sum \(b_0+b_0+(R_0^2+b_0^2)/10+2k_0\) is less
+than \(\eta_K/2\). All these constants are independent of the tree.
+
+For the retained indices write \(u=a+ib\). Their factors at \(a\) are positive.
+If \(r_j=\cos(2\pi(j+1/2)/N)\), then \(r_j>-1/3\) and
+\(r_j+\cos a>253/384\). Along \(|a|\le1/8,\ |b|\le2^{-11}\), the denominator
+\(r_j+\cos(a+ib)\) has modulus greater than \(3/5\), and
+
+\begin{equation}\label{dt:eq-18}
+\left|\frac{d^2}{du^2}\log(r_j+\cos u)\right|
+ =\left|\frac{-r_j\cos u-1}{(r_j+\cos u)^2}\right|<9.
+\end{equation}
+
+The first derivative at real a is real. Integrating vertically therefore
+gives the actual finite-product estimate
+
+\begin{equation}\label{dt:eq-19}
+|e_k(-2\cos(a+ib))|
+       \le e_k(-2\cos a)e^{5Nb^2},\qquad k/N\in I.
+\end{equation}
+
+At the other end retain the original product bound
+
+\begin{equation}\label{dt:eq-20}
+|e_k(-2\cos(t+iy))|
+   \le e^2e_k(-2)e^{N[-\alpha\sin^2(t/2)+11y^2]},
+                       \qquad \alpha=1/160>1/250.
+\end{equation}
+
+The positive retained sum at \((0,a)\) is bounded by a polynomial times
+\(\exp(N\psi(0,a))\), uniformly for real \(|a|\le1/8\). This is the positive one-edge Laplace estimate in \cite[Section~3]{Summed}: its unique critical wire is
+
+\begin{equation}\label{dt:eq-21}
+\tan^2(\pi x)=\frac1{1+\tan^2(a/2)},
+\end{equation}
+
+which stays in the interior of \(I\). Its second derivative stays negative
+on this fixed real compact. Equations \eqref{dt:eq-19}--\eqref{dt:eq-20}, and the second bound
+in \eqref{dt:eq-17}, consequently give
+
+\begin{equation}\label{dt:eq-22}
+|K_{N,I}(t+iy,u;s)|\le C_RN^{A_R}
+ e^{N\{\Re\psi(0,u)-\alpha\sin^2(t/2)+11y^2+6b^2\}}.
+\end{equation}
+
+For \(|t|\ge1/8\),
+
+\begin{equation}\label{dt:eq-23}
+6b_0^2<\frac{\alpha}{2}\sin^2(1/16),\qquad
+                         2k_0<\alpha/2.
+\end{equation}
+
+For example \(\sin(1/16)>1/(8\pi)\), \(\pi^2<10\) and \(\alpha>1/250\) already
+prove the first inequality. This proves \eqref{dt:eq-15} in this range.
+
+For \(|t|\le1/8\), \cite[equation~(3.10)]{Summed} gives the exact
+nonzero edge asymptotic on the 1/4 bidisk. Both \(u\) and \(t+iy\) lie strictly
+inside that disk. Integrating the first bound of \eqref{dt:eq-17} gives \eqref{dt:eq-15} there.
+The original lattice currents and \eqref{dt:eq-16} are exponentially smaller.
+In particular the full kernel, uniformly on this smaller rectangle
+product, retains
+
+\begin{equation}\label{dt:eq-24}
+K_N(t,u;s)=N^{-3/2}a_e(t,u)e^{N\psi(t,u)}
+                         (1+O_R(N^{-1})),
+\end{equation}
+
+with the original nonzero holomorphic leading amplitude and midpoint
+normalization. The outside physical edge gamma is not included in \(a_e\).

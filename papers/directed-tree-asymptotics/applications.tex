@@ -1,0 +1,261 @@
+\section{Uniform local consequences and concrete constructions}\label{dt:sec-8}
+
+The directed criterion has the following simple consequence:
+
+\begin{equation}\label{dt:eq-47}
+|n_v|\ge2^{27}\quad\text{at every vertex}
+             \quad\Longrightarrow\quad\text{Theorem~\ref{dt:main}}.
+\end{equation}
+
+This sufficient constant is independent of the number of vertices,
+their degrees and the choice of root. Here is a proof covering all
+degrees simultaneously. Choose \(c_v=k_0/2\) at every nonroot vertex
+and write \(\delta\) for their common value in \eqref{dt:eq-3}. The elementary
+cosine estimate gives
+
+\begin{equation}\label{dt:eq-48}
+\chi\ge\frac{r_0^2}{2}-\frac{r_0^4}{24}
+       =2^{-9}\frac{3071}{3072}>2^{-10},\qquad
+                          \delta>2^{-30}.
+\end{equation}
+
+At any vertex, including the root, put
+\(\mathcal R_v=\sqrt{d_v^2+n_v^2}\). Then
+
+\begin{equation}\label{dt:eq-49}
+A_v\ge\frac{k_0d_v}{2\pi^2},\qquad B_v\le16d_v,
+ \qquad C_v\le\frac{\mathcal R_v^2}{8k_0d_v}.
+\end{equation}
+
+For the last inequality use \(16\le1/(8k_0)\). Each of the four
+branches of the minimum in \eqref{dt:eq-6} consequently has the following lower
+bound, respectively:
+
+\begin{equation}\label{dt:eq-50}
+\frac\delta2,\qquad
+ \frac{t_0k_0d_v}{\pi\mathcal R_v},\qquad
+ \frac{k_0d_v}{16\mathcal R_v},\qquad 2^{-12}.
+\end{equation}
+
+The second displayed quantity is smaller than the third and fourth.
+For the third bound, use
+\(\pi|b_v|+t_0|D_v|\le\mathcal R_v(1+t_0/\pi)/2\).
+Thus every branch of \eqref{dt:eq-7}, not just its tail branch, is bounded below by
+
+\begin{equation}\label{dt:eq-51}
+\eta_v\ge\min\left\{
+       \frac{t_0\mathcal R_v\delta}{8\pi},
+       \frac{t_0^2 k_0d_v}{4\pi^2}\right\}.
+\end{equation}
+
+Indeed the second entry here is smaller than each of the other three
+entries in \eqref{dt:eq-7}, by their explicit values and \(t_0\ll r_0\).
+On the other hand
+
+\begin{equation}\label{dt:eq-52}
+\beta_v=\frac{420\pi}{361}\frac{d_v}{\mathcal R_v^2}
+                       <\frac{4d_v}{\mathcal R_v^2}.
+\end{equation}
+
+For comparison with half the first entry of \eqref{dt:eq-51}, it suffices that
+\(\mathcal R_v^2>64\pi/(t_0\delta)\), since \(d_v\le\mathcal R_v\).
+The right side is less than \(2^{52}\), using \(\pi<4\) and \eqref{dt:eq-48}.
+For comparison with half the second entry it suffices that
+\(\mathcal R_v^2>32\pi^2/(t_0^2k_0)\), whose right side is less
+than \(2^{53}\), since \(\pi^2<10\). Both inequalities follow
+strictly from \(\mathcal R_v^2\ge n_v^2\ge2^{54}\).
+The charge-cut condition in \eqref{dt:eq-8} follows as well.
+
+For the outgoing patch, the sharper elementary estimate is
+
+\begin{equation}\label{dt:eq-53}
+\beta_v\le\frac{210\pi}{361|n_v|}
+ \le\frac{330}{361}\,2^{-26}
+ <\frac{3071}{3072}\,2^{-26}
+ \le\frac{k_0}2\chi.
+\end{equation}
+
+Here \(\pi<22/7\),
+\(d_v/(d_v^2+n_v^2)\le1/(2|n_v|)\), and the displayed rational
+comparison prove \eqref{dt:eq-9} for every degree. This completes the corollary
+without a numerical scan or a threshold depending on the tree.
+
+The same proof gives a mixed condition, chosen independently at each
+vertex:
+
+\begin{equation}\label{dt:eq-53a}
+\boxed{\qquad
+       d_v\ge2^{28}\quad\text{or}\quad |n_v|\ge2^{27}
+               \qquad\text{for every }v.\qquad}
+\end{equation}
+
+Under the degree alternative, \(\mathcal R_v^2\ge d_v^2\ge2^{56}\)
+proves the same two tail comparisons, while
+
+\begin{equation}\label{dt:eq-53b}
+\beta_v\le\frac{420\pi}{361d_v}
+             \le\frac{330}{361}\,2^{-26}
+                    <\frac{k_0}2\chi
+\end{equation}
+
+is the same outgoing patch bound. Neither alternative needs to hold
+uniformly over all vertices. In particular, the high-degree vertices
+may retain any fixed signed powers, including zero and small nonzero
+powers. No sum over the number of such vertices occurs.
+
+Here is a precise extension construction illustrating that freedom.
+Start with any fixed ordered circle-tree core whose original endpoint
+pairing closes to a knot and has no internal closed component. Retain
+all its fixed signed powers. At every core vertex choose one of its
+actual product slots next to its crossing box and insert a consecutive
+stack of an even number \(B\ge2^{28}\) of new terminal pieces. Every
+new leaf has a fixed odd power satisfying
+
+\begin{equation}\label{dt:eq-53c}
+|n_{\mathrm{leaf}}|\ge2^{27}+1.
+\end{equation}
+
+The physical quarter-turn of an odd two-strand braid has diagonal
+pairing \(X=\{02,13\}\); this pairing is invariant under the
+quarter-turn. An even ordered stack of these leaves has the through
+pairing \(I=\{03,12\}\) and creates no internal circle. Inserting it
+in the specified slot therefore preserves the original local endpoint
+pairing in that actual frame. This is a pairing calculation, not an
+isotopy removing the new tangles. At the original closing box the same
+insertion takes place inside its local ball. An added terminal leaf may
+then be chosen as the recursive root using the original closed-collar
+move with its induced frame reversal and factor order retained.
+
+Thus the resulting diagram is again a knot, while its knot type may
+change. Each old vertex now satisfies the degree alternative and each
+new leaf satisfies the twist alternative in \eqref{dt:eq-53a}. The resulting actual
+knot complement is hyperbolic and satisfies Theorem~\ref{dt:main}. The number and
+arrangement of prescribed short-power vertices are arbitrary but fixed;
+the number \(B\) does not depend on their total count.
+
+\begin{figure}[t]
+\centering\input{figures/paired-leaves}
+\caption{The upper drawing records tangle operations, not a knot
+projection. In the construction, each drawn pair represents \(B/2\)
+consecutive pairs inserted in one chosen product slot. The lower
+pairing calculation is \(X\circ X=I\), with no internal component;
+it preserves the original closure's component count, not its knot type.}
+\label{dt:leaves-figure}
+\end{figure}
+
+The earlier uniform local condition is also a corollary:
+\begin{corollary}\label{dt:local}
+If \(\max_v d_v/(d_v^2+n_v^2)\le2^{-120}\), then the conclusions
+of Theorem~\ref{dt:main} hold.
+\end{corollary}
+\begin{proof}
+If both \(d_v<2^{28}\) and \(|n_v|<2^{27}\), then
+\(d_v^2+n_v^2<2^{57}\). Since \(d_v\ge1\), this would give
+\(d_v/(d_v^2+n_v^2)>2^{-57}>2^{-120}\). Thus every vertex
+satisfies \eqref{dt:eq-53a}. This proof uses the directed theorem,
+not a summability hypothesis over vertices.
+\end{proof}
+
+\section{A star beyond both previous quantitative tests}\label{dt:sec-9}
+
+Consider an ordered star rooted at its central vertex, of odd degree
+\(d=30{,}000{,}001\). Set its power to 2 and every terminal power to the fixed
+odd integer \(2^{60}+1\). Choose \(c_v=k_0/2\) on every leaf.
+
+The knot pairing can be checked in the original terminal-root syntax,
+even though the finite contraction is evaluated from the center. Label
+the boundary points lower left, lower right, upper right, upper left
+by \(0,1,2,3\). The even and odd braid pairings are respectively
+
+\begin{equation}\label{dt:eq-54a}
+I=\{03,12\},\qquad X=\{02,13\};\qquad
+ T(I)=H=\{01,23\},\quad T(X)=X.
+\end{equation}
+
+At a terminal root there are \(d-1\) other leaves. Their turned odd
+braids have pairing \(X\); their ordered product has pairing \(I\)
+because \(d-1\) is even. The central power \(2\) preserves it. Its
+actual quarter-turn has pairing \(H\), and stacking the root's odd
+braid against \(H\) still gives \(H\), with no internal closed arc.
+Cylindrical closure joins \(03\) and \(12\), so it closes \(H\)
+into one component. All intermediate products before that last stack
+are two through-strand braids. There is no hidden internal component.
+
+The criterion can be verified by rational enclosures without expanding this large
+tree. All leaves have the same data. The center has approximately
+
+\begin{equation}\label{dt:eq-54}
+\beta_o=1.219\,10^{-7},\qquad
+ \eta_o=2.713\,10^{-7},\qquad
+       \frac{\beta_o}{\eta_o/2}<0.9.
+\end{equation}
+
+Every leaf has a much smaller ratio. The root does not satisfy the
+nonroot patch inequality for any \(c>0\), because \(\beta_o>k_0\chi\).
+Nevertheless its exact final trace satisfies \eqref{dt:eq-8}. Thus that outgoing
+patch must not be charged to a root that sends no message.
+
+Moreover
+
+\begin{equation}\label{dt:eq-55}
+\sum_v\frac{d_v}{d_v^2+n_v^2}
+       >\frac{30,000,001}{30,000,001^2+4}>2^{-25},
+\end{equation}
+
+and its maximum is far above \(2^{-120}\). The example therefore lies beyond
+both published quantitative alternatives. Its size and all its powers
+are fixed; it is not an N-growing family. The constant sizes are coarse,
+and no optimality assertion is intended.
+
+Here are rational enclosures proving the inequalities rather than
+inferring them from those decimal values. Put
+
+\begin{equation}\label{dt:eq-56}
+\pi_- =3,\quad \pi_+=22/7,\quad c=k_0/2,\quad
+ \chi_-=r_0^2/2-r_0^4/24,\quad
+ \delta_- =\frac{c\chi_-}{4(1+c)}.
+\end{equation}
+
+At the central vertex use the conservative height
+\(y_* =\delta_-/2\). It is at most each branch of \eqref{dt:eq-6}. For example,
+with
+
+\begin{equation}\label{dt:eq-57}
+D_- =\frac d{2\pi_+},\quad D_+=\frac{d+1}{2\pi_-},\quad
+ A_- =\frac{dc}{\pi_+^2},\quad
+ C_+=d+\frac{\pi_-^{-2}}{4A_-},
+\end{equation}
+
+the three non-strip comparisons are
+
+\begin{equation}\label{dt:eq-58}
+y_*<\frac{t_0D_-}{4C_+},\qquad
+ y_*<\frac{dc}{8(1+t_0D_+)},\qquad y_*^2<\frac c8.
+\end{equation}
+
+The strip comparison follows from \(\delta\ge\delta_-\).
+Every quantity in \eqref{dt:eq-56}--\eqref{dt:eq-58} is rational. Direct cross-multiplication
+also gives
+
+\begin{equation}\label{dt:eq-59}
+\frac{2[420\pi_+d/(361(d^2+4))]}
+             {t_0D_-y_*/2}<\frac9{10},
+ \qquad
+ 2\frac{420\pi_+d}{361(d^2+4)}
+ <\min\left\{\frac{dc}{2},\ A_-r_0^2,
+                          \frac{D_-r_0^2}{8}\right\}.
+\end{equation}
+
+These compare the upper bound for twice the first-charge drop with
+all four lower bounds for \(\eta_o\). The charge cutoff is greater
+than two.
+
+For a leaf with \(n=2^{60}+1\), take
+\(y_*=t_0k_0/(2n)\). The same direct rational comparisons, using
+\(D_-=n/(2\pi_+)\), \(D_+=(n+1)/(2\pi_-)\),
+\(A_-=2k_0/\pi_+^2\), and
+\(C_+=16+[n/(2\pi_-)]^2/(4A_-)\), put this height below each
+branch of \eqref{dt:eq-6}. They give a lower bound greater than \(2^{-49}\)
+for every entry of \eqref{dt:eq-7}, while \(\beta_v<2^{-117}\).
+The outgoing patch follows from
+\(\beta_v<(k_0/2)\chi_-\). This proves the leaf inequalities.

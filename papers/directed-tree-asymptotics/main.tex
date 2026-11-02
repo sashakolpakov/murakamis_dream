@@ -1,0 +1,200 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,booktabs,array,xurl}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\setlength{\emergencystretch}{2em}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\dd}{\mathrm d}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\Ch}{\operatorname{Ch}}
+\newcommand{\Turn}{\mathsf T}
+\newcommand{\stat}{\operatorname{stat}}
+\newcommand{\Log}{\operatorname{Log}}
+\title{Local degree and twist bounds for circle-tree volume limits}
+\author{}\date{}
+\begin{document}\maketitle
+\begin{abstract}
+We prove a volume limit for the original reduced invariant of a fixed
+ordered tree of crossing circles from a finite condition at its vertices.
+The condition allows a different real-decay bound on each directed edge
+and imposes no sum over the tree. A simple consequence is that at every
+vertex either the degree is at least \(2^{28}\) or the absolute signed
+crossing power is at least \(2^{27}\). Large-degree vertices may retain
+zero or small powers. The proof evaluates the full finite contraction
+recursively, dividing each subtree polynomial by its exact value at zero.
+A conditional complex kernel estimate, a one-variable Fourier calculation
+with all endpoint currents, and a fresh outgoing bound close the induction
+without a depth-dependent exponential loss. The leading coefficient is
+nonzero through both level parities. The classical circle-tree theorem
+identifies the critical action with the volume of the original hyperbolic
+knot complement. We retain the microscopic main-meridian scalar and give
+its normalized leading profile.
+\end{abstract}
+
+\section{The fixed diagrams and the conclusion}\label{dt:intro}
+A crossing circle bounds a disk punctured twice by the main strands.
+Its signed crossing power is measured in that disk's original frame.
+Fix a finite ordered tree \(\mathcal T=(V,E)\), with at least one edge,
+and a crossing-circle tangle \(P_v\) at every vertex. The literal rooted
+construction is
+\[
+ W_v=\left(\prod_{w\in I_v^-}\Turn(W_w)\right)P_v
+           \left(\prod_{w\in I_v^+}\Turn(W_w)\right).
+\]
+The lists have their specified orders. Each turn rotates the whole tangle
+and its disk frame. There are no bare product junctions. Draw the
+prescribed terminal-root cylindrical closure with its actual strand
+orientations and one reduced cut on a main strand. Require that endpoint
+tracing gives one main component and no component already closed inside
+an intermediate tangle. These are the diagram hypotheses of
+\cite[Section~1]{Geometry}; the abstract tree alone does not imply them.
+
+Write \(d_v\ge1\) for the graph degree and \(n_v\in\mathbb Z\) for the
+physical signed crossing power. The diagram and every power are fixed
+before the integer level \(N\ge3\) tends to infinity. Put
+\[
+ q_N=e^{\pi\ii/N},\qquad d=N-1,\qquad M=q_N^s,\qquad |s|\le R<1.
+\]
+The level degree \(d\) is distinct from \(d_v\). Let \(F_N(M)\) be the
+reduced zero-framed ADO invariant in the convention of \cite{Meridian},
+with unknot value one. At \(M=1\) it is the reduced Kashaev invariant of
+the same knot \(K_{\mathbf n}\). The cut, orientation and framing are
+retained in every finite contraction below.
+
+Choose any vertex \(o\) as the final vertex for evaluating that
+contraction. Section~\ref{dt:criterion} gives a finite criterion in
+\(d_v,n_v,o\) and numbers \(0<c_v<2^{-16}\) attached to the nonroot
+vertices. The number \(c_v\) is a chosen bound for the normalized
+polynomial sent from \(v\) to its parent. Its definition uses no unknown
+invariant or critical value.
+
+For the action, let
+\[
+ J(x)=\int_0^x\log(2\sin\pi u)\,\dd u,\qquad
+ g(x)=J(2x)-4J(x),\qquad G_0=g(1/4).
+\]
+The even holomorphic edge phase near \((0,0)\) is specified by
+\begin{equation}\label{dt:psi}
+ \psi(0,0)=2G_0,\qquad
+ \psi_t(t,u)=-\frac1\pi\operatorname{arsinh}
+                       \bigl(\tan(t/2)\cos(u/2)\bigr),
+ \qquad\psi_u(t,u)=\psi_t(u,t).
+\end{equation}
+Branches continue from zero; the mixed derivatives agree. Put
+\[
+ \Psi(\boldsymbol\tau)=\sum_{vw\in E}\psi(\tau_v,\tau_w),\qquad
+ \mathcal C=\operatorname{stat}_{\boldsymbol\tau}
+ \left\{\Psi(\boldsymbol\tau)+\frac{\ii}{4\pi}
+             \sum_v n_v\tau_v^2-\ii\sum_v\tau_v\right\}.
+\]
+The proof constructs the small critical point used in this notation.
+
+\begin{theorem}\label{dt:main}
+Suppose the chosen root and bounds \(c_v\) satisfy the directed criterion
+\eqref{dt:eq-3}, \eqref{dt:eq-8}, \eqref{dt:eq-9}.
+There is a constant \(D_{\mathcal T,\mathbf n}\ne0\), independent of
+level parity, such that
+\begin{equation}\label{dt:leading}
+ F_N(1)=\Omega_N N^{3/2}D_{\mathcal T,\mathbf n}
+                  e^{N\mathcal C}(1+O(N^{-1})),\qquad
+ \Omega_N=q_N^{d^2(2w(D)+\sum_vn_v)/4}.
+\end{equation}
+Here \(w(D)\) is the original oriented writhe and \(|\Omega_N|=1\).
+The original knot complement is hyperbolic, and
+\begin{equation}\label{dt:volume}
+ \lim_{N\to\infty}\frac{2\pi}{N}\log|F_N(1)|
+       =2\pi\Re\mathcal C=\Vol(S^3\setminus K_{\mathbf n}).
+\end{equation}
+Moreover, with
+\begin{equation}\label{dt:scalars}
+ H_N(s)=\frac{\sin\pi s}{N\sin(\pi s/N)},\qquad
+ A_N(s)=q_N^{(-w(D)-\sum_vn_v)s^2/2},
+\end{equation}
+where \(H_N(0)=1\), one has uniformly for \(|s|\le R<1\)
+\begin{equation}\label{dt:profile}
+ \frac{F_N(q_N^s)}{A_N(s)H_N(s)F_N(1)}=1+O_R(N^{-1}).
+\end{equation}
+These values are nonzero for all sufficiently large \(N\), and the volume
+limit holds uniformly with \(F_N(q_N^s)\) in place of \(F_N(1)\).
+\end{theorem}
+All implied constants and starting levels may depend on the fixed tree,
+its powers and \(R\). The numerical curvature bounds and the directed
+criterion do not acquire an extra constant from the depth of the tree.
+
+\begin{corollary}\label{dt:mixed}
+The theorem holds if, independently at each vertex,
+\[
+ \boxed{\quad d_v\ge2^{28}\quad\hbox{or}\quad |n_v|\ge2^{27}.\quad}
+\]
+It also holds under the uniform local condition
+\(\max_v d_v/(d_v^2+n_v^2)\le2^{-120}\).
+\end{corollary}
+The proof of the corollary is in Section~\ref{dt:sec-8}; it covers all
+degrees symbolically. The tree, its degrees and all powers remain fixed.
+A high-degree vertex may have \(n_v=0\). Neither condition is a
+hypothesis that the sum of \(d_v/(d_v^2+n_v^2)\) is small.
+
+\paragraph{Inputs and proof boundary.}
+The exact finite inputs are \cite[Proposition~6.1, Theorem~7.1 and
+Proposition~8.1]{Meridian}: full crossing polynomials and traces, original
+typed tree contraction, and scalar ledger. The unconditional estimates
+in \cite[Lemma~2.1, Sections~3--4 and Section~6.1]{Summed} supply
+polynomial norm comparisons, the complex edge sum and the exact
+one-variable Fourier conversion. Their proofs use no summed criterion.
+Canonical factorial interpolation is \cite[Lemma~2.1]{Factorial}.
+The geometric input is \cite[Theorem~1.1]{Geometry}, whose degree-and-twist
+threshold follows from our criterion. We prove the conditional
+normalization, directed bounds, complete recursive induction and
+noncancellation here. No all-orders expansion, longitude factor, larger
+strict Conway grammar or fixed \(M\)-neighborhood is asserted.
+
+\input{criterion}
+\input{kernels}
+\input{recursion}
+\input{applications}
+
+\section{Finite reproduction and limitations}\label{dt:reproduction}
+From the repository root run
+\begin{verbatim}
+python3 papers/directed-tree-asymptotics/check.py \\
+    --output /tmp/directed-tree-check.json
+\end{verbatim}
+The record pins its source files. It reuses the exact rational budget
+and endpoint-pairing calculations, and the finite comparison of quotient
+messages with full root-grid and first-normal contractions. The examples
+in that comparison use formal independent vertex parameters; this tests
+the finite algebra, not the existence of additional diagrams.
+The checker also verifies the elementary implication from the older
+local condition and includes negative controls for a lost root
+exemption and an odd rather than even inserted stack. Finite checks
+neither prove the uniform analytic induction nor replace the imported
+geometric theorem.
+
+\begin{thebibliography}{9}
+\bibitem{Meridian}
+\emph{Exact Newton calculus for tangles with a moving meridian},
+companion paper, Propositions~6.1 and~8.1, Theorem~7.1.
+\url{https://sashakolpakov.github.io/murakamis_dream/papers/meridian-tangles.pdf}.
+\bibitem{Summed}
+\emph{Degree and twist estimates for circle-tree invariants},
+companion paper, Lemma~2.1 and Sections~3, 4 and~6.1.
+\url{https://sashakolpakov.github.io/murakamis_dream/papers/circle-tree-asymptotics.pdf}.
+\bibitem{Factorial}
+\emph{Holomorphic source asymptotics and volume limits for Conway closures},
+companion paper, Lemma~2.1.
+\url{https://sashakolpakov.github.io/murakamis_dream/papers/conway-asymptotics.pdf}.
+\bibitem{Geometry}
+\emph{Positive octahedra and primitive fillings for trees of crossing circles}, companion paper, Theorem~1.1.
+\url{https://sashakolpakov.github.io/murakamis_dream/papers/circle-tree-geometry.pdf}.
+\end{thebibliography}
+\end{document}

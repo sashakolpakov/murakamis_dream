@@ -2,19 +2,23 @@
 
 The current PDF is a 374-page reference account. Its results are being
 rewritten as [papers organized by subject](../../papers/README.md), each at
-most 30 pages including references. Seventeen drafts have
-individual lengths from 11 to 28 pages. Five cover finite spectral
-evaluation, uniform local bounds, central source asymptotics, oscillatory
-fillings and geometric filling. Twelve cover complete and moving-meridian
-Newton formulas, complete and filled Conway geometry, complementary color
-bounds, completed-root Conway asymptotics, classical circle-tree geometry,
-the summed circle-tree estimate, shared-face criteria, terminal decoration, ordinary triangular insertion
-and the long three-braid application. Each
-application names the results it imports and checks their hypotheses.
+most 30 pages including references. Nineteen drafts have individual
+lengths from 11 to 28 pages. Their shared foundations cover finite
+spectral evaluation, coefficient estimates, source asymptotics,
+oscillatory sums and marked geometry. The application papers give their
+precise diagram and twist hypotheses and name the numbered statements
+they use.
 
-These papers do not yet replace the reference account. The broader strict-tree extension,
-the local and directed circle-tree estimates, and the all-orders meridian,
-longitude and recurrence results still need separate complete accounts.
+The directed circle-tree paper now gives the conditional subtree
+estimates independently of the summed criterion. Its mixed degree-or-twist
+condition also implies the older local theorem, so there is no need to
+repeat that earlier induction. The quarter-index paper supplies a local
+recurrence estimate needed beyond the completed-root Conway grammar;
+it does not by itself prove the broader tree theorem.
+
+These papers do not yet replace the reference account. The broader
+strict-tree construction and the all-orders meridian, longitude and
+recurrence results still need separate complete accounts.
 The reference PDF remains frozen. Its measured length is 93 pages of main
 text, 266 pages of appendices, and 15 pages of front matter and references.
 Several theorem families and their separate dependencies accumulated in
@@ -27,8 +31,9 @@ foundations by numbered statement. The
 The broader strict-tree extension in the research notes requires arguments
 beyond the manuscript's completed-root grammar. The dependency graph
 records its normal form, boundary profiles, spectral estimates and marked
-geometry separately. Those notes are not silently substituted for the
-narrower theorem or described as fully reviewed companion papers.
+geometry separately. The quarter-index input now has a companion paper; the other additional
+arguments retain their own review obligations. The narrower completed-root
+theorem is not being used as a proof of the broader construction.
 
 [Read the manuscript PDF](../../manuscript/build/main.pdf). The [editable sources and build instructions](../../manuscript/README.md) are available alongside it.
 

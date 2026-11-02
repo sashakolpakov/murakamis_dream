@@ -1,0 +1,413 @@
+\section{The exact recursion may be rooted anywhere}\label{dt:sec-3}
+
+Lower the fixed Frobenius pairing at every vertex of the original closed
+source. Every physical turn then identifies equal Newton indices and
+retains its factor \(\gamma_e H_N/W_k\). The resulting finite scalar is a
+sum over the original edge indices of a product of the original vertex
+trace tensors. Choosing a root merely specifies the order of these
+finite contractions. It does not move a cut through a tangle, commute
+open operators or change a framing.
+
+Consequently the exact recursions of \cite[Theorem~7.1]{Meridian} hold for any chosen root:
+
+\begin{equation}\label{dt:eq-25}
+M_{v,N}(u)=\gamma_{e_v}(s)\,
+ \mathcal D_{n_v,\sigma_v,N}^{(t)}
+ \left[K_N(t,u;s)\prod_{w\in\mathrm{Ch}(v)}M_{w,N}(t)\right]
+\end{equation}
+
+at a nonroot vertex, where
+\(\mathcal D_{n,\sigma,N}[f]=\phi_\sigma(R_\sigma^n f)\)
+uses the actual physical crossing polynomial and its Cartan scalar.
+At the root the recursion is
+
+\begin{equation}\label{dt:eq-26}
+Z_N=\mathcal D_{n_o,\sigma_o,N}^{(t)}
+                  \left[\prod_{w\in\mathrm{Ch}(o)}M_{w,N}(t)\right]
+\end{equation}
+
+at the root. The original global closing, framing and reference factors of \cite[Proposition~8.1]{Meridian},
+and the original single reduced cut \(H_N\), remain outside \eqref{dt:eq-26}. Edge
+gammas are counted once. The exact normal value \(\sigma_v=0\) and the moving
+values \(\pm s\) retain their actual orientation types.
+
+Each message is an even trigonometric polynomial of degree at most \(N-1\)
+in \(u\), regardless of the subtree. There is no discarded-source error in
+\eqref{dt:eq-25}--\eqref{dt:eq-26}.
+
+\begin{figure}[t]
+\centering\input{figures/normalized-recursion}
+\caption{Edges point toward the vertex whose trace is evaluated next.
+The exact numbers \(M_{w,N}(0)\) are factored out before applying that
+trace. The outgoing polynomial is then divided by its own exact value
+at zero. Only a nonroot vertex must supply an outgoing real-decay bound;
+the final root evaluates a scalar. This diagram describes contraction
+order, not an isotopy of the knot.}\label{dt:recursion-figure}
+\end{figure}
+
+\section{The phase class and the variable envelopes}\label{dt:sec-4}
+
+The inductive analytic class is
+
+\begin{equation}\label{dt:eq-27}
+h_v(0)=h'_v(0)=0,\qquad h_v(-u)=h_v(u),\qquad
+ |h_v''(u)+a_0|\le a_0/20,\quad u\in\mathcal R.
+\end{equation}
+
+The leading normalized amplitude \(\alpha_v(u)/\alpha_v(0)\) is holomorphic
+and nonzero on a neighborhood of the required smaller compact. Exact
+subtree constants are retained:
+
+\begin{equation}\label{dt:eq-28}
+\frac{M_{v,N}(u)}{M_{v,N}(0)}
+ =\frac{\alpha_v(u)}{\alpha_v(0)}e^{Nh_v(u)}(1+O(N^{-1})),
+                     \quad u\in\mathcal R.
+\end{equation}
+
+As usual a slightly smaller rectangle can be used for fixed derivative
+estimates; the strict margins permit an initially slightly larger one.
+
+The global assertions attached to \(c_v\) are
+
+\begin{equation}\label{dt:eq-29}
+\left|\frac{M_{v,N}(t)}{M_{v,N}(0)}\right|
+          \le CN^A e^{-Nc_v(1-\cos t)},
+                         \quad t\in[-\pi,\pi],
+\end{equation}
+
+\begin{equation}\label{dt:eq-30}
+\left|\frac{M_{v,N}(t+iy)}{M_{v,N}(0)}\right|
+ \le CN^A e^{N[-(c_v/2)(1-\cos t)+y^2]},
+                      \quad |y|\le\delta_v.
+\end{equation}
+
+For canonical representatives of degree less than \(N\), the real sup,
+Chebyshev and full value-and-first-derivative norms differ by polynomial
+factors, by \cite[Lemma~2.1]{Summed}. A product of degree a fixed multiple
+of \(N\) is first bounded in its real sup norm and then folded in the
+correct quotient; no equivalence with finite node data is asserted for
+an unreduced higher-degree polynomial. In particular the reduction and
+trace retain the repeated-root normals.
+
+Here is the passage from the real bound to the strip. Write the
+normalized message as a Laurent polynomial \(P(e^{\ii t})\), of powers
+between \(-m\) and \(m\), where \(m<N\). The subharmonic function
+\(\log|z^mP(z)|\) on the unit disk is bounded by the harmonic
+function \(\log(CN^A)-Nc_v+Nc_v\Re z\). Substitute
+\(z=e^{-y+\ii t}\) and divide by \(|z|^m\); for negative \(y\)
+use the reciprocal polynomial. Since \(1-e^{-|y|}\le|y|\), this gives
+
+\begin{equation}\label{dt:eq-31}
+|M_{v,N}(t+iy)/M_{v,N}(0)|
+ \le CN^A e^{N[-c_v(1-\cos t)+(1+c_v)|y|]}.
+\end{equation}
+
+For \(|t|\ge r_0\) use \eqref{dt:eq-3}. For \(|t|<r_0\) use the rectangle expansion and
+
+\begin{equation}\label{dt:eq-32}
+\Re h_v(t+iy)\le
+       -\frac{19a_0}{40}t^2+\frac{21a_0}{40}y^2.
+\end{equation}
+
+Both arguments give \eqref{dt:eq-30}, without a conjectured quadratic estimate for
+an individual high Newton basis element.
+
+Assume the children satisfy \eqref{dt:eq-27}--\eqref{dt:eq-30}. At a nonroot vertex set
+
+\begin{equation}\label{dt:eq-33}
+A_v^{\mathrm{loc}}(t,u)=\psi(t,u)+\sum_wh_w(t),
+ \quad
+ C_{v,\ell}(u)=\operatorname{stat}_t
+       \{A_v^{\mathrm{loc}}(t,u)+ib_vt^2/2-i\ell t\}.
+\end{equation}
+
+At the root omit \(\psi\) and \(u\). There are \(d_v\) incidences in \(t\). Hence
+
+\begin{equation}\label{dt:eq-34}
+A_v^{\mathrm{loc}}(t,u)=\psi(0,u)-a_vt^2/2+E_v(t,u),
+       \quad |E_{v,tt}|,\ |E_{v,t}/t|\le a_v/20.
+\end{equation}
+
+The root constant in this formula is zero. For \(0\le\ell\le L_v=\lfloor t_0|D_v|\rfloor\)
+the equation \(D_vt=-i\ell+E_{v,t}\) contracts in \(|t|\le b_0\). Indeed
+\(t_0+b_0/20<b_0\). The actual solutions lie in the smaller disk
+\(|t|\le t_0/(19/20)\), leaving room for the translated contours.
+
+Writing \(E_{v,t}=tQ_v\), with \(|Q_v|\le a_v/20\), gives
+\(t_{v,\ell}=-\ii\ell/(D_v-Q_v)\). Its imaginary part is
+\(-\ell\Re(D_v-Q_v)/|D_v-Q_v|^2\). The numerator lies
+between \(19a_v/20\) and \(21a_v/20\), and the denominator
+between \((19|D_v|/20)^2\) and \((21|D_v|/20)^2\).
+Therefore
+
+\begin{equation}\label{dt:eq-35}
+\frac{380}{441}\frac{\ell a_v}{|D_v|^2}
+ \le-\Im t_{v,\ell}\le
+ \frac{420}{361}\frac{\ell a_v}{|D_v|^2},
+\end{equation}
+
+also for complex parent \(u\). No child phase is asserted to be real on
+the real axis. Its nonlinear derivative is \(t\) times a function bounded
+by \(a_v/20\), so the real part of the denominator remains positive.
+
+The normalized phase \(h_v=C_{v,1}(u)-C_{v,1}(0)\) satisfies
+
+\begin{equation}\label{dt:eq-36}
+h'_v=\psi_u(t_{v,1},u),\qquad
+ h''_v=\psi_{uu}
+       -\frac{\psi_{ut}^2}{A_{v,tt}^{\mathrm{loc}}+ib_v}.
+\end{equation}
+
+Using \eqref{dt:eq-17} and \(|A_{v,tt}^{\mathrm{loc}}+ib_v|\ge(19/20)|D_v|\ge(19/20)a_0\) proves \eqref{dt:eq-27},
+since \(1/50+20/(19\cdot2500)<1/20\). This is uniform on the rectangle.
+Charge ordering and the current-vertex drop are
+
+\begin{equation}\label{dt:eq-37}
+\Re C_{v,\ell}(u)\le\Re C_{v,1}(u)
+  -\frac{190}{441}\frac{a_v}{|D_v|^2}(\ell^2-1),
+ \quad
+ 0\le\Re\psi(0,u)-\Re C_{v,1}(u)\le\beta_v.
+\end{equation}
+
+At the root again replace \(\psi(0,u)\) by zero.
+
+\section{Actual trace tails with the directed budgets}\label{dt:sec-5}
+
+Divide every child by its exact nonzero value \(M_{w,N}(0)\). The induction
+uses those complex constants exactly; it never estimates them by their
+complete-source magnitudes. Equations \eqref{dt:eq-15} and \eqref{dt:eq-30} imply
+
+\begin{equation}\label{dt:eq-38}
+|\text{normalized trace input}(t+iy,u)|
+ \le CN^A
+   e^{N[\Re\psi(0,u)-A_vt^2+B_vy^2]},
+                      \quad |y|\le\delta_v^{\mathrm{in}}.
+\end{equation}
+
+The root constant is zero. The factor \(2/\pi^2\) in \eqref{dt:eq-4} is exactly the
+inequality \(1-\cos t\ge2t^2/\pi^2\) on the original interval.
+
+Write \(\eta=(-1)^d\). For the actual input, an even trigonometric
+polynomial of any fixed-multiple degree, the exact trace is
+\begin{equation}\label{dt:trace-grid}
+ \mathcal D_{n,\sigma,N}[f]
+ =\frac{\eta N C_{N,n}(\sigma)}{\sin(2\pi\sigma)}
+   \sum_{j=0}^{N-1}\sin\tau_j\,f(\tau_j)
+                      e^{\ii nN\tau_j^2/(4\pi)},
+ \quad\begin{cases}
+ \tau_j=\dfrac{2\pi}{N}(d/2+\sigma-j),\\
+ C_{N,n}(\sigma)=q_N^{n(d^2/4-\sigma^2/2)}.
+ \end{cases}
+\end{equation}
+This is \cite[equation~(6.4)]{Meridian}, initially away from colliding
+grids; its holomorphic limit includes every normal. To recall the exact
+Fourier conversion, use
+\[
+ \mathcal K_\sigma(t)=
+ \frac{\ii N e^{\ii Nt}}{e^{\ii Nt}-\eta e^{2\pi\ii\sigma}}
+\]
+on the rectangle with sides \(\pm\pi\pm\ii y_v+2\pi\sigma/N\).
+The kernel has residue one at the \(N\) enclosed grid points and equals
+\(\ii N e^{-Nz}/(1+e^{-Nz})\) on a vertical side
+\(t=\pm\pi+\ii z+2\pi\sigma/N\). Its upper and lower horizontal
+series are
+\[
+ -\ii N\sum_{\ell\ge1}\eta^\ell
+       e^{-2\pi\ii\ell\sigma}e^{\ii\ell Nt},\qquad
+ \ii N\left(1+\sum_{\ell\ge1}\eta^\ell
+       e^{2\pi\ii\ell\sigma}e^{-\ii\ell Nt}\right).
+\]
+Move each entire term to a fixed horizontal segment, retaining its short
+endpoint connectors. Reflect the upper integral by \(t\mapsto-t\),
+with the boundary orientation; \(\sin t\,f(t)e^{\ii nNt^2/(4\pi)}\)
+is odd. The paired coefficients are therefore
+\begin{equation}\label{dt:eq-39}
+ c_{\ell,N}(\sigma)=\eta^{\ell-1}
+ U_{\ell-1}(\cos2\pi\sigma),\qquad c_{1,N}=1,
+\end{equation}
+with common prefactor \(-N^2C_{N,n}/(\pi\ii)\).
+The zero-mode integral on the real interval vanishes by oddness, but its
+endpoint currents remain. These algebraic steps are also written in
+\cite[Section~6.1]{Summed}; they impose no condition on the twists or
+sum over vertices. In particular there is no later sum of unexamined
+equal-action signs.
+
+For \(\ell>L_v\), moving the single-grid rectangle by \(y_v\) costs, after
+maximizing the chirp term in the real variable, at most \(C_v y_v^2\).
+Since \(\ell>L_v\) implies \(\ell>t_0|D_v|\), \eqref{dt:eq-6} gives a tail loss at least
+
+\begin{equation}\label{dt:eq-40}
+t_0|D_v|y_v-C_vy_v^2\ge\frac12t_0|D_v|y_v.
+\end{equation}
+
+Successive charges have the additional factor \(\exp(-Ny_v)\). The exact
+fixed-compact growth of \eqref{dt:eq-39} is absorbed for all sufficiently large N.
+This starting level may depend on the fixed vertex.
+
+At an original endpoint \(\pm\pi\), the chirp and finite-charge connectors cost
+at most
+
+\begin{equation}\label{dt:eq-41}
+(\pi|b_v|+t_0|D_v|)y_v+B_vy_v^2
+                            \le A_v\pi^2/4.
+\end{equation}
+
+Thus their loss is at least \(A_v\pi^2/2\). This includes the original
+zero-mode current. Nothing is inferred by dropping the endpoint terms
+of the nonperiodic chirp.
+
+For a retained charge, restrict its real integral to \([-r_0,r_0]\).
+Its complement loses \(A_vr_0^2\) by \eqref{dt:eq-38}. Translate the retained interval
+to \(\Im t_{v,\ell}\). Its endpoints remain in the analytic rectangle. The
+original local Young inequality, now on this larger real interval,
+is
+
+\begin{equation}\label{dt:eq-42}
+\begin{aligned}
+ \Re\{A_v^{\mathrm{loc}}(t-iz,u)+ib_v(t-iz)^2/2-i\ell(t-iz)\}
+ &\le\Re\psi(0,u)-a_vt^2/8\\
+ &\quad+\left[\frac{21}{40}a_v+
+                 \frac{2b_v^2}{(14/5)a_v}\right]z^2-\ell z.
+\end{aligned}
+\end{equation}
+
+For \(0\le z\le-\Im t_{v,\ell}\), the last line after its quadratic term is
+at most \(-\ell z/8\), since \((420/361)\max(21/40,5/7)=300/361<7/8\).
+Every such connector therefore loses at least \(a_vr_0^2/8\).
+The translated horizontal saddle has negative real quadratic part
+at most \(-(19/20)a_v\). The physical sine factor is nonzero at \(t_{v,\ell}\).
+
+Equations \eqref{dt:eq-40}--\eqref{dt:eq-42} give an error of at most
+\(CN^A\exp N[\Re\psi(0,u)-\eta_v]\). Nonminimal charges are their saddle
+terms plus this absolute error; no relative approximation is asserted
+at a much lower nonminimal action. Conditions \eqref{dt:eq-8} and \eqref{dt:eq-37} put the
+whole conditional error strictly below the first charge. Equation
+\eqref{dt:eq-39} gives its nonzero coefficient for both parities. This establishes
+\eqref{dt:eq-28} and nonvanishing of the exact \(M_{v,N}(0)\).
+
+For the child inputs, their exact analytic logarithms differ from the
+limiting phases by \(O(N^{-1})\), with fixed derivatives on the required
+smaller compact. The finite product of those corrections is retained
+in the amplitude, or moves the saddle by \(O(N^{-1})\). As the tree is fixed,
+it spends no new exponential budget. The leading amplitude is a product
+of nonzero edge, child and Gaussian factors. All N-dependent physical
+crossing and carrier phases remain in \(M_{v,N}(0)\); its normalized leading
+amplitude does not conceal such phases.
+
+The full physical trace and the first-charge approximation are
+holomorphic in the formal meridian variables. As in the original
+proof, first take parameter circles avoiding collisions and then apply
+the maximum principle to their whole difference. This covers every
+actual \(\sigma_v=0,\pm s\), including normal limits. No isolated divided
+current is declared removable without its companions.
+
+\section{Regenerating the outgoing real bound}\label{dt:sec-6}
+
+Lemma~2.1 of \cite{Summed} compares the real sup norm, the
+Chebyshev norm, and the complete value-and-first-derivative norm by
+polynomial factors. It also bounds the physical fixed-power crossing
+and the full quotient trace. These estimates apply to polynomial
+products of degree a fixed multiple of \(N\); that multiple can depend
+on the degree of this fixed vertex. For real \(u\), \eqref{dt:eq-14},
+the polynomial real sup bounds of the normalized children, the actual
+fixed-power crossing polynomial, Chebyshev folding in the correct
+quotient, and the full top-coefficient functional give
+
+\begin{equation}\label{dt:eq-43}
+|M_{v,N}(u)|\le CN^A
+       \left|\prod_wM_{w,N}(0)\right|
+                  e^{N[2G_0-k_0(1-\cos u)]}.
+\end{equation}
+
+This retains repeated-root derivatives and all fixed normals. Dividing
+by the nonzero first-charge value at zero costs at most \(\beta_v\). For
+\(|u|\ge r_0\), \eqref{dt:eq-9} absorbs that cost and yields \eqref{dt:eq-29}. For \(|u|<r_0\), \eqref{dt:eq-28}
+and \eqref{dt:eq-32} give the stronger estimate, since \(c_v<k_0\ll19a_0/20\).
+Equation \eqref{dt:eq-30} follows by Section~\ref{dt:sec-4}. Thus the induction closes with
+the selected directed budgets, rather than a common decay constant.
+
+There is no outgoing real bound at the final root. Imposing \eqref{dt:eq-9} there
+would be an unnecessary restriction. Its only normalization comparison
+is the conditional trace estimate \eqref{dt:eq-8}.
+
+\section{Original action, geometry, and scope}\label{dt:sec-7}
+
+Restore the exact subtree constants successively. Stationary
+elimination in \eqref{dt:eq-33} gives the original joint equations
+
+\begin{equation}\label{dt:eq-44}
+\sum_{e\sim v}\psi_{e,\tau_v}
+                      +\frac{in_v\tau_v}{2\pi}=i.
+\end{equation}
+
+The exact child constants telescope to the original critical value
+
+\begin{equation}\label{dt:eq-45}
+\mathcal C(\mathbf1)=\operatorname{stat}_{\boldsymbol\tau}
+ \left[\sum_e\psi_e+
+       \frac{i}{4\pi}\sum_vn_v\tau_v^2-i\sum_v\tau_v\right].
+\end{equation}
+
+Back-substitute from the final root: its first-charge angle belongs to
+the rectangle, so each child's selected parent value does also, and
+the same statement continues down the finite tree. Every restored angle
+has modulus at most \(1/[(19/20)|D_v|]\). Thus the vector satisfying
+\eqref{dt:eq-44} lies inside the full simultaneous small-angular uniqueness
+polydisk, not just the conditional disks used during elimination.
+The existing contraction identifies it with the same branch as the
+marked positive charge path of \cite[Theorem~1.1]{Geometry}. In fact
+\(20/(19|D_v|)<10^{-2}\). Indeed
+\eqref{dt:eq-8} implies
+
+\begin{equation}\label{dt:eq-46}
+\sqrt{d_v^2+n_v^2}=2\pi|D_v|\ge 2\pi\,2^{15}>630.
+\end{equation}
+
+\cite[Theorem~1.1]{Geometry} applies with no sum condition.
+The edge functions agree: their derivatives are \eqref{dt:psi} and
+their complete values satisfy \(2G_0=v_{\rm oct}/\pi\), as in
+\cite[Section~7]{Summed}. Write \(n_v=\epsilon_v-2p_v\), with
+\(\epsilon_v\in\{-1,0,1\}\), in the original disk frame. The
+primitive periods supplied by the geometric theorem are
+\[
+ U_v=-2\pi\Psi_{\tau_v}-\ii\epsilon_v\tau_v,
+ \qquad V_v=2\ii\tau_v.
+\]
+Equation \eqref{dt:eq-44} therefore gives the full continued relation
+\(U_v+p_vV_v=-2\pi\ii\). The imported theorem proves its primitive
+winding, smooth metric completion, and complete main cusp; we do not
+infer these facts from an exponentiated equation.
+Its original ordered two-octahedron cut, odd seam and calibrated action identify \(2\pi\Re\mathcal C(\mathbf1)\) with the volume of the actual
+filled knot complement. This is a geometric input, not a deduction
+from the quantum saddle alone.
+
+There are \(|E|\) edge Gaussians \(N^{-3/2}\) and \(|V|\) trace Gaussians \(N^{3/2}\);
+\(|V|=|E|+1\) leaves the original \(N^{3/2}\) power with nonzero amplitude.
+The exact first Fourier coefficient is one. The retained edge insertion
+has leading value one, and the scalar ledger remains precisely \eqref{dt:scalars}.
+At \(s=0\), all edge gammas and paired insertions equal one.
+The exact outside scalar is
+\[
+ \Omega_N=\theta_d^{-w(D)}\prod_vC_{N,n_v}(0)
+       =q_N^{d^2(2w(D)+\sum_v n_v)/4},
+ \qquad \theta_d=q_N^{-d^2/2}.
+\]
+The remaining leading coefficient is independent of \(N\), nonzero,
+and the same through both parities. This proves the full leading
+asymptotic in Theorem~\ref{dt:main}.
+For bounded \(s\), the first-charge coefficient is still one, the
+paired insertion has leading value one, and all normalized leading
+amplitudes are unchanged. Restoring the exact scalar ledger of
+\cite[Proposition~8.1]{Meridian} gives \(A_N(s)H_N(s)\).
+The finite product of relative \(1+O_R(N^{-1})\) factors proves
+\eqref{dt:profile}. Its nonvanishing follows uniformly on every
+fixed disk \(R<1\), since \(A_N\) and \(H_N\) have no zeros there.
+Together with the geometric identification above this proves
+Theorem~\ref{dt:main}.
+
+The criterion allows different strip and real-decay budgets and a
+different choice of final vertex. It is not the assertion that arbitrary
+capped short-twist islands can be substituted as black-box messages.
+Such an island requires a multi-boundary version of the conditional
+normalization proved here for an actual edge. The pointwise source
+estimates on the older tiny disk alone do not supply that extension.

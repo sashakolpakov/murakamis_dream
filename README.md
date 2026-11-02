@@ -181,15 +181,14 @@ separate work.
 
 ## Reading and reproducing the work
 
-The [collection of research papers](papers/README.md) now contains seventeen
-drafts, ranging from 11 to 28 pages. Five develop
-the finite algebra, local estimates, central asymptotics, oscillatory
-sums and geometric fillings. The other twelve treat complete and
-moving-meridian Newton formulas, complete and filled Conway geometry,
-complementary color bounds, completed-root Conway asymptotics, classical
-circle-tree geometry and the summed analytic criterion, shared-face criteria, terminal decorations,
-triangular insertions and long three-braids.
-Each paper states the companion results it uses.
+The [collection of research papers](papers/README.md) now contains nineteen
+drafts, ranging from 11 to 28 pages. They separate the exact finite
+invariant, coefficient estimates, complex asymptotics and marked
+hyperbolic geometry from the application theorems. The completed-root
+Conway theorem and the summed and directed circle-tree criteria have
+complete companion accounts. A separate local paper treats the signed
+recurrence at the quarter index. Each paper states the numbered results
+it imports and checks their hypotheses.
 
 These papers extract selected results from the
 [374-page reference manuscript](manuscript/README.md); they do not yet
@@ -197,9 +196,10 @@ replace it. The reference contains 93 pages of main text, 266 pages of
 appendices and 15 pages of front matter and references. Its length came
 from collecting several theorem families, repeated setup for separate
 proofs, and alternative constructions in one continuous account. The
-local and directed circle-tree estimates, the broader strict-tree extension,
-and the all-orders meridian and longitude theorems still need their own
-complete papers. The reference remains frozen and is no
+broader strict-tree extension and the all-orders meridian and longitude
+theorems still need their own complete papers. The older local tree
+criterion now follows from the directed paper, without repeating its
+separate induction. The reference remains frozen and is no
 longer presented as a single journal paper. Its
 [errata](manuscript/ERRATA.md) record corrections found during extraction.
 Chapter 1 separates full volume theorems from completed partial results:
@@ -210,12 +210,12 @@ The open remainder estimate for unchanged general diagrams is not a
 premise of the restricted-family proofs.
 
 The [paper reproduction command](papers/README.md#building-and-reproducing-the-papers)
-now runs ten finite check groups. The three new groups compare physical
-Newton operators with their formulas, check terminal insertion and
-pairing identities, and check the circle-tree peripheral matrices and
-rational bounds. These checks accompany the written all-level,
-topological and analytic proofs; they do not establish those proofs by
-sampling levels or diagrams.
+runs eighteen finite check groups. They compare exact matrix and
+polynomial formulas, replay rational certificate inequalities, and check
+normalizations and endpoint pairings. The new recurrence checks retain
+both source components and both level parities. These computations
+supplement the written analytic and geometric proofs; sampling levels
+or diagrams does not establish those proofs.
 
 The [manuscript audit](repro/MANUSCRIPT_AUDIT.md) records the proof
 dependencies, corrections, and precise extent of the review. The
