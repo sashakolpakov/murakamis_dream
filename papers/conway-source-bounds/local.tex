@@ -1,0 +1,218 @@
+\section{Uniform bounds for one actual leaf}\label{cs:local}
+
+The difficult coefficient is a half-twisted core. Taking the absolute value of each term in \eqref{cs:half-twist} would lose the cancellation needed for its correct exponential rate. We derive a recurrence for that signed finite sum, including its endpoint condition, and then bound products of its recurrence matrices.
+
+\begin{proposition}[Leaf envelopes]\label{cs:envelopes}
+There are a sequence $e_N\to0$ and an absolute constant $C$ such that, uniformly over all physical colors and $\epsilon\in\{0,1,-1\}$,
+\begin{align}
+ |[e_r]C_j^\epsilon|&\le
+ \exp\{N[\widetilde g(r/N)+e_N]\},&&0\le r\le M,\label{cs:core-envelope}\\
+ |[e_r]A_j^\epsilon|&\le N^C\exp\{Nk(r/N)\},&&0\le r\le d.\label{cs:alias-envelope}
+\end{align}
+The core is zero above $M$. Moreover, if $I\subset(1/4,1/2)$ is compact and $\delta>0$, there is $\eta>0$ such that, for all sufficiently large $N$,
+\begin{equation}\label{cs:local-color-loss}
+ h\ge\delta N,\quad r/N\in I,\quad 0\le h\le M
+ \quad\Longrightarrow\quad
+ |[e_r]C_{N-h}^\epsilon|
+ \le\exp\{N[g(r/N)-\eta]\}.
+\end{equation}
+Zero coefficients are included. No polynomial prefactor for the core is asserted at collisions of recurrence roots.
+\end{proposition}
+
+\subsection{The finite Ward identity}
+Here $F_r=(Q;Q)_r=\prod_{a=1}^r(1-Q^a)$, $F_0=1$. For integers $0\le h,r\le M$ put
+\begin{align}
+ A_{h,r}&=\sum_{v=\max(r,h)}^M
+ \frac{Q^{-vr}F_{2v}}{F_vF_{v-h}F_{v+h}F_{v-r}},\label{cs:finite-A}\\
+ D_{0,r}&=\frac{Q^{-r^2}F_{2r}}{F_r^3},
+ &V_{h,r}&=\frac{q^{h^2}A_{h,r}}{D_{0,r}}.\label{cs:finite-V}
+\end{align}
+Every factorial in these sums has a nonnegative index below $N$, and $D_{0,r}\ne0$. The lower endpoint is $\max(r,h)$ even when the output index is below the color deficit.
+
+The elementary phase identity
+\[
+ F_a=(-\ii)^a q^{a(a+1)/2}S_a
+\]
+converts the negative half-twist coefficient in \eqref{cs:half-twist} to
+\[
+ [e_r]C_{N-h}^{-1}
+ =\frac{N^2\kappa^{-1}}{S_r}\,
+ \ii^r q^{(r^2-r)/2+h^2}A_{h,r}.
+\]
+The positive sign is its complex conjugate in the real Newton basis. Thus
+\begin{equation}\label{cs:exact-modulus}
+ |[e_r]C_{N-h}^{\epsilon}|=
+ \frac{N^2S_{2r}}{S_r^4}|V_{h,r}|,
+ \qquad \epsilon=\pm1.
+\end{equation}
+This is the modulus of the original sum, after its phases have been combined.
+
+Set $H=Q^h$, $Y=Q^r$ and $T_h=H+H^{-1}$. The exact finite sum satisfies
+\begin{multline}\label{cs:Ward}
+ QY^2(1-Q^2Y)A_{h,r+2}
+ +Y(T_hQ^3Y^2+Q+1)A_{h,r+1}\\
+ -Q(QY+1)(QY^2-1)A_{h,r}=0.
+\end{multline}
+Absent sums above $M$ are zero. Here is an explicit telescoping proof. If $z=Q^v$, the ratio of consecutive summands of \eqref{cs:finite-A} is
+\[
+ R(z)=\frac{Y^{-1}(1-Qz^2)(1+Qz)}
+ {(1-Qz/H)(1-QHz)(1-Qz/Y)}.
+\]
+Use
+\[
+ G_h(z)=\frac{(1-z/H)(1-Hz)(1-z/Y)}{z^2}.
+\]
+Expanding $R(z)G_h(Qz)-G_h(z)$ gives
+\begin{equation}\label{cs:telescoper}
+ \left(\frac1{YQ^2}-1\right)z^{-2}
+ +\left(\frac1{YQ}+H+H^{-1}+\frac1Y\right)z^{-1}
+ -\frac1{YQ}-1-\frac{H+H^{-1}}Y.
+\end{equation}
+The ratio of a summand at $r+1$ to its value at $r$ is $z^{-1}-Y^{-1}$. Applying this identity twice expresses the first two $z^{-1}$ moments in terms of $A_{h,r+1}$ and $A_{h,r+2}$ and gives \eqref{cs:Ward} after clearing the displayed denominators.
+
+The endpoints vanish in this cleared form. At $v=\max(r,h)$ one of $1-z/Y$ and $1-z/H$ is zero. At the upper endpoint, multiplying the next summand by $G_h(Q^{M+1})$ first cancels the three last factorial factors; the remaining numerator contains $F_{2M+2}$ and hence $1-Q^N$. This order also covers $h=M$, where an uncanceled ratio would read $0/0$. No negative factorial or division by a zero endpoint is used. These observations prove the recurrence for $r<h$ as well as $r\ge h$.
+
+Normalizing by \eqref{cs:finite-V} and writing $Z=Q^{r+1}$ gives
+\begin{align}
+ V_{h,r}&=p_{h,N}(r)V_{h,r+1}+q_N(r)V_{h,r+2},\label{cs:recurrence}\\
+ p_{h,N}(r)&=-\frac{Z^{-1}[(H+H^{-1})Z^2+1+Q^{-1}]}{(1-Z)^2},\notag\\
+ q_N(r)&=-\frac{Q^{-2}Z^{-2}(1-QZ^2)(1+QZ)}
+ {(1-Z)^2(1-QZ)}.\notag
+\end{align}
+The denominators are nonzero for $0\le r\le M-1$. At $r=M-1$, $q_N(r)=0$ at both parities. We may set the unused value $V_{h,M+1}=0$. The actual remaining terminal value is
+\begin{equation}\label{cs:terminal}
+ |V_{h,M}|=\frac{S_M^2}{S_{M-h}S_{M+h}}
+ =\begin{cases}1,&N\text{ odd},\\ \cos(\pi h/N),&N\text{ even}.
+ \end{cases}
+\end{equation}
+Indeed $S_aS_{N-1-a}=N$. For odd $N=2M+1$ both products in the ratio equal $N$. For even $N=2m$, $M=m-1$, the numerator is $N/2$ and the denominator is $N/(2\cos(\pi h/N))$. Thus the prescribed solution is bounded by one at the upper wall throughout the physical color range. For the rate arguments it suffices to take $N\ge3$; the finite formulas still have their stated meaning at $N=2$.
+
+\subsection{Both roots of the recurrence}
+Let $T_N(r)$ be the companion matrix of \eqref{cs:recurrence}, so that
+$(V_{h,r},V_{h,r+1})^{\mathsf t}=T_N(r)(V_{h,r+1},V_{h,r+2})^{\mathsf t}$.
+Freeze $u=(r+1)\pi/N$ and $\chi=\pi h/N$ while $Q\to1$. The limiting matrix $T_0(u,\chi)$ has eigenvalues $e^{-2\ii u}v$, where
+\begin{equation}\label{cs:ellipse-polynomial}
+ v^2-bv-c=0,\qquad c=\cot^2u,\qquad
+ b=(c-1)\cos^2\chi-2\ii\sqrt c\sin^2\chi.
+\end{equation}
+We claim
+\begin{equation}\label{cs:spectral-radius}
+ \rho(T_0(u,\chi))\le\rho_0(u):=\max(1,\cot^2u),
+ \qquad 0<u\le\pi/2,\quad0\le\chi\le\pi/2.
+\end{equation}
+For $0<c<1$, a root $v$ on the unit circle would require $b=v-c/v$. Its locus in the $b$ plane is the ellipse
+\[
+ \left(\frac{\Re b}{1-c}\right)^2+
+ \left(\frac{\Im b}{1+c}\right)^2=1.
+\]
+At the actual $b$ its left side is
+\[
+ \cos^4\chi+\frac{4c}{(1+c)^2}\sin^4\chi\le1,
+\]
+with strict inequality for $\chi>0$. At the center the roots have modulus $\sqrt c<1$. Along a segment inside the ellipse no root can cross the unit circle, proving the bound for both roots. Continuity covers its boundary. For $c>1$ apply the same argument to $v/c$ and $1/c$. At $c=1$ the roots of $v^2+2\ii\sin^2\chi\,v-1$ have modulus one; at $c=0$ they are $0$ and $-\cos^2\chi$. This proves \eqref{cs:spectral-radius}.
+
+In particular, for $\chi_0>0$ and a compact interval $I\subset(\pi/4,\pi/2)$,
+\begin{equation}\label{cs:strict-radius}
+ \sup_{u\in I,\,\chi_0\le\chi\le\pi/2}\rho(T_0(u,\chi))
+ \le\theta<1.
+\end{equation}
+The endpoint $\chi=\pi/2$ is included: its repeated root has modulus $\sqrt c<1$. We will bound matrix powers directly, without an eigenbasis that could become singular there.
+
+\subsection{Fixed blocks and the lower endpoint}
+Define
+\begin{equation}\label{cs:E}
+ E(u)=\begin{cases}\displaystyle\frac2\pi\int_u^{\pi/4}\log\cot t\dd t,
+ &0\le u<\pi/4,\\0,&\pi/4\le u\le\pi/2.
+ \end{cases}
+\end{equation}
+The recurrence implies
+\begin{align}
+ \limsup_{N\to\infty}\max_{0\le h,r\le M}
+ \{N^{-1}\log|V_{h,r}|-E(\pi r/N)\}&\le0,\label{cs:global-V}\\
+ \limsup_{N\to\infty}
+ \max_{\substack{\delta N\le h\le M\\0\le r\le\beta N}}
+ \{N^{-1}\log|V_{h,r}|-E(\pi r/N)\}&\le-\gamma_{\delta,\beta}<0,
+ \label{cs:strict-V}
+\end{align}
+for $0<\delta,\beta<1/2$. We use $\log0=-\infty$ and ignore an empty index set.
+
+Here are the uniform product estimates. Fix a lower cutoff $a>0$. For $a\le u_r=(r+1)\pi/N\le\pi/2$, the exact normalized matrices
+$B_N(r)=T_N(r)/\rho_0(u_r)$ differ by $O_a(N^{-1})$ from the bounded Lipschitz family $B(u_r,\chi)=T_0(u_r,\chi)/\rho_0(u_r)$. The factor $1-QZ$ in \eqref{cs:recurrence} stays bounded away from zero on this interval at all sufficiently large levels.
+
+For a bounded $2$ by $2$ matrix whose eigenvalues have modulus at most one, Cayley--Hamilton gives
+\begin{equation}\label{cs:matrix-power}
+ \|B^L\|\le L\|B\|+L-1\le C_a L.
+\end{equation}
+The coefficient of $B$ is the polynomial
+$\sum_{j=0}^{L-1}\lambda_1^{L-1-j}\lambda_2^j$; the constant coefficient has modulus at most $L-1$. The formula extends to equal roots. If both roots have modulus at most $\theta<1$, it gives $\|B^L\|\le C_a L\theta^{L-1}$.
+
+Choose a fixed integer $L$. Telescoping the product of $L$ adjacent matrices against its frozen value gives, uniformly in $\chi$,
+\[
+ B_N(r)\cdots B_N(r+L-1)
+ =B(u_r,\chi)^L+O_{a,L}(N^{-1}).
+\]
+For a prescribed $\varepsilon>0$, choose $L$ large enough that $C_aL<e^{\varepsilon L}$ and only then take $N$ sufficiently large. Complete blocks cost at most $e^{2\varepsilon L}$; the incomplete blocks at the ends cost a fixed constant. Thus any normalized propagation above the cutoff costs at most $C_{a,\varepsilon}e^{2\varepsilon N}$.
+
+For \eqref{cs:strict-V}, choose
+$I\subset(\max(\pi\beta,\pi/4),\pi/2)$. Propagation from the upper wall to any $r\le\beta N$ crosses $I$. Equation \eqref{cs:strict-radius} permits the same fixed $L$ to be enlarged until every full block inside $I$ has norm at most $e^{-\gamma_0 L}$ for some $\gamma_0>0$. There are $N|I|/(\pi L)+O(1)$ such blocks. Taking $\varepsilon<\gamma_0|I|/(8\pi)$ leaves a strict negative rate after the remaining blocks have been included.
+
+At the omitted lower endpoint, direct estimates in \eqref{cs:recurrence} give
+\[
+ \|T_N(r)\|\le C\frac{N^2}{(r+1)^2},\qquad u_r\le a<\pi/8.
+\]
+Indeed $|H+H^{-1}|\le2$, $|1-Z|\ge4(r+1)/N$, and
+$|1-QZ^2|/|1-QZ|$ is bounded in this range. For at most $K\le aN/\pi$ consecutive indices the product is bounded by
+\[
+ \frac{C^KN^{2K}}{(K!)^2}
+ \le\exp\{O(Na\log(1/a))+O(\log N)\}.
+\]
+This also covers a shorter segment beginning later, by enlarging the absolute constant so each omitted factor is at least one. Its normalized rate tends to zero with $a$.
+
+Finally $\log\rho_0$ decreases to zero, so its right-endpoint Riemann sum satisfies
+\[
+ \sum_{j=r}^{M-1}\log\rho_0((j+1)\pi/N)\le NE(\pi r/N).
+\]
+For the global assertion first fix $a$ and $\varepsilon$, then $L$, then $N$, and finally make $a,\varepsilon$ arbitrarily small. For the strict assertion fix $I$ and its negative budget first; choose $a\log(1/a)$ and $\varepsilon$ below that budget, then $L$, and finally $N$. Combining \eqref{cs:terminal} with these estimates proves \eqref{cs:global-V} and \eqref{cs:strict-V}. Both branches, including their collisions, have been bounded.
+
+The prefactor in \eqref{cs:exact-modulus} has rate $g(x)$ by \eqref{cs:factorial}, and
+\begin{equation}\label{cs:plateau}
+ g(x)+E(\pi x)=g(\max(x,1/4))=\widetilde g(x).
+\end{equation}
+This proves \eqref{cs:core-envelope} for the two twisted signs. For an untwisted core, the coefficient vanishes for $r<h$ and otherwise has rate
+\[
+ g(x)-\Delta(x,t),\qquad
+ \Delta(x,t)=J(x-t)+J(x+t)-2J(x),
+ \quad t=h/N,\ x=r/N.
+\]
+For $t>0$ and $x<1/2$,
+\[
+ \partial_t\Delta=\log\frac{\sin\pi(x+t)}{\sin\pi(x-t)}>0,
+\]
+since the difference of the two sines is $2\cos\pi x\sin\pi t>0$. The boundary $t=x$ is integrable and follows by continuity. This proves the untwisted bound and its strict loss on a fixed high interval when $t\ge\delta$. For the twisted signs, choose $\beta$ above that interval and apply \eqref{cs:strict-V}; $E=0$ there. Thus \eqref{cs:local-color-loss} follows at both parities.
+
+\subsection{The full alias range}
+It remains to prove \eqref{cs:alias-envelope}. The absolute value of a coefficient in \eqref{cs:low-color} is
+\[
+ b_{j,r}=\frac{S_r^2}{S_{2r+1}}
+ \prod_{a=-r}^r2\sin((j+a)\pi/N),\qquad
+ 0\le r<j\le\lfloor N/2\rfloor.
+\]
+As a function of real $j$ on $(r,N-r)$, the logarithm of the product is strictly concave and symmetric about $N/2$. Its maximum is at that center. Sine duplication gives
+\[
+ b_{j,r}\le B_r:=
+ 2\frac{\prod_{a=1}^r2\sin(2a\pi/N)}
+ {\prod_{a=0}^r2\sin((2a+1)\pi/N)}.
+\]
+Here $B_0=\csc(\pi/N)$ and
+$B_{r+1}/B_r=\sin((2r+2)\pi/N)/\sin((2r+3)\pi/N)$.
+The ratio changes from at most one to at least one at most once, so a maximum occurs at an endpoint. The last value is $N/2$ for even $N$, and $\csc(\pi/N)$ for odd $N$. Since $\sin(\pi/N)\ge2/N$,
+\begin{equation}\label{cs:raw-alias}
+ b_{j,r}\le N/2.
+\end{equation}
+
+A half twist contributes a coefficient ratio $S_v/(S_rS_{v-r})$, where $v\ge\max(r,N/2)$. Its rate is
+\[
+ J(w)-J(u)-J(w-u),\qquad w=v/N,\ u=r/N.
+\]
+Differentiation in $w$ gives
+$\log(\sin\pi w/\sin\pi(w-u))$; its maximum is at $w=(1+u)/2$. Reflection and duplication of $J$ give the maximum $-2J(u/2)=k(u)$. Uniform factorial errors and at most $N$ summands cost only a power of $N$. This proves \eqref{cs:alias-envelope} for both twists. The pure alias obeys the same bound because $k\ge0$ and \eqref{cs:raw-alias} applies. Proposition~\ref{cs:envelopes} is proved.

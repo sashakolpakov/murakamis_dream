@@ -1,0 +1,90 @@
+\section{Exact rational verification of the two comparisons}\label{cs:arithmetic}
+
+The two finite supporting-plane arguments use fixed rational points, not numerically located maximizers as hypotheses. This section specifies the data and proves how every transcendental quantity in the comparisons is enclosed. Together with concavity and the exact covers in Sections~\ref{cs:two-leaf} and \ref{cs:attachment}, these are finite proofs of the two inequalities.
+
+The ancillary files in the repository's \texttt{experiments/} directory are
+\begin{center}\small
+\begin{tabular}{l}
+\texttt{conway\_two\_leaf\_block\_alias\_certificate.json}\\
+\texttt{conway\_single\_leaf\_attachment\_certificate.json}\\
+\texttt{verify\_conway\_two\_leaf\_block\_alias\_certificate.py}\\
+\texttt{verify\_conway\_single\_leaf\_attachment\_certificate.py}.
+\end{tabular}
+\end{center}
+The first table records the sixteen slope intervals and three rational points in each. The second records a rooted subdivision tree; a node is either its four quarter-rectangles or one pure point and one alias point. Coordinates are integer multiples of the denominator declared by the table. The verifier checks strict feasibility and the core conditions before taking any derivative. For the first alias profile its core tangent coordinate is strictly between $1/4$ and $1/2$, so the derivative is the stated derivative of $g$.
+
+\subsection{Outward interval arithmetic}
+Let $S=10^{40}$. An interval is stored as integers $(l,u)$ representing $[l/S,u/S]$. A rational input is rounded down and up to this grid. Addition and subtraction are exact on the grid. Multiplication uses all four endpoint products with outward integer rounding; division uses all four endpoint quotients after checking that the denominator interval avoids zero. Thus every subsequent interval contains the exact expression, by induction on its arithmetic operations. Repeated multiplication gives nonnegative integer powers.
+
+For the constant $\pi$ use Machin's identity
+\[
+ \pi=16\arctan(1/5)-4\arctan(1/239).
+\]
+Truncate each alternating series after 40 terms and enclose its remainder by the absolute next term. The resulting interval also verifies $\pi<22/7$.
+
+For $\sin(\pi t)$, reflect $t>1/2$ to $1-t$ and use the Taylor polynomial through degree 41. On $0\le\pi t\le\pi/2$, its error is at most $(\pi t)^{43}/43!$. Rational interval operations applied to the enclosed $\pi$ give an outward enclosure. Every sine used inside a logarithm is at a strict positive rational argument below one; positivity of its resulting enclosure is checked.
+
+For a positive interval $x$, multiply by a power of two until its lower endpoint is in $[1,2)$. Put $z=(x-1)/(x+1)$ and verify $0\le z<1/2$ throughout the interval. Then
+\begin{equation}\label{cs:log-series}
+ \log x=2\sum_{j=0}^{79}\frac{z^{2j+1}}{2j+1}+R,
+ \qquad 0\le R\le\frac{2z^{161}}{161(1-z^2)}.
+\end{equation}
+The upper bound follows by replacing every subsequent denominator by 161 and summing the geometric powers. The same formula at $z=1/3$ encloses $\log2$ and restores the extracted power. Monotonicity and outward rounding are used at every step; the small width of the interval is not presumed.
+
+\subsection{The log-sine integral and gradients}
+For $0<t<1/2$, integration of the absolutely convergent Euler sine product gives
+\begin{equation}\label{cs:J-series}
+ J(t)=t\log(2\pi t)-t-
+ \sum_{n=1}^{20}\frac{\zeta(2n)t^{2n+1}}{n(2n+1)}-R_t,
+ \qquad
+ 0\le R_t\le\frac{2t^{43}}{21\cdot43(1-t^2)}.
+\end{equation}
+To justify the expansion directly, write
+$\log(\sin\pi u/(\pi u))
+=\sum_{k\ge1}\log(1-u^2/k^2)$, expand each negative logarithm and integrate; the nonnegative double series permits termwise integration. For the tail use $\zeta(2n)<2$ and $n(2n+1)\ge21\cdot43$ for $n\ge21$.
+
+The first zeta value is $\zeta(2)=\pi^2/6$. For $2\le n\le20$ integral comparison gives
+\[
+ \sum_{k=1}^{64}k^{-2n}
+ \le\zeta(2n)\le
+ \sum_{k=1}^{64}k^{-2n}+
+ \frac{64^{1-2n}}{2n-1}.
+\]
+All these bounds are rational except for the already enclosed $\pi$. Use the exact values of $J$ at $0,1/2,1$, and use $J(1-t)=-J(t)$ above $1/2$.
+
+The gradients needed for the supporting planes contain only positive sines:
+\begin{align*}
+ m_x&=\log\frac{\sin\pi(x+y)\sin\pi(z-x)}
+                     {\sin\pi x\sin\pi(x+y-z)},\\
+ m_y&=\log\frac{\sin\pi(x+y)\sin\pi(z-y)}
+                     {\sin\pi y\sin\pi(x+y-z)},\\
+ m_z&=\log\frac{\sin\pi z\sin\pi(x+y-z)}
+                     {\sin\pi(z-x)\sin\pi(z-y)}.
+\end{align*}
+Together with the displayed derivatives of $g$ and $k$, equations \eqref{cs:log-series} and \eqref{cs:J-series} enclose every term of \eqref{cs:two-certificate} and \eqref{cs:single-certificate}. The lower interval endpoints give precisely the rational margins \eqref{cs:two-margin} and \eqref{cs:single-margin}. Evaluating a tangent at a boundary vertex requires no singular derivative at that vertex: all derivatives are taken at the strict rational tangent point.
+
+The elementary bound \eqref{cs:elementary-margin} can also be checked without special-function evaluation. Its four-term lower sum is
+\[
+ \frac23-\frac{(2/3)^3}{9}+\frac{(2/3)^5}{25}
+ -\frac{(2/3)^7}{49}=\frac{1708762}{2679075}.
+\]
+For $\log(3/2)$, the first three terms of its $z=1/5$ series and the bound on its remaining positive tail give
+\[
+ \log(3/2)\le
+ 2\left(\frac15+\frac{1}{3\cdot5^3}+\frac{1}{5\cdot5^5}\right)
+ +\frac{2}{5^7\cdot7(1-1/25)}
+ =\frac{177391}{437500}.
+\]
+Multiplying the first lower bound by $7/11$ and subtracting the second gives the fraction in \eqref{cs:elementary-margin}.
+
+\subsection{Reproduction and the limits of the finite computation}
+From the repository root, with Python's standard library alone, run
+\begin{verbatim}
+python3 papers/conway-source-bounds/check.py \
+    --output /tmp/conway-source-check
+\end{verbatim}
+The wrapper replays just the two certificates used in this paper, verifies their coverage counts and margins, and checks the elementary rational comparison. It records the source and data hashes before and after execution. It rejects optimized Python execution, uses isolated subprocesses and removes any previous success summary before validation. Output consists of the two detailed rational records and one summary.
+
+The computation proves the finite inequalities once the enclosure rules and concavity arguments above have been established. It does not sample levels to prove the Ward identity, the long matrix-product bounds, or the tree induction. Those are all-level written arguments. The finite physical identities are the separately stated imports from \cite{Newton}; the certificates supply no new identification of a polynomial with a tangle evaluation.
+
+The theorem can be used in a later filling argument in the following precise way. It supplies a strict bound on the sum of all alias sectors and on the entire physical-color complement of a fixed complete-color neighborhood. A filling analysis must still keep its exact finite functional, control the remaining neighborhood and prove a nonzero selected contribution with the appropriate normalization. These requirements are not conclusions of an absolute source bound.

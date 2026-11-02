@@ -49,7 +49,7 @@ common core for several inserted diagrams also uses protected gluing.
 
 ## The current drafts
 
-The thirteen papers total 203 pages, with individual lengths from 11 to
+The fifteen papers total 231 pages, with individual lengths from 11 to
 28 pages. They provide complete accounts of the results described below,
 with numbered companion imports. This is a partial extraction of the
 reference manuscript, rather than a replacement for all its theorem
@@ -122,6 +122,37 @@ and disk longitude form a primitive basis, also for the retained
 half-twist partners. The theorem uses the completed-root grammar of the
 Newton paper. A corollary identifies the positive complete source's rate
 with this volume; neither result asserts a signed filling asymptotic.
+
+**Complementary color bounds for Conway tangle sources.** 16 pages.
+[TeX source](conway-source-bounds/main.tex) ·
+[PDF](../docs/papers/conway-source-bounds.pdf)
+
+The exact colored-circle formula has a core and a complementary term.
+This paper bounds the sum of every contribution containing a complementary
+term, uniformly over the integer colors and retained half twists. It
+also bounds the whole source when one color stays a fixed fraction of the
+level away from complete color. A finite recurrence preserves the signed
+cancellation inside each core. Fixed matrix blocks bound both recurrence
+roots, including their collisions; rational supporting planes then give
+two local strict comparisons that propagate through the completed-root
+construction. The theorem is an upper bound before filling. It supplies
+neither a nonzero filled contribution nor a volume identity.
+
+**Marked deformations and long fillings of Conway closures.** 12 pages.
+[TeX source](conway-fillings/main.tex) ·
+[PDF](../docs/papers/conway-fillings.pdf)
+
+Starting with the complete Conway metric, this paper defines a classical
+cell potential and continues the full face maps and group relations.
+The original meridian and disk longitude give the primitive logarithmic
+filling equations. One neighborhood works for independently long signed
+slopes, without restrictions on their ratios. The metric completion
+keeps the main cusps complete and adds smooth solid tori along the
+original auxiliary slopes. The complete volume fixes the action's
+constant, and a comparison of the same fundamental chain gives the
+absolute filled volume. Its proof does not use a quantum asymptotic.
+The [reference errata](../manuscript/ERRATA.md) explain the corrected
+factor in the filling Jacobian.
 
 **Uniform spectral bounds for local Casimir sources.** 14 pages.
 [TeX source](local-coefficients/main.tex) ·
@@ -307,12 +338,13 @@ For a citation between papers, the exporting paper must state a numbered
 theorem with its normalization, degree restrictions, level parity and
 uniformity assumptions. The importing paper must name that theorem and
 check those hypotheses. A reference to a folder of calculations is not
-a substitute. The thirteen drafts above now include terminal decoration,
-complete and moving-meridian Newton calculus, complete Conway geometry
-and classical circle-tree filling, alongside
+a substitute. The fifteen drafts above now include terminal decoration,
+complete and moving-meridian Newton calculus, complementary color bounds,
+complete and filled Conway geometry and classical circle-tree filling, alongside
 the planar criteria, two kinds of triangular assembly, the three-braid
-application and their foundations. The remaining signed tree estimates,
-recursive filled closures and meridian asymptotics and longitude results still require
+application and their foundations. The remaining signed circle-tree estimates,
+nonzero asymptotics and whole filling sums for recursive closures,
+and meridian asymptotics and longitude results still require
 their own extraction and proof review. The dependency
 graph keeps those obligations visible.
 

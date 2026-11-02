@@ -1,0 +1,31 @@
+\begin{tikzpicture}[x=1cm,y=1cm,>=Stealth,
+  leaf/.style={draw,rounded corners=2pt,fill=blue!6,minimum width=1.15cm,minimum height=.55cm},
+  gate/.style={draw,fill=black!8,minimum size=.38cm,inner sep=1pt},
+  every node/.style={font=\small}]
+\begin{scope}
+ \node[leaf] (h1) at (-1,1.35) {$h$};
+ \node[leaf] (h2) at (1,1.35) {$h$};
+ \node[gate] (g) at (0,0) {$\star$};
+ \draw[->] (h1) -- node[left,pos=.48] {$i$} (g);
+ \draw[->] (h2) -- node[right,pos=.48] {$j$} (g);
+ \draw[->] (g) -- (0,-1) node[below] {$r$};
+ \node[align=center] at (0,-1.8) {$g(a)+g(a)+m(a,a,b)$\\$\lambda=2\log(2X^2)$};
+ \node at (0,2) {two-leaf seed};
+\end{scope}
+\begin{scope}[xshift=6.5cm]
+ \node[leaf] (h) at (-1.25,1.35) {$h$};
+ \node[draw,rounded corners=2pt,fill=green!5,minimum width=1.8cm,minimum height=1.15cm] (E) at (1.1,1.5) {};
+ \node at (1.1,1.9) {$E$};
+ \fill (.6,1.55) circle (1pt);
+ \fill (1.1,1.55) circle (1pt);
+ \fill (1.6,1.55) circle (1pt);
+ \draw (.6,1.55)--(.85,1.23)--(1.1,1.55);
+ \draw (.85,1.23)--(1.1,.99)--(1.6,1.55);
+ \node[gate] (g) at (0,0) {$\star$};
+ \draw[->] (h) -- node[left,pos=.48] {$i$} (g);
+ \draw[->] (E.south) -- node[right,pos=.48] {$j$} (g);
+ \draw[->] (g) -- (0,-1) node[below] {$r$};
+ \node[align=center] at (0,-1.8) {$g(a)+f_E(b)+m(a,b,c)$\\$\mu_{\!E}=f_E'(b),\quad\lambda=f_{hE}'(c)$};
+ \node at (0,2.55) {single attachment};
+\end{scope}
+\end{tikzpicture}

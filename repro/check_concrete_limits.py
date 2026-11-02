@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check optional Mathlib transfer, energy, flattening and grounded minimization.
+"""Check optional Mathlib transfer, variational estimates and grounded inversion.
 
 The Std-only package is a path dependency and remains independently usable.
 This checker never downloads dependencies or updates the manifest. Provision
@@ -30,6 +30,7 @@ MODULE_NAMESPACES = {
     "Flattening": "VolumeLogic.Flattening",
     "TransportCoercivity": "VolumeLogic.TransportCoercivity",
     "GroundedConvexity": "VolumeLogic.GroundedConvexity",
+    "GroundedLaplacian": "VolumeLogic.GroundedLaplacian",
 }
 ALLOWED_AXIOMS = {"propext", "Classical.choice", "Quot.sound"}
 # The complete expected Git dependency set, not merely the direct Mathlib pin.
@@ -198,6 +199,13 @@ def negative_controls(manifest: dict, names: dict[str, str], audit: str) -> list
         raise ValueError("The registered unique grounded-minimum theorem is missing.")
     reject("omitted_unique_grounded_minimum_audit", validate_audit, names,
            audit.replace("#print axioms " + uniqueness_name, ""))
+    reject("omitted_grounded_laplacian_module", declaration_inventory,
+           [PACKAGE / (m + ".lean") for m in MODULE_NAMESPACES if m != "GroundedLaplacian"])
+    inversion_name = "VolumeLogic.GroundedLaplacian.exists_unique_grounded_solution"
+    if inversion_name not in names:
+        raise ValueError("The registered grounded linear-equation theorem is missing.")
+    reject("omitted_unique_grounded_solution_audit", validate_audit, names,
+           audit.replace("#print axioms " + inversion_name, ""))
     return checks
 
 
@@ -282,7 +290,7 @@ def main() -> None:
             if any(sha256(ROOT / path) != digest for path, digest in hashes.items()):
                 raise ValueError("A recorded source changed during this replay; rerun on stable inputs.")
             report = {
-                "scope": "Concrete complex modulus and real logarithmic level scale; finite-residue packet assembly, whole-remainder noncancellation and conditional volume transfer; actual finite real weighted graph energy, positive-edge paths, constant kernel, grounded strict positivity and the explicit Laplacian quadratic identity; actual one-variable derivative bounds imply stationary quadratic cost, convex supporting-tangent gains and a strict two-branch sector margin; an actual positive finite corner table and connected co-occurrence paths give a uniform grounded max-minus-linear recession bound, coercivity of its vertex-bounded potential, compact sublevels and an attained minimum; actual segment derivatives with second derivative equal to connected graph energy imply strict convexity and uniqueness of that same grounded minimum.",
+                "scope": "Concrete complex modulus and real logarithmic level scale; finite-residue packet assembly, whole-remainder noncancellation and conditional volume transfer; actual finite real weighted graph energy, positive-edge paths, constant kernel, grounded strict positivity and the explicit Laplacian quadratic identity; actual one-variable derivative bounds imply stationary quadratic cost, convex supporting-tangent gains and a strict two-branch sector margin; an actual positive finite corner table and connected co-occurrence paths give a uniform grounded max-minus-linear recession bound, coercivity of its vertex-bounded potential, compact sublevels and an attained minimum; actual segment derivatives with second derivative equal to connected graph energy imply strict convexity and uniqueness of that same grounded minimum; the actual reduced principal graph Laplacian has its constructed bilinear form, trivial kernel, nonzero determinant and a linear inverse, yielding a unique solution of every grounded linear equation.",
                 "explicit_inputs_remaining": ["the actual invariant's exact finite source identity", "the nonzero packet coefficient and finite-action convergence (a common limit, or a limit on every residue class with equal real action)", "a strict bound for the whole complementary remainder", "the actual geometric action-volume equality", "geometric Hessian differentiation, conductance signs, and identification of the connected ordinary-face graph", "identification of the shared-weight path and its stationary point, directional second-derivative bound, triangle entropy and pure-corner inequalities, and the actual source envelopes", "Hall feasibility of the geometric corner table, its prescribed row and column margins, identification of the connected grounded support, and the triangle potential vertex bound including fixed boundary constants", "actual first and second segment derivatives of the geometric potential and their graph-energy identity; fixed-boundary pooling and the connected positive conductance support along every grounded segment"],
                 "residue_assembly": {"period": "any fixed positive natural number", "denominator": "original level N, including on N=p*n+r", "amplitudes": "each residue limit is nonzero; the complex limits may differ", "actions": "the complex residue limits may differ; their real parts agree", "unit_character": "may depend arbitrarily on N and need not converge", "conclusion": "ordinary all-integer-level convergence and eventual nonvanishing"},
                 "toolchain": TOOLCHAIN,
@@ -309,6 +317,7 @@ def main() -> None:
         print("The geometric Hessian identity, connected conductance graph and source interpretation of flattening remain written inputs.")
         print("Geometric transport feasibility, margins, support connectivity and local vertex bounds remain written inputs.")
         print("Actual segment differentiation and its geometric graph-energy identity remain written inputs; strict convexity and uniqueness follow in Lean.")
+        print("Grounded finite graph inversion is proved; geometric Hessian identification, quantitative inverse bounds and nonlinear deformation remain outside this theorem.")
         if args.output:
             print(f"Report: {output / 'summary.json'}")
 

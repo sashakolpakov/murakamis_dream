@@ -8,7 +8,8 @@ not copied. The ordinary Std-only check does not need this package or Mathlib.
 The package also proves the real finite quadratic-form implication used in
 the circle-pattern Hessian argument, the one-variable calculus behind
 shared-weight flattening, coercivity from a positive finite transport table,
-and uniqueness from actual graph-valued second derivatives.
+uniqueness from actual graph-valued second derivatives, and invertibility
+of the actual graph Laplacian after grounding one coordinate.
 
 ## What is proved
 
@@ -372,6 +373,69 @@ potential in the free interior coordinates. The module does not prove
 smooth dependence of the minimizer, the implicit function theorem's
 application, circle-pattern development or a volume identity.
 
+## Inverting the grounded graph Laplacian
+
+[GroundedLaplacian.lean](GroundedLaplacian.lean) contains four definitions
+and eighteen theorems in `VolumeLogic.GroundedLaplacian`. It proves the
+finite nondegeneracy step after a Hessian has been identified with the
+graph form. Positive definiteness, injectivity and invertibility are
+conclusions, not additional hypotheses.
+
+Let `V` and `E` be finite vertex and edge types. An edge `e` has endpoints
+`src e`, `dst e` and real weight `w e`. Fix a vertex `root`. The assumptions
+are `0 ≤ w e` for every edge and connectivity by actual finite paths whose
+edge weights are strictly positive, as defined in `WeightedGraph.connected`.
+Loops, parallel edges and zero weights remain allowed. Put
+
+\[
+I=\{v\in V:v\ne\mathrm{root}\},\qquad
+B_{ev}=\mathbf 1_{\operatorname{src}e=v}
+       -\mathbf 1_{\operatorname{dst}e=v},\qquad
+L_{uv}=\sum_e w_e B_{eu}B_{ev}.
+\]
+
+The definition `reducedMatrix` is precisely the principal matrix
+\(L^\circ=(L_{uv})_{u,v\in I}\), and `reducedOperator` is multiplication by
+this matrix. For `f : I → ℝ`, `extend root f` is the vertex function
+\(\bar f\) equal to `f` away from the root and zero at the root.
+The theorem `reduced_bilinear` proves
+
+\[
+\sum_{u\in I} f_u(L^\circ g)_u
+=\sum_e w_e(\bar f_{\operatorname{src}e}-\bar f_{\operatorname{dst}e})
+             (\bar g_{\operatorname{src}e}-\bar g_{\operatorname{dst}e}).
+\]
+
+The self-pairing is therefore exactly the previously constructed graph
+energy. If `f ≠ 0`, connected positive support and grounding make that
+energy strictly positive. This proves the kernel is zero and the operator
+is injective. Finite dimensionality gives surjectivity, after which
+`reducedEquiv` constructs a real linear equivalence and hence its inverse.
+`reducedMatrix_det_ne_zero` also proves \(\det L^\circ\ne0\).
+
+The two main solvability statements are
+`exists_unique_reduced_solution` and `exists_unique_grounded_solution`.
+The latter says that for **every** right-hand side `b : V → ℝ` there is a
+unique `f : V → ℝ` satisfying
+
+\[
+f_{\mathrm{root}}=0,\qquad
+\sum_{v\in V}L_{uv}f_v=b_u\quad(u\ne\mathrm{root}).
+\]
+
+The root equation is omitted: its value is the reaction to the grounding
+condition, so no zero-sum compatibility condition is imposed on `b`.
+If the graph has one vertex, `I` is empty, its determinant is one, and the
+unique grounded function is zero; the same proofs include this case.
+
+To apply this result to the geometric variational problem, the actual
+derivative matrix must still be identified with this reduced Laplacian,
+with the displayed nonnegative weights and connected positive support.
+For several fixed boundary coordinates, a pooled boundary vertex can be
+used only after that identification has been supplied. This module proves
+neither a uniform inverse norm bound nor differentiable dependence on
+parameters, a nonlinear implicit-function theorem, or geometric development.
+
 ## Pinned dependencies
 
 - Lean: `leanprover/lean4:v4.32.2`.
@@ -399,6 +463,9 @@ lake exe cache get \
   Mathlib.Analysis.Complex.Basic \
   Mathlib.Analysis.Convex.Deriv \
   Mathlib.Analysis.Normed.Module.FiniteDimension \
+  Mathlib.LinearAlgebra.Matrix.ToLin \
+  Mathlib.LinearAlgebra.Matrix.NonsingularInverse \
+  Mathlib.LinearAlgebra.FiniteDimensional.Basic \
   Mathlib.Topology.Order.Compact \
   Mathlib.Topology.Order.Lattice \
   Mathlib.Algebra.Order.GroupWithZero.Finset \
@@ -443,7 +510,8 @@ the executed Lean version must still match the pin.
 
 The checker rebuilds the Std-only path dependency, compiles
 `RealTransfer.lean`, `WeightedGraph.lean`, `Flattening.lean`,
-`TransportCoercivity.lean` and `GroundedConvexity.lean`, and runs
+`TransportCoercivity.lean`, `GroundedConvexity.lean` and
+`GroundedLaplacian.lean`, and runs
 [AxiomAudit.lean](AxiomAudit.lean). Every
 definition and theorem must appear exactly once in the audit. Only Lean's
 standard foundational axioms `propext`, `Classical.choice` and `Quot.sound`
@@ -452,21 +520,23 @@ are permitted; placeholders and additional axioms fail the check.
 `summary.json` records every declaration, its axioms, all dependency pins,
 and the SHA-256 hashes of the optional package, checker and Std-only sources.
 It contains relative paths and omits timestamps so identical inputs produce
-the same summary. Sixteen negative controls check altered pins, missing or
+the same summary. Eighteen negative controls check altered pins, missing or
 duplicate dependencies, an absolute local dependency, incomplete or
 duplicate declaration audits, an omitted graph module or grounded-energy
 audit entry, an omitted flattening module or quadratic-cost audit entry,
 an omitted transport module or grounded-coercivity audit entry,
 an omitted grounded-convexity module or unique-minimum audit entry,
+an omitted grounded-Laplacian module or unique-linear-solution audit entry,
 and an unexpected logical axiom. A failed run
 removes any old success summary in its output directory.
 
-The optional count is **twenty definitions and seventy-four theorems**, separate
+The optional count is **twenty-four definitions and ninety-two theorems**, separate
 from the Std-only theorem count: `RealTransfer` has two definitions and
 twenty-two theorems, `WeightedGraph` has seven definitions and nineteen
 theorems, `Flattening` has one definition and nine theorems,
-`TransportCoercivity` has seven definitions and sixteen theorems, and
-`GroundedConvexity` has three definitions and eight theorems. The audit
+`TransportCoercivity` has seven definitions and sixteen theorems,
+`GroundedConvexity` has three definitions and eight theorems, and
+`GroundedLaplacian` has four definitions and eighteen theorems. The audit
 checks these proofs and the
 listed dependency pins; it does not certify that a particular knot family
 satisfies the remaining written analytic and geometric hypotheses.

@@ -2613,48 +2613,80 @@
       "id": "recursive_marked_metric",
       "title": "Nearby primitive fillings and volume for the completed-root construction",
       "group": "recursive_tangles",
-      "statement": "The labeled recursive cells give the actual peripheral words and signed logarithms. On the nearby independently long filling branch the original primitive slopes complete smoothly, the main cusp stays complete, and the calibrated filled critical action has real part equal to actual hyperbolic volume divided by 2pi. A regulator differential alone is not the conclusion.",
+      "statement": "For the completed/completed Conway grammar, a classical holomorphic cell potential produces the actual framed representation, primitive similarity logarithms and parabolic main cusps. Its corrected complete auxiliary Hessian gives independently sufficiently long signed filling solutions, smooth completion on the original exterior and absolute volume equal to 2pi times the real critical action. No quantum asymptotic is used or proved.",
       "sources": [
         {
-          "path": "manuscript/sections/07-marked-geometry.tex",
-          "anchor": "\\label{prop:marked-primitive}"
+          "path": "papers/conway-fillings/main.tex",
+          "anchor": "\\label{cf:main}"
         },
         {
-          "path": "manuscript/sections/07-marked-geometry.tex",
-          "anchor": "\\label{eq:filled-volume}"
+          "path": "papers/conway-fillings/main.tex",
+          "anchor": "\\label{cf:local-potential}"
         },
         {
-          "path": "manuscript/sections/D-marked-cell-calibration.tex",
-          "anchor": "\\label{eq:app-primitive}"
+          "path": "papers/conway-fillings/main.tex",
+          "anchor": "\\label{cf:Phi}"
         },
         {
-          "path": "manuscript/sections/D-marked-cell-calibration.tex",
-          "anchor": "\\label{eq:app-absolute-regulator}"
+          "path": "papers/conway-fillings/main.tex",
+          "anchor": "\\label{cf:hessian}"
         },
         {
-          "path": "manuscript/sections/D-marked-cell-calibration.tex",
-          "anchor": "\\label{eq:app-smooth-tube}"
+          "path": "papers/conway-fillings/deformation.tex",
+          "anchor": "\\label{cf:edge-words}"
+        },
+        {
+          "path": "papers/conway-fillings/deformation.tex",
+          "anchor": "\\label{cf:primitive-logs}"
+        },
+        {
+          "path": "papers/conway-fillings/metric-volume.tex",
+          "anchor": "\\label{cf:Jacobian}"
+        },
+        {
+          "path": "papers/conway-fillings/metric-volume.tex",
+          "anchor": "\\label{cf:sign}"
+        },
+        {
+          "path": "papers/conway-fillings/metric-volume.tex",
+          "anchor": "\\label{cf:small-period}"
+        },
+        {
+          "path": "papers/conway-fillings/metric-volume.tex",
+          "anchor": "\\label{cf:regulator}"
+        },
+        {
+          "path": "papers/conway-fillings/metric-volume.tex",
+          "anchor": "\\label{cf:homotopy}"
         }
       ],
       "depends_on": [
         {
+          "id": "recursive_positive_source",
+          "reason": "Supplies the complete strict stationary point and nonsingular internal Hessian; no positive-source asymptotic is needed here."
+        },
+        {
           "id": "recursive_angle_geometry",
-          "reason": "Fixes the actual complete cells, topology, labels and absolute complete action."
+          "reason": "Fixes the actual complete cells, topology, face labels and absolute complete volume."
         },
         {
           "id": "recursive_complete_peripheral",
-          "reason": "Fixes the primitive complete collar basis, sign conventions and half-twist marking before the separate nearby logarithmic family and filling argument."
-        },
-        {
-          "id": "recursive_local_packet_filling",
-          "reason": "Identifies the selected source action and its actual primitive charge-one branch; geometric completion is not inferred merely from nonzero amplitude."
+          "reason": "Fixes the primitive complete meridian and disk longitude before continuing their actual group words."
         },
         {
           "id": "geo_nearby_metric_completion",
-          "reason": "Supplies the positive nearby compact-core/cusp and primitive solid-torus completion argument after the actual logarithmic slope equations are verified."
+          "reason": "Completes the framed representation after its original primitive slope equations have been solved."
+        },
+        {
+          "id": "geo_local_peripheral_volume_differential",
+          "reason": "Supplies the local volume differential in similarity logarithms; the Conway potential uses its own V dU polarization and complete constant."
+        },
+        {
+          "id": "geo_same_filled_chain",
+          "reason": "Identifies the same original ideal-chain volume with the completed metric, after the marked smooth filling has been established."
         }
       ],
-      "coverage": "The new complete-geometry companion supplies only the complete anchor and primitive basis. This nearby deformation, source-action calibration and filled metric remain the separate written D/07 arguments, with completed-root scope."
+      "coverage": "The separate classical companion corrects the factor two in the frozen Appendix D filling Jacobian. Identification with the quantum source action remains a distinct analytic node; neither its nonzero amplitude nor its whole-sum limit is an input to this geometric theorem."
     },
     {
       "id": "open_general_remainder",
@@ -3598,23 +3630,39 @@
       "id": "recursive_completed_source_gap",
       "title": "The completed-root complementary-source estimate",
       "group": "recursive_tangles",
-      "statement": "For the completed-root grammar stated in the reference manuscript, the exact two-leaf and single-attachment estimates propagate through the finite construction and give the whole physical-color bound and complementary-color gap.",
+      "statement": "For each fixed completed/completed Conway closure, the entire sum of sectors containing an alias is exponentially below the positive complete-source maximum, uniformly over physical auxiliary colors, retained signs and both level parities. The whole source also has a strict gap whenever one physical color stays a fixed fraction of the level away from complete color. No filled-invariant asymptotic is a conclusion.",
       "sources": [
         {
-          "path": "manuscript/sections/05-alias.tex",
-          "anchor": "\\section{Coefficient envelopes on the true support}"
+          "path": "papers/conway-source-bounds/main.tex",
+          "anchor": "\\label{cs:main}"
         },
         {
-          "path": "manuscript/sections/05-alias.tex",
-          "anchor": "\\section{Why a block estimate is needed}"
+          "path": "papers/conway-source-bounds/main.tex",
+          "anchor": "\\label{cs:alias-gap}"
         },
         {
-          "path": "manuscript/sections/05-alias.tex",
-          "anchor": "\\section{A leaf attached to an arbitrary completed child}"
+          "path": "papers/conway-source-bounds/main.tex",
+          "anchor": "\\label{cs:color-gap}"
         },
         {
-          "path": "manuscript/sections/05-alias.tex",
-          "anchor": "\\section{The whole-tree induction}"
+          "path": "papers/conway-source-bounds/composition.tex",
+          "anchor": "\\label{cs:two-leaf-gap}"
+        },
+        {
+          "path": "papers/conway-source-bounds/composition.tex",
+          "anchor": "\\label{cs:attachment-gap}"
+        },
+        {
+          "path": "papers/conway-source-bounds/composition.tex",
+          "anchor": "\\label{cs:tangent}"
+        },
+        {
+          "path": "papers/conway-source-bounds/composition.tex",
+          "anchor": "\\label{cs:assembly}"
+        },
+        {
+          "path": "papers/conway-source-bounds/arithmetic.tex",
+          "anchor": "\\label{cs:arithmetic}"
         }
       ],
       "depends_on": [
@@ -3625,9 +3673,13 @@
         {
           "id": "recursive_positive_source",
           "reason": "Supplies the completed-root shared-wire action, unique strict saddle, nonsingular Hessian and stationary leaf window. A geometric volume identity is not needed for this analytic estimate."
+        },
+        {
+          "id": "recursive_uniform_leaf_envelopes",
+          "reason": "Controls each actual signed core and alias on the entire finite support before the two local strict comparisons are propagated through the tree."
         }
       ],
-      "coverage": "This node records the completed-root construction of Chapters 2–8, with its stated grammar. The broader strict-tree extension has separate nodes and additional inputs."
+      "coverage": "The companion proves the completed-root scope. Its two rational certificates have complete slope-domain coverage; analytic recurrence bounds and tree induction are written proofs. Broader strict syntax and a bare closing leaf require additional estimates."
     },
     {
       "id": "recursive_completed_volume",
@@ -3688,6 +3740,10 @@
         {
           "id": "elementary_rate_transfer",
           "reason": "Combines the nonzero contribution with the strict full remainder bound."
+        },
+        {
+          "id": "recursive_source_action_comparison",
+          "reason": "Identifies the action selected by the nonzero quantum asymptotic with the independently defined classical filling action, including its constant."
         }
       ],
       "coverage": "This node records the completed-root construction of Chapters 2–8, with its stated grammar. The broader strict-tree extension has separate nodes and additional inputs."
@@ -3941,14 +3997,18 @@
           "anchor": "\\label{eq:b1-local-asymptotic}"
         },
         {
-          "path": "manuscript/sections/B2-global-core-envelope.tex",
-          "anchor": "\\label{eq:b2-far-color}"
+          "path": "papers/conway-source-bounds/local.tex",
+          "anchor": "\\label{cs:envelopes}"
         }
       ],
       "depends_on": [
         {
           "id": "recursive_finite_source",
           "reason": "Fixes the literal leaf coefficients, their Casimir data and the exact finite recurrences used in the estimates."
+        },
+        {
+          "id": "recursive_uniform_leaf_envelopes",
+          "reason": "Supplies the separately proved all-physical-color global envelope; the holomorphic nonzero local expansion remains in the frozen appendix."
         }
       ],
       "coverage": "These written high-index and global-envelope proofs are in the frozen manuscript. The quarter-index extension has a separate node because the completed-root argument does not need its enlarged chart."
@@ -4228,6 +4288,145 @@
         }
       ],
       "coverage": "These real calculus and uniqueness implications are proved in the optional Mathlib package. Fixed-boundary pooling and row offsets are explicit hypotheses of the application, not silently discarded."
+    },
+    {
+      "id": "finite_grounded_inverse",
+      "title": "The reduced graph Laplacian has an inverse",
+      "group": "finite_graph_energy",
+      "statement": "For the actual principal matrix obtained by deleting one grounded vertex from the finite weighted graph Laplacian, nonnegative weights and connected positive-edge paths imply a zero kernel, a nonzero determinant and a constructed real linear inverse. Every right-hand side has a unique grounded solution of all nonroot equations, including the one-vertex case. This proves neither a uniform inverse bound nor a nonlinear deformation theorem.",
+      "sources": [
+        {
+          "path": "formal-real/GroundedLaplacian.lean",
+          "anchor": "theorem reduced_bilinear"
+        },
+        {
+          "path": "formal-real/GroundedLaplacian.lean",
+          "anchor": "theorem reduced_quadratic_pos"
+        },
+        {
+          "path": "formal-real/GroundedLaplacian.lean",
+          "anchor": "theorem reducedOperator_bijective"
+        },
+        {
+          "path": "formal-real/GroundedLaplacian.lean",
+          "anchor": "theorem reducedMatrix_det_ne_zero"
+        },
+        {
+          "path": "formal-real/GroundedLaplacian.lean",
+          "anchor": "theorem exists_unique_grounded_solution"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "finite_weighted_graph_kernel",
+          "reason": "The actual reduced quadratic form equals the full graph energy of the zero extension; positive paths make it strictly positive on nonzero free vectors."
+        }
+      ],
+      "coverage": "The geometric Hessian identification, positive conductances and any boundary pooling remain written application hypotheses."
+    },
+    {
+      "id": "recursive_uniform_leaf_envelopes",
+      "title": "Uniform physical-color leaf bounds through recurrence collisions",
+      "group": "local_asymptotics",
+      "statement": "For every physical auxiliary color and retained half-twist sign, the actual core coefficients have the plateau-envelope upper rate with a uniform o(1) error, and the full alias range has a polynomial-factor envelope. Fixed blocks control both recurrence roots, including collisions and the lower endpoint. On compact high-index intervals, a macroscopic color deficit gives a strict loss. No polynomial core prefactor at collisions or complex asymptotic is asserted.",
+      "sources": [
+        {
+          "path": "papers/conway-source-bounds/local.tex",
+          "anchor": "\\label{cs:envelopes}"
+        },
+        {
+          "path": "papers/conway-source-bounds/local.tex",
+          "anchor": "\\label{cs:Ward}"
+        },
+        {
+          "path": "papers/conway-source-bounds/local.tex",
+          "anchor": "\\label{cs:terminal}"
+        },
+        {
+          "path": "papers/conway-source-bounds/local.tex",
+          "anchor": "\\label{cs:matrix-power}"
+        },
+        {
+          "path": "papers/conway-source-bounds/local.tex",
+          "anchor": "\\label{cs:global-V}"
+        },
+        {
+          "path": "papers/conway-source-bounds/local.tex",
+          "anchor": "\\label{cs:strict-V}"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "recursive_finite_source",
+          "reason": "The actual colored-circle coefficients and retained signed half twists determine the finite Ward recurrence and its terminal value."
+        }
+      ]
+    },
+    {
+      "id": "geo_same_filled_chain",
+      "title": "The retained ideal chain has the completed metric volume",
+      "group": "action_volume",
+      "statement": "After primitive completion of the actual near-complete representation, an equivariant boundary homotopy takes the original ideal chain to the core axis with vanishing boundary volume. Its extension through the same solid torus has zero added tetrahedron volume. Comparison with the complete developing map identifies the original chain volume with the filled metric volume.",
+      "sources": [
+        {
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:boundary-homotopy}"
+        },
+        {
+          "path": "papers/marked-fillings/main.tex",
+          "anchor": "\\label{mf:volume-independence}"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "geo_nearby_metric_completion",
+          "reason": "Supplies the actual smooth filling and its primitive meridian before comparing fundamental chains."
+        }
+      ],
+      "coverage": "Requires the original oriented chain, peripheral framing and the stated completion. An arbitrary replacement chain or an exponential slope relation alone is insufficient."
+    },
+    {
+      "id": "recursive_source_action_comparison",
+      "title": "Comparison of the quantum leaf action with the classical shear potential",
+      "group": "recursive_tangles",
+      "statement": "For the completed-root local source, its endpoint-normalized leading leaf primitive agrees with the classical sheared log-sine potential, including the parameter-dependent constant. Eliminating the same stationary internal wires identifies the source action with the geometric one. A common derivative in the wire variable or a common Hessian at completeness alone would not prove this comparison.",
+      "sources": [
+        {
+          "path": "manuscript/sections/B1-high-index-packet.tex",
+          "anchor": "\\label{eq:b1-local-actions}"
+        },
+        {
+          "path": "manuscript/sections/B1-high-index-packet.tex",
+          "anchor": "\\label{eq:b1-shear}"
+        },
+        {
+          "path": "manuscript/sections/B1-high-index-packet.tex",
+          "anchor": "\\label{eq:b1-shear-action}"
+        },
+        {
+          "path": "manuscript/sections/B1-high-index-packet.tex",
+          "anchor": "\\label{eq:b1-wire-phase}"
+        },
+        {
+          "path": "papers/conway-fillings/metric-volume.tex",
+          "anchor": "\\label{cf:interface}"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "recursive_local_leaf_estimates",
+          "reason": "Provides the actual finite-source leading primitive and its endpoint normalization, rather than only a formal solution of the characteristic equation."
+        },
+        {
+          "id": "recursive_positive_source",
+          "reason": "Gives the same strict internal critical point and its unique nearby stationary continuation."
+        },
+        {
+          "id": "recursive_marked_metric",
+          "reason": "Defines the classical shear potential and identifies its normalized critical value with the actual filled volume."
+        }
+      ],
+      "coverage": "The analytic comparison is still sourced to the frozen appendix. The new classical paper states this interface but does not claim to prove the finite-source asymptotic."
     }
   ]
 }

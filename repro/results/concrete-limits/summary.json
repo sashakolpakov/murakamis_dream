@@ -105,6 +105,116 @@
       "Quot.sound",
       "propext"
     ],
+    "VolumeLogic.GroundedLaplacian.exists_unique_grounded_solution": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.GroundedLaplacian.exists_unique_reduced_solution": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.GroundedLaplacian.extend": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.GroundedLaplacian.extend_free": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.GroundedLaplacian.extend_injective": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.GroundedLaplacian.extend_restrict": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.GroundedLaplacian.extend_root": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.GroundedLaplacian.extend_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.GroundedLaplacian.reducedEquiv": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.GroundedLaplacian.reducedEquiv_apply": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.GroundedLaplacian.reducedMatrix": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.GroundedLaplacian.reducedMatrix_det_ne_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.GroundedLaplacian.reducedMatrix_symm": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.GroundedLaplacian.reducedOperator": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.GroundedLaplacian.reducedOperator_apply": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.GroundedLaplacian.reducedOperator_bijective": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.GroundedLaplacian.reducedOperator_eq_zero_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.GroundedLaplacian.reducedOperator_injective": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.GroundedLaplacian.reduced_bilinear": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.GroundedLaplacian.reduced_quadratic": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.GroundedLaplacian.reduced_quadratic_pos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "VolumeLogic.GroundedLaplacian.sum_free": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
     "VolumeLogic.RealModel.amplitude_hasRate_of_residue_limits": [
       "Classical.choice",
       "Quot.sound",
@@ -514,6 +624,14 @@
       "lake",
       "env",
       "lean",
+      "-o",
+      ".lake/build/lib/lean/GroundedLaplacian.olean",
+      "GroundedLaplacian.lean"
+    ],
+    [
+      "lake",
+      "env",
+      "lean",
       "AxiomAudit.lean"
     ]
   ],
@@ -522,6 +640,10 @@
     "VolumeLogic.GroundedConvexity.grounded",
     "VolumeLogic.GroundedConvexity.segment",
     "VolumeLogic.GroundedConvexity.segmentValue",
+    "VolumeLogic.GroundedLaplacian.extend",
+    "VolumeLogic.GroundedLaplacian.reducedEquiv",
+    "VolumeLogic.GroundedLaplacian.reducedMatrix",
+    "VolumeLogic.GroundedLaplacian.reducedOperator",
     "VolumeLogic.RealModel.complexMagnitude",
     "VolumeLogic.RealModel.realLogScale",
     "VolumeLogic.TransportCoercivity.connected",
@@ -612,6 +734,11 @@
       "namespace": "VolumeLogic.GroundedConvexity",
       "theorems": 8
     },
+    "GroundedLaplacian": {
+      "definitions": 4,
+      "namespace": "VolumeLogic.GroundedLaplacian",
+      "theorems": 18
+    },
     "RealTransfer": {
       "definitions": 2,
       "namespace": "VolumeLogic.RealModel",
@@ -644,7 +771,9 @@
     "omitted_transport_coercivity_module",
     "omitted_grounded_coercivity_audit",
     "omitted_grounded_convexity_module",
-    "omitted_unique_grounded_minimum_audit"
+    "omitted_unique_grounded_minimum_audit",
+    "omitted_grounded_laplacian_module",
+    "omitted_unique_grounded_solution_audit"
   ],
   "residue_assembly": {
     "actions": "the complex residue limits may differ; their real parts agree",
@@ -655,18 +784,19 @@
     "unit_character": "may depend arbitrarily on N and need not converge"
   },
   "result": "All optional declarations compiled; every definition and theorem has only the permitted foundational axioms.",
-  "scope": "Concrete complex modulus and real logarithmic level scale; finite-residue packet assembly, whole-remainder noncancellation and conditional volume transfer; actual finite real weighted graph energy, positive-edge paths, constant kernel, grounded strict positivity and the explicit Laplacian quadratic identity; actual one-variable derivative bounds imply stationary quadratic cost, convex supporting-tangent gains and a strict two-branch sector margin; an actual positive finite corner table and connected co-occurrence paths give a uniform grounded max-minus-linear recession bound, coercivity of its vertex-bounded potential, compact sublevels and an attained minimum; actual segment derivatives with second derivative equal to connected graph energy imply strict convexity and uniqueness of that same grounded minimum.",
+  "scope": "Concrete complex modulus and real logarithmic level scale; finite-residue packet assembly, whole-remainder noncancellation and conditional volume transfer; actual finite real weighted graph energy, positive-edge paths, constant kernel, grounded strict positivity and the explicit Laplacian quadratic identity; actual one-variable derivative bounds imply stationary quadratic cost, convex supporting-tangent gains and a strict two-branch sector margin; an actual positive finite corner table and connected co-occurrence paths give a uniform grounded max-minus-linear recession bound, coercivity of its vertex-bounded potential, compact sublevels and an attained minimum; actual segment derivatives with second derivative equal to connected graph energy imply strict convexity and uniqueness of that same grounded minimum; the actual reduced principal graph Laplacian has its constructed bilinear form, trivial kernel, nonzero determinant and a linear inverse, yielding a unique solution of every grounded linear equation.",
   "source_sha256": {
     "formal-real/.gitignore": "fde850d24186b6e99c8c0debd641fb3ab85198b109eb66f71a1fea02bd6ea1b3",
-    "formal-real/AxiomAudit.lean": "e255c2c3b208b86914d4fbaa7ebfbc9e02e351c69e8cf86c7a7a24aa33772dde",
+    "formal-real/AxiomAudit.lean": "17c22162157359c8834de6ac62a02ce6231111e7e05c65ce652cff4f034dd88a",
     "formal-real/Flattening.lean": "a15977f5e3234d9f56217aee2e875c3a6ec8542b4140bfdf74f78d0b35e0f9cc",
     "formal-real/GroundedConvexity.lean": "91ca39bdfb8bdcefb3abb11beef23f602d95f380b31ff271e749ca41ba40f904",
-    "formal-real/README.md": "4f98ceabc9213181eafa8b9fb93e3f00c6cb1c18c5dca0d97c20d7eadd9f5e6d",
+    "formal-real/GroundedLaplacian.lean": "dc0d55a5d4c5cdb2803781e899dbe53ade0cc7876c34965a2819e0589b87c2e5",
+    "formal-real/README.md": "d4b5d2d6e3416d48ec3be851a6a8eff089e34fbd41bc6ddcdabce39bc228f2a4",
     "formal-real/RealTransfer.lean": "fd41a1469999ec0e455e64a08c5d81a947a38797054c8f850a3a2371023c545a",
     "formal-real/TransportCoercivity.lean": "ec8acf6a1b32c5299e070e49485e2ffb4dd44f3a0a7e916ef02cdd901151b1d3",
     "formal-real/WeightedGraph.lean": "3e3d77275515fcc861bc861ac8b5e4988e5c5d2775636931ee561db7ce56fecf",
     "formal-real/lake-manifest.json": "e4b572de88e8c9a6bf79817a5b36f982d825c86725f6d161e65bad42aadd6b5b",
-    "formal-real/lakefile.toml": "04417f65ae9defa7a3fa4dec0ecf1246865b5edaad1854ed4bcb890af8974045",
+    "formal-real/lakefile.toml": "eb8444e7312bb32afb76a3a57fc1126f97e44b6492972477fc39f1dfc277ec3b",
     "formal-real/lean-toolchain": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
     "formal/VolumeLogic.lean": "371d7a33df4ca8057e50a55fa32d7138df9f2d9aed566ac502f4e8f294f9934c",
     "formal/VolumeLogic/FaceGridSupport.lean": "4baeeee58f794f7a610f880a5f465af13bb00beb6598f1041ac58fb9a74d8705",
@@ -687,7 +817,7 @@
     "formal/lake-manifest.json": "94a62178292dabc02ac925f33a78081a26da3b9fc9b5c3ea33e97e9a8dce25da",
     "formal/lakefile.toml": "d4fbe5befdea32352528a400922442a9814ad56dd607ec3dbbff3639120d947b",
     "formal/lean-toolchain": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
-    "repro/check_concrete_limits.py": "25b1ec88b918ea672ef4274fb0928bc1540bbb7ac20ee2a796247a749fc00a6f"
+    "repro/check_concrete_limits.py": "5503ba5161fe3aee6f891ba415e97df27d0c2e8b7b2e7ac57833ebacd4e44ce8"
   },
   "theorems": [
     "VolumeLogic.Flattening.convex_flattening_gain",
@@ -707,6 +837,24 @@
     "VolumeLogic.GroundedConvexity.segment_strict_jensen",
     "VolumeLogic.GroundedConvexity.strictConvexOn_Icc_of_second_pos",
     "VolumeLogic.GroundedConvexity.strictConvexOn_grounded",
+    "VolumeLogic.GroundedLaplacian.exists_unique_grounded_solution",
+    "VolumeLogic.GroundedLaplacian.exists_unique_reduced_solution",
+    "VolumeLogic.GroundedLaplacian.extend_free",
+    "VolumeLogic.GroundedLaplacian.extend_injective",
+    "VolumeLogic.GroundedLaplacian.extend_restrict",
+    "VolumeLogic.GroundedLaplacian.extend_root",
+    "VolumeLogic.GroundedLaplacian.extend_zero",
+    "VolumeLogic.GroundedLaplacian.reducedEquiv_apply",
+    "VolumeLogic.GroundedLaplacian.reducedMatrix_det_ne_zero",
+    "VolumeLogic.GroundedLaplacian.reducedMatrix_symm",
+    "VolumeLogic.GroundedLaplacian.reducedOperator_apply",
+    "VolumeLogic.GroundedLaplacian.reducedOperator_bijective",
+    "VolumeLogic.GroundedLaplacian.reducedOperator_eq_zero_iff",
+    "VolumeLogic.GroundedLaplacian.reducedOperator_injective",
+    "VolumeLogic.GroundedLaplacian.reduced_bilinear",
+    "VolumeLogic.GroundedLaplacian.reduced_quadratic",
+    "VolumeLogic.GroundedLaplacian.reduced_quadratic_pos",
+    "VolumeLogic.GroundedLaplacian.sum_free",
     "VolumeLogic.RealModel.amplitude_hasRate_of_residue_limits",
     "VolumeLogic.RealModel.amplitude_hasRate_of_tendsto",
     "VolumeLogic.RealModel.complex_hasRate_iff",

@@ -6,6 +6,8 @@ This is the 374-page reference account, retained while its results are
 rewritten as [papers organized by subject](../papers/README.md). Each new paper
 has its own theorem, notation and proof dependencies and must fit within
 30 pages. The reference PDF is frozen during that work.
+Corrections found during extraction are recorded in the
+[errata](ERRATA.md), with their effect on the affected arguments.
 
 The manuscript contains completed proofs, including partial results with narrower conclusions. [The introduction](sections/01-introduction.tex) lists the statements and their hypotheses. The illustrated guide's [methods chapter](../book/chapters/methods.md) retains exploratory constructions and unsuccessful comparisons, with their definitions, references and limitations.
 

@@ -1,0 +1,428 @@
+\section{The primitive solution for independently signed slopes}
+\label{cf:critical}
+
+Put $r_\ell=1/p_\ell$ and solve
+\begin{equation}\label{cf:r-equations}
+ V_\ell(\boldsymbol\chi)+r_\ell U_\ell(\boldsymbol\chi)
+                       =-2\pi\ii r_\ell .
+\end{equation}
+At $\mathbf r=0$ the solution is $\boldsymbol\chi=0$.
+Lemma~\ref{cf:hessian} and \eqref{cf:UV} give
+\begin{equation}\label{cf:Jacobian}
+ D_{\boldsymbol\chi}V(0)=-2\pi\ii\,\diag(\tau_1,\ldots,\tau_H).
+\end{equation}
+It is invertible because $\Ima\tau_\ell>0$.
+The holomorphic implicit-function theorem gives a unique solution
+$\boldsymbol\chi_*(\mathbf r)$ on one fixed polydisk in all the
+independent reciprocal slopes. Shrink that polydisk so that its
+image lies in the framed neighborhood of
+Section~\ref{cf:peripheral}. For real signed integer $p_\ell$
+this requires only a lower bound on each $|p_\ell|$.
+There is no constraint on their ratios.
+
+When $p_\ell\ne0$, \eqref{cf:r-equations} is exactly
+\begin{equation}\label{cf:slope-equations}
+ U_\ell+p_\ell V_\ell=-2\pi\ii .
+\end{equation}
+By \eqref{cf:UV} these are precisely the critical equations of
+\eqref{cf:action}. Thus local uniqueness applies to the stated
+critical point, not only to a separate system of period equations.
+
+There is also a direct classical check that the filled auxiliary
+groups have a genuine loxodromic direction. Separate evenness of
+$\Phi_\eps$ gives holomorphic functions $\widetilde\tau_\ell$
+such that
+\[
+ V_\ell=\widetilde\tau_\ell(\boldsymbol\chi)\,U_\ell,\qquad
+ \widetilde\tau_\ell(0)=\tau_\ell .
+\]
+In fact divide $\partial_{\chi_\ell}\Phi_\eps$ by $\pi\ii\chi_\ell$;
+the apparent singularity is removable. Shrink the neighborhood
+so $\Ima\widetilde\tau_\ell>0$ throughout it.
+At the solution of \eqref{cf:r-equations},
+\begin{equation}\label{cf:sign}
+\begin{split}
+ \chi_{\ell,*}
+  &=\frac{r_\ell}
+          {\widetilde\tau_\ell(\boldsymbol\chi_*)+r_\ell},\\
+ \Rea V_\ell
+  &=\frac{2\pi r_\ell^2\,
+          \Ima\widetilde\tau_\ell(\boldsymbol\chi_*)}
+           {|\widetilde\tau_\ell(\boldsymbol\chi_*)+r_\ell|^2}
+       >0 .
+\end{split}
+\end{equation}
+The second formula holds for either sign of the nonzero real
+$r_\ell$. Thus the longitude multiplier has nonunit modulus.
+The sign is derived from the classical potential and the original
+positive cusp ratio, without a source noncancellation argument.
+
+\section{From a peripheral equation to the original smooth filling}
+\label{cf:metric}
+
+We now apply a metric result, rather than identifying an
+exponential equation with a filled metric.
+The following is the precise input
+\cite[Proposition~6.1]{Marked}.
+
+\begin{proposition}[Near-complete primitive completion, imported]
+\label{cf:completion-input}
+Let $M$ be an oriented complete finite-volume hyperbolic
+three-manifold with torus cusps and complete holonomy $\rho_0$.
+Fix primitive bases $(\mu_i,\lambda_i)$.
+There is one neighborhood of $\rho_0$ with its peripheral fixed
+flags, chosen before any slopes, with the following property.
+Let $\rho$ be an actual representation in that neighborhood and
+$U_i,V_i$ its small similarity logarithms in bounded frames
+sending the flags to infinity. Suppose both multipliers are one
+at each cusp to remain unfilled. At each cusp to be filled suppose
+$a_iU_i+b_iV_i=\pm2\pi\ii$ with $\gcd(a_i,b_i)=1$.
+Then $\rho$ descends to the original topological filling and
+is its smooth complete finite-volume hyperbolic holonomy.
+\end{proposition}
+
+This statement supplies completion; it does not supply the
+representation or solve its equations. Its hypotheses hold here
+for the following concrete reasons.
+The complete manifold is the actual $Y^\eps_E$ of
+\cite[Theorem~1.2]{Geometry}. Its primitive bases are the traced
+curves \eqref{cf:peripheral-words}. The rational face maps and
+original cut relations prove an actual framed representation
+near that holonomy, in bounded charts. Section~\ref{cf:peripheral}
+proves that every main peripheral group is a translation group.
+The equations at the auxiliary cusps are
+\eqref{cf:slope-equations}; their slopes are primitive because
+$(1,p_\ell)$ is a primitive integer vector in the original basis.
+These facts verify every premise of
+Proposition~\ref{cf:completion-input}.
+
+For clarity, we spell out the winding step in that proposition
+and its relation to the present markings. On a compact truncated
+core, a finite partition of unity in the future hyperboloid
+model averages the small change of complete developing maps:
+\begin{equation}\label{cf:core}
+ \begin{split}
+ Y_\rho(x)&=\sum_{j,\gamma}
+       \eta_{j,\gamma}(x)\rho(\gamma)\rho_0(\gamma)^{-1}x,\\
+ E_\rho(x)&=\frac{Y_\rho(x)}
+       {\sqrt{-\langle Y_\rho(x),Y_\rho(x)\rangle}} .
+ \end{split}
+\end{equation}
+Here the $\eta_{j,\gamma}$ are equivariant lifts of a finite
+partition on evenly covered balls. A positive sum of future
+timelike vectors is timelike. Reindexing proves equivariance,
+and on a compact fundamental part $E_\rho$ is $C^1$-close to
+the complete identity map. It is therefore a positive local
+diffeomorphism. This argument assumes no discreteness of
+the deformed representation.
+
+For one complete cusp use coordinates
+$(w,s)\in\CC\times[s_0,\infty)$ with translation lattice
+$\Lambda$. In the moving flag frame its peripheral maps are
+$A_\lambda(z)=a_\lambda z+b_\lambda$.
+Choose a smooth compactly supported partition satisfying
+$\sum_{\lambda\in\Lambda}\eta(w-\lambda)=1$, and put
+\begin{equation}\label{cf:link}
+\begin{split}
+ d_\rho(w)&=\sum_{\lambda\in\Lambda}
+            \eta(w-\lambda)A_\lambda(w-\lambda),\\
+ F_\rho(w,s)&=\bigl(d_\rho(w),e^{s+\xi_\rho(w)}\bigr),
+\end{split}
+\end{equation}
+where $\xi_\rho$ is the real-linear extension of
+$\lambda\mapsto\log|a_\lambda|$.
+Then $d_\rho(w+\lambda)=A_\lambda d_\rho(w)$.
+Its real Jacobian is positive on a compact fundamental
+parallelogram, by closeness to the identity, and equivariance
+propagates this everywhere. The Jacobian of $F_\rho$ is
+$e^{s+\xi_\rho(w)}\det_{\RR}Dd_\rho(w)>0$.
+Interpolation with \eqref{cf:core} on a compact collar remains
+$C^1$-close and positive.
+This constructs an actual nonsingular hyperbolic metric on
+the original core and its ideal-end-deleted cusps.
+
+At a cusp to be filled, \eqref{cf:sign} in particular gives
+a multiplier different from one. Commuting affine maps have
+a common finite fixed point $q$, in addition to infinity.
+For any generator with $a\ne1$ it is $q=b/(1-a)$.
+Both complete generator translations are nonzero, while their
+multipliers tend to one. Thus $|q|\to\infty$ uniformly near
+completeness, even if one generator has multiplier one.
+The developed fundamental parallelogram and its fixed generator
+paths remain in a bounded set and have bounded lengths.
+They therefore miss $q$ in one sufficiently small neighborhood.
+Equivariance extends this exclusion to the entire link cover.
+
+On that simply connected cover choose
+$f=\Log(d_\rho-q)$. The metric $|df|^2$ is nonsingular and
+descends to a compact torus; it is complete. Its lifted
+Euclidean developing map covers $\CC$, by lifting finite line
+segments. Since the plane is simply connected, $f$ is a
+global diffeomorphism and its periods form a rank-two lattice.
+For a fixed generator path of developed length at most $L$,
+inside $|d_\rho|\le R$,
+\begin{equation}\label{cf:small-period}
+ |\Delta f|\le \frac{L}{|q|-R}\longrightarrow0.
+\end{equation}
+Its exponential is the actual affine multiplier. Consequently
+the increment equals its prescribed small logarithm, with
+no extra $2\pi\ii$ integer. Thus the two actual periods are
+$U,V$ before the potentially large coefficient $p$ is used.
+This is why the fixed neighborhood controls all independently
+long slopes.
+
+Translate $q$ to zero. Periodicity bounds
+$e^{s_0+\xi_\rho(w)}/|d_\rho(w)-q|$, so the end contains
+a full epigraph $y>A|d_\rho-q|$.
+Set
+\[
+ r=\frac{y}{|d_\rho-q|},\qquad
+ R=\operatorname{arsinh}(1/r),\qquad
+ \theta=\Ima f,\qquad
+ X=\Rea f+\tfrac12\log(1+r^2).
+ \]
+Direct substitution gives
+\begin{equation}\label{cf:tube}
+ ds^2=dR^2+\cosh^2R\,dX^2+\sinh^2R\,d\theta^2 .
+\end{equation}
+The epigraph contains a whole punctured tube $0<R<R_0$.
+A period $L$ translates $(X,\theta)$ by $(\Rea L,\Ima L)$.
+The original slope $\mu+p\lambda$ has period $-2\pi\ii$,
+exactly one angular turn. Its complementary primitive period
+$V$ has nonzero real part, either by rank two of the period
+lattice or directly by \eqref{cf:sign}.
+Adding the axis gives a smooth solid torus, with precisely
+the original slope as meridian. Its holonomy is the identity:
+it fixes both $q,\infty$ and has multiplier one.
+This proves group descent, rather than merely an exponential
+relation. Reversing the angular sign reverses its parametrization,
+not the metric orientation.
+
+\begin{figure}[ht]
+\centering\input{figures/filling-periods}
+\caption{The actual logarithmic link and its smooth filling.
+The period $m=U+pV=-2\pi\ii$ is the primitive meridian of the
+added solid torus; $V$ is the original disk-longitude period.
+The old basis is $U=m-pV$. Equation \eqref{cf:tube} turns
+$V$ into an axial translation and rotation, and $m$ into
+one full angular turn.}
+\label{cf:filling-figure}
+\end{figure}
+
+At an unfilled main cusp the multipliers are one. The same
+compact Euclidean-link argument now gives a complete translation
+plane and a full horoball quotient in \eqref{cf:link}.
+The middle region is compact; the added tubes and the remaining
+horoball ends have finite volume. The metric is complete.
+Its universal developing map covers simply connected hyperbolic
+space and hence is an isometry. The filled topology and all
+its markings are the ones described in \eqref{cf:slope}.
+This completes the metric part of Theorem~\ref{cf:main}.
+
+\section{The absolute action and the filled fundamental chain}
+\label{cf:volume-proof}
+
+\subsection{The correct polarization}
+Define $G=2\pi\ii\Phi_\eps$. The exact period formula
+\eqref{cf:UV} gives
+\begin{equation}\label{cf:primitive}
+ \dd G=\frac12\sum_\ell V_\ell\,\dd U_\ell,\qquad
+ \Ima G(0)=2\pi F_0=\Vol(Y^\eps_E).
+\end{equation}
+This is the $V\,dU$ polarization. A potential with differential
+$-\frac12\sum U\,dV$ differs by the boundary term
+$\frac12\sum UV$. Its regulator correction cannot be copied
+unchanged into \eqref{cf:primitive}.
+
+Let $\mathcal V(\rho_{\boldsymbol\chi})$ be the signed
+ideal-tetrahedron volume of the retained original fundamental
+chain from Section~\ref{cf:deformation}.
+The local peripheral differential
+\cite[equation~(7.3)]{Marked} is
+\begin{equation}\label{cf:volume-differential}
+ \dd\mathcal V
+ =\frac12\sum_\ell
+    \bigl(\Rea V_\ell\,\dd\Ima U_\ell
+                 -\Rea U_\ell\,\dd\Ima V_\ell\bigr).
+\end{equation}
+Its hypotheses are present here: the oriented ideal chain is
+positive and nondegenerate near the complete point; actual
+face maps cancel the internal boundaries; edge relations
+keep their logarithmic sums fixed; and the primitive
+peripheral basis has the orientation
+$\Ima(\lambda/\mu)>0$ at completeness.
+All main logs vanish because their peripheral actions are
+translations, so they contribute zero.
+The factor $1/2$ in \eqref{cf:volume-differential} is for
+similarity logarithms; replacing them by eigenvalue logarithms
+without adjusting the factor would change the formula.
+
+For reference, that local identity follows by differentiating
+the Bloch--Wigner volume on each oriented tetrahedron and
+cancelling paired normal-face flows. The remaining cusp
+coefficient rows have intersection pairing $-2$ on the
+primitive meridian/longitude basis; the inverse tangent
+pairing is $-1/2$. In \cite[Section~7.1]{Marked} the signs
+are computed with the positively ordered model
+$(0,\infty,1,z)$ in standard upper-half-space orientation.
+The original complete cusp orientation
+\eqref{cf:cusp} is precisely that convention.
+No complete character-variety uniqueness is an input to
+this local calculation.
+
+Taking the imaginary part of \eqref{cf:primitive} shows that
+the differential of
+$\Ima G-\frac12\sum\Rea U_\ell\Ima V_\ell$
+is exactly \eqref{cf:volume-differential}.
+At completeness its value is the actual metric volume,
+by \eqref{cf:primitive}; hence the constant on this connected
+neighborhood is fixed:
+\begin{equation}\label{cf:regulator}
+ \mathcal V(\rho_{\boldsymbol\chi})
+   =2\pi\Rea\Phi_\eps(\boldsymbol\chi)
+          -\frac12\sum_\ell\Rea U_\ell\,\Ima V_\ell .
+\end{equation}
+This is an absolute equality on the original marked chain.
+
+\subsection{The critical boundary term}
+At a real integer filling tuple, write $\chi_\ell=u_\ell+\ii v_\ell$.
+The critical equation gives
+$V_\ell=2\pi\ii(\chi_\ell-1)/p_\ell$.
+Direct substitution yields
+\begin{equation}\label{cf:boundary-cancellation}
+\begin{split}
+ -\tfrac12\Rea U_\ell\,\Ima V_\ell
+  &=-\frac{2\pi^2}{p_\ell}v_\ell(u_\ell-1)\\
+  &=2\pi\Rea\left(\frac{\pi\ii}{2p_\ell}
+                              (\chi_\ell-1)^2\right).
+\end{split}
+\end{equation}
+Thus \eqref{cf:regulator} equals
+$2\pi\Rea S_{\eps,\mathbf p}(\boldsymbol\chi_*)$.
+It remains to identify the same ideal-chain volume with
+the complete filled metric, rather than infer that conclusion
+from a differential identity.
+
+\subsection{Keeping the same boundary triangulation}
+The comparison in \cite[Section~7.3]{Marked} applies to the
+primitive completion proved above. We describe its chain
+content to fix the absolute interpretation.
+At a filled cusp conjugate the two fixed points to $0,\infty$.
+On each triangle of the retained boundary triangulation
+the conical ideal development has form
+$(a(w),Yb(w))$, with $b>0$.
+The functions and their derivatives are bounded on a finite
+fundamental set. An equivariant axis map is
+$(0,Y e^{\eta(w)})$, where $\eta$ has the real peripheral
+logarithmic character. On that same triangulation use
+\begin{equation}\label{cf:homotopy}
+ H_s(w,Y)=\left(sa(w),
+     Y\exp\bigl((1-s)\eta(w)+s\log b(w)\bigr)\right),
+       \qquad 0\le s\le1.
+\end{equation}
+It is face-compatible and equivariant: horizontal coordinates
+transform by the complex multiplier and both heights by its
+modulus. The height is comparable to $Y$, horizontal
+derivatives are bounded, and height derivatives are $O(Y)$.
+The hyperbolic volume form
+$y^{-3}\,dx_1\wedge dx_2\wedge dy$ bounds this boundary
+homotopy's volume by $O(Y^{-2})$.
+
+After the primitive slope has been killed, extend the same
+axis-valued triangulated boundary through the solid torus.
+The remaining cyclic peripheral group acts along the axis.
+All added vertices lie on that axis, so every added
+tetrahedron has zero signed volume.
+Unfilled main cusp comparisons have the same vanishing
+boundary estimate.
+Stokes on finite truncations, followed by $Y\to\infty$,
+therefore identifies the original chain with the filled
+equivariant fundamental class.
+
+Compare it with the developing map of the complete metric
+from Section~\ref{cf:metric}. They represent this same class
+and have the same remaining cusp flags. A common subdivision,
+straightening and the same vanishing boundary estimate give
+\[
+ \mathcal V(\rho_{\boldsymbol\chi_*})
+       =\Vol\bigl(Y^\eps_E(\mathbf p)\bigr).
+ \]
+Using an unrelated new triangulation with axis vertices
+would not prove this equality; it is the retained boundary
+homotopy \eqref{cf:homotopy} that supplies the comparison.
+The usual metric volume is unambiguous also by the
+volume-independence statement \cite[Lemma~7.1]{Marked}.
+Together with \eqref{cf:boundary-cancellation} this proves
+\eqref{cf:volume} and Theorem~\ref{cf:main}.
+
+\section{The analytic interface and finite checks}
+\label{cf:interface}
+
+The classical potential has been defined from the cell functions
+\eqref{cf:m}, \eqref{cf:g} and the exact meridian shear.
+An application to a finite source must separately prove that
+its selected limiting leaf action is this $f_\eps$, including
+the parameter-dependent constant. Matching only its $x$
+derivative or its complete Hessian is insufficient.
+For example the exact classical exponential relation
+$R^{-1}-1=e^{-\partial_x f_\eps}$ fixes a face shape,
+but does not by itself identify a finite coefficient's
+normalization. One must also compare the endpoint-normalized
+leaf primitive and then eliminate the same internal wires.
+Control of complementary terms and a nonzero whole filling
+asymptotic are further analytic assertions. None is a
+premise or conclusion of Theorem~\ref{cf:main}.
+
+The construction-specific imported inputs are the complete
+stationary point of \cite[Proposition~5.3]{Newton} and the
+complete metric, actual cut and primitive bases of
+\cite[Theorem~1.2 and Sections~4--7]{Geometry}.
+The full complex continuation uses the latter paper's
+rational face identities, not a claim that a nonplanar
+deformed half ball is convex. The metric completion and
+peripheral-volume facts imported from \cite{Marked} have
+their actual hypotheses verified above. Standard holomorphic
+implicit-function theory is used only at the two explicitly
+invertible Jacobians. The usual Dehn-filling and
+peripheral-volume framework provides historical context
+\cite{NeumannZagier}; the original words and the absolute
+normalization are retained in the calculation here.
+
+The deterministic accompanying program \texttt{check.py}
+verifies exact rational flag and multiplier identities,
+the local Hessian coefficient, the real signed formula
+\eqref{cf:sign}, and the boundary cancellation
+\eqref{cf:boundary-cancellation}. Its negative controls
+detect the missing factor two between eigenvalue and
+similarity logs and an incorrect shear sign.
+The record includes hashes of the actual source inputs.
+These checks establish finite algebraic equalities only.
+They do not prove the implicit-function theorem, the original
+topological identification, metric completeness, or the
+fundamental-chain comparison.
+
+\begin{thebibliography}{9}
+\bibitem{Geometry}
+\emph{Pyramids, prisms, and complete geometry of Conway closures},
+companion paper, Theorem~1.2 and Sections~4--7.
+\href{https://sashakolpakov.github.io/murakamis_dream/papers/conway-geometry.pdf}
+{Companion PDF}.
+
+\bibitem{Newton}
+\emph{Newton coefficients and positive sources for Conway tangles},
+companion paper, Proposition~5.3.
+\href{https://sashakolpakov.github.io/murakamis_dream/papers/newton-tangles.pdf}
+{Companion PDF}.
+
+\bibitem{Marked}
+\emph{Circle patterns and primitive fillings of augmented links},
+companion paper, Proposition~6.1, equation~(7.3) and Section~7.3.
+\href{https://sashakolpakov.github.io/murakamis_dream/papers/marked-fillings.pdf}
+{Companion PDF}.
+
+\bibitem{NeumannZagier}
+W.~D.~Neumann and D.~Zagier, Volumes of hyperbolic three-manifolds,
+\emph{Topology} \textbf{24} (1985), 307--332.
+\href{https://doi.org/10.1016/0040-9383(85)90004-7}
+{doi:10.1016/0040-9383(85)90004-7}.
+\end{thebibliography}

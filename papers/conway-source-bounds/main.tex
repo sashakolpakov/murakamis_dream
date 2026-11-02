@@ -1,0 +1,178 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,microtype,mathrsfs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,urlcolor=blue!55!black,citecolor=blue!55!black]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\Turn}{\mathcal T}
+\newcommand{\core}{\mathrm{core}}
+\newcommand{\arccot}{\operatorname{arccot}}
+\newcommand{\Ti}{\operatorname{Ti}_2}
+\newcommand{\supp}{\operatorname{supp}}
+\title{Complementary color bounds for Conway tangle sources}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+An auxiliary circle in a root-of-unity tangle evaluation has a finite Newton expansion with a low-index core and an exact complementary term. A retained half twist mixes its coefficients and introduces cancellation. We prove that every contribution containing a complementary term is exponentially smaller than the positive complete-color source for a fixed Conway construction whose closing boxes are both completed. The estimate is uniform over all physical auxiliary colors, both parities of the level, and every fixed choice of retained half-twist signs. A second estimate controls the entire source when one color stays a fixed fraction of the level away from complete color. The proof derives a finite recurrence for the actual coefficients, bounds both recurrence roots through their collisions, and propagates two strict local comparisons through the original construction. The local comparisons are certified by outward rational arithmetic on complete slope polytopes. No asymptotic assertion about a filled invariant is needed.
+\end{abstract}
+
+\section{The source and the result}\label{cs:intro}
+
+A circle surrounding two strands can be evaluated before it is filled by twists. The resulting two-strand operator depends on the dimension assigned to that circle. At complete color its turned Newton coefficients are positive. Other colors contain an additional signed polynomial, which remains present in the exact finite source. Bounding only the complete-color coefficients therefore leaves a necessary part of the evaluation uncontrolled.
+
+We work with a fixed construction from elementary circle tangles, vertical stacking and clockwise quarter turns. The construction is \emph{completed} if it is obtained by the following rules: a stack of two elementary pieces is completed; the turn of a completed box is completed; a stack of two completed boxes is completed; and attaching one elementary piece above or below a completed box is completed. A closed construction consists of two completed boxes joined by cylindrical closure. These are the diagrams of \cite[Definition 2.1]{Newton}. The construction, the number of its elementary pieces, and their retained crossing signs are fixed as the level grows. The two completed closing boxes are an essential hypothesis.
+
+Here an elementary piece is a colored auxiliary circle in its disk framing, followed by the prescribed turn. It may retain no crossing, one positive crossing or one negative crossing in that disk. Write its sign as $\epsilon\in\{0,1,-1\}$. The term \emph{physical color} means an integer dimension $j$ with $1\le j\le N$. It does not mean a freely chosen continuous parameter.
+
+At each elementary piece the exact polynomial is the sum of a core and a complementary polynomial, which we call its \emph{alias}. Section~\ref{cs:finite} defines this split, including low colors for which the core is zero. Let $\mathcal A_N(\mathbf j,\boldsymbol\epsilon)$ be the scalar obtained by the original turns, stacks and closing trace. Let $\mathcal C_N(\mathbf j,\boldsymbol\epsilon)$ be the same expression with every elementary piece replaced by its core. Both are finite, exact expressions in the full root algebra. Define $F_0$ to be the maximum action of the pure complete-color construction: every $j=N$ and every $\epsilon=0$.
+
+\begin{theorem}[Uniform complementary and color gaps]\label{cs:main}
+Fix a completed closed construction. There are $\gamma>0$ and $N_0$ such that, for all $N\ge N_0$ and all its physical colors and retained signs,
+\begin{equation}\label{cs:alias-gap}
+ |\mathcal A_N(\mathbf j,\boldsymbol\epsilon)-\mathcal C_N(\mathbf j,\boldsymbol\epsilon)|
+ \le \exp\{N(F_0-\gamma)\}.
+\end{equation}
+For every $\delta>0$ there are $\gamma_\delta>0$ and $N_\delta$ such that
+\begin{equation}\label{cs:color-gap}
+ \max_\ell(N-j_\ell)\ge\delta N
+ \quad\Longrightarrow\quad
+ |\mathcal A_N(\mathbf j,\boldsymbol\epsilon)|
+ \le\exp\{N(F_0-\gamma_\delta)\},\qquad N\ge N_\delta.
+\end{equation}
+The limits range over all integer levels, including composite levels. Constants may depend on the fixed construction and on $\delta$; no uniformity over growing trees is asserted.
+\end{theorem}
+
+The proof has three different comparisons. First, the exact finite algebra identifies which coefficients occur. Second, a positive majorant controls all core coefficients, even at colors where a recurrence has repeated characteristic roots. Third, strict inequalities for a two-leaf block and a single attachment leave a loss that survives the whole construction. The final estimate concerns a sum of all alias selections, rather than one favorable contribution.
+
+Theorem~\ref{cs:main} is an upper bound for the source before filling. A nonzero asymptotic for a selected filled contribution and an exact filling transformation are additional inputs to any filled-invariant conclusion. In particular the theorem alone neither identifies a hyperbolic volume nor rules out cancellation inside the retained core.
+
+\subsection{Precise imported results}
+We use the following numbered results of \emph{Newton coefficients and positive sources for Conway tangles} \cite{Newton}. Proposition 3.2 identifies the physical turn and trace in the normalized Newton basis; Theorem 3.3 gives multiplication in the full quotient, including repeated-root derivatives. Proposition 4.1 and equations (4.4)--(4.8) give the colored-circle split and the two retained crossing operators. We display these formulas below so that all subsequent estimates have explicit inputs. Proposition 5.3 gives the unique strict maximum of the positive complete source; Lemma 6.1 locates every selected leaf in
+\begin{equation}\label{cs:leaf-window}
+ \frac14<a<\frac{\arctan 2}{\pi}<\frac12
+\end{equation}
+and gives the boundary-parameter inequalities used in Section~\ref{cs:attachment}. The positive variational theorem uses the actual finite lattice, with no restriction to a subsequence of levels. No complex interpolation theorem is imported here.
+
+\section{Exact finite coefficients and their supports}\label{cs:finite}
+
+Put $d=N-1$, $M=\lfloor d/2\rfloor$, $q=e^{\pi\ii/N}$ and $Q=q^2$. Throughout this paper
+\[
+ S_r=\prod_{a=1}^r2\sin(\pi a/N),\qquad S_0=1,
+ \qquad c_a=q^{2a+1}+q^{-2a-1}.
+\]
+Thus $S_r$ is a product, not a single sine. The root algebra is
+\[
+ \mathscr A_N=\mathbb C[z]/(P_N(z)),\qquad
+ P_N(z)=2T_N(z/2)+2=\prod_{a=0}^{d}(z-c_a),
+\]
+where $T_N(\cos t)=\cos Nt$. Repeated entries in the displayed product remain repeated roots. Equality in $\mathscr A_N$ preserves values and first derivatives at its double roots; at odd $N$ the simple root $-2$ also remains.
+The normalized Newton basis is
+\begin{equation}\label{cs:basis}
+ e_r(z)=S_r^{-2}\prod_{a=0}^{r-1}(c_a-z),\qquad 0\le r\le d.
+\end{equation}
+The physical clockwise turn $\Turn$ and normalized cylindrical closure $\phi$ satisfy
+\begin{equation}\label{cs:turn-trace}
+ \Turn e_r=e_{d-r},\qquad \phi(e_i e_j)=\mathbf1_{i+j=d}.
+\end{equation}
+A stack is multiplication. For $i+j\le d$ its exact coefficients are
+\begin{equation}\label{cs:product}
+ e_i e_j=\sum_{k=\max(i,j)}^{i+j}
+ \frac{S_{i+j}S_k}{S_iS_jS_{k-i}S_{k-j}S_{i+j-k}}e_k.
+\end{equation}
+For $i+j\ge N$ the product is zero in the full algebra, with multiplicities. All nonzero coefficients in \eqref{cs:product} are positive. We call one use of this multiplication a \emph{gate}. Its exact finite support is
+\begin{equation}\label{cs:support}
+ i,j\ge0,\qquad i+j\le d,\qquad \max(i,j)\le k\le i+j.
+\end{equation}
+At a closing gate the trace forces $i+j=d$, and its coefficient is one. This is an exact constraint before any scaling by $N$.
+
+\subsection{The core and the alias}
+Let $U_0(z/2)=1$, $U_1(z/2)=z$, and $U_{r+1}(z/2)=zU_r(z/2)-U_{r-1}(z/2)$. The ordinary circle is $L_j=(-1)^{j-1}U_{j-1}(z/2)$, and the elementary turned piece is $h_j=\Turn L_j$. Put $h_0=0$. For a high color $j=N-h$, $0\le h\le M$, its exact split is
+\begin{align}
+ h_{N-h}&=C_{N-h}+A_{N-h},\\
+ C_{N-h}&=\sum_{v=h}^{M}
+ \frac{N^2S_{2v}}{S_v^2S_{v-h}S_{v+h}}e_v,
+ &A_{N-h}&=(-1)^N h_h.\label{cs:split}
+\end{align}
+For the remaining physical colors $1\le j\le\lfloor N/2\rfloor$, set $C_j=0$ and $A_j=h_j$. The low-color formula is
+\begin{equation}\label{cs:low-color}
+ h_j=\sum_{r=0}^{j-1}(-1)^{j-1+r}
+ \frac{S_r^2S_{j+r}}{S_{2r+1}S_{j-r-1}}e_{d-r}.
+\end{equation}
+There is no overlap or omitted color in this definition. The high and low \emph{colors} should be distinguished from the high and low \emph{Newton indices}: the high-color core has indices at most $M$, while an alias before the retained half twist in \eqref{cs:low-color} has indices $d-r\ge N/2$.
+
+Let $\kappa=q^{d^2/2}$, with $q^a=e^{\pi\ii a/N}$ for real $a$. A retained half twist acts by
+\begin{equation}\label{cs:half-twist}
+ \Theta_\epsilon e_v=\kappa^\epsilon(-1)^v
+ \sum_{r=0}^v q^{\epsilon v(r+1)}
+ \frac{S_v}{S_rS_{v-r}}e_r,\qquad \epsilon=\pm1,
+ \qquad \Theta_0=1.
+\end{equation}
+Define $C_j^\epsilon=\Theta_\epsilon C_j$ and $A_j^\epsilon=\Theta_\epsilon A_j$. The core still has indices at most $M$, but a half-twisted alias can occupy every index from $0$ to $d$. Thus the alias must be estimated on the entire gate support \eqref{cs:support}. The phases in \eqref{cs:half-twist} are retained until after the finite sum has been formed.
+
+Equations \eqref{cs:turn-trace}--\eqref{cs:half-twist} are the physical identities imported above. Their derivation in \cite{Newton} is in the full quotient, not merely at the distinct roots. Consequently the estimates below concern the original normal data too; no semisimple replacement of a circle is made.
+
+\subsection{Continuous actions and elementary bounds}\label{cs:actions}
+Define the continuous function
+\[
+ J(t)=\int_0^t\log(2\sin\pi u)\dd u,\qquad 0\le t\le1.
+\]
+It satisfies $J(1-t)=-J(t)$ and $J(0)=J(1/2)=J(1)=0$. The leaf and gate actions are
+\begin{align}
+ g(x)&=J(2x)-4J(x),&0\le x\le\tfrac12,\label{cs:g}\\
+ m(x,y,z)&=J(x+y)+J(z)-J(x)-J(y)\notag\\[-2mm]
+ &\quad-J(z-x)-J(z-y)-J(x+y-z).\label{cs:m}
+\end{align}
+The full limiting gate polytope is
+\begin{equation}\label{cs:D}
+ D=\{x,y\ge0:\ \max(x,y)\le z\le x+y\le1\}.
+\end{equation}
+It includes inputs larger than $1/2$. The two majorant profiles will be
+\begin{equation}\label{cs:profiles}
+ \widetilde g(x)=g(\max(x,1/4))\quad(0\le x\le1/2),
+ \qquad k(x)=-2J(x/2)\quad(0\le x\le1).
+\end{equation}
+
+For reference, the uniform sine-factorial estimate is
+\begin{equation}\label{cs:factorial}
+ \log S_r=NJ(r/N)+O(\log N),\qquad 0\le r<N.
+\end{equation}
+To see endpoint uniformity, subtract $\log t+\log(1-t)$ from the integrand of $J$. The remainder extends with a bounded derivative to $[0,1]$, so its Riemann sum has bounded error. The two removed sums are logarithms of ordinary factorials; integral comparison, or Stirling's inequalities, bounds their errors by $O(\log N)$ uniformly in the endpoint. This includes $r=0$. Applied to \eqref{cs:product}, it gives the exponent $Nm(i/N,j/N,k/N)$ with a uniform $O(\log N)$ error.
+
+All three profiles $\widetilde g,k,m$ are concave on their indicated domains. Indeed
+\[
+\begin{aligned}
+ g'(x)&=2\log\cot\pi x,&g''(x)&<0,\\
+ k'(x)&=-\log(2\sin(\pi x/2)),&
+ k''(x)&=-\frac\pi2\cot(\pi x/2)<0.
+\end{aligned}
+\]
+The derivative of $\widetilde g$ is zero on its plateau and joins $g'$ continuously at $1/4$. For the gate put $p=z-x$, $q_1=z-y$, $r=x+y-z$, $w=1-x-y$. Then
+\begin{equation}\label{cs:tetrahedra}
+ \pi m=V(y,x,w)+V(p,q_1,2r+w)+V(p+q_1,r,r+w),
+ \qquad V(a,b,c)=-\pi[J(a)+J(b)+J(c)].
+\end{equation}
+Each triple is nonnegative and sums to one. On such a triangle $V$ is concave: its two-variable negative Hessian is a positive multiple of
+$\left(\begin{smallmatrix}\cot\pi a+\cot\pi c&\cot\pi c\\\cot\pi c&\cot\pi b+\cot\pi c\end{smallmatrix}\right)$, whose diagonal entries are positive and whose determinant is one. Continuity handles the boundary. Identity \eqref{cs:tetrahedra}, obtained by $J(1-t)=-J(t)$, proves concavity on the full $D$.
+
+\input{local}
+\input{composition}
+\input{arithmetic}
+
+\begin{thebibliography}{9}
+\bibitem{Newton}\emph{Newton coefficients and positive sources for Conway tangles}.
+Companion paper, \href{https://sashakolpakov.github.io/murakamis_dream/papers/newton-tangles.pdf}{repository edition}.
+\bibitem{Certificates} \emph{Rational supporting-plane data for two-leaf blocks and single-leaf attachments}.
+Ancillary data and exact verifiers, \href{https://github.com/sashakolpakov/murakamis_dream/tree/main/experiments}{repository experiments}; the exact filenames and replay are given in Section~\ref{cs:arithmetic}.
+\end{thebibliography}
+\end{document}

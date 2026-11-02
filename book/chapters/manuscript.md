@@ -2,17 +2,18 @@
 
 The current PDF is a 374-page reference account. Its results are being
 rewritten as [papers organized by subject](../../papers/README.md), each at
-most 30 pages including references. Thirteen drafts have
+most 30 pages including references. Fifteen drafts have
 individual lengths from 11 to 28 pages. Five cover finite spectral
 evaluation, uniform local bounds, central source asymptotics, oscillatory
-fillings and geometric filling. Eight cover complete and moving-meridian
-Newton formulas, complete Conway geometry, classical circle-tree geometry,
+fillings and geometric filling. Ten cover complete and moving-meridian
+Newton formulas, complete and filled Conway geometry, complementary color
+bounds, classical circle-tree geometry,
 shared-face criteria, terminal decoration, ordinary triangular insertion
 and the long three-braid application. Each
 application names the results it imports and checks their hypotheses.
 
 These papers do not yet replace the reference account. Signed tree
-asymptotics, recursive filled closures, and
+asymptotics, the nonzero expansion and whole oscillatory sum for recursive closures, and
 longitude and recurrence results still need separate complete accounts.
 The reference PDF remains frozen. Its measured length is 93 pages of main
 text, 266 pages of appendices, and 15 pages of front matter and references.
@@ -20,7 +21,8 @@ Several theorem families and their separate dependencies accumulated in
 that file. Repeated definitions and setup made individual appendices
 readable on their own, while alternative constructions added further
 length. The new division groups related proofs and imports their shared
-foundations by numbered statement.
+foundations by numbered statement. The
+[errata](../../manuscript/ERRATA.md) record corrections to the frozen account.
 
 The broader strict-tree extension in the research notes requires arguments
 beyond the manuscript's completed-root grammar. The dependency graph
@@ -374,6 +376,16 @@ basis. Four illustrations show the tangle operations, the two cells and
 this cusp lattice. The resulting positive-source volume identity is
 distinct from the signed invariant after filling the crossing circles.
 
+The 12-page [Conway filling paper](../../docs/papers/conway-fillings.pdf)
+continues this geometry. It defines its potential from the cells, keeps
+the actual face maps and original peripheral curves, and solves the
+primitive equations for independently long signed slopes. Its metric
+completion checks that the new meridian winds exactly once. The volume
+constant is fixed at the complete metric and carried to the same filled
+fundamental chain. A quantum expansion is not needed for this classical
+construction. Comparing the resulting action with the action of a finite
+source is a separate analytic step.
+
 The source estimates address a different issue: a signed sum can be much smaller than the sum of the absolute values of its terms. In the recursive tree proof, the exact reflection formula separates
 a principal contribution from extra terms called aliases. In the
 planar face-source proof, the three pieces instead refer to paths
@@ -384,6 +396,16 @@ supports. The recursive proof uses concavity and supporting tangents
 to reduce two important estimates to finite rational certificates.
 Appendix O deliberately evaluates only the central planar contribution,
 as described above.
+
+The 16-page [complementary-color paper](../../docs/papers/conway-source-bounds.pdf)
+now supplies the two strict comparisons and their propagation for the
+completed-root grammar. The proof retains cancellation inside the exact
+leaf recurrence, bounds both characteristic roots through collisions,
+and checks supporting planes over the full allowed slope domains.
+It bounds the sum of all complementary sectors, as well as the entire
+source when one color remains far from complete color. These are upper
+bounds; a nonzero leading term still requires the subsequent asymptotic
+argument.
 
 ![Supporting tangents used to control a single-piece attachment over its entire allowed state region.](../../manuscript/build/figures/attachment-tangents.png)
 
@@ -411,12 +433,14 @@ The companion papers have a combined finite-check command:
 python3 repro/check_paper_algebra.py --output repro/results/paper-algebra
 ```
 
-It runs twelve groups. They check physical Newton identities over
+It runs fourteen groups. They check physical Newton identities over
 exact finite fields, terminal curvature and endpoint identities, and
 circle-tree seam, peripheral and rational-bound formulas. The additional
 moving-meridian checks use physical matrices at both ordinary and
 colliding spectral parameters; the complete geometry checks verify
-rational face-map identities and the endpoint pairing tables. The output
+rational face-map identities and the endpoint pairing tables. The newest
+groups reproduce the two complementary-color certificates and the
+classical filling's symbolic periods, Hessian and volume boundary term. The output
 records their bounded scope and source hashes. These checks do not
 replace the proofs for every level, the all-length insertion argument,
 or the construction and completion of a hyperbolic metric. The

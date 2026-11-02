@@ -165,11 +165,12 @@ separate work.
 
 ## Reading and reproducing the work
 
-The [collection of research papers](papers/README.md) now contains thirteen
+The [collection of research papers](papers/README.md) now contains fifteen
 drafts, ranging from 11 to 28 pages. Five develop
 the finite algebra, local estimates, central asymptotics, oscillatory
-sums and geometric fillings. The other eight treat complete and
-moving-meridian Newton formulas, complete Conway geometry, classical
+sums and geometric fillings. The other ten treat complete and
+moving-meridian Newton formulas, complete and filled Conway geometry,
+complementary color bounds, classical
 circle-tree geometry, shared-face criteria, terminal decorations,
 triangular insertions and long three-braids.
 Each paper states the companion results it uses.
@@ -180,10 +181,11 @@ replace it. The reference contains 93 pages of main text, 266 pages of
 appendices and 15 pages of front matter and references. Its length came
 from collecting several theorem families, repeated setup for separate
 proofs, and alternative constructions in one continuous account. The
-analytic circle-tree estimates, recursive
-filled-closure arguments, and longitude and recurrence theorems still
+analytic circle-tree estimates, the nonzero asymptotic and complete
+oscillatory sum for recursive closures, and longitude and recurrence theorems still
 need their own complete papers. The reference remains frozen and is no
-longer presented as a single journal paper.
+longer presented as a single journal paper. Its
+[errata](manuscript/ERRATA.md) record corrections found during extraction.
 Chapter 1 separates full volume theorems from completed partial results:
 a finite filling estimate and a theorem about one geometric contribution
 do not assert the volume limit for an arbitrary original invariant.

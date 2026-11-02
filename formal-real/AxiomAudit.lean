@@ -3,6 +3,7 @@ import WeightedGraph
 import Flattening
 import TransportCoercivity
 import GroundedConvexity
+import GroundedLaplacian
 
 #print axioms VolumeLogic.RealModel.complexMagnitude
 #print axioms VolumeLogic.RealModel.constant_div_nat_rate
@@ -102,3 +103,26 @@ import GroundedConvexity
 #print axioms VolumeLogic.GroundedConvexity.strictConvexOn_grounded
 #print axioms VolumeLogic.GroundedConvexity.grounded_minimizer_eq
 #print axioms VolumeLogic.GroundedConvexity.exists_unique_grounded_minimizer
+
+#print axioms VolumeLogic.GroundedLaplacian.extend
+#print axioms VolumeLogic.GroundedLaplacian.extend_root
+#print axioms VolumeLogic.GroundedLaplacian.extend_free
+#print axioms VolumeLogic.GroundedLaplacian.extend_injective
+#print axioms VolumeLogic.GroundedLaplacian.extend_zero
+#print axioms VolumeLogic.GroundedLaplacian.extend_restrict
+#print axioms VolumeLogic.GroundedLaplacian.sum_free
+#print axioms VolumeLogic.GroundedLaplacian.reducedMatrix
+#print axioms VolumeLogic.GroundedLaplacian.reducedMatrix_symm
+#print axioms VolumeLogic.GroundedLaplacian.reducedOperator
+#print axioms VolumeLogic.GroundedLaplacian.reducedOperator_apply
+#print axioms VolumeLogic.GroundedLaplacian.reduced_bilinear
+#print axioms VolumeLogic.GroundedLaplacian.reduced_quadratic
+#print axioms VolumeLogic.GroundedLaplacian.reduced_quadratic_pos
+#print axioms VolumeLogic.GroundedLaplacian.reducedOperator_eq_zero_iff
+#print axioms VolumeLogic.GroundedLaplacian.reducedOperator_injective
+#print axioms VolumeLogic.GroundedLaplacian.reducedOperator_bijective
+#print axioms VolumeLogic.GroundedLaplacian.reducedEquiv
+#print axioms VolumeLogic.GroundedLaplacian.reducedEquiv_apply
+#print axioms VolumeLogic.GroundedLaplacian.exists_unique_reduced_solution
+#print axioms VolumeLogic.GroundedLaplacian.reducedMatrix_det_ne_zero
+#print axioms VolumeLogic.GroundedLaplacian.exists_unique_grounded_solution

@@ -1,0 +1,269 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,booktabs,array,xurl}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\numberwithin{equation}{section}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\dd}{\mathrm d}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\Rea}{\operatorname{Re}}
+\newcommand{\Ima}{\operatorname{Im}}
+\newcommand{\Turn}{\mathsf T}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Log}{\operatorname{Log}}
+\newcommand{\kap}{\varkappa}
+\title{Marked deformations and long fillings\\of Conway closures}
+\author{}\date{}
+\begin{document}\maketitle
+
+\begin{abstract}
+We deform the complete pyramid-and-prism construction of a
+completed-root Conway closure. A holomorphic potential defined
+directly from the cells gives the actual meridian and disk-longitude
+logarithms on every crossing circle. Entire complex face maps retain
+the original closed cut, all group relations and every parabolic
+main cusp. The primitive equations have a unique small solution
+for independently sufficiently long signed fillings. We verify
+that the logarithmic meridian winds once, so the completion is the
+original smooth filled exterior. The absolute volume is the real
+part of a corrected critical action, with its constant fixed by
+the original complete cell volumes. The proof is classical and
+does not use a quantum packet or a noncancellation theorem.
+\end{abstract}
+
+\section{The marked exteriors and the filling theorem}
+\label{cf:intro}
+
+The starting link is specified by a finite ordered construction.
+A two-string box has endpoints $0,1,2,3$ in cyclic order, starting
+at the bottom left. In a vertical stack $FG$, the lower box $F$
+is joined to the upper box $G$ by $F_2/G_1$ and $F_3/G_0$.
+The exposed tuple is $(F_0,F_1,G_2,G_3)$.
+A clockwise turn rotates the entire box and all its crossing disks;
+the new tuple is $(F_1,F_2,F_3,F_0)$.
+Cylindrical closure joins $0$ to $3$ and $1$ to $2$.
+
+Let $h$ be the quarter-turn of an elementary crossing circle
+surrounding two untwisted strands. The completed grammar is
+\begin{equation}\label{cf:grammar}
+ E::=hh\mid\Turn(E)\mid E_1E_2\mid hE\mid Eh,
+ \qquad \text{closure }C(FG),\quad F,G\text{ completed}.
+\end{equation}
+Every leaf is a distinct crossing circle. Both closing children
+must be completed; a bare closing leaf is not included.
+Fix a retained half twist $\eps_\ell\in\{-1,0,1\}$ at each leaf.
+The original augmented exterior is denoted $Y^\eps_E$.
+Its crossing-circle meridian $\mu_\ell$ and disk longitude
+$\lambda_\ell$ are fixed before any deformation.
+They are the primitive curves of \cite[Section~7]{Geometry}.
+
+For integers $p_\ell$, fill the auxiliary tori along
+\begin{equation}\label{cf:slope}
+       \mu_\ell+p_\ell\lambda_\ell .
+\end{equation}
+The physical crossing power in the original disk frame is
+$n_\ell=\eps_\ell-2p_\ell$.
+Indeed, cut along the twice-punctured disk and rotate one side
+through $p_\ell$ full turns before removing its auxiliary circle.
+The slope \eqref{cf:slope} becomes the meridian of the inserted
+solid torus, and the strands acquire $-2p_\ell$ crossings.
+These operations take place in the disjoint original leaf balls.
+They preserve the ambient $S^3$ and give precisely the diagram
+with these crossing powers. Write $Y^\eps_E(\mathbf p)$ for
+its exterior. If the main endpoint matching is one component,
+it is $S^3\setminus K_{\eps,\mathbf p}$.
+Such half-twist choices exist by \cite[Proposition~8.1]{Geometry};
+full twists preserve that component count.
+
+We use two precise complete inputs. The strict stationary point
+and its negative definite internal-wire Hessian are
+\cite[Proposition~5.3]{Newton}, for the grammar \eqref{cf:grammar}.
+The actual complete metric, its absolute volume $2\pi F_0$,
+the labeled original cut and the primitive cusp basis are
+\cite[Theorem~1.2 and Section~7]{Geometry}. At leaf $\ell$ its
+complete angle $a_\ell$ satisfies
+\begin{equation}\label{cf:cusp}
+ \frac14<a_\ell<\frac{\arctan2}{\pi},\qquad
+ \tau_\ell=\frac{2\ii c_\ell}{1-\eps_\ell\ii c_\ell},
+ \quad c_\ell=\cot(\pi a_\ell),\quad \Ima\tau_\ell>0.
+\end{equation}
+Here $\tau_\ell$ is the longitude translation divided by the
+meridian translation, with the orientation of the original torus.
+No filled metric is an input.
+
+Section~\ref{cf:potential} defines a holomorphic classical
+potential $\Phi_\eps(\boldsymbol\chi)$ from these cells, with
+$\Phi_\eps(0)=F_0$. Its variables are centered auxiliary
+meridian coordinates, not the meridian of the main knot.
+
+\begin{theorem}\label{cf:main}
+For the fixed construction \eqref{cf:grammar} and fixed
+half-twist pattern, there is a holomorphic framed representation
+$\rho_{\boldsymbol\chi}$ of the original group
+$\pi_1(Y^\eps_E)$ near $\boldsymbol\chi=0$. It continues the
+oriented complete holonomy and has primitive similarity
+logarithms
+\begin{equation}\label{cf:UV}
+ U_\ell=-2\pi\ii\chi_\ell,\qquad
+ V_\ell=-2\,\partial_{\chi_\ell}\Phi_\eps .
+\end{equation}
+Every main peripheral group remains parabolic.
+There is $B_E>0$ such that for every signed integer tuple with
+$|p_\ell|>B_E$ the function
+\begin{equation}\label{cf:action}
+ S_{\eps,\mathbf p}(\boldsymbol\chi)
+ =\Phi_\eps(\boldsymbol\chi)
+       +\frac{\pi\ii}{2}\sum_\ell\frac{(\chi_\ell-1)^2}{p_\ell}
+\end{equation}
+has a unique critical point in a fixed small neighborhood of zero.
+Its representation completes to a smooth oriented complete
+finite-volume hyperbolic metric on the original
+$Y^\eps_E(\mathbf p)$, and
+\begin{equation}\label{cf:volume}
+ \Vol\bigl(Y^\eps_E(\mathbf p)\bigr)
+       =2\pi\Rea S_{\eps,\mathbf p}(\boldsymbol\chi_*).
+\end{equation}
+The bounds are independent of relative signs and relative sizes
+of the $p_\ell$. Every main cusp is left complete.
+\end{theorem}
+
+Uniqueness here is local uniqueness in this prescribed family
+and coordinate neighborhood. It does not classify the whole
+character variety or all possible representations of the filled
+group. The action in the theorem is defined geometrically below.
+Identifying it with a particular finite quantum source is a
+separate interface, described in Section~\ref{cf:interface}.
+
+We import the general near-complete metric implication of
+\cite[Proposition~6.1]{Marked}, after verifying every hypothesis
+on this original family. We also use its local peripheral-volume
+differential \cite[equation~(7.3)]{Marked} and the same-chain
+comparison of \cite[Section~7.3]{Marked}. Neither import assumes
+a source asymptotic. The normalizations and applicability are
+made explicit in Sections~\ref{cf:metric}--\ref{cf:volume-proof}.
+
+\section{A classical holomorphic cell potential}
+\label{cf:potential}
+
+\subsection{Logarithms, hidden leaf parameters and the half twist}
+On a complex neighborhood of each strict real angle interval
+continue the branch
+\[
+ J(u)=\int_0^u\Log(2\sin\pi s)\,\dd s
+\]
+from the real log-sine primitive. All occurrences are continued
+from the fixed complete point, so their constants are fixed.
+The product function is
+\begin{equation}\label{cf:m}
+\begin{split}
+ m(x,y,z)={}&J(x+y)+J(z)-J(x)-J(y)\\
+            &-J(z-x)-J(z-y)-J(x+y-z).
+\end{split}
+\end{equation}
+Its strict complete domain is
+$\max(x,y)<z<x+y<1$, with $x,y>0$.
+For a leaf define
+\begin{equation}\label{cf:g}
+ g(x,t)=J(2x)-2J(x)-J(x-t)-J(x+t),\qquad
+ v=g_t=\Log\frac{\sin\pi(x-t)}{\sin\pi(x+t)}.
+\end{equation}
+The parameter $t$ will be an auxiliary coordinate before the
+half-twist shear. At $t=0$ this is the complete leaf action,
+and $v=0$.
+
+For $\eps=0,1,-1$ define $t=t(x,\chi)$ by
+\begin{equation}\label{cf:shear}
+ \chi=t-\frac{\eps v(x,t)}{2\pi\ii}.
+\end{equation}
+At $(x,t)=(a,0)$ its $t$ derivative is
+$1-\eps\ii\cot\pi a\ne0$. The holomorphic implicit-function
+theorem gives a unique small $t(x,\chi)$, with $t(x,0)=0$.
+Set
+\begin{equation}\label{cf:local-potential}
+ f_\eps(x,\chi)
+       =g(x,t)-\frac{\eps v(x,t)^2}{4\pi\ii}.
+\end{equation}
+The elementary differential calculation
+\begin{equation}\label{cf:local-differential}
+ \dd f_\eps=g_x\,\dd x+v\,\dd\chi
+\end{equation}
+is exact. The term subtracted in \eqref{cf:local-potential}
+keeps the same boundary covector when the meridian is sheared.
+It is fixed by the primitive collar words in
+Section~\ref{cf:peripheral}, rather than by a choice of
+asymptotic phase.
+
+\subsection{Eliminating the internal wires}
+Let $\mathbf y$ be any independent coordinates for the internal
+wires of the completed closure after its final forced gate has
+been removed. The root relation is retained exactly: its outputs
+are $b,1-b$. Turns likewise replace a wire by its complement.
+On the same affine constraint space define
+\begin{equation}\label{cf:full-action}
+ \mathcal F_\eps(\mathbf y,\boldsymbol\chi)
+   =\sum_{\ell} f_{\eps_\ell}(x_\ell(\mathbf y),\chi_\ell)
+       +\sum_{\text{products}}m(x,y,z).
+\end{equation}
+At $\boldsymbol\chi=0$ this is precisely the complete real
+action. Its internal Hessian at the unique strict point
+$\mathbf y_0$ is nonsingular by the stated Newton input.
+The holomorphic implicit-function theorem therefore gives
+a unique small solution
+\begin{equation}\label{cf:wire-critical}
+ \partial_{\mathbf y}\mathcal F_\eps
+       (\mathbf y_*(\boldsymbol\chi),\boldsymbol\chi)=0,\qquad
+ \mathbf y_*(0)=\mathbf y_0 .
+\end{equation}
+Define the classical stationary potential by
+\begin{equation}\label{cf:Phi}
+ \Phi_\eps(\boldsymbol\chi)
+       =\mathcal F_\eps(\mathbf y_*(\boldsymbol\chi),
+                        \boldsymbol\chi).
+\end{equation}
+The envelope rule and \eqref{cf:local-differential} give
+$\partial_{\chi_\ell}\Phi_\eps=v_\ell$.
+Since $g$ is even in $t$ and $v$ is odd,
+\eqref{cf:shear} is odd in $t$ and
+$f_\eps$ is even in $\chi$. Uniqueness in
+\eqref{cf:wire-critical} makes the stationary wires and
+$\Phi_\eps$ separately even in each $\chi_\ell$.
+
+\begin{lemma}\label{cf:hessian}
+The complete auxiliary Hessian is
+\begin{equation}\label{cf:hessian-equation}
+ \partial_{\chi_i}\partial_{\chi_j}\Phi_\eps(0)
+       =\pi\ii\tau_i\,\delta_{ij}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+At one leaf, with $c=\cot\pi a$,
+$g_{tt}(a,0)=-2\pi c$ and
+$\chi_t(a,0)=1-\eps\ii c$. Thus
+$f_{\chi\chi}(a,0)=-2\pi c/(1-\eps\ii c)=\pi\ii\tau$.
+Also $g_{xt}(x,0)=0$, so every mixed internal-wire/auxiliary
+derivative vanishes at zero. Stationary-wire elimination
+therefore adds no Schur-complement correction to this
+auxiliary block. Distinct leaves have no direct mixed term
+in \eqref{cf:full-action}. This proves the diagonal formula.
+\end{proof}
+
+This argument used the cell functions and the complete variational
+Hessian only. A finite-level interpolation or a nonzero quantum
+coefficient is not needed to construct \eqref{cf:Phi}.
+
+\input{deformation}
+\input{metric-volume}
+\end{document}

@@ -1,0 +1,236 @@
+\section{A two-leaf comparison on the whole output interval}\label{cs:two-leaf}
+
+A pointwise comparison with a single complete leaf is insufficient throughout \eqref{cs:leaf-window}. The relevant quantity would be
+\[
+ \min_{0\le u\le1}\{g(a)+g'(a)(u-a)-k(u)\},
+\]
+which need not be positive there. The gate joining two leaves supplies the missing comparison. We retain it, and its output tangent, before propagating an estimate into the rest of the tree.
+
+At the selected pure two-leaf stack, write
+\begin{equation}\label{cs:seed-parameters}
+ X=\cot\pi a,\qquad \cot\pi b=X-\frac1{2X},\qquad
+ F_2(b)=2g(a)+m(a,a,b),\qquad
+ \lambda=2\log(2X^2).
+\end{equation}
+Here $\arccot$ always takes values in $(0,\pi)$. By the imported boundary bounds $1/2<X<1$ in our closed construction; it is useful to prove the comparison on the closed enlargement $[1/2,1]$.
+
+\begin{lemma}[Two-leaf gap]\label{cs:two-leaf-gap}
+For $1/2\le X\le1$ and the slope in \eqref{cs:seed-parameters},
+\begin{align}
+ \max_{D,\,y\le1/2}
+ \{k(x)+\widetilde g(y)+m(x,y,z)-\lambda z\}
+ &\le F_2(b)-\lambda b-\frac1{100},\label{cs:AC}\\
+ \max_D\{k(x)+k(y)+m(x,y,z)-\lambda z\}
+ &\le F_2(b)-\lambda b-\frac1{100}.\label{cs:AA}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Let $P(\lambda)$ be the maximum of $g(x)+g(y)+m(x,y,z)-\lambda z$ on $D$ with $x,y\le1/2$. Direct differentiation at $(a,a,b)$ gives
+\[
+ m_x=m_y=-2\log X,\qquad m_z=\lambda,\qquad g'(a)=2\log X.
+\]
+This point is strict in $D$, including the endpoints $X=1/2,1$. Concavity proves
+\[
+ P(\lambda)=F_2(b)-\lambda b.
+\]
+The same maximum is obtained if either or both copies of $g$ are replaced by $\widetilde g$: the selected point has $a\ge1/4$, where their supporting tangents agree.
+
+We give the complete finite certificate reduction. Write $H=k+\widetilde g+m$ for the first alias action and $H=k+k+m$ for the second. A rational feasible pure point $p=(p_1,p_1,p_3)$ gives
+\[
+ P(\lambda)\ge 2g(p_1)+m(p)-\lambda p_3.
+\]
+For a strict rational alias point $v$, with $v_2>1/4$ in the first case, global concavity gives
+$H(w)\le H(v)+\nabla H(v)\cdot(w-v)$. The full vertex sets are
+\begin{align*}
+ \mathcal V_{\mathrm{AC}}={}&
+ \{(0,0,0),(1,0,1),(1/2,1/2,1/2),(0,1/2,1/2),(1/2,1/2,1)\},\\
+ \mathcal V_{\mathrm{AA}}={}&
+ \{(0,0,0),(1,0,1),(0,1,1),(1/2,1/2,1/2)\}.
+\end{align*}
+To verify that these lists are complete, the nonnegative coordinates
+$p=z-x$, $q_1=z-y$, $r=x+y-z$, $w_0=1-x-y$ obey
+$p+q_1+2r+w_0=1$. Thus $D$ is a tetrahedron. Cutting by $y\le1/2$ removes one vertex and adds the two listed edge intersections.
+
+Partition $\lambda/\log2\in[-2,2]$ into the sixteen intervals
+$[-2+j/4,-2+(j+1)/4]$, $j=0,\ldots,15$. On each interval the rational data in \cite{Certificates} give one pure point and one tangent point for each alias action. For every vertex $w$ and the two slope endpoints $t$, they give
+\begin{equation}\label{cs:two-certificate}
+ 2g(p_1)+m(p)-t\log2\,p_3
+ -H(v)-\nabla H(v)\cdot(w-v)+t\log2\,w_3>\frac1{100}.
+\end{equation}
+The expression is affine separately in the slope and in $w$. Its endpoint and vertex checks therefore prove the inequality on each full interval and polytope. There are $16\cdot2\cdot(5+4)=288$ inequalities. Section~\ref{cs:arithmetic} proves the outward enclosure rules and specifies the exact data. The smallest certified lower bound is
+\begin{equation}\label{cs:two-margin}
+ \frac{210002102902309638093785766005979344329}
+ {5000000000000000000000000000000000000000}
+ >\frac1{25}>\frac1{100}.
+\end{equation}
+This proves both comparisons, including boundary maxima and the core plateau.
+\end{proof}
+
+\section{A new leaf and an arbitrary completed child}\label{cs:attachment}
+
+A completed child is represented by its actual selected output and its output derivative. Its entire internal source remains in the calculation. Let $f_E(b)$ be its optimized pure complete action at output $b$, near the selected strict state. The imported strict maximum has negative Hessian in its internal variables, so the implicit function theorem gives this differentiable local profile. Its derivative is the boundary Lagrange multiplier.
+
+The boundary variables from \cite[Section 6]{Newton} are
+\[
+ B=\cot\pi b,\qquad
+ X^2=\frac{1+B^2}{1+e^{-f_E'(b)}},\qquad
+ Y=e^{-f_E'(b)/2}X.
+\]
+Thus $X^2+Y^2-B^2=1$ and $f_E'(b)=2\log(X/Y)$. At a stack the two children have the same $X$, and their output variables satisfy
+\[
+ B_o=\frac{B_1B_2+X^2-1}{B_1+B_2},
+ \qquad Y_o=\frac{Y_1Y_2}{B_1+B_2}.
+\]
+For a leaf attached to a completed child these become
+\begin{equation}\label{cs:attachment-parameters}
+ \begin{gathered}
+ a=\arccot X/\pi,\quad b=\arccot B/\pi,\quad
+ c=\arccot B_p/\pi,\quad B_p=X-\frac1{X+B},\\
+ Y_p=\frac{Y}{X+B},\qquad
+ \mu=f_E'(b)=2\log(X/Y),\qquad
+ \lambda=f_{hE}'(c)=2\log(X/Y_p).
+ \end{gathered}
+\end{equation}
+Both child and parent are completed. Lemma 6.1 of \cite{Newton} therefore gives $0<X,Y,Y_p<1$. The child inequality $Y<1$ gives $|B|<X$. The parent inequality $Y_p<1$ gives
+\[
+ B>\frac1{2X}-X.
+\]
+Together they force $X>1/2$. These two distinct inequalities are needed below.
+
+Define the pure and alias dual maxima
+\begin{align}
+ P(\mu,\lambda)&=\max_{D,\,x\le1/2}
+ \{g(x)+m(x,y,z)+\mu y-\lambda z\},\label{cs:single-P}\\
+ Q(\mu,\lambda)&=\max_D
+ \{k(x)+m(x,y,z)+\mu y-\lambda z\}.\label{cs:single-Q}
+\end{align}
+Only the new leaf has the restriction $x\le1/2$. The child coordinate $y$ retains the whole interval $[0,1]$; it is represented by its tangent, not replaced by a second leaf.
+
+\begin{lemma}[Single-attachment gap]\label{cs:attachment-gap}
+For the parameters of every selected attachment in our closed grammar,
+\[
+ Q(\mu,\lambda)\le P(\mu,\lambda)-\frac1{2500}.
+\]
+The pure maximum is attained at $(a,b,c)$ from \eqref{cs:attachment-parameters}. Replacing $g$ by $\widetilde g$ does not change this maximum.
+\end{lemma}
+
+\begin{proof}
+At the displayed point,
+$m_x=-2\log X$, $m_y=-\mu$, $m_z=\lambda$ and $g'(a)=2\log X$. Hence the pure objective is stationary and concavity proves its global maximality. Since $a>1/4$, the same tangent applies to $\widetilde g$.
+
+First suppose $1/2<X\le2/3$. The child gives
+$Y^2=1+B^2-X^2\ge1-X^2>X^2$, while $Y<1$. Thus
+$-2\log2<2\log X<\mu\le0$. The parent gives separately
+$Y_p^2=1+B_p^2-X^2\ge1-X^2>X^2$, while $Y_p<1$, so the same bounds hold for $\lambda$. Both slopes lie in $[-2\log2,0]$.
+
+On the entire closed square, a second rational certificate proves
+\begin{equation}\label{cs:square-gap}
+ P(\mu,\lambda)-Q(\mu,\lambda)>\frac1{1000}.
+\end{equation}
+Divide both slopes by $\log2$. The resulting square is partitioned into 55 dyadic rectangles. Each rectangle carries a strict rational pure point $p$, with $p_1<1/2$, and a strict rational tangent point $v$ for $H=k+m$. At each of its four slope corners and each of the four vertices of $D$, the verified inequality is
+\begin{multline}\label{cs:single-certificate}
+ g(p_1)+m(p)-H(v)-\nabla H(v)\cdot(w-v)\\
+ +\mu(p_2-w_2)-\lambda(p_3-w_3)>\frac1{1000}.
+\end{multline}
+Concavity bounds the alias function by this tangent; the pure point bounds its maximum below. Affinity in the slopes and in $w$ gives the full rectangle and full $D$. The data define each nonterminal subdivision node to have exactly four children, its four quarter-rectangles, starting at $[-2,0]^2$. This proves coverage without gaps or overlap concerns. There are $55\cdot4\cdot4=880$ inequalities. Their least certified lower bound is
+\begin{equation}\label{cs:single-margin}
+ \frac{55437191760019874892517972684020763373}{10^{40}}
+ >\frac1{1000}.
+\end{equation}
+
+For $X\ge2/3$ an elementary one-leaf inequality suffices. Set
+\[
+ I(a)=\min_{0\le u\le1}\{g(a)+g'(a)(u-a)-k(u)\}.
+\]
+For $a\ge a_*:=\arctan\sqrt2/\pi$, the minimum is at $u=1$ because $g'(a)\le k'(1)=-\log2$. Then
+\begin{equation}\label{cs:Ti}
+ I(a)=g(a)+(1-a)g'(a)
+ =\frac2\pi\Ti(X)+\log X,\qquad
+ \Ti(X)=\int_0^X\frac{\arctan t}{t}\dd t.
+\end{equation}
+For example the two expressions have the same derivative in $X$, namely
+$X^{-1}+2\arctan X/(\pi X)$, and their difference tends to zero as $X\downarrow0$. This proves the constant in \eqref{cs:Ti}. The expression decreases with $a$.
+
+For $1/4\le a\le a_*$ the minimizing index is
+$u=(2/\pi)\arcsin(\tan^2(\pi a)/2)$. It exceeds $a$: equivalently
+$\tan^2 t>2\sin(t/2)$ for $\pi/4\le t\le\arctan\sqrt2$, which holds at $\pi/4$ and remains true because the derivative of the difference is $2\tan t\sec^2t-\cos(t/2)>0$ there and thereafter. Hence $I'(a)=g''(a)(u-a)<0$. The minimum on $1/4\le a\le\arccot(2/3)/\pi$ is consequently at its upper endpoint, where \eqref{cs:Ti} applies.
+
+Four alternating terms of $\Ti(2/3)$ give
+\[
+ \Ti(2/3)>\frac{1708762}{2679075}.
+\]
+The series $2\sum_{j\ge0}(1/5)^{2j+1}/(2j+1)$ for $\log(3/2)$, with its geometric tail, gives
+$\log(3/2)\le177391/437500$. Together with $\pi<22/7$ these imply
+\begin{equation}\label{cs:elementary-margin}
+ I(a)>\frac{57269}{136687500}>\frac1{2500}.
+\end{equation}
+The bound $\pi<22/7$ follows, for instance, from the Machin enclosure used in Section~\ref{cs:arithmetic}. Thus
+$k(u)\le g(a)+g'(a)(u-a)-1/2500$ on the full alias interval. Adding the supporting plane of $m$ and the child linear term cancels the input coefficients by stationarity. This proves the lemma in the remaining case.
+\end{proof}
+
+\begin{figure}[t]
+\centering\input{figures/tangent-propagation}
+\caption{A completed construction retains its exact indices at every step; $\star$ is the multiplication in \eqref{cs:product}. In the left seed, $i,j$ are leaf indices and $r$ is the output of their original multiplication. In the right attachment, $j$ is the output of the entire child $E$, not a new leaf. The affine estimates use the same $i/N,j/N,r/N$; the internal slopes cancel at the selected stationary state.}
+\label{cs:figure}
+\end{figure}
+
+\section{Propagation through the entire construction}\label{cs:assembly}
+
+A \emph{sector} specifies at each elementary piece whether its core or its alias is used. This is a finite exact expansion because the construction is fixed. For a completed subtree $E$, let $E_S$ denote the contribution from an alias subset $S$ of its leaves, propagated by the original operations. We prove the following open-output estimate.
+
+\begin{proposition}[Affine bound with an inherited loss]\label{cs:tangent}
+At the selected output $b_E$ of every completed subtree, put
+$\lambda_E=f_E'(b_E)$. For each of its alias subsets there is a number $\delta_S$ with $\delta_\varnothing=0$ and $\delta_S>0$ for $S\ne\varnothing$, such that
+\begin{equation}\label{cs:subtree}
+ |[e_r]E_S|
+ \le\exp\!\left\{N\left[f_E(b_E)+
+       \lambda_E(r/N-b_E)-\delta_S+e_{E,N}\right]\right\}.
+\end{equation}
+Here $e_{E,N}\to0$ uniformly over all physical colors, retained signs and output indices $0\le r\le d$.
+\end{proposition}
+\begin{proof}
+For an $hh$ seed, Proposition~\ref{cs:envelopes} and the uniform gate estimate reduce each summand to the action in Lemma~\ref{cs:two-leaf-gap}. A nonempty alias subset loses $1/100$. The all-core estimate uses the supporting tangent of $\widetilde g+\widetilde g+m$ at the same selected point, with no loss. There are at most $N^2$ input pairs for each output; this and the factorial errors enter $e_{E,N}$.
+
+A turn sends the output index to $d-r$. Its pure profile is $f_E(1-b)$, so its slope changes sign. The difference between $d/N$ and $1$ contributes only $O(1/N)$ inside the exponent in \eqref{cs:subtree}. The inherited loss is unchanged.
+
+For a product of two completed children, let their selected indices be $a,b$ and its output $c$. Their slopes and the gate derivatives satisfy
+\[
+ f_1'(a)+m_x(a,b,c)=0,\qquad
+ f_2'(b)+m_y(a,b,c)=0,\qquad
+ f_o'(c)=m_z(a,b,c).
+\]
+Add the two child inequalities to the global supporting plane of the concave gate. Every input linear term cancels, leaving
+$f_o(c)+f_o'(c)(r/N-c)$ and the sum of the inherited losses. The true finite support is a subset of $D$, so the bound covers every summand, including ones with a high input. Polynomially many input pairs again cost $o(1)$ in the rate.
+
+For $hE$, a core at the new leaf uses the tangent of $\widetilde g$ at $a>1/4$ and leaves any child loss unchanged. If the new leaf is an alias, Lemma~\ref{cs:attachment-gap}, with the child's actual linear tangent, gives an additional loss $1/2500$. If the child also has aliases, its loss adds. More explicitly the three nonempty possibilities are
+\[
+ A_h\star C_E,\qquad C_h\star E_S,\qquad A_h\star E_S
+ \quad(S\ne\varnothing),
+\]
+where $\star$ denotes exactly \eqref{cs:product}. The child is never assigned the elementary support $[0,M]$. A stack $Eh$ has the same estimate by the symmetry of this multiplication; no coupon is commuted through a physical turn. The tree has finitely many operations, so accumulated errors still tend to zero uniformly. This completes the induction.
+\end{proof}
+
+\subsection{Closure and the sum of all complementary sectors}
+Let $E,F$ be the two closing completed boxes, with selected outputs $b_E+b_F=1$. Their slopes agree, say $\lambda_E=\lambda_F=\lambda$, because the complete action is stationary on this constraint. On the exact relation $i+j=d$ the sum of the two affine output terms is
+\[
+ \lambda(i/N-b_E)+\lambda(j/N-b_F)=-\lambda/N.
+\]
+After multiplication by $N$ it is a fixed scalar contribution. Equation \eqref{cs:turn-trace} now bounds a sector with at least one alias by
+\[
+ N\exp\{N(F_0-\delta_S+o(1))\}.
+\]
+There are finitely many nonempty subsets $S$. Their positive minimum loss, the common uniform errors, and the polynomial number of states can be absorbed by halving that minimum and increasing the level threshold. This proves \eqref{cs:alias-gap}. It bounds the entire difference $\mathcal A_N-\mathcal C_N$, using the triangle inequality only after the local signed cancellations have supplied the core envelope.
+
+\subsection{The macroscopic physical-color loss}
+Let $\mathcal P$ be the compact limiting pure state polytope after the closing constraint has been imposed and all turns have been eliminated. Replace each $g$ in its complete action by $\widetilde g$, leaving every gate $m$ unchanged. Call the resulting concave action $\widetilde F$. At the selected complete state $p_*$ all leaf indices satisfy \eqref{cs:leaf-window}, so $\widetilde F$ agrees with the original action on a neighborhood of $p_*$. Its gradient vanishes there and its Hessian on the actual state space is negative definite by \cite[Proposition 5.3]{Newton}.
+
+It follows that $p_*$ is the unique maximum of $\widetilde F$, of value $F_0$. Indeed a second maximum would make the line segment between it and $p_*$ constant, contradicting the negative Hessian near $p_*$. Compactness gives a strict loss on the complement of any sufficiently small fixed neighborhood of $p_*$. This is a shared-state maximum: no sum of separate factor maxima is substituted for it.
+
+The exact finite states obey $d/N=1-1/N$ at turns and closure. They are uniformly bounded, and every subsequential limit lies in $\mathcal P$. Uniform continuity of all the actions therefore transfers the preceding loss to the finite states outside a slightly smaller neighborhood. This argument does not discard a finite endpoint or presume an integral state exists at a chosen real point; only an upper bound is being proved.
+
+Inside the neighborhood all leaf indices lie in one fixed compact interval $I\subset(1/4,1/2)$. Suppose some physical deficit $N-j_\ell$ is at least $\delta N$. If that color is low, its core is zero and the whole source is already covered by \eqref{cs:alias-gap}. Otherwise Proposition~\ref{cs:envelopes} gives a fixed strict reduction at that leaf relative to $g=\widetilde g$. The other factors retain their common majorant, whose maximum is $F_0$. Combining the inside and outside estimates bounds the all-core contribution by $\exp\{N(F_0-\eta_\delta)\}$ after reducing the positive margin. Add \eqref{cs:alias-gap} and absorb the factor two. This proves \eqref{cs:color-gap} and Theorem~\ref{cs:main}.
+
+\begin{remark}
+The constants are attached to a fixed completed construction. A closing elementary leaf need not satisfy \eqref{cs:leaf-window}; the strict recurrence interval and the attachment comparisons would then require another argument. Likewise, changing a meridian changes the finite quotient and its operators. Neither extension is part of the theorem proved here.
+\end{remark}

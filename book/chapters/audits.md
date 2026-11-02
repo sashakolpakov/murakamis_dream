@@ -340,9 +340,19 @@ with the transport module gives an existing, unique minimum of the same
 constructed potential. The geometric derivative calculation and the
 positive table needed to apply the result remain written proofs.
 
-The optional package has twenty definitions and seventy-four theorems.
-Its axiom audit covers all ninety-four declarations, separately from
-the Std-only project. Sixteen negative controls check that invalid
+The [reduced-Laplacian module](../../formal-real/GroundedLaplacian.lean)
+also constructs the matrix obtained by fixing one vertex and deleting
+its row and column. Its quadratic form is the original edge energy
+after extending the remaining coordinates by zero. Connected positive
+edges make its kernel zero. Finite-dimensional linear algebra then gives
+an inverse and a unique solution for every right-hand side on the free
+vertices. The equation at the fixed vertex is not imposed. This includes
+the one-vertex graph, which has no free coordinates. A uniform bound for
+the inverse and a nonlinear implicit-function theorem are separate tasks.
+
+The optional package has twenty-four definitions and ninety-two theorems.
+Its axiom audit covers all 116 declarations, separately from
+the Std-only project. Eighteen negative controls check that invalid
 inputs are rejected. The saddle estimates, whole-source gap and geometric
 volume identity remain written application inputs. The
 [tangle and tree review](../../repro/TANGLE_TREE_AUDIT.md) records the
@@ -351,6 +361,13 @@ The later [Conway geometry and meridian review](../../repro/CONWAY_MERIDIAN_AUDI
 records the complete geometry and moving-meridian papers, together with
 the strict-convexity module and the additional finite checks. Each review
 retains its own dated source snapshot; its counts refer to that execution.
+The [source and filling review](../../repro/CONWAY_SOURCE_FILLING_AUDIT.md)
+then separates the completed-root complementary-color bound from the
+classical filling and volume construction. It also records the new
+reduced-Laplacian proof. The
+[reference errata](../../manuscript/ERRATA.md) give the corrected filling
+Jacobian, \(-2\pi i\operatorname{diag}(\tau_\ell)\), and show directly
+why its invertibility is unaffected. The reference PDF remains unchanged.
 
 ## Joining certified diagrams
 
