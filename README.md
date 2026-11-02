@@ -146,6 +146,22 @@ Its peripheral-volume input is a local differential from the geometric
 foundation, so no independently long-twist assumption is imposed on
 these zero-power cases.
 
+The [degree-and-twist paper](docs/papers/circle-tree-asymptotics.pdf)
+now proves the full invariant asymptotic under the summed condition
+$\sum_v d_v/(d_v^2+n_v^2)\le2^{-25}$. It retains every Newton index,
+Fourier charge and repeated-root derivative, and gives a uniform
+microscopic meridian profile. This analytic condition implies the
+geometric threshold above. The different local and directed conditions
+still have their own proofs in the reference account.
+
+For the completed-root Conway construction,
+[Holomorphic source asymptotics and volume limits for Conway closures](docs/papers/conway-asymptotics.pdf)
+proves the nonzero leading term of the entire filled invariant. It
+imports the complementary-color bound and geometric completion by
+numbered theorem, proves the intervening complex estimates, and fixes
+the absolute action comparison. This is the narrower completed-root
+class; the broader strict-tree extension remains a separate extraction.
+
 ## The meridian and the A-polynomial
 
 For the covered strict-tree constructions and the directed circle-tree
@@ -165,13 +181,13 @@ separate work.
 
 ## Reading and reproducing the work
 
-The [collection of research papers](papers/README.md) now contains fifteen
+The [collection of research papers](papers/README.md) now contains seventeen
 drafts, ranging from 11 to 28 pages. Five develop
 the finite algebra, local estimates, central asymptotics, oscillatory
-sums and geometric fillings. The other ten treat complete and
+sums and geometric fillings. The other twelve treat complete and
 moving-meridian Newton formulas, complete and filled Conway geometry,
-complementary color bounds, classical
-circle-tree geometry, shared-face criteria, terminal decorations,
+complementary color bounds, completed-root Conway asymptotics, classical
+circle-tree geometry and the summed analytic criterion, shared-face criteria, terminal decorations,
 triangular insertions and long three-braids.
 Each paper states the companion results it uses.
 
@@ -181,9 +197,9 @@ replace it. The reference contains 93 pages of main text, 266 pages of
 appendices and 15 pages of front matter and references. Its length came
 from collecting several theorem families, repeated setup for separate
 proofs, and alternative constructions in one continuous account. The
-analytic circle-tree estimates, the nonzero asymptotic and complete
-oscillatory sum for recursive closures, and longitude and recurrence theorems still
-need their own complete papers. The reference remains frozen and is no
+local and directed circle-tree estimates, the broader strict-tree extension,
+and the all-orders meridian and longitude theorems still need their own
+complete papers. The reference remains frozen and is no
 longer presented as a single journal paper. Its
 [errata](manuscript/ERRATA.md) record corrections found during extraction.
 Chapter 1 separates full volume theorems from completed partial results:

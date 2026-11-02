@@ -1,0 +1,195 @@
+\section{A finite holomorphic source and its two lattice saddles}\label{ca:packet}
+
+We now assemble the actual leaves before estimating any sum. Let $b$ be the number of leaves. A binary construction has $b-1$ multiplication gates. The last is the closing trace; its equation is $i+j=d$ and its coefficient is one. Removing that equation leaves $b-2$ gates and
+\[
+ k=b+(b-2)-1=2b-3
+\]
+free integer wire coordinates. Turns replace an index by $d-r$. Solving the closing equation eliminates one coordinate with coefficient $1$ or $-1$. Consequently the remaining lattice is primitive: there is no lattice index in its Gaussian density. This is the explicit coordinate construction of \cite[Section 5.3]{Newton}.
+
+Write $y=\mathbf k/N$ in these coordinates. Every wire is exactly
+\begin{equation}\label{ca:offsets}
+ r_w=NL_w(y)+\delta_w,
+\end{equation}
+where $L_w$ is an integral affine function and $\delta_w$ is a fixed integer. Each occurrence of $d=N-1$ contributes to these offsets. Choose a closed rectangular window $\mathcal B$ about the unique strict complete maximizer, inside the strict support of every retained gate. The leaf coordinates lie in the fixed interval $I$ of Section~\ref{ca:leaf}. The window and all complex neighborhoods below are fixed before $N$.
+
+The exact gate coefficient and its action are
+\begin{align}
+ \mu_N(i,j,r)&=
+ \frac{S_{i+j}S_r}{S_iS_jS_{r-i}S_{r-j}S_{i+j-r}},
+ \qquad \max(i,j)\le r\le i+j\le d,\label{ca:gate}\\
+ m(x,y,z)&=J(x+y)+J(z)-J(x)-J(y)
+             -J(z-x)-J(z-y)-J(x+y-z).\notag
+\end{align}
+Define $C_N^\epsilon(t)$ to be the finite sum over $\mathbf k/N\in\mathcal B$ of the product of the exact $\ell_N^{\epsilon_\ell}(r_\ell,t_\ell)$ and these integer gate coefficients. Only colors are continued in this definition. The function is holomorphic on a fixed polydisk and separately even. No index continuation has yet replaced the sum.
+
+\begin{theorem}[The exact corridor source]\label{ca:packet-theorem}
+There are a fixed complex color polydisk, a nonzero holomorphic function
+$a_\epsilon$, and a separately even holomorphic action $\Phi_\epsilon$ such that
+\begin{equation}\label{ca:packet-expansion}
+ C_N^\epsilon(t)=N^{3/2}a_\epsilon(t)e^{N\Phi_\epsilon(t)}
+                    (1+O(N^{-1}))
+\end{equation}
+uniformly there, with all fixed derivatives on smaller polydisks. If
+$\mathcal A_N^\epsilon(\mathbf h)$ denotes the original physical-color source at colors $N-h_\ell$, then for some fixed $\delta,\gamma>0$,
+\begin{equation}\label{ca:source-error}
+ \left|\mathcal A_N^\epsilon(\mathbf h)
+  -e^{\pi\ii d\sum\epsilon_\ell/4}C_N^\epsilon(\mathbf h/N)\right|
+ \le e^{N(F_0-\gamma)}
+ \quad(0\le h_\ell\le\delta N,\ N\ \text{sufficiently large}).
+\end{equation}
+The source outside this physical-color corridor is bounded by
+$e^{N(F_0-\gamma_\delta)}$ for some $\gamma_\delta>0$. At zero,
+\begin{equation}\label{ca:packet-hessian}
+ \Phi_\epsilon(0)=F_0,\qquad
+ (\Phi_\epsilon)_{t_\ell t_j}(0)
+ =-\frac{2\pi X_\ell}{1-\epsilon_\ell\ii X_\ell}\,\mathbf1_{\ell=j}.
+\end{equation}
+All statements hold at both parities.
+\end{theorem}
+
+\begin{proof}
+Interpolate the gate factorials by Lemma~\ref{ca:factorial} and the leaf factors by \eqref{ca:I}. The resulting index function agrees with the exact window sum up to an exponentially small error. More precisely, \eqref{ca:exponential-interpolation}, the polynomial number of wire states, and the complete maximum give an absolute error
+\[
+ N^C\exp N\{F_0+C_1\|t\|^2-c_1\}.
+\]
+After reducing the color disk this is smaller than the forthcoming saddle by a fixed exponential factor. The use of exponential accuracy here is necessary.
+
+The interpolated summand has the uniform form
+\begin{equation}\label{ca:summand}
+ N^{3-b}b_\epsilon(y,t)e^{NF_\epsilon(y,t)}(1+O(N^{-1})),
+ \quad
+ F_\epsilon=\sum_{\ell=1}^b f_{\epsilon_\ell}(L_\ell(y),t_\ell)
+                  +\sum_{\text{gates}}m(L_i,L_j,L_r).
+\end{equation}
+Indeed each leaf contributes $N^{1/2}$ and each of the $b-2$ gates contributes $N^{-3/2}$. Without offsets the gate density is
+\[
+ b_\mu(x,y,z)=2^{-3/2}
+ \sqrt{\frac{\sin\pi(x+y)\sin\pi z}
+ {\sin\pi x\sin\pi y\sin\pi(z-x)\sin\pi(z-y)\sin\pi(x+y-z)}}.
+\]
+Multiply these and \eqref{ca:leaf-functions} to obtain the unshifted density. For each leaf offset multiply by
+$e^{\delta_\ell(f_{\epsilon_\ell})_x}$, and for each gate by
+$e^{\delta_i m_x+\delta_j m_y+\delta_r m_z}$.
+This specifies $b_\epsilon$ completely. All its factors are nonzero on a sufficiently small complex strict window. In particular offsets use the changed action at the changed point.
+
+At $t=0$ the phase is the positive strictly concave complete action.
+The imported strict maximum and negative definite Hessian, followed by the holomorphic implicit-function theorem, give a unique nearby stationary point $y_*(t)$. Define
+\begin{equation}\label{ca:critical-amplitude}
+ \Phi_\epsilon(t)=F_\epsilon(y_*(t),t),\qquad
+ a_\epsilon(t)=
+ \frac{(2\pi)^{k/2}b_\epsilon(y_*(t),t)}
+ {\sqrt{\det[-(F_\epsilon)_{yy}(y_*(t),t)]}}.
+\end{equation}
+We justify that its coefficient in the original finite sum is one.
+
+Take the endpoints of the real wire rectangle halfway between grid points, moving them by at most $1/N$ inside a fixed boundary neighborhood. In one coordinate the exact residue kernel is $\pi N\cot(\pi Nz)$, with residue one at each $j/N$. Enclose the finite interval by its rectangle at heights $\pm a$, where $a>0$ is small and fixed. On vertical half-grid sides $|\cot|\le1$. On the horizontal sides it equals $\mp\ii+O(e^{-2\pi Na})$. Let $g_{\partial}>0$ be the fixed real boundary phase loss. On the complex tube the added cost is at most $Ca^2+C\|t\|^2$, because the complete phase is real on the real window and stationary to first order in imaginary directions. Choose $a$ with $Ca^2<\min\{\pi a,g_{\partial}/4\}$. Then shrink the color disk so that its added cost, including the change of critical value, is below both $g_{\partial}/4$ and the remaining cotangent margin. Every vertical side and every nonconstant cotangent mode is now exponentially smaller than the critical value. Repeating this residue argument in all $k$ coordinates gives
+\[
+ \sum_{\mathbf k/N\in\mathcal B}I_N(\mathbf k/N,t)
+ =N^k\int_{\mathcal B}I_N(y,t)\dd y
+    +O(e^{N(\Re\Phi_\epsilon(t)-c)})
+\]
+with the polynomial powers absorbed by a smaller $c>0$. The two constant horizontal contributions each have weight $1/2$; their sum produces $N$, not an extra factor two.
+
+Translate the real integral to the parallel contour through $y_*(t)$.
+All connecting boundary faces retain the strict loss after the same shrinkage. Near that point the negative Hessian has positive definite real part. Taylor expansion on a fixed ball, followed by $u=\sqrt N(y-y_*)$, gives the Gaussian coefficient in \eqref{ca:critical-amplitude}. Cubic terms and the linear density term have odd degree and integrate to zero; the remaining error is relative $O(N^{-1})$. The tails outside the ball are exponentially small. These statements are uniform on a complex color polydisk; Cauchy's formula supplies the derivative estimates. The power is
+$3-b+k/2=3/2$.
+
+At zero the signed density divided by the positive density is
+\[
+ \prod_{\epsilon_\ell\ne0}
+       \sqrt{\sin\pi a_\ell}\,e^{-\epsilon_\ell\pi\ii a_\ell/2},
+\]
+which is nonzero. Separate evenness makes every wire--color mixed second derivative vanish at zero. The envelope derivative and
+\eqref{ca:leaf-hessian} therefore give \eqref{ca:packet-hessian}.
+They also show $\Re\Phi_\epsilon$ has a strict real-color maximum at zero.
+
+Finally, Theorem 1.1 and the supporting-plane proof in Section 6.2 of
+\cite{Bounds} control all alias selections, not one term of their sum.
+Its concave core majorant has the same unique maximum and is strictly below it off any neighborhood of that point: the actual leaf intervals lie above $1/4$, where the majorant equals the original action. Compactness leaves a uniform gap outside $\mathcal B$, also for small physical colors. The finite number of sums has only polynomial cardinality. Shrinking the strict gap absorbs their uniform $o(N)$ errors and proves \eqref{ca:source-error}. The macroscopic-color estimate is exactly the second assertion of that imported theorem.
+\end{proof}
+
+The argument also gives, after shrinking the color disk,
+\begin{equation}\label{ca:color-gaussian}
+ |C_N^\epsilon(x+\ii y)|
+ \le N^C\exp N\{F_0-a_0\|x\|^2+B_0\|y\|^2\},\qquad a_0>0.
+\end{equation}
+The mixed real--imaginary term of a complex quadratic form is absorbed by these two terms. This is a bound for the actual continued finite window.
+
+\subsection{A real local Fourier action and a gap on the entire torus}
+
+We now use only $\epsilon=0$, and abbreviate $C_N=C_N^0$,
+$\Phi_0=\Phi_{\epsilon=0}$ and $a_0=a_{\epsilon=0}$ when $a_0$ denotes a function rather than the positive constant in \eqref{ca:color-gaussian}. Choose a smaller fixed $\delta>0$ and let $H_N^{\rm cut}=\lfloor\delta N\rfloor$. Define the exact finite Fourier polynomial
+\begin{equation}\label{ca:Fourier-source}
+ \mathcal F_N(z)=
+ \sum_{|h_1|,\ldots,|h_b|\le H_N^{\rm cut}}
+ C_N(h/N)e^{2\pi\ii h\cdot z}.
+\end{equation}
+It is even in each variable. Grouping positive and negative frequencies shows that
+$\mathcal F_N(z)=P_N(-2\cos2\pi z_1,\ldots,-2\cos2\pi z_b)$
+for a polynomial of separate degree at most $H_N^{\rm cut}\le d$.
+Here $P_N$ denotes this multivariate polynomial, not the root polynomial used in the next section.
+
+\begin{proposition}[Local expansion and global spectral gap]\label{ca:Fourier-theorem}
+On a fixed complex neighborhood of zero,
+\begin{align}
+ \mathcal F_N(z)&=
+ N^{3/2+b/2}B(z)e^{N\Psi_0(z)}(1+O(N^{-1})),\label{ca:Fourier-local}\\
+ B(z)&=\frac{(2\pi)^{b/2}a_0(\xi(z))}
+             {\sqrt{\det[-\Phi_0''(\xi(z))]}}\ne0.\label{ca:Fourier-amplitude}
+\end{align}
+The functions $\xi,\Psi_0$ are given by \eqref{ca:Psi}.
+The action is real for real $z$, separately even, and
+\begin{equation}\label{ca:Fourier-Hessian}
+ \Psi_0(0)=F_0,\qquad
+ \Psi_0''(0)=-2\pi\diag(X_1^{-1},\ldots,X_b^{-1}).
+\end{equation}
+For every sufficiently small fixed $\eta>0$ there are $\tau,c_\eta>0$ and $C_\eta$ such that
+\begin{equation}\label{ca:Fourier-global}
+ |\mathcal F_N(x+\ii y)|
+ \le N^{C_\eta}e^{N(F_0-c_\eta)}
+\end{equation}
+whenever $x\in[-1/2,1/2]^b$, $\max|x_\ell|\ge\eta$ and
+$\max|y_\ell|\le\tau$. The same conclusion holds for every specified finite set of derivatives, after shrinking $\tau$.
+\end{proposition}
+
+\begin{proof}
+Apply the finite residue argument just proved to the color sum
+\eqref{ca:Fourier-source}, retaining the absolute exponentially small boundary error. The holomorphic phase is
+$\Phi_0(t)+2\pi\ii t\cdot z$; its unique critical point is $\xi(z)$.
+The Gaussian adds $N^{b/2}$ and gives \eqref{ca:Fourier-amplitude}.
+All original values $C_N(h/N)$ were used in this sum. The function
+$\Phi_0$ is real on the real color cube and even, since its pure finite source is positive there and its factorial continuation is real.
+For real $z$, conjugation and evenness give
+$\overline{\xi(z)}=-\xi(z)$. Therefore $\Psi_0(z)$ is real.
+Differentiation gives
+$\Psi_0''(0)=4\pi^2[\Phi_0''(0)]^{-1}$, proving
+\eqref{ca:Fourier-Hessian}.
+
+For the global assertion it is important to estimate the full finite Fourier sum, rather than extrapolate its local phase. Fix a coordinate with frequency
+$\varphi=2\pi x_\ell$ modulo $2\pi$ in
+$[\varphi_0,2\pi-\varphi_0]$, where $\varphi_0=2\pi\eta$.
+Keep all other integer colors real. Enclose the finite integer interval
+$[-H_N^{\rm cut},H_N^{\rm cut}]$ by the rectangle with half-integer vertical sides and heights $\pm\sigma N$. Use the exact residue kernel
+\[
+ \pi\cot(\pi w)-\pi\ii
+     =\frac{2\pi\ii}{e^{2\pi\ii w}-1}
+\]
+on $C_N(\ldots,w/N,\ldots)e^{\ii\varphi w}$.
+The top and bottom sides respectively gain
+$e^{-\varphi\sigma N}$ and
+$e^{-(2\pi-\varphi)\sigma N}$.
+On the vertical sides the kernel times the Fourier factor is bounded by
+$2\pi e^{-\varphi_0|\Im w|}$. There the real color is at least
+$\delta-O(N^{-1})$, so \eqref{ca:color-gaussian} gives a fixed loss
+$a_0\delta^2N/2$. Choose $\sigma$ small enough that
+$B_0\sigma^2$ is less than half this loss and half
+$\varphi_0\sigma$. All four sides have a common strict exponential loss. Summing the other $b-1$ integer colors costs only a polynomial factor.
+
+To allow $z=x+\ii y$, on this same contour the additional factor has modulus at most
+$e^{2\pi(\delta N+1/2)\sum|y_\ell|}$, apart from the already estimated real-frequency factor. Choosing a fixed $\tau$ small enough preserves half the loss. Derivatives in $z$ insert fixed powers of the contour variables, hence polynomial factors. Alternatively Cauchy's formula on a slightly larger strip gives the stated derivative bounds. This proves the entire shared spectral-cube estimate.
+\end{proof}
+
+\begin{figure}[ht]
+ \centering\input{figures/two-lattices}
+ \caption{The two finite lattices in the proof. The wire indices determine the exact finite function $C_N(t)$; each affine wire retains its integer offset. Its color samples are then summed to the even Fourier polynomial $\mathcal F_N(z)$. The horizontal contour moves are made only after an exact residue representation and an exponentially accurate wire interpolation. The outer rectangle retains all its connecting sides.}\label{ca:two-lattices}
+\end{figure}

@@ -1,0 +1,29 @@
+\begin{tikzpicture}[x=0.9cm,y=0.85cm,>=Stealth,font=\small]
+\begin{scope}
+ \draw[->](-.4,0)--(3.4,0) node[right]{$y_1$};
+ \draw[->](0,-.35)--(0,2.7) node[above]{$y_2$};
+ \draw[blue!65!black,thick](.5,.45)rectangle(2.9,2.25);
+ \foreach \x in {.7,1.1,1.5,1.9,2.3,2.7}
+  \foreach \y in {.65,1.05,1.45,1.85}
+    \fill[black!55](\x,\y)circle(1pt);
+ \fill[red!65!black](1.65,1.22)circle(2pt)
+    node[above right]{$y_*(0)$};
+ \node at(1.7,-.65){primitive wire lattice};
+ \node[blue!65!black]at(2.8,2.5){$\mathcal B$};
+\end{scope}
+\draw[->,thick](4,1.25)--(5.4,1.25)
+ node[midway,above]{$C_N(t)$};
+\begin{scope}[shift={(6.2,0)}]
+ \draw[->](-.5,1.25)--(3.8,1.25)node[right]{$\Re t$};
+ \draw[->](1.65,-.3)--(1.65,2.85)node[above]{$\Im t$};
+ \draw[blue!65!black,thick](.15,.35)--(3.15,.35)--(3.15,2.15)--(.15,2.15)--cycle;
+ \foreach \x in {.4,.8,1.2,1.6,2,2.4,2.8}
+   \fill(\x,1.25)circle(1.2pt);
+ \draw[red!65!black,thick](.15,1.8)--(3.15,1.8);
+ \fill[red!65!black](1.65,1.8)circle(2pt)
+   node[above right]{$\xi(z)$};
+ \node at(1.65,-.65){finite color contour};
+ \node[blue!65!black]at(3.5,.35){$-\ii\sigma$};
+ \node[blue!65!black]at(3.5,2.15){$\ii\sigma$};
+\end{scope}
+\end{tikzpicture}

@@ -1,0 +1,122 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,mathrsfs,xurl}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\setlength{\emergencystretch}{2em}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\Turn}{\mathcal T}
+\newcommand{\Log}{\operatorname{Log}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\title{Holomorphic source asymptotics and volume limits\\for Conway closures}
+\author{}\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove a nonzero asymptotic for the entire filling evaluation of a fixed completed-root Conway construction. The auxiliary filling integers are independently signed and sufficiently long, and are fixed before the level tends to infinity. An exact continuation of the finite Newton coefficients gives a holomorphic source near its complete maximum. For retained half twists, a finite recurrence with its original terminal condition yields an exponentially accurate index interpolation; its action is identified with the classical meridian shear, including its parameter-dependent constant. A finite lattice saddle retains all integer offsets and gives a nonzero amplitude at both parities. To evaluate fillings we expand each full physical crossing power into ordinary circles. This exact rearrangement places the resulting even Fourier polynomial under a real-action filling theorem without changing the knot. Combining that theorem with the independently established complementary-source bound and primitive geometric completion gives the stated volume limit at all sufficiently large integer levels.
+\end{abstract}
+
+\section{The construction, the asymptotic and the inputs}\label{ca:intro}
+
+A completed Conway box is built from a stack of two elementary circle tangles by clockwise quarter turns, stacks of completed boxes, and attachments of one elementary piece to a completed box. We close two completed boxes cylindrically. Every elementary piece is a distinct auxiliary circle surrounding two main strands, with its original disk framing. This is precisely the grammar of \cite[Definition 2.1]{Newton}; a bare elementary piece at the closing root is excluded.
+
+Fix such a finite construction with $b$ circles. At circle $\ell$ retain $\epsilon_\ell\in\{0,1,-1\}$ half twists and fill the original primitive slope $\mu_\ell+p_\ell\lambda_\ell$, where $\mu_\ell$ is its meridian and $\lambda_\ell$ its disk longitude. The physical crossing power is
+\begin{equation}\label{ca:n}
+ n_\ell=\epsilon_\ell-2p_\ell.
+\end{equation}
+Assume the endpoint pairing after these retained half twists has one main component. Full twists preserve that pairing, so the resulting main link is a knot $K_{\epsilon,\mathbf p}$. The circles and their fillings are those of the original construction; they are not substituted by a different surgery presentation.
+
+At level $N\ge3$ put $d=N-1$, $q=e^{\pi\ii/N}$ and
+$\kappa=q^{d^2/2}$, with $q^t=e^{\pi\ii t/N}$. Let $D$ be the oriented blackboard diagram of the filled knot, and let $w(D)$ denote its writhe. The actual reduced tensor evaluation is corrected to zero framing by
+\begin{equation}\label{ca:framing}
+ \zeta_{N,D}=\theta^{-w(D)},\qquad
+ \theta=q^{-d^2/2}=\kappa^{-1}.
+\end{equation}
+For another explicitly specified ribbon framing one uses that integer framing correction instead. The single reduced cut has unknot value one. Its identification with the reduced Kashaev invariant is \cite[Theorem 10.1]{Finite}; no additional factor is assigned to an auxiliary circle.
+
+The pure complete source has a unique strict stationary state. Write its value as $F_0$ and its leaf coordinates as $a_\ell$. The boundary parameters
+\[
+ X_\ell=\cot(\pi a_\ell),\qquad
+ \frac12<X_\ell<1
+\]
+come from \cite[Lemma 6.1]{Newton}. Section~\ref{ca:packet} constructs the holomorphic pure-color critical action $\Phi_0(t)$ with $\Phi_0(0)=F_0$. Its Fourier Legendre action is
+\begin{equation}\label{ca:Psi}
+ \nabla\Phi_0(\xi(z))+2\pi\ii z=0,\qquad
+ \Psi_0(z)=\Phi_0(\xi(z))+2\pi\ii\,\xi(z)\cdot z.
+\end{equation}
+All these germs are fixed by their complete values and the original logarithmic branches.
+
+\begin{theorem}[The entire filled evaluation]\label{ca:main}
+For the fixed construction and retained half-twist pattern there is $P_0$ such that the following holds for every fixed signed integer tuple with $|p_\ell|>P_0$ for every $\ell$. The phase
+\[
+ T_{\mathbf n}(z)=\Psi_0(z)+\pi\ii\sum_{\ell=1}^b n_\ell z_\ell^2
+                           +2\pi\ii\sum_{\ell=1}^b z_\ell
+\]
+has a unique critical point $z_{\mathbf n}$ near zero. Put
+$S_{\mathbf n}=T_{\mathbf n}(z_{\mathbf n})$ and
+$Q_{\mathbf n}=-T_{\mathbf n}''(z_{\mathbf n})$. There is a holomorphic nonzero Fourier amplitude $B$ near zero, defined in \eqref{ca:Fourier-amplitude}, such that
+\begin{align}
+ K_N(K_{\epsilon,\mathbf p})
+ &=\zeta_{N,D}\,\kappa^{\frac12\sum_\ell n_\ell}
+ N^{3/2}D(\mathbf n)e^{NS_{\mathbf n}}
+ \bigl(1+O_{\mathbf p}(N^{-1})\bigr),\label{ca:asymptotic}\\
+ D(\mathbf n)&=
+ \frac{(-2\ii)^b(2\pi)^{b/2}B(z_{\mathbf n})
+       \prod_\ell\sin(2\pi z_{\mathbf n,\ell})}
+      {\sqrt{\det Q_{\mathbf n}}}\ne0.\label{ca:D}
+\end{align}
+The square root is the Gaussian branch with positive real quadratic form. The formula holds through all sufficiently large integer levels, with both parities and composite levels included. In particular the invariant is eventually nonzero and
+\begin{equation}\label{ca:volume}
+ \lim_{N\to\infty}\frac{2\pi}{N}\log|K_N(K_{\epsilon,\mathbf p})|
+ =2\pi\Re S_{\mathbf n}
+ =\Vol(S^3\setminus K_{\epsilon,\mathbf p}).
+\end{equation}
+There is no bound on the ratios or relative signs of the filling integers. They do not grow with $N$.
+\end{theorem}
+
+We separate four inputs from the new analytic work. The exact Newton turn, trace, multiplication, circle split and crossing polynomial are \cite[Proposition 3.2, Theorem 3.3, Proposition 4.1 and equation (4.8)]{Newton}; its Proposition 5.3 supplies the strict stationary point and internal Hessian. Theorem 1.1 of \cite{Bounds} controls the sum of all complementary terms and the whole physical-color region outside a complete-color corridor. Theorem 1.1 of \cite{Filling} evaluates an exact periodic polynomial filling source once its real local action and shared global gap are proved. Finally \cite[Theorem 1.1]{Geometry} gives the original primitive fillings and their absolute volume in terms of a classical shear potential. We will identify that potential with the source action, not merely compare Hessians.
+
+There is a useful distinction in applying the filling theorem. A source with retained half twists has a complex local phase even at real color. The real-action hypothesis of \cite{Filling} cannot simply be assigned to it. We instead expand the full physical integer power $R^{n_\ell}$ at each disk into ordinary circles before taking any asymptotic limit. This finite identity uses the pure source. It preserves the actual knot and places its Fourier polynomial under the theorem's stated real-action hypotheses. The signed local expansion is still proved below, and its absolute shear identity connects the resulting action to the marked geometry.
+
+\input{factorial}
+\input{leaf}
+\input{packet}
+\input{filling}
+
+\section{Finite reproduction and the use of the result}\label{ca:reproduction}
+The accompanying Python program \texttt{check.py} uses only the standard library. Run
+\[
+ \texttt{python3 -I papers/conway-asymptotics/check.py}
+\]
+from the repository root, optionally adding
+\texttt{--output /path/to/directory}. It removes a previous summary before validation and records its source hashes before and after the run.
+
+For levels $2$ through $12$, over two finite fields containing a primitive $8N$th root at each level, the program constructs the crossing from its normalized Newton polynomial. Ordinary polynomial division then forms its powers $-3,-2,-1,0,1,2,3$, using the extended Euclidean algorithm for negative powers. These polynomials are compared with the independently formed value and angular-normal data, their Fourier--Hermite inversion, and their expansion in ordinary circles. Three explicit even corridor sequences in each case test the midpoint formula, including its $h=0$ weight. There are $154$ integer-power cases and $462$ midpoint cases. The test does not assume a prime level or discard an odd simple node.
+
+The all-level algebraic argument is in Section~\ref{ca:filling}; the finite checks can detect transcription and normalization errors but are not its proof. They do not test the analytic continuation or the asymptotic estimates. The latter are established by the canonical interpolation, the exact recurrence endpoint, and the two finite-contour arguments above. The whole-charge theorem and the marked metric theorem are imported with their explicit hypotheses from the cited companions. Thus Theorem~\ref{ca:main} is a volume statement for this fixed completed-root grammar and independently sufficiently long fixed fillings, without an assertion about arbitrary Conway closures or growing constructions.
+
+\begin{thebibliography}{9}
+\bibitem{Newton}\emph{Newton coefficients and positive sources for Conway tangles}.
+Companion paper, \href{https://sashakolpakov.github.io/murakamis_dream/papers/newton-tangles.pdf}{repository edition}.
+\bibitem{Bounds}\emph{Complementary color bounds for Conway tangle sources}.
+Companion paper, \href{https://sashakolpakov.github.io/murakamis_dream/papers/conway-source-bounds.pdf}{repository edition}.
+\bibitem{Filling}\emph{Oscillatory filling sums with independently long twists}.
+Companion paper, \href{https://sashakolpakov.github.io/murakamis_dream/papers/oscillatory-fillings.pdf}{repository edition}.
+\bibitem{Geometry}\emph{Marked deformations and long fillings of Conway closures}.
+Companion paper, \href{https://sashakolpakov.github.io/murakamis_dream/papers/conway-fillings.pdf}{repository edition}.
+\bibitem{Finite}\emph{Finite spectral evaluation and uniform filling bounds}.
+Companion paper, \href{https://sashakolpakov.github.io/murakamis_dream/papers/filling-bounds.pdf}{repository edition}.
+\bibitem{DLMF} F. W. J. Olver et al., eds., \emph{NIST Digital Library of Mathematical Functions}, \href{https://dlmf.nist.gov/5.5}{\S5.5} and \href{https://dlmf.nist.gov/5.11}{\S5.11}.
+\end{thebibliography}
+\end{document}

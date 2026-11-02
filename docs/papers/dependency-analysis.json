@@ -1,7 +1,7 @@
 {
   "scope": "Consistency and source-location checks on the declared mathematical dependency graph, not proof verification.",
-  "nodes": 117,
-  "edges": 275,
+  "nodes": 120,
+  "edges": 280,
   "component_edges": [
     [
       "action_volume",
@@ -34,6 +34,10 @@
     [
       "central_period",
       "planar_criteria"
+    ],
+    [
+      "central_period",
+      "recursive_tangles"
     ],
     [
       "complete_geometry",
@@ -172,6 +176,10 @@
       "recursive_tangles"
     ],
     [
+      "local_asymptotics",
+      "tree_criteria"
+    ],
+    [
       "marked_geometry",
       "action_volume"
     ],
@@ -193,6 +201,7 @@
     ]
   ],
   "topological_order": [
+    "analytic_canonical_factorial",
     "analytic_circle_charge_path",
     "analytic_convex_flattening",
     "analytic_supported_transport_coercivity",
@@ -221,6 +230,7 @@
     "finite_remainder_transfer",
     "finite_weighted_graph_kernel",
     "analytic_grounded_strict_convexity",
+    "analytic_triangle_load_derivatives",
     "finite_grounded_inverse",
     "geo_circle_ordered_cut",
     "geo_circle_positive_edge_charts",
@@ -270,6 +280,7 @@
     "planar_weak_balance_volume",
     "recursive_finite_source",
     "finite_moving_meridian_tangle",
+    "analytic_circle_joint_source",
     "recursive_exact_filling_source",
     "recursive_local_ideal_cells",
     "recursive_positive_source",
@@ -314,35 +325,35 @@
   "shared_prerequisites": [
     {
       "id": "finite_local_fourier",
-      "downstream": 71
+      "downstream": 72
     },
     {
       "id": "finite_remainder",
-      "downstream": 65
+      "downstream": 66
     },
     {
       "id": "finite_hermite",
-      "downstream": 63
+      "downstream": 64
     },
     {
       "id": "finite_crossing",
-      "downstream": 59
+      "downstream": 60
     },
     {
       "id": "finite_pivotal_mark",
-      "downstream": 58
+      "downstream": 59
     },
     {
       "id": "finite_global_source",
-      "downstream": 57
+      "downstream": 58
     },
     {
       "id": "finite_invariant_normalization",
-      "downstream": 44
+      "downstream": 45
     },
     {
       "id": "recursive_finite_source",
-      "downstream": 34
+      "downstream": 35
     },
     {
       "id": "geo_simple_sphere_packing",
@@ -358,7 +369,7 @@
     },
     {
       "id": "finite_weighted_graph_kernel",
-      "downstream": 21
+      "downstream": 22
     },
     {
       "id": "recursive_local_ideal_cells",
@@ -377,8 +388,20 @@
       "downstream": 19
     },
     {
+      "id": "analytic_canonical_factorial",
+      "downstream": 18
+    },
+    {
+      "id": "finite_fourier_period",
+      "downstream": 18
+    },
+    {
       "id": "recursive_positive_source",
       "downstream": 17
+    },
+    {
+      "id": "analytic_conditional_filling",
+      "downstream": 15
     },
     {
       "id": "recursive_local_leaf_estimates",
@@ -425,10 +448,6 @@
       "downstream": 12
     },
     {
-      "id": "finite_fourier_period",
-      "downstream": 12
-    },
-    {
       "id": "geo_morse_deformed_pattern",
       "downstream": 12
     },
@@ -469,6 +488,10 @@
       "downstream": 10
     },
     {
+      "id": "finite_moving_meridian_tangle",
+      "downstream": 10
+    },
+    {
       "id": "finite_resolvent",
       "downstream": 10
     },
@@ -493,19 +516,11 @@
       "downstream": 10
     },
     {
-      "id": "analytic_conditional_filling",
-      "downstream": 9
-    },
-    {
       "id": "analytic_morse_charge_tails",
       "downstream": 9
     },
     {
       "id": "finite_bernstein",
-      "downstream": 9
-    },
-    {
-      "id": "finite_moving_meridian_tangle",
       "downstream": 9
     },
     {
@@ -545,10 +560,6 @@
       "downstream": 8
     },
     {
-      "id": "tree_exact_edge_kernel",
-      "downstream": 8
-    },
-    {
       "id": "geo_longitude_ratio_differential",
       "downstream": 7
     },
@@ -562,6 +573,10 @@
     },
     {
       "id": "recursive_strict_filling_transfer",
+      "downstream": 7
+    },
+    {
+      "id": "tree_exact_edge_kernel",
       "downstream": 7
     },
     {
@@ -677,6 +692,10 @@
       "downstream": 1
     },
     {
+      "id": "analytic_circle_joint_source",
+      "downstream": 1
+    },
+    {
       "id": "analytic_morse_geometric_contribution",
       "downstream": 1
     },
@@ -714,6 +733,10 @@
     },
     {
       "id": "analytic_grounded_strict_convexity",
+      "downstream": 0
+    },
+    {
+      "id": "analytic_triangle_load_derivatives",
       "downstream": 0
     },
     {
@@ -810,10 +833,12 @@
     "notes/actual_conway_net_twist_volume.md": "cd76d2d1f9b0ce2961308343d80098ec3336dd367248fbe36ee811e959fbcfa2",
     "notes/actual_conway_arbitrary_closure_volume.md": "4962c4945f286df0beff9624a433e98371a634fd9058f00d9260bcc7e1d8c954",
     "papers/meridian-tangles/main.tex": "d3b7d4804e532f46a52ac5142118d4793c48ea06b86d95f34215e887971ccfd4",
-    "manuscript/sections/E-quantitative-finite-sums.tex": "a8061a355a1426ca475df29455c8a06c16ead89322f49fe36f4e385ed71bea78",
     "manuscript/sections/G-local-tree-messages.tex": "9a169d6aeff06df5887952c18c22a0aef470bbcda9e18610d4f57f016e2dbdce",
+    "papers/circle-tree-asymptotics/finite-bounds.tex": "e4cf66544703af6d9a78208deae971c4d9f4367ba4b2ad660694ee489ef67ea1",
+    "papers/circle-tree-asymptotics/edge-packet.tex": "53eb6dbfbda3ca639db35911ed50947c29655840337f9d1f1ce909d435013dbb",
     "papers/circle-tree-geometry/main.tex": "2404285044d7efb8376b3fdeaa3a6da6f2d36bc29da6a7e176f09f8230339301",
-    "manuscript/sections/08a-quantitative-circle-trees.tex": "cfd7fa0dafd66bdc0e0e5151f415b2bc6b28c49a63ad6d1e0a244829b1db70f0",
+    "papers/circle-tree-asymptotics/main.tex": "ba6e5ffb622ec103ba07e8418117553f3b12b12330ccc45047aa241470b1e562",
+    "papers/circle-tree-asymptotics/conclusion.tex": "13185fcea97d31f528daf323527a04a903794b13f3055713196a938c00cdffe8",
     "manuscript/sections/K-directed-circle-messages.tex": "7eff3a7658079dff75802b8044d7213e040795eeff89c7795bb1476aee04c03a",
     "papers/three-braids/main.tex": "9bad961bfcb9893bf0b6035a084d95436e0c146b3acda10850ba7d374a832c76",
     "repro/check_cyclic_source_constants.py": "302e25fa4a42784e67ecd502f004bfe98c9c08a1246c4ff64019bda46e5cee05",
@@ -822,15 +847,12 @@
     "notes/actual_global_diagonal_spectral_sector_gap.md": "fb8353e00968dedcf0e9563a6e1d6057a38162714e8aa1bbaf234d4042cac79f",
     "manuscript/sections/L-balanced-terminal-fans.tex": "4c5b03317602d547a44028908a99e8cd449922f391c27ba80e8dafd5156f4775",
     "papers/newton-tangles/main.tex": "1d6dc27ef5129b98012530b3e750f42ecf986c81e1cfd0aefe9b9581e6544af6",
-    "manuscript/sections/02-finite-source.tex": "232936be01555db658f818b3ed0539c31fe4f2deb3386cc0ed8df5497d8b65e2",
-    "manuscript/sections/A-finite-identities.tex": "c1e125117c6f1ebc790ec1e8f662d451c78f9b42c29be1a86baf0261d3861abb",
+    "papers/conway-asymptotics/filling.tex": "23fabbb0169e2279d9d7fa6309169dc10382ff2142bcb38a4b5bec6c365f324e",
     "papers/conway-geometry/main.tex": "c07ee6d82aae5a04ae7b9ac12906dc839d970ad86d7e7dcf3749d88e866384a7",
     "papers/conway-geometry/assembly.tex": "8b6a5c5d3b88ab12dd2f9018398deef7131293f2f9a83d5bf083aa329fc5232f",
     "papers/conway-geometry/completion.tex": "affc43bfbde3e7a62280bec9dcb990cb28572efa9da470f8737373c72a559df2",
-    "manuscript/sections/06-packet.tex": "8a5b6bd7b108cc357a9e602db49bfa3480f0c2d4b47decfacaed04c82e8a12d8",
-    "manuscript/sections/B1-high-index-packet.tex": "d43d1ccf6ab9b25c466392ceb28476f7ed9cf507214ce5fc6caba7b78d7f1cc1",
-    "manuscript/sections/B-analytic-estimates.tex": "0ae218413d4fac051613ec4da38fdcc7babe484c40c010c6dd83f79acc0428d5",
-    "manuscript/sections/08-filling.tex": "263ba4a38c79c487cbe13136fe99414c6026159285a946968eeb6d4156ed7254",
+    "papers/conway-asymptotics/packet.tex": "b6d0cc1ca91c890b6a09ab235731f560dd4d13f95ec02c275eb21e1530a65d2a",
+    "papers/conway-asymptotics/main.tex": "2b9981e12da04117db397154e5e1c17720b1f0692f7233ebd724ed8cd312f1b1",
     "papers/conway-fillings/main.tex": "ea8e9fa87d5c30e264d799265ec8b120ad061a18e5af343225a1476e11327c72",
     "papers/conway-fillings/deformation.tex": "779425de857418d07d0e5ccfa4449a7f49ef9f013a5cc5c16539b4a52398a1e3",
     "papers/conway-fillings/metric-volume.tex": "721d492f743a17b0a9a0b4008447c4a2dea507840f6bb0dff821b2aefcadc2e6",
@@ -847,7 +869,6 @@
     "papers/conway-source-bounds/main.tex": "f09fa9422650981acfa4d1f972f491d1521c7e68616c85d0419013ea094c429c",
     "papers/conway-source-bounds/composition.tex": "27bfb2ce4c8da7ecd09f443ef2afea3267d4a978bd70905c936be1d85155c7aa",
     "papers/conway-source-bounds/arithmetic.tex": "580f18fd5fa1e5c3c12a9eef938af54bfa10f087ebd49524199f80fcb0d02199",
-    "manuscript/sections/D-marked-cell-calibration.tex": "e6c3270bd8c8e0e61d79cf0c036943e39d476197d4700a9a9ce19440c3959286",
     "notes/actual_conway_single_leaf_source_composition.md": "168e8248607eaac62ce27d88e7bcbd56d5245eccfff5654c116cdce9018c3bc2",
     "notes/actual_conway_reduced_hub_source_normal_form.md": "69eecde122111c541bb323ed96ecd0527632b2a805ca85c43d83807cf3a18067",
     "notes/actual_conway_rigid_spine_and_flagged_tree_geometry.md": "e4b93ca45f0bd4a4a99b4ecddc37eff257adc41b2f82b488d11a0b98cdfdfb24",
@@ -858,6 +879,7 @@
     "notes/actual_conway_general_core_packet_and_gap.md": "11968f7f6856179322d49dcf8fe4bcf7200ae524231dced812661e5b1459c16b",
     "notes/actual_conway_general_mask_marked_filling.md": "f3d0b91665c0bf62d26f71e4e0fa3368fe8714cdccab7d30b4e04272c61c209d",
     "notes/general_original_source_long_filling_transfer.md": "b51fa1d6280e2c1027641d27561722ba0e9753c0a26f49c7d4c8e40ac8b47997",
+    "papers/conway-asymptotics/leaf.tex": "92dd680d86f06cb375ca779fe70c12063703404f8fe1efaee6a2b2089e14f26e",
     "papers/conway-source-bounds/local.tex": "c8faf78eebaf72c7767d6c41e08b13e74a15fe9be66a9979f93bfbcc1f6eff1f",
     "notes/actual_conway_general_strict_mask_geometry.md": "980413284c4d9bd6d383c97b07cba017b3f2d23a0e642148e30e53371e6f0f31",
     "formal-real/Flattening.lean": "a15977f5e3234d9f56217aee2e875c3a6ec8542b4140bfdf74f78d0b35e0f9cc",
@@ -866,6 +888,9 @@
     "papers/conway-geometry/maps.tex": "87f0c0df97c207b997b0102842bee951e378b3d44c5b62de7ed02f3e35b8b02c",
     "formal-real/GroundedConvexity.lean": "91ca39bdfb8bdcefb3abb11beef23f602d95f380b31ff271e749ca41ba40f904",
     "formal-real/GroundedLaplacian.lean": "dc0d55a5d4c5cdb2803781e899dbe53ade0cc7876c34965a2819e0589b87c2e5",
-    "papers/dependencies.json": "4569982bd2d0c065bc3a6347b5cf334257479ff9ca86291256ca86cc5f0ec4fa"
+    "formal-real/TriangleLoads.lean": "5f35fff0cb8d440cfec1c5613818bb964acb029b4dd1d0b1fc5cb5181249e963",
+    "papers/conway-asymptotics/factorial.tex": "fa05557505927ae81f005b90edbd3d0946288e7eacf2363f070d9753db632fe1",
+    "papers/circle-tree-asymptotics/joint-filling.tex": "19dd4180c8c5c43e0707577c4d5e5646df3cae8ec710e9092312e7c35144b2ad",
+    "papers/dependencies.json": "9c990a57f53aecdcdfb43f2a9715899d07033f7d1c4986caf4cfbba2e8cea405"
   }
 }

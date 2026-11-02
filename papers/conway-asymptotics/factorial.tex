@@ -1,0 +1,125 @@
+\section{A normalized factorial on a complex strip}\label{ca:factorial-section}
+
+We first fix the interpolation used in every subsequent contour. Put
+$Q=e^{2\pi\ii/N}$ and
+\[
+ S_r=\prod_{j=1}^r2\sin(\pi j/N),\qquad S_0=1.
+\]
+The function below is a normalized solution of a sine difference equation. Only the ordinary Gamma functional equation, its Stirling expansion with remainder, and the convergent sine product are needed; the standard Gamma formulas are recorded in \cite[\S\S5.5(i), 5.11(i)--(ii)]{DLMF}.
+
+\begin{lemma}[Canonical factorial interpolation]\label{ca:factorial}
+For $N\ge2$ and $-1<\Re z<N$ the product
+\begin{equation}\label{ca:G}
+ G_N(z)=\left(\frac{2\pi}{N}\right)^z\Gamma(z+1)
+ \prod_{k=1}^{\infty}
+ \frac{\Gamma(Nk+z+1)}{\Gamma(Nk-z)(Nk)^{2z+1}}
+\end{equation}
+is holomorphic and nonzero. Positive-base powers use their real logarithms. With $d=N-1$ and
+\[
+ \widehat F_N(z)=e^{\pi\ii z(z+1)/(2N)-\pi\ii z/2}G_N(z)
+\]
+one has the exact identities
+\begin{align}
+ G_N(z+1)&=2\sin\!\frac{\pi(z+1)}N\,G_N(z),\notag\\
+ \widehat F_N(z+1)&=(1-Q^{z+1})\widehat F_N(z),\label{ca:shift}\\
+ G_N(0)&=1,\qquad G_N(r)=S_r,\qquad
+ \widehat F_N(r)=(Q;Q)_r\quad(0\le r<N),\notag\\
+ G_N(z)G_N(d-z)&=N,\notag\\
+ \widehat F_N(z)\widehat F_N(d-z)&=
+ N e^{\pi\ii z(z-d)/N}.\label{ca:reflection}
+\end{align}
+Identities are asserted where the factors are regular, and elsewhere by meromorphic continuation. If
+\[
+ H_N(s)=\prod_{j=1}^{d}
+       \frac{\sin(\pi(j-s)/N)}{\sin(\pi j/N)}
+       =\frac{\sin(\pi s)}{N\sin(\pi s/N)},
+\]
+then on $|s|<1$,
+\begin{equation}\label{ca:small-reflection}
+ G_N(s)G_N(-s)=H_N(s)^{-1}.
+\end{equation}
+
+Let $J$ be the analytic primitive of $\Log(2\sin\pi x)$ on
+$0<\Re x<1$, fixed by its integrable limit $J(0)=0$ along the real interval. On every compact subset of this strip,
+\begin{equation}\label{ca:Stirling}
+ \log G_N(Nx)
+ =NJ(x)+\tfrac12\Log(2N\sin\pi x)
+       +\frac{\pi\cot\pi x}{12N}+O(N^{-3}).
+\end{equation}
+The branches are real on $0<x<1$. More generally, for each fixed $L\ge1$ the correction is
+\begin{align}
+ &\sum_{r=1}^{L}\frac{c_{2r-1}(x)}{N^{2r-1}}+O(N^{-2L-1}),\notag\\
+ &c_{2r-1}(x)=\frac{B_{2r}}{2r(2r-1)}
+ \left\{x^{1-2r}+
+ \sum_{k\ge1}\bigl[(k+x)^{1-2r}-(k-x)^{1-2r}\bigr]\right\}.
+ \label{ca:all-Stirling}
+\end{align}
+Here $B_j$ are defined by $t/(e^t-1)=\sum B_jt^j/j!$.
+All fixed derivatives have the same uniform remainder orders on smaller compact sets. Fixed bounded complex offsets are included by substituting $x+c/N$; in particular
+\begin{equation}\label{ca:offset}
+ G_N(Nx+c)=
+ \sqrt{2N\sin\pi x}\,e^{NJ(x)}(2\sin\pi x)^c
+ \bigl(1+O(N^{-1})\bigr).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The logarithm of the $k$th factor in \eqref{ca:G} is
+\[
+ -\frac{z(z+1)(2z+1)}{6N^2k^2}+O(k^{-3})
+\]
+locally uniformly in $z$. The product and all its local logarithmic derivatives therefore converge. Its factors are nonzero in the stated strip and its value at zero is one. Gamma's functional equation gives
+\[
+ \frac{G_N(z+1)}{G_N(z)}
+ =\frac{2\pi(z+1)}N
+  \prod_{k\ge1}\left(1-\frac{(z+1)^2}{N^2k^2}\right)
+ =2\sin\frac{\pi(z+1)}N.
+\]
+Multiplying by the displayed exponential gives the second shift. This also fixes the lattice values, including their phases.
+
+To remove any periodic ambiguity in reflection, differentiate
+$\log[G_N(z)G_N(d-z)]$. In the product truncated at $k=K$ the resulting sum telescopes to
+\[
+ \psi(NK+z+1)-\psi(N(K+1)-z),
+\]
+where $\psi=\Gamma'/\Gamma$. It tends locally uniformly to zero. The product is constant, and at $z=0$ it equals $S_d=N$. The latter equality follows by taking the absolute value of
+$\prod_{j=1}^{N-1}(1-e^{2\pi\ii j/N})=N$.
+This proves both formulas in \eqref{ca:reflection}, with the marked phase obtained by adding the two quadratic exponents. Iterating the shift from $-s$ to $d-s$ gives
+$G_N(d-s)=N H_N(s)G_N(-s)$, which proves \eqref{ca:small-reflection}. The finite sine product gives the displayed quotient for $H_N$, with its removable value one at zero.
+
+We give the remainder argument for \eqref{ca:Stirling}, because contours require a complex estimate rather than values on an integer mesh. Stirling's expansion on a closed right-half-plane sector has remainder $O(|w|^{-2L-1})$ after its term in $w^{1-2L}$. One obtains this bound from the Euler summation formula for $\log\Gamma$: the remaining periodic Bernoulli polynomial is bounded, and its integral is bounded by a constant times
+$\int_0^\infty|w+t|^{-2L-2}\dd t$.
+For $x$ in a fixed complex compact set as above, $Nx$ and
+$N(k\pm x)$ lie in a common such sector.
+
+For $L=1$ the logarithm of the $k$th factor in \eqref{ca:G}, at $z=Nx$, becomes
+\[
+ N\phi_k(x)+\tfrac12\Log(1-x^2/k^2)
+ +\frac1{12N}\left(\frac1{k+x}-\frac1{k-x}\right)
+ +O(N^{-3}k^{-3}),
+\]
+where
+\[
+ \phi_k(x)=(k+x)\Log(1+x/k)
+ -(k-x)\Log(1-x/k)-2x.
+\]
+The remainder is summable. Moreover $\phi_k(0)=0$ and
+$\phi_k'(x)=\Log(1-x^2/k^2)$. The sine product, including the
+$\Gamma(Nx+1)$ factor, therefore sums the leading terms to $NJ(x)$.
+It sums the half logarithms to $\frac12\Log(2N\sin\pi x)$.
+The identity
+\[
+ \frac1x+\sum_{k\ge1}
+   \left(\frac1{k+x}-\frac1{k-x}\right)=\pi\cot\pi x
+\]
+gives the first correction. Keeping further Stirling terms gives
+\eqref{ca:all-Stirling}; their paired series converge locally uniformly, and the remainder sums absolutely as
+$O(N^{-2L-1}\sum k^{-2L-1})$. The normalization of $J$, including its additive constant, was fixed by integration from zero, not by differentiation alone. Cauchy's formula on a larger compact set proves the derivative assertions. Taylor expansion at $x+c/N$ proves \eqref{ca:offset}.
+\end{proof}
+
+The reflection $J(1-x)=-J(x)$ follows by differentiating and using
+$\int_0^1\log(2\sin\pi t)\dd t=0$. In particular $J(1/2)=0$. We will use
+\[
+ J(1/2+t)=-J(1/2-t)
+\]
+to normalize a sheared action at the actual terminal index.

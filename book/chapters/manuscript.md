@@ -2,18 +2,18 @@
 
 The current PDF is a 374-page reference account. Its results are being
 rewritten as [papers organized by subject](../../papers/README.md), each at
-most 30 pages including references. Fifteen drafts have
+most 30 pages including references. Seventeen drafts have
 individual lengths from 11 to 28 pages. Five cover finite spectral
 evaluation, uniform local bounds, central source asymptotics, oscillatory
-fillings and geometric filling. Ten cover complete and moving-meridian
+fillings and geometric filling. Twelve cover complete and moving-meridian
 Newton formulas, complete and filled Conway geometry, complementary color
-bounds, classical circle-tree geometry,
-shared-face criteria, terminal decoration, ordinary triangular insertion
+bounds, completed-root Conway asymptotics, classical circle-tree geometry,
+the summed circle-tree estimate, shared-face criteria, terminal decoration, ordinary triangular insertion
 and the long three-braid application. Each
 application names the results it imports and checks their hypotheses.
 
-These papers do not yet replace the reference account. Signed tree
-asymptotics, the nonzero expansion and whole oscillatory sum for recursive closures, and
+These papers do not yet replace the reference account. The broader strict-tree extension,
+the local and directed circle-tree estimates, and the all-orders meridian,
 longitude and recurrence results still need separate complete accounts.
 The reference PDF remains frozen. Its measured length is 93 pages of main
 text, 266 pages of appendices, and 15 pages of front matter and references.
@@ -281,8 +281,11 @@ condition allows zero powers at high degree. It also identifies the
 absolute critical action with the completed metric volume. The paper
 uses only the geometric foundation's local peripheral-volume differential;
 it does not impose that foundation's separate long-twist hypothesis or
-claim a nonzero quantum asymptotic. The summed and directed analytic
-source estimates still need their own companion paper.
+claim a nonzero quantum asymptotic. The summed analytic criterion now has
+its own [degree-and-twist paper](../../docs/papers/circle-tree-asymptotics.pdf).
+It proves the entire finite-sum asymptotic and the centered meridian profile,
+including all Fourier tails and endpoint terms. The different local and
+directed criteria still require their own accounts.
 
 The reference chapter illustrates an actual octahedral attachment and explains
 why it recovers the original exterior. Positive tetrahedra continue
@@ -406,6 +409,17 @@ It bounds the sum of all complementary sectors, as well as the entire
 source when one color remains far from complete color. These are upper
 bounds; a nonzero leading term still requires the subsequent asymptotic
 argument.
+
+The [Conway asymptotics paper](../../docs/papers/conway-asymptotics.pdf)
+supplies this next step. It constructs a normalized holomorphic factorial
+interpolation, retains the terminal condition of the signed leaf recurrence,
+and proves a nonzero local expansion for the shared integer sum. The exact
+full crossing powers are expanded before filling, so the Fourier source
+satisfies the real-action hypothesis of the oscillatory companion. The
+result is an asymptotic for the entire invariant, through both parities,
+for the completed-root grammar. Its comparison with the classical shear
+potential fixes the additive function of the color parameter at the actual
+terminal index; agreement of Hessians alone is not used as a volume proof.
 
 ![Supporting tangents used to control a single-piece attachment over its entire allowed state region.](../../manuscript/build/figures/attachment-tangents.png)
 

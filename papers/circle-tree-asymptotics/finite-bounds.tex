@@ -1,0 +1,227 @@
+\section{The original finite contraction and its discarded indices}
+\label{cta:finite}
+
+\subsection{Fixed coordinates and the physical factors}
+Write \(\theta=\pi/N\), \(\eta=(-1)^{N-1}\), and let
+\(\mathsf T_N(z)\) be the monic polynomial with
+\(\mathsf T_N(t+t^{-1})=t^N+t^{-N}\). The pair algebra at a vertex
+has relation \(P_\sigma=\mathsf T_N+2\cos(2\pi\sigma)\), with
+\(\sigma=0,s\), or \(-s\) prescribed by its oriented pair type.
+The common vector-space basis is
+\begin{equation}\label{cta:basis}
+ e_k(z)=S_k^{-2}\prod_{j<k}(c_j-z),\qquad
+ S_k=\prod_{j=1}^k2\sin(j\theta),\qquad
+ c_j=2\cos((2j+1)\theta),\quad 0\le k<N.
+\end{equation}
+An empty product is one. A canonical representative has degree
+less than \(N\), obtained using its actual relation \(P_\sigma\).
+The different relations are not identified as algebras.
+
+The closing functional and paired edge factors are
+\begin{equation}\label{cta:pairing}
+ \phi_\sigma(f)=\eta N^2[z^d]\rem_{P_\sigma}f,\qquad
+ \phi_\sigma(e_i e_j)=\mathbf1_{i+j=d},
+\end{equation}
+\begin{equation}\label{cta:edge-factor}
+ W_k(s)=\prod_{j=1}^k
+  \left(1-\frac{\sin^2(\pi s/N)}{\sin^2(\pi j/N)}\right),
+ \qquad W_kW_{d-k}=H_N^2.
+\end{equation}
+Every physical turn contributes its prescribed scalar
+\(\gamma_e(s)\in\{1,q_N^{s^2/2},q_N^{-s^2/2}\}\).
+Lowering its index with \eqref{cta:pairing} identifies the equal
+indices on the two ends of the edge and leaves
+\(\gamma_e H_N/W_k\), not its reciprocal.
+
+Let \(p_v\) be the actual crossing power, including the carrier
+specified by the original oriented diagram. The exact identity
+of \cite[Theorem~7.1]{Meridian} is
+\begin{equation}\label{cta:exact-source}
+ \begin{split}
+ Z_N(s)&=\sum_{\boldsymbol k\in\{0,\ldots,d\}^{E}}
+       \prod_v\phi_{\sigma_v}
+           \left(p_v\prod_{e\ni v}e_{k_e}\right)
+       \prod_e\gamma_e(s)\frac{H_N(s)}{W_{k_e}(s)},\\
+ F_N(q_N^s)&=\vartheta_{d+s}^{-w(D)}H_N(s)Z_N(s),
+ \qquad \vartheta_{d+s}=q_N^{(s^2-d^2)/2}.
+ \end{split}
+\end{equation}
+Thus cups, caps, physical turns, negative crossings, the pivotal
+closure and the one reduced cut are already fixed finite data.
+
+On every disk \(R<1\), all factors \(H_N/W_k\) and their inverses
+are bounded independently of \(N,k\). For example split the factors
+in \eqref{cta:edge-factor} according to
+\(\min(j,N-j)\le J\) or \(>J\). The latter logarithms are bounded
+by a summable constant times \(\min(j,N-j)^{-2}\).
+For fixed \(J\) the former factors have no zeros on the disk;
+their endpoint limits are \(1-s^2/j^2\), also zero-free.
+Compactness, including the finitely many small \(N\), gives the
+bound and its inverse. The same argument applies to \(H_N\).
+
+\subsection{Bounds that retain the first normal}
+Let \(m=\lfloor d/2\rfloor\). Indices \(k\le m\) will be called
+low, the others high. For a canonical polynomial use the complete
+norm
+\[
+ \|f\|_{\mathcal J}=
+ \max\{|f(c)|,\ |f'(c)|:\ c\text{ a double node of }P_0;
+                 \ |f(-2)|\text{ if }N\text{ is odd}\}.
+\]
+The derivative at the odd simple node is absent. All first
+derivatives at double nodes are retained.
+
+\begin{lemma}\label{cta:norms}
+For fixed \(R<1\), a fixed number of factors and fixed integer
+crossing powers, quotient multiplication, closing, and those
+crossing powers have polynomial cost in \(\|\cdot\|_{\mathcal J}\).
+Uniformly in all indices,
+\begin{equation}\label{cta:basis-bound}
+ \|e_k\|_{\mathcal J}\le C N^A
+ \begin{cases}
+   \exp(Ng(k/N)),&0\le k\le m,\\
+   1,&m<k<N .
+ \end{cases}
+\end{equation}
+The constants in these statements do not depend on \(s\) in its disk.
+\end{lemma}
+\begin{proof}
+We give the conditioning and endpoint details because ignoring
+derivatives would make the high-index assertion insufficient.
+The distinct complete-node polynomial is
+\[
+ Q_N(z)=
+ \begin{cases}
+  2T_{N/2}(z/2),&N\text{ even},\\
+  (z+2)\{U_m(z/2)-U_{m-1}(z/2)\},&N=2m+1.
+ \end{cases}
+\]
+Here \(T_j,U_j\) are the ordinary Chebyshev polynomials.
+Its interval norm and derivatives are polynomial in \(N\).
+At its roots, \(|Q_N'|\ge N/2\) in the even case and at least
+\(N/2\) in the odd case: for an odd interior root \(z=2\cos t\),
+\(|Q_N'(z)|=N/(2\sin(t/2))\), while \(|Q_N'(-2)|=N\).
+The mean-value formula bounds each Lagrange cardinal by a
+polynomial in \(N\).
+
+For a general polynomial of degree \(<N\), interpolate its values
+by \(I\) of degree \(<\deg Q_N\). Write \(f-I=Q_N h\).
+The values of \(h\) at the double nodes are
+\((f'(c)-I'(c))/Q_N'(c)\). These determine \(h\), whose degree
+is less than their number. Use \(Q_N\) for this interpolation at
+even levels and \(Q_N/(z+2)\) at odd levels; the same cardinal
+bound applies. Consequently the interval norm, the complete
+normal norm, and the Chebyshev coefficient sum are polynomially
+equivalent. One may bound derivatives without any conditioning
+assumption: a degree-\(n\) Chebyshev expansion has coefficients
+at most twice its interval norm, and
+\(\|T_j'(z/2)\|\le j^2/2\).
+
+Write \(C_j(z)=(t^j+t^{-j})/2\) when \(z=t+t^{-1}\).
+The product identity \(2C_iC_j=C_{i+j}+C_{|i-j|}\) makes
+the coefficient sum submultiplicative. Modulo \(P_\sigma\),
+\[
+ C_N=-\cos(2\pi\sigma),\qquad
+ \rem C_{N+j}=-2\cos(2\pi\sigma)C_j-C_{N-j}\quad(0<j<N).
+\]
+Iteration bounds reduction of degree at most \(hN\) by
+\((2\cosh(2\pi R)+1)^h\), for fixed \(h\).
+Finally \([z^d]C_d=1/2\). These facts prove the asserted
+polynomial costs of multiplication and \(\phi_\sigma\).
+
+The actual crossing polynomial and its inverse are holomorphic
+through the collisions in \(|\sigma|<1\), with the normals of
+\cite[Proposition~6.1]{Meridian}. On a parameter circle of radius
+\(R'\in(R,1)\), \(R'\ne1/2\), Lagrange interpolation has
+denominator \(\sin(2\pi\sigma)\) bounded away from zero.
+Its nodes have angular imaginary part \(O_{R'}(N^{-1})\).
+The divided differences of \(\mathsf T_N\) and their derivatives
+on that ellipse are \(O_{R'}(N^2)\) and \(O_{R'}(N^4)\):
+differentiate \(2\cos(Nt)\), with endpoint limits interpreted
+by its polynomial expression. The fixed-power eigenvalues,
+including negative powers, are bounded there. Thus the canonical
+crossing and its first derivative have polynomial interval norm.
+Holomorphy and the maximum principle extend the bound through
+all collisions to the disk. The mixed orders use their actual
+fixed reference crossing and the bounded scalars of the same
+proposition, so they satisfy the same conclusion.
+
+For low \(k\), all values \(e_k(c_j)\) at distinct nodes are
+nonnegative and bounded by \(e_k(-2)\). Interpolation by \(Q_N\)
+therefore gives \(\|e_k\|_{\mathcal J}\le N^A e_k(-2)\).
+Uniform sum--integral comparison of the midpoint cosine product
+and sine factorial gives
+\[
+ \log e_k(-2)=Ng(k/N)+O(\log N),\qquad 0\le k\le m.
+\]
+This remains uniform at both endpoints: removing the first and
+last mesh interval leaves a smooth logarithm, while each removed
+logarithmic interval contributes \(O(\log N)\).
+
+For high \(k\), put \(l=N-k\le\lfloor N/2\rfloor\) and
+\(B_j(z)=\prod_{a<j}(c_a-z)\).
+Reflection \(c_{d-a}=c_a\) gives
+\(B_kB_l=(-1)^N P_0\). Thus \(e_k\) vanishes at every node.
+At a double node indexed by \(0\le j<\lfloor N/2\rfloor\),
+its derivative is zero unless \(j<l\), and otherwise
+\begin{equation}\label{cta:high-normal}
+ |e_k'(c_j)|
+ =\frac{S_{l-1}^{\,2}}
+ {2\sin((2j+1)\theta)S_{l+j}S_{l-1-j}}.
+\end{equation}
+To obtain this formula, compare quadratic coefficients in
+\(B_kB_l=(-1)^NP_0\), using
+\(P_0''(c_j)/2=N^2/(4\sin^2((2j+1)\theta))\),
+\(|B_l'(c_j)|=S_{l+j}S_{l-1-j}/(2\sin((2j+1)\theta))\),
+and \(S_kS_{l-1}=N\).
+The denominator ratio
+\(D_j=S_{l+j}S_{l-1-j}/S_{l-1}^2\) starts at
+\(2\sin(l\theta)\) and is nondecreasing, since
+\[
+ \frac{D_{j+1}}{D_j}
+   =\frac{\sin((l+j+1)\theta)}{\sin((l-1-j)\theta)}\ge1.
+\]
+The two angles sum to at most \(\pi\).
+Equation \eqref{cta:high-normal} is consequently at most
+\(1/(4\sin((2j+1)\theta)\sin(l\theta))\le N^2/16\).
+The odd simple-node value is zero. This proves \eqref{cta:basis-bound}.
+\end{proof}
+
+\subsection{Discard before forming an angular sum}
+Retain \(k_e/N\in I=[1/5,3/10]\) at every edge.
+Each edge index occurs in two vertex factors of
+\eqref{cta:exact-source}. Lemma~\ref{cta:norms} therefore bounds
+the absolute rate of an assignment by
+\(2\sum_{\text{low }e}g(k_e/N)\).
+Direct differentiation gives
+\[
+ g'(1/4)=0,\qquad
+ g''(x)=-\frac{4\pi}{\sin2\pi x}\le-4\pi.
+\]
+Since \(g(0)=g(1/2)=0\), concavity also gives \(2G_0\ge\pi/4\).
+A low index outside \(I\) loses at least \(\pi/100\) from \(F_0\);
+a high index loses at least \(2G_0\).
+The number of assignments is polynomial in \(N\) for the fixed tree.
+We have proved the full-source estimate
+\begin{equation}\label{cta:discard}
+ |\text{all discarded assignments}|
+       \le C_R N^A e^{N(F_0-\eta_0)},\qquad \eta_0=\pi/200.
+\end{equation}
+The exponent loss is independent of tree size and powers; the
+prefactor and starting level are not. This argument estimates
+the actual vertex traces, rather than replacing a small spectral
+norm by a positive coefficient cone.
+
+On the retained indices, the edge sums commute with the polynomial
+traces. Remove only the already recorded edge scalars and put
+\begin{equation}\label{cta:packet}
+ \begin{split}
+ K_N(t,u;s)&=\sum_{k/N\in I}e_k(-2\cos t)e_k(-2\cos u)
+                         \frac{H_N(s)}{W_k(s)},\\
+ B_N(\boldsymbol\tau,s)&=\prod_{vw\in E}K_N(\tau_v,\tau_w;s).
+ \end{split}
+\end{equation}
+This is an exact polynomial in each \(-2\cos\tau_v\).
+Its separate degree may be larger than \(N-1\); no such bound
+is assumed in the contours below. The functional \(\phi_{\sigma_v}\)
+reduces the whole polynomial in its proper relation.

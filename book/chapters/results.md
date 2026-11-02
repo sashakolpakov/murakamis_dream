@@ -462,6 +462,19 @@ constant fixed at the complete augmented link. The finite-sum proof
 then supplies the nonzero contribution and bounds every competing
 region. Neither of these two arguments is left as a hypothesis.
 
+The [degree-and-twist paper](../../docs/papers/circle-tree-asymptotics.pdf)
+gives the analytic proof of this summed criterion. It begins with the full
+finite Newton contraction, including derivatives at repeated spectral roots.
+Indices outside a fixed interval are bounded before any contour is moved.
+An exact factorial interpolation then evaluates the remaining edge sums,
+and a joint Fourier argument estimates every charge and endpoint term.
+The first charge has coefficient one, so its nonzero Gaussian contribution
+survives at both level parities. The geometric input is stated independently
+in [the positive-octahedra paper](../../docs/papers/circle-tree-geometry.pdf).
+The new analytic paper also proves the first microscopic meridian correction
+as an explicit sum over its filled edge shapes. The identification with a
+preferred cusp and the all-orders longitude theorem are separate results.
+
 This theorem does not cover arbitrary short-twist arborescent knots.
 The following long-net-twist theorem covers other presentations and
 allows junctions without crossing circles without the displayed

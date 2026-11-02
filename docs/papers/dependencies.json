@@ -24,7 +24,7 @@
     },
     "local_asymptotics": {
       "title": "Uniform coefficient asymptotics",
-      "count": 11,
+      "count": 12,
       "open": false
     },
     "central_period": {
@@ -44,7 +44,7 @@
     },
     "tree_criteria": {
       "title": "Estimates for ordered tangle trees",
-      "count": 5,
+      "count": 6,
       "open": false
     },
     "recursive_tangles": {
@@ -74,7 +74,7 @@
     },
     "finite_graph_energy": {
       "title": "Real variational estimates",
-      "count": 5,
+      "count": 6,
       "open": false
     }
   },
@@ -2122,7 +2122,7 @@
       "id": "tree_exact_edge_kernel",
       "title": "The original circle-tree kernel and its local bounds",
       "group": "diagram_evaluation",
-      "statement": "The exact moving-meridian Newton pairing gives the original tree boundary-polynomial recursion with all indices, physical types and scalar factors retained. Its finite adapter is in the meridian companion; the quantitative local complex and real bounds, including high indices, remain the separate E/G proofs.",
+      "statement": "The exact moving-meridian pairing gives the original all-index tree recursion with physical types and scalars. The new summed-criterion paper proves global full-normal Newton bounds and complex edge estimates. The additional conditional subtree bounds used by the local and directed criteria remain separate G/K inputs.",
       "sources": [
         {
           "path": "papers/meridian-tangles/main.tex",
@@ -2140,11 +2140,6 @@
           "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/meridian-tangles/main.tex#L1035"
         },
         {
-          "path": "manuscript/sections/E-quantitative-finite-sums.tex",
-          "anchor": "\\section{Uniform Newton bounds with explicit constants}\\label{sec:qu}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/E-quantitative-finite-sums.tex#L508"
-        },
-        {
           "path": "manuscript/sections/G-local-tree-messages.tex",
           "anchor": "\\label{sec:lm-2}",
           "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/G-local-tree-messages.tex#L30"
@@ -2153,6 +2148,21 @@
           "path": "manuscript/sections/G-local-tree-messages.tex",
           "anchor": "\\label{sec:lm-3}",
           "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/G-local-tree-messages.tex#L55"
+        },
+        {
+          "path": "papers/circle-tree-asymptotics/finite-bounds.tex",
+          "anchor": "\\label{cta:norms}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-asymptotics/finite-bounds.tex#L74"
+        },
+        {
+          "path": "papers/circle-tree-asymptotics/finite-bounds.tex",
+          "anchor": "\\label{cta:discard}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-asymptotics/finite-bounds.tex#L206"
+        },
+        {
+          "path": "papers/circle-tree-asymptotics/edge-packet.tex",
+          "anchor": "\\label{cta:raw}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-asymptotics/edge-packet.tex#L216"
         }
       ],
       "depends_on": [
@@ -2222,38 +2232,44 @@
       "id": "tree_summed_volume",
       "title": "The summed degree/twist criterion",
       "group": "tree_criteria",
-      "statement": "S=sum d_v/(d_v^2+n_v^2)<=2^-25 gives the full volume/profile theorem, with fixed tree and knot test.",
+      "statement": "For each fixed literal all-circle tree satisfying the original knot-component test and sum d_v/(d_v^2+n_v^2)<=2^-25, the full reduced invariant is eventually nonzero and has the knot-complement volume rate at all sufficiently large integer levels. A centered microscopic main-meridian expansion is uniform on each fixed |s|<=R<1. Zero powers at sufficiently high degree are allowed.",
       "sources": [
         {
-          "path": "manuscript/sections/E-quantitative-finite-sums.tex",
-          "anchor": "\\section{Finite sums under the degree and twist criterion}\\label{sec:qe}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/E-quantitative-finite-sums.tex#L125"
+          "path": "papers/circle-tree-asymptotics/main.tex",
+          "anchor": "\\label{cta:word}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-asymptotics/main.tex#L58"
         },
         {
-          "path": "manuscript/sections/E-quantitative-finite-sums.tex",
-          "anchor": "\\section{Uniform Newton bounds with explicit constants}\\label{sec:qu}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/E-quantitative-finite-sums.tex#L508"
+          "path": "papers/circle-tree-asymptotics/main.tex",
+          "anchor": "\\label{cta:main}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-asymptotics/main.tex#L114"
         },
         {
-          "path": "manuscript/sections/08a-quantitative-circle-trees.tex",
-          "anchor": "\\label{thm:circle-quantitative}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/08a-quantitative-circle-trees.tex#L82"
+          "path": "papers/circle-tree-asymptotics/main.tex",
+          "anchor": "\\label{cta:profile}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-asymptotics/main.tex#L147"
+        },
+        {
+          "path": "papers/circle-tree-asymptotics/conclusion.tex",
+          "anchor": "\\label{cta:conclusion}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-asymptotics/conclusion.tex#L2"
         }
       ],
       "depends_on": [
         {
-          "id": "tree_exact_edge_kernel",
-          "reason": "Supplies original edge action and off-window source bounds."
+          "id": "analytic_circle_joint_source",
+          "reason": "Gives the nonzero asymptotic of the whole original invariant, full errors, exact unit phase and microscopic insertion."
         },
         {
           "id": "tree_positive_completion",
-          "reason": "Identifies the selected angular action with the original smooth filled volume."
+          "reason": "The summed condition implies the actual geometric threshold; the matching action has the same derivatives and complete constant."
         },
         {
           "id": "elementary_rate_transfer",
-          "reason": "A bound for the entire remainder, the nonzero central contribution and the original scalar normalization are combined to obtain the rate of the invariant."
+          "reason": "The nonzero coefficient and lower exponential error give the all-level logarithmic rate with the retained physical normalization."
         }
-      ]
+      ],
+      "coverage": "Proved in the degree-and-twist companion with its explicit summed condition. The preferred-cusp interpretation and all-orders longitude statements remain separate."
     },
     {
       "id": "tree_local_volume",
@@ -2736,28 +2752,38 @@
           "reason": "Fixes the enhanced reduced convention and actual physical gauge. The new paper proves its pair turn and cylindrical trace directly, rather than importing a different invariant."
         }
       ],
-      "coverage": "The complete-meridian finite algebra is proved in the Newton paper. Its exact circle-basis filling expansion remains a separate archive input; no moving-meridian adapter is supplied here."
+      "coverage": "The complete-meridian finite algebra is proved in the Newton paper. The exact all-integer circle-basis filling expansion is proved separately in the Conway asymptotics companion. Moving-meridian identities retain their own adapter."
     },
     {
       "id": "recursive_exact_filling_source",
       "title": "Exact circle-basis filling of the recursive source",
       "group": "diagram_evaluation",
-      "statement": "For each fixed original marked recursive diagram, insert the full Fourier-Hermite circle-basis expansion of every R^(-2p) before taking the unchanged closure. This gives the exact signed color sum with its original unit character, Cartan powers and both value and normal interpolation data. It is a finite identity, not a source gap or an asymptotic statement.",
+      "statement": "For every integer physical crossing power, including odd and negative powers, full Fourier-Hermite inversion gives its exact expansion into ordinary circles. The midpoint identity retains the normal data and h=0 multiplicity, and fixes the whole Fourier period and its unit phase. Evaluating each local identity in the unchanged diagram preserves the original knot and framing.",
       "sources": [
         {
-          "path": "manuscript/sections/02-finite-source.tex",
-          "anchor": "\\label{eq:exact-filling}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/02-finite-source.tex#L242"
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:crossing-data}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/filling.tex#L13"
         },
         {
-          "path": "manuscript/sections/02-finite-source.tex",
-          "anchor": "\\label{eq:whole-filling-source}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/02-finite-source.tex#L249"
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:Hermite-inverse}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/filling.tex#L33"
         },
         {
-          "path": "manuscript/sections/A-finite-identities.tex",
-          "anchor": "\\label{app:fourier}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/A-finite-identities.tex#L136"
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:crossing-split}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/filling.tex#L49"
+        },
+        {
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:midpoint}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/filling.tex#L79"
+        },
+        {
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:period}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/filling.tex#L117"
         }
       ],
       "depends_on": [
@@ -2778,7 +2804,7 @@
           "reason": "Restores the exact original reduced scalar and framing character."
         }
       ],
-      "coverage": "Retained written archive dependency from Chapter 2 and Appendix A. The new Newton paper does not claim the whole filled-source formula or its analytic estimates."
+      "coverage": "Proved in the Conway asymptotics paper before any large-level estimate. The full integer power is expanded, making the pure source available even for odd physical powers."
     },
     {
       "id": "recursive_positive_source",
@@ -2891,34 +2917,44 @@
       "statement": "For a fixed completed-root expression, the exact finite color corridor has a relative holomorphic asymptotic with nonzero amplitude and fixed complex tube. Combining it with the full complementary-color gap and exact filling transform controls endpoints, connectors and all other charges. For independently sufficiently long fixed signed powers, the original invariant has the all-parity nonzero asymptotic of eq:final-asymptotic, including its level power and recorded phases.",
       "sources": [
         {
-          "path": "manuscript/sections/06-packet.tex",
-          "anchor": "\\label{thm:packet}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/06-packet.tex#L75"
+          "path": "papers/conway-asymptotics/packet.tex",
+          "anchor": "\\label{ca:offsets}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/packet.tex#L10"
         },
         {
-          "path": "manuscript/sections/B1-high-index-packet.tex",
-          "anchor": "\\label{eq:b1-exact-window}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/B1-high-index-packet.tex#L549"
+          "path": "papers/conway-asymptotics/packet.tex",
+          "anchor": "\\label{ca:packet-theorem}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/packet.tex#L25"
         },
         {
-          "path": "manuscript/sections/B1-high-index-packet.tex",
-          "anchor": "\\label{eq:b1-source-restoration}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/B1-high-index-packet.tex#L695"
+          "path": "papers/conway-asymptotics/packet.tex",
+          "anchor": "\\label{ca:Fourier-theorem}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/packet.tex#L132"
         },
         {
-          "path": "manuscript/sections/B-analytic-estimates.tex",
-          "anchor": "\\label{app:filling-contours}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/B-analytic-estimates.tex#L7"
+          "path": "papers/conway-asymptotics/packet.tex",
+          "anchor": "\\label{ca:Fourier-global}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/packet.tex#L147"
         },
         {
-          "path": "manuscript/sections/08-filling.tex",
-          "anchor": "\\label{eq:final-asymptotic}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/08-filling.tex#L189"
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:generic-period}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/filling.tex#L105"
         },
         {
-          "path": "manuscript/sections/08-filling.tex",
-          "anchor": "\\label{eq:final-amplitude}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/08-filling.tex#L196"
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:filled-error}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/filling.tex#L123"
+        },
+        {
+          "path": "papers/conway-asymptotics/main.tex",
+          "anchor": "\\label{ca:asymptotic}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/main.tex#L73"
+        },
+        {
+          "path": "papers/conway-asymptotics/main.tex",
+          "anchor": "\\label{ca:D}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/main.tex#L77"
         }
       ],
       "depends_on": [
@@ -2937,9 +2973,13 @@
         {
           "id": "recursive_local_leaf_estimates",
           "reason": "Uses the finite high-index local expansions and global core estimates within the completed-root parameter ranges."
+        },
+        {
+          "id": "analytic_conditional_filling",
+          "reason": "The exact full-power expansion uses the pure even Fourier polynomial. Its real local action and entire shared-strip gap meet the existing theorem without extending its hypotheses to a complex action."
         }
       ],
-      "coverage": "This node records the completed-root construction of Chapters 2–8, with its stated grammar. The broader strict-tree extension has separate nodes and additional inputs."
+      "coverage": "Proved for the completed-root grammar in the Conway asymptotics paper. Both integer lattices retain their exact offsets, densities, repeated-root terms and physical phases; the broader strict-tree construction remains separate."
     },
     {
       "id": "recursive_marked_metric",
@@ -4145,52 +4185,32 @@
       "id": "recursive_completed_volume",
       "title": "Long-twist volume for the completed-root construction",
       "group": "recursive_tangles",
-      "statement": "The frozen manuscript proves the full volume limit for its completed-root tangle grammar, original knot test, and independently sufficiently long fixed signed powers.",
+      "statement": "For each fixed completed-root Conway construction with the original knot-component test, independently sufficiently long fixed signed crossing powers give a nonzero asymptotic and the full knot-complement volume limit through all sufficiently large integer levels. The completed-root grammar is retained; arbitrary strict masks are a separate extension.",
       "sources": [
         {
-          "path": "manuscript/sections/08-filling.tex",
-          "anchor": "\\section{Replacing the color sum by its controlled local part}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/08-filling.tex#L7"
+          "path": "papers/conway-asymptotics/main.tex",
+          "anchor": "\\label{ca:main}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/main.tex#L60"
         },
         {
-          "path": "manuscript/sections/08-filling.tex",
-          "anchor": "\\section{An exact Fourier bound away from zero frequency}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/08-filling.tex#L26"
+          "path": "papers/conway-asymptotics/main.tex",
+          "anchor": "\\label{ca:asymptotic}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/main.tex#L73"
         },
         {
-          "path": "manuscript/sections/08-filling.tex",
-          "anchor": "\\section{The total derivative and the zero-charge cancellation}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/08-filling.tex#L46"
+          "path": "papers/conway-asymptotics/main.tex",
+          "anchor": "\\label{ca:volume}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/main.tex#L80"
         },
         {
-          "path": "manuscript/sections/08-filling.tex",
-          "anchor": "\\section{Uniform charge tails and their endpoint currents}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/08-filling.tex#L87"
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:filled-error}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/filling.tex#L123"
         },
         {
-          "path": "manuscript/sections/08-filling.tex",
-          "anchor": "\\section{The central Fourier packet}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/08-filling.tex#L120"
-        },
-        {
-          "path": "manuscript/sections/08-filling.tex",
-          "anchor": "\\section{Local charges for independently signed slopes}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/08-filling.tex#L145"
-        },
-        {
-          "path": "manuscript/sections/08-filling.tex",
-          "anchor": "\\section{Noncancellation and the final action}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/08-filling.tex#L185"
-        },
-        {
-          "path": "manuscript/sections/D-marked-cell-calibration.tex",
-          "anchor": "\\section{Primitive logs, the absolute regulator, and filling}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/D-marked-cell-calibration.tex#L183"
-        },
-        {
-          "path": "manuscript/sections/D-marked-cell-calibration.tex",
-          "anchor": "\\section{Smooth completion on the actual primitive filled topology}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/D-marked-cell-calibration.tex#L273"
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:classical-action}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/filling.tex#L176"
         }
       ],
       "depends_on": [
@@ -4215,7 +4235,7 @@
           "reason": "Identifies the action selected by the nonzero quantum asymptotic with the independently defined classical filling action, including its constant."
         }
       ],
-      "coverage": "This node records the completed-root construction of Chapters 2–8, with its stated grammar. The broader strict-tree extension has separate nodes and additional inputs."
+      "coverage": "Proved in the Conway asymptotics companion using the separate complementary-source, entire filling-sum and classical geometry papers. Each imported hypothesis is verified before the volume conclusion."
     },
     {
       "id": "recursive_strict_normal_form",
@@ -4487,9 +4507,34 @@
       "statement": "The exact signed finite leaf coefficients admit normalized holomorphic expansions on each compact high-index chart with a nonzero source-selected amplitude. Whole-color majorants and the original fixed integer offsets are retained. This is the local finite-source interface used in the completed-root construction.",
       "sources": [
         {
-          "path": "manuscript/sections/B1-high-index-packet.tex",
-          "anchor": "\\label{eq:b1-local-asymptotic}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/B1-high-index-packet.tex#L456"
+          "path": "papers/conway-asymptotics/leaf.tex",
+          "anchor": "\\label{ca:Ward}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/leaf.tex#L34"
+        },
+        {
+          "path": "papers/conway-asymptotics/leaf.tex",
+          "anchor": "\\label{ca:wall}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/leaf.tex#L63"
+        },
+        {
+          "path": "papers/conway-asymptotics/leaf.tex",
+          "anchor": "\\label{ca:continued-fraction}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/leaf.tex#L92"
+        },
+        {
+          "path": "papers/conway-asymptotics/leaf.tex",
+          "anchor": "\\label{ca:physical-ratio}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/leaf.tex#L99"
+        },
+        {
+          "path": "papers/conway-asymptotics/leaf.tex",
+          "anchor": "\\label{ca:exponential-interpolation}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/leaf.tex#L149"
+        },
+        {
+          "path": "papers/conway-asymptotics/leaf.tex",
+          "anchor": "\\label{ca:leaf-asymptotic}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/leaf.tex#L175"
         },
         {
           "path": "papers/conway-source-bounds/local.tex",
@@ -4505,9 +4550,13 @@
         {
           "id": "recursive_uniform_leaf_envelopes",
           "reason": "Supplies the separately proved all-physical-color global envelope; the holomorphic nonzero local expansion remains in the frozen appendix."
+        },
+        {
+          "id": "analytic_canonical_factorial",
+          "reason": "Fixes the complex factorial continuation and all phases; the source-selected recurrence then constructs an exponentially accurate index interpolation."
         }
       ],
-      "coverage": "These written high-index and global-envelope proofs are in the frozen manuscript. The quarter-index extension has a separate node because the completed-root argument does not need its enlarged chart."
+      "coverage": "The completed-root high-index expansion and its actual terminal normalization are proved in the Conway asymptotics companion. The quarter-index extension remains a separate result."
     },
     {
       "id": "recursive_strict_angle_geometry",
@@ -4939,24 +4988,29 @@
       "statement": "For the completed-root local source, its endpoint-normalized leading leaf primitive agrees with the classical sheared log-sine potential, including the parameter-dependent constant. Eliminating the same stationary internal wires identifies the source action with the geometric one. A common derivative in the wire variable or a common Hessian at completeness alone would not prove this comparison.",
       "sources": [
         {
-          "path": "manuscript/sections/B1-high-index-packet.tex",
-          "anchor": "\\label{eq:b1-local-actions}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/B1-high-index-packet.tex#L453"
+          "path": "papers/conway-asymptotics/leaf.tex",
+          "anchor": "\\label{ca:shear}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/leaf.tex#L204"
         },
         {
-          "path": "manuscript/sections/B1-high-index-packet.tex",
-          "anchor": "\\label{eq:b1-shear}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/B1-high-index-packet.tex#L487"
+          "path": "papers/conway-asymptotics/leaf.tex",
+          "anchor": "\\label{ca:shear-action}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/leaf.tex#L210"
         },
         {
-          "path": "manuscript/sections/B1-high-index-packet.tex",
-          "anchor": "\\label{eq:b1-shear-action}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/B1-high-index-packet.tex#L492"
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:global-shear}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/filling.tex#L152"
         },
         {
-          "path": "manuscript/sections/B1-high-index-packet.tex",
-          "anchor": "\\label{eq:b1-wire-phase}",
-          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/manuscript/sections/B1-high-index-packet.tex#L579"
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:Legendre-shear}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/filling.tex#L157"
+        },
+        {
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:classical-action}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/filling.tex#L176"
         },
         {
           "path": "papers/conway-fillings/metric-volume.tex",
@@ -4978,13 +5032,167 @@
           "reason": "Defines the classical shear potential and identifies its normalized critical value with the actual filled volume."
         }
       ],
-      "coverage": "The analytic comparison is still sourced to the frozen appendix. The new classical paper states this interface but does not claim to prove the finite-source asymptotic."
+      "coverage": "The analytic companion now proves the comparison, fixing the possible additive color function at the actual terminal index x=1/2 before stationary wire elimination. The classical companion supplies the absolute geometric volume independently."
+    },
+    {
+      "id": "analytic_triangle_load_derivatives",
+      "title": "Actual triangle-load derivatives and shared graph energy",
+      "group": "finite_graph_energy",
+      "statement": "For nonnegative corner constants and positive radicand, the exponential-weight arctangent loads have their explicitly proved directional conductance Jacobian. Their pairing with a variation equals the actual three-edge energy. Finite assembly uses one shared vertex function and retains parallel edges; one-zero triangles are covered, and singleton loads are separately constant. Identifying these loads with the gradient of the geometric potential remains a written input.",
+      "sources": [
+        {
+          "path": "formal-real/TriangleLoads.lean",
+          "anchor": "theorem derivative_algebra",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/TriangleLoads.lean#L113"
+        },
+        {
+          "path": "formal-real/TriangleLoads.lean",
+          "anchor": "theorem load_hasDerivAt",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/TriangleLoads.lean#L206"
+        },
+        {
+          "path": "formal-real/TriangleLoads.lean",
+          "anchor": "theorem load_off_diagonal_hasDerivAt",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/TriangleLoads.lean#L226"
+        },
+        {
+          "path": "formal-real/TriangleLoads.lean",
+          "anchor": "theorem load_pairing_hasDerivAt",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/TriangleLoads.lean#L258"
+        },
+        {
+          "path": "formal-real/TriangleLoads.lean",
+          "anchor": "theorem sum_load_pairing_hasDerivAt",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/TriangleLoads.lean#L273"
+        },
+        {
+          "path": "formal-real/TriangleLoads.lean",
+          "anchor": "theorem singletonLoad_hasDerivAt",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/formal-real/TriangleLoads.lean#L301"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "finite_weighted_graph_kernel",
+          "reason": "Uses the explicit shared edge-energy definition; differentiation of the exponential, square-root and arctangent functions is proved in the new module."
+        }
+      ],
+      "coverage": "The actual local derivative formula is formalized, including one-zero support. Entropy-gradient identification, the geometric incidence map and positive-support connectivity remain explicit application obligations."
+    },
+    {
+      "id": "analytic_canonical_factorial",
+      "title": "Canonical sine factorial and complex remainder estimates",
+      "group": "local_asymptotics",
+      "statement": "A convergent Gamma product fixes a nonvanishing holomorphic interpolation of the finite sine factorial, including its exact shift, reflection, marked phase and small-meridian normalization. Summable Stirling remainders give all fixed orders and derivatives on compact complex bulk strips. No periodic renormalization is allowed.",
+      "sources": [
+        {
+          "path": "papers/conway-asymptotics/factorial.tex",
+          "anchor": "\\label{ca:factorial}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/factorial.tex#L10"
+        },
+        {
+          "path": "papers/conway-asymptotics/factorial.tex",
+          "anchor": "\\label{ca:G}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/factorial.tex#L12"
+        },
+        {
+          "path": "papers/conway-asymptotics/factorial.tex",
+          "anchor": "\\label{ca:reflection}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/factorial.tex#L29"
+        },
+        {
+          "path": "papers/conway-asymptotics/factorial.tex",
+          "anchor": "\\label{ca:small-reflection}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/factorial.tex#L38"
+        },
+        {
+          "path": "papers/conway-asymptotics/factorial.tex",
+          "anchor": "\\label{ca:all-Stirling}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/conway-asymptotics/factorial.tex#L55"
+        }
+      ],
+      "depends_on": [],
+      "coverage": "A general analytic lemma proved from the stated Gamma and sine-product identities; it has no tangle-grammar or quantum-asymptotic hypothesis."
+    },
+    {
+      "id": "analytic_circle_joint_source",
+      "title": "All-index and joint Fourier estimates under the summed criterion",
+      "group": "tree_criteria",
+      "statement": "For the literal fixed all-circle tree with sum d_v/(d_v^2+n_v^2)<=2^-25, the full Newton source has a nonzero first-charge asymptotic through both level parities. The proof bounds every discarded index with full repeated-root normals, constructs the normalized complex edge sum, controls all charge tails with real/grid spectators, and retains every endpoint and connecting contour. The centered microscopic insertion has an O(N^-2) expansion after its exact physical scalar is removed.",
+      "sources": [
+        {
+          "path": "papers/circle-tree-asymptotics/finite-bounds.tex",
+          "anchor": "\\label{cta:norms}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-asymptotics/finite-bounds.tex#L74"
+        },
+        {
+          "path": "papers/circle-tree-asymptotics/finite-bounds.tex",
+          "anchor": "\\label{cta:discard}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-asymptotics/finite-bounds.tex#L206"
+        },
+        {
+          "path": "papers/circle-tree-asymptotics/edge-packet.tex",
+          "anchor": "\\label{cta:interpolant}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-asymptotics/edge-packet.tex#L33"
+        },
+        {
+          "path": "papers/circle-tree-asymptotics/edge-packet.tex",
+          "anchor": "\\label{cta:packet-expansion}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-asymptotics/edge-packet.tex#L158"
+        },
+        {
+          "path": "papers/circle-tree-asymptotics/edge-packet.tex",
+          "anchor": "\\label{cta:global-Gaussian}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-asymptotics/edge-packet.tex#L226"
+        },
+        {
+          "path": "papers/circle-tree-asymptotics/joint-filling.tex",
+          "anchor": "\\label{cta:charge-order}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-asymptotics/joint-filling.tex#L57"
+        },
+        {
+          "path": "papers/circle-tree-asymptotics/joint-filling.tex",
+          "anchor": "\\label{cta:telescoping}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-asymptotics/joint-filling.tex#L191"
+        },
+        {
+          "path": "papers/circle-tree-asymptotics/joint-filling.tex",
+          "anchor": "\\label{cta:finite-charges}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-asymptotics/joint-filling.tex#L207"
+        },
+        {
+          "path": "papers/circle-tree-asymptotics/joint-filling.tex",
+          "anchor": "\\label{cta:connector}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-asymptotics/joint-filling.tex#L241"
+        },
+        {
+          "path": "papers/circle-tree-asymptotics/joint-filling.tex",
+          "anchor": "\\label{cta:budget}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-asymptotics/joint-filling.tex#L284"
+        },
+        {
+          "path": "papers/circle-tree-asymptotics/conclusion.tex",
+          "anchor": "\\label{cta:amplitude}",
+          "url": "https://github.com/sashakolpakov/murakamis_dream/blob/main/papers/circle-tree-asymptotics/conclusion.tex#L15"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "finite_moving_meridian_tangle",
+          "reason": "Provides the exact full tree contraction, actual repeated-root traces and the original physical scalar ledger."
+        },
+        {
+          "id": "analytic_canonical_factorial",
+          "reason": "Fixes the factorial interpolation, reflection and uniform complex remainders used to derive the edge sum and its meridian insertion."
+        }
+      ],
+      "coverage": "The summed criterion is proved here. It is distinct from the local and directed criteria, whose separate source estimates are not inferred from it. Geometry is used only in the subsequent volume identification."
     }
   ],
   "analysis": {
     "scope": "Consistency and source-location checks on the declared mathematical dependency graph, not proof verification.",
-    "nodes": 117,
-    "edges": 275,
+    "nodes": 120,
+    "edges": 280,
     "component_edges": [
       [
         "action_volume",
@@ -5017,6 +5225,10 @@
       [
         "central_period",
         "planar_criteria"
+      ],
+      [
+        "central_period",
+        "recursive_tangles"
       ],
       [
         "complete_geometry",
@@ -5155,6 +5367,10 @@
         "recursive_tangles"
       ],
       [
+        "local_asymptotics",
+        "tree_criteria"
+      ],
+      [
         "marked_geometry",
         "action_volume"
       ],
@@ -5176,6 +5392,7 @@
       ]
     ],
     "topological_order": [
+      "analytic_canonical_factorial",
       "analytic_circle_charge_path",
       "analytic_convex_flattening",
       "analytic_supported_transport_coercivity",
@@ -5204,6 +5421,7 @@
       "finite_remainder_transfer",
       "finite_weighted_graph_kernel",
       "analytic_grounded_strict_convexity",
+      "analytic_triangle_load_derivatives",
       "finite_grounded_inverse",
       "geo_circle_ordered_cut",
       "geo_circle_positive_edge_charts",
@@ -5253,6 +5471,7 @@
       "planar_weak_balance_volume",
       "recursive_finite_source",
       "finite_moving_meridian_tangle",
+      "analytic_circle_joint_source",
       "recursive_exact_filling_source",
       "recursive_local_ideal_cells",
       "recursive_positive_source",
@@ -5297,35 +5516,35 @@
     "shared_prerequisites": [
       {
         "id": "finite_local_fourier",
-        "downstream": 71
+        "downstream": 72
       },
       {
         "id": "finite_remainder",
-        "downstream": 65
+        "downstream": 66
       },
       {
         "id": "finite_hermite",
-        "downstream": 63
+        "downstream": 64
       },
       {
         "id": "finite_crossing",
-        "downstream": 59
+        "downstream": 60
       },
       {
         "id": "finite_pivotal_mark",
-        "downstream": 58
+        "downstream": 59
       },
       {
         "id": "finite_global_source",
-        "downstream": 57
+        "downstream": 58
       },
       {
         "id": "finite_invariant_normalization",
-        "downstream": 44
+        "downstream": 45
       },
       {
         "id": "recursive_finite_source",
-        "downstream": 34
+        "downstream": 35
       },
       {
         "id": "geo_simple_sphere_packing",
@@ -5341,7 +5560,7 @@
       },
       {
         "id": "finite_weighted_graph_kernel",
-        "downstream": 21
+        "downstream": 22
       },
       {
         "id": "recursive_local_ideal_cells",
@@ -5360,8 +5579,20 @@
         "downstream": 19
       },
       {
+        "id": "analytic_canonical_factorial",
+        "downstream": 18
+      },
+      {
+        "id": "finite_fourier_period",
+        "downstream": 18
+      },
+      {
         "id": "recursive_positive_source",
         "downstream": 17
+      },
+      {
+        "id": "analytic_conditional_filling",
+        "downstream": 15
       },
       {
         "id": "recursive_local_leaf_estimates",
@@ -5408,10 +5639,6 @@
         "downstream": 12
       },
       {
-        "id": "finite_fourier_period",
-        "downstream": 12
-      },
-      {
         "id": "geo_morse_deformed_pattern",
         "downstream": 12
       },
@@ -5452,6 +5679,10 @@
         "downstream": 10
       },
       {
+        "id": "finite_moving_meridian_tangle",
+        "downstream": 10
+      },
+      {
         "id": "finite_resolvent",
         "downstream": 10
       },
@@ -5476,19 +5707,11 @@
         "downstream": 10
       },
       {
-        "id": "analytic_conditional_filling",
-        "downstream": 9
-      },
-      {
         "id": "analytic_morse_charge_tails",
         "downstream": 9
       },
       {
         "id": "finite_bernstein",
-        "downstream": 9
-      },
-      {
-        "id": "finite_moving_meridian_tangle",
         "downstream": 9
       },
       {
@@ -5528,10 +5751,6 @@
         "downstream": 8
       },
       {
-        "id": "tree_exact_edge_kernel",
-        "downstream": 8
-      },
-      {
         "id": "geo_longitude_ratio_differential",
         "downstream": 7
       },
@@ -5545,6 +5764,10 @@
       },
       {
         "id": "recursive_strict_filling_transfer",
+        "downstream": 7
+      },
+      {
+        "id": "tree_exact_edge_kernel",
         "downstream": 7
       },
       {
@@ -5660,6 +5883,10 @@
         "downstream": 1
       },
       {
+        "id": "analytic_circle_joint_source",
+        "downstream": 1
+      },
+      {
         "id": "analytic_morse_geometric_contribution",
         "downstream": 1
       },
@@ -5697,6 +5924,10 @@
       },
       {
         "id": "analytic_grounded_strict_convexity",
+        "downstream": 0
+      },
+      {
+        "id": "analytic_triangle_load_derivatives",
         "downstream": 0
       },
       {
@@ -5793,10 +6024,12 @@
       "notes/actual_conway_net_twist_volume.md": "cd76d2d1f9b0ce2961308343d80098ec3336dd367248fbe36ee811e959fbcfa2",
       "notes/actual_conway_arbitrary_closure_volume.md": "4962c4945f286df0beff9624a433e98371a634fd9058f00d9260bcc7e1d8c954",
       "papers/meridian-tangles/main.tex": "d3b7d4804e532f46a52ac5142118d4793c48ea06b86d95f34215e887971ccfd4",
-      "manuscript/sections/E-quantitative-finite-sums.tex": "a8061a355a1426ca475df29455c8a06c16ead89322f49fe36f4e385ed71bea78",
       "manuscript/sections/G-local-tree-messages.tex": "9a169d6aeff06df5887952c18c22a0aef470bbcda9e18610d4f57f016e2dbdce",
+      "papers/circle-tree-asymptotics/finite-bounds.tex": "e4cf66544703af6d9a78208deae971c4d9f4367ba4b2ad660694ee489ef67ea1",
+      "papers/circle-tree-asymptotics/edge-packet.tex": "53eb6dbfbda3ca639db35911ed50947c29655840337f9d1f1ce909d435013dbb",
       "papers/circle-tree-geometry/main.tex": "2404285044d7efb8376b3fdeaa3a6da6f2d36bc29da6a7e176f09f8230339301",
-      "manuscript/sections/08a-quantitative-circle-trees.tex": "cfd7fa0dafd66bdc0e0e5151f415b2bc6b28c49a63ad6d1e0a244829b1db70f0",
+      "papers/circle-tree-asymptotics/main.tex": "ba6e5ffb622ec103ba07e8418117553f3b12b12330ccc45047aa241470b1e562",
+      "papers/circle-tree-asymptotics/conclusion.tex": "13185fcea97d31f528daf323527a04a903794b13f3055713196a938c00cdffe8",
       "manuscript/sections/K-directed-circle-messages.tex": "7eff3a7658079dff75802b8044d7213e040795eeff89c7795bb1476aee04c03a",
       "papers/three-braids/main.tex": "9bad961bfcb9893bf0b6035a084d95436e0c146b3acda10850ba7d374a832c76",
       "repro/check_cyclic_source_constants.py": "302e25fa4a42784e67ecd502f004bfe98c9c08a1246c4ff64019bda46e5cee05",
@@ -5805,15 +6038,12 @@
       "notes/actual_global_diagonal_spectral_sector_gap.md": "fb8353e00968dedcf0e9563a6e1d6057a38162714e8aa1bbaf234d4042cac79f",
       "manuscript/sections/L-balanced-terminal-fans.tex": "4c5b03317602d547a44028908a99e8cd449922f391c27ba80e8dafd5156f4775",
       "papers/newton-tangles/main.tex": "1d6dc27ef5129b98012530b3e750f42ecf986c81e1cfd0aefe9b9581e6544af6",
-      "manuscript/sections/02-finite-source.tex": "232936be01555db658f818b3ed0539c31fe4f2deb3386cc0ed8df5497d8b65e2",
-      "manuscript/sections/A-finite-identities.tex": "c1e125117c6f1ebc790ec1e8f662d451c78f9b42c29be1a86baf0261d3861abb",
+      "papers/conway-asymptotics/filling.tex": "23fabbb0169e2279d9d7fa6309169dc10382ff2142bcb38a4b5bec6c365f324e",
       "papers/conway-geometry/main.tex": "c07ee6d82aae5a04ae7b9ac12906dc839d970ad86d7e7dcf3749d88e866384a7",
       "papers/conway-geometry/assembly.tex": "8b6a5c5d3b88ab12dd2f9018398deef7131293f2f9a83d5bf083aa329fc5232f",
       "papers/conway-geometry/completion.tex": "affc43bfbde3e7a62280bec9dcb990cb28572efa9da470f8737373c72a559df2",
-      "manuscript/sections/06-packet.tex": "8a5b6bd7b108cc357a9e602db49bfa3480f0c2d4b47decfacaed04c82e8a12d8",
-      "manuscript/sections/B1-high-index-packet.tex": "d43d1ccf6ab9b25c466392ceb28476f7ed9cf507214ce5fc6caba7b78d7f1cc1",
-      "manuscript/sections/B-analytic-estimates.tex": "0ae218413d4fac051613ec4da38fdcc7babe484c40c010c6dd83f79acc0428d5",
-      "manuscript/sections/08-filling.tex": "263ba4a38c79c487cbe13136fe99414c6026159285a946968eeb6d4156ed7254",
+      "papers/conway-asymptotics/packet.tex": "b6d0cc1ca91c890b6a09ab235731f560dd4d13f95ec02c275eb21e1530a65d2a",
+      "papers/conway-asymptotics/main.tex": "2b9981e12da04117db397154e5e1c17720b1f0692f7233ebd724ed8cd312f1b1",
       "papers/conway-fillings/main.tex": "ea8e9fa87d5c30e264d799265ec8b120ad061a18e5af343225a1476e11327c72",
       "papers/conway-fillings/deformation.tex": "779425de857418d07d0e5ccfa4449a7f49ef9f013a5cc5c16539b4a52398a1e3",
       "papers/conway-fillings/metric-volume.tex": "721d492f743a17b0a9a0b4008447c4a2dea507840f6bb0dff821b2aefcadc2e6",
@@ -5830,7 +6060,6 @@
       "papers/conway-source-bounds/main.tex": "f09fa9422650981acfa4d1f972f491d1521c7e68616c85d0419013ea094c429c",
       "papers/conway-source-bounds/composition.tex": "27bfb2ce4c8da7ecd09f443ef2afea3267d4a978bd70905c936be1d85155c7aa",
       "papers/conway-source-bounds/arithmetic.tex": "580f18fd5fa1e5c3c12a9eef938af54bfa10f087ebd49524199f80fcb0d02199",
-      "manuscript/sections/D-marked-cell-calibration.tex": "e6c3270bd8c8e0e61d79cf0c036943e39d476197d4700a9a9ce19440c3959286",
       "notes/actual_conway_single_leaf_source_composition.md": "168e8248607eaac62ce27d88e7bcbd56d5245eccfff5654c116cdce9018c3bc2",
       "notes/actual_conway_reduced_hub_source_normal_form.md": "69eecde122111c541bb323ed96ecd0527632b2a805ca85c43d83807cf3a18067",
       "notes/actual_conway_rigid_spine_and_flagged_tree_geometry.md": "e4b93ca45f0bd4a4a99b4ecddc37eff257adc41b2f82b488d11a0b98cdfdfb24",
@@ -5841,6 +6070,7 @@
       "notes/actual_conway_general_core_packet_and_gap.md": "11968f7f6856179322d49dcf8fe4bcf7200ae524231dced812661e5b1459c16b",
       "notes/actual_conway_general_mask_marked_filling.md": "f3d0b91665c0bf62d26f71e4e0fa3368fe8714cdccab7d30b4e04272c61c209d",
       "notes/general_original_source_long_filling_transfer.md": "b51fa1d6280e2c1027641d27561722ba0e9753c0a26f49c7d4c8e40ac8b47997",
+      "papers/conway-asymptotics/leaf.tex": "92dd680d86f06cb375ca779fe70c12063703404f8fe1efaee6a2b2089e14f26e",
       "papers/conway-source-bounds/local.tex": "c8faf78eebaf72c7767d6c41e08b13e74a15fe9be66a9979f93bfbcc1f6eff1f",
       "notes/actual_conway_general_strict_mask_geometry.md": "980413284c4d9bd6d383c97b07cba017b3f2d23a0e642148e30e53371e6f0f31",
       "formal-real/Flattening.lean": "a15977f5e3234d9f56217aee2e875c3a6ec8542b4140bfdf74f78d0b35e0f9cc",
@@ -5849,7 +6079,10 @@
       "papers/conway-geometry/maps.tex": "87f0c0df97c207b997b0102842bee951e378b3d44c5b62de7ed02f3e35b8b02c",
       "formal-real/GroundedConvexity.lean": "91ca39bdfb8bdcefb3abb11beef23f602d95f380b31ff271e749ca41ba40f904",
       "formal-real/GroundedLaplacian.lean": "dc0d55a5d4c5cdb2803781e899dbe53ade0cc7876c34965a2819e0589b87c2e5",
-      "papers/dependencies.json": "4569982bd2d0c065bc3a6347b5cf334257479ff9ca86291256ca86cc5f0ec4fa"
+      "formal-real/TriangleLoads.lean": "5f35fff0cb8d440cfec1c5613818bb964acb029b4dd1d0b1fc5cb5181249e963",
+      "papers/conway-asymptotics/factorial.tex": "fa05557505927ae81f005b90edbd3d0946288e7eacf2363f070d9753db632fe1",
+      "papers/circle-tree-asymptotics/joint-filling.tex": "19dd4180c8c5c43e0707577c4d5e5646df3cae8ec710e9092312e7c35144b2ad",
+      "papers/dependencies.json": "9c990a57f53aecdcdfb43f2a9715899d07033f7d1c4986caf4cfbba2e8cea405"
     }
   }
 }

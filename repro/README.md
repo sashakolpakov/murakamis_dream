@@ -57,8 +57,12 @@ geometric derivative identity and positive-table construction remain
 written inputs. The reduced-Laplacian module identifies the actual free
 matrix with that energy, constructs its inverse, and proves uniqueness
 of every grounded linear solution. It does not prove a quantitative
-inverse estimate or a nonlinear deformation theorem. Together the
-optional modules contain twenty-four definitions and ninety-two theorems,
+inverse estimate or a nonlinear deformation theorem. The triangle-load module now differentiates the actual exponential,
+square-root and arctangent expressions and identifies their shared-vertex
+pairing with that edge energy. It includes one-zero triangles. Identifying
+these loads as the gradient of the geometric potential and verifying its
+positive support remain written application inputs. Together the
+optional modules contain thirty-four definitions and 116 theorems,
 all included in the axiom audit.
 The optional command is separate from the Std-only
 check above; it requires
@@ -71,8 +75,8 @@ checks of their finite algebra and rational constants. Run them together:
 python3 repro/check_paper_algebra.py --output repro/results/paper-algebra
 ~~~
 
-The runner requires SymPy, python-flint and NumPy. It saves each program's
-output and stops on a failed check. Its fourteen groups cover polynomial
+The runner requires SymPy, python-flint, NumPy and mpmath. It saves each program's
+output and stops on a failed check. Its sixteen groups cover polynomial
 resolvents and path partitions, positive-matrix identities and parity
 anchors, filling-sum normalization, symbolic peripheral coordinates,
 rational three-braid constants, the complete forty-branch planar

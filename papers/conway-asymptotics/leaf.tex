@@ -1,0 +1,251 @@
+\section{The actual high-index leaf and its shear}\label{ca:leaf}
+
+A leaf index near the complete maximum belongs to a fixed compact interval
+$I=[\tau_0,\tau_1]\subset(1/4,1/2)$. Throughout this section $x=r/N$ is that index and $t=h/N$ is the physical color deficit. We continue the color to a small complex disk; its radius is independent of $N$. Put
+$M=\lfloor(N-1)/2\rfloor$ and $F_r=(Q;Q)_r$.
+
+The finite Newton calculation of \cite[Proposition 4.1]{Newton} gives, for $r>h$,
+\begin{align}
+ A_N(r,t)&=\frac{N^2S_{2r}}
+ {S_r^2G_N(r-Nt)G_N(r+Nt)},\label{ca:pure-leaf}\\
+ d_N^\epsilon(r,t)&=\kappa^\epsilon
+ \sum_{v=r}^M(-1)^v q^{\epsilon v(r+1)}
+       \frac{S_v}{S_rS_{v-r}}A_N(v,t),
+ \quad \epsilon=\pm1,\qquad d_N^0=A_N.\label{ca:signed-leaf}
+\end{align}
+Only the two color-shifted factorials are continued. The finite sum is therefore an exact even holomorphic function of $t$, with the original integer support. Set
+$\ell_N^\epsilon=e^{-\pi\ii\epsilon d/4}d_N^\epsilon$.
+This removes a constant unit phase, not a color-dependent phase.
+
+\subsection{A recurrence with its physical upper endpoint}
+
+For $h=Nt$ define
+\begin{align}
+ A_{h,r}&=\sum_{v=r}^M
+ \frac{Q^{-vr}F_{2v}}
+ {F_v\widehat F_N(v-h)\widehat F_N(v+h)F_{v-r}},\notag\\
+ D_{h,r}&=\frac{Q^{-r^2}F_{2r}}
+ {F_r\widehat F_N(r-h)\widehat F_N(r+h)},\qquad
+ U_{h,r}=A_{h,r}/D_{h,r}.\label{ca:AU}
+\end{align}
+In the present corridor these denominators do not vanish. The last term gives $U_{h,M}=1$.
+
+Put $Y=Q^r$, $H=Q^h=e^{2\pi\ii t}$ and $T=H+H^{-1}$. The exact recurrence is
+\begin{multline}\label{ca:Ward}
+ QY^2(1-Q^2Y)A_{h,r+2}
+ +Y(TQ^3Y^2+Q+1)A_{h,r+1}\\
+ -Q(QY+1)(QY^2-1)A_{h,r}=0,\qquad A_{h,M+1}=0.
+\end{multline}
+For clarity we verify the telescoping at complex color. The ratio of the $v+1$ summand to the $v$ summand, with $z=Q^v$, is
+\[
+ \frac{Y^{-1}(1-Qz^2)(1+Qz)}
+ {(1-Qz/H)(1-QHz)(1-Qz/Y)}.
+\]
+Multiply by $g(z)=(1-z/H)(1-Hz)(1-z/Y)/z^2$ and take the forward difference. Dividing by the original summand leaves
+\[
+ \left(\frac1{YQ^2}-1\right)z^{-2}
+ +\left(\frac1{YQ}+H+H^{-1}+\frac1Y\right)z^{-1}
+ -\frac1{YQ}-1-\frac{H+H^{-1}}Y.
+\]
+Its lower endpoint vanishes because $z=Y$; its upper endpoint contains
+$F_{2M+2}=0$. The index shift $r\mapsto r+1$ multiplies a summand by
+$z^{-1}-Y^{-1}$. Expressing the two moments in these shifted sums and clearing denominators gives \eqref{ca:Ward}. This uses the exact shift of $\widehat F_N$, so it holds at complex $h$ without interpolation from finitely many colors.
+
+Write $\operatorname{den}_r=(1-QY/H)(1-QYH)$. Division by the actual $D_{h,r}$ gives
+\begin{align}
+ U_r&=p_N(r,t)U_{r+1}+q_N(r,t)U_{r+2},\label{ca:recurrence}\\
+ p_N&=-\frac{Q^{-2}Y^{-1}(TQ^3Y^2+Q+1)}
+                 {\operatorname{den}_r},\notag\\
+ q_N&=-\frac{Q^{-4}Y^{-2}(1-Q^2Y)(1-Q^3Y^2)(1+Q^2Y)}
+                 {\operatorname{den}_r\operatorname{den}_{r+1}}.\notag
+\end{align}
+At $r=M-1$ one has
+\begin{equation}\label{ca:wall}
+ q_N(M-1,t)=0,\qquad U_{M-1}=p_N(M-1,t),\qquad U_M=1.
+\end{equation}
+For $N=2m+1$ the vanishing factor is $1-Q^3Y^2$, and for $N=2m$ it is $1+Q^2Y$. We have not divided by a nonexistent $D_{h,M+1}$.
+
+\subsection{A holomorphic solution selected by that endpoint}
+
+Regard $p_N,q_N$ as holomorphic functions of $(x,t,e)$ with
+$e=1/N$, $Y=e^{2\pi\ii x}$ and $Q=e^{2\pi\ii e}$. Their leading terms are
+\begin{equation}\label{ca:leading-pq}
+ p_0=-Y^{-1}\frac{(H+H^{-1})Y^2+2}{D_t},\qquad
+ q_0=-Y^{-2}\frac{(1-Y^2)^2}{D_t^2},\qquad
+ D_t=(1-Y/H)(1-YH).
+\end{equation}
+At $t=0$ the roots of $\mu^2-p_0\mu-q_0=0$ are
+\[
+ \mu(x,0)=-Y^{-1},\qquad \mu_f(x,0)=Y^{-1}\cot^2(\pi x).
+\]
+On a compact interval in $(1/4,3/4)$ containing $[\tau_0,1/2]$, the first root has positive real part and
+$|\mu_f/\mu|<1$. These inequalities persist uniformly on a fixed complex neighborhood and a small color disk:
+\begin{equation}\label{ca:root-gap}
+ \Re\mu\ge m_0>0,\qquad |\mu_f/\mu|\le k_0<1.
+\end{equation}
+In particular $\mu(1/2,t)=1$. Both $q_0$ and its first $e$ correction vanish there.
+
+Choose $\sigma>0$ with
+$[\tau_0-\sigma,1-\tau_0+4\sigma]\subset(1/4,3/4)$, and set
+$L_N=\lceil(1/2-\tau_0+2\sigma)N\rceil$. For
+$\mathcal F_x(w)=p(x,t,e)+q(x,t,e)/w$, define
+\begin{equation}\label{ca:continued-fraction}
+ v_N(x,t)=\mathcal F_x\circ\mathcal F_{x+e}\circ\cdots
+ \circ\mathcal F_{x+(L_N-1)e}
+       \bigl(\mu(x+L_Ne,t)\bigr).
+\end{equation}
+These compositions stay in disks of radius $Ce$ about the successive roots. Indeed one step has error $O(e)$ at the root and derivative at most $k_0+O(e)$. Taking $C$ larger than the error constant divided by $1-k_0$ makes the disks invariant, and they avoid zero. Thus $v_N$ is holomorphic and
+$v_N=\mu+O(e)$, with all fixed derivative bounds on a smaller tube. On a physical grid point $x=r/N$, the composition passes through $M-1$. Equation \eqref{ca:wall} erases its artificial tail there. Backward substitution consequently gives the exact identity
+\begin{equation}\label{ca:physical-ratio}
+ v_N(r/N,t)=U_{h,r}/U_{h,r+1}\quad(r<M).
+\end{equation}
+This also proves that those actual coefficients do not vanish in the chosen complex color disk.
+
+Write $p=p_0+ep_1+O(e^2)$ and $q=q_0+eq_1+O(e^2)$. Expanding one step gives
+\begin{equation}\label{ca:nu}
+ v_N=\mu+e\nu+O(e^2),\qquad
+ \nu=\frac{p_1+q_1/\mu-q_0\mu_x/\mu^2}{1+q_0/\mu^2}.
+\end{equation}
+The denominator is $1-\mu_f/\mu$, separated from zero. The same contraction proves the error uniformly. Direct substitution at $t=0$ gives
+\begin{equation}\label{ca:nu0}
+ \Log\mu(x,0)=\pi\ii-2\pi\ii x,\qquad
+ \frac{\nu(x,0)}{\mu(x,0)}
+ =-\frac{\pi}{2}\cot(\pi x)-\frac{5\pi\ii}{2}.
+\end{equation}
+Define
+\begin{align}
+ S(x,t)&=\int_x^{1/2}\Log\mu(u,t)\dd u,\notag\\
+ C(x,t)&=\sqrt{\mu(x,t)}
+             \exp\!\int_x^{1/2}\frac{\nu(u,t)}{\mu(u,t)}\dd u.\label{ca:SC}
+\end{align}
+The logarithm is fixed by \eqref{ca:root-gap} and the square root by its value one at $1/2$. Ordinary Euler summation of \eqref{ca:physical-ratio} gives
+$U_{h,r}=C(x,t)e^{NS(x,t)}(1+O(N^{-1}))$.
+The physical endpoint $M/N$ differs from $1/2$ by $O(N^{-1})$; since
+$\Log\mu(1/2,t)=0$, its missing integral contributes only $O(N^{-1})$ to the exponent. In particular no color-dependent constant is introduced at this endpoint. Formula \eqref{ca:nu0} gives
+\begin{equation}\label{ca:SC0}
+ S(x,0)=\pi\ii(1/2-x)^2,\qquad
+ C(x,0)=\sqrt{\sin\pi x}\,
+                  e^{-3\pi\ii(1/2-x)/2}.
+\end{equation}
+
+\subsection{Exponential accuracy before moving an index contour}
+
+An error $O(N^{-1})$ on integer indices is insufficient when the sum of those indices has cancellation. We therefore construct an exponentially accurate interpolation of the same product. Let
+$f_N=\Log v_N$ and $b_N=M/N$. On a fixed larger tube
+$|f_N^{(j)}|\le B j! a^{-j}$ by Cauchy's formula. Choose a sufficiently small constant $c>0$ and put $K_N=\lfloor cN\rfloor$. Set
+\begin{align}
+ E_N(x,t)={}&N\int_x^{b_N}f_N(u,t)\dd u
+       +\tfrac12\{f_N(x,t)-f_N(b_N,t)\}\notag\\
+ &+\sum_{k=1}^{K_N}\frac{B_{2k}N^{1-2k}}{(2k)!}
+ \{\partial_x^{2k-1}f_N(b_N,t)
+             -\partial_x^{2k-1}f_N(x,t)\}.\label{ca:EM}
+\end{align}
+Euler summation on the actual finite product, and
+$|B_{2k}|\le4(2k)!/(2\pi)^{2k}$, bound its remainder by
+\[
+ CN\left(\frac{K_N}{\pi aN}\right)^{2K_N}\le C'e^{-c'N}.
+\]
+Thus, uniformly at physical $r/N\in I$ and complex $t$ in a fixed disk,
+\begin{equation}\label{ca:exponential-interpolation}
+ U_{h,r}=e^{E_N(r/N,t)}(1+O(e^{-c'N})).
+\end{equation}
+On a smaller complex index tube \eqref{ca:nu} and the same factorial bounds give
+$e^{E_N}=C e^{NS}(1+O(N^{-1}))$, with all fixed derivatives. The interpolation is holomorphic, as a finite sum of holomorphic integrals and derivatives. No analytic extension is being inferred solely from mesh values.
+
+To recover the literal coefficient, put
+\begin{align}
+ A_N^{\rm hol}(x,t)&=
+ \frac{N^2G_N(2Nx)}
+ {G_N(Nx)^2G_N(N(x-t))G_N(N(x+t))},\notag\\
+ \nu_N(z)&=e^{-\pi\ii z+\pi\ii z(z+1)/N},\qquad
+ P_N^{\rm ch}(x)=\kappa^{-1}e^{\pi\ii d/4}/\nu_N(Nx),\notag\\
+ I_N^-&=A_N^{\rm hol}P_N^{\rm ch}e^{E_N},\qquad
+ I_N^+=\overline{I_N^-(\bar x,\bar t)},\qquad
+ I_N^0=A_N^{\rm hol}.\label{ca:I}
+\end{align}
+The factorial phases give, exactly,
+\[
+ q^{h^2}\frac{D_{h,r}}{D_{0,r}}
+  =\frac{G_N(r)^2}{G_N(r-h)G_N(r+h)},\qquad
+ \nu_N(r)=(-1)^r q^{r(r+1)}.
+\]
+Substitution in \eqref{ca:signed-leaf} and \eqref{ca:AU} proves
+$I_N^\epsilon(r/N,t)=\ell_N^\epsilon(r,t)(1+O(e^{-c'N}))$.
+Schwarz reflection is legitimate since the original positive sine factorials have that symmetry. Moreover
+\begin{equation}\label{ca:leaf-asymptotic}
+ I_N^\epsilon(x,t)=N^{1/2}b_\epsilon(x,t)
+                e^{Nf_\epsilon(x,t)}(1+O(N^{-1})),
+\end{equation}
+uniformly on fixed complex tubes, where
+\begin{align}
+ g(x,t)&=J(2x)-2J(x)-J(x-t)-J(x+t),\notag\\
+ f_0&=g,\qquad f_-=g+S-S(x,0),\qquad
+ f_+(x,t)=\overline{f_-(\bar x,\bar t)},\notag\\
+ b_0(x,t)&=\frac{\sqrt{\sin2\pi x}}
+ {2^{3/2}\sin\pi x\sqrt{\sin\pi(x-t)\sin\pi(x+t)}},\notag\\
+ b_-(x,t)&=b_0(x,t)e^{\pi\ii(3/4-x)}C(x,t),
+ \qquad b_+(x,t)=\overline{b_-(\bar x,\bar t)}.\label{ca:leaf-functions}
+\end{align}
+All square roots continue their positive real values. The phase identity
+\[
+ P_N^{\rm ch}(x)e^{NS(x,0)}
+   =e^{\pi\ii(3/4-x-1/(2N))}
+\]
+accounts for the original upper-wall chirp. In particular
+\begin{equation}\label{ca:leaf-amplitude0}
+ f_\epsilon(x,0)=g(x,0),\qquad
+ \frac{b_\epsilon(x,0)}{b_0(x,0)}
+ =\sqrt{\sin\pi x}\,e^{-\epsilon\pi\ii x/2}\ne0
+ \quad(\epsilon=\pm1).
+\end{equation}
+
+\subsection{Identification of the absolute shear potential}
+
+\begin{proposition}\label{ca:shear}
+For $\epsilon\in\{0,\pm1\}$ let $s=s(x,t)$ be the small solution of
+\begin{equation}\label{ca:shear-map}
+ t=s-\frac{\epsilon}{2\pi\ii}g_s(x,s).
+\end{equation}
+The action just derived from the finite sum is exactly
+\begin{equation}\label{ca:shear-action}
+ f_\epsilon(x,t)=g(x,s)
+                 -\frac{\epsilon}{4\pi\ii}g_s(x,s)^2.
+\end{equation}
+In particular $(f_\epsilon)_x=g_x(x,s)$ and
+$(f_\epsilon)_t=g_s(x,s)$, and
+\begin{equation}\label{ca:leaf-hessian}
+ (f_\epsilon)_{tt}(x,0)
+     =-\frac{2\pi X}{1-\epsilon\ii X},
+ \qquad X=\cot(\pi x).
+\end{equation}
+The equality includes its additive function of $t$.
+\end{proposition}
+
+\begin{proof}
+At $t=s=0$ the derivative of \eqref{ca:shear-map} in $s$ is
+$1-\epsilon\ii X\ne0$. It therefore defines a unique holomorphic solution. Differentiating the right side of \eqref{ca:shear-action} gives the two stated derivatives.
+
+It remains to identify this function with \eqref{ca:leaf-functions}; a comparison of Hessians would not suffice. For $\epsilon=-1$ write
+$E=e^{2\pi\ii x}$, $H=e^{2\pi\ii t}$ and $T=e^{2\pi\ii s}$. Exponentiating \eqref{ca:shear-map} gives
+\[
+ H=T\frac{E-T}{ET-1},\qquad
+ T^2+E(H-1)T-H=0,\qquad T=1\ \text{at }H=1.
+\]
+The derivative of the proposed classical function satisfies
+\[
+ K=e^{-g_x(x,s)}
+   =-\frac{(1-E/T)(1-ET)}{(1+E)^2},
+\]
+and elimination of $T$ yields
+\[
+ K^2(1+E)^2+K\{(H+H^{-1})E^2+2\}+(1-E)^2=0.
+\]
+On the other hand, differentiating the quantum expression $g+S-S(x,0)$ gives
+\[
+ e^{-(f_-)_x}=\frac{E\mu D_t}{(1+E)^2},
+\]
+which satisfies the same equation by \eqref{ca:leading-pq}. At $H=1$ both branches equal $\tan^2(\pi x)$; the separated root and the fixed logarithm give equality of the derivatives in $x$.
+
+Their difference could still depend on $t$. Let $x$ tend to $1/2$ in the actions. Here $S(1/2,t)=0$ and
+$g(1/2,t)=0$ by the reflection of $J$. The shear equation has $s=t$ and $g_s(1/2,s)=0$, so the proposed classical action also equals zero for every small $t$. This fixes the possible function of $t$ to zero. This endpoint argument concerns the holomorphic action, not a bulk asymptotic for factorials at a zero. Schwarz reflection proves the positive sign, and the zero sign is immediate. Finally differentiating \eqref{ca:shear-map} proves \eqref{ca:leaf-hessian}.
+\end{proof}

@@ -9,7 +9,9 @@ The package also proves the real finite quadratic-form implication used in
 the circle-pattern Hessian argument, the one-variable calculus behind
 shared-weight flattening, coercivity from a positive finite transport table,
 uniqueness from actual graph-valued second derivatives, and invertibility
-of the actual graph Laplacian after grounding one coordinate.
+of the actual graph Laplacian after grounding one coordinate. The triangle
+load module derives the local derivative and its assembled graph energy
+from the exponential, square-root and arctangent formulas themselves.
 
 ## What is proved
 
@@ -436,6 +438,94 @@ used only after that identification has been supplied. This module proves
 neither a uniform inverse norm bound nor differentiable dependence on
 parameters, a nonlinear implicit-function theorem, or geometric development.
 
+## Differentiating the actual triangle loads
+
+[TriangleLoads.lean](TriangleLoads.lean) contains ten definitions and
+twenty-four theorems in `VolumeLogic.TriangleLoads`. It proves the
+calculus behind equation `mf:hessian` in
+[the marked-fillings paper](../papers/marked-fillings/main.tex) and
+equations `ti:eq-4`–`ti:eq-5` in
+[the triangular-insertion paper](../papers/triangular-insertion/main.tex).
+The derivative formula is a conclusion, not a supplied Hessian identity.
+
+For corners indexed by `Fin 3`, fix nonnegative real coefficients
+\(a_i\) and logarithmic coordinates \(q_i\). The definitions are
+
+\[
+w_i=a_i e^{q_i},\qquad
+S=w_0w_1+w_1w_2+w_2w_0,\qquad D=\sqrt S,\qquad
+\alpha_i=\frac1\pi\arctan\frac{w_i}{D}.
+\]
+
+The load theorem assumes \(S>0\). This covers both three positive
+corners and two positive corners with one zero coefficient.
+`radicand_pos_of_positive_pair` proves positivity of \(S\) from any two
+distinct positive weights and nonnegativity of the others.
+`pair_sum_pos` proves \(w_i+w_j>0\) for distinct corners under the
+load theorem's hypotheses. Thus the off-diagonal denominators below
+are nonzero even at a zero corner. No limiting argument or division by
+that corner's weight is used.
+
+For every real direction \(h\), `load_hasDerivAt` proves the derivative
+of the **actual** function \(t\mapsto\alpha_i(a,q+t h)\) at zero:
+
+\[
+\alpha_i'(0)=\sum_j\kappa_{ij}(h_i-h_j),\qquad
+\kappa_{ij}=\frac{w_iw_j}{2\pi D(w_i+w_j)}\quad(i\ne j).
+\]
+
+The proof first differentiates the exponential weights and \(D\), then
+uses Mathlib's quotient and arctangent chain rules. The algebraic step
+uses the exact identity
+\(D^2+w_i^2=(w_i+w_j)(w_i+w_k)\) for the three distinct corners.
+`load_off_diagonal_hasDerivAt` specializes to the coordinate direction
+\(h=e_j\), giving \(\partial_{q_j}\alpha_i=-\kappa_{ij}\) for
+\(i\ne j\). A common shift has zero Jacobian action. Conductances are
+nonnegative, and they are strictly positive when both endpoint weights
+are positive. Diagonal values of the helper `conductance` do not matter:
+they multiply \(h_i-h_i=0\), and are never edges in the graph form.
+
+The graph has three explicit edge labels, for the pairs \(01,02,12\).
+`jacobian_pairing` identifies its full bilinear form with
+\(\sum_i h_i(Jk)_i\); `jacobian_energy` consequently gives
+
+\[
+\sum_i h_i\alpha_i'(0)
+=\kappa_{01}(h_0-h_1)^2+
+  \kappa_{02}(h_0-h_2)^2+
+  \kappa_{12}(h_1-h_2)^2.
+\]
+
+`load_pairing_hasDerivAt` proves this equality as the derivative of
+\(\sum_i h_i\alpha_i(a,q+t h)\), so the graph interpretation is tied
+to an actual function. `sum_load_pairing_hasDerivAt` then treats any
+finite collection of triangles with a corner map into one common vertex
+type. It differentiates the sum using the **same** vertex functions
+\(q,h\) at every occurrence. Its graph edge type is the product of the
+triangle labels and the three pair labels. Parallel edges and coincident
+corner labels are retained, and every unordered local pair is counted
+once. There is no choice of independent coordinates for each occurrence
+of a shared face.
+
+A zero corner has identically zero load. A singleton is handled separately
+by `singletonLoad`: its sole supported corner has the constant load
+\(1/2\), with zero derivative. This is not an evaluation of the
+arctangent formula at \(D=0\). All-zero triangles are not part of the
+positive-radicand theorem. Singleton rows add no Hessian energy.
+
+The remaining potential-level input is the identification of these
+\(\alpha_i\) with the gradient of the actual entropy-envelope potential.
+The module does not formalize that constrained maximization or its
+Lagrange-multiplier solution. Once that identification and the actual
+supported incidence graph are supplied, the proved derivative is the
+displayed Hessian energy. Existing `WeightedGraph` and
+`GroundedLaplacian` results apply when positive-weight paths connect the
+actual supported vertex space and the appropriate coordinate is grounded.
+Zero-weight corners do not create positive edges; inactive coordinates
+or pooled boundary data must be treated according to the application.
+Neither graph connectivity, packing existence nor nonlinear deformation
+is inferred solely from the local formula.
+
 ## Pinned dependencies
 
 - Lean: `leanprover/lean4:v4.32.2`.
@@ -472,6 +562,13 @@ lake exe cache get \
   Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic \
   Mathlib.Analysis.SpecialFunctions.Pow.Real \
   Mathlib.Analysis.SpecialFunctions.Log.Basic \
+  Mathlib.Analysis.SpecialFunctions.ExpDeriv \
+  Mathlib.Analysis.SpecialFunctions.Sqrt \
+  Mathlib.Analysis.SpecialFunctions.Trigonometric.ArctanDeriv \
+  Mathlib.Data.Fin.VecNotation \
+  Mathlib.Tactic.FieldSimp \
+  Mathlib.Tactic.FinCases \
+  Mathlib.Tactic.Positivity \
   Mathlib.Tactic.Linarith \
   Mathlib.Data.Real.Basic \
   Mathlib.Algebra.Order.BigOperators.Group.Finset \
@@ -511,7 +608,7 @@ the executed Lean version must still match the pin.
 The checker rebuilds the Std-only path dependency, compiles
 `RealTransfer.lean`, `WeightedGraph.lean`, `Flattening.lean`,
 `TransportCoercivity.lean`, `GroundedConvexity.lean` and
-`GroundedLaplacian.lean`, and runs
+`GroundedLaplacian.lean` and `TriangleLoads.lean`, and runs
 [AxiomAudit.lean](AxiomAudit.lean). Every
 definition and theorem must appear exactly once in the audit. Only Lean's
 standard foundational axioms `propext`, `Classical.choice` and `Quot.sound`
@@ -520,23 +617,25 @@ are permitted; placeholders and additional axioms fail the check.
 `summary.json` records every declaration, its axioms, all dependency pins,
 and the SHA-256 hashes of the optional package, checker and Std-only sources.
 It contains relative paths and omits timestamps so identical inputs produce
-the same summary. Eighteen negative controls check altered pins, missing or
+the same summary. Twenty negative controls check altered pins, missing or
 duplicate dependencies, an absolute local dependency, incomplete or
 duplicate declaration audits, an omitted graph module or grounded-energy
 audit entry, an omitted flattening module or quadratic-cost audit entry,
 an omitted transport module or grounded-coercivity audit entry,
 an omitted grounded-convexity module or unique-minimum audit entry,
 an omitted grounded-Laplacian module or unique-linear-solution audit entry,
+an omitted triangle-load module or shared-load derivative audit entry,
 and an unexpected logical axiom. A failed run
 removes any old success summary in its output directory.
 
-The optional count is **twenty-four definitions and ninety-two theorems**, separate
+The optional count is **thirty-four definitions and one hundred sixteen theorems**, separate
 from the Std-only theorem count: `RealTransfer` has two definitions and
 twenty-two theorems, `WeightedGraph` has seven definitions and nineteen
 theorems, `Flattening` has one definition and nine theorems,
 `TransportCoercivity` has seven definitions and sixteen theorems,
 `GroundedConvexity` has three definitions and eight theorems, and
-`GroundedLaplacian` has four definitions and eighteen theorems. The audit
+`GroundedLaplacian` has four definitions and eighteen theorems, and
+`TriangleLoads` has ten definitions and twenty-four theorems. The audit
 checks these proofs and the
 listed dependency pins; it does not certify that a particular knot family
 satisfies the remaining written analytic and geometric hypotheses.

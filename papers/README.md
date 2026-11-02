@@ -49,7 +49,7 @@ common core for several inserted diagrams also uses protected gluing.
 
 ## The current drafts
 
-The fifteen papers total 231 pages, with individual lengths from 11 to
+The seventeen papers total 262 pages, with individual lengths from 11 to
 28 pages. They provide complete accounts of the results described below,
 with numbered companion imports. This is a partial extraction of the
 reference manuscript, rather than a replacement for all its theorem
@@ -154,6 +154,25 @@ absolute filled volume. Its proof does not use a quantum asymptotic.
 The [reference errata](../manuscript/ERRATA.md) explain the corrected
 factor in the filling Jacobian.
 
+**Holomorphic source asymptotics and volume limits for Conway closures.** 16 pages.
+[TeX source](conway-asymptotics/main.tex) ·
+[PDF](../docs/papers/conway-asymptotics.pdf)
+
+This paper completes the analytic argument for the completed-root Conway
+construction. It first proves a canonical factorial interpolation that
+can also be cited without any knot hypothesis. The actual terminal
+condition of the signed leaf recurrence selects its holomorphic solution;
+an exponentially accurate interpolation then permits the shared wire
+sum to be moved to a complex contour. A second finite sum gives an even
+Fourier polynomial with a real local action and a strict bound away
+from its maximum. Expanding the full physical crossing powers makes the
+oscillatory filling theorem applicable to this polynomial. The entire
+invariant has a nonzero leading coefficient through both level parities.
+The final comparison fixes the quantum action's additive constant and
+identifies it with the independently constructed filled metric volume.
+The knot diagram and independently long signed powers are fixed before
+the level tends to infinity. The broader strict-tree syntax is separate.
+
 **Uniform spectral bounds for local Casimir sources.** 14 pages.
 [TeX source](local-coefficients/main.tex) ·
 [PDF](../docs/papers/local-coefficients.pdf)
@@ -233,6 +252,24 @@ only specialized companion import is the geometric foundation's local
 peripheral-volume differential, not that paper's long-filling existence
 theorem. It supplies geometry for subsequent asymptotic applications;
 it does not select a nonzero contribution to a quantum invariant.
+
+**Degree and twist estimates for circle-tree invariants.** 15 pages.
+[TeX source](circle-tree-asymptotics/main.tex) ·
+[PDF](../docs/papers/circle-tree-asymptotics.pdf)
+
+For the literal ordered circle tree, this paper proves the full invariant's
+volume limit when the sum of $d_v/(d_v^2+n_v^2)$ is at most $2^{-25}$.
+It permits zero crossing power at a sufficiently high-degree vertex.
+The proof retains the first derivatives at repeated spectral roots when
+bounding discarded Newton indices. A complex edge-sum calculation gives
+the local action and amplitude. A joint Fourier argument controls all
+charges and endpoint terms, keeping other variables on real integrals
+or their physical grids while estimating each infinite tail. The first
+charge has a nonzero coefficient at both parities. The positive-octahedra
+companion identifies its action with the original knot-complement volume.
+A second theorem gives the first centered microscopic meridian correction,
+including its physical framing. Local and directed degree criteria, and
+the all-orders longitude statements, are separate results.
 
 **Shared face estimates and triangular gluing for planar link diagrams.** 15 pages.
 [TeX source](planar-certificates/main.tex) ·
@@ -318,8 +355,8 @@ purposes:
 
 | Subject | Result to explain and prove | Dependencies that must remain visible |
 | --- | --- | --- |
-| Recursive filled Conway closures | The completed-root theorem and the broader strict-tree extension require their respective signed source estimates | Exact tangle evaluation, boundary profiles, alias bounds, nonzero filled contributions and marked geometry |
-| Quantitative circle-tree asymptotics | Summed, local and directed degree-and-twist criteria give the full invariant's volume limit | The exact moving-meridian tree formula and classical geometric inputs are available; the analytic subtree and filling estimates must be retained |
+| General strict Conway trees | Extend the completed-root argument to the broader syntax, including bare junctions | Exact normal form, boundary profiles, signed component bounds, quarter-index expansions and marked geometry |
+| Local and directed circle-tree criteria | Prove the separate subtree estimates that remove the summed-condition restriction | Exact moving-meridian tree calculus, conditional source bounds, outgoing estimates and classical completion |
 | Geometric longitude and recurrences | All-order meridian expansions force the selected geometric factor to divide a classical symbol | The moving-meridian source, full expansion, normalization and preferred geometric longitude |
 
 The frozen reference manuscript's first theorem uses its completed-root
@@ -338,15 +375,12 @@ For a citation between papers, the exporting paper must state a numbered
 theorem with its normalization, degree restrictions, level parity and
 uniformity assumptions. The importing paper must name that theorem and
 check those hypotheses. A reference to a folder of calculations is not
-a substitute. The fifteen drafts above now include terminal decoration,
-complete and moving-meridian Newton calculus, complementary color bounds,
-complete and filled Conway geometry and classical circle-tree filling, alongside
-the planar criteria, two kinds of triangular assembly, the three-braid
-application and their foundations. The remaining signed circle-tree estimates,
-nonzero asymptotics and whole filling sums for recursive closures,
-and meridian asymptotics and longitude results still require
-their own extraction and proof review. The dependency
-graph keeps those obligations visible.
+a substitute. The seventeen drafts now include the completed-root Conway volume theorem
+and the summed circle-tree criterion, together with their separate finite,
+analytic and geometric foundations. The broader strict-tree extension,
+the local and directed circle-tree estimates, and the all-orders meridian
+and longitude results still require their own extraction and proof review.
+The dependency graph keeps those obligations visible.
 
 The illustrated guide retains the broader approaches and unsuccessful
 comparisons. The reference manuscript remains available for the existing
@@ -389,7 +423,7 @@ python3 repro/check_paper_algebra.py --output repro/results/paper-algebra
 ```
 
 The runner requires SymPy, python-flint and NumPy. It saves a separate
-record and log for each of ten check groups, and stops on failure. The
+record and log for each registered check group, and stops on failure. The
 planar certificate groups retain their supporting interval records in
 separate subdirectories. The new Newton group compares physical matrix
 turns, traces, circle coefficients and crossing normals with the stated

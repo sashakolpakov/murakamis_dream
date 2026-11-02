@@ -4,6 +4,7 @@ import Flattening
 import TransportCoercivity
 import GroundedConvexity
 import GroundedLaplacian
+import TriangleLoads
 
 #print axioms VolumeLogic.RealModel.complexMagnitude
 #print axioms VolumeLogic.RealModel.constant_div_nat_rate
@@ -126,3 +127,38 @@ import GroundedLaplacian
 #print axioms VolumeLogic.GroundedLaplacian.exists_unique_reduced_solution
 #print axioms VolumeLogic.GroundedLaplacian.reducedMatrix_det_ne_zero
 #print axioms VolumeLogic.GroundedLaplacian.exists_unique_grounded_solution
+
+#print axioms VolumeLogic.TriangleLoads.weights
+#print axioms VolumeLogic.TriangleLoads.radicand
+#print axioms VolumeLogic.TriangleLoads.triangleD
+#print axioms VolumeLogic.TriangleLoads.load
+#print axioms VolumeLogic.TriangleLoads.conductance
+#print axioms VolumeLogic.TriangleLoads.jacobianAction
+#print axioms VolumeLogic.TriangleLoads.radicandRate
+#print axioms VolumeLogic.TriangleLoads.edgeSrc
+#print axioms VolumeLogic.TriangleLoads.edgeDst
+#print axioms VolumeLogic.TriangleLoads.weights_nonneg
+#print axioms VolumeLogic.TriangleLoads.weights_pos_iff
+#print axioms VolumeLogic.TriangleLoads.weights_hasDerivAt
+#print axioms VolumeLogic.TriangleLoads.radicand_pos_of_positive_pair
+#print axioms VolumeLogic.TriangleLoads.pair_sum_pos
+#print axioms VolumeLogic.TriangleLoads.triangleD_pos
+#print axioms VolumeLogic.TriangleLoads.triangleD_sq
+#print axioms VolumeLogic.TriangleLoads.conductance_symm
+#print axioms VolumeLogic.TriangleLoads.conductance_nonneg
+#print axioms VolumeLogic.TriangleLoads.conductance_pos
+#print axioms VolumeLogic.TriangleLoads.derivative_algebra
+#print axioms VolumeLogic.TriangleLoads.radicand_hasDerivAt
+#print axioms VolumeLogic.TriangleLoads.triangleD_hasDerivAt
+#print axioms VolumeLogic.TriangleLoads.derivative_algebra_vector
+#print axioms VolumeLogic.TriangleLoads.load_hasDerivAt
+#print axioms VolumeLogic.TriangleLoads.jacobianAction_single_off_diagonal
+#print axioms VolumeLogic.TriangleLoads.load_off_diagonal_hasDerivAt
+#print axioms VolumeLogic.TriangleLoads.jacobianAction_constant
+#print axioms VolumeLogic.TriangleLoads.jacobian_pairing
+#print axioms VolumeLogic.TriangleLoads.jacobian_energy
+#print axioms VolumeLogic.TriangleLoads.load_pairing_hasDerivAt
+#print axioms VolumeLogic.TriangleLoads.sum_load_pairing_hasDerivAt
+#print axioms VolumeLogic.TriangleLoads.load_zero_corner
+#print axioms VolumeLogic.TriangleLoads.singletonLoad
+#print axioms VolumeLogic.TriangleLoads.singletonLoad_hasDerivAt

@@ -1,0 +1,175 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,booktabs,array,xurl}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\setlength{\emergencystretch}{2em}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\dd}{\mathrm d}
+\newcommand{\Rea}{\operatorname{Re}}
+\newcommand{\Ima}{\operatorname{Im}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Log}{\operatorname{Log}}
+\newcommand{\stat}{\operatorname{stat}}
+\newcommand{\rem}{\operatorname{rem}}
+\newcommand{\Turn}{\mathsf T}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\calC}{\mathcal C}
+\newcommand{\calE}{\mathcal E}
+\title{Degree and twist estimates for circle-tree invariants}
+\author{}\date{}
+\begin{document}\maketitle
+
+\begin{abstract}
+We prove a volume asymptotic for the original reduced invariant of an
+ordered tree of crossing circles. A sufficient condition is that the sum
+of \(d_v/(d_v^2+n_v^2)\), over its circles, is at most \(2^{-25}\);
+here \(d_v\) is graph degree and \(n_v\) is the fixed signed crossing
+power. Large degree can therefore replace large twist at a vertex.
+The proof keeps the full finite Newton contraction, including its
+repeated-root derivatives, and estimates all discarded indices before
+forming a complex wire sum. A joint Fourier argument then controls all
+charges, endpoint currents and connecting contours. Its first charge
+has a nonzero coefficient through both level parities. The geometric
+circle-tree theorem identifies the resulting action with the volume
+of the original filled knot complement. We also give the centered
+microscopic main-meridian profile, with the physical framing and
+edge factors retained.
+\end{abstract}
+
+\section{The diagrams and the conclusion}\label{cta:intro}
+
+A crossing circle is an auxiliary component bounding a disk punctured
+by two main strands. Filling it restores an integer power of the
+crossing in that disk's original frame. Consider the following literal
+ordered construction, as in \cite[Section~1]{Geometry}. A finite tree
+\(\mathcal T=(V,E)\) has at least one edge. Every vertex has its own
+crossing-circle tangle \(P_v\). A rooted expression is
+\begin{equation}\label{cta:word}
+ W_v=\left(\prod_{w\in I_v^-}\Turn(W_w)\right)P_v
+             \left(\prod_{w\in I_v^+}\Turn(W_w)\right).
+\end{equation}
+The lists have their specified orders. The turn rotates the whole
+tangle and its disk frame; it is not just a scalar change of variable.
+Choose a terminal root and the prescribed cylindrical closure. Keep
+the actual strand orientations, a reduced cut on a main strand, and
+zero framing. Require that the endpoint tracing gives one main
+component and no internal closed component. There are no bare product
+junctions. This is an input condition on the diagram, not a consequence
+of the abstract graph.
+
+Write \(r=|V|\), \(e=|E|=r-1\), and \(d_v\ge1\) for graph degree.
+At vertex \(v\) the physical crossing power is \(n_v\in\mathbb Z\).
+The diagram, all powers and orientations are fixed throughout.
+Only the level \(N\ge3\) tends to infinity. Let \(F_N(M)\) be its
+reduced zero-framed ADO invariant, with unknot value one, in the
+physical convention of \cite{Meridian}. At \(M=1\) it is the reduced
+Kashaev invariant of the same knot \(K_{\mathbf n}\). Put
+\[
+ q_N=e^{\pi\ii/N},\qquad d=N-1,\qquad M=q_N^s,\qquad |s|\le R<1.
+\]
+The level degree \(d\) is unrelated to \(d_v\).
+
+Here is the quantitative hypothesis:
+\begin{equation}\label{cta:sum}
+ \mathfrak S=\sum_{v\in V}\frac{d_v}{d_v^2+n_v^2}\le2^{-25}.
+\end{equation}
+Neither the number of vertices nor the signs or relative sizes of
+the fixed powers are bounded. A power can be zero when its degree is
+large enough. The constants in the asymptotic and the initial level
+may depend on the whole fixed diagram.
+
+Define \(J(x)=\int_0^x\log(2\sin\pi u)\,\dd u\),
+\(g(x)=J(2x)-4J(x)\), and \(G_0=g(1/4)\). Near \(t=u=0\) let
+\begin{equation}\label{cta:psi-definition}
+ \psi(0,0)=2G_0,\qquad
+ \psi_t(t,u)=-\frac1\pi
+     \operatorname{arsinh}\!\left(\tan(t/2)\cos(u/2)\right),
+ \qquad\psi_u(t,u)=\psi_t(u,t).
+\end{equation}
+Branches continue from zero. The mixed derivatives agree, as checked
+in Section~\ref{cta:edge}. Set
+\[
+ \Psi(\boldsymbol\tau)=\sum_{vw\in E}\psi(\tau_v,\tau_w),
+ \qquad F_0=2eG_0,\qquad
+ \Phi_{\boldsymbol\ell}(\boldsymbol\tau)
+ =\Psi(\boldsymbol\tau)+\frac{\ii}{4\pi}
+       \sum_v n_v\tau_v^2-\ii\sum_v\ell_v\tau_v .
+\]
+Let \(\boldsymbol\tau_*\) be the small critical point for
+\(\boldsymbol\ell=\mathbf1\), and
+\(\calC(\mathbf1)=\Phi_{\mathbf1}(\boldsymbol\tau_*)\).
+Existence and uniqueness in the needed chart are proved below.
+
+\begin{theorem}\label{cta:main}
+For the fixed marked knot diagram above, suppose \eqref{cta:sum}.
+There is a constant \(D_{\mathcal T,\mathbf n}\ne0\), independent
+of the level parity, such that
+\begin{equation}\label{cta:leading}
+ F_N(1)=\Omega_N N^{3/2}D_{\mathcal T,\mathbf n}
+            e^{N\calC(\mathbf1)}(1+O(N^{-1})),\qquad
+ \Omega_N=q_N^{\,d^2(2w(D)+\sum_vn_v)/4}.
+\end{equation}
+Here \(w(D)\) is the oriented writhe of the original diagram and
+\(|\Omega_N|=1\).
+The original knot complement is hyperbolic and
+\begin{equation}\label{cta:volume}
+ \lim_{N\to\infty}\frac{2\pi}{N}\log|F_N(1)|
+       =2\pi\Rea\calC(\mathbf1)
+       =\Vol(S^3\setminus K_{\mathbf n}).
+\end{equation}
+Both level parities are included.
+\end{theorem}
+
+For the centered profile put
+\[
+ H_N(s)=\frac{\sin\pi s}{N\sin(\pi s/N)},\qquad
+ A_N(s)=q_N^{(-w(D)-\sum_vn_v)s^2/2}.
+\]
+The value at zero is removable. For each edge let
+\(x_{vw}^*=x(\tau_{*,v},\tau_{*,w})\), where the branch \(x(0,0)=1/4\)
+is specified by
+\begin{equation}\label{cta:wire}
+ \tan^2(\pi x(t,u))
+     =\frac1{1+\tan^2(t/2)+\tan^2(u/2)}.
+\end{equation}
+
+\begin{theorem}\label{cta:profile}
+Under the same hypothesis, \(F_N(q_N^s)\) is nonzero on
+\(|s|\le R<1\) for all sufficiently large \(N\), and uniformly there
+\begin{equation}\label{cta:profile-formula}
+ \frac{F_N(q_N^s)}{A_N(s)H_N(s)F_N(1)}
+ =1-\frac{\pi s^2}{N}\sum_{vw\in E}\cot(\pi x_{vw}^*)
+                                      +O_R(N^{-2}).
+\end{equation}
+Consequently the limit in \eqref{cta:volume} also holds uniformly
+with \(F_N(1)\) replaced by \(F_N(q_N^s)\).
+\end{theorem}
+
+This is a microscopic statement: \(s\) is bounded while \(M=q_N^s\)
+approaches one. It asserts neither an asymptotic on a fixed
+\(M\)-neighborhood nor an all-orders annihilator theorem.
+
+The finite inputs are precisely \cite[Proposition~6.1, Theorem~7.1
+and Proposition~8.1]{Meridian}: full crossing polynomials and traces,
+the original tree contraction, and its scalar ledger. The geometric
+input is \cite[Theorem~1.1]{Geometry}. The analytic passage between
+them is proved here. In particular the independently long-twist
+theorem of \cite{Oscillatory} is not applicable merely from
+\eqref{cta:sum}; a vertex may have \(n_v=0\).
+
+\input{finite-bounds}
+\input{edge-packet}
+\input{joint-filling}
+\input{conclusion}
+\end{document}

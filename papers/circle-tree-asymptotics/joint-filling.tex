@@ -1,0 +1,292 @@
+\section{Critical points with degree in the denominator}
+\label{cta:critical}
+
+Set
+\begin{equation}\label{cta:D}
+ b_v=\frac{n_v}{2\pi},\qquad D_v=a_v-\ii b_v,\qquad
+ t_0=\frac1{16},\qquad L_v=\lfloor t_0|D_v|\rfloor .
+\end{equation}
+The summed condition implies
+\(\sqrt{d_v^2+n_v^2}\ge2^{25/2}\sqrt{d_v}\), so
+\(|D_v|>32\) and \(L_v\ge1\). This denominator stays large
+also when \(n_v=0\).
+
+For real continuous charges \(0\le\ell_v\le L_v\), the critical
+equation of \(\Phi_{\boldsymbol\ell}\) is
+\begin{equation}\label{cta:fixedpoint}
+ D_v\tau_v=-\ii\ell_v+\calE_v(\boldsymbol\tau).
+\end{equation}
+After division by \(D_v\), its right side is a contraction
+with constant at most \(\varepsilon\) in the radius-\(1/4\)
+polydisk, by \eqref{cta:error} and \(a_v\le|D_v|\).
+Its image has radius at most \(t_0+\delta/4<1/4\).
+It has a unique analytic critical branch
+\(\boldsymbol\tau_{\boldsymbol\ell}\). Define
+\(\calC(\boldsymbol\ell)=
+\Phi_{\boldsymbol\ell}(\boldsymbol\tau_{\boldsymbol\ell})\).
+
+Put \(Q_v=\calE_v/\tau_v\), with its holomorphic removable
+extension. The exact equation is
+\begin{equation}\label{cta:tau-formula}
+ \tau_v=-\frac{\ii\ell_v}{D_v-Q_v}.
+\end{equation}
+Since \(|Q_v|\le\delta a_v\), define
+\[
+ \gamma_+=\frac{1+\delta}{(1-\delta)^2}
+          =\frac{2550}{2401},\qquad
+ \gamma_-=\frac{1-\delta}{(1+\delta)^2}
+          =\frac{2450}{2601}.
+\]
+Taking the imaginary part of \eqref{cta:tau-formula} gives
+\begin{equation}\label{cta:imaginary}
+ \gamma_-\frac{\ell_va_v}{|D_v|^2}
+ \le-\Ima\tau_v
+ \le\gamma_+\frac{\ell_va_v}{|D_v|^2}.
+\end{equation}
+For example the numerator is
+\(\ell_v\Rea(D_v-Q_v)\), between
+\((1-\delta)\ell_va_v\) and \((1+\delta)\ell_va_v\);
+the denominator is bounded by
+\((1\pm\delta)^2|D_v|^2\).
+Every positive-charge coordinate therefore has negative
+imaginary part and is nonzero.
+
+The envelope derivative is
+\(\partial_{\ell_v}\Rea\calC=\Ima\tau_v\).
+Integrating it one coordinate at a time gives
+\begin{equation}\label{cta:charge-order}
+ \Rea\calC(\boldsymbol\ell)\le\Rea\calC(\mathbf1)
+   -\frac{\gamma_-}{2}\sum_v
+       \frac{a_v}{|D_v|^2}(\ell_v^2-1),
+ \qquad 1\le\ell_v\le L_v .
+\end{equation}
+Integrating from \(\mathbf0\) to \(\mathbf1\) similarly gives
+\begin{equation}\label{cta:drop}
+ F_0-\beta\le\Rea\calC(\mathbf1)\le F_0,\qquad
+ \beta=\frac{\gamma_+}{2}\sum_v\frac{a_v}{|D_v|^2}
+                         =\pi\gamma_+\mathfrak S.
+\end{equation}
+This compares each charge directly with the filled first-charge
+action; a comparison only with \(F_0\) would not suffice.
+
+The real part of the Hessian on a real tangent is at most
+\(-(1-\varepsilon)\diag(a_v)\), by the symmetric weighted
+row bound in \eqref{cta:error}. Its Gaussian determinant
+is nonzero. Also
+\(|\tau_v|\le t_0/(1-\delta)<\pi/2\), so
+\(\prod_v\sin\tau_v\ne0\) at every positive-charge saddle.
+
+\section{The entire Fourier filling calculation}\label{cta:Fourier}
+
+\subsection{A translated finite grid, including its endpoint currents}
+For an even trigonometric polynomial
+\(f(t)=f^\sharp(-2\cos t)\), define the exact trace
+\(\mathcal D_{n,\sigma,N}[f]=\phi_\sigma(R_\sigma^n f^\sharp)\).
+There is no restriction on the degree of \(f^\sharp\).
+The actual crossing formula of
+\cite[Proposition~6.1 and equation~(6.4)]{Meridian} gives
+\begin{equation}\label{cta:trace}
+ \mathcal D_{n,\sigma,N}[f]
+ =\frac{\eta N C_{N,n}(\sigma)}{\sin(2\pi\sigma)}
+   \sum_{j=0}^{N-1}
+     \sin\tau_j\, f(\tau_j)e^{\ii nN\tau_j^2/(4\pi)},
+ \quad
+ \begin{cases}
+ \tau_j=\dfrac{2\pi}{N}(d/2+\sigma-j),\\
+ C_{N,n}(\sigma)=q_N^{n(d^2/4-\sigma^2/2)} .
+ \end{cases}
+\end{equation}
+It is initially written off the colliding grids. Its holomorphic
+limit is the full trace, including first normals and the odd
+simple-node value; it is not a distinct-node approximation.
+
+Fix \(R<R'<1\), with \(R'\ne1/2\), and first put the formal
+parameters \(\sigma_v\) on \(|\sigma_v|=R'\).
+Their denominators are then bounded away from zero.
+The grid kernel
+\[
+ \mathcal K_\sigma(t)=
+ \frac{\ii N e^{\ii Nt}}{e^{\ii Nt}-\eta e^{2\pi\ii\sigma}}
+\]
+has residue one at each grid point. Integrate it around the
+rectangle with sides \(\pm\pi\pm\ii y+2\pi\sigma/N\).
+It encloses exactly the \(N\) points in \eqref{cta:trace}.
+On its vertical sides,
+\[
+ \mathcal K_\sigma(\pm\pi+\ii v+2\pi\sigma/N)
+           =\frac{\ii N e^{-Nv}}{1+e^{-Nv}}.
+\]
+Thus no argument-dependent pole separation is assumed.
+The upper and lower horizontal expansions are respectively
+\[
+ -\ii N\sum_{\ell\ge1}
+     \eta^\ell e^{-2\pi\ii\ell\sigma}e^{\ii\ell Nt},
+ \qquad
+ \ii N\left(1+\sum_{\ell\ge1}
+     \eta^\ell e^{2\pi\ii\ell\sigma}e^{-\ii\ell Nt}\right).
+\]
+Each term has an entire integrand, so its translated path can
+be moved to the fixed horizontal segment, retaining the short
+endpoint connectors. This is not a deformation of a meromorphic
+kernel through its moving poles.
+
+The function \(\sin t\,f(t)e^{\ii nNt^2/(4\pi)}\) is odd.
+Reflect the upper side by \(t\mapsto-t\), with its actual
+boundary orientation. Combining the two coefficients leaves
+\[
+ c_{\ell,N}(\sigma)=
+   \eta^{\ell-1}U_{\ell-1}(\cos2\pi\sigma),\qquad c_{1,N}=1.
+\]
+The zero-mode integral on the real segment is zero, but moving
+it there leaves its endpoint currents. The resulting
+nonzero-charge prefactor is \(-N^2C_{N,n}/(\pi\ii)\).
+In particular the reflected charges have already been paired;
+there will be no later unexamined sum of equal-action signs.
+
+\subsection{Infinite tails with real spectators}
+Let \(A_0=1/400\), and use the heights
+\begin{equation}\label{cta:height}
+ y_v=A_0t_0\,\frac{a_v}{|D_v|}.
+\end{equation}
+In coordinate \(v\), with all spectators real or on their
+physical translated grids, \eqref{cta:global-Gaussian} bounds
+the exponent on the lower horizontal side by
+\[
+ F_0-A_0a_v t^2+|b_vty_v|-\ell y_v+70a_vy_v^2.
+ \]
+After maximizing \(t\), the positive quadratic coefficient
+of \(y_v^2\) is at most
+\[
+ 70a_v+\frac{100b_v^2}{a_v}
+                  \le\frac{100|D_v|^2}{a_v}.
+ \]
+Since \(L_v+1>t_0|D_v|\), every \(\ell\ge L_v+1\) loses at least
+\begin{equation}\label{cta:tail-loss}
+ \tfrac12 A_0t_0^2a_v\ge\frac1{409600\pi}.
+\end{equation}
+Further charges carry \(e^{-N(\ell-L_v-1)y_v}\).
+The bound
+\(|c_{\ell,N}(\sigma)|\le
+\ell e^{2\pi R'(\ell-1)}\) is absorbed for sufficiently large
+\(N\), since this tree and \(y_v>0\) are fixed.
+
+The original vertical sides have loss
+\(\pi^2a_v/400\).
+The chirp, finite-charge connector and imaginary Gaussian
+costs there are at most
+\(\pi A_0t_0a_v\), \(A_0t_0^2a_v\), and
+\(70A_0^2t_0^2a_v\). Their sum is less than half that
+endpoint loss. The zero-mode current obeys the same estimate.
+The translated-grid error \(O(N^{-1})\) changes only the
+prefactor.
+
+For completeness, define the finite real-integral functional
+\[
+ \mathcal P_v[f]=-\frac{N^2C_{N,n_v}(\sigma_v)}{\pi\ii}
+   \sum_{\ell=1}^{L_v}c_{\ell,N}(\sigma_v)
+   \int_{-\pi}^{\pi}\sin t\,f(t)
+            e^{N(\ii b_vt^2/2-\ii\ell t)}\,\dd t .
+\]
+Use the exact telescoping identity
+\begin{equation}\label{cta:telescoping}
+ \prod_v\mathcal D_v-\prod_v\mathcal P_v
+ =\sum_j\left(\prod_{v<j}\mathcal P_v\right)
+        (\mathcal D_j-\mathcal P_j)
+        \left(\prod_{v>j}\mathcal D_v\right).
+\end{equation}
+The left spectators are finite real integrals and the right
+spectators are physical grids. Each costs only a polynomial
+in \(N\), with constants depending on fixed powers.
+Their grid heights are \(O(N^{-1})\), not another
+coordinate's slope-dependent contour height. This is why
+the loss in \eqref{cta:tail-loss} survives arbitrary relative
+degrees and twists.
+
+Thus the exact retained contraction is, up to an error with
+that fixed loss, the finite sum
+\begin{equation}\label{cta:finite-charges}
+ \begin{split}
+ &
+ \left(\prod_v-\frac{N^2C_{N,n_v}(\sigma_v)}{\pi\ii}\right)
+ \sum_{1\le\ell_v\le L_v}\!
+     \left(\prod_vc_{\ell_v,N}(\sigma_v)\right)\\
+ &\quad\times
+     \int_{[-\pi,\pi]^r}B_N(\boldsymbol\tau,s)
+          \prod_v\sin\tau_v\,
+          e^{N(\ii\sum_v b_v\tau_v^2/2-\ii\sum_v\ell_v\tau_v)}
+                     \,\dd\boldsymbol\tau .
+ \end{split}
+\end{equation}
+The \emph{whole difference} is holomorphic in every formal
+\(\sigma_v\) on the unit disk. The original side has the
+holomorphic full crossing traces; the finite approximation
+has polynomial coefficients \(c_{\ell,N}\).
+The maximum principle, one parameter at a time, extends the
+estimate from the circles to the disks. We can now set
+\(\sigma_v=0,s,-s\) as the actual types require. This step
+does not claim that each divided endpoint current separately
+has a removable singularity.
+
+\subsection{The connecting contours and the selected charge}
+Restrict the real integrals in \eqref{cta:finite-charges} to
+\([-\rho,\rho]^r\), with \(\rho=1/8\).
+Their complement loses at least \(1/(51200\pi)\) by
+\eqref{cta:global-Gaussian}; the real chirps and Fourier
+factors have modulus one.
+Translate this box to the imaginary part of its own critical
+point. On a connector write \(\tau_v=t_v-\ii v_v\), where
+\(0\le v_v\le-\Ima\tau_{\boldsymbol\ell,v}\).
+All these points lie in the radius-\(1/4\) polydisk.
+Equation \eqref{cta:error} and Young's inequality give
+\begin{equation}\label{cta:connector}
+ \begin{split}
+ \Rea\Phi_{\boldsymbol\ell}(\mathbf t-\ii\mathbf v)
+ \le F_0-\tfrac18\sum_va_vt_v^2
+ +\sum_v\left[
+  \tfrac{1+\varepsilon}{2}a_v+
+       \frac{2b_v^2}{(3-4\varepsilon)a_v}\right]v_v^2
+ -\sum_v\ell_vv_v .
+ \end{split}
+\end{equation}
+Indeed Young's inequality uses
+\((3-4\varepsilon)a_vt_v^2/8\) to absorb \(b_vt_vv_v\).
+By \eqref{cta:imaginary},
+\[
+ \gamma_+\max\{(1+\varepsilon)/2,\ 2/(3-4\varepsilon)\}<3/4.
+\]
+The last two sums in \eqref{cta:connector} are therefore at
+most \(-\tfrac14\sum_v\ell_vv_v\). Each connector has some
+\(|t_v|=\rho\), and loses at least \(1/(1024\pi)\).
+The negative Fourier terms of all spectators are retained
+in this calculation; replacing them by independent imaginary
+growth estimates would lose the result.
+
+On the translated horizontal box the critical point has
+\(|\Rea\tau_v|<t_0/(1-\delta)<\rho\), and the real Hessian
+is strictly negative. Apply the holomorphic packet expansion
+\eqref{cta:packet-expansion} there. Taylor expansion at that
+critical point gives its Gaussian contribution; the rest has
+an exponential loss, and the odd Gaussian corrections vanish.
+For a nonminimal charge the original integral equals this
+saddle contribution plus an additive error at rate
+\(F_0-\eta\), where
+\begin{equation}\label{cta:eta}
+ \eta=\frac1{819200\pi}.
+\end{equation}
+We do not assert a relative asymptotic for its original
+contour if its own action is smaller than that error.
+Equation \eqref{cta:charge-order} is what compares its saddle
+with the first one.
+
+Every discarded source, edge-contour, real-box, tail and
+connector error has at least the loss \eqref{cta:eta}, allowing
+polynomial prefactors. Finally
+\begin{equation}\label{cta:budget}
+ \beta\le\pi\frac{2550}{2401}\,2^{-25}
+                      <\frac1{1638400\pi}=\frac\eta2.
+\end{equation}
+All fixed-loss errors are strictly below the first-charge
+action. Each other retained positive charge is also strictly
+below it by \eqref{cta:charge-order}. There are finitely many
+such charges for the fixed tree. These are two distinct
+comparisons, and both are needed.

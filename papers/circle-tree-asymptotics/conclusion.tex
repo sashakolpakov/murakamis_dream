@@ -1,0 +1,214 @@
+\section{The nonzero coefficient and the original knot volume}
+\label{cta:conclusion}
+
+\subsection{The coefficient of the whole invariant}
+Let
+\[
+ \mathcal Q=-\Psi''(\boldsymbol\tau_*)-\ii\diag(b_v).
+\]
+Its real quadratic part is positive on real vectors.
+Choose \(\sqrt{\det\mathcal Q}\) by the complex Gaussian on that
+real tangent. This branch continues from positive definite real
+matrices in the domain with positive real part.
+Applying \eqref{cta:packet-expansion} to the first integral
+in \eqref{cta:finite-charges} gives the explicit constant
+\begin{equation}\label{cta:amplitude}
+ D_{\mathcal T,\mathbf n}
+ =\left(-\frac1{\pi\ii}\right)^r(2\pi)^{r/2}
+   \frac{a(\boldsymbol\tau_*)\prod_v\sin\tau_{*,v}}
+        {\sqrt{\det\mathcal Q}}\ne0 .
+\end{equation}
+Each factor has already been proved nonzero.
+The charge-one coefficient is exactly one at every vertex,
+even at a colliding or constant grid. Hence no parity-dependent
+leading cancellation remains.
+
+The powers of \(N\) can be read without an asymptotic
+normalization choice. The \(r\) exact trace factors supply
+\(N^{2r}\). The \(e\) finite edge sums supply \(N^{-3e/2}\),
+and the angular Gaussian supplies \(N^{-r/2}\).
+Since \(e=r-1\), the total is \(N^{3/2}\).
+At \(s=0\) all physical turn factors and \(H_N/W_k\) are one.
+Equations \eqref{cta:exact-source} and \eqref{cta:trace} therefore
+leave precisely
+\[
+ \vartheta_d^{-w(D)}\prod_v C_{N,n_v}(0)
+       =q_N^{d^2(2w(D)+\sum_vn_v)/4}=\Omega_N.
+\]
+Every final turn is included by the original compiler in
+\eqref{cta:exact-source}; it is not removed in this count.
+This proves the complete leading term \eqref{cta:leading}.
+All nonminimal charges and fixed-loss errors are absorbed
+using \eqref{cta:charge-order} and \eqref{cta:budget}.
+The implied exponential rates and initial levels depend on
+the fixed tree and powers, as the theorem allows.
+
+\begin{figure}[ht]
+\centering\input{figures/joint-contour}
+\caption{One coordinate of the finite angular deformation.
+The real box has endpoints \(\pm\rho\), with \(\rho=1/8\);
+its translated horizontal side passes through the critical point.
+The two vertical sides are retained as connectors, with their
+boundary orientations when comparing the horizontal integrals.
+Here \(v_v=-\Im\tau_{\boldsymbol\ell,v}>0\).
+Other coordinates can have intermediate downward displacements,
+so their negative Fourier terms are kept in
+\eqref{cta:connector}. The earlier infinite-charge estimate
+uses real or translated-grid spectators, before this deformation.}
+\label{cta:contour-figure}
+\end{figure}
+
+\subsection{Matching the geometric branch}
+The analytic action is exactly the action of
+\cite[Theorem~1.1]{Geometry}, not just a function with its
+complete Hessian. Its derivative \eqref{cta:psi-definition}
+agrees on every edge with that theorem, and the constants agree:
+\(2G_0=v_{\rm oct}/\pi\), where \(v_{\rm oct}\) is the regular
+ideal octahedron volume. This last equality also follows directly
+from the Lobachevsky integral at \(\pi/4\).
+
+Write \(n_v=\epsilon_v-2p_v\), with the retained parity
+\(\epsilon_v\in\{-1,0,1\}\) in each actual disk frame.
+The geometric theorem fills the original primitive slope
+\(\mu_v+p_v\lambda_v\), with periods
+\[
+ U_v=-2\pi\Psi_{\tau_v}-\ii\epsilon_v\tau_v,\qquad
+ V_v=2\ii\tau_v.
+\]
+Its unit-charge equation is
+\(\Psi_{\tau_v}+\ii n_v\tau_v/(2\pi)=\ii\), precisely
+\eqref{cta:fixedpoint} for \(\boldsymbol\ell=\mathbf1\).
+The summed condition implies
+\(\sqrt{d_v^2+n_v^2}\ge2^{25/2}>630\).
+Furthermore \eqref{cta:tau-formula} gives
+\[
+ |\tau_{*,v}|\le
+ \frac{2\pi}{(1-\delta)\sqrt{d_v^2+n_v^2}}<10^{-2}.
+\]
+Thus our critical point lies in the geometric theorem's
+uniqueness chart. Its original filled metric is smooth,
+complete and finite-volume, including zero powers at high-degree
+vertices; every main cusp stays complete. Its absolute
+fundamental-chain calculation gives
+\(\Vol(S^3\setminus K_{\mathbf n})=2\pi\Rea\calC(\mathbf1)\).
+There is no appeal here to a long-twist theorem for a zero
+power, or to a formal exponentiated slope without metric completion.
+Taking logarithms of the already nonzero
+\eqref{cta:leading} proves Theorem~\ref{cta:main}.
+
+\subsection{The centered main-meridian insertion}
+The finite scalar ledger of \cite[Proposition~8.1]{Meridian}
+separates exactly \(A_N(s)\) from the index-dependent factors
+\(H_N/W_k\), the shifted crossing grids and the single closing
+factor \(H_N(s)\). In the first-charge coefficient every grid
+parameter has disappeared because \(c_{1,N}(\sigma)=1\).
+The chirp has no remaining \(\sigma\)-dependence once its
+recorded scalar is extracted.
+
+It remains to integrate the second line of
+\eqref{cta:packet-expansion} on the same joint contour.
+For any fixed holomorphic insertion \(h(\boldsymbol\tau)\),
+the normalized angular Gaussian evaluates it as
+\(h(\boldsymbol\tau_*)+O(N^{-1})\): its linear Gaussian
+term vanishes, and the quadratic term and its interaction
+with the cubic phase contribute \(O(N^{-1})\).
+The expansion to the next order and the fixed losses above
+make this statement uniform on \(|s|\le R\).
+Apply it to
+\(-\pi s^2\sum_e\cot(\pi x_e(\boldsymbol\tau))\),
+which already has the factor \(N^{-1}\).
+The common first saddle correction cancels upon division
+by \(F_N(1)\). The result is \eqref{cta:profile-formula}
+with a uniform \(O_R(N^{-2})\) remainder.
+In particular the wire values are those at the filled
+critical point, not the complete values \(1/4\).
+
+Both \(A_N\) and \(H_N\) are nonzero and bounded away from
+zero on the fixed disk for large \(N\).
+The ratio in \eqref{cta:profile-formula} tends uniformly
+to one. This proves uniform eventual nonvanishing and
+the remaining assertions of Theorem~\ref{cta:profile}.
+No division by an unproved nonzero finite invariant was
+used to establish the leading term.
+
+\section{Scope, dependencies and reproducibility}
+
+The condition is a theorem about every fixed literal marked
+tree satisfying \eqref{cta:sum}. It is not uniform in a tree
+growing with \(N\), and it is not a condition solely on the
+smallest crossing power. For example, in a star with \(d\)
+terminal vertices, central power zero and terminal powers \(n\),
+\[
+ \mathfrak S=\frac1d+\frac{d}{1+n^2}.
+\]
+Taking \(d\ge2^{27}\) and \(|n|\ge\sqrt{2^{27}d}\) gives
+\(\mathfrak S\le2^{-26}\). Knot applicability still requires
+the literal endpoint condition of Section~\ref{cta:intro};
+this arithmetic example does not supply that condition by itself.
+The proof uses neither the separate directed-message criterion
+nor the more general strict Conway grammar with bare junctions.
+
+The mathematical dependencies have different jobs.
+The finite meridian calculus supplies the exact original
+invariant and all repeated-root data.
+The factorial lemma supplies one normalized holomorphic
+interpolant, and its application to this finite edge sum is
+proved in Section~\ref{cta:edge}.
+Sections~\ref{cta:angular}--\ref{cta:Fourier} prove the joint
+summed-condition analytic estimate, including the entire
+original source and Fourier period.
+Only after noncancellation is proved is the classical
+circle-tree theorem used to identify the action with metric
+volume. No quantum asymptotic is an input to that geometric
+theorem.
+
+The residue and Gaussian steps belong to the classical
+contour method; \cite[Sections~2.4(iii)--(iv)]{DLMF} gives
+background. Their contours and all losses relevant to this
+finite invariant have been specified above.
+From the repository root the paper-local reproduction command is
+\begin{verbatim}
+python3 papers/circle-tree-asymptotics/check.py \
+    --output /tmp/circle-tree-check.json
+\end{verbatim}
+It records source hashes and reuses the existing edge script's four
+exact symbolic identities and finite complex-product samples.
+It also checks the numerical budgets by exact rational interval
+arithmetic, using convergent series bounds for \(\pi\), \(\sinh\)
+and \(\cosh\). Negative controls reject altered budgets.
+Those finite calculations do not prove a uniform strip estimate,
+the charge tails or a volume theorem; the corresponding
+proofs are given here. The script and its recorded result are
+linked in the accompanying repository.
+
+\begin{thebibliography}{9}
+\bibitem{Meridian}
+\emph{Exact Newton calculus for tangles with a moving meridian},
+companion paper, Proposition~6.1, Theorem~7.1,
+and Proposition~8.1.
+\href{https://sashakolpakov.github.io/murakamis_dream/papers/meridian-tangles.pdf}
+{Companion PDF}.
+
+\bibitem{Geometry}
+\emph{Positive octahedra and primitive fillings for trees of crossing circles},
+companion paper, Theorem~1.1.
+\href{https://sashakolpakov.github.io/murakamis_dream/papers/circle-tree-geometry.pdf}
+{Companion PDF}.
+
+\bibitem{ConwayAnalysis}
+\emph{Holomorphic source asymptotics and volume limits for Conway closures},
+companion paper, Lemma~2.1.
+\href{https://sashakolpakov.github.io/murakamis_dream/papers/conway-asymptotics.pdf}
+{Companion PDF}.
+
+\bibitem{Oscillatory}
+\emph{Oscillatory filling sums with independently long twists},
+companion paper.
+\href{https://sashakolpakov.github.io/murakamis_dream/papers/oscillatory-fillings.pdf}
+{Companion PDF}.
+
+\bibitem{DLMF}
+NIST Digital Library of Mathematical Functions,
+\href{https://dlmf.nist.gov/5.11}{Section~5.11, Gamma-function asymptotics},
+and \href{https://dlmf.nist.gov/2.4}{Section~2.4, Contour integrals}.
+\end{thebibliography}

@@ -337,8 +337,8 @@ support makes that second derivative positive along every nonconstant
 segment. Lean derives the strict Jensen inequality and strict convexity,
 then proves that two minimizing points must coincide. Combining this
 with the transport module gives an existing, unique minimum of the same
-constructed potential. The geometric derivative calculation and the
-positive table needed to apply the result remain written proofs.
+constructed potential. The positive table and the identification of the
+potential's first derivative remain written application inputs.
 
 The [reduced-Laplacian module](../../formal-real/GroundedLaplacian.lean)
 also constructs the matrix obtained by fixing one vertex and deleting
@@ -350,9 +350,36 @@ vertices. The equation at the fixed vertex is not imposed. This includes
 the one-vertex graph, which has no free coordinates. A uniform bound for
 the inverse and a nonlinear implicit-function theorem are separate tasks.
 
-The optional package has twenty-four definitions and ninety-two theorems.
-Its axiom audit covers all 116 declarations, separately from
-the Std-only project. Eighteen negative controls check that invalid
+The [triangle-load module](../../formal-real/TriangleLoads.lean) now
+derives the second derivative used in this argument from explicit
+formulas. For nonnegative corner constants \(a_i\), logarithmic
+coordinates \(q_i\), and a direction \(h_i\), put
+
+\[
+w_i=a_i e^{q_i},\qquad
+D=\sqrt{w_0w_1+w_1w_2+w_2w_0},\qquad
+\alpha_i=\frac1\pi\arctan\frac{w_i}{D}.
+\]
+
+When \(D>0\), Lean differentiates \(\alpha_i(q+th)\) and proves
+
+\[
+\left.\frac{d}{dt}\alpha_i(q+th)\right|_{t=0}
+=\sum_j\frac{w_iw_j}{2\pi D(w_i+w_j)}(h_i-h_j).
+\]
+
+Pairing with \(h\) gives the three-edge graph energy. Summing over
+triangles uses one common value at every shared vertex and preserves
+parallel edges. The proof also covers a triangle with one zero corner;
+a singleton's load is defined separately as the constant \(1/2\).
+To apply this to the geometric potential, one must still prove that its
+first derivative is the pairing with these loads and that the positive
+edges connect the required vertices. These are not consequences of the
+arctangent calculation alone.
+
+The optional package has thirty-four definitions and 116 theorems.
+Its axiom audit covers all 150 declarations, separately from
+the Std-only project. Twenty negative controls check that invalid
 inputs are rejected. The saddle estimates, whole-source gap and geometric
 volume identity remain written application inputs. The
 [tangle and tree review](../../repro/TANGLE_TREE_AUDIT.md) records the
@@ -368,6 +395,13 @@ reduced-Laplacian proof. The
 [reference errata](../../manuscript/ERRATA.md) give the corrected filling
 Jacobian, \(-2\pi i\operatorname{diag}(\tau_\ell)\), and show directly
 why its invertibility is unaffected. The reference PDF remains unchanged.
+
+The [analytic tree review](../../repro/ANALYTIC_TREE_AUDIT.md) follows the
+completed-root Conway asymptotic and the summed circle-tree criterion.
+It records how the actual finite sums meet the analytic hypotheses,
+where the volume comparison enters, and which broader tree statements
+still need separate papers. It also records the triangle-load
+differentiation and the limits of that formalization.
 
 ## Joining certified diagrams
 

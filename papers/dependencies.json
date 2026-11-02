@@ -1881,7 +1881,7 @@
       "id": "tree_exact_edge_kernel",
       "title": "The original circle-tree kernel and its local bounds",
       "group": "diagram_evaluation",
-      "statement": "The exact moving-meridian Newton pairing gives the original tree boundary-polynomial recursion with all indices, physical types and scalar factors retained. Its finite adapter is in the meridian companion; the quantitative local complex and real bounds, including high indices, remain the separate E/G proofs.",
+      "statement": "The exact moving-meridian pairing gives the original all-index tree recursion with physical types and scalars. The new summed-criterion paper proves global full-normal Newton bounds and complex edge estimates. The additional conditional subtree bounds used by the local and directed criteria remain separate G/K inputs.",
       "sources": [
         {
           "path": "papers/meridian-tangles/main.tex",
@@ -1896,16 +1896,24 @@
           "anchor": "\\label{mt:scalar}"
         },
         {
-          "path": "manuscript/sections/E-quantitative-finite-sums.tex",
-          "anchor": "\\section{Uniform Newton bounds with explicit constants}\\label{sec:qu}"
-        },
-        {
           "path": "manuscript/sections/G-local-tree-messages.tex",
           "anchor": "\\label{sec:lm-2}"
         },
         {
           "path": "manuscript/sections/G-local-tree-messages.tex",
           "anchor": "\\label{sec:lm-3}"
+        },
+        {
+          "path": "papers/circle-tree-asymptotics/finite-bounds.tex",
+          "anchor": "\\label{cta:norms}"
+        },
+        {
+          "path": "papers/circle-tree-asymptotics/finite-bounds.tex",
+          "anchor": "\\label{cta:discard}"
+        },
+        {
+          "path": "papers/circle-tree-asymptotics/edge-packet.tex",
+          "anchor": "\\label{cta:raw}"
         }
       ],
       "depends_on": [
@@ -1970,35 +1978,40 @@
       "id": "tree_summed_volume",
       "title": "The summed degree/twist criterion",
       "group": "tree_criteria",
-      "statement": "S=sum d_v/(d_v^2+n_v^2)<=2^-25 gives the full volume/profile theorem, with fixed tree and knot test.",
+      "statement": "For each fixed literal all-circle tree satisfying the original knot-component test and sum d_v/(d_v^2+n_v^2)<=2^-25, the full reduced invariant is eventually nonzero and has the knot-complement volume rate at all sufficiently large integer levels. A centered microscopic main-meridian expansion is uniform on each fixed |s|<=R<1. Zero powers at sufficiently high degree are allowed.",
       "sources": [
         {
-          "path": "manuscript/sections/E-quantitative-finite-sums.tex",
-          "anchor": "\\section{Finite sums under the degree and twist criterion}\\label{sec:qe}"
+          "path": "papers/circle-tree-asymptotics/main.tex",
+          "anchor": "\\label{cta:word}"
         },
         {
-          "path": "manuscript/sections/E-quantitative-finite-sums.tex",
-          "anchor": "\\section{Uniform Newton bounds with explicit constants}\\label{sec:qu}"
+          "path": "papers/circle-tree-asymptotics/main.tex",
+          "anchor": "\\label{cta:main}"
         },
         {
-          "path": "manuscript/sections/08a-quantitative-circle-trees.tex",
-          "anchor": "\\label{thm:circle-quantitative}"
+          "path": "papers/circle-tree-asymptotics/main.tex",
+          "anchor": "\\label{cta:profile}"
+        },
+        {
+          "path": "papers/circle-tree-asymptotics/conclusion.tex",
+          "anchor": "\\label{cta:conclusion}"
         }
       ],
       "depends_on": [
         {
-          "id": "tree_exact_edge_kernel",
-          "reason": "Supplies original edge action and off-window source bounds."
+          "id": "analytic_circle_joint_source",
+          "reason": "Gives the nonzero asymptotic of the whole original invariant, full errors, exact unit phase and microscopic insertion."
         },
         {
           "id": "tree_positive_completion",
-          "reason": "Identifies the selected angular action with the original smooth filled volume."
+          "reason": "The summed condition implies the actual geometric threshold; the matching action has the same derivatives and complete constant."
         },
         {
           "id": "elementary_rate_transfer",
-          "reason": "A bound for the entire remainder, the nonzero central contribution and the original scalar normalization are combined to obtain the rate of the invariant."
+          "reason": "The nonzero coefficient and lower exponential error give the all-level logarithmic rate with the retained physical normalization."
         }
-      ]
+      ],
+      "coverage": "Proved in the degree-and-twist companion with its explicit summed condition. The preferred-cusp interpretation and all-orders longitude statements remain separate."
     },
     {
       "id": "tree_local_volume",
@@ -2427,25 +2440,33 @@
           "reason": "Fixes the enhanced reduced convention and actual physical gauge. The new paper proves its pair turn and cylindrical trace directly, rather than importing a different invariant."
         }
       ],
-      "coverage": "The complete-meridian finite algebra is proved in the Newton paper. Its exact circle-basis filling expansion remains a separate archive input; no moving-meridian adapter is supplied here."
+      "coverage": "The complete-meridian finite algebra is proved in the Newton paper. The exact all-integer circle-basis filling expansion is proved separately in the Conway asymptotics companion. Moving-meridian identities retain their own adapter."
     },
     {
       "id": "recursive_exact_filling_source",
       "title": "Exact circle-basis filling of the recursive source",
       "group": "diagram_evaluation",
-      "statement": "For each fixed original marked recursive diagram, insert the full Fourier-Hermite circle-basis expansion of every R^(-2p) before taking the unchanged closure. This gives the exact signed color sum with its original unit character, Cartan powers and both value and normal interpolation data. It is a finite identity, not a source gap or an asymptotic statement.",
+      "statement": "For every integer physical crossing power, including odd and negative powers, full Fourier-Hermite inversion gives its exact expansion into ordinary circles. The midpoint identity retains the normal data and h=0 multiplicity, and fixes the whole Fourier period and its unit phase. Evaluating each local identity in the unchanged diagram preserves the original knot and framing.",
       "sources": [
         {
-          "path": "manuscript/sections/02-finite-source.tex",
-          "anchor": "\\label{eq:exact-filling}"
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:crossing-data}"
         },
         {
-          "path": "manuscript/sections/02-finite-source.tex",
-          "anchor": "\\label{eq:whole-filling-source}"
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:Hermite-inverse}"
         },
         {
-          "path": "manuscript/sections/A-finite-identities.tex",
-          "anchor": "\\label{app:fourier}"
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:crossing-split}"
+        },
+        {
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:midpoint}"
+        },
+        {
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:period}"
         }
       ],
       "depends_on": [
@@ -2466,7 +2487,7 @@
           "reason": "Restores the exact original reduced scalar and framing character."
         }
       ],
-      "coverage": "Retained written archive dependency from Chapter 2 and Appendix A. The new Newton paper does not claim the whole filled-source formula or its analytic estimates."
+      "coverage": "Proved in the Conway asymptotics paper before any large-level estimate. The full integer power is expanded, making the pure source available even for odd physical powers."
     },
     {
       "id": "recursive_positive_source",
@@ -2565,28 +2586,36 @@
       "statement": "For a fixed completed-root expression, the exact finite color corridor has a relative holomorphic asymptotic with nonzero amplitude and fixed complex tube. Combining it with the full complementary-color gap and exact filling transform controls endpoints, connectors and all other charges. For independently sufficiently long fixed signed powers, the original invariant has the all-parity nonzero asymptotic of eq:final-asymptotic, including its level power and recorded phases.",
       "sources": [
         {
-          "path": "manuscript/sections/06-packet.tex",
-          "anchor": "\\label{thm:packet}"
+          "path": "papers/conway-asymptotics/packet.tex",
+          "anchor": "\\label{ca:offsets}"
         },
         {
-          "path": "manuscript/sections/B1-high-index-packet.tex",
-          "anchor": "\\label{eq:b1-exact-window}"
+          "path": "papers/conway-asymptotics/packet.tex",
+          "anchor": "\\label{ca:packet-theorem}"
         },
         {
-          "path": "manuscript/sections/B1-high-index-packet.tex",
-          "anchor": "\\label{eq:b1-source-restoration}"
+          "path": "papers/conway-asymptotics/packet.tex",
+          "anchor": "\\label{ca:Fourier-theorem}"
         },
         {
-          "path": "manuscript/sections/B-analytic-estimates.tex",
-          "anchor": "\\label{app:filling-contours}"
+          "path": "papers/conway-asymptotics/packet.tex",
+          "anchor": "\\label{ca:Fourier-global}"
         },
         {
-          "path": "manuscript/sections/08-filling.tex",
-          "anchor": "\\label{eq:final-asymptotic}"
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:generic-period}"
         },
         {
-          "path": "manuscript/sections/08-filling.tex",
-          "anchor": "\\label{eq:final-amplitude}"
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:filled-error}"
+        },
+        {
+          "path": "papers/conway-asymptotics/main.tex",
+          "anchor": "\\label{ca:asymptotic}"
+        },
+        {
+          "path": "papers/conway-asymptotics/main.tex",
+          "anchor": "\\label{ca:D}"
         }
       ],
       "depends_on": [
@@ -2605,9 +2634,13 @@
         {
           "id": "recursive_local_leaf_estimates",
           "reason": "Uses the finite high-index local expansions and global core estimates within the completed-root parameter ranges."
+        },
+        {
+          "id": "analytic_conditional_filling",
+          "reason": "The exact full-power expansion uses the pure even Fourier polynomial. Its real local action and entire shared-strip gap meet the existing theorem without extending its hypotheses to a complex action."
         }
       ],
-      "coverage": "This node records the completed-root construction of Chapters 2–8, with its stated grammar. The broader strict-tree extension has separate nodes and additional inputs."
+      "coverage": "Proved for the completed-root grammar in the Conway asymptotics paper. Both integer lattices retain their exact offsets, densities, repeated-root terms and physical phases; the broader strict-tree construction remains separate."
     },
     {
       "id": "recursive_marked_metric",
@@ -3685,43 +3718,27 @@
       "id": "recursive_completed_volume",
       "title": "Long-twist volume for the completed-root construction",
       "group": "recursive_tangles",
-      "statement": "The frozen manuscript proves the full volume limit for its completed-root tangle grammar, original knot test, and independently sufficiently long fixed signed powers.",
+      "statement": "For each fixed completed-root Conway construction with the original knot-component test, independently sufficiently long fixed signed crossing powers give a nonzero asymptotic and the full knot-complement volume limit through all sufficiently large integer levels. The completed-root grammar is retained; arbitrary strict masks are a separate extension.",
       "sources": [
         {
-          "path": "manuscript/sections/08-filling.tex",
-          "anchor": "\\section{Replacing the color sum by its controlled local part}"
+          "path": "papers/conway-asymptotics/main.tex",
+          "anchor": "\\label{ca:main}"
         },
         {
-          "path": "manuscript/sections/08-filling.tex",
-          "anchor": "\\section{An exact Fourier bound away from zero frequency}"
+          "path": "papers/conway-asymptotics/main.tex",
+          "anchor": "\\label{ca:asymptotic}"
         },
         {
-          "path": "manuscript/sections/08-filling.tex",
-          "anchor": "\\section{The total derivative and the zero-charge cancellation}"
+          "path": "papers/conway-asymptotics/main.tex",
+          "anchor": "\\label{ca:volume}"
         },
         {
-          "path": "manuscript/sections/08-filling.tex",
-          "anchor": "\\section{Uniform charge tails and their endpoint currents}"
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:filled-error}"
         },
         {
-          "path": "manuscript/sections/08-filling.tex",
-          "anchor": "\\section{The central Fourier packet}"
-        },
-        {
-          "path": "manuscript/sections/08-filling.tex",
-          "anchor": "\\section{Local charges for independently signed slopes}"
-        },
-        {
-          "path": "manuscript/sections/08-filling.tex",
-          "anchor": "\\section{Noncancellation and the final action}"
-        },
-        {
-          "path": "manuscript/sections/D-marked-cell-calibration.tex",
-          "anchor": "\\section{Primitive logs, the absolute regulator, and filling}"
-        },
-        {
-          "path": "manuscript/sections/D-marked-cell-calibration.tex",
-          "anchor": "\\section{Smooth completion on the actual primitive filled topology}"
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:classical-action}"
         }
       ],
       "depends_on": [
@@ -3746,7 +3763,7 @@
           "reason": "Identifies the action selected by the nonzero quantum asymptotic with the independently defined classical filling action, including its constant."
         }
       ],
-      "coverage": "This node records the completed-root construction of Chapters 2–8, with its stated grammar. The broader strict-tree extension has separate nodes and additional inputs."
+      "coverage": "Proved in the Conway asymptotics companion using the separate complementary-source, entire filling-sum and classical geometry papers. Each imported hypothesis is verified before the volume conclusion."
     },
     {
       "id": "recursive_strict_normal_form",
@@ -3993,8 +4010,28 @@
       "statement": "The exact signed finite leaf coefficients admit normalized holomorphic expansions on each compact high-index chart with a nonzero source-selected amplitude. Whole-color majorants and the original fixed integer offsets are retained. This is the local finite-source interface used in the completed-root construction.",
       "sources": [
         {
-          "path": "manuscript/sections/B1-high-index-packet.tex",
-          "anchor": "\\label{eq:b1-local-asymptotic}"
+          "path": "papers/conway-asymptotics/leaf.tex",
+          "anchor": "\\label{ca:Ward}"
+        },
+        {
+          "path": "papers/conway-asymptotics/leaf.tex",
+          "anchor": "\\label{ca:wall}"
+        },
+        {
+          "path": "papers/conway-asymptotics/leaf.tex",
+          "anchor": "\\label{ca:continued-fraction}"
+        },
+        {
+          "path": "papers/conway-asymptotics/leaf.tex",
+          "anchor": "\\label{ca:physical-ratio}"
+        },
+        {
+          "path": "papers/conway-asymptotics/leaf.tex",
+          "anchor": "\\label{ca:exponential-interpolation}"
+        },
+        {
+          "path": "papers/conway-asymptotics/leaf.tex",
+          "anchor": "\\label{ca:leaf-asymptotic}"
         },
         {
           "path": "papers/conway-source-bounds/local.tex",
@@ -4009,9 +4046,13 @@
         {
           "id": "recursive_uniform_leaf_envelopes",
           "reason": "Supplies the separately proved all-physical-color global envelope; the holomorphic nonzero local expansion remains in the frozen appendix."
+        },
+        {
+          "id": "analytic_canonical_factorial",
+          "reason": "Fixes the complex factorial continuation and all phases; the source-selected recurrence then constructs an exponentially accurate index interpolation."
         }
       ],
-      "coverage": "These written high-index and global-envelope proofs are in the frozen manuscript. The quarter-index extension has a separate node because the completed-root argument does not need its enlarged chart."
+      "coverage": "The completed-root high-index expansion and its actual terminal normalization are proved in the Conway asymptotics companion. The quarter-index extension remains a separate result."
     },
     {
       "id": "recursive_strict_angle_geometry",
@@ -4392,20 +4433,24 @@
       "statement": "For the completed-root local source, its endpoint-normalized leading leaf primitive agrees with the classical sheared log-sine potential, including the parameter-dependent constant. Eliminating the same stationary internal wires identifies the source action with the geometric one. A common derivative in the wire variable or a common Hessian at completeness alone would not prove this comparison.",
       "sources": [
         {
-          "path": "manuscript/sections/B1-high-index-packet.tex",
-          "anchor": "\\label{eq:b1-local-actions}"
+          "path": "papers/conway-asymptotics/leaf.tex",
+          "anchor": "\\label{ca:shear}"
         },
         {
-          "path": "manuscript/sections/B1-high-index-packet.tex",
-          "anchor": "\\label{eq:b1-shear}"
+          "path": "papers/conway-asymptotics/leaf.tex",
+          "anchor": "\\label{ca:shear-action}"
         },
         {
-          "path": "manuscript/sections/B1-high-index-packet.tex",
-          "anchor": "\\label{eq:b1-shear-action}"
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:global-shear}"
         },
         {
-          "path": "manuscript/sections/B1-high-index-packet.tex",
-          "anchor": "\\label{eq:b1-wire-phase}"
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:Legendre-shear}"
+        },
+        {
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:classical-action}"
         },
         {
           "path": "papers/conway-fillings/metric-volume.tex",
@@ -4426,7 +4471,139 @@
           "reason": "Defines the classical shear potential and identifies its normalized critical value with the actual filled volume."
         }
       ],
-      "coverage": "The analytic comparison is still sourced to the frozen appendix. The new classical paper states this interface but does not claim to prove the finite-source asymptotic."
+      "coverage": "The analytic companion now proves the comparison, fixing the possible additive color function at the actual terminal index x=1/2 before stationary wire elimination. The classical companion supplies the absolute geometric volume independently."
+    },
+    {
+      "id": "analytic_triangle_load_derivatives",
+      "title": "Actual triangle-load derivatives and shared graph energy",
+      "group": "finite_graph_energy",
+      "statement": "For nonnegative corner constants and positive radicand, the exponential-weight arctangent loads have their explicitly proved directional conductance Jacobian. Their pairing with a variation equals the actual three-edge energy. Finite assembly uses one shared vertex function and retains parallel edges; one-zero triangles are covered, and singleton loads are separately constant. Identifying these loads with the gradient of the geometric potential remains a written input.",
+      "sources": [
+        {
+          "path": "formal-real/TriangleLoads.lean",
+          "anchor": "theorem derivative_algebra"
+        },
+        {
+          "path": "formal-real/TriangleLoads.lean",
+          "anchor": "theorem load_hasDerivAt"
+        },
+        {
+          "path": "formal-real/TriangleLoads.lean",
+          "anchor": "theorem load_off_diagonal_hasDerivAt"
+        },
+        {
+          "path": "formal-real/TriangleLoads.lean",
+          "anchor": "theorem load_pairing_hasDerivAt"
+        },
+        {
+          "path": "formal-real/TriangleLoads.lean",
+          "anchor": "theorem sum_load_pairing_hasDerivAt"
+        },
+        {
+          "path": "formal-real/TriangleLoads.lean",
+          "anchor": "theorem singletonLoad_hasDerivAt"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "finite_weighted_graph_kernel",
+          "reason": "Uses the explicit shared edge-energy definition; differentiation of the exponential, square-root and arctangent functions is proved in the new module."
+        }
+      ],
+      "coverage": "The actual local derivative formula is formalized, including one-zero support. Entropy-gradient identification, the geometric incidence map and positive-support connectivity remain explicit application obligations."
+    },
+    {
+      "id": "analytic_canonical_factorial",
+      "title": "Canonical sine factorial and complex remainder estimates",
+      "group": "local_asymptotics",
+      "statement": "A convergent Gamma product fixes a nonvanishing holomorphic interpolation of the finite sine factorial, including its exact shift, reflection, marked phase and small-meridian normalization. Summable Stirling remainders give all fixed orders and derivatives on compact complex bulk strips. No periodic renormalization is allowed.",
+      "sources": [
+        {
+          "path": "papers/conway-asymptotics/factorial.tex",
+          "anchor": "\\label{ca:factorial}"
+        },
+        {
+          "path": "papers/conway-asymptotics/factorial.tex",
+          "anchor": "\\label{ca:G}"
+        },
+        {
+          "path": "papers/conway-asymptotics/factorial.tex",
+          "anchor": "\\label{ca:reflection}"
+        },
+        {
+          "path": "papers/conway-asymptotics/factorial.tex",
+          "anchor": "\\label{ca:small-reflection}"
+        },
+        {
+          "path": "papers/conway-asymptotics/factorial.tex",
+          "anchor": "\\label{ca:all-Stirling}"
+        }
+      ],
+      "depends_on": [],
+      "coverage": "A general analytic lemma proved from the stated Gamma and sine-product identities; it has no tangle-grammar or quantum-asymptotic hypothesis."
+    },
+    {
+      "id": "analytic_circle_joint_source",
+      "title": "All-index and joint Fourier estimates under the summed criterion",
+      "group": "tree_criteria",
+      "statement": "For the literal fixed all-circle tree with sum d_v/(d_v^2+n_v^2)<=2^-25, the full Newton source has a nonzero first-charge asymptotic through both level parities. The proof bounds every discarded index with full repeated-root normals, constructs the normalized complex edge sum, controls all charge tails with real/grid spectators, and retains every endpoint and connecting contour. The centered microscopic insertion has an O(N^-2) expansion after its exact physical scalar is removed.",
+      "sources": [
+        {
+          "path": "papers/circle-tree-asymptotics/finite-bounds.tex",
+          "anchor": "\\label{cta:norms}"
+        },
+        {
+          "path": "papers/circle-tree-asymptotics/finite-bounds.tex",
+          "anchor": "\\label{cta:discard}"
+        },
+        {
+          "path": "papers/circle-tree-asymptotics/edge-packet.tex",
+          "anchor": "\\label{cta:interpolant}"
+        },
+        {
+          "path": "papers/circle-tree-asymptotics/edge-packet.tex",
+          "anchor": "\\label{cta:packet-expansion}"
+        },
+        {
+          "path": "papers/circle-tree-asymptotics/edge-packet.tex",
+          "anchor": "\\label{cta:global-Gaussian}"
+        },
+        {
+          "path": "papers/circle-tree-asymptotics/joint-filling.tex",
+          "anchor": "\\label{cta:charge-order}"
+        },
+        {
+          "path": "papers/circle-tree-asymptotics/joint-filling.tex",
+          "anchor": "\\label{cta:telescoping}"
+        },
+        {
+          "path": "papers/circle-tree-asymptotics/joint-filling.tex",
+          "anchor": "\\label{cta:finite-charges}"
+        },
+        {
+          "path": "papers/circle-tree-asymptotics/joint-filling.tex",
+          "anchor": "\\label{cta:connector}"
+        },
+        {
+          "path": "papers/circle-tree-asymptotics/joint-filling.tex",
+          "anchor": "\\label{cta:budget}"
+        },
+        {
+          "path": "papers/circle-tree-asymptotics/conclusion.tex",
+          "anchor": "\\label{cta:amplitude}"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "finite_moving_meridian_tangle",
+          "reason": "Provides the exact full tree contraction, actual repeated-root traces and the original physical scalar ledger."
+        },
+        {
+          "id": "analytic_canonical_factorial",
+          "reason": "Fixes the factorial interpolation, reflection and uniform complex remainders used to derive the edge sum and its meridian insertion."
+        }
+      ],
+      "coverage": "The summed criterion is proved here. It is distinct from the local and directed criteria, whose separate source estimates are not inferred from it. Geometry is used only in the subsequent volume identification."
     }
   ]
 }
