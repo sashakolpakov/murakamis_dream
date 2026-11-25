@@ -69,17 +69,6 @@ theorem face_grid_unique_exponents (N a b : Nat) (xs : List Nat)
   intro x hx
   exact residue_target_lower N x (residues x hx)
 
-/-- If the numerator has less than the target total degree, every
-monomial is rejected by at least one ordinary-face grid. -/
-theorem face_grid_below_target (N a b : Nat) (xs : List Nat)
-    (budget : a + b + xs.sum < xs.length * (N - 1)) :
-    ¬ (∀ x ∈ xs, x % N = N - 1) := by
-  intro residues
-  have hs := list_sum_lower (N - 1) xs (by
-    intro x hx
-    exact residue_target_lower N x (residues x hx))
-  omega
-
 /-- The exact support selector after averaging every free face grid.
 The exterior protected face is not averaged; its exponent is forced
 to zero by the degree budget. -/

@@ -1,11 +1,12 @@
 \chapter{Uniform bounds for inserting twist powers}
 \label{app:uniform-filling-bound}
 
-The finite formula for a diagram can be organized in two steps. First,
-take the prescribed coefficient in its shared face variables. This gives
-a polynomial \(S_N\) in one spectral variable for each crossing region.
-Then apply a linear functional in each spectral variable to insert the
-chosen signed twist power.
+The face-variable formula separates the diagram from its twist
+powers. Taking the prescribed shared face coefficient produces a
+polynomial \(S_N\), with one spectral variable for each crossing
+region. A linear functional in each variable then inserts the
+chosen signed power. We bound these functionals without changing
+the shared face constraints.
 
 This appendix bounds the second step. Inserting \(n\) crossings costs at
 most \(1+|n|/2\) in the supremum norm on the real spectral interval,
@@ -23,7 +24,9 @@ polynomial and prove that the geometric contribution survives.
 Here is the precise statement. Let \(N\ge2\), \(d=N-1\),
 \(q=e^{\pi i/N}\), and let \(\mathcal L_N^{n}\) be the full-Hermite
 functional for the actual crossing power \(R^n\), with
-\(n\in\mathbb Z\), defined below. For a polynomial \(H\) of degree at
+\(n\in\mathbb Z\), defined below. ``Full-Hermite'' means that it
+uses values at the spectral nodes and first derivatives at the double
+nodes. For a polynomial \(H\) of degree at
 most \(d\), \begin{equation}\label{uf:eq-1}
 |\mathcal L_N^{n}H|
        \le \left(1+\frac{|n|}{2}\right)
@@ -68,8 +71,9 @@ Fourier charge.
 \section{The exact source and its
 normalization}\label{uf:sec-the-exact-source-and-its-normalization}
 
-Use the original pair Casimir \(\Omega\), not an operator reconstructed
-from its spectral values. The direct matrix calculation in
+We first relate the spectral polynomial to the pair Casimir
+\(\Omega\). This matrix identity is needed because spectral values
+alone would omit its nilpotent part. The direct matrix calculation in
 Section~\ref{uf:local-fourier} proves \(\chi_N(\Omega)=0\), and
 polynomial division gives the degree-\(d\) resolvent numerator \begin{equation}\label{uf:eq-5}
 V_N(z;\Omega)=\chi_N(z)(z-\Omega)^{-1}.
@@ -80,8 +84,8 @@ every spectral node. It is not the determinant adjugate of the full
 The
 \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_homogeneous_casimir_face_source.html}{original
 homogeneous face source} associates to \eqref{uf:eq-5} a four-face polynomial
-\(H_V(x,b,c,y;z)\), with literal input/output middle faces \(b,c\). Fix
-a connected original diagram at \(N\ge3\), with its actual cups, caps,
+\(H_V(x,b,c,y;z)\), with input/output middle faces \(b,c\). Fix
+a connected diagram at \(N\ge3\), with its cups, caps,
 unrestricted marked cap, protected face targets, and every ordered box.
 The applications include connected flat plats and the connected matched
 simple-sphere Morse diagrams of
@@ -110,9 +114,8 @@ Kashaev convention uses the recorded framing/component character, of
 modulus one at complete color; for a knot the enhanced component sign is
 one. In the specified full one-cut modified convention, retain the
 additional factor \(i^{N+3}/N\). Original exterior Cartan and framing
-factors remain in their prescribed locations throughout. These are the
-physical normalization choices; no new quantum dimension or color
-average is introduced by the norm theorem.
+factors remain in their prescribed locations throughout. These conventions fix the normalization of the functional used in
+the estimate.
 
 The polynomial degree and the identities \eqref{uf:eq-5}--\eqref{uf:eq-7}, rather than a
 hypothesis about arbitrary polynomial solutions of a recurrence, are the
@@ -123,9 +126,10 @@ themselves hold for every polynomial of the indicated degree and every
 \section{The local source identity from a finite Fourier transform}
 \label{uf:local-fourier}
 
-We give the local matrix calculation, including its normalization.
-It explains both the annihilating polynomial and the homogeneous face
-polynomial used above. No decomposition into simple modules is needed.
+The local calculation has two outputs: the annihilating polynomial
+of \(\Omega\), including its multiplicities, and the normalized map
+from matrix entries to the homogeneous face polynomial. Both follow
+from one finite Fourier transform.
 
 Put \(Q=q^2\). In the balanced basis \(e_0,\ldots,e_d\) of the
 complete-color module, the original matrices are
@@ -252,7 +256,7 @@ The right side gives the same Laurent polynomial. Substitution
 Cayley--Hamilton and \eqref{uf:face-fourier-conjugacy} give
 \(\chi_N(\Omega_s)=0\). The \(N\) residue spaces form a direct sum
 of the full pair space, proving the assertion for \(\Omega\).
-This proves a matrix identity, not only an identity on its eigenvalues.
+The conclusion therefore includes every nilpotent part of the pair matrix.
 \end{proof}
 
 The same transform gives the complete local polynomial adapter.
@@ -285,8 +289,8 @@ the result is
  (f(\Omega_s))_{ru}
    =\frac1N q^{-d(r-u)}c^{-d}H_f(x,b,c,y).
 \end{equation}
-This proves the factor \(1/N\), the direction of the shift and the
-full polynomial identity directly from the original pair matrices.
+This identifies the factor \(1/N\) and the direction of the shift
+in the face-polynomial formula.
 If the input and output have different integer totals, the left
 side is zero: the modular block is the direct sum of its actual-total
 blocks. Hence the right side also vanishes at such a grid point.
@@ -309,10 +313,9 @@ with respect to a generic deformation of \(q\) is taken here.
 \section{Why the polynomial reduction is well defined}
 \label{uf:sec-canonical-reduction}
 
-Before using the particular spectral roots, we record the algebraic
-fact behind reduction at repeated roots. It explains which parts of the
-calculation depend only on the polynomial and which still require the
-original crossing operator.
+Reduction at repeated roots is an algebraic operation that uses no
+root differences as denominators. We record it here before
+specializing to the Chebyshev roots.
 
 Let \(R\) be a commutative ring with identity, and let
 \(r_1,\ldots,r_m\in R\), with \(m\ge1\). Repetitions are allowed.
@@ -429,18 +432,14 @@ multiplicative: $\ell_p(fg)$ need not equal $\ell_p(f)\ell_p(g)$.
 The product must be formed and reduced before its coefficient is taken.
 At a repeated spectral root the product rule also retains the first
 derivative of either factor; a list of values alone cannot replace it.
-This is the algebra needed when a product initially exceeds the
-canonical degree in Appendix~\ref{app:directed-all-orders}.
+The reduction must therefore precede the final coefficient extraction,
+also when an unreduced product has degree above the canonical range.
 
-These polynomial statements are checked in the Lean files described
-in Chapter~\ref{ch:reproduction}. The implementation uses coefficient
-lists and also proves invariance under arbitrary trailing zeros.
-The characterization of \(\ell_p\) states sufficient conditions
-for identifying another functional with it; those conditions must
-still be proved for that functional. In this appendix the application
-requires the actual factorization of \(\chi_N\), the original
-Casimir relation, and the crossing values and derivatives. The next
-section supplies the root data and the corresponding explicit formula.
+The polynomial statements also have Lean proofs, described in
+Chapter~\ref{ch:reproduction}. To apply them here, we still need the
+factorization of \(\chi_N\), the matrix relation for \(\Omega\),
+and the values and derivatives of the crossing power. The next
+section supplies the root data and the explicit functional.
 
 There is also a direct algebraic relation between this coefficient
 functional and the resolvent numerator. It does not require a
@@ -476,9 +475,8 @@ Induction gives \(\ell_p(X^jV_w)=w^j\). Linearity proves the
 claim for arbitrary \(f\), with no restriction on its degree.
 \end{proof}
 
-The seven declarations in
-\sourcefile{formal/VolumeLogic/ResolventFunctional.lean} prove this
-identity for the constructed coefficient-list operations. For the
+A coefficient-list proof is in
+\sourcefile{formal/VolumeLogic/ResolventFunctional.lean}. For the
 local matrix application, take the commutative algebra generated by
 the one Casimir \(\Omega\) and scalar matrices. With
 \(p=\chi_N\) and \(w=\Omega\), its \(V_w\) is exactly
@@ -528,7 +526,7 @@ its weight in \eqref{uf:eq-10}. Thus \eqref{uf:eq-10} is equivalently \begin{equ
        \left.\frac{d}{d\phi}
        \frac{2\sin\phi\,f(2\cos\phi)H(2\cos\phi)}{N^2}
        \right|_{\phi=\phi_k}.
-\end{equation} There is no omission or doubling of the odd simple node.
+\end{equation} The sine derivative thus accounts for the odd simple node with its required weight.
 
 For the actual positive or negative integral crossing power, the
 \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_direct_long_power_source.html}{full-Hermite
@@ -540,8 +538,7 @@ f_n(2\cos\phi)=q^{nd^2/4}
 lift even for nonintegral \(a\). In particular \begin{equation}\label{uf:eq-14}
 |f_n|=1,\qquad |\partial_\phi f_n|\le\frac{|n|N}{2},\qquad
  f_n(c_a)=q^{nd^2/2}(-1)^{an}q^{na(a+1)}.
-\end{equation} The nodal phase is the actual crossing phase, not its absolute value
-substituted into the source. Formula \eqref{uf:eq-13} is symmetric about \(\pi\); it
+\end{equation} Keep this nodal phase in the functional; only its estimate uses the modulus. Formula \eqref{uf:eq-13} is symmetric about \(\pi\); it
 has the required holomorphic germ at the odd simple node. The possible
 endpoint cut at \(z=2\) does not occur at a spectral node and does not
 enter the finite identity \eqref{uf:eq-12}.
@@ -553,8 +550,7 @@ Expanding \eqref{uf:eq-12}, with primes now in \(\phi\), gives \begin{equation}\
 \end{equation} This finite formula is sufficient for every norm below; no
 interchange of an infinite Fourier series or a contour limit is needed.
 
-\section{An elementary exact derivative
-inequality}\label{uf:sec-an-elementary-exact-derivative-inequality}
+\section{A finite interpolation proof of the derivative bound}\label{uf:sec-an-elementary-exact-derivative-inequality}
 
 For every complex trigonometric polynomial \(P\) of degree at most
 \(d\ge1\), set \(\theta_j=(2j-1)\pi/(2d)\), \(1\le j\le2d\). The finite
@@ -602,15 +598,14 @@ exactly. Only the derivative of the original numerator remains. Applying
 \eqref{uf:eq-19} to that term gives \eqref{uf:eq-2}, uniformly in every signed \(n\), including
 zero.
 
-Here is why the original lower and upper one-sided numerators satisfy
-this hypothesis. Put
+We now verify node vanishing for the lower and upper one-sided numerators. Put
 \(D_-(z)=\prod_{a=0}^{\lfloor N/2\rfloor-1}(z-c_a)\). The exact
 lower-row restriction leaves the factor \begin{equation}\label{uf:eq-21}
 \frac{\chi_N(z)}{D_-(z)}=
  \begin{cases}D_-(z),&N\ \mathrm{even},\\
  (z+2)D_-(z),&N\ \mathrm{odd}.
  \end{cases}
-\end{equation} Every lower one-sided entry is divisible by \eqref{uf:eq-21}; literal row
+\end{equation} Every lower one-sided entry is divisible by \eqref{uf:eq-21}; row
 reflection gives the same statement for the upper piece. Thus values
 vanish at all nodes. On the lower invariant block \(\Omega_-\), whose
 eigenvalues \(c_a\) are distinct, \eqref{uf:eq-10} reduces exactly to \begin{equation}\label{uf:eq-22}
@@ -619,12 +614,13 @@ eigenvalues \(c_a\) are distinct, \eqref{uf:eq-10} reduces exactly to \begin{equ
                        H_{V,\mathrm L}'(c_a).
 \end{equation} These numerator derivatives are the original lower-block spectral
 projectors. The derivative of \(f_n\) disappears, but the semisimple
-source is not zero. For example the literal local diagonal coefficient
+source is not zero. For example the local diagonal coefficient
 obeys \begin{equation}\label{uf:eq-23}
 [c^d]H_{V,\mathrm L}(z)=\frac{\chi_N(z)}{z-c_0},
  \qquad [c^d]H_{R^n,\mathrm L}=q^{nd^2/2}.
-\end{equation} Its modulus is one. This is an actual local coefficient, not a claim
-that the same boundary can maximize a closed source.
+\end{equation} Its modulus is one. This checks that the one-sided functional is
+not identically zero; it does not identify a maximizing boundary
+for a closed diagram.
 
 \section{Shared polynomials and the unsplit complementary
 source}\label{uf:sec-shared-polynomials-and-the-unsplit-complementary-source}
@@ -661,8 +657,7 @@ this unsplit difference avoids summing the absolute values of
 exponentially many path terms. The statement is finite and exact even
 though its remaining shared supremum can be large.
 
-\section{What the norm theorem does and does not
-supply}\label{uf:sec-what-the-norm-theorem-does-and-does-not-supply}
+\section{Relation to the remaining source estimate}\label{uf:sec-what-the-norm-theorem-does-and-does-not-supply}
 
 There is already a level-independent dual filling cost in the
 \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_filling_fourier_hermite_gram.html}{positive
@@ -686,8 +681,7 @@ grows at the geometric volume rate. Neither node vanishing nor the
 uniform functional norm controls this remaining between-node polynomial.
 Separate absolute local envelopes may exceed that rate, and \eqref{uf:eq-23}
 prevents an argument that every one-sided channel is identically killed.
-The theorem asserts no new saddle dominance, peripheral representation,
-or knot-volume equality.
+Those conclusions require the separate saddle and geometric arguments.
 
 The \href{https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_uniform_filling_supremum_bound.py}{finite reproduction program}
 takes \texttt{-\/-repo} pointing to the research checkout. It checks the
@@ -697,9 +691,8 @@ the midpoint reconstruction with independently built original
 coproduct/Casimir and signed braid matrices at levels 3--8, for powers
 \(\pm1,\ldots,\pm5\), and checks the lower-block compression including
 its normal data. The JSON output distinguishes the exact rational
-cyclotomic calculations from exact finite-field matrix checks. These
-finite cases check algebraic identities; the all-level inequalities
-follow from the proofs above, not from sampled norm ratios.
+cyclotomic calculations from exact finite-field matrix checks. These finite cases check the algebraic formulas. The preceding proofs
+establish the inequalities at all levels.
 
 \section{The estimate needed for long
 fillings}\label{uf:sec-the-estimate-needed-for-long-fillings}
@@ -731,7 +724,8 @@ Z_{N,\mathrm C}(\boldsymbol n)
 contribution tends to zero exponentially. Consequently \begin{equation}\label{uf:eq-29}
 \lim_{N\to\infty}N^{-1}\log|Z_N(\boldsymbol n)|
        =\Re\mathcal A_{\boldsymbol n}.
-\end{equation} The subexponential normalization factors in section 1 preserve this
+\end{equation} The subexponential normalization factors in
+Section~\ref{uf:sec-the-exact-source-and-its-normalization} preserve this
 limit. Identifying \(2\pi\Re\mathcal A_{\boldsymbol n}\) with the
 hyperbolic volume still requires the geometric filling argument for that
 diagram.

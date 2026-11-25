@@ -9,14 +9,18 @@ We add finitely many terminal tangles near each crossing circle and
 prove the volume limit for the resulting knots after independently
 sufficiently long fixed fillings.
 
-The construction has a geometric purpose. It leaves every old circle
-in the complete packing fixed and adds disks in its triangular gaps.
-By choosing the numbers of insertions on the two sides separately,
-one obtains a strict inequality at the same complete packing for every
-crossing circle. This bounds the one-sided terms of the full spectral
-numerator below the geometric contribution. The knot being evaluated
-is the decorated knot, with all its original and added circles filled;
-it need not be isotopic to the initial core knot.
+The decoration serves one purpose: it makes the geometric contribution
+dominate the other terms of the finite source. It leaves all old circles
+of the complete packing fixed and inserts new disks into triangular
+gaps. Two independently chosen fan lengths make a strict inequality
+hold at every crossing circle on that same packing. The inequality
+controls the \emph{one-sided} cofactor terms, whose paths stay on one
+side of the middle index. The complementary, central terms carry the
+geometric contribution.
+
+The resulting knot is the decorated knot, with every original and
+added circle filled. The construction need not preserve the knot type
+of the undecorated diagram.
 
 \section{The diagrams and the result}
 
@@ -76,7 +80,8 @@ The signs at these odd boxes may be chosen independently. Theorem
 
 \section{A circle packing from the finite combinatorics}
 
-No additional positive polyhedron is an unverified input. Remove one
+We construct the required positive polyhedron from the incidence data.
+Remove one
 triangle of the white sphere and prescribe three positive boundary
 circle radii. The remaining disk has a strictly positive angle
 assignment with demand $2\pi$ at each interior vertex and total
@@ -86,7 +91,7 @@ and the same holds for a subset containing the pooled boundary.
 Separating triangles are allowed.
 
 The strictly concave triangle entropy has an interior maximum on this
-angle polytope. Its multipliers give radii and Euclidean triangles with
+angle polytope. Its Lagrange multipliers give circle radii and Euclidean triangles with
 side lengths $r_f+r_g$. Their interior angle sums are $2\pi$, so their
 development is locally Euclidean. The boundary goes once around the
 prescribed convex triangle. The winding-number argument makes the
@@ -131,8 +136,8 @@ The new matching edge is $bb_1$. Every old circle stays fixed.
  \label{fig:balanced-terminal-fans}
 \end{figure}
 
-The convexity of this insertion can be checked in a single explicit
-model. Normalize the old white circles to two parallel lines at heights
+One local supporting-halfspace argument proves convexity for every
+insertion. Normalize the old white circles to two parallel lines at heights
 zero and two and a unit disk centered at $i$. The right interstice
 receives the unit disk centered at $2+i$. Its three new shaded disks
 are $|z-1|<1$, $|z-(1+2i)|<1$, and $\Re z>2$, all contained in the old
@@ -190,16 +195,21 @@ unrestricted mark is restricted only after whole-source conservation.
 Consequently the full spectral numerator, including Casimir normals,
 is the original marked coefficient on the refined diagram.
 
-The part whose local cofactor paths cross the middle index has a
-nonzero local geometric packet and a global spectral gap. These arguments use the simple
-sphere, local cofactor estimates and shared Cauchy torus, with no
-flat-plat sweep. Inequality \eqref{bf:strict-balance} bounds every
-sector containing a one-sided term by a strictly smaller exponential
-rate at those same radii. The original whole-domain Fourier/Hermite
-filling formula retains its sine endpoints, parity signs and
-second-derivative endpoint currents. Its first charge survives and
-the remaining charges are smaller for independently long fixed powers.
-This proves a nonzero asymptotic for the full invariant.
+The source estimate has two separate parts. First, the central cofactor
+terms have a nonzero geometric asymptotic from the shared face torus,
+and an exponential gap away from its spectral neighborhood. This uses
+the simple sphere and local cofactor estimates, so it applies even when
+the diagram has no flat-plat presentation. Second,
+\eqref{bf:strict-balance} bounds every term containing a one-sided
+factor at a smaller exponential rate, using those same face radii.
+Together they control the full spectral numerator.
+
+The Fourier--Hermite filling formula then evaluates the original
+integer powers. It keeps the sine endpoints, parity factors and
+second-derivative endpoint currents. The primitive charge has a nonzero
+coefficient, and all other charges are smaller for independently long
+fixed powers. This is the step that upgrades a geometric contribution
+to an asymptotic for the whole invariant.
 
 The geometric conclusion has a separate metric step. The common
 deformed circle pattern and its full ordered collar maps give the
@@ -219,8 +229,7 @@ rate with the volume of this actual filled knot complement. The full
 construction and estimates are given in Appendix
 \ref{app:balanced-terminal-fans}.
 
-The new tangles retain the correlations around cycles. On the graph
-obtained by collapsing the source's physical cycles, one insertion
-adds a loop. The proof controls those channels through the full shared
-coefficient and its strict balance; it does not replace the invariant
-by a scalar tree contraction.
+An insertion can add a loop to the graph obtained by collapsing the
+physical source cycles. All correlations around that loop remain in
+the shared coefficient. The strict balance estimate controls them
+there; no independence assumption between the inserted blocks is used.

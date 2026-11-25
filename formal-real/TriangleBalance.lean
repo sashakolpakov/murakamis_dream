@@ -2,12 +2,16 @@ import TriangleMinimizer
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 
 /-!
-Euler equations for the literal supported triangle entropy supremum.
-The corner loads are the actual arctangent maximizer on regular rows and
-one half at the active corner on singleton rows. Repeated destinations are
-summed before the free-coordinate equations are imposed. Grounding leaves
-the root demand arbitrary. Hall feasibility and geometric incidence are
-not supplied by these theorems.
+Euler equations for the supported triangle entropy supremum.
+The proved maximizing loads differentiate the potential. Summing all corners
+at their vertex destinations gives the residual load minus demand, so the
+free-coordinate Euler equations are equivalent to grounded minimality.
+Repeated destinations and singleton rows retain all their contributions.
+
+The root demand is not silently imposed. `root_residual` records its exact
+total-mass discrepancy, and `root_balance_iff_total` identifies the additional
+compatibility needed to close that equation. The existence theorem here
+takes a feasible table; `TriangleHall` derives it from finite cuts.
 -/
 namespace VolumeLogic.TriangleBalance
 open scoped BigOperators

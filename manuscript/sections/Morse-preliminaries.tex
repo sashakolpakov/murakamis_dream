@@ -1,0 +1,381 @@
+\chapter{The common source for matched spherical diagrams}
+\label{app:morse-preliminaries}
+
+A simple matched white sphere determines the complete augmented
+geometry and the exact reduced finite source used in the following
+volume theorems. This chapter records those common inputs once.
+No terminal decoration or source-balance inequality is needed here.
+The two faces adjacent to the marked strand edge are protected; after
+sending their common contact to infinity they have curvature zero.
+All other face variables are shared throughout the actual diagram.
+
+\section{A simple sphere supplies the actual metric}\label{bl:a-simple-sphere-supplies-the-actual-metric}
+
+\subsection{A combinatorial starting hypothesis}\label{bl:a-combinatorial-starting-hypothesis}
+
+It is enough to start with an actual connected marked augmented diagram
+whose white cellulation is a simple triangulated sphere with at least
+four vertices. The matching pairs, cyclic orders and marked strand edge
+are those of its projection/crossing-disk cut. A positive geometric
+certificate need not be supplied independently.
+
+Three steps turn the combinatorial sphere into a polyhedron: an
+angle assignment, a planar development of its center triangles, and
+the supporting-halfspace test. We use the following calibrated
+triangle entropy. Remove one triangular
+face \(abc\), prescribe positive radii at its three vertices, and let
+\(v\) be the number of remaining interior vertices. The disk has
+\(2v+1\) triangles. Give every interior vertex angle demand \(2\pi\),
+and pool the three boundary vertices into one destination with demand
+\(\pi\), retaining the separate boundary corners.
+
+A nonempty interior subset \(S\) touches at least \(2|S|+1\) disk triangles.
+To see this, puncture the sphere at a vertex of \(S\). The complementary
+simple planar graph on the other interior vertices \(T\) and \(a,b,c\)
+has at most \(2|T|+1\) bounded triangular faces. One is the removed
+face, so at most \(2|T|\) of the disk's triangles avoid \(S\).
+A proper subset containing the pooled boundary destination has strict
+slack too: its complement consists only of interior vertices \(T\),
+and at most \(2|T|-5\) triangles are wholly supported there when
+\(|T|\ge3\), with none when \(|T|\le2\). The full set has equal
+supply and demand. The finite transport Hall inequalities are therefore
+strict for every nonempty proper destination subset. Subtracting a sufficiently
+small positive allocation at every corner preserves feasibility of the
+remaining transport system. Thus a strictly positive angle assignment
+exists.
+
+For an angle triple of sum \(\pi\), use
+
+\begin{equation}\label{bl:G0}
+\mathcal V(\theta)=2\sum_{j=1}^3
+ [\Lambda(\theta_j/2)+\Lambda((\pi-\theta_j)/2)],
+ \qquad \Lambda(t)=-\int_0^t\log|2\sin u|\,du .
+\end{equation}
+
+Its corner derivative is \(-\log\tan(\theta_j/2)\), and its one-corner endpoint value is zero. Maximize the sum of these calibrated triangle entropies, with the fixed
+boundary linear terms \(\theta_f\log(1/r_f)\). Their derivative
+\(-\log\tan(\theta/2)\) diverges positively at a new zero corner.
+Moving toward the strictly positive assignment excludes a boundary
+maximum. Strict concavity gives one interior maximum. Its multipliers
+satisfy
+
+\begin{equation}\label{bl:G1}
+\tan(\theta_{tf}/2)=k_t l_f,\qquad
+k_t=\left(\sum_{f<g\in t}l_fl_g\right)^{-1/2},
+\qquad l_f=1/r_f>0.
+\end{equation}
+
+The boundary multipliers are the prescribed inverse radii, up to the
+one common scale absorbed in the row multipliers. The three boundary
+angle sums are positive and total \(\pi\), hence each is less than
+\(\pi\).
+
+For each triangle glue the Euclidean center triangle with side lengths
+\(r_f+r_g\). Its angles are exactly \eqref{bl:G1}. The total angle at every
+interior vertex is \(2\pi\); continuation around that vertex fixes
+its center and rotates by \(2\pi\), so has zero translational as
+well as rotational holonomy. These loops generate the punctured
+disk's holonomy. The development is therefore globally defined. Its
+boundary is the convex triangle with the prescribed three side lengths,
+traversed once. For a point away from the developed edges, the number
+of preimages is its boundary winding number: one inside and zero
+outside. Local injectivity extends this across edges and vertices.
+The development is an embedding.
+
+Place the radius-\(r_f\) disk at each developed center. In one center
+triangle the opposite center edge is covered by its two vertex disks,
+both disjoint from the third disk. Their mutual contact lies strictly
+outside the third disk, and its two contacts with those disks occur
+on the other two center edges. Thus the third disk's sector stops
+strictly before the opposite edge. The sectors assemble to full disks
+at interior vertices and to the prescribed boundary-disk sectors.
+This proves disjoint interiors and excludes unintended contacts,
+including across separating triangles.
+
+The circle through a center triangle's three tangency points is its
+incircle: its contact distance along a center edge is exactly the
+corresponding radius. It is orthogonal to the three vertex circles.
+Its disk contains no other packing contact. On the omitted outer
+triangle choose the opposite side of its contact circle; all interior
+contacts lie in its bounded curvilinear gap. The resulting white and
+shaded supporting halfspaces contain every contact, strictly unless
+incident. Their exposed faces form the full closed labeled sphere,
+so the convex hull has exactly those facets and no additional face.
+Every ideal vertex has alternating white/shaded faces and successive
+right angles. This constructs the required convex ideal right-angled
+polyhedron. The proof did not use a height ordering or a flat plat.
+
+Sending any chosen strand contact to infinity turns its adjacent white
+circles into two parallel marked lines. Every other disk is finite in
+their common strip. Thus the required marked complete packing follows
+from the finite combinatorial starting hypothesis.
+
+\section{The original link and a knot parity}\label{bl:the-original-link-and-a-knot-parity}
+
+\subsection{From a matched sphere to an actual knot diagram}\label{bl:from-a-matched-sphere-to-an-actual-knot-diagram}
+
+Conversely begin with any finite oriented simple triangulated sphere
+with at least four vertices and a chosen perfect matching of its cubic
+dual. Two matched triangles share one edge, have distinct third vertices,
+and form an embedded quadrilateral with four distinct boundary vertices.
+Choose disjoint small neighborhoods of the matched dual edges and their
+endpoints. Contracting these disks gives a connected planar four-valent
+graph. At each disk use the original ordered untwisted pairing
+\((0,1),(2,3)\); join the outside terminals by the embedded nonmatching
+dual edges. Put the standard perpendicular crossing circle in a disjoint
+three-ball neighborhood of each disk. This constructs an augmented
+link in \(S^3\), with exactly the prescribed cut graph and disk frames.
+
+Choose a regular height after straightening each local box in its
+orientation-preserving frame. The outside arcs give finitely many
+ordinary cups and caps and no new crossing. This is the literal
+general Morse diagram, not an assumed flat-plat presentation. A strand
+edge may be chosen for the original reduced mark.
+
+The graph whose vertices are the untwisted main circles and whose
+edges are the crossing boxes is connected. Otherwise the union of
+boxes and outside arcs would split the connected planar graph.
+Choose a spanning tree of this graph and give exactly those boxes
+odd parity. Switching one tree edge to the odd pairing joins two
+different current circles. Induction along any order of the tree
+edges gives one main component, with no internal extra component.
+The odd signs are arbitrary. Subsequent full twists preserve this
+pairing, and the even terminal fans preserve it as well. This proves
+the combinatorial corollary without asserting that every arbitrary
+tensor graph is a knot diagram.
+
+\section{The complete augmented exterior}
+\label{morse:complete-exterior}
+
+Cut along the projection sphere. In each projection ball a crossing
+circle semicircle is boundary parallel by its original half disk.
+Drilling that semicircle and opening that same half disk cancels the
+introduced handle. These operations occur in disjoint collars, so
+opening all of them leaves one ball in each projection copy. The
+boundary cellulation is the prescribed medial sphere. Thus cycles in the
+matched graph create no unidentified handle or extra gluing.
+
+Let \(Q\) be its positive ideal right-angled cut polyhedron. The even
+shaded pairing fixes the crossing-circle vertex and sends
+\(C_1\mapsto C_0,\ C_2\mapsto C_3\). An odd pairing exchanges the
+projection copies and the two punctures, using the literal signed
+half-twist collar. The two odd signs have the same corner permutation
+but different primitive paths. White faces pair by their original
+projection labels.
+
+At every ideal vertex, the link of \(Q\) is a rectangle. Normalize its
+opposite shaded sides to length one. Each shaded triangle map then
+preserves the canonical horocycles at all three corners, including the
+odd corner permutation. Each alternating white/shaded edge cycle has
+four right-angle pieces. It fixes both ideal endpoints, preserves the
+chosen horospheres there, and rotates by \(2\pi\), so its whole holonomy
+is the identity. The ideal links are the actual link's torus links and
+have no cone or dilation defect. Their horoball ends are complete. Hence
+\begin{equation}\label{mcg:eq-4}
+\operatorname{Vol}(Y_D)=2\operatorname{Vol}(Q),
+       \qquad \Phi_D=\frac{\operatorname{Vol}(Y_D)}{2\pi}.
+\end{equation} Here \(Y_D\) is the same augmented exterior, with the recorded half
+twists and peripheral bases.
+
+The construction uses the original sphere projection and disjoint
+crossing-disk collars. In particular it applies before any terminal fan
+is inserted and does not require a flat-plat presentation.
+
+\section{The calibrated triangle action}\label{bl:an-exact-integral-for-the-source-normalized-triangle-action}
+
+Let \(F(x,b,y)\) be the complete triangle action with the original
+determinant, beta and half-forced-product normalization. Put
+\(A=x+y\) and \(P=xy\). Its exact
+entropy definition is
+
+\begin{equation}\label{bl:F8}
+F(x,b,y)=\max_{\alpha_x+\alpha_b+\alpha_y=1/2}
+\left\{\sum_j f(\alpha_j)+\alpha_x\log x+
+\alpha_b\log b+\alpha_y\log y\right\},
+\end{equation}
+
+where \(f'(t)=\log\cot(\pi t)\), \(f(0)=f(1/2)=0\), and zero
+weights force zero allocation. The complete stationary middle load is
+
+\begin{equation}\label{bl:F9}
+\frac{\partial F}{\partial\log b}
+=\frac1\pi\arctan\frac{b}{\sqrt{Ab+P}}.
+\end{equation}
+
+The entropy derivatives give these identities with their displayed
+absolute constant; the same normalization is used in
+\cite[Section~5]{CasimirSources} and \cite[Section~1]{MarkedFillings}.
+
+\section{The physical face adapter}
+\label{morse:face-adapter}
+
+Fix \(N\ge3\), \(d=N-1\), \(q=e^{\pi i/N}\), \(Q=q^2\). Let \(H_f(x,b,c,y)\) be the original homogeneous degree-\(d\) face polynomial of an arbitrary full coupon \(f(\Omega)\). This includes actual signed crossing powers and cleared resolvent numerators, with all repeated-node data.
+
+The finite Fourier face adapter of \cite[equation~(4.5)]{Finite} is
+
+\begin{equation}\label{bl:S5}
+f(\Omega)_{r,s;u,v}
+ =N^{-1}q^{-d(r-u)}c^{-d}H_f(x,b,c,y)
+ =N^{-1}\frac{H_f(x,b,c,y)}{(bc)^{d/2}} .
+\end{equation}
+
+The last equality uses the coherent integer face-log lifts of that physical state. No head is independently reduced modulo \(N\). The physical Casimir lowering arrows vanish at their genuine endpoints; hence a modular output with a wrong unwrapped total has zero coefficient before it is interpreted as a physical state. This is valid for every polynomial in the full Casimir, not only for the complete circle.
+
+Let \(M_f\) count middle incidences and \(T_f\) outside minus
+inside Morse turns in a face, temporarily restoring the cap at the
+marked edge. Rounding the boxes in their actual frames, each middle
+passage contributes \(+\pi\) to boundary turning, while the outer pair
+contributes zero. Inside and outside turns contribute \(+\pi\) and
+\(-\pi\). The winding is one in a bounded face and minus one in the
+exterior face \(a\). Consequently
+\begin{equation}\label{bl:S8}
+ M_f-T_f=2\quad(f\ne a),\qquad M_a-T_a=-2.
+\end{equation}
+The equality uses the actual region boundary, so adding a cancelling
+Morse cup--cap pair leaves it unchanged.
+
+\section{The physical mark and the full finite source}\label{bl:the-physical-mark-measure-and-normals}
+
+Choose a strand edge as the mark, with adjacent protected faces
+\(a,b_*\). The pivotal self-duality transports its reduced cut through
+the actual Morse presentation; it does not replace an internal marked
+row by an ordinary cap. The regular generic pivot \((-1)^HK\), where
+\(H\) is the integer-weight operator, specializes to \(K^{1-N}\).
+The transported cut and literal duality frames are those of
+\cite[Section~9]{Finite}.
+
+In literal left-to-right physical order the cup, cap and mark are
+
+\begin{equation}\label{bl:S12}
+p_{ij}=Nq^{-d^2+di}\mathbf1_{i+j=d},\qquad
+ \ell_{ij}=N^{-1}q^{di}\mathbf1_{i+j=d},\qquad
+ m_{ij}=N^{-2}q^{dj}.
+\end{equation}
+
+The marked row is initially unrestricted. The whole-network degree conservation, after the other actual caps act, forces its two heads to sum to \(d\). Only then is its ratio to the ordinary cap
+
+\begin{equation}\label{bl:S13}
+\frac m\ell=N^{-1}(L_{b_*}/L_a)^d .
+\end{equation}
+
+The cup and cap factors have cancelling powers of \(N\) and cancelling
+fixed \(q\)-constants. For a diagram with \(R\) boxes,
+\eqref{bl:S5}, \eqref{bl:S8} and \eqref{bl:S13} make its full marked summand
+
+\begin{equation}\label{bl:S14}
+N^{-R-1}\,
+ \frac{\prod_{e=1}^{R}H_{f_e}(L_{x_e},L_{b_e},L_{c_e},L_{y_e})}
+      {\prod_{f\ne a,b_*}L_f^d}.
+\end{equation}
+
+The integer conservation law is a face-potential law on the sphere.
+Integrate head differences along dual paths: zero divergence makes
+the result path independent, up to one common constant. This gives a
+primitive lattice, unchanged by bending an arc. There are \(R+2\)
+faces and hence \(R+1\) independent \(N\)-point grids after fixing
+\(L_a\). Their count cancels \(N^{-R-1}\) in \eqref{bl:S14}.
+There is no residual dimension factor in this conversion.
+
+The numerator is homogeneous of degree \(dR\), with nonnegative
+exponents and arbitrary complex coefficients. The following finite
+orthogonality statement gives exactly the required coefficient.
+
+\begin{proposition}[The unique monomial selected by the face grids]
+\label{mcg:face-grid-selection}
+Let \(N\ge2\), \(d=N-1\), and let \(P\) be a polynomial in
+\(R+2\) face variables, of total degree at most \(Rd\). Distinguish
+two variables \(L_u,L_v\) and call the remaining \(R\) variables
+ordinary. Put \(\omega=e^{2\pi i/N}\). For arbitrary nonzero
+\(\xi_f\in\mathbb C\), \(f\ne u\), set
+\(L_u=1\) and \(L_f=\xi_f\omega^{p_f}\). Then
+\[
+ \frac1{N^{R+1}}
+ \sum_{\boldsymbol p\in\{0,\ldots,N-1\}^{R+1}}
+ \frac{P(L)}{\prod_{f\ne u,v}L_f^d}
+ =
+ [\prod_{f\ne u,v}L_f^d]P\big|_{L_u=L_v=0}.
+\]
+In particular, translating any of the free grids by a nonzero factor
+does not change this average.
+\end{proposition}
+
+\begin{proof}
+By linearity it suffices to take a monomial with nonnegative exponents
+\(m_f\). The finite geometric sum in each ordinary variable vanishes
+unless \(m_f\equiv d\pmod N\); the grid at \(v\) also requires
+\(m_v\equiv0\pmod N\). Every ordinary exponent that survives is
+at least \(d\). Their sum is therefore at least \(Rd\), which
+exhausts the assumed total-degree bound. Hence every ordinary exponent
+equals \(d\) and \(m_u=m_v=0\). The remaining multiplier is
+\(\prod_{f\ne u,v}\xi_f^{m_f-d}\xi_v^{m_v}=1\).
+This monomial contributes its coefficient; every other monomial
+contributes zero. No sign or positivity condition on the coefficients
+was used.
+\end{proof}
+
+Each original \(H_e\) is homogeneous of degree \(d\), so their
+product has degree exactly \(Rd\). At even levels the physical grids
+are translated by \(\xi_f=q^{t_f}\). The forced exponents in the
+proposition show that their extra character is one. Thus the original
+marked scalar is
+
+\begin{equation}\label{bl:S15}
+I_N=\left[\prod_{f\ne a,b_*}L_f^d\right]
+ \left.\prod_{e=1}^{R}H_{f_e}
+       (L_{x_e},L_{b_e},L_{c_e},L_{y_e})
+ \right|_{L_a=L_{b_*}=0}.
+\end{equation}
+
+This holds for arbitrary local full polynomials and their spectral parameters. In particular use
+
+\begin{equation}\label{bl:S16}
+V_N(\sigma;z)=
+  \frac{\chi_N(\sigma)-\chi_N(z)}{\sigma-z},\qquad
+ \chi_N(z)=2T_N(z/2)+2,
+\end{equation}
+
+as a polynomial before setting \(z=\Omega\), where
+\(T_N(\cos t)=\cos Nt\). It is the actual cleared resolvent at the root
+and retains the first derivative at every double Casimir node. No
+value-only interpolation or paired-channel retraction is used.
+
+If an ordinary generic closure is used instead, the full open regular network is a scalar endomorphism of the generic highest-weight object \(V_d\). Its ordinary closure is \((-1)^d[N]_q\) times that scalar. The one genuine normal at the root recovers \eqref{bl:S15}. No additional normal occurs at a crossing circle or at a separator. This uses the regular physical lift, not a derivative of an arbitrary fixed-root identity.
+
+\subsection{The original signed Fourier/Hermite period}\label{bl:the-original-signed-fourierhermite-period}
+
+Put the literal nonzero fixed signed braid power \(R^{n_e}\) at each box, with \(n_e=\epsilon_e-2p_e\) in its own original disk framing. Define the whole spectral numerator
+
+\begin{equation}\label{bl:S17}
+S_N(\boldsymbol\sigma)=
+ \left[\prod_{f\ne a,b_*}L_f^d\right]
+ \left.\prod_{e=1}^{R}H_{V_N(\sigma_e)}\right|_{L_a=L_{b_*}=0}.
+\end{equation}
+
+Apply the source-independent local full-Hermite crossing functional
+separately to each box, as in \cite[Corollary~9.2]{Finite}.
+Multilinearity of the original ordered contraction gives
+
+\begin{equation}\label{bl:S18}
+\begin{split}
+ I_{N,\boldsymbol n}={}&
+ q^{\frac{d^2}{4}\sum_e n_e}(-i)^{R}
+ \sum_{\boldsymbol\ell\in(\mathbb Z\setminus\{0\})^{R}}
+ \left(\prod_e\ell_e\right)(-1)^{(N+1)\sum_e\ell_e}\\
+ &\times\int_{[-1/2,1/2]^{R}}
+ \left(\prod_e\sin(2\pi\delta_e)\right)
+ S_N(-2\cos(2\pi\boldsymbol\delta))\\
+ &\qquad\times
+ \exp\!\left\{N\sum_e[\pi i n_e\delta_e^2+2\pi i\ell_e\delta_e]\right\}
+ d\boldsymbol\delta .
+ \end{split}
+\end{equation}
+
+This is the original whole Hermite functional applied to the general
+Morse source. The Cartan scalar, charge weights, parity and endpoint
+sine factors have not changed. The original matrix identity excludes
+charge zero. Three integrations by parts on whole intervals give
+absolute summability, retaining the second-derivative endpoint currents.
+No constant-headcount assumption occurs.
+
+The exterior framing/component character remains separately recorded. At complete main color it has modulus one. The full one-cut modified convention also retains its specified polynomial-level factor. These source conversions do not change the exponential rate. The invariant in \eqref{bl:S18} belongs to the specified filled diagram, with its original component and framing convention.
+

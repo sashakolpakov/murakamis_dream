@@ -1,23 +1,18 @@
-# Published edition
+# Audited manuscripts and proof code
 
-The illustrated guide is the documentation site. It introduces the knot
-construction, states the theorem with its hypotheses, explains the proof,
-and links to the detailed arguments. Former Sphinx URLs redirect to the
-corresponding guide pages.
+This revision contains the 16-page Conway paper, the 202-page volume
+reference and the 14-page quarter-index paper. The Conway paper and
+reference share their mathematical proof files. The independent
+quarter-index paper contains its necessary signed local proofs.
 
-The manuscript has 85 pages. It treats the stated recursive family of
-Conway tangle compositions, with a fixed construction and independently
-sufficiently long signed twists. The companion notes state the extension
-to every construction passing the strict type test and give the quantum
-A-operator formulation. The right side of each knot limit is the volume
-of the knot complement; only auxiliary crossing-circle cusps are filled.
+The active Lean code follows the retained manuscript statements.
+Obsolete proof sources, module copies and validation controls were
+deleted rather than archived. The analytic and geometric lemmas retain
+their written proofs and explicit formal interfaces.
 
-The guide distinguishes those results from broader questions about
-arborescent presentations, short twists, and the selected classical
-geometric factor. The full research archive remains available.
-
-The publication checks cover paper compilation, native mathematical
-typesetting, images, navigation, and the research-check runner. Exact
-mathematical certificate inputs and algorithms are unchanged by this
-editorial revision. Their purpose and limitations are explained in the
-reproduction guide.
+The [audit report](repro/PROOF_PATH_CLEANUP_2026-11-25.md) and
+[current verification record](repro/results/manuscript-and-lean/verification-summary.json)
+record the fresh compilation, axiom checks, exact finite examples,
+dependency checks, PDF builds and guide checks. The guide update covers
+the manuscript chapter, errata and paper index; it does not publish
+unrelated ongoing research notes.

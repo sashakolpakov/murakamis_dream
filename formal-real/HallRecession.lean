@@ -2,9 +2,17 @@ import TriangleBalance
 import Mathlib.Algebra.Order.Group.Finset
 
 /-!
-A direct finite-cut proof of the maximum-minus-linear recession bound.
-No transport table is assumed: a height vector is reduced one positive
-level at a time, and each level contributes its actual Hall deficit.
+A finite-cut proof of the maximum-minus-linear recession bound.
+Peeling the least positive height writes the recession as a sum of cut
+deficits. Total supply equals total demand, so translating all heights
+does not change it. Strict proper-cut inequalities then give positivity
+modulo constants, a coercive bound after grounding, and existence of a
+minimum for any continuous potential with the stated lower bound.
+
+No transport table or geometric packing is assumed. A row has half-mass,
+and its capacity is counted once when it meets a cut, even if several
+corners have the same destination. The later triangle modules identify
+these finite supports with the corresponding entropy potential.
 -/
 namespace VolumeLogic.HallRecession
 open scoped BigOperators

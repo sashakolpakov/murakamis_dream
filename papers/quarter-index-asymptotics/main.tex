@@ -55,7 +55,7 @@ For the color deficit $h=Nt$ and integer index $r$ near $N/4$ define
  {F_r\widehat F_N(r-h)\widehat F_N(r+h)},\qquad
  U_{h,r}=A_{h,r}/D_{h,r}.\label{qi:source}
 \end{align}
-Only the two color-shifted factorials are continued. For physical integer $0\le h\le r$ this is the normalization of the actual signed low-core Newton coefficient; its finite derivation is \cite[Section 3.1]{Conway}, from the circle and crossing identities of \cite[Proposition 4.1 and equation (4.8)]{Newton}. For a fixed small complex disk in $t$, all factorial arguments in \eqref{qi:source} remain regular. Hence the finite source is holomorphic and even in $t$.
+Only the two color-shifted factorials are continued. For physical integer $0\le h\le r$ this is the normalization of the signed Newton coefficient obtained from the circle and crossing identities of \cite[Proposition 4.1 and equation (4.8)]{Newton}. Section~\ref{qi:signed} writes that coefficient explicitly and checks the normalization. For a fixed small complex disk in $t$, all factorial arguments in \eqref{qi:source} remain regular. Hence the finite source is holomorphic and even in $t$.
 
 Here is its exact recurrence. With $e=1/N$, $x=r/N$, $Y=e^{2\pi\ii x}$, $H=e^{2\pi\ii t}$ and
 $\operatorname{den}(x)=(1-QY/H)(1-QYH)$,
@@ -70,7 +70,35 @@ The upper endpoint is
 \begin{equation}\label{qi:wall}
  U_M=1,\qquad q_c((M-1)/N,t,1/N)=0,\qquad U_{M-1}=p((M-1)/N,t,1/N).
 \end{equation}
-For odd $N$ the factor $1-Q^3Y^2$ vanishes in that row; for even $N$ the factor is $1+Q^2Y$. No value $D_{h,M+1}$ is introduced. The exact telescoping certificate in \cite[equations (3.3)--(3.5)]{Conway} proves \eqref{qi:recurrence} for this complex-color factorial continuation, not just at its physical colors.
+For odd $N$ the factor $1-Q^3Y^2$ vanishes in that row; for even $N$ the factor is $1+Q^2Y$. No value $D_{h,M+1}$ is introduced.
+
+Here is a direct verification at complex color. Let $a_v$ be the
+$v$th summand defining $A_{h,r}$ and write $z=Q^v$. Then
+\[
+ \frac{a_{v+1}}{a_v}
+ =\frac{Y^{-1}(1-Qz^2)(1+Qz)}
+ {(1-Qz/H)(1-QHz)(1-Qz/Y)}.
+\]
+For $b(z)=(1-z/H)(1-Hz)(1-z/Y)/z^2$, expansion of
+$b(Qz)a_{v+1}/a_v-b(z)$ gives
+\[
+ \left(\frac1{YQ^2}-1\right)z^{-2}
+ +\left(\frac1{YQ}+H+H^{-1}+\frac1Y\right)z^{-1}
+ -\frac1{YQ}-1-\frac{H+H^{-1}}Y.
+\]
+Summing this forward difference kills the lower endpoint, where
+$z=Y$, and the upper endpoint, whose numerator contains $F_{2M+2}=0$.
+The shift $r\mapsto r+1$ multiplies $a_v$ by
+$z^{-1}-Y^{-1}$. Expressing the two displayed moments through the
+shifted sums gives
+\begin{multline}\label{qi:unnormalized-recurrence}
+ QY^2(1-Q^2Y)A_{h,r+2}
+ +Y[(H+H^{-1})Q^3Y^2+Q+1]A_{h,r+1}\\
+ -Q(QY+1)(QY^2-1)A_{h,r}=0.
+\end{multline}
+Division by the nonzero normalizing factors $D_{h,r}$ proves
+\eqref{qi:recurrence}. The calculation uses the exact factorial shift,
+so it proves the identity for complex $h$ as well as for integer colors.
 
 Let $p_0=p(x,t,0)$ and $q_0=q_c(x,t,0)$, and label the roots of
 $\mu^2-p_0\mu-q_0=0$ by
@@ -110,15 +138,24 @@ On a smaller fixed joint complex domain,
 Every fixed derivative of the normalized remainder satisfies the same bound on smaller domains. The first estimate concerns the original finite source on its integer index set. The second concerns the explicitly constructed holomorphic interpolation. All constants are independent of $N$.
 \end{theorem}
 
-The high-index input is \cite[Section 3.2--3.3]{Conway}: on every compact interval in $(1/4,1/2)$ the same source has its exact upper-endpoint-selected ratio, its nonzero holomorphic leading expression $C e^{NS}$, and exponentially accurate index interpolation. We use that result only at a fixed anchor strictly above quarter. Its proof cannot be applied below quarter, where $|\mu_f/\mu_s|$ can exceed one. Sections~\ref{qi:diagonalization}--\ref{qi:source-proof} supply that additional argument.
+Lemma~\ref{qi:high-index} proves the needed source anchor directly
+from the upper endpoint. Above quarter the unwanted ratio has modulus
+strictly less than one. That proof cannot be applied below quarter,
+where $|\mu_f/\mu_s|$ can exceed one. The matrix reduction and
+cumulative-action argument in
+Sections~\ref{qi:diagonalization}--\ref{qi:source-proof} supply the
+additional control needed to cross the equality point.
 
 \input{transport}
+\input{high-index}
 \input{source}
 \input{signed}
 
 \begin{thebibliography}{9}
-\bibitem{Conway}\emph{Holomorphic source asymptotics and volume limits for Conway closures}.
-Companion paper, \href{https://sashakolpakov.github.io/murakamis_dream/papers/conway-asymptotics.pdf}{repository edition}.
+\bibitem{Conway}\emph{Holomorphic source asymptotics and volume limits
+for strict Conway compositions}, companion paper,
+\href{https://sashakolpakov.github.io/murakamis_dream/papers/conway-asymptotics.pdf}{repository edition}.
+Only its canonical factorial lemma is used here.
 \bibitem{Newton}
 \emph{Newton calculus and stationary profiles of Conway tangles},
 consolidated companion paper,

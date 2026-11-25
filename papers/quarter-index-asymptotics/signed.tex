@@ -78,10 +78,51 @@ The chirp $q^{h^2}$ is therefore retained in
  b_+(x,t)=\overline{b_-(\bar x,\bar t)}.\label{qi:density}
 \end{align}
 All marks continue those fixed at the upper endpoint; no new square-root choice is made here.
+On a compact high-index interval, replace $I_N$ by the interpolation
+$H_N$ of Lemma~\ref{qi:high-index} in
+\eqref{qi:actual-interpolants}. The same exact finite identity and
+factorial estimate give these signed interpolants, actions and
+densities there as well. This is the high-index input used by the
+finite-window corollary below.
 
-For $x$ above quarter the absolute identity
-\eqref{qi:absolute-shear} is \cite[Proposition 3.1]{Conway}, including its additive function of color. Both sides extend holomorphically to the connected neighborhood just constructed. The derivative of \eqref{qi:shear} in $s$ at zero is
-$1-\epsilon\ii\cot(\pi x)$, which stays nonzero there. The identity theorem therefore extends the already normalized equality through quarter. It is not an inference from the second derivative alone.
+We prove the absolute shear identity directly. At $s=t=0$ the
+derivative of \eqref{qi:shear} in $s$ is
+$1-\epsilon\ii\cot(\pi x)\ne0$, so it determines a unique small
+holomorphic solution. Differentiating the proposed right side of
+\eqref{qi:absolute-shear} gives the derivatives $g_x(x,s)$ and
+$g_s(x,s)$ with respect to $x$ and $t$.
+
+For the negative sign, put $E=e^{2\pi\ii x}$,
+$H=e^{2\pi\ii t}$ and $T=e^{2\pi\ii s}$. Exponentiating the
+shear equation yields
+\[
+ H=T\frac{E-T}{ET-1},\qquad
+ T^2+E(H-1)T-H=0,\qquad T=1\quad\text{at }H=1.
+\]
+With $K=e^{-g_x(x,s)}$, the sine derivatives of $g$ give
+\[
+ K=-\frac{(1-E/T)(1-ET)}{(1+E)^2},\qquad
+ (1+E)^2K^2+[(H+H^{-1})E^2+2]K+(1-E)^2=0.
+\]
+On the other hand, differentiating $f_-=g+S-S(x,0)$ gives
+\[
+ e^{-(f_-)_x}
+ =\frac{E\mu_s(1-E/H)(1-EH)}{(1+E)^2}.
+\]
+Substituting the characteristic equation for $\mu_s$ shows that
+this satisfies the same quadratic. At $H=1$ both selected branches
+are $\tan^2\pi x$, and the other root is different, including at
+quarter. Their holomorphic continuations and their fixed logarithms
+therefore agree. The two actions have equal $x$ derivatives.
+
+Their difference could still be a function of $t$. Continue the
+selected branch up to $x=1/2$. Reflection of the canonical $J$
+gives $g(1/2,t)=0$, while $S(1/2,t)=S(1/2,0)=0$. The small
+shear solution there is $s=t$ and $g_s(1/2,s)=0$, so the proposed
+classical action also tends to zero for every small $t$. The
+difference is consequently zero. This uses the endpoint value of
+the actions, not a factorial asymptotic at a zero. Schwarz reflection
+proves the positive sign; the pure sign is immediate.
 Formula \eqref{qi:density} and the complete $C$ at the end of Section~\ref{qi:source-proof} give the amplitude ratio. Differentiating the exact shear gives the displayed color Hessian.
 \end{proof}
 
@@ -128,7 +169,8 @@ nonzero leading density, and phase
  m(x,y,z)=J(x+y)+J(z)-J(x)-J(y)
                   -J(z-x)-J(z-y)-J(x+y-z).
 \]
-Together with Corollary~\ref{qi:signed-corollary} and the high-index theorem this gives an interpolated summand
+Together with Corollary~\ref{qi:signed-corollary} and
+Lemma~\ref{qi:high-index} this gives an interpolated summand
 \[
  N^{b/2-3g/2}b_\epsilon(y,t)e^{NF_\epsilon(y,t)}
                          (1+O(N^{-1})).

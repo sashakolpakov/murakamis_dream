@@ -1,13 +1,12 @@
 \chapter{Protected triangular sums of certified diagrams}
 \label{app:protected-triangular-sums}
 
-This appendix proves a constructive closure theorem for full source
-certificates. The inputs are actual marked simple-sphere diagrams whose
-phase-uniform local envelopes admit an unabridged finite shared-radius
-certificate. The output is their literal protected triangular sum. Its
-full source has a strict complementary gap at both level parities, and
-its independently sufficiently long fixed signed fillings satisfy the
-volume limit for the actual new knot.
+We join two marked diagrams along triangles containing their marked
+edge. The geometric actions add, and the bounds for all complementary
+source terms pass to the joined diagram. The reason is a precise
+counting identity: the ordinary vertex shared by the two triangles has
+one coefficient target after gluing, rather than two. The change in the
+local triangle action is exactly that missing target.
 
 A shared-radius certificate uses one positive weight for each ordinary
 white face, with the same weight at every occurrence of that face.
@@ -16,7 +15,9 @@ lets us normalize both input certificates at that face, while an exact
 local inequality accounts for its single output coefficient target.
 If the inputs satisfy weak balance, the output does too. The more
 general certificate hypothesis also yields marked examples outside
-weak balance.
+weak balance. Here a certificate means the finite collection of strict
+inequalities in \eqref{pts:eq-5}; it is an explicit hypothesis on the
+whole shared source.
 
 \begin{theorem}[Closure under protected triangular sums]\label{pts:closure}
 Let $D_1,\ldots,D_k$, $k\ge2$, be marked matched spheres as defined in
@@ -79,11 +80,11 @@ deleted from the supported simplex. Thus, for example,
  A_L&=\max\{\log c,Q(x,b,y)+\tfrac12\log c\},\\
  A_R&=\max\{\log b,Q(x,c,y)+\tfrac12\log b\}.
  \end{split}
-\end{equation} left is absent when \(c\) is protected; right is absent when \(b\) is
-protected. These are the proved bounds for the actual local path pieces,
-uniform in their real spectral parameter and all face phases. central
-includes its original odd central row. The physical reflected order,
-rather than an arbitrary relabeling of a matrix, supplies right.
+\end{equation} The left term is absent when \(c\) is protected, and the right
+term is absent when \(b\) is protected. These bounds hold for the actual
+local path pieces, uniformly in the real spectral parameter and all
+face phases. The central piece includes its odd central row once.
+The right formula uses the reflected physical order of the same crossing.
 
 For each locally allowed label string \(\omega\), define \begin{equation}\label{pts:eq-3}
 G_{D,\omega}(q)
@@ -113,7 +114,7 @@ witness per string is a finite cover. This is a hypothesis about the
 original phase-uniform envelopes, not merely a bound for a signed
 coefficient at a selected spectrum.
 
-The cover must be unabridged: it covers every locally allowed noncentral
+The word unabridged specifies an important requirement: the cover includes every locally allowed noncentral
 string, including one whose final shared coefficient might vanish
 identically for a separate reason. A certificate that omits strings by a
 global support or cancellation argument is not automatically an input to
@@ -205,15 +206,16 @@ loses \(q_B\), exactly compensating for counting the ordinary
 \label{fig:protected-triangular-sum}
 \end{figure}
 
-Every other complete triangle rate is retained. On the other hand,
+This local identity is the whole gluing calculation. Every other
+complete triangle rate is retained. On the other hand,
 the combined ordinary target at \(B\) is counted once, rather than once
 in each input. Write \(P_i=G_{D_i,C}\) and
 \(P_{\mathrm{new}}=G_{\mathrm{new},C}\). Thus \begin{equation}\label{pts:eq-10}
 P_{\mathrm{new}}(q_1,q_2)
                    =P_1(q_1)+P_2(q_2)
-\end{equation} whenever the two displayed vectors agree at \(B\). This is an
-identity of the full shared functions, not an inequality between
-separately optimized local terms.
+\end{equation} whenever the two vectors agree at \(B\). The boundary value is
+shared before minimization. This is why homogeneity can combine the
+two minimizers without an additional compatibility equation.
 
 Normalize both complete minimizers by \(q_B=0\). They then combine to a
 minimizer of \eqref{pts:eq-10}; conversely \eqref{pts:eq-10} is bounded below by the sum of their
@@ -251,9 +253,9 @@ L=\max\{q_c,Q_a+\tfrac12q_c\},\qquad
  L_1+C_2-q_B
   =\max\{q_c+Q_a-\tfrac12q_B,\ Q_a+\tfrac12q_c\}
   \ge\max\{q_c,Q_a+\tfrac12q_c\}=L.
-\] The right case is identical with \(a,c\) exchanged. The inequality
-retains the mixed branch of the genuine one-sided rate; it is not a
-replacement by a pure-middle monomial.
+\] Exchanging \(a,c\) proves the right case. These are the same three
+local gluing comparisons for every diagram; the mixed branches in
+\eqref{pts:eq-14} are included in them.
 
 For a whole output string \(\omega\), leave every other local label on
 its original input and use \eqref{pts:eq-15} at the merged crossing. This defines
@@ -275,11 +277,10 @@ one legal shared Cauchy vector for the new source. Equations \eqref{pts:eq-11} a
 G_{\mathrm{new},\omega}\le
        \Phi-\min(\gamma_1,\gamma_2)
                    \qquad(\omega\ne C).
-\end{equation} If both input strings are noncentral their losses add. Per-sector
-witnesses are essential to this simple statement: the other input can
-use its complete minimizer when its induced string is central. There is
-no claim that one input witness vector works for every case
-simultaneously.
+\end{equation} If both input strings are noncentral their losses add. Choosing
+a witness for each string is useful here: a central input uses its
+complete minimizer, while a noncentral input uses its strict bound.
+The two whole vectors are rescaled only once, at their common face.
 
 Equivalently, taking infima after the \(B=1\) normalization gives \begin{equation}\label{pts:eq-18}
 \mathcal C_{\mathrm{new},\omega}
@@ -361,9 +362,10 @@ original matched sphere. Its selected action \(S_{\boldsymbol p}\) obeys
        =\operatorname{Vol}(S^3\setminus K_{\boldsymbol p}).
 \end{equation} The latter equality uses the new diagram's complete positive cells,
 its original meridians and longitudes, the primitive equations
-\(U_e+p_eV_e=-2\pi i\), the main cusp left complete, and the same-chain
-volume calibration. It is not inferred from \eqref{pts:eq-11} or from a formal
-critical value.
+\(U_e+p_eV_e=-2\pi i\), and the main cusp left complete. Metric
+completion and the volume comparison on the same fundamental chain
+are the required geometric inputs; additivity at completeness in
+\eqref{pts:eq-11} alone would not identify a filled volume.
 
 Choose the independent long-filling threshold so that the selected real
 action is larger than \(\Phi-\gamma/2\), and so that the original
@@ -583,21 +585,17 @@ operation; it is not a claim that the original input knot type is
 preserved.
 
 
-\section{Reproduction and formal scope}
+\section{Finite certificate data and formal verification}
 
-The following command replays the two rational interval certificates
-used in Section~\ref{pts:sec-7} and constructs eight exact tetrahedral
-attachments:
-\begin{verbatim}
-python3 repro/check_protected_sums.py --output repro/results/protected-sums
-\end{verbatim}
-It requires Python with \sourcefile{python-flint}. The finite checks
-verify the original branch cover, triangle loads, strict interval
-bounds, and the new complexes' vertex links, matching and target
-counts. They check that all four possible failed balance regions remain
-unchanged. The induction in Section~\ref{pts:sec-6}, rather than the
-number of examples tested, proves the assertion for any fixed finite
-assembly.
+The two rational interval certificates used in
+Section~\ref{pts:sec-7} specify the branch cover, the triangle loads,
+and strict bounds for the resulting entropies. Their data are replayed
+by \sourcefile{repro/check_protected_sums.py}, using
+\sourcefile{python-flint}. That check also constructs eight tetrahedral
+attachments and verifies their vertex links, matching, target counts,
+and retention of the four possible failed balance regions. The
+all-length assertion is the induction in Section~\ref{pts:sec-6}; it
+does not depend on how many attachments are checked computationally.
 
 The module \sourcefile{formal/VolumeLogic/ProtectedSum.lean} proves
 \eqref{pts:eq-15} and the target cancellation as ordered-ring identities

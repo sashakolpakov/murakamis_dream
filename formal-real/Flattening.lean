@@ -4,11 +4,16 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
 /-!
-One-variable calculus behind Appendix P's shared-weight flattening.
-Derivative hypotheses below concern actual real functions. Neither the
-quadratic action cost nor the supporting-tangent gain is assumed.
-Identifying these functions with geometric triangle potentials, their
-Hessians and their stationary complete point remains a written input.
+One-variable calculus for Appendix P's shared-weight perturbation.
+A stationary convex function has quadratic action cost when its second
+derivative is bounded. A supporting tangent gives a first-order entropy
+gain for each of the two branches of a surviving one-sided envelope.
+The final theorems compare that gain with the cost on the same path.
+
+The derivative, convexity, and source-envelope hypotheses remain explicit.
+In particular the common path changes every ordinary logarithmic weight
+with one parameter; it does not optimize crossing incidences independently
+or assert that the perturbed weights form another circle packing.
 -/
 
 namespace VolumeLogic.Flattening

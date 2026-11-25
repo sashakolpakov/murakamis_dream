@@ -46,6 +46,9 @@
     },
     "finite_graph_energy": {
       "title": "Real variational estimates"
+    },
+    "exact_operations": {
+      "title": "Exact coefficient operations"
     }
   },
   "nodes": [
@@ -327,6 +330,18 @@
         {
           "path": "notes/research_arbitrary_main_edge_mark_transport.md",
           "anchor": "## 7. Primitive grids, actual support and the unique alias"
+        },
+        {
+          "path": "manuscript/sections/Morse-preliminaries.tex",
+          "anchor": "\\label{bl:S15}"
+        },
+        {
+          "path": "manuscript/sections/Morse-preliminaries.tex",
+          "anchor": "\\label{bl:S8}"
+        },
+        {
+          "path": "manuscript/sections/Morse-preliminaries.tex",
+          "anchor": "\\label{morse:face-adapter}"
         }
       ],
       "depends_on": [
@@ -506,6 +521,14 @@
         {
           "path": "papers/marked-fillings/main.tex",
           "anchor": "\\label{mf:Phi}"
+        },
+        {
+          "path": "manuscript/sections/Morse-preliminaries.tex",
+          "anchor": "\\label{bl:a-simple-sphere-supplies-the-actual-metric}"
+        },
+        {
+          "path": "manuscript/sections/Morse-preliminaries.tex",
+          "anchor": "\\label{bl:G0}"
         }
       ],
       "depends_on": [],
@@ -532,6 +555,14 @@
         {
           "path": "papers/marked-fillings/main.tex",
           "anchor": "\\label{mf:complete-volume}"
+        },
+        {
+          "path": "manuscript/sections/Morse-preliminaries.tex",
+          "anchor": "\\label{morse:complete-exterior}"
+        },
+        {
+          "path": "manuscript/sections/Morse-preliminaries.tex",
+          "anchor": "\\label{mcg:eq-4}"
         }
       ],
       "depends_on": [
@@ -563,6 +594,10 @@
         {
           "path": "papers/casimir-source-asymptotics/shared-saddle.tex",
           "anchor": "\\label{sa:AH}"
+        },
+        {
+          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
+          "anchor": "\\label{mca:sec-2}"
         }
       ],
       "depends_on": [
@@ -580,41 +615,6 @@
         }
       ],
       "article": "casimir-source-asymptotics"
-    },
-    {
-      "id": "analytic_fold_interpolation",
-      "title": "Actual cofactor interpolation at both folded parity grids",
-      "group": "local_asymptotics",
-      "statement": "The original central cofactor agrees exponentially with the canonically anchored analytic fold interpolation on a fixed complex chart, retaining double-node first derivatives, the odd simple-node value and the central skipping derivative. Odd and even anchors are 0 and 1/(2N), respectively.",
-      "sources": [
-        {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mca:sec-3}"
-        },
-        {
-          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-          "anchor": "\\label{mca:eq-8}"
-        },
-        {
-          "path": "notes/actual_positive_face_exponential_fold_interpolation.md",
-          "anchor": "## 6. An analytic discrete primitive with the exact folded anchor"
-        },
-        {
-          "path": "notes/actual_cross_cofactor_interpolant_rigidity.md",
-          "anchor": "## 4. Finite Cauchy--Lagrange rigidity, including both parity grids"
-        }
-      ],
-      "depends_on": [
-        {
-          "id": "finite_global_source",
-          "reason": "Identifies the central projection of the original shared coefficient."
-        },
-        {
-          "id": "finite_local_fourier",
-          "reason": "Identifies the physical Casimir cofactor, folded nodes and complete local normalization to which interpolation applies."
-        }
-      ],
-      "article": null
     },
     {
       "id": "analytic_cofactor_angular_gap",
@@ -651,7 +651,7 @@
       "id": "analytic_morse_h1",
       "title": "H1: finite holomorphic central coefficient packet",
       "group": "local_asymptotics",
-      "statement": "The common face coefficient has a nonzero Gaussian packet with finite holomorphic action A_N, face Hessian H_N, exact raw sign and N^(2R) factor, and a relative O(1/N) error on a fixed complex spectral chart. Its limiting action is even in every spectral variable and has strictly negative diagonal spectral Hessian at the complete point. The current direct proof defines A_N from the exact normalized polynomial; the archived fold-interpolation route is an alternative, not an additional required premise.",
+      "statement": "The common face coefficient has a nonzero Gaussian packet with finite holomorphic action A_N, face Hessian H_N, exact raw sign and N^(2R) factor, and a relative O(1/N) error on a fixed complex spectral chart. Its limiting action is even in every spectral variable and has strictly negative diagonal spectral Hessian at the complete point. The current direct proof defines A_N from the exact normalized polynomial; no fold interpolation is a premise.",
       "sources": [
         {
           "path": "papers/casimir-source-asymptotics/shared-coefficient.tex",
@@ -668,6 +668,10 @@
         {
           "path": "papers/casimir-source-asymptotics/complex-cofactors.tex",
           "anchor": "\\label{sa:exact-B}"
+        },
+        {
+          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
+          "anchor": "\\label{mca:eq-H1}"
         }
       ],
       "depends_on": [
@@ -753,6 +757,10 @@
         {
           "path": "papers/casimir-source-asymptotics/spectral-gap.tex",
           "anchor": "\\label{sa:Poisson}"
+        },
+        {
+          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
+          "anchor": "\\label{mca:eq-H2}"
         }
       ],
       "depends_on": [
@@ -915,6 +923,10 @@
         {
           "path": "papers/oscillatory-fillings/main.tex",
           "anchor": "\\label{of:source-result}"
+        },
+        {
+          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
+          "anchor": "\\label{mca:eq-4}"
         }
       ],
       "depends_on": [
@@ -1838,18 +1850,18 @@
       "id": "recursive_strict_volume",
       "title": "Full volume limit for every fixed strict Conway knot presentation",
       "group": "recursive_tangles",
-      "statement": "For every fixed strict ordered Conway expression with at least two original leaves and the original one-knot test, including internal components, independently sufficiently long fixed signed filling powers give the nonzero full invariant asymptotic and the all-integer volume limit on the unchanged knot complement.",
+      "statement": "For each fixed strict ordered Conway expression with at least two original leaves whose prescribed closing passes the one-knot component test, independently sufficiently long fixed signed filling powers give a nonzero full invariant asymptotic and the ordinary all-integer volume limit for that same knot complement.",
       "sources": [
         {
-          "path": "papers/conway-asymptotics/main.tex",
+          "path": "papers/conway-asymptotics/introduction.tex",
           "anchor": "\\label{ca:main}"
         },
         {
-          "path": "papers/conway-asymptotics/main.tex",
+          "path": "papers/conway-asymptotics/introduction.tex",
           "anchor": "\\label{ca:asymptotic}"
         },
         {
-          "path": "papers/conway-asymptotics/main.tex",
+          "path": "papers/conway-asymptotics/introduction.tex",
           "anchor": "\\label{ca:volume}"
         },
         {
@@ -1871,7 +1883,7 @@
           "reason": "Transfers the nonzero leading term and whole strict remainder to the logarithmic invariant rate."
         }
       ],
-      "coverage": "Conway Asymptotics Theorem 1.1. The expression and signed filling tuple are fixed before N tends to infinity. Net-twist and zero-aware reductions remain separate archive results.",
+      "coverage": "Current 16-page Conway Asymptotics Theorem 1.1. The expression and filling tuple are fixed before the level tends to infinity. Its proof uses the strict pure packet, whole-period filling analysis and strict classical geometry. The separate quarter-index, net-twist and zero-aware results are not premises.",
       "article": "conway-asymptotics"
     },
     {
@@ -2044,7 +2056,7 @@
           "reason": "The sole specialized companion import is the local oriented-chain identity in marked-fillings Eq. (7.3). The new tree paper proves its own winding, cone completion and same-chain absolute-volume comparison; it does not import a long-filling existence theorem."
         }
       ],
-      "coverage": "Classical all-circle geometry only. Quantitative analytic remainder estimates and completed-root filled-invariant conclusions remain archive dependencies; the nonparabolic moving-meridian/longitude adapter remains in its separate I/J nodes.",
+      "coverage": "Classical all-circle geometry only. The source-specific quantum estimates and the nonparabolic moving-meridian/longitude adapter are separate results.",
       "article": "circle-tree-geometry"
     },
     {
@@ -2068,22 +2080,6 @@
         {
           "path": "papers/circle-tree-volume/summed-conclusion.tex",
           "anchor": "\\label{cta:conclusion}"
-        },
-        {
-          "path": "formal-real/UniformProfile.lean",
-          "anchor": "theorem compact_microscopic_volume_transfer"
-        },
-        {
-          "path": "formal-real/SineFactor.lean",
-          "anchor": "theorem factor_tendsto"
-        },
-        {
-          "path": "formal-real/SineFactor.lean",
-          "anchor": "theorem quadraticPhase_tendsto"
-        },
-        {
-          "path": "formal-real/SineFactor.lean",
-          "anchor": "theorem compact_quadratic_sine_volume_transfer"
         }
       ],
       "depends_on": [
@@ -2100,42 +2096,26 @@
           "reason": "The nonzero coefficient and lower exponential error give the all-level logarithmic rate with the retained physical normalization."
         }
       ],
-      "coverage": "Proved in the circle-tree volume paper with its explicit summed condition, separately from the directed theorem. The preferred-cusp interpretation and all-orders longitude statements remain separate. The compiled UniformProfile theorem derives one common nonvanishing threshold and the uniform logarithmic rate from the written microscopic profile, actual moving-factor limits and base volume rate. It does not prove the tree-specific source estimates or geometry. SineFactor now proves both actual scalar limits, including the removable origin and the nonzero-integer zero set. The compact profile implication no longer assumes those limits for the fixed quadratic diagram scalar; source estimates, nonzero base packet and absolute geometry remain application inputs.",
+      "coverage": "The summed criterion and its microscopic profile have written proofs in the current circle-tree volume paper. The joint source estimates, nonzero coefficient, complete remainder budget and marked geometric comparison are its actual inputs. The general complex rate implication is retained in Lean; no deleted profile module is claimed.",
       "article": "circle-tree-volume"
     },
     {
       "id": "tree_local_volume",
       "title": "The uniform local subtree criterion",
       "group": "tree_criteria",
-      "statement": "The uniform local condition max_v d_v/(d_v^2+n_v^2)<=2^-120 implies the mixed degree-or-twist condition. It therefore inherits the volume and centered meridian conclusions of the directed theorem. Its older tiny-disk induction is retained in the frozen reference account but is unnecessary for this corollary.",
+      "statement": "The local condition max_v d_v/(d_v^2+n_v^2)<=2^-120 forces d_v>=2^28 or |n_v|>=2^27 at every vertex. It is therefore a direct corollary of the directed criterion, with the same knot qualification, full invariant, volume limit and centered microscopic expansion.",
       "sources": [
         {
           "path": "papers/circle-tree-volume/directed-applications.tex",
           "anchor": "\\label{dt:local}"
         },
         {
-          "path": "manuscript/sections/G-local-tree-messages.tex",
-          "anchor": "\\section{The full finite kernel and exact recursion}\\label{sec:lm-2}"
+          "path": "manuscript/sections/08b-local-circle-messages.tex",
+          "anchor": "\\label{lem:local-implies-directed}"
         },
         {
-          "path": "manuscript/sections/G-local-tree-messages.tex",
-          "anchor": "\\section{Two full-kernel bounds}\\label{sec:lm-3}"
-        },
-        {
-          "path": "manuscript/sections/G-local-tree-messages.tex",
-          "anchor": "\\section{A closed class of boundary phases}\\label{sec:lm-4}"
-        },
-        {
-          "path": "manuscript/sections/G-local-tree-messages.tex",
-          "anchor": "\\section{The exact finite-message induction}\\label{sec:lm-5}"
-        },
-        {
-          "path": "manuscript/sections/G-local-tree-messages.tex",
-          "anchor": "\\section{Conditional trace tails and connectors}\\label{sec:lm-6}"
-        },
-        {
-          "path": "manuscript/sections/G-local-tree-messages.tex",
-          "anchor": "\\section{Root assembly and the original filled action}\\label{sec:lm-7}"
+          "path": "manuscript/sections/08b-local-circle-messages.tex",
+          "anchor": "\\label{thm:local-circle-volume}"
         }
       ],
       "depends_on": [
@@ -2144,7 +2124,8 @@
           "reason": "If both d_v<2^28 and |n_v|<2^27 held, the local ratio would exceed 2^-57; the stated 2^-120 condition therefore forces the directed theorem\u2019s mixed alternative at every vertex."
         }
       ],
-      "article": "circle-tree-volume"
+      "article": "circle-tree-volume",
+      "coverage": "The current proof is the elementary local-to-directed implication followed by the directed theorem. Appendix G now supplies geometry only, including thm:vertexwise-geometry; its former local quantum-message induction is not a current proof input."
     },
     {
       "id": "tree_directed_volume",
@@ -2191,22 +2172,6 @@
         {
           "path": "manuscript/sections/K-directed-circle-messages.tex",
           "anchor": "\\label{dk:sec-8}"
-        },
-        {
-          "path": "formal-real/UniformProfile.lean",
-          "anchor": "theorem compact_microscopic_volume_transfer"
-        },
-        {
-          "path": "formal-real/SineFactor.lean",
-          "anchor": "theorem factor_tendsto"
-        },
-        {
-          "path": "formal-real/SineFactor.lean",
-          "anchor": "theorem quadraticPhase_tendsto"
-        },
-        {
-          "path": "formal-real/SineFactor.lean",
-          "anchor": "theorem compact_quadratic_sine_volume_transfer"
         }
       ],
       "depends_on": [
@@ -2224,7 +2189,7 @@
         }
       ],
       "article": "circle-tree-volume",
-      "coverage": " The compiled UniformProfile theorem derives one common nonvanishing threshold and the uniform logarithmic rate from the written microscopic profile, actual moving-factor limits and base volume rate. It does not prove the tree-specific source estimates or geometry. SineFactor now proves both actual scalar limits, including the removable origin and the nonzero-integer zero set. The compact profile implication no longer assumes those limits for the fixed quadratic diagram scalar; source estimates, nonzero base packet and absolute geometry remain application inputs."
+      "coverage": "The directed criterion and centered profile have written proofs from the full conditional kernel, normalized subtree estimates and positive completed geometry. Their source-specific inputs remain written; the general complex rate implication is retained in Lean."
     },
     {
       "id": "braid_literal_matched_sphere",
@@ -2473,7 +2438,7 @@
           "reason": "The original scalar, sine factors and charge period must belong to the actual invariant; abstract polynomial bounds alone do not identify that period."
         }
       ],
-      "coverage": "Retained older archive route. It is not a premise of the new terminal-decoration paper, whose whole complementary estimate uses the finite Hermite norm.",
+      "coverage": "An alternative research-note argument. It is not a premise of the new terminal-decoration paper, whose whole complementary estimate uses the finite Hermite norm.",
       "article": null
     },
     {
@@ -2712,55 +2677,18 @@
       "article": "conway-geometry"
     },
     {
-      "id": "recursive_local_packet_filling",
-      "title": "Completed-root signed local corridor expansion",
-      "group": "recursive_tangles",
-      "statement": "For the stated completed-root grammar, signed leaves on the fixed high-index interval give an exact finite corridor source with a uniform holomorphic relative expansion, nonzero amplitude and the stated local Hessian. The full physical source agrees up to an exponentially small error by the separate whole-source comparison. This node records the signed local export, not the enlarged pure filling theorem.",
+      "id": "analytic_finite_lattice_saddle",
+      "title": "One finite-lattice contour lemma for wire and color sums",
+      "group": "local_asymptotics",
+      "statement": "A holomorphic lattice summand with a real strict interior complete maximum, nonzero density, fixed complex neighborhood and primitive grid has the uniform Gaussian asymptotic with its lattice measure and determinant. The cotangent contour proof retains the vertical sides, half-grid strips and both constant horizontal contributions. Exponentially accurate mesh replacement is allowed only after bounding its total absolute error below the critical value.",
       "sources": [
         {
-          "path": "papers/conway-asymptotics/packet.tex",
-          "anchor": "\\label{ca:offsets}"
-        },
-        {
-          "path": "papers/conway-asymptotics/packet.tex",
-          "anchor": "\\label{ca:packet-theorem}"
-        },
-        {
-          "path": "papers/conway-asymptotics/packet.tex",
-          "anchor": "\\label{ca:packet-expansion}"
-        },
-        {
-          "path": "papers/conway-asymptotics/packet.tex",
-          "anchor": "\\label{ca:source-error}"
-        },
-        {
-          "path": "papers/conway-asymptotics/packet.tex",
-          "anchor": "\\label{ca:packet-hessian}"
-        },
-        {
-          "path": "papers/conway-asymptotics/packet.tex",
-          "anchor": "\\label{ca:color-gaussian}"
+          "path": "papers/conway-asymptotics/lattice.tex",
+          "anchor": "\\label{ca:lattice-method}"
         }
       ],
-      "depends_on": [
-        {
-          "id": "recursive_positive_source",
-          "reason": "Supplies the completed-root strict optimizer, primitive lattice, nondegenerate Hessian and analytic fixed-output profiles. The stronger leaf window is supplied by the separate completed-bound prerequisite."
-        },
-        {
-          "id": "recursive_local_leaf_estimates",
-          "reason": "Supplies the signed high-index holomorphic leaf interpolation and its endpoint-normalized amplitude."
-        },
-        {
-          "id": "recursive_completed_source_gap",
-          "reason": "Controls the whole physical-source complement beyond the signed corridor."
-        },
-        {
-          "id": "recursive_completed_port_bounds",
-          "reason": "The completed-root leaf window places the original stationary labels strictly above quarter, as required in this argument."
-        }
-      ],
-      "coverage": "Conway Asymptotics Theorem 4.1 remains a separate completed-root signed result. The strict pure volume route uses Theorem 4.2 instead.",
+      "depends_on": [],
+      "coverage": "The unnumbered finite-lattice saddle estimate in Section 2 is used twice in the current proof: for the exact pure wire sum and for the color Fourier sum. The global Fourier-torus gap remains a separate estimate.",
       "article": "conway-asymptotics"
     },
     {
@@ -2903,35 +2831,23 @@
       "id": "elementary_rate_transfer",
       "title": "A strict remainder gap preserves the leading rate",
       "group": "limit_comparison",
-      "statement": "If the exact invariant is a nonzero leading contribution plus a remainder with strictly smaller upper exponential rate, it is eventually nonzero and has the leading rate. Multiplication by a nonzero scalar of zero exponential rate preserves the conclusion. The argument uses triangle and reverse triangle inequalities; it does not supply the source estimates or the geometric volume comparison.",
+      "statement": "For K_N=u_N(N^rho a_N exp(N S_N)+E_N), with |u_N|=1, fixed real rho, a_N tending to a nonzero complex number and S_N tending to S, an entire-remainder upper rate strictly below Re S implies eventual nonvanishing and the ordinary all-integer logarithmic rate Re S. A separate identity 2 pi Re S=volume gives the volume limit. No cancellation, packet or geometric hypothesis is inferred from a norm bound.",
       "sources": [
         {
           "path": "papers/filling-bounds/main.tex",
           "anchor": "\\label{fb:rate-transfer}"
         },
         {
-          "path": "formal/VolumeLogic/VolumeTransfer.lean",
-          "anchor": "theorem invariant_rate_transfer"
-        },
-        {
-          "path": "formal-real/RealTransfer.lean",
-          "anchor": "theorem complex_volume_transfer"
+          "path": "manuscript/sections/09-reproduction.tex",
+          "anchor": "\\label{prop:volume-rate-transfer}"
         },
         {
           "path": "formal-real/RealTransfer.lean",
           "anchor": "theorem complex_packet_volume_transfer"
-        },
-        {
-          "path": "formal-real/RealTransfer.lean",
-          "anchor": "theorem complex_residue_packet_volume_transfer"
-        },
-        {
-          "path": "formal-real/RealTransfer.lean",
-          "anchor": "theorem complex_parity_packet_volume_transfer"
         }
       ],
       "depends_on": [],
-      "coverage": "The epsilon-limit implication and its realization using the actual complex norm and real logarithm have Lean proofs. The optional pinned Mathlib package also derives the leading rate from a nonzero convergent amplitude, a fixed real level power and a convergent complex action. Exact diagram identities, diagram-specific asymptotics, whole-remainder estimates and the geometric volume equality remain written inputs.",
+      "coverage": "The current Mathlib proof uses the actual complex norm and logarithm, convergent complex actions and nonzero convergent amplitudes. Packet existence, the strict entire-remainder estimate and the geometric identity are explicit application inputs; no former Std rate wrapper, parity restriction or recurrence assertion is used.",
       "article": "filling-bounds"
     },
     {
@@ -3055,7 +2971,7 @@
         }
       ],
       "depends_on": [],
-      "coverage": "A classical contraction theorem, not a noncancellation or filled-invariant asymptotic. The new paper does not replace the archived E/G/K source estimates or their backward-restoration arguments.",
+      "coverage": "A classical contraction theorem, not a noncancellation or filled-invariant asymptotic. The new paper does not replace the separate summed and directed source estimates or their backward-restoration arguments.",
       "article": "circle-tree-geometry"
     },
     {
@@ -3131,10 +3047,6 @@
       "statement": "After the original topological and peripheral identification, the old complete construction and the ordered positive page construction have conjugate complete holonomies by orientation-preserving marked geometric rigidity. Equivalently the cited maximal-volume conjugacy theorem applies to the same original group. Equal cell volume without that group and marking identification would not suffice.",
       "sources": [
         {
-          "path": "manuscript/sections/F-quantitative-octahedral-geometry.tex",
-          "anchor": "\\label{sec:fc-2}"
-        },
-        {
           "path": "notes/actual_fejer_unique_geometric_maximizer.md",
           "anchor": "## 1. Equality in the natural-map bound gives actual conjugacy"
         },
@@ -3153,50 +3065,8 @@
           "reason": "Provides the actual complete positive page geometry, whose complete metric is compared to the old complete construction."
         }
       ],
-      "article": null
-    },
-    {
-      "id": "geo_circle_preferred_cusp",
-      "title": "Preferred main cusp transported along the positive tree path",
-      "group": "geometric_longitude",
-      "statement": "The original complete marked geometry identifies the old and new positive shape germs using main-meridian and auxiliary-longitude coordinates. Exact Legendre elimination matches retained wire coordinates; actual main translations continue along the path, and the original surgery word supplies the preferred longitude shear and framing integer.",
-      "sources": [
-        {
-          "path": "manuscript/sections/F-quantitative-octahedral-geometry.tex",
-          "anchor": "\\label{sec:fc-2}"
-        },
-        {
-          "path": "manuscript/sections/F-quantitative-octahedral-geometry.tex",
-          "anchor": "\\label{sec:fc-3}"
-        },
-        {
-          "path": "manuscript/sections/F-quantitative-octahedral-geometry.tex",
-          "anchor": "\\label{sec:fc-4}"
-        },
-        {
-          "path": "manuscript/sections/F-quantitative-octahedral-geometry.tex",
-          "anchor": "\\label{sec:fc-5}"
-        }
-      ],
-      "depends_on": [
-        {
-          "id": "tree_positive_completion",
-          "reason": "Supplies the actual positive path, original filled manifold and complete anchor; this cusp result is downstream of metric completion."
-        },
-        {
-          "id": "geo_positive_marked_gluing",
-          "reason": "Identifies the marked representation germs on the actual triangulations rather than assuming equality from tangent data."
-        },
-        {
-          "id": "geo_complete_marked_metric_identification",
-          "reason": "Identifies their complete marked holonomies before the positive germ uniqueness is applied."
-        },
-        {
-          "id": "geo_circle_ordered_cut",
-          "reason": "Retains main peripheral access paths and the integral surgery/framing ledger."
-        }
-      ],
-      "article": null
+      "article": null,
+      "coverage": "The source notes give the marked complete-holonomy comparison after the original topological and peripheral identification. This graph node cites those current written arguments, not a removed reference section."
     },
     {
       "id": "geo_nonparabolic_edge_character",
@@ -3583,10 +3453,6 @@
         {
           "path": "manuscript/sections/K-directed-circle-messages.tex",
           "anchor": "\\label{dk:eq-45}"
-        },
-        {
-          "path": "manuscript/sections/M-directed-all-orders.tex",
-          "anchor": "\\label{dao:sec-2}"
         }
       ],
       "depends_on": [
@@ -3681,7 +3547,7 @@
       "id": "analytic_filtered_coefficient_regrading",
       "title": "Recovering the formal two-parameter series from all microscopic orders",
       "group": "geometric_longitude",
-      "statement": "The proved degree filtration writes the logarithm as h^(-1) S(u)+a regular series, with u=h s. FormalRegradingRing constructs the actual injective algebra map C[[h,u]] -> C[s][[h]], derives coefficient recovery, and identifies the earlier Std coefficient table. FormalShift proves exact divisibility of S(u+j h)-S(u) by h and the logarithmic projection j S prime(u). FormalExp constructs admissible exponentials from the factorial series, proves compatibility with h=0, and gives exp(j S prime(u))=(exp S prime(u))^j for natural shifts. Every finite jet recovers only its coefficient triangle. The analytic filtration and identification of the physical expansion with these formal data remain written inputs.",
+      "statement": "The degree filtration rewrites the actual logarithmic expansion as h^(-1) S(u) plus a regular series, with u=h s. Coefficient extraction makes substitution C[[h,u]] -> C[s][[h]] injective and recovers each finite coefficient triangle. The numerator S(u+jh)-S(u) is divisible by h; its quotient has constant h-coefficient j S prime(u). Exponentiation gives the leading shift ratio exp(j S prime(u)). The analytic filtration and every-order expansion are established beforehand.",
       "sources": [
         {
           "path": "papers/meridian-expansions/operators.tex",
@@ -3690,38 +3556,6 @@
         {
           "path": "papers/meridian-expansions/operators.tex",
           "anchor": "\\label{me:coefficient-recovery}"
-        },
-        {
-          "path": "formal/VolumeLogic/FormalRegrading.lean",
-          "anchor": "theorem regrade_coefficient_recovery"
-        },
-        {
-          "path": "formal/VolumeLogic/FormalRegrading.lean",
-          "anchor": "theorem regrade_injective"
-        },
-        {
-          "path": "formal/VolumeLogic/FormalRegrading.lean",
-          "anchor": "theorem regrade_finite_order_iff"
-        },
-        {
-          "path": "formal-real/FormalShift.lean",
-          "anchor": "theorem principalDifference_division"
-        },
-        {
-          "path": "formal-real/FormalShift.lean",
-          "anchor": "theorem logarithmicShift_atHZero"
-        },
-        {
-          "path": "formal-real/FormalRegradingRing.lean",
-          "anchor": "theorem regrading_injective"
-        },
-        {
-          "path": "formal-real/FormalRegradingRing.lean",
-          "anchor": "theorem std_table_compatibility"
-        },
-        {
-          "path": "formal-real/FormalExp.lean",
-          "anchor": "theorem logarithmic_exponential_atHZero_nat"
         }
       ],
       "depends_on": [
@@ -3730,7 +3564,8 @@
           "reason": "Supplies every asymptotic coefficient and its degree filtration; a fixed finite jet would not justify recovery of the full bivariate identity."
         }
       ],
-      "article": "meridian-expansions"
+      "article": "meridian-expansions",
+      "coverage": "Written coefficient extraction and formal-series algebra in the current meridian-expansions paper. These statements are not attributed to deleted Lean modules and do not establish recurrence existence."
     },
     {
       "id": "analytic_actual_operator_classical_germ",
@@ -3769,62 +3604,6 @@
         {
           "path": "papers/meridian-expansions/operators.tex",
           "anchor": "\\label{me:symbol-identity}"
-        },
-        {
-          "path": "formal-real/AsymptoticIdentity.lean",
-          "anchor": "theorem formal_series_zero"
-        },
-        {
-          "path": "formal-real/FormalGauge.lean",
-          "anchor": "theorem denominator_clearing"
-        },
-        {
-          "path": "formal-real/FormalGauge.lean",
-          "anchor": "theorem atHZero_clearedCoefficient"
-        },
-        {
-          "path": "formal-real/FormalCharacteristic.lean",
-          "anchor": "theorem gauged_classical_identity_from_all_orders"
-        },
-        {
-          "path": "formal-real/ActualGauge.lean",
-          "anchor": "theorem sine_cleared_equation"
-        },
-        {
-          "path": "formal-real/RecurrenceExpansion.lean",
-          "anchor": "theorem finite_equation_expansion"
-        },
-        {
-          "path": "formal-real/RecurrenceGaugeExpansion.lean",
-          "anchor": "theorem characteristic_of_sine_recurrence"
-        },
-        {
-          "path": "formal-real/MeridianExpansion.lean",
-          "anchor": "theorem characteristic_at_roots"
-        },
-        {
-          "path": "formal-real/LaurentExpansion.lean",
-          "anchor": "theorem characteristic_of_laurent_recurrence"
-        },
-        {
-          "path": "formal-real/OperatorNormalization.lean",
-          "anchor": "theorem classicalSymbol_ne_zero"
-        },
-        {
-          "path": "formal-real/OperatorNormalization.lean",
-          "anchor": "theorem recurrence_at_root_iff"
-        },
-        {
-          "path": "formal-real/OperatorNormalization.lean",
-          "anchor": "theorem qTaylor_order"
-        },
-        {
-          "path": "formal-real/OperatorCoefficientAdapter.lean",
-          "anchor": "theorem normalized_characteristic_of_record"
-        },
-        {
-          "path": "formal-real/MeridianSeriesEmbedding.lean",
-          "anchor": "theorem normalized_characteristic_faithful"
         }
       ],
       "depends_on": [
@@ -3839,14 +3618,10 @@
         {
           "id": "finite_invariant_normalization",
           "reason": "Identifies the actual reduced/full meridian gauge and component sign before cancellation."
-        },
-        {
-          "id": "finite_meridian_series_embedding",
-          "reason": "Preserves the nonzero normalized classical symbol under M=exp(u), with L still independent, before evaluating the selected longitude series."
         }
       ],
       "article": "meridian-expansions",
-      "coverage": "The compiled theorem starts from a specified nonzero finite polynomial coefficient record and original root recurrence. It constructs the common q-1 quotient and derives its nonzero classical symbol, connects the exact finite Laurent encoding, proves all coefficient Taylor estimates and the sine/meridian gauge, and reconstructs the full classical symbol using the explicit shift-degree bound. Source-ratio asymptotics, normalization and eventual source nonvanishing remain inputs. Algebraic rational denominator clearing is separately proved; the actual physical denominator chart, operator existence, analytic germ and geometric-factor conclusion remain application steps. Finite Vandermonde reconstruction now proves that the complete formal symbol is nonzero before selected-longitude evaluation; it does not make that last evaluation injective."
+      "coverage": "The current written proof starts from a specified nonzero rational recurrence, clears its fixed denominators and common q-1 valuation, retains the exact reduced/full gauge, and uses every required asymptotic shift before injective regrading. The resulting germ identity has the nonzero normalized classical symbol. Recurrence existence, source asymptotics and the geometric factor identification remain their stated separate inputs; no deleted formal module is cited."
     },
     {
       "id": "geometric_selected_factor_of_actual_recurrence",
@@ -3921,6 +3696,14 @@
         {
           "path": "papers/casimir-source-asymptotics/complex-cofactors.tex",
           "anchor": "\\label{sa:exact-B}"
+        },
+        {
+          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
+          "anchor": "\\label{mca:eq-7}"
+        },
+        {
+          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
+          "anchor": "\\label{mca:eq-8}"
         }
       ],
       "depends_on": [
@@ -4027,15 +3810,15 @@
       "statement": "The completed/completed root theorem is the corresponding subclass of the strict pure full-volume theorem, with the same literal knot test, full physical powers, framing and all-integer limit.",
       "sources": [
         {
-          "path": "papers/conway-asymptotics/main.tex",
+          "path": "papers/conway-asymptotics/introduction.tex",
           "anchor": "\\label{ca:main}"
         },
         {
-          "path": "papers/conway-asymptotics/main.tex",
+          "path": "papers/conway-asymptotics/introduction.tex",
           "anchor": "\\label{ca:asymptotic}"
         },
         {
-          "path": "papers/conway-asymptotics/main.tex",
+          "path": "papers/conway-asymptotics/introduction.tex",
           "anchor": "\\label{ca:volume}"
         }
       ],
@@ -4193,58 +3976,6 @@
       "article": "conway-source-bounds"
     },
     {
-      "id": "recursive_strict_core_packet",
-      "title": "Separate signed high/quarter core route for strict syntax",
-      "group": "recursive_tangles",
-      "statement": "For the exact arbitrary strict wire polytope, every complete leaf lies at or above the quarter index. The retained gate Hessians control all primitive directions. The actual core sum has a nonzero holomorphic local expansion and a global core majorant; the whole-source alias bound remains a distinct input. The two-leaf knot case keeps its pure-leaf qualification.",
-      "sources": [
-        {
-          "path": "notes/actual_conway_general_core_packet_and_gap.md",
-          "anchor": "## 2. Every complete closed-tree leaf is at or above one quarter"
-        },
-        {
-          "path": "notes/actual_conway_general_core_packet_and_gap.md",
-          "anchor": "## 3. Gate curvature controls every primitive direction"
-        },
-        {
-          "path": "notes/actual_conway_general_core_packet_and_gap.md",
-          "anchor": "## 5. Uniform estimates for the literal complete core sum"
-        },
-        {
-          "path": "notes/actual_conway_general_core_packet_and_gap.md",
-          "anchor": "## 6. The exact local packet and the remaining alias obligation"
-        }
-      ],
-      "depends_on": [
-        {
-          "id": "recursive_strict_normal_form",
-          "reason": "Provides the exact strict syntax and closing relation."
-        },
-        {
-          "id": "recursive_strict_optimizer",
-          "reason": "Supplies the primitive lattice, unique strict maximum and gate-only curvature without assuming a metric."
-        },
-        {
-          "id": "recursive_strict_boundary_profiles",
-          "reason": "Places the closed stationary leaves at or above quarter and fixes their actual profiles."
-        },
-        {
-          "id": "recursive_finite_source",
-          "reason": "Retains the exact high/quarter-index sources, offsets and parities."
-        },
-        {
-          "id": "recursive_local_leaf_estimates",
-          "reason": "Covers strictly-high-index signed leaf interpolation."
-        },
-        {
-          "id": "recursive_quarter_leaf_expansion",
-          "reason": "Covers equality at quarter, outside the fixed strictly-high-index charts."
-        }
-      ],
-      "coverage": "This signed/quarter research-note route is preserved separately. It is not a prerequisite of the new pure strict source packet, classical marked metric or full-volume theorem.",
-      "article": null
-    },
-    {
       "id": "recursive_strict_marked_metric",
       "title": "Primitive signed fillings and absolute volume for strict masks",
       "group": "recursive_tangles",
@@ -4355,11 +4086,11 @@
           "anchor": "\\label{ca:filled-error}"
         },
         {
-          "path": "papers/conway-asymptotics/main.tex",
+          "path": "papers/conway-asymptotics/introduction.tex",
           "anchor": "\\label{ca:asymptotic}"
         },
         {
-          "path": "papers/conway-asymptotics/main.tex",
+          "path": "papers/conway-asymptotics/introduction.tex",
           "anchor": "\\label{ca:D}"
         }
       ],
@@ -4379,62 +4110,54 @@
         {
           "id": "finite_invariant_normalization",
           "reason": "Restores the exact reduced invariant, original framing and scalar factors."
+        },
+        {
+          "id": "recursive_coherent_remainder_transfer",
+          "reason": "Transfers the physical full-minus-pure error through every original filling coefficient at subexponential cost, without dropping first normals, parity or a shared color."
         }
       ],
-      "coverage": "This is the enlarged pure-source filling route in Conway Asymptotics. It does not yet identify the action with volume; the following classical comparison does that.",
+      "coverage": "This is the current strict pure filling route. The algebraic coefficient cost, coherent full-color remainder contraction and final rate implication have current Lean realizations; the pure packet, charge analysis and absolute volume comparison remain written proof inputs.",
       "article": "conway-asymptotics"
     },
     {
       "id": "recursive_local_leaf_estimates",
-      "title": "High-index leaf expansions and global core bounds",
+      "title": "Endpoint-selected high-index signed coefficient",
       "group": "recursive_tangles",
-      "statement": "The exact signed finite leaf coefficients admit normalized holomorphic expansions on each compact high-index chart with a nonzero source-selected amplitude. Whole-color majorants and the original fixed integer offsets are retained. This is the local finite-source interface used in the completed-root construction.",
+      "statement": "For the actual finite signed Newton coefficient on a compact index interval inside (1/4,1/2), the original terminal wall selects a nonzero holomorphic scalar ratio. A uniformly contracting backward recurrence proves its endpoint-normalized first asymptotic and exponentially accurate index interpolation. The signed coefficient follows by the exact factorial-phase identity, with values and primitive color normalization retained.",
       "sources": [
         {
-          "path": "papers/conway-asymptotics/leaf.tex",
-          "anchor": "\\label{ca:Ward}"
+          "path": "papers/quarter-index-asymptotics/main.tex",
+          "anchor": "\\label{qi:unnormalized-recurrence}"
         },
         {
-          "path": "papers/conway-asymptotics/leaf.tex",
-          "anchor": "\\label{ca:wall}"
+          "path": "papers/quarter-index-asymptotics/high-index.tex",
+          "anchor": "\\label{qi:high-index}"
         },
         {
-          "path": "papers/conway-asymptotics/leaf.tex",
-          "anchor": "\\label{ca:continued-fraction}"
+          "path": "papers/quarter-index-asymptotics/high-index.tex",
+          "anchor": "\\label{qi:high-index-leading}"
         },
         {
-          "path": "papers/conway-asymptotics/leaf.tex",
-          "anchor": "\\label{ca:physical-ratio}"
+          "path": "papers/quarter-index-asymptotics/high-index.tex",
+          "anchor": "\\label{qi:high-index-ratio}"
         },
         {
-          "path": "papers/conway-asymptotics/leaf.tex",
-          "anchor": "\\label{ca:exponential-interpolation}"
-        },
-        {
-          "path": "papers/conway-asymptotics/leaf.tex",
-          "anchor": "\\label{ca:leaf-asymptotic}"
-        },
-        {
-          "path": "papers/conway-source-bounds/local.tex",
-          "anchor": "\\label{cs:envelopes}"
+          "path": "papers/quarter-index-asymptotics/signed.tex",
+          "anchor": "\\label{qi:actual-interpolants}"
         }
       ],
       "depends_on": [
         {
           "id": "recursive_finite_source",
-          "reason": "Fixes the literal leaf coefficients, their Casimir data and the exact finite recurrences used in the estimates."
-        },
-        {
-          "id": "recursive_uniform_leaf_envelopes",
-          "reason": "Supplies the separately proved all-physical-color global envelope; the nonzero holomorphic high-index expansion is proved in the Conway asymptotics companion."
+          "reason": "The original Newton crossing and circle coefficients give the literal finite source. Its complex-color telescoping recurrence and terminal condition are proved in the quarter-index paper."
         },
         {
           "id": "analytic_canonical_factorial",
-          "reason": "Fixes the complex factorial continuation and all phases; the source-selected recurrence then constructs an exponentially accurate index interpolation."
+          "reason": "The canonical factorial shift, normalization and bulk expansion are used in the exact finite source and its signed normalization."
         }
       ],
-      "coverage": "The completed-root high-index expansion and its actual terminal normalization are proved in the Conway asymptotics companion. The quarter-index extension remains a separate result.",
-      "article": "conway-asymptotics"
+      "coverage": "The necessary high-index input is proved in the consuming quarter-index paper. It needs the current canonical factorial lemma and exact Newton identities; no obsolete Conway edition, global source bound or completed-root packet is cited.",
+      "article": "quarter-index-asymptotics"
     },
     {
       "id": "recursive_strict_angle_geometry",
@@ -4566,7 +4289,7 @@
       "id": "recursive_quarter_leaf_expansion",
       "title": "Source-selected leaf expansion through the quarter index",
       "group": "recursive_tangles",
-      "statement": "The quarter-index local theorem controls both finite recurrence channels from their actual source anchor, proves an exponentially accurate selected interpolation, and identifies its nonzero signed amplitude with the original leaf coefficient. It is an additional local estimate needed when an extended strict tree has a complete leaf at the quarter index.",
+      "statement": "The local theorem controls both finite recurrence channels from the actual high-index source anchor, crosses the regular equality-of-moduli point, and proves an exponentially accurate selected interpolation with its nonzero normalized amplitude. It is a local signed coefficient theorem, separate from the pure-source volume proof.",
       "sources": [
         {
           "path": "papers/quarter-index-asymptotics/main.tex",
@@ -4583,14 +4306,6 @@
         {
           "path": "papers/quarter-index-asymptotics/source.tex",
           "anchor": "\\label{qi:I}"
-        },
-        {
-          "path": "notes/actual_conway_quarter_index_color_packet.md",
-          "anchor": "## 4. Exact source anchor, both channels, and all conversion errors"
-        },
-        {
-          "path": "notes/actual_conway_quarter_index_color_packet.md",
-          "anchor": "## 7. Original signed Conway coefficients and the local wire packet"
         }
       ],
       "depends_on": [
@@ -4600,14 +4315,14 @@
         },
         {
           "id": "recursive_local_leaf_estimates",
-          "reason": "Supplies the shared high-index normalization and analytic finite-factorial machinery; the quarter-index channel control is the additional proof."
+          "reason": "The paper-local high-index lemma supplies both actual source channels, with their original endpoint normalization."
         },
         {
           "id": "analytic_backward_diagonalization",
           "reason": "The fixed analytic reduction supplies an exponential remainder before the target interval is chosen; its all-intermediate action bound controls every mode conversion."
         }
       ],
-      "coverage": "Quarter-index Asymptotics supplies a separate signed local expansion. The strict pure volume theorem uses exact factorial continuation and does not require this route.",
+      "coverage": "The high-index anchor, the two-channel propagation and the absolute shear normalization are proved in the quarter-index paper. Its external mathematical inputs are the canonical factorial lemma and exact Newton identities, not a previous manuscript edition.",
       "article": "quarter-index-asymptotics"
     },
     {
@@ -4866,30 +4581,6 @@
       ],
       "coverage": "Requires the original oriented chain, peripheral framing and the stated completion. An arbitrary replacement chain or an exponential slope relation alone is insufficient.",
       "article": "marked-fillings"
-    },
-    {
-      "id": "recursive_source_action_comparison",
-      "title": "Separate high-index signed leaf action comparison",
-      "group": "recursive_tangles",
-      "statement": "On the fixed high-index leaf chart, the endpoint-normalized leading signed leaf primitive equals the classical local shear potential, including its color-dependent constant. This is a local quantum action statement, distinct from the direct pure global shear used for the enlarged volume theorem.",
-      "sources": [
-        {
-          "path": "papers/conway-asymptotics/leaf.tex",
-          "anchor": "\\label{ca:shear}"
-        },
-        {
-          "path": "papers/conway-asymptotics/leaf.tex",
-          "anchor": "\\label{ca:shear-action}"
-        }
-      ],
-      "depends_on": [
-        {
-          "id": "recursive_local_leaf_estimates",
-          "reason": "Provides the actual signed finite-source primitive and its endpoint normalization."
-        }
-      ],
-      "coverage": "Conway Asymptotics Proposition 3.1 remains a separate signed high-index result; it is not required by the strict pure volume route.",
-      "article": "conway-asymptotics"
     },
     {
       "id": "analytic_triangle_load_derivatives",
@@ -5469,6 +5160,18 @@
         {
           "path": "papers/conway-asymptotics/packet.tex",
           "anchor": "\\label{ca:Fourier-global}"
+        },
+        {
+          "path": "papers/conway-asymptotics/pure-window.tex",
+          "anchor": "\\label{ca:pure-leaf}"
+        },
+        {
+          "path": "papers/conway-asymptotics/pure-window.tex",
+          "anchor": "\\label{ca:source-error}"
+        },
+        {
+          "path": "papers/conway-asymptotics/pure-window.tex",
+          "anchor": "\\label{ca:color-gaussian}"
         }
       ],
       "depends_on": [
@@ -5487,9 +5190,17 @@
         {
           "id": "recursive_strict_source_gap",
           "reason": "Controls the original full-minus-core contribution and every physical macroscopic-color deficit, including two leaves."
+        },
+        {
+          "id": "analytic_finite_lattice_saddle",
+          "reason": "Evaluates the exact pure wire sum and the subsequent color Fourier sum with their primitive lattice measure, contour boundaries and Gaussian amplitudes."
+        },
+        {
+          "id": "exact_stationary_schur",
+          "reason": "Computes the Hessian after the stationary wire variables are eliminated; evenness removes the mixed complete-point block, while the finite-lattice argument supplies existence and nonzero amplitudes."
         }
       ],
-      "coverage": "Conway Asymptotics Theorem 4.2 and Proposition 4.3. No signed recurrence, quarter-index interpolation or q-Hahn estimate is used.",
+      "coverage": "Current Conway Asymptotics Theorem 3.1 and Proposition 3.2. Both sums use the common finite-lattice lemma with their exact densities and offsets; the spectral-torus complement is estimated separately. No signed recurrence, high-index expansion, completed-root packet or quarter-index interpolation is a premise.",
       "article": "conway-asymptotics"
     },
     {
@@ -6411,31 +6122,207 @@
       "coverage": "Bounds Lemma 7.2 only. Its proof precedes decorated-turn, macroscopic character loss and whole-component comparison, and uses no signed recurrence or quarter-index expansion."
     },
     {
-      "id": "finite_meridian_series_embedding",
-      "title": "Finite meridian jets recover Laurent coefficients",
-      "group": "geometric_longitude",
-      "statement": "For a fixed finite set E of integer exponents, the first |E| coefficients after M=exp(u) determine a Laurent polynomial supported on E. Factorials convert these coefficients to a Vandermonde system on distinct exponents. Thus the full meridian-series substitution is an injective complex algebra map, and mapping coefficients preserves a nonzero polynomial in an independent L. No fixed jet order works for arbitrary supports; substituting a selected L-series may have a kernel.",
+      "id": "exact_coefficient_gram",
+      "title": "Coefficient synthesis and its exact Gram form",
+      "group": "exact_operations",
+      "statement": "For a finite complex synthesis map B, the coefficient Gram form is B*B, its quadratic form equals the squared physical norm, and its kernel is exactly ker B. Coordinate change gives S*GS. Exact contraction of prescribed linear corridors preserves represented vectors and null directions; the closing functional remains additional data and has no positive lower bound from the Gram identity alone.",
       "sources": [
         {
-          "path": "formal-real/MeridianSeriesEmbedding.lean",
-          "anchor": "theorem equal_of_initial_coefficients_on_support"
+          "path": "manuscript/sections/02-exact-concepts.tex",
+          "anchor": "\\label{prop:coefficient-gram}"
         },
         {
-          "path": "formal-real/MeridianSeriesEmbedding.lean",
-          "anchor": "theorem meridianSeries_injective"
+          "path": "formal-real/CoefficientGram.lean",
+          "anchor": "theorem quadratic_eq_norm_sq"
         },
         {
-          "path": "formal-real/MeridianSeriesEmbedding.lean",
-          "anchor": "theorem meridianAlgHom_injective"
+          "path": "formal-real/CoefficientGram.lean",
+          "anchor": "theorem ker_gram"
         },
         {
-          "path": "formal-real/MeridianSeriesEmbedding.lean",
-          "anchor": "theorem formalSymbol_ne_zero"
+          "path": "formal-real/CoefficientGram.lean",
+          "anchor": "theorem coordinate_change"
+        },
+        {
+          "path": "formal-real/CoefficientGram.lean",
+          "anchor": "theorem corridor_comp"
         }
       ],
       "depends_on": [],
       "article": null,
-      "coverage": "These finite reconstruction and injectivity statements are compiled in Lean, using the actual exponential series and Vandermonde matrix. They neither construct a quantum recurrence nor prove that an actual source supplies its required expansions."
+      "coverage": "This is an exact finite-dimensional identity and an explanation of coefficient pairings, not a new geometric estimate or a substitution of the identity matrix for the physical Gram form."
+    },
+    {
+      "id": "exact_shifted_parseval",
+      "title": "Parseval on the complete shifted Fourier grid",
+      "group": "exact_operations",
+      "statement": "For N>=2, real alpha and H_a=N^-1 sum_k f_k exp(-2 pi i a(k+alpha)/N), inversion retains every index 0<=a,k<N and sum_a |H_a|^2=N^-1 sum_k |f_k|^2. The shift contributes unit phases and causes no loss of orthogonality.",
+      "sources": [
+        {
+          "path": "manuscript/sections/02-exact-concepts.tex",
+          "anchor": "\\label{prop:shifted-parseval}"
+        },
+        {
+          "path": "formal-real/FourierHermite.lean",
+          "anchor": "theorem shiftedDFT_eq_sum"
+        },
+        {
+          "path": "formal-real/FourierHermite.lean",
+          "anchor": "theorem shifted_parseval"
+        }
+      ],
+      "depends_on": [],
+      "article": null
+    },
+    {
+      "id": "finite_hermite_coefficient_mass",
+      "title": "Full value-and-normal coefficient mass",
+      "group": "exact_operations",
+      "statement": "For the actual integer-power phases h_k=(-1)^(nk)q^(n k(k+1)) and normal data d_k=n(k-(N-1)/2)h_k, Fourier reconstruction with a_0=H_0, a_a=((N-a)H_a+D_a)/N for a>0 and the truncated conversion beta_j=(-1)^j(a_j-a_(j+2)) gives sum_j |beta_j|<=2 sqrt(N)(1+|n|/sqrt(12)). Both signs and odd powers are retained. The estimate uses the exact normal energy n^2(N^2-1)/12; it does not prove the separate crossing interpolation identity.",
+      "sources": [
+        {
+          "path": "manuscript/sections/02-exact-concepts.tex",
+          "anchor": "\\label{prop:hermite-coefficient-mass}"
+        },
+        {
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:Hermite-inverse}"
+        },
+        {
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:crossing-split}"
+        },
+        {
+          "path": "formal-real/FourierHermite.lean",
+          "anchor": "theorem normal_energy"
+        },
+        {
+          "path": "formal-real/FourierHermite.lean",
+          "anchor": "theorem hermite_coefficient_mass"
+        },
+        {
+          "path": "formal-real/FourierHermite.lean",
+          "anchor": "theorem crossing_coefficient_mass"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "exact_shifted_parseval",
+          "reason": "Parseval controls the complete value and normal Fourier arrays before only the zeroth normal coordinate is omitted in the exact reconstruction."
+        }
+      ],
+      "article": "conway-asymptotics"
+    },
+    {
+      "id": "exact_stationary_schur",
+      "title": "Stationary elimination and the Schur Hessian",
+      "group": "exact_operations",
+      "statement": "For a holomorphic phase with invertible stationary y-Hessian, differentiating the stationary equation gives Dy*=-F_yy^-1 F_yt and the reduced Hessian F_tt-F_ty F_yy^-1 F_yt. Joint evenness in the retained variables kills the mixed block at the complete point. This algebra does not construct the stationary branch, its nonzero Gaussian coefficient or its additive action constant.",
+      "sources": [
+        {
+          "path": "manuscript/sections/02-exact-concepts.tex",
+          "anchor": "\\label{prop:stationary-schur}"
+        },
+        {
+          "path": "formal-real/StationaryElimination.lean",
+          "anchor": "theorem solve_linearized"
+        },
+        {
+          "path": "formal-real/StationaryElimination.lean",
+          "anchor": "theorem effective_hessian"
+        },
+        {
+          "path": "formal-real/StationaryElimination.lean",
+          "anchor": "theorem schur_zero_mixed"
+        }
+      ],
+      "depends_on": [],
+      "article": null
+    },
+    {
+      "id": "finite_coherent_color_contraction",
+      "title": "The coherent full-color contraction bound",
+      "group": "exact_operations",
+      "statement": "For the exact finite sum E=sum_j (product_l beta_l(j_l)) D(j), with one shared bound |D(j)|<=B on every full color tuple, the triangle inequality and product-of-sums identity give |E|<=(product_l sum_k |beta_l(k)|) B. No color is selected independently and the original linear closing stays inside the identity until this bound is applied.",
+      "sources": [
+        {
+          "path": "formal-real/ConwayAssembly.lean",
+          "anchor": "def fullColorContraction"
+        },
+        {
+          "path": "formal-real/ConwayAssembly.lean",
+          "anchor": "theorem fullColorContraction_norm_le"
+        },
+        {
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:filled-error}"
+        }
+      ],
+      "depends_on": [],
+      "article": null,
+      "coverage": "This theorem transfers a uniform full-source upper bound through the exact closing. It supplies no leading lower bound and does not replace a coherent sum by an incoherent positive evaluation."
+    },
+    {
+      "id": "finite_subexponential_cost_transfer",
+      "title": "Nonnegative filling costs preserve upper rates",
+      "group": "limit_comparison",
+      "statement": "If B_N and C_N are eventually nonnegative with upper exponential rates at most b and zero, and |E_N|<=C_N B_N, then E has upper rate at most b. In particular C_N<=C_0 N^m for fixed real m and C_0>=0 suffices. Zero source budgets and zero costs are allowed; no division or nonvanishing assumption is needed.",
+      "sources": [
+        {
+          "path": "manuscript/sections/09-reproduction.tex",
+          "anchor": "\\label{lem:subexponential-remainder-transfer}"
+        },
+        {
+          "path": "manuscript/sections/09-reproduction.tex",
+          "anchor": "\\label{cor:polynomial-remainder-transfer}"
+        },
+        {
+          "path": "formal-real/RealTransfer.lean",
+          "anchor": "theorem UpperRate.mul"
+        },
+        {
+          "path": "formal-real/RealTransfer.lean",
+          "anchor": "theorem upperRate_norm_of_cost"
+        },
+        {
+          "path": "formal-real/RealTransfer.lean",
+          "anchor": "theorem upperRate_of_polynomial_bound"
+        }
+      ],
+      "depends_on": [],
+      "article": null
+    },
+    {
+      "id": "recursive_coherent_remainder_transfer",
+      "title": "Polynomial cost of the original filled remainder",
+      "group": "recursive_tangles",
+      "statement": "For a fixed finite tuple of integer crossing powers, the product of the actual Fourier-Hermite coefficient masses has upper rate zero. The exact coherent full-color contraction therefore preserves the strict source-remainder gap. The current assembled Lean theorem then applies the complex packet-to-volume implication with the packet and geometric calibration supplied explicitly.",
+      "sources": [
+        {
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:filled-error}"
+        },
+        {
+          "path": "formal-real/ConwayAssembly.lean",
+          "anchor": "theorem conway_packet_volume_limit"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "finite_hermite_coefficient_mass",
+          "reason": "Bounds each actual full value-and-normal coefficient array by a fixed constant times sqrt(N)."
+        },
+        {
+          "id": "finite_coherent_color_contraction",
+          "reason": "Keeps the exact shared-color closing and derives its product mass cost from one full-source budget."
+        },
+        {
+          "id": "finite_subexponential_cost_transfer",
+          "reason": "A fixed finite product of these nonnegative polynomial costs leaves the source upper exponential rate unchanged."
+        }
+      ],
+      "article": "conway-asymptotics",
+      "coverage": "The current code proves the finite norm bound, the actual coefficient cost and the final conditional complex limit implication. It does not formalize the lattice asymptotics, whole charge analysis or hyperbolic volume identity."
     }
   ],
   "articles": {
@@ -6811,10 +6698,10 @@
       "witnesses": [
         {
           "path": [
-            "recursive_local_leaf_estimates",
-            "recursive_quarter_leaf_expansion"
+            "analytic_canonical_factorial",
+            "recursive_local_leaf_estimates"
           ],
-          "reason": "Supplies the shared high-index normalization and analytic finite-factorial machinery; the quarter-index channel control is the additional proof."
+          "reason": "Only the canonical factorial shift, normalization and bulk estimate are imported. The current quarter-index paper proves its own signed source selection."
         }
       ]
     },
@@ -6851,24 +6738,10 @@
       "witnesses": [
         {
           "path": [
-            "recursive_completed_source_gap",
-            "recursive_local_packet_filling"
-          ],
-          "reason": "Controls the whole physical-source complement beyond the signed corridor."
-        },
-        {
-          "path": [
             "recursive_strict_source_gap",
             "recursive_strict_pure_packet"
           ],
           "reason": "Controls the original full-minus-core contribution and every physical macroscopic-color deficit, including two leaves."
-        },
-        {
-          "path": [
-            "recursive_uniform_leaf_envelopes",
-            "recursive_local_leaf_estimates"
-          ],
-          "reason": "Supplies the separately proved all-physical-color global envelope; the nonzero holomorphic high-index expansion is proved in the Conway asymptotics companion."
         }
       ]
     },
@@ -7626,24 +7499,10 @@
         },
         {
           "path": [
-            "recursive_finite_source",
-            "recursive_local_leaf_estimates"
-          ],
-          "reason": "Fixes the literal leaf coefficients, their Casimir data and the exact finite recurrences used in the estimates."
-        },
-        {
-          "path": [
             "recursive_positive_source",
             "recursive_completed_volume"
           ],
           "reason": "Identifies the completed-root grammar and its complete positive action within the strict class."
-        },
-        {
-          "path": [
-            "recursive_positive_source",
-            "recursive_local_packet_filling"
-          ],
-          "reason": "Supplies the completed-root strict maximum, primitive coordinates and stationary high-index leaf window."
         },
         {
           "path": [
@@ -8061,5 +7920,5 @@
       ]
     }
   ],
-  "article_scope": "Article ownership names the publication that proves a recorded statement. Null-owned nodes are explicit archival, formal or cross-article assemblies. Article edges retain nearest-owned theorem paths through null-owned inputs; they do not infer imports from bibliography entries. Standard external citations and unrecorded local lemmas are not automatically checked."
+  "article_scope": "Article ownership names the publication that proves a recorded statement. Null-owned nodes are explicit background or cross-article assemblies. Article edges retain nearest-owned theorem paths through null-owned inputs; they do not infer imports from bibliography entries. Standard external citations and unrecorded local lemmas are not automatically checked."
 }

@@ -1,9 +1,20 @@
 \chapter{Certified insertion at ordinary triangular boundaries}
 \label{app:triangular-boundary-insertion}
 
-An ordinary triangular face has three positive coefficient weights. It need not contain either protected face of the marked source. This appendix proves that a diagram already controlled at a protected edge can be inserted at such an ordinary face when two boundary curvatures are sufficiently small relative to the third. The coefficient demands on the old boundary vertices remain the original core demands.
+An ordinary triangular face has three positive coefficient weights; it
+need not meet the protected edge of the marked source. We prove that a
+controlled diagram can be inserted at such a face when two boundary
+curvatures are small compared with the third. Each old boundary vertex
+keeps its original coefficient demand.
 
-The mechanism has two parts. The complete packing inside a triangular boundary contributes exactly the old triangle potential plus a constant. For complementary sectors, the old protected certificate extends to small positive boundary weights. Any local comparison error is absorbed by the same boundary correction. Explicit strictly balanced cores supply arbitrarily thin ordinary faces, so the theorem applies to any fixed finite collection of certified inputs.
+The proof separates geometry from the source estimate. Minimizing over
+the inserted disk gives exactly the old triangle potential plus the
+complete action of the inserted block. This is a fixed-boundary gluing
+identity. We then extend the block's finitely many strict source
+inequalities from two zero boundary weights to small positive weights.
+The same boundary correction absorbs every gluing defect. Finally an
+explicit chain of tangent circles supplies faces with the required
+small curvature ratios.
 
 \begin{theorem}[Ordinary triangular insertion]\label{tbi:main} Let \(B_1,\ldots,B_s\), \(s\ge1\), be fixed marked simple-sphere diagrams satisfying the unabridged certificate \eqref{tbi:eq-C2}. Choose a marked boundary triangle in each input. There are positive boundary thresholds \(\eta_j\) such that the following holds.
 
@@ -87,7 +98,10 @@ Singletons contribute no Hessian. Thus a connected supported graph has only the 
 
 \section{Existence for every positive boundary triple}\label{tbi:sec-2}
 
-Here is the finite feasibility and coercivity argument, separate from the subsequent development.
+We first solve the variational problem with the boundary weights fixed.
+Existence requires coercivity as well as a positive Hessian. The finite
+flow argument below supplies both, and will also handle the zero-weight
+limit used to calibrate the additive constant.
 
 Each triangle supplies \(1/2\); every interior vertex demands one. Pool the three boundary destinations into one destination of demand \(1/2\), retaining their separate corners. A strictly positive transport table exists.
 
@@ -121,14 +135,23 @@ Develop the triangles with their given orientation. Continuation around an inter
 
 This development is injective. For a point outside the finite developed edges, each preimage is orientation preserving, so the number of preimages equals the boundary winding number: one inside the boundary triangle and zero outside. Local injectivity at edges and interior vertices, followed by continuity, extends this to the whole disk. Separating triangles inside \(P\) cause no change in this degree argument.
 
-It follows that the total developed angle \(\Theta_u\) at the boundary vertex \(u\) is exactly the angle of the unrefined center triangle. Differentiating the optimized action gives
+The developed disk fills the prescribed center triangle once.
+Consequently its total angle \(\Theta_u\) at a boundary vertex is
+the angle of the unrefined triangle. The envelope rule identifies the
+boundary derivative of the optimized action:
 \begin{equation}\label{tbi:eq-8}
 \partial_{\log u}\mathcal J_P
 =\frac{\Theta_u}{2\pi}
 =\frac1\pi\arctan\frac{u}{\sqrt{uv+ub+vb}}
 =\partial_{\log u}Q(u,v,b).
 \end{equation}
-The same holds at \(v,b\). Hence the difference in \eqref{tbi:eq-3} has zero differential throughout the connected positive octant and is constant. There is no extra boundary-linear term. Its logarithmic homogeneity is \(1/2\), since the disk has half-supply \(k+1/2\) and interior demand \(k\).
+The same holds at \(v,b\). Thus eliminating the internal variables
+preserves the complete boundary response: its derivatives are exactly
+those of one triangle. Their difference is constant on the connected
+positive octant, proving \eqref{tbi:eq-3} up to that constant.
+There is no boundary-linear correction. Both sides have logarithmic
+homogeneity \(1/2\): the disk supplies \(k+1/2\) and its interior
+targets consume \(k\).
 
 The developed disks have disjoint interiors and only the prescribed contacts: each disk sector lies inside its incident center triangle and stops before the opposite center edge. The contact-circle halfspaces give the original convex right-angled ideal piece. This identifies the variational development with the fixed-boundary packing, rather than just an abstract flat metric.
 
@@ -198,7 +221,10 @@ e_D=(u,v,c,b),\quad f_D=(u,v,b);
 \qquad
 e_B=(u,a,v,b),\quad f_B=(u,b,v).
 \end{equation}
-The removed triangles have opposite orientations. Their common matching side is \(ub\), and their retained partners are \((u,b,c)\) and \((u,a,b)\). After gluing, those partners form the new region
+The removed triangles have opposite orientations. Identify their three
+boundary vertices in that order. Their common matching side is
+\(ub\); the retained partners \((u,b,c)\) and \((u,a,b)\) then
+form the new crossing-circle region
 \begin{equation}\label{tbi:eq-16}
 e_{\mathrm{new}}=(u,a,c,b).
 \end{equation}
@@ -233,7 +259,11 @@ Put \(T=Q(u,v,b)\), \(Q_a=Q(u,a,b)\), \(Q_c=Q(u,c,b)\). Then
 \begin{equation}\label{tbi:eq-18}
 X_D=T+Q_c,\quad X_B=Q_a+T,\quad X_{\mathrm{new}}=Q_a+Q_c.
 \end{equation}
-The block comparison expression subtracts its interior targets and one \(b\)-target, but none at \(u,v\). Combining it with the core therefore duplicates only \(b\). The exact complete action identity and a general sector inequality are
+The demand count explains the correction. The block comparison subtracts
+its interior targets and one \(b\)-target, but none at \(u,v\).
+Adding it to the core duplicates only the target at \(b\).
+The following correction removes that duplicate and the two deleted
+triangle potentials:
 \begin{equation}\label{tbi:eq-19}
 P_{\mathrm{new}}=P_D+\widehat P_B-\Delta,\qquad
 G_{\mathrm{new},\omega}\le
@@ -279,7 +309,9 @@ or its \(v\)-analogue. At one fixed positive interior vector it tends uniformly 
 
 Combining these finite choices with \eqref{tbi:eq-12}, there is \(\eta_B>0\) such that \(u/b,v/b\le\eta_B\) permits a central conditional minimizer of value \(\Phi_B+\Delta\), or a noncentral witness of value at most \(\Phi_B-\gamma_B/2\). The central conditional root satisfies \(a>v\) by \eqref{tbi:eq-14a}; no ordering is required of noncentral witnesses.
 
-Suppose the core has an unabridged certificate whose finitely many witnesses, together with its complete vector, meet the selected thin-boundary conditions. There is no required inequality between core middles. Choose one induced core witness, then classify each induced \textbf{whole block string}:
+Suppose the core's finite witnesses and complete vector meet the
+thin-boundary conditions. Choose the induced core witness and classify
+each inserted block by all of its labels, not just its root label:
 
 \begin{itemize}
 \item
@@ -288,7 +320,10 @@ Suppose the core has an unabridged certificate whose finitely many witnesses, to
   If the block has any noncentral label, use the finite extended certificate. Its value is at most \(\Phi_B-\gamma_B/2\), while its bridge defect is at most \(\Delta/2\). It therefore contributes at most \(\Phi_B-\gamma_B/2-\Delta/2\) after the correction.
 \end{itemize}
 
-The locally central root alone does not imply that the whole block is central. The split above uses every label of that block. At least one induced input is noncentral when the output is noncentral. For any fixed finite number of blocks this proves
+Every noncentral output induces a noncentral label in the core or in
+an inserted block. The first case keeps the core gap; the second keeps
+that block's half-gap. Each interface absorbs its own defect.
+For finitely many insertions this proves
 \begin{equation}\label{tbi:eq-23}
 \gamma_{\mathrm{new}}\ge
 \min\{\gamma_D,\gamma_{B_1}/2,\ldots,\gamma_{B_s}/2\}>0.
@@ -382,7 +417,22 @@ All these matching regions are strictly balanced. Here are the inequalities, inc
 \begin{equation}\label{tbi:eq-28d}
 X-\log2\ge2g-\frac34\log2>\frac3{50}.
 \end{equation}
-The other unchanged region has positive outer weights and middle weights one, so \(X>0\).
+For the remaining unchanged pair \(T_3,Z_3\), the outer weights are
+\((2,0)\) and the two middle weights are \((1,1)\). The zero outer
+weight is protected and stays zero. In either triangle the admissible
+loads \((1/4,1/4,0)\) in \eqref{tbi:eq-1} give
+\[
+ Q(2,1,0)\ge2g+\tfrac14\log2,
+ \qquad X=2Q(2,1,0)\ge4g+\tfrac12\log2.
+\]
+Each overloaded middle has weight \(h=1\). Its pure-middle comparison
+is \(X-\log h=X\), and its mixed comparison satisfies
+\[
+ Q(2,h,0)-\tfrac12\log h
+ \ge2g+\tfrac14\log2>\frac3{50}.
+\]
+The last inequality follows already from the stronger comparison
+\(2g-\tfrac34\log2>3/50\) in \eqref{tbi:eq-28d}.
 
 At the root region the outer weights are \(2,2\), the middles \(b_1,1\). Choose loads \((1/12,1/3,1/12)\) in the first triangle and \((1/5,1/10,1/5)\) in the second. Then
 \begin{equation}\label{tbi:eq-28e}
@@ -400,7 +450,8 @@ X-\log b_{j+1}
 \end{equation}
 The ratios \(b_j/b_{j-1}\) decrease by the factorization in \eqref{tbi:eq-28}, and the expression in the first logarithm is \((b_{j+1}/b_j)^3(b_j/b_{j-1})\). This proves the second inequality for every \(j\), not just for bounded chain length.
 
-The three strict constants can be checked with explicit interval arithmetic: use
+The three numerical margins follow from this convergent Fourier series
+with an explicit tail bound:
 \begin{equation}\label{tbi:eq-28g}
 \Lambda(x)=\frac12\sum_{r=1}^{K}\frac{\sin(2rx)}{r^2}
 +E_K(x),\qquad |E_K(x)|\le\frac1{2K},\qquad K=2048.
@@ -481,7 +532,13 @@ retain their other ordinary weights. Outward interval evaluation of the original
 \end{equation}
 where each triple lists the region, side, and overloaded face. For each, take that anchored side and all genuine spectator labels at one fixed old witness. The same evaluation gives a gap greater than \(1/50\) for these five branches. The forty old branches and five new anchors cover every locally allowed noncentral string, including any previously globally zero string.
 
-The portable runner \href{https://github.com/sashakolpakov/murakamis_dream/blob/main/repro/check_triangular_boundary_certificate.py}{check\_triangular\_boundary\_certificate.py} checks the original Morse incidence and forty-branch division, the rational complete-flow demands, the five new anchors, and all forty-five rate inequalities with the Fourier tail in \eqref{tbi:eq-28g}. It also replays the restricted dual used in \eqref{tbi:eq-30}. These finite interval inequalities concern the source weights; they do not replace the all-length geometric or asymptotic proof.
+The finite certificate consists of forty old witnesses and five new
+anchored witnesses, evaluated with the tail bound
+\eqref{tbi:eq-28g}. Their incidence data, demand table and interval
+inequalities are recorded in
+\href{https://github.com/sashakolpakov/murakamis_dream/blob/main/repro/check_triangular_boundary_certificate.py}{the triangular-boundary certificate}.
+The conclusion for every larger even chain length follows from the
+monotonicity argument below.
 
 Every selected rate is nondecreasing in \(w_0,w_{16}\), and the block comparison subtracts no target at these boundary vertices. Since \(b_n\) increases, the same forty-five witnesses work for every even \(n\ge n_0\). The correction \(\Delta\) also decreases. Combining their gap with the core gap \(>3/50\) and the whole-block comparison gives an assembled source gap at least \(1/50\).
 

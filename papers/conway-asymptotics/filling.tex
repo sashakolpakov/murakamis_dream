@@ -1,8 +1,13 @@
-\section{Full integer powers and the entire filling functional}\label{ca:filling}
+\section{Performing the twists and identifying the volume}\label{ca:filling}
 
-A retained half twist can be left in the source or included in the full crossing power. We use the latter exact description here: each original disk carries $R^{n_\ell}$ with $n_\ell=\epsilon_\ell-2p_\ell$, expanded into ordinary circles. The following calculation treats odd and even $n$, including negative $n$. Thus no endpoint parity is changed by the rearrangement.
+The filled diagram has the crossing power $R^{n_\ell}$ at disk
+$\ell$, with $n_\ell=\epsilon_\ell-2p_\ell$. We expand that entire
+power in ordinary colored circles. This permits us to use the pure
+source of Theorem~\ref{ca:strict-pure} while evaluating exactly the
+same knot. The calculation includes positive and negative, odd and
+even powers.
 
-\subsection{The full Hermite data and their finite Fourier transform}
+\subsection{Fourier orthogonality with repeated-root derivatives}
 
 Write $\mathscr P_N(\sigma)=2T_N(\sigma/2)+2$ for the monic root polynomial and
 \[
@@ -15,7 +20,14 @@ $\mathbb C[\sigma]/(\mathscr P_N)$ the normalized crossing $r_N=\kappa^{-1}R$ ha
  (w\partial_w)r_N(w+w^{-1})\big|_{w=w_k}
       =-\tfrac12(d-2k)r_N(c_k).
 \end{equation}
-The second formula is the derivative at the double nodes; at the odd simple node $w_k=-1$ it is zero and imposes no extra normal. These are the full crossing data proved in \cite[Proposition 5.1]{Finite} and \cite[equation (4.8)]{Newton}. Every value is nonzero. Hence the crossing is a unit in the full quotient, and all integer powers, including negative ones, are defined there.
+At a double root the value and derivative are both needed to specify
+a polynomial modulo $\mathscr P_N$. The second formula records that
+derivative in the coordinate $w$. At the odd-level simple root
+$w_k=-1$ it is zero and imposes no extra condition. These data are
+proved in \cite[Proposition 5.1]{Finite} and
+\cite[equation (4.8)]{Newton}. Since every value is nonzero, the
+crossing is invertible in the quotient and every integer power is
+defined.
 
 Let $f_{N,n}$ be the unique representative of degree at most $d$ of $r_N^n$.
 Put
@@ -50,13 +62,31 @@ $L_{j+1}=(-1)^jU_j(\sigma/2)$ satisfy the exact physical identity
  R^n=\kappa^n\sum_{j=0}^{d}\beta_j^{n/2}L_{j+1},
  \qquad
  \sum_{j=0}^{d}|\beta_j^{n/2}|
-       \le 2N(1+|n|/2).
+       \le 2\sqrt N(1+|n|/\sqrt{12}).
 \end{equation}
-For the bound use $|H_a|\le1$, $|D_a|\le |n|d/2$ in
-\eqref{ca:Hermite-inverse}, then sum the two coefficient contributions in
-\eqref{ca:beta}. The equality is first an identity in the one local pair algebra and then evaluated in the diagram. Distinct physical boxes have not been commuted.
+The norm bound follows more directly from orthogonality than from
+individual coefficient estimates. On the shifted grid,
+\[
+ \frac1N\sum_{k=0}^{N-1}w_k^{a-b}=\mathbf1_{a=b}
+                    \qquad(0\le a,b<N).
+\]
+Parseval's identity, in our $1/N$ Fourier normalization, gives
+\[
+ \|H\|_2^2=1,\qquad
+ \|D\|_2^2=\frac{n^2}{4N}\sum_{k=0}^{N-1}(d-2k)^2
+           =\frac{n^2(N^2-1)}{12}.
+\]
+In \eqref{ca:Hermite-inverse} the $H$ part is a diagonal
+contraction, while the $D$ part is divided by $N$ and its zeroth
+coordinate is omitted. Thus
+$\|a\|_2\le1+|n|/\sqrt{12}$. The truncated shift
+$(a_j)\mapsto(a_{j+2})$ has norm at most one, so
+$\|\beta\|_2\le2\|a\|_2$; Cauchy--Schwarz gives
+\eqref{ca:crossing-split}. This includes the derivative data and
+both parities. The identity is then inserted at each disk in the
+diagram, without interchanging distinct boxes.
 
-\subsection{The midpoint identity, including odd physical powers}
+\subsection{The midpoint identity and all its Fourier modes}
 
 Let $C_N(t)$ be the even strict pure corridor of
 Theorem~\ref{ca:strict-pure}, with one variable for the moment, and let
@@ -122,11 +152,11 @@ This is precisely the normalization in \cite[equation (1.6)]{Filling}; the defin
 Before using any asymptotic theorem, \eqref{ca:crossing-split} and
 Theorem~\ref{ca:strict-pure} show that replacing the full physical source by this corridor changes its filled value by at most
 \begin{equation}\label{ca:filled-error}
- \prod_j2N(1+|n_j|/2)\ e^{N(F_0-\gamma_*)}
+ \prod_j2\sqrt N(1+|n_j|/\sqrt{12})\ e^{N(F_0-\gamma_*)}
 \end{equation}
 for a fixed $\gamma_*>0$. The source error and macroscopic-color errors were bounded before extending colors by evenness. Thus an alias is never silently folded as though it were even. For fixed $\mathbf n$, the displayed prefactor is polynomial in $N$.
 
-\subsection{Application to the whole sum and the primitive action}
+\subsection{The nonzero leading term of the filled invariant}
 
 Proposition~\ref{ca:Fourier-theorem} verifies every analytic input of
 \cite[Theorem 1.1]{Filling} for this exact polynomial. Its separate degree is at most $d$. In the notation of that theorem take
@@ -143,10 +173,10 @@ $\alpha-b/2=3/2$. The local phase and amplitude are independent of $N$ here, so 
 $F_0-\Re S_{\mathbf n}=O(\sum n_j^{-2})$ with no ratio constraint.
 Increase a fixed threshold on the independent $|n_j|$ until this loss is smaller than $\gamma_*/2$. Then \eqref{ca:filled-error} is exponentially below the nonzero leading term. This proves the same relative asymptotic for the whole original evaluation.
 
-It remains to identify its action with the original marked filling,
-especially when a physical power is odd. We use a classical shear
-defined at every strict leaf, not a signed quantum asymptotic at
-that leaf. For $0<x<1/2$ and $v=g_t(x,t)$ put
+\subsection{The critical action is the knot-complement volume}
+
+It remains to identify this action with the marked geometric filling.
+We use the classical shear defined at every strict leaf. For $0<x<1/2$ and $v=g_t(x,t)$ put
 \[
  \chi=t-\frac{\epsilon}{2\pi\ii}v,\qquad
  f_\epsilon^{\rm cl}(x,\chi)
@@ -161,8 +191,6 @@ primitive retained-half-twist shear of
 \cite[Section 6, equations (6.1)--(6.5)]{StrictGeometry};
 the normalization is $J(0)=0$ and $f_\epsilon^{\rm cl}(x,0)=g(x,0)$.
 Their construction is classical and includes $x=1/4$.
-On the high-index interval they agree with
-Proposition~\ref{ca:shear}, but that agreement is not needed here.
 
 Sum these functions and the unchanged gate actions and eliminate
 the stationary wires. Denote the resulting classical action by

@@ -1,11 +1,15 @@
 import HallRecession
 
 /-!
-Strict finite cut inequalities imply existence and uniqueness of the actual
-supported triangle balance. No feasible table is an input: a minimizer of
-the Lobachevsky envelope constructs the positive corner table. The theorem
-retains singleton rows and repeated destinations. Geometric incidence and
-verification of the cuts for a particular packing remain application work.
+Strict finite cuts give a unique supported triangle balance.
+`HallRecession` supplies coercivity without a feasible table. Minimizing the
+Lobachevsky envelope then constructs positive corner loads with the prescribed
+column sums. The resulting table and connected support invoke the existing
+uniqueness theorem. Singleton rows and repeated destinations remain included.
+
+The total half-mass identity is essential: it recovers the root equation
+after grounded minimization. Verifying the cuts for a particular diagram,
+and developing its geometric packing, are application steps.
 -/
 namespace VolumeLogic.TriangleHall
 open scoped BigOperators
@@ -106,8 +110,8 @@ theorem exists_positive_table (c : T → Fin 3 → V) (a : T → Fin 3 → ℝ)
   · exact fun t => (supportedLoad_feasible (a t) _ (ha t) (hne t)).2.1
   · exact funext hb
 
-/-- The previously conditional uniqueness theorem now receives its positive
-table and row connectivity from the finite cut hypotheses. -/
+/-- Finite cut hypotheses supply both the positive table and row connectivity
+required by the supported-potential uniqueness theorem. -/
 theorem exists_unique_balance (c : T → Fin 3 → V) (a : T → Fin 3 → ℝ)
     (d : V → ℝ) (ha : ∀ t i, 0 ≤ a t i) (hne : ∀ t, ∃ i, 0 < a t i)
     (hm : (∑ v, d v) = (Fintype.card T : ℝ)/2)

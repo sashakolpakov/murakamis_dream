@@ -4,13 +4,16 @@ import Mathlib.LinearAlgebra.FiniteDimensional.Basic
 import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
 
 /-!
-The actual finite weighted graph Laplacian with one coordinate grounded.
-The reduced matrix is the principal submatrix obtained by deleting that
-coordinate. Its invertibility is derived from nonnegative weights and finite
-paths in their positive support, not assumed as a matrix hypothesis.
+The graph Laplacian with one coordinate fixed to zero. The reduced matrix is
+the principal submatrix obtained by deleting that coordinate. Zero extension
+identifies its bilinear form with the original edge form, and positive-support
+connectivity proves injectivity. Finite dimensionality then gives the inverse.
 
-The identification of a geometric Hessian with this matrix remains a written
-input. No nonlinear implicit-function or uniform inverse bound is asserted.
+Grounding removes a constant direction; it does not eliminate interior
+variables by a Schur complement. In particular these theorems do not prove
+the Hessian formula for a nonlinear stationary family, an implicit-function
+theorem, or a uniform inverse bound. A geometric application must identify
+its Hessian and its grounded coordinate with the objects defined here.
 -/
 
 namespace VolumeLogic.GroundedLaplacian

@@ -1,6 +1,14 @@
-\section{A normalized factorial on a complex strip}\label{ca:factorial-section}
+\section{Complex interpolation and finite lattice sums}\label{ca:factorial-section}
 
-We first fix the interpolation used in every subsequent contour. Put
+The coefficients are initially products of sines at integer indices.
+To move a contour through their maximum we need a function of a complex
+index that has exactly those values. Agreement of leading exponential
+rates on a grid would not justify that contour movement. The following
+normalization fixes both the grid values and the reflection formula.
+
+\subsection{An interpolation with exact shifts and reflection}
+
+Put
 $Q=e^{2\pi\ii/N}$ and
 \[
  S_r=\prod_{j=1}^r2\sin(\pi j/N),\qquad S_0=1.
@@ -122,4 +130,4 @@ $\int_0^1\log(2\sin\pi t)\dd t=0$. In particular $J(1/2)=0$. We will use
 \[
  J(1/2+t)=-J(1/2-t)
 \]
-to normalize a sheared action at the actual terminal index.
+as the reflection normalization of the classical action.

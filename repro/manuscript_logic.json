@@ -1,5 +1,5 @@
 {
-  "scope": "Statement-level interfaces for the frozen manuscript and the current strict-Conway companions. The map records family, level and premise compatibility; it does not verify the written analytic or geometric proofs.",
+  "scope": "Declared proof dependencies of the cleaned volume reference and its shared strict pure Conway proof. Standalone recurrence and superseded signed routes are outside this active map. Mathematical nodes are written proofs unless their exact supporting Lean theorem is named; structural checks are not kernel verification.",
   "assumptions": {
     "marked_sphere": "A fixed finite simple triangulated sphere with at least four vertices, its actual perfect dual matching, and a nonmatching marked edge; retain cyclic orders and primitive crossing-disk framings.",
     "fixed_data": "The whole diagram, retained half twists and integer crossing powers are fixed before N tends to infinity. The invariant and framing use the recorded original normalization.",
@@ -8,10 +8,9 @@
     "weak_balance": "The actual complete packing satisfies every inequality in (wb:balance), or the separately quantified small-defect criterion.",
     "protected_inputs": "A fixed finite protected triangular assembly as in Appendix Q. Every input has a strict shared-weight certificate for every locally allowed noncentral string, even if its old global coefficient vanishes.",
     "ordinary_boundary_inputs": "A fixed finite assembly as in Appendix R: unabridged block certificates, distinct selected core matching pairs with all-ordinary triangular boundaries, and positive boundary ratios sufficiently small at every selected core witness and at its complete vector.",
-    "recursive_construction": "The completed-box grammar of Definition def:grammar, with two completed children at the cylindrical root; preserve endpoint order, disk framings, and the fixed half-twist pattern.",
     "ordered_circle_tree": "The literal finite ordered tree with at least one edge and an original crossing circle at every vertex; every tree edge is a physical quarter-turn and all strand and disk frames are retained.",
     "summed_tree_criterion": "The actual fixed ordered tree satisfies sum_v d_v/(d_v^2+n_v^2) <= 2^(-25). This is a sufficient criterion, not an assertion for arbitrary short powers.",
-    "local_tree_criterion": "The actual fixed ordered tree satisfies max_v d_v/(d_v^2+n_v^2) <= 2^(-120). The geometry and analytic induction use this same tree and these same powers.",
+    "local_tree_criterion": "The actual fixed ordered tree satisfies max_v d_v/(d_v^2+n_v^2) <= 2^(-120). This supplies the degree-or-twist sufficient condition of the directed theorem.",
     "directed_tree_criterion": "The fixed rooted ordered tree has the complete directed certificate of Appendix K, including the conditional rectangle, every outgoing decay requirement and the separate final-root condition. The degree-or-twist test is a proved sufficient special case.",
     "terminal_decoration": "The actual finite terminal insertions of Appendix L have been made on both sides of every original region with their required parities. All original and added powers are subject to the final long-twist threshold; the knot can change.",
     "strict_conway_construction": "A fixed literal ordered Conway expression with at least two distinct leaves, strict leaf/product inequalities and complementary closing outputs. Original turns, crossing disks, primitive framings and all internal components are retained."
@@ -22,8 +21,8 @@
       "status": "written",
       "levels": "all",
       "location": {
-        "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-        "anchor": "\\label{mcg:eq-5}"
+        "path": "manuscript/sections/Morse-preliminaries.tex",
+        "anchor": "\\label{bl:S15}"
       },
       "provides": [
         "exact_invariant"
@@ -258,7 +257,14 @@
       ],
       "requires": {},
       "assumptions": [],
-      "context": "generic"
+      "context": "generic",
+      "supporting_locations": [
+        {
+          "path": "formal-real/RealTransfer.lean",
+          "anchor": "theorem complex_packet_volume_transfer",
+          "scope": "The exact complex packet, nonzero limiting amplitude, finite actions and entire-remainder exponential envelope imply eventual nonvanishing and the ordinary volume-normalized limit."
+        }
+      ]
     },
     "weak_balance_volume": {
       "statement": "All-level volume limit for the unchanged knot under weak balance.",
@@ -320,47 +326,6 @@
         "nonzero_contribution": "central_contribution",
         "specified_metric": "specified_metric",
         "absolute_volume": "absolute_volume"
-      },
-      "assumptions": [],
-      "context": "matched_sphere"
-    },
-    "general_remainder": {
-      "statement": "A strict bound for the entire noncentral filled contribution on a general unchanged matched sphere. Neither the central estimate nor a single-cap estimate supplies this.",
-      "status": "open",
-      "levels": "all",
-      "location": {
-        "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-        "anchor": "\\label{mcg:eq-29}"
-      },
-      "provides": [
-        "full_remainder"
-      ],
-      "requires": {
-        "exact_invariant": "exact_source",
-        "filling_bound": "filling_norm",
-        "nonzero_contribution": "central_contribution"
-      },
-      "assumptions": [],
-      "context": "matched_sphere"
-    },
-    "general_volume": {
-      "statement": "The full-invariant volume limit for every unchanged matched sphere in the stated geometric setup; this is a target with an unresolved remainder premise.",
-      "status": "open",
-      "levels": "all",
-      "location": {
-        "path": "manuscript/sections/O-morse-geometric-contribution.tex",
-        "anchor": "\\label{mcg:sec-8}"
-      },
-      "provides": [
-        "volume_limit"
-      ],
-      "requires": {
-        "exact_invariant": "exact_source",
-        "nonzero_contribution": "central_contribution",
-        "specified_metric": "specified_metric",
-        "absolute_volume": "absolute_volume",
-        "rate_transfer": "rate_transfer",
-        "full_remainder": "general_remainder"
       },
       "assumptions": [],
       "context": "matched_sphere"
@@ -443,140 +408,6 @@
       },
       "assumptions": [],
       "context": "matched_sphere"
-    },
-    "recursive_source": {
-      "statement": "The exact reduced scalar for the fixed completed tangle expression is the original invariant, with the full core/alias split, crossing powers, turns, traces and normalization retained.",
-      "status": "written",
-      "levels": "all",
-      "context": "recursive",
-      "location": {
-        "path": "manuscript/sections/02-finite-source.tex",
-        "anchor": "\\label{eq:whole-filling-source}"
-      },
-      "provides": [
-        "exact_invariant"
-      ],
-      "requires": {},
-      "assumptions": [
-        "recursive_construction",
-        "fixed_data"
-      ]
-    },
-    "recursive_leading": {
-      "statement": "The original filled Fourier sum has a nonzero leading amplitude for independently sufficiently long fixed signed twists, with both parities retained.",
-      "status": "written",
-      "levels": "all",
-      "context": "recursive",
-      "location": {
-        "path": "manuscript/sections/08-filling.tex",
-        "anchor": "\\label{eq:final-amplitude}"
-      },
-      "provides": [
-        "nonzero_contribution"
-      ],
-      "requires": {
-        "exact_invariant": "recursive_source"
-      },
-      "assumptions": [
-        "long_twists"
-      ],
-      "supporting_locations": [
-        {
-          "path": "manuscript/sections/06-packet.tex",
-          "anchor": "\\label{thm:packet}",
-          "scope": "The local holomorphic packet is a prerequisite, not the full Fourier remainder estimate."
-        }
-      ]
-    },
-    "recursive_remainder": {
-      "statement": "The complementary colors, aliases, nonleading Fourier charges, tails and contour connectors are bounded below the same filled leading action.",
-      "status": "written",
-      "levels": "all",
-      "context": "recursive",
-      "location": {
-        "path": "manuscript/sections/08-filling.tex",
-        "anchor": "\\label{eq:final-asymptotic}"
-      },
-      "provides": [
-        "full_remainder"
-      ],
-      "requires": {
-        "exact_invariant": "recursive_source",
-        "nonzero_contribution": "recursive_leading"
-      },
-      "assumptions": [],
-      "supporting_locations": [
-        {
-          "path": "manuscript/sections/05-alias.tex",
-          "anchor": "\\label{eq:physical-color-gap}",
-          "scope": "The entire complementary-color estimate before filling."
-        },
-        {
-          "path": "manuscript/sections/B-analytic-estimates.tex",
-          "anchor": "\\label{app:filling-contours}",
-          "scope": "The complex contour and charge estimates retain the joining and endpoint terms."
-        }
-      ]
-    },
-    "recursive_metric": {
-      "statement": "The labeled positive cells complete along the original primitive slopes to the specified hyperbolic knot complement, leaving its main cusp complete.",
-      "status": "written",
-      "levels": "all",
-      "context": "recursive",
-      "location": {
-        "path": "manuscript/sections/D-marked-cell-calibration.tex",
-        "anchor": "\\label{eq:app-smooth-tube}"
-      },
-      "provides": [
-        "specified_metric"
-      ],
-      "requires": {
-        "exact_invariant": "recursive_source"
-      },
-      "assumptions": [
-        "knot_pairing",
-        "long_twists"
-      ]
-    },
-    "recursive_absolute_volume": {
-      "statement": "The marked regulator, its boundary correction and its absolute complete anchor give the volume of that same completed knot metric.",
-      "status": "written",
-      "levels": "all",
-      "context": "recursive",
-      "location": {
-        "path": "manuscript/sections/D-marked-cell-calibration.tex",
-        "anchor": "\\label{eq:app-absolute-regulator}"
-      },
-      "provides": [
-        "absolute_volume"
-      ],
-      "requires": {
-        "specified_metric": "recursive_metric",
-        "nonzero_contribution": "recursive_leading"
-      },
-      "assumptions": []
-    },
-    "recursive_volume": {
-      "statement": "The original all-level Kashaev volume limit for the completed recursive class and its independently long fixed signed fillings.",
-      "status": "written",
-      "levels": "all",
-      "context": "recursive",
-      "location": {
-        "path": "manuscript/sections/01-introduction.tex",
-        "anchor": "\\label{thm:main}"
-      },
-      "provides": [
-        "volume_limit"
-      ],
-      "requires": {
-        "exact_invariant": "recursive_source",
-        "nonzero_contribution": "recursive_leading",
-        "full_remainder": "recursive_remainder",
-        "specified_metric": "recursive_metric",
-        "absolute_volume": "recursive_absolute_volume",
-        "rate_transfer": "rate_transfer"
-      },
-      "assumptions": []
     },
     "circle_tree_source": {
       "statement": "The full Newton edge kernel and marked trace contraction evaluate the original reduced invariant of the literal ordered circle tree, including every index and repeated-root normal.",
@@ -711,101 +542,8 @@
       },
       "assumptions": []
     },
-    "local_tree_leading": {
-      "statement": "Under its stated criterion the original tree contraction has a nonzero leading term, with exact child scalars and both level parities retained.",
-      "status": "written",
-      "levels": "all",
-      "context": "circle_tree",
-      "location": {
-        "path": "manuscript/sections/G-local-tree-messages.tex",
-        "anchor": "\\label{sec:lm-7}"
-      },
-      "provides": [
-        "nonzero_contribution"
-      ],
-      "requires": {
-        "exact_invariant": "circle_tree_source"
-      },
-      "assumptions": [
-        "local_tree_criterion"
-      ]
-    },
-    "local_tree_remainder": {
-      "statement": "The criterion controls the whole original complementary contraction, including all conditional trace tails and contour connectors relative to the retained leading action.",
-      "status": "written",
-      "levels": "all",
-      "context": "circle_tree",
-      "location": {
-        "path": "manuscript/sections/G-local-tree-messages.tex",
-        "anchor": "\\label{sec:lm-6}"
-      },
-      "provides": [
-        "full_remainder"
-      ],
-      "requires": {
-        "exact_invariant": "circle_tree_source",
-        "nonzero_contribution": "local_tree_leading"
-      },
-      "assumptions": []
-    },
-    "local_tree_path": {
-      "statement": "The same criterion places the restored joint stationary point on the positive geometric charge path with the required radius and peripheral sign bounds.",
-      "status": "written",
-      "levels": "all",
-      "context": "circle_tree",
-      "location": {
-        "path": "manuscript/sections/G-local-tree-messages.tex",
-        "anchor": "\\label{sec:vg-3}"
-      },
-      "provides": [
-        "geometric_path"
-      ],
-      "requires": {
-        "exact_invariant": "circle_tree_source"
-      },
-      "assumptions": [
-        "local_tree_criterion"
-      ]
-    },
-    "local_tree_metric": {
-      "statement": "The original ordered octahedral cuts and primitive logarithmic slopes complete the positive charge path to the specified knot complement.",
-      "status": "written",
-      "levels": "all",
-      "context": "circle_tree",
-      "location": {
-        "path": "manuscript/sections/F-quantitative-octahedral-geometry.tex",
-        "anchor": "\\label{sec:fg-5}"
-      },
-      "provides": [
-        "specified_metric"
-      ],
-      "requires": {
-        "geometric_path": "local_tree_path"
-      },
-      "assumptions": [
-        "knot_pairing"
-      ]
-    },
-    "local_tree_absolute_volume": {
-      "statement": "The absolute regulator of the same oriented cell chain equals the volume of the completed metric, including the original half-twist correction.",
-      "status": "written",
-      "levels": "all",
-      "context": "circle_tree",
-      "location": {
-        "path": "manuscript/sections/F-quantitative-octahedral-geometry.tex",
-        "anchor": "\\label{sec:fg-6}"
-      },
-      "provides": [
-        "absolute_volume"
-      ],
-      "requires": {
-        "specified_metric": "local_tree_metric",
-        "nonzero_contribution": "local_tree_leading"
-      },
-      "assumptions": []
-    },
     "local_tree_volume": {
-      "statement": "The full all-level volume limit for this fixed ordered tree under its stated sufficient criterion.",
+      "statement": "The local ratio volume theorem is a corollary of the directed theorem for the same ordered tree; it has no separate quantum induction and assumes no extra directed condition.",
       "status": "written",
       "levels": "all",
       "context": "circle_tree",
@@ -818,13 +556,16 @@
       ],
       "requires": {
         "exact_invariant": "circle_tree_source",
-        "nonzero_contribution": "local_tree_leading",
-        "full_remainder": "local_tree_remainder",
-        "specified_metric": "local_tree_metric",
-        "absolute_volume": "local_tree_absolute_volume",
+        "nonzero_contribution": "directed_tree_leading",
+        "full_remainder": "directed_tree_remainder",
+        "specified_metric": "directed_tree_metric",
+        "absolute_volume": "directed_tree_absolute_volume",
         "rate_transfer": "rate_transfer"
       },
-      "assumptions": []
+      "assumptions": [],
+      "assumption_proofs": {
+        "directed_tree_criterion": "local_to_directed_criterion"
+      }
     },
     "directed_tree_leading": {
       "statement": "Under its stated criterion the original tree contraction has a nonzero leading term, with exact child scalars and both level parities retained.",
@@ -1024,6 +765,11 @@
           "path": "papers/filling-bounds/sections/diagram-evaluation.tex",
           "anchor": "\\label{de:invariant-normalization}",
           "scope": "Original enhancement, single cut and framing normalization; not a large-level estimate."
+        },
+        {
+          "path": "formal-real/FourierHermite.lean",
+          "anchor": "theorem crossing_coefficient_mass",
+          "scope": "Actual shifted Fourier value/normal arrays give the fixed integer-power coefficient mass estimate; the physical crossing identity is the written finite source theorem."
         }
       ]
     },
@@ -1033,7 +779,7 @@
       "levels": "independent",
       "context": "strict_conway",
       "location": {
-        "path": "papers/strict-newton-profiles/variation.tex",
+        "path": "papers/newton-calculus/variation.tex",
         "anchor": "\\label{st:positive-action}"
       },
       "provides": [
@@ -1094,7 +840,7 @@
       "levels": "all",
       "context": "strict_conway",
       "location": {
-        "path": "papers/conway-asymptotics/main.tex",
+        "path": "papers/conway-asymptotics/introduction.tex",
         "anchor": "\\label{ca:intro}"
       },
       "provides": [
@@ -1200,7 +946,14 @@
         "filling_source_estimates": "strict_conway_fourier",
         "nonzero_contribution": "strict_conway_leading"
       },
-      "assumptions": []
+      "assumptions": [],
+      "supporting_locations": [
+        {
+          "path": "formal-real/ConwayAssembly.lean",
+          "anchor": "theorem conway_packet_volume_limit",
+          "scope": "Derives the filled whole-color remainder estimate from the exact coherent finite sum, actual crossing coefficient mass bound and uniform source envelope, then applies direct complex packet transfer."
+        }
+      ]
     },
     "strict_conway_metric": {
       "statement": "The original marked strict exterior has smooth primitive signed fillings with all main cusps complete, on the specified knot complement. Its classical proof has no quantum asymptotic premise.",
@@ -1253,7 +1006,7 @@
       "levels": "all",
       "context": "strict_conway",
       "location": {
-        "path": "papers/conway-asymptotics/main.tex",
+        "path": "papers/conway-asymptotics/introduction.tex",
         "anchor": "\\label{ca:volume}"
       },
       "provides": [
@@ -1268,6 +1021,30 @@
         "rate_transfer": "rate_transfer"
       },
       "assumptions": []
+    },
+    "local_to_directed_criterion": {
+      "statement": "The local ratio condition implies d_v >= 2^28 or |n_v| >= 2^27 at every vertex. The directed degree-or-twist theorem proves this is sufficient for the complete directed certificate on the same marked tree.",
+      "status": "written",
+      "levels": "all",
+      "context": "circle_tree",
+      "location": {
+        "path": "manuscript/sections/08b-local-circle-messages.tex",
+        "anchor": "\\label{lem:local-implies-directed}"
+      },
+      "supporting_locations": [
+        {
+          "path": "manuscript/sections/08d-directed-circle-messages.tex",
+          "anchor": "\\label{thm:directed-degree-twist}",
+          "scope": "The stated degree-or-twist alternative supplies the directed outgoing and root estimates for the original marked tree."
+        }
+      ],
+      "provides": [
+        "assumption:directed_tree_criterion"
+      ],
+      "requires": {},
+      "assumptions": [
+        "local_tree_criterion"
+      ]
     }
   },
   "conclusions": {
@@ -1300,18 +1077,6 @@
       ],
       "unresolved": []
     },
-    "general_volume": {
-      "assumptions": [
-        "marked_sphere",
-        "fixed_data",
-        "long_twists",
-        "knot_pairing"
-      ],
-      "unresolved": [
-        "general_remainder",
-        "general_volume"
-      ]
-    },
     "ordinary_boundary_volume": {
       "assumptions": [
         "marked_sphere",
@@ -1319,15 +1084,6 @@
         "long_twists",
         "knot_pairing",
         "ordinary_boundary_inputs"
-      ],
-      "unresolved": []
-    },
-    "recursive_volume": {
-      "assumptions": [
-        "recursive_construction",
-        "fixed_data",
-        "long_twists",
-        "knot_pairing"
       ],
       "unresolved": []
     },

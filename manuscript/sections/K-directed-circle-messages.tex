@@ -1,10 +1,11 @@
 \chapter{Volume limits from the degree and twist at each circle}
 \label{app:directed-circle-messages}\label{dk:volume-limits-from-the-degree-and-twist-at-each-circle}
 
-Start with a fixed finite ordered tree of two-strand integer braids, with
-at least one edge and one crossing circle at every vertex. Turn each child tangle through its
-specified quarter-turn before stacking it at the parent, and use the
-original cylindrical closure. The
+This appendix proves the directed criterion of
+Chapter~\ref{ch:directed-circle-messages}. Its finite source is the same
+ordered tree of two-strand braids: one crossing circle at every vertex,
+an actual quarter-turn on every child attachment, and the original
+cylindrical closure. The
 \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_all_circle_quantitative_volume.html\#the-knot-construction}{literal construction and strand test}
 retain the endpoint frames and require one closed main knot, with no
 component closed inside an intermediate tangle.
@@ -27,13 +28,12 @@ Both level parities are included. The tree, powers and degrees are fixed
 before \(N\) tends to infinity. The constants are coarse sufficient
 bounds; they make no claim about the shortest possible twists.
 
-The more general criterion below assigns a real-decay bound to each
-subtree polynomial. Dividing by that polynomial's exact value at zero
-retains its complex scalar and isolates the contribution of the next
-trace. Different edges may use different bounds. The final vertex has
-no outgoing polynomial, so it need not pay the extra loss needed to
-send one to a parent. This distinction also gives a short-power star
-outside both the earlier summed and uniform local tests.
+The proof assigns a decay constant to each outgoing polynomial.
+Its exact value at zero is kept as a scalar; only the normalized
+polynomial enters the next estimate. We then distinguish the last
+vertex, which sends no polynomial and needs no outgoing decay bound.
+This gives both the uniform sufficient constants above and the more
+flexible finite criterion below.
 
 Section~\ref{dk:sec-8} explains how to retain arbitrarily many prescribed short
 powers: add an even stack of sufficiently long terminal tangles at every
@@ -71,8 +71,8 @@ nonroot vertex choose a number
                \frac{c_v\chi}{4(1+c_v)}\right\}.
 \end{equation}
 
-These are parameters of the criterion. They can differ at every edge.
-They are not asymptotic quantities to be inferred from the invariant.
+Choose these positive numbers as part of the finite test. They may
+differ from edge to edge and require no knowledge of the invariant.
 
 Write \(q_v=1\) at a nonroot vertex and \(q_v=0\) at the root. If \(\mathrm{Ch}(v)\) is the
 set of children, define
@@ -108,7 +108,8 @@ y_v=\min\left\{
  \right\}.
 \end{equation}
 
-Finally define two action quantities
+The two quantities to compare are the first-charge action drop
+$\beta_v$ and the available error loss $\eta_v$:
 
 \begin{equation}\label{dk:eq-7}
 \beta_v=\frac{210}{361}\frac{a_v}{|D_v|^2},
@@ -136,11 +137,10 @@ and, only at nonroot vertices,
        \beta_v<(k_0-c_v)\chi.\qquad}
 \end{equation}
 
-It is a finite elementary test in the degrees, signed powers, root and
-positive numbers \(c_v\). It uses no value of an unknown quantum invariant
-and no assumed dominance of a global saddle. Its quantities are local:
-\(A_v\) and the available strip depend on the child budgets, while the exact
-child scalar will be divided out rather than estimated.
+Every quantity in the test is explicit in the degrees, powers, chosen
+root and $c_v$. The children determine the available real decay and
+strip width. Their exact complex scalar values are retained, so their
+earlier action drops are not charged again here.
 
 Use the original reduced-state normalization
 \(q_N=e^{\pi i/N}\), \(M=-q_Nx=q_N^s\), and \(F_N(1)=K_N\).
@@ -208,8 +208,8 @@ W_k(s)=\prod_{r=1}^k
 
 After lowering the pairing \eqref{dk:eq-N2}, a physical turn gives the equal-index
 weight \(\gamma_e(s)H_N(s)/W_k(s)\). The factor \(\gamma_e\) is the
-original scalar prescribed by that edge's orientation type. It stays in
-the exact scalar ledger.
+original scalar prescribed by that edge's orientation type. It is
+retained in the final product of scalar factors.
 
 For the edge action write
 
@@ -241,9 +241,9 @@ unchanged. It is a polynomial of degree at most \(N-1\) in each of
 \(-2\cos t\) and \(-2\cos u\), hence has trigonometric degree at most
 \(N-1\) in either angle.
 The paired factors and their inverses are bounded for fixed \(|s|\le R<1\).
-Every inequality below permits a polynomial factor in N.
+Every inequality below permits a polynomial factor in $N$.
 
-The \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_all_circle_local_message_volume.html\#two-full-kernel-bounds}{full-kernel real estimate} is
+The full-kernel real estimate is
 
 \begin{equation}\label{dk:eq-14}
 |K_N(t,u;s)|\le C_RN^{A_R}
@@ -251,7 +251,16 @@ The \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_all_circl
                  \qquad t,u\in[-\pi,\pi].
 \end{equation}
 
-The new estimate needed here is
+To prove it, split the sum at \(I=[1/5,3/10]\). On \(I\),
+Section~\ref{sec:qu-2} gives angular loss \(\sin^2(t/2)/160\)
+at each end, and the positive zero-angle sum has rate \(2G_0\).
+Outside \(I\), Section~\ref{sec:qu-1} gives loss
+\(\eta_K=\pi/200\) for the full polynomial, including its
+high-index derivatives. Since \(4k_0<\eta_K\) and
+\(2k_0<1/160\), both parts obey \eqref{dk:eq-14}.
+The bounded paired insertion changes only the polynomial prefactor.
+
+The conditional estimate used in the recursion is
 
 \begin{equation}\label{dk:eq-15}
 |K_N(t+iy,u;s)|\le C_RN^{A_R}
@@ -259,11 +268,11 @@ The new estimate needed here is
  \quad u\in\mathcal R,\quad t\in[-\pi,\pi],\quad |y|\le b_0.
 \end{equation}
 
-Thus the parent compact is a long, thin rectangle, rather than the old
-disk of radius \(2^{-12}\). The constant term is the actual conditional phase
-\(\psi(0,u)\), not its upper bound \(2G_0+O(|u|^2)\).
+The parent parameter ranges over the rectangle \(\mathcal R\).
+The constant term is the actual conditional phase \(\psi(0,u)\);
+retaining it is necessary when the exact child constants are divided out.
 
-Here is a proof from the original finite kernel. Split the indices into
+To prove it, split the original finite kernel into
 \(I=[1/5,3/10]\) and its complement. The complementary full polynomial
 has the established single-edge loss \(\eta_K=\pi/200\), including high
 indices and their complete derivatives. Its ellipse bound is
@@ -296,7 +305,7 @@ If \(r_j=\cos(2\pi(j+1/2)/N)\), then \(r_j>-1/3\) and
  =\left|\frac{-r_j\cos u-1}{(r_j+\cos u)^2}\right|<9.
 \end{equation}
 
-The first derivative at real a is real. Integrating vertically therefore
+The first derivative at real $a$ is real. Integrating vertically therefore
 gives the actual finite-product estimate
 
 \begin{equation}\label{dk:eq-19}
@@ -356,16 +365,14 @@ normalization. The outside physical edge gamma is not included in \(a_e\).
 
 \section{The exact recursion may be rooted anywhere}\label{dk:sec-3}
 
-Lower the fixed Frobenius pairing at every vertex of the original closed
-source. Every physical turn then identifies equal Newton indices and
-retains its factor \(\gamma_e H_N/W_k\). The resulting finite scalar is a
-sum over the original edge indices of a product of the original vertex
-trace tensors. Choosing a root merely specifies the order of these
-finite contractions. It does not move a cut through a tangle, commute
-open operators or change a framing.
+Rooting anywhere is legitimate because the recursion is an order of
+finite contraction. Lower the Frobenius pairing at each vertex; a
+physical turn then identifies the two edge indices and retains
+\(\gamma_e H_N/W_k\). The scalar is a finite sum of products of the
+original vertex tensors. Choosing a root decides which sums to perform
+first, without moving an open box or changing a framing.
 
-Consequently the \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_all_circle_local_message_volume.html\#the-full-finite-kernel-and-exact-recursion}{exact recursions}
-hold for any chosen root:
+The exact finite contraction therefore gives, for any chosen root,
 
 \begin{equation}\label{dk:eq-25}
 M_{v,N}(u)=\gamma_{e_v}(s)\,
@@ -408,8 +415,8 @@ subtree constants are retained:
                      \quad u\in\mathcal R.
 \end{equation}
 
-As usual a slightly smaller rectangle can be used for fixed derivative
-estimates; the strict margins permit an initially slightly larger one.
+For fixed derivative estimates use a slightly smaller rectangle;
+the strict margins allow the construction to start on a larger one.
 
 The global assertions attached to \(c_v\) are
 
@@ -425,9 +432,10 @@ The global assertions attached to \(c_v\) are
                       \quad |y|\le\delta_v.
 \end{equation}
 
-The real sup norm, full canonical polynomial norm and complete derivative
-norm differ by polynomial factors at the required fixed multiples of N.
-No estimate drops the repeated-root normal data.
+At the required fixed multiples of $N$, real sup, canonical polynomial
+and complete derivative norms are polynomially equivalent. Thus the
+global assertion controls the full boundary polynomial, including the
+repeated-root directions.
 
 For completeness, \eqref{dk:eq-30} follows from \eqref{dk:eq-28}--\eqref{dk:eq-29} and exact degree. The
 Poisson estimate for a Laurent polynomial of degree less than \(N\) is
@@ -447,7 +455,9 @@ For \(|t|\ge r_0\) use \eqref{dk:eq-3}. For \(|t|<r_0\) use the rectangle expans
 Both arguments give \eqref{dk:eq-30}, without a conjectured quadratic estimate for
 an individual high Newton basis element.
 
-Assume the children satisfy \eqref{dk:eq-27}--\eqref{dk:eq-30}. At a nonroot vertex set
+The local phase calculation is the stationary elimination already used
+for the packet. Assume the children satisfy
+\eqref{dk:eq-27}--\eqref{dk:eq-30}, and at a nonroot vertex set
 
 \begin{equation}\label{dk:eq-33}
 A_v^{\mathrm{loc}}(t,u)=\psi(t,u)+\sum_wh_w(t),
@@ -468,7 +478,16 @@ the equation \(D_vt=-i\ell+E_{v,t}\) contracts in \(|t|\le b_0\). Indeed
 \(t_0+b_0/20<b_0\). The actual solutions lie in the smaller disk
 \(|t|\le t_0/(19/20)\), leaving room for the translated contours.
 
-The same elementary calculation as in the original proof gives
+Write $E_{v,t}(t,u)=t\mathcal R_v(t,u)$, taking the removable value
+at $t=0$. The bound in \eqref{dk:eq-34} gives
+$|\mathcal R_v|\le a_v/20$. By \eqref{dk:eq-4},
+$\Re D_v=a_v>0$ and $a_v\le|D_v|$. Hence
+\[
+ \frac{19a_v}{20}\le\Re(D_v-\mathcal R_v)\le\frac{21a_v}{20},
+ \qquad
+ \frac{19|D_v|}{20}\le|D_v-\mathcal R_v|\le\frac{21|D_v|}{20}.
+\]
+Since $t_{v,\ell}=-i\ell/(D_v-\mathcal R_v)$, taking its imaginary part gives
 
 \begin{equation}\label{dk:eq-35}
 \frac{380}{441}\frac{\ell a_v}{|D_v|^2}
@@ -503,9 +522,9 @@ At the root again replace \(\psi(0,u)\) by zero.
 
 \section{Actual trace tails with the directed budgets}\label{dk:sec-5}
 
-Divide every child by its exact nonzero value \(M_{w,N}(0)\). The induction
-uses those complex constants exactly; it never estimates them by their
-complete-source magnitudes. Equations \eqref{dk:eq-15} and \eqref{dk:eq-30} imply
+We now apply the exact trace to the normalized children. Factor out
+their nonzero values \(M_{w,N}(0)\) first. Equations
+\eqref{dk:eq-15} and \eqref{dk:eq-30} bound the remaining input by
 
 \begin{equation}\label{dk:eq-38}
 |\text{normalized trace input}(t+iy,u)|
@@ -534,7 +553,7 @@ t_0|D_v|y_v-C_vy_v^2\ge\frac12t_0|D_v|y_v.
 \end{equation}
 
 Successive charges have the additional factor \(\exp(-Ny_v)\). The exact
-fixed-compact growth of \eqref{dk:eq-39} is absorbed for all sufficiently large N.
+fixed-compact growth of \eqref{dk:eq-39} is absorbed for all sufficiently large $N$.
 This starting level may depend on the fixed vertex.
 
 At an original endpoint \(\pm\pi\), the chirp and finite-charge connectors cost
@@ -570,6 +589,8 @@ Every such connector therefore loses at least \(a_vr_0^2/8\).
 The translated horizontal saddle has negative real quadratic part
 at most \(-(19/20)a_v\). The physical sine factor is nonzero at \(t_{v,\ell}\).
 
+The four entries in $\eta_v$ now have their stated meaning: tail,
+original endpoints, real complement and local connectors.
 Equations \eqref{dk:eq-40}--\eqref{dk:eq-42} give an error of at most
 \(CN^A\exp N[\Re\psi(0,u)-\eta_v]\). Nonminimal charges are their saddle
 terms plus this absolute error; no relative approximation is asserted
@@ -578,14 +599,14 @@ whole conditional error strictly below the first charge. Equation
 \eqref{dk:eq-39} gives its nonzero coefficient for both parities. This establishes
 \eqref{dk:eq-28} and nonvanishing of the exact \(M_{v,N}(0)\).
 
-For the child inputs, their exact analytic logarithms differ from the
-limiting phases by \(O(N^{-1})\), with fixed derivatives on the required
-smaller compact. The finite product of those corrections is retained
-in the amplitude, or moves the saddle by \(O(N^{-1})\). As the tree is fixed,
-it spends no new exponential budget. The leading amplitude is a product
-of nonzero edge, child and Gaussian factors. All N-dependent physical
-crossing and carrier phases remain in \(M_{v,N}(0)\); its normalized leading
-amplitude does not conceal such phases.
+The finite child corrections are harmless for a precise reason.
+On a smaller zero-free compact their logarithms, divided by $N$,
+equal the limiting phases plus $O(N^{-1})$, with fixed derivative
+bounds. The finite product of these corrections belongs to the
+analytic amplitude, or shifts the saddle by $O(N^{-1})$. All
+$N$-dependent crossing and carrier phases remain in
+$M_{v,N}(0)$ itself. This proves a nonzero normalized leading
+amplitude without spending another exponential loss.
 
 The full physical trace and the first-charge approximation are
 holomorphic in the formal meridian variables. As in the original
@@ -607,7 +628,7 @@ quotient, and the full top-coefficient functional give
                   e^{N[2G_0-k_0(1-\cos u)]}.
 \end{equation}
 
-This retains repeated-root derivatives and all fixed normals. Dividing
+The norm bounds retain repeated-root derivatives. Dividing
 by the nonzero first-charge value at zero costs at most \(\beta_v\). For
 \(|u|\ge r_0\), \eqref{dk:eq-9} absorbs that cost and yields \eqref{dk:eq-29}. For \(|u|<r_0\), \eqref{dk:eq-28}
 and \eqref{dk:eq-32} give the stronger estimate, since \(c_v<k_0\ll19a_0/20\).
@@ -620,8 +641,9 @@ is the conditional trace estimate \eqref{dk:eq-8}.
 
 \section{Original action, geometry, and scope}\label{dk:sec-7}
 
-Restore the exact subtree constants successively. Stationary
-elimination in \eqref{dk:eq-33} gives the original joint equations
+Finally restore the exact subtree scalars and back-substitute the
+stationary points. Differentiation of the stationary values in
+\eqref{dk:eq-33} gives the joint equations
 
 \begin{equation}\label{dk:eq-44}
 \sum_{e\sim v}\psi_{e,\tau_v}
@@ -659,15 +681,15 @@ from the quantum saddle alone.
 There are \(|E|\) edge Gaussians \(N^{-3/2}\) and \(|V|\) trace Gaussians \(N^{3/2}\);
 \(|V|=|E|+1\) leaves the original \(N^{3/2}\) power with nonzero amplitude.
 The exact first Fourier coefficient is one. The retained edge insertion
-has leading value one, and the scalar ledger remains precisely \eqref{dk:eq-11}.
+has leading value one, and the scalar factors remain precisely those of
+\eqref{dk:eq-11}.
 This proves \eqref{dk:eq-10}--\eqref{dk:eq-12}, with the original peripheral and framing factors.
 
-The criterion allows different strip and real-decay budgets and a
-different choice of final vertex. It is not the assertion that arbitrary
-capped short-twist islands can be substituted as black-box messages.
-Such an island requires a multi-boundary version of the conditional
-normalization proved here for an actual edge. The pointwise source
-estimates on the older tiny disk alone do not supply that extension.
+The result concerns a one-boundary subtree of this ordered tree.
+A component with several attaching boundaries would require a
+corresponding conditional estimate in all those variables. The choice
+of root and the separate budgets proved here do not supply that further
+estimate.
 
 \section{A uniform twist corollary, with no degree sampling}\label{dk:sec-8}
 
@@ -675,12 +697,12 @@ The directed criterion has the following simple consequence:
 
 \begin{equation}\label{dk:eq-47}
 |n_v|\ge2^{27}\quad\text{at every vertex}
-             \quad\Longrightarrow\quad\text{(10)--(12)}.
+             \quad\Longrightarrow\quad
+             \eqref{dk:eq-10}\text{--}\eqref{dk:eq-12}.
 \end{equation}
 
-This sufficient constant is independent of the number of vertices,
-their degrees and the choice of root. Here is a proof covering all
-degrees simultaneously. Choose \(c_v=k_0/2\) at every nonroot vertex
+The proof covers all degrees at once, with no search over degrees.
+Choose \(c_v=k_0/2\) at every nonroot vertex
 and write \(\delta\) for their common value in \eqref{dk:eq-3}. The elementary
 cosine estimate gives
 
@@ -774,7 +796,7 @@ uniformly over all vertices. In particular, the high-degree vertices
 may retain any fixed signed powers, including zero and small nonzero
 powers. No sum over the number of such vertices occurs.
 
-Here is a precise extension construction illustrating that freedom.
+This gives the following extension construction.
 Start with any fixed ordered circle-tree core whose original endpoint
 pairing closes to a knot and has no internal closed component. Retain
 all its fixed signed powers. At every core vertex choose one of its
@@ -810,14 +832,13 @@ the number \(B\) does not depend on their total count.
 \caption{An even stack of added odd terminal tangles preserves the core's endpoint pairing.}
 \end{figure}
 
-The upper drawing is a tree of tangle operations, not a knot projection.
-Only one added pair is drawn at each original vertex. The construction
-inserts \(B/2\) consecutive pairs in one specified product slot, retaining
-the original cyclic order; \(B\ge2^{28}\) is even. Each added leaf has odd
-\(|m|\ge2^{27}+1\), and every tree edge applies the physical quarter-turn
-\(T\). The lower drawing forgets crossings and shows the literal endpoint
-pairings: two diagonal pairings compose to the through pairing.
-It does not claim that the new braids can be removed by an isotopy.
+The upper drawing records tangle operations. Only one added pair is
+shown at each original vertex; the construction inserts $B/2$
+consecutive pairs in its specified slot, preserving the cyclic order.
+Each added leaf has odd power of magnitude at least $2^{27}+1$.
+The lower drawing records the endpoint calculation: two diagonal
+pairings compose to the through pairing. The new tangles remain in
+the knot diagram.
 
 \section{A star beyond both previous quantitative tests}\label{dk:sec-9}
 
@@ -844,8 +865,9 @@ Cylindrical closure joins \(03\) and \(12\), so it closes \(H\)
 into one component. All intermediate products before that last stack
 are two through-strand braids. There is no hidden internal component.
 
-The criterion can be verified by rational enclosures without expanding this large
-tree. All leaves have the same data. The center has approximately
+The large tree need not be expanded to verify the criterion. All leaves
+have the same data, and only the center requires a different enclosure.
+For orientation, its values are approximately
 
 \begin{equation}\label{dk:eq-54}
 \beta_o=1.219\,10^{-7},\qquad
@@ -870,8 +892,7 @@ both published quantitative alternatives. Its size and all its powers
 are fixed; it is not an N-growing family. The constant sizes are coarse,
 and no optimality assertion is intended.
 
-Here are rational enclosures proving the inequalities rather than
-inferring them from those decimal values. Put
+The proof uses rational enclosures, not those decimal values. Put
 
 \begin{equation}\label{dk:eq-56}
 \pi_- =3,\quad \pi_+=22/7,\quad c=k_0/2,\quad
@@ -938,9 +959,9 @@ arithmetic for the constant inequalities, the all-degree corollaries and
 the star enclosures. It also constructs the literal four-endpoint
 pairings and checks the composition and closure identities used above.
 
-Those are finite checks, not numerical evidence for the asymptotic
-theorem. The proof of the full invariant estimates is the conditional
-kernel and trace induction in sections~\ref{dk:sec-2}--\ref{dk:sec-7}. The earlier
+These reproduce the finite arithmetic and pairing calculations. The
+uniform invariant estimates are proved by the conditional kernel and
+trace induction in Sections~\ref{dk:sec-2}--\ref{dk:sec-7}. The earlier
 \href{https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_all_circle_local_message_recursion.py}{exact tree-message reproduction}
 independently compares canonical quotient contractions with root-grid and
 complete first-normal traces; the present argument retains those same

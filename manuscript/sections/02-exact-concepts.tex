@@ -1,0 +1,243 @@
+\chapter{Exact operations, orthogonality, and stationary elimination}
+\label{ch:exact-concepts}
+
+The proof uses two kinds of elimination. An exact linear contraction
+replaces a finite part of the tangle calculation by the same linear
+map written more economically. Stationary elimination replaces
+internal variables of an analytic phase by their critical values.
+The first is an identity at every level; the second requires a
+nondegenerate critical point and an estimate for the original sum.
+This chapter records the elementary facts needed to keep these
+operations and their estimates separate.
+
+\section{The coefficient space and its actual pairing}
+
+Let $V$ be a finite-dimensional complex inner-product space. We take
+the inner product to be conjugate-linear in its first argument.
+Choose vectors $v_1,\ldots,v_m$ spanning a subspace of $V$, and let
+\[
+ B:\CC^m\longrightarrow V,\qquad Bc=\sum_{j=1}^m c_jv_j.
+\]
+The spanning vectors need not be independent or orthogonal. The
+adjoint is denoted by $B^*$; in orthonormal coordinates it is the
+conjugate transpose. Define the Gram matrix $G=B^*B$.
+
+\begin{proposition}[The transported coefficient pairing]
+\label{prop:coefficient-gram}
+For all $c,d\in\CC^m$,
+\[
+ \langle Bc,Bd\rangle=c^*Gd,\qquad
+ \|Bc\|^2=c^*Gc,\qquad
+ \ker G=\ker B.
+\]
+Consequently $G$ defines a positive definite pairing on
+$\CC^m/\ker B$. If new coefficients are related by $c=Sd$, their
+Gram matrix is $S^*GS$.
+\end{proposition}
+\begin{proof}
+The adjoint identity gives
+$\langle Bc,Bd\rangle=\langle c,B^*Bd\rangle$.
+Thus $G$ is positive semidefinite. If $Gc=0$, its quadratic form
+vanishes and $Bc=0$; the converse follows from $Gc=B^*(Bc)$.
+This also shows that the form descends to the stated quotient and
+has no remaining null vector. Substituting $c=Sd$ gives the last
+formula.
+\end{proof}
+
+In particular, replacing $G$ by the identity is justified only for
+orthonormal spanning vectors. Redundant coefficient directions have
+zero energy because they represent the zero vector, not because a
+later estimate is expected to cancel them.
+
+A closing functional is additional data. For a fixed complex-linear
+map $\ell:V\to\CC$,
+\[
+ |\ell(Bc)|\le \|\ell\|\,\sqrt{c^*Gc}.
+\]
+This is an upper bound. It gives no positive lower bound on
+$|\ell(Bc)|$: a nonzero vector may lie in $\ker\ell$. For example,
+the unit vector $(1,1)/\sqrt2$ is killed by
+$\ell(z_1,z_2)=(z_1-z_2)/\sqrt2$.
+The proof of nonvanishing must therefore concern the original
+closing functional, not just the size of a coefficient vector.
+
+In the Newton coordinates used for the tangles, the closing has the
+bilinear form $a^{\mathsf T}Jb$, where $J$ reverses the coefficient
+order. With the ordinary Hermitian coefficient norm,
+$J^*J=I$, so
+\[
+ |a^{\mathsf T}Jb|\le\|a\|_2\|b\|_2.
+\]
+The equality with the physical cap and the normalization of these
+coordinates are the exact finite identities cited in
+Chapter~\ref{ch:conway-current}. The bilinear closing itself is not
+a Hermitian inner product.
+
+\section{Contracting a linear part of the diagram}
+
+Suppose a sequence of already specified pieces acts by linear maps
+\[
+ V_0\xrightarrow{T_1}V_1\xrightarrow{T_2}\cdots
+       \xrightarrow{T_s}V_s.
+\]
+Replacing these pieces by $T=T_s\cdots T_1$ is exact. We call such
+a sequence a \emph{linear corridor}. A product operation with one
+fixed input is linear in its other input and may occur in a
+corridor. A product whose two inputs are both still being summed
+is not a prescribed linear map.
+
+If the coefficient maps are $B_j$ and the coordinate matrices $A_j$
+satisfy
+\[
+ T_jB_{j-1}=B_jA_j,
+\]
+then
+\[
+ T_s\cdots T_1B_0=B_sA_s\cdots A_1.
+\]
+This follows by successive substitution. In particular a vector
+in $\ker B_0$ remains physically zero after the contraction.
+All phases and derivative coordinates are retained by the matrix
+product. One may not discard a vector merely because the present
+closing row kills it: a subsequent map can move that vector out of
+the closing kernel.
+
+No unitarity is assumed in this contraction. When estimates are
+needed afterward, the incoming and outgoing Gram matrices must be
+the transported pairings of Proposition~\ref{prop:coefficient-gram}.
+For instance an isometry in these coordinates satisfies
+$A_j^*G_jA_j=G_{j-1}$. An arbitrary multiplication by a fixed
+tangle need not have this property.
+
+\section{Fourier orthogonality on the shifted grid}
+
+Fix $N\ge2$ and a real shift $\alpha$. Put
+\[
+ x_k=(k+\alpha)/N,\qquad
+ w_k=e^{2\pi\ii x_k},\qquad 0\le k<N.
+\]
+The normalized Fourier matrix is
+\[
+ \mathcal U_{ak}=N^{-1/2}w_k^{-a},
+                   \qquad0\le a,k<N.
+\]
+For these complete sets of indices,
+\[
+ \sum_{k=0}^{N-1}w_k^{a-b}
+   =\begin{cases}N,&a=b,\\0,&a\ne b.\end{cases}
+\]
+Indeed, when $a\ne b$ the ratio
+$e^{2\pi\ii(a-b)/N}$ is a nontrivial $N$th root of unity, so the
+finite geometric sum vanishes. The factor from $\alpha$ is
+constant in $k$ and does not change this conclusion. It follows
+that $\mathcal U\mathcal U^*=I$ and $\mathcal U$ is unitary.
+
+\begin{proposition}[Parseval in the coefficient normalization]
+\label{prop:shifted-parseval}
+For $f_0,\ldots,f_{N-1}\in\CC$, define
+$H_a=N^{-1}\sum_k f_kw_k^{-a}$. Then
+\[
+ f_k=\sum_{a=0}^{N-1}H_aw_k^a,\qquad
+ \sum_a|H_a|^2=\frac1N\sum_k|f_k|^2.
+\]
+\end{proposition}
+\begin{proof}
+Expand the first sum and use character orthogonality. For the
+second, expand the squared moduli as
+$N^{-2}\sum_{k,l}f_k\overline{f_l}\sum_aw_l^aw_k^{-a}$.
+Only $k=l$ survives, with factor $N$.
+\end{proof}
+
+The filling argument uses $\alpha=1/2$, so $w_k^N=-1$. It also
+retains derivatives at double spectral roots. The following estimate
+isolates the role of orthogonality in that calculation.
+
+\begin{proposition}[A bound for the full Hermite coefficient vector]
+\label{prop:hermite-coefficient-mass}
+Let $n\in\ZZ$, let $|h_k|=1$, and put
+\[
+ d_k=n\bigl(k-(N-1)/2\bigr)h_k,\qquad
+ H_a=\frac1N\sum_kh_kw_k^{-a},\qquad
+ D_a=\frac1N\sum_kd_kw_k^{-a}.
+\]
+Define $a_0=H_0$ and
+$a_a=((N-a)H_a+D_a)/N$ for $1\le a<N$.
+Set $a_N=a_{N+1}=0$ and
+$\beta_j=(-1)^j(a_j-a_{j+2})$ for $0\le j<N$. Then
+\[
+ \sum_{j=0}^{N-1}|\beta_j|
+       \le2\sqrt N\left(1+\frac{|n|}{\sqrt{12}}\right).
+\]
+\end{proposition}
+\begin{proof}
+Parseval gives $\|H\|_2^2=1$ and
+\[
+ \|D\|_2^2
+ =\frac{n^2}{N}\sum_{k=0}^{N-1}\bigl(k-(N-1)/2\bigr)^2
+ =\frac{n^2(N^2-1)}{12}.
+\]
+The last equality follows by expanding the square and using
+$\sum k=N(N-1)/2$ and
+$\sum k^2=N(N-1)(2N-1)/6$.
+The $H$ part of $a$ is a diagonal contraction. The $D$ part is
+divided by $N$ and its zeroth coordinate is omitted. Hence
+\[
+ \|a\|_2\le1+\frac{\|D\|_2}{N}
+             \le1+\frac{|n|}{\sqrt{12}}.
+\]
+The truncated shift $a_j\mapsto a_{j+2}$ has norm at most one,
+so $\|\beta\|_2\le2\|a\|_2$. Cauchy--Schwarz gives
+$\|\beta\|_1\le\sqrt N\|\beta\|_2$.
+\end{proof}
+
+In the physical application $h_k=(-1)^{nk}q^{nk(k+1)}$ with
+$q=e^{\pi\ii/N}$. Chapter~\ref{ch:conway-current} proves that these
+values, the displayed normal data and the coefficient reconstruction
+give the full crossing power, including negative and odd powers.
+Proposition~\ref{prop:hermite-coefficient-mass} estimates that exact
+coefficient vector. It is not a replacement of a double root by
+its value alone.
+
+\section{Eliminating stationary variables}
+
+Let $F(y,t)$ be holomorphic near $(y_0,0)\in\CC^k\times\CC^r$.
+Assume $F_y(y_0,0)=0$ and $A=F_{yy}(y_0,0)$ is invertible.
+The holomorphic implicit-function theorem supplies a unique local
+function $y_*(t)$ with $y_*(0)=y_0$ and $F_y(y_*(t),t)=0$.
+Set $\Phi(t)=F(y_*(t),t)$.
+
+\begin{proposition}[The stationary Hessian]
+\label{prop:stationary-schur}
+On this stationary family,
+\[
+ Dy_*=-F_{yy}^{-1}F_{yt},\qquad
+ \Phi_t=F_t,\qquad
+ \Phi_{tt}=F_{tt}-F_{ty}F_{yy}^{-1}F_{yt}.
+\]
+Every block is evaluated at $(y_*(t),t)$. If
+$F(y,t)=F(y,-t)$ for all nearby $y,t$, then $F_{yt}(y,0)=0$.
+\end{proposition}
+\begin{proof}
+Differentiate $F_y(y_*(t),t)=0$ to obtain
+$F_{yy}Dy_*+F_{yt}=0$. The first formula follows by inversion.
+The chain rule gives
+$\Phi_t=F_t+F_yDy_*=F_t$. Differentiating it once more and
+substituting the first formula gives the Schur complement. Evenness
+gives $F_t(y,0)=0$ identically in $y$, hence $F_{yt}(y,0)=0$.
+\end{proof}
+
+The derivatives do not determine the additive constant of $\Phi$.
+Its complete value must be kept when comparing it with a volume.
+Likewise stationary elimination does not determine whether the
+original finite sum contains the resulting Gaussian term. That
+requires the finite-lattice contour argument and the nonzero density
+in Chapter~\ref{ch:conway-current}, followed by the estimate of the
+whole filling sum.
+
+Grounding a graph Laplacian is a different operation. If
+$L=B^{\mathsf T}WB$ is a real weighted graph Laplacian with connected
+positive support, fixing one coordinate to zero removes its constant
+kernel. The reduced principal matrix is positive definite. Eliminating
+other free coordinates after that step produces a Schur complement.
+The shared-weight variational arguments later in this reference use
+both ideas in these respective roles.

@@ -1,0 +1,3140 @@
+{
+  "scope": "Actual compilation and axiom checks of the retained manuscript-facing statements. Written analytic/geometric inputs remain those stated in the manuscripts.",
+  "toolchain": "leanprover/lean4:v4.32.2",
+  "projects": {
+    "std": {
+      "modules": [
+        "VolumeLogic.FiniteSupport",
+        "VolumeLogic.FiniteAlgebra",
+        "VolumeLogic.MonicRemainder",
+        "VolumeLogic.MonicLinearity",
+        "VolumeLogic.MonicUniqueness",
+        "VolumeLogic.MonicProduct",
+        "VolumeLogic.ResolventFunctional",
+        "VolumeLogic.FaceGridSupport",
+        "VolumeLogic.RateComparison",
+        "VolumeLogic.ProtectedSum",
+        "VolumeLogic.TriangularBoundary",
+        "VolumeLogic.SourceAssembly"
+      ],
+      "declarations": {
+        "VolumeLogic.three_supports": "theorem",
+        "VolumeLogic.left_endpoint_cutoff": "theorem",
+        "VolumeLogic.central_endpoint_even": "theorem",
+        "VolumeLogic.central_endpoint_odd": "theorem",
+        "VolumeLogic.horner": "definition",
+        "VolumeLogic.dividedDifference": "definition",
+        "VolumeLogic.divided_difference_identity": "theorem",
+        "VolumeLogic.annihilating_root_identity": "theorem",
+        "VolumeLogic.double_root_jet_identity": "theorem",
+        "VolumeLogic.product": "definition",
+        "VolumeLogic.allChoices": "definition",
+        "VolumeLogic.nonemptySecondChoices": "definition",
+        "VolumeLogic.all_choices_product": "theorem",
+        "VolumeLogic.tensor_grid_subtraction": "theorem",
+        "VolumeLogic.coefficient": "definition",
+        "VolumeLogic.CoeffEq": "definition",
+        "VolumeLogic.addConstant": "definition",
+        "VolumeLogic.timesLinear": "definition",
+        "VolumeLogic.synthetic": "definition",
+        "VolumeLogic.coefficient_addConstant_zero": "theorem",
+        "VolumeLogic.coefficient_addConstant_succ": "theorem",
+        "VolumeLogic.coefficient_timesLinear_zero": "theorem",
+        "VolumeLogic.coefficient_timesLinear_succ": "theorem",
+        "VolumeLogic.horner_addConstant": "theorem",
+        "VolumeLogic.horner_timesLinear": "theorem",
+        "VolumeLogic.synthetic_reconstruct_nonempty": "theorem",
+        "VolumeLogic.synthetic_reconstruct": "theorem",
+        "VolumeLogic.synthetic_horner": "theorem",
+        "VolumeLogic.polyAdd": "definition",
+        "VolumeLogic.coefficient_polyAdd": "theorem",
+        "VolumeLogic.coeffEq_refl": "theorem",
+        "VolumeLogic.coeffEq_symm": "theorem",
+        "VolumeLogic.coeffEq_trans": "theorem",
+        "VolumeLogic.timesLinear_congr": "theorem",
+        "VolumeLogic.addConstant_congr": "theorem",
+        "VolumeLogic.monicMultiple": "definition",
+        "VolumeLogic.monicQuotient": "definition",
+        "VolumeLogic.monicRemainder": "definition",
+        "VolumeLogic.monic_division_identity": "theorem",
+        "VolumeLogic.timesLinear_length": "theorem",
+        "VolumeLogic.monicRemainder_length": "theorem",
+        "VolumeLogic.coefficient_eq_zero_of_length_le": "theorem",
+        "VolumeLogic.monic_remainder_degree_bound": "theorem",
+        "VolumeLogic.newtonFunctional": "definition",
+        "VolumeLogic.top_coefficient_is_newton": "theorem",
+        "VolumeLogic.two_node_top_coefficient": "theorem",
+        "VolumeLogic.monicPolynomial": "definition",
+        "VolumeLogic.monicMultiple_length": "theorem",
+        "VolumeLogic.monicPolynomial_monic": "theorem",
+        "VolumeLogic.synthetic_length": "theorem",
+        "VolumeLogic.monicQuotient_length": "theorem",
+        "VolumeLogic.monicMultiple_zero": "theorem",
+        "VolumeLogic.monicRemainder_of_degree_lt": "theorem",
+        "VolumeLogic.newtonFunctional_of_degree_lt": "theorem",
+        "VolumeLogic.synthetic_addConstant": "theorem",
+        "VolumeLogic.synthetic_cons": "theorem",
+        "VolumeLogic.synthetic_timesLinear": "theorem",
+        "VolumeLogic.monicRemainder_annihilates_multiple": "theorem",
+        "VolumeLogic.newtonFunctional_annihilates_multiple": "theorem",
+        "VolumeLogic.formalDerivativeValue": "definition",
+        "VolumeLogic.diagonal_divided_difference": "theorem",
+        "VolumeLogic.double_root_top_coefficient": "theorem",
+        "VolumeLogic.double_root_remainder": "theorem",
+        "VolumeLogic.polyScale": "definition",
+        "VolumeLogic.coefficient_polyScale": "theorem",
+        "VolumeLogic.horner_zero_of_coefficients_zero": "theorem",
+        "VolumeLogic.horner_congr": "theorem",
+        "VolumeLogic.horner_polyAdd": "theorem",
+        "VolumeLogic.horner_polyScale": "theorem",
+        "VolumeLogic.coefficient_drop": "theorem",
+        "VolumeLogic.coeffEq_drop": "theorem",
+        "VolumeLogic.coefficient_synthetic": "theorem",
+        "VolumeLogic.synthetic_congr": "theorem",
+        "VolumeLogic.synthetic_polyAdd": "theorem",
+        "VolumeLogic.synthetic_polyScale": "theorem",
+        "VolumeLogic.monicRemainder_congr": "theorem",
+        "VolumeLogic.monicRemainder_polyAdd": "theorem",
+        "VolumeLogic.monicRemainder_polyScale": "theorem",
+        "VolumeLogic.newtonFunctional_congr": "theorem",
+        "VolumeLogic.newtonFunctional_polyAdd": "theorem",
+        "VolumeLogic.newtonFunctional_polyScale": "theorem",
+        "VolumeLogic.monicRemainder_add_multiple": "theorem",
+        "VolumeLogic.newtonFunctional_quotient_invariant": "theorem",
+        "VolumeLogic.monicRemainder_quotient_invariant": "theorem",
+        "VolumeLogic.coefficient_replicate_zero": "theorem",
+        "VolumeLogic.coeffEq_append_zeros": "theorem",
+        "VolumeLogic.monicRemainder_append_zeros": "theorem",
+        "VolumeLogic.newtonFunctional_append_zeros": "theorem",
+        "VolumeLogic.list_eq_of_coeffEq_of_length_eq": "theorem",
+        "VolumeLogic.coefficient_take_of_lt": "theorem",
+        "VolumeLogic.coeffEq_take_of_degree_lt": "theorem",
+        "VolumeLogic.monicRemainder_of_coeff_degree_lt": "theorem",
+        "VolumeLogic.monicRemainder_unique": "theorem",
+        "VolumeLogic.monicRemainder_unique_padded": "theorem",
+        "VolumeLogic.monic_remainder_unique_between": "theorem",
+        "VolumeLogic.newtonFunctional_from_remainder": "theorem",
+        "VolumeLogic.monicRemainder_idempotent": "theorem",
+        "VolumeLogic.monicMultiple_congr": "theorem",
+        "VolumeLogic.timesLinear_commute": "theorem",
+        "VolumeLogic.monicMultiple_permutation": "theorem",
+        "VolumeLogic.monicRemainder_permutation": "theorem",
+        "VolumeLogic.newtonFunctional_permutation": "theorem",
+        "VolumeLogic.newtonFunctional_characterization": "theorem",
+        "VolumeLogic.polyMul": "definition",
+        "VolumeLogic.polyAdd_congr": "theorem",
+        "VolumeLogic.polyScale_congr": "theorem",
+        "VolumeLogic.shift_congr": "theorem",
+        "VolumeLogic.polyMul_zero_right": "theorem",
+        "VolumeLogic.polyMul_congr_right": "theorem",
+        "VolumeLogic.polyMul_cons_right": "theorem",
+        "VolumeLogic.polyMul_comm": "theorem",
+        "VolumeLogic.polyMul_congr_left": "theorem",
+        "VolumeLogic.polyMul_congr": "theorem",
+        "VolumeLogic.polyMul_add_right": "theorem",
+        "VolumeLogic.polyMul_add_left": "theorem",
+        "VolumeLogic.polyMul_scale_right": "theorem",
+        "VolumeLogic.polyMul_scale_left": "theorem",
+        "VolumeLogic.polyMul_shift_left": "theorem",
+        "VolumeLogic.polyMul_assoc": "theorem",
+        "VolumeLogic.timesLinear_as_add": "theorem",
+        "VolumeLogic.polyMul_timesLinear_left": "theorem",
+        "VolumeLogic.polyMul_monicMultiple_left": "theorem",
+        "VolumeLogic.monicRemainder_mul_reduce_left": "theorem",
+        "VolumeLogic.monicRemainder_mul_reduce_right": "theorem",
+        "VolumeLogic.monicRemainder_mul_reduce_both": "theorem",
+        "VolumeLogic.newtonFunctional_mul_reduce_both": "theorem",
+        "VolumeLogic.quotientProduct": "definition",
+        "VolumeLogic.quotientProduct_length": "theorem",
+        "VolumeLogic.quotientProduct_congr": "theorem",
+        "VolumeLogic.quotientProduct_comm": "theorem",
+        "VolumeLogic.quotientProduct_assoc": "theorem",
+        "VolumeLogic.polyMul_one_left": "theorem",
+        "VolumeLogic.quotientProduct_one_left": "theorem",
+        "VolumeLogic.quotientProduct_one_right": "theorem",
+        "VolumeLogic.polyProduct": "definition",
+        "VolumeLogic.canonicalProduct": "definition",
+        "VolumeLogic.monicRemainder_product": "theorem",
+        "VolumeLogic.newtonFunctional_product": "theorem",
+        "VolumeLogic.horner_polyMul": "theorem",
+        "VolumeLogic.formalDerivativeValue_polyAdd": "theorem",
+        "VolumeLogic.formalDerivativeValue_polyScale": "theorem",
+        "VolumeLogic.formalDerivativeValue_polyMul": "theorem",
+        "VolumeLogic.double_root_product_remainder": "theorem",
+        "VolumeLogic.newtonFunctional_double_root_product": "theorem",
+        "VolumeLogic.formalDerivativeValue_addConstant": "theorem",
+        "VolumeLogic.formalDerivativeValue_timesLinear": "theorem",
+        "VolumeLogic.monicRemainder_head_value": "theorem",
+        "VolumeLogic.monicRemainder_double_head_derivative": "theorem",
+        "VolumeLogic.quotientProduct_double_head_value": "theorem",
+        "VolumeLogic.quotientProduct_double_head_derivative": "theorem",
+        "VolumeLogic.polynomialResolvent": "definition",
+        "VolumeLogic.monicPolynomial_length": "theorem",
+        "VolumeLogic.polynomialResolvent_length": "theorem",
+        "VolumeLogic.polynomialResolvent_identity": "theorem",
+        "VolumeLogic.newtonFunctional_resolvent_one": "theorem",
+        "VolumeLogic.polynomialResolvent_multiple": "theorem",
+        "VolumeLogic.newtonFunctional_resolvent_shift": "theorem",
+        "VolumeLogic.newtonFunctional_resolvent_reproduces": "theorem",
+        "VolumeLogic.residue_target_lower": "theorem",
+        "VolumeLogic.list_sum_lower": "theorem",
+        "VolumeLogic.face_budget_saturation": "theorem",
+        "VolumeLogic.face_grid_unique_exponents": "theorem",
+        "VolumeLogic.face_grid_selection_iff": "theorem",
+        "VolumeLogic.doubled_flattening_gain": "theorem",
+        "VolumeLogic.strict_weak_balance_gain": "theorem",
+        "VolumeLogic.total": "definition",
+        "VolumeLogic.total_nonnegative": "theorem",
+        "VolumeLogic.nonempty_sector_gap": "theorem",
+        "VolumeLogic.sector_strictly_below": "theorem",
+        "VolumeLogic.filled_rate_gap": "theorem",
+        "VolumeLogic.filled_remainder_strictly_below": "theorem",
+        "VolumeLogic.protectedMax": "definition",
+        "VolumeLogic.protectedMin": "definition",
+        "VolumeLogic.protectedMax_le": "theorem",
+        "VolumeLogic.protectedMax_ge_left": "theorem",
+        "VolumeLogic.protectedMax_ge_right": "theorem",
+        "VolumeLogic.protectedMin_le_left": "theorem",
+        "VolumeLogic.protectedMin_le_right": "theorem",
+        "VolumeLogic.protectedMin_positive": "theorem",
+        "VolumeLogic.protected_sum_central": "theorem",
+        "VolumeLogic.protected_sum_left": "theorem",
+        "VolumeLogic.protected_sum_right": "theorem",
+        "VolumeLogic.protectedFirstSide": "definition",
+        "VolumeLogic.protectedSecondSide": "definition",
+        "VolumeLogic.protectedBridgeRate": "definition",
+        "VolumeLogic.protectedFirstRate": "definition",
+        "VolumeLogic.protectedSecondRate": "definition",
+        "VolumeLogic.protected_sum_bridge": "theorem",
+        "VolumeLogic.protected_sector_map_noncentral": "theorem",
+        "VolumeLogic.protected_sum_target_cancellation": "theorem",
+        "VolumeLogic.protected_sum_total_rate": "theorem",
+        "VolumeLogic.protected_sum_central_total": "theorem",
+        "VolumeLogic.protected_sum_common_gap": "theorem",
+        "VolumeLogic.protected_sum_min_gap": "theorem",
+        "VolumeLogic.protected_sum_strict_gap": "theorem",
+        "VolumeLogic.protected_sum_sector_gap": "theorem",
+        "VolumeLogic.protected_sum_certified_rate": "theorem",
+        "VolumeLogic.protected_total_pair_bound": "theorem",
+        "VolumeLogic.protected_total_pair_gap": "theorem",
+        "VolumeLogic.protected_finite_assembly_gap": "theorem",
+        "VolumeLogic.boundary_left_with_defect": "theorem",
+        "VolumeLogic.boundary_right_with_defect": "theorem",
+        "VolumeLogic.boundary_bridge_with_defect": "theorem",
+        "VolumeLogic.boundary_bridge_central_block": "theorem",
+        "VolumeLogic.boundary_total_with_defect": "theorem",
+        "VolumeLogic.boundary_total_central_block": "theorem",
+        "VolumeLogic.boundary_conditional_action_cancels": "theorem",
+        "VolumeLogic.boundary_noncentral_block_margin": "theorem",
+        "VolumeLogic.boundary_certified_rate": "theorem",
+        "VolumeLogic.sectorSum": "definition",
+        "VolumeLogic.filling_sector_sum": "theorem",
+        "VolumeLogic.filled_remainder_identity": "theorem",
+        "VolumeLogic.magnitude_sector_sum": "theorem",
+        "VolumeLogic.sector_sum_mono": "theorem",
+        "VolumeLogic.sector_sum_common_factor": "theorem",
+        "VolumeLogic.finite_sector_filling_bound": "theorem",
+        "VolumeLogic.sectorThreshold": "definition",
+        "VolumeLogic.sector_threshold_dominates": "theorem",
+        "VolumeLogic.simultaneous_sector_threshold": "theorem"
+      },
+      "axioms": {
+        "VolumeLogic.three_supports": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.left_endpoint_cutoff": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.central_endpoint_even": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.central_endpoint_odd": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.divided_difference_identity": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.annihilating_root_identity": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.double_root_jet_identity": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.all_choices_product": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.tensor_grid_subtraction": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.coefficient_addConstant_zero": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.coefficient_addConstant_succ": [
+          "propext"
+        ],
+        "VolumeLogic.coefficient_timesLinear_zero": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.coefficient_timesLinear_succ": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.horner_addConstant": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.horner_timesLinear": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.synthetic_reconstruct_nonempty": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.synthetic_reconstruct": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.synthetic_horner": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.coefficient_polyAdd": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.timesLinear_congr": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.addConstant_congr": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.monic_division_identity": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.timesLinear_length": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.monicRemainder_length": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.coefficient_eq_zero_of_length_le": [
+          "propext"
+        ],
+        "VolumeLogic.monic_remainder_degree_bound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.top_coefficient_is_newton": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.two_node_top_coefficient": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.monicMultiple_length": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.monicPolynomial_monic": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.synthetic_length": [
+          "propext",
+          "Quot.sound"
+        ],
+        "VolumeLogic.monicQuotient_length": [
+          "propext",
+          "Quot.sound"
+        ],
+        "VolumeLogic.monicMultiple_zero": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.monicRemainder_of_degree_lt": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.newtonFunctional_of_degree_lt": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.synthetic_timesLinear": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.monicRemainder_annihilates_multiple": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.newtonFunctional_annihilates_multiple": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.double_root_top_coefficient": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.double_root_remainder": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.coefficient_polyScale": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.horner_zero_of_coefficients_zero": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.horner_congr": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.horner_polyAdd": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.horner_polyScale": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.coefficient_drop": [
+          "propext"
+        ],
+        "VolumeLogic.coeffEq_drop": [
+          "propext"
+        ],
+        "VolumeLogic.coefficient_synthetic": [
+          "propext"
+        ],
+        "VolumeLogic.synthetic_congr": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.synthetic_polyAdd": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.synthetic_polyScale": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.monicRemainder_congr": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.monicRemainder_polyAdd": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.monicRemainder_polyScale": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.newtonFunctional_congr": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.newtonFunctional_polyAdd": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.newtonFunctional_polyScale": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.monicRemainder_add_multiple": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.newtonFunctional_quotient_invariant": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.monicRemainder_quotient_invariant": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.monicRemainder_append_zeros": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.newtonFunctional_append_zeros": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.list_eq_of_coeffEq_of_length_eq": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.coefficient_take_of_lt": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.coeffEq_take_of_degree_lt": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.monicRemainder_of_coeff_degree_lt": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.monicRemainder_unique": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.monicRemainder_unique_padded": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.monic_remainder_unique_between": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.newtonFunctional_from_remainder": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.monicRemainder_idempotent": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.monicMultiple_congr": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.timesLinear_commute": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.monicMultiple_permutation": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.monicRemainder_permutation": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.newtonFunctional_permutation": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.newtonFunctional_characterization": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.polyAdd_congr": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.polyScale_congr": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.polyMul_zero_right": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.polyMul_congr_right": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.polyMul_cons_right": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.polyMul_comm": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.polyMul_congr_left": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.polyMul_congr": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.polyMul_add_right": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.polyMul_add_left": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.polyMul_scale_right": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.polyMul_scale_left": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.polyMul_shift_left": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.polyMul_assoc": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.timesLinear_as_add": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.polyMul_timesLinear_left": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.polyMul_monicMultiple_left": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.monicRemainder_mul_reduce_left": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.monicRemainder_mul_reduce_right": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.monicRemainder_mul_reduce_both": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.newtonFunctional_mul_reduce_both": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.quotientProduct_length": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.quotientProduct_congr": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.quotientProduct_comm": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.quotientProduct_assoc": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.polyMul_one_left": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.quotientProduct_one_left": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.quotientProduct_one_right": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.monicRemainder_product": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.newtonFunctional_product": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.horner_polyMul": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.formalDerivativeValue_polyAdd": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.formalDerivativeValue_polyScale": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.formalDerivativeValue_polyMul": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.double_root_product_remainder": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.newtonFunctional_double_root_product": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.formalDerivativeValue_addConstant": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.formalDerivativeValue_timesLinear": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.monicRemainder_head_value": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.monicRemainder_double_head_derivative": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.quotientProduct_double_head_value": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.quotientProduct_double_head_derivative": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.monicPolynomial_length": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.polynomialResolvent_length": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.polynomialResolvent_identity": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.newtonFunctional_resolvent_one": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.polynomialResolvent_multiple": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.newtonFunctional_resolvent_shift": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.newtonFunctional_resolvent_reproduces": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.residue_target_lower": [
+          "propext",
+          "Quot.sound"
+        ],
+        "VolumeLogic.list_sum_lower": [
+          "propext",
+          "Quot.sound"
+        ],
+        "VolumeLogic.face_budget_saturation": [
+          "propext",
+          "Quot.sound"
+        ],
+        "VolumeLogic.face_grid_unique_exponents": [
+          "propext",
+          "Quot.sound"
+        ],
+        "VolumeLogic.face_grid_selection_iff": [
+          "propext",
+          "Quot.sound"
+        ],
+        "VolumeLogic.doubled_flattening_gain": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.strict_weak_balance_gain": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.total_nonnegative": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.nonempty_sector_gap": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.sector_strictly_below": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.filled_rate_gap": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.filled_remainder_strictly_below": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.protectedMax": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.protectedMin": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.protectedMax_le": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.protectedMax_ge_left": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.protectedMax_ge_right": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.protectedMin_le_left": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.protectedMin_le_right": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.protectedMin_positive": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.protected_sum_central": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.protected_sum_left": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.protected_sum_right": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.protectedFirstSide": [
+          "propext"
+        ],
+        "VolumeLogic.protectedSecondSide": [
+          "propext"
+        ],
+        "VolumeLogic.protectedBridgeRate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.protectedFirstRate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.protectedSecondRate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.protected_sum_bridge": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.protected_sector_map_noncentral": [
+          "propext"
+        ],
+        "VolumeLogic.protected_sum_target_cancellation": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.protected_sum_total_rate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.protected_sum_central_total": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.protected_sum_common_gap": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.protected_sum_min_gap": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.protected_sum_strict_gap": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.protected_sum_sector_gap": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.protected_sum_certified_rate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.protected_total_pair_bound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.protected_total_pair_gap": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.protected_finite_assembly_gap": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.boundary_left_with_defect": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.boundary_right_with_defect": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.boundary_bridge_with_defect": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.boundary_bridge_central_block": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.boundary_total_with_defect": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.boundary_total_central_block": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.boundary_conditional_action_cancels": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.boundary_noncentral_block_margin": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.boundary_certified_rate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.filling_sector_sum": [
+          "propext"
+        ],
+        "VolumeLogic.filled_remainder_identity": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.magnitude_sector_sum": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.sector_sum_mono": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.sector_sum_common_factor": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.finite_sector_filling_bound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.sector_threshold_dominates": [
+          "propext",
+          "Quot.sound"
+        ],
+        "VolumeLogic.simultaneous_sector_threshold": [
+          "propext",
+          "Quot.sound"
+        ],
+        "VolumeLogic.horner": [],
+        "VolumeLogic.dividedDifference": [],
+        "VolumeLogic.product": [],
+        "VolumeLogic.allChoices": [],
+        "VolumeLogic.nonemptySecondChoices": [],
+        "VolumeLogic.coefficient": [],
+        "VolumeLogic.CoeffEq": [],
+        "VolumeLogic.addConstant": [],
+        "VolumeLogic.timesLinear": [],
+        "VolumeLogic.synthetic": [],
+        "VolumeLogic.polyAdd": [],
+        "VolumeLogic.coeffEq_refl": [],
+        "VolumeLogic.coeffEq_symm": [],
+        "VolumeLogic.coeffEq_trans": [],
+        "VolumeLogic.monicMultiple": [],
+        "VolumeLogic.monicQuotient": [],
+        "VolumeLogic.monicRemainder": [],
+        "VolumeLogic.newtonFunctional": [],
+        "VolumeLogic.monicPolynomial": [],
+        "VolumeLogic.synthetic_addConstant": [],
+        "VolumeLogic.synthetic_cons": [],
+        "VolumeLogic.formalDerivativeValue": [],
+        "VolumeLogic.diagonal_divided_difference": [],
+        "VolumeLogic.polyScale": [],
+        "VolumeLogic.coefficient_replicate_zero": [],
+        "VolumeLogic.coeffEq_append_zeros": [],
+        "VolumeLogic.polyMul": [],
+        "VolumeLogic.shift_congr": [],
+        "VolumeLogic.quotientProduct": [],
+        "VolumeLogic.polyProduct": [],
+        "VolumeLogic.canonicalProduct": [],
+        "VolumeLogic.polynomialResolvent": [],
+        "VolumeLogic.total": [],
+        "VolumeLogic.sectorSum": [],
+        "VolumeLogic.sectorThreshold": []
+      }
+    },
+    "mathlib": {
+      "modules": [
+        "RealTransfer",
+        "CoefficientGram",
+        "StationaryElimination",
+        "FourierHermite",
+        "ConwayAssembly",
+        "WeightedGraph",
+        "Flattening",
+        "TransportCoercivity",
+        "GroundedConvexity",
+        "GroundedLaplacian",
+        "TriangleLoads",
+        "TrianglePotential",
+        "TriangleMinimizer",
+        "TriangleBalance",
+        "HallRecession",
+        "TriangleHall"
+      ],
+      "declarations": {
+        "VolumeLogic.RealModel.UpperRate": "definition",
+        "VolumeLogic.RealModel.UpperRate.mul": "theorem",
+        "VolumeLogic.RealModel.upperRate_norm_of_cost": "theorem",
+        "VolumeLogic.RealModel.upperRate_of_polynomial_bound": "theorem",
+        "VolumeLogic.RealModel.complex_packet_volume_transfer": "theorem",
+        "VolumeLogic.CoefficientGram.synthesis": "definition",
+        "VolumeLogic.CoefficientGram.synthesis_apply": "theorem",
+        "VolumeLogic.CoefficientGram.gram": "definition",
+        "VolumeLogic.CoefficientGram.inner_pullback": "theorem",
+        "VolumeLogic.CoefficientGram.quadratic_eq_norm_sq": "theorem",
+        "VolumeLogic.CoefficientGram.norm_sq_pullback": "theorem",
+        "VolumeLogic.CoefficientGram.norm_pullback": "theorem",
+        "VolumeLogic.CoefficientGram.quadratic_nonneg": "theorem",
+        "VolumeLogic.CoefficientGram.ker_gram": "theorem",
+        "VolumeLogic.CoefficientGram.quadratic_pos_iff": "theorem",
+        "VolumeLogic.CoefficientGram.pairing_descends": "theorem",
+        "VolumeLogic.CoefficientGram.synthesis_gram_entry": "theorem",
+        "VolumeLogic.CoefficientGram.coordinate_change": "theorem",
+        "VolumeLogic.CoefficientGram.closing_bound": "theorem",
+        "VolumeLogic.CoefficientGram.corridor_comp": "theorem",
+        "VolumeLogic.CoefficientGram.corridor_preserves_zero": "theorem",
+        "VolumeLogic.StationaryElimination.schur": "definition",
+        "VolumeLogic.StationaryElimination.solve_linearized": "theorem",
+        "VolumeLogic.StationaryElimination.linearized_iff": "theorem",
+        "VolumeLogic.StationaryElimination.effective_block": "theorem",
+        "VolumeLogic.StationaryElimination.effective_hessian": "theorem",
+        "VolumeLogic.StationaryElimination.schur_zero_mixed": "theorem",
+        "VolumeLogic.FourierHermite.shiftPhase": "definition",
+        "VolumeLogic.FourierHermite.norm_shiftPhase": "theorem",
+        "VolumeLogic.FourierHermite.shiftedDFT": "definition",
+        "VolumeLogic.FourierHermite.shiftedDFT_eq_sum": "theorem",
+        "VolumeLogic.FourierHermite.shifted_reconstruction": "theorem",
+        "VolumeLogic.FourierHermite.shifted_parseval": "theorem",
+        "VolumeLogic.FourierHermite.centered_variance": "theorem",
+        "VolumeLogic.FourierHermite.normalData": "definition",
+        "VolumeLogic.FourierHermite.hermiteCoefficients": "definition",
+        "VolumeLogic.FourierHermite.shiftTwo": "definition",
+        "VolumeLogic.FourierHermite.circleCoefficients": "definition",
+        "VolumeLogic.FourierHermite.value_energy": "theorem",
+        "VolumeLogic.FourierHermite.normal_energy": "theorem",
+        "VolumeLogic.FourierHermite.fillingCoefficients": "definition",
+        "VolumeLogic.FourierHermite.hermite_coefficient_mass": "theorem",
+        "VolumeLogic.FourierHermite.crossingValues": "definition",
+        "VolumeLogic.FourierHermite.norm_crossingValues": "theorem",
+        "VolumeLogic.FourierHermite.crossingCoefficients": "definition",
+        "VolumeLogic.FourierHermite.crossing_coefficient_mass": "theorem",
+        "VolumeLogic.ConwayAssembly.fullColorContraction": "definition",
+        "VolumeLogic.ConwayAssembly.fullColorContraction_norm_le": "theorem",
+        "VolumeLogic.ConwayAssembly.conway_packet_volume_limit": "theorem",
+        "VolumeLogic.WeightedGraph.edgeStep": "definition",
+        "VolumeLogic.WeightedGraph.positiveStep": "definition",
+        "VolumeLogic.WeightedGraph.connected": "definition",
+        "VolumeLogic.WeightedGraph.connected_of_positive_weights": "theorem",
+        "VolumeLogic.WeightedGraph.energy": "definition",
+        "VolumeLogic.WeightedGraph.form": "definition",
+        "VolumeLogic.WeightedGraph.energy_nonneg": "theorem",
+        "VolumeLogic.WeightedGraph.energy_constant": "theorem",
+        "VolumeLogic.WeightedGraph.energy_eq_zero_iff": "theorem",
+        "VolumeLogic.WeightedGraph.equal_of_positive_step": "theorem",
+        "VolumeLogic.WeightedGraph.equal_of_positive_path": "theorem",
+        "VolumeLogic.WeightedGraph.energy_eq_zero_iff_constant": "theorem",
+        "VolumeLogic.WeightedGraph.grounded_energy_eq_zero_iff": "theorem",
+        "VolumeLogic.WeightedGraph.grounded_energy_pos": "theorem",
+        "VolumeLogic.WeightedGraph.energy_eq_form_self": "theorem",
+        "VolumeLogic.WeightedGraph.form_symm": "theorem",
+        "VolumeLogic.WeightedGraph.form_add_left": "theorem",
+        "VolumeLogic.WeightedGraph.form_smul_left": "theorem",
+        "VolumeLogic.WeightedGraph.energy_add_constant": "theorem",
+        "VolumeLogic.WeightedGraph.incidence": "definition",
+        "VolumeLogic.WeightedGraph.laplacian": "definition",
+        "VolumeLogic.WeightedGraph.incidence_pairing": "theorem",
+        "VolumeLogic.WeightedGraph.laplacian_symm": "theorem",
+        "VolumeLogic.WeightedGraph.laplacian_form": "theorem",
+        "VolumeLogic.WeightedGraph.laplacian_quadratic": "theorem",
+        "VolumeLogic.WeightedGraph.grounded_laplacian_pos": "theorem",
+        "VolumeLogic.Flattening.convex_on_Icc_of_second_nonneg": "theorem",
+        "VolumeLogic.Flattening.stationary_convex_lower": "theorem",
+        "VolumeLogic.Flattening.stationary_quadratic_cost": "theorem",
+        "VolumeLogic.Flattening.weightPath": "definition",
+        "VolumeLogic.Flattening.weight_path_cost": "theorem",
+        "VolumeLogic.Flattening.convex_support_at_one": "theorem",
+        "VolumeLogic.Flattening.convex_flattening_gain": "theorem",
+        "VolumeLogic.Flattening.side_loss_from_convexity": "theorem",
+        "VolumeLogic.Flattening.flattening_sector_gap": "theorem",
+        "VolumeLogic.Flattening.weak_balance_sector_gap": "theorem",
+        "VolumeLogic.TransportCoercivity.rowMass": "definition",
+        "VolumeLogic.TransportCoercivity.demand": "definition",
+        "VolumeLogic.TransportCoercivity.rowMax": "definition",
+        "VolumeLogic.TransportCoercivity.recession": "definition",
+        "VolumeLogic.TransportCoercivity.rowStep": "definition",
+        "VolumeLogic.TransportCoercivity.connected": "definition",
+        "VolumeLogic.TransportCoercivity.sum_demand": "theorem",
+        "VolumeLogic.TransportCoercivity.recession_eq_gaps": "theorem",
+        "VolumeLogic.TransportCoercivity.recession_nonneg": "theorem",
+        "VolumeLogic.TransportCoercivity.recession_zero_iff": "theorem",
+        "VolumeLogic.TransportCoercivity.equal_of_row_path": "theorem",
+        "VolumeLogic.TransportCoercivity.recession_zero": "theorem",
+        "VolumeLogic.TransportCoercivity.grounded_recession_pos": "theorem",
+        "VolumeLogic.TransportCoercivity.continuous_recession": "theorem",
+        "VolumeLogic.TransportCoercivity.recession_smul": "theorem",
+        "VolumeLogic.TransportCoercivity.grounded_recession_coercive": "theorem",
+        "VolumeLogic.TransportCoercivity.potential": "definition",
+        "VolumeLogic.TransportCoercivity.recession_sub_le_potential": "theorem",
+        "VolumeLogic.TransportCoercivity.grounded_potential_coercive": "theorem",
+        "VolumeLogic.TransportCoercivity.continuous_potential": "theorem",
+        "VolumeLogic.TransportCoercivity.grounded_sublevel_bounded": "theorem",
+        "VolumeLogic.TransportCoercivity.grounded_sublevel_compact": "theorem",
+        "VolumeLogic.TransportCoercivity.exists_grounded_minimizer": "theorem",
+        "VolumeLogic.GroundedConvexity.grounded": "definition",
+        "VolumeLogic.GroundedConvexity.segment": "definition",
+        "VolumeLogic.GroundedConvexity.segmentValue": "definition",
+        "VolumeLogic.GroundedConvexity.convex_grounded": "theorem",
+        "VolumeLogic.GroundedConvexity.segment_grounded": "theorem",
+        "VolumeLogic.GroundedConvexity.strictConvexOn_Icc_of_second_pos": "theorem",
+        "VolumeLogic.GroundedConvexity.segment_strictConvexOn": "theorem",
+        "VolumeLogic.GroundedConvexity.segment_strict_jensen": "theorem",
+        "VolumeLogic.GroundedConvexity.strictConvexOn_grounded": "theorem",
+        "VolumeLogic.GroundedConvexity.grounded_minimizer_eq": "theorem",
+        "VolumeLogic.GroundedConvexity.exists_unique_grounded_minimizer": "theorem",
+        "VolumeLogic.GroundedLaplacian.extend": "definition",
+        "VolumeLogic.GroundedLaplacian.extend_root": "theorem",
+        "VolumeLogic.GroundedLaplacian.extend_free": "theorem",
+        "VolumeLogic.GroundedLaplacian.extend_injective": "theorem",
+        "VolumeLogic.GroundedLaplacian.extend_zero": "theorem",
+        "VolumeLogic.GroundedLaplacian.extend_restrict": "theorem",
+        "VolumeLogic.GroundedLaplacian.sum_free": "theorem",
+        "VolumeLogic.GroundedLaplacian.reducedMatrix": "definition",
+        "VolumeLogic.GroundedLaplacian.reducedMatrix_symm": "theorem",
+        "VolumeLogic.GroundedLaplacian.reducedOperator": "definition",
+        "VolumeLogic.GroundedLaplacian.reducedOperator_apply": "theorem",
+        "VolumeLogic.GroundedLaplacian.reduced_bilinear": "theorem",
+        "VolumeLogic.GroundedLaplacian.reduced_quadratic": "theorem",
+        "VolumeLogic.GroundedLaplacian.reduced_quadratic_pos": "theorem",
+        "VolumeLogic.GroundedLaplacian.reducedOperator_eq_zero_iff": "theorem",
+        "VolumeLogic.GroundedLaplacian.reducedOperator_injective": "theorem",
+        "VolumeLogic.GroundedLaplacian.reducedOperator_bijective": "theorem",
+        "VolumeLogic.GroundedLaplacian.reducedEquiv": "definition",
+        "VolumeLogic.GroundedLaplacian.reducedEquiv_apply": "theorem",
+        "VolumeLogic.GroundedLaplacian.exists_unique_reduced_solution": "theorem",
+        "VolumeLogic.GroundedLaplacian.reducedMatrix_det_ne_zero": "theorem",
+        "VolumeLogic.GroundedLaplacian.exists_unique_grounded_solution": "theorem",
+        "VolumeLogic.TriangleLoads.weights": "definition",
+        "VolumeLogic.TriangleLoads.radicand": "definition",
+        "VolumeLogic.TriangleLoads.triangleD": "definition",
+        "VolumeLogic.TriangleLoads.load": "definition",
+        "VolumeLogic.TriangleLoads.conductance": "definition",
+        "VolumeLogic.TriangleLoads.jacobianAction": "definition",
+        "VolumeLogic.TriangleLoads.radicandRate": "definition",
+        "VolumeLogic.TriangleLoads.edgeSrc": "definition",
+        "VolumeLogic.TriangleLoads.edgeDst": "definition",
+        "VolumeLogic.TriangleLoads.weights_nonneg": "theorem",
+        "VolumeLogic.TriangleLoads.weights_pos_iff": "theorem",
+        "VolumeLogic.TriangleLoads.weights_hasDerivAt": "theorem",
+        "VolumeLogic.TriangleLoads.radicand_pos_of_positive_pair": "theorem",
+        "VolumeLogic.TriangleLoads.pair_sum_pos": "theorem",
+        "VolumeLogic.TriangleLoads.triangleD_pos": "theorem",
+        "VolumeLogic.TriangleLoads.triangleD_sq": "theorem",
+        "VolumeLogic.TriangleLoads.conductance_symm": "theorem",
+        "VolumeLogic.TriangleLoads.conductance_nonneg": "theorem",
+        "VolumeLogic.TriangleLoads.conductance_pos": "theorem",
+        "VolumeLogic.TriangleLoads.derivative_algebra": "theorem",
+        "VolumeLogic.TriangleLoads.radicand_hasDerivAt": "theorem",
+        "VolumeLogic.TriangleLoads.triangleD_hasDerivAt": "theorem",
+        "VolumeLogic.TriangleLoads.derivative_algebra_vector": "theorem",
+        "VolumeLogic.TriangleLoads.load_hasDerivAt": "theorem",
+        "VolumeLogic.TriangleLoads.jacobianAction_single_off_diagonal": "theorem",
+        "VolumeLogic.TriangleLoads.load_off_diagonal_hasDerivAt": "theorem",
+        "VolumeLogic.TriangleLoads.jacobianAction_constant": "theorem",
+        "VolumeLogic.TriangleLoads.jacobian_pairing": "theorem",
+        "VolumeLogic.TriangleLoads.jacobian_energy": "theorem",
+        "VolumeLogic.TriangleLoads.load_pairing_hasDerivAt": "theorem",
+        "VolumeLogic.TriangleLoads.sum_load_pairing_hasDerivAt": "theorem",
+        "VolumeLogic.TriangleLoads.load_zero_corner": "theorem",
+        "VolumeLogic.TriangleLoads.singletonLoad": "definition",
+        "VolumeLogic.TriangleLoads.singletonLoad_hasDerivAt": "theorem",
+        "VolumeLogic.TrianglePotential.lobachevsky": "definition",
+        "VolumeLogic.TrianglePotential.entropy": "definition",
+        "VolumeLogic.TrianglePotential.entropySlope": "definition",
+        "VolumeLogic.TrianglePotential.lobachevsky_eq_log_sin": "theorem",
+        "VolumeLogic.TrianglePotential.lobachevsky_continuous": "theorem",
+        "VolumeLogic.TrianglePotential.lobachevsky_hasDerivAt": "theorem",
+        "VolumeLogic.TrianglePotential.lobachevsky_zero": "theorem",
+        "VolumeLogic.TrianglePotential.lobachevsky_half_pi": "theorem",
+        "VolumeLogic.TrianglePotential.entropy_continuous": "theorem",
+        "VolumeLogic.TrianglePotential.entropy_zero": "theorem",
+        "VolumeLogic.TrianglePotential.entropy_half": "theorem",
+        "VolumeLogic.TrianglePotential.entropy_hasDerivAt": "theorem",
+        "VolumeLogic.TrianglePotential.entropySlope_hasDerivAt": "theorem",
+        "VolumeLogic.TrianglePotential.entropy_concave": "theorem",
+        "VolumeLogic.TrianglePotential.entropy_tangent": "theorem",
+        "VolumeLogic.TrianglePotential.arctan_sum": "theorem",
+        "VolumeLogic.TrianglePotential.loads_sum": "theorem",
+        "VolumeLogic.TrianglePotential.load_mem_Ioo": "theorem",
+        "VolumeLogic.TrianglePotential.load_nonneg": "theorem",
+        "VolumeLogic.TrianglePotential.logWeight": "definition",
+        "VolumeLogic.TrianglePotential.Feasible": "definition",
+        "VolumeLogic.TrianglePotential.objective": "definition",
+        "VolumeLogic.TrianglePotential.potential": "definition",
+        "VolumeLogic.TrianglePotential.logWeight_eq_log": "theorem",
+        "VolumeLogic.TrianglePotential.loads_feasible": "theorem",
+        "VolumeLogic.TrianglePotential.feasible_mem_Icc": "theorem",
+        "VolumeLogic.TrianglePotential.entropySlope_at_load": "theorem",
+        "VolumeLogic.TrianglePotential.objective_le_loads": "theorem",
+        "VolumeLogic.TrianglePotential.potential_eq_loads": "theorem",
+        "VolumeLogic.TrianglePotential.sum_jacobianAction": "theorem",
+        "VolumeLogic.TrianglePotential.jacobianAction_zero_corner": "theorem",
+        "VolumeLogic.TrianglePotential.exists_positive_pair": "theorem",
+        "VolumeLogic.TrianglePotential.radicand_pos_all_coordinates": "theorem",
+        "VolumeLogic.TrianglePotential.objective_loads_hasDerivAt": "theorem",
+        "VolumeLogic.TrianglePotential.potential_hasDerivAt": "theorem",
+        "VolumeLogic.TrianglePotential.potential_path_hasDerivAt": "theorem",
+        "VolumeLogic.TrianglePotential.potential_path_second_hasDerivAt": "theorem",
+        "VolumeLogic.TrianglePotential.singleton_feasible": "theorem",
+        "VolumeLogic.TrianglePotential.feasible_singleton_unique": "theorem",
+        "VolumeLogic.TrianglePotential.objective_singleton": "theorem",
+        "VolumeLogic.TrianglePotential.potential_singleton": "theorem",
+        "VolumeLogic.TrianglePotential.potential_singleton_hasDerivAt": "theorem",
+        "VolumeLogic.TrianglePotential.potential_singleton_second_hasDerivAt": "theorem",
+        "VolumeLogic.TrianglePotential.summedPotential": "definition",
+        "VolumeLogic.TrianglePotential.summedPotential_path_hasDerivAt": "theorem",
+        "VolumeLogic.TrianglePotential.summedPotential_path_second_hasDerivAt": "theorem",
+        "VolumeLogic.TrianglePotential.summedPotential_path_second_at": "theorem",
+        "VolumeLogic.TrianglePotential.summedPotential_mixed_hasDerivAt": "theorem",
+        "VolumeLogic.TrianglePotential.summedPotential_mixed_second_at": "theorem",
+        "VolumeLogic.TriangleMinimizer.Regular": "definition",
+        "VolumeLogic.TriangleMinimizer.regular_radicand": "theorem",
+        "VolumeLogic.TriangleMinimizer.nonregular_singleton": "theorem",
+        "VolumeLogic.TriangleMinimizer.potential_attained": "theorem",
+        "VolumeLogic.TriangleMinimizer.potential_vertex_lower": "theorem",
+        "VolumeLogic.TriangleMinimizer.objective_difference": "theorem",
+        "VolumeLogic.TriangleMinimizer.objective_difference_le": "theorem",
+        "VolumeLogic.TriangleMinimizer.potential_lipschitz": "theorem",
+        "VolumeLogic.TriangleMinimizer.potential_continuous": "theorem",
+        "VolumeLogic.TriangleMinimizer.support": "definition",
+        "VolumeLogic.TriangleMinimizer.aggregate": "definition",
+        "VolumeLogic.TriangleMinimizer.column": "definition",
+        "VolumeLogic.TriangleMinimizer.offsetCost": "definition",
+        "VolumeLogic.TriangleMinimizer.mem_support": "theorem",
+        "VolumeLogic.TriangleMinimizer.support_nonempty": "theorem",
+        "VolumeLogic.TriangleMinimizer.aggregate_nonneg": "theorem",
+        "VolumeLogic.TriangleMinimizer.aggregate_positive": "theorem",
+        "VolumeLogic.TriangleMinimizer.aggregate_zero_outside": "theorem",
+        "VolumeLogic.TriangleMinimizer.table_nonneg": "theorem",
+        "VolumeLogic.TriangleMinimizer.table_support_nonempty": "theorem",
+        "VolumeLogic.TriangleMinimizer.aggregate_sum": "theorem",
+        "VolumeLogic.TriangleMinimizer.aggregate_rowMass": "theorem",
+        "VolumeLogic.TriangleMinimizer.aggregate_demand": "theorem",
+        "VolumeLogic.TriangleMinimizer.transport_potential_eq": "theorem",
+        "VolumeLogic.TriangleMinimizer.row_vertex_lower": "theorem",
+        "VolumeLogic.TriangleMinimizer.corner_pair_covered": "theorem",
+        "VolumeLogic.TriangleMinimizer.edgeWeight": "definition",
+        "VolumeLogic.TriangleMinimizer.edgeWeight_nonneg": "theorem",
+        "VolumeLogic.TriangleMinimizer.row_step_positive_path": "theorem",
+        "VolumeLogic.TriangleMinimizer.conductance_connected_of_rows": "theorem",
+        "VolumeLogic.TriangleMinimizer.affine_eq_segment": "theorem",
+        "VolumeLogic.TriangleMinimizer.summedPotential_segment_hasDerivAt": "theorem",
+        "VolumeLogic.TriangleMinimizer.summedPotential_segment_second": "theorem",
+        "VolumeLogic.TriangleMinimizer.exists_unique_triangle_minimizer": "theorem",
+        "VolumeLogic.TriangleMinimizer.pooled_boundary_weight": "theorem",
+        "VolumeLogic.TriangleMinimizer.root_demand_difference": "theorem",
+        "VolumeLogic.TriangleMinimizer.grounded_demand_eq": "theorem",
+        "VolumeLogic.TriangleMinimizer.exists_unique_prescribed_minimizer": "theorem",
+        "VolumeLogic.TriangleBalance.supportedLoad": "definition",
+        "VolumeLogic.TriangleBalance.supportedLoad_regular": "theorem",
+        "VolumeLogic.TriangleBalance.not_regular_singleton": "theorem",
+        "VolumeLogic.TriangleBalance.supportedLoad_singleton": "theorem",
+        "VolumeLogic.TriangleBalance.supportedLoad_feasible": "theorem",
+        "VolumeLogic.TriangleBalance.potential_eq_supportedLoad": "theorem",
+        "VolumeLogic.TriangleBalance.potential_supporting": "theorem",
+        "VolumeLogic.TriangleBalance.potential_path_derivative": "theorem",
+        "VolumeLogic.TriangleBalance.vertexLoad": "definition",
+        "VolumeLogic.TriangleBalance.residual": "definition",
+        "VolumeLogic.TriangleBalance.column_pairing": "theorem",
+        "VolumeLogic.TriangleBalance.sum_vertexLoad": "theorem",
+        "VolumeLogic.TriangleBalance.sum_residual": "theorem",
+        "VolumeLogic.TriangleBalance.root_residual": "theorem",
+        "VolumeLogic.TriangleBalance.root_balance_iff_total": "theorem",
+        "VolumeLogic.TriangleBalance.summedPotential_path_derivative": "theorem",
+        "VolumeLogic.TriangleBalance.coordinate_derivative": "theorem",
+        "VolumeLogic.TriangleBalance.minimizer_balance": "theorem",
+        "VolumeLogic.TriangleBalance.summedPotential_supporting": "theorem",
+        "VolumeLogic.TriangleBalance.balance_minimizer": "theorem",
+        "VolumeLogic.TriangleBalance.grounded_minimizer_iff_balance": "theorem",
+        "VolumeLogic.TriangleBalance.exists_unique_balance": "theorem",
+        "VolumeLogic.HallRecession.positive": "definition",
+        "VolumeLogic.HallRecession.rowCut": "definition",
+        "VolumeLogic.HallRecession.capacity": "definition",
+        "VolumeLogic.HallRecession.deficit": "definition",
+        "VolumeLogic.HallRecession.recession": "definition",
+        "VolumeLogic.HallRecession.peel": "definition",
+        "VolumeLogic.HallRecession.mem_positive": "theorem",
+        "VolumeLogic.HallRecession.peel_nonneg": "theorem",
+        "VolumeLogic.HallRecession.peel_split": "theorem",
+        "VolumeLogic.HallRecession.rowMax_peel": "theorem",
+        "VolumeLogic.HallRecession.recession_peel": "theorem",
+        "VolumeLogic.HallRecession.peel_card_lt": "theorem",
+        "VolumeLogic.HallRecession.nonneg_of_cuts": "theorem",
+        "VolumeLogic.HallRecession.capacity_univ": "theorem",
+        "VolumeLogic.HallRecession.weak_cuts_of_strict": "theorem",
+        "VolumeLogic.HallRecession.positive_of_strict_cuts": "theorem",
+        "VolumeLogic.HallRecession.recession_translate": "theorem",
+        "VolumeLogic.HallRecession.grounded_positive": "theorem",
+        "VolumeLogic.HallRecession.continuous_recession": "theorem",
+        "VolumeLogic.HallRecession.recession_smul": "theorem",
+        "VolumeLogic.HallRecession.grounded_coercive": "theorem",
+        "VolumeLogic.HallRecession.connected_of_strict_cuts": "theorem",
+        "VolumeLogic.HallRecession.exists_grounded_minimizer": "theorem",
+        "VolumeLogic.TriangleHall.supportedLoad_positive": "theorem",
+        "VolumeLogic.TriangleHall.supportedLoad_zero": "theorem",
+        "VolumeLogic.TriangleHall.row_lower": "theorem",
+        "VolumeLogic.TriangleHall.continuous_summedPotential": "theorem",
+        "VolumeLogic.TriangleHall.recession_lower": "theorem",
+        "VolumeLogic.TriangleHall.exists_balance": "theorem",
+        "VolumeLogic.TriangleHall.exists_positive_table": "theorem",
+        "VolumeLogic.TriangleHall.exists_unique_balance": "theorem",
+        "VolumeLogic.TriangleHall.exists_unique_minimizer": "theorem"
+      },
+      "axioms": {
+        "VolumeLogic.RealModel.UpperRate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.RealModel.UpperRate.mul": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.RealModel.upperRate_norm_of_cost": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.RealModel.upperRate_of_polynomial_bound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.RealModel.complex_packet_volume_transfer": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.CoefficientGram.synthesis": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.CoefficientGram.synthesis_apply": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.CoefficientGram.gram": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.CoefficientGram.inner_pullback": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.CoefficientGram.quadratic_eq_norm_sq": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.CoefficientGram.norm_sq_pullback": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.CoefficientGram.norm_pullback": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.CoefficientGram.quadratic_nonneg": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.CoefficientGram.ker_gram": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.CoefficientGram.quadratic_pos_iff": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.CoefficientGram.pairing_descends": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.CoefficientGram.synthesis_gram_entry": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.CoefficientGram.coordinate_change": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.CoefficientGram.closing_bound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.CoefficientGram.corridor_comp": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.CoefficientGram.corridor_preserves_zero": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.StationaryElimination.schur": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.StationaryElimination.solve_linearized": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.StationaryElimination.linearized_iff": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.StationaryElimination.effective_block": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.StationaryElimination.effective_hessian": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.StationaryElimination.schur_zero_mixed": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.FourierHermite.shiftPhase": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.FourierHermite.norm_shiftPhase": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.FourierHermite.shiftedDFT": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.FourierHermite.shiftedDFT_eq_sum": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.FourierHermite.shifted_reconstruction": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.FourierHermite.shifted_parseval": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.FourierHermite.centered_variance": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.FourierHermite.normalData": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.FourierHermite.hermiteCoefficients": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.FourierHermite.shiftTwo": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.FourierHermite.circleCoefficients": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.FourierHermite.value_energy": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.FourierHermite.normal_energy": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.FourierHermite.fillingCoefficients": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.FourierHermite.hermite_coefficient_mass": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.FourierHermite.crossingValues": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.FourierHermite.norm_crossingValues": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.FourierHermite.crossingCoefficients": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.FourierHermite.crossing_coefficient_mass": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.ConwayAssembly.fullColorContraction": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.ConwayAssembly.fullColorContraction_norm_le": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.ConwayAssembly.conway_packet_volume_limit": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.WeightedGraph.positiveStep": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.WeightedGraph.connected": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.WeightedGraph.connected_of_positive_weights": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.WeightedGraph.energy": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.WeightedGraph.form": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.WeightedGraph.energy_nonneg": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.WeightedGraph.energy_constant": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.WeightedGraph.energy_eq_zero_iff": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.WeightedGraph.equal_of_positive_step": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.WeightedGraph.equal_of_positive_path": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.WeightedGraph.energy_eq_zero_iff_constant": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.WeightedGraph.grounded_energy_eq_zero_iff": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.WeightedGraph.grounded_energy_pos": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.WeightedGraph.energy_eq_form_self": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.WeightedGraph.form_symm": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.WeightedGraph.form_add_left": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.WeightedGraph.form_smul_left": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.WeightedGraph.energy_add_constant": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.WeightedGraph.incidence": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.WeightedGraph.laplacian": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.WeightedGraph.incidence_pairing": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.WeightedGraph.laplacian_symm": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.WeightedGraph.laplacian_form": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.WeightedGraph.laplacian_quadratic": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.WeightedGraph.grounded_laplacian_pos": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.Flattening.convex_on_Icc_of_second_nonneg": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.Flattening.stationary_convex_lower": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.Flattening.stationary_quadratic_cost": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.Flattening.weightPath": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.Flattening.weight_path_cost": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.Flattening.convex_support_at_one": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.Flattening.convex_flattening_gain": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.Flattening.side_loss_from_convexity": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.Flattening.flattening_sector_gap": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.Flattening.weak_balance_sector_gap": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TransportCoercivity.rowMass": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TransportCoercivity.demand": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TransportCoercivity.rowMax": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TransportCoercivity.recession": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TransportCoercivity.rowStep": [
+          "propext",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TransportCoercivity.connected": [
+          "propext",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TransportCoercivity.sum_demand": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TransportCoercivity.recession_eq_gaps": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TransportCoercivity.recession_nonneg": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TransportCoercivity.recession_zero_iff": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TransportCoercivity.equal_of_row_path": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TransportCoercivity.recession_zero": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TransportCoercivity.grounded_recession_pos": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TransportCoercivity.continuous_recession": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TransportCoercivity.recession_smul": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TransportCoercivity.grounded_recession_coercive": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TransportCoercivity.potential": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TransportCoercivity.recession_sub_le_potential": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TransportCoercivity.grounded_potential_coercive": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TransportCoercivity.continuous_potential": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TransportCoercivity.grounded_sublevel_bounded": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TransportCoercivity.grounded_sublevel_compact": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TransportCoercivity.exists_grounded_minimizer": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedConvexity.grounded": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedConvexity.segment": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedConvexity.segmentValue": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedConvexity.convex_grounded": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedConvexity.segment_grounded": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedConvexity.strictConvexOn_Icc_of_second_pos": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedConvexity.segment_strictConvexOn": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedConvexity.segment_strict_jensen": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedConvexity.strictConvexOn_grounded": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedConvexity.grounded_minimizer_eq": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedConvexity.exists_unique_grounded_minimizer": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedLaplacian.extend": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedLaplacian.extend_root": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedLaplacian.extend_free": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedLaplacian.extend_injective": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedLaplacian.extend_zero": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedLaplacian.extend_restrict": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedLaplacian.sum_free": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedLaplacian.reducedMatrix": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedLaplacian.reducedMatrix_symm": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedLaplacian.reducedOperator": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedLaplacian.reducedOperator_apply": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedLaplacian.reduced_bilinear": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedLaplacian.reduced_quadratic": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedLaplacian.reduced_quadratic_pos": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedLaplacian.reducedOperator_eq_zero_iff": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedLaplacian.reducedOperator_injective": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedLaplacian.reducedOperator_bijective": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedLaplacian.reducedEquiv": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedLaplacian.reducedEquiv_apply": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedLaplacian.exists_unique_reduced_solution": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedLaplacian.reducedMatrix_det_ne_zero": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.GroundedLaplacian.exists_unique_grounded_solution": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.weights": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.radicand": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.triangleD": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.load": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.conductance": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.jacobianAction": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.radicandRate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.edgeSrc": [
+          "propext"
+        ],
+        "VolumeLogic.TriangleLoads.edgeDst": [
+          "propext"
+        ],
+        "VolumeLogic.TriangleLoads.weights_nonneg": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.weights_pos_iff": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.weights_hasDerivAt": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.radicand_pos_of_positive_pair": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.pair_sum_pos": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.triangleD_pos": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.triangleD_sq": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.conductance_symm": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.conductance_nonneg": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.conductance_pos": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.derivative_algebra": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.radicand_hasDerivAt": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.triangleD_hasDerivAt": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.derivative_algebra_vector": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.load_hasDerivAt": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.jacobianAction_single_off_diagonal": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.load_off_diagonal_hasDerivAt": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.jacobianAction_constant": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.jacobian_pairing": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.jacobian_energy": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.load_pairing_hasDerivAt": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.sum_load_pairing_hasDerivAt": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.load_zero_corner": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.singletonLoad": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleLoads.singletonLoad_hasDerivAt": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.lobachevsky": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.entropy": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.entropySlope": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.lobachevsky_eq_log_sin": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.lobachevsky_continuous": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.lobachevsky_hasDerivAt": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.lobachevsky_zero": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.lobachevsky_half_pi": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.entropy_continuous": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.entropy_zero": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.entropy_half": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.entropy_hasDerivAt": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.entropySlope_hasDerivAt": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.entropy_concave": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.entropy_tangent": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.arctan_sum": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.loads_sum": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.load_mem_Ioo": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.load_nonneg": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.logWeight": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.Feasible": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.objective": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.potential": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.logWeight_eq_log": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.loads_feasible": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.feasible_mem_Icc": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.entropySlope_at_load": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.objective_le_loads": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.potential_eq_loads": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.sum_jacobianAction": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.jacobianAction_zero_corner": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.exists_positive_pair": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.radicand_pos_all_coordinates": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.objective_loads_hasDerivAt": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.potential_hasDerivAt": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.potential_path_hasDerivAt": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.potential_path_second_hasDerivAt": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.singleton_feasible": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.feasible_singleton_unique": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.objective_singleton": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.potential_singleton": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.potential_singleton_hasDerivAt": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.potential_singleton_second_hasDerivAt": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.summedPotential": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.summedPotential_path_hasDerivAt": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.summedPotential_path_second_hasDerivAt": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.summedPotential_path_second_at": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.summedPotential_mixed_hasDerivAt": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TrianglePotential.summedPotential_mixed_second_at": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.Regular": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.regular_radicand": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.nonregular_singleton": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.potential_attained": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.potential_vertex_lower": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.objective_difference": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.objective_difference_le": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.potential_lipschitz": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.potential_continuous": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.support": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.aggregate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.column": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.offsetCost": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.mem_support": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.support_nonempty": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.aggregate_nonneg": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.aggregate_positive": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.aggregate_zero_outside": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.table_nonneg": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.table_support_nonempty": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.aggregate_sum": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.aggregate_rowMass": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.aggregate_demand": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.transport_potential_eq": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.row_vertex_lower": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.corner_pair_covered": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.edgeWeight": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.edgeWeight_nonneg": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.row_step_positive_path": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.conductance_connected_of_rows": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.affine_eq_segment": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.summedPotential_segment_hasDerivAt": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.summedPotential_segment_second": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.exists_unique_triangle_minimizer": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.pooled_boundary_weight": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.root_demand_difference": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.grounded_demand_eq": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleMinimizer.exists_unique_prescribed_minimizer": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleBalance.supportedLoad": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleBalance.supportedLoad_regular": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleBalance.not_regular_singleton": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleBalance.supportedLoad_singleton": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleBalance.supportedLoad_feasible": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleBalance.potential_eq_supportedLoad": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleBalance.potential_supporting": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleBalance.potential_path_derivative": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleBalance.vertexLoad": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleBalance.residual": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleBalance.column_pairing": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleBalance.sum_vertexLoad": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleBalance.sum_residual": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleBalance.root_residual": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleBalance.root_balance_iff_total": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleBalance.summedPotential_path_derivative": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleBalance.coordinate_derivative": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleBalance.minimizer_balance": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleBalance.summedPotential_supporting": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleBalance.balance_minimizer": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleBalance.grounded_minimizer_iff_balance": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleBalance.exists_unique_balance": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.HallRecession.positive": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.HallRecession.rowCut": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.HallRecession.capacity": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.HallRecession.deficit": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.HallRecession.recession": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.HallRecession.peel": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.HallRecession.mem_positive": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.HallRecession.peel_nonneg": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.HallRecession.peel_split": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.HallRecession.rowMax_peel": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.HallRecession.recession_peel": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.HallRecession.peel_card_lt": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.HallRecession.nonneg_of_cuts": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.HallRecession.capacity_univ": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.HallRecession.weak_cuts_of_strict": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.HallRecession.positive_of_strict_cuts": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.HallRecession.recession_translate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.HallRecession.grounded_positive": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.HallRecession.continuous_recession": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.HallRecession.recession_smul": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.HallRecession.grounded_coercive": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.HallRecession.connected_of_strict_cuts": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.HallRecession.exists_grounded_minimizer": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleHall.supportedLoad_positive": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleHall.supportedLoad_zero": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleHall.row_lower": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleHall.continuous_summedPotential": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleHall.recession_lower": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleHall.exists_balance": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleHall.exists_positive_table": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleHall.exists_unique_balance": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.TriangleHall.exists_unique_minimizer": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "VolumeLogic.WeightedGraph.edgeStep": []
+      }
+    }
+  },
+  "inventory_controls_rejected": [
+    "unused private axiom",
+    "unused private opaque",
+    "admitted proof"
+  ],
+  "source_sha256": {
+    "formal-real/AxiomAudit.lean": "372e3856e4bd5133094165491a1182a271c171fab5474446ac2fbd46eacf890a",
+    "formal-real/CoefficientGram.lean": "1ad0370079a6b447dab76729a904b8d772e9071a75c374e8ce7e246af2cfed9f",
+    "formal-real/ConwayAssembly.lean": "579fbb6e956c10b239a105b1d82fdea61f8a4c71c2b49a5bd713cd415d90a46d",
+    "formal-real/Flattening.lean": "cb2af0e3d616f4c29234585f0fcca0c1baccd3c18f2efc60ceb2e6e7384846a0",
+    "formal-real/FourierHermite.lean": "17acc98f3006c7c29ff026330473cdc6f63c4fb33f83096635cc2c285409c7c3",
+    "formal-real/GroundedConvexity.lean": "ad17ca142c49f83f7353d8a7e75502bc4fc3e818ecd4aafb4edd005c0cca6e18",
+    "formal-real/GroundedLaplacian.lean": "50944c066b6e5771136d71d81e29421f8e420a72dcb68ca74b773b2503fe247e",
+    "formal-real/HallRecession.lean": "3c8aa25f8ce72300342d6fc338801cb4ed7d25ec71b0da21d5b595e0348fbd76",
+    "formal-real/RealTransfer.lean": "05030ec80b0b7f9dffb540ec896503f6112acc73f733c585e32756aada88be8d",
+    "formal-real/StationaryElimination.lean": "a07fd090905d49c0fb06718a238086b4af98daf0b87f503dacde2fef00e99583",
+    "formal-real/TransportCoercivity.lean": "098d28d5e96ab719f295f2cb2a7c393c9bbfc7a088cb9175f1668bc0cf7abf40",
+    "formal-real/TriangleBalance.lean": "0d112900fe6c69de781228eef69821dd60397bbd330591dd5397bb6a634889fc",
+    "formal-real/TriangleHall.lean": "0d96085c488f6bb10dc690d8e7b27fb922a04a1d018e81df09d5696e54416618",
+    "formal-real/TriangleLoads.lean": "9fb64199f60f62488b902f087461b1e566568c77248049a596ed17f684a5f59c",
+    "formal-real/TriangleMinimizer.lean": "50ccf8b488523b4e0cfbc1eddaf52a3bac7d2b1994dea925f14b4dabc234d8ec",
+    "formal-real/TrianglePotential.lean": "48a34b92ea3a9911a6d27ac05744f69324a77b29749b3a44bbcfb36dc6aaeb59",
+    "formal-real/WeightedGraph.lean": "9594bc44a971cdb67277e1a5f74f29017b818bebe7ba0cee7f10aaff30d19f39",
+    "formal-real/lake-manifest.json": "e4b572de88e8c9a6bf79817a5b36f982d825c86725f6d161e65bad42aadd6b5b",
+    "formal-real/lakefile.toml": "c319bfe5692fb86e40dd1c62915b87c4ac14edb3289ce1888c98de475d52eae6",
+    "formal-real/lean-toolchain": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
+    "formal/AxiomAudit.lean": "f9eb75643ac35afe00b71236820dacdf7ee57a7ffa66f80e4500fb3c94ca6bd5",
+    "formal/VolumeLogic.lean": "7cc9329a71ac5bbd085149b1dab90efaf30cd15048b4699fd696e9e9058e9e9a",
+    "formal/VolumeLogic/FaceGridSupport.lean": "8ee975dbb132d003f3ae31752d5999ab25547143b3b43b4c86027280a3ee8d5c",
+    "formal/VolumeLogic/FiniteAlgebra.lean": "6fcf9498917b62a42b4ebb2805350563fd646fdc821a541b929ecf815bdbf3d9",
+    "formal/VolumeLogic/FiniteSupport.lean": "1bfa85773a7f86cd6bed589bfb21e7395cb196449f164d4c272cb1dafc5b1d35",
+    "formal/VolumeLogic/MonicLinearity.lean": "75b8cebc8e8bd4cd72257cff082ffe2d74f67391f90942df59f80782f6a8db2b",
+    "formal/VolumeLogic/MonicProduct.lean": "77c70ef655c3e7af4c0d877dd5b110e53a22d3f421bc0581470e5e7c1735cd0b",
+    "formal/VolumeLogic/MonicRemainder.lean": "f6781dba17c7677adcfe2aec41d31f8742004fc38a45be9732c24ce98b65dbfd",
+    "formal/VolumeLogic/MonicUniqueness.lean": "5b1923608c3117ba4875879310b51d56995b8548f1bc93e9491eda2238d4ab1c",
+    "formal/VolumeLogic/ProtectedSum.lean": "6083dc9764da8ffdee625f01bc2c6a8929cdddf6adc8bcfbce5fed188b37e60d",
+    "formal/VolumeLogic/RateComparison.lean": "837a19f87080465b55b8f9373d99eda56900829c166e98a8f16c1136ae06123b",
+    "formal/VolumeLogic/ResolventFunctional.lean": "3fd0e71216901b57867cefad3bbaa423c5b1c0196e7b48286ba09cea5f0df01f",
+    "formal/VolumeLogic/SourceAssembly.lean": "40a6a714a71eefeef2aa9ddf429a6852fe2f8d7360d72a7e2ba03821f2387865",
+    "formal/VolumeLogic/TriangularBoundary.lean": "4e28e5b0ea179f4abae23c4541e1dd29e0fc599e2637531807abd387dcfae02b",
+    "formal/coverage.json": "47e67b5105ab469db13e434cf7d0e82590e5e7a2ba6424a83c3677ce6490565d",
+    "formal/dependency-pins.json": "f5c2a8f4f20174b592b6ef20fe2c085f1016d2403e3b2308af140a4eb7557f33",
+    "formal/lake-manifest.json": "94a62178292dabc02ac925f33a78081a26da3b9fc9b5c3ea33e97e9a8dce25da",
+    "formal/lakefile.toml": "71a7a9b5284cf174da995a33b0eacd876b7a02a5aceb34263293078d22109d33",
+    "formal/lean-toolchain": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
+    "manuscript/sections/02-exact-concepts.tex": "3e238b139a78b4c8ab085a800b21ec3c579ce6fb5deb2a32375bac7dbea85b0e",
+    "manuscript/sections/09-reproduction.tex": "57f8411977fae16d614a7ccd2c9f80dee668cfb5ce89a424a0cc59db17b5ad19",
+    "manuscript/sections/Morse-preliminaries.tex": "d6dfc0d1f2d49c9ac669181126ea3c4400040e910374254e3e02fa3a013fe06c",
+    "manuscript/sections/N-uniform-filling-bound.tex": "13acdb347c1e944cb86818d3d8d5958ffc92cdd2375541fb99933a3ff04ad55d",
+    "manuscript/sections/O-morse-geometric-contribution.tex": "4d2c66502910cf82c125e14cb93cffe62e94d92852bd31baeb1a98814a9bb8f8",
+    "manuscript/sections/P-weak-balance.tex": "3aac4d8656bf069f87d7fb4d8fa609290028c34a59769ebe51bc72a45612f727",
+    "manuscript/sections/Q-protected-triangular-sums.tex": "e0fea23dd758c9a43036613cb78a32d7d1e6efd9d89fc54573d617c985763aa6",
+    "manuscript/sections/R-triangular-boundary-insertion.tex": "5678dd95836916c2aee3e1de9616c95b80ce310415399ea3c37dca8c05875a4b",
+    "papers/conway-asymptotics/filling.tex": "3c2be6f9ba48b766e8c35c187d7079acd22dddac0e0957e46c541d0b564e291f",
+    "papers/conway-asymptotics/introduction.tex": "ad9ddf1ec4db242a633638b96955ada978e082727f7ad7404e0f559b225dec74",
+    "repro/check_lean.py": "3d124f22291e40983f8c469a7fbd9d64af7a547ce7ab2cf011b3c29f26631e81"
+  }
+}

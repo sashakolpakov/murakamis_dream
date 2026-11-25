@@ -1,15 +1,12 @@
 \chapter{A sharper degree and twist condition}
 \label{ch:directed-circle-messages}
 
-The preceding chapter estimates a subtree by the polynomial that it
-leaves on its attaching edge. Two changes improve the resulting numerical
-condition. First, the conditional kernel estimate is proved on a larger
-rectangle of complex angles. Second, each attaching edge is allowed its
-own decay constant, and the vertex evaluated last is not required to
-produce a further boundary polynomial. These changes give an explicit
-twist bound independent of the number of tangles. They also allow
-arbitrarily many prescribed short-twist pieces, provided enough
-long-twist terminal pieces are attached to them.
+The directed argument assigns a separate decay constant to each
+outgoing edge and estimates the conditional phase on a fixed complex
+rectangle. The final vertex needs no outgoing estimate. This gives
+a uniform sufficient twist bound and permits a fixed collection of
+short-twist pieces to be retained after adding enough long terminal
+pieces.
 
 Throughout this chapter, the diagram is the ordered circle-tree
 construction of Section~\ref{sec:circle-the-knot-construction}. A vertex
@@ -64,9 +61,9 @@ two simple tests.
 
 \section{Why the last vertex has a different condition}
 
-Choose any vertex as the final vertex of the calculation and direct
-the edges toward it. This only reorders a finite tensor contraction;
-it does not rotate the physical diagram or change its framing.
+Choose the final vertex and direct the edges toward it. The choice
+changes only the order of finite contraction; the diagram and its
+framing remain fixed.
 A nonfinal vertex sends its parent the exact polynomial
 $M_{v,N}(u)$ of \eqref{eq:local-recursion}. Its value at $u=0$ is
 kept as a scalar, and the quotient is estimated on the full real
@@ -82,8 +79,8 @@ The constant $c_v$ records how much decay remains after the trace at
 that vertex. It is an explicit variable in a finite sufficient test;
 it is not a quantity to be estimated from unknown invariant values.
 
-The proof in Appendix~\ref{app:directed-circle-messages} defines two
-positive numbers at each vertex. The first,
+The finite criterion in Appendix~\ref{app:directed-circle-messages}
+compares two quantities at each vertex. The first,
 \[
  \beta_v=\frac{210}{361}
        \frac{d_v/(2\pi)}{|(d_v-in_v)/(2\pi)|^2},
@@ -110,13 +107,13 @@ bound.
 
 \section{The conditional estimate and the proof of the theorem}
 
-The proof uses the same full kernel as the preceding chapter:
+The conditional estimate uses the same finite kernel:
 \[
  K_N(t,u;s)=\sum_{k=0}^{N-1}
  e_k(-2\cos t)e_k(-2\cos u)\frac{H_N(s)}{W_k(s)}.
 \]
 All its indices and the derivative data at repeated spectral roots
-remain present. The new estimate is uniform for
+remain present. The estimate is uniform for
 $|\Re u|\le1/8$, $|\Im u|\le2^{-11}$ and $|y|\le2^{-11}$:
 \[
  |K_N(t+iy,u;s)|
@@ -135,15 +132,12 @@ retain the full kernel's fixed exponential gap. Near the critical
 point the original holomorphic edge expansion applies. These three
 facts prove the displayed estimate on the entire rectangle.
 
-The induction now keeps each child scalar exactly, proves a nonzero
-first Fourier term at the next vertex, and compares every other term
-with that same conditional action. The exact first Fourier
-coefficient is one for both level parities. The finite trace's
-endpoint terms are included in $\eta_v$; their omission would not be
-justified by a local stationary-phase argument. Since the tree is
-fixed, the relative $O(N^{-1})$ corrections in normalized children
-alter the next amplitude without consuming an additional exponential
-loss.
+At each step keep the exact child scalars and compare all errors with
+the current conditional action. The first Fourier coefficient is one
+at both parities. Endpoint terms enter $\eta_v$ along with tails and
+connectors. The normalized children contribute relative $O(N^{-1})$
+corrections on a fixed complex domain; for the fixed tree these enter
+the next amplitude rather than consuming another exponential gap.
 
 Choose $c_v=k_0/2$ at every nonfinal vertex. Elementary inequalities
 then prove all the finite conditions under \eqref{eq:directed-mixed},
@@ -174,10 +168,9 @@ give \eqref{eq:directed-profile}.
 
 \section{Keeping an arbitrary fixed collection of short-twist pieces}
 
-The degree alternative has a useful constructive consequence. Begin
-with any fixed ordered circle-tree diagram whose strand pairing gives
-one knot, with no internal closed component. Its powers may be short,
-zero or of either sign. Keep all of them.
+The degree alternative gives a concrete extension construction. Begin
+with a fixed ordered circle-tree knot diagram, with no internal closed
+component. Keep all its powers, including short or zero ones.
 
 At each original vertex choose a specific product slot beside its
 crossing box. Insert there a consecutive stack of an even number
@@ -220,7 +213,8 @@ diagram from which the construction starts.
 
 \section{A finite criterion beyond the simple bounds}
 
-The choice of final vertex matters even with equal $c_v$. Consider
+Even with equal $c_v$, choosing the final vertex can improve the test.
+Consider
 a star with $30{,}000{,}001$ terminal vertices. Give the center power
 $2$ and each terminal vertex power $2^{60}+1$, and evaluate the
 center last. The original strand calculation gives one knot.

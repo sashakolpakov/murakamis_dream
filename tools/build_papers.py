@@ -46,6 +46,7 @@ def main() -> None:
         source = ROOT / "papers" / name
         build = source / "build"
         build.mkdir(parents=True, exist_ok=True)
+        (build / "build-manifest.json").unlink(missing_ok=True)
         command = [latexmk, "-pdf", "-interaction=nonstopmode", "-halt-on-error",
                    "-file-line-error", "-outdir=build", "main.tex"]
         result = subprocess.run(command, cwd=source, text=True, stdout=subprocess.PIPE,

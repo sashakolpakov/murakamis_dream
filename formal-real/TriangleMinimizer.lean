@@ -2,11 +2,17 @@ import TrianglePotential
 import GroundedConvexity
 
 /-!
-The actual supported triangle potential has a unique grounded minimum from
-an explicitly positive half-mass corner table and actual row paths. Fixed
-boundary offsets stay in the corner coefficients; coincident vertices are
-aggregated only in the transport table. Hall existence and the geometric
-incidence/development remain application inputs.
+Existence and uniqueness for the supported triangle potential.
+An explicit positive half-mass corner table supplies coercivity, while row
+paths connect the positive conductance graph and give strict convexity.
+Singleton rows remain affine and contribute zero conductance.
+
+Fixed boundary offsets stay in individual corner coefficients. Only corner
+loads are aggregated when destinations coincide. Pooling boundary corners at
+the grounded vertex therefore retains their distinct prescribed weights;
+it is not a claim that the boundary labels are geometrically identical.
+The table is an input here; `TriangleHall` constructs one from strict cuts.
+The packing development and its geometric interpretation remain separate.
 -/
 namespace VolumeLogic.TriangleMinimizer
 open scoped BigOperators

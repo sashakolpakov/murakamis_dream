@@ -4,6 +4,7 @@
 \usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,mathrsfs}
 \usepackage[margin=30mm,headheight=15pt]{geometry}
 \usepackage{booktabs,longtable,array,enumitem,xcolor,graphicx}
+\usepackage{import}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,positioning,calc,fit,decorations.pathreplacing,patterns,intersections}
 \usepackage[unicode,colorlinks=true,linkcolor=blue!45!black,citecolor=green!35!black,urlcolor=blue!55!black]{hyperref}
@@ -18,6 +19,7 @@
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
+\newtheorem*{latticelemma}{Finite lattice saddle estimate}
 \theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
 \newtheorem{example}[theorem]{Example}
 \theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
@@ -42,14 +44,15 @@
 \newcommand{\arccot}{\operatorname{arccot}}
 \newcommand{\dist}{\operatorname{dist}}
 \newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Log}{\operatorname{Log}}
 \newcommand{\co}{\operatorname{co}}
 \newcommand{\poly}{\operatorname{poly}}
 \newcommand{\eps}{\varepsilon}
 \newcommand{\sourcefile}[1]{\texttt{\detokenize{#1}}}
-\tikzset{box/.style={draw,rounded corners,fill=blue!4,align=center,inner sep=7pt}, arr/.style={-{Latex[length=2mm]},thick}, port/.style={draw,fill=white,minimum size=4mm,circle,inner sep=0pt}}
-\title{\Huge Volume limits from planar tangles\\[8pt]\Large Circle packings, long twists,\\and ordered tangle trees\\[18pt]\large Finite knot invariants, hyperbolic filling,\\and the preferred cusp shape}
+\tikzset{box/.style={draw,rounded corners,fill=blue!4,align=center,inner sep=7pt}, arr/.style={-{Latex[length=2mm]},thick}}
+\title{\Huge Volume limits from planar tangles\\[8pt]\Large Exact gluing, Fourier orthogonality,\\and primitive hyperbolic fillings}
 \author{}
-\date{1 November 2026}
+\date{25 November 2026}
 \begin{document}
 \hypersetup{pageanchor=false}
 \maketitle
@@ -57,73 +60,88 @@
 \hypersetup{pageanchor=true}
 \frontmatter
 \chapter*{Abstract}
-We prove volume limits for several specified classes of knots constructed from planar tangle diagrams. The first starts with a simple triangulation of the sphere and a perfect matching of its dual graph. These data specify an augmented link in the three-sphere. An explicit finite decoration by even stacks of terminal tangles makes a shared circle-packing inequality strict. Independently sufficiently long signed fillings of every original and added crossing circle then give
+We study the volume conjecture for knots assembled from planar tangles.
+For each of the constructions specified here, sufficiently long signed
+twists give
 \[
  \lim_{N\to\infty}\frac{2\pi}{N}\log|\langle K\rangle_N|
        =\operatorname{Vol}(S^3\setminus K),
 \]
-where $\langle K\rangle_N$ is the reduced Kashaev invariant with unknot value one. The limit includes both parities and composite levels. The decoration preserves the chosen endpoint pairing but can change the knot.
+where $\langle K\rangle_N$ is the reduced Kashaev invariant, with
+unknot value one. The knot and its twists are fixed while $N$ tends
+to infinity through all integers, including even and composite levels.
+For a fixed construction this covers a set of integer twist assignments
+of natural density one; it is not a counting statement about all knots.
 
-For an unchanged matched sphere, the same volume conclusion holds whenever the complete packing satisfies an explicit weak balance condition. Equality is allowed in its local inequalities. A common perturbation of the coefficient weights gives a linear entropy gain while increasing the stationary complete action only quadratically. This proves a strict bound for all complementary terms. A quantitative version permits small balance defects. The condition is sufficient and is not asserted for every packing.
+The first class consists of strict ordered Conway constructions.
+Its proof is the same pure-source proof used in the research paper:
+full integer crossing powers are expanded before any asymptotic
+estimate. A second class starts from a triangulated sphere
+with paired triangles. Explicit additions of terminal tangles make
+its circle-packing inequalities strict. The additions preserve the
+chosen strand connections but can change the knot. For an unchanged
+diagram, separate theorems assume weak balance or a shared-weight
+certificate; these hypotheses are stated with each result.
 
-A specified triangular sum also preserves full shared-weight certificates. This permits any fixed finite number of certified pieces. An explicit sequence starts with a seventeen-region rational certificate and adds tetrahedral pieces; its marked diagrams retain a balance failure but still satisfy the full volume limit after sufficiently long fixed signed fillings.
-
-Certified pieces can also be inserted along ordinary triangular faces,
-where all three boundary curvatures are positive. Two boundary
-curvatures must be sufficiently small relative to the third at the
-chosen coefficient witnesses. Explicit even chains produce such faces
-for any fixed finite list of inputs. The proof minimizes the disk action
-with its boundary weights fixed and then transports the strict
-complementary estimates with their original coefficient demands.
-
-A further class consists of specified ordered constructions from two-string tangles. A recursive class admits independently sufficiently long signed twists. For a finite ordered tree with at least one edge and a crossing-circle operator at every vertex, write $d_v$ for the vertex degree and $n_v$ for the signed half-twist power. Each of the following is a sufficient condition for hyperbolicity and the volume limit:
+For a finite ordered tree of crossing circles, let $d_v$ be the degree
+of vertex $v$ and $n_v$ its signed crossing power. Explicit sufficient
+conditions include
 \[
  \sum_v\frac{d_v}{d_v^2+n_v^2}\le2^{-25},
  \qquad\text{or}\qquad
  d_v\ge2^{28}\ \text{or}\ |n_v|\ge2^{27}
        \quad\text{at every vertex}.
 \]
-The alternatives in the second test may differ between vertices. A more flexible directed criterion assigns separate decay bounds to the polynomials obtained by evaluating subtrees. In particular, the uniform twist bound is independent of the number of tangles, while the degree alternative allows prescribed short or zero powers. Every diagram and every twist power is fixed before $N$ tends to infinity. The original strand connections must form one knot without an internally closed extra main component.
+The second test is imposed separately at each vertex; its degree
+alternative permits short or zero powers. In every theorem the strand
+connections must give one knot, including components that might close
+inside a tangle.
 
-The proofs start with the finite matrices defining the invariant and retain the derivative data at repeated spectral roots. Signed complementary terms are bounded before the oscillatory filling sum is evaluated. The leading Fourier contribution is nonzero, with every remaining charge and contour boundary term controlled. On the geometric side, labeled cuts reconstruct the original augmented exterior. For circle trees the cut supplies two octahedra per edge. Positive deformations and the actual primitive peripheral periods give smooth fillings and identify the selected action with the volume of the original knot complement. The main cusp remains complete.
+The proofs separate exact finite algebra, asymptotic estimates, and
+geometry. Linear corridors are contracted before estimates. Fourier
+orthogonality bounds the coefficient vectors with their repeated-root
+derivatives, while Schur complements describe elimination at a stationary
+point. A nonzero local Gaussian contribution is then combined with a
+bound for the entire complementary sum. Finally the ordered face maps
+and primitive peripheral curves identify the action with the volume
+of the knot complement. The main cusp remains complete.
 
-For the covered tree classes, the same source calculation gives a uniform microscopic meridian profile of the zero-framed reduced Akutsu--Deguchi--Ohtsuki invariant, with its exact crossing and framing factors. The summed and directed criteria also give the preferred-cusp correction. The full expansion and a geometric longitude identity imply that the selected geometric factor divides the first nonzero classical symbol of any nonzero fixed operator annihilating the actual reduced sequence at all sufficiently large levels. This is an implication for an existing annihilator; it does not assert equality with the entire A-polynomial or recurrence ideal.
-
-Two further results retain narrower conclusions. For unchanged diagrams specified by a simple matched sphere, the geometric contribution to the original exact invariant has a nonzero long-filling asymptotic with the actual volume rate. No general bound on its complementary contribution is asserted. A separate finite theorem bounds the filling functionals independently of the level. The weak-balance theorem supplies the additional remainder estimate for its stated class. For a general unchanged diagram, the geometric-contribution theorem retains its smaller conclusion.
+The opening chapters explain the transported Gram pairing, shifted
+Fourier orthogonality, the full Hermite coefficient bound and the
+stationary Schur complement. The subsequent arguments state the
+different hypotheses needed by each volume family.
 
 \tableofcontents
 \mainmatter
+\part{Exact operations and the Conway volume theorem}
 \input{sections/01-introduction}
-\input{sections/02-finite-source}
-\input{sections/03-entropy}
-\input{sections/04-geometry}
-\input{sections/05-alias}
-\input{sections/06-packet}
-\input{sections/07-marked-geometry}
-\input{sections/08-filling}
+\input{sections/02-exact-concepts}
+\chapter{The volume theorem for strict Conway compositions}
+\label{ch:conway-current}
+\subimport{../papers/conway-asymptotics/}{introduction.tex}
+\subimport{../papers/conway-asymptotics/}{factorial.tex}
+\subimport{../papers/conway-asymptotics/}{lattice.tex}
+\subimport{../papers/conway-asymptotics/}{packet.tex}
+\subimport{../papers/conway-asymptotics/}{filling.tex}
+\part{Quantitative criteria for trees of crossing circles}
 \input{sections/08a-quantitative-circle-trees}
 \input{sections/08b-local-circle-messages}
 \input{sections/08d-directed-circle-messages}
-\input{sections/08c-geometric-characteristic}
+\part{Further planar constructions}
 \input{sections/08e-balanced-terminal-fans}
-\input{sections/08f-directed-all-orders}
 \input{sections/09-reproduction}
+\part{Detailed proofs of the supporting results}
 \appendix
-\input{sections/A-finite-identities}
-\input{sections/B-analytic-estimates}
 \input{sections/C-certificate-arithmetic}
 \input{sections/D-marked-cell-calibration}
 \input{sections/E-quantitative-finite-sums}
 \input{sections/F-quantitative-octahedral-geometry}
 \input{sections/G-local-tree-messages}
-\input{sections/H-filtered-characteristic}
-\input{sections/I-geometric-characteristic}
-\input{sections/J-strict-tree-geometric-characteristic}
 \input{sections/K-directed-circle-messages}
-\input{sections/L-balanced-terminal-fans}
-\input{sections/M-directed-all-orders}
+\input{sections/Morse-preliminaries}
 \input{sections/N-uniform-filling-bound}
 \input{sections/O-morse-geometric-contribution}
+\input{sections/L-balanced-terminal-fans}
 \input{sections/P-weak-balance}
 \input{sections/Q-protected-triangular-sums}
 \input{sections/R-triangular-boundary-insertion}

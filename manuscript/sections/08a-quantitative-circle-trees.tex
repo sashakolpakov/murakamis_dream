@@ -1,12 +1,13 @@
 \chapter{An explicit volume theorem for ordered trees of crossing
 circles}\label{ch:quantitative-circle-trees}
 
-The number of twists at a region is not the only quantity that can make
-filling controllable. In the construction below, a crossing circle of
-large degree meets many geometric pieces. Its complete cusp makes even a
-small integer twist correspond to a long normalized filling slope. This
-gives a numerical sufficient condition for the volume conjecture in
-which some twist coefficients may be short or zero.
+The preceding filling theorem makes every twist long. For the ordered
+circle trees considered here, high degree can play the same role.
+A degree-$d_v$ circle meets $d_v$ edge pieces: their curvatures add in
+the quantum sum, and their disk sectors add in the cusp geometry.
+Both calculations lead to the quantity $d_v/(d_v^2+n_v^2)$.
+We obtain an explicit volume theorem allowing short or zero powers
+at vertices whose degrees are sufficiently large.
 
 \section{The knot construction}\label{sec:circle-the-knot-construction}
 
@@ -25,8 +26,8 @@ vertices. There is no unmarked product junction. Each edge represents an
 actual quarter-turn of a child tangle, rather than a crossing of two
 drawn edges.
 
-Here is a precise recursive way to specify the diagrams. Choose a
-terminal vertex as root. At a nonroot vertex \(v\), put the integer
+To specify the order and the frames, choose a terminal vertex as root.
+At a nonroot vertex \(v\), put the integer
 braid \(R^{n_v}\) between the two ordered lists of its child tangles: \begin{equation}
  W_v=\left(\prod_{w\in I_v^-}T(W_w)\right)R^{n_v}
        \left(\prod_{w\in I_v^+}T(W_w)\right).
@@ -104,9 +105,9 @@ and the radius \(R\) do not grow with \(N\).
 
 \end{theorem}
 
-The constant in \eqref{eq:circle-5} is conservative. It makes the condition explicit; no
-optimality is asserted. There is no additional strict-angle hypothesis
-for this literal class. Indeed an unturned elementary circle has
+The constant in \eqref{eq:circle-5} is a sufficient bound, not an
+optimal threshold. Strict feasibility requires no further hypothesis
+for this construction. An unturned elementary circle has
 attainable output interval \((1/2,1)\), and a turned subtree has
 interval \((0,1/2)\). The exact product interval shows that one
 upper-interval factor together with any number of lower-interval factors
@@ -160,8 +161,10 @@ shaded disk triangles. At a leaf with half-segments
 literal strand matching fixes every cyclic vertex order and hence every
 white face boundary.
 
-Adding one terminal child supplies an explicit local cell attachment.
-Let \(h_v\) denote the quarter-turned crossing-circle tangle. Write its parent's unturned box as \(P_v=T^{-1}h_v\), so its exposed
+The geometric induction follows the same operation as the tangle
+construction: attach one terminal child in its prescribed slot.
+Let \(h_v\) denote the quarter-turned crossing-circle tangle. Write
+its parent's unturned box as \(P_v=T^{-1}h_v\), so its exposed
 tuple is \((v_3,v_0,v_1,v_2)\). If the old downstream matches are
 \(v_1-x_1\) and \(v_2-x_2\), insertion of \(h_w\) immediately after
 \(P_v\) replaces them by \begin{equation}
@@ -214,9 +217,9 @@ calculation.
 
 \section{Positive cells and primitive filling periods}\label{sec:circle-a-positive-geometric-path-rather-than-a-small-total-logarithm}
 
-For an edge with endpoint angular variables \(t,u\), the finite quantum
-sum has the following analytic phase. Its derivatives determine the
-geometric logarithms below: \begin{equation}
+One edge sum supplies the local action for both the quantum and the
+geometric calculations. If \(t,u\) are its endpoint angles, that action
+is \begin{equation}
  \begin{aligned}
  \psi(t,u)&=\operatorname*{stat}_{x}[b(x,t)+b(x,u)],\\
  b(x,t)&=\int_0^x\log(2\cos2\pi v+2\cos t)\,dv-2J(x),\\
@@ -258,7 +261,9 @@ the distinguished odd seam the original cross-copy disk maps exchange
 the prescribed punctures. Their full matrix edge words are identities.
 Positivity and continuation fix every interior edge angle at \(2\pi\).
 
-The actual meridian crosses the consecutive disk-page sectors once. A
+We must use the original peripheral paths, rather than infer a filling
+slope from the exponentiated equations. The actual meridian crosses
+the consecutive disk-page sectors once. A
 pure edge contributes \(-2\pi\psi_{\tau_v}\); the single retained half
 twist contributes \(-i\epsilon_v\tau_v\). The original primitive
 logarithms are therefore \begin{equation}
@@ -296,8 +301,9 @@ this path.
 \section{The action and the invariant have the same
 normalization}\label{sec:circle-the-action-and-the-invariant-have-the-same-normalization}
 
-The same actual cells fix the additive constant of the complex action.
-With \(V_v=2i\tau_v\), set \begin{equation}
+The cells also fix the additive constant of the action. Differential
+identities alone would leave that constant undetermined. With
+\(V_v=2i\tau_v\), set \begin{equation}
  G=2\pi i\left(\Psi-\sum_v\tau_v\Psi_{\tau_v}\right)
                                   +\frac12\sum_v\epsilon_v\tau_v^2.
  \label{eq:circle-17}
@@ -314,9 +320,9 @@ evaluated at \eqref{eq:circle-14}. Substitution of the original filling relation
 \end{equation} At \(c=1\), the right side is thus the volume of the knot complement
 just constructed.
 
-The finite invariant selects this action without an assumption about
-saddle dominance. The polynomial expansion of the finite invariant
-assigns an integer label \(0\le k<N\) to every internal edge. Its
+It remains to show that this action contributes to the invariant.
+Expand the original finite contraction by assigning an integer label
+\(0\le k<N\) to every internal edge. Its
 normalized label is \(x=k/N\); the high range is
 \(k>\lfloor(N-1)/2\rfloor\). The complete contribution of an edge is
 maximized at \(x=1/4\). Outside \([1/5,3/10]\), that edge loses a fixed
@@ -338,7 +344,8 @@ exponential error. The possible drop of the first action is at most
 \(\pi(2550/2401)\mathfrak S\), which \eqref{eq:circle-5} places below half the available
 error gap. Thus the selected term is nonzero for both parities of \(N\).
 
-The physical closing trace contributes exactly \(H_N\), and all
+After the source and contour errors have been removed, the physical
+closing trace contributes exactly \(H_N\), and all
 remaining crossing, changes of tensor order and zero-framing factors
 combine into the exact \(A_N\) in \eqref{eq:circle-4}. The bounded insertion on each
 retained edge is \(1+O(N^{-1})\); the conditioned saddle evaluation
@@ -356,7 +363,8 @@ retains the physical strand orientations and framing in \eqref{eq:circle-4}.
 \section{A geometric form of the numerical
 condition}\label{sec:circle-a-geometric-form-of-the-numerical-condition}
 
-At the complete auxiliary cusp the primitive shape is
+The numerical condition has a direct interpretation on the original
+complete cusps. At an auxiliary cusp the primitive shape is
 \(2i c_v/(1-i\epsilon_v c_v)\), where \(c_v=1/d_v\). The normalized
 length of a slope means its Euclidean length divided by the square root
 of the cusp area. For the actual primitive filling slope this gives \begin{equation}
@@ -372,11 +380,11 @@ criterion or classify all short fillings.
 \section{The preferred cusp and the first
 correction}\label{sec:circle-the-preferred-cusp-and-the-first-correction}
 
-The remaining cusp belongs to the knot itself. Normalize its meridian
-translation to one. Its preferred longitude, which has linking number
-zero with the knot, then translates by a complex number \(\tau_K\), the
-preferred cusp shape. This geometric normalization is needed to
-interpret the first correction in the quantum profile.
+The first correction records the remaining knot cusp. Normalize its
+meridian translation to one. The preferred longitude, characterized
+by linking number zero with the knot, then translates by the preferred
+cusp shape \(\tau_K\). This geometric marking is fixed before we
+compare it with the quantum correction.
 
 Let \(x_e^*\) be the branch in \eqref{eq:circle-12} evaluated at \(\boldsymbol\tau(1)\).
 The finite edge-insertion calculation retains one further term: \begin{equation}
@@ -413,8 +421,8 @@ fixed curve on the unfilled main boundary. At \(c=1\), surgery homology
 identifies it with the preferred longitude of the smooth filled knot
 complement.
 
-Here is why its translation formula applies beyond the initial
-small-deformation neighborhood. The edge blocks form a positive ideal
+To continue the translation formula along the filling path, use the
+marked geometric representation. The edge blocks form a positive ideal
 triangulation of the original augmented exterior. Near completeness,
 prescribing the main meridian logarithm and the primitive auxiliary
 longitude logarithms determines its marked shape germ uniquely. The
@@ -459,37 +467,3 @@ The shape in this formula belongs to the filled knot complement, not the
 complete augmented link. The exact scalar in \eqref{eq:circle-4} remains part of the
 statement; its quadratic expansion is the integer contribution to the
 preferred cusp in \eqref{eq:circle-24}.
-
-\section{The pointed quantum A-period}\label{sec:circle-pointed-a}
-
-Fix a genuine all-level quantum A-operator \(P\) annihilating the
-knot's reduced ADO family. The finite initial vector \(c_0\) of
-ordinary-color polynomials selects its solution. The
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_conway_pointed_quantum_a_volume.html}{pointed operator construction},
-Sections 2--3, gives an ordered recurrence row \(r_N(q)\) with
-\begin{equation}\label{eq:circle-pointed-identity}
- \mathscr P_N(P,c_0)
- =\operatorname{CT}_{t=0}
-    \bigl[r_N(q_N(1+t))c_0(q_N(1+t))\bigr]=K_N(K).
-\end{equation}
-The constant Laurent coefficient is taken after multiplying the
-whole row by the initial vector. This retains cancellations at
-singular recurrence steps and the required derivatives of the fixed
-initial data.
-
-\begin{corollary}
-Under the hypotheses of Theorem~\ref{thm:circle-quantitative},
-\begin{equation}\label{eq:circle-pointed-limit}
- \lim_{N\to\infty}\frac{2\pi}{N}
-       \log|\mathscr P_N(P,c_0)|
-                 =\Vol(S^3\setminus K).
-\end{equation}
-\end{corollary}
-\begin{proof}
-The exact reconstruction \eqref{eq:circle-pointed-identity} holds
-at every sufficiently large level. Substitute it in
-\eqref{eq:circle-6}.
-\end{proof}
-This is a limit for the operator with its specified initial data.
-Identifying the selected geometric factor of its classical symbol
-remains a separate problem and is not used in this corollary.

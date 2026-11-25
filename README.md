@@ -5,282 +5,230 @@ Kashaev invariants and the hyperbolic volumes of knot complements.
 **[Read the illustrated guide](https://sashakolpakov.github.io/murakamis_dream/)** ·
 [Research papers](papers/README.md) ·
 [Dependency graph](https://sashakolpakov.github.io/murakamis_dream/papers/dependencies.html) ·
-[Reference manuscript](manuscript/README.md) ·
+[Volume reference](manuscript/README.md) ·
 [Reproduction instructions](repro/README.md)
 
-For a fixed hyperbolic knot $K$, the volume conjecture predicts
+For a fixed hyperbolic knot \(K\), the volume conjecture predicts
 
-$$
+\[
  \lim_{N\to\infty}\frac{2\pi}{N}\log|K_N(K)|
        =\operatorname{Vol}(S^3\setminus K).
-$$
+\]
 
-Here $K_N(K)$ is the reduced Kashaev invariant at level $N$, with
-unknot value one. This repository develops proofs for specified
-families built from planar tangle diagrams. The diagram and every
-twist number are fixed while $N$ tends to infinity.
+Here \(K_N(K)\) is the reduced Kashaev invariant, with unknot value one.
+This repository develops proofs for specified planar tangle families.
+The finite diagram and every twist number are fixed before the level
+tends to infinity through all integers.
 
-For a first reading, start with
-[the diagram, its finite evaluation, and the meaning of the limit](https://sashakolpakov.github.io/murakamis_dream/guide/starting.html).
-The guide defines its terms before using the source-polynomial and
-geometric constructions. The
-[results chapter](https://sashakolpakov.github.io/murakamis_dream/guide/results.html)
-states the precise hypotheses for each family.
-Its [literature comparison](https://sashakolpakov.github.io/murakamis_dream/guide/results.html#comparing-the-result-with-other-volume-statements)
-also distinguishes the Kashaev limit from Turaev–Viro volume statements,
-and records restrictions such as odd levels or a specified link family.
+New readers can start with
+[the diagram, its finite evaluation and the meaning of the limit](https://sashakolpakov.github.io/murakamis_dream/guide/starting.html).
+The [results chapter](https://sashakolpakov.github.io/murakamis_dream/guide/results.html)
+states the different hypotheses. Its
+[literature comparison](https://sashakolpakov.github.io/murakamis_dream/guide/results.html#comparing-the-result-with-other-volume-statements)
+distinguishes this invariant and limit from Turaev–Viro statements and
+from results restricted to other level sequences or link families.
 
-## Planar constructions with arbitrarily many tangles
+## One strict Conway proof
 
-One general construction begins with a finite simple triangulation of
-the sphere and a pairing of its triangles across selected edges. Every
-triangle belongs to exactly one pair. The paired triangles specify
-crossing-circle tangles and the connections between their strands.
-The construction places the resulting augmented link in the three-sphere;
-it does not require the tangle operations to form a tree.
+The [16-page Conway paper](papers/conway-asymptotics/README.md) proves a
+nonzero whole-invariant asymptotic and the volume limit for every fixed
+strict Conway expression with at least two crossing circles, provided
+its strand connections give a knot and every auxiliary filling is
+independently sufficiently long. Strictness is an explicit finite test:
+each elementary leaf is a quarter-turned crossing-circle box;
+leaf labels lie in \((0,1/2)\), a turn complements a label, a product
+satisfies \(\max(x,y)<z<x+y<1\), and the closing outputs sum to one.
+An elementary closing child is allowed.
 
-There is an explicit finite decoration of this diagram for which the
-volume conjecture holds after all twist regions receive sufficiently
-long signed twists. At each original crossing circle, insert an even
-number of additional terminal tangles on each side. The numbers are
-chosen from the circle packing constructed in the proof. Give the new
-pieces odd crossing parity, and choose the original parities so that
-following the strands gives one knot. Every original and added twist
-number may then be chosen independently, with either sign, beyond one
-threshold for the decorated diagram.
+The proof uses only the pure auxiliary source. Exact expansion of each
+full integer crossing power handles odd, even, positive and negative
+twists before estimating that source. The wire lattice, factorial
+interpolation and nonzero Gaussian density are explicit. A global
+Fourier gap and the whole filling-sum theorem then control cancellation.
+The marked geometric comparison keeps the primitive integer slopes and
+identifies the absolute knot-complement volume.
 
-The resulting knot is hyperbolic and its reduced Kashaev invariant has
-the knot-complement volume limit through all integer levels. The added
-tangles preserve the chosen endpoint pairing, but generally change the
-knot. The theorem concerns this decorated knot; the original core’s
-powers must also be sufficiently long. The companion paper
-[Balanced circle packings from terminal tangle decorations](docs/papers/terminal-decorations.pdf)
-proves the literal insertion, the packing recurrence and strict balance
-at every old and new region. It imports the finite evaluation, analytic
-and geometric results stated in the foundation papers. The
-[statement and construction](https://sashakolpakov.github.io/murakamis_dream/guide/results.html#decorating-a-planar-diagram)
-explain the quantifiers and the geometric condition that the decoration
-establishes.
+The [volume reference](manuscript/README.md) includes these same proof
+files. The separate [quarter-index paper](papers/quarter-index-asymptotics/README.md)
+contains the signed local results needed for its recurrence argument.
 
-![A local insertion subdivides one triangle and preserves the original matching edge.](book/figures/balanced-terminal-fans.png)
+For each eligible fixed construction, the long-filling assignments have
+natural density one in their integer lattice. This is not density one
+among distinct knots. Infinitely many short-coordinate assignments
+remain outside the sufficient condition. Neither this theorem nor the
+other sufficient criteria classify all arborescent knots or prove the
+proposed arbitrary-short-filling extension.
 
-The proof controls the entire finite invariant, including the terms
-outside the geometric contribution. A strict inequality at each crossing
-circle, evaluated in one shared circle packing, makes those remaining
-terms exponentially smaller. The geometric contribution is nonzero.
-Its peripheral equations complete the auxiliary cusps by smooth solid
-tori while leaving the main knot cusp complete, so the limiting action
-is the volume of the actual knot complement.
+The separate [ordered-reduction paper](papers/conway-reductions/README.md)
+tracks net twists and the surviving closure before applying the strict
+theorem. Large written powers can cancel; its reduction and component
+hypotheses remain necessary.
 
-## When the original diagram already satisfies the packing condition
+## Exact operations that simplify the proof
 
-A further theorem requires no added tangles. If the complete circle
-packing satisfies the explicit **weak balance inequalities**, independently
-sufficiently long signed twists at the existing crossing circles give
-the full volume limit, provided the original strand connections form one
-knot with no extra closed main component. Equalities in the packing
-condition are allowed.
-The proof perturbs the radii used in the coefficient estimate: a linear
-entropy gain dominates the quadratic increase of the stationary action.
+The reference's conceptual chapter proves four concrete facts:
 
-This is a condition on the unchanged diagram, not a claim about every
-circle packing. [The statement and proof explanation](https://sashakolpakov.github.io/murakamis_dream/guide/results.html#an-unchanged-diagram-satisfying-weak-balance)
-define all its quantities. Appendix P gives the proof and a quantified
-extension allowing small failures of the local inequalities.
+- Finite synthesis \(c\mapsto Bc\) has coefficient Gram form \(G=B^*B\),
+  including any null directions; a closing row remains additional data.
+- Shifted discrete Fourier orthogonality gives Parseval with its exact
+  normalization.
+- The full Hermite coefficient vector, with derivatives at double roots,
+  has filling cost at most \(2\sqrt N(1+|n|/\sqrt{12})\).
+- Eliminating stationary variables gives the Schur complement of the
+  phase Hessian.
 
-## Joining certified diagrams
+Linear corridors are contracted exactly before estimates. One
+finite-lattice contour argument evaluates both the pure wire sum and its
+color Fourier transform. These operations preserve the full source and
+do not replace the global remainder or noncancellation arguments.
 
-A [triangular-sum theorem](https://sashakolpakov.github.io/murakamis_dream/guide/results.html#joining-diagrams-with-a-shared-weight-certificate)
-preserves the full source estimate when certified matched spheres are
-joined along specified triangles. Any fixed finite number of certified
-pieces is allowed. An explicit sequence has $17+r$ crossing regions
-after $r$ attachments and retains a failure of weak balance at its mark.
-Its strict source certificates nevertheless give the volume limit after
-independently sufficiently long fixed fillings. Appendix Q defines the
-operation, its input certificates and its knot-component requirement.
+The chapter on complex asymptotics proves the packet-to-volume
+implication. A nonzero limiting amplitude and a strict exponential gap
+for the **entire** remainder give eventual nonvanishing and an ordinary
+all-level logarithmic limit. A separate zero-safe cost lemma explains
+why nonnegative polynomial filling costs preserve a source upper rate.
 
-Appendix R permits an insertion away from the protected edge. Its
-attaching triangle has three positive circle curvatures; two must be
-sufficiently small relative to the third at every coefficient witness
-used by the core. An explicit even chain makes these ratios as small
-as required. Consequently any fixed finite collection of certified
-pieces can be attached to a suitable core, followed by independently
-long fixed signed twists. The
-[construction and proof](https://sashakolpakov.github.io/murakamis_dream/guide/results.html#inserting-a-piece-at-an-ordinary-triangular-face)
-explain the boundary condition and the exact coefficient demands.
-
-## Ordered tangle trees and explicit bounds
-
-The reference account also develops Conway’s algebraic, or arborescent, constructions
-by stacking and turning rational tangles. A reduction combines twist
-boxes that can be brought together. Sufficiently large surviving *net*
-twists give the volume limit; large individual counts alone need not
-suffice when opposite signs cancel.
+## Independent tree criteria
 
 For an ordered tree with a crossing-circle tangle at every vertex and
-at least one edge, a separate theorem gives an explicit sufficient
-condition. If the signed crossing power at every vertex has magnitude
-at least $2^{27}$, the volume equality holds, independently of the tree’s
-size and depth. More generally, each vertex may satisfy either this
-twist bound or the degree bound $2^{28}$. The latter allows any fixed power,
-including zero. The original strand connections must form one knot,
-with no extra component closed inside a tangle.
+at least one edge, write \(d_v\) for the degree and \(n_v\) for the
+signed crossing power. The
+[circle-tree volume paper](docs/papers/circle-tree-volume.pdf)
+proves the volume limit under the summed condition
 
-The [results chapter](https://sashakolpakov.github.io/murakamis_dream/guide/results.html)
-also gives a summed criterion that can produce smaller bounds for a
-particular tree, and explains the exact net-twist and closure reductions.
-These explicit tree bounds and the planar decoration theorem have
-different hypotheses; neither is a classification of all hyperbolic knots.
+\[
+                  \sum_v\frac{d_v}{d_v^2+n_v^2}\le2^{-25},
+\]
 
-Two new companions extract separate inputs to the tree proofs.
-[Newton coefficients and positive sources for Conway tangles](docs/papers/newton-tangles.pdf)
-proves the exact turn, product, closure and circle formulas, including
-repeated-root derivatives, and the variational limit of the positive
-complete auxiliary-color source. Signed fillings still require their
-own remainder and noncancellation estimates.
+or its separate directed criterion. A simple consequence of the
+directed criterion permits, at each vertex,
+
+\[
+                  d_v\ge2^{28}\quad\text{or}\quad |n_v|\ge2^{27}.
+\]
+
+The degree alternative allows a fixed short or zero power. The tree
+does not grow with the quantum level, and the strand connections must
+form one knot without a component closed inside a box. The summed and
+directed arguments retain their own source estimates and geometry;
+they are not consequences of weakening the strict Conway threshold.
+The local ratio test
+\(\max_v d_v/(d_v^2+n_v^2)\le2^{-120}\) is a direct corollary of the
+directed theorem, with no separate quantum induction. The summed proof
+also retains its explicit first microscopic meridian correction; the
+directed and local conclusions give the centered ratio \(1+O(N^{-1})\).
+
 [Positive octahedra and primitive fillings for trees of crossing circles](docs/papers/circle-tree-geometry.pdf)
-constructs the actual filled hyperbolic metric whenever
-$\sqrt{d_v^2+n_v^2}\ge630$ at every vertex. This geometric criterion permits
-zero powers at high degree; it does not by itself prove a quantum limit.
-Its peripheral-volume input is a local differential from the geometric
-foundation, so no independently long-twist assumption is imposed on
-these zero-power cases.
+constructs the marked metric under the geometric condition
+\(\sqrt{d_v^2+n_v^2}\ge630\). This metric criterion alone is not a
+quantum volume theorem.
 
-[Volume asymptotics for trees of crossing circles](docs/papers/circle-tree-volume.pdf)
-proves two distinct sufficient conditions in one 27-page account. The
-summed condition is $\sum_v d_v/(d_v^2+n_v^2)\le2^{-25}$; the directed
-condition uses local estimates along the tree. The proofs share their
-finite kernel and Fourier trace, then establish their own remainder and
-noncancellation estimates. Both give a uniform microscopic meridian
-profile. The explicit first correction is retained under the summed
-condition alone. Each proof verifies the geometric threshold above.
+## Planar constructions beyond trees
 
-For every fixed strict Conway expression with at least two original
-crossing circles,
-[Holomorphic source asymptotics and volume limits for strict Conway compositions](docs/papers/conway-asymptotics.pdf)
-proves the nonzero leading term of the entire filled invariant and its
-volume limit, provided the actual closure is a knot and all signed powers
-are independently sufficiently long. It imports the strict optimizer,
-whole complementary-source bound and marked geometry by numbered theorem,
-then proves the pure-source expansion and absolute action comparison.
-Its separate signed local results and the quarter-index paper are not
-premises of this volume theorem.
+A second construction starts from a finite simple triangulation of the
+sphere with every triangle paired to an adjacent triangle. The paired
+faces determine crossing-circle tangles and their strand connections.
+A prescribed finite decoration inserts even stacks of odd terminal
+tangles on both sides of each original crossing circle. The circle
+packing determines how many are needed.
 
-## The meridian and the A-polynomial
+[Balanced circle packings from terminal tangle decorations](docs/papers/terminal-decorations.pdf)
+proves the insertion and the strict packing inequalities at every old
+and new region. Independently sufficiently long signed fillings at
+**all** those regions then give the volume limit for the decorated
+knot. The construction preserves its chosen endpoint pairing and
+generally changes the knot type.
 
-The 20-page
-[moving-meridian source paper](docs/papers/moving-meridian-sources.pdf)
-controls the actual finite source when the main meridian is
-$M=q_N^s$, with $s$ in the stated fixed microscopic parameter sets.
-It treats arbitrary strict product junctions, retains their shared
-indices and proves a nonzero joint filling contribution for independently
-long fixed signed powers. This supplies the error bounds needed to
-expand the whole invariant, rather than only its selected local term.
+![A local insertion subdivides a triangle and preserves the matching edge.](book/figures/balanced-terminal-fans.png)
 
-The 13-page
-[meridian-expansion paper](docs/papers/meridian-expansions.pdf)
-then proves every inverse-level order for these strict sources and,
-separately, for circle trees satisfying the summed or directed criterion.
-The estimates hold on the translated parameter sets needed by a fixed
-recurrence. The degree of each logarithmic coefficient identifies its
-highest-degree term with the stationary action. A separate classical
-argument identifies the resulting germ with the preferred longitude;
-in particular, the first correction is determined by the preferred cusp
-shape. The analytic expansion itself does not assume that geometric
-identification.
+For an unchanged matched sphere, the reference instead assumes the
+explicit weak balance inequalities, including their stated small-defect
+variant. A perturbation of the coefficient radii gives a linear entropy
+gain at a quadratic action cost. No assertion that every complete
+packing satisfies weak balance is made.
 
-Theorem 1.2 and Corollary 8.1 give a conditional consequence: start with a
-specified fixed nonzero operator annihilating the **whole reduced
-meridian function at every sufficiently large integer level**. Its first
-nonzero classical symbol contains the selected geometric irreducible
-factor. The proof retains the meridian divisor and sign in the exact
-reduced/full normalization. It does not construct such an operator,
-identify every A-polynomial factor or its multiplicity, or establish the
-full AJ conjecture. For strict sources, the geometric corollary takes
-the larger of the analytic and classical filling thresholds.
-The new decorated planar theorem concerns the complete meridian value;
-a corresponding moving-meridian theorem for that larger class remains
-separate work.
+Two further gluing results use full shared-weight certificates.
+Protected triangular sums preserve them through a fixed finite
+assembly. Ordinary triangular insertion requires two sufficiently small
+boundary ratios at every chosen core witness; an explicit chain
+constructs suitable cores. These results keep the original coefficient
+demands and all locally allowed noncentral sectors. The
+[worked statements](https://sashakolpakov.github.io/murakamis_dream/guide/results.html)
+give their precise knot and filling conditions.
 
-## Reading and reproducing the work
+The geometric-contribution theorem for a general unchanged matched
+sphere has a narrower conclusion: it evaluates one nonzero contribution,
+not the entire remainder. A further source estimate is required before
+that contribution gives a whole-invariant volume limit.
 
-Choose a theorem in the
-[dependency graph](https://sashakolpakov.github.io/murakamis_dream/papers/dependencies.html)
-and open **The recorded proof route**. This lists the statements it uses
-in prerequisite order, with each shared result appearing once. Follow
-that route through the [papers organized by subject](papers/README.md);
-there is no need to read the whole collection before approaching one
-application. The graph records declared theorem uses. Its cycle and
-source-location checks do not verify the proofs themselves.
+## Reading routes and separate developments
 
-The collection currently contains **21 drafts, totaling 403 pages**, each
-between 11 and 29 pages. These are provisional mathematical groupings,
-not a decision to publish 21 separate papers. Shared finite algebra,
-coefficient estimates, asymptotic analysis and hyperbolic geometry should
-each have a clear home. An application cites the numbered statements it
-needs and checks their hypotheses.
+For the strict volume theorem, use the
+[Conway paper's input list](papers/conway-asymptotics/README.md#proof-inputs)
+or expand **The recorded proof route** in the
+[dependency graph](https://sashakolpakov.github.io/murakamis_dream/papers/dependencies.html).
+That route names the finite Newton calculus, strict optimizer,
+whole-source bound, oscillatory filling theorem and marked geometry.
+A paper that supplies one lemma does not thereby contribute all its
+other results to the proof.
 
-The [frozen reference manuscript](manuscript/README.md) has 374 pages:
-93 pages of main text, 266 pages in eighteen appendices, 13 pages of front
-matter, and two pages of references. Several mathematical projects
-accumulated in that account, with repeated setup and summaries followed
-by full proofs. Its length is not the length of one proof of the general
-volume conjecture. Splitting the material has made individual arguments
-easier to follow, but has not reduced the total page count. Current
-papers also contain expanded proofs and broader results. The Newton,
-circle-tree and Casimir consolidations have removed ten pages of overlap;
-we have not measured how much more can be removed. The
-[manuscript guide](https://sashakolpakov.github.io/murakamis_dream/guide/manuscript.html)
-explains the current division and the [errata](manuscript/ERRATA.md)
-record corrections to the frozen account.
+The [paper guide](papers/README.md) also keeps independent
+moving-meridian, all-orders and preferred-longitude papers accessible.
+Their conditional recurrence-symbol conclusion assumes a specified
+fixed nonzero all-level annihilator; it does not construct one or prove
+the full AJ conjecture. Those developments are outside the active
+volume reference.
 
-The [closing assessment](repro/RETAINED_RELEASE_ASSESSMENT.md) records the
-completed review of the retained restricted results. For each volume
-conclusion, the proof needs an exact invariant formula, a nonzero leading
-term, a bound for the whole remainder, the intended hyperbolic metric,
-and an absolute comparison between its volume and the same action.
-The open remainder estimate for general unchanged diagrams is not an
-input to the retained restricted-family arguments. Further families,
-stronger estimates and the general conjecture remain separate research.
-
-There are three different kinds of checks:
-
-- The [finite reproduction suite](papers/README.md#building-and-reproducing-the-papers)
-  runs 22 groups covering exact formulas, rational and interval
-  inequalities, normalization factors and endpoint pairings. It does
-  not infer an asymptotic theorem from sampled levels.
-- The [Lean library](formal/README.md) proves finite algebra and theorem
-  assembly. The [Mathlib extension](formal-real/README.md) also proves
-  concrete calculus, norm and logarithmic-limit results, formal series
-  identities and the nonzero classical-symbol implication under its
-  stated recurrence assumptions. The
-  [coverage record](repro/PAPER_FORMAL_COVERAGE.md) identifies the written
-  analytic, geometric and topological inputs. No actual knot-family
-  theorem is claimed as an end-to-end Lean proof.
-- The [guide checks](book/README.md#rebuilding-the-guide) verify rendered
-  formulas, navigation and illustration assets. Paper builds check
-  typesetting, references and page limits.
-
-The [illustrated guide](https://sashakolpakov.github.io/murakamis_dream/)
-is the maintained web exposition. Its
+The revised volume account incorporates the
+[first-edition errata](manuscript/ERRATA.md). Earlier tracked versions
+are available in Git history. Historical alternative
+approaches remain in the guide's
 [methods](https://sashakolpakov.github.io/murakamis_dream/guide/methods.html)
 and [algebraic approaches](https://sashakolpakov.github.io/murakamis_dream/guide/algebraic.html)
-chapters retain the Fourier, torsor, weighted Cauchy, cube and other
-approaches, including unsuccessful comparisons and the reasons they
-failed. Definitions, literature references and limitations accompany
-those discussions. The
-[research library](https://sashakolpakov.github.io/murakamis_dream/library.html)
-keeps the detailed notes available. Historical approaches are not extra
-premises of a current theorem. Former Sphinx addresses redirect to the
-guide; there is no second exposition to maintain.
+chapters and in the
+[research library](https://sashakolpakov.github.io/murakamis_dream/library.html).
+They are not additional premises of the current theorem.
+
+## Reproduction and builds
+
+The [reproduction guide](repro/README.md) distinguishes written proofs,
+exact rational certificates, optional finite checks and typesetting.
+Finite samples do not prove uniform analytic estimates or metric
+completion. The [Lean code](formal-real/README.md) proves the retained
+Gram and Schur block algebra, the actual shifted Fourier–Hermite mass
+bound at every \(N\ge2\), and direct complex rate transfer.
+[ConwayAssembly](formal-real/ConwayAssembly.lean) derives the whole
+filled-remainder estimate from the exact coherent color contraction and
+that coefficient bound. The source contour, nonzero packet and marked
+geometry remain explicit written inputs. The [coverage map](formal/coverage.json)
+names each module's manuscript statement. The
+[cleanup record](repro/PROOF_PATH_CLEANUP_2026-11-25.md) gives the source
+changes and replay.
+
+Superseded proof sources and modules are deleted rather than copied
+into backup directories. Use Git history for earlier tracked versions.
+
+To build only the standalone Conway paper:
+
+```sh
+python3 tools/build_papers.py conway-asymptotics
+```
+
+To build the reference and guide:
+
+```sh
+python3 tools/build_manuscript.py
+python3 tools/build_book.py
+python3 tools/check_book.py
+```
 
 | Directory | Contents |
 | --- | --- |
-| `papers/` | Current subject drafts, earlier editions, and the dependency inventory |
-| `manuscript/` | Frozen reference manuscript, illustrations, bibliography and errata |
-| `repro/` | Reproduction commands, recorded results and scoped proof reviews |
-| `formal/` | Lean proofs of finite algebra and internal implications |
-| `formal-real/` | Mathlib proofs of calculus, limits and formal-series implications |
+| `papers/` | Current subject papers and the dependency inventory |
+| `manuscript/` | The active volume reference, figures, bibliography and errata |
+| `repro/` | Reproduction commands and scoped records |
+| `formal/` | Exact finite algebra, source support and scalar certificate proofs in Lean |
+| `formal-real/` | Gram, Fourier–Hermite, Conway assembly and variational proofs in Mathlib |
 | `book/` | Illustrated-guide sources and editable diagrams |
 | `docs/` | Published guide, dependency graph and PDFs |
 | `notes/` | Detailed arguments and historical research notes |

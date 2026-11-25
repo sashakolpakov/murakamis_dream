@@ -7,15 +7,18 @@ citable independently of an asymptotic theorem; a geometric filling
 construction should state precisely the information needed to compare
 its volume with a quantum action.
 
-The 374-page reference account contains 93 pages of main text, 266 pages
-of appendices, and 15 pages of front matter and references. The appendices
-collect several subjects: finite quantum algebra, geometric constructions,
-asymptotic estimates, sufficient conditions for different knot families,
-and meridian and longitude results. Those subjects accumulated in one
-file; the length does not show that one theorem requires 374 pages.
-The account remains frozen, with corrections recorded in its
-[errata](../manuscript/ERRATA.md). The working limit of 30 pages per paper
-is an editorial constraint, not the principle for grouping results.
+The first reference edition collected finite quantum algebra, geometric
+constructions, asymptotic estimates, several volume families, and
+meridian and longitude results in 374 pages. Earlier tracked versions
+remain in Git history.
+The active [volume reference](../manuscript/README.md) now follows the
+same pure-source Conway proof as the 16-page application paper, using
+the same proof files. It retains the independent tree and planar volume
+families; standalone meridian and recurrence developments remain in
+their separate papers. The reference incorporates its
+[errata](../manuscript/ERRATA.md). Its length is not the length of one
+proof. The working limit of 30 pages per subject paper is an editorial
+constraint, not the principle for grouping results.
 
 [Explore the dependency graph](../docs/papers/dependencies.html).
 Each statement lists the results it uses, the reason for each use, and
@@ -40,12 +43,10 @@ every subject in the collection. The route follows the named uses in
 the inventory; it does not automatically include every result from an
 article that supplies one lemma.
 
-The current Casimir-source proof defines its finite action directly
-from the exact cofactor polynomial. The earlier fold interpolation
-remains in the reference account and guide as an alternative construction;
-the direct proof does not require both routes. This is one concrete way
-the dependency analysis shortens the presentation without removing a
-needed argument.
+The Casimir-source proof defines its finite action directly from the
+exact cofactor polynomial. The strict Conway volume argument uses only
+the pure source. The separate quarter-index paper proves the signed
+local result needed for its recurrence theorem.
 
 Three other distinctions determine the division. The classical filling
 construction does not need a nonzero quantum asymptotic; their comparison
@@ -59,8 +60,7 @@ common core for several inserted diagrams also uses protected gluing.
 
 ## The current drafts
 
-The twenty-one current drafts total 403 pages, with individual lengths from
-11 to 29 pages. These are provisional subject groupings, not a decision
+The twenty-one current drafts are provisional subject groupings, not a decision
 to publish twenty-one separate papers. Each gives the proofs of its stated results and names
 its numbered companion imports. Eight earlier editions, totaling
 another 113 pages, are preserved below for existing citations. This is a
@@ -68,9 +68,10 @@ division of the retained results into citable components; the reading
 routes are explained at the end of this guide. The aggregate page count
 is not a measure of compression: separate papers repeat their conventions
 and references, and some supply arguments only sketched in the reference.
-The Newton, circle-tree and Casimir mergers have removed ten pages of
-overlap: 32 became 26 pages, 30 became 27, and 26 became 25. No estimate
-has yet been made of the total dispensable material. The aim is to make
+The Newton, circle-tree and Casimir mergers state their common arguments
+once. The Conway application has also been reduced from 22 to 16 pages
+by removing the unused signed route and writing the pure-source
+calculation in full. The aim is to make
 each proof independently readable and citable while giving every shared
 argument one home.
 
@@ -190,7 +191,7 @@ imports are the stationary-profile theorem and the general primitive
 completion and volume differential. There is no quantum asymptotic
 premise.
 
-**Holomorphic source asymptotics and volume limits for strict Conway compositions.** 20 pages.
+**Holomorphic source asymptotics and volume limits for strict Conway compositions.** 16 pages.
 [TeX source](conway-asymptotics/main.tex) ·
 [PDF](../docs/papers/conway-asymptotics.pdf)
 
@@ -214,10 +215,13 @@ An explicit classical shear then identifies the quantum action with the
 primitive filling action on the actual retained half-twist partner.
 The calculation keeps its additive constant and the integer slope;
 odd powers are not treated as half-integral surgery on another partner.
-The signed local coefficient and completed-root source expansions remain
-proved in the same article as separate reusable results. The strict
-volume route does not require those signed expansions or the
-quarter-index recurrence theorem.
+The canonical factorial lemma, exact pure leaf, primitive wire offsets,
+gate density, physical remainder and complex color bound are all stated
+on this one proof path. The pure source is Theorem 3.1 and its Fourier
+estimate is Proposition 3.2. The reference includes these same proof
+files. The separate quarter-index paper proves its own signed local
+source statements. Its recurrence theorem is not a
+premise of the volume result.
 
 **Moving-meridian source estimates for strict Conway tangles.** 20 pages.
 [TeX source](moving-meridian-sources/main.tex) ·
@@ -277,7 +281,7 @@ applies. The paper gives a criterion on terminal factors and a sufficient
 condition on all nonzero subset sums. It supplies no numerical universal
 twist threshold and makes no claim about all short-twist arborescent knots.
 
-**Asymptotics of signed Newton coefficients near the quarter index.** 11 pages.
+**Asymptotics of signed Newton coefficients near the quarter index.** 14 pages.
 [TeX source](quarter-index-asymptotics/main.tex) ·
 [PDF](../docs/papers/quarter-index-asymptotics.pdf)
 
@@ -489,7 +493,12 @@ requires, independently at every vertex, degree at least $2^{28}$ or
 absolute signed crossing power at least $2^{27}$. Large-degree vertices
 may keep zero power. This proof gives a centered meridian ratio
 $1+O(N^{-1})$; the sharper correction in Theorem 1.2 is not assigned to
-it. The simpler uniform local ratio condition remains a corollary.
+it. The uniform local ratio condition
+$\max_v d_v/(d_v^2+n_v^2)\le2^{-120}$ is a direct corollary of the
+directed theorem: the elementary implication to the degree-or-twist
+alternative is written out in the reference's
+[local criterion](../manuscript/sections/08b-local-circle-messages.tex).
+There is no third quantum induction for that corollary.
 
 Each proof checks the hypotheses of the positive-octahedra companion,
 which identifies its selected action with the volume of the original
@@ -669,6 +678,11 @@ criterion is not inferred from the summed one, and neither requires the
 strict Conway long-power hypothesis. Both routes supply the source
 estimates used by Meridian Expansions. The dependency graph retains their
 separate assumptions and theorem uses within the combined article.
+The local ratio test uses the directed route. The summed route keeps
+its explicit first microscopic correction; the directed and local
+statements give the centered ratio $1+O(N^{-1})$. The separate
+$L_v\ge630$ theorem constructs the positive filled metric and is not
+a quantum source estimate.
 
 For the matched-sphere applications, **Spectral bounds and asymptotics
 of Casimir sources** gives the local sector estimates in Sections 1–7.
@@ -679,9 +693,10 @@ comparison. The planar certificate, terminal-decoration, triangular-insertion
 and three-braid papers prove their own sufficient estimates for the full
 complementary source. A central Gaussian alone does not supply those estimates.
 
-The frozen reference manuscript's first theorem uses its completed-root
-grammar. The companion accounts now cover the larger strict syntax through
-its own variational, source and marked-geometry arguments. A further
+The reference manuscript and the 16-page application now share the same
+strict pure-source proof. An elementary closing child and a leaf at
+one quarter are allowed. The theorem retains strict feasibility, the
+knot component test and independently long fixed fillings. A further
 topological reduction can change the written expression before this
 theorem is applied. The tangle-reduction paper supplies that step: large
 written twists may cancel to a small net twist, and a vanishing net twist may change
@@ -700,9 +715,30 @@ The conditional operator conclusion retains its all-level hypothesis.
 Neither it nor the restricted volume theorems resolve the complementary
 source estimate for every unchanged planar diagram.
 
-The illustrated guide retains the broader approaches and unsuccessful
-comparisons. The reference manuscript remains available for the existing
-full account. Exploratory research is separate from this editing work.
+The illustrated guide retains broader approaches and unsuccessful
+comparisons in its methods chapters. Its manuscript chapter describes
+the current volume proofs. Earlier tracked editions remain in Git history.
+
+## Lean statements used by the current volume account
+
+The [active formalization](../formal-real/README.md) proves the following
+retained statements.
+[CoefficientGram](../formal-real/CoefficientGram.lean) proves the
+synthesis Gram form, kernel and closing upper bound;
+[FourierHermite](../formal-real/FourierHermite.lean) proves shifted
+reconstruction, Parseval and the full value/normal coefficient mass bound at $N\ge2$;
+and [StationaryElimination](../formal-real/StationaryElimination.lean)
+proves the complex bilinear Schur block algebra.
+[ConwayAssembly](../formal-real/ConwayAssembly.lean) uses the actual
+crossing coefficients to bound the entire coherent color error, then
+applies [RealTransfer](../formal-real/RealTransfer.lean) to a nonzero
+complex packet with its finite action retained.
+
+The exact source identity, contour estimates, nonzero packet and marked
+volume equality remain explicit inputs. The
+[coverage map](../formal/coverage.json) records the manuscript anchors
+and the [cleanup record](../repro/PROOF_PATH_CLEANUP_2026-11-25.md)
+records the replay.
 
 ## Building and reproducing the papers
 

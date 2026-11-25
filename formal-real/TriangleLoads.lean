@@ -9,14 +9,17 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 
 /-!
-Actual derivatives of the three arctangent loads of an exponential triangle.
-Nonnegative corner coefficients and a positive radicand include both a fully
-positive triangle and a triangle with exactly one zero corner. The resulting
-Jacobian is identified with the explicit three-edge graph form.
+Derivatives of the three arctangent loads in logarithmic corner weights.
+The fixed nonnegative coefficients may include one zero corner when the
+radicand is positive. Chain rules and one rational identity give the full
+Jacobian, whose bilinear form counts the three unordered corner pairs once.
+A shared vertex function then assembles any finite collection of triangles.
 
-The downstream `TrianglePotential` and `TriangleBalance` modules construct
-the entropy-envelope potential and prove that these loads give its gradient.
-Identifying the geometric incidence data remains an application input.
+The coefficients remain fixed along every logarithmic path. A singleton row
+has a separate constant load; it is not defined by substituting D = 0 into
+the arctangent formula. `TrianglePotential` proves that the loads differentiate
+the entropy supremum. Geometric incidence and the physical source pairing
+are separate from this real Jacobian calculation.
 -/
 
 namespace VolumeLogic.TriangleLoads

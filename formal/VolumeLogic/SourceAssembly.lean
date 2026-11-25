@@ -10,6 +10,11 @@ multiplicities. Nothing in these statements replaces that list by one
 selected term. The source identity, local estimates and the bound for
 the actual filling functional are hypotheses; their analytic and
 geometric proofs are not supplied by this module.
+
+`filling_sector_sum` and `filled_remainder_identity` are exact identities in
+the coefficient ring. `magnitude_sector_sum` is a subsequent inequality.
+Keeping that order preserves the coherent sum and its cross terms; none of
+these results identifies the marked closing with a sum of squared norms.
 -/
 
 universe u v w z

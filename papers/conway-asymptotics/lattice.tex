@@ -1,0 +1,87 @@
+\subsection{One contour argument for the two lattices}
+\label{ca:lattice-method}
+
+The internal wire sum and the later color Fourier sum have the same
+analytic form. We give the contour argument once. It explains why a
+Gaussian critical point contributes to these finite sums with the
+claimed coefficient.
+
+\begin{latticelemma}
+Let $\mathcal B\subset\mathbb R^k$ be a fixed rectangle and let
+$F(y,t)$ and $b(y,t)$ be holomorphic on a fixed complex neighborhood
+of $\mathcal B\times\{0\}$. Suppose that $F(y,0)$ is real for real
+$y$, has a unique maximum $y_0$ in the interior of $\mathcal B$,
+and has negative definite Hessian there. Suppose also that
+$b(y_0,0)\ne0$.
+
+Let $b_N=b+O(N^{-1})$ holomorphically on this neighborhood, with
+the same bound for every fixed number of derivatives on smaller
+neighborhoods. Then, for small complex $t$,
+\begin{align*}
+ &\sum_{j/N\in\mathcal B}
+       N^\rho b_N(j/N,t)e^{NF(j/N,t)}\\
+ &\qquad=
+ N^{\rho+k/2}
+ \frac{(2\pi)^{k/2}b(y_*(t),t)}
+      {\sqrt{\det[-F_{yy}(y_*(t),t)]}}
+ e^{NF(y_*(t),t)}(1+O(N^{-1})).
+\end{align*}
+Here $y_*(t)$ is the continuation of $y_0$, and the square root is
+positive at $t=0$. The expansion is uniform on a fixed parameter
+polydisk, with every fixed derivative on smaller polydisks. The
+lattice is $N^{-1}\mathbb Z^k$, with no extra covolume factor.
+\end{latticelemma}
+
+\begin{proof}
+The implicit-function theorem gives $y_*(t)$ and its nonsingular
+Hessian. At $t=0$, compactness gives a fixed phase loss on the
+boundary of $\mathcal B$ and outside a small ball about $y_0$.
+
+In one coordinate, move each endpoint by at most $1/N$ to a
+half-grid point without changing the enclosed lattice points.
+The function $\pi N\cot(\pi Nz)$ has residue one at every
+$j/N$. Integrate it around the resulting rectangle with horizontal
+sides at heights $\pm a$, where $a>0$ is fixed and small.
+On a vertical half-grid side its modulus is at most $\pi N$;
+on the horizontal sides it is
+$\mp\pi N\ii+O(Ne^{-2\pi Na})$.
+
+Because the complete phase is real on the real rectangle, moving
+an imaginary distance at most $a$ changes its real part by at most
+$Ca^2$. The color perturbation costs at most $C\|t\|$ on this
+fixed tube. Choose $a$ first, so that $Ca^2$ is smaller than one
+quarter of the boundary loss and smaller than $\pi a$. Then shrink
+the parameter polydisk. Every vertical side and every nonconstant
+cotangent term has a fixed exponential loss relative to the
+continued critical value.
+
+The two constant horizontal terms each give one half of $N$ times
+the real integral. Their connecting vertical segments have the
+same boundary loss. Apply this argument in every coordinate.
+The finite sum is therefore $N^k$ times the integral over
+$\mathcal B$, up to an exponentially smaller absolute error.
+The $O(N^{-1})$ strips between the half-grid rectangle and
+$\mathcal B$ have the same fixed boundary loss. In particular there
+is no multiplicity $2^k$.
+
+Translate the integral to the parallel contour through $y_*(t)$.
+The connecting faces retain the boundary loss. On a small fixed
+ball the real part of $-F_{yy}$ remains positive definite.
+With $u=\sqrt N(y-y_*)$, the quadratic term gives the displayed
+Gaussian determinant. The cubic phase term and linear amplitude
+term are odd and integrate to zero. Taylor's formula and Gaussian
+domination bound the remaining relative error by $O(N^{-1})$;
+outside the ball there is a strict exponential loss. The factors
+$N^k$ from the grid and $N^{-k/2}$ from the Gaussian give the
+stated power. Holomorphy and Cauchy's formula give the derivative
+bounds.
+\end{proof}
+
+Eliminating stationary variables is compatible with this calculation.
+If $\Phi(t)=F(y_*(t),t)$, differentiation of $F_y=0$ gives
+\[
+ \Phi_{tt}=F_{tt}-F_{ty}F_{yy}^{-1}F_{yt}.
+\]
+This is the Schur complement of the wire Hessian. In the pure
+source, evenness in every color gives $F_{yt}(y,0)=0$, so its
+complete color Hessian can be read directly from the leaves.

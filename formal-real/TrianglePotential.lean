@@ -5,10 +5,18 @@ import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 import Mathlib.Analysis.Calculus.Deriv.Shift
 
 /-!
-The actual Lobachevsky triangle entropy and its supported variational envelope.
-The potential is defined by the same integral and constrained maximum as in
-the written triangle-potential arguments, not by integrating an assumed
-gradient field. Geometric incidence and packing identifications are separate.
+Lobachevsky triangle entropy and its supported variational envelope.
+The potential is the constrained supremum used in the manuscript. Its
+explicit arctangent maximizer proves attainment; differentiating that value
+cancels the load derivatives by their common multiplier and fixed total mass.
+The second derivative along a shared logarithmic path is the graph energy.
+
+Support coefficients are fixed. The theorems called `mixed` combine regular
+and singleton rows; they do not refer to mixed partial derivatives between
+retained and eliminated variables. In particular this module does not prove
+stationary elimination, a Schur-complement formula, or continuity as support
+coefficients vanish. Circle-pattern realization and volume calibration are
+also separate application steps.
 -/
 
 namespace VolumeLogic.TrianglePotential
@@ -577,8 +585,8 @@ theorem summedPotential_path_second_at {T V : Type*} [Fintype T] [Fintype V]
   funext j
   ring
 
-/-- The same shared potential may contain singleton rows. The partition and
-sole active corners are explicit data, not conclusions about a geometric mesh. -/
+/-- A mixture of regular and singleton rows in the same shared potential.
+The partition and sole active corners are explicit fixed-support data. -/
 theorem summedPotential_mixed_hasDerivAt {T V : Type*} [Fintype T] [Fintype V]
     (corners : T → Fin 3 → V) (a : T → Fin 3 → ℝ) (demand q h : V → ℝ)
     (regular : T → Prop) [DecidablePred regular] (active : T → Fin 3)

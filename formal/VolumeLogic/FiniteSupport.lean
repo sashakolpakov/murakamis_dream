@@ -23,9 +23,4 @@ theorem central_endpoint_odd (m i j : Nat) (hj : j ≤ 2*m) :
     (i ≤ (2*m)/2 ∧ 2*m-j ≤ (2*m)/2) ↔ (i ≤ m ∧ m ≤ j) := by
   omega
 
-/-- The sine-Cauchy moment matrix only uses moments strictly below N-1. -/
-theorem protected_moment_degree (N i j : Nat) (hN : 2 ≤ N)
-    (hi : i ≤ N/2-1) (hj : j ≤ N/2-1) : i+j ≤ N-2 := by
-  omega
-
 end VolumeLogic

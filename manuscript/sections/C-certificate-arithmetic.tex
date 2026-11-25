@@ -1,11 +1,11 @@
 \chapter{The exact certificate arithmetic}\label{app:certificate}
 
-The inequalities in Chapter~\ref{ch:alias} concern continuous domains. Their certificates are finite because concavity bounds each alias action by a tangent plane, while a feasible pure point bounds the pure maximum from below. The remaining difference is affine in the domain variables and slope parameters. It is therefore enough to check finitely many vertices and corners, provided coverage and all transcendental errors are controlled. This appendix supplies those controls.
+The alias inequalities hold on continuous domains, but their proof reduces to rational arithmetic. Concavity bounds an alias action from above by a supporting tangent plane. A feasible pure point bounds the pure maximum from below. Subtracting these bounds leaves a function affine in the domain variables and slope parameters, so its minimum occurs among finitely many vertices and corners. This appendix explains the reduction, the exact cover of the parameter domain, and the error bounds for the transcendental functions.
 
-\section{A finite proof object}
+\section{From concavity to a finite certificate}
 The two main certificates consist of rational points and exact coverage data. The two-leaf block table has sixteen closed slope intervals, one rational feasible pure point and two strict alias tangent points per interval. The attachment table is a recursively subdivided dyadic cover of $[-2,0]^2$ with 55 leaves, one pure point and one alias tangent point per leaf. The verifier checks feasibility and coverage before evaluating an inequality. It then checks every slope corner and every vertex of the appropriate product polytope.
 
-The mathematical reason this finite object is sufficient is independent of the way candidate points were found. A feasible pure value is a lower bound for the pure maximum. A tangent to a concave alias action is a global upper bound, including at boundary points and on the core plateau. The difference is affine in the slope parameters and the product-domain point. Corner and vertex checks therefore prove the continuum inequality. An approximate optimizer could produce a poor candidate, but could not create a false verification result.
+The certificate proves the inequality independently of how its candidate points were found. A feasible pure value is a lower bound for the pure maximum. A tangent to a concave alias action is a global upper bound, including at boundary points and on the core plateau. The difference is affine in the slope parameters and the product-domain point. Corner and vertex checks therefore prove the continuum inequality. Numerical optimization may suggest the points; only their rational supporting inequalities enter the proof.
 
 The exact files are
 \begin{itemize}
@@ -13,9 +13,9 @@ The exact files are
 \item \sourcefile{experiments/conway_single_leaf_attachment_certificate.json};
 \item the corresponding \sourcefile{verify_conway_..._certificate.py} programs and recorded result files.
 \end{itemize}
-The reproduction runner supplies the complete, unambiguous path list and verifies fresh results against the committed records. The optional endpoint certificate strengthens the attachment margin but is not required by Theorem~\ref{thm:main}.
+The reproduction runner supplies the complete, unambiguous path list and verifies fresh results against the committed records. The optional endpoint certificate strengthens the attachment margin; it is not an input to the strict Conway volume theorem.
 
-\section{Outward rational intervals}
+\section{Rational bounds for the elementary functions}
 Every interval endpoint is an integer multiple of $10^{-40}$. Addition and subtraction are exact on this grid. Products and quotients use floor and ceiling integer division in the outward directions, with sign cases handled explicitly. A denominator interval must avoid zero. Intersections and monotone range reductions are checked, rather than inferred from floating-point values.
 
 The constant $\pi$ is enclosed by Machin's formula
@@ -49,16 +49,26 @@ Since $\zeta(2n)<2$, the tail after $n=20$ in \eqref{eq:C-J-series} is bounded b
 The exact identities $J(0)=J(1/2)=J(1)=0$ and $J(1-t)=-J(t)$ reduce every action argument to this range. Thus every action and derivative used by the certificates has a proved rational enclosure.
 
 \section{Gradients and coverage}
+For the certificate notation, put
+\[
+ g_0(y)=g(y,0)=J(2y)-4J(y),\qquad k(x)=-2J(x/2),
+\]
+where $J(t)=\int_0^t\log(2\sin\pi s)\,\dd s$ on the real
+interval and by the continued branch used in the strict window.
+The function $m(x,y,z)$ is the multiplication action in
+Chapter~\ref{ch:conway-current}. The precise block and attachment
+comparisons are the supporting inequalities used in the
+whole-source proof of \cite{Bounds}.
 The derivatives evaluated by the verifier are
 \begin{align*}
- g'(y)&=2\log\cot\pi y,& k'(x)&=-\log(2\sin(\pi x/2)),\\
+ g_0'(y)&=2\log\cot\pi y,& k'(x)&=-\log(2\sin(\pi x/2)),\\
  m_x&=\log\frac{\sin\pi(x+y)\sin\pi(z-x)}{\sin\pi x\sin\pi(x+y-z)},&
  m_y&=\log\frac{\sin\pi(x+y)\sin\pi(z-y)}{\sin\pi y\sin\pi(x+y-z)},\\
  m_z&=\log\frac{\sin\pi z\sin\pi(x+y-z)}{\sin\pi(z-x)\sin\pi(z-y)}.
 \end{align*}
 Every tangent point is strict, and the core tangent point in the block certificate lies above $1/4$, so these derivatives are finite and select the intended branch. The entire action remains concave even where a maximizer could lie on the boundary; differentiability is needed only at the chosen tangent point.
 
-For the square certificate, each nonterminal rectangle is split into its four dyadic children. The verifier checks equality with these children, their endpoints and their depth. Thus the 55 leaves cover the square exactly. It does not infer coverage from a list of sampled centers or from an approximate total area. The 880 corner/vertex inequalities are then enclosed from below. Their minimum is the rational number printed in Chapter~\ref{ch:alias}; outward error can only weaken the lower bound.
+For the square certificate, each nonterminal rectangle is split into its four dyadic children. The verifier checks equality with these children, their endpoints and their depth. Thus the 55 leaves cover the square exactly. It does not infer coverage from a list of sampled centers or from an approximate total area. The 880 corner/vertex inequalities are then enclosed from below. The exact lower endpoints are retained in the certificate records; outward error can only weaken the lower bound.
 
-\section{What execution establishes}
-A successful replay establishes the finite supporting inequalities, their exact domains, the recorded rational margins and consistency of the immutable data. It does not numerically establish strict geometry, the complex recurrence asymptotic, or the filling theorem. Those are analytic arguments in the preceding chapters and Appendix~\ref{app:analytic}. The optional finite matrix audits check independent instances of the exact identities; their logical role is supplementary, not an extrapolation from tested levels.
+\section{The role of verification}
+A successful replay establishes the finite supporting inequalities, their exact domains, the recorded rational margins and consistency of the immutable data. The pure complex continuation and the finite-lattice contour are proved in Chapter~\ref{ch:conway-current}; the whole filling theorem has its separate argument. Optional finite matrix calculations check identities at selected levels. They do not replace the arguments that hold at every level.

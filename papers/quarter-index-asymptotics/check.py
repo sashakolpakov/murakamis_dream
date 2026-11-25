@@ -19,13 +19,16 @@ ROOT = PAPER.parents[1]
 INPUTS = [
     "papers/quarter-index-asymptotics/main.tex",
     "papers/quarter-index-asymptotics/transport.tex",
+    "papers/quarter-index-asymptotics/high-index.tex",
     "papers/quarter-index-asymptotics/source.tex",
     "papers/quarter-index-asymptotics/signed.tex",
     "papers/quarter-index-asymptotics/figures/quarter-action.tex",
     "papers/quarter-index-asymptotics/check.py",
     "papers/conway-asymptotics/factorial.tex",
-    "papers/conway-asymptotics/leaf.tex",
-    "papers/newton-tangles/main.tex",
+    "papers/newton-calculus/main.tex",
+    "papers/newton-calculus/finite.tex",
+    "papers/newton-calculus/supports.tex",
+    "papers/newton-calculus/profiles.tex",
 ]
 
 

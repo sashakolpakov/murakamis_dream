@@ -1,430 +1,332 @@
-\chapter{Proof inputs and reproduction}\label{ch:reproduction}
+\chapter{From complex asymptotics to volume limits}
+\label{ch:reproduction}
 
-The volume theorems combine written analytic and geometric arguments with finite checks of different kinds. The long-twist proof reduces two local inequalities to exact rational certificates supplied with the paper. The quantitative circle-tree proof establishes its uniform bounds analytically; separate finite checks verify its edge formulas, face identifications and peripheral identities. This chapter distinguishes those roles and records the scope of each theorem.
+A volume proof must connect three statements about the same finite
+invariant. The original contraction has an exact formula; its entire
+remainder is smaller than a nonzero leading contribution; and the real
+part of that contribution's action is the volume of the specified
+filled manifold. This chapter proves the elementary last analytic
+implication and locates its hypotheses in the preceding arguments.
+It also separates the written proofs from the repository's finite
+certificates and supplementary checks.
 
-\section{The implication that finishes a volume proof}\label{sec:proof-dependencies}
+\section{A complete packet-to-volume implication}
+\label{sec:proof-dependencies}
 
-It is useful to separate three questions. Does the exact invariant contain
-the contribution computed by stationary phase, with the stated scalar
-normalization? Is the sum of all its other contributions smaller at the
-exponential scale? Is the real part of the selected action the volume of
-the intended knot complement? An affirmative answer to one of these
-questions does not answer the other two.
+The statement is complex from the outset. No positivity of the
+invariant or of its leading coefficient is assumed. All logarithms
+in rate bounds use $\log0=-\infty$.
+For a nonnegative sequence $b_N$, the assertion of upper exponential
+rate at most $b$ means equivalently that, for every $\eta>0$,
+\[
+ b_N\le \exp\bigl(N(b+\eta)\bigr)
+ \quad\hbox{for all sufficiently large }N.
+\]
+This exponential-envelope formulation includes zero terms and will be
+used in the comparisons below.
 
-The final analytic step has the following precise form. Its hypotheses
-refer to the entire remainder, including all other charges and contour
-terms. Throughout this statement, the diagram and every filling integer
-are fixed. We use $\log 0=-\infty$ in an upper bound for a remainder.
-
-\begin{proposition}[Transfer from a contribution to the invariant]
+\begin{theorem}[A leading packet with a strict entire-remainder gap]
 \label{prop:volume-rate-transfer}
-Suppose that for all sufficiently large integers $N$ the exact invariant
-has the decomposition
+Let $K_N\in\CC$ be the invariant of one fixed knot at integer levels.
+Suppose that, for all sufficiently large $N$,
+\begin{equation}\label{eq:complex-packet-decomposition}
+ K_N=u_N\bigl(N^\rho a_N e^{NS_N}+E_N\bigr),
+ \qquad |u_N|=1,
+\end{equation}
+where $\rho\in\RR$ is fixed, $a_N,S_N\in\CC$ satisfy
 \[
- K_N=u_N(G_N+E_N),\qquad G_N=a_Ne^{N\mathcal A},
+                a_N\longrightarrow a\ne0,
+                \qquad S_N\longrightarrow S,
 \]
-where $\mathcal A\in\CC$ is independent of $N$, and $u_N,a_N$ are
-nonzero with
+and the \emph{entire} remainder satisfies
+\begin{equation}\label{eq:entire-remainder-gap}
+ \limsup_{N\to\infty}\frac1N\log|E_N|<\Re S.
+\end{equation}
+Then $K_N\ne0$ for all sufficiently large $N$, and the ordinary
+all-level limit exists:
 \[
- \frac1N\log|u_N|\longrightarrow0,\qquad
- \frac1N\log|a_N|\longrightarrow0.
+               \lim_{N\to\infty}\frac1N\log|K_N|=\Re S.
 \]
-Assume there are real numbers $\Phi$ and $\gamma>0$ such that
+If, for this same knot complement, a geometric argument proves
+$2\pi\Re S=V=\Vol(S^3\setminus K)$, then
 \[
- \limsup_{N\to\infty}\frac1N\log|E_N|\le\Phi-\gamma,
- \qquad \Re\mathcal A>\Phi-\gamma.
+                \lim_{N\to\infty}\frac{2\pi}{N}\log|K_N|=V.
 \]
-Then $K_N$ is nonzero for all sufficiently large $N$, and
-\[
- \lim_{N\to\infty}\frac1N\log|K_N|=\Re\mathcal A.
-\]
-If a separate geometric argument proves
-$2\pi\Re\mathcal A=\Vol(S^3\setminus K)$ for this same knot,
-the volume conjecture follows for $K$.
-\end{proposition}
+\end{theorem}
 
 \begin{proof}
-Put $\Delta=\Re\mathcal A-(\Phi-\gamma)>0$ and choose
-$0<\eta<\Delta/3$. The remainder bound and the limit for $a_N$
-give, for all sufficiently large $N$,
+Put $G_N=N^\rho a_Ne^{NS_N}$. Since $a_N\to a\ne0$,
+there are constants $0<c<C$ with $c\le|a_N|\le C$ for all
+sufficiently large $N$. In particular $G_N\ne0$, and
 \[
- |E_N|\le e^{N(\Phi-\gamma+\eta)},\qquad
- |G_N|\ge e^{N(\Re\mathcal A-\eta)}.
+ \frac1N\log|G_N|
+ =\rho\frac{\log N}{N}+\frac{\log|a_N|}{N}+\Re S_N
+ \longrightarrow\Re S.
 \]
-Consequently $|E_N/G_N|\le e^{-N(\Delta-2\eta)}$. In particular
-this ratio is eventually smaller than $1/2$. The triangle and reverse
-triangle inequalities bound $|1+E_N/G_N|$ between
-$1-e^{-N(\Delta-2\eta)}$ and $1+e^{-N(\Delta-2\eta)}$.
-It is nonzero and its logarithm divided by $N$ tends to zero. Taking
-absolute values and logarithms in
-$K_N=u_Na_Ne^{N\mathcal A}(1+E_N/G_N)$ proves the assertion.
-The last conclusion uses the stated geometric identity, which is not
-an assumption needed for the preceding analytic limit.
+Choose a real number $r<\Re S$ strictly above the limsup in
+\eqref{eq:entire-remainder-gap}; if that limsup is $-\infty$,
+any fixed $r<\Re S$ will do. Choose
+$0<\eta<(\Re S-r)/3$. For all sufficiently large $N$,
+\[
+       |E_N|\le e^{N(r+\eta)},\qquad
+       |G_N|\ge e^{N(\Re S-\eta)}.
+\]
+Thus $|E_N/G_N|\le e^{-N(\Re S-r-2\eta)}$.
+This tends exponentially to zero and is eventually smaller than
+$1/2$. The triangle and reverse triangle inequalities give
+\[
+ 1-|E_N/G_N|\le|1+E_N/G_N|\le1+|E_N/G_N|.
+\]
+Consequently $K_N\ne0$, and
+$N^{-1}\log|1+E_N/G_N|\to0$. Taking moduli and logarithms in
+$K_N=u_NG_N(1+E_N/G_N)$ proves the claimed ordinary limit.
+The geometric identity then gives the last assertion.
 \end{proof}
 
-A relative correction such as $1+O(N^{-1})$ to the first saddle
-belongs to $a_N$. It is not put into $E_N$: such a correction has the
-same exponential rate as the first saddle. The strict remainder bound
-is reserved for the other contributions.
+A relative error $1+O(N^{-1})$ in a saddle expansion belongs to
+$a_N$. It has the same exponential rate as the leading term and
+does not satisfy a strict remainder gap by itself. Likewise,
+$S_N\to S$ is sufficient for the logarithmic limit, but it does not
+justify replacing $e^{NS_N}$ by $e^{NS}$ in a relative asymptotic.
+The coefficient $a\ne0$ is the coefficient after all contributions
+with the leading action have been combined. A nonzero individual
+Gaussian would not establish that assertion if other equally large
+terms could cancel it.
 
-The location of each hypothesis matters. For the recursive tangle
-theorem, Chapter~\ref{ch:source} gives the exact invariant and its
-normalization. Chapter~\ref{ch:alias} bounds the complementary color
-terms. Chapter~\ref{ch:packet} and Appendix~\ref{app:selected-source}
-construct the local holomorphic approximation. Chapter~\ref{ch:filling}
-and Section~\ref{app:filling-contours} control the rest of the Fourier
-period, prove that the leading coefficient is nonzero, and compare the
-charge actions. Chapter~\ref{ch:marked} and
-Appendix~\ref{app:marked-calibration} identify that action with the
-volume of the original primitive filling. The local approximation
-alone supplies neither the global remainder bound nor the metric
-identification.
+\section{Nonnegative costs and upper exponential rates}
 
-For weak balance, write the exact shared spectral polynomial as
-$S_N=C_N+D_N$, where $C_N$ uses the central contribution at every
-crossing region. Equation~\eqref{wb:remainder} bounds the supremum
-norm of $D_N$ on the full real spectral cube. Appendix~\ref{app:uniform-filling-bound}
-then bounds its image under the actual filling functional by
+An estimate for a source remainder often acquires a level-dependent
+factor when the filling operators are applied. The following
+comparison is valid even when the factor or the source budget
+vanishes.
+
+\begin{lemma}[A subexponential cost preserves an upper rate]
+\label{lem:subexponential-remainder-transfer}
+Let $B_N,C_N\ge0$ for all sufficiently large $N$, let $b\in\RR$,
+and suppose
+\[
+ \limsup_{N\to\infty}\frac1N\log B_N\le b,\qquad
+ \limsup_{N\to\infty}\frac1N\log C_N\le0.
+\]
+If a complex remainder satisfies $|E_N|\le C_NB_N$, then
+\[
+             \limsup_{N\to\infty}\frac1N\log|E_N|\le b.
+\]
+\end{lemma}
+
+\begin{proof}
+For every $\eta>0$, the two limsup bounds imply, eventually,
+$B_N\le e^{N(b+\eta)}$ and $C_N\le e^{N\eta}$.
+These inequalities also hold at their zero values. Hence
+$|E_N|\le e^{N(b+2\eta)}$. Taking the limsup and then letting
+$\eta$ decrease to zero proves the result. No division by $B_N$
+or $C_N$ is used.
+\end{proof}
+
+\begin{corollary}[Polynomial filling costs]
+\label{cor:polynomial-remainder-transfer}
+Suppose $B_N\ge0$ and $|E_N|\le C_NB_N$ for all sufficiently
+large $N$. Suppose also that
+\[
+ \limsup_{N\to\infty}N^{-1}\log B_N\le b,\qquad
+ 0\le C_N\le C_0N^m
+\]
+eventually, with fixed $b,m\in\RR$ and $C_0\ge0$.
+Then $\limsup N^{-1}\log|E_N|\le b$.
+\end{corollary}
+\begin{proof}
+If $C_0=0$, the remainder is eventually zero. Otherwise
+$N^{-1}\log C_N\le(\log C_0+m\log N)/N$ wherever $C_N>0$,
+and the bound at $C_N=0$ is automatic. Apply the lemma.
+\end{proof}
+
+These statements transfer an upper bound. They assert no lower
+bound for a complex contraction and introduce no assumption of
+nonvanishing. Fourier orthogonality can supply a cost estimate;
+it does not supply the leading coefficient in
+\eqref{eq:complex-packet-decomposition}.
+
+\section{Where the strict Conway proof supplies each hypothesis}
+
+Chapter~\ref{ch:conway-current} uses one source from beginning to
+end. Its finite normalization is the reduced invariant with unknot
+value one, including the writhe correction. Turns and the final
+closing relation are solved exactly before a lattice is chosen.
+The remaining cell volume is one.
+
+Theorem~\ref{ca:strict-pure} gives the exact holomorphic pure window,
+its nonzero local amplitude and the physical-source comparison
+\eqref{ca:source-error}. The same theorem bounds every macroscopic
+color deficit. Proposition~\ref{ca:Fourier-theorem} proves both
+the local Fourier expansion and the gap on the remainder of the
+spectral cube. These are distinct hypotheses of the whole
+oscillatory filling theorem imported there.
+
+For fixed signed crossing powers $\mathbf n$, the filling
+coefficient bound is
+\[
+ C_N=\prod_j2\sqrt N(1+|n_j|/\sqrt{12}).
+\]
+It is a nonnegative polynomial cost. The source budget in
+\eqref{ca:filled-error} is
+$B_N=e^{N(F_0-\gamma_*)}$, so
+Corollary~\ref{cor:polynomial-remainder-transfer} gives upper rate
+$F_0-\gamma_*$ for the filled physical remainder. The whole filling
+theorem gives a nonzero leading amplitude and a critical action
+$S_{\mathbf n}$ satisfying
+$F_0-\Re S_{\mathbf n}=O(\sum_jn_j^{-2})$.
+Increasing the fixed twist threshold makes
+$\Re S_{\mathbf n}>F_0-\gamma_*$.
+
+Thus \eqref{ca:asymptotic} has the form
+\eqref{eq:complex-packet-decomposition}, with
+$\rho=3/2$, $S_N=S_{\mathbf n}$ and a coefficient converging to
+$D(\mathbf n)\ne0$. The framing and crossing phases have modulus
+one. The primitive geometric comparison proves
+$2\pi\Re S_{\mathbf n}=\Vol(S^3\setminus K_{\epsilon,\mathbf p})$
+for the same filled diagram. Theorem~\ref{prop:volume-rate-transfer}
+then gives the volume limit and eventual nonvanishing.
+
+The written dependency chain is therefore
+\[
+ \begin{gathered}
+ \text{exact finite algebra and primitive coordinates}\\
+ \longrightarrow\ \text{strict pure window and physical remainder}\\
+ \longrightarrow\ \text{local Fourier expansion and global gap}\\
+ \longrightarrow\ \text{whole filling sum with nonzero coefficient}\\
+ \longrightarrow\ \text{primitive metric and absolute volume}.
+ \end{gathered}
+\]
+The source bounds, whole-sum theorem and metric comparison are named
+companion inputs in Chapter~\ref{ch:conway-current}. This display
+does not turn their citations into proofs. Their stated hypotheses
+and written arguments remain part of the dependency chain.
+
+\section{The independent tree and planar arguments}
+
+The circle-tree arguments use the same full finite kernel, with two
+different remainder estimates. The summed estimate is proved in
+Appendix~\ref{app:quantitative-sums}; the directed estimate is proved
+in Appendix~\ref{app:directed-circle-messages}. The local ratio test
+implies the directed degree-or-twist condition by
+Lemma~\ref{lem:local-implies-directed}, so its volume conclusion is
+a corollary, with no separate quantum induction. The vertexwise
+geometric completion in Appendix~\ref{app:local-messages} remains
+a separate result. Both quantum proofs use the primitive metric
+comparison of Appendix~\ref{app:quantitative-geometry}. These
+arguments concern their stated circle-tree construction, rather
+than a change of construction class inside the strict proof.
+
+For weak balance, the shared spectral polynomial is split as
+$S_N=C_N+D_N$, with $C_N$ central at every crossing region.
+Equation~\eqref{wb:remainder} bounds the supremum norm of the entire
+$D_N$ on the real spectral cube.
+Appendix~\ref{app:uniform-filling-bound} bounds its filled image by
 \[
  |E_N|\le\prod_e(1+|n_e|/2)\,\|D_N\|_{[-2,2]^R}.
 \]
-The product is independent of $N$. Appendix~\ref{app:morse-geometric-contribution}
-gives the nonzero asymptotic of the filled central contribution and
-its geometric action. Only after these two independent estimates have
-been established do we increase the fixed twist threshold so that
-the drop from $\Phi$ to $\Re\mathcal A$ is smaller than the remainder
-gap. Proposition~\ref{prop:volume-rate-transfer} then applies.
+This is a fixed cost for fixed powers.
+Appendix~\ref{app:morse-geometric-contribution} gives the nonzero
+central contribution and its filled geometric action. Only after
+both estimates are proved is the filling threshold enlarged until
+the action drop is smaller than the remainder gap.
 
-There is no circular use of the planar decoration theorem here.
-Appendix~\ref{app:morse-geometric-contribution} uses the complete
-packing construction and finite Morse source from
-Appendix~\ref{app:balanced-terminal-fans}; it does not assume that
-appendix's full-invariant volume conclusion. The complementary-source
-estimate under weak balance is proved separately in
-Appendix~\ref{app:weak-balance}. For a general unchanged matched sphere
-that estimate remains an additional requirement.
+There is no circular use of the full decoration conclusion.
+The geometric-contribution proof uses the packing construction
+and finite Morse source from
+Appendix~\ref{app:morse-preliminaries}. The decoration theorem is a
+later application, not an input to that proof. Weak balance supplies the complementary-source
+bound separately. Protected sums and ordinary triangular insertion
+supply their own complete certificates. For a general unchanged
+matched sphere, the geometric contribution alone leaves the
+complementary-source estimate open.
 
-\section{The scope of the dependency argument}
+\section{Written proofs, certificates and checks}
 
-For the weak-balance and protected-sum results, the order of the
-quantifiers is
-\[
- \begin{gathered}
- \text{fix an admissible diagram and half twists};\qquad
- \exists T\ \forall\boldsymbol p,\\
- \min_e|p_e|>T\quad\Longrightarrow\quad
- \lim_{N\to\infty}\frac{2\pi}{N}\log|K_N|
-      =\Vol(S^3\setminus K_{\boldsymbol p}).
- \end{gathered}
-\]
-The diagram must satisfy the particular theorem's packing or certificate
-hypothesis, and its strand connections must give one knot. Each tuple
-$\boldsymbol p$ is fixed inside the limit. In the protected-sum theorem
-the number of pieces is also fixed before $T$ is chosen. The assertion
-does not supply one threshold for every diagram or allow the diagram
-or filling integers to vary with $N$.
+The analytic and geometric arguments are written proofs. Exact
+rational certificates are finite parts of specified inequality
+proofs: the text reduces the required continuum statements to their
+feasibility, coverage and supporting-plane conditions. Optional
+finite matrix or numerical checks have a different role. They may
+detect an indexing or normalization error; they do not prove a
+contour deformation, a metric completion or a limit.
 
-The dependency map in \sourcefile{repro/manuscript_logic.json} records
-the interfaces used by Appendices N--R. Each full-volume conclusion
-must name its exact invariant, nonzero contribution, full remainder
-bound, specified completed metric, absolute action-volume identity,
-and final rate-transfer argument. The general unchanged-sphere route
-retains its unresolved remainder requirement. It is separate from the
-completed weak-balance, protected-sum and ordinary-boundary routes.
+From the repository root, the finite Conway identities can be
+checked separately with
+\begin{verbatim}
+python3 -I papers/conway-asymptotics/check.py
+\end{verbatim}
+The checker compares Newton-polynomial powers with full
+Fourier--Hermite interpolation and the exact midpoint formula.
+The all-level finite identities are proved in
+Section~\ref{ca:filling}; sampling levels is not their proof.
 
-The following command checks that the recorded premises have the right
-roles, retain their assumptions and level scope, refer to existing
-statements, and contain no circular dependency:
+The exact certificate runner is
+\begin{verbatim}
+python3 repro/verify.py --output repro/results
+\end{verbatim}
+It replays the two-leaf and attachment certificates used in the
+source estimates, and the optional stronger endpoint margin.
+Appendix~\ref{app:certificate} states the mathematical
+inequalities and their reduction to finite rational checks.
+Candidate generation and numerical optimization are not run by
+verification.
+
+The independent constructions have the following supplementary
+commands:
+\begin{verbatim}
+python3 repro/run_research_checks.py curvature-fillings
+python3 repro/run_research_checks.py local-tree-fillings
+python3 repro/run_research_checks.py directed-tree-fillings
+python3 repro/run_research_checks.py balanced-terminal-fans
+python3 repro/run_research_checks.py filling-supremum
+\end{verbatim}
+They check finite identities, rational constants, endpoint
+connections and the indicated sample contractions. Their output
+does not replace the uniform estimates and geometric arguments
+in the corresponding chapters and appendices. Requirements beyond
+the standard Python library are recorded by each runner.
+
+The dependency record can be checked with
 \begin{verbatim}
 python3 repro/check_manuscript_logic.py \
   --output repro/results/manuscript-logic
 \end{verbatim}
-It also deliberately introduces ten defects and checks that each is
-rejected. These include removing the remainder premise, replacing it
-by the central contribution, importing an open estimate, and using an
-odd-level estimate in an all-level conclusion. The map is supplied by
-the author; its consistency is not a proof of the mathematics at its
-vertices. The recorded source hashes identify the texts used by the
-check. Internal analytic and geometric lemmas still require their
-written proofs.
-
-For ordinary-boundary insertion, the map additionally records the
-conditional disk minimum and the small-boundary certificate hypothesis.
-The scalar comparison in Appendix~\ref{app:triangular-boundary-insertion}
-has a Lean proof. It distinguishes a wholly central inserted block from
-a block with a central attaching label but noncentral terms elsewhere.
-The duplicated target is twice the boundary logarithm in the doubled
-Lean normalization; it is not twice the removed triangle potential.
-The conditional packing and the existence of the shared witnesses remain
-separate written inputs to those declarations.
-
-\section{Finite steps checked in Lean}
-
-The directory \sourcefile{formal/} contains a small formalization using
-Lean's standard library. It checks the exact even- and odd-level degree
-cutoffs, polynomial divided differences without division at a spectral
-root, the double-root Hermite identity after clearing denominators, and
-the finite tensor-product subtraction used when node values vanish.
-The formalization also constructs synthetic division on coefficient
-lists and the remainder modulo a split monic polynomial
-$p(X)=\prod_i(X-r_i)$. It proves the reconstruction identity
-coefficient by coefficient, the degree bound on the remainder, and
-the formula for its top coefficient as an iterated divided difference.
-Repeated nodes are allowed; no inverse of $r_i-r_j$ is introduced.
-The constructed remainder and functional are also proved linear over
-the coefficient ring. Coefficient-equivalent input lists, including
-arbitrary trailing zeros, give the same output. Adding a multiple of
-the constructed monic polynomial leaves the remainder and functional
-unchanged. These statements establish independence of the polynomial
-representative; they do not yet identify the functional with the
-original crossing matrix.
-The product module constructs multiplication of the coefficient lists
-and proves that reducing either factor leaves the final remainder and
-functional unchanged. It derives associative reduced multiplication,
-reduction after every step of a finite product, and the product rule
-for the value and first derivative at a repeated root.
-Proposition~\ref{prop:canonical-remainder-products} states these facts
-in polynomial notation. In particular the multiplication is proved
-compatible with reduction; that compatibility is not a formal hypothesis.
-The next module proves uniqueness of the remainder among all
-representatives of the required degree, allowing arbitrary trailing
-zeros in the coefficient lists. It then proves invariance under every
-permutation of the root list, including repeated roots, and gives a
-characterization of the coefficient functional by additivity,
-annihilation of monic multiples, and normalization in degree below the
-modulus. Proposition~\ref{prop:canonical-polynomial-remainder} gives the
-corresponding mathematical statement and proof. To apply that
-characterization to a proposed crossing functional, its hypotheses
-must still be established for the actual operator.
-The resolvent module now proves one such link directly:
-if \(p(w)=0\) and \(V_w(X)=(p(X)-p(w))/(X-w)\), then the
-top-coefficient functional satisfies \(\ell_p(fV_w)=f(w)\).
-Proposition~\ref{prop:resolvent-reproduction} gives the proof and
-applies it in the commutative algebra generated by one local Casimir.
-Proposition~\ref{prop:local-face-fourier} now proves the actual
-annihilating relation by an explicit finite Fourier transform of the
-original pair matrix. It also derives the homogeneous source adapter
-and its factor \(1/N\), retaining integer displacements at even levels.
-These are written linear-algebra proofs. The crossing polynomial and
-its repeated-node derivatives have their separate finite calculation.
-No commutativity between different boxes is used.
-The face-grid module proves that the ordinary residue conditions and
-the total-degree bound force exactly the prescribed monomial, with
-both protected exponents zero. Proposition~\ref{mcg:face-grid-selection}
-adds the elementary character average and explains the shifted
-even-level grids. The physical grid and its turn normalization are
-still supplied by the written diagram calculation.
-The protected-sum module constructs the three central/left/right rate
-functions and their map to the two input sectors. It proves the local
-comparison, cancels the duplicated joining-face target, and preserves
-the smaller input gap. Appendix~\ref{app:protected-triangular-sums}
-proves that the diagrams and their shared witnesses supply these
-formal hypotheses. The triangulations, analytic estimates, and volume
-identity themselves are not formalized.
-The formal regrading module checks the coefficient substitution
-$u=hs$ used in Appendix~\ref{app:directed-all-orders}. It recovers
-every coefficient from its new pair of exponents and proves
-injectivity. It also proves that agreement through order $h^L$
-recovers exactly the coefficients of total degree at most $L$.
-The all-orders expansion, its uniform analytic remainder, and the
-identification of the longitude remain separate inputs.
-It also checks the scalar inequalities that compare the entropy gain
-with its quadratic cost and preserve a remainder gap after a small
-decrease in the action. From the repository root, run
+This checks an authored map: premise roles, references, level
+scope and circular dependencies. It does not prove the statements
+assigned to its vertices. The Lean code proves the Gram identities,
+shifted Parseval and Hermite coefficient bound, the linearized stationary
+equations, the complex packet theorem, and the whole-color remainder
+assembly. It also contains the finite polynomial and supported-graph
+lemmas used in the appendices. The analytic contour arguments and
+geometric calibration are the written inputs named in those statements.
+The replay command is
 \begin{verbatim}
-python3 repro/check_proof_logic.py --output repro/results/proof-logic
+python3 repro/check_lean.py --output repro/results/volume-lean
 \end{verbatim}
-The project pins its Lean version. The runner compiles the declarations
-and then separately inspects every theorem's logical assumptions.
-The accepted foundational axioms are propositional extensionality,
-classical choice and quotient soundness; an admitted proof step is
-rejected.
+Compilation and axiom inspection do not establish the analytic
+source estimates or the geometric hypotheses of an application.
 
-These are formal proofs of the stated finite implications. Their
-applications still require the hypotheses proved in the manuscript.
-For example, the scalar entropy comparison does not prove the Hessian
-formula, and the divided-difference identity does not identify the
-original knot operator. The monic-remainder calculation does not prove
-the Chebyshev factorization or its root multiplicities; these data are
-proved in Appendix~\ref{app:uniform-filling-bound} for the actual pair
-matrix. The global diagram adapter, uniform analytic
-estimates, geometric realization, primitive completion and
-Proposition~\ref{prop:volume-rate-transfer} remain written proofs.
-The file \sourcefile{repro/MANUSCRIPT_AUDIT.md} records the current
-proof checks and the boundaries of this initial formalization.
+\section{Building the reference}
 
-\section{Three different kinds of evidence}
-The manuscript contains analytic proofs, exact finite certificates, and optional finite checks. They have different logical roles. The matrix identities, support and strictness arguments, geometric incidence, complex estimates and filling analysis are proved in the text. The rational certificates are finite parts of the proof: the continuum inequalities reduce to their exact feasibility, coverage and supporting-plane checks. Finite matrix computations and numerical asymptotic comparisons provide independent checks of formulas and normalizations, but do not establish a theorem by extrapolation.
-
-The chapters and appendices give the proofs with their named dependencies on earlier finite-source and geometric lemmas. References to those technical companions remain proof inputs; the PDF does not reproduce every calculation in the research library. The repository also supplies the exact certificate data and verification programs. Those programs check the finite inequalities described below; they do not formally verify the analytic or geometric arguments.
-
-\section{Replaying the exact certificates}
-From the repository root, run
-\begin{verbatim}
-python3 repro/verify.py --output repro/results
-\end{verbatim}
-The serial runner uses the standard Python library. It replays the two-leaf block certificate, the attachment square certificate and the optional endpoint certificate, compares their exact results with the recorded data, and checks the elementary rational leaf and isolated-three-leaf margins. Its report records the source and data hashes. Candidate generation and numerical optimization are not run by verification.
-
-The principal proof files are
-\begin{center}\small
-\begin{tabular}{p{0.44\textwidth}p{0.46\textwidth}}\toprule
-Certificate & Mathematical coverage\\\midrule
-\path{verify_conway_two_leaf_block_alias_certificate.py}
-& Sixteen slope intervals; both alias types; 288 corner/vertex inequalities.\\[5pt]
-\path{verify_conway_single_leaf_attachment_certificate.py}
-& Exact 55-rectangle cover; 880 corner/vertex inequalities on the full child/parent slope square.\\[5pt]
-Endpoint certificate in the runner's manifest
-& Optional stronger margin at the monotone-response endpoint; not needed for the main theorem.\\\bottomrule
-\end{tabular}
-\end{center}
-All paths are resolved relative to the repository or script directory, rather than an author's temporary working directory. The runner's proof-input guide lists the written dependencies separately from executable checks.
-
-\section{Checking the quantitative tree formulas}
-The elementary edge equations and complex-strip estimates used by Chapter~\ref{ch:quantitative-circle-trees} have a portable reproduction command:
-\begin{verbatim}
-python3 repro/run_research_checks.py curvature-fillings
-\end{verbatim}
-The runner checks exact symbolic edge identities, finite samples of the stated complex inequality, labeled octahedral attachments and the full signed peripheral matrix words. Its output separates those computations from the uniform analytic and geometric proofs. Appendix~\ref{app:quantitative-sums} gives the full quantitative finite-sum proof, including both uniform Newton estimates, the weighted contraction and the charge-tail bounds. Appendix~\ref{app:quantitative-geometry} gives the complete ordered attachment, positive angular charts, primitive-period completion, volume calibration and preferred-cusp argument. The technical notes provide separately readable copies of those proofs. Such finite checks can detect sign or indexing errors; they do not replace the written proofs.
-
-The local subtree proof and its separate geometric criterion have the
-following finite checks:
-\begin{verbatim}
-python3 repro/run_research_checks.py local-tree-fillings
-\end{verbatim}
-They verify exact rational constant inequalities and compare the full
-finite subtree recurrence with independently evaluated contractions.
-Appendix~\ref{app:local-messages} proves the estimates at every level
-and the uniform induction on a fixed tree. A finite set of levels does
-not establish that induction.
-
-\section{The planar terminal decoration}
-The finite identities for Chapter~\ref{ch:balanced-terminal-fans} have one command:
-\begin{verbatim}
-python3 repro/run_research_checks.py balanced-terminal-fans
-\end{verbatim}
-The script uses exact integer and rational arithmetic. It checks the
-closed fan recurrence, the rational balance margin, the oriented
-triangle subdivision and its new ordered quadrilateral, the matching
-and even-level face parity, and the endpoint pairing of even stacks of
-odd terminal tangles. It does not infer an asymptotic theorem from
-sampled quantum values. Appendix~\ref{app:balanced-terminal-fans}
-proves the geometric realization, full finite source, uniform
-Fourier estimates and primitive completion.
-
-\section{The directed criterion and unmarked junctions}
-
-The exact rational comparisons for
-Chapter~\ref{ch:directed-circle-messages} have one command:
-\begin{verbatim}
-python3 repro/run_research_checks.py directed-tree-fillings
-\end{verbatim}
-This program uses only Python's standard library. It verifies the
-constant inequalities for the uniform twist bound and the star with
-central power two, using rational enclosures of all quantities.
-The uniform conditional kernel estimate, induction over arbitrary
-fixed trees, noncancellation and geometric interpretation are written
-proofs in Appendix~\ref{app:directed-circle-messages}.
-
-For the local algebra of the unmarked-junction extension, run
-\begin{verbatim}
-python3 repro/run_research_checks.py strict-tree-geometry
-\end{verbatim}
-This program requires SymPy. It checks the white-map normalizations,
-primitive disk-longitude trace, incident radius formulas and the
-half-angle fold identity. Appendix~\ref{app:strict-tree-geometric-characteristic}
-proves the based boundary-map comparison, stationary elimination and
-full representation assembly. Those global statements are not
-deduced from the finite matrix checks.
-
-\section{Building the manuscript and illustrated guide}
-The TeX source is in \sourcefile{manuscript/}; its native illustrations are in \sourcefile{manuscript/figures/}. A TeX Live or MacTeX installation with \sourcefile{latexmk} builds the paper:
+The TeX source is in \sourcefile{manuscript/}, with native figures
+in \sourcefile{manuscript/figures/}. Build it with
 \begin{verbatim}
 python3 tools/build_manuscript.py
 \end{verbatim}
-The output is \sourcefile{manuscript/build/main.pdf}. The build manifest records the hashes of all TeX and bibliography inputs and the generated PDF. It is a typesetting record, not a mathematical certificate.
+The output is \sourcefile{manuscript/build/main.pdf}.
+The build manifest records its input hashes and typesetting
+checks; it is not a mathematical certificate. The standalone
+Conway paper is built from the shared source with
+\begin{verbatim}
+python3 tools/build_papers.py conway-asymptotics
+\end{verbatim}
 
 The illustrated guide is built separately:
 \begin{verbatim}
 python3 tools/build_book.py
 python3 tools/check_book.py
 \end{verbatim}
-It is written to \sourcefile{docs/} and links the same authored PDF. Documentation builds do not execute research scripts. The guide includes the theorem statements, a notation chapter and a lecture-note account of the methods, including approaches that do not give a general theorem. Its links distinguish proved estimates from open comparisons. The manuscript retains the completed arguments and their stated consequences.
-
-\section{The scope of the conclusions}
-Every volume theorem fixes the diagram, its endpoint order, disk
-framings, parity pattern and integer powers before $N$ tends to
-infinity. The limit includes both parity sequences and composite
-levels. Only auxiliary crossing circles are filled; the main knot
-cusp remains complete. The component test must give one knot without
-an internally closed extra main component.
-
-Theorem~\ref{thm:main} applies to the completed expressions of
-Definition~\ref{def:grammar}. Each signed filling integer must exceed
-a construction-dependent threshold in absolute value; there is no
-restriction on ratios between the large integers. The circle-tree
-results use their own sufficient conditions: the summed inequality of
-Theorem~\ref{thm:circle-quantitative}, the local inequality of
-Theorem~\ref{thm:local-circle-volume}, or the directed certificate of
-Chapter~\ref{ch:directed-circle-messages}. The mixed condition
-$d_v\ge2^{28}$ or $|n_v|\ge2^{27}$ at each vertex is a consequence
-of the last certificate. These are separate proofs, not relaxations
-of the completed-box hypothesis inside the first proof.
-
-The planar theorem of Chapter~\ref{ch:balanced-terminal-fans} applies
-a specified finite decoration to a simple matched sphere before
-performing its independently long signed fillings. The decoration
-preserves the chosen endpoint pairing and can change the knot. It
-does not give the full volume theorem for every unchanged sphere.
-For unchanged diagrams, Appendix~\ref{app:morse-geometric-contribution}
-proves a narrower statement: the specified geometric contribution
-of the original exact invariant has a nonzero asymptotic at the
-actual filled volume rate. This contribution is not a separate
-topological invariant, and the theorem does not bound the remaining
-signed contribution.
-
-The meridian-profile and preferred-longitude results retain their
-stated source classes. Chapter~\ref{ch:directed-all-orders} proves the
-full expansion required for the selected-factor conclusion for
-every directed certificate. That conclusion is an implication for
-an existing nonzero fixed all-level annihilator; it neither proves
-recurrence existence nor identifies the entire A-polynomial or
-recurrence ideal. Appendix~\ref{app:uniform-filling-bound} proves a
-finite functional estimate. Its application to an additional volume
-class requires a separate exponential source estimate.
-
-None of these sufficient conditions is a classification of all
-arborescent knots or all short fillings. Broader net-twist and closure
-statements in the linked companions keep their own reduction and
-long-surviving-weight hypotheses. The geometric arguments retain the
-original manifold: scalar equalities in $\cH_N$ are not used as tangle
-isotopies, and the continued main boundary word becomes the preferred
-longitude of the smooth filled knot at the endpoint of the specified
-geometric path.
-
-\section{The geometric longitude calculation}
-The symbolic identities in the geometric characteristic chapter have one
-reproduction command:
-\begin{verbatim}
-python3 repro/run_research_checks.py geometric-characteristic
-\end{verbatim}
-This group requires SymPy. It verifies the nonparabolic face maps,
-character matrices, half-twist line transports, and the differential
-and discriminant formulas. The topological gluing, boundary pairing,
-algebraic constants and regularity arguments remain the written proofs
-of Appendices~\ref{app:filtered-characteristic} and
-\ref{app:geometric-characteristic}.
-
-
-\section{Uniform bounds for inserting twists}
-Appendix~\ref{app:uniform-filling-bound} proves a level-independent
-bound for each original filling functional, measured against the
-supremum of the shared spectral polynomial. Its finite identities
-can be checked with one command:
-\begin{verbatim}
-python3 repro/run_research_checks.py filling-supremum
-\end{verbatim}
-This group requires SymPy and NumPy. It checks the derivative
-interpolation and Chebyshev residues exactly, then compares the
-functional with independently constructed signed crossing matrices
-over finite fields. The shared exponential estimate remains a
-separate hypothesis; these checks add no new volume class.
+Documentation builds do not execute research scripts. The guide
+also describes exploratory methods, whose open steps are
+distinguished from the volume theorems retained here.

@@ -61,6 +61,7 @@ def main() -> None:
     if args.clean and BUILD.exists():
         shutil.rmtree(BUILD)
     BUILD.mkdir(parents=True, exist_ok=True)
+    (BUILD / 'build-manifest.json').unlink(missing_ok=True)
     figure_outputs = build_figures()
     command = [latexmk, '-pdf', '-interaction=nonstopmode', '-halt-on-error', '-file-line-error', '-outdir=build', 'main.tex']
     result = subprocess.run(command, cwd=SOURCE, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
@@ -72,7 +73,24 @@ def main() -> None:
     fatal = ['There were undefined references', 'There were undefined citations', 'Citation `']
     if any(s in log for s in fatal):
         raise SystemExit('LaTeX completed with unresolved references/citations; see manuscript/build/main.log.')
-    inputs = sorted(p for p in SOURCE.rglob('*') if p.suffix in {'.tex', '.bib'} and BUILD not in p.parents)
+    # Shared proof files are read from the Conway paper by \subimport.
+    # The recorder lists the actual inputs; a manuscript-only directory
+    # scan would miss those sources and also pin retired, unused chapters.
+    inputs = {SOURCE / 'references.bib'}
+    for line in (BUILD / 'main.fls').read_text().splitlines():
+        if not line.startswith('INPUT '):
+            continue
+        path = Path(line[6:])
+        path = (SOURCE / path).resolve() if not path.is_absolute() else path.resolve()
+        if (path.is_file() and path.is_relative_to(ROOT)
+                and not path.is_relative_to(BUILD)
+                and path.suffix in {'.tex', '.bib', '.pdf', '.png', '.svg'}):
+            inputs.add(path)
+            if path.suffix in {'.pdf', '.png', '.svg'}:
+                native = path.with_suffix('.tex')
+                if native.is_file():
+                    inputs.add(native)
+    inputs = sorted(inputs)
     metadata = {'schema': 1, 'scope': 'Typesetting only; does not replay mathematical certificates.',
                 'command': ['latexmk', '-pdf', '-interaction=nonstopmode', '-halt-on-error', '-file-line-error', '-outdir=build', 'main.tex'], 'inputs': {str(p.relative_to(ROOT)): sha256(p) for p in inputs},
                 'figures': figure_outputs,

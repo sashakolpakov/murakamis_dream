@@ -1,11 +1,13 @@
-# Corrections to the frozen reference manuscript
+# Corrections to the first reference edition
 
-These corrections apply to the 374-page [reference PDF](build/main.pdf),
+These corrections apply to the 374-page
+[1 November reference PDF](https://github.com/sashakolpakov/murakamis_dream/blob/e3c75b2903498cc87c7465eb8e2047e527113276/docs/papers/conway-composition.pdf),
 whose SHA-256 is
 `e5b384c8fd103c1e1e7209ac97b3862b71abe227f8dc82e49dc0465bf4ae5437`.
-The PDF and its TeX sources remain frozen while the results are rewritten
-as separate papers. This file records corrections without silently
-changing the version that earlier citations refer to.
+That PDF and its TeX sources are available in the linked Git commit.
+The 25 November expository revision incorporates both corrections
+below. This record continues to identify the version to which earlier
+page references apply.
 
 ## Appendix D: the derivative of the filling equations
 

@@ -4,16 +4,19 @@ import Mathlib.Analysis.Convex.Deriv
 import Mathlib.Tactic.Linarith
 
 /-!
-Strict convexity and uniqueness for an actual grounded real potential.
-The second derivative along a segment is identified with the constructed
-weighted graph energy. Strict positivity follows from finite positive-edge
-paths, rather than from an assumed positive-definite Hessian or strict
-convexity. Existence is supplied by the actual supported transport potential.
+Strict convexity and uniqueness from derivatives along grounded segments.
+The second derivative is an explicitly supplied graph energy. Its positive
+support makes it strictly positive on every nonconstant grounded direction,
+so the one-variable convexity theorem gives strict Jensen inequalities.
+The final theorem joins this uniqueness argument to the existence result
+for a supported transport potential.
 
-Geometric differentiation, conductance signs and connected support, and the
-feasible positive transport table remain written inputs. The derivative
-hypotheses are weaker than C2 regularity: actual first and second derivatives
-on the indicated segments suffice; continuity of the Hessian is not needed.
+The hypotheses ask for first and second derivatives on the indicated
+segments, not C2 regularity or continuity of a Hessian. They still require
+the derivative identity, conductance signs, connectivity, and feasible table.
+They do not construct a stationary family in boundary parameters or derive
+its Schur-complement Hessian. Those are separate calculus statements in the
+manuscript, rather than consequences of strict convexity alone.
 -/
 
 namespace VolumeLogic.GroundedConvexity
@@ -108,9 +111,8 @@ theorem segment_strict_jensen [Fintype E]
     zero_ne_one (sub_pos.mpr ht.2) ht.1 (sub_add_cancel 1 t)
   simpa [segmentValue, segment] using h
 
-/-- A C2 potential with the stated graph Hessian is strictly convex on the
-grounded space. The explicit segment derivative data are sufficient even
-without a separate continuity assumption on the Hessian. -/
+/-- The stated segment derivatives make the potential strictly convex on the
+grounded space. Neither C2 regularity nor Hessian continuity is assumed. -/
 theorem strictConvexOn_grounded [Fintype E]
     (P : (V → ℝ) → ℝ) (src dst : E → V)
     (w : (V → ℝ) → E → ℝ) (root : V)

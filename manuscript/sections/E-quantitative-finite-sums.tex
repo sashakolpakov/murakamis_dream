@@ -1,17 +1,22 @@
 \chapter{The quantitative finite-sum estimate}\label{app:quantitative-sums}
 
-This appendix proves the analytic part of
-Theorem~\ref{thm:circle-quantitative}. The finite ordered tree, the
-crossing power at every vertex, the strand orientations and the knot
-pairing are fixed throughout. The integer $N$ alone tends to infinity.
-The proof gives explicit estimates on the original finite invariant;
-Appendix~\ref{app:quantitative-geometry} identifies the resulting
-critical action with the volume of the actual filled knot complement.
+We prove the analytic part of Theorem~\ref{thm:circle-quantitative}
+directly from the finite circle-tree contraction. First discard edge
+indices with a fixed source loss. Evaluate the remaining edge sums,
+then apply the exact crossing traces and compare their Fourier charges.
+The summed criterion places the selected action above every discarded
+term. Appendix~\ref{app:quantitative-geometry} identifies that action
+with the filled knot volume.
+
+The tree, powers, strand orientations and knot pairing are fixed
+throughout. Only $N$ tends to infinity.
 
 \section{Polynomial coordinates and the finite sum}\label{sec:q-coordinates}
 
-We first specify the finite algebra used below, including the data
-at repeated roots. Put $d=N-1$, $\theta=\pi/N$, and $q=e^{i\theta}$.
+We use canonical polynomial representatives so that every contraction
+is performed before an estimate. The quotient retains both values and
+first derivatives at repeated roots. Put $d=N-1$, $\theta=\pi/N$,
+and $q=e^{i\theta}$.
 The main meridian parameter is $M=q^s$, with $s$ in a fixed disk
 $|s|\le R<1$. Let $\mathsf T_N$ be the normalized Chebyshev polynomial
 characterized by
@@ -80,7 +85,7 @@ their inverses are bounded uniformly in $N$ and $k$. The exact
 orientation and framing products give the scalar $A_N(s)$ in
 \eqref{eq:circle-4}; they are not replaced by their limits.
 
-The finite sum over the internal edge indices is called the packet
+After these exact contractions, the finite sum over edge indices is the packet
 $B_N$. Its angular variables $\tau_v$ are the Fourier variables of the
 circle traces. A Fourier charge $\ell_v$ labels the frequency
 $N\ell_v$ produced by the translated root grid; it is not a new color
@@ -124,9 +129,13 @@ explicit angular domain required by the quantitative theorem.
 
 \section{Finite sums under the degree and twist criterion}\label{sec:qe}
 
-The separately available version of this section is \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_all_circle_curvature_filling_limit.html}{finite sums under the degree and twist criterion}. The proof is reproduced here in full.
-
-The number of branches incident to a crossing circle can supply part of the estimate previously obtained by taking its twist number large. This section proves the finite-sum limit under an explicit inequality in those two integers. The \hyperref[ch:quantitative-circle-trees]{volume theorem} combines it with the ordered octahedral decomposition and positive filling path. The limiting action is therefore the volume of the original knot complement throughout the stated class, including the short coefficients permitted by the inequality.
+At a circle, the edge curvatures add to $d_v/(2\pi)$ and the
+crossing contributes $in_v/(2\pi)$. Their combined denominator is
+$(d_v-in_v)/(2\pi)$. This is why a large degree can compensate for
+a small twist. We give the finite estimates under the summed condition
+and retain the original source throughout. The separately available
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_all_circle_curvature_filling_limit.html}{degree and twist calculation}
+records the same proof.
 
 \subsection{Assertion and scope}\label{sec:qe-1}
 
@@ -157,7 +166,8 @@ Here \(w(D)\) is the writhe of the fixed original diagram. The \href{https://sas
 
 \subsection{Finite identities and the four uses of long twists}\label{sec:qe-2}
 
-The finite identities used below have the following roles. Their separately available proofs are linked for reference:
+The finite identities used in the proof are listed here by function.
+They fix the source, its normalization and its contour representation:
 
 \begin{itemize}
 \item
@@ -172,13 +182,19 @@ The finite identities used below have the following roles. Their separately avai
   \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_main_meridian_exact_scalar.html}{the crossing and framing scalar}: the unchanged exact scalar identity for fixed integer powers.
 \end{itemize}
 
-These are mathematical inputs, not numerical diagnostics. The \href{https://sashakolpakov.github.io/murakamis_dream/notes/general_original_source_long_filling_transfer.html}{earlier source transfer theorem} and \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_pretzel_long_filling_charge_selection.html}{the pretzel filling calculation} use reciprocal-slope implicit functions; the geometric source-regulator theorem uses a neighborhood of the complete framed representation.
-
-The long-twist hypothesis enters the joint Fourier argument in four analytic places: existence and charge ordering of a nearby critical branch; a nonempty finite charge cutoff with a fixed tail loss; the angular connectors; and comparison of the total critical drop with fixed discarded-source losses. The geometric completion is a separate fifth use. This proof replaces the four analytic uses in the all-circle class.
+For long twists, four analytic estimates were obtained from small
+reciprocal slopes: the local branch and charge ordering, the infinite
+tail cutoff, the joining contours, and the final comparison with the
+discarded-source gap. Below each is controlled by $d_v$ and $n_v$
+together. Geometric completion remains a separate argument. For
+comparison, the \href{https://sashakolpakov.github.io/murakamis_dream/notes/general_original_source_long_filling_transfer.html}{source transfer theorem}
+and the \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_pretzel_long_filling_charge_selection.html}{pretzel calculation}
+use the reciprocal-slope formulation.
 
 \subsection{A graph-independent discarded-source gap}\label{sec:qe-3}
 
-Use the fixed complete Newton basis \(e_k\), \(0\le k<N\), and write
+We first remove edge states, before evaluating the oscillatory traces.
+Use the full Newton basis \(e_k\), \(0\le k<N\), and write
 \begin{equation}
 J(x)=\int_0^x\log(2\sin\pi u)\,du,\quad
  g(x)=J(2x)-4J(x),\quad G_0=g(1/4).
@@ -217,7 +233,8 @@ This loss is independent of the tree size and the fixed powers; prefactors and s
 
 \subsection{Exact edge action}\label{sec:qe-4}
 
-The retained packet factorizes over physical edges. Apart from its edge scalar, each factor is
+The retained packet is a product of one-dimensional edge sums. Apart
+from its recorded scalar, one edge contributes
 \begin{equation}
 K_N(t,u;s)=\sum_{k/N\in I}e_k(-2\cos t)e_k(-2\cos u)
                                       \frac{H_N(s)}{W_k(s)}.
@@ -257,7 +274,12 @@ In particular the diagonal curvature grows with graph degree.
 
 \subsection{An available complex packet and nonlinear bounds}\label{sec:qe-5}
 
-Take \(r=1/4\). Formula \eqref{eq:qe-10} gives \(|x(t,u)-1/4|<0.003\) on \(|t|,|u|\le r\): \(|\tan(t/2)|<0.128\), hence \(|c|\le2(0.128)^2/[2-2(0.128)^2]<0.017\), and \(x=1/4-\arcsin(c)/(2\pi)\).
+We need a fixed complex domain for the finite sum, not just for the
+critical equation. Take \(r=1/4\). Formula \eqref{eq:qe-10} gives
+\(|x(t,u)-1/4|<0.003\) on \(|t|,|u|\le r\):
+\(|\tan(t/2)|<0.128\), hence
+\(|c|\le2(0.128)^2/[2-2(0.128)^2]<0.017\), and
+\(x=1/4-\arcsin(c)/(2\pi)\).
 
 Here the radius is valid for the finite packet, not only its formal action. Put \(A=b(x,t)+b(x,u)\). On \(\Re x\in I\), \(|\Im x|\le1/50\), \(|t|,|u|\le1/4\),
 \begin{equation}
@@ -290,7 +312,8 @@ The quotient extends at \(\tau_v=0\). For the first bound integrate the diagonal
 
 \subsection{A uniform raw angular Gaussian}\label{sec:qe-6}
 
-For \(k/N\in I\) the exact product is
+The contour argument also needs a bound far from the angular saddle.
+Use the exact normalized product, valid for \(k/N\in I\):
 \begin{equation}
 \frac{e_k(-2\cos t)}{e_k(-2)}
  =\prod_{j<k}\left(1-
@@ -328,7 +351,10 @@ b_v=n_v/(2\pi),\quad D_v=a_v-ib_v,\quad t_0=1/16,\quad
                    L_v=\lfloor t_0|D_v|\rfloor.
 \label{eq:qe-21}
 \end{equation}
-Condition \eqref{eq:qe-2} implies \(|D_v|>32\) for all \(v\), so \(L_v\ge1\). For real continuous \(0\le\ell_v\le L_v\), the critical equation is
+The degree and twist enter only through $D_v$ in the following
+contraction. Condition \eqref{eq:qe-2} implies \(|D_v|>32\) for all
+\(v\), so \(L_v\ge1\). For real continuous
+\(0\le\ell_v\le L_v\), the critical equation is
 \begin{equation}
 D_v\tau_v=-i\ell_v+\mathcal E_v(\boldsymbol\tau).
 \label{eq:qe-22}
@@ -371,7 +397,8 @@ Each positive-charge coordinate is nonzero and has modulus below \(t_0/(1-\delta
 
 \subsection{Infinite tails and connectors}\label{sec:qe-8}
 
-Keep the exact full-normal charge coefficients
+We next control the part of the exact trace not covered by those
+critical branches. Keep its full-normal charge coefficients
 \begin{equation}
 c_{\ell,N}(\sigma)=
  (-1)^{(N-1)(\ell-1)}U_{\ell-1}(\cos2\pi\sigma),\qquad c_{1,N}=1.
@@ -397,7 +424,13 @@ Further charges carry \(e^{-N(\ell-L_v-1)y_v}\). The coefficient bound \(\ell e^
 
 Original endpoint loss is \(\pi^2a_v/400\). The chirp, finite-charge connector and imaginary Gaussian costs are bounded respectively by \(\pi A_0t_0a_v\), \(A_0t_0^2a_v\), and \(70A_0^2t_0^2a_v\), less than half that loss in total. The zero-mode current obeys the same estimate. Exact telescoping of physical functionals and finite real-integral approximants therefore gives the finite-charge formula with \eqref{eq:qe-31}. No spectator uses another coordinate's complex filling contour.
 
-Next restrict real angles to \([-\rho,\rho]^m\), \(\rho=1/8\). The complement loses \(1/(51200\pi)\) by \eqref{eq:qe-20}. Translate this box to the imaginary part of its critical point. On any connector write \(\tau_v=t_v-i v_v\), with \(0\le v_v\le-\Im\tau_{\ell,v}\). These points stay in the radius-\(1/4\) polydisk. From \eqref{eq:qe-16} and Young's inequality,
+For the remaining charges restrict real angles to
+\([-\rho,\rho]^m\), \(\rho=1/8\). The complement loses
+\(1/(51200\pi)\) by \eqref{eq:qe-20}. Translate this box through
+the critical point and retain every joining face. Write a point on a
+connector as \(\tau_v=t_v-i v_v\), with
+\(0\le v_v\le-\Im\tau_{\ell,v}\). It remains in the radius-\(1/4\)
+polydisk. Equation \eqref{eq:qe-16} and Young's inequality give
 \begin{equation}
 \Re\Phi_\ell(\mathbf t-i\mathbf v)\le
  F_0-\tfrac18\sum_va_vt_v^2+
@@ -415,7 +448,9 @@ A connector face has some \(|t_v|=\rho\), and hence loss at least \(1/(1024\pi)\
 
 \subsection{The actual analytic conclusion}\label{sec:qe-9}
 
-Allowing polynomial prefactors, all source, real-box and charge-tail errors above have loss at least
+All absolute errors can now be compared at one level. Allowing
+polynomial prefactors, the source, real-box and charge-tail errors
+have loss at least
 \begin{equation}
 \eta=1/(819200\pi).
 \label{eq:qe-34}
@@ -442,7 +477,9 @@ uniformly on the disk, and is nonzero there for sufficiently large levels. The e
 
 \subsection{Explicit analytic nonvacuity}\label{sec:qe-10}
 
-For a star with center degree \(B\), arbitrary fixed center power \(n_0\), and leaf powers \(|n_j|\ge B\),
+The criterion permits short powers in explicit finite diagrams. For a
+star with center degree \(B\), arbitrary fixed center power \(n_0\),
+and leaf powers \(|n_j|\ge B\),
 \begin{equation}
 \mathfrak S=\frac{B}{B^2+n_0^2}
                     +\sum_{j=1}^B\frac1{1+n_j^2}<2/B.
@@ -470,7 +507,10 @@ These examples retain the original knot/parity qualification. Some star presenta
 
 \subsection{Identification with the knot volume}\label{sec:qe-11}
 
-Small angular variables do not imply that the primitive meridian logarithms are small: a high-degree circle collects contributions from many edges. The geometric proof therefore follows the entire path of filling equations, with its logarithm branches retained.
+To identify the selected action, follow the original primitive paths
+along the positive filling branch. Small edge angles do not make their
+total meridian logarithm small at a high-degree circle. The logarithms
+must therefore be continued, rather than reduced to principal values.
 
 The \hyperref[sec:ft]{ordered decomposition} cuts the original augmented exterior into two octahedra per tree edge. Its literal strand matchings retain every face pairing, half twist and primitive peripheral path. The \hyperref[sec:fa]{angular construction} subdivides these octahedra into eight positive tetrahedra per edge on the chart \(|\tau_v|<10^{-2}\). Section~\ref{sec:qe-7} places the whole path
 
@@ -493,11 +533,13 @@ It verifies that the primitive slope bounds a tube of cone angle \(2\pi c\). At 
 \label{eq:qe-38}
 \end{equation}
 
-Thus the analytic conclusion above is an actual uniform volume theorem under \eqref{eq:qe-2}. The \hyperref[sec:fc]{preferred-cusp continuation} also identifies the first correction geometrically. This establishes the summed criterion, not arbitrary short fillings or a criterion for graphs with cycles.
+Thus the analytic conclusion above is an actual uniform volume theorem under \eqref{eq:qe-2}. This establishes the summed criterion, not arbitrary short fillings or a criterion for graphs with cycles.
 
 \subsection{Reproducing the edge calculations}\label{sec:qe-reproduction}
 
-The \hyperref[sec:qu]{elementary Newton estimates} give a second direct proof of the uniform discarded-state and complex-strip bounds. The exact edge equations and finite samples of that strip inequality can be checked with:
+The proofs above establish the uniform estimates. For an independent
+finite check of the edge equations and samples of the strip inequality,
+the reproduction command is:
 
 \begin{verbatim}
 python3 repro/run_research_checks.py curvature-fillings
@@ -507,15 +549,21 @@ The \href{https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments
 
 \section{Uniform Newton bounds with explicit constants}\label{sec:qu}
 
-The separately available version of this section is \href{https://sashakolpakov.github.io/murakamis_dream/notes/all_circle_uniform_newton_bounds.html}{uniform newton bounds with explicit constants}. The proof is reproduced here in full.
-
-This section proves two uniform estimates used in the \hyperref[sec:qe]{quantitative filling limit}. It does not identify a complex critical value with the volume of a filled complement. The latter still requires the original marked geometry and smooth completion.
+The following product argument gives the complex-strip estimate without
+estimating each Newton factor separately. It also records the precise
+discarded-state rate used above. The
+\href{https://sashakolpakov.github.io/murakamis_dream/notes/all_circle_uniform_newton_bounds.html}{separate Newton calculation}
+contains these same estimates. The volume identification still uses
+the marked geometry and its smooth completion.
 
 Fix a finite ordered tree. Every vertex carries its actual crossing-circle operator, including the degree-one vertices. Write \(d_v\) for a vertex degree and \(a_v=d_v/(2\pi)\). All graph data and integer crossing powers are fixed before the level \(N\) tends to infinity. Constants in polynomial prefactors may depend on these fixed data. The exponential constants below do not depend on the tree.
 
 \subsection{A uniform loss outside the retained interval}\label{sec:qu-1}
 
-Use the fixed complete Newton basis, the physical diagonal edge factors, the full value-and-first-derivative norm, and the fixed-power crossing bounds from \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_main_meridian_source_bounds.html}{the full polynomial trace bounds}. A low basis element has norm at most a polynomial times \(\exp(Ng(k/N))\); a high basis element has polynomial norm. Here
+Here is the rate calculation from Section~\ref{sec:qe-3} in a form
+that can be reused. The full polynomial trace bounds give a low basis
+element rate $g(k/N)$ and a polynomial bound for a high element,
+including its normal derivative. The edge factors are bounded. With
 \[
 g(x)=J(2x)-4J(x),\qquad
 J(x)=\int_0^x\log(2\sin\pi u)\,du,
@@ -529,7 +577,10 @@ Thus, with \(G_0=g(1/4)\),
 g(x)\le G_0-2\pi(x-1/4)^2.
 \]
 
-Each physical edge index occurs at its two ends. Quotient multiplication, a fixed crossing power, and the trace cost only a polynomial in the full norm. Consequently the absolute scalar sum is bounded by a polynomial times the sum of the products of the squared basis bounds. There are only polynomially many edge-index assignments for a fixed tree. Its complete maximum is \(F_0=2|E|G_0\).
+Each edge index occurs twice. Quotient multiplication, a fixed crossing
+power and the closing cost only a polynomial in the full norm.
+Polynomial state counting therefore gives the complete reference rate
+$F_0=2|E|G_0$.
 
 Retain the interval \(I=[1/5,3/10]\) on every edge. A low edge outside \(I\) loses at least \(\pi/100\) in this rate. A high edge loses \(2G_0\), which is larger. The sum of every discarded assignment therefore has upper rate at most
 \[
@@ -548,7 +599,8 @@ The exact normalized basis value is
 \[
 \frac{e_k(-2\cos z)}{e_k(-2)}=\prod_{j=0}^{k-1}Q_{r_j}(z).
 \]
-Although some individual factors have a negative constant Laurent coefficient, those factors can be paired before taking absolute values.
+Some factors have a negative constant Laurent coefficient. Pairing
+them first recovers nonnegative coefficients and a useful modulus bound.
 
 Reserve the first \(m=\lfloor N/32\rfloor\) factors. Their parameters satisfy \(r_j\ge\cos(\pi/16)>9/10\). There are at most \(h\le N/20+1\) negative parameters, all greater than \(\cos(3\pi/5)>-2/5\). Pair each of these with a different parameter from the next \(h\) positions after the reserved ones. These positions are disjoint from the negative ones and have parameter at least \(\cos(\pi/4)>7/10\), because \(m+h\le N/8\). Every remaining unpaired parameter is nonnegative.
 
@@ -594,7 +646,9 @@ Indeed the stronger constants from the preceding calculation are \(1/(80\pi)\) a
 
 \subsection{The explicit action of one edge}\label{sec:qu-3}
 
-The two-ended Newton action is the critical value in \(x\) of
+For reference, the same product calculation gives a compact formula
+for the edge action and its Hessian. The action is the critical value in
+\(x\) of
 \[
 R(x,t)+R(x,u),\qquad
 R(x,t)=\int_0^x\log(2\cos(2\pi v)+2\cos t)\,dv-2J(x).

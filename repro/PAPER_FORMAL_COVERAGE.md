@@ -1,57 +1,44 @@
-# Current internal assembly coverage
+# Formal statements in the retained volume proofs
 
-This record maps all 21 current papers to exact compiled results and retained written inputs. It compares their main theorem statements with the Lean declarations and explicit assumptions. Exact source locators, declaration names and hashes are in [the coverage record](formal_coverage/coverage.json). The interface review does not replace reading the analytic and geometric proofs.
+The active formalization follows the cleaned reference and its shared
+strict Conway proof. Start with
+[ConwayAssembly.lean](../formal-real/ConwayAssembly.lean): the theorem
+retains the exact coherent color sum, derives the whole filled-remainder
+bound from the actual crossing coefficient estimate, and applies the
+direct complex packet theorem.
 
-The integrated libraries contain 241 Std theorems. The Mathlib project contains 28 modules, 115 definitions or abbreviations, and 461 theorems. These counts do not measure completed paper coverage.
+The [coverage map](../formal/coverage.json) gives every active module's
+manuscript anchors, selected public roots and mathematical role. It
+includes the finite polynomial/support arguments in the filling
+appendix and the independent fixed-boundary variational argument.
+It contains no standalone recurrence or microscopic-profile branch.
 
-## What changed
+The principal new statements are:
 
-The local spectral bounds and central shared-coefficient asymptotics now form one paper. Their exact finite setup is stated once; the signed transfer estimates, protected-variable argument, global angular and spectral bounds, and nonzero shared Gaussian remain separate proofs. The central theorem still assumes stationary positive radii. The [audit of the original papers](manuscript_audit/casimir-source/report.md) records the analytic checks and retained hypotheses; the consolidation has a separate proof-diff review.
+| Retained manuscript argument | Lean source |
+| --- | --- |
+| Transported Gram, its kernel and coordinate changes | [CoefficientGram](../formal-real/CoefficientGram.lean) |
+| Shifted Parseval and the actual Hermite coefficient mass | [FourierHermite](../formal-real/FourierHermite.lean) |
+| Linearized stationary equation and Schur block | [StationaryElimination](../formal-real/StationaryElimination.lean) |
+| Zero-safe costs and the complex packet-to-volume implication | [RealTransfer](../formal-real/RealTransfer.lean) |
+| Exact coherent color contraction and its derived whole remainder | [ConwayAssembly](../formal-real/ConwayAssembly.lean) |
 
-The circle-tree volume paper now contains both the summed and directed criteria, with their finite kernel and Fourier trace proved once. The different global estimates remain separate, as does the stronger first correction under the summed condition. Earlier editions remain available for citations.
+The analytic implicit-function/contour arguments and primitive geometric
+calibration remain the written inputs at their stated places. The Lean
+statements give the exact finite and analytic implications listed here;
+they are not an independently defined knot invariant.
 
-The recurrence proof now constructs every finite Laurent coefficient expansion at the actual roots. Monic division removes the maximal common power of $q-1$ and proves a nonzero classical symbol. An exact coefficient adapter connects the polynomial record to the finite Laurent sum and reconstructs the whole symbol; its degree bound prevents an omitted shift coefficient from making the conclusion vacuous. The complete $h$-order and leading coefficient under $q=e^h$ are also proved. The meridian substitution $M=e^u$ is now an injective complex algebra map: for a fixed exponent set $E$, the first $|E|$ coefficients give a Vandermonde system. Thus the full formal polynomial remains nonzero before its selected longitude is substituted. A uniform finite-jet bound without a fixed support is not asserted.
+Run the complete current check from the repository root:
 
-Both explicit scalar factors in the microscopic profiles now have proved limits. The removable sine quotient converges uniformly to $\operatorname{sinc}(\pi s)$, and the fixed quadratic factor $\exp(cs^2/N)$ converges uniformly to one. The exact limiting zero set gives positive bounds on compact sets avoiding the nonzero integers, including every disk $|s|\le R<1$. These bounds supply one common nonvanishing threshold and uniform logarithmic rate from the written source profile.
+~~~sh
+python3 repro/check_lean.py --output repro/results/volume-lean
+~~~
 
-## Exact remaining boundary
+The runner compiles from empty local build directories, validates the
+active import graph and pinned dependencies, and audits every public
+definition and theorem. It also verifies the literal manuscript
+anchors. The source-location checks and the kernel checks have different
+roles; their results are recorded separately.
 
-The operator application still requires a specified actual recurrence, its source normalization and nonvanishing, and all-orders shifted source-ratio estimates. Algebraic common-denominator clearing is proved, but the physical rational denominator chart must still be verified. No annihilator is constructed. The selected holomorphic germ and geometric-factor conclusion remain written arguments; no full AJ or full A-polynomial theorem follows.
-
-For the volume applications, the actual source profile, nonzero whole packet, bound for the entire complementary sum and absolute geometric calibration remain written inputs. The scalar-factor proof is not a saddle or contour proof. Generic theorem assembly, actual mathematical constructions and dependency metadata have different roles: the DAG checks named connections, while Lean proves the stated algebraic and analytic implications. No current paper is claimed to be an end-to-end Lean instance for its actual knot family.
-
-## 21-paper map
-
-| Paper | Compiled part of its main conclusion | Remaining written/application boundary |
-|---|---|---|
-| [Finite spectral evaluation and uniform filling bounds](../papers/filling-bounds/main.tex) | Canonical remainder/product/resolvent algebra and target-budget arithmetic are actual proved mathematics. The final generic rate implication is also proved. | No uncovered elementary remainder-to-rate step found; physical finite identities and the analytic norm are not implied by the generic quotient theorems. |
-| [Newton calculus and stationary profiles of Conway tangles](../papers/newton-calculus/main.tex) | Canonical reduction of products and first normals is proved generically. It does not prove the physical positive Newton coefficients, strict support criterion, interior optimizer, harmonic profiles or positive-source limit. | No compiled theorem instantiates this Newton action and its support or assembles its positive-source limit. TriangleHall treats a different supported triangle-entropy potential; its grounded optimizer cannot be substituted for the Newton optimizer/profile theorem. |
-| [Exact Newton calculus for tangles with a moving meridian](../papers/meridian-tangles/main.tex) | Repeated-node quotient and normal-product algebra is proved in a generic commutative coefficient ring. | No Lean tree-contraction object or physical-to-quotient adapter exists in this version; generic quotient algebra does not prove mt:tree or mt:scalar. |
-| [Spectral estimates for Conway tangle sources](../papers/conway-source-bounds/main.tex) | Generic finite threshold and positive budget assembly are proved; the source-specific bounds are not. | No source-bound claim is obtained merely from the dependency graph. The theorem for at least three crossing-circle vertices does not replace the separate two-vertex corollary. |
-| [Marked geometry of strict Conway compositions](../papers/strict-conway-geometry/main.tex) | No formal manifold, representation or primitive slope construction is provided by these libraries. | The volume calibration is an explicit premise of the generic Lean transfer, not a conclusion of graph metadata or a positivity lemma. |
-| [Holomorphic source asymptotics and volume limits for strict Conway compositions](../papers/conway-asymptotics/main.tex) | The final noncancellation/rate/normalization and fixed-tuple common-threshold implications are compiled. | No additional generic final-rate gap found. Applying the existing theorem still requires the actual scalar identity and packet data; this is not an instantiated Lean theorem about Conway knots. |
-| [Ordered tangle reductions and long net twists](../papers/conway-reductions/main.tex) | No formal tangle syntax, isotopy normalizer or connected-sum hyperbolicity classifier exists here. | The final conclusion uses actual isotopy to the retained strict factor, not multiplication of abstract scalar rates. There is no compiled topological assembly theorem. |
-| [Spectral bounds and asymptotics of Casimir sources](../papers/casimir-source-asymptotics/main.tex) | Support arithmetic, explicit triangle-potential calculus, strict-cut balance, grounded Hessian invertibility and unique face-grid targets are proved. | Uniform spectral rates, the actual complex cofactor and shared Gaussian, and both global complement estimates remain written proofs. The central theorem assumes stationary positive radii; neither a noncentral invariant bound nor a geometric volume calibration follows from the generic Lean lemmas. |
-| [Oscillatory filling sums with independently long twists](../papers/oscillatory-fillings/main.tex) | After the written asymptotic and nonzero limiting amplitude are supplied, the logarithmic rate and finite threshold combination are proved. | The Lean rate lemma must not be described as a formal proof of the entire period or of cancellation among charges. |
-| [Circle patterns and primitive fillings of augmented links](../papers/marked-fillings/main.tex) | The exact supported potential, strict-cut existence/balance, and grounded linear algebra have compiled proofs. | No formal geometry-to-volume bridge is claimed. Generic source/volume assembly accepts this precise classical theorem as an input. |
-| [Positive octahedra and primitive fillings for trees of crossing circles](../papers/circle-tree-geometry/main.tex) | No compiled instance of this complex contraction/cone-path construction is present. | The independent-long-filling theorem cannot replace this input when a high-degree vertex has small or zero power. |
-| [Nonparabolic holonomy of trees of crossing circles](../papers/nonparabolic-tree-geometry/main.tex) | No formal representation, character germ or local Artin inverse theorem is present. | A source branch must separately reach the same actual positive filled anchor and primitive rows. Formal graph rank alone would not identify that branch. |
-| [Preferred longitudes of Conway tree complements](../papers/preferred-longitudes/main.tex) | No compiled rational function-field, no-poles, monomial or preferred-word theorem is present. | This is an explicit geometric/algebraic input to the selected-factor corollary; it is not a conclusion of FormalShift or FormalRegrading. |
-| [Volume asymptotics for trees of crossing circles](../papers/circle-tree-volume/main.tex) | Actual removable sine and fixed quadratic scalar limits supply both factor inputs to the compiled uniform nonvanishing and logarithmic-rate implication. | The summed and directed source estimates, nonzero whole packet, entire remainder and absolute geometric calibration remain written; only the summed theorem gives the explicit first correction. |
-| [Shared face estimates and triangular gluing for planar link diagrams](../papers/planar-certificates/main.tex) | Actual convex flattening calculus, two-branch scalar comparison, protected target cancellation, finite whole-sector filling and final rate transfer are proved. | The Lean protected finite-assembly theorem assumes the accumulated comparison join. It does not construct a glued sphere or transfer omitted globally-zero strings. Unabridged coverage remains necessary. |
-| [Balanced circle packings from terminal tangle decorations](../papers/terminal-decorations/main.tex) | The downstream scalar balance/certificate and rate implications are compiled, not the decoration. | Neither original knot preservation nor an undeformed universal theorem follows; decoration may change the knot. No compiled topological constructor exists. |
-| [Triangular insertion and volume limits for augmented diagrams](../papers/triangular-insertion/main.tex) | Supported grounded minimization and the scalar whole-block split/duplicate-target correction are actual compiled proofs. | The scalar theorem keeps the whole-block Boolean; a central attaching label alone is insufficient. Its hypotheses do not by themselves prove the actual geometric insertion or uniform boundary extension. |
-| [Volume limits for long alternating-generator three-braids](../papers/three-braids/main.tex) | Generic source-gap restoration and actual log-rate assembly apply once the supplied witnesses and packet are identified. | The trigonometric certificate for every syllable count and the braid construction remain written; finite numerical/reproduction checks are not those proofs. |
-| [Asymptotics of signed Newton coefficients near the quarter index](../papers/quarter-index-asymptotics/main.tex) | No compiled analytic backward diagonalization/interpolation theorem is present. | No global remainder, filling or volume statement is a formal or written consequence of this local theorem alone. |
-| [Moving-meridian source estimates for strict Conway tangles](../papers/moving-meridian-sources/main.tex) | Actual removable sine and fixed quadratic scalar limits, followed by the conditional uniform profile implication. | The source packet, uniform errors, translated domains, all orders and base rate remain written. This analytic paper asserts no geometric volume theorem. |
-| [Meridian expansions and classical symbols of quantum recurrences](../papers/meridian-expansions/main.tex) | A specified nonzero polynomial coefficient record and actual root recurrence give a nonzero complete classical symbol and a nonzero formal polynomial satisfying its characteristic identity. Normalization, exact encoding, coefficient estimates, gauge, full shift support and faithful meridian-series substitution are proved. | Actual annihilator identification, rational denominator chart, source normalization/nonvanishing and source-ratio estimates remain inputs. Finite-jet reconstruction requires fixed support; the convergent germ and selected geometric factor remain written. |
-
-The JSON retains each paper’s full top-level conclusion and exact written inputs. No current paper is marked as a completed Lean instance of its actual knot/tangle family. Classical geometric theorem assumptions are retained as written inputs rather than replaced by abstract propositions bearing the same names.
-
-Validate this record from the repository root with:
-
-```sh
-python3 repro/check_paper_formal_coverage.py --root . --coverage repro/formal_coverage/coverage.json --output /tmp/paper-formal-coverage-check.json
-```
-
-This command checks current paper membership, literal source anchors, declaration inventories and source hashes. It does not compile Lean or prove the assertions in the coverage table.
+The [cleanup record](PROOF_PATH_CLEANUP_2026-11-25.md) explains the
+manuscript-first revision and the subsequent deletion of obsolete sources.

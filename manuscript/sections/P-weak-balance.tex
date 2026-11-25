@@ -10,6 +10,11 @@ packing creates a first-order local gain. Stationarity makes the cost
 to the complete action only second order. We account for both changes
 on the same shared face variables.
 
+The proof is a perturbation argument at a stationary point. Its two
+ingredients are a weighted graph Laplacian, which bounds the change of
+the total action, and a positive triangle entropy, which separates each
+surviving one-sided term. Neither ingredient requires a new packing.
+
 \section{The unchanged diagram and the volume statement}
 
 Fix a finite simple triangulation of the sphere with at least four
@@ -141,7 +146,10 @@ therefore
  h^{\mathsf t}\nabla^2Q_t(q')h
        =\sum_{\{i,j\}\subset I_t}\kappa_{ij}^t(h_i-h_j)^2.
 \]
-This also proves positive semidefiniteness directly.
+Thus the Hessian is the weighted Laplacian of the supported triangle.
+It measures differences of logarithmic weights and ignores a common
+rescaling. Summing these local forms gives the global estimate below;
+there is no need to diagonalize a separate matrix for each triangle.
 
 Set
 \begin{equation}\label{wb:action}
@@ -153,8 +161,9 @@ geometric action of Appendix~\ref{app:morse-geometric-contribution} give
  \sum_{t\ni f}a_{tf}=1,\qquad \nabla P(q)=0,
  \qquad P(q)=\Phi.
 \end{equation}
-These are statements about the complete geometric contribution. They
-do not assume a bound for the complementary part of the invariant.
+The angle sums establish stationarity, and the calibrated cell volume
+fixes its value. The complementary quantum terms have not yet entered
+the argument.
 
 \section{Changing the common weights}
 
@@ -164,7 +173,7 @@ For $0<t<1$, replace every ordinary weight by
 \]
 Keep the two protected weights zero. These numbers specify one valid
 Cauchy coefficient torus. They need not describe another packing.
-Define
+Measure the size of this simultaneous change by
 \begin{equation}\label{wb:energy}
  \mathcal E=\frac1{4\pi}
        \sum_t\sum_{\{i,j\}\subset I_t}(q_i-q_j)^2
@@ -180,7 +189,7 @@ ordinary white edge. Taylor's formula, \eqref{wb:hessian}, and
    \le\tfrac12t^2\mathcal E.
 \end{equation}
 
-The local gain is first order. Put
+The local improvement has a different order. Put
 $E_t(\beta)=Q_t(\beta q)-\beta q\cdot\nabla Q_t(\beta q)$ for
 $0<\beta\le1$. Differentiation gives
 \[
@@ -217,7 +226,7 @@ $t(e,s)$ be the triangle containing $z$. Define, at the complete packing,
  \epsilon_{e,s}=\max(0,q_z-X_e(q)),\qquad
  h_{e,s}=E_{t(e,s)}(q)>0.
 \end{equation}
-The strict positivity needs a geometric incidence observation. The
+The positivity of this entropy follows from the incidence of the mark. The
 outer edge is matched, whereas the protected edge is nonmatching.
 Since the sphere is simple, the outer pair cannot be precisely the
 two protected vertices. Hence the triangle containing a positive
@@ -237,7 +246,9 @@ receives that of the overloaded triangle. This proves, for either side,
  (X_e-A_s)((1-t)q)
        \ge t h_{e,s}-(1-t)\epsilon_{e,s}.
 \end{equation}
-All weights in this comparison belong to the same global vector.
+The comparison therefore applies to all crossings at once: a face has
+one weight even when several crossings meet it. This is the point at
+which independent local optimizations would be insufficient.
 
 \section{A quantitative criterion and the full complementary sum}
 
@@ -247,7 +258,9 @@ Suppose for some $0<t<1$ that
         \{t h_{e,s}-(1-t)\epsilon_{e,s}\}
                     -\tfrac12t^2\mathcal E>0.
 \end{equation}
-This is a sufficient condition even when weak balance fails. If no
+The first term is the smallest local improvement; the second pays for
+the change of the entire central action. This is a sufficient condition
+even when weak balance fails. If no
 one-sided label survives, the complement is exactly zero and the
 criterion is unnecessary. Otherwise put $h_* =\min h_{e,s}>0$.
 Under weak balance all defects vanish. Choose
@@ -263,7 +276,7 @@ value is $h_*/2$. This proves that any number of equalities in
 $\max\epsilon_{e,s}<t_0h_*/2$ suffices, with gap at least
 $t_0h_*/2-\max\epsilon_{e,s}$.
 
-Here is the passage from these real functions to the original invariant.
+We now apply this real-variable estimate to the exact finite source.
 Put $d=N-1$ and write $S_N(\boldsymbol\sigma)$ for the exact shared
 spectral polynomial of the Morse source. Its local numerator is
 \[
@@ -297,7 +310,8 @@ inequality on the single torus $|L_f|=(w_f^*)^{1-t}$, together with
  \le\Phi-\gamma_0.
 \]
 Condition~\eqref{wb:criterion} makes every summand in braces
-positive, so other one-sided choices cannot undo the loss. The local
+positive. Thus one one-sided choice already pays for the entire action
+cost, and further such choices only improve the bound. The local
 bounds are uniform in all face phases and real spectral values.
 The original target is $d$, and $d/N=1-1/N$ changes the normalized
 logarithm by only $O(1/N)$ at these fixed weights. There are at most
@@ -346,14 +360,15 @@ with nonzero amplitude for all sufficiently large levels, and
  2\pi\Re\mathcal A_{\boldsymbol n}
    =\Vol(S^3\setminus K_{\boldsymbol p}).
 \end{equation}
-The second identity uses the original primitive peripheral basis.
+The second identity is the geometric step, rather than a consequence
+of the real-variable estimate. It uses the original primitive peripheral basis.
 The actual periods satisfy the filling equation for
 $\mu_e+p_e\lambda_e$, and the completed auxiliary end is a smooth
 solid torus with cone angle $2\pi$. The main knot cusp stays complete.
-The regulator's boundary correction cancels the filling correction
-in the critical action. These are the geometric completion steps
-proved there, not a new identification inferred from a shared
-stationary equation.
+The regulator's boundary correction then cancels the filling correction
+in the critical action. This order matters: the stationary equations
+first identify a representation, and metric completion identifies its
+volume with that of the filled knot complement.
 
 Choose $0<\eta<\gamma_0$ and increase the common twist threshold
 until the drop in~\eqref{wb:filled-action} is less than $\eta/2$.
@@ -368,8 +383,8 @@ rate. Thus the same limit holds for the normalized invariant in
 Theorem~\ref{wb:volume}, proving it. The argument also proves its
 extension under~\eqref{wb:criterion}.
 
-The theorem supplies an unchanged-diagram sufficient condition of
-arbitrary finite size. It does not impose a tree or bridge-width
-restriction. Whether a diagram satisfies the condition is a separate
-geometric question; the theorem supplies neither a universal balance
-claim nor a filling threshold uniform over growing diagrams.
+The resulting sufficient condition applies to unchanged diagrams of
+arbitrary fixed finite size, including diagrams with cycles. Its
+geometric hypothesis remains \eqref{wb:balance}, or the quantitative
+replacement \eqref{wb:criterion}; it need not hold for every diagram.
+The filling threshold depends on the fixed diagram.

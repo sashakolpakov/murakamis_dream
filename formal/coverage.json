@@ -1,0 +1,555 @@
+{
+  "scope": "Selected formal proof roots for the cleaned volume manuscripts. The role and exact manuscript statement explain why each active module is retained. Supporting lemmas are audited too. Written physical source identities, complex contours and geometric calibration are not inferred from these records.",
+  "projects": {
+    "std": {
+      "directory": "formal",
+      "defaultTargets": [
+        "VolumeLogic"
+      ],
+      "infrastructure": [
+        "VolumeLogic.lean",
+        "AxiomAudit.lean"
+      ],
+      "modules": [
+        {
+          "module": "VolumeLogic.FiniteSupport",
+          "path": "VolumeLogic/FiniteSupport.lean",
+          "namespace": "VolumeLogic",
+          "roots": [
+            "VolumeLogic.three_supports",
+            "VolumeLogic.left_endpoint_cutoff",
+            "VolumeLogic.central_endpoint_even",
+            "VolumeLogic.central_endpoint_odd"
+          ],
+          "manuscript": [
+            {
+              "path": "manuscript/sections/O-morse-geometric-contribution.tex",
+              "anchor": "\\label{mca:sec-1}"
+            }
+          ],
+          "role": "The central and two one-sided supports at both level parities."
+        },
+        {
+          "module": "VolumeLogic.FiniteAlgebra",
+          "path": "VolumeLogic/FiniteAlgebra.lean",
+          "namespace": "VolumeLogic",
+          "roots": [
+            "VolumeLogic.double_root_jet_identity",
+            "VolumeLogic.tensor_grid_subtraction"
+          ],
+          "manuscript": [
+            {
+              "path": "manuscript/sections/N-uniform-filling-bound.tex",
+              "anchor": "\\label{uf:eq-10}"
+            },
+            {
+              "path": "manuscript/sections/N-uniform-filling-bound.tex",
+              "anchor": "\\label{uf:eq-4}"
+            }
+          ],
+          "role": "Division-free double-root identity and subtraction of only the all-evaluation tensor term."
+        },
+        {
+          "module": "VolumeLogic.MonicRemainder",
+          "path": "VolumeLogic/MonicRemainder.lean",
+          "namespace": "VolumeLogic",
+          "roots": [
+            "VolumeLogic.monic_division_identity",
+            "VolumeLogic.monic_remainder_degree_bound",
+            "VolumeLogic.top_coefficient_is_newton",
+            "VolumeLogic.double_root_remainder"
+          ],
+          "manuscript": [
+            {
+              "path": "manuscript/sections/N-uniform-filling-bound.tex",
+              "anchor": "\\label{prop:canonical-polynomial-remainder}"
+            }
+          ],
+          "role": "The constructed confluent remainder and its degree and leading coefficient."
+        },
+        {
+          "module": "VolumeLogic.MonicLinearity",
+          "path": "VolumeLogic/MonicLinearity.lean",
+          "namespace": "VolumeLogic",
+          "roots": [
+            "VolumeLogic.monicRemainder_polyAdd",
+            "VolumeLogic.monicRemainder_polyScale",
+            "VolumeLogic.newtonFunctional_quotient_invariant"
+          ],
+          "manuscript": [
+            {
+              "path": "manuscript/sections/N-uniform-filling-bound.tex",
+              "anchor": "\\label{prop:canonical-polynomial-remainder}"
+            }
+          ],
+          "role": "Linearity and invariance under replacing the polynomial representative."
+        },
+        {
+          "module": "VolumeLogic.MonicUniqueness",
+          "path": "VolumeLogic/MonicUniqueness.lean",
+          "namespace": "VolumeLogic",
+          "roots": [
+            "VolumeLogic.monic_remainder_unique_between",
+            "VolumeLogic.monicRemainder_permutation",
+            "VolumeLogic.newtonFunctional_characterization"
+          ],
+          "manuscript": [
+            {
+              "path": "manuscript/sections/N-uniform-filling-bound.tex",
+              "anchor": "\\label{prop:canonical-polynomial-remainder}"
+            }
+          ],
+          "role": "Uniqueness, repeated-root order independence and characterization of the coefficient functional."
+        },
+        {
+          "module": "VolumeLogic.MonicProduct",
+          "path": "VolumeLogic/MonicProduct.lean",
+          "namespace": "VolumeLogic",
+          "roots": [
+            "VolumeLogic.monicRemainder_mul_reduce_both",
+            "VolumeLogic.newtonFunctional_product",
+            "VolumeLogic.quotientProduct_assoc",
+            "VolumeLogic.quotientProduct_double_head_derivative"
+          ],
+          "manuscript": [
+            {
+              "path": "manuscript/sections/N-uniform-filling-bound.tex",
+              "anchor": "\\label{prop:canonical-remainder-products}"
+            }
+          ],
+          "role": "Exact product reduction and retained first normals."
+        },
+        {
+          "module": "VolumeLogic.ResolventFunctional",
+          "path": "VolumeLogic/ResolventFunctional.lean",
+          "namespace": "VolumeLogic",
+          "roots": [
+            "VolumeLogic.polynomialResolvent_identity",
+            "VolumeLogic.newtonFunctional_resolvent_reproduces"
+          ],
+          "manuscript": [
+            {
+              "path": "manuscript/sections/N-uniform-filling-bound.tex",
+              "anchor": "\\label{prop:resolvent-reproduction}"
+            }
+          ],
+          "role": "The constructed polynomial resolvent reproduces evaluation at an annihilating element."
+        },
+        {
+          "module": "VolumeLogic.FaceGridSupport",
+          "path": "VolumeLogic/FaceGridSupport.lean",
+          "namespace": "VolumeLogic",
+          "roots": [
+            "VolumeLogic.face_grid_selection_iff"
+          ],
+          "manuscript": [
+            {
+              "path": "manuscript/sections/Morse-preliminaries.tex",
+              "anchor": "\\label{mcg:face-grid-selection}"
+            }
+          ],
+          "role": "The degree/residue selector after the actual character sum, not a replacement for that sum."
+        },
+        {
+          "module": "VolumeLogic.RateComparison",
+          "path": "VolumeLogic/RateComparison.lean",
+          "namespace": "VolumeLogic",
+          "roots": [
+            "VolumeLogic.doubled_flattening_gain",
+            "VolumeLogic.strict_weak_balance_gain",
+            "VolumeLogic.nonempty_sector_gap",
+            "VolumeLogic.filled_remainder_strictly_below"
+          ],
+          "manuscript": [
+            {
+              "path": "manuscript/sections/P-weak-balance.tex",
+              "anchor": "\\label{wb:remainder}"
+            }
+          ],
+          "role": "The scalar strict-gap comparisons used after entropy and action bounds."
+        },
+        {
+          "module": "VolumeLogic.ProtectedSum",
+          "path": "VolumeLogic/ProtectedSum.lean",
+          "namespace": "VolumeLogic",
+          "roots": [
+            "VolumeLogic.protected_sum_certified_rate",
+            "VolumeLogic.protected_sum_central_total",
+            "VolumeLogic.protected_finite_assembly_gap"
+          ],
+          "manuscript": [
+            {
+              "path": "manuscript/sections/Q-protected-triangular-sums.tex",
+              "anchor": "\\label{pts:eq-17}"
+            }
+          ],
+          "role": "The whole protected-sector comparison and duplicated target cancellation."
+        },
+        {
+          "module": "VolumeLogic.TriangularBoundary",
+          "path": "VolumeLogic/TriangularBoundary.lean",
+          "namespace": "VolumeLogic",
+          "roots": [
+            "VolumeLogic.boundary_certified_rate",
+            "VolumeLogic.boundary_conditional_action_cancels",
+            "VolumeLogic.boundary_total_central_block",
+            "VolumeLogic.boundary_noncentral_block_margin"
+          ],
+          "manuscript": [
+            {
+              "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+              "anchor": "\\label{tbi:eq-23}"
+            }
+          ],
+          "role": "The two whole-block insertion cases with the actual coefficient demands."
+        },
+        {
+          "module": "VolumeLogic.SourceAssembly",
+          "path": "VolumeLogic/SourceAssembly.lean",
+          "namespace": "VolumeLogic",
+          "roots": [
+            "VolumeLogic.filled_remainder_identity",
+            "VolumeLogic.finite_sector_filling_bound",
+            "VolumeLogic.simultaneous_sector_threshold"
+          ],
+          "manuscript": [
+            {
+              "path": "manuscript/sections/P-weak-balance.tex",
+              "anchor": "\\label{wb:transfer}"
+            },
+            {
+              "path": "manuscript/sections/Q-protected-triangular-sums.tex",
+              "anchor": "\\label{pts:eq-20}"
+            }
+          ],
+          "role": "Coherent sector assembly before norms, including the entire original index list."
+        }
+      ]
+    },
+    "mathlib": {
+      "directory": "formal-real",
+      "defaultTargets": [
+        "RealTransfer",
+        "CoefficientGram",
+        "StationaryElimination",
+        "FourierHermite",
+        "ConwayAssembly",
+        "WeightedGraph",
+        "Flattening",
+        "TransportCoercivity",
+        "GroundedConvexity",
+        "GroundedLaplacian",
+        "TriangleLoads",
+        "TrianglePotential",
+        "TriangleMinimizer",
+        "TriangleBalance",
+        "HallRecession",
+        "TriangleHall"
+      ],
+      "infrastructure": [
+        "AxiomAudit.lean"
+      ],
+      "modules": [
+        {
+          "module": "RealTransfer",
+          "path": "RealTransfer.lean",
+          "namespace": "VolumeLogic.RealModel",
+          "roots": [
+            "VolumeLogic.RealModel.complex_packet_volume_transfer",
+            "VolumeLogic.RealModel.upperRate_norm_of_cost",
+            "VolumeLogic.RealModel.upperRate_of_polynomial_bound"
+          ],
+          "manuscript": [
+            {
+              "path": "manuscript/sections/09-reproduction.tex",
+              "anchor": "\\label{prop:volume-rate-transfer}"
+            },
+            {
+              "path": "manuscript/sections/09-reproduction.tex",
+              "anchor": "\\label{lem:subexponential-remainder-transfer}"
+            },
+            {
+              "path": "manuscript/sections/09-reproduction.tex",
+              "anchor": "\\label{cor:polynomial-remainder-transfer}"
+            }
+          ],
+          "role": "The direct complex packet and zero-safe exponential-envelope proof; no abstract log/magnitude model."
+        },
+        {
+          "module": "CoefficientGram",
+          "path": "CoefficientGram.lean",
+          "namespace": "VolumeLogic.CoefficientGram",
+          "roots": [
+            "VolumeLogic.CoefficientGram.quadratic_eq_norm_sq",
+            "VolumeLogic.CoefficientGram.ker_gram",
+            "VolumeLogic.CoefficientGram.coordinate_change",
+            "VolumeLogic.CoefficientGram.closing_bound",
+            "VolumeLogic.CoefficientGram.corridor_comp",
+            "VolumeLogic.CoefficientGram.corridor_preserves_zero"
+          ],
+          "manuscript": [
+            {
+              "path": "manuscript/sections/02-exact-concepts.tex",
+              "anchor": "\\label{prop:coefficient-gram}"
+            }
+          ],
+          "role": "Actual l2 synthesis, transported Gram and exact linear corridors with the closing functional retained."
+        },
+        {
+          "module": "StationaryElimination",
+          "path": "StationaryElimination.lean",
+          "namespace": "VolumeLogic.StationaryElimination",
+          "roots": [
+            "VolumeLogic.StationaryElimination.solve_linearized",
+            "VolumeLogic.StationaryElimination.effective_hessian",
+            "VolumeLogic.StationaryElimination.schur_zero_mixed"
+          ],
+          "manuscript": [
+            {
+              "path": "manuscript/sections/02-exact-concepts.tex",
+              "anchor": "\\label{prop:stationary-schur}"
+            }
+          ],
+          "role": "The complex bilinear block algebra after differentiating the stationary equation; the IFT and differentiation remain the written analytic step."
+        },
+        {
+          "module": "FourierHermite",
+          "path": "FourierHermite.lean",
+          "namespace": "VolumeLogic.FourierHermite",
+          "roots": [
+            "VolumeLogic.FourierHermite.shiftedDFT_eq_sum",
+            "VolumeLogic.FourierHermite.shifted_reconstruction",
+            "VolumeLogic.FourierHermite.shifted_parseval",
+            "VolumeLogic.FourierHermite.centered_variance",
+            "VolumeLogic.FourierHermite.hermite_coefficient_mass",
+            "VolumeLogic.FourierHermite.crossing_coefficient_mass"
+          ],
+          "manuscript": [
+            {
+              "path": "manuscript/sections/02-exact-concepts.tex",
+              "anchor": "\\label{prop:shifted-parseval}"
+            },
+            {
+              "path": "manuscript/sections/02-exact-concepts.tex",
+              "anchor": "\\label{prop:hermite-coefficient-mass}"
+            },
+            {
+              "path": "papers/conway-asymptotics/filling.tex",
+              "anchor": "\\label{ca:crossing-split}"
+            }
+          ],
+          "role": "Actual shifted finite Fourier sums, exact reconstruction and Parseval; full normal data, omitted D0, truncated shift and the physical crossing coefficient bound."
+        },
+        {
+          "module": "ConwayAssembly",
+          "path": "ConwayAssembly.lean",
+          "namespace": "VolumeLogic.ConwayAssembly",
+          "roots": [
+            "VolumeLogic.ConwayAssembly.fullColorContraction_norm_le",
+            "VolumeLogic.ConwayAssembly.conway_packet_volume_limit"
+          ],
+          "manuscript": [
+            {
+              "path": "papers/conway-asymptotics/filling.tex",
+              "anchor": "\\label{ca:filled-error}"
+            },
+            {
+              "path": "papers/conway-asymptotics/introduction.tex",
+              "anchor": "\\label{ca:volume}"
+            }
+          ],
+          "role": "The exact coherent full-color contraction gives the entire remainder bound, using the actual crossing coefficient estimate before final packet transfer."
+        },
+        {
+          "module": "WeightedGraph",
+          "path": "WeightedGraph.lean",
+          "namespace": "VolumeLogic.WeightedGraph",
+          "roots": [
+            "VolumeLogic.WeightedGraph.energy_eq_zero_iff_constant",
+            "VolumeLogic.WeightedGraph.grounded_laplacian_pos"
+          ],
+          "manuscript": [
+            {
+              "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+              "anchor": "\\label{tbi:eq-5}"
+            }
+          ],
+          "role": "The constant kernel and grounded positivity of the supported Hessian."
+        },
+        {
+          "module": "Flattening",
+          "path": "Flattening.lean",
+          "namespace": "VolumeLogic.Flattening",
+          "roots": [
+            "VolumeLogic.Flattening.stationary_quadratic_cost",
+            "VolumeLogic.Flattening.weak_balance_sector_gap"
+          ],
+          "manuscript": [
+            {
+              "path": "manuscript/sections/P-weak-balance.tex",
+              "anchor": "\\label{wb:remainder}"
+            }
+          ],
+          "role": "The actual one-variable cost and entropy comparisons in the weak-balance argument."
+        },
+        {
+          "module": "TransportCoercivity",
+          "path": "TransportCoercivity.lean",
+          "namespace": "VolumeLogic.TransportCoercivity",
+          "roots": [
+            "VolumeLogic.TransportCoercivity.exists_grounded_minimizer"
+          ],
+          "manuscript": [
+            {
+              "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+              "anchor": "\\label{tbi:eq-7}"
+            }
+          ],
+          "role": "Positive corner transport proves coercivity and attainment for the fixed-boundary potential."
+        },
+        {
+          "module": "GroundedConvexity",
+          "path": "GroundedConvexity.lean",
+          "namespace": "VolumeLogic.GroundedConvexity",
+          "roots": [
+            "VolumeLogic.GroundedConvexity.exists_unique_grounded_minimizer"
+          ],
+          "manuscript": [
+            {
+              "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+              "anchor": "\\label{tbi:sec-2}"
+            }
+          ],
+          "role": "Segment Hessians give uniqueness for that same grounded potential."
+        },
+        {
+          "module": "GroundedLaplacian",
+          "path": "GroundedLaplacian.lean",
+          "namespace": "VolumeLogic.GroundedLaplacian",
+          "roots": [
+            "VolumeLogic.GroundedLaplacian.reducedMatrix_det_ne_zero",
+            "VolumeLogic.GroundedLaplacian.exists_unique_grounded_solution"
+          ],
+          "manuscript": [
+            {
+              "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+              "anchor": "\\label{tbi:eq-5}"
+            },
+            {
+              "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+              "anchor": "\\label{tbi:eq-7}"
+            }
+          ],
+          "role": "The actual reduced principal Laplacian and its inverse; distinct from stationary Schur elimination."
+        },
+        {
+          "module": "TriangleLoads",
+          "path": "TriangleLoads.lean",
+          "namespace": "VolumeLogic.TriangleLoads",
+          "roots": [
+            "VolumeLogic.TriangleLoads.jacobian_energy",
+            "VolumeLogic.TriangleLoads.sum_load_pairing_hasDerivAt",
+            "VolumeLogic.TriangleLoads.singletonLoad_hasDerivAt"
+          ],
+          "manuscript": [
+            {
+              "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+              "anchor": "\\label{tbi:eq-4}"
+            },
+            {
+              "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+              "anchor": "\\label{tbi:eq-5}"
+            }
+          ],
+          "role": "The literal arctangent loads and conductance Jacobian, with singleton support retained."
+        },
+        {
+          "module": "TrianglePotential",
+          "path": "TrianglePotential.lean",
+          "namespace": "VolumeLogic.TrianglePotential",
+          "roots": [
+            "VolumeLogic.TrianglePotential.summedPotential_mixed_hasDerivAt",
+            "VolumeLogic.TrianglePotential.summedPotential_mixed_second_at"
+          ],
+          "manuscript": [
+            {
+              "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+              "anchor": "\\label{tbi:eq-2}"
+            },
+            {
+              "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+              "anchor": "\\label{tbi:eq-5}"
+            }
+          ],
+          "role": "The supported entropy potential and its first/second derivatives for mixed regular and singleton rows."
+        },
+        {
+          "module": "TriangleMinimizer",
+          "path": "TriangleMinimizer.lean",
+          "namespace": "VolumeLogic.TriangleMinimizer",
+          "roots": [
+            "VolumeLogic.TriangleMinimizer.exists_unique_prescribed_minimizer"
+          ],
+          "manuscript": [
+            {
+              "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+              "anchor": "\\label{tbi:eq-7}"
+            }
+          ],
+          "role": "The fixed-boundary minimizer, with the pooled boundary coefficients and demands explicit."
+        },
+        {
+          "module": "TriangleBalance",
+          "path": "TriangleBalance.lean",
+          "namespace": "VolumeLogic.TriangleBalance",
+          "roots": [
+            "VolumeLogic.TriangleBalance.exists_unique_balance"
+          ],
+          "manuscript": [
+            {
+              "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+              "anchor": "\\label{tbi:sec-2}"
+            }
+          ],
+          "role": "Euler equations and balanced loads for the supported minimum."
+        },
+        {
+          "module": "HallRecession",
+          "path": "HallRecession.lean",
+          "namespace": "VolumeLogic.HallRecession",
+          "roots": [
+            "VolumeLogic.HallRecession.connected_of_strict_cuts",
+            "VolumeLogic.HallRecession.exists_grounded_minimizer"
+          ],
+          "manuscript": [
+            {
+              "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+              "anchor": "\\label{tbi:eq-6}"
+            },
+            {
+              "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+              "anchor": "\\label{tbi:eq-7}"
+            }
+          ],
+          "role": "Strict finite cuts give connectivity and coercivity of this actual supported potential."
+        },
+        {
+          "module": "TriangleHall",
+          "path": "TriangleHall.lean",
+          "namespace": "VolumeLogic.TriangleHall",
+          "roots": [
+            "VolumeLogic.TriangleHall.exists_unique_balance",
+            "VolumeLogic.TriangleHall.exists_unique_minimizer"
+          ],
+          "manuscript": [
+            {
+              "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+              "anchor": "\\label{tbi:sec-2}"
+            }
+          ],
+          "role": "The cut-to-balance conclusion used for the positive fixed-boundary problem, not the Conway Newton optimizer."
+        }
+      ]
+    }
+  }
+}

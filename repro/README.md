@@ -16,6 +16,11 @@ infinite charge estimates and endpoint terms, while the
 checks how the resulting theorem is used. The general source comparison
 remains open. No complete formal proof for an actual knot is claimed.
 
+The [manuscript-first cleanup](PROOF_PATH_CLEANUP_2026-11-25.md)
+records the rewritten proof routes and the code that follows them.
+The [active coverage map](../formal/coverage.json) names each retained
+module's actual manuscript statement.
+
 ## Choose the check that matches the claim
 
 Run these commands from the repository root. Each writes its results to
@@ -26,19 +31,16 @@ one kind of check does not overwrite another.
 | --- | --- | --- |
 | Finite rational certificates for the original tangle bounds | `python3 repro/verify.py --output repro/results` | Python 3.10 or later; standard library |
 | Finite algebra and rational constants in the registered papers | `python3 repro/check_paper_algebra.py --output repro/results/paper-algebra` | SymPy, python-flint, NumPy and mpmath |
-| Finite algebra and conditional proof implications in Lean | `python3 repro/check_proof_logic.py --output repro/results/proof-logic` | Pinned Lean toolchain |
-| Concrete analytic, variational and formal-series results in Lean | `python3 repro/check_concrete_limits.py --output repro/results/concrete-limits` | Pinned Lean and Mathlib dependencies |
+| Retained finite, Fourier/Hermite, variational and complex packet proofs in Lean | `python3 repro/check_lean.py --output repro/results/volume-lean` | Pinned Lean and Mathlib dependencies |
 | Consistency of the declared proof dependencies | `python3 repro/check_manuscript_logic.py --output repro/results/manuscript-logic` | Python standard library |
 
 The [Std-only instructions](../formal/README.md) and
-[Mathlib setup](../formal-real/README.md#fresh-checkout-setup) explain how
-to install and replay the formal packages. The Mathlib command is a
-separate, larger check. Its library proves actual logarithmic-limit,
-triangle-potential and formal-series statements. The exact source
-formula, the source-specific asymptotic and whole-remainder estimates,
-and the absolute geometric volume comparison remain application inputs.
-The [paper coverage record](PAPER_FORMAL_COVERAGE.md) gives the precise
-compiled and written boundary for each current paper.
+[Mathlib setup](../formal-real/README.md#pinned-setup-and-replay) explain
+the package requirements. The single current replay cleans generated
+local builds, compiles both libraries and audits every public declaration.
+The [coverage record](PAPER_FORMAL_COVERAGE.md) explains the actual
+manuscript-facing roots, including the derived whole-color remainder
+bound and the explicit written analytic/geometric inputs.
 
 The paper-algebra runner has 22 groups. They cover the finite spectral
 and Newton identities, both parity conventions, filling normalization,

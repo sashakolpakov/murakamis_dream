@@ -67,6 +67,13 @@ def check(data: dict, root: Path = ROOT) -> dict:
                 raise LogicError(
                     f"{identifier}: premise {dependency} belongs to the distinct "
                     f"source construction {dependency_context}")
+        for assumption, proof in node.get("assumption_proofs", {}).items():
+            if assumption not in assumptions or proof not in nodes:
+                raise LogicError(f"{identifier}: invalid proved-assumption reference")
+            if "assumption:" + assumption not in nodes[proof]["provides"]:
+                raise LogicError(f"{identifier}: {proof} does not establish {assumption}")
+            if nodes[proof]["context"] not in {"generic", context}:
+                raise LogicError(f"{identifier}: criterion proof belongs to a different construction")
         if "volume_limit" in node["provides"] and set(node["requires"]) != VOLUME_ROLES:
             raise LogicError(f"{identifier}: a volume conclusion needs all six premise roles")
         if "volume_limit" in node["provides"] and context == "generic":
@@ -82,12 +89,24 @@ def check(data: dict, root: Path = ROOT) -> dict:
         unresolved = {identifier} if node["status"] == "open" else set()
         odd = {identifier} if node["levels"] == "odd" else set()
         closure = {identifier}
-        for dependency in node["requires"].values():
+        dependencies = list(node["requires"].values())
+        dependencies += list(node.get("assumption_proofs", {}).values())
+        for dependency in dependencies:
             report = visit(dependency, (*stack, identifier))
             inherited.update(report["assumptions"])
             unresolved.update(report["unresolved"])
             odd.update(report["odd_level_inputs"])
             closure.update(report["closure"])
+        discharged = set(node.get("assumption_proofs", {}))
+        for assumption, proof in node.get("assumption_proofs", {}).items():
+            # Simultaneous discharges must have independently established
+            # premises. Otherwise P <- Q and Q <- P could erase both
+            # unproved assumptions without a cycle in the node graph.
+            if discharged & set(reports[proof]["assumptions"]):
+                raise LogicError(f"{identifier}: criterion proof uses an assumption discharged at the same node")
+            if assumption not in inherited:
+                raise LogicError(f"{identifier}: unused proved-assumption annotation")
+            inherited.remove(assumption)
         if node["levels"] == "all" and odd:
             raise LogicError(f"{identifier}: all-level conclusion uses odd-only input {sorted(odd)}")
         if node["status"] == "written" and unresolved:
@@ -125,7 +144,9 @@ def negative_controls(data: dict) -> list[str]:
     del broken["nodes"]["weak_balance_volume"]["requires"]["full_remainder"]
     cases.append(("missing full-remainder premise", broken))
     broken = deepcopy(data)
-    broken["nodes"]["weak_balance_volume"]["requires"]["full_remainder"] = "general_remainder"
+    broken["nodes"]["unproved_remainder"] = deepcopy(broken["nodes"]["weak_balance_remainder"])
+    broken["nodes"]["unproved_remainder"]["status"] = "open"
+    broken["nodes"]["weak_balance_volume"]["requires"]["full_remainder"] = "unproved_remainder"
     cases.append(("open remainder substituted into proved route", broken))
     broken = deepcopy(data)
     broken["nodes"]["weak_balance_remainder"]["levels"] = "odd"
@@ -152,10 +173,10 @@ def negative_controls(data: dict) -> list[str]:
     broken["nodes"]["exact_source"]["supporting_locations"][0]["anchor"] = "nonexistent-finite-support-theorem"
     cases.append(("missing finite-algebra supporting reference", broken))
     broken = deepcopy(data)
-    broken["nodes"]["recursive_volume"]["requires"]["nonzero_contribution"] = "central_contribution"
-    cases.append(("matched-sphere period substituted into the recursive source", broken))
+    broken["nodes"]["strict_conway_volume"]["requires"]["nonzero_contribution"] = "central_contribution"
+    cases.append(("matched-sphere period substituted into the strict Conway source", broken))
     broken = deepcopy(data)
-    broken["nodes"]["recursive_volume"]["requires"]["exact_invariant"] = "circle_tree_source"
+    broken["nodes"]["strict_conway_volume"]["requires"]["exact_invariant"] = "circle_tree_source"
     cases.append(("different exact construction substituted into the conclusion", broken))
     broken = deepcopy(data)
     broken["conclusions"]["directed_tree_volume"]["assumptions"].remove("directed_tree_criterion")
@@ -167,7 +188,9 @@ def negative_controls(data: dict) -> list[str]:
     broken["nodes"]["strict_conway_source_gap"]["requires"]["source_gap_two"] = "strict_conway_gap_many"
     cases.append(("three-or-more-leaf bound substituted for the two-leaf case", broken))
     broken = deepcopy(data)
-    broken["nodes"]["strict_conway_volume"]["requires"]["exact_invariant"] = "recursive_source"
+    broken["nodes"]["completed_root_only_source"] = deepcopy(broken["nodes"]["strict_conway_source"])
+    broken["nodes"]["completed_root_only_source"]["context"] = "completed_root"
+    broken["nodes"]["strict_conway_volume"]["requires"]["exact_invariant"] = "completed_root_only_source"
     cases.append(("completed-root construction substituted into the strict route", broken))
     broken = deepcopy(data)
     broken["conclusions"]["strict_conway_volume"]["assumptions"].remove("strict_conway_construction")
@@ -178,6 +201,22 @@ def negative_controls(data: dict) -> list[str]:
     broken = deepcopy(data)
     broken["nodes"]["strict_conway_volume"]["requires"]["full_remainder"] = "strict_conway_source_gap"
     cases.append(("unfilled source bound substituted for the filled remainder", broken))
+    broken = deepcopy(data)
+    del broken["nodes"]["local_tree_volume"]["assumption_proofs"]
+    cases.append(("directed condition left unproved in the local corollary", broken))
+    broken = deepcopy(data)
+    broken["nodes"]["local_to_directed_criterion"]["assumptions"].append("directed_tree_criterion")
+    cases.append(("criterion proof assumes its own conclusion", broken))
+    broken = deepcopy(data)
+    broken["nodes"]["local_tree_volume"]["assumption_proofs"]["directed_tree_criterion"] = "circle_tree_source"
+    cases.append(("exact source substituted for a criterion implication", broken))
+    broken = deepcopy(data)
+    broken["nodes"]["circular_local_criterion"] = deepcopy(broken["nodes"]["local_to_directed_criterion"])
+    broken["nodes"]["circular_local_criterion"]["provides"] = ["assumption:local_tree_criterion"]
+    broken["nodes"]["circular_local_criterion"]["assumptions"] = ["directed_tree_criterion"]
+    broken["nodes"]["local_tree_volume"]["assumption_proofs"]["local_tree_criterion"] = "circular_local_criterion"
+    broken["conclusions"]["local_tree_volume"]["assumptions"].remove("local_tree_criterion")
+    cases.append(("two unproved criteria used to discharge each other", broken))
     rejected = []
     for name, broken in cases:
         try:
@@ -203,7 +242,7 @@ def main() -> None:
         report["source_sha256"][str(path.relative_to(ROOT))] = hashlib.sha256(path.read_bytes()).hexdigest()
     (args.output / "summary.json").write_text(json.dumps(report, indent=2) + "\n")
     print(f"Checked {report['nodes_checked']} declared proof steps and {len(report['negative_controls_rejected'])} invalid substitutions.")
-    print("The general remainder remains open. The mathematical nodes retain their written proofs.")
+    print("The active map records the retained written proofs; kernel verification is a separate check.")
 
 
 if __name__ == "__main__":

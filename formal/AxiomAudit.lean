@@ -1,24 +1,35 @@
-import VolumeLogic
+import VolumeLogic.FiniteSupport
+import VolumeLogic.FiniteAlgebra
+import VolumeLogic.MonicRemainder
+import VolumeLogic.MonicLinearity
+import VolumeLogic.MonicUniqueness
+import VolumeLogic.MonicProduct
+import VolumeLogic.ResolventFunctional
+import VolumeLogic.FaceGridSupport
+import VolumeLogic.RateComparison
+import VolumeLogic.ProtectedSum
+import VolumeLogic.TriangularBoundary
+import VolumeLogic.SourceAssembly
 
 #print axioms VolumeLogic.three_supports
 #print axioms VolumeLogic.left_endpoint_cutoff
 #print axioms VolumeLogic.central_endpoint_even
 #print axioms VolumeLogic.central_endpoint_odd
-#print axioms VolumeLogic.protected_moment_degree
+#print axioms VolumeLogic.horner
+#print axioms VolumeLogic.dividedDifference
 #print axioms VolumeLogic.divided_difference_identity
 #print axioms VolumeLogic.annihilating_root_identity
 #print axioms VolumeLogic.double_root_jet_identity
+#print axioms VolumeLogic.product
+#print axioms VolumeLogic.allChoices
+#print axioms VolumeLogic.nonemptySecondChoices
 #print axioms VolumeLogic.all_choices_product
 #print axioms VolumeLogic.tensor_grid_subtraction
-#print axioms VolumeLogic.product_difference_identity
-#print axioms VolumeLogic.doubled_flattening_gain
-#print axioms VolumeLogic.strict_weak_balance_gain
-#print axioms VolumeLogic.total_nonnegative
-#print axioms VolumeLogic.nonempty_sector_gap
-#print axioms VolumeLogic.sector_strictly_below
-#print axioms VolumeLogic.filled_rate_gap
-#print axioms VolumeLogic.filled_remainder_strictly_below
-
+#print axioms VolumeLogic.coefficient
+#print axioms VolumeLogic.CoeffEq
+#print axioms VolumeLogic.addConstant
+#print axioms VolumeLogic.timesLinear
+#print axioms VolumeLogic.synthetic
 #print axioms VolumeLogic.coefficient_addConstant_zero
 #print axioms VolumeLogic.coefficient_addConstant_succ
 #print axioms VolumeLogic.coefficient_timesLinear_zero
@@ -28,19 +39,25 @@ import VolumeLogic
 #print axioms VolumeLogic.synthetic_reconstruct_nonempty
 #print axioms VolumeLogic.synthetic_reconstruct
 #print axioms VolumeLogic.synthetic_horner
+#print axioms VolumeLogic.polyAdd
 #print axioms VolumeLogic.coefficient_polyAdd
 #print axioms VolumeLogic.coeffEq_refl
 #print axioms VolumeLogic.coeffEq_symm
 #print axioms VolumeLogic.coeffEq_trans
 #print axioms VolumeLogic.timesLinear_congr
 #print axioms VolumeLogic.addConstant_congr
+#print axioms VolumeLogic.monicMultiple
+#print axioms VolumeLogic.monicQuotient
+#print axioms VolumeLogic.monicRemainder
 #print axioms VolumeLogic.monic_division_identity
 #print axioms VolumeLogic.timesLinear_length
 #print axioms VolumeLogic.monicRemainder_length
 #print axioms VolumeLogic.coefficient_eq_zero_of_length_le
 #print axioms VolumeLogic.monic_remainder_degree_bound
+#print axioms VolumeLogic.newtonFunctional
 #print axioms VolumeLogic.top_coefficient_is_newton
 #print axioms VolumeLogic.two_node_top_coefficient
+#print axioms VolumeLogic.monicPolynomial
 #print axioms VolumeLogic.monicMultiple_length
 #print axioms VolumeLogic.monicPolynomial_monic
 #print axioms VolumeLogic.synthetic_length
@@ -53,10 +70,11 @@ import VolumeLogic
 #print axioms VolumeLogic.synthetic_timesLinear
 #print axioms VolumeLogic.monicRemainder_annihilates_multiple
 #print axioms VolumeLogic.newtonFunctional_annihilates_multiple
+#print axioms VolumeLogic.formalDerivativeValue
 #print axioms VolumeLogic.diagonal_divided_difference
 #print axioms VolumeLogic.double_root_top_coefficient
 #print axioms VolumeLogic.double_root_remainder
-
+#print axioms VolumeLogic.polyScale
 #print axioms VolumeLogic.coefficient_polyScale
 #print axioms VolumeLogic.horner_zero_of_coefficients_zero
 #print axioms VolumeLogic.horner_congr
@@ -81,7 +99,6 @@ import VolumeLogic
 #print axioms VolumeLogic.coeffEq_append_zeros
 #print axioms VolumeLogic.monicRemainder_append_zeros
 #print axioms VolumeLogic.newtonFunctional_append_zeros
-
 #print axioms VolumeLogic.list_eq_of_coeffEq_of_length_eq
 #print axioms VolumeLogic.coefficient_take_of_lt
 #print axioms VolumeLogic.coeffEq_take_of_degree_lt
@@ -97,30 +114,7 @@ import VolumeLogic
 #print axioms VolumeLogic.monicRemainder_permutation
 #print axioms VolumeLogic.newtonFunctional_permutation
 #print axioms VolumeLogic.newtonFunctional_characterization
-
-#print axioms VolumeLogic.protectedMax_le
-#print axioms VolumeLogic.protectedMax_ge_left
-#print axioms VolumeLogic.protectedMax_ge_right
-#print axioms VolumeLogic.protectedMin_le_left
-#print axioms VolumeLogic.protectedMin_le_right
-#print axioms VolumeLogic.protectedMin_positive
-#print axioms VolumeLogic.protected_sum_central
-#print axioms VolumeLogic.protected_sum_left
-#print axioms VolumeLogic.protected_sum_right
-#print axioms VolumeLogic.protected_sum_bridge
-#print axioms VolumeLogic.protected_sector_map_noncentral
-#print axioms VolumeLogic.protected_sum_target_cancellation
-#print axioms VolumeLogic.protected_sum_total_rate
-#print axioms VolumeLogic.protected_sum_central_total
-#print axioms VolumeLogic.protected_sum_common_gap
-#print axioms VolumeLogic.protected_sum_min_gap
-#print axioms VolumeLogic.protected_sum_strict_gap
-#print axioms VolumeLogic.protected_sum_sector_gap
-#print axioms VolumeLogic.protected_sum_certified_rate
-#print axioms VolumeLogic.protected_total_pair_bound
-#print axioms VolumeLogic.protected_total_pair_gap
-#print axioms VolumeLogic.protected_finite_assembly_gap
-
+#print axioms VolumeLogic.polyMul
 #print axioms VolumeLogic.polyAdd_congr
 #print axioms VolumeLogic.polyScale_congr
 #print axioms VolumeLogic.shift_congr
@@ -143,6 +137,7 @@ import VolumeLogic
 #print axioms VolumeLogic.monicRemainder_mul_reduce_right
 #print axioms VolumeLogic.monicRemainder_mul_reduce_both
 #print axioms VolumeLogic.newtonFunctional_mul_reduce_both
+#print axioms VolumeLogic.quotientProduct
 #print axioms VolumeLogic.quotientProduct_length
 #print axioms VolumeLogic.quotientProduct_congr
 #print axioms VolumeLogic.quotientProduct_comm
@@ -150,6 +145,8 @@ import VolumeLogic
 #print axioms VolumeLogic.polyMul_one_left
 #print axioms VolumeLogic.quotientProduct_one_left
 #print axioms VolumeLogic.quotientProduct_one_right
+#print axioms VolumeLogic.polyProduct
+#print axioms VolumeLogic.canonicalProduct
 #print axioms VolumeLogic.monicRemainder_product
 #print axioms VolumeLogic.newtonFunctional_product
 #print axioms VolumeLogic.horner_polyMul
@@ -164,20 +161,56 @@ import VolumeLogic
 #print axioms VolumeLogic.monicRemainder_double_head_derivative
 #print axioms VolumeLogic.quotientProduct_double_head_value
 #print axioms VolumeLogic.quotientProduct_double_head_derivative
-
-#print axioms VolumeLogic.regrade_coefficient_recovery
-#print axioms VolumeLogic.recover_regrade
-#print axioms VolumeLogic.regrade_injective
-#print axioms VolumeLogic.regrade_zero
-#print axioms VolumeLogic.regrade_zero_iff
-#print axioms VolumeLogic.regrade_add
-#print axioms VolumeLogic.regrade_scalar
-#print axioms VolumeLogic.regrade_above_diagonal
-#print axioms VolumeLogic.regrade_recover
-#print axioms VolumeLogic.regrade_finite_order_iff
-#print axioms VolumeLogic.hidden_regrading_term_truncates
-#print axioms VolumeLogic.hidden_regrading_term_nonzero
-
+#print axioms VolumeLogic.polynomialResolvent
+#print axioms VolumeLogic.monicPolynomial_length
+#print axioms VolumeLogic.polynomialResolvent_length
+#print axioms VolumeLogic.polynomialResolvent_identity
+#print axioms VolumeLogic.newtonFunctional_resolvent_one
+#print axioms VolumeLogic.polynomialResolvent_multiple
+#print axioms VolumeLogic.newtonFunctional_resolvent_shift
+#print axioms VolumeLogic.newtonFunctional_resolvent_reproduces
+#print axioms VolumeLogic.residue_target_lower
+#print axioms VolumeLogic.list_sum_lower
+#print axioms VolumeLogic.face_budget_saturation
+#print axioms VolumeLogic.face_grid_unique_exponents
+#print axioms VolumeLogic.face_grid_selection_iff
+#print axioms VolumeLogic.doubled_flattening_gain
+#print axioms VolumeLogic.strict_weak_balance_gain
+#print axioms VolumeLogic.total
+#print axioms VolumeLogic.total_nonnegative
+#print axioms VolumeLogic.nonempty_sector_gap
+#print axioms VolumeLogic.sector_strictly_below
+#print axioms VolumeLogic.filled_rate_gap
+#print axioms VolumeLogic.filled_remainder_strictly_below
+#print axioms VolumeLogic.protectedMax
+#print axioms VolumeLogic.protectedMin
+#print axioms VolumeLogic.protectedMax_le
+#print axioms VolumeLogic.protectedMax_ge_left
+#print axioms VolumeLogic.protectedMax_ge_right
+#print axioms VolumeLogic.protectedMin_le_left
+#print axioms VolumeLogic.protectedMin_le_right
+#print axioms VolumeLogic.protectedMin_positive
+#print axioms VolumeLogic.protected_sum_central
+#print axioms VolumeLogic.protected_sum_left
+#print axioms VolumeLogic.protected_sum_right
+#print axioms VolumeLogic.protectedFirstSide
+#print axioms VolumeLogic.protectedSecondSide
+#print axioms VolumeLogic.protectedBridgeRate
+#print axioms VolumeLogic.protectedFirstRate
+#print axioms VolumeLogic.protectedSecondRate
+#print axioms VolumeLogic.protected_sum_bridge
+#print axioms VolumeLogic.protected_sector_map_noncentral
+#print axioms VolumeLogic.protected_sum_target_cancellation
+#print axioms VolumeLogic.protected_sum_total_rate
+#print axioms VolumeLogic.protected_sum_central_total
+#print axioms VolumeLogic.protected_sum_common_gap
+#print axioms VolumeLogic.protected_sum_min_gap
+#print axioms VolumeLogic.protected_sum_strict_gap
+#print axioms VolumeLogic.protected_sum_sector_gap
+#print axioms VolumeLogic.protected_sum_certified_rate
+#print axioms VolumeLogic.protected_total_pair_bound
+#print axioms VolumeLogic.protected_total_pair_gap
+#print axioms VolumeLogic.protected_finite_assembly_gap
 #print axioms VolumeLogic.boundary_left_with_defect
 #print axioms VolumeLogic.boundary_right_with_defect
 #print axioms VolumeLogic.boundary_bridge_with_defect
@@ -187,66 +220,13 @@ import VolumeLogic
 #print axioms VolumeLogic.boundary_conditional_action_cancels
 #print axioms VolumeLogic.boundary_noncentral_block_margin
 #print axioms VolumeLogic.boundary_certified_rate
-
-#print axioms VolumeLogic.residue_target_lower
-#print axioms VolumeLogic.list_sum_lower
-#print axioms VolumeLogic.face_budget_saturation
-#print axioms VolumeLogic.face_grid_unique_exponents
-#print axioms VolumeLogic.face_grid_below_target
-#print axioms VolumeLogic.face_grid_selection_iff
-
-#print axioms VolumeLogic.monicPolynomial_length
-#print axioms VolumeLogic.polynomialResolvent_length
-#print axioms VolumeLogic.polynomialResolvent_identity
-#print axioms VolumeLogic.newtonFunctional_resolvent_one
-#print axioms VolumeLogic.polynomialResolvent_multiple
-#print axioms VolumeLogic.newtonFunctional_resolvent_shift
-#print axioms VolumeLogic.newtonFunctional_resolvent_reproduces
-#print axioms VolumeLogic.eventuallyOn_of_forall
-#print axioms VolumeLogic.eventuallyOn_mono
-#print axioms VolumeLogic.eventuallyOn_and
-#print axioms VolumeLogic.eventuallyOn_restrict
-#print axioms VolumeLogic.eventuallyOn_finite
-#print axioms VolumeLogic.eventuallyOn_both_parities
-#print axioms VolumeLogic.longEnough_mono
-#print axioms VolumeLogic.fixed_filling_finite_threshold
-#print axioms VolumeLogic.positive_quarter
-#print axioms VolumeLogic.rateLimit_const
-#print axioms VolumeLogic.rateLimit_congr
-#print axioms VolumeLogic.rateLimit_add
-#print axioms VolumeLogic.rateLimit_restrict
-#print axioms VolumeLogic.rateLimit_both_parities
-#print axioms VolumeLogic.rateLimit_squeeze_error
-#print axioms VolumeLogic.rateLimit_scale_nonnegative
+#print axioms VolumeLogic.sectorSum
 #print axioms VolumeLogic.filling_sector_sum
 #print axioms VolumeLogic.filled_remainder_identity
 #print axioms VolumeLogic.magnitude_sector_sum
 #print axioms VolumeLogic.sector_sum_mono
 #print axioms VolumeLogic.sector_sum_common_factor
 #print axioms VolumeLogic.finite_sector_filling_bound
+#print axioms VolumeLogic.sectorThreshold
 #print axioms VolumeLogic.sector_threshold_dominates
 #print axioms VolumeLogic.simultaneous_sector_threshold
-#print axioms VolumeLogic.magnitude_positive
-#print axioms VolumeLogic.magnitude_reverse_add
-#print axioms VolumeLogic.logScale_lt_reflects
-#print axioms VolumeLogic.hasRate_congr
-#print axioms VolumeLogic.hasRate_mul
-#print axioms VolumeLogic.strict_remainder_eventually_small
-#print axioms VolumeLogic.small_remainder_corridor
-#print axioms VolumeLogic.hasRate_add_smaller
-#print axioms VolumeLogic.invariant_rate_transfer
-#print axioms VolumeLogic.invariant_rate_of_source_gap
-#print axioms VolumeLogic.budgetUpper_zero
-#print axioms VolumeLogic.budgetUpper_const
-#print axioms VolumeLogic.budgetUpper_add
-#print axioms VolumeLogic.budgetUpper_mul
-#print axioms VolumeLogic.sector_sum_nonnegative
-#print axioms VolumeLogic.budgetUpper_finite_sum
-#print axioms VolumeLogic.finite_weighted_envelope_upperRate
-#print axioms VolumeLogic.filling_bound_preserves_upperRate
-#print axioms VolumeLogic.leading_rate_from_amplitude
-#print axioms VolumeLogic.hasRate_both_parities
-#print axioms VolumeLogic.calibrated_volume_rate
-#print axioms VolumeLogic.fixed_filling_volume_transfer
-#print axioms VolumeLogic.finite_source_rate_transfer
-#print axioms VolumeLogic.long_filling_volume_transfer

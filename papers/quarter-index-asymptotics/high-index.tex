@@ -1,0 +1,120 @@
+\section{Selection by the original upper endpoint}\label{qi:high-index-section}
+
+The transport argument needs a nonzero source coefficient at an
+anchor above quarter. We prove that input here. It follows from a
+contracting scalar recurrence and uses neither the quarter-index
+theorem nor an asymptotic of a closed tangle.
+
+\begin{lemma}[The high-index source]\label{qi:high-index}
+Let $I=[\tau_0,\tau_1]\subset(1/4,1/2)$ be fixed. For all
+sufficiently large $N$ of either parity, there is a nonzero holomorphic
+function $v_N(x,t)$ on a fixed complex neighborhood of $I$ and a fixed
+color disk such that
+\[
+ v_N(r/N,t)=\frac{U_{Nt,r}}{U_{Nt,r+1}},\qquad
+ v_N=\mu_s+N^{-1}\nu+O(N^{-2}).
+\]
+The identity is on the physical index grid, and the expansion holds
+uniformly holomorphically. For all physical indices in $I$,
+\begin{equation}\label{qi:high-index-leading}
+ U_{Nt,r}=C(r/N,t)e^{NS(r/N,t)}(1+O(N^{-1})),
+\end{equation}
+with the $C,S$ of \eqref{qi:SC}. There is also a nonzero
+holomorphic interpolation $H_N(x,t)$ on a smaller fixed domain with
+relative grid error $O(e^{-cN})$ and the same leading expression.
+All statements include both parities.
+\end{lemma}
+\begin{proof}
+At $t=0$, throughout any compact subinterval of $(1/4,3/4)$,
+\[
+ \Re\mu_s>0,\qquad
+ \left|\frac{\mu_f}{\mu_s}\right|=|\cot^2\pi x|<1.
+\]
+Choose $\eta>0$ with
+$[\tau_0-\eta,1-\tau_0+4\eta]\subset(1/4,3/4)$.
+The root labels extend to a fixed complex neighborhood and a
+sufficiently small color disk, on which
+\begin{equation}\label{qi:high-index-gap}
+ \Re\mu_s\ge m>0,\qquad |\mu_f/\mu_s|\le k<1.
+\end{equation}
+The second root may vanish at $x=1/2$; the selected root does not.
+Define $e=1/N$,
+$\mathcal F_x(w)=p(x,t,e)+q_c(x,t,e)/w$, and
+$L_N=\lceil(1/2-\tau_0+2\eta)N\rceil$. Set
+\begin{equation}\label{qi:high-index-ratio}
+ v_N(x,t)=\mathcal F_x\circ\mathcal F_{x+e}\circ\cdots
+ \circ\mathcal F_{x+(L_N-1)e}
+       \bigl(\mu_s(x+L_Ne,t)\bigr).
+\end{equation}
+We construct this function on a neighborhood of $[\tau_0,1/2]$,
+and finally restrict it to $I$. All shifted arguments stay in the
+larger neighborhood just chosen. One
+backward step has defect $O(e)$ at the selected root and derivative
+of modulus at most $k+O(e)$. Disks of radius $Be$ about the
+successive roots are therefore preserved when $B$ is larger than
+the uniform defect constant divided by $1-k$. They avoid zero.
+Thus \eqref{qi:high-index-ratio} is holomorphic, nonzero and equal
+to $\mu_s+O(e)$.
+
+For a physical $x=r/N$, this composition passes through the row
+$M-1$. There $q_c=0$, so the artificial tail is erased and
+$v_N((M-1)/N,t)=p((M-1)/N,t)$. The actual wall values
+\eqref{qi:wall} and backward substitution prove the ratio identity.
+They also prove nonvanishing of every $U_{Nt,r}$ used in the product;
+there is no division by an unknown zero of the source.
+
+Put $w=\mu_s+e\nu$. Expanding
+$w(x)-\mathcal F_x(w(x+e))$ shows that its coefficient of $e$
+vanishes precisely for the $\nu$ in \eqref{qi:SC}.
+Its remaining defect is $O(e^2)$. The same contraction shows
+$v_N=w+O(e^2)$, up to a terminal error bounded by $O(e)k^{L_N}$,
+which is exponentially small. All bounds are holomorphic, so
+Cauchy's estimate gives every fixed derivative bound on a smaller
+domain.
+
+The actual source is the finite product
+\[
+ U_{Nt,r}=\prod_{j=r}^{M-1}v_N(j/N,t).
+\]
+Let $f_N=\Log v_N$, with the selected logarithm, and let $b_N=M/N$.
+Apply the Euler primitive \eqref{qi:EM} with $l_N=f_N$ and upper
+endpoint $b_N$. This is a formula for the finite product just
+displayed, independent of any transport argument. Cauchy's bound
+$|\partial_x^j f_N|\le B_0j!a^{-j}$ and the periodic Bernoulli
+remainder bound the error after $K_N=\lfloor c_0N\rfloor$ terms by
+\[
+ C N\left(\frac{K_N}{\pi aN}\right)^{2K_N}
+       \le C'e^{-cN}
+\]
+for a sufficiently small fixed $c_0>0$. Exponentiating that explicit
+primitive defines $H_N$ and proves its exponentially accurate grid
+identity. The same bounds on a smaller complex tube show that the
+sum of its Bernoulli terms beyond the integral and half-endpoints
+is $O(N^{-1})$.
+
+Since $f_N=\Log\mu_s+e\nu/\mu_s+O(e^2)$, its leading expression is
+\[
+ \sqrt{\mu_s(x,t)}
+ \exp\left\{N\int_x^{1/2}\Log\mu_s(u,t)\dd u
+          +\int_x^{1/2}\frac{\nu(u,t)}{\mu_s(u,t)}\dd u\right\}
+ (1+O(N^{-1})).
+\]
+Here $\mu_s(1/2,t)=1$ and $b_N-1/2=O(N^{-1})$; the missing
+integral of $\Log\mu_s$ is $O(N^{-2})$, so it changes the
+exponent by only $O(N^{-1})$ at either parity. This proves
+\eqref{qi:high-index-leading} with exactly the endpoint normalization
+in \eqref{qi:SC}.
+\end{proof}
+
+At zero color, direct substitution in the rational coefficients gives
+\[
+ \Log\mu_s(x,0)=\pi\ii-2\pi\ii x,\qquad
+ \frac{\nu(x,0)}{\mu_s(x,0)}
+       =-\frac\pi2\cot(\pi x)-\frac{5\pi\ii}{2}.
+\]
+Integrating from the same upper endpoint yields
+\begin{equation}\label{qi:high-index-complete}
+ S(x,0)=\pi\ii(1/2-x)^2,\qquad
+ C(x,0)=\sqrt{\sin\pi x}\,
+       e^{-3\pi\ii(1/2-x)/2}.
+\end{equation}

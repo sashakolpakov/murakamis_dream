@@ -1,5 +1,13 @@
 import VolumeLogic.MonicUniqueness
 
+/-!
+Canonical coefficient-list multiplication. A prescribed factor can be
+multiplied and reduced before the other factors without changing the final
+coefficient functional. This is an algebraic contraction, not a unitary
+change of physical coordinates or a positive Hermitian closing. The actual
+Newton turn and its anti-diagonal bilinear pairing are separate inputs.
+-/
+
 namespace VolumeLogic
 open Lean.Grind
 universe u

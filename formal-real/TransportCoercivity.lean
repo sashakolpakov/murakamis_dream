@@ -6,10 +6,17 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
 /-!
-Coercivity of a finite supported transport potential. Row supports and positive
-corner loads are actual finite data; demands are their column sums. Connectivity
-uses finite co-occurrence paths. No uniform recession margin is assumed.
-Hall feasibility, geometric support and the triangle vertex bound remain written.
+Coercivity from a finite positive supported transport table.
+Demands are the column sums of that same table. The recession is the sum
+of positive loads times the gap from each supported value to its row
+maximum. Its zero directions are constant along row co-occurrence paths.
+Grounding removes the common constant, and compactness of the unit sphere
+produces the coercive constant used to obtain a global minimum.
+
+This module assumes the feasible table, connected support, continuity,
+and row lower bounds. `HallRecession` supplies a different route from
+strict cuts, and the triangle modules supply their particular potential.
+Neither route by itself identifies a physical source or a hyperbolic volume.
 -/
 namespace VolumeLogic.TransportCoercivity
 open Set

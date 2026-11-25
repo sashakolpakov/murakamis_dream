@@ -75,18 +75,4 @@ theorem tensor_grid_subtraction (xs : List (R × R)) :
     simp only [nonemptySecondChoices, List.map_cons, product]
     grind
 
-/-- An ordered product difference expanded without dividing by a factor. -/
-def productDifference : List (R × R) → R
-  | [] => 0
-  | (a,b) :: xs => (a-b)*product (xs.map Prod.fst) + b*productDifference xs
-
-theorem product_difference_identity (xs : List (R × R)) :
-    productDifference xs = product (xs.map Prod.fst)-product (xs.map Prod.snd) := by
-  induction xs with
-  | nil => simp [productDifference, product]; grind
-  | cons x xs ih =>
-    rcases x with ⟨a,b⟩
-    simp only [productDifference, List.map_cons, product]
-    grind
-
 end VolumeLogic

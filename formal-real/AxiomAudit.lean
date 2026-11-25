@@ -1,8 +1,8 @@
-import MeridianExpansion
-import ActualGauge
-import RecurrenceExpansion
-import RecurrenceGaugeExpansion
 import RealTransfer
+import CoefficientGram
+import StationaryElimination
+import FourierHermite
+import ConwayAssembly
 import WeightedGraph
 import Flattening
 import TransportCoercivity
@@ -14,44 +14,56 @@ import TriangleMinimizer
 import TriangleBalance
 import HallRecession
 import TriangleHall
-import FormalShift
-import FormalRegradingRing
-import FormalExp
-import AsymptoticIdentity
-import FormalGauge
-import FormalCharacteristic
-import UniformProfile
-import LaurentExpansion
-import OperatorNormalization
-import SineFactor
-import OperatorCoefficientAdapter
-import MeridianSeriesEmbedding
 
-#print axioms VolumeLogic.RealModel.complexMagnitude
-#print axioms VolumeLogic.RealModel.constant_div_nat_rate
-#print axioms VolumeLogic.RealModel.realLogScale
-#print axioms VolumeLogic.RealModel.eventually_physical_iff
-#print axioms VolumeLogic.RealModel.real_rateLimit_iff
-#print axioms VolumeLogic.RealModel.complex_hasRate_iff
-#print axioms VolumeLogic.RealModel.complex_hasUpperRate_iff
-#print axioms VolumeLogic.RealModel.complex_invariant_rate_transfer
-#print axioms VolumeLogic.RealModel.unit_norm_hasRate
-#print axioms VolumeLogic.RealModel.amplitude_hasRate_of_tendsto
-#print axioms VolumeLogic.RealModel.exponential_action_hasRate
-#print axioms VolumeLogic.RealModel.gaussian_packet_hasRate
-#print axioms VolumeLogic.RealModel.complex_volume_transfer
-#print axioms VolumeLogic.RealModel.level_power_hasRate
-#print axioms VolumeLogic.RealModel.powered_gaussian_packet_hasRate
+#print axioms VolumeLogic.RealModel.UpperRate
+#print axioms VolumeLogic.RealModel.UpperRate.mul
+#print axioms VolumeLogic.RealModel.upperRate_norm_of_cost
+#print axioms VolumeLogic.RealModel.upperRate_of_polynomial_bound
 #print axioms VolumeLogic.RealModel.complex_packet_volume_transfer
-#print axioms VolumeLogic.RealModel.residue_index_tendsto
-#print axioms VolumeLogic.RealModel.eventually_residue_iff
-#print axioms VolumeLogic.RealModel.tendsto_residue_iff
-#print axioms VolumeLogic.RealModel.amplitude_hasRate_of_residue_limits
-#print axioms VolumeLogic.RealModel.exponential_action_hasRate_of_residue_limits
-#print axioms VolumeLogic.RealModel.residue_gaussian_packet_hasRate
-#print axioms VolumeLogic.RealModel.complex_residue_packet_volume_transfer
-#print axioms VolumeLogic.RealModel.complex_parity_packet_volume_transfer
-
+#print axioms VolumeLogic.CoefficientGram.synthesis
+#print axioms VolumeLogic.CoefficientGram.synthesis_apply
+#print axioms VolumeLogic.CoefficientGram.gram
+#print axioms VolumeLogic.CoefficientGram.inner_pullback
+#print axioms VolumeLogic.CoefficientGram.quadratic_eq_norm_sq
+#print axioms VolumeLogic.CoefficientGram.norm_sq_pullback
+#print axioms VolumeLogic.CoefficientGram.norm_pullback
+#print axioms VolumeLogic.CoefficientGram.quadratic_nonneg
+#print axioms VolumeLogic.CoefficientGram.ker_gram
+#print axioms VolumeLogic.CoefficientGram.quadratic_pos_iff
+#print axioms VolumeLogic.CoefficientGram.pairing_descends
+#print axioms VolumeLogic.CoefficientGram.synthesis_gram_entry
+#print axioms VolumeLogic.CoefficientGram.coordinate_change
+#print axioms VolumeLogic.CoefficientGram.closing_bound
+#print axioms VolumeLogic.CoefficientGram.corridor_comp
+#print axioms VolumeLogic.CoefficientGram.corridor_preserves_zero
+#print axioms VolumeLogic.StationaryElimination.schur
+#print axioms VolumeLogic.StationaryElimination.solve_linearized
+#print axioms VolumeLogic.StationaryElimination.linearized_iff
+#print axioms VolumeLogic.StationaryElimination.effective_block
+#print axioms VolumeLogic.StationaryElimination.effective_hessian
+#print axioms VolumeLogic.StationaryElimination.schur_zero_mixed
+#print axioms VolumeLogic.FourierHermite.shiftPhase
+#print axioms VolumeLogic.FourierHermite.norm_shiftPhase
+#print axioms VolumeLogic.FourierHermite.shiftedDFT
+#print axioms VolumeLogic.FourierHermite.shiftedDFT_eq_sum
+#print axioms VolumeLogic.FourierHermite.shifted_reconstruction
+#print axioms VolumeLogic.FourierHermite.shifted_parseval
+#print axioms VolumeLogic.FourierHermite.centered_variance
+#print axioms VolumeLogic.FourierHermite.normalData
+#print axioms VolumeLogic.FourierHermite.hermiteCoefficients
+#print axioms VolumeLogic.FourierHermite.shiftTwo
+#print axioms VolumeLogic.FourierHermite.circleCoefficients
+#print axioms VolumeLogic.FourierHermite.value_energy
+#print axioms VolumeLogic.FourierHermite.normal_energy
+#print axioms VolumeLogic.FourierHermite.fillingCoefficients
+#print axioms VolumeLogic.FourierHermite.hermite_coefficient_mass
+#print axioms VolumeLogic.FourierHermite.crossingValues
+#print axioms VolumeLogic.FourierHermite.norm_crossingValues
+#print axioms VolumeLogic.FourierHermite.crossingCoefficients
+#print axioms VolumeLogic.FourierHermite.crossing_coefficient_mass
+#print axioms VolumeLogic.ConwayAssembly.fullColorContraction
+#print axioms VolumeLogic.ConwayAssembly.fullColorContraction_norm_le
+#print axioms VolumeLogic.ConwayAssembly.conway_packet_volume_limit
 #print axioms VolumeLogic.WeightedGraph.edgeStep
 #print axioms VolumeLogic.WeightedGraph.positiveStep
 #print axioms VolumeLogic.WeightedGraph.connected
@@ -78,7 +90,6 @@ import MeridianSeriesEmbedding
 #print axioms VolumeLogic.WeightedGraph.laplacian_form
 #print axioms VolumeLogic.WeightedGraph.laplacian_quadratic
 #print axioms VolumeLogic.WeightedGraph.grounded_laplacian_pos
-
 #print axioms VolumeLogic.Flattening.convex_on_Icc_of_second_nonneg
 #print axioms VolumeLogic.Flattening.stationary_convex_lower
 #print axioms VolumeLogic.Flattening.stationary_quadratic_cost
@@ -89,7 +100,6 @@ import MeridianSeriesEmbedding
 #print axioms VolumeLogic.Flattening.side_loss_from_convexity
 #print axioms VolumeLogic.Flattening.flattening_sector_gap
 #print axioms VolumeLogic.Flattening.weak_balance_sector_gap
-
 #print axioms VolumeLogic.TransportCoercivity.rowMass
 #print axioms VolumeLogic.TransportCoercivity.demand
 #print axioms VolumeLogic.TransportCoercivity.rowMax
@@ -113,7 +123,6 @@ import MeridianSeriesEmbedding
 #print axioms VolumeLogic.TransportCoercivity.grounded_sublevel_bounded
 #print axioms VolumeLogic.TransportCoercivity.grounded_sublevel_compact
 #print axioms VolumeLogic.TransportCoercivity.exists_grounded_minimizer
-
 #print axioms VolumeLogic.GroundedConvexity.grounded
 #print axioms VolumeLogic.GroundedConvexity.segment
 #print axioms VolumeLogic.GroundedConvexity.segmentValue
@@ -125,7 +134,6 @@ import MeridianSeriesEmbedding
 #print axioms VolumeLogic.GroundedConvexity.strictConvexOn_grounded
 #print axioms VolumeLogic.GroundedConvexity.grounded_minimizer_eq
 #print axioms VolumeLogic.GroundedConvexity.exists_unique_grounded_minimizer
-
 #print axioms VolumeLogic.GroundedLaplacian.extend
 #print axioms VolumeLogic.GroundedLaplacian.extend_root
 #print axioms VolumeLogic.GroundedLaplacian.extend_free
@@ -148,7 +156,6 @@ import MeridianSeriesEmbedding
 #print axioms VolumeLogic.GroundedLaplacian.exists_unique_reduced_solution
 #print axioms VolumeLogic.GroundedLaplacian.reducedMatrix_det_ne_zero
 #print axioms VolumeLogic.GroundedLaplacian.exists_unique_grounded_solution
-
 #print axioms VolumeLogic.TriangleLoads.weights
 #print axioms VolumeLogic.TriangleLoads.radicand
 #print axioms VolumeLogic.TriangleLoads.triangleD
@@ -183,7 +190,6 @@ import MeridianSeriesEmbedding
 #print axioms VolumeLogic.TriangleLoads.load_zero_corner
 #print axioms VolumeLogic.TriangleLoads.singletonLoad
 #print axioms VolumeLogic.TriangleLoads.singletonLoad_hasDerivAt
-
 #print axioms VolumeLogic.TrianglePotential.lobachevsky
 #print axioms VolumeLogic.TrianglePotential.entropy
 #print axioms VolumeLogic.TrianglePotential.entropySlope
@@ -233,7 +239,6 @@ import MeridianSeriesEmbedding
 #print axioms VolumeLogic.TrianglePotential.summedPotential_path_second_at
 #print axioms VolumeLogic.TrianglePotential.summedPotential_mixed_hasDerivAt
 #print axioms VolumeLogic.TrianglePotential.summedPotential_mixed_second_at
-
 #print axioms VolumeLogic.TriangleMinimizer.Regular
 #print axioms VolumeLogic.TriangleMinimizer.regular_radicand
 #print axioms VolumeLogic.TriangleMinimizer.nonregular_singleton
@@ -272,7 +277,6 @@ import MeridianSeriesEmbedding
 #print axioms VolumeLogic.TriangleMinimizer.root_demand_difference
 #print axioms VolumeLogic.TriangleMinimizer.grounded_demand_eq
 #print axioms VolumeLogic.TriangleMinimizer.exists_unique_prescribed_minimizer
-
 #print axioms VolumeLogic.TriangleBalance.supportedLoad
 #print axioms VolumeLogic.TriangleBalance.supportedLoad_regular
 #print axioms VolumeLogic.TriangleBalance.not_regular_singleton
@@ -295,7 +299,6 @@ import MeridianSeriesEmbedding
 #print axioms VolumeLogic.TriangleBalance.balance_minimizer
 #print axioms VolumeLogic.TriangleBalance.grounded_minimizer_iff_balance
 #print axioms VolumeLogic.TriangleBalance.exists_unique_balance
-
 #print axioms VolumeLogic.HallRecession.positive
 #print axioms VolumeLogic.HallRecession.rowCut
 #print axioms VolumeLogic.HallRecession.capacity
@@ -319,7 +322,6 @@ import MeridianSeriesEmbedding
 #print axioms VolumeLogic.HallRecession.grounded_coercive
 #print axioms VolumeLogic.HallRecession.connected_of_strict_cuts
 #print axioms VolumeLogic.HallRecession.exists_grounded_minimizer
-
 #print axioms VolumeLogic.TriangleHall.supportedLoad_positive
 #print axioms VolumeLogic.TriangleHall.supportedLoad_zero
 #print axioms VolumeLogic.TriangleHall.row_lower
@@ -329,304 +331,3 @@ import MeridianSeriesEmbedding
 #print axioms VolumeLogic.TriangleHall.exists_positive_table
 #print axioms VolumeLogic.TriangleHall.exists_unique_balance
 #print axioms VolumeLogic.TriangleHall.exists_unique_minimizer
-
-#print axioms VolumeLogic.FormalShift.index
-#print axioms VolumeLogic.FormalShift.index_zero
-#print axioms VolumeLogic.FormalShift.index_one
-#print axioms VolumeLogic.FormalShift.bc
-#print axioms VolumeLogic.FormalShift.shiftArgument
-#print axioms VolumeLogic.FormalShift.argument_hasSubst
-#print axioms VolumeLogic.FormalShift.shiftPrincipal
-#print axioms VolumeLogic.FormalShift.shiftPrincipal_rescale
-#print axioms VolumeLogic.FormalShift.shiftPrincipal_coeff
-#print axioms VolumeLogic.FormalShift.bc_sub
-#print axioms VolumeLogic.FormalShift.divideH
-#print axioms VolumeLogic.FormalShift.divideH_coeff
-#print axioms VolumeLogic.FormalShift.principalDifference
-#print axioms VolumeLogic.FormalShift.principalDifference_zero
-#print axioms VolumeLogic.FormalShift.principalDifference_first
-#print axioms VolumeLogic.FormalShift.principalDifference_division
-#print axioms VolumeLogic.FormalShift.atHZero
-#print axioms VolumeLogic.FormalShift.principalDifference_symbol
-#print axioms VolumeLogic.FormalShift.principalDifference_origin
-#print axioms VolumeLogic.FormalShift.zeroVariables
-#print axioms VolumeLogic.FormalShift.zeroVariables_hasSubst
-#print axioms VolumeLogic.FormalShift.atHZero_eq_subst
-#print axioms VolumeLogic.FormalShift.shiftVariables
-#print axioms VolumeLogic.FormalShift.shiftVariables_hasSubst
-#print axioms VolumeLogic.FormalShift.shiftRegular
-#print axioms VolumeLogic.FormalShift.shiftRegular_atHZero
-#print axioms VolumeLogic.FormalShift.logarithmicShift
-#print axioms VolumeLogic.FormalShift.logarithmicShift_atHZero
-#print axioms VolumeLogic.FormalShift.logarithmicShift_origin
-
-#print axioms VolumeLogic.FormalRegradingRing.targetVariables
-#print axioms VolumeLogic.FormalRegradingRing.targetVariables_hasSubst
-#print axioms VolumeLogic.FormalRegradingRing.regrading
-#print axioms VolumeLogic.FormalRegradingRing.regrading_add
-#print axioms VolumeLogic.FormalRegradingRing.regrading_mul
-#print axioms VolumeLogic.FormalRegradingRing.monomial_image
-#print axioms VolumeLogic.FormalRegradingRing.monomial_image_coeff
-#print axioms VolumeLogic.FormalRegradingRing.regrading_coeff
-#print axioms VolumeLogic.FormalRegradingRing.coefficient_recovery
-#print axioms VolumeLogic.FormalRegradingRing.std_table_compatibility
-#print axioms VolumeLogic.FormalRegradingRing.regrading_injective
-#print axioms VolumeLogic.FormalRegradingRing.regrading_zero_iff
-#print axioms VolumeLogic.FormalRegradingRing.finite_order_iff
-#print axioms VolumeLogic.FormalRegradingRing.coefficient_degree
-#print axioms VolumeLogic.FormalRegradingRing.regrading_h
-#print axioms VolumeLogic.FormalRegradingRing.regrading_u
-
-#print axioms VolumeLogic.FormalExp.exponential
-#print axioms VolumeLogic.FormalExp.exponential_coeff
-#print axioms VolumeLogic.FormalExp.exponential_coeff_finite
-#print axioms VolumeLogic.FormalExp.atHZero_constant
-#print axioms VolumeLogic.FormalExp.exponential_constant
-#print axioms VolumeLogic.FormalExp.exponential_isUnit
-#print axioms VolumeLogic.FormalExp.exponential_zero
-#print axioms VolumeLogic.FormalExp.hZeroHom
-#print axioms VolumeLogic.FormalExp.hZeroHom_apply
-#print axioms VolumeLogic.FormalExp.atHZero_exponential
-#print axioms VolumeLogic.FormalExp.regularDifference_atHZero
-#print axioms VolumeLogic.FormalExp.regularDifference_origin
-#print axioms VolumeLogic.FormalExp.regular_exponential_atHZero
-#print axioms VolumeLogic.FormalExp.exponential_linear_coeff
-#print axioms VolumeLogic.FormalExp.logarithmic_exponential_atHZero
-#print axioms VolumeLogic.FormalExp.logarithmic_exponential_amplitude_independent
-#print axioms VolumeLogic.FormalExp.logarithmic_exponential_isUnit
-#print axioms VolumeLogic.FormalExp.exponential_nat_smul
-#print axioms VolumeLogic.FormalExp.logarithmic_exponential_atHZero_nat
-
-#print axioms VolumeLogic.AsymptoticIdentity.coefficient_zero_of_next_order
-#print axioms VolumeLogic.AsymptoticIdentity.coefficients_zero_of_all_orders
-#print axioms VolumeLogic.AsymptoticIdentity.coefficient_polynomials_zero
-#print axioms VolumeLogic.AsymptoticIdentity.formal_series_zero
-
-#print axioms VolumeLogic.FormalGauge.shiftedMeridian
-#print axioms VolumeLogic.FormalGauge.meridian
-#print axioms VolumeLogic.FormalGauge.denominator
-#print axioms VolumeLogic.FormalGauge.punctured
-#print axioms VolumeLogic.FormalGauge.clearedCoefficient
-#print axioms VolumeLogic.FormalGauge.project_shiftArgument
-#print axioms VolumeLogic.FormalGauge.project_shiftedMeridian
-#print axioms VolumeLogic.FormalGauge.shiftedMeridian_constant
-#print axioms VolumeLogic.FormalGauge.meridian_constant
-#print axioms VolumeLogic.FormalGauge.project_denominator
-#print axioms VolumeLogic.FormalGauge.shifted_mul_punctured
-#print axioms VolumeLogic.FormalGauge.denominator_clearing
-#print axioms VolumeLogic.FormalGauge.project_punctured
-#print axioms VolumeLogic.FormalGauge.project_clearedCoefficient
-#print axioms VolumeLogic.FormalGauge.atHZero_clearedCoefficient
-#print axioms VolumeLogic.FormalCharacteristic.shiftedEquation
-#print axioms VolumeLogic.FormalCharacteristic.classicalPolynomial
-#print axioms VolumeLogic.FormalCharacteristic.meridianDivisor
-#print axioms VolumeLogic.FormalCharacteristic.meridianDivisor_linear
-#print axioms VolumeLogic.FormalCharacteristic.meridianDivisor_ne_zero
-#print axioms VolumeLogic.FormalCharacteristic.projected_shiftedEquation
-#print axioms VolumeLogic.FormalCharacteristic.classical_identity_of_shifted_zero
-#print axioms VolumeLogic.FormalCharacteristic.regraded_asymptotics_force_zero
-#print axioms VolumeLogic.FormalCharacteristic.classical_identity_from_all_orders
-
-#print axioms VolumeLogic.FormalCharacteristic.gauged_classical_identity_from_all_orders
-
-#print axioms VolumeLogic.UniformProfile.norm_one_add_bounds
-#print axioms VolumeLogic.UniformProfile.profile_norm_bounds
-#print axioms VolumeLogic.UniformProfile.log_rate_corridor
-#print axioms VolumeLogic.UniformProfile.uniform_profile_rate
-#print axioms VolumeLogic.UniformProfile.uniform_profile_tendsto
-#print axioms VolumeLogic.UniformProfile.moving_factor_bounds
-#print axioms VolumeLogic.UniformProfile.compact_nonvanishing_bounds
-#print axioms VolumeLogic.UniformProfile.compact_moving_factor_bounds
-#print axioms VolumeLogic.UniformProfile.scalar_profile_transfer
-#print axioms VolumeLogic.UniformProfile.uniform_vanishing_of_bound
-#print axioms VolumeLogic.UniformProfile.uniform_vanishing_of_inverse_level
-#print axioms VolumeLogic.UniformProfile.uniform_vanishing_of_two_orders
-#print axioms VolumeLogic.UniformProfile.microscopic_volume_transfer
-#print axioms VolumeLogic.UniformProfile.compact_microscopic_volume_transfer
-
-#print axioms VolumeLogic.ActualGauge.denominator
-#print axioms VolumeLogic.ActualGauge.punctured
-#print axioms VolumeLogic.ActualGauge.clearedCoefficient
-#print axioms VolumeLogic.ActualGauge.denominator_clearing
-#print axioms VolumeLogic.ActualGauge.formal_coefficient_eq
-#print axioms VolumeLogic.ActualGauge.map_clearedCoefficient
-#print axioms VolumeLogic.ActualGauge.coefficient_times_normalization
-#print axioms VolumeLogic.ActualGauge.cleared_equation_of_recurrence
-#print axioms VolumeLogic.ActualGauge.cleared_equation_of_ratio
-#print axioms VolumeLogic.ActualGauge.sineNormalization
-#print axioms VolumeLogic.ActualGauge.sineMeridian
-#print axioms VolumeLogic.ActualGauge.sineMeridian_eq_exp
-#print axioms VolumeLogic.ActualGauge.levelRoot
-#print axioms VolumeLogic.ActualGauge.meridianValue
-#print axioms VolumeLogic.ActualGauge.levelRoot_power
-#print axioms VolumeLogic.ActualGauge.meridianValue_shift
-#print axioms VolumeLogic.ActualGauge.sineMeridian_eq_root_shift
-#print axioms VolumeLogic.ActualGauge.numerator_shift
-#print axioms VolumeLogic.ActualGauge.sine_gauge
-#print axioms VolumeLogic.ActualGauge.shifted_sine_ne_zero
-#print axioms VolumeLogic.ActualGauge.sine_cleared_equation
-
-#print axioms VolumeLogic.RecurrenceExpansion.HasExpansion
-#print axioms VolumeLogic.RecurrenceExpansion.polynomial_bounded
-#print axioms VolumeLogic.RecurrenceExpansion.eval_isBigO_of_X_pow_dvd
-#print axioms VolumeLogic.RecurrenceExpansion.trunc_product_remainder
-#print axioms VolumeLogic.RecurrenceExpansion.hasExpansion_polynomial
-#print axioms VolumeLogic.RecurrenceExpansion.HasExpansion.bounded
-#print axioms VolumeLogic.RecurrenceExpansion.HasExpansion.mul
-#print axioms VolumeLogic.RecurrenceExpansion.HasExpansion.sum
-#print axioms VolumeLogic.RecurrenceExpansion.hasExpansion_const
-#print axioms VolumeLogic.RecurrenceExpansion.HasExpansion.prod
-#print axioms VolumeLogic.RecurrenceExpansion.microscopic
-#print axioms VolumeLogic.RecurrenceExpansion.microscopic_coeff
-#print axioms VolumeLogic.RecurrenceExpansion.trunc_eval
-#print axioms VolumeLogic.RecurrenceExpansion.finite_equation_expansion
-#print axioms VolumeLogic.RecurrenceExpansion.characteristic_of_factor_expansions
-
-#print axioms VolumeLogic.RecurrenceExpansion.clearedCoefficient_expansion
-#print axioms VolumeLogic.RecurrenceExpansion.characteristic_of_original_coefficient_expansions
-#print axioms VolumeLogic.RecurrenceExpansion.characteristic_of_actual_recurrence
-#print axioms VolumeLogic.RecurrenceExpansion.characteristic_of_sine_recurrence
-
-#print axioms VolumeLogic.RecurrenceExpansion.parameterVariables
-#print axioms VolumeLogic.RecurrenceExpansion.parameterVariables_hasSubst
-#print axioms VolumeLogic.RecurrenceExpansion.microscopic_eq_subst
-#print axioms VolumeLogic.RecurrenceExpansion.microscopic_exponential
-#print axioms VolumeLogic.RecurrenceExpansion.microscopic_shiftArgument
-#print axioms VolumeLogic.RecurrenceExpansion.microscopic_shiftedMeridian
-#print axioms VolumeLogic.RecurrenceExpansion.hasExpansion_exp_linear
-#print axioms VolumeLogic.RecurrenceExpansion.HasExpansion.sub
-#print axioms VolumeLogic.RecurrenceExpansion.hasExpansion_meridian_linear
-#print axioms VolumeLogic.RecurrenceExpansion.levelScale
-#print axioms VolumeLogic.RecurrenceExpansion.levelScale_tendsto
-#print axioms VolumeLogic.RecurrenceExpansion.levelScale_eventually_ne_zero
-#print axioms VolumeLogic.RecurrenceExpansion.sineMeridian_linear_expansion
-#print axioms VolumeLogic.RecurrenceExpansion.sineMeridian_expansion
-#print axioms VolumeLogic.RecurrenceExpansion.characteristic_at_roots
-
-#print axioms VolumeLogic.LaurentExpansion.Coefficient
-#print axioms VolumeLogic.LaurentExpansion.evaluate
-#print axioms VolumeLogic.LaurentExpansion.monomialArgument
-#print axioms VolumeLogic.LaurentExpansion.formalCoefficient
-#print axioms VolumeLogic.LaurentExpansion.monomialArgument_origin
-#print axioms VolumeLogic.LaurentExpansion.microscopic_constant
-#print axioms VolumeLogic.LaurentExpansion.microscopic_monomialArgument
-#print axioms VolumeLogic.LaurentExpansion.microscopic_formalCoefficient
-#print axioms VolumeLogic.LaurentExpansion.evaluate_exp
-#print axioms VolumeLogic.LaurentExpansion.classicalCoefficient
-#print axioms VolumeLogic.LaurentExpansion.project_monomialArgument
-#print axioms VolumeLogic.LaurentExpansion.project_formalCoefficient
-#print axioms VolumeLogic.LaurentExpansion.evaluate_single
-#print axioms VolumeLogic.LaurentExpansion.microscopic_single
-#print axioms VolumeLogic.LaurentExpansion.classicalCoefficient_add
-#print axioms VolumeLogic.LaurentExpansion.classicalCoefficient_single
-#print axioms VolumeLogic.LaurentExpansion.coefficient_expansion
-#print axioms VolumeLogic.LaurentExpansion.coefficient_expansion_at_roots
-#print axioms VolumeLogic.LaurentExpansion.characteristic_of_laurent_recurrence
-
-#print axioms VolumeLogic.OperatorNormalization.exists_nonzero_cleared_family
-#print axioms VolumeLogic.OperatorNormalization.commonOrder
-#print axioms VolumeLogic.OperatorNormalization.normalize
-#print axioms VolumeLogic.OperatorNormalization.classicalSymbol
-#print axioms VolumeLogic.OperatorNormalization.factorization
-#print axioms VolumeLogic.OperatorNormalization.classicalSymbol_ne_zero
-#print axioms VolumeLogic.OperatorNormalization.maximal_common_order
-#print axioms VolumeLogic.OperatorNormalization.common_order_iff
-#print axioms VolumeLogic.OperatorNormalization.normalized_common_order_zero
-#print axioms VolumeLogic.OperatorNormalization.actualCoefficient
-#print axioms VolumeLogic.OperatorNormalization.coefficient_factorization
-#print axioms VolumeLogic.OperatorNormalization.recurrence_factorization
-#print axioms VolumeLogic.OperatorNormalization.recurrence_iff
-#print axioms VolumeLogic.OperatorNormalization.sign_substitution_ne_zero
-#print axioms VolumeLogic.OperatorNormalization.gauged_symbol_ne_zero
-#print axioms VolumeLogic.OperatorNormalization.meridian
-#print axioms VolumeLogic.OperatorNormalization.meridian_ne_zero
-#print axioms VolumeLogic.OperatorNormalization.laurent_gauged_symbol_ne_zero
-#print axioms VolumeLogic.OperatorNormalization.levelRoot_ne_one
-#print axioms VolumeLogic.OperatorNormalization.recurrence_at_root_iff
-#print axioms VolumeLogic.OperatorNormalization.qTaylor
-#print axioms VolumeLogic.OperatorNormalization.qTaylor_constant
-#print axioms VolumeLogic.OperatorNormalization.exponentialUnit
-#print axioms VolumeLogic.OperatorNormalization.exponentialUnit_constant
-#print axioms VolumeLogic.OperatorNormalization.exp_sub_one_factorization
-#print axioms VolumeLogic.OperatorNormalization.exponentialUnit_isUnit
-#print axioms VolumeLogic.OperatorNormalization.qTaylor_factorization
-#print axioms VolumeLogic.OperatorNormalization.qTaylor_leading_coefficient
-#print axioms VolumeLogic.OperatorNormalization.qTaylor_lower_coefficients
-#print axioms VolumeLogic.OperatorNormalization.qTaylor_order
-
-#print axioms VolumeLogic.SineFactor.sinc
-#print axioms VolumeLogic.SineFactor.sinc_zero
-#print axioms VolumeLogic.SineFactor.sinc_of_ne_zero
-#print axioms VolumeLogic.SineFactor.sinc_eq_dslope
-#print axioms VolumeLogic.SineFactor.continuous_sinc
-#print axioms VolumeLogic.SineFactor.limitingFactor
-#print axioms VolumeLogic.SineFactor.factor
-#print axioms VolumeLogic.SineFactor.factor_zero
-#print axioms VolumeLogic.SineFactor.continuous_limitingFactor
-#print axioms VolumeLogic.SineFactor.factor_eq_literal
-#print axioms VolumeLogic.SineFactor.continuousAt_factor_zero
-#print axioms VolumeLogic.SineFactor.literal_tendsto_zero
-#print axioms VolumeLogic.SineFactor.uniform_scaled_continuous
-#print axioms VolumeLogic.SineFactor.denominator_tendsto
-#print axioms VolumeLogic.SineFactor.denominator_bounds
-#print axioms VolumeLogic.SineFactor.factor_tendsto
-#print axioms VolumeLogic.SineFactor.limiting_zero_iff
-#print axioms VolumeLogic.SineFactor.limiting_ne_zero_of_avoids
-#print axioms VolumeLogic.SineFactor.limiting_ne_zero_of_norm_lt_one
-#print axioms VolumeLogic.SineFactor.compact_factor_bounds
-#print axioms VolumeLogic.SineFactor.disk_factor_bounds
-#print axioms VolumeLogic.SineFactor.compact_sine_volume_transfer
-#print axioms VolumeLogic.SineFactor.quadraticPhase
-#print axioms VolumeLogic.SineFactor.quadraticPhase_eq_diagram_scalar
-#print axioms VolumeLogic.SineFactor.quadraticPhase_ne_zero
-#print axioms VolumeLogic.SineFactor.quadraticPhase_tendsto
-#print axioms VolumeLogic.SineFactor.compact_quadratic_sine_volume_transfer
-
-#print axioms VolumeLogic.OperatorCoefficientAdapter.encode
-#print axioms VolumeLogic.OperatorCoefficientAdapter.encode_coefficient
-#print axioms VolumeLogic.OperatorCoefficientAdapter.encode_injective
-#print axioms VolumeLogic.OperatorCoefficientAdapter.encode_zero
-#print axioms VolumeLogic.OperatorCoefficientAdapter.encode_sum
-#print axioms VolumeLogic.OperatorCoefficientAdapter.meridian_evaluation_sum
-#print axioms VolumeLogic.OperatorCoefficientAdapter.evaluate_encode
-#print axioms VolumeLogic.OperatorCoefficientAdapter.shiftPolynomial
-#print axioms VolumeLogic.OperatorCoefficientAdapter.operatorFamily
-#print axioms VolumeLogic.OperatorCoefficientAdapter.actualCoefficient_eq_shiftPolynomial
-#print axioms VolumeLogic.OperatorCoefficientAdapter.actualCoefficient_eq_evaluate
-#print axioms VolumeLogic.OperatorCoefficientAdapter.meridianSeries
-#print axioms VolumeLogic.OperatorCoefficientAdapter.classicalCoefficient_encode
-#print axioms VolumeLogic.OperatorCoefficientAdapter.classical_record_coefficient
-#print axioms VolumeLogic.OperatorCoefficientAdapter.classical_record_map
-#print axioms VolumeLogic.OperatorCoefficientAdapter.classicalCoefficient_normalized
-#print axioms VolumeLogic.OperatorCoefficientAdapter.formalSymbol
-#print axioms VolumeLogic.OperatorCoefficientAdapter.formalSymbol_as_range
-#print axioms VolumeLogic.OperatorCoefficientAdapter.normalized_symbol_degree_bound
-#print axioms VolumeLogic.OperatorCoefficientAdapter.normalized_formalSymbol
-#print axioms VolumeLogic.OperatorCoefficientAdapter.omitted_shift_coefficients_zero
-#print axioms VolumeLogic.OperatorCoefficientAdapter.levelRoot_eq_exp_scale
-#print axioms VolumeLogic.OperatorCoefficientAdapter.meridianUnit
-#print axioms VolumeLogic.OperatorCoefficientAdapter.meridianValue_eq_unit
-#print axioms VolumeLogic.OperatorCoefficientAdapter.normalized_characteristic_of_record
-
-#print axioms VolumeLogic.MeridianSeriesEmbedding.meridianSeries_C_mul_T
-#print axioms VolumeLogic.MeridianSeriesEmbedding.meridianSeries_T
-#print axioms VolumeLogic.MeridianSeriesEmbedding.exponential_linear_mul
-#print axioms VolumeLogic.MeridianSeriesEmbedding.meridianSeries_one
-#print axioms VolumeLogic.MeridianSeriesEmbedding.meridianSeries_mul
-#print axioms VolumeLogic.MeridianSeriesEmbedding.meridianRingHom
-#print axioms VolumeLogic.MeridianSeriesEmbedding.meridianRingHom_apply
-#print axioms VolumeLogic.MeridianSeriesEmbedding.meridianSeries_coeff
-#print axioms VolumeLogic.MeridianSeriesEmbedding.meridianSeries_T_coeff
-#print axioms VolumeLogic.MeridianSeriesEmbedding.moment_zero_of_coefficient_zero
-#print axioms VolumeLogic.MeridianSeriesEmbedding.meridianSeries_eq_zero_of_initial_coefficients
-#print axioms VolumeLogic.MeridianSeriesEmbedding.equal_of_initial_coefficients_on_support
-#print axioms VolumeLogic.MeridianSeriesEmbedding.meridianSeries_eq_zero_iff
-#print axioms VolumeLogic.MeridianSeriesEmbedding.meridianSeries_injective
-#print axioms VolumeLogic.MeridianSeriesEmbedding.meridianSeries_C
-#print axioms VolumeLogic.MeridianSeriesEmbedding.meridianAlgHom
-#print axioms VolumeLogic.MeridianSeriesEmbedding.meridianAlgHom_injective
-#print axioms VolumeLogic.MeridianSeriesEmbedding.formalSymbol_eq_map
-#print axioms VolumeLogic.MeridianSeriesEmbedding.formalSymbol_injective
-#print axioms VolumeLogic.MeridianSeriesEmbedding.formalSymbol_ne_zero
-#print axioms VolumeLogic.MeridianSeriesEmbedding.normalized_formalSymbol_ne_zero
-#print axioms VolumeLogic.MeridianSeriesEmbedding.normalized_characteristic_faithful

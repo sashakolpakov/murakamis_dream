@@ -5,13 +5,16 @@ import Mathlib.Logic.Relation
 import Mathlib.Tactic.Ring
 
 /-!
-Real finite weighted graph energy. Edges have explicit endpoints; parallel
-edges and loops are allowed. Connectivity means a finite path of actual
-positive-weight edges, not an assumption about a quadratic-form kernel.
+Finite real graph energy with explicit edge endpoints. Parallel edges and
+loops retain their labels, and only strictly positive edges propagate
+equality. The main argument is the same throughout: a sum of nonnegative
+terms vanishes exactly when every positive edge difference vanishes; finite
+paths then leave only the common constant direction.
 
-For the circle-pattern application, the geometric differentiation that
-identifies a Hessian with this form, positivity of its conductances, and
-connectivity of the ordinary-face graph remain written inputs.
+This module does not identify a graph with a geometric Hessian. The triangle
+derivatives and their incidence assembly are proved in `TriangleLoads` and
+`TriangleMinimizer`. Identifying a particular diagram with those data remains
+an application step. This real energy is not the physical closing pairing.
 -/
 
 namespace VolumeLogic.WeightedGraph
