@@ -21,59 +21,77 @@
 \newcommand{\normJ}[1]{\lVert #1\rVert_{\mathcal J}}
 \newcommand{\coef}[2]{[e_{#1}]#2}
 \title{Spectral estimates for Conway tangle sources}
-\author{}
-\date{}
+\author{Alexander Kolpakov}
+\date{25 November 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
-We bound the exact colored source of a fixed strict Conway composition,
-uniformly over its physical circle colors, retained half twists and all
-sufficiently large integer levels. The upper exponential rate is the
-maximum of its positive complete-color action. A color a fixed fraction
-below complete color gives a strict loss, as does the entire difference
-between the full source and its selected core. The proof retains the
-full root algebra, including first derivatives at repeated spectral
-roots. An exact Fourier formula controls a character before a turn;
-a positive comparison with shared indices controls regions without a
-character. Two supporting-plane inequalities, proved by outward rational
-arithmetic, propagate this comparison. We also prove the uniform signed
-recurrence estimates for the local core coefficients. The result includes
-strict compositions with an elementary closing leaf and the isolated
-three-leaf closure. A separate corollary treats the strict two-leaf
-closure. These are source bounds before filling, not a filled
-invariant or volume asymptotic.
+We study a finite polynomial expression associated with a Conway tangle
+construction before twists are inserted in its crossing circles. Each
+circle has an integer color between $1$ and the level $N$. We prove that
+the absolute value of the expression is bounded by the exponential rate
+of its positive complete-color sum. The estimate is uniform in all circle
+colors and in the retained half twists. If any color stays a fixed
+fraction below $N$, the exponential rate is strictly smaller. The same
+strict bound holds for the terms omitted by the core decomposition defined below. The proof combines a Fourier formula for a colored circle
+with positive estimates for the intervening multiplication trees. It
+keeps both values and first derivatives at repeated spectral roots.
+Two concave optimization inequalities supply the strict losses; their
+constants are proved by rational interval arithmetic. We also give a
+separate recurrence estimate for individual leaf coefficients. These
+results bound the finite expressions used in a filling argument; they do
+not by themselves give an asymptotic formula for a filled knot invariant.
 \end{abstract}
 
 \section{The source and the result}\label{cs:intro}
 
-A circle surrounding two strands gives a polynomial operator before it
-is filled by twists. Stacking tangles multiplies these operators, a
-quarter turn acts by a specified linear map, and cylindrical closure
-takes a specified linear functional. The spectral polynomial has
-repeated roots: values alone do not determine the operator. Its first
-derivatives are needed both in the original finite algebra and in the
-cancellation that bounds a small physical color.
+A Conway construction builds a tangle by stacking two-strand pieces and
+turning them through a quarter turn. At a fixed level $N$, these operations
+have a finite algebraic description. A circle surrounding two strands
+acts by a polynomial, stacking is multiplication in a polynomial quotient,
+and a quarter turn is a linear involution. A linear functional closes the
+diagram. We call the resulting scalar a \emph{source}: it is the expression
+to which one later applies a filling transformation to insert full twists.
+The present paper estimates this scalar before filling.
 
-Separate absolute bounds at every intermediate operation are inadequate.
-A turn can have an exponential norm cost which need not be the intrinsic
-rate of that subtree. We instead alternate two estimates. A character
-followed by a turn admits a Fourier estimate with its exact endpoint
-currents. A region without a character admits a positive comparison
-whose shared indices determine the correct cost. The variational
-identities for those two operations retain their additive constants.
+The difficulty is to obtain an upper bound which respects cancellation.
+Taking a separate absolute bound for every turn gives too large an
+exponential rate. We use a Fourier identity when a colored-circle factor
+is present. Between such factors, we keep all shared multiplication
+indices and compare with a positive sum. The comparison must also retain
+first derivatives at repeated roots of the quotient polynomial. Replacing
+the quotient by its distinct spectral values would lose precisely the
+terms used in the Fourier cancellation.
 
 \subsection{Constructions and their complete action}
-The diagrams use ordered products of two-strand boxes, their clockwise
-quarter turns and cylindrical closure. Each elementary box is
-\(h_i=\Turn(R^{\epsilon_i}L_{j_i})\), where \(L_{j_i}\) is its circle
+Fix an expression built from ordered products, clockwise quarter turns
+and one closing operation. Denote the turn by $\Turn$ and closure by
+$\phi$. Each elementary two-strand box is
+\(B_i=h_{j_i}^{\epsilon_i}=\Turn(R^{\epsilon_i}L_{j_i})\), where $R$ is the positive crossing operator and \(L_{j_i}\) is its circle
 operator, \(1\le j_i\le N\), and \(\epsilon_i\in\{0,1,-1\}\) specifies
 no retained crossing or one crossing of the indicated sign. Every box
 occurs once. The construction and its number \(H\ge3\) of boxes are
-fixed before the level \(N\) tends to infinity. A physical color is an
-integer dimension; it is not a continuous Fourier parameter.
+fixed before the level \(N\) tends to infinity. The color $j_i$ is the
+integer dimension label on the $i$th circle. The \emph{complete color} is
+$j_i=N$. Write $\mathbf j=(j_1,\ldots,j_H)$,
+$\boldsymbol\epsilon=(\epsilon_1,\ldots,\epsilon_H)$ and
+$\mathbf N=(N,\ldots,N)$.
 
-Strictness is a finite condition on this syntax. The types \(L,H,A\)
-denote output intervals \((0,1/2),(1/2,1),(0,1)\), respectively.
+Here is the real feasibility condition on the expression. Give every
+elementary box a label in $(0,1/2)$. A turn replaces a label $x$ by $1-x$.
+At a multiplication, the input labels $x,y$ and output label $z$ satisfy
+\[
+ \max(x,y)<z<x+y<1.
+\]
+At closure the two input labels sum to $1$; there is no free output
+label. The presentation is \emph{strict} if such labels exist. These are
+the interiors of the normalized Newton-index constraints derived in
+Section~\ref{cs:finite}. They are conditions on the expression, not on
+its chosen circle colors.
+
+Strictness can be checked without solving for all the labels.
+The types \(L,H,A\) denote the possible output intervals
+\((0,1/2),(1/2,1),(0,1)\), respectively.
 An elementary box has type \(L\). A turn interchanges \(L,H\) and
 preserves \(A\). With either input order the product table is
 \[
@@ -81,33 +99,52 @@ preserves \(A\). With either input order the product table is
  LH,HA\longmapsto H,\qquad HH\longmapsto\varnothing.
 \]
 At closure the allowed pairs are \(AA,AL,AH,LH\) and their reversals.
-A presentation passing this test is called \emph{strict}. The empty
-type means absence of a strict real state, not necessarily a zero
-finite operator. The type letter \(H\) is unrelated to the box count.
+A presentation admits strict labels exactly when it passes this test
+\cite[Lemma 5.2]{Newton}. An empty type means that no strict labels
+exist; it does not assert that the finite operator vanishes. The type
+letter \(H\) and the number $H$ of boxes play different roles.
 
-Write \(Z_N(\mathbf j,\boldsymbol\epsilon)\) for the original scalar,
-with the single reduced cut and normalization of \cite{Newton}.
+For example, consider the closure $\phi(B_1(B_2B_3))$. Labels
+$a_1=2/5$, $a_2=a_3=7/20$ and $z=3/5$ give
+\[
+ \max(a_2,a_3)<z<a_2+a_3<1,\qquad a_1+z=1.
+\]
+Thus this three-leaf presentation is strict, although one side of the
+closing product is a single elementary box.
+
+Write \(Z_N(\mathbf j,\boldsymbol\epsilon)\) for the scalar obtained by
+evaluating the chosen expression: use $B_i$ at its leaves, multiplication
+at a stack, $\Turn$ at a turn, and $\phi$ at closure. The normalization
+of $\phi$ is given in \eqref{cs:turn-trace}; it is the single reduced cut
+of \cite{Newton}.
 Section~\ref{cs:finite} specifies the finite operators and each exact
 core--alias split. Let \(Z_N^{\core}\) be the same contraction with
-every box replaced by its core. Thus these are also the full and core
-sources formerly denoted by \(\mathcal A_N,\mathcal C_N\).
-Let \(P\) be the limiting pure state polytope, retaining every shared
-wire index and the turn and closing relations. The closing product has
-coefficient one. With the explicit continuous functions \(g,m\) in
+every box replaced by the summand $C_{j_i}^{\epsilon_i}$ defined there.
+We call this summand the \emph{core}; the complementary summand is the
+\emph{alias}. These names refer to an exact algebraic decomposition,
+not to an asymptotic approximation.
+
+Let \(P\) be the closure of the set of strict labelings. A single label
+is used at both ends of each shared edge. Turns and closure impose the
+relations just described. With the functions \(g,m\) in
 \eqref{cs:g}--\eqref{cs:m}, its complete action is
 \begin{equation}\label{cs:F0}
  F_0=\max_{y\in P}
  \left\{\sum_{i=1}^{H}g(a_i(y))+
              \sum_{v=1}^{H-2}m(x_v(y),y_v(y),z_v(y))\right\}.
 \end{equation}
-The strict profile theorem \cite{Newton} gives a unique interior
-maximum on the primitive state space. Its value is also the rate of
-\(Z_N(\mathbf N,\mathbf0)\), which is positive for every sufficiently
-large integer \(N\).
+There is one term $g$ for each elementary box and one term $m$ for
+each multiplication other than the closing product. The latter has
+coefficient one. The strict profile theorem \cite[Theorem 6.4]{Newton}
+gives a unique interior maximum after the turn and closing relations
+are imposed. In particular,
+$N^{-1}\log Z_N(\mathbf N,\mathbf0)\to F_0$; this complete-color,
+untwisted sum is positive for every sufficiently large integer $N$.
 
 \begin{theorem}[Whole-source and color bounds]\label{cs:main}
-Fix a strict presentation with \(H\ge3\). Uniformly over all its
-physical colors and retained signs,
+Fix a strict presentation with \(H\ge3\). Uniformly for
+$\mathbf j\in\{1,\ldots,N\}^H$ and
+$\boldsymbol\epsilon\in\{0,1,-1\}^H$,
 \begin{equation}\label{cs:whole}
  |Z_N(\mathbf j,\boldsymbol\epsilon)|\le\exp\{N(F_0+o(1))\}.
 \end{equation}
@@ -127,15 +164,14 @@ primality restriction. Constants depend on the fixed presentation;
 no bound for constructions growing with \(N\) is asserted.
 \end{theorem}
 
-This includes the earlier completed-root grammar: start with a product
-of two elementary boxes, allow turns, products of completed boxes and
-single-box attachments, and close two completed boxes. The strict
-class also allows an elementary closing leaf. Corollary~\ref{cs:two-leaf-source}
-handles the strict two-leaf closure separately, with rate \(2G_0\),
-where \(G_0=g(1/4)\). The final alias gap
-follows from the full physical-color bound, not by identifying high
-Newton indices with complementary colors. A crossing can mix both
-Newton ranges.
+The second estimate is needed when a filling transformation sums over
+many colors: it excludes every region where a circle color is separated
+from $N$ by a fixed fraction. The third estimate allows the core to
+replace the full source at the leading exponential rate. Its proof
+uses the color bound. A high Newton index alone would not suffice,
+because a half twist mixes Newton indices.
+Corollary~\ref{cs:two-leaf-source} treats the strict two-leaf closure
+separately, with rate \(2G_0\), where \(G_0=g(1/4)\).
 
 \subsection{The proof and its inputs}
 The exact finite quotient, turn, pairing, product and circle formulas
@@ -143,34 +179,39 @@ are \cite[Proposition 3.2, Theorem 3.3 and Proposition 4.1]{Newton}.
 The crossing values and first derivatives are also stated in
 \cite[Proposition 5.1]{Finite}. We prove the needed complete-node
 conditioning directly in Section~\ref{cs:conditioning}, including
-all high-index normals. No moving-meridian or circle-tree estimate is
-an input.
+all derivative data at high Newton indices.
 
-Section~\ref{cs:local} retains the local signed recurrence estimate for
-applications that require individual core coefficients. It is independent
-of the whole-source proof below, and asserts no polynomial error at
-colliding roots.
+Section~\ref{cs:local} bounds individual twisted core coefficients by a
+recurrence. This result is useful when the coefficients themselves are
+needed, but is not an input to Theorem~\ref{cs:main}. A reader following
+only that theorem may pass directly to Section~\ref{cs:two-leaf}.
 Sections~\ref{cs:two-leaf}--\ref{cs:attachment} prove two scalar
 supporting-plane inequalities; Section~\ref{cs:arithmetic} supplies
-their full rational certificates. Their parameter hypotheses are
-stated explicitly. The comparison for arbitrary arrays in
-Section~\ref{cs:probe} uses those scalar inequalities, not a
-completed-root source theorem applied outside its grammar.
+their rational certificates. These inequalities compare a leaf with
+the two possible coefficient bounds, and propagate the resulting strict
+loss through a multiplication tree.
 
-The finite strict-state, reduced-junction and pure boundary-profile
-results of \cite{Newton} identify the component decomposition,
-stationary indices and absolute rate constants. The completed-root
-boundary inequalities in \cite[Lemma 9.5]{Newton} are used only for
-the completed pure references specified below. Neither companion's
-quantum core asymptotic is an input. The Fourier and component proofs
+The finite strict-state, reduced-junction and boundary-profile
+results of \cite{Newton} give the tree decomposition and the maximized
+action at each boundary. Some comparisons use the following smaller
+class of auxiliary complete-color expressions. Begin with a product
+$hh$ of two leaves, where $h=h_N$. Allow turns, products of two such
+expressions and attachment of one leaf on either side:
+\[
+ E::=hh\mid\Turn E\mid E_1E_2\mid hE\mid Eh.
+\]
+We call these expressions \emph{completed comparison expressions}.
+The boundary inequalities of \cite[Lemma 9.5]{Newton} apply to its
+descendants at the maximum of a closure with two completed sides. In Section~\ref{cs:probe} we explain why each comparison
+needed for a general strict presentation lies in this class, or is
+the explicit three-leaf example above. We do not use a core asymptotic
+from either companion. The Fourier and multiplication-tree proofs
 in Sections~\ref{cs:fourier}--\ref{cs:assembly} then establish the
-whole-source theorem, including the three-leaf reference at the
-endpoint of the two-leaf comparison.
+whole-source theorem.
 
-A later filling theorem still needs a normalized nonzero core
-asymptotic, the exact oscillatory filling transformation and a marked
-geometric identification of the selected action. None follows from
-an upper source bound alone.
+A filling theorem still needs a nonzero core asymptotic, the oscillatory
+filling transformation and a geometric interpretation of the selected
+action. None follows from an upper source bound alone.
 
 \section{Exact finite coefficients and their supports}\label{cs:finite}
 
@@ -179,17 +220,22 @@ Put $d=N-1$, $M=\lfloor d/2\rfloor$, $q=e^{\pi\ii/N}$ and $Q=q^2$. Throughout th
  S_r=\prod_{a=1}^r2\sin(\pi a/N),\qquad S_0=1,
  \qquad c_a=q^{2a+1}+q^{-2a-1}.
 \]
-Thus $S_r$ is a product, not a single sine. The root algebra is
+Thus $S_r$ is a product, not a single sine. The finite polynomial algebra is
 \[
  \mathscr A_N=\mathbb C[z]/(P_N(z)),\qquad
  P_N(z)=2T_N(z/2)+2=\prod_{a=0}^{d}(z-c_a),
 \]
-where $T_N(\cos t)=\cos Nt$. Repeated entries in the displayed product remain repeated roots. Equality in $\mathscr A_N$ preserves values and first derivatives at its double roots; at odd $N$ the simple root $-2$ also remains.
+where $T_N(\cos t)=\cos Nt$. Every class has a unique representative
+of degree at most $d$; we call it the \emph{canonical representative}.
+Repeated entries in the displayed product remain repeated roots.
+Equality in $\mathscr A_N$ means equality of values and first derivatives
+at its double roots, and of the value at the additional simple root
+$-2$ when $N$ is odd.
 The normalized Newton basis is
 \begin{equation}\label{cs:basis}
  e_r(z)=S_r^{-2}\prod_{a=0}^{r-1}(c_a-z),\qquad 0\le r\le d.
 \end{equation}
-The physical clockwise turn $\Turn$ and normalized cylindrical closure $\phi$ satisfy
+Write $[e_r]F$ for the coefficient of $e_r$ in this basis. The clockwise turn $\Turn$ and normalized cylindrical closure $\phi$ satisfy
 \begin{equation}\label{cs:turn-trace}
  \Turn e_r=e_{d-r},\qquad \phi(e_i e_j)=\mathbf1_{i+j=d},\qquad
  \phi(F)=(-1)^dN^2[z^d](F\bmod P_N).
@@ -209,17 +255,19 @@ For $i+j\ge N$ the product is zero in the full algebra, with multiplicities. All
 \begin{equation}\label{cs:support}
  i,j\ge0,\qquad i+j\le d,\qquad \max(i,j)\le k\le i+j.
 \end{equation}
-At a closing gate the trace forces $i+j=d$, and its coefficient is one. This is an exact constraint before any scaling by $N$.
+At a closing product $\phi$ forces $i+j=d$, and its coefficient is one. This is an exact constraint before any scaling by $N$.
 
 \subsection{The core and the alias}
-Let $U_0(z/2)=1$, $U_1(z/2)=z$, and $U_{r+1}(z/2)=zU_r(z/2)-U_{r-1}(z/2)$. The ordinary circle is $L_j=(-1)^{j-1}U_{j-1}(z/2)$, and the elementary turned piece is $h_j=\Turn L_j$. Put $h_0=0$. For a high color $j=N-h$, $0\le h\le M$, its exact split is
+A colored circle is represented by a signed Chebyshev polynomial.
+We occasionally call it a \emph{circle character}; only its polynomial
+formula is used below. Let $U_0(z/2)=1$, $U_1(z/2)=z$, and $U_{r+1}(z/2)=zU_r(z/2)-U_{r-1}(z/2)$. The ordinary circle is $L_j=(-1)^{j-1}U_{j-1}(z/2)$, and the elementary turned piece is $h_j=\Turn L_j$. Put $h_0=0$. For a high color $j=N-h$, $0\le h\le M$, its exact split is
 \begin{align}
  h_{N-h}&=C_{N-h}+A_{N-h},\\
  C_{N-h}&=\sum_{v=h}^{M}
  \frac{N^2S_{2v}}{S_v^2S_{v-h}S_{v+h}}e_v,
  &A_{N-h}&=(-1)^N h_h.\label{cs:split}
 \end{align}
-For the remaining physical colors $1\le j\le\lfloor N/2\rfloor$, set $C_j=0$ and $A_j=h_j$. The low-color formula is
+For the remaining circle colors $1\le j\le\lfloor N/2\rfloor$, set $C_j=0$ and $A_j=h_j$. The low-color formula is
 \begin{equation}\label{cs:low-color}
  h_j=\sum_{r=0}^{j-1}(-1)^{j-1+r}
  \frac{S_r^2S_{j+r}}{S_{2r+1}S_{j-r-1}}e_{d-r}.
@@ -233,7 +281,13 @@ Let $\kappa=q^{d^2/2}$, with $q^a=e^{\pi\ii a/N}$ for real $a$. A retained half 
  \frac{S_v}{S_rS_{v-r}}e_r,\qquad \epsilon=\pm1,
  \qquad \Theta_0=1.
 \end{equation}
-Define $C_j^\epsilon=\Theta_\epsilon C_j$ and $A_j^\epsilon=\Theta_\epsilon A_j$. The core still has indices at most $M$, but a half-twisted alias can occupy every index from $0$ to $d$. Thus the alias must be estimated on the entire gate support \eqref{cs:support}. The phases in \eqref{cs:half-twist} are retained until after the finite sum has been formed.
+Set
+\[
+ h_j^\epsilon=\Theta_\epsilon h_j=\Turn(R^\epsilon L_j),\qquad
+ C_j^\epsilon=\Theta_\epsilon C_j,\qquad
+ A_j^\epsilon=\Theta_\epsilon A_j.
+\]
+Thus $h_j^\epsilon=C_j^\epsilon+A_j^\epsilon$ exactly in $\mathscr A_N$. The core still has indices at most $M$, but a half-twisted alias can occupy every index from $0$ to $d$. Thus the alias must be estimated on the entire gate support \eqref{cs:support}. The phases in \eqref{cs:half-twist} are retained until after the finite sum has been formed.
 
 The transformation is exactly
 \(\Theta_\epsilon F=\Turn(R^\epsilon\Turn F)\). The physical crossing has
@@ -246,7 +300,13 @@ The derivative is required only at double nodes; at the odd simple
 node its value suffices. The inverse crossing is the inverse of this
 class in the full quotient.
 
-Equations \eqref{cs:turn-trace}--\eqref{cs:half-twist} are the physical identities imported above. Their derivation in \cite{Newton} is in the full quotient, not merely at the distinct roots. Consequently the estimates below concern the original normal data too; no semisimple replacement of a circle is made.
+These formulas are identities in the full quotient, as derived in
+\cite{Newton}; they hold for derivative data as well as values. A small
+example explains the distinction. Since $L_1=1$, we have $h_1=e_d$.
+This is a nonzero class, but it vanishes at every distinct spectral
+root. Its derivatives at the double roots cannot all vanish. Any
+estimate which discarded those derivatives would therefore replace a
+nonzero colored box by zero.
 
 \subsection{Continuous actions and elementary bounds}\label{cs:actions}
 Define the continuous function
@@ -304,12 +364,12 @@ $\left(\begin{smallmatrix}\cot\pi a+\cot\pi c&\cot\pi c\\\cot\pi c&\cot\pi b+\co
 
 \begin{thebibliography}{9}
 \bibitem{Newton}
-\emph{Newton calculus and stationary profiles of Conway tangles},
+A.~Kolpakov, \emph{Newton calculus and stationary profiles of Conway tangles},
 consolidated companion paper,
-\href{https://sashakolpakov.github.io/murakamis_dream/papers/newton-calculus.pdf}{repository edition}.
+\href{https://github.com/sashakolpakov/murakamis_dream/blob/conway-series-2026-11-25/docs/papers/newton-calculus.pdf}{25 November 2026 edition}.
 
-\bibitem{Finite}\emph{Finite spectral evaluation and uniform filling bounds}.
-Companion paper, \href{https://sashakolpakov.github.io/murakamis_dream/papers/filling-bounds.pdf}{PDF}.
+\bibitem{Finite}A.~Kolpakov, \emph{Finite spectral evaluation and uniform filling bounds}.
+Companion paper, \href{https://github.com/sashakolpakov/murakamis_dream/blob/conway-series-2026-11-25/docs/papers/filling-bounds.pdf}{PDF}.
 \bibitem{Certificates}\emph{Rational supporting-plane data for two-leaf blocks and single-leaf attachments}.
 Ancillary data and exact verifiers, \href{https://github.com/sashakolpakov/murakamis_dream/tree/main/experiments}{repository experiments}; the exact files and replay are specified in Section~\ref{cs:arithmetic}.
 \end{thebibliography}

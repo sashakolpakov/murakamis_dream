@@ -1,18 +1,27 @@
-\section{A positive comparison for a region without a character}\label{cs:probe}
+\section{Positive estimates between colored-circle factors}\label{cs:probe}
 
-Consider a connected region of product junctions with no distinguished
-original character at a junction. Each internal edge carries a turn.
-Choose one outgoing edge. Every junction then has at least two incoming
-branches. Its boundary inputs are \(n\ge2\) polynomials \(F_{i,N}\)
-of type \(L\). The resulting expression, before its outgoing turn,
-is denoted by \(A(F_1,\ldots,F_n)\), and its outgoing operator by
-\(Q_N=\Turn A(F_1,\ldots,F_n)\).
+We now estimate a multiplication tree whose boundary inputs are
+polynomials rather than individual colored circles. This is the part
+of the proof in which taking absolute coefficients is useful.
 
-The finite expression uses only products and turns; every input occurs
-once. It can be constructed from two-input products by turns, products
-of completed expressions and single-input attachments. Its type refers
-to its pure positive states, not to the range of its signed Newton
-coefficients.
+First reduce the closed expression by associating consecutive products,
+canceling pairs of turns and using \eqref{cs:adjoint} to move a turn
+across the closing pairing. The resulting tree has product junctions
+of valence at least three, with a turn on every internal edge. An
+external edge carries either $h_j^\epsilon=\Turn(R^\epsilon L_j)$ or
+the unturned circle factor $R^\epsilon L_j$. We call an edge of the
+second kind \emph{flagged}. The reduced-junction theorem of
+\cite[Theorem 5.5]{Newton} says that a strict expression has at most
+one flagged edge at each junction.
+
+Consider a maximal connected collection of junctions with no flagged
+edge attached. Choose one outgoing edge. Its incoming boundary
+subtrees have type $L$; denote their polynomials by $F_{1,N},\ldots,F_{n,N}$,
+where $n\ge2$. Write $A(F_1,\ldots,F_n)$ for the expression before
+the outgoing turn and $Q_N=\Turn A(F_1,\ldots,F_n)$ for its output.
+Only products and turns occur inside $A$, and each input occurs once.
+Its type is determined by the complete-color label constraints; it
+places no restriction on the signed coefficients of its inputs.
 
 \begin{definition}[The comparison arrays]
 Let \(c_i\in\mathbb R\) be fixed constants. The input arrays satisfy
@@ -32,9 +41,11 @@ Introduce the auxiliary polynomial
  W_N=\sum_{r=0}^{d}w_{N,r}e_r.
 \end{equation}
 It serves only in a norm inequality. It does not add a crossing circle
-to the link. A \emph{band sector} chooses, for each input and for this
-comparison polynomial, either the low indices \(r\le M\) or the high
-indices \(r>M\). These bands are not the physical core and alias.
+to the link. To estimate this positive sum, split each input and this
+comparison polynomial into low indices $r\le M$ and high indices
+$r>M$. A \emph{band sector} is one term of the resulting multilinear
+expansion. This split is by Newton index; it is different from the
+core--alias split by complementary circle colors.
 
 Let \(A^0\) be the same expression with every input replaced by the pure
 complete leaf \(h_N=\Turn L_N\). Write \(\Phi_A\) for the complete
@@ -42,9 +53,10 @@ action of the closed reference expression \(\phi(h_N A^0)\), and set
 \begin{equation}\label{cs:Omega}
  \Omega=\sum_i c_i+\Phi_A.
 \end{equation}
-The reference has \(n+1\ge3\) effective leaves. It has no flagged
-junction and is strict; these facts and its stationary boundary indices
-are supplied by \cite{Newton}.
+The reference has \(n+1\ge3\) effective leaves. Replacing a boundary subtree of type $L$ by a complete leaf preserves
+these strict label constraints. The closed reference therefore is
+strict and has no flagged edge. Its stationary boundary ranges are given by
+\cite[Theorems 7.3--7.4]{Newton}.
 
 \begin{theorem}[Positive comparison with shared indices]\label{cs:unflagged}
 For the fixed component and inputs \eqref{cs:cone},
@@ -57,8 +69,8 @@ upper bound \(e^{N(\Omega-\gamma)}\), for some \(\gamma>0\) and all
 sufficiently large \(N\). The constants are uniform over the specified
 input families.
 
-The all-low comparison is concentrated at the unique strict maximum
-of the original reference action. Its effective input indices and
+In the sector where every boundary index is low, the positive sum
+is concentrated at the unique strict maximum of the reference action. Its effective input indices and
 comparison index are in \((1/4,1/2)\). Outside any fixed neighborhood
 of that maximum it has a fixed exponential loss.
 \end{theorem}
@@ -74,7 +86,7 @@ By the full pairing,
 \end{equation}
 This proves the first inequality in \eqref{cs:positive-bound} by
 \eqref{cs:basis-norm}. It holds separately in each specified band
-sector and retains the first derivatives of all high basis elements.
+sector and includes the derivatives of high-index basis elements through \eqref{cs:basis-norm}.
 
 It remains to bound the positive scalar. For low input and comparison
 indices its upper leaf profile is \(g\); for high indices it is zero.
@@ -86,23 +98,25 @@ The common additive constants are \(\sum_i c_i\). Set
 On these domains \(g\le\widetilde g\) and \(0\le k\).
 Thus the scalar supporting-plane estimates of
 Lemmas~\ref{cs:two-leaf-gap} and~\ref{cs:attachment-gap} apply to the profiles of
-\eqref{cs:cone}. We give the propagation argument to specify why
-their applicability does not depend on the origin of the arrays.
+\eqref{cs:cone}. Here $k$ is only an upper bound for the zero high-index profile.
+Its useful feature is that the two scalar lemmas give a strict gap
+relative to the reference action. We spell out how those local gaps
+propagate while keeping every shared index.
 
-First suppose \(n+1\ge4\). The unflagged closed junction tree can be
-rooted between two completed expressions. If there is an internal
+First suppose \(n+1\ge4\). The closed reference tree can be rooted between two completed comparison expressions. If there is an internal
 edge, each side has at least two leaves, because every internal vertex
 has valence at least three. If there is only one junction, split its
 at least four leaves into two products with at least two factors each.
-Products, associativity and \eqref{cs:adjoint} realize this change of
-root as an exact identity of full colored tensors. Every external band
-stays attached to its original array. No tangle isotopy is asserted.
+Associativity and \eqref{cs:adjoint} realize this choice of root as
+an identity of the finite contractions. The input arrays and their
+chosen bands do not change. This algebraic identity is all we need;
+we do not change the ordered tangle construction used for geometry.
 
 At a two-leaf seed with selected output \(b\), write its pure profile
 as \(f(b)\), with slope \(\lambda=f'(b)\). The effective boundary
 parameters have \(1/2<X<1\). The two-leaf scalar inequalities give
 \begin{equation}\label{cs:seed-affine}
- \text{nonempty high profile at output }z
+ \text{profile with at least one high input, at output }z
        \le f(b)+\lambda(z-b)-1/100.
 \end{equation}
 The all-low case has the same tangent without a loss. At a turn the
@@ -143,16 +157,15 @@ their sum is at least \(2M+2>d\), at either parity. For exactly
 one high index, group it with a low index, leaving the other low
 index for closure. The pure selected point is
 \[
- a=\frac{\arctan2}{\pi},\quad b=1-a,\quad X=1/2,\quad
+ a=\frac{\arctan(2)}{\pi},\quad b=1-a,\quad X=1/2,\quad
  \lambda=g'(a)=-\log4.
 \]
 The endpoint case of the two-leaf inequality gives
 \(f(b)+\lambda(z-b)-1/100\). The remaining low profile has tangent
 \(g(a)+\lambda(u-a)\). Since \(z+u=d/N\), their sum is at most
 \(\Phi_A-1/100+\log4/N\). This proves the high-sector claim also
-in the three-leaf reference. No estimate for three physical aliases
-is needed here: these are coefficient bands, and the two-high
-vanishing is an exact polynomial identity.
+in the three-leaf reference. This treats every sector of the three-leaf comparison: two or three
+high indices give zero, and a single high index has the displayed gap.
 
 For the all-low sector, the uniform closed upper action is
 \begin{equation}\label{cs:reference-action}
@@ -203,11 +216,11 @@ satisfies
  |Q_N(2\cos(\theta+\ii y))|
  \le e^{N(\Omega-c(\theta-\pi)^2+Cy^2+o(1))}
 \end{equation}
-on a fixed strip, with \(c,C>0\), uniformly in its physical inputs.
+on a fixed strip, with \(c,C>0\), uniformly in the specified input families.
 \end{proposition}
 \begin{proof}
 Choose a compact interval \(I\subset(0,1/2)\) around the selected
-comparison index. Separate the actual state expansion of \(Q_N\)
+comparison index. Separate the state expansion of \(Q_N\)
 into an all-low part with output index \(r/N\in I\), and its
 complement. The weighted coefficient mass of the complementary part
 has a strict gap by Theorem~\ref{cs:unflagged}. It is a canonical

@@ -17,45 +17,46 @@
 \theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
 \theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
 \title{Finite spectral evaluation and uniform filling bounds}
-\author{}
-\date{}
+\author{Alexander Kolpakov}
+\date{25 November 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
-We study a finite functional on polynomials of degree less than $N$,
-whose spectral nodes are the roots of $2T_N(z/2)+2$ and whose multiplier
-is an integer Gaussian chirp. Double roots retain first derivatives;
-the odd simple root has its own value term. We prove that the functional
-has supremum-norm bound $1+|n|/2$, independently of the level $N$.
-If the polynomial vanishes at every node, the bound improves to
-$(N-1)/N$, independently also of the signed integer $n$. Tensor products
-admit a further exact subtraction when only joint grid vanishing is
-known. The proof uses canonical polynomial remainders, a finite midpoint
-identity, and an explicit derivative interpolation formula. We also
-construct a Fourier similarity between a concrete pair Casimir and its
-polynomial face operator, so the resolvent reproduction identity holds
-on the full matrix, including nilpotent parts. Regular confluent
-specialization identifies the Gaussian multiplier with powers of an
-explicit finite crossing matrix. For a planar diagram obtained from a
-matched triangulated sphere, we prove that its reduced tensor evaluation
-is one coefficient of the product of its local face polynomials. The
-proof retains the actual cups, caps and marked cut, including the shifted
-face lattice at even levels. An explicit matrix calculation identifies
-the resulting knot evaluation with the reduced Kashaev invariant, up to
-its stated unit framing factor. No volume asymptotic is assumed or proved.
+We prove a bound for inserting a fixed signed crossing power in a
+root-of-unity tangle evaluation. The insertion is expressed as a finite
+functional on polynomials of degree less than $N$. Its nodes are the
+roots of $2T_N(z/2)+2$; at a double root the functional uses both the
+value and the first derivative. Its norm, for the supremum on $[-2,2]$,
+is at most $1+|n|/2$, where $n$ is the signed crossing power. The bound
+is independent of $N$. On polynomials vanishing at every node it
+improves to $(N-1)/N$, independently also of $n$. We prove corresponding
+multivariable estimates, including an improvement when the polynomial
+vanishes only on the Cartesian product of the node sets.
+
+We then construct the polynomial to which these bounds apply for a
+diagram obtained from a matched triangulated sphere. A finite Fourier
+calculation expresses each local matrix as a homogeneous polynomial
+in four face variables. Identifying the variables belonging to the same
+face, and then taking one prescribed coefficient, gives exactly the
+reduced tensor evaluation. The proof includes the cups, caps, marked
+cut and both level parities. A direct comparison of crossing matrices
+and framing factors identifies this scalar with the reduced Kashaev
+invariant when the main link is a knot. The paper supplies a finite
+evaluation and a norm estimate; it does not assert a volume asymptotic.
 \end{abstract}
 
 \section{Introduction and the main estimate}
 
 At a repeated spectral root, a polynomial is not determined by its
 values. Its derivative can act on a nonzero nilpotent part of an
-operator. This elementary fact matters when a crossing power is inserted
-into a finite spectral source: a value-only sum would omit some of the
-original matrix entries. The purpose of this paper is to retain those
-entries while bounding the insertion by the supremum of the original
-polynomial on a real interval. We then prove the exact diagram identity
-needed to apply that bound: the face variables shared by different
-crossings are identified before taking the prescribed coefficient.
+operator. This matters when a crossing power is inserted into a
+spectral formula for a tangle: a sum using only values would omit some
+matrix entries. We retain those entries and bound the insertion by
+the supremum of a single polynomial on a real interval. We also prove
+the diagram identity that produces this polynomial. Variables belonging
+to the same face are identified across all local factors before the
+coefficient prescribed by the closure is taken. This order preserves
+the dependencies between different crossings.
 
 Fix $N\ge2$, and write
 \[
@@ -71,8 +72,9 @@ $\chi_N$ is monic of degree $N$. Its distinct double roots are
 For odd $N$ there is one further root, $-2$, of multiplicity one.
 All statements below apply to both parities and to composite levels.
 
-Let $\mathcal R_{\chi_N}F$ be the canonical polynomial remainder modulo
-$\chi_N$, and put
+Let $\mathcal R_{\chi_N}F$ be the unique polynomial of degree less
+than $N$ such that $F-\mathcal R_{\chi_N}F$ is a multiple of
+$\chi_N$. Write $[z^k]$ for the coefficient of $z^k$, and put
 \[
  \ell_N(F)=[z^{N-1}]\mathcal R_{\chi_N}F.
 \]
@@ -83,6 +85,8 @@ roots by the local germs
        \exp\!\left(\frac{inN(\phi-\pi)^2}{4\pi}\right),
        \qquad 0<\phi<2\pi.
 \]
+Throughout, $q^t$ means $\exp(\pi i t/N)$ even when $t$ is not
+integral. Thus the phase in this formula has a fixed lift.
 The formula is symmetric about $\pi$ and defines a regular germ at
 $z=-2$. Its Hermite polynomial $\widetilde f_n$ is the unique polynomial
 of degree less than $N$ with those values and first derivatives at the
@@ -126,6 +130,11 @@ has the analogous meaning. The tensor product denotes successive
 application in the separate spectral variables. These operations
 commute because they act in different scalar variables; this says
 nothing about commutation of matrices at different crossings.
+In this finite setting, inserting the signed power $B_q^n$ in a
+two-strand box is what the word ``filling'' will mean. Its exact
+representation by $\mathcal L_N^n$ is proved in
+Section~\ref{fb:crossing}. A geometric interpretation of full twists
+as Dehn fillings is not needed for the estimate.
 
 The derivative inequality used below is the classical Bernstein
 inequality, obtained here from Riesz's finite interpolation formula
@@ -158,14 +167,11 @@ identification of their rate with hyperbolic volume are not proved here.
 \section{Polynomial reduction and resolvent reproduction}
 \label{uf:sec-canonical-reduction}
 
-The value-and-derivative interpolation is the classical construction
-of Hermite~\cite{Hermite1878}. We record its elementary polynomial
-form, including repeated roots, because it fixes the coefficient
-functional used here. Before using the particular spectral roots,
-we record the algebraic
-fact behind reduction at repeated roots. It explains which parts of the
-calculation depend only on the polynomial and which still require the
-original crossing operator.
+Value-and-derivative interpolation is the classical construction of
+Hermite~\cite{Hermite1878}. We begin with its polynomial form over a
+general commutative ring. This separates reduction modulo a monic
+polynomial from any choice of eigenvectors, and it will let us apply
+the same construction to matrices with nilpotent parts.
 
 Let \(R\) be a commutative ring with identity, and let
 \(r_1,\ldots,r_m\in R\), with \(m\ge1\). Repetitions are allowed.
@@ -373,7 +379,7 @@ polynomial is the unique polynomial of degree less than $N$ with those
 values and first derivatives at the double roots, and its value at the
 odd simple root. Existence follows because the corresponding linear map
 between two $N$-dimensional spaces has zero kernel: a polynomial with
-all these jets zero is divisible by the monic degree-$N$ polynomial
+all these values and derivatives zero is divisible by the monic degree-$N$ polynomial
 $\chi_N$. We define $\mathcal L_N^fH=\ell_{\chi_N}(\widetilde f H)$,
 where $\widetilde f$ is that Hermite polynomial. Formula \eqref{uf:eq-10}
 therefore applies to every polynomial $H$, without choosing a global
@@ -397,7 +403,7 @@ is \begin{equation}\label{uf:eq-13}
 f_n(2\cos\phi)=q^{nd^2/4}
           \exp\left(\frac{inN(\phi-\pi)^2}{4\pi}\right),
  \qquad 0\le\phi\le2\pi.
-\end{equation} Here \(q^a\) means \(e^{\pi ia/N}\), fixing the original square-root
+\end{equation} Here \(q^a\) means \(e^{\pi ia/N}\), fixing the square-root
 lift even for nonintegral \(a\). In particular \begin{equation}\label{uf:eq-14}
 |f_n|=1,\qquad |\partial_\phi f_n|\le\frac{|n|N}{2},\qquad
  f_n(c_a)=q^{nd^2/2}(-1)^{an}q^{na(a+1)}.
@@ -411,7 +417,7 @@ enter the finite identity \eqref{uf:eq-12}.
 The germ at $z=-2$ is regular. Indeed, with $t=\phi-\pi$ one has
 $z=-2\cos t=-2+t^2+O(t^4)$, so $t^2$ is a holomorphic function of
 $z+2$. At a double root put $h=2a+1<N$. Differentiating the Gaussian
-and using $dz/d\phi=-2\sin\phi$ gives the exact normal ratio
+and using $dz/d\phi=-2\sin\phi$ gives the exact logarithmic derivative
 \begin{equation}\label{fb:gaussian-normal}
  \frac{f_n'(c_a)}{f_n(c_a)}
    =-\frac{n(N-h)}{2(q^h-q^{-h})}.
@@ -435,10 +441,11 @@ of a unit, and \eqref{fb:gaussian-normal} prove
 \begin{equation}\label{fb:polynomial-power}
  \widetilde f_n=q^{nd^2/2}r_N^{\,n}\pmod{\chi_N}.
 \end{equation}
-This is an identity of values and normals, not merely an equality of
-functions on the set of distinct roots. Section~\ref{fb:crossing} identifies $q^{d^2/2}r_N(\Omega)$
+This is an identity in the quotient algebra: it asserts equality of
+values and first derivatives at the double roots. Section~\ref{fb:crossing} identifies $q^{d^2/2}r_N(\Omega)$
 with an explicitly defined finite crossing. The norm proof itself
-requires only the displayed jets.
+requires only these values and derivatives, which we shall also call
+the first-order interpolation data.
 
 For the next formula, write $f_k=f_n(2\cos\phi_k)$ and
 $P_k=P(\phi_k)$. Here $f_k'$ is the derivative of
@@ -451,7 +458,7 @@ $P_k'=P'(\phi_k)$. Expanding \eqref{uf:eq-12} gives
 \end{equation} This finite formula is sufficient for every norm below; no
 interchange of an infinite Fourier series or a contour limit is needed.
 
-\section{The local source identity from a finite Fourier transform}
+\section{A Fourier formula for local matrix entries}
 \label{uf:local-fourier}
 
 We give the local matrix calculation, including its normalization.
@@ -472,7 +479,7 @@ $e_i=v_i/(Q;Q)_i$. Here
 $[i]_q=(q^i-q^{-i})/(q-q^{-1})$ and
 $(Q;Q)_i=\prod_{j=1}^i(1-Q^j)$, with the empty product equal to one.
 All denominators are nonzero because $i<N$. Alternatively the displayed
-matrices can be taken as the definition of the model. The pair matrices are
+matrices can be taken as the definition of the representation. The pair matrices are
 \[
  \begin{split}
  K_{12}&=K\otimes K,\\
@@ -496,7 +503,7 @@ index by \(+1,-1\):
 The second index changes by the opposite amount. The positive shift
 vanishes when \(u=d\) or \(v=0\), and the negative shift vanishes
 when \(u=0\) or \(v=d\). Thus these formulas retain the true
-integer total and all physical endpoints.
+integer total and the boundary indices $0,d$.
 
 For independent outer face variables \(x,y\), define an operator on
 polynomials in \(z\) by
@@ -527,7 +534,7 @@ The only potentially negative powers have coefficients
 \(N\)-dimensional space of polynomials of degree at most \(d\),
 and it preserves total degree when \(x,y,z\) all have degree one.
 
-\begin{proposition}[The actual Casimir and the face operator]
+\begin{proposition}[The pair Casimir and the face operator]
 \label{prop:local-face-fourier}
 For \(s=0,\ldots,d\), let \(\Omega_s\) be the restriction of
 \(\Omega\) to the ordered basis
@@ -547,12 +554,12 @@ distinct points \(b_u\). With \(T\) written in the monomial basis,
 \begin{equation}\label{uf:face-fourier-conjugacy}
  \mathsf E T\mathsf E^{-1}=-G^{-1}\Omega_s^{\mathsf T}G.
 \end{equation}
-Consequently the full original pair matrix satisfies
+Consequently the pair matrix satisfies
 \(\chi_N(\Omega)=0\), including its nilpotent parts.
 \end{proposition}
 
 \begin{proof}
-At \(z=b_u\), the two physical clocks are
+At \(z=b_u\), the two diagonal index eigenvalues are
 \[
  -q^{-1}x/b_u=Q^u,\qquad
  -q^{-1}b_u/y=Q^{s-u}.
@@ -567,7 +574,7 @@ evaluation at \(Qb_u\) decrements it. The endpoint zeros in
 Thus the coefficient from row \(u\) to column \(r\) is
 \(-q^{d(r-u)}(\Omega_s)_{ru}\), proving
 \eqref{uf:face-fourier-conjugacy}. The transpose occurs because
-evaluation acts on functions of the input index, whereas the physical
+evaluation acts on functions of the input index, whereas the pair
 matrix sends input columns to output rows.
 
 The matrix of \(-T\) is triangular, with diagonal
@@ -590,7 +597,9 @@ of the full pair space, proving the assertion for \(\Omega\).
 This proves a matrix identity, not only an identity on its eigenvalues.
 \end{proof}
 
-The same transform gives the complete local polynomial adapter.
+The same transform expresses every matrix entry by a polynomial in
+four variables. We shall later identify those variables with the
+four faces adjacent to a diagram box.
 For any polynomial \(f\), write
 \[
  f(-T)z^j=\sum_{\alpha,\beta\ge0,\ \alpha+\beta\le j}
@@ -623,7 +632,7 @@ the result is
 This proves the factor \(1/N\), the direction of the shift and the
 full polynomial identity directly from the original pair matrices.
 If the input and output have different integer totals, the left
-side is zero: the modular block is the direct sum of its actual-total
+side is zero: the residue block is the direct sum of its integer-total
 blocks. Hence the right side also vanishes at such a grid point.
 
 At even levels \(q^{d(p+N)}=-q^{dp}\). The exponent \(r-u\)
@@ -636,14 +645,14 @@ face-logarithm lifts, \(c=Q^{-(r-u)}b\) converts the prefactor to
 does not identify a closed diagram contraction.
 
 This argument holds at every fixed root with \(N\ge2\), including
-composite levels. It proves the annihilator and the adapter for
-polynomials of the actual Casimir. The polynomial representing a crossing power and its repeated-node
+composite levels. It proves the annihilating relation and the four-variable formula for
+polynomials of the Casimir. The polynomial representing a crossing power and its repeated-node
 derivatives are established in Section~\ref{fb:crossing}. The
 comparison with a specified knot invariant requires its marked
-diagram adapter. No derivative
+diagram formula. No derivative
 with respect to a generic deformation of \(q\) is taken here.
 
-\section{Crossing values and their repeated-root normals}
+\section{Crossing values and derivatives at repeated roots}
 \label{fb:crossing}
 
 The Gaussian multiplier was defined by its germs, so the norm theorem
@@ -776,8 +785,8 @@ Ordinary interpolation at the distinct generic scalars supplies a
 polynomial $p_z$ of degree less than $N$ such that
 $B_z=p_z(\Omega_z)$.
 
-It remains to specialize this identity without discarding the normal
-part. At $z=q$ the nodes $k$ and $l=N-1-k$ collide, and their crossing
+It remains to specialize this identity while retaining first
+derivatives. At $z=q$ the nodes $k$ and $l=N-1-k$ collide, and their crossing
 values agree. Put $h=2k+1<N$ and $A_h=q^h-q^{-h}\ne0$. Differentiating
 with respect to $\log z$ gives
 \[
@@ -797,7 +806,7 @@ Replace each colliding pair of interpolation rows by its first row and
 its divided-difference row. The coefficient matrix tends to the
 confluent Vandermonde matrix for the double roots $c_a$ and the odd
 simple root when present. It is invertible: a polynomial of degree
-less than $N$ in its kernel has all the prescribed zero jets and is
+less than $N$ in its kernel has all the prescribed values and derivatives zero and is
 therefore divisible by $\chi_N$. Thus the coefficients of $p_z$
 are regular at $q$, and their limits are the specified Hermite data.
 The value is
@@ -807,9 +816,9 @@ Every entry of $B_z$ is regular there as well, since $[j]_q!\ne0$ for
 $j<N$. Specializing the matrix identity proves
 $B_q=q^{d^2/2}r_N(\Omega)$ with its nilpotent part included.
 The nodal values of $r_N$ are nonzero, so its class modulo $\chi_N$
-is invertible. An inverse is obtained by prescribing the jets
+is invertible. An inverse is obtained by prescribing the interpolation data
 $r_N(c)^{-1}$ and $-r_N'(c)/r_N(c)^2$ at each double root, and the
-inverse value at the odd simple root. The product has the same jets as
+inverse value at the odd simple root. The product has the same interpolation data as
 one, so is one modulo $\chi_N$. Now
 \eqref{fb:polynomial-power}, together with $\chi_N(\Omega)=0$,
 proves the assertion for every signed power.
@@ -849,11 +858,12 @@ yields after two logarithmic derivatives and substitution \(x=\pi/(4d)\)
 \end{equation} The argument works without real coefficients or positivity.
 
 The same finite identity and triangle inequality hold when the
-coefficients lie in any finite-dimensional normed space. Thus \eqref{uf:eq-19}, and
-consequently \eqref{uf:eq-1}--\eqref{uf:eq-4}, hold for such vector-valued polynomials without a
-dimension factor. The intended application here remains the original
-shared scalar coefficient of Section~\ref{fb:application}; no change
-of the source norm is required.
+coefficients lie in any finite-dimensional normed space. Thus
+\eqref{uf:eq-19}, and consequently \eqref{uf:eq-1}--\eqref{uf:eq-4},
+hold for such vector-valued polynomials without a dimension factor.
+We use this observation when iterating the estimate over several
+variables: the remaining polynomial variables are regarded as the
+coefficients, with their cube supremum norm.
 
 \section{Full and vanishing-node
 bounds}\label{uf:sec-full-and-vanishing-node-bounds}
@@ -884,10 +894,10 @@ term in \eqref{uf:eq-10} is zero. Hence
  |\mathcal L_N^nH_a|=1.
 \end{equation}
 The improvement in the norm is therefore a bound on the surviving
-normal contribution, not a claim that all values determine the answer.
+derivative contribution; vanishing at the distinct nodes does not determine
+the value of the functional.
 
-\section{Shared polynomials and the unsplit complementary
-source}\label{uf:sec-shared-polynomials-and-the-unsplit-complementary-source}
+\section{Tensor products and joint node vanishing}\label{uf:sec-shared-polynomials-and-the-unsplit-complementary-source}
 
 The other finite functionals preserve each partial node-vanishing
 condition. Applying \eqref{uf:eq-1} and \eqref{uf:eq-2} successively proves
@@ -921,11 +931,13 @@ provided the degree in each spectral variable is at most $d$.
 This argument does not require vanishing on each node hyperplane.
 
 For example, if $N=3$ then $\chi_3(z)=(z-1)^2(z+2)$.
-The polynomial $(z-1)(z+2)$ vanishes at both distinct nodes but has
-nonzero first derivative at the double root. In several variables a
-sum of products with different such factors can vanish on the product
-grid without sharing a factor in any single coordinate. The subtraction
-of the all-evaluation term in \eqref{uf:eq-4} remains valid in that case.
+Put $u(z)=(z-1)(z+2)$. It vanishes at both distinct nodes but has
+nonzero derivative at the double root. Then
+$\mathcal D(\sigma_1,\sigma_2)=u(\sigma_1)+u(\sigma_2)$ vanishes
+on the product node grid. It does not vanish on either full node
+hyperplane: if $\sigma_1$ is a node, it equals $u(\sigma_2)$.
+Thus \eqref{uf:eq-4} applies to polynomials that satisfy none of
+the individual coordinate hypotheses of \eqref{uf:eq-3}.
 
 
 \input{sections/diagram-evaluation}
@@ -945,7 +957,7 @@ has the same separate degree bounds. Theorem~\ref{fb:main} applies to
 this shared polynomial itself. It does not replace the extraction by
 independent maxima of its local factors.
 
-\begin{corollary}[Exact-source implication]\label{fb:source-application}
+\begin{corollary}[Comparison after coefficient extraction]\label{fb:source-application}
 Assume a scalar contraction $Z_N(\boldsymbol n)$ has the exact identity
 \begin{equation}\label{fb:source-hypothesis}
  Z_N(\boldsymbol n)
@@ -963,8 +975,9 @@ in \eqref{uf:eq-4} applies.
 \begin{proof}
 The finite functional is linear. Subtract \eqref{fb:source-hypothesis}
 and the definition of $Z_{N,C}$ before applying \eqref{uf:eq-3} with
-$J=\varnothing$, or \eqref{uf:eq-4}. This preserves the full difference,
-including every source sector and all shared coefficient demands.
+$J=\varnothing$, or \eqref{uf:eq-4}. The norm is taken after the
+common coefficient extraction, on the single polynomial difference
+$S_N-C_N$.
 \end{proof}
 
 For the intended Morse-diagram application, the local factor is the
@@ -974,7 +987,7 @@ homogeneous representation of
        =\frac{\chi_N(\sigma)-\chi_N(\Omega)}{\sigma-\Omega},
 \]
 where the fraction is polynomial division. The Fourier calculation in
-Section~\ref{uf:local-fourier} proves the local adapter and the
+Section~\ref{uf:local-fourier} proves the formula for local matrix entries and the
 annihilator needed by resolvent reproduction. Proposition~\ref{fb:crossing-polynomial} also identifies the defined
 finite crossing, including its repeated-root derivatives.
 For the matched spherical diagrams of Section~\ref{de:section},
@@ -987,7 +1000,7 @@ sources whose exact evaluation has been established separately.
 
 Here is the resulting asymptotic implication, recorded to make clear
 which estimate an application must supply. It is an elementary
-consequence of a strict remainder gap, not an additional source theorem.
+consequence of a strict remainder gap, not an additional estimate for $S_N$.
 
 \begin{proposition}[Transfer of a strict remainder gap]\label{fb:rate-transfer}
 Fix the number of variables and the integer tuple $\boldsymbol n$.

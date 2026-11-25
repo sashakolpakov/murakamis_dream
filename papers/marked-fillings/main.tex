@@ -23,23 +23,26 @@
 \newcommand{\Vol}{\operatorname{Vol}}
 \newcommand{\Log}{\operatorname{Log}}
 \title{Circle patterns and primitive fillings of augmented links}
-\author{}
-\date{}
+\author{Alexander Kolpakov}
+\date{25 November 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
-A simple triangulated sphere with a matching of its dual determines a
-link diagram with specified crossing circles. We construct the complete
-hyperbolic exterior, deform one common marked circle pattern, and
-calculate the original peripheral words. An explicitly normalized
-classical action then has a critical point for all independently
-sufficiently long signed fillings. Its real critical value, multiplied
-by \(2\pi\), is the volume of the smoothly filled original exterior.
-The proof includes the logarithmic torus periods and the absolute
-fundamental-chain comparison; an exponentiated filling equation alone
-would not imply either conclusion. No quantum asymptotic is used.
-The final section states the precise interface with the separate
-oscillatory filling theorem.
+We construct hyperbolic augmented link exteriors from circle packings
+of triangulated spheres with a matching. The matching groups the
+triangular gaps into crossing-circle pieces and records the disk
+framings. We define a classical potential from the angles of the
+packing, continue it holomorphically near the complete structure, and
+calculate the meridian and longitude holonomies in the specified
+framing. For independently sufficiently long signed fillings, the
+resulting logarithmic filling equations have a unique nearby solution.
+We prove that this solution gives a smooth hyperbolic metric on the
+prescribed filled exterior and that its volume equals $2\pi$ times the
+real critical value of the potential. Two parts of the argument fix
+the normalization: the primitive periods of the cusp torus, and a
+comparison of the ideal fundamental chain before and after filling.
+The final section states the additional analytic input required to use
+this classical identity in a quantum volume limit.
 \end{abstract}
 
 \section{The diagram, the action, and the theorem}
@@ -52,26 +55,52 @@ or one signed half twist in each box. The disk and its collar are
 retained: they specify the peripheral curves used to put the full
 twists back.
 
-Here is the combinatorial input throughout this paper. Let
-\(\mathcal T\) be a finite oriented simple triangulated sphere with
-at least four vertices. Choose a perfect matching of its cubic dual.
+We shall encode the diagram by a triangulation and a matching.
+Let \(\mathcal T\) be a finite oriented triangulation of the sphere
+with at least four vertices. We require its graph to be simple: it has
+no loops or multiple edges. Its dual has one vertex for each triangle
+and one edge for each pair of triangles sharing an edge. Every dual
+vertex has degree three. Choose a \emph{perfect matching} of this dual
+graph, that is, a set of edges meeting each dual vertex exactly once.
+Thus every triangle is paired with one of its neighbors.
 Two matched triangles share one edge and have distinct third vertices.
 Write their cyclic quadrilateral as
 \((x_e,b_e,y_e,c_e)\); its diagonal is \(x_ey_e\).
 The triangles are the input \((x_e,b_e,y_e)\) and output
 \((x_e,c_e,y_e)\), with their sphere orientations understood.
-There are \(R\) matched pairs and \(R+2\) white vertices.
-An edge of \(\mathcal T\) whose dual is not in the matching will be
-called a \emph{strand edge}. Choose such an edge \(uv\) as a mark.
+There are \(R\) matched pairs and \(R+2\) vertices of
+\(\mathcal T\), by Euler's formula. We call these vertices
+\emph{white vertices}, since they will label the disks in a circle
+packing. Each triangular gap between those disks will correspond to
+a \emph{shaded} triangular face of the hyperbolic polyhedron. An edge
+of \(\mathcal T\) whose dual is not in the matching is called a
+\emph{strand edge}. Choose one such edge \(uv\) as a mark. Its
+contact point in the packing will be sent to infinity; the two
+corresponding white circles then become parallel lines.
+Figure~\ref{mf:input-example} gives the smallest example.
+
+\begin{figure}[ht]
+\centering\input{figures/matched-packing}
+\caption{The tetrahedral triangulation with matched edges $01$ and
+$23$, shown in orange, and marked strand edge $02$, shown dashed.
+The matching pairs the faces $012,013$ and the faces $023,123$.
+On the right is a packing after the $02$ contact has been sent to
+infinity. The white circles labeled $0,2$ are the two boundary lines;
+$1,3$ are circles of radius $1/2$. Each triangular gap determines a
+shaded face. The two unbounded gaps meet the marked contact at infinity.}
+\label{mf:input-example}
+\end{figure}
 
 The inverse cut in Section~\ref{mf:topology} constructs from these data
-an augmented link in \(S^3\). Equivalently, the input may be an actual
+an augmented link in \(S^3\). Equivalently, the input may be an
 augmented diagram whose projection and disk cut has exactly these
 labels and orders. At each disk retain
 \(\epsilon_e\in\{-1,0,1\}\) half twists, with the positive convention
 specified by the Hurwitz move in \eqref{mf:hurwitz}. Denote the resulting
-augmented exterior by \(Y_D\). Its main components are the original
-strands; its auxiliary components are the crossing circles.
+augmented exterior by \(Y_D\). Here an exterior is the complement
+of an open tubular neighborhood of the link; we use the same notation
+for its interior with cusp ends. Its \emph{main components} come from
+the strands, and its \emph{auxiliary components} are the crossing circles.
 
 On each auxiliary cusp choose the original disk-framed primitive
 meridian and longitude \((\mu_e,\lambda_e)\). The meridian goes once
@@ -84,9 +113,10 @@ crossings, so the restored power is
 \begin{equation}\label{mf:powers}
                          n_e=\epsilon_e-2p_e.
 \end{equation}
-The original outside pairing and these box parities determine the main
-components. We call the filled link a knot only when that terminal
-graph is connected.
+The arcs outside the boxes, together with the strand pairing in each
+box, form a finite graph in which every vertex has degree two. Its
+cycles are exactly the main components. Thus filling all auxiliary
+components gives a knot precisely when this graph is connected.
 
 We use curvatures, not radii, as the variables of the action. A finite
 white circle with curvature \(w>0\) has radius \(1/w\). The two marked
@@ -109,7 +139,10 @@ A zero curvature forces its angle to zero; its logarithmic term is
 omitted. Thus \(F(w,0,0)=\frac12\log w\). This definition fixes the
 absolute constant geometrically.
 
-For one triangle \((x,b,y)\), introduce a small complex parameter
+For a triangle whose vertex labels are \((x,b,y)\), we also use
+\(x,b,y\) for the corresponding curvatures. Thus expressions such
+as \(x+y\) below refer to curvatures, not vertex labels. Introduce
+a small complex parameter
 \(\delta\), and put
 \begin{equation}\label{mf:local-data}
 \begin{aligned}
@@ -119,8 +152,12 @@ For one triangle \((x,b,y)\), introduce a small complex parameter
  E_b&=A+2bs^2+2sT_b.
 \end{aligned}
 \end{equation}
-The square roots are continued from positive complete values. In a
-singleton triangle, where a middle and an outer curvature are zero,
+The value \(\delta=0\) represents the complete tangent-circle
+packing. Square roots are the holomorphic branches that are positive
+there whenever the radicand is nonzero. A triangle incident to both
+marked line circles has just one nonzero curvature; we call it a
+\emph{singleton triangle}. Where its middle and one outer curvature
+are zero,
 set \(T_b=0\) and \(E_b=A\) exactly. At every matched pair \(A>0\).
 Define the holomorphic triangle germ \(Q_b\) by
 \begin{equation}\label{mf:Q}
@@ -131,20 +168,44 @@ with logarithm zero at \(\delta=0\). Section~\ref{mf:pattern} proves
 that it is an angle potential for the deformed common pattern.
 It has logarithmic homogeneity \(1/2\), as does \(F\).
 
-Set \(w_u=w_v=0\), fix one common scale of the ordinary curvatures,
-and define the selected face-critical value
+Set \(w_u=w_v=0\). The remaining curvatures are positive at
+completeness, so their logarithms give local coordinates. A common
+rescaling adds a constant to all these logarithms and leaves the
+expression below unchanged: each of the \(2R\) triangle terms has
+logarithmic homogeneity \(1/2\), while there are \(R\) ordinary
+white vertices. Fix this freedom by holding one ordinary curvature
+constant. We use \(\operatorname{crit}_w\) to mean: solve the
+stationary equations in the remaining independent logarithmic
+curvatures near the complete packing, and substitute the resulting
+curvatures in the expression. Define
 \begin{equation}\label{mf:A0}
  A_0(\boldsymbol\delta)
    =\operatorname{crit}_{w}
        \left\{\sum_{e=1}^R(Q_{b_e}+Q_{c_e})
                        -\sum_{f\ne u,v}\Log w_f\right\}.
 \end{equation}
-The critical point in this definition is the unique germ at the
-complete positive packing. Its existence is proved below.
+Section~\ref{mf:pattern} proves that this stationary point exists
+uniquely near the complete packing and depends holomorphically on
+\(\boldsymbol\delta\). In particular \eqref{mf:A0} defines a
+function, not a maximum over complex curvatures.
+
+We also fix the holonomy convention used in the theorem. A
+\emph{framed representation} is a representation in
+\(\operatorname{PSL}_2(\mathbb C)\) with a chosen common fixed
+point for each peripheral subgroup on the sphere at infinity. In a
+coordinate sending that point to infinity, a peripheral element is
+\(z\mapsto az+b\). Its \emph{similarity logarithm} is the branch
+of \(\Log a\) that is zero at the complete structure. We write
+\(U_e\) for the meridian logarithm and \(V_e\) for the longitude
+logarithm. These are twice the eigenvalue logarithms of a centered
+\(\operatorname{SL}_2\) representative. A peripheral basis is
+\emph{primitive} when its two curves form a basis of the integral
+first homology of the cusp torus.
 
 \begin{theorem}[Primitive fillings and their classical action]
 \label{mf:main}
-For every fixed marked matched sphere and its retained signed collars,
+For every fixed triangulated sphere, matching, marked strand edge and
+retained half-twist pattern as above,
 the action \eqref{mf:A0} is holomorphic near zero, separately even,
 and real on real parameters. Its complete value is
 \[
@@ -157,7 +218,7 @@ property. For every fixed integer vector \(\mathbf p\) with
  S_{\mathbf n}(\delta)=A_0(\delta)+
        \pi\ii\sum_e n_e\delta_e^2+2\pi\ii\sum_e\delta_e
 \end{equation}
-has one critical point in the selected small germ. At that point:
+has one critical point in the specified neighborhood of the complete structure. At that point:
 \begin{enumerate}[label=(\roman*)]
 \item The explicitly constructed representation of \(\pi_1(Y_D)\)
 has original primitive similarity logarithms
@@ -182,7 +243,7 @@ As all \(|n_e|\) tend to infinity, the critical point tends to zero
 and \(\Rea S_{\mathbf n}\to\Phi_D\).
 \end{theorem}
 
-The sphere, its matching, collars and filling integers are fixed before
+The sphere, its matching, crossing disks and filling integers are fixed before
 any asymptotic application. The threshold places no restriction on the
 ratios or signs of the independently long powers. The uniqueness claim
 concerns the indicated critical germ; it is not uniqueness of the whole
@@ -202,28 +263,43 @@ applying uniform contraction on a small complex ball. The resulting
 fixed point is holomorphic as the locally uniform limit of its
 holomorphic iterates.
 The ideal-tetrahedron volume formula used below is the classical
-Lobachevsky formula; see~\cite[Appendix]{Milnor}. We prove the global
-normalizations and filling comparison rather than importing a general
-Dehn filling or character-rigidity theorem.
+Lobachevsky formula; see~\cite[Appendix]{Milnor}.
+
+The proof has four stages. Section~\ref{mf:topology} constructs the
+complete packing and identifies its polyhedron with the cut link
+exterior, including the volume constant. Sections~\ref{mf:pattern}
+and~\ref{mf:words} deform the packing and calculate its marked
+peripheral holonomy. The critical equations then give the logarithmic
+filling equations. Finally, Sections~6 and~7 prove smooth completion
+and the absolute comparison of volumes. The completion statement is
+formulated for general nearby framed representations, so it can also
+be applied to other cell constructions.
 
 \section{A packing and the original complete exterior}\label{mf:topology}
 
 \subsection{Strict feasibility and the circle packing}
 
 \begin{proposition}[Packing with its exact labels]\label{mf:packing}
-Every simple triangulated sphere in the hypotheses has a packing of
-white disks, with contacts exactly its edges. The circles through the
+Every triangulated sphere in the hypotheses has a circle packing on
+the sphere: disks have disjoint interiors, and two boundary circles
+are tangent exactly when their vertex labels are joined by an edge. The circles through the
 three contacts of each triangular interstice bound orthogonal shaded
 planes. These planes and the white planes bound a convex ideal
-right-angled polyhedron with precisely the prescribed medial sphere.
+right-angled polyhedron with the following prescribed boundary: ideal vertices correspond to
+contacts, white faces to packing disks, and shaded triangles to the
+triangular gaps. This is the medial cell decomposition of $\mathcal T$.
 \end{proposition}
 \begin{proof}
 Remove a triangular face \(abc\), and prescribe positive boundary
 radii \(r_a,r_b,r_c\). The remaining disk, with \(v\) interior
 vertices, has \(2v+1\) triangles by Euler's formula.
-Give each triangle angle supply \(\pi\), each interior vertex demand
-\(2\pi\), and the three boundary vertices pooled demand \(\pi\);
-their separate corners are retained.
+We first seek angles at the corners of these triangles, with sum
+\(\pi\) in each triangle and sum \(2\pi\) at every interior
+vertex. The three boundary angle sums together must then be
+\(\pi\). They are not prescribed separately. For the feasibility
+argument only, treat the three boundary vertices as one destination
+with this total demand; the angles at their separate corners remain
+distinct variables.
 
 We first find a strictly positive allocation to all corners.
 A nonempty set \(S\) of interior vertices touches at least
@@ -237,8 +313,8 @@ consists only of interior vertices, and at most \(2|T|-5\) triangles
 are wholly supported there for \(|T|\ge3\), with none for
 \(|T|\le2\). The full destination set has equal demand and supply.
 
-These are the finite transport Hall inequalities. To recall the short
-argument, join a source to the triangle nodes with their supply
+These inequalities give a strictly feasible finite transport problem.
+Here is the needed max-flow argument: join a source to the triangle nodes with their supply
 capacities, join each triangle to its incident destinations, and join
 destinations to a sink with their demands. A finite cut minimizes to
 one of these inequalities. Augmenting along residual paths proves
@@ -247,7 +323,9 @@ Strict slack at every proper destination subset permits subtraction
 of one small positive amount at every corner before this argument.
 Thus an allocation positive at every corner exists.
 
-On the compact angle polytope maximize
+Let the \emph{angle polytope} be the compact set of nonnegative
+corner assignments satisfying these row and vertex sums. On it,
+maximize
 \[
        \sum_t\mathcal V(\theta_t)
           +\sum_{\text{boundary corners }tf}\theta_{tf}\log(1/r_f).
@@ -266,7 +344,7 @@ including the prescribed boundary ones, and
  \tan(\theta_{tf}/2)=\frac{w_f}{D_t},\qquad
  D_t=\sqrt{\sum_{\{f,g\}\subset t}w_fw_g}.
 \end{equation}
-The row sum \(\pi\) determines \(D_t\) by the tangent addition
+The angle sum \(\pi\) in a triangle determines \(D_t\) by the tangent addition
 identity. These are the angles of the Euclidean center triangle
 with sides \(r_f+r_g\).
 
@@ -415,12 +493,12 @@ face targets proves
 \end{equation}
 The constant \(F(w,0,0)=\frac12\log w\) is essential here.
 
-\section{One holomorphic marked pattern}\label{mf:pattern}
+\section{Holomorphic deformation of a single circle pattern}\label{mf:pattern}
 
 Use the strip \(0<Y<1\). For each ordinary circle retain its center
 \((X_f,Y_f)\) and radius \(r_f\). A strand edge has inversive cosine
 \(I_{fg}=1\), and a matching edge \(e\) has
-\(I_{fg}=\cos(2\pi\delta_e)\). The actual signed equations are
+\(I_{fg}=\cos(2\pi\delta_e)\). The circle-intersection equations, with the indicated side signs, are
 \begin{equation}\label{mf:circle-system}
 \begin{aligned}
  (X_f-X_g)^2+(Y_f-Y_g)^2
@@ -532,13 +610,15 @@ The ordered product of outer reflections has trace
 has a unit off-diagonal entry in some chart. The eigenvalues
 \(J_e=-e^{-2\pi\ii\delta_e}\) and \(J_e^{-1}\) therefore specify
 holomorphic fixed-line germs: solve the linear eigenvector equation
-using that unit entry. The two flags may coincide at completeness;
+using that unit entry. Here a flag is a fixed point on the ideal boundary, equivalently
+an eigenline of a projective matrix. The two fixed points may
+coincide at completeness;
 no division by their difference is needed.
 
 \section{The crossing disk and the original peripheral words}
 \label{mf:words}
 
-\subsection{One primitive sidepairing}
+\subsection{The face identification across a crossing disk}
 
 We calculate a map, not just its multiplier. Products act from right
 to left. Let \(\mathcal R_f\) denote reflection in white circle \(f\).
@@ -552,7 +632,7 @@ The ordered input and output main meridians are
  B_{\rm out}&=\mathcal R_y\mathcal R_c.
 \end{aligned}
 \end{equation}
-The actual contacts are \(C_1=x\cap b,\ C_2=b\cap y\) and
+The labeled contacts are \(C_1=x\cap b,\ C_2=b\cap y\) and
 \(C_0=x\cap c,\ C_3=c\cap y\). The pure disk pairs
 \(C_1\mapsto C_0,\ C_2\mapsto C_3\).
 
@@ -639,7 +719,7 @@ This retains the nontrivial parabolic limit.
 \subsection{The marked lines and the side signs}
 
 An independent local choice of exterior disk could change a side
-sign, so we justify the line limit using the whole marked pattern.
+sign, so we justify the line limit using the marked pattern as a single configuration.
 Apply to every circle the single map
 \[
                   g_t(z)=\frac{z}{1-tz+\ii t/2}.
@@ -713,7 +793,7 @@ map depends holomorphically on both triples. Thus \eqref{mf:C},
 including both full generator relations, holds in the common marked
 pattern and extends to complex parameters.
 
-\subsection{Threading, half twists, and the whole diagram}
+\subsection{Threading paths, half twists, and the link-group relations}
 
 The positive crossing convention on an ordered pair is
 \begin{equation}\label{mf:hurwitz}
@@ -730,7 +810,7 @@ The same quadratic relation gives
 \(H^2=(\operatorname{tr}P-2)P^{-1}\), so two positive crossings
 act by conjugation with \(P^{-1}\).
 
-The auxiliary circle is the literal three-strand threading word
+The auxiliary circle is represented by the three-strand threading word
 \([2,1,1,2]\). Apply \eqref{mf:hurwitz} chronologically to
 \((A,B,C_{\rm aux})\). If \(K=P^{-1}C_{\rm aux}P\), the outputs are
 \[
@@ -761,7 +841,7 @@ these local representatives. The longitude is centered by replacing
 its projective peripheral word, and is not a claim that every centered
 representative belongs to one global \(SL_2\) lift. The similarity
 coordinates are twice these centered eigenvalue logs.
-Cutting the actual disk collar before a meridian filling also checks
+Cutting the crossing-disk collar before a meridian filling also checks
 the surgery sign. Killing \(\mu+p\lambda\) sets the auxiliary word
 to \(P^{-p}\). Its inverse threading transport is \(P^p\), which is
 the \(-2p\) crossing twist by the preceding formula for \(H^2\).
@@ -774,8 +854,8 @@ basepath is reconnected.
 We now check that the local maps assemble for arbitrary cycles in the
 diagram, not just for a tree. Complexify a white reflection as a pair
 \(\mathcal R_f^+,\mathcal R_f^-\) of mutually inverse maps between
-the two projection copies. On an actual sweep whose region sequence
-is \(F_0,\ldots,F_k\), set
+the two projection copies. On a path whose successive projection regions
+are \(F_0,\ldots,F_k\), set
 \[
  Q_j=\mathcal R_{F_j}^+\mathcal R_{F_0}^-,
  \qquad H_j=\mathcal R_{F_j}^+\mathcal R_{F_{j-1}}^- .
@@ -868,10 +948,10 @@ manifold.
 \begin{proposition}[Near-complete primitive completion]\label{mf:completion-prop}
 Let \(M\) be an oriented complete finite-volume hyperbolic
 three-manifold with torus cusps and holonomy \(\rho_0\).
-Fix actual primitive bases \((\mu_i,\lambda_i)\).
+Fix primitive peripheral bases \((\mu_i,\lambda_i)\).
 There is a neighborhood of \(\rho_0\), with its peripheral fixed
 points, in which the following holds.
-Let \(\rho\) be an actual representation, let \(U_i,V_i\) be its
+Let \(\rho\) be a representation, let \(U_i,V_i\) be its
 small similarity logarithms in bounded frames sending the selected
 fixed points to infinity, and suppose:
 \begin{enumerate}[label=(\alph*)]
@@ -1011,16 +1091,18 @@ turn. The drawing uses a scaled vertical axis.}
 \label{mf:filling-figure}
 \end{figure}
 
-The branch in Section~\ref{mf:critical} satisfies every hypothesis
-of Proposition~\ref{mf:completion-prop}. It is an actual representation
-in one bounded complete frame; the selected flags are holomorphic;
+The family in Section~\ref{mf:critical} satisfies every hypothesis
+of Proposition~\ref{mf:completion-prop}. It is a representation of
+the specified link group in a coordinate frame varying in a bounded
+neighborhood of its complete value. The chosen peripheral fixed
+points are holomorphic;
 the main peripheral groups remain translations; and
 \(\Rea V_e>0\). The exact slope equation is \(-2\pi\ii\).
-This proves the metric assertion of Theorem~\ref{mf:main}, including
-zero restrictions on relative signs or relative rates of the
+This proves the metric assertion of Theorem~\ref{mf:main}, with
+no restriction on relative signs or relative rates of the
 independently long powers.
 
-\section{The absolute action and the same filled fundamental chain}
+\section{The critical value and the filled fundamental chain}
 \label{mf:regulator}
 
 \subsection{The peripheral differential and its factor}
@@ -1042,8 +1124,10 @@ rectangle basis with \(\Ima(\lambda/\mu)>0\).
 
 Retain the positive ideal triangulation of the original exterior
 constructed in Section~\ref{mf:topology}. Develop its ideal vertices
-at the continued peripheral flags of the representation.
-Their ordered cross-ratios remain positive near the complete point.
+at the continued peripheral fixed points of the representation.
+The cross-ratio of each positively oriented tetrahedron has positive
+imaginary part at completeness, and retains that sign in a small
+neighborhood. We call such an ideal tetrahedron positive.
 Every face and edge equation holds because the developed vertices
 come from the same representation and the original group words.
 Let \(\beta_\rho=\sum_\Delta[z_\Delta]\), with the original
@@ -1054,9 +1138,17 @@ Here the Bloch--Wigner volume is
  D(z)=\Ima\operatorname{Li}_2(z)+\log|z|\,\arg(1-z),\qquad
  dD=\log|z|\,d\arg(1-z)-\log|1-z|\,d\arg z .
 \]
-The local logarithms are continued in this one positive shape chart.
+The local logarithms are continued in this neighborhood of the
+complete shapes. This gives a volume attached to a fixed fundamental
+chain on the unfilled exterior. It does not yet identify that volume
+with a metric on the Dehn filling; that comparison will be made in
+Section~7.3.
 
-We spell out the boundary normalization used below. For a positively
+The next calculation expresses the differential of this sum in terms
+of its peripheral logarithms. Interior face contributions cancel.
+The remaining boundary calculation is on the Euclidean triangles
+obtained by truncating the ideal vertices. We include it because it
+fixes both the sign and the factor of two in the filling formula. For a positively
 ordered tetrahedron use logarithms \(u=\log z\) and
 \(v=\log(1-z^{-1})\), with symplectic form \(du\wedge dv\);
 reverse the form for a reversed tetrahedron.
@@ -1068,7 +1160,11 @@ The type of edge \(ij\) is \(0\) for \(01,23\), \(1\) for
 \(02,13\), and \(2\) for \(03,12\); thus
 \(\operatorname{type}(j,f)\) means the type of edge joining
 vertices \(j,f\). Face \(f\) is opposite vertex \(f\).
-Here is the geometric identification of the normal-path rows.
+A \emph{normal path} in the triangulated cusp torus crosses edges
+transversely and, inside each triangle, joins two distinct sides.
+Its logarithmic holonomy is a linear combination of the local shape
+logarithms; the coefficient vector is its \emph{row}. We now compute
+these rows from the cusp triangles.
 At each vertex send that vertex to infinity and normalize its first
 two remaining vertices, in increasing order, to \(0,1\).
 The third is respectively
@@ -1090,7 +1186,7 @@ If \(a_i\) is the scale taking the \(i\)-th canonical cusp triangle
 into a common developed chart, a shared side gives
 \(a_{i+1}/a_i=-\mathrm{side}_{\rm out}(i)/
 \mathrm{side}_{\rm in}(i+1)\). Around a closed normal path the scales
-telescope. Its actual similarity multiplier is the product of
+telescope. Its similarity multiplier is the product of
 outgoing sides divided by incoming sides, including the fixed signs.
 Thus its logarithmic row is the sum of the outgoing-flow-weighted
 entries of \eqref{mf:cusp-side-table}. The table proves that this row
@@ -1099,8 +1195,12 @@ is exactly the vector \(d_j(r)\) below, in the coordinates \((u,v)\).
 The following local calculation records the intersection factor.
 In tetrahedron orientation \(\varepsilon\),
 at vertex \(j\) list the other faces \(f_0<f_1<f_2\).
-A normal flow has outgoing entries \(r_{j,f}\) across the three sides
-of that cusp triangle, with \(\sum_{f\ne j}r_{j,f}=0\).
+A \emph{normal flow} records a linear combination of such path
+segments by its signed outgoing weights \(r_{j,f}\) across the
+three sides of that cusp triangle. Conservation gives
+\(\sum_{f\ne j}r_{j,f}=0\). When triangles are glued, the outgoing
+weight from one side is the negative of the outgoing weight on its
+partner. Closed peripheral curves give examples of these flows.
 In the next two formulas we suppress the first index within a fixed
 vertex \(j\), writing \(r_{f_i}=r_{j,f_i}\).
 Set
@@ -1110,7 +1210,9 @@ Set
               -r_{f_2}e_{\operatorname{type}(j,f_1)}\right),
  \qquad \tau_j=-\varepsilon(-1)^j .
 \]
-The oriented triangle intersection is
+Write \(\Omega_\varepsilon((a,b),(c,d))
+=\varepsilon(ad-bc)\) for the local skew pairing. For two normal
+flows \(r,s\), their oriented triangle intersection is
 \(\frac12\tau_j(r_{f_0}s_{f_1}-r_{f_1}s_{f_0})\).
 Expanding the two-coordinate determinants gives
 \begin{equation}\label{mf:normal-flow}
@@ -1257,7 +1359,7 @@ vertices by axis points would not establish this equality.
 Finally compare this equivariant chain with the developing map of
 the complete metric from Proposition~\ref{mf:completion-prop}.
 They represent the same filled fundamental class and agree at the
-remaining cusp flags. Straightening their common finite subdivision
+remaining peripheral fixed points. Straightening their common finite subdivision
 and applying the same vanishing boundary estimate gives
 \(\mathcal V_\rho=\Vol\) of that metric.
 This proves \eqref{mf:volume} for the constructed complete metric.
@@ -1381,8 +1483,8 @@ hyperbolic volume}, Ann. of Math. (2) \textbf{139} (1994), 553--580.
 \href{https://doi.org/10.2307/2118572}{doi:10.2307/2118572}.
 
 \bibitem{OscillatoryFillings}
-\emph{Oscillatory filling sums with independently long twists},
+A.~Kolpakov, \emph{Oscillatory filling sums with independently long twists},
 companion paper, Theorem 1.1.
-\url{https://sashakolpakov.github.io/murakamis_dream/papers/oscillatory-fillings.pdf}.
+\url{https://github.com/sashakolpakov/murakamis_dream/blob/conway-series-2026-11-25/docs/papers/oscillatory-fillings.pdf}.
 \end{thebibliography}
 \end{document}

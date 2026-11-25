@@ -25,7 +25,8 @@ with no restriction on their ratios. For $p_i\ne0$ the equations are
 They are precisely the critical equations of
 \eqref{sm:filled-action}.
 
-The peripheral direction is actually loxodromic at these solutions.
+The longitude holonomy is loxodromic at these solutions: its
+similarity multiplier has modulus greater than one.
 Separate evenness makes the apparent quotient
 $\widetilde\tau_i=V_i/U_i$ removable, holomorphic near zero, and
 equal to $\tau_i$ there. Shrink once more so that
@@ -47,22 +48,22 @@ At each filled cusp a primitive integral combination of the small
 logs must equal $2\pi\ii$ or $-2\pi\ii$. It then completes the
 original topological filling to a smooth complete hyperbolic metric.
 
-Every hypothesis has been supplied on this enlarged syntax:
-Theorem~\ref{sm:complete} constructs the actual complete exterior;
+Every hypothesis has been supplied for the present family:
+Theorem~\ref{sm:complete} constructs the complete exterior;
 the unchanged two-rectangle collar proves its primitive basis;
-Sections~\ref{sm:maps}--\ref{sm:group} construct the actual framed
+Sections~\ref{sm:maps}--\ref{sm:group} construct the framed
 representation and the original group relations; all unfilled
 cusps have translation holonomy; and \eqref{sm:primitive-equations}
 uses the primitive vector $(1,p_i)$. The fixed small parameter
 neighborhood is chosen before the slopes.
 
-\subsection{Why the integer equation gives one actual angular turn}
+\subsection{Why the logarithmic equation gives one angular turn}
 We recall the part of the imported proof that prevents an exponential
 period equation from being mistaken for completion. On a complete
 cusp link use a translation lattice $\Lambda\subset\CC$ and its fixed
 generator paths. A nearby peripheral action is affine,
-$A_\lambda(z)=a_\lambda z+b_\lambda$, in a bounded moving flag
-frame. A smooth partition $\eta$ on the complete plane with
+$A_\lambda(z)=a_\lambda z+b_\lambda$, in a coordinate sending the chosen peripheral fixed point to infinity
+and varying within a bounded family near completeness. A smooth partition $\eta$ on the complete plane with
 $\sum_{\lambda\in\Lambda}\eta(w-\lambda)=1$ gives
 \[
  d_\rho(w)=\sum_{\lambda\in\Lambda}
@@ -90,7 +91,7 @@ multiplication by the large integer $p$.
 
 The metric $|df|^2$ descends to a compact nonsingular flat torus.
 Its complete lifted developing map is a diffeomorphism to $\CC$,
-so $U,V$ form its actual rank-two period lattice. The developed
+so $U,V$ form its rank-two period lattice. The developed
 end contains a punctured metric tube with cylindrical metric
 \begin{equation}\label{sm:tube}
              dR^2+\cosh^2R\,dX^2+\sinh^2R\,d\theta^2.
@@ -118,22 +119,22 @@ translation.}
 \label{sm:period-figure}
 \end{figure}
 
-This verifies the metric conclusion of Theorem~\ref{sm:fillings}
-for the actual disk-filled exterior. In particular high-index
-estimates for a quantum coefficient, source positivity and whole
-character-variety rigidity have played no role.
+This proves the metric conclusion of Theorem~\ref{sm:fillings} for
+the specified Dehn filling. It remains to show that the real critical
+value is its absolute volume.
 
-\section{Absolute volume on the original chain}\label{sm:absolute}
+\section{The critical value and the volume of the filled exterior}\label{sm:absolute}
 
 Set $G=2\pi\ii\Phi_\eps$. The exact peripheral identity gives
 \begin{equation}\label{sm:primitive}
  \dd G=\frac12\sum_i V_i\,\dd U_i,\qquad
  \Ima G(0)=2\pi F_0=\Vol(Y_E^\eps).
 \end{equation}
-This is the $V\,dU$ polarization. A primitive of
-$-\tfrac12\sum U\,dV$ differs by the boundary term
-$\tfrac12\sum UV$; its regulator correction cannot be reused
-unchanged here.
+This choice of potential has differential $\tfrac12\sum V\,dU$.
+The circle-pattern companion instead uses
+$-\tfrac12\sum U\,dV$. Their difference is
+$\tfrac12\,d\sum UV$, so we must compute the boundary correction
+for the convention used here.
 
 Let $\mathcal V(\rho)$ be the signed sum of the ideal tetrahedron
 volumes of the retained original chain. The local boundary
@@ -144,7 +145,7 @@ differential \cite[equation~(7.3)]{Marked} reads, for similarity logs,
                           -\Rea U_i\,\dd\Ima V_i\bigr).
 \end{equation}
 Its hypotheses hold on our positive nondegenerate chain:
-internal faces cancel by the actual maps, edge-log sums stay fixed,
+internal faces cancel by the face-pairing maps, edge-log sums stay fixed,
 and the primitive cusp orientation is
 $\Ima(\lambda/\mu)>0$ by \eqref{sm:tau}.
 All main logs vanish. The proof of that local identity differentiates
@@ -160,8 +161,7 @@ its boundary correction now gives
       =2\pi\Rea\Phi_\eps(\boldsymbol\chi)
                      -\frac12\sum_i\Rea U_i\,\Ima V_i .
 \end{equation}
-The integration constant is fixed by the actual degree-one complete
-cell volumes, not just by a derivative computation.
+The integration constant is fixed by the complete cell volumes and the homeomorphism with the link exterior, not just by a derivative computation.
 At a filling solution write $\chi_i=u_i+\ii v_i$. Since
 $V_i=2\pi\ii(\chi_i-1)/p_i$,
 \begin{equation}\label{sm:boundary-term}
@@ -210,35 +210,33 @@ suffice; \eqref{sm:chain-homotopy} supplies the absolute comparison.
 Combining it with \eqref{sm:regulator} and
 \eqref{sm:boundary-term} proves \eqref{sm:filled-volume}.
 
-\section{Proof boundary and finite algebra}\label{sm:scope}
+\section{Dependencies and finite verification}\label{sm:scope}
 
 The strict variational existence, Hessian and boundary-profile
 identities are imported from \cite{Newton}, with their precise
 nonmetric content in Section~\ref{sm:variational}. The only local
 volume input is the classical ideal-tetrahedron formula
 \eqref{sm:tetra}. The local cells, all supporting planes and
-cross ratios, entire rational prism maps, collar words and
+cross ratios, rational prism face maps, collar words and
 similarity multipliers are proved here. The individual-mask
 induction establishes the closed topology and determines which
-maps are actual white-face pairings and which are intermediate
+maps are white-face pairings and which are intermediate
 completion maps.
 Smooth metric completion and the local
 volume differential are the explicitly stated inputs from
 \cite{Marked}, with all hypotheses verified here.
 
-No source asymptotic, full spectral bound or nonzero Fourier
-contribution is claimed. To identify the classical action with a
-quantum packet one must independently match each endpoint-normalized
-leaf action, including its color-dependent additive constant, and
-then eliminate these same wires. A further whole-source estimate
-and filling noncancellation theorem are needed for an invariant
-volume limit. The geometry alone does not supply them.
-Similarly no equivalence with a completed-root presentation is used,
-and no moving main-meridian or preferred-longitude deformation
-claim is made.
+The result is a classical volume identity for the specified
+hyperbolic fillings. To use it in a volume conjecture for a quantum
+invariant requires additional theorems. First, the action obtained from
+the finite sum must agree with $\Phi_\eps$, including its additive
+constant. Second, the geometric critical point must contribute with a
+nonzero coefficient, and all competing terms must satisfy the required
+bounds. Those analytic assertions are not consequences of the geometric
+construction proved here.
 
 The accompanying \texttt{check.py} verifies the finite mask closure
-and its allowed edge pairings, the literal endpoint-connection
+and its allowed edge pairings, the endpoint-connection
 table, projective turn/closing and pure/odd return identities,
 the independent-phase prism table, complete collar conjugations,
 deformed peripheral multipliers, and the primitive Hessian and
@@ -252,14 +250,14 @@ comparison.
 
 \begin{thebibliography}{9}
 \bibitem{Newton}
-\emph{Newton calculus and stationary profiles of Conway tangles},
+A.~Kolpakov, \emph{Newton calculus and stationary profiles of Conway tangles},
 consolidated companion paper,
-\href{https://sashakolpakov.github.io/murakamis_dream/papers/newton-calculus.pdf}{repository edition}.
+\href{https://github.com/sashakolpakov/murakamis_dream/blob/conway-series-2026-11-25/docs/papers/newton-calculus.pdf}{25 November 2026 edition}.
 
 \bibitem{Marked}
-\emph{Circle patterns and primitive fillings of augmented links},
+A.~Kolpakov, \emph{Circle patterns and primitive fillings of augmented links},
 companion paper, Proposition~6.1, equation~(7.3) and Section~7.3.
-\href{https://sashakolpakov.github.io/murakamis_dream/papers/marked-fillings.pdf}
+\href{https://github.com/sashakolpakov/murakamis_dream/blob/conway-series-2026-11-25/docs/papers/marked-fillings.pdf}
 {Companion PDF}.
 
 \bibitem{Milnor}

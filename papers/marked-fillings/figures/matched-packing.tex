@@ -1,0 +1,22 @@
+\begin{tikzpicture}[x=1cm,y=1cm,every node/.style={font=\small}]
+\begin{scope}
+\coordinate (a) at (0,0);\coordinate (b) at (2.4,0);
+\coordinate (c) at (1.2,2.1);\coordinate (d) at (1.2,.72);
+\draw[gray!65] (a)--(b)--(c)--cycle (a)--(d)--(b) (d)--(c);
+\draw[orange!85!black,very thick] (a)--(b) (c)--(d);
+\draw[blue!65!black,thick,dashed] (a)--(c);
+\foreach \v/\l/\pos in {a/0/below left,b/1/below right,c/2/above,d/3/right}
+ {\fill (\v) circle (1.5pt);\node[\pos] at (\v) {$\l$};}
+\node at (1.2,-.65) {Triangulation and matching};
+\end{scope}
+\begin{scope}[xshift=5.6cm,yshift=.2cm,scale=1.6]
+\fill[blue!3] (-.6,0) rectangle (1.6,1);
+\draw[thick] (-.7,0)--(1.7,0) (-.7,1)--(1.7,1);
+\draw[thick,fill=white] (0,.5) circle (.5) (1,.5) circle (.5);
+\node at (0,.5) {$1$};\node at (1,.5) {$3$};
+\node[below] at (.5,0) {$0$};\node[above] at (.5,1) {$2$};
+\fill[orange!85!black] (0,0) circle (1.6pt) (1,1) circle (1.6pt);
+\fill (0,1) circle (1pt) (1,0) circle (1pt) (.5,.5) circle (1pt);
+\node[align=center] at (.5,-.55) {Packing in a strip\\$w_0=w_2=0$, $w_1=w_3=2$};
+\end{scope}
+\end{tikzpicture}

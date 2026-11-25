@@ -1,8 +1,10 @@
-\section{A character contraction as a Fourier functional}\label{cs:fourier}
+\section{Fourier expansion of a colored-circle contraction}\label{cs:fourier}
 
-We first isolate the estimate used whenever an original character is
-exposed at the closing functional. The input can be an unreduced product:
-it is its actual analytic representative that enters the hypothesis.
+We next keep the circle factor signed and exploit its cancellation.
+The following identity expresses closure against $L_j$ in terms of
+Fourier coefficients. It holds for every polynomial representative,
+including an unreduced product of subtree polynomials. That freedom
+will let us multiply analytic estimates before reducing modulo $P_N$.
 
 \begin{lemma}[Exact Fourier and sampling formulas]\label{cs:character-fourier}
 For any polynomial \(F\), write its finite symmetric Laurent expansion
@@ -14,7 +16,9 @@ For \(0\le h\le d\),
  \phi(L_{N-h}F)=(-1)^hN^2
       \sum_{m\in\mathbb Z}(-1)^m(m+1)a_{h+mN}.
 \end{equation}
-In particular the winding \(m=-1\) has exactly zero coefficient.
+Here $m$ indexes the frequency translates by multiples of $N$.
+The translate $m=-1$ has coefficient zero. This cancellation will
+remove the only low frequency which could obstruct the color gap.
 With \(\theta_l=(2l+1)\pi/N\) and \(w_l=e^{\ii\theta_l}\), the same
 functional is
 \begin{equation}\label{cs:sampling}
@@ -42,8 +46,8 @@ Expanding the denominator at infinity gives
  \sum_{m\ge0}(-1)^m(m+1)
        \{a_{h+mN}-a_{2N-h+mN}\}.
 \]
-Use symmetry to rewrite the second half with negative windings. Its
-first winding is \(-2\), leaving precisely the zero coefficient at
+Use symmetry to rewrite the second half with negative frequency translates. Its
+first such index is \(-2\), leaving precisely the zero coefficient at
 \(-1\) in \eqref{cs:fourier-exact}.
 
 Discrete orthogonality gives
@@ -60,10 +64,11 @@ at the latter. Thus the formula retains exactly the full quotient data.
 
 If \(\deg F<N\), only the term \(m=0\) can survive in
 \eqref{cs:fourier-exact}. For a product of canonical polynomials the
-other windings can occur, and must be kept.
+other frequency translates can occur, and must be kept.
 
 \begin{theorem}[Color loss from a spectral strip]\label{cs:root-bound}
-Let \(E_N\) be actual polynomials, not necessarily canonical. Suppose
+Let $E_N$ be specified polynomials, which need not be canonical
+representatives of their quotient classes. Suppose
 there are constants \(c>0,C>0,y_0>0\), a real number \(F\), and positive
 \(A_N\) with \(\log A_N=o(N)\), such that
 \begin{equation}\label{cs:strip-hyp}
@@ -72,7 +77,7 @@ there are constants \(c>0,C>0,y_0>0\), a real number \(F\), and positive
 \end{equation}
 for \(0\le\theta\le2\pi\), \(|y|\le y_0\). The constants and the
 error are uniform over any further specified parameters of \(E_N\).
-Then, uniformly in \(j\) and \(\epsilon\in\{0,1,-1\}\),
+Then, uniformly for $1\le j\le N$ and $\epsilon\in\{0,1,-1\}$,
 \[
  |\phi(R^\epsilon L_j E_N)|\le e^{N(F+o(1))}.
 \]
@@ -84,7 +89,14 @@ for some \(\gamma_\delta>0\) and every sufficiently large \(N\).
 \end{theorem}
 
 \begin{proof}
-The proof has to retain the crossing derivative as well as its values.
+The estimate is most transparent in the angle variable
+$z=\theta+\ii y$. The bound is concentrated near $\theta=\pi$, which
+corresponds to the spectral endpoint $-2$. A color deficit $h=N-j$
+selects Fourier frequencies of order $h$ in \eqref{cs:fourier-exact}.
+Contour translation will make them exponentially small.
+
+The crossing must first be represented by a function with the correct
+values \emph{and} derivatives at the nodes.
 For \(\epsilon\in\{0,1,-1\}\), define the entire function
 \begin{equation}\label{cs:chirp}
  \rho_{\epsilon,N}(z)=\kappa^\epsilon
@@ -103,7 +115,7 @@ functional is
  Z_{N,h}=(-1)^h\sum_{l=0}^{N-1}e^{-\ii h\theta_l}
           \{(N-h)F_N(\theta_l)-\ii F_N'(\theta_l)\}.
 \end{equation}
-The real-axis chirp has modulus one. Cauchy's inequality on radius
+The factor $\rho_{\epsilon,N}$ is a quadratic exponential, of modulus one on the real axis. Cauchy's inequality on radius
 \(1/N\) disks bounds the derivative by a polynomial cost times
 \(A_Ne^{NF}\), proving the first conclusion. At endpoint disks use
 the periodicity of \(E_N(2\cos z)\); its continuation still has the
@@ -127,7 +139,8 @@ Choose those disks first and use Cauchy on smaller disks. Their
 distance from \(\pi\) is bounded below, so shrinking the strip leaves
 a fixed loss.
 
-The function \(F_N\) is symmetric under \(z\mapsto2\pi-z\), but
+To use an absolutely convergent Fourier expansion, we first correct
+an endpoint mismatch. The function $F_N$ is symmetric under \(z\mapsto2\pi-z\), but
 its derivatives do not all match at the two ends of the interval.
 Specifically,
 \[
@@ -154,8 +167,7 @@ the differentiated series converge absolutely. Substitution in
  Z_{N,h}(G_N)=(-1)^hN^2
            \sum_{m\in\mathbb Z}(-1)^m(m+1)g_{N,h+mN}.
 \end{equation}
-The subtracted polynomial is not omitted. Its original nodal
-functional costs at most a polynomial times the bound
+The subtracted polynomial contributes at most a polynomial times the bound
 \eqref{cs:endpoint-gap}; it will be restored at the end.
 
 For \(k>0\), move the coefficient contour to imaginary part

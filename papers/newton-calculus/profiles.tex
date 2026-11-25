@@ -14,6 +14,18 @@ We call $(B,X,Y)$ the stationary boundary parameters.
 Their definitions are variational; no global geometric
 realization is assumed.
 
+For clarity, if $E=E_1E_2$ and its output $z$ is fixed, the
+optimization defining its profile is
+\[
+ f_E(z)=\max_{\max(x,y)\le z\le x+y\le1}
+       \{f_{E_1}(x)+f_{E_2}(y)+m(x,y,z)\},
+\]
+where $x,y$ must also lie in the feasible intervals of the children.
+For a strict output the maximum satisfies all these inequalities
+strictly by Theorem~\ref{st:positive-action}. Thus the derivatives
+used in the next lemma are ordinary derivatives at an interior
+maximum; there are no boundary multipliers.
+
 \begin{lemma}[The stationary product]\label{st:port-product}
 At a strict stationary product the two children and the
 output have the same $X$. With child cotangents $B_1,B_2$,
@@ -55,7 +67,7 @@ proves the last assertion.
 \end{proof}
 
 \begin{proposition}[Parameters of the three types]\label{st:port-types}
-On their actual strict output intervals the parameters satisfy
+On the strict output intervals of Lemma~\ref{st:types}, the parameters satisfy
 \begin{equation}\label{st:parameter-table}
  \begin{array}{c|c}
  L&(B,X,Y)=(B,B,1),\quad B>0,\\
@@ -113,23 +125,23 @@ Their constants are computed next, without a choice
 of additive normalization.
 \end{proof}
 
-\subsection{The intrinsic satellite action}
+\subsection{Following the unique high branch}
 No product has type $L$. A product of type $H$ has
 exactly one high child. Starting at an $L$ or $H$
 output, follow turns and the unique high child of
 each product. This path terminates at a unique
 original leaf, the \emph{distinguished leaf}.
-The other children on the path are called its
-satellites, and have type $L$ or $A$.
+We call this path the \emph{spine} of the expression. The other
+children on the path, called its \emph{satellites}, have type $L$ or $A$.
 Between successive high products the number of turns
 is even. Thus the full algebra also gives
 \begin{equation}\label{st:spine-source}
  E_H=(\T h_*)\prod_{j=1}^m Q_j,\qquad
  E_L=\T\left((\T h_*)\prod_{j=1}^m Q_j\right),
 \end{equation}
-after associating the inherited products. This
-identity retains the actual polynomials; its
-stationary profile is simpler than the polynomial.
+after associating the inherited products. This identity is in the
+quotient algebra, before any maximization. It does not replace
+the satellite polynomials by their maxima.
 
 For a satellite $Q$ define
 \begin{equation}\label{st:Omega}
@@ -194,6 +206,13 @@ Theorem~\ref{st:positive-action}, gives
 Turns preserve the constant and the bare leaf has
 constant zero. This proves the second formula.
 \end{proof}
+For example, if the satellites are bare low leaves, each has $b_Q=1$.
+With $m$ such satellites the response law reduces to
+$u_0=v/(1+mv)$. One can therefore determine the distinguished leaf
+from the final output without solving for the intermediate high
+labels one by one. The additive constant still contains the complete
+maximizing actions of all the satellite subtrees.
+
 For a low satellite, $\Omega_Q=2G_0+c_Q$ where
 $G_0=g(1/4)$. The formula is an identity of optimized
 actions. For example at $N=3$ the complete source has
@@ -226,8 +245,14 @@ or $A$. Its intrinsic action is
                  \{g(a)+f_A(1-a)\}.
 \]
 This is the action of the strict closure $C(hA)$.
+Write $F_{\rm probe}(A^{\rm skel})$ for the maximum action of
+$C(hA^{\rm skel})$, with each effective low leaf assigned the
+profile $g$ and with its additive constant set to zero. The word
+``probe'' refers simply to the extra bare leaf $h$ used in this
+closure. Equation~\eqref{st:constant-skeleton} will restore all
+the omitted constants.
 
-\begin{theorem}[The intrinsic probe range]\label{st:probe}
+\begin{theorem}[Bounds obtained by closing with one leaf]\label{st:probe}
 At this closing maximum the unturned output has
 \begin{equation}\label{st:probe-port}
  (B_A,X_A,Y_A)=(-x,x,1),\qquad \frac12\le x<1.
@@ -289,7 +314,7 @@ all three leaves. This proves the range.
 The first identity in \eqref{st:probe-constant}
 is \eqref{st:constant-skeleton} inside the same
 maximum. For the second, write the original
-root source as $\phi((\T h_0)\prod Q_j)$.
+root source as $\phi((\T h^{(0)})\prod Q_j)$.
 The associated open high profile is
 $g(1-z)+\sum_j\Omega_{Q_j}$ by
 Theorem~\ref{st:profiles}. At the closing output
@@ -312,7 +337,7 @@ range; it does not assert an estimate for the
 signed source. Such estimates require its actual
 coefficient arrays.
 
-\begin{corollary}[The action budget at any exposed leaf]\label{st:root-budget}
+\begin{corollary}[Decomposing the maximum at any exposed leaf]\label{st:root-budget}
 Use Corollary~\ref{st:any-root}, with root edge parity
 $\sigma$ and remaining product $A$.
 If $\sigma=1$, every branch of $A$ has type $L$ or

@@ -1,10 +1,15 @@
-\section{The primitive polytope and its interior maximum}\label{st:variation}\label{nt:variational}
+\section{The state polytope and its interior maximum}\label{st:variation}\label{nt:variational}
 For a fixed strict expression let $P$ be the compact polytope
 obtained by replacing all strict leaf and product inequalities
 by their weak versions. Turns retain $y=1-x$, and closure
 retains the complementary relation. Its relative interior is
 the strict state set: a strict state exists, so none of the
 listed proper inequalities is identically an equality.
+We shall express $P$ in independent coordinates. The word
+\emph{primitive} below means that their integer lattice is all of
+$\mathbb Z^K$, rather than a proper subgroup defined by congruences.
+This is what allows a strict real state to be approximated at every
+sufficiently large level.
 
 \subsection{Integer coordinates and endpoints}
 \begin{lemma}[Primitive coordinates]\label{st:lattice}
@@ -60,7 +65,9 @@ Define
 \end{align}
 Here $J$ has its continuous endpoint values,
 $J(1-t)=-J(t)$ and $J(1/2)=0$.
-The complete action is the sum of one $g$ for each
+The uniform factorial estimate below explains why these functions
+are the appropriate logarithmic weights. If $y$ denotes the independent
+real coordinates of a state, its complete action is the sum of one $g$ for each
 original leaf and one $m$ for each retained product:
 \begin{equation}\label{st:action}
  \A(y)=\sum_{\ell=1}^H g(a_\ell(y))
@@ -83,7 +90,10 @@ For a fixed tree, every nonzero complete state of scaled labels $\mathbf r/d$ ha
 Away from the endpoints, compare the sum of $\log(2\sin\pi u)$ with its integral on consecutive mesh cells. Near zero and one, subtract $\log u$ or $\log(1-u)$; the remaining function has bounded derivative, and the logarithmic part is controlled by factorials. The total discrepancy is $O(\log N)$, uniformly in the stopping index. Apply this estimate to \eqref{eq:positive-product} and \eqref{eq:complete-leaf}. The shifts between $r/N$ and $r/d$, and between $M/N$ and $1/2$, change $NJ$ by at most $O(\log N)$ because $J$ has modulus of continuity $O(\delta|\log\delta|)$. There are a fixed number of factors.
 \end{proof}
 
-\subsection{The atoms and their boundary derivative}
+\subsection{Concavity and the boundary derivative}
+We prove concavity by writing every local action as a sum of copies of
+one function on the angle simplex. We call a copy an \emph{atom}
+only to distinguish these summands from the leaf and product actions.
 For $a+b+c=1$ set
 \[
  V(a,b,c)=-\pi\{J(a)+J(b)+J(c)\}.
@@ -137,7 +147,10 @@ The derivative is finite. A positive atom also has a
 finite derivative. Thus no atom contributes $-\infty$
 along a segment toward a strict state.
 
-\begin{lemma}[Endpoint descent]\label{st:barrier}
+The following lemma supplies more than concavity. It finds a summand
+whose inward derivative is infinite at every boundary state. Without
+this step, a concave action could attain its maximum on a proper face.
+\begin{lemma}[A boundary summand with infinite inward derivative]\label{st:barrier}
 At every nonstrict point of a nonempty strict closed
 polytope, or of an open fixed-output slice with output
 in its strict interval, at least one atom in

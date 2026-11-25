@@ -1,4 +1,4 @@
-\section{The physical pair algebra}\label{nt:algebra}
+\section{The polynomial algebra of two-strand operators}\label{nt:algebra}
 Fix $N\ge2$, and set
 \begin{equation}\label{eq:root-notation}
  d=N-1,\qquad q=e^{\pi\ii/N},\qquad Q=q^2,\qquad
@@ -18,7 +18,12 @@ The finite universal crossing, including its Cartan factor, is
  \sum_{k=0}^{d}\frac{q^{k(k-1)/2}\rho^k}{[k]_q!}
  E^k\otimes F^k.
 \end{equation}
-Every denominator is nonzero. The physical braided crossing is obtained with the fixed exchange and transpose convention; the inverse is the actual matrix inverse. The framing and enhancement are part of the definition, not an unspecified factor appended to an asymptotic formula.
+Every denominator is nonzero. Let $\mathsf P(u\otimes v)=v\otimes u$.
+The positive crossing is $R=\mathsf P\mathscr R$, and the negative
+crossing is its matrix inverse. This is the column-vector convention
+of \cite[Proposition~5.1]{Finite}. We use its cups, caps and framing
+throughout; these choices determine the finite scalar before any
+asymptotic question is considered.
 
 For calculations in the polynomial algebra it is useful to change basis on this same space. We call the new coordinates balanced; they do not define a different invariant. In this basis the operators are
 \begin{equation}\label{eq:balanced-module}
@@ -48,6 +53,11 @@ change of basis on the same representation. Its factors cancel on
 contracted wires. The invariant normalization and crossing comparison
 are those of \cite[Theorem~10.1]{Finite}; no asymptotic bound on this
 change of basis is used.
+The same companion paper writes its balanced basis as $v_a/p_a$ and
+uses the generators $\rho^2E,F$. Both conventions give exactly the
+matrices in \eqref{eq:balanced-module}: the extra factor $\rho^a$ in
+the present basis compensates for the different generator scalings.
+Thus its pair Casimir and the polynomial variable used here agree.
 
 \subsection{The full pair algebra}
 
@@ -71,7 +81,17 @@ The list of roots includes multiplicity. Since $c_{d-j}=c_j$, all distinct roots
 The endomorphisms of $V_N\otimes V_N$ commuting with the three pair generators are exactly $\CC[\Omega]\simeq\cH_N$.
 \end{lemma}
 \begin{proof}
-Let $W_T$ be the span of $|a,T-a\rangle$. The $K_{12}$ eigenvalue one occurs only on $W_d$. The matrices $\mathcal E_{12}:W_{T+1}\to W_T$ for $T<d$, and $\mathcal F_{12}:W_T\to W_{T+1}$ for $T\ge d$, have triangular maximal minors with nonzero diagonals. Consequently the entire pair is generated from $W_d$ by these raising and lowering operators.
+Let $W_T$ be the span of those vectors $|a,T-a\rangle$ whose
+indices lie in $\{0,\ldots,d\}$. Its $K_{12}$ eigenvalue is
+$Q^{-(T+1)}$, so eigenvalue one occurs only on $W_d$. In particular,
+every pair intertwiner preserves $W_d$. The matrices
+$\mathcal E_{12}:W_{T+1}\to W_T$ for $T<d$, and
+$\mathcal F_{12}:W_T\to W_{T+1}$ for $T\ge d$, have triangular
+maximal minors with nonzero diagonals. They are therefore surjective.
+Repeated application of $\mathcal E_{12}$ reaches every block below
+$W_d$, and repeated application of $\mathcal F_{12}$ reaches every
+block above it. Thus an intertwiner is determined by its restriction
+to $W_d$.
 
 On $W_d$, the Casimir is a symmetric tridiagonal matrix with adjacent entries $-(1-Q^{a+1})^2\ne0$. Its first basis vector is cyclic: the $k$th power has last possible coordinate $k$, with coefficient equal to the nonzero product of the first $k$ adjacent entries. An operator commuting with this block is therefore a unique polynomial of degree below $N$ in that block. Subtracting the same polynomial in $\Omega$ from a pair intertwiner gives zero on $W_d$, hence zero everywhere by generation.
 
@@ -102,7 +122,15 @@ At a double root $c$, reduction modulo $(z-c)^2$ leaves
 \]
 Thus both the value and its first derivative are independent coordinates of the operator. Throughout the paper, retaining the ``full algebra'' or the ``normal data'' means retaining this derivative as well. A polynomial can vanish at every distinct root and still define a nonzero operator in $\cH_N$. Evaluating only at roots would therefore lose part of the invariant.
 
-\subsection{The actual turn and the Newton basis}
+For example, when $N=3$ the relation is
+$P_3(z)=(z-1)^2(z+2)$. The polynomial $u(z)=(z-1)(z+2)$
+vanishes at both distinct roots, but $u'(1)=3$. Since $\deg u<3$,
+its class in $\mathcal H_3$ is nonzero. Formula
+\eqref{eq:leading-trace}, proved below, even gives $\phi(u)=9$.
+This is the simplest instance of information that would disappear
+if one replaced the quotient algebra by functions on its distinct roots.
+
+\subsection{Quarter-turn and the Newton basis}
 
 We choose a polynomial basis adapted to successive Casimir roots, including their multiplicities. Its normalization is designed so that turning a physical box reverses the basis index exactly. The same basis makes the final closure a coefficient extraction. These are the two facts that will allow us to follow every internal summation index through a large construction.
 Put
@@ -161,8 +189,16 @@ Including the leading coefficient $(-1)^r$ gives $s_r^2$. The corresponding path
  \Turn B_r=\frac{s_r^2}{s_{d-r}^2}B_{d-r},
  \qquad \Turn\Bhat_r=\Bhat_{d-r}.
 \]
-Finally $s_rs_{d-r}=N$ and the closure calculation immediately below give
-$\phi(\Bhat_i\Bhat_j)=\delta_{i+j,d}$: use degree below $d$, leading coefficient at $d$, and full divisibility by $P_N$ above it. This proves Proposition~\ref{prop:newton-turn} by physical support and exact paths.
+It remains to calculate closure. We establish below, directly from
+the trace \eqref{eq:phi-physical}, the coefficient formula
+\eqref{eq:leading-trace}. It implies $\phi(\Bhat_r)=\delta_{r,d}$:
+the degree is below $d$ unless $r=d$, and $s_d=N$. For the product,
+degree below $d$ again gives zero when $i+j<d$. If $i+j=d$,
+its leading coefficient and the identity $s_i s_{d-i}=N$ give one.
+If $i+j>d$, the root reflection $c_{d-u}=c_u$ shows that
+$B_iB_j$ is divisible by $P_N$, including its root multiplicities,
+so the answer is zero. The trace calculation below is independent
+of the turn formula and completes the proof.
 
 \end{proof}
 The turn is linear and involutive in this basis, but it is not multiplicative.
@@ -212,8 +248,8 @@ contributes $(4-c^2)f'(c)-cf(c)$ to the removable quotient.
 When $N$ is odd the self-paired index $m=N$ contributes $f(-2)$.
 At the fixed root the original pivot is $g=(-1)^dK$, and the
 normalizing factor $1/N$ in \eqref{eq:phi-physical} cancels the
-trace of the scalar operator on the remaining $N$-dimensional head.
-Consequently the actual closure is
+trace of the scalar operator on the remaining copy of $V_N$.
+Consequently the cylindrical closure is
 
 \begin{equation}\label{eq:hermite-trace}
  \phi(f)=(-1)^d\sum_{c\ \mathrm{double}}
@@ -227,7 +263,7 @@ Equivalently,
 For example, at a double root $c$, writing $Q_c=P_N/(z-c)^2$ gives
 $Q_c(c)=N^2/(4-c^2)$ and $Q_c'(c)/Q_c(c)=c/(4-c^2)$ from the Chebyshev differential equation. The residue of $f/P_N$ is exactly the corresponding term of \eqref{eq:hermite-trace} after multiplication by $(-1)^dN^2$. Summing residues proves \eqref{eq:leading-trace}; the simple odd root has $P_N'(-2)=N^2$. The sole shortest tridiagonal path from the first to the last coordinate has product $(-1)^dN^2$, which also identifies this scalar with the original endpoint matrix element.
 
-\subsection{Positive multiplication with every normal retained}
+\subsection{Positive multiplication in the quotient algebra}
 
 Suppose two stacked boxes contribute basis indices $i$ and $j$. Their product is a linear combination of output indices $r$. The following coefficient formula gives both the allowed triples $(i,j,r)$ and their weights. Calling this local operation a \emph{gate} is only shorthand for this one multiplication; the geometric operation remains the vertical stack.
 \begin{theorem}[Multiplication law]\label{thm:positive-product}
@@ -264,10 +300,21 @@ For $i+j\ge N$, use the exact polynomial identity $B_N/B_j=B_{N-j}$, a consequen
 \section{Colored circles and retained half twists}\label{nt:colors}
 
 A color $j$ on an auxiliary circle means that the circle carries a $j$-dimensional representation. The main strands still carry $V_N$. We must compute the resulting operator on those two main strands, including the trace around the auxiliary circle, before replacing that circle by twists. The answer is a Chebyshev polynomial in $\Omega$, with the sign fixed by the pivot.
-For $1\le j\le N$, the auxiliary module is the ordinary $j$-dimensional highest-weight module. Its loop is the actual block-braiding word $[2,1,1,2]$, with the intermediate strand dimensions retained, followed by its ordinary pivot $K_j^{1-N}$. There is no auxiliary $1/j$ or $1/N$.
+For $1\le j\le N$, the auxiliary module is the ordinary
+$j$-dimensional highest-weight module: on its basis indexed by
+$a=0,\ldots,j-1$, one has $K_jv_a=q^{j-1-2a}v_a$,
+$Ev_a=[a]_q[j-a]_qv_{a-1}$ and $Fv_a=v_{a+1}$.
+The loop starts with the ordered strand dimensions $(N,N,j)$ and
+uses the braid word $[2,1,1,2]$. An entry $i$ means a positive
+crossing at positions $i,i+1$; thus the auxiliary strand moves to
+the left across the two main strands and then returns to its
+initial position. At every step the universal formula
+\eqref{eq:universal-crossing} uses the dimensions then present at
+those positions. Finally take the auxiliary trace with pivot
+$K_j^{1-N}$. This is an ordinary trace, with no factor $1/j$ or $1/N$.
 
 \begin{proposition}[Circle identity]\label{prop:circle}
-The resulting two-head operator is
+The resulting operator on the two main strands is
 \begin{equation}\label{eq:circle}
  L_j=(-1)^{j-1}U_{j-1}(\Omega/2).
 \end{equation}
@@ -357,7 +404,12 @@ $\Turn_\eps(f)=\Turn(R^\eps\Turn f)$, for $\eps=\pm1$. Its exact transport is
  \sum_{r=0}^{v}q^{\eps v(r+1)}
  \frac{s_v}{s_rs_{v-r}}\Bhat_r.
 \end{equation}
-The triangular formula retains the full Cartan phase and all normals. Its derivation uses the finite continuant expansion and root factorial reflection; the two signs are coefficient conjugates in the real Newton basis. A half-twisted alias may occupy every Newton coordinate, so the pure alias support cannot be reused after \eqref{eq:half-twist}.
+The formula determines a polynomial in $\mathcal H_N$, hence includes
+the first derivatives at double roots. Its two signs are coefficient
+conjugates in the real Newton basis. We prove it by identifying the
+entire crossing polynomial and then reversing the Newton indices.
+Notice that a half twist can spread the complementary-color term
+over every Newton index; its support before the twist no longer applies.
 
 
 Here is a proof identifying the entire crossing polynomial. In this

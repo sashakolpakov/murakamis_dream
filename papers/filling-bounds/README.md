@@ -30,15 +30,14 @@ coefficient, and Corollary 9.2 expresses its signed crossing insertions
 by these functionals. Theorem 10.1 identifies that evaluation with the
 reduced Kashaev invariant, including the framing factor, at every
 integer level $N\ge3$. The cups, caps, marked cut, face lattice and both
-level parities are part of those proofs. The diagram identity is therefore
-a conclusion of this paper, not an unproved companion assumption.
+level parities are included in those proofs.
 
-The input is the enhanced ribbon definition of the reduced invariant.
-The needed finite interpolation forms are proved here and attributed
-to their classical sources. No theorem from the long reference manuscript
-is required as a substitute for these proofs. A nonzero asymptotic, a
-bound for the entire remaining sum, and its geometric volume comparison
-are separate analytic and geometric inputs to later applications.
+The invariant is specified by its enhanced crossing matrix, its
+weighted partial trace and its writhe correction. The interpolation
+formulas are proved here, with references to Hermite and Riesz. Later
+applications must supply a nonzero leading asymptotic, a strict bound
+for the entire remainder, and a geometric interpretation of the
+resulting exponential rate.
 
 ## Build and finite checks
 

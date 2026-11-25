@@ -1,23 +1,36 @@
 \section{A two-leaf comparison on the whole output interval}\label{cs:two-leaf}
 
-In a completed pure reference the selected leaf range is
+The positive comparison later in the paper will use two possible
+bounds at each boundary leaf: $g$ for a low Newton index and $k$ for a
+high index. We need a strict loss when at least one leaf uses $k$.
+The comparison must be made after multiplication, since the analogous
+inequality for a leaf alone fails in part of the required range.
+
+At the maximum of a closure between two completed comparison
+expressions, every leaf label lies in
 \begin{equation}\label{cs:leaf-window}
- \frac14<a<\frac{\arctan2}{\pi}<\frac12.
+ \frac14<a<\frac{\arctan(2)}{\pi}<\frac12.
 \end{equation}
-A pointwise comparison with a single complete leaf is insufficient
-throughout this range. The relevant quantity would be
+Indeed, a comparison using only the supporting tangent to $g$ would require positivity of
 \[
  \min_{0\le u\le1}\{g(a)+g'(a)(u-a)-k(u)\},
 \]
-which need not be positive there. The gate joining two leaves supplies the missing comparison. We retain it, and its output tangent, before propagating an estimate into the rest of the tree.
+which need not hold throughout \eqref{cs:leaf-window}. We therefore keep the multiplication joining two leaves, together with the supporting tangent at its output.
 
-At the selected pure two-leaf stack, write
+Hold the output label $b$ of a product of two complete leaves fixed,
+and maximize its action over the two leaf labels. At the stationary
+point the two labels agree; denote their common value by $a$. The
+stationarity equations are conveniently written as
 \begin{equation}\label{cs:seed-parameters}
  X=\cot\pi a,\qquad \cot\pi b=X-\frac1{2X},\qquad
  F_2(b)=2g(a)+m(a,a,b),\qquad
  \lambda=2\log(2X^2).
 \end{equation}
-Here $\arccot$ takes values in $(0,\pi)$. The displayed expressions define the scalar parameters for every $X\in[1/2,1]$. Completed pure references use the interior range; the three-leaf reference in Section~\ref{cs:probe} uses the endpoint $X=1/2$.
+Here $\arccot$ takes values in $(0,\pi)$, and $\lambda$ is the
+output derivative of the maximized two-leaf action. The formulas
+also define $a,b,F_2(b),\lambda$ for every $X\in[1/2,1]$. Completed
+comparison expressions use the interior of this interval. The
+three-leaf closure will require the endpoint $X=1/2$.
 
 \begin{lemma}[Two-leaf gap]\label{cs:two-leaf-gap}
 For $1/2\le X\le1$ and the slope in \eqref{cs:seed-parameters},
@@ -41,11 +54,11 @@ This point is strict in $D$, including the endpoints $X=1/2,1$. Concavity proves
 \]
 The same maximum is obtained if either or both copies of $g$ are replaced by $\widetilde g$: the selected point has $a\ge1/4$, where their supporting tangents agree.
 
-We give the complete finite certificate reduction. Write $H=k+\widetilde g+m$ for the first alias action and $H=k+k+m$ for the second. A rational feasible pure point $p=(p_1,p_1,p_3)$ gives
+We give the complete finite certificate reduction. Write $H=k+\widetilde g+m$ for the first competing action and $H=k+k+m$ for the second. A rational feasible pure point $p=(p_1,p_1,p_3)$ gives
 \[
  P(\lambda)\ge 2g(p_1)+m(p)-\lambda p_3.
 \]
-For a strict rational alias point $v$, with $v_2>1/4$ in the first case, global concavity gives
+For a rational point $v$ in the strict support, with $v_2>1/4$ in the first case, global concavity gives
 $H(w)\le H(v)+\nabla H(v)\cdot(w-v)$. The full vertex sets are
 \begin{align*}
  \mathcal V_{\mathrm{AC}}={}&
@@ -69,12 +82,23 @@ The expression is affine separately in the slope and in $w$. Its endpoint and ve
  {5000000000000000000000000000000000000000}
  >\frac1{25}>\frac1{100}.
 \end{equation}
-This proves both comparisons, including boundary maxima and the core plateau.
+This proves both comparisons on the closed domains, including the plateau of $\widetilde g$.
 \end{proof}
 
-\section{A new leaf and an arbitrary completed child}\label{cs:attachment}
+\section{Attaching a leaf to a completed expression}\label{cs:attachment}
 
-A completed child is represented by its actual selected output and its output derivative. Its entire internal source remains in the calculation. Let $f_E(b)$ be its optimized pure complete action at output $b$, near the selected strict state. The imported strict maximum has negative Hessian in its internal variables, so the implicit function theorem gives this differentiable local profile. Its derivative is the boundary Lagrange multiplier.
+We next attach one leaf to a completed comparison expression $E$.
+For the application, this attachment occurs inside a closure with two
+completed sides, and all parameters below are evaluated at that
+closure's maximizing state.
+The interior of $E$ is summarized by its boundary profile: $f_E(b)$ is
+the maximum of its complete-color action with output label $b$ held
+fixed. We use this profile near the output of the strict maximum.
+The internal Hessian is negative definite by the profile theorem of
+\cite{Newton}. The implicit function theorem therefore gives a
+differentiable maximizing state, and $f_E'(b)$ is the multiplier for
+the fixed-output constraint. Keeping this derivative lets us estimate
+the whole child without replacing it by a leaf.
 
 The boundary variables from \cite[Section 9]{Newton} are
 \[
@@ -97,7 +121,8 @@ For a leaf attached to a completed child these become
  \lambda=f_{hE}'(c)=2\log(X/Y_p).
  \end{gathered}
 \end{equation}
-For a completed pure reference, both child and parent are completed. Lemma 9.5 of \cite{Newton} then gives $0<X,Y,Y_p<1$. The child inequality $Y<1$ gives $|B|<X$. The parent inequality $Y_p<1$ gives
+Both $E$ and the attached expression $hE$ are completed descendants
+of that closed comparison. Lemma 9.5 of \cite{Newton} therefore gives $0<X,Y,Y_p<1$. The child inequality $Y<1$ gives $|B|<X$. The parent inequality $Y_p<1$ gives
 \[
  B>\frac1{2X}-X.
 \]
@@ -110,7 +135,9 @@ Define the pure and alias dual maxima
  Q(\mu,\lambda)&=\max_D
  \{k(x)+m(x,y,z)+\mu y-\lambda z\}.\label{cs:single-Q}
 \end{align}
-Only the new leaf has the restriction $x\le1/2$. The child coordinate $y$ retains the whole interval $[0,1]$; it is represented by its tangent, not replaced by a second leaf.
+Only the new leaf has the restriction $x\le1/2$. The child coordinate $y$ ranges through $[0,1]$. The term $\mu y$
+comes from the supporting tangent to $f_E$, whose constant term is
+restored when the estimate is used in a larger expression.
 
 \begin{lemma}[Single-attachment gap]\label{cs:attachment-gap}
 Let $1/2<X<1$, $Y=\sqrt{1+B^2-X^2}$, $Y_p=Y/(X+B)$ and $0<Y,Y_p<1$, with the positive branch $X+B>0$. Define $a,b,c,\mu,\lambda$ by \eqref{cs:attachment-parameters}. Then
@@ -148,18 +175,18 @@ For $X\ge2/3$ an elementary one-leaf inequality suffices. Set
 \[
  I(a)=\min_{0\le u\le1}\{g(a)+g'(a)(u-a)-k(u)\}.
 \]
-For $a\ge a_*:=\arctan\sqrt2/\pi$, the minimum is at $u=1$ because $g'(a)\le k'(1)=-\log2$. Then
+For $a\ge a_*:=\arctan(\sqrt2)/\pi$, the minimum is at $u=1$ because $g'(a)\le k'(1)=-\log2$. Then
 \begin{equation}\label{cs:Ti}
  I(a)=g(a)+(1-a)g'(a)
  =\frac2\pi\Ti(X)+\log X,\qquad
  \Ti(X)=\int_0^X\frac{\arctan t}{t}\dd t.
 \end{equation}
-For example the two expressions have the same derivative in $X$, namely
+To verify this identity, the two expressions have the same derivative in $X$, namely
 $X^{-1}+2\arctan X/(\pi X)$, and their difference tends to zero as $X\downarrow0$. This proves the constant in \eqref{cs:Ti}. The expression decreases with $a$.
 
 For $1/4\le a\le a_*$ the minimizing index is
 $u=(2/\pi)\arcsin(\tan^2(\pi a)/2)$. It exceeds $a$: equivalently
-$\tan^2 t>2\sin(t/2)$ for $\pi/4\le t\le\arctan\sqrt2$, which holds at $\pi/4$ and remains true because the derivative of the difference is $2\tan t\sec^2t-\cos(t/2)>0$ there and thereafter. Hence $I'(a)=g''(a)(u-a)<0$. The minimum on $1/4\le a\le\arccot(2/3)/\pi$ is consequently at its upper endpoint, where \eqref{cs:Ti} applies.
+$\tan^2 t>2\sin(t/2)$ for $\pi/4\le t\le\arctan(\sqrt2)$, which holds at $\pi/4$ and remains true because the derivative of the difference is $2\tan t\sec^2t-\cos(t/2)>0$ there and thereafter. Hence $I'(a)=g''(a)(u-a)<0$. The minimum on $1/4\le a\le\arccot(2/3)/\pi$ is consequently at its upper endpoint, where \eqref{cs:Ti} applies.
 
 Four alternating terms of $\Ti(2/3)$ give
 \[
@@ -176,6 +203,6 @@ $k(u)\le g(a)+g'(a)(u-a)-1/2500$ on the full alias interval. Adding the supporti
 
 \begin{figure}[t]
 \centering\input{figures/tangent-propagation}
-\caption{A completed construction retains its exact indices at every step; $\star$ is the multiplication in \eqref{cs:product}. In the left seed, $i,j$ are leaf indices and $r$ is the output of their original multiplication. In the right attachment, $j$ is the output of the entire child $E$, not a new leaf. The affine estimates use the same $i/N,j/N,r/N$; the internal slopes cancel at the selected stationary state.}
+\caption{The two estimates used to propagate a supporting tangent; $\star$ is the multiplication in \eqref{cs:product}. In the left seed, $i,j$ are leaf indices and $r$ is the output of their multiplication. In the right attachment, $j$ is the output of the entire child $E$, not a new leaf. The affine estimates use the same $i/N,j/N,r/N$; the internal slopes cancel at the selected stationary state.}
 \label{cs:figure}
 \end{figure}

@@ -1,8 +1,8 @@
-\subsection{Conditioning at the complete spectral nodes}\label{cs:conditioning}
+\subsection{Hermite interpolation estimates}\label{cs:conditioning}
 
-The canonical representative of a quotient class has degree less than
-\(N\). Off the spectral nodes we specify whether we use this
-representative or an actual unreduced product. Define the norm
+We first compare polynomial size with the data defining a class in
+$\mathscr A_N$. At a double root these data consist of a value and a
+first derivative. Their joint norm is
 \[
  \normJ{F}=\max\bigl\{|F(c)|+|F'(c)|:c\text{ a double node};
                      \ |F(-2)|\text{ if }N\text{ is odd}\bigr\}.
@@ -14,10 +14,12 @@ Put
 \begin{equation}\label{cs:weights}
  w_{N,r}=\begin{cases}e_r(-2),&0\le r\le M,\\1,&M<r<N.\end{cases}
 \end{equation}
-These weights are positive. The following estimates are purely at the
-complete main color; no tree or filling-power hypothesis is needed.
+For $r\le M$, the weight measures the exponential size of $e_r$.
+For $r>M$ the basis element has only polynomial size, so a unit weight
+suffices. The following estimates hold in the level-$N$ quotient,
+independently of any choice of tangle expression.
 
-\begin{lemma}[Complete-node conditioning]\label{cs:conditioning-lemma}
+\begin{lemma}[Polynomial conditioning]\label{cs:conditioning-lemma}
 There are absolute constants \(C,A\) such that
 \begin{align}
  |\phi(F)|&\le CN^A\normJ{F},&
@@ -27,13 +29,15 @@ There are absolute constants \(C,A\) such that
  \log w_{N,r}&=Ng(r/N)+O(\log N),&&&0\le r\le M.\label{cs:weight-rate}
 \end{align}
 For \(r>M\), every value of \(e_r\) at a spectral node is zero,
-but its first normals satisfy \(\normJ{e_r}\le N^2/16\).
+but its first derivatives satisfy \(\normJ{e_r}\le N^2/16\).
 Every canonical polynomial also satisfies
 \begin{equation}\label{cs:ellipse}
  |F(2\cos(\theta+\ii y))|
        \le CN^A e^{N|y|}\normJ{F},\qquad \theta,y\in\mathbb R.
 \end{equation}
-This last assertion is not made for arbitrary unreduced representatives.
+The degree restriction in this assertion matters. Adding a multiple
+of $P_N$ leaves the quotient class unchanged but may make its values away
+from the spectral nodes arbitrarily large.
 \end{lemma}
 \begin{proof}
 The polynomial with the distinct complete nodes as simple roots is
@@ -65,7 +69,7 @@ estimate applies. Derivative bounds do not presume good conditioning:
 a degree-\(n\) polynomial has Chebyshev coefficients at most twice its
 interval norm, and \(\|T_j'(z/2)\|_\infty\le j^2/2\).
 This proves polynomial equivalence of the canonical interval norm,
-its complete value-and-normal norm, and its Chebyshev coefficient sum.
+its complete value-and-derivative norm, and its Chebyshev coefficient sum.
 
 In particular \([z^d]T_d(z/2)=1/2\), so the exact functional in
 \eqref{cs:turn-trace} has polynomial cost. The circle polynomial has
@@ -115,11 +119,10 @@ and is nondecreasing, since
 the two angles sum to at most \(\pi\). Consequently
 \eqref{cs:high-normal} is at most
 \(1/[4\sin((2j+1)\theta)\sin(l\theta)]\le N^2/16\).
-The odd simple-node value is zero. This retains every normal and
-completes the proof.
+The odd simple-node value is zero. This proves the derivative bound and completes the proof.
 \end{proof}
 
 Throughout the estimates, a uniform error \(o(1)\) may absorb powers
 of \(N\), a fixed number of sums and the errors of fixed estimates.
-It is uniform over all indicated physical colors and retained signs.
+It is uniform over all indicated circle colors and retained signs.
 A strict exponential loss is reduced before those errors are absorbed.

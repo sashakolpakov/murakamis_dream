@@ -1,16 +1,20 @@
 # The retained results and their current proof sources
 
 The current collection consists of 21 subject manuscripts, totaling
-403 pages. The reference has 203 pages and covers overlapping material
+414 pages. The reference has 205 pages and covers overlapping material
 and several different volume families. Separate papers repeat their
 conventions and bibliography, so their aggregate length measures neither
 compression nor proof strength.
 
 All manuscripts are from this project. The Conway volume application
-is 17 pages. Its five directly cited supporting papers, together with
+is 19 pages. Its five directly cited supporting papers, together with
 the general marked-filling paper used by geometry, give a seven-paper
-reading route of 149 pages. The reference is not an additional input
+reading route of 160 pages. The reference is not an additional input
 to that route.
+
+The [exposition audit](CONWAY_SERIES_AUDIT_2026-11-25.md) records the
+substantive notation corrections and proof simplifications made across
+these seven manuscripts. Their theorem scopes are unchanged.
 
 The [paper guide](../papers/README.md) identifies each result and its
 imports. The [collection record](results/paper-collection/summary.json)

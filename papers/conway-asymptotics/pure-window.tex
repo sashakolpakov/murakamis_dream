@@ -1,14 +1,20 @@
-\subsection{The pure source and its physical remainder}
+\subsection{Restriction to a neighborhood of the maximum}
 \label{ca:strict-pure-section}
 
 Fix a strict construction from Section~\ref{ca:intro}, with $b\ge2$,
 and evaluate every auxiliary circle without a retained half twist.
 Section~\ref{ca:filling} will expand each full crossing power in this
 pure circle basis. Write $\mathcal A_N(\mathbf h)$ for the resulting
-physical source at circle colors $N-h_\ell$.
+finite reduced evaluation at circle colors $N-h_\ell$, with
+$\mathbf h\in\{0,\ldots,N-1\}^b$. This is the full sum, including
+all polynomial coefficients in the tangle expansion.
 
 Put $M_N=\lfloor(N-1)/2\rfloor$. For a physical color deficit $h$,
-the core coefficient of a leaf is zero when $r<h$ or $r>M_N$.
+retain from each leaf expansion only its lower Newton indices
+$h\le r\le M_N$. We call the part of the expansion using these
+indices at every leaf its \emph{core}; the other terms will be bounded
+using \cite{Bounds}. Its leaf coefficient is zero when $r<h$ or
+$r>M_N$.
 For $0\le h\le r\le M_N$ it is the exact positive ratio
 \begin{equation}\label{ca:pure-leaf}
  A_N(r,h/N)=
@@ -27,22 +33,27 @@ Its action is
 \[
  g(x,t)=J(2x)-2J(x)-J(x-t)-J(x+t).
 \]
-The continuation is regular at $x=1/4$ as well.
+For $x$ in a compact subset of $(0,1/2)$ and $t$ sufficiently small,
+all factorial arguments stay in the domain of Lemma~\ref{ca:factorial}.
+No additional restriction at $x=1/4$ is needed.
 
 Let $y_*$ be the unique complete strict maximizer. Choose a fixed
-rectangle $\mathcal B$ about $y_*$ in the primitive coordinates
-\eqref{ca:offsets}, inside every strict gate domain. Its leaf indices
+rectangle $\mathcal B$ about $y_*$ in the independent coordinates
+\eqref{ca:offsets}, inside every strict product domain. Its leaf indices
 lie in a compact subset of $(0,1/2)$. Choose a complex color polydisk
 small enough that all shifted factorial arguments in
 \eqref{ca:pure-index} remain in the strip of Lemma~\ref{ca:factorial}.
 Define $C_N(t)$ by summing the product of these leaf functions and
-the gate functions \eqref{ca:gate} over $\mathbf k/N\in\mathcal B$,
+the product coefficients \eqref{ca:gate} over
+$\mathbf m/N\in\mathcal B$,
 where every gate factorial $S_j$ is replaced by $G_N(j)$.
-The support of this finite sum is independent of $t$.
-Thus $C_N$ is holomorphic and separately even. For real small $t$
+The set of summation indices is fixed as $t$ varies. Thus $C_N$
+is holomorphic and separately even. It differs from $\mathcal A_N$
+in two ways: it omits the other Newton coefficients, and it restricts
+the retained coefficients to $\mathcal B$. For real small $t$
 it is positive for every sufficiently large $N$.
 
-\begin{theorem}[The pure source near its maximum]\label{ca:strict-pure}
+\begin{theorem}[Asymptotics of the restricted sum]\label{ca:strict-pure}
 For every fixed strict construction with $b\ge2$, there are
 holomorphic separately even functions $a_0,\Phi_0$ on a fixed complex
 polydisk such that
@@ -64,22 +75,26 @@ source satisfies
        \le e^{N(F_0-\gamma)}
        \qquad(0\le h_\ell\le\delta N)
 \end{equation}
-for all sufficiently large $N$. If any physical deficit is at least
-$\delta N$, the entire source has a strict exponential loss from
-$F_0$. Finally, on a smaller complex polydisk,
+for all sufficiently large $N$. There is also a fixed $\gamma_{\rm mac}>0$ such that
+$|\mathcal A_N(\mathbf h)|\le e^{N(F_0-\gamma_{\rm mac})}$
+whenever at least one $h_\ell\ge\delta N$. Finally, on a smaller complex polydisk,
 \begin{equation}\label{ca:color-gaussian}
  |C_N(x+\ii y)|\le
  N^C\exp N\{F_0-c_{\rm col}\|x\|^2+C_{\rm col}\|y\|^2\},
  \qquad c_{\rm col}>0.
 \end{equation}
-All statements include both level parities.
+Here $x,y\in\mathbb R^b$, the norms are Euclidean, and
+$C,c_{\rm col},C_{\rm col}$ are fixed constants, with
+$c_{\rm col}>0$. The color cutoff $\delta$ may be decreased to
+any smaller positive constant, with the gaps chosen again. All
+statements include both level parities.
 \end{theorem}
 
 \begin{proof}
 The phase of the interpolated summand is
 \[
  F(y,t)=\sum_{\ell=1}^b g(L_\ell(y),t_\ell)
-            +\sum_{\text{gates}}m(L_i,L_j,L_r).
+            +\sum_{\text{products}}m(L_i(y),L_j(y),L_r(y)).
 \]
 All factorial arguments lie in fixed strict complex neighborhoods.
 Lemma~\ref{ca:factorial} gives, with uniform fixed derivatives,
@@ -103,8 +118,12 @@ Multiply these densities and include each integer offset from
 \eqref{ca:offsets}: the leaf offset contributes
 $e^{\delta_\ell g_x}$ and a gate contributes
 $e^{\delta_i m_x+\delta_jm_y+\delta_rm_z}$.
-The derivatives are evaluated at the corresponding changed arguments.
-This fixes $b_0$, including its normalization. At real strict
+All derivatives here are evaluated at the limiting labels
+$L_w(y)$ and at $t$. These factors follow directly from
+$NJ(L+\delta/N)=NJ(L)+\delta J'(L)+O(N^{-1})$.
+Thus the integer offsets affect the leading amplitude, although they
+do not affect the rate. This specifies $b_0$, including its
+normalization. At real strict
 arguments it is positive.
 
 Theorem 6.4 of \cite{Newton} gives the unique maximum $y_*$ and
@@ -164,11 +183,12 @@ The modulus of continuity $O(\eta|\log\eta|)$ of $J$ shows that
 the bounded affine wire offsets cost only $O(\log N)$.
 
 The complete action has its unique maximum inside $\mathcal B$.
-Compactness gives a fixed gap on the rest of its state polytope,
-and the nonnegative losses $\Delta$ preserve it throughout a small
-real color corridor. The polynomial number of states and the
+On the compact complement of the interior of this rectangle in the
+state polytope, its value is at most $F_0-\gamma_0$ for some
+$\gamma_0>0$. The nonnegative losses $\Delta$ preserve this
+inequality for all sufficiently small real color deficits. The polynomial number of states and the
 $O(\log N)$ errors preserve a strict exponential loss for the
-whole core outside the window.
+whole core outside $\mathcal B$.
 
 Finally \cite[Theorem 1.1]{Bounds}, or
 \cite[Corollary 9.1]{Bounds} for $b=2$, bounds the entire
@@ -177,5 +197,8 @@ Combining these bounds proves \eqref{ca:source-error} and the
 remaining physical-source assertions.
 \end{proof}
 
-The next step uses this exact finite function $C_N$, rather than
-replacing it by its pointwise leading term on the color grid.
+Only $C_N$ has been continued to negative and complex color deficits.
+The error estimates refer to the original nonnegative integer deficits
+of $\mathcal A_N$. This distinction will matter when we fill the
+crossing circles: the error will be summed at its original colors,
+whereas evenness will be used for the Fourier transform of $C_N$.

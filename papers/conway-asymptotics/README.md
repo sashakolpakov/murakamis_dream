@@ -22,9 +22,9 @@ coordinate occupy a proportion tending to zero in expanding boxes.
 This does not assert density one among distinct knots, or only finitely
 many excluded assignments.
 
-## One proof through the pure source
+## The proof
 
-The proof now follows only the strict pure-source route. The entire
+The proof begins with the augmented diagram with no retained half twists. The entire
 integer crossing power, including an odd or negative power, is expanded
 exactly in ordinary colored circles. Thus the local asymptotic is needed
 only for the positive pure source. A classical shear then identifies
@@ -36,7 +36,7 @@ The argument has five steps:
 1. The finite Newton algebra solves turn and closing constraints exactly.
    Its remaining wire lattice has fundamental cell volume one, including
    the bounded integer offsets.
-2. Canonical factorial interpolation agrees exactly with the finite
+2. An exact factorial interpolation agrees exactly with the finite
    coefficients. The strict positive maximum gives a nonzero local
    source expansion.
 3. The full-source bounds control the physical remainder and macroscopic
@@ -52,9 +52,9 @@ The argument has five steps:
 
 The local positive sum does not settle cancellation in the oscillatory
 filling. The global Fourier gap, whole-sum theorem and metric completion
-remain separate parts of the proof. Exact linear corridors can be
-contracted before choosing coordinates; no estimate substitutes for
-those proof steps.
+remain separate parts of the proof. Strings of operations linear in the same free boundary index can be
+composed as matrices before choosing coordinates. Their exact
+elimination does not replace the remaining analytic estimates.
 
 In the dependency graph, this application joins the strict variational
 result, the full-source bounds and the marked geometric filling theorem.
@@ -88,17 +88,17 @@ twists.
 ## Exports and source organization
 
 - Theorem 1.1, `ca:main`: the strict full-invariant asymptotic and volume limit.
-- Lemma 2.1, `ca:factorial`: canonical factorial interpolation, with its
+- Lemma 2.1, `ca:factorial`: exact factorial interpolation, with its
   exact shifts, reflection and all-order expansion retained.
 - The unnumbered finite-lattice saddle estimate in Section 2 applies
   first to the wire sum and then to the color Fourier sum.
-- Theorem 3.1, `ca:strict-pure`: the pure window, its physical-source
+- Theorem 3.1, `ca:strict-pure`: the restricted finite sum, its full-source
   remainder and complex color bound.
 - Proposition 3.2, `ca:Fourier-theorem`: the local Fourier expansion
   and global spectral gap.
 - Section 4 gives full-power Fourier--Hermite inversion, the midpoint
   formula, the filled remainder and the classical action comparison.
-- The same section now states shifted Fourier reconstruction and
+- The same section states shifted Fourier reconstruction and
   Parseval, the coherent full-color error bound and Lemma 4.1 on
   subexponential costs explicitly. The stationary Schur formula is
   written in the proof of Theorem 3.1. These steps need no import
@@ -106,7 +106,7 @@ twists.
 
 The introduction is a separate source file, [introduction.tex](introduction.tex),
 so the reference manuscript can include the same proof without copying it.
-The canonical factorial lemma remains available to
+The factorial interpolation lemma remains available to
 companion papers that use it independently of the volume theorem.
 
 ## Build and finite reproduction
@@ -125,4 +125,9 @@ reconstruction and the midpoint identity. It includes composite levels
 and the odd-level simple root. Its 154 power cases and 462 midpoint
 cases are finite algebra checks. They do not establish contour bounds,
 variational theorems, metric completion or the all-level asymptotic.
-The input manifest records the current consolidated companion sources.
+The input manifest records the exact companion sources used in each run.
+
+The six supporting papers and this article form the
+[dated Conway series](../conway-series.json). Its bibliographic links
+use one fixed Git edition, so the imported theorem numbers refer to
+the same texts that were checked together.

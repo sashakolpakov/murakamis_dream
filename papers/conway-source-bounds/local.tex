@@ -1,9 +1,9 @@
-\section{Uniform bounds for one actual leaf}\label{cs:local}
+\section{Uniform bounds for one twisted leaf}\label{cs:local}
 
 The difficult coefficient is a half-twisted core. Taking the absolute value of each term in \eqref{cs:half-twist} would lose the cancellation needed for its correct exponential rate. We derive a recurrence for that signed finite sum, including its endpoint condition, and then bound products of its recurrence matrices.
 
 \begin{proposition}[Leaf envelopes]\label{cs:envelopes}
-There are a sequence $e_N\to0$ and an absolute constant $C$ such that, uniformly over all physical colors and $\epsilon\in\{0,1,-1\}$,
+There are a sequence $e_N\to0$ and an absolute constant $C$ such that, uniformly for $1\le j\le N$ and $\epsilon\in\{0,1,-1\}$,
 \begin{align}
  |[e_r]C_j^\epsilon|&\le
  \exp\{N[\widetilde g(r/N)+e_N]\},&&0\le r\le M,\label{cs:core-envelope}\\
@@ -19,7 +19,7 @@ The core is zero above $M$. Moreover, if $I\subset(1/4,1/2)$ is compact and $\de
 Zero coefficients are included. No polynomial prefactor for the core is asserted at collisions of recurrence roots.
 \end{proposition}
 
-\subsection{The finite Ward identity}
+\subsection{A finite recurrence identity}
 Here $F_r=(Q;Q)_r=\prod_{a=1}^r(1-Q^a)$, $F_0=1$. For integers $0\le h,r\le M$ put
 \begin{align}
  A_{h,r}&=\sum_{v=\max(r,h)}^M
@@ -45,9 +45,9 @@ The positive sign is its complex conjugate in the real Newton basis. Thus
  \frac{N^2S_{2r}}{S_r^4}|V_{h,r}|,
  \qquad \epsilon=\pm1.
 \end{equation}
-This is the modulus of the original sum, after its phases have been combined.
+Thus the task is to bound $V_{h,r}$; taking absolute values inside its defining sum would discard the cancellation we need.
 
-Set $H=Q^h$, $Y=Q^r$ and $T_h=H+H^{-1}$. The exact finite sum satisfies
+Set $\eta_h=Q^h$, $Y=Q^r$ and $T_h=\eta_h+\eta_h^{-1}$. The exact finite sum satisfies
 \begin{multline}\label{cs:Ward}
  QY^2(1-Q^2Y)A_{h,r+2}
  +Y(T_hQ^3Y^2+Q+1)A_{h,r+1}\\
@@ -55,27 +55,27 @@ Set $H=Q^h$, $Y=Q^r$ and $T_h=H+H^{-1}$. The exact finite sum satisfies
 \end{multline}
 Absent sums above $M$ are zero. Here is an explicit telescoping proof. If $z=Q^v$, the ratio of consecutive summands of \eqref{cs:finite-A} is
 \[
- R(z)=\frac{Y^{-1}(1-Qz^2)(1+Qz)}
- {(1-Qz/H)(1-QHz)(1-Qz/Y)}.
+ \mathcal R_{h,r}(z)=\frac{Y^{-1}(1-Qz^2)(1+Qz)}
+ {(1-Qz/\eta_h)(1-Q\eta_h z)(1-Qz/Y)}.
 \]
 Use
 \[
- G_h(z)=\frac{(1-z/H)(1-Hz)(1-z/Y)}{z^2}.
+ G_h(z)=\frac{(1-z/\eta_h)(1-\eta_h z)(1-z/Y)}{z^2}.
 \]
-Expanding $R(z)G_h(Qz)-G_h(z)$ gives
+Expanding $\mathcal R_{h,r}(z)G_h(Qz)-G_h(z)$ gives
 \begin{equation}\label{cs:telescoper}
  \left(\frac1{YQ^2}-1\right)z^{-2}
- +\left(\frac1{YQ}+H+H^{-1}+\frac1Y\right)z^{-1}
- -\frac1{YQ}-1-\frac{H+H^{-1}}Y.
+ +\left(\frac1{YQ}+\eta_h+\eta_h^{-1}+\frac1Y\right)z^{-1}
+ -\frac1{YQ}-1-\frac{\eta_h+\eta_h^{-1}}Y.
 \end{equation}
 The ratio of a summand at $r+1$ to its value at $r$ is $z^{-1}-Y^{-1}$. Applying this identity twice expresses the first two $z^{-1}$ moments in terms of $A_{h,r+1}$ and $A_{h,r+2}$ and gives \eqref{cs:Ward} after clearing the displayed denominators.
 
-The endpoints vanish in this cleared form. At $v=\max(r,h)$ one of $1-z/Y$ and $1-z/H$ is zero. At the upper endpoint, multiplying the next summand by $G_h(Q^{M+1})$ first cancels the three last factorial factors; the remaining numerator contains $F_{2M+2}$ and hence $1-Q^N$. This order also covers $h=M$, where an uncanceled ratio would read $0/0$. No negative factorial or division by a zero endpoint is used. These observations prove the recurrence for $r<h$ as well as $r\ge h$.
+The endpoints vanish in this cleared form. At $v=\max(r,h)$ one of $1-z/Y$ and $1-z/\eta_h$ is zero. At the upper endpoint, multiplying the next summand by $G_h(Q^{M+1})$ first cancels the three last factorial factors; the remaining numerator contains $F_{2M+2}$ and hence $1-Q^N$. This order also covers $h=M$, where an uncanceled ratio would read $0/0$. No negative factorial or division by a zero endpoint is used. These observations prove the recurrence for $r<h$ as well as $r\ge h$.
 
 Normalizing by \eqref{cs:finite-V} and writing $Z=Q^{r+1}$ gives
 \begin{align}
  V_{h,r}&=p_{h,N}(r)V_{h,r+1}+q_N(r)V_{h,r+2},\label{cs:recurrence}\\
- p_{h,N}(r)&=-\frac{Z^{-1}[(H+H^{-1})Z^2+1+Q^{-1}]}{(1-Z)^2},\notag\\
+ p_{h,N}(r)&=-\frac{Z^{-1}[(\eta_h+\eta_h^{-1})Z^2+1+Q^{-1}]}{(1-Z)^2},\notag\\
  q_N(r)&=-\frac{Q^{-2}Z^{-2}(1-QZ^2)(1+QZ)}
  {(1-Z)^2(1-QZ)}.\notag
 \end{align}
@@ -85,10 +85,10 @@ The denominators are nonzero for $0\le r\le M-1$. At $r=M-1$, $q_N(r)=0$ at both
  =\begin{cases}1,&N\text{ odd},\\ \cos(\pi h/N),&N\text{ even}.
  \end{cases}
 \end{equation}
-Indeed $S_aS_{N-1-a}=N$. For odd $N=2M+1$ both products in the ratio equal $N$. For even $N=2m$, $M=m-1$, the numerator is $N/2$ and the denominator is $N/(2\cos(\pi h/N))$. Thus the prescribed solution is bounded by one at the upper wall throughout the physical color range. For the rate arguments it suffices to take $N\ge3$; the finite formulas still have their stated meaning at $N=2$.
+Indeed $S_aS_{N-1-a}=N$. For odd $N=2M+1$ both products in the ratio equal $N$. For even $N=2m$, $M=m-1$, the numerator is $N/2$ and the denominator is $N/(2\cos(\pi h/N))$. Thus the prescribed solution is bounded by one at the upper endpoint throughout the allowed color range. For the rate arguments it suffices to take $N\ge3$; the finite formulas still have their stated meaning at $N=2$.
 
 \subsection{Both roots of the recurrence}
-Let $T_N(r)$ be the companion matrix of \eqref{cs:recurrence}, so that
+Use the Euclidean operator norm on $2\times2$ matrices. Let $T_N(r)$ be the companion matrix of \eqref{cs:recurrence}, so that
 $(V_{h,r},V_{h,r+1})^{\mathsf t}=T_N(r)(V_{h,r+1},V_{h,r+2})^{\mathsf t}$.
 Freeze $u=(r+1)\pi/N$ and $\chi=\pi h/N$ while $Q\to1$. The limiting matrix $T_0(u,\chi)$ has eigenvalues $e^{-2\ii u}v$, where
 \begin{equation}\label{cs:ellipse-polynomial}
@@ -136,7 +136,7 @@ The recurrence implies
 \end{align}
 for $0<\delta,\beta<1/2$. We use $\log0=-\infty$ and ignore an empty index set.
 
-Here are the uniform product estimates. Fix a lower cutoff $a>0$. For $a\le u_r=(r+1)\pi/N\le\pi/2$, the exact normalized matrices
+A pointwise eigenvalue bound does not alone bound a varying matrix product. We use fixed-length blocks to obtain the required uniform estimate, as follows. Fix a lower cutoff $a>0$. For $a\le u_r=(r+1)\pi/N\le\pi/2$, the exact normalized matrices
 $B_N(r)=T_N(r)/\rho_0(u_r)$ differ by $O_a(N^{-1})$ from the bounded Lipschitz family $B(u_r,\chi)=T_0(u_r,\chi)/\rho_0(u_r)$. The factor $1-QZ$ in \eqref{cs:recurrence} stays bounded away from zero on this interval at all sufficiently large levels.
 
 For a bounded $2$ by $2$ matrix whose eigenvalues have modulus at most one, Cayley--Hamilton gives
@@ -160,7 +160,7 @@ At the omitted lower endpoint, direct estimates in \eqref{cs:recurrence} give
 \[
  \|T_N(r)\|\le C\frac{N^2}{(r+1)^2},\qquad u_r\le a<\pi/8.
 \]
-Indeed $|H+H^{-1}|\le2$, $|1-Z|\ge4(r+1)/N$, and
+Indeed $|\eta_h+\eta_h^{-1}|\le2$, $|1-Z|\ge4(r+1)/N$, and
 $|1-QZ^2|/|1-QZ|$ is bounded in this range. For at most $K\le aN/\pi$ consecutive indices the product is bounded by
 \[
  \frac{C^KN^{2K}}{(K!)^2}
@@ -172,7 +172,7 @@ Finally $\log\rho_0$ decreases to zero, so its right-endpoint Riemann sum satisf
 \[
  \sum_{j=r}^{M-1}\log\rho_0((j+1)\pi/N)\le NE(\pi r/N).
 \]
-For the global assertion first fix $a$ and $\varepsilon$, then $L$, then $N$, and finally make $a,\varepsilon$ arbitrarily small. For the strict assertion fix $I$ and its negative budget first; choose $a\log(1/a)$ and $\varepsilon$ below that budget, then $L$, and finally $N$. Combining \eqref{cs:terminal} with these estimates proves \eqref{cs:global-V} and \eqref{cs:strict-V}. Both branches, including their collisions, have been bounded.
+For the global assertion first fix $a$ and $\varepsilon$, then $L$, then $N$, and finally make $a,\varepsilon$ arbitrarily small. For the strict assertion fix $I$ and its negative contribution first; choose $a\log(1/a)$ and $\varepsilon$ below that contribution, then $L$, and finally $N$. Combining \eqref{cs:terminal} with these estimates proves \eqref{cs:global-V} and \eqref{cs:strict-V}. The argument bounds the whole two-dimensional recurrence, including coincident roots.
 
 The prefactor in \eqref{cs:exact-modulus} has rate $g(x)$ by \eqref{cs:factorial}, and
 \begin{equation}\label{cs:plateau}

@@ -1,23 +1,30 @@
 \section{Exact evaluation of a marked diagram}
 \label{de:section}
 
-The local polynomial now has a global interpretation. A variable belongs
-to a face of the diagram, so all its occurrences at different boxes
-must be identified before a coefficient is taken. We prove that this
-shared coefficient is the reduced tensor evaluation, including its
-single marked cap. No positivity or limiting estimate enters the proof.
+We now assemble the four-variable polynomials into one diagram
+evaluation. The construction begins with a triangulated sphere; its
+matched pairs of triangles specify the two-strand boxes. Each face
+receives one variable, used in every box incident to that face. The
+theorem identifies the reduced tensor contraction with one coefficient
+of the resulting product. In particular, its proof must account for
+the bends of the strands and for the single marked cap used in the
+reduction. Everything in this section is an equality at a fixed level.
 
 \subsection{The ordered diagram and the coefficient theorem}
 
 Throughout this section \(N\ge3\), \(d=N-1\),
 \(q=e^{\pi i/N}\), \(Q=q^2\), and \(x_0=q^d\).
 Start with a finite connected triangulation of the oriented sphere and
-a perfect matching of its cubic dual. We allow a triangular
+a perfect matching of its cubic dual. The dual has one vertex for
+each triangle and one edge for each shared side; a perfect matching
+chooses exactly one incident dual edge at every dual vertex. We allow a triangular
 cellulation, but require that the two triangles at each matching edge
 form an embedded quadrilateral disk with four distinct vertices.
 There are \(2R\) triangles, \(R\) matching edges and \(R+2\) vertices.
-The vertices will be called \emph{white faces}, because they index the
-complementary regions in the diagram below.
+The vertices of the triangulation index complementary regions of the
+diagram below. Following the usual checkerboard terminology, we call
+these regions \emph{white faces}; the term never denotes a triangular
+two-cell of the original triangulation.
 
 Contract a small disk around each matched dual edge and its endpoints.
 The disks are disjoint, and the resulting embedded graph \(\Gamma\)
@@ -30,37 +37,41 @@ white faces have cyclic order
 the matching diagonal is \(xy\). The coherently oriented triangles
 can be written \((x,b,y)\) and \((y,c,x)\). The polynomial of this box
 is \(H_f(x,b,c,y)\): \(b\) is its input middle face and \(c\) its
-output middle face.
+output middle face. Here the letters name positions around the box.
+When boxes are assembled, they will be replaced by the variables
+$L_f$ belonging to their respective global faces.
 
 Here is the terminal convention. Write the four terminals as
 \(C_0,C_1,C_2,C_3\) in cyclic order, with input terminals
 \(C_1,C_2\) and output terminals \(C_0,C_3\). The matching halves
-group \((C_1,C_2)\) and \((C_3,C_0)\); the untwisted physical
+group \((C_1,C_2)\) and \((C_3,C_0)\); the untwisted
 strands pair \((C_0,C_1)\) and \((C_2,C_3)\). These are different
 pairings. When side indices \(0,1,2,3\) are used for a quadrilateral,
 as in an annular braid drawing, they denote
 \[
                  (C_1,C_2,C_3,C_0),
 \]
-respectively. In those indices the physical pairs are \((0,3)\)
+respectively. In those indices the strand pairs are \((0,3)\)
 and \((1,2)\), and the matching halves are \((0,1)\) and \((2,3)\).
 
 Draw the two untwisted strands in each disk and join them along the
 uncontracted dual edges. The outside arcs are disjoint. They can be
 made Morse with respect to height, keeping the disk parametrizations
-fixed, so that each maximum or minimum is an ordinary cap or cup.
+fixed: they have finitely many nondegenerate maxima and minima, each
+represented by an ordinary cap or cup.
 Place the specified two-strand operator in each disk. A crossing
 power uses the checked crossing of Proposition~\ref{fb:crossing-polynomial};
 an arbitrary polynomial in the Casimir is also allowed. The local
 frames are part of the data and are not reset when an arc is bent.
 
-This construction is a literal planar tensor diagram. If crossing
+These choices specify a planar tensor contraction. If crossing
 circles are desired, place one perpendicular circle around the two
 strands in each disjoint three-ball about a disk. Its crossing disk
 meets precisely those two strands. Thus the corresponding augmented
 link is embedded in \(S^3\); no geometric realization assumption is
-needed for the finite evaluation. An arbitrary polynomial coupon
-itself need not be a braid or define a knot.
+needed for the finite evaluation. The more general polynomial operator need not be a braid and need
+not define a knot. We use the word \emph{coupon}, when needed, for
+a disk containing such an operator, with its ordered inputs and outputs.
 
 \begin{figure}[ht]
  \centering
@@ -68,7 +79,7 @@ itself need not be a braid or define a knot.
  \caption{The ordered box has cyclic face order \((x,b,y,c)\) and
  polynomial \(H_f(x,b,c,y)\). Its two inputs are \(C_1,C_2\), and
  its outputs are \(C_0,C_3\). The matching diagonal \(xy\) is not a
- physical strand. On a supported state the displayed head satisfies
+ strand. If the first input has basis index $i$, it satisfies
  \(i-d/2=\lambda_x-\lambda_b\); this fixes the sign of the face
  potential. The alternative side numbering \(0,1,2,3\) refers to
  \(C_1,C_2,C_3,C_0\).}
@@ -85,7 +96,7 @@ a spherical graph is a bridge.
 
 The matrices defining the turns and mark are given below. Let
 \(A_{\rm raw}(f_1,\ldots,f_R)\) be their contraction, with exactly
-one marked cap and with the full operators \(f_e(\Omega)\) in the
+one marked cap and with the operators \(f_e(\Omega)\) in the
 recorded boxes. Each \(f_e\) is a finite polynomial; its coefficients
 may depend on \(N\) and on other parameters. In particular it may
 already include a signed crossing power through
@@ -99,7 +110,7 @@ Every local factor is homogeneous of degree \(d\), so
 
 \begin{theorem}[The exact marked face coefficient]
 \label{de:coefficient-theorem}
-For the stated ordered diagram and the full polynomial coupons,
+For the stated ordered diagram and polynomial operators,
 \begin{equation}\label{de:coefficient}
  A_{\rm raw}(f_1,\ldots,f_R)
  =\left[\prod_{f\ne a,b}L_f^d\right]
@@ -113,8 +124,12 @@ local polynomial onto selected monomials.
 \end{theorem}
 
 We prove the theorem in several finite steps. The first concerns
-the reduced cut; the remaining steps turn its state sum into the
-displayed coefficient.
+the reduced cut. We then express strand indices as differences of
+face potentials, including the half-integer shift at even $N$.
+The cup and cap factors combine by a winding calculation. Finally,
+orthogonality of characters on the finite face grids extracts the
+displayed coefficient. These steps explain both the target exponent
+and its normalization.
 
 \subsection{Duality, turns and the unrestricted mark}
 
@@ -159,7 +174,7 @@ In the given self-dual frame it is exactly the double-dual map:
  \frac{c_i(z)}{c_{L-i}(z)}=(-1)^Lz^{L-2i}.
 \]
 At \(z=q\), every integral weight satisfies \(q^{-NH}=(-1)^H\).
-Thus the generic pivot specializes to the physical root pivot
+Thus the generic pivot specializes to the root-of-unity pivot
 \begin{equation}\label{de:pivot}
                        g=K^{1-N}.
 \end{equation}
@@ -175,8 +190,10 @@ Take \(L=d\) and pass to the balanced basis
 follows from \((Q;Q)_d=N\) and
 \(1-Q^{-j}=-Q^{-j}(1-Q^j)\).
 Since \(c_i(q)=q^{i^2}\), the factorials in \(J_q\) therefore
-cancel exactly. If the first tensor factor below is a dual factor,
-denote it by a superscript \(\vee\). The four ordered turns are
+cancel exactly. On the dual space we use the transported basis
+\(e_a^\vee=J_qe_a\), rather than the coordinate dual basis \(e_a^*\).
+This distinction accounts for the antidiagonal support in the following
+evaluation and coevaluation maps. The four ordered turns are
 \[
 \begin{aligned}
  \operatorname{ev}_L(e_a^\vee\otimes e_b)
@@ -199,7 +216,7 @@ index; its \(x_0\) and \(g\) factors cancel. This proves all four
 snake identities. Closing an endomorphism by the corresponding
 ordinary turns gives the pivotal trace \(\operatorname{Tr}(gA)\).
 
-In literal left-to-right physical head order \((i,j)\), both cups
+In left-to-right order of the two strand indices \((i,j)\), both cups
 and both caps reduce to
 \begin{equation}\label{de:root-turns}
  p_{ij}=Nq^{-d^2+di}\mathbf1_{i+j=d},
@@ -208,10 +225,13 @@ and both caps reduce to
 \end{equation}
 For example the right-cap ratio to the stated cap is
 \(q^{-2Ni}=1\), and the right-cup ratio is
-\(q^{2N(d-i)}=1\). These are equalities of the actual turn matrices,
+\(q^{2N(d-i)}=1\). These are equalities of the displayed turn matrices,
 not independent rescalings of the local frames.
 
-Define the rank-one projector \(e=\psi\phi\) by
+The marked cap extracts the scalar of an open one-strand tangle.
+Unlike an ordinary pivotal closure, it does not multiply this scalar
+by the vanishing quantum dimension \([N]_q\). To specify it, define
+the rank-one projector \(e=\psi\phi\) by
 \(\psi_i=1\), \(\phi_i=1/N\), so \(e^2=e\) and
 \(\operatorname{Tr}e=1\). At a right cut insert \(g^{-1}e\)
 on the primal input. For every matrix \(C\),
@@ -219,8 +239,8 @@ on the primal input. For every matrix \(C\),
                  \operatorname{Tr}(g\,g^{-1}eC)
                            =\operatorname{Tr}(eC).
 \]
-At a left cut use the corresponding defect \(ge\). In physical
-left-to-right order the resulting marked rows are
+At a left cut use the corresponding defect \(ge\). In
+left-to-right strand order the resulting marked rows are
 \begin{equation}\label{de:unrestricted-mark}
  m_R(i,j)=\frac{x_0^j}{N^2},\qquad
  m_L(i,j)=\frac{x_0^i g_{d-i}}{N^2}.
@@ -234,7 +254,7 @@ support restriction.
 
 Each complete marked cup-cap contraction is one. In a whole
 closed diagram with one marked cap, conservation forces the
-marked heads to satisfy \(i+j=d\): each box preserves the true
+marked indices to satisfy \(i+j=d\): each box preserves the true
 integer sum of its two indices, every cup supplies \(d\), and
 every other cap consumes \(d\). On this forced support both
 rows in \eqref{de:unrestricted-mark} equal
@@ -299,7 +319,7 @@ and all original matrices are regular at \(q\). For the
 crossing this regularity was proved in
 Proposition~\ref{fb:crossing-polynomial}; its inverse is regular
 as well because its root value is invertible. Thus
-\eqref{de:spherical-traces} specializes to the actual diagram.
+\eqref{de:spherical-traces} specializes to the root-of-unity diagram.
 No decomposition or projection onto the generic irreducible
 summands is specialized.
 
@@ -320,7 +340,7 @@ remaining compact drawing. Its tip is a top cap; the strip
 introduces no crossing or extra component. The inside face is
 still \(b\). Perturb the other arcs to make their turns Morse.
 
-Leave the new cap open. After the actual cup identification,
+Leave the new cap open. After using the stated cup identification,
 the remaining diagram is an endomorphism of \(V_d\) or its dual.
 Generically it is a scalar \(a(z)I\): commuting with the distinct
 \(K\) weights makes it diagonal, and commuting with the nonzero
@@ -345,23 +365,25 @@ its true cups and duality, and then identifies its reduced scalar.
 \subsection{The affine face lattice and the true support}
 
 We describe the state space before evaluating the turn factors.
-For a vertical head separating a left face \(f\) from a right
-face \(g\), use the convention
+Assign a basis index \(i\in\{0,\ldots,d\}\) to each monotone strand
+segment. We shall express its centered index \(i-d/2\) as a difference
+of face potentials \(\lambda_f\). For a vertical segment separating
+a left face \(f\) from a right face \(g\), the convention is
 \begin{equation}\label{de:centered-flow}
  i-\frac d2=\lambda_f-\lambda_g,\qquad
  L_f=\exp(2\pi i\lambda_f/N).
 \end{equation}
-At the first input of a box this reads
+At the first input of a box this gives
 \(Q^i=q^dL_x/L_b=-q^{-1}L_x/L_b\), exactly the first
-clock in the local Fourier proof. At the other input the ratio
+eigenvalue of the diagonal index operator in the local Fourier proof. At the other input the ratio
 is \(q^dL_b/L_y\); the two output ratios use \(c\) in place of
-\(b\). Reversing an arc replaces its head \(i\) by \(d-i\),
+\(b\). Reversing an arc replaces its index \(i\) by \(d-i\),
 so its centered value changes sign.
 
-A physical state on the unmarked diagram is a choice of canonical
-heads \(0,\ldots,d\). At a turn the heads sum to \(d\); at every
-box the two input heads have the same integer sum as the two
-output heads. Centered heads thus define an antisymmetric flow
+A state on the unmarked diagram is a choice of these indices in
+\(\{0,\ldots,d\}\) on all strand segments. At a turn the indices sum to \(d\); at every
+box the two input indices have the same integer sum as the two
+output indices. Centered indices thus define an antisymmetric flow
 on the edges of \(\Gamma\), with zero divergence at each vertex.
 Equivalently, they give a closed cochain on the dual face graph.
 
@@ -378,9 +400,9 @@ path independence. Connectedness gives uniqueness. Integration
 uses only addition and subtraction, so it introduces no finite
 index or determinant factor.
 
-For odd \(N\), the centered heads are integral. Fix
+For odd \(N\), the centered indices are integral. Fix
 \(\lambda_a=0\); their potentials are then integers. For even
-\(N\), twice every centered head is odd. The corresponding
+\(N\), twice every centered index is odd. The corresponding
 parity cochain equals one on each main edge and zero on a
 matching diagonal: the boundary of each triangle has two
 main edges. It is closed, and the same spherical argument over
@@ -397,7 +419,7 @@ potentials have the form
 \end{equation}
 For odd \(N\), use \(t_f=0\) throughout. These affine lattices are
 nonempty: the potential \(t_f/2\) itself gives centered flow
-\((t_f-t_g)/2\), and its heads lie in the physical range.
+\((t_f-t_g)/2\), and the resulting strand indices lie in $\{0,\ldots,d\}$.
 The difference of any two lifts is an integral face potential.
 
 Reduce the \(p_f\) modulo \(N\), with \(p_a=0\). There are exactly
@@ -405,26 +427,26 @@ Reduce the \(p_f\) modulo \(N\), with \(p_a=0\). There are exactly
 \begin{equation}\label{de:face-grid}
  L_a=1,\qquad L_f=q^{t_f}Q^{p_f}\quad(f\ne a).
 \end{equation}
-At every such point take the canonical head representing
+At every such point take the unique index in $\{0,\ldots,d\}$ representing
 \(d/2+\lambda_f-\lambda_g\) modulo \(N\). At a turn the
 congruence \(i+j=d\pmod N\) forces the equality \(i+j=d\):
 neither \(d-N=-1\) nor \(d+N=2N-1\) lies in \([0,2d]\).
 
 At a box the residue total need not determine the true integer
-total. This is the place where physical support is essential.
-The local Fourier proposition expresses the actual residue
+total. The equality of integer totals, rather than only their residues, is essential here.
+Proposition~\ref{prop:local-face-fourier} expresses each residue
 block as a direct sum of its true-total blocks. Hence if the
-canonical input and output totals differ, the matrix entry
+input and output totals as integers differ, the matrix entry
 vanishes, and \eqref{uf:physical-local-adapter} implies
 \begin{equation}\label{de:unsupported-zero}
                     H_{f_e}(L_x,L_b,L_c,L_y)=0
 \end{equation}
 at that grid point. The prefactor there is nonzero.
 
-If no box violates the true total, the canonical heads form the
+If no box violates the true total, these strand indices form the
 closed centered flow just described. Integrating it gives unique
 exact potentials with \(\lambda_a=0\), and they reduce to the
-given grid point. Conversely every supported canonical state
+given grid point. Conversely every supported strand state
 gives one grid point by this integration. Additional zeros of
 a coupon merely give zero weight on both sides. We have proved
 a bijection between supported states and supported grid points,
@@ -474,7 +496,7 @@ occurrence of a face is counted, and no restriction on the
 relative heights of different boxes was used.
 
 At a cup or cap with outside face \(o\) and inside face \(z\),
-the first head satisfies
+the first index satisfies
 \[
  q^{di}=q^{d^2/2}(L_o/L_z)^{d/2}.
 \]
@@ -524,12 +546,12 @@ At this exponent the even-coset character is exactly one.
 The \(N^{R+1}\) grids cancel the denominator in
 \eqref{de:marked-summand}. This proves
 Theorem~\ref{de:coefficient-theorem}, with both parities and the
-entire normal data of every coupon retained.
+values and first derivatives of every polynomial operator retained.
 
 \subsection{Insertion of signed powers after the shared extraction}
 
-The preceding theorem is an equality for full polynomial
-operators. It may therefore be combined with resolvent
+The preceding theorem is an equality for polynomial
+operators in the quotient algebra. It may therefore be combined with resolvent
 reproduction before any estimate is taken. Define
 \begin{equation}\label{de:shared-numerator}
  S_N(\boldsymbol\sigma)=
@@ -543,7 +565,7 @@ Each spectral degree is at most \(d\). The extraction and
 multiplication in \eqref{de:shared-numerator} take place in the
 same face variables as in the original diagram.
 
-\begin{corollary}[Exact filling of the marked source]
+\begin{corollary}[Exact insertion of crossing powers]
 \label{de:exact-filling}
 For any fixed signed integer powers \(n_1,\ldots,n_R\), the
 raw marked evaluation with \(B_q^{n_e}\) in box \(e\) is
@@ -862,8 +884,8 @@ are exactly those already computed in
 \eqref{de:root-turns}--\eqref{de:mark-on-support}.
 For the same framed tangle, its planar ribbon reading and its
 braid reading evaluate the same specified ribbon invariant.
-The actual reduced cut is independent of its exposed edge by
-the preceding source proof.
+The reduced cut is independent of its exposed edge by
+the proof of Theorem~\ref{de:coefficient-theorem}.
 
 For a knot, correcting an integer framing multiplies the raw
 scalar by the corresponding power of the unit \(\theta\);

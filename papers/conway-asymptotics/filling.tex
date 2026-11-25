@@ -9,12 +9,23 @@ even powers.
 
 \subsection{Fourier orthogonality with repeated-root derivatives}
 
-Write $\mathscr P_N(\sigma)=2T_N(\sigma/2)+2$ for the monic root polynomial and
+Let $T_N$ be the Chebyshev polynomial determined by
+$T_N(\cos\theta)=\cos(N\theta)$. The monic polynomial
+$\mathscr P_N(\sigma)=2T_N(\sigma/2)+2$ has roots $c_k$, where
 \[
  w_k=q^{2k+1},\qquad c_k=w_k+w_k^{-1},\qquad 0\le k\le d.
 \]
-Its repeated roots remain repeated. In the full quotient
-$\mathbb C[\sigma]/(\mathscr P_N)$ the normalized crossing $r_N=\kappa^{-1}R$ has
+The crossing is represented in the polynomial quotient
+$\mathbb C[\sigma]/(\mathscr P_N)$. This retains the multiplicities
+of the roots. For instance, at $N=3$,
+$\mathscr P_3(\sigma)=(\sigma-1)^2(\sigma+2)$. A class is
+specified by $f(1),f'(1),f(-2)$, rather than just its values at the
+two distinct roots. Algebraically the component at the double root
+contains an element $u$ with $u^2=0$, and
+$f(1+u)=f(1)+f'(1)u$. Dropping the derivative would discard part
+of the crossing operator.
+
+In this quotient the normalized crossing $r_N=\kappa^{-1}R$ has
 \begin{equation}\label{ca:crossing-data}
  r_N(c_k)=(-1)^kq^{k(k+1)},\qquad
  (w\partial_w)r_N(w+w^{-1})\big|_{w=w_k}
@@ -22,7 +33,9 @@ $\mathbb C[\sigma]/(\mathscr P_N)$ the normalized crossing $r_N=\kappa^{-1}R$ ha
 \end{equation}
 At a double root the value and derivative are both needed to specify
 a polynomial modulo $\mathscr P_N$. The second formula records that
-derivative in the coordinate $w$. At the odd-level simple root
+derivative in the coordinate $w$: it equals
+$(w_k-w_k^{-1})r_N'(c_k)$, and $w_k-w_k^{-1}\ne0$ at a
+double root. At the odd-level simple root
 $w_k=-1$ it is zero and imposes no extra condition. These data are
 proved in \cite[Proposition 5.1]{Finite} and
 \cite[equation (4.8)]{Newton}. Since every value is nonzero, the
@@ -39,32 +52,43 @@ Put
  D_a=\frac1N\sum_{k=0}^d d_kw_k^{-a}.
 \end{gathered}
 \]
-Here $d_k$ is a normal datum, not the level shift $d$.
-For $\mathsf C_a(w+w^{-1})=w^a+w^{-a}$, write
-$f_{N,n}=a_0+\sum_{a=1}^d a_a\mathsf C_a$. Discrete Fourier inversion on $w_k^N=-1$ gives
+Here $d_k$ is the value of $(w\partial_w)r_N^n$ at $w_k$; the
+unsubscripted $d=N-1$ still denotes the level shift. All sums in this
+subsection run from $0$ to $N-1$ unless another range is shown.
+For $a\ge1$, define the polynomial $\mathsf C_a$ by
+$\mathsf C_a(w+w^{-1})=w^a+w^{-a}$, and write
+$f_{N,n}=a_0+\sum_{a=1}^d a_a\mathsf C_a$.
+These $a_a$ are scalar polynomial coefficients, distinct from the
+function $a_0(t)$ in Theorem~\ref{ca:strict-pure}. Discrete Fourier inversion on $w_k^N=-1$ gives
 \begin{equation}\label{ca:Hermite-inverse}
  a_0=H_0,\qquad
  a_a=\frac{D_a+(N-a)H_a}{N}\quad(1\le a<N).
 \end{equation}
-Indeed the value and normal equations are
+Indeed, the Fourier transforms of the value and derivative equations
+are
 $H_a=a_a-a_{N-a}$ and
 $D_a=a\,a_a+(N-a)a_{N-a}$. When $N$ is even and $a=N/2$, the first equation is identically zero and the second still recovers the coefficient. At odd $N$ the simple node has only its value. These equations therefore recover the whole quotient, not just its distinct-root values.
 
-Since
-$\mathsf C_a=U_a(\sigma/2)-U_{a-2}(\sigma/2)$ for $a\ge1$,
-with $U_{-1}=0$, set $a_N=a_{N+1}=0$ and
+Let $U_j$ be the Chebyshev polynomial of the second kind,
+$U_j(\cos\theta)=\sin((j+1)\theta)/\sin\theta$, and put $U_{-1}=0$.
+Since $\mathsf C_a=U_a(\sigma/2)-U_{a-2}(\sigma/2)$ for $a\ge1$,
+set $a_N=a_{N+1}=0$ and
 \begin{equation}\label{ca:beta}
  \beta_j^{n/2}=(-1)^j(a_j-a_{j+2}),\qquad0\le j<N.
 \end{equation}
-The superscript is a parameter and need not be an integer. The actual circles
-$L_{j+1}=(-1)^jU_j(\sigma/2)$ satisfy the exact physical identity
+The superscript $n/2$ is a label, rather than an exponent; odd $n$
+is allowed. A circle of color $j+1$ surrounding the two strands
+represents $L_{j+1}=(-1)^jU_j(\sigma/2)$ by
+\cite[Proposition 4.1]{Newton}. Consequently the operator identity is
 \begin{equation}\label{ca:crossing-split}
  R^n=\kappa^n\sum_{j=0}^{d}\beta_j^{n/2}L_{j+1},
  \qquad
  \sum_{j=0}^{d}|\beta_j^{n/2}|
        \le 2\sqrt N(1+|n|/\sqrt{12}).
 \end{equation}
-The norm bound follows from orthogonality. For any real shift $\alpha$,
+The norm bound follows from the ordinary Hermitian inner product on
+arrays in $\mathbb C^N$. It does not require a positive inner product
+for the tangle representation. For any real shift $\alpha$,
 put $u_k=e^{2\pi\ii(k+\alpha)/N}$. The finite character sum gives
 \[
  \frac1N\sum_{k=0}^{N-1}u_k^{a-b}=\mathbf1_{a=b}
@@ -88,8 +112,8 @@ characters. Taking $\alpha=1/2$ gives $u_k=w_k$, and therefore
 In \eqref{ca:Hermite-inverse} the $H$ part is a diagonal
 contraction, while the $D$ part is divided by $N$ and its zeroth
 coordinate is omitted. Thus
-$\|a\|_2\le1+|n|/\sqrt{12}$. The truncated shift
-$(a_j)\mapsto(a_{j+2})$ has norm at most one, so
+$\|a\|_2\le1+|n|/\sqrt{12}$. Here $\|a\|_2^2=\sum_{j=0}^d|a_j|^2$. The truncated shift
+$(a_j)\mapsto(a_{j+2})$ has operator norm at most one, so
 $\|\beta\|_2\le2\|a\|_2$; Cauchy--Schwarz gives
 \eqref{ca:crossing-split}. This includes the derivative data and
 both parities. The identity is then inserted at each disk in the
@@ -97,7 +121,7 @@ diagram, without interchanging distinct boxes.
 
 \subsection{The midpoint identity and all its Fourier modes}
 
-Let $C_N(t)$ be the even strict pure corridor of
+Let $C_N(t)$ be the restricted, even holomorphic sum of
 Theorem~\ref{ca:strict-pure}, with one variable for the moment, and let
 $\mathcal F_N(z)=\sum_{|h|\le H_N^{\rm cut}}C_N(h/N)e^{2\pi\ii hz}$.
 Put
@@ -127,7 +151,9 @@ To see the endpoint multiplicity directly, for $h\ge1$ the summand before this p
  \sum_k e^{\pi\ii nNz_k^2+2\pi\ii h z_k}
  \{(nNz_k+h)\sinh(2\pi\ii z_k)+\cosh(2\pi\ii z_k)\}.
 \]
-For $h=0$ it is half this expression. The symmetric Fourier polynomial has two terms at $h\ne0$ and one at zero, exactly as required by \eqref{ca:midpoint}. Its derivative includes the original normal term $nNz_k$; omitting that term would give a different functional.
+For $h=0$ it is half this expression. The symmetric Fourier polynomial has two terms at $h\ne0$ and one at zero, exactly as required by \eqref{ca:midpoint}. The term $nNz_k$ comes from the derivative data of the crossing.
+It is present in the derivative of the Gaussian in $U_N$, so the
+midpoint identity retains it automatically.
 
 Both endpoint values of $U_N$ vanish, and
 $U_N'(1/2)=U_N'(-1/2)$. Its periodically extended derivative is continuous and piecewise smooth. Two integrations by parts give an absolutely summable Fourier series for each fixed $N$. Midpoint selection and a further integration by parts yield
@@ -138,10 +164,13 @@ $U_N'(1/2)=U_N'(-1/2)$. Its periodically extended derivative is continuous and p
  e^{\pi\ii nNz^2-2\pi\ii mNz}
  \sinh(2\pi\ii z)\mathcal F_N(z)\dd z.
 \end{equation}
-The zero charge is absent because the original endpoint values vanish. This is an exact convergent identity at each $N$, not yet an estimate of a tail as $N$ grows.
+The integers $m$ here are Fourier indices, also called charges.
+The index zero is absent because the endpoint values of $U_N$ vanish.
+The series converges at each fixed $N$. A uniform bound as $N$ grows
+requires the estimates in \cite{Filling}, not merely this convergence.
 
-Apply this identity in all $b$ color registers and restore
-$\kappa^{\sum n_\ell}$ from \eqref{ca:crossing-split}. Change $m_\ell$ to $-\ell_\ell$ and use $\sinh(2\pi\ii z)=\ii\sin(2\pi z)$. The resulting corridor evaluation is
+Apply this identity in all $b$ color variables and restore
+$\kappa^{\sum n_\ell}$ from \eqref{ca:crossing-split}. Change $m_\ell$ to $-\ell_\ell$ and use $\sinh(2\pi\ii z)=\ii\sin(2\pi z)$. The resulting filled evaluation of the restricted sum is
 \begin{equation}\label{ca:generic-period}
  (-1)^{bd}\mathcal I_N(\mathbf n),
 \end{equation}
@@ -175,9 +204,21 @@ For $C_0=0$ the cost vanishes. Neither step divides by a source
 budget or takes its logarithm, so zero budgets cause no exception.
 \end{proof}
 
-To apply the lemma, let $D_N(j)$ be the full source error on the
-physical tuple $j\in\{0,\ldots,d\}^b$, and suppose
-$|D_N(j)|\le B_N$ for every such tuple. After removing the common
+Here is the error array to which the lemma applies. If
+$j\in\{0,\ldots,d\}^b$, the actual circle colors are $j_\ell+1$
+and their deficits are $h_\ell=d-j_\ell$. Define
+\[
+ D_N(j)=\mathcal A_N(\mathbf h)-\widetilde C_N(\mathbf h),\qquad
+ \widetilde C_N(\mathbf h)=
+ \begin{cases}
+ C_N(\mathbf h/N),&0\le h_\ell\le H_N^{\rm cut}\text{ for all }\ell,\\
+ 0,&\text{otherwise}.
+ \end{cases}
+\]
+Choose $\gamma_*>0$ smaller than both the local source-error gap
+and the gap for deficits outside this cube. The latter follows from
+Theorem~\ref{ca:strict-pure}, with the cutoff reduced if necessary.
+Then $|D_N(j)|\le B_N=e^{N(F_0-\gamma_*)}$ for all large $N$. After removing the common
 phases of modulus one, its filled error is the coherent sum
 \begin{equation}\label{ca:coherent-error}
 \begin{aligned}
@@ -191,29 +232,54 @@ The second line follows by the triangle inequality and factoring the
 finite sum of products. The source bound is shared by all color tuples;
 no color is chosen independently before closing the diagram.
 
-Before using any asymptotic theorem, \eqref{ca:crossing-split} and
-Theorem~\ref{ca:strict-pure} show that replacing the full physical source by this corridor changes its filled value by at most
+Combining \eqref{ca:coherent-error} with the coefficient bound
+\eqref{ca:crossing-split}, the replacement of the full evaluation
+by the restricted sum changes its filled value by at most
 \begin{equation}\label{ca:filled-error}
  \prod_j2\sqrt N(1+|n_j|/\sqrt{12})\ e^{N(F_0-\gamma_*)}
 \end{equation}
-for a fixed $\gamma_*>0$. The source error and macroscopic-color errors were bounded before extending colors by evenness. Thus an alias is never silently folded as though it were even. For fixed $\mathbf n$, the displayed prefactor is polynomial in $N$.
+The error array is evaluated only at its nonnegative integer deficits.
+Its proof uses no even extension of the full source. Evenness has been
+used only to form $\mathcal F_N$ from $C_N$. For fixed $\mathbf n$,
+the displayed prefactor is polynomial in $N$, and hence does not alter
+the strict exponential gap.
 
 \subsection{The nonzero leading term of the filled invariant}
 
-Proposition~\ref{ca:Fourier-theorem} verifies every analytic input of
-\cite[Theorem 1.1]{Filling} for this exact polynomial. Its separate degree is at most $d$. In the notation of that theorem take
+Apply \cite[Theorem 1.1]{Filling} to $\mathcal F_N$.
+The trigonometric polynomial called $C_N$ in that paper is
+$\mathcal F_N$ here; it is not the earlier sum over internal indices.
+Its separate degree is at most $d$. Proposition~\ref{ca:Fourier-theorem}
+verifies the local expansion and the bound on the rest of the torus.
+The remaining translation of notation is
 \[
  \alpha=3/2+b/2,\qquad \varepsilon_N=1,\qquad
  A_N=\Psi_0,\qquad a_N=B,\qquad c_j=\pi/X_j.
 \]
-The action is real on the real polydisk; the global gap is for the whole polynomial on the entire shared cube and a fixed complex strip. Polynomial factors in \eqref{ca:Fourier-global} are absorbed into half its strict gap. Thus the theorem controls all distant integer charges, their paired endpoint currents, and all remaining finite nonlocal charges. These controls are part of the imported whole-sum theorem, not an assertion that convergence of \eqref{ca:period} alone suffices.
+The phase $\Psi_0$ is real on the real polydisk, and its Hessian
+is $-2\diag(c_1,\ldots,c_b)$ as required. The global bound holds
+on a fixed complex strip, with polynomial factors absorbed into half
+its exponential gap. The cited theorem estimates the whole series
+\eqref{ca:period}. In particular, it controls the infinitely many
+Fourier indices, pairs their endpoint contributions before estimating
+them, and shows that the contributions with all $|\ell_j|=1$
+add with a nonzero coefficient.
 
 Its nonzero leading expression, multiplied by \eqref{ca:generic-period}, has parity factor
 $(-1)^{bd+(N+1)b}=1$. Its power of $N$ is
 $\alpha-b/2=3/2$. The local phase and amplitude are independent of $N$ here, so the theorem's finite critical action is exactly $S_{\mathbf n}$, not merely a sequence converging to it. It gives
-\eqref{ca:asymptotic}--\eqref{ca:D} for the corridor. Also
+\eqref{ca:asymptotic}--\eqref{ca:D} for the restricted sum. Also
 $F_0-\Re S_{\mathbf n}=O(\sum n_j^{-2})$ with no ratio constraint.
-Increase a fixed threshold on the independent $|n_j|$ until this loss is smaller than $\gamma_*/2$. Then \eqref{ca:filled-error} is exponentially below the nonzero leading term. This proves the same relative asymptotic for the whole original evaluation.
+Increase a fixed threshold on the independent $|n_j|$ until this loss is smaller than $\gamma_*/2$. Then \eqref{ca:filled-error} is exponentially below the nonzero leading term. Thus it is absorbed into the relative $O_{\mathbf p}(N^{-1})$
+error, giving the same asymptotic for the full knot evaluation.
+
+Nonvanishing is worth making explicit. The amplitude $B$ is nonzero
+near zero. If a coordinate of $z_{\mathbf n}$ were zero, separate
+evenness of $\Psi_0$ would make the corresponding derivative of
+$T_{\mathbf n}$ equal to $2\pi\ii$, contrary to criticality.
+The coordinates are small, so none is another zero of
+$\sin(2\pi z_j)$. The Gaussian Hessian is nonsingular by the filling
+theorem. Every factor in \eqref{ca:D} is therefore nonzero.
 
 \subsection{The critical action is the knot-complement volume}
 
@@ -250,13 +316,23 @@ The envelope rule and the local formula give the exact identities
        -\sum_j\frac{\epsilon_j}{4\pi\ii}
                          [\partial_{t_j}\Phi_0(t)]^2.\label{ca:global-shear}
 \end{align}
-The right side is an identity of functions, not merely of their
+The coordinate change is locally invertible, since
+\[
+ D_t\chi(0)=\diag(1-\epsilon_j\ii X_j)_{j=1}^b
+\]
+has no zero diagonal entry. The right side of
+\eqref{ca:global-shear} is an identity of functions, not merely of their
 derivatives. It fixes the additive constant and every
 color-dependent term. By its construction it is the cell potential
 of \cite[Theorem 1.3]{StrictGeometry}, for the same original
 expression, disk framings and retained half twists.
 
-For the Fourier Legendre functions, \eqref{ca:global-shear} gives
+Define the Legendre transform of the sheared action in the same way
+as before: choose $\chi(z)$ satisfying
+$\nabla_\chi\Phi_\epsilon^{\rm cl}(\chi)+2\pi\ii z=0$, and put
+$\Psi_\epsilon^{\rm cl}(z)=\Phi_\epsilon^{\rm cl}(\chi(z))+
+2\pi\ii\chi(z)\cdot z$. Its derivative variable is unchanged by
+the shear. Substituting \eqref{ca:global-shear} gives
 \begin{equation}\label{ca:Legendre-shear}
  \Psi_\epsilon^{\rm cl}(z)=\Psi_0(z)+\pi\ii\sum_j\epsilon_jz_j^2,
  \qquad \chi=t+\epsilon z,
@@ -278,26 +354,36 @@ Substitution into the Legendre expression gives exactly
        +\frac{\pi\ii}{2}\sum_j\frac{(\chi_j-1)^2}{p_j}.
  \label{ca:classical-action}
 \end{align}
-The primitive similarity logarithms in that theorem are
+For clarity, the peripheral variables in the geometry theorem are
+logarithms of the complex dilation multipliers of the cusp
+holonomies along $\mu_j$ and $\lambda_j$. A similarity acts as
+$u\mapsto a u+b$ on a horospherical plane, and its similarity
+logarithm means a chosen branch of $\log a$. Both branches vanish
+at the complete metric. With the primitive meridian and disk-longitude
+basis fixed in the introduction, those logarithms are
 \[
  U_j=-2\pi\ii\chi_j,\qquad
  V_j=-2\partial_j\Phi_\epsilon^{\rm cl}
        =4\pi\ii z_{g,j}.
 \]
-Consequently $U_j+p_jV_j=-2\pi\ii$ exactly, with the original
-integer $p_j$. These equations also show that $\chi$ is critical
+Consequently $U_j+p_jV_j=-2\pi\ii$ exactly, with the integer
+$p_j$ that specifies the filling. This is one full turn along the
+primitive filled slope; the sign is fixed by the orientation of our
+meridian. These equations also show that $\chi$ is critical
 for the final expression in \eqref{ca:classical-action}.
-Since $z_{\mathbf n}=O(\max_j|n_j|^{-1})$ and
-$\xi(z)=O(\|z\|)$, the formula $\chi=t_g+\epsilon z_g$
+The critical-point equations give
+$z_{\mathbf n,j}=O(|n_j|^{-1})$, uniformly as the independent
+$|n_j|$ become large. Since $\xi(z)=O(\|z\|)$, the formula $\chi=t_g+\epsilon z_g$
 shows that $\chi$ tends to zero independently of the ratios
 of the filling integers. Local uniqueness in
 \cite[Theorem 1.3]{StrictGeometry} therefore identifies it with
 the primitive filling branch through the oriented complete metric.
 No uniqueness of the full character variety is used.
-That theorem keeps the original full group relations and main
-parabolic cusps, proves smooth completion on the actual filled
-exterior, and compares the same positive cell chain with the
-metric fundamental chain. Its conclusion is the absolute equality
+The geometry theorem proves that this branch satisfies the
+representation relations of the augmented link and extends smoothly
+over its filled auxiliary cusps. The main cusps remain complete.
+Its comparison of the oriented cells with the metric fundamental
+chain fixes the volume itself, including the additive constant. Its conclusion is the absolute equality
 $\Vol(S^3\setminus K_{\epsilon,\mathbf p})
 =2\pi\Re S_{\mathbf n}$.
 The knot test in Section~\ref{ca:intro} is what makes this

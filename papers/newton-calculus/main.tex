@@ -22,25 +22,30 @@
 \newcommand{\T}{\mathsf T}\newcommand{\HH}{\mathcal H}\newcommand{\A}{\mathcal A}
 \newcommand{\eps}{\varepsilon}
 \title{Newton calculus and stationary profiles of Conway tangles}
-\author{}\date{}
+\author{Alexander Kolpakov}\date{25 November 2026}
 \begin{document}\maketitle
 \begin{abstract}
-At a principal root of unity, the two-strand Casimir has repeated
-spectral roots. We construct its full Newton calculus, including
-multiplication, physical quarter-turn, marked closure and colored
-crossing circles, with the derivative data at repeated roots retained.
-For arbitrary ordered Conway expressions, we determine the exact
-positive integer support and characterize the existence of a strict
-real state. For every expression admitting a strict state, the complete
-positive source has a unique interior maximum
-with negative definite Hessian on its primitive wire lattice. Its
-logarithmic growth equals this maximum at both level parities.
-We calculate stationary boundary profiles with their additive constants
-and prove an exact harmonic response law. Every original leaf at a
-closed strict maximum lies at or above one quarter; a specified
-completed-root subclass satisfies stronger bounds. The positive source
-studied here provides finite and variational input for separate estimates
-of signed fillings and their hyperbolic volumes.
+We give a polynomial calculus for two-strand tangle operators at a
+principal root of unity. The Casimir has repeated spectral roots, so
+the calculus must retain first derivatives as well as values. In a
+normalized Newton basis, a quarter-turn reverses the basis index,
+multiplication has positive coefficients, and cylindrical closure pairs
+complementary indices. These formulas describe the evaluation of any
+fixed ordered expression formed by stacking and turning elementary
+crossing-circle tangles.
+
+When every auxiliary circle has complete color and no half twists are
+retained, the evaluation is a positive finite sum. We determine its
+integer support and give a combinatorial criterion for the existence of
+a state satisfying every inequality strictly. In that case the limiting
+action has a unique interior maximum with negative definite Hessian,
+and the logarithmic growth of the sum equals this maximum along all
+levels. We also compute the dependence of a subtree's maximum on its
+output label. The resulting reciprocal-addition law gives bounds on
+every elementary label at a closed maximum, including a general lower
+bound of one quarter. These statements concern the positive sum;
+estimates for signed fillings and their hyperbolic interpretation
+require additional arguments.
 \end{abstract}
 
 \section{Introduction}
@@ -48,7 +53,7 @@ A tangle calculation changes character when two spectral roots
 coincide. Polynomial values alone no longer determine the operator:
 a derivative can multiply a nonzero nilpotent matrix. This paper uses
 one polynomial algebra throughout the tangle calculation, keeping both
-values and first derivatives. Its basis is chosen so that the physical
+values and first derivatives. Its basis is chosen so that the diagrammatic
 quarter-turn reverses the basis index. Multiplication then has positive
 coefficients with a simple support, and cylindrical closure pairs
 complementary indices.
@@ -56,11 +61,16 @@ complementary indices.
 These identities turn any fixed ordered expression in two-strand
 tangles into a finite sum over integer indices. For the complete color
 on every auxiliary circle, every nonzero summand is positive. The
-positivity makes a variational question natural: which expressions
-have an interior maximizing state, and how does that state respond
-when the exposed output index changes?
+positivity makes a variational question natural: after dividing these
+indices by the level, which expressions have an interior maximizing
+state, and how does that state respond when the output index is
+prescribed? Here a state is a choice of a basis index at every
+elementary piece and every intermediate product.
 
-The exact finite calculus is proved in
+The paper has two parts. Sections~\ref{nt:diagrams} and
+\ref{nt:algebra} establish the finite tangle calculus; the remaining
+sections study its positive sums. More precisely, the finite formulas
+are proved in
 Proposition~\ref{prop:newton-turn}, Theorem~\ref{thm:positive-product}
 and Proposition~\ref{prop:circle}. The strict support criterion is
 Theorem~\ref{st:reduced-junctions}. Theorem~\ref{st:positive-action}
@@ -69,7 +79,8 @@ positive-source limit. Its boundary argument is necessary: concavity
 by itself would permit a maximum on the boundary. Theorems
 \ref{st:profiles} and \ref{st:probe} calculate the absolute stationary
 profiles. Theorem~\ref{st:quarter} and Lemma~\ref{lem:port-bounds}
-give respectively the general and completed-root leaf bounds.
+give respectively the general leaf bound and a stronger bound for the
+recursive subclass defined in Section~\ref{nt:completed}.
 
 All expressions and their number of leaves are fixed before the
 quantum level grows. No tangle-isotopy classification is needed.
@@ -117,16 +128,19 @@ highest-weight representation and surrounding two main strands of
 complete color $N$. Its disk fixes the ordering and framing. Set
 $h_j=\Turn L_j$. When discussing the construction, $h$ denotes one
 such turned circle; in the positive source it is evaluated as $h_N$.
-Every written occurrence is a distinct auxiliary circle.
+Every written occurrence is a distinct auxiliary circle; the term
+\emph{leaf} will refer to such an occurrence in the expression tree.
 
 The open expressions considered here have arbitrary ordered syntax
 \[
  E::=h\mid\Turn E\mid E_1E_2.
 \]
-A closed expression is $C(FG)$. Every written occurrence of $h$ is a
-distinct auxiliary circle. The complete positive source $Z_N^0$ is
-its evaluation with every leaf equal to $h_N$ and no retained half
-twists. Section~\ref{nt:algebra} defines this scalar as $\phi(FG)$.
+A closed expression is $C(FG)$. Its \emph{complete positive source}
+$Z_N^0$ is its evaluation with every leaf equal to $h_N$ and no retained
+half twists. Thus ``source'' here names a particular scalar finite sum,
+not a new tangle operation. Section~\ref{nt:algebra} defines the scalar
+as $\phi(FG)$, and its positivity follows from the multiplication and
+closure formulas proved there.
 Its endpoint pairing need not form a knot; that condition belongs
 to later knot applications. For example, $C((hh)(hh))$ has four
 leaves and $C(h\Turn(hh))$ has three. Section~\ref{nt:completed}

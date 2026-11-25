@@ -1,4 +1,4 @@
-\section{The pure source and its Fourier transform}\label{ca:packet}
+\section{The finite sum and its Fourier transform}\label{ca:packet}
 
 A \emph{wire} is a shared polynomial index, not another tangle strand.
 For a construction with $b$ leaves there are $b-1$ multiplications.
@@ -14,34 +14,41 @@ The two root subtrees have disjoint variables, so this substitution
 introduces no divisibility condition. The remaining lattice has
 fundamental cell volume one \cite[Lemma 6.1]{Newton}.
 
-Write $y=\mathbf k/N$ in these coordinates. Every wire is exactly
+Write $y=\mathbf m/N$, where $\mathbf m\in\mathbb Z^k$ is the
+vector of independent indices. Every wire is exactly
 \begin{equation}\label{ca:offsets}
  r_w=NL_w(y)+\delta_w,
 \end{equation}
 where $L_w$ is integral affine and $\delta_w$ is a fixed integer.
-Each occurrence of $d=N-1$ contributes to these offsets.
-The finite gate coefficient is
+The map $L_w$ has integer coefficients, including its constant term.
+For example, turning an index $r=Ny+\delta$ gives
+$d-r=N(1-y)-1-\delta$. Thus the difference between $d$ and $N$
+is retained in the offset rather than discarded in the limit.
+
+At a product junction the coefficient with input indices $i,j$ and
+output index $r$ is
 \begin{equation}\label{ca:gate}
  \mu_N(i,j,r)=
  \frac{S_{i+j}S_r}{S_iS_jS_{r-i}S_{r-j}S_{i+j-r}},
  \qquad \max(i,j)\le r\le i+j\le d.
 \end{equation}
-Its action is
-\[
- m(x,y,z)=J(x+y)+J(z)-J(x)-J(y)
-             -J(z-x)-J(z-y)-J(x+y-z).
-\]
-These are the multiplication and trace formulas of
+Outside the stated index range it is zero. We sometimes call this a
+product or gate coefficient. Its exponential rate is the function
+$m(i/N,j/N,r/N)$ defined in the introduction; the scalar arguments
+of $m$ should be distinguished from the vector $y$ of independent
+coordinates. These are the multiplication and trace formulas of
 \cite[Proposition 3.2 and Theorem 3.3]{Newton}.
-All subsequent windows are fixed independently of $N$ and lie
-strictly inside the gate support.
+The restricted sums below use fixed rectangles in the scaled
+coordinates. They lie strictly inside every inequality that makes the
+product coefficients nonzero.
 
 \input{pure-window}
 
 \subsection{The Fourier transform and its global gap}
 
-Use the pure source $C_N$ of Theorem~\ref{ca:strict-pure}.
-Choose a smaller fixed $\delta>0$, put
+Use the restricted holomorphic sum $C_N$ of
+Theorem~\ref{ca:strict-pure}. Choose a smaller fixed
+$0<\delta<1/4$, put
 $H_N^{\rm cut}=\lfloor\delta N\rfloor$, and define
 \begin{equation}\label{ca:Fourier-source}
  \mathcal F_N(z)=
@@ -54,7 +61,7 @@ for a polynomial of separate degree at most $H_N^{\rm cut}\le d$.
 Here $P_N$ denotes this multivariate polynomial, not the root polynomial used in the next section.
 
 \begin{proposition}[Local expansion and global spectral gap]\label{ca:Fourier-theorem}
-For the strict pure source of Theorem~\ref{ca:strict-pure}, on a fixed complex neighborhood of zero,
+For the function $C_N$ of Theorem~\ref{ca:strict-pure}, on a fixed complex neighborhood of zero,
 \begin{align}
  \mathcal F_N(z)&=
  N^{3/2+b/2}B(z)e^{N\Psi_0(z)}(1+O(N^{-1})),\label{ca:Fourier-local}\\
@@ -86,7 +93,9 @@ on a fixed neighborhood of the color rectangle.
 The strict color Hessian and \eqref{ca:color-gaussian} give the
 interior maximum and boundary loss. The Gaussian adds $N^{b/2}$
 and gives \eqref{ca:Fourier-amplitude}.
-All original values $C_N(h/N)$ were used in this sum. The function
+The Fourier sum uses the exact values of $C_N(h/N)$ at each
+integer color deficit; the lattice estimate has not replaced those
+values in its definition. The function
 $\Phi_0$ is real on the real color cube and even, since its pure finite source is positive there and its factorial continuation is real.
 For real $z$, conjugation and evenness give
 $\overline{\xi(z)}=-\xi(z)$. Therefore $\Psi_0(z)$ is real.
@@ -115,10 +124,19 @@ $C_{\rm col}\sigma^2$ is less than half this loss and half
 $\varphi_0\sigma$. All four sides have a common strict exponential loss. Summing the other $b-1$ integer colors costs only a polynomial factor.
 
 To allow $z=x+\ii y$, on this same contour the additional factor has modulus at most
-$e^{2\pi(\delta N+1/2)\sum|y_\ell|}$, apart from the already estimated real-frequency factor. Choosing a fixed $\tau$ small enough preserves half the loss. Derivatives in $z$ insert fixed powers of the contour variables, hence polynomial factors. Alternatively Cauchy's formula on a slightly larger strip gives the stated derivative bounds. This proves the entire shared spectral-cube estimate.
+$e^{2\pi(\delta N+1/2)\sum|y_\ell|}$, apart from the already estimated real-frequency factor. Choosing a fixed $\tau$ small enough preserves half the loss. Derivatives in $z$ insert fixed powers of the contour variables, hence polynomial factors. Alternatively Cauchy's formula on a slightly larger strip gives the stated derivative bounds. This proves the estimate on the complement of the small cube in the
+whole Fourier torus.
 \end{proof}
 
 \begin{figure}[ht]
  \centering\input{figures/two-lattices}
- \caption{The two finite lattices in the proof. The primitive wire sum defines $C_N(t)$, with every affine offset retained. The color samples of this exact holomorphic function then define $\mathcal F_N(z)$. The same finite-lattice lemma evaluates both local sums. A separate contour estimate bounds the rest of the Fourier torus.}\label{ca:two-lattices}
+ \caption{The two sums, shown in two internal coordinates and one color
+coordinate. On the left, the dots are the scaled integer indices
+$y=\mathbf m/N$ in the rectangle $\mathcal B$, and $y_*(0)$ is the
+complete-color maximum. Their weighted sum is $C_N(t)$. On the
+right, the dots are its values at $t=h/N$. The contour for their
+Fourier transform is moved through $\xi(z)$; $\sigma>0$ is the
+chosen height of the surrounding rectangle. The lattice lemma
+calculates both local sums. The estimate away from zero in Fourier
+space requires the separate contour argument above.}\label{ca:two-lattices}
 \end{figure}

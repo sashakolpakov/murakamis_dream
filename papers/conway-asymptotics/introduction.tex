@@ -29,6 +29,10 @@ Finally $C(FG)$ joins $0$ to $3$ and $1$ to $2$ by outside arcs.
 An expression is a fixed finite recipe using these operations and
 distinct elementary boxes. The order of the factors matters.
 
+The word ``construction'' includes this recipe, its endpoint ordering,
+and its crossing circles. Two recipes for the same knot need not give
+the same auxiliary link. We fix the recipe throughout the proof.
+
 \begin{figure}[ht]
  \centering
  \resizebox{\textwidth}{!}{\input{figures/tangle-construction}}
@@ -76,32 +80,73 @@ the final closure. Full twists preserve that test. Filling all auxiliary
 circles therefore gives a knot, denoted $K_{\epsilon,\mathbf p}$.
 
 At level $N\ge3$ put $d=N-1$, $q=e^{\pi\ii/N}$ and
-$\kappa=q^{d^2/2}$, with $q^t=e^{\pi\ii t/N}$. Let $D$ be the oriented blackboard diagram of the filled knot, and let $w(D)$ denote its writhe. The actual reduced tensor evaluation is corrected to zero framing by
+$\kappa=q^{d^2/2}$, with $q^t=e^{\pi\ii t/N}$.
+A strand of color $j$ carries the $j$-dimensional representation used
+in the finite evaluation of \cite{Finite}; the main strands have color
+$N$. Write $R$ for the two-strand crossing operator on
+$V_N\otimes V_N$, where $V_N$ is that $N$-dimensional representation.
+Its convention, including the interchange of tensor factors, is that
+of \cite[Section 2]{Newton}. Let $D$ be the oriented blackboard
+diagram of the filled knot, and let $w(D)$ denote its writhe, the
+signed number of crossings. The reduced tensor evaluation is corrected
+to zero framing by
 \begin{equation}\label{ca:framing}
  \zeta_{N,D}=\theta^{-w(D)},\qquad
  \theta=q^{-d^2/2}=\kappa^{-1}.
 \end{equation}
-For another explicitly specified ribbon framing one uses that integer framing correction instead. The single reduced cut has unknot value one. Its identification with the reduced Kashaev invariant is \cite[Theorem 10.1]{Finite}; no additional factor is assigned to an auxiliary circle.
+The reduced evaluation is obtained by cutting one main strand,
+evaluating the resulting endomorphism $\lambda\,\mathrm{id}_{V_N}$,
+and taking its scalar $\lambda$. Scalarity is proved in
+\cite[Sections 9--10]{Finite}; the unknot has value one. Its identification with the reduced Kashaev
+invariant is \cite[Theorem 10.1]{Finite}. No extra normalizing factor
+is assigned to an auxiliary circle. Another ribbon framing requires
+its corresponding integer framing correction.
 
 \subsection{The asymptotic formula}
 
-The finite evaluation of the augmented diagram, as a function of its
-auxiliary colors, will be called its \emph{source}. The \emph{pure}
-source has no retained half twists. Its complete-color action has a
-unique strict maximum \cite[Theorem 6.4]{Newton}. Write $F_0$ for the
-maximum and $a_\ell$ for its leaf coordinates. Set
+First consider the real function that determines the exponential rate.
+Put
+\[
+ J(x)=\int_0^x\log(2\sin\pi u)\dd u\qquad(0\le x\le1),
+\]
+where the endpoint integrals converge. A leaf with label $x$ contributes
+$g(x,0)=J(2x)-4J(x)$. A nonclosing product with input labels $x,y$
+and output label $z$ contributes
+\[
+ m(x,y,z)=J(x+y)+J(z)-J(x)-J(y)
+          -J(z-x)-J(z-y)-J(x+y-z).
+\]
+Let $F$ be the sum of these contributions on the closed polytope
+obtained by replacing the strict inequalities by weak ones. The turn
+relations and the closing equation are substituted before maximizing.
+For a strict construction, $F$ has a unique maximum in the strict
+interior, with negative definite Hessian in the independent coordinates
+\cite[Theorem 6.4]{Newton}. Write $F_0$ for its value and $a_\ell$
+for its leaf labels. Set
 \[
  X_\ell=\cot(\pi a_\ell)>0.
 \]
-Section~\ref{ca:strict-pure-section} constructs a holomorphic action
-$\Phi_0(t)$ for small color deficits $t$, normalized by
-$\Phi_0(0)=F_0$. Only $0<a_\ell<1/2$ is needed. Define its Fourier
-Legendre action by
+We call the finite reduced evaluation of the augmented diagram,
+as a function of its auxiliary colors, its \emph{source}. The source
+with no retained half twists will be called \emph{pure}. It is an
+intermediate tensor evaluation. The color deficit is $h_\ell=N-j_\ell$
+when the $\ell$th auxiliary circle has color $j_\ell$; write
+$t_\ell=h_\ell/N$. Complete color means $h_\ell=0$ for every $\ell$.
+
+Section~\ref{ca:strict-pure-section} restricts an exact expansion of
+this source to a fixed neighborhood of the maximum and continues
+that finite sum holomorphically in $t$. Denote it by $C_N(t)$.
+Its exponential rate is a holomorphic function $\Phi_0(t)$,
+normalized by $\Phi_0(0)=F_0$. The omitted terms are bounded
+separately. Define the Fourier Legendre transform of this rate by
 \begin{equation}\label{ca:Psi}
  \nabla\Phi_0(\xi(z))+2\pi\ii z=0,\qquad
  \Psi_0(z)=\Phi_0(\xi(z))+2\pi\ii\,\xi(z)\cdot z.
 \end{equation}
-All these germs are fixed by their complete values and the original logarithmic branches.
+Here $\xi(0)=0$, and $\xi$ is the unique small solution of the
+displayed equation. The nonsingular Hessian established below makes
+this definition possible. The integral defining $J$, and its analytic
+continuation from the real interval, fix the additive constants.
 
 \begin{theorem}[Long twists in a fixed strict construction]\label{ca:main}
 For every fixed strict construction with $b\ge2$ and retained half-twist pattern satisfying the stated knot test, there is $P_0$ such that the following holds for every fixed signed integer tuple with $|p_\ell|>P_0$ for every $\ell$. The phase
@@ -145,17 +190,19 @@ does it leave only finitely many assignments uncovered.
 
 \subsection{Why the proof has this form}
 
-There are three distinct calculations. First we find the asymptotic of
-a positive source near its strict maximum. Next we perform the
-oscillatory fillings, retaining the derivative data at repeated roots.
-Finally we identify the critical action with the volume of the specified
-knot complement. Positivity in the first calculation does not by itself
-settle cancellation in the second.
+There are three calculations. Sections~\ref{ca:factorial-section}
+and \ref{ca:packet} estimate a positive finite sum near its strict
+maximum and then its finite Fourier transform. Section~\ref{ca:filling}
+inserts all twists by an exact polynomial identity and applies an
+oscillatory-sum theorem. The last step compares its critical value
+with the volume of the knot complement. Positivity in the first
+calculation does not by itself settle cancellation in the second.
 
 The finite algebra permits exact preliminary reductions. A turn substitutes
-$r\mapsto N-1-r$ in a wire index. Multiplication by a prescribed tangle
-packet is linear in its other input, so such a corridor may be contracted
-to one matrix before applying an estimate. In the sum below we first
+$r\mapsto N-1-r$ in a wire index. Multiplication by a fixed tangle
+evaluation is linear in its other input. A string of these operations
+can therefore be composed as matrices before applying an estimate.
+In the sum below we first
 substitute the turn relations and solve the closing constraint, whose
 coefficient is $\pm1$. Section~\ref{ca:packet} records the resulting
 $2b-3$ independent coordinates and their integer offsets. This exact

@@ -9,7 +9,8 @@ claimed coefficient.
 \begin{latticelemma}
 Let $\mathcal B\subset\mathbb R^k$ be a fixed rectangle and let
 $F(y,t)$ and $b(y,t)$ be holomorphic on a fixed complex neighborhood
-of $\mathcal B\times\{0\}$. Suppose that $F(y,0)$ is real for real
+of $\mathcal B\times\{0\}$, where $y\in\mathbb C^k$ and
+$t\in\mathbb C^s$. Fix a real number $\rho$. Suppose that $F(y,0)$ is real for real
 $y$, has a unique maximum $y_0$ in the interior of $\mathcal B$,
 and has negative definite Hessian there. Suppose also that
 $b(y_0,0)\ne0$.
@@ -26,10 +27,13 @@ neighborhoods. Then, for small complex $t$,
       {\sqrt{\det[-F_{yy}(y_*(t),t)]}}
  e^{NF(y_*(t),t)}(1+O(N^{-1})).
 \end{align*}
-Here $y_*(t)$ is the continuation of $y_0$, and the square root is
-positive at $t=0$. The expansion is uniform on a fixed parameter
-polydisk, with every fixed derivative on smaller polydisks. The
-lattice is $N^{-1}\mathbb Z^k$, with no extra covolume factor.
+The sum is over $j\in\mathbb Z^k$. Here $y_*(t)$ is the
+continuation of $y_0$, and the square root is positive at $t=0$.
+Precisely, after division by the displayed power, amplitude and
+exponential, the remainder is a holomorphic function $R_N(t)$ with
+$R_N=O(N^{-1})$. Each fixed derivative of $R_N$ has the same bound
+on smaller parameter polydisks. The lattice is $N^{-1}\mathbb Z^k$;
+its fundamental cell has volume $N^{-k}$.
 \end{latticelemma}
 
 \begin{proof}
@@ -64,9 +68,12 @@ The $O(N^{-1})$ strips between the half-grid rectangle and
 $\mathcal B$ have the same fixed boundary loss. In particular there
 is no multiplicity $2^k$.
 
-Translate the integral to the parallel contour through $y_*(t)$.
-The connecting faces retain the boundary loss. On a small fixed
-ball the real part of $-F_{yy}$ remains positive definite.
+Translate the real rectangle by $\ii\Im y_*(t)$. The translated
+rectangle contains the critical point because $\Re y_*(t)$ stays
+in its interior. Cauchy's theorem expresses the difference of the two
+integrals as integrals over connecting faces, which retain the boundary
+loss. On a small fixed ball the real part of $-F_{yy}$ remains positive
+definite.
 With $u=\sqrt N(y-y_*)$, the quadratic term gives the displayed
 Gaussian determinant. The cubic phase term and linear amplitude
 term are odd and integrate to zero. Taylor's formula and Gaussian
@@ -77,11 +84,9 @@ stated power. Holomorphy and Cauchy's formula give the derivative
 bounds.
 \end{proof}
 
-Eliminating stationary variables is compatible with this calculation.
-If $\Phi(t)=F(y_*(t),t)$, differentiation of $F_y=0$ gives
-\[
- \Phi_{tt}=F_{tt}-F_{ty}F_{yy}^{-1}F_{yt}.
-\]
-This is the Schur complement of the wire Hessian. In the pure
-source, evenness in every color gives $F_{yt}(y,0)=0$, so its
-complete color Hessian can be read directly from the leaves.
+The important distinction is between an exact finite sum and its local
+Gaussian approximation. The cotangent integral first relates the
+entire finite sum to a contour through the critical point, with an
+exponentially smaller error. Only then is it legitimate to use the
+Gaussian coefficient. The same argument will be applied to the
+internal polynomial indices and to the auxiliary colors.

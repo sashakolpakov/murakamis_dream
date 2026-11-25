@@ -1,12 +1,14 @@
-\section{Multiplying by a character before turning}\label{cs:characters}
+\section{Multiplication by a circle factor followed by a turn}\label{cs:characters}
 
 For an input class \(E\), define
 \begin{equation}\label{cs:decorated}
  D_j^\epsilon[E]=\Turn(R^\epsilon L_jE).
 \end{equation}
-The character stays at its specified position before the turn. The
-input may be a product of several subtree polynomials; it need not
-have a positive coefficient expansion.
+This is the first of the two operations used in the tree induction.
+For example $D_j^\epsilon[1]=h_j^\epsilon$ is an elementary box. A
+nonempty input $E$ may be a product of subtree polynomials and may
+have signed or complex coefficients. The estimates below use its
+quotient norm, rather than a sum of absolute coefficients.
 
 \begin{lemma}[Coefficient duality]\label{cs:duality}
 For \(0\le r\le d\),
@@ -16,7 +18,7 @@ For \(0\le r\le d\),
 \end{equation}
 \end{lemma}
 \begin{proof}
-The pairing in \eqref{cs:turn-trace} extracts the coefficient
+This identity is the useful duality between a turn and closure: the pairing in \eqref{cs:turn-trace} extracts the coefficient
 \(d-r\) before the turn, hence coefficient \(r\) after the turn.
 Use \eqref{cs:finite-cost}, submultiplicativity and
 \eqref{cs:basis-norm}. There is no sum over the coefficients of
@@ -28,7 +30,7 @@ Set \(G_0=g(1/4)\). Differentiation gives
  g'(u)=2\log\cot(\pi u),\qquad
  g''(u)=-\frac{4\pi}{\sin(2\pi u)}<0,\qquad 0<u<1/2.
 \end{equation}
-Thus \(G_0>0\) is the unique maximum of \(g\), while
+Thus $G_0>0$ is the maximum value of $g$, attained uniquely at $u=1/4$, while
 \(g(0)=g(1/2)=0\).
 
 \begin{lemma}[Angular bound for a low Newton polynomial]\label{cs:low-strip}
@@ -39,7 +41,7 @@ Let \(I\) be a compact subinterval of \((0,1/2)\). There are
  \le w_{N,r}\exp N\{-c_I(\theta-\pi)^2+C_Iy^2+e_N\}
 \end{equation}
 for \(0\le\theta\le2\pi\), \(|y|\le y_I\).
-On the full low range, the upper logarithmic rate is
+For $0\le u\le1/2$, the upper logarithmic rate of $e_r$ with $r/N\to u$ is
 \begin{equation}\label{cs:Newton-action}
  b(u,\theta,y)=\int_0^u
       \log|2\cos(2\pi v)-2\cos(\theta+\ii y)|\dd v-2J(u).
@@ -105,7 +107,7 @@ whole strip. Finally use \eqref{cs:weight-rate} to replace
 \(e^{Ng(r/N)}\) by \(w_{N,r}\).
 \end{proof}
 
-\begin{proposition}[Norm and angular localization after a character]\label{cs:decorated-turn}
+\begin{proposition}[Norm and angular estimates after a circle factor]\label{cs:decorated-turn}
 Suppose \(\normJ{E_N}\le e^{N(c+o(1))}\), uniformly in the specified
 input family. Then
 \begin{equation}\label{cs:D-norm}
@@ -117,7 +119,7 @@ Its canonical representative has constants \(a,C,y_0>0\) such that
  \le e^{N(c+2G_0-a(\theta-\pi)^2+Cy^2+o(1))}
 \end{equation}
 on \(0\le\theta\le2\pi\), \(|y|\le y_0\). The constants are
-independent of the physical color \(j\) and retained sign.
+independent of the circle color \(j\) and retained sign.
 A fixed loss in the norm exponent of \(E_N\) is preserved in the
 coefficient estimate \eqref{cs:dual} at every output index.
 \end{proposition}
@@ -142,14 +144,14 @@ Choose \(y_0\) and then the angular constant small enough that
 terms. The final assertion follows directly from \eqref{cs:dual}.
 \end{proof}
 
-\begin{proposition}[A deficit in the new character]\label{cs:regular-deficit}
-Suppose an actual representative of \(E_N\) satisfies
+\begin{proposition}[A deficit in the newly inserted circle color]\label{cs:regular-deficit}
+Suppose a specified polynomial representative of $E_N$ satisfies
 \begin{equation}\label{cs:E-strip}
  |E_N(2\cos(\theta+\ii y))|
  \le e^{N(c-c_E(\theta-\pi)^2+C_Ey^2+o(1))},
  \quad |y|\le y_E,
 \end{equation}
-with \(c_E\ge0\). The empty input \(E_N=1,c=0\) is allowed.
+for $0\le\theta\le2\pi$, with fixed $c_E\ge0$, $C_E>0$ and $y_E>0$, uniformly in the input family. The empty input \(E_N=1,c=0\) is allowed.
 For every compact \(I\subset(0,1/2)\) and every \(\delta>0\),
 there is \(\eta>0\) such that
 \begin{equation}\label{cs:regular-color-loss}
@@ -164,8 +166,7 @@ for all sufficiently large \(N\). If also
 for some \(\eta'>0\).
 \end{proposition}
 \begin{proof}
-By Lemma~\ref{cs:low-strip}, the actual product \(e_rE_N\)
-satisfies the positive-angular hypothesis of Theorem~\ref{cs:root-bound}
+By Lemma~\ref{cs:low-strip}, the unreduced product $e_rE_N$ satisfies the strict angular bound required of Theorem~\ref{cs:root-bound}
 uniformly for \(r/N\in I\), at rate \(c+g(r/N)\).
 The first identity in \eqref{cs:dual} and that theorem prove
 \eqref{cs:regular-color-loss}. No continuation of the discrete color
@@ -180,4 +181,4 @@ remaining terms and sum. Reducing the minimum loss proves the claim.
 
 For a later component, the relevant input index can be strictly above
 \(1/4\). This is why \eqref{cs:regular-color-loss} is stated on every
-compact regular interval, rather than only near the maximum of \(g\).
+compact interval of low Newton indices, rather than only near the maximum of \(g\).

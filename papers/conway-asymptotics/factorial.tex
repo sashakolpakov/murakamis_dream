@@ -13,9 +13,11 @@ $Q=e^{2\pi\ii/N}$ and
 \[
  S_r=\prod_{j=1}^r2\sin(\pi j/N),\qquad S_0=1.
 \]
-The function below is a normalized solution of a sine difference equation. Only the ordinary Gamma functional equation, its Stirling expansion with remainder, and the convergent sine product are needed; the standard Gamma formulas are recorded in \cite[\S\S5.5(i), 5.11(i)--(ii)]{DLMF}.
+We also use the finite product
+$(a;Q)_r=\prod_{j=0}^{r-1}(1-aQ^j)$, with value one when $r=0$.
+The function below solves a sine difference equation. Only the ordinary Gamma functional equation, its Stirling expansion with remainder, and the convergent sine product are needed; the standard Gamma formulas are recorded in \cite[\S\S5.5(i), 5.11(i)--(ii)]{DLMF}.
 
-\begin{lemma}[Canonical factorial interpolation]\label{ca:factorial}
+\begin{lemma}[An exact factorial interpolation]\label{ca:factorial}
 For $N\ge2$ and $-1<\Re z<N$ the product
 \begin{equation}\label{ca:G}
  G_N(z)=\left(\frac{2\pi}{N}\right)^z\Gamma(z+1)
@@ -54,7 +56,8 @@ $0<\Re x<1$, fixed by its integrable limit $J(0)=0$ along the real interval. On 
  =NJ(x)+\tfrac12\Log(2N\sin\pi x)
        +\frac{\pi\cot\pi x}{12N}+O(N^{-3}).
 \end{equation}
-The branches are real on $0<x<1$. More generally, for each fixed $L\ge1$ the correction is
+The logarithm of $G_N$ is chosen real on $(-1,N)$; the logarithms
+in the expansion are real on $0<x<1$. More generally, for each fixed $L\ge1$ the correction is
 \begin{align}
  &\sum_{r=1}^{L}\frac{c_{2r-1}(x)}{N^{2r-1}}+O(N^{-2L-1}),\notag\\
  &c_{2r-1}(x)=\frac{B_{2r}}{2r(2r-1)}
@@ -92,7 +95,9 @@ $\log[G_N(z)G_N(d-z)]$. In the product truncated at $k=K$ the resulting sum tele
 \]
 where $\psi=\Gamma'/\Gamma$. It tends locally uniformly to zero. The product is constant, and at $z=0$ it equals $S_d=N$. The latter equality follows by taking the absolute value of
 $\prod_{j=1}^{N-1}(1-e^{2\pi\ii j/N})=N$.
-This proves both formulas in \eqref{ca:reflection}, with the marked phase obtained by adding the two quadratic exponents. Iterating the shift from $-s$ to $d-s$ gives
+This proves the first reflection formula. Adding the two quadratic
+exponents in the definition of $\widehat F_N$ gives the second,
+including its phase. Iterating the shift from $-s$ to $d-s$ gives
 $G_N(d-s)=N H_N(s)G_N(-s)$, which proves \eqref{ca:small-reflection}. The finite sine product gives the displayed quotient for $H_N$, with its removable value one at zero.
 
 We give the remainder argument for \eqref{ca:Stirling}, because contours require a complex estimate rather than values on an integer mesh. Stirling's expansion on a closed right-half-plane sector has remainder $O(|w|^{-2L-1})$ after its term in $w^{1-2L}$. One obtains this bound from the Euler summation formula for $\log\Gamma$: the remaining periodic Bernoulli polynomial is bounded, and its integral is bounded by a constant times
@@ -124,6 +129,12 @@ gives the first correction. Keeping further Stirling terms gives
 \eqref{ca:all-Stirling}; their paired series converge locally uniformly, and the remainder sums absolutely as
 $O(N^{-2L-1}\sum k^{-2L-1})$. The normalization of $J$, including its additive constant, was fixed by integration from zero, not by differentiation alone. Cauchy's formula on a larger compact set proves the derivative assertions. Taylor expansion at $x+c/N$ proves \eqref{ca:offset}.
 \end{proof}
+
+A difference equation alone would allow multiplication by a periodic
+function. The explicit product \eqref{ca:G} removes that ambiguity;
+we have proved its reflection formula, rather than inferred it from the
+integer values. This is why the same continuation can be used on both
+sides of a contour.
 
 The reflection $J(1-x)=-J(x)$ follows by differentiating and using
 $\int_0^1\log(2\sin\pi t)\dd t=0$. In particular $J(1/2)=0$. We will use

@@ -37,6 +37,17 @@ def main() -> None:
     catalog_path = ROOT / "papers/catalog.json"
     catalog = json.loads(catalog_path.read_text())
     entries = {p["directory"]: p for p in catalog["papers"]}
+    series_path = ROOT / "papers/conway-series.json"
+    series = json.loads(series_path.read_text())
+    if (series["lead"] != "conway-asymptotics"
+            or len(series["papers"]) != len(set(series["papers"]))
+            or not set(series["papers"]) <= set(entries)):
+        raise ValueError("The Conway series must name distinct current papers and its lead.")
+    prior = set()
+    for paper in series["papers"]:
+        if not set(series["direct_prerequisites"][paper]) <= prior:
+            raise ValueError(f"The Conway series prerequisite order fails at {paper}")
+        prior.add(paper)
     if len(entries) != len(catalog["papers"]) or not catalog.get("edition"):
         raise ValueError("The collection needs a dated catalog without repeated papers.")
     if set(entries) & RETIRED or any(p.get("edition") == "earlier" for p in entries.values()):
@@ -49,6 +60,7 @@ def main() -> None:
             raise ValueError(f"Superseded paper copy remains: {name}")
 
     pins = {"papers/catalog.json": digest(catalog_path),
+            "papers/conway-series.json": digest(series_path),
             str(Path(__file__).resolve().relative_to(ROOT)): digest(Path(__file__))}
     reports = {}
     labels = {}
@@ -100,7 +112,14 @@ def main() -> None:
             if old_paths.search(content):
                 raise ValueError(f"A current paper still refers to a retired path: {path.relative_to(ROOT)}")
             pins[str(path.relative_to(ROOT))] = digest(path)
-            for target in re.findall(r"https://sashakolpakov\.github\.io/murakamis_dream/papers/([a-z0-9-]+)\.pdf", content):
+            targets = re.findall(r"https://sashakolpakov\.github\.io/murakamis_dream/papers/([a-z0-9-]+)\.pdf", content)
+            for tag, target in re.findall(
+                r"https://github\.com/sashakolpakov/murakamis_dream/blob/([^/]+)/docs/papers/([a-z0-9-]+)\.pdf", content
+            ):
+                if tag != series["git_tag"] or target not in series["papers"]:
+                    raise ValueError(f"Unregistered series edition in {path.relative_to(ROOT)}")
+                targets.append(target)
+            for target in targets:
                 if target not in entries:
                     raise ValueError(f"Unknown companion PDF in {path.relative_to(ROOT)}: {target}")
                 companion_links.add((name, target))
@@ -137,10 +156,13 @@ def main() -> None:
     if route["unowned_statements"]:
         raise ValueError("A Conway prerequisite has no current paper home.")
     conway_papers = route["articles"]
+    if set(conway_papers) != set(series["papers"]):
+        raise ValueError("The source series and the mathematical dependency closure differ.")
     supporting = [name for name in conway_papers if name != "conway-asymptotics"]
     result = {
         "scope": "Current collection consistency, actual compiled exports, source/PDF identity and declared reading dependencies; not verification of analytic or geometric proofs.",
         "edition": catalog["edition"], "papers": reports,
+        "conway_series_tag": series["git_tag"],
         "total_pages": sum(r["pages"] for r in reports.values()),
         "compiled_graph_exports_checked": checked_labels,
         "companion_links_checked": sorted(companion_links),

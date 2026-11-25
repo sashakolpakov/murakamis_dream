@@ -26,33 +26,43 @@
 \newcommand{\RR}{\mathbb R}
 \newcommand{\kap}{\varkappa}
 \title{Marked geometry of strict Conway compositions}
-\author{}\date{}
+\author{Alexander Kolpakov}\date{25 November 2026}
 \begin{document}\maketitle
 \begin{abstract}
-An ordered expression in crossing-circle tangles, products and physical
-turns determines a link diagram and a real wire polytope. We construct
-the complete hyperbolic metric whenever that polytope has a strict state.
-Four separate boundary-edge labels allow the pyramid-and-prism
-construction to pass through turned elementary children and arbitrary
-strict closing pairs. We prove convexity, retain every original shaded
-triangle, and identify the closed assembly with the literal projection
-cut of the specified link. Whole complex face maps then give its marked
-deformation, with parabolic main cusps. The original primitive filling
-equations have a unique small solution for independently long signed
-slopes. Smooth completion and an absolute fundamental-chain comparison
-identify the volume with a critical value of a classical cell potential.
-No asymptotic formula for a quantum invariant is used or asserted.
+We associate a hyperbolic link exterior to a finite construction from
+crossing-circle tangles by stacking and quarter-turns. The hypothesis is
+an explicit system of strict linear inequalities on one real variable
+for each stage of the construction. A variational theorem then supplies
+the parameters of ideal pyramids and prisms. We prove that these cells
+assemble to a convex right-angled polyhedron, and that two copies of it,
+with specified face identifications, give the prescribed link exterior.
+We calculate the meridian and disk longitude at every crossing circle,
+including their signs and primitive lattice periods. The same face maps
+extend holomorphically near the complete metric. For all independently
+sufficiently long signed fillings, their logarithmic filling equations
+have a unique nearby solution. Its classical critical value is the
+volume of the filled exterior. The argument concerns hyperbolic geometry;
+the additional estimates needed for a quantum-invariant volume limit
+are stated separately at the end.
 \end{abstract}
 
 \section{The fixed diagram and the geometric statements}\label{sm:intro}
 
-A crossing circle is an auxiliary unknotted component bounding a disk
-punctured twice by the main strands. We retain its disk and its original
-framing. Let $h$ be the physical quarter-turn of this elementary
-two-strand tangle, with full twists removed. A construction is a finite
-expression in distinct copies of $h$, ordered products and physical
-clockwise quarter-turns $\Turn$. No reduced algebraic expression replaces
-the original diagram in this paper.
+The construction keeps track of a diagram, rather than just an unmarked
+isotopy class of tangles. This is necessary because the crossing disks
+specify the curves along which we shall fill. A \emph{crossing circle} is
+an auxiliary unknotted component bounding a disk punctured twice by the
+main strands. Begin with a two-strand crossing box, remove its full
+twists, and turn the box clockwise through a quarter-turn; call the
+result $h$. The crossing circle and its disk move with the box.
+A construction is a finite parenthesized expression in distinct copies
+of $h$, ordered products, and clockwise quarter-turns $\Turn$.
+The leaves of this expression are its elementary crossing-circle boxes.
+The unturned pure box has two parallel vertical strands. Consequently,
+in the endpoint convention below, a pure leaf $h$ joins $0$ to $1$
+and $2$ to $3$. An odd retained half twist changes this pairing to
+$0$ with $2$ and $1$ with $3$. The crossing disk meets each of the
+two strands once.
 
 The four endpoints of a box are numbered $0,1,2,3$ cyclically, starting
 at the bottom left. In the stack $FG$, with $F$ below $G$, join
@@ -61,29 +71,51 @@ $(F_0,F_1,G_2,G_3)$. A turn replaces a tuple by
 $(C_1,C_2,C_3,C_0)$ and moves the entire box and all its disks.
 Cylindrical closure $C$ joins endpoints $0$ to $3$ and $1$ to $2$.
 Our closed diagrams are $C(FG)$ with arbitrary such $F,G$ subject to
-the following condition.
+the following condition. Figure~\ref{sm:endpoint-figure} records the endpoint convention.
+
+\begin{figure}[ht]
+\centering\input{figures/endpoint-conventions}
+\caption{Endpoint labels for a stack and its cylindrical closure.
+Each rectangle contains a tangle; only the joining arcs are shown.
+A clockwise quarter-turn gives the new ordered tuple
+$(C_1,C_2,C_3,C_0)$.}
+\label{sm:endpoint-figure}
+\end{figure}
 
 \begin{definition}\label{sm:strict}
-A strict wire state assigns a leaf variable $a\in(0,1/2)$ and an
-output variable to every open subexpression. A turn complements its
-variable. Every product retained below the closing root satisfies
+Assign a real \emph{output variable} to each open subexpression.
+These variables are also called wires: they are the labels on the
+edges of the expression tree, not individual strands in the link
+diagram. A leaf has output $a\in(0,1/2)$, and a turn changes an
+output $b$ to $1-b$. If $x,y$ are the outputs of the two factors
+of a product and $z$ is its output, require
 \begin{equation}\label{sm:gate-domain}
              \max(x,y)<z<x+y<1.
 \end{equation}
-The two closing outputs are $b,1-b$. The final forced gate is removed,
-but this complementary relation is retained. An expression is strict
-if the resulting real polytope has a strict state.
+at every product below the closing root. The two factors at the root
+have complementary outputs $b,1-b$; there is no independent output
+variable or product term at that root. The turn and closing relations
+are affine. Together with the inequalities above they define a
+relatively open convex polytope in their affine constraint space,
+called the \emph{wire polytope}. A \emph{strict state} is a point of
+this polytope, and the expression is \emph{strict} if the polytope is
+nonempty.
 \end{definition}
 
-Thus strictness is a condition on this particular presentation. A turned
-leaf or a bare leaf may occur at a closing child. The construction below
-allows every closing pair satisfying Definition~\ref{sm:strict}.
+Strictness is therefore a finite feasibility condition on the chosen
+construction. For example, the expression
+$C((h_1h_2)(h_3h_4))$ has a strict state: give each leaf the value
+$3/10$ and each of the two products the value $1/2$. The two closing
+outputs are complementary, and $3/10<1/2<3/5<1$ at both products.
+The geometry uses the maximizing state, which need not be this sample
+state. A single leaf, or a turned leaf, may also be one of the two
+closing factors when the complementary constraints permit it.
 
-Fix $\eps_i\in\{-1,0,1\}$ at the $H$ original leaves. It specifies
+Fix $\eps_i\in\{-1,0,1\}$ at the $H$ leaves of the expression $E$. It specifies
 the retained signed half twist; $\eps_i=0$ is the pure disk pairing.
 Let $Y_E^\eps$ be the exterior in $S^3$ of the resulting augmented
 link, retaining all $H$ crossing circles and every main component.
-The source-independent functions used below are
+The cell volumes will be expressed in terms of the functions
 \begin{align}
  J(u)&=\int_0^u\log(2\sin\pi t)\,\dd t\quad(0\le u\le1),
        &J(1-u)&=-J(u),\label{sm:J}\\
@@ -94,9 +126,21 @@ The source-independent functions used below are
 Let $\mathcal F$ be the sum of $g$ over leaves and $m$ over retained
 products, and let $F_0$ denote its maximum. The variational theorem
 of \cite{Newton} supplies the unique strict optimizer and its
-negative definite Hessian in independent wires. We state the precise
-input in Section~\ref{sm:variational}; its proof does not use a
-global metric or a quantum noncancellation theorem.
+negative definite Hessian in any independent coordinates on the affine
+constraint space. We state its precise conclusions in
+Section~\ref{sm:variational}. In the geometric construction, a leaf
+contributes a pyramid of volume $\pi g$, and a product contributes a
+prism of volume $\pi m$. The stationary equations are exactly the
+conditions for their quadrilateral faces to be isometric.
+
+We use \emph{exterior} for the complement of an open tubular
+neighborhood of a link, and use the same notation for its interior
+with complete cusp ends. Each crossing disk fixes a meridian
+$\mu_i$ and a disk longitude $\lambda_i$ on the auxiliary boundary
+torus. A pair is \emph{primitive} if it is a basis of the integral
+first homology of that torus. On a complete cusp, holonomy acts on a
+horosphere by translations. We orient our basis so that its
+longitude-to-meridian ratio has positive imaginary part.
 
 \begin{theorem}[Complete marked exterior]\label{sm:complete}
 For every fixed strict expression and retained half-twist pattern,
@@ -124,6 +168,19 @@ inserts the physical power $\eps_i-2p_i$ in that same disk frame.
 The disjoint disk neighborhoods show directly that the ambient manifold
 is still $S^3$. We never fill a main cusp.
 
+For the deformation statement we also fix the logarithm convention.
+A \emph{framed representation} consists of a homomorphism to
+$\operatorname{PSL}_2(\mathbb C)$ and a continuously chosen common
+fixed point of each peripheral subgroup on the sphere at infinity.
+Send that point to $\infty$. A peripheral element then acts as
+$z\mapsto a z+b$; its \emph{similarity logarithm} is the branch of
+$\Log a$ that vanishes at the complete structure. We write $U_i$
+for the meridian logarithm and $V_i$ for the longitude logarithm.
+These are twice the corresponding eigenvalue logarithms in a centered
+$\operatorname{SL}_2$ lift. The factor two will be important in the
+filling and volume formulas. We parametrize the meridian deformation
+by $U_i=-2\pi\ii\chi_i$.
+
 \begin{theorem}[Primitive signed fillings]\label{sm:fillings}
 There is a holomorphic classical potential $\Phi_\eps(\boldsymbol\chi)$,
 with $\Phi_\eps(0)=F_0$, and a framed representation of the original
@@ -147,14 +204,15 @@ hyperbolic metric on the original $Y_E^\eps(\mathbf p;I)$, and
                    =2\pi\Rea S_{\eps,\mathbf p}(\boldsymbol\chi_*).
 \end{equation}
 The signs and relative sizes of the filling integers are independent.
-If $I$ contains all auxiliaries and the literal strand pairing has one
+If $I$ contains all auxiliaries and the strand pairing of the specified diagram has one
 component, the right side is the volume of that knot complement.
 \end{theorem}
 
-The uniqueness assertion is local in this prescribed family, not a
-classification of the character variety. The potential is defined from
-the cells in Section~\ref{sm:potential}; no selected quantum action is
-an input. A maximum over the finitely many $\eps,I$ gives one bound
+Here and below a holomorphic potential is a function on a sufficiently
+small neighborhood of zero; its value and logarithm branches are fixed
+by the complete structure. Uniqueness means uniqueness in that fixed
+neighborhood. Section~\ref{sm:potential} defines the potential directly
+from the cell functions. A maximum over the finitely many $\eps,I$ gives one bound
 for a fixed strict expression if desired. An empty filling subset
 recovers Theorem~\ref{sm:complete}.
 
@@ -167,14 +225,18 @@ manifold and the absolute normalization proved explicitly.
 
 \section{Variational input and local cells}\label{sm:variational}
 
-We use the following specific conclusions of the strict-profile
+Before constructing the cells, we record exactly what is supplied by
+the variational calculation. For an open expression $E$ with prescribed
+output $b$, its \emph{profile} $f_E(b)$ is the maximum of its sum of
+leaf and product terms over all its remaining variables.
+We use the following conclusions of the strict-profile
 companion \cite[Lemma~5.2, Theorem~6.4, Lemma~7.1 and
 Proposition~7.2]{Newton}.
 For each nonempty strict fixed-output domain, the maximum over the
 internal wires is strict, unique and nondegenerate. Its profile $f_E(b)$
 is real analytic on that domain. The analogous closed statement holds
 on Definition~\ref{sm:strict}'s reduced affine constraint space.
-The exact open types and product table are
+The possible intervals of output values are denoted by $L,H,A$, as follows. The table gives the interval for a product of two given types:
 \begin{equation}\label{sm:types}
  L=(0,1/2),\quad H=(1/2,1),\quad A=(0,1),\qquad
  \begin{array}{c|ccc}
@@ -203,8 +265,11 @@ two children have a common $X$, and, writing $S=B_1+B_2>0$,
        B_o=\frac{B_1B_2+X^2-1}{S},\qquad
        Y_o=\frac{Y_1Y_2}{S}.
 \end{equation}
-These are scalar variational identities; they do not identify an
-open quadrilateral with a physical four-punctured tangle boundary.
+The number $\kap$ will be the cross ratio of the quadrilateral left
+exposed by the cell assembly. Thus these profile identities control
+the shape of the next gluing face. The exposed quadrilateral is an
+internal cut face in the construction; the physical boundary of a
+four-ended tangle is a different surface.
 
 \input{local-cells}
 

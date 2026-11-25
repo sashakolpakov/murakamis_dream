@@ -107,11 +107,11 @@ into the current Newton, Casimir and circle-tree papers. The
 [collection guide](../papers/README.md#the-conway-paper-and-its-supporting-proofs)
 explains that all of these manuscripts are from the same project.
 
-The Conway paper is now 17 pages. It states shifted Parseval and
+At the end of that cleanup the Conway paper had 17 pages. It states shifted Parseval and
 reconstruction, the coherent color bound, the zero-safe cost lemma and
 the stationary Schur formula explicitly. These elementary steps no
 longer have to be located in the long reference. Its six supporting
-papers total 132 pages. The 203-page reference covers overlapping
+papers then totaled 132 pages. The reference then had 203 pages and covered overlapping
 material and other families; it is not an additional prerequisite.
 
 The [collection check](results/paper-collection/summary.json) verifies
@@ -120,3 +120,9 @@ companion links. The [full finite replay](results/paper-collection/finite/summar
 records the 20 current check groups. The Lean source map includes the
 newly explicit paper statements, and both projects were freshly replayed.
 No sufficient hypothesis or volume-theorem scope changed.
+
+The subsequent [seven-paper exposition audit](CONWAY_SERIES_AUDIT_2026-11-25.md)
+corrected notation and expanded definitions and proof transitions. The
+Conway article is now 19 pages, the series totals 160 pages, and the
+reference has 205 pages. Current hashes and page counts are recorded in
+the collection and verification reports linked above.

@@ -12,7 +12,7 @@ constructions, asymptotic estimates, several volume families, and
 meridian and longitude results in 374 pages. Earlier tracked versions
 remain in Git history.
 The active [volume reference](../manuscript/README.md) now follows the
-same pure-source Conway proof as the 17-page application paper, using
+same pure-source Conway proof as the 19-page application paper, using
 the same proof files. It retains the independent tree and planar volume
 families; standalone meridian and recurrence developments remain in
 their separate papers. The reference incorporates its
@@ -46,6 +46,13 @@ strict geometry. The long reference is another account of overlapping
 material, rather than an additional seventh prerequisite. The collection
 check below verifies that the source files, compiled exports, PDFs and
 this reading route belong to the same current edition.
+
+The [exposition audit](../repro/CONWAY_SERIES_AUDIT_2026-11-25.md)
+records the notation errors corrected, definitions added and duplicated
+argument removed in this revision. The seven manuscripts total 160 pages;
+the Conway article itself is 19 pages. Their mutual citations refer to
+one [fixed series edition](conway-series.json), so its theorem numbers
+can be used together.
 
 Build and check the collection from the repository root:
 
@@ -139,7 +146,7 @@ framing factor. These results supply the finite formulas used by later
 papers. They do not estimate the large-level invariant or identify an
 exponential rate with volume.
 
-**Newton calculus and stationary profiles of Conway tangles.** 26 pages.
+**Newton calculus and stationary profiles of Conway tangles.** 28 pages.
 [TeX source](newton-calculus/main.tex) ·
 [PDF](../docs/papers/newton-calculus.pdf)
 
@@ -183,7 +190,7 @@ show which part of the sum dominates as the level grows. The comparison
 with Kashaev's original normalization imports the finite spectral paper
 at levels at least three; the algebraic identities hold from level two.
 
-**Spectral estimates for Conway tangle sources.** 28 pages.
+**Spectral estimates for Conway tangle sources.** 30 pages.
 [TeX source](conway-source-bounds/main.tex) ·
 [PDF](../docs/papers/conway-source-bounds.pdf)
 
@@ -206,7 +213,7 @@ estimates remain available as local results; they are not premises of
 this global argument. The conclusion is a bound before filling, with no
 claim here about a nonzero filled invariant or its volume.
 
-**Marked geometry of strict Conway compositions.** 21 pages.
+**Marked geometry of strict Conway compositions.** 23 pages.
 [TeX source](strict-conway-geometry/main.tex) ·
 [PDF](../docs/papers/strict-conway-geometry.pdf)
 
@@ -231,7 +238,7 @@ imports are the stationary-profile theorem and the general primitive
 completion and volume differential. There is no quantum asymptotic
 premise.
 
-**Holomorphic source asymptotics and volume limits for strict Conway compositions.** 17 pages.
+**Holomorphic source asymptotics and volume limits for strict Conway compositions.** 19 pages.
 [TeX source](conway-asymptotics/main.tex) ·
 [PDF](../docs/papers/conway-asymptotics.pdf)
 
@@ -368,7 +375,7 @@ combined in this account. A bound on the other degree sectors and
 a geometric identification of the action are still separate inputs to
 a volume theorem.
 
-**Oscillatory filling sums with independently long twists.** 11 pages.
+**Oscillatory filling sums with independently long twists.** 12 pages.
 [TeX source](oscillatory-fillings/main.tex) ·
 [PDF](../docs/papers/oscillatory-fillings.pdf)
 
@@ -384,7 +391,7 @@ hypotheses explicitly. For a knot source, construction of those hypotheses
 and identification of the critical action with volume remain separate
 theorems.
 
-**Circle patterns and primitive fillings of augmented links.** 18 pages.
+**Circle patterns and primitive fillings of augmented links.** 20 pages.
 [TeX source](marked-fillings/main.tex) ·
 [PDF](../docs/papers/marked-fillings.pdf)
 
@@ -661,7 +668,7 @@ comparison. The planar certificate, terminal-decoration, triangular-insertion
 and three-braid papers prove their own sufficient estimates for the full
 complementary source. A central Gaussian alone does not supply those estimates.
 
-The reference manuscript and the 17-page application now share the same
+The reference manuscript and the 19-page application now share the same
 strict pure-source proof. An elementary closing child and a leaf at
 one quarter are allowed. The theorem retains strict feasibility, the
 knot component test and independently long fixed fillings. A further

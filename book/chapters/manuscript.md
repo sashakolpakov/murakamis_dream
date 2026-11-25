@@ -7,7 +7,7 @@
 The reference begins with the volume theorem for strict Conway
 compositions, proved through the pure auxiliary source.
 It includes the same proof files as the
-[17-page Conway paper](../../papers/conway-asymptotics/README.md).
+[19-page Conway paper](../../papers/conway-asymptotics/README.md).
 The rest of the volume reference retains independent circle-tree
 and planar constructions with their own hypotheses.
 
@@ -15,7 +15,11 @@ The companion manuscripts are from the same project. The Conway paper
 uses five directly and one further geometric prerequisite, as explained
 in the [collection guide](../../papers/README.md#the-conway-paper-and-its-supporting-proofs).
 They reorganize the shared mathematical material; the long reference
-also contains results outside this seven-paper route.
+also contains results outside this seven-paper route. The
+[exposition audit](../../repro/CONWAY_SERIES_AUDIT_2026-11-25.md) describes
+the corrections and expanded explanations. The seven-paper series has
+160 pages in total; it is the complete prerequisite collection for the
+19-page Conway result.
 
 The signed local calculation used for the separate recurrence problem
 is proved in the [quarter-index paper](../../papers/quarter-index-asymptotics/README.md).

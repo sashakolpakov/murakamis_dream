@@ -1,102 +1,89 @@
 # Marked geometry of strict Conway compositions
 
-[Read the PDF](../../docs/papers/strict-conway-geometry.pdf) · [TeX source](main.tex) · [Dependency graph](https://sashakolpakov.github.io/murakamis_dream/papers/dependencies.html)
+[Read the PDF](../../docs/papers/strict-conway-geometry.pdf) ·
+[TeX source](main.tex) ·
+[Dependency graph](https://sashakolpakov.github.io/murakamis_dream/papers/dependencies.html)
 
-This classical paper constructs the complete exterior and independently
-long primitive signed fillings of a fixed literal strict Conway
-expression. It proves the individual-edge mask induction and the
-original closed-link identification; it does not apply the completed-root
-global metric theorem to the enlarged syntax.
+This paper supplies the geometry used in the Conway volume proof. Start
+with a fixed ordered recipe for stacking and turning two-strand tangles.
+Every elementary piece contains a crossing circle bounding a disk pierced
+by two strands. The recipe is strict when its real labels satisfy
 
-The [strict Conway asymptotic paper](../conway-asymptotics/README.md) uses this construction to identify its action with the volume of the original knot complement. The metric is constructed here from the strict variational data; its existence is not inferred from the quantum asymptotic.
+\[
+ 0<a<1/2,\qquad x\longmapsto1-x,\qquad
+ \max(x,y)<z<x+y<1,
+\]
 
-## Statements
+at leaves, turns and products respectively, with complementary output
+labels at the final closure. A worked example and an endpoint diagram
+explain these conventions in Section 1.
 
-- **sm:complete**: complete metric of the original augmented link,
-  primitive crossing-circle bases and absolute volume $2\pi F_0$.
-- **sm:mask-invariant**: all four output-edge bits, including asymmetric
-  high-type outputs, convex attachment and terminal accounting.
-- **sm:knot-choice**: a literal pure/odd choice with one main component.
-- **sm:marked-deformation**: the actual original group, positive retained
-  chain, parabolic main cusps and exact auxiliary similarity logarithms.
-- **sm:fillings**: original peripheral group, parabolic unfilled cusps,
-  independently long signed primitive fillings, and the absolute
-  critical-action formula.
+The paper constructs the complete hyperbolic exterior of this augmented
+link. It then fills selected crossing circles along sufficiently long
+signed integer slopes, leaving the main cusps complete. A meridian and
+the longitude determined by the crossing disk form a primitive basis:
+they generate the entire cusp lattice, rather than a proper sublattice.
+This matters because a slope equation for a multiple of a meridian would
+not establish smooth completion of the intended filling.
 
-The fixed presentation must have a strict state after deleting only its
-forced closing gate and retaining the complementary root relation.
-Arbitrary bare or turned closing children are allowed when this condition
-holds. Slopes refer to the original crossing disks. A knot-complement
-conclusion additionally requires all auxiliaries to be filled and the
-actual main pairing to have one component. The paper claims no quantum
-asymptotic, global character-variety uniqueness, or moving main-meridian
-longitude theorem.
+## Results and proof
 
-## Local constructions proved in this paper
+| Result | What it establishes |
+| --- | --- |
+| Theorem 1.1, `sm:complete` | The complete augmented exterior, its primitive crossing-circle bases and its volume, equal to \(2\pi\) times the maximum of the real tangle action. |
+| Theorem 1.2, `sm:marked-deformation` | A nearby family of representations of the same link group, with the prescribed face identifications, complete main cusps and explicitly calculated peripheral logarithms. |
+| Theorem 1.3, `sm:fillings` | Independently sufficiently long signed fillings, smooth hyperbolic completion and the absolute critical-action formula for their volumes. |
 
-Section 2 constructs the ideal leaf pyramid and multiplication prism
-from their vertices and supporting planes, computes their volumes by
-positive tetrahedra, and proves the ordered cross-ratio matching.
-Sections 5 and 7–8 derive the primitive collar translations, common
-prism maps, actual and auxiliary white transitions, full group words,
-and deformed peripheral multipliers. In particular:
+The construction begins with ideal pyramids at leaves and ideal prisms
+at products. Their vertices, faces, dihedral angles and volumes are
+computed explicitly. Stationary equations match the ordered
+quadrilateral faces. An induction records which of the four boundary
+edges remain exposed; it proves that the resulting gluing realizes the
+specified tangle recipe, including asymmetric boundary configurations.
+Tracing the main strands determines whether the resulting link is a
+knot. Components closed inside an intermediate tangle are included in
+this test.
 
-- `sm:local-cells`, `sm:leaf`, `sm:prism-P`, `sm:prism-angles`,
-  `sm:prism-volume`: the local cells, support, angles and volumes;
-- `sm:kappa`, `sm:input-kappa`, `sm:output-kappa`: whole ordered
-  quadrilateral matching, including its shear;
-- `sm:world-matrices`, `sm:world-table`, `sm:prism-maps`: all twelve
-  prism transitions in one coordinate system;
-- `sm:peripheral-words`, `sm:translations`,
-  `sm:multiplier-calculation`: the original primitive basis and its
-  complete translations and deformed multipliers.
+The next calculation gives the face isometries and the meridian and
+longitude holonomies. Their logarithms are continued from zero at the
+complete structure. The primitive filling equation records one angular
+turn. Finally, a comparison of the oriented ideal cells with the metric
+fundamental chain identifies the volume itself, including its additive
+constant. This geometric argument does not assume a quantum asymptotic.
 
-The cell construction, deformation and filling comparison are proved
-in this paper. No earlier geometry edition is needed.
+## Results used from other papers
 
-## Exact imports
+The [Newton calculus paper](../newton-calculus/README.md) supplies the
+strict-support test, unique stationary maximum, negative Hessian and
+boundary-profile identities: Lemma 5.2, Theorem 6.4, Lemma 7.1 and
+Proposition 7.2. The ideal-tetrahedron volume formula is stated in the
+text with its flat limit and a reference to Milnor.
 
-- **Newton calculus and stationary profiles of Conway tangles**:
-  Lemma 5.2 (st:types), Theorem 6.4 (st:positive-action),
-  Lemma 7.1 (st:port-product) and Proposition 7.2 (st:port-types).
-  Only the nonmetric strict optimizer, Hessian and profile identities are
-  used. The local core quantum asymptotic is not imported.
-- The classical ideal-tetrahedron volume formula, with its flat limit,
-  is stated explicitly in `sm:tetra` and referenced to Milnor,
-  *Hyperbolic geometry: the first 150 years*. All subsequent cell
-  volumes are computed here from that normalization.
-- **Circle patterns and primitive fillings of augmented links**:
-  Proposition 6.1 for near-complete primitive metric completion;
-  equation (7.3) and Section 7.3 for the similarity-log differential and
-  the same-boundary-chain comparison. All topological, flag, positivity,
-  primitive-log and unfilled-cusp premises are verified here.
+The [general circle-pattern paper](../marked-fillings/README.md)
+supplies Proposition 6.1 on near-complete metric completion, equation
+(7.3) for the volume differential in similarity-logarithm coordinates,
+and Section 7.3 on the fundamental-chain comparison. The Conway paper
+verifies the topology, face maps, positivity, primitive periods and
+complete unfilled cusps required to apply those results. It does not
+use the general paper's full matched-sphere construction as a substitute
+for this verification.
 
-The primitive ratio is $\tau=2ic/(1-\epsilon ic)$. Accordingly
-$\Phi_{\chi_i\chi_j}(0)=\pi i\tau_i\delta_{ij}$ and
-$DV(0)=-2\pi i\,\mathrm{diag}(\tau_i)$. This convention avoids the
-half-ratio ambiguity in the older general-mask note.
+The [Conway asymptotic paper](../conway-asymptotics/README.md) proves
+that its quantum critical action is the classical action constructed
+here. Neither paper asserts uniqueness on the whole character variety.
 
-## Build and finite reproduction
+## Build and finite checks
 
-From this directory:
+From the repository root:
 
-    latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build main.tex
+```sh
+python3 tools/build_papers.py strict-conway-geometry
+python3 -I papers/strict-conway-geometry/check.py --output /tmp/strict-conway-geometry.json
+```
 
-From the repository root, with SymPy installed in the chosen Python
-environment:
-
-    python -I papers/strict-conway-geometry/check.py --output /tmp/strict-conway-geometry.json
-
-The exact checker covers the finite mask-state closure, original
-endpoint-pairing table, an independent chord-line solution for the
-prism vertex, all twelve common prism maps and the two actual white
-triangle maps, projective edge/turn/closing words and their scalar
-returns, primitive collar translations, auxiliary flags and
-multipliers, and Hessian/signed-period/boundary-term algebra.
-Negative controls change an asymmetric mask, an ordered face map, a
-closing order, a component count, an odd meridian and the primitive
-factor of two. The JSON output pins the paper and its actual companion
-inputs and is written only if they remain unchanged. An optimized
-Python invocation is rejected and any stale output is removed first.
-These calculations do not establish variational existence, topology,
-convexity, completeness, analytic uniformity or a volume theorem.
+The checker requires SymPy. It tests the endpoint and boundary-edge
+bookkeeping, rational face maps, primitive translations and logarithmic
+normalizations. Deliberately altered maps and peripheral factors must
+fail the corresponding identities. These finite calculations detect
+formula errors; the existence, topology, completeness and volume
+arguments are written proofs in the paper.

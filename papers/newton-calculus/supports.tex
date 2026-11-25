@@ -13,11 +13,14 @@ The formulas just proved give
 The product is zero when $i+j>d$. These are not new hypotheses:
 they restate the finite identities to fix the notation used below.
 At the closing product, the complementary relation $i+j=d$
-has coefficient one. We impose it before deleting the forced gate.
-Every other product remains in the original source.
-When colors and retained half twists are varied independently, the
-$i$th leaf means exactly $h_i=\T(R^{\eps_i}L_{j_i})$, with
-$\eps_i\in\{-1,0,1\}$. The finite formulas of
+has coefficient one. We impose that relation and omit the final
+multiplication from the list of weighted factors. All other products
+remain in the sum. This convention is important in the later boundary
+argument: the omitted product contributes no action.
+When colors and retained half twists are varied independently, write
+$h^{(i)}=\T(R^{\eps_i}L_{j_i})$ for the $i$th leaf, with
+$\eps_i\in\{-1,0,1\}$. The superscript labels the occurrence;
+the subscript $j_i$ is its representation dimension. The finite formulas of
 Section~\ref{nt:colors} specify all these factors.
 
 \section{Exact supports and reduced product junctions}\label{st:syntax}
@@ -59,7 +62,11 @@ This identity also holds for arbitrary signed leaf coefficients.
 Only the positive-support conclusion uses positivity.
 
 \subsection{Strict real supports}
-Scale the finite wire labels by $d$. A strict leaf label is
+An edge of the expression tree records a Newton index between two
+operations; we call that index a \emph{wire label}. Dividing all
+finite labels by $d$ gives real labels in $[0,1]$. We first study the
+inequalities obtained in this scaling, before treating the small
+integer shifts caused by the two level parities. A strict leaf label is
 $0<a<1/2$. A strict retained product with inputs $x,y$ and output
 $z$ satisfies
 \begin{equation}\label{st:strict-gate}
@@ -190,10 +197,14 @@ remains, namely $x_1+x_2=1$.
 \end{proof}
 
 \subsection{The reduced junction tree}
-Write $\mathbf J_{ij}=\mathbf1_{i+j=d}$. Raising one index of
-$C_3$ by $\mathbf J$ recovers multiplication. Thus an internal
-edge without a turn contracts through $\mathbf J$, while an
-edge with a turn contracts through $\mathbf J\T=I$.
+The support test becomes simpler after consecutive products are
+combined. Write $\mathbf J_{ij}=\mathbf1_{i+j=d}$ for the closure
+pairing. Its matrix satisfies $\mathbf J^2=I$. Contracting one index
+of $C_3$ with $\mathbf J$ therefore recovers the multiplication
+coefficients in \eqref{st:product}. In this symmetric-tensor
+description an internal edge without a turn contracts through
+$\mathbf J$, while an edge with a turn contracts through
+$\mathbf J\T=I$.
 Contract unary chains modulo the algebraic identity $\T^2=I$,
 suppress the degree-two closing vertex, and collapse every
 internal edge without a turn. The result is a tree of
@@ -245,28 +256,35 @@ labels are equal. We retain this case separately below.
 \centering\input{figures/reduced-tree}
 \caption{A strict source with four original leaves. Each trivalent
 vertex carries the symmetric product tensor. The middle edge has
-a turn, so it is retained. A flagged leaf supplies $\T h_i$;
-the other leaves supply $h_i$. Each vertex has one flagged
-leaf. The labels $i$ remain independent when colors or crossings
-are changed.}\label{st:tree-figure}
+a turn, so it is retained. A flagged leaf supplies $\T h^{(i)}$;
+the other leaves supply $h^{(i)}$. Each vertex has one flagged
+leaf. The occurrence labels remain independent when their colors or
+crossings are changed.}\label{st:tree-figure}
 \end{figure}
 
-For later estimates it is useful to record the exact outgoing
-coupons. Root at a flagged leaf when one is present. A
-nonroot junction gives
+The same reduction also gives a recursion for the polynomial carried
+by a whole branch. Choose a leaf as root, using a flagged leaf if
+one is present, and orient all other branches toward it. For a
+nonroot junction $v$, let $Q_w$ be the polynomials already computed
+on its child branches, and let $h^{(l)}$ be the unflagged leaves attached
+directly to $v$. Its outgoing polynomial is
 \begin{equation}\label{st:messages}
  Q_v=
  \begin{cases}
- \T\bigl(p_{i(v)}\prod_wQ_w\prod_lh_l\bigr),
+ \T\bigl(p^{(i(v))}\prod_wQ_w\prod_lh^{(l)}\bigr),
        &\text{one flagged leaf},\\
- \T\bigl(\prod_wQ_w\prod_lh_l\bigr),
+ \T\bigl(\prod_wQ_w\prod_lh^{(l)}\bigr),
        &\text{no flagged leaf},
  \end{cases}
- \qquad p_i=\T h_i .
+ \qquad p^{(i)}=\T h^{(i)} .
 \end{equation}
-The final scalar is $\phi(p_0\prod Q_w\prod h_l)$.
+Here $i(v)$ denotes the unique flagged leaf at $v$ when it has one.
+If the root leaf is flagged, the final scalar is
+$\phi(p^{(0)}\prod Q_w\prod h^{(l)})$. If no leaf is flagged,
+use $\phi(h^{(0)}\prod Q_w\prod h^{(l)})$ instead. The products
+at the root exclude the root leaf itself.
 These are exact full-algebra identities, also for
-$h_i=\T(R^{\eps_i}L_{j_i})$ at independent colors and signs.
+$h^{(i)}=\T(R^{\eps_i}L_{j_i})$ at independent colors and signs.
 The two outgoing types are respectively $L$ and $A$.
 Commutativity and $\T^2=I$ in this calculation are not
 claims that arbitrary physical turns or products can be
@@ -274,18 +292,18 @@ removed from the underlying tangle.
 
 \begin{corollary}[Exposing any original leaf]\label{st:any-root}
 Every original leaf of a strict closed tree with $H\ge3$
-can be exposed as a closing character without changing
-any other leaf. If its reduced edge parity is $\sigma$,
+can be exposed as a closing factor without changing
+any other leaf. If its reduced edge has $\sigma\in\{0,1\}$ turns,
 and $A$ is the product of the other branches at its
 junction, then
 \[
- Z_N=\phi((\T^\sigma h_j)A)
-     =\phi(h_j\T^\sigma A)
-     =\phi(p_j\T^{\sigma+1}A),\qquad p_j=\T h_j .
+ Z_N=\phi((\T^\sigma h^{(j)})A)
+     =\phi(h^{(j)}\T^\sigma A)
+     =\phi(p^{(j)}\T^{\sigma+1}A),\qquad p^{(j)}=\T h^{(j)} .
 \]
 The last factor is either an unturned product of at least
-two $L/A$ branches, a decorated low module of the first
-form in \eqref{st:messages}, or the turned output of an
+two branches of type $L$ or $A$, an expression of type $L$ of the
+first form in \eqref{st:messages}, or the turned output of an
 unflagged product with at least two branches.
 \end{corollary}
 \begin{proof}
@@ -295,7 +313,7 @@ If $\sigma=1$, the root leaf uses the only possible flag,
 so all other branches are $L/A$ and
 $\T^{\sigma+1}A=A$.
 If $\sigma=0$ and another leaf at the junction is flagged,
-$A=p_i\prod Q$ and $\T A$ is the decorated low module.
+$A=p^{(i)}\prod Q$ and $\T A$ is of type $L$.
 If there is no such flag, $\T A$ is the outgoing
 unflagged product. The valence is at least three in
 all cases. In particular an entirely unflagged

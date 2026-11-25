@@ -18,25 +18,27 @@
 \newcommand{\Rea}{\operatorname{Re}}
 \newcommand{\Ima}{\operatorname{Im}}
 \title{Oscillatory filling sums with independently long twists}
-\author{}
-\date{}
+\author{Alexander Kolpakov}
+\date{25 November 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
-An exact finite Hermite functional can be written as a sum of oscillatory
-integrals indexed by nonzero integer Fourier charges. We prove an
-asymptotic formula for the whole sum from two source estimates: a
-nonvanishing holomorphic expansion near the complete point and a strict
-spectral gap away from it. The twist numbers are independently signed,
-sufficiently large integers, fixed before the level tends to infinity.
-The proof first bounds all distant charges on the original intervals,
-including the paired endpoint contributions. Only the remaining finite
-set is localized near its stationary points. The charges of magnitude
-one contribute equally, while every other charge is exponentially smaller.
-The resulting amplitude is nonzero and retains the finite-level action.
-We state the application to marked knot sources with its local analytic
-and geometric inputs explicit; this paper does not prove those inputs or
-estimate the other degree regions of the invariant.
+We prove an asymptotic formula for finite polynomial functionals that
+occur in Dehn filling calculations. The polynomial sequence must satisfy
+two assumptions: a nonzero holomorphic expansion near the origin, and
+a strict exponential bound away from the origin in a fixed complex
+strip. An exact Fourier formula expresses the functional as a sum of
+oscillatory integrals indexed by nonzero integers. For every fixed tuple
+of independently signed, sufficiently long twists, the terms indexed
+by $\pm1$ have equal leading contributions, with a nonzero coefficient;
+all other terms are exponentially smaller. The main issue is to estimate
+the infinite Fourier tail before localizing the integrals. We do so by
+moving a complete interval and combining its two vertical side integrals
+before taking absolute values. We then evaluate the remaining finite
+set by a contour shift and a complex Gaussian integral. The final
+section states how the result can be applied to a knot invariant, and
+which analytic and geometric hypotheses must still be established in
+that application.
 \end{abstract}
 
 \section{The question and the hypotheses}
@@ -49,10 +51,13 @@ of the same sum. We address one precise part of that problem: the passage
 from a local holomorphic source expansion to its entire Fourier filling
 sum.
 
-The motivating finite functional is defined in
-\cite{FinitePaper}. It includes first derivatives at double spectral
-roots, as well as the value at an odd simple root. Its Fourier
-representation involves every nonzero integer charge. Absolute
+The finite functional that motivates the problem is defined in
+\cite{FinitePaper}. It evaluates a polynomial and, at repeated roots,
+its first derivative. Such an evaluation is called a \emph{Hermite
+functional}. In the present problem the spectral roots may be double;
+an additional simple root occurs at odd levels. Its Fourier formula
+is indexed by all nonzero integers. We call these Fourier indices
+\emph{charges}; the word will have no further meaning. Absolute
 convergence for each fixed level is insufficient for an asymptotic
 argument: the constants in such a convergence estimate can grow
 exponentially with the level. We therefore prove a separate estimate
@@ -66,6 +71,12 @@ the determinant branch and the charge estimates explicitly. These
 details are needed to distinguish the complete filling sum from an
 arbitrarily chosen local integral.
 
+There are two independent integer parameters in the theorem. The
+\emph{level} $N$ will tend to infinity. The tuple of twist numbers
+$\boldsymbol n=(n_1,\ldots,n_r)$ is chosen first and is then held
+fixed. A threshold will be imposed on every $|n_j|$, but there will
+be no relation between their signs or relative sizes.
+
 Fix an integer $r\ge1$. For every integer $N\ge3$, let
 $P_N(\sigma_1,\ldots,\sigma_r)$ be a complex polynomial of degree at
 most $N-1$ in each separate variable. Put
@@ -74,7 +85,8 @@ most $N-1$ in each separate variable. Put
                          -2\cos(2\pi\delta_r)),\qquad
  \delta=(\delta_1,\ldots,\delta_r)\in\mathbb C^r.
 \end{equation}
-Thus $C_N$ is entire, one-periodic and even in each variable separately.
+We call $C_N$ the source function. It is entire, one-periodic and
+even in each variable separately.
 No bound on its total degree smaller than $r(N-1)$ is assumed.
 Write $I=[-1/2,1/2]$, and use Euclidean norm for real vectors and
 maximum norm when specifying polydisks.
@@ -112,8 +124,10 @@ $\tau_\eta,\gamma_\eta>0$ such that, for all large $N$,
  \quad\text{when }x\in I^r,\quad
  \max_j|x_j|\ge\eta,\quad \max_j|y_j|\le\tau_\eta.
 \end{equation}
-The bound is for the shared polynomial $P_N$ itself. Separate estimates
-for its local factors are not a substitute for this hypothesis.
+The bound concerns the same multivariable function $C_N$ as in
+\eqref{of:packet}. If $P_N$ was obtained by gluing local factors,
+this hypothesis must be verified after their internal variables have
+been combined.
 \end{enumerate}
 
 The restriction to sufficiently small $\eta$ loses nothing in later
@@ -146,7 +160,9 @@ choice of fractional power. Define
 \end{equation}
 Section~\ref{of:fourier} proves absolute convergence at each fixed
 $N$ and identifies this expression with the finite Hermite functional.
-The term \emph{charge} will mean precisely an index $\ell_j$ in this sum.
+Thus a charge vector is $\ell=(\ell_1,\ldots,\ell_r)$, with
+no zero coordinate. The factor $\prod_j\ell_j$ is part of the
+functional and must be kept when estimating its Fourier tail.
 
 \begin{theorem}[The whole filling sum]\label{of:main}
 Under \eqref{of:source}--\eqref{of:gap}, there is $n_0$ such that the
@@ -189,6 +205,12 @@ Moreover $\Phi-\Rea S_0=O(\sum_j n_j^{-2})$ as the independent
 magnitudes tend to infinity. Neither the threshold nor this last
 bound imposes a restriction on their ratios.
 \end{theorem}
+
+The conclusion is an asymptotic of the full functional
+\eqref{of:period}, including its infinite Fourier sum. It is an
+analytic theorem under assumptions~\ref{of:Hlocal}
+and~\ref{of:Hgap}; the hypotheses do not by themselves specify a
+knot or a hyperbolic volume.
 
 The constants in the relative error may depend on the fixed tuple.
 The theorem makes no assertion when the twists grow with $N$.
@@ -234,9 +256,38 @@ asserted to be a knot invariant. It illustrates why the local
 expansion and the global gap are distinct hypotheses and how each
 can be verified.
 
+Here is the division of the Fourier sum used in the proof. By reflection
+we can describe it using positive charges. There is a fixed small
+number $a>0$ and a cutoff
+$M_j=\lceil |n_j|/2+D\rceil$, where $D$ is fixed independently
+of the twists. The following four sets exhaust the charge vectors.
+\begin{center}
+\begin{tabular}{@{}p{.45\linewidth}p{.48\linewidth}@{}}
+\toprule
+Fourier indices & Estimate used \\
+\midrule
+Some $\ell_j>M_j$ & Move a full interval; combine its vertical sides
+before summing the infinite tail. \\[2pt]
+All $\ell_j\le M_j$,\newline but some $\ell_j>a|n_j|$ & Move a small cube a
+short distance upward in that coordinate; there is a fixed exponential
+loss. \\[2pt]
+All $\ell_j\le a|n_j|$,\newline but some $\ell_j>1$ & Evaluate the local
+critical point and compare its action with the unit-charge action. \\[2pt]
+All $\ell_j=1$ & Evaluate the local Gaussian; restore all $2^r$ sign
+choices by exact reflection. \\
+\bottomrule
+\end{tabular}
+\end{center}
+The first step is performed before cutting down to a small cube. The
+other three involve only finitely many terms for fixed
+$\boldsymbol n$. Their order in the written proof is chosen to
+establish the local critical-point estimates before applying them.
+
 \section{The exact Fourier representation}\label{of:fourier}
 
-We explain the normalization before estimating the sum. For a polynomial
+The first step is an identity at a fixed level. No asymptotic assumption
+is needed in this section. The identity also determines every scalar
+and parity factor that will occur in the leading coefficient. For a polynomial
 $H$ of degree at most $d$, the finite filling functional of
 \cite[Section 3]{FinitePaper} has the midpoint formula
 \begin{equation}\label{of:midpoint}
@@ -249,9 +300,13 @@ where
          \exp\left(\frac{\ii nN(\phi-\pi)^2}{4\pi}\right)
          H(2\cos\phi),\qquad 0\le\phi\le2\pi.
 \]
-The functional in \eqref{of:midpoint} retains the derivative at each
-double root; it is not evaluation only at the distinct roots.
-Its finite proof is the only quantum-algebra input to this section.
+Here $q^{nd^2/4}$ denotes
+$\exp(\pi\ii nd^2/(4N))$, using the same lift as
+\eqref{of:scalar}. Although \eqref{of:midpoint} is written as a
+sum over angles, $g'$ contains $H'$ as well as $H$. It therefore
+retains the derivative data at a double spectral root. The finite
+algebraic proof of this midpoint formula is the input from
+\cite{FinitePaper}; we prove its Fourier form here.
 
 At the endpoints, $g=0$ and $g'(0)=g'(2\pi)$. The equality follows
 because the derivative of the sine is the only surviving term and
@@ -329,11 +384,14 @@ gives the corresponding bound for $|w|\le1$. Apply this argument
 successively in the $r$ variables to prove \eqref{of:entire-bound}.
 \end{proof}
 
-Fixed source derivatives can be bounded by Cauchy's formula on a small
-fixed complex neighborhood. In contrast, derivatives of the Gaussian
-factor will be taken explicitly on real spectator variables. This
-distinction prevents large twist numbers from entering a complex-source
-bound where they do not belong.
+We shall often estimate one coordinate while the others remain real.
+The latter coordinates are sometimes called \emph{spectators}. We
+apply Cauchy's formula only to derivatives of $C_N$, on fixed complex
+neighborhoods. Derivatives of the quadratic exponential are computed
+explicitly while their own coordinates remain real. This keeps the
+exponential bound for $C_N$ independent of the twist numbers; the
+explicit derivatives add only powers of $N$ with constants depending
+on the fixed tuple $\boldsymbol n$.
 
 \begin{lemma}[Endpoint identities and summable charge weights]
 \label{of:endpoints}
@@ -362,7 +420,7 @@ each fixed $N$ and fixed $\boldsymbol n$.
 \end{lemma}
 \begin{proof}
 The first identity follows from the sine. In its first derivative
-only the cosine term survives; the source and the Gaussian have equal
+only the cosine term survives; the source and the quadratic exponential have equal
 values at the two endpoints. This remains true with complex values
 of the other coordinates. The Fourier characters also have equal
 endpoint values because $N\ell_j$ is an integer. The first two
@@ -373,16 +431,21 @@ by $\prod_j|\ell_j|$, the majorant is a product of convergent
 $\sum_{\ell_j\ne0}|\ell_j|^{-2}$ series.
 \end{proof}
 
-When \eqref{of:three-ibp} is applied only in a subset of coordinates,
-call them \emph{spectator coordinates}. Each contributes at most three
-boundary or integral terms. On real spectators a Gaussian derivative
-of order at most three costs $O_{\boldsymbol n}(N^3)$. Cauchy bounds
-for the source derivatives, at a fixed radius, have the same exponential
-rate as the source bound being used, after any stated reduction of its
-gap. The $N^3$ cancels the denominator in
-\eqref{of:three-ibp}; each weighted spectator charge thus contributes
-the summable factor $|\ell_j|^{-2}$. There are at most $3^{r-1}$ terms
-when all spectators of one distinguished coordinate are treated.
+We will also use \eqref{of:three-ibp} in all coordinates except
+one distinguished coordinate $i$. In each remaining coordinate it
+expresses the integral as endpoint terms and an integral involving
+at most three derivatives. Since that coordinate stays real, the
+quadratic exponential has modulus one; its derivatives cost at most
+$O_{\boldsymbol n}(N^3)$. Cauchy's formula bounds the derivatives
+of $C_N$ with the exponential rate of the strip estimate being used,
+after a fixed reduction of its gap. The three powers of $N$ are
+canceled by the denominator in \eqref{of:three-ibp}. Including the
+factor $\ell_j$ from \eqref{of:period}, each such coordinate is
+therefore bounded by a constant times $|\ell_j|^{-2}$.
+Repeating this in $r-1$ coordinates produces at most $3^{r-1}$
+terms, each with a product of summable inverse-square weights. This
+will permit all the other Fourier indices to be summed while we
+estimate the distinguished coordinate.
 
 \section{Critical points for independently signed twists}
 
@@ -464,15 +527,17 @@ vector to $\mathbf1$ give the required bound. At zero charge the
 critical point is zero and the action is $A_N(0)$.
 \end{proof}
 
-\section{The original local contour and its Gaussian coefficient}
+\section{A local contour through the critical point}
 
 Let $K_B=[-B,B]^r$, with $B$ fixed inside the local expansion disk.
 Choose $a$ in Lemma~\ref{of:critical} sufficiently small relative to
 $B$ and $r$. For a local positive charge write $z=x_*+\ii y_*$.
 Translate $K_B$ vertically to $K_B+\ii y_*$, one coordinate at a
-time. The holomorphic integrand gives exactly the translated integral
-and its side-face integrals. The coefficient of the translated integral
-is one; it has not been supplied by a choice of a saddle contribution.
+time. Cauchy's theorem expresses the integral over $K_B$ as the
+integral over the translated cube plus the integrals over its vertical
+side faces. We shall prove an exponential bound for those side faces.
+The translated cube contains the critical point, so this constructs
+its contribution from the given contour, with coefficient one.
 
 \begin{lemma}[Side faces and the local expansion]\label{of:local-integral}
 Uniformly for the local charges of Lemma~\ref{of:critical}, the
@@ -552,16 +617,22 @@ the sine factors or determinants vanishes. This proves both the
 relative error assertion and nonvanishing of the limiting coefficient.
 \end{proof}
 
-The real integral outside $K_B$ is bounded directly by
-\eqref{of:gap}; its chirp and charge factors have modulus one.
+For each fixed charge vector, the real integral outside $K_B$ is bounded by
+\eqref{of:gap}; its quadratic exponential and Fourier character have modulus one.
 This observation applies only to a fixed finite collection of charges.
 It is not used to split an infinite Fourier series at the boundary of
 $K_B$.
 
 \section{The infinite set of distant charges}
 
-We now estimate complete weighted charge terms in
-\eqref{of:period}. Fix a small strip height $\tau>0$ for which
+The preceding local calculation cannot yet be summed over all
+$\ell$. Its error estimate is for a fixed charge vector. In
+particular, cutting every integral down to a small cube could introduce
+new boundary terms with a non-summable Fourier bound.
+We therefore estimate the distant charges using their full intervals
+$I$, with the factors $\prod_j\ell_j$ in \eqref{of:period}
+included. Once their total is bounded, only finitely many charge
+vectors will remain. Fix a small strip height $\tau>0$ for which
 \eqref{of:gap} gives a strict source bound at
 $\delta_i=\pm1/2+\ii v$, $0\le v\le\tau$, with the remaining
 variables real. Choose it smaller if necessary so that Cauchy
@@ -594,23 +665,28 @@ endpoint integrands:
 \end{equation}
 The other sine and Gaussian factors are left outside this identity.
 The endpoint Fourier characters agree, and their product with the
-original parity is $(-1)^{\ell_i}$. In particular their modulus is one.
-Pairing the endpoints before estimating them exposes the quadratic
-zero in $v$.
+parity factor is $(-1)^{\ell_i}$. In particular their modulus is one.
+This is the crucial endpoint cancellation. Each vertical side
+separately has only the factor $\sinh(2\pi v)$, which vanishes to
+first order at $v=0$. Subtracting the sides gives the additional
+factor $\sinh(\pi n_iNv)$ and hence a quadratic zero. The Laplace
+integral of $v^2$ will supply three inverse powers of the distant
+charge. The weight $\ell_i$ then leaves a summable tail.
 
 \begin{figure}[ht]
 \centering
 \input{figures/whole-interval}
-\caption{One coordinate is moved on its whole original interval.
+\caption{One coordinate is moved on the full interval $I$.
 Both horizontal arrows give the direction of their integrals.
 The vertical arrows give the boundary contribution that is subtracted.
 The two vertical sides are retained and paired by
-\eqref{of:paired-current}. Spectator variables remain on their
-whole real intervals. Only after the distant charges have been
+\eqref{of:paired-current}. All other variables remain on their
+full real intervals. Only after the distant charges have been
 summed is a small real cube introduced.}
 \end{figure}
 
-Apply Lemma~\ref{of:endpoints} in every spectator coordinate.
+Apply Lemma~\ref{of:endpoints} in every coordinate other than $i$,
+as explained after that lemma.
 Using
 \[
  |\sinh(2\pi v)\sinh(\pi n_iNv)|
@@ -631,10 +707,11 @@ $2/[2\pi N(\ell_i-|n_i|/2)]^3$. The resulting charge sum is finite:
 For example, write $\ell=(\ell-|n_i|/2)+|n_i|/2$ and compare
 the sums of the inverse squares and cubes with their decreasing
 integrals. A change in the integer endpoint only changes the absolute
-constant. The spectator sums converge by their inverse-square factors.
+constant. The sums over the other Fourier indices converge because of their
+inverse-square factors.
 
 On the upper horizontal interval use \eqref{of:entire-bound}, with
-fixed Cauchy neighborhoods for spectator source derivatives. They can
+fixed Cauchy neighborhoods for the derivatives of $C_N$ in the other coordinates. They can
 be chosen to give total exponential cost at most $2\pi r\tau N$.
 The shifted Gaussian and Fourier factors in the distinguished
 coordinate have modulus at most
@@ -654,14 +731,15 @@ the same for both vertical sides together.
 
 Negative distant charges satisfy the identical estimates, by reflection.
 Taking a union bound over the distinguished coordinate proves
-\begin{proposition}[The entire distant-charge tail]\label{of:far}
+\begin{proposition}[The sum over distant charges]\label{of:far}
 For some fixed $\gamma_\infty>0$ and each fixed sufficiently long
 twist tuple, the sum of the absolute values of all complete weighted
 charge terms for which $|\ell_i|>M_i$ for at least one $i$ is at most
 \[
             C_{\boldsymbol n}N^C e^{N(\Phi-\gamma_\infty)}.
 \]
-Every spectator charge is summed over its full nonzero integer range.
+Every Fourier index in a coordinate other than the distinguished one
+is summed over its full nonzero integer range.
 \end{proposition}
 
 The union bound can count a charge more than once; this only enlarges
@@ -686,13 +764,13 @@ For $|x_j|\le b$ and $0\le v\le b/|n_i|$,
 \[
  \Rea A_N(x+\ii ve_i)\le A_N(0)-c|x|^2+Cv^2.
 \]
-The real chirp and charge contribution is
+The real part contributed by the quadratic and linear Fourier phases is
 \begin{equation}\label{of:bad-charge-loss}
  -2\pi n_ix_iv-2\pi\ell_iv
                   \le-2\pi|n_i|(a-b)v\le0.
 \end{equation}
 On the translated horizontal face, the loss is at least
-$2\pi b(a-b)$ and the source cost is at most $Cb^2/n_0^2$.
+$2\pi b(a-b)$ and the increase from $A_N$ is at most $Cb^2/n_0^2$.
 On a vertical side $|x_i|=b$, the fixed loss $cb^2$ persists,
 while \eqref{of:bad-charge-loss} remains nonpositive. Increase
 $n_0$ so that these costs are smaller than half the indicated losses.
@@ -705,7 +783,7 @@ the same strict exponential upper rate, with a constant depending on
 $\boldsymbol n$. Using the inner cube here and the outer cube for
 the local saddle avoids a conflict between the two contour estimates.
 
-\section{The unit charges and proof of the theorem}
+\section{Why the unit-charge terms add, and completion of the proof}
 
 All remaining charges lie in the local range
 $|\ell_i|/|n_i|\le a$. They are still a finite set for fixed
@@ -717,16 +795,21 @@ smallest such gap may tend to zero when a twist magnitude tends to
 infinity; it remains positive in the limit under consideration,
 where the tuple is fixed.
 
-The $2^r$ choices of unit signs contribute exactly equally. Indeed,
+It remains to add the $2^r$ charge vectors with
+$\ell_j\in\{-1,1\}$. These contributions have exactly the same
+complex phase, so their leading terms add rather than cancel. To see
+this before making any approximation,
 in one coordinate replace $\ell_j$ by $-\ell_j$ and substitute
 $\delta_j\mapsto-\delta_j$ on its full symmetric interval.
-The source and the Gaussian are even, the sine changes sign, and
+The source and the quadratic exponential are even, the sine changes sign, and
 the charge factor changes sign. Those two signs cancel.
-The parity character is unchanged because the two exponents differ
-by $2(N+1)\ell_j$. This is an equality of the original integrals,
-including phase, before any approximation.
+The parity factor is unchanged because its exponents differ by
+$2(N+1)\ell_j$. Thus the complete weighted term in
+\eqref{of:period} is unchanged by reflecting any charge coordinate.
+This exact symmetry, rather than positivity of individual integrands,
+is the noncancellation argument.
 
-For the positive unit vector, the original parity is
+For the positive unit vector, the parity factor is
 $(-1)^{(N+1)r}$. Multiplying its local formula by $2^r$, the
 prefactor $\Gamma_N(-\ii)^r$, and that parity gives
 \eqref{of:asymptotic}. Choose $n_0$ large enough that the unit
@@ -746,16 +829,18 @@ dividing by $N$ proves \eqref{of:rate}. The estimate for the unit
 action drop follows from Lemma~\ref{of:charge-gap} after passage
 to the limit. This completes the proof.
 
-\section{Use for a marked knot source}
+\section{Conditional application to knot invariants}
 
-We record the exact interface with the motivating source so that
-the theorem can be cited without importing a geometric conclusion
-into an analytic premise. Suppose a marked diagram has $r$ crossing
+We finish by separating the analytic theorem just proved from the
+additional inputs required for a knot volume conjecture. This section
+is an application under further hypotheses, not an assertion that
+every knot source satisfies them. Suppose a marked diagram has $r$ crossing
 regions and an exact full polynomial source $S_N$. The marked coefficient
 and its reduced framing convention are supplied by
 \cite[Theorems 9.1 and 10.1, Corollary 9.2]{FinitePaper}.
 Choose the central degree
-region in every local factor and let $P_N$ be its shared coefficient.
+region in every local factor and let $P_N$ be its multivariable polynomial coefficient, with the common gluing
+variables retained.
 This is a linear part of the original source; it need not define an
 independent invariant under changes of diagram.
 
@@ -766,13 +851,18 @@ In that application the required local expansion has the form
  {(2\pi N)^{(r-1)/2}\sqrt{\det H_N(\delta)}}
                           (1+O(N^{-1})).
 \end{equation}
-The matrix $H_N$ is the normalized face Hessian on the quotient by
-common scale. A separate source theorem must construct that quotient,
-prove its nondegeneracy, choose the positive complete branch of the
-determinant root, and establish this expansion on a fixed complex
-neighborhood. It must also prove the global shared gap
-\eqref{of:gap}. Nodal values or a formal stationary phase alone
-would not establish either premise.
+Here $H_N$ denotes the $(r-1)\times(r-1)$ holomorphic Hessian
+matrix supplied by that local calculation, in its specified face
+coordinates and measure. The missing direction is the common
+rescaling of the face variables. For $r=1$ its determinant is one.
+A separate source theorem must justify removing this direction,
+prove that $H_N$ converges locally uniformly to a nonsingular matrix,
+choose the square root that is positive at the real complete point,
+and establish \eqref{of:face-packet} on a fixed complex neighborhood.
+It must verify the reality, evenness, convergence and Hessian
+conditions on $A_N$ in assumption~\ref{of:Hlocal}, and prove the
+gap~\eqref{of:gap} for this same polynomial. Values at the finite spectral roots do not give a holomorphic
+expansion on a neighborhood; both estimates are separate hypotheses.
 
 If these inputs hold, set
 \[
@@ -814,9 +904,9 @@ Theorem~\ref{of:main}.
 
 \begin{thebibliography}{9}
 \bibitem{FinitePaper}
-\emph{Finite spectral evaluation and uniform filling bounds}, companion
+A.~Kolpakov, \emph{Finite spectral evaluation and uniform filling bounds}, companion
 manuscript, 2026.
-\href{https://sashakolpakov.github.io/murakamis_dream/papers/filling-bounds.pdf}{Full text}.
+\href{https://github.com/sashakolpakov/murakamis_dream/blob/conway-series-2026-11-25/docs/papers/filling-bounds.pdf}{Full text}.
 \bibitem{DLMF}
 F.~W.~J. Olver et al., eds., \emph{NIST Digital Library of Mathematical
 Functions}, Chapter 2, Asymptotic Approximations, \S2.4, Contour Integrals.
