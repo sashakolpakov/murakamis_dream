@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run the two retained Newton checks without duplicating their implementations.
+"""Run the physical Newton and support/profile checks for this paper.
 
 The checks cover bounded exact finite algebra, supports and rational stationary
 identities. The written all-level and variational proofs are not tested by
@@ -18,7 +18,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 SOURCES = (
     "main.tex", "finite.tex", "supports.tex", "variation.tex", "profiles.tex",
-    "completed.tex", "conclusion.tex", "figures/tangle-construction.tex",
+    "completed.tex", "conclusion.tex", "check_finite.py", "check_profiles.py", "figures/tangle-construction.tex",
     "figures/reduced-tree.tex", "check.py", "README.md",
 )
 
@@ -36,15 +36,15 @@ def main() -> None:
     destination = output / "summary.json"
     destination.unlink(missing_ok=True)
     if not __debug__:
-        raise SystemExit("Run without -O: the delegated checks require assertions.")
+        raise SystemExit("Run without -O: the component checks require assertions.")
 
     before = {str((HERE / name).relative_to(ROOT)): digest(HERE / name)
               for name in SOURCES}
     specifications = (
-        ("physical_newton", "papers/newton-tangles/check.py",
+        ("physical_newton", "papers/newton-calculus/check_finite.py",
          output / "physical-newton.json", output / "physical-newton.json",
          "source_sha256"),
-        ("strict_supports_profiles", "papers/strict-newton-profiles/check.py",
+        ("strict_supports_profiles", "papers/newton-calculus/check_profiles.py",
          output / "strict-supports", output / "strict-supports" / "summary.json",
          "source_hashes"),
     )
@@ -60,7 +60,7 @@ def main() -> None:
         report = json.loads(result_path.read_text())
         for relative, expected in report[hash_key].items():
             if digest(ROOT / relative) != expected:
-                raise SystemExit(f"Input changed during delegated check: {relative}")
+                raise SystemExit(f"Input changed during component check: {relative}")
             previous = before.setdefault(relative, expected)
             if previous != expected:
                 raise SystemExit(f"Conflicting input hashes: {relative}")

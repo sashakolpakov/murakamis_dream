@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run the two retained circle-tree checks without copying their implementations.
+"""Run the summed and directed checks for the current circle-tree paper.
 
 The checks cover exact edge identities, rational budgets, endpoint pairings
 and finite quotient/root-grid comparisons. They do not prove uniform contour
@@ -22,7 +22,7 @@ SOURCES = (
     "directed-kernels.tex", "directed-recursion.tex", "directed-applications.tex",
     "reproduction.tex", "references.tex", "figures/joint-contour.tex",
     "figures/normalized-recursion.tex", "figures/paired-leaves.tex",
-    "check.py", "README.md",
+    "check.py", "check_summed.py", "check_directed.py", "README.md",
 )
 
 
@@ -44,9 +44,9 @@ def main() -> None:
     before = {str((HERE / name).relative_to(ROOT)): digest(HERE / name)
               for name in SOURCES}
     specifications = (
-        ("summed_criterion", "papers/circle-tree-asymptotics/check.py",
+        ("summed_criterion", "papers/circle-tree-volume/check_summed.py",
          output / "summed.json", output / "summed.json", "source_sha256"),
-        ("directed_criterion", "papers/directed-tree-asymptotics/check.py",
+        ("directed_criterion", "papers/circle-tree-volume/check_directed.py",
          output / "directed.json", output / "directed.json", "source_sha256"),
     )
     reports = {}

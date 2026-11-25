@@ -215,7 +215,7 @@ def main():
     folder = Path(__file__).resolve().parent
     root = folder.parents[1]
     files = sorted(p for p in folder.rglob('*.tex') if 'build' not in p.parts)
-    files += [Path(__file__).resolve(), root/'papers/newton-tangles/main.tex',
+    files += [Path(__file__).resolve(), root/'papers/newton-calculus/main.tex', root/'papers/newton-calculus/finite.tex',
               root/'papers/filling-bounds/main.tex']
     def hashes():
         return {str(p.relative_to(root)): hashlib.sha256(p.read_bytes()).hexdigest() for p in files}

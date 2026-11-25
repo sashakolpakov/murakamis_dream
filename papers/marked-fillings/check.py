@@ -21,8 +21,16 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
+    if args.output:
+        args.output.unlink(missing_ok=True)
     if not __debug__:
         raise RuntimeError("Assertions must be enabled.")
+    here = Path(__file__).resolve().parent
+    root = here.parents[1]
+    inputs = [here/"main.tex", Path(__file__).resolve(),
+              *sorted((here/"figures").glob("*.tex"))]
+    before = {p.relative_to(root).as_posix():
+              hashlib.sha256(p.read_bytes()).hexdigest() for p in inputs}
     identities = []
     controls = []
 
@@ -241,17 +249,18 @@ def main() -> None:
     zero("tube_metric", tube_metric-original_metric,
          "R=asinh(1/r), X=xi+.5log(1+r^2) give the smooth tube metric")
 
-    here = Path(__file__).resolve().parent
-    inputs = [here/"main.tex", Path(__file__).resolve(),
-              *sorted((here/"figures").glob("*.tex"))]
+    after = {p.relative_to(root).as_posix():
+             hashlib.sha256(p.read_bytes()).hexdigest() for p in inputs}
+    if before != after:
+        raise RuntimeError("A recorded input changed during verification.")
     result = {
         "scope": "Finite symbolic algebra only: no packing, development, analytic "
                  "uniformity, topology, completion, Stokes limit, or volume theorem.",
         "method": "Exact rational/polynomial simplification, all free normal-flow "
                   "variables, both orientation signs, all six face permutations, "
                   "and reduced free-group words. No numerical sampling.",
-        "source_sha256": {p.relative_to(here).as_posix():
-                         hashlib.sha256(p.read_bytes()).hexdigest() for p in inputs},
+        "source_sha256": before,
+        "inputs_unchanged": True,
         "sympy_version": sp.__version__,
         "identities": identities, "identity_count": len(identities),
         "negative_controls": controls, "negative_control_count": len(controls),

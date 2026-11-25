@@ -9,7 +9,7 @@ bound for the filled expression.
 
 The code follows the retained statements of the
 [reference](../manuscript/README.md) and the
-[16-page Conway paper](../papers/conway-asymptotics/README.md).
+[17-page Conway paper](../papers/conway-asymptotics/README.md).
 The [coverage map](../formal/coverage.json) records each module's exact
 manuscript anchors, public roots and role.
 

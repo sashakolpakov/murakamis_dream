@@ -19,10 +19,11 @@ def inputs():
     own = [HERE / "check.py", *HERE.glob("*.tex"), *HERE.glob("figures/*.tex")]
     imports = [
         "papers/marked-fillings/main.tex",
-        "papers/strict-newton-profiles/main.tex",
-        "papers/strict-newton-profiles/syntax.tex",
-        "papers/strict-newton-profiles/variation.tex",
-        "papers/strict-newton-profiles/profiles.tex",
+        "papers/newton-calculus/main.tex",
+        "papers/newton-calculus/finite.tex",
+        "papers/newton-calculus/supports.tex",
+        "papers/newton-calculus/variation.tex",
+        "papers/newton-calculus/profiles.tex",
     ]
     return sorted(set(own + [ROOT / p for p in imports]))
 

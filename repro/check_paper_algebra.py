@@ -31,10 +31,8 @@ CHECKS = {
     "circle-tree-geometry": "papers/circle-tree-geometry/check.py",
     "nonparabolic-tree-geometry": "papers/nonparabolic-tree-geometry/check.py",
     "preferred-longitudes": "papers/preferred-longitudes/check.py",
-    "conway-geometry": "papers/conway-geometry/check.py",
     "meridian-tangles": "papers/meridian-tangles/check.py",
     "conway-source-bounds": "papers/conway-source-bounds/check.py",
-    "conway-fillings": "papers/conway-fillings/check.py",
     "conway-asymptotics": "papers/conway-asymptotics/check.py",
     "circle-tree-volume": "papers/circle-tree-volume/check.py",
     "quarter-index-asymptotics": "papers/quarter-index-asymptotics/check.py",
@@ -47,12 +45,12 @@ DIRECTORY_CHECKS = {"planar-certificates", "triangular-insertion", "terminal-dec
                     "moving-meridian-sources", "meridian-expansions", "circle-tree-volume",
                     "casimir-source-asymptotics"}
 CERTIFICATE_INPUTS = (
-    "papers/local-coefficients/check.py",
-    "papers/source-asymptotics/check.py",
-    "papers/newton-tangles/check.py",
-    "papers/strict-newton-profiles/check.py",
-    "papers/circle-tree-asymptotics/check.py",
-    "papers/directed-tree-asymptotics/check.py",
+    "papers/casimir-source-asymptotics/check_local.py",
+    "papers/casimir-source-asymptotics/check_central.py",
+    "papers/newton-calculus/check_finite.py",
+    "papers/newton-calculus/check_profiles.py",
+    "papers/circle-tree-volume/check_summed.py",
+    "papers/circle-tree-volume/check_directed.py",
     "papers/conway-source-bounds/check_fourier.py",
     "repro/check_protected_sums.py",
     "experiments/audit_actual_sector_cover.py",
@@ -87,7 +85,7 @@ def replay(output: Path) -> None:
     summary.unlink(missing_ok=True)
     sources = [ROOT / script for script in CHECKS.values()]
     # Register publication inputs explicitly: an unrelated working draft may
-    # change while this suite runs. Earlier registered editions remain covered.
+    # change while this suite runs. Only current registered papers are included.
     catalog_path = ROOT / "papers" / "catalog.json"
     catalog_bytes = catalog_path.read_bytes()
     catalog = json.loads(catalog_bytes)

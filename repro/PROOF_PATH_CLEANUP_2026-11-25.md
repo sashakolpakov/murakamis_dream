@@ -76,7 +76,7 @@ From the repository root:
 ~~~sh
 python3 repro/check_lean.py --output repro/results/manuscript-and-lean/lean
 python3 repro/check_manuscript_logic.py --output repro/results/manuscript-and-lean/manuscript-logic
-python3 -I papers/conway-asymptotics/check.py --output repro/results/manuscript-and-lean/conway-finite
+python3 -I papers/conway-asymptotics/check.py --output repro/results/paper-collection/finite/conway-asymptotics
 python3 tools/build_dependency_graph.py
 ~~~
 
@@ -98,3 +98,25 @@ The [current verification record](results/manuscript-and-lean/verification-summa
 collects those results. The frozen sufficient hypotheses and their
 natural-density-one conclusion are unchanged; the general
 finite-exception problem remains outside the proved statements.
+
+## The synchronized subject collection
+
+The current collection has 21 papers. Eight superseded editions have
+been removed after six necessary finite-check implementations were moved
+into the current Newton, Casimir and circle-tree papers. The
+[collection guide](../papers/README.md#the-conway-paper-and-its-supporting-proofs)
+explains that all of these manuscripts are from the same project.
+
+The Conway paper is now 17 pages. It states shifted Parseval and
+reconstruction, the coherent color bound, the zero-safe cost lemma and
+the stationary Schur formula explicitly. These elementary steps no
+longer have to be located in the long reference. Its six supporting
+papers total 132 pages. The 203-page reference covers overlapping
+material and other families; it is not an additional prerequisite.
+
+The [collection check](results/paper-collection/summary.json) verifies
+all 21 source/PDF pairs, the graph's compiled exports and current
+companion links. The [full finite replay](results/paper-collection/finite/summary.json)
+records the 20 current check groups. The Lean source map includes the
+newly explicit paper statements, and both projects were freshly replayed.
+No sufficient hypothesis or volume-theorem scope changed.

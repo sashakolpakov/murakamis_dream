@@ -22,8 +22,18 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, help="write the deterministic JSON record here")
     args = parser.parse_args()
+    if args.output:
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        args.output.unlink(missing_ok=True)
     if not __debug__:
         raise RuntimeError("Run without -O: assertions are part of this checker.")
+    here = Path(__file__).resolve().parent
+    paths = [Path(__file__).resolve(), here/"main.tex",
+             here/"figures"/"whole-interval.tex"]
+    def source_hashes():
+        return {path.relative_to(here).as_posix():
+                hashlib.sha256(path.read_bytes()).hexdigest() for path in paths}
+    before = source_hashes()
 
     identities: list[dict[str, str]] = []
     controls: list[dict[str, str]] = []
@@ -183,20 +193,15 @@ def main() -> None:
          boundary-(bottom-(top-right_side-left_side)),
          "bottom=top-right_side-left_side when the oriented rectangle boundary is zero")
 
-    here = Path(__file__).resolve().parent
-    paths = [Path(__file__).resolve(), here/"main.tex",
-             here/"figures"/"whole-interval.tex"]
-    hashes = {
-        path.relative_to(here).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
-        for path in paths
-    }
+    if source_hashes() != before:
+        raise RuntimeError("A source changed during the checks; no summary was written.")
     record = {
         "scope": "Exact finite symbolic algebra only. No contour bounds, uniformity, "
                  "Gaussian asymptotics, H1/H2, actual-source amplitude, or volume theorem is proved.",
         "method": "SymPy exact simplification; all displayed residuals are zero identities. "
                   "Deliberately incorrect controls are required to have nonzero exact residuals.",
         "sympy_version": sp.__version__,
-        "source_sha256": hashes,
+        "source_sha256": before,
         "identity_count": len(identities),
         "identities": identities,
         "negative_control_count": len(controls),

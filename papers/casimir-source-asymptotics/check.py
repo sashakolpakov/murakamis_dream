@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run the two retained finite Casimir-source checks without copying their code.
+"""Run the local-sector and central-cofactor checks for this paper.
 
 The results check finite algebraic identities at the listed levels. Uniform
 spectral bounds, complex contour estimates and Gaussian asymptotics retain
@@ -22,6 +22,7 @@ SOURCES = (
     "one-sided-envelope.tex", "face-phases.tex", "shared-coefficient.tex",
     "positive-matrices.tex", "complex-cofactors.tex", "angular-gap.tex",
     "shared-saddle.tex", "spectral-gap.tex", "filling-input.tex",
+    "check_local.py", "check_central.py",
     "references.tex", "figures/local-path-partition.tex",
     "figures/shared-tetrahedral-coefficient.tex", "check.py", "README.md",
 )
@@ -40,39 +41,33 @@ def main() -> None:
     destination = output / "summary.json"
     destination.unlink(missing_ok=True)
     if not __debug__:
-        raise SystemExit("Run without -O: the delegated checks retain their original assertions.")
+        raise SystemExit("Run without -O: the component checks require normal Python execution.")
 
     before = {str((HERE / name).relative_to(ROOT)): digest(HERE / name)
               for name in SOURCES}
     specifications = (
-        ("local_sectors", "local-coefficients", "source_sha256"),
-        ("central_cofactors", "source-asymptotics", "paper_sha256"),
+        ("local_sectors", "check_local.py"),
+        ("central_cofactors", "check_central.py"),
     )
-    for _, directory, _ in specifications:
-        for name in ("main.tex", "check.py"):
-            relative = f"papers/{directory}/{name}"
-            before[relative] = digest(ROOT / relative)
-
     reports = {}
-    for name, directory, paper_key in specifications:
-        script = f"papers/{directory}/check.py"
+    for name, filename in specifications:
+        script = HERE / filename
         result_path = output / (name + ".json")
         result_path.unlink(missing_ok=True)
-        command = [sys.executable, "-I", str(ROOT / script),
+        command = [sys.executable, "-I", str(script),
                    "--output", str(result_path)]
         result = subprocess.run(command, cwd=ROOT, text=True, capture_output=True)
         log = output / (name + ".log")
         log.write_text(result.stdout + result.stderr)
         if result.returncode:
-            raise SystemExit(f"{script} failed with exit code {result.returncode}; see {log}")
+            raise SystemExit(f"{filename} failed with exit code {result.returncode}; see {log}")
         report = json.loads(result_path.read_text())
-        expected_sources = {
-            f"papers/{directory}/main.tex": report[paper_key],
-            script: report["script_sha256"],
-        }
-        for relative, expected in expected_sources.items():
-            if digest(ROOT / relative) != expected or before[relative] != expected:
-                raise SystemExit(f"Input changed during delegated check: {relative}")
+        for relative, expected in report["source_sha256"].items():
+            if digest(ROOT / relative) != expected:
+                raise SystemExit(f"Input changed during component check: {relative}")
+            previous = before.setdefault(relative, expected)
+            if previous != expected:
+                raise SystemExit(f"Conflicting input hashes: {relative}")
         reports[name] = report
     for relative, expected in before.items():
         if digest(ROOT / relative) != expected:

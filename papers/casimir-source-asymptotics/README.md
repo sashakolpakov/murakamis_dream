@@ -28,6 +28,8 @@ python3 papers/casimir-source-asymptotics/check.py \
   --output repro/results/casimir-source-asymptotics
 ```
 
-The wrapper invokes the unchanged checks in the two earlier editions. The local check compares the finite matrix polynomial, path partition, central factors, protected-zero identities, and nodal signs at levels 3–6. The central-source check compares cofactors with positive matrix determinants and checks the parity normalization at levels 3–8. These exact finite checks help detect formula errors. The uniform estimates, complex contour arguments, and Gaussian asymptotics have written proofs in the paper.
+The runner invokes the two component suites in this folder,
+[check_local.py](check_local.py) and [check_central.py](check_central.py). The local check compares the finite matrix polynomial, path partition, central factors, protected-zero identities, and nodal signs at levels 3–6. The central-source check compares cofactors with positive matrix determinants and checks the parity normalization at levels 3–8. These exact finite checks help detect formula errors. The uniform estimates, complex contour arguments, and Gaussian asymptotics have written proofs in the paper.
 
-The earlier editions remain available in `papers/local-coefficients` and `papers/source-asymptotics`, with their original numbering. The new paper retains their labels as source aliases where definitions have been consolidated.
+The checks record the current consolidated TeX sources. They require no
+previous paper edition or archived proof.

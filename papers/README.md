@@ -12,13 +12,54 @@ constructions, asymptotic estimates, several volume families, and
 meridian and longitude results in 374 pages. Earlier tracked versions
 remain in Git history.
 The active [volume reference](../manuscript/README.md) now follows the
-same pure-source Conway proof as the 16-page application paper, using
+same pure-source Conway proof as the 17-page application paper, using
 the same proof files. It retains the independent tree and planar volume
 families; standalone meridian and recurrence developments remain in
 their separate papers. The reference incorporates its
 [errata](../manuscript/ERRATA.md). Its length is not the length of one
 proof. The working limit of 30 pages per subject paper is an editorial
 constraint, not the principle for grouping results.
+
+## The Conway paper and its supporting proofs
+
+These are manuscripts from the same project. They reorganize and expand
+the material developed in the reference; they are not independent external
+sources confirming its results. The division follows mathematical
+prerequisites. It is not a division of the reference into five equal parts.
+The reference also contains other volume families.
+
+The 17-page [Conway application](conway-asymptotics/README.md) uses five
+companion papers directly. Its geometry paper uses one further geometric
+result, so the complete reading route has six supporting manuscripts:
+
+| Supporting paper | What the Conway proof uses |
+| --- | --- |
+| [Finite spectral evaluation](filling-bounds/README.md) | The original invariant, its normalization, and full repeated-root crossing data. |
+| [Newton calculus](newton-calculus/README.md) | Exact tangle algebra, the primitive lattice and the strict stationary maximum. |
+| [Conway source bounds](conway-source-bounds/README.md) | The whole physical-source and complementary-source estimates. |
+| [Oscillatory fillings](oscillatory-fillings/README.md) | The nonzero whole filling asymptotic from the verified local and global source hypotheses. |
+| [Strict Conway geometry](strict-conway-geometry/README.md) | The marked knot complement, primitive fillings and absolute action-volume comparison. |
+| [Circle patterns and primitive fillings](marked-fillings/README.md) | The general completion and volume-differential results used by strict Conway geometry. |
+
+The first five are cited by the Conway paper; the last is used through
+strict geometry. The long reference is another account of overlapping
+material, rather than an additional seventh prerequisite. The collection
+check below verifies that the source files, compiled exports, PDFs and
+this reading route belong to the same current edition.
+
+Build and check the collection from the repository root:
+
+~~~sh
+python3 tools/build_papers.py
+python3 tools/build_dependency_graph.py
+python3 tools/check_paper_collection.py
+~~~
+
+The last command checks actual TeX inputs, published PDFs, compiled
+theorem labels and companion links. The
+[current record](../repro/results/paper-collection/summary.json)
+lists the six supporting manuscripts and their versions. These are
+consistency checks; the proofs remain in the papers themselves.
 
 [Explore the dependency graph](../docs/papers/dependencies.html).
 Each statement lists the results it uses, the reason for each use, and
@@ -60,18 +101,17 @@ common core for several inserted diagrams also uses protected gluing.
 
 ## The current drafts
 
-The twenty-one current drafts are provisional subject groupings, not a decision
-to publish twenty-one separate papers. Each gives the proofs of its stated results and names
-its numbered companion imports. Eight earlier editions, totaling
-another 113 pages, are preserved below for existing citations. This is a
-division of the retained results into citable components; the reading
-routes are explained at the end of this guide. The aggregate page count
+The twenty-one current drafts are organized by mathematical subject, not
+a decision to make twenty-one separate deposits. Each states its results,
+gives their proofs and identifies its numbered companion imports.
+Superseded editions have been removed after their necessary checks were
+moved into the current papers. Earlier tracked versions remain in Git
+history. The reading routes below identify which papers a result uses. The aggregate page count
 is not a measure of compression: separate papers repeat their conventions
 and references, and some supply arguments only sketched in the reference.
 The Newton, circle-tree and Casimir mergers state their common arguments
-once. The Conway application has also been reduced from 22 to 16 pages
-by removing the unused signed route and writing the pure-source
-calculation in full. The aim is to make
+once. The Conway application uses only the pure-source argument and states
+the Fourier, stationary-elimination and cost comparisons explicitly. The aim is to make
 each proof independently readable and citable while giving every shared
 argument one home.
 
@@ -191,7 +231,7 @@ imports are the stationary-profile theorem and the general primitive
 completion and volume differential. There is no quantum asymptotic
 premise.
 
-**Holomorphic source asymptotics and volume limits for strict Conway compositions.** 16 pages.
+**Holomorphic source asymptotics and volume limits for strict Conway compositions.** 17 pages.
 [TeX source](conway-asymptotics/main.tex) ·
 [PDF](../docs/papers/conway-asymptotics.pdf)
 
@@ -324,7 +364,7 @@ Section 14 supplies the exact normalized input to the oscillatory filling
 theorem. The local estimates and the central expansion now use one set
 of definitions and a single proof of the common nodal comparison. The
 former 14-page local-bound paper and 12-page central-source paper remain
-available as earlier editions. A bound on the other degree sectors and
+combined in this account. A bound on the other degree sectors and
 a geometric identification of the action are still separate inputs to
 a volume theorem.
 
@@ -585,78 +625,6 @@ circle-pattern paper supplies the marked geometric volume comparison.
 The application now cites numbered statements in these companion papers,
 and checks their common normalization and hypotheses.
 
-## Earlier editions
-
-The earlier Newton accounts remain available at their original addresses,
-so their numbered citations still identify the statements intended:
-
-- [Newton coefficients and positive sources for Conway tangles](../docs/papers/newton-tangles.pdf), 18 pages: the complete-meridian finite calculus and the completed-root variational theorem.
-- [Stationary profiles of strict Newton trees](../docs/papers/strict-newton-profiles.pdf), 14 pages: the larger strict-state problem and its boundary profiles.
-
-Their proofs are combined in the 26-page current Newton paper. Current
-companions cite that account; the earlier files are unchanged.
-
-The earlier circle-tree asymptotic papers also retain their original
-numbering and addresses:
-
-- [Degree and twist estimates for circle-tree invariants](../docs/papers/circle-tree-asymptotics.pdf), 15 pages: the summed degree-and-twist criterion and its explicit first microscopic meridian correction. [TeX source](circle-tree-asymptotics/main.tex).
-- [Local degree and twist bounds for circle-tree volume limits](../docs/papers/directed-tree-asymptotics.pdf), 15 pages: the directed recursion, independent degree-or-twist alternative and its endpoint constructions. [TeX source](directed-tree-asymptotics/main.tex).
-
-The 27-page current **Volume asymptotics for trees of crossing circles**
-contains both proofs. Current consumers cite that paper. The earlier
-source files and PDFs are unchanged; neither criterion has been removed
-or substituted for the other.
-
-The two earlier Casimir-source papers retain their numbering and addresses:
-
-- [Uniform spectral bounds for local Casimir sources](../docs/papers/local-coefficients.pdf), 14 pages: the phase-uniform central and one-sided bounds. [TeX source](local-coefficients/main.tex).
-- [Holomorphic asymptotics of central shared face coefficients](../docs/papers/source-asymptotics.pdf), 12 pages: the nonzero shared central asymptotic and the spectral gap. [TeX source](source-asymptotics/main.tex).
-
-The 25-page current **Spectral bounds and asymptotics of Casimir sources**
-contains both proofs. It defines their common operator, cofactors and
-triangle function once. Its local upper bounds and central asymptotic
-retain their distinct hypotheses; current consumers cite the combined
-account.
-
-The following two papers treat the narrower completed-root construction.
-They remain available for existing citations. The 21-page **Marked
-geometry of strict Conway compositions** now contains the local proofs
-and the broader complete and filled constructions, so these editions are
-not part of its required reading.
-
-**Pyramids, prisms, and complete geometry of Conway closures.** 13 pages.
-[TeX source](conway-geometry/main.tex) ·
-[PDF](../docs/papers/conway-geometry.pdf)
-
-The positive-source maximum in the Newton paper determines ideal
-hyperbolic cells. This paper proves that the stationary equations match
-their entire ordered quadrilateral faces, and that successive attachments
-stay convex. It then identifies the assembled boundary with the original
-projection cut, checks the face maps and edge returns, and constructs
-compatible horospheres at every cusp. The metric is therefore on the
-specified augmented link complement. Its volume is twice the sum of the
-cell volumes, or $2\pi$ times the source action. The original meridian
-and disk longitude form a primitive basis, also for the retained
-half-twist partners. The theorem uses the completed-root grammar of the
-Newton paper. A corollary identifies the positive complete source's rate
-with this volume; neither result asserts a signed filling asymptotic.
-
-**Marked deformations and long fillings of Conway closures.** 12 pages.
-[TeX source](conway-fillings/main.tex) ·
-[PDF](../docs/papers/conway-fillings.pdf)
-
-Starting with the complete Conway metric, this paper defines a classical
-cell potential and continues the full face maps and group relations.
-The original meridian and disk longitude give the primitive logarithmic
-filling equations. One neighborhood works for independently long signed
-slopes, without restrictions on their ratios. The metric completion
-keeps the main cusps complete and adds smooth solid tori along the
-original auxiliary slopes. The complete volume fixes the action's
-constant, and a comparison of the same fundamental chain gives the
-absolute filled volume. Its proof does not use a quantum asymptotic.
-The [reference errata](../manuscript/ERRATA.md) explain the corrected
-factor in the filling Jacobian.
-
 ## Reading routes and retained boundaries
 
 The volume-limit and recurrence arguments use different outputs of the
@@ -693,7 +661,7 @@ comparison. The planar certificate, terminal-decoration, triangular-insertion
 and three-braid papers prove their own sufficient estimates for the full
 complementary source. A central Gaussian alone does not supply those estimates.
 
-The reference manuscript and the 16-page application now share the same
+The reference manuscript and the 17-page application now share the same
 strict pure-source proof. An elementary closing child and a leaf at
 one quarter are allowed. The theorem retains strict feasibility, the
 knot component test and independently long fixed fillings. A further

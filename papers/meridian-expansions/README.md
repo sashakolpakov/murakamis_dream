@@ -17,7 +17,7 @@ The main imports are precise and one-way:
 - *Finite spectral evaluation and uniform filling bounds*, equation (10.11): the full modified-dimension convention, including its $N$-only phase.
 - *Exact Newton calculus for tangles with a moving meridian*, Proposition 6.1, Theorem 7.1 and Proposition 8.1: full spectral normals, actual contraction and scalar ledger.
 - *Spectral estimates for Conway tangle sources*, Lemma 2.1: finite complete Hermite conditioning.
-- *Holomorphic source asymptotics and volume limits for strict Conway compositions*, Lemma 2.1 only: canonical factorial interpolation and every finite bulk order. Its signed high-index recurrence is not a prerequisite of the present pure-source route.
+- *Holomorphic source asymptotics and volume limits for strict Conway compositions*, Lemma 2.1 only: canonical factorial interpolation and every finite bulk order. Only the canonical factorial result is used here.
 - *Nonparabolic holonomy of trees of crossing circles*, Theorem 1.2 and Corollary 7.1, and *Preferred longitudes of Conway tree complements*, Theorems 1.2–1.3: original-group branch and preferred-longitude identification used only in Section 8.
 
 Build with `latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build main.tex` in this folder. The illustration `figures/translated-charts.tex` shows the parameter neighborhoods required by a fixed recurrence.
@@ -28,4 +28,6 @@ The bounded algebra checker requires Python and SymPy:
 python3 -I papers/meridian-expansions/check.py --output /tmp/meridian-expansion-check
 ```
 
-The output directory receives `summary.json`; an older summary is removed before validation. The checks derive the reduced/full ratio modulo the actual relation $q^N=-1$, verify the cleared classical divisor/sign, check the rational sine identities, and exercise formal coefficient recovery with finite-jet negative controls. They do not test analytic remainders or identify a geometric representation by finite samples. The [formal coverage record](../../repro/PAPER_FORMAL_COVERAGE.md) locates the compiled coefficient, gauge, regrading and meridian-substitution implications. The source estimates, the actual annihilating recurrence and the geometric identification remain their stated written or application inputs. These formal implications are not a complete Lean theorem about a particular knot.
+The output directory receives `summary.json`; an older summary is removed before validation. The checks derive the reduced/full ratio modulo the actual relation $q^N=-1$, verify the cleared classical divisor/sign, check the rational sine identities, and exercise formal coefficient recovery with finite-jet negative controls. They do not test analytic remainders or identify a geometric representation by finite samples. The coefficient, gauge and meridian-substitution arguments are written
+proofs in this paper. The source estimates, specified annihilating
+recurrence and geometric identification remain their stated inputs.

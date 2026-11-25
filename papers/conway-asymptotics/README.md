@@ -98,6 +98,11 @@ twists.
   and global spectral gap.
 - Section 4 gives full-power Fourier--Hermite inversion, the midpoint
   formula, the filled remainder and the classical action comparison.
+- The same section now states shifted Fourier reconstruction and
+  Parseval, the coherent full-color error bound and Lemma 4.1 on
+  subexponential costs explicitly. The stationary Schur formula is
+  written in the proof of Theorem 3.1. These steps need no import
+  from the long reference.
 
 The introduction is a separate source file, [introduction.tex](introduction.tex),
 so the reference manuscript can include the same proof without copying it.

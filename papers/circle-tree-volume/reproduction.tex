@@ -6,11 +6,12 @@ reproduction command. From the repository root, run
 python3 -I papers/circle-tree-volume/check.py \
     --output /tmp/circle-tree-volume-check
 \end{verbatim}
-The runner delegates to the two retained suites, in
-\path{papers/circle-tree-asymptotics/check.py} and
-\path{papers/directed-tree-asymptotics/check.py}. It records both
-results together with the sources of this paper; the implementations
-of the checks are not copied into a third suite.
+The runner executes the summed-condition suite in
+\path{papers/circle-tree-volume/check_summed.py} and the
+directed-condition suite in
+\path{papers/circle-tree-volume/check_directed.py}. Both check
+implementations belong to this paper. Their results are recorded
+with hashes of the current sources.
 The first script checks four symbolic edge identities, finite complex
 products, and the summed-condition budgets. Its rational enclosures
 use convergent series for \(\pi\), \(\sinh\) and \(\cosh\), and its

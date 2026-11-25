@@ -64,13 +64,22 @@ $L_{j+1}=(-1)^jU_j(\sigma/2)$ satisfy the exact physical identity
  \sum_{j=0}^{d}|\beta_j^{n/2}|
        \le 2\sqrt N(1+|n|/\sqrt{12}).
 \end{equation}
-The norm bound follows more directly from orthogonality than from
-individual coefficient estimates. On the shifted grid,
+The norm bound follows from orthogonality. For any real shift $\alpha$,
+put $u_k=e^{2\pi\ii(k+\alpha)/N}$. The finite character sum gives
 \[
- \frac1N\sum_{k=0}^{N-1}w_k^{a-b}=\mathbf1_{a=b}
+ \frac1N\sum_{k=0}^{N-1}u_k^{a-b}=\mathbf1_{a=b}
                     \qquad(0\le a,b<N).
 \]
-Parseval's identity, in our $1/N$ Fourier normalization, gives
+Thus every complex array $(f_k)_{k=0}^{N-1}$ satisfies
+\begin{equation}\label{ca:shifted-parseval}
+\begin{aligned}
+ \widehat f_a&=\frac1N\sum_k f_ku_k^{-a},&
+ f_k&=\sum_a\widehat f_a u_k^a,\\
+ \sum_a|\widehat f_a|^2&=\frac1N\sum_k|f_k|^2.
+\end{aligned}
+\end{equation}
+Both identities follow by expanding the sums and cancelling all unequal
+characters. Taking $\alpha=1/2$ gives $u_k=w_k$, and therefore
 \[
  \|H\|_2^2=1,\qquad
  \|D\|_2^2=\frac{n^2}{4N}\sum_{k=0}^{N-1}(d-2k)^2
@@ -148,6 +157,39 @@ where, with $I=[-1/2,1/2]$,
                          2\pi\ii\sum_j\ell_jz_j\}}\dd z.\label{ca:period}
 \end{align}
 This is precisely the normalization in \cite[equation (1.6)]{Filling}; the definition \eqref{ca:period} fixes it independently of that equation number.
+
+Here is the elementary rate comparison used for the physical remainder.
+\begin{lemma}[Subexponential costs]\label{ca:subexponential-cost}
+Fix $\beta\in\mathbb R$. Suppose $B_N,C_N\ge0$, $E_N\in\mathbb C$
+and, for every $\eta>0$, eventually
+$B_N\le e^{N(\beta+\eta)}$ and $C_N\le e^{N\eta}$.
+If $|E_N|\le C_NB_N$, then for every $\eta>0$ eventually
+$|E_N|\le e^{N(\beta+\eta)}$.
+The hypothesis on $C_N$ holds for any bound
+$C_N\le C_0N^m$, with fixed $C_0\ge0$ and real $m$.
+\end{lemma}
+\begin{proof}
+Apply the two assumed bounds with $\eta/2$ and multiply them.
+For $C_0>0$, $\log C_0+m\log N=o(N)$ proves the polynomial assertion.
+For $C_0=0$ the cost vanishes. Neither step divides by a source
+budget or takes its logarithm, so zero budgets cause no exception.
+\end{proof}
+
+To apply the lemma, let $D_N(j)$ be the full source error on the
+physical tuple $j\in\{0,\ldots,d\}^b$, and suppose
+$|D_N(j)|\le B_N$ for every such tuple. After removing the common
+phases of modulus one, its filled error is the coherent sum
+\begin{equation}\label{ca:coherent-error}
+\begin{aligned}
+ E_N&=\sum_j\left(\prod_{\ell=1}^b
+                   \beta_{j_\ell}^{n_\ell/2}\right)D_N(j),\\
+ |E_N|&\le B_N\prod_{\ell=1}^b
+                   \sum_{k=0}^d|\beta_k^{n_\ell/2}|.
+\end{aligned}
+\end{equation}
+The second line follows by the triangle inequality and factoring the
+finite sum of products. The source bound is shared by all color tuples;
+no color is chosen independently before closing the diagram.
 
 Before using any asymptotic theorem, \eqref{ca:crossing-split} and
 Theorem~\ref{ca:strict-pure} show that replacing the full physical source by this corridor changes its filled value by at most

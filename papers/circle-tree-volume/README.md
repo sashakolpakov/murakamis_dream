@@ -36,6 +36,6 @@ From the repository root, the combined finite runner is:
 python3 -I papers/circle-tree-volume/check.py --output /tmp/circle-tree-volume-check
 ```
 
-It invokes the two existing checkers unchanged, with isolated Python, removes old results before launching them, requires both runs to succeed, and checks the recorded input hashes. It covers their exact identities, rational inequalities, endpoint pairings and finite comparisons. It does not certify the uniform estimates, Gaussian induction or geometric theorem by finite samples.
+It invokes [check_summed.py](check_summed.py) and [check_directed.py](check_directed.py) with isolated Python, removes old results before launching them, requires both runs to succeed, and checks the recorded input hashes. It covers their exact identities, rational inequalities, endpoint pairings and finite comparisons. It does not certify the uniform estimates, Gaussian induction or geometric theorem by finite samples.
 
-This is the current combined account. The earlier [summed-condition edition](../circle-tree-asymptotics/README.md) and [directed-condition edition](../directed-tree-asymptotics/README.md) remain available for existing citations. Their finite check implementations are retained by the combined runner. Combining the common preliminaries does not merge the two sufficient conditions or strengthen the directed meridian estimate.
+The two conditions share the finite preliminaries but retain their separate proofs. The local ratio criterion is a corollary of the directed condition; it has no separate quantum induction. Only the summed condition gives the explicit first microscopic correction. Earlier tracked editions remain in Git history.

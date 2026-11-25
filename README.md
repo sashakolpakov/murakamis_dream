@@ -30,7 +30,7 @@ from results restricted to other level sequences or link families.
 
 ## One strict Conway proof
 
-The [16-page Conway paper](papers/conway-asymptotics/README.md) proves a
+The [17-page Conway paper](papers/conway-asymptotics/README.md) proves a
 nonzero whole-invariant asymptotic and the volume limit for every fixed
 strict Conway expression with at least two crossing circles, provided
 its strand connections give a knot and every auxiliary filling is
@@ -51,6 +51,14 @@ identifies the absolute knot-complement volume.
 The [volume reference](manuscript/README.md) includes these same proof
 files. The separate [quarter-index paper](papers/quarter-index-asymptotics/README.md)
 contains the signed local results needed for its recurrence argument.
+
+The supporting manuscripts are also from this project. They organize
+the shared material into separately citable mathematical results.
+There are 21 current subject papers; the Conway volume proof uses six
+supporting papers, as listed in the
+[collection guide](papers/README.md#the-conway-paper-and-its-supporting-proofs).
+The [collection check](repro/results/paper-collection/summary.json)
+keeps their sources, compiled exports and PDFs synchronized.
 
 For each eligible fixed construction, the long-filling assignments have
 natural density one in their integer lattice. This is not density one

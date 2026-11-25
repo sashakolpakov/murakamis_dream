@@ -30,7 +30,8 @@ one kind of check does not overwrite another.
 | Claim being checked | Entry point | Requirements |
 | --- | --- | --- |
 | Finite rational certificates for the original tangle bounds | `python3 repro/verify.py --output repro/results` | Python 3.10 or later; standard library |
-| Finite algebra and rational constants in the registered papers | `python3 repro/check_paper_algebra.py --output repro/results/paper-algebra` | SymPy, python-flint, NumPy and mpmath |
+| Current paper sources, compiled exports, PDFs and companion links | `python3 tools/check_paper_collection.py` | Build all current papers first |
+| Finite algebra and rational constants in the registered papers | `python3 repro/check_paper_algebra.py --output repro/results/paper-collection/finite` | SymPy, python-flint, NumPy and mpmath |
 | Retained finite, Fourier/Hermite, variational and complex packet proofs in Lean | `python3 repro/check_lean.py --output repro/results/volume-lean` | Pinned Lean and Mathlib dependencies |
 | Consistency of the declared proof dependencies | `python3 repro/check_manuscript_logic.py --output repro/results/manuscript-logic` | Python standard library |
 
@@ -42,7 +43,7 @@ The [coverage record](PAPER_FORMAL_COVERAGE.md) explains the actual
 manuscript-facing roots, including the derived whole-color remainder
 bound and the explicit written analytic/geometric inputs.
 
-The paper-algebra runner has 22 groups. They cover the finite spectral
+The paper-algebra runner has 20 groups. They cover the finite spectral
 and Newton identities, both parity conventions, filling normalization,
 original peripheral coordinates, and the rational certificates used by
 the restricted families. The combined Casimir and circle-tree groups
@@ -50,7 +51,7 @@ invoke the retained component checks. Consolidation changes their
 organization, not their finite assertions. The runner saves every
 program's output and stops on a failure. Its record identifies the
 registered TeX and bibliography sources, the catalog, and the check
-scripts by their hashes; earlier registered editions are included.
+scripts by their hashes. Superseded editions are excluded.
 
 The two planar certificate groups use outward interval arithmetic and
 explicit Fourier-series remainder bounds. The written proofs explain
@@ -252,7 +253,7 @@ The [paper catalog](../papers/README.md) gives the current subject
 accounts and their build commands. These are provisional mathematical
 groupings; the dependency graph identifies their shared foundations.
 The [manuscript source guide](../manuscript/README.md) describes the frozen
-374-page reference account. Its [errata](../manuscript/ERRATA.md) should
+volume reference. Its [errata](../manuscript/ERRATA.md) should
 be read with it. Rebuilding documentation does not run the mathematical
 checks above.
 
@@ -265,10 +266,10 @@ python3 tools/build_book.py
 python3 tools/check_book.py
 ```
 
-`python3 tools/build_manuscript.py` reproduces the frozen reference
-account from its retained sources; it is not needed for an ordinary
-guide update. It does not incorporate later companion-paper results
-or the separate errata into that archive.
+`python3 tools/build_manuscript.py` builds the reference from its current
+sources, including the proof files shared with the Conway paper.
+It incorporates the listed corrections. It is not needed for an ordinary
+guide update.
 
 The certificate runner itself still requires only Python's standard library. Keeping rendering and verification separate makes a failed build distinguishable from a failed mathematical certificate.
 

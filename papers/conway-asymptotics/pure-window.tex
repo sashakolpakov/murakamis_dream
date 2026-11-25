@@ -128,8 +128,15 @@ index-interpolation error has to be estimated.
 
 Evenness in every color gives $F_{yt}(y,0)=0$, while
 $g_{tt}(x,0)=-2\pi\cot(\pi x)$.
-The stationary Schur complement therefore proves
-\eqref{ca:strict-pure-hessian}. Positivity of the density gives
+To compute the reduced Hessian, differentiate
+$F_y(y_*(t),t)=0$ and $\Phi_0(t)=F(y_*(t),t)$. This gives
+\begin{equation}\label{ca:stationary-schur}
+ Dy_*=-F_{yy}^{-1}F_{yt},\qquad
+ (\Phi_0)_{tt}=F_{tt}-F_{ty}F_{yy}^{-1}F_{yt},
+\end{equation}
+where every block is evaluated on the stationary family. The mixed
+block vanishes at zero, proving \eqref{ca:strict-pure-hessian}.
+Positivity of the density gives
 $a_0(0)>0$; shrinking the disk makes $a_0$ nonzero.
 The negative real-color Hessian, evenness and holomorphy give
 \eqref{ca:color-gaussian}. The exact finite window and its relative

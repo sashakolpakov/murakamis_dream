@@ -51,11 +51,8 @@ and deformed peripheral multipliers. In particular:
   `sm:multiplier-calculation`: the original primitive basis and its
   complete translations and deformed multipliers.
 
-The earlier completed-root papers **Pyramids, prisms, and complete
-geometry of Conway closures** and **Marked deformations and long
-fillings of Conway closures** remain historical references. Neither
-their local proofs nor their narrower global theorems are prerequisites
-of the present proof.
+The cell construction, deformation and filling comparison are proved
+in this paper. No earlier geometry edition is needed.
 
 ## Exact imports
 

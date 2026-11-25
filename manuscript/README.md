@@ -6,7 +6,7 @@
 
 The reference begins with the strict Conway theorem, proved through
 its pure auxiliary source. It includes the same proof files as the
-[16-page Conway paper](../papers/conway-asymptotics/README.md).
+[17-page Conway paper](../papers/conway-asymptotics/README.md).
 
 The reference also retains the independent circle-tree and planar
 volume families. Moving-meridian expansions, preferred-longitude

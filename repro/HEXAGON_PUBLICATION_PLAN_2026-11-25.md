@@ -1,6 +1,6 @@
 # Choosing a Hexagon deposit after the proof cleanup
 
-The 16-page **Holomorphic source asymptotics and volume limits for strict
+The 17-page **Holomorphic source asymptotics and volume limits for strict
 Conway compositions** is the lead article for the volume result. It now
 contains only its pure-source proof. The volume reference shares those
 proof files and supplies the conceptual account and independent volume
@@ -10,8 +10,8 @@ The application uses named companion results. Fix accessible editions of
 the Newton calculus, whole-source bounds, finite spectral evaluation,
 oscillatory fillings and marked strict geometry. The geometry paper also
 uses the general marked-filling paper. These seven current PDFs total
-148 pages; that is the declared dependency closure, not a claim that the
-16-page paper is standalone.
+149 pages; that is the declared dependency closure, not a claim that the
+17-page paper is standalone.
 
 For a smaller first deposit, the 11-page **Oscillatory filling sums with
 independently long twists** isolates the whole-sum noncancellation

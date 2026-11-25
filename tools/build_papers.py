@@ -65,8 +65,32 @@ def main() -> None:
         overfull = [line for line in log.splitlines() if "Overfull" in line]
         if overfull:
             raise SystemExit(f"{name}: overfull boxes need inspection and correction:\n" + "\n".join(overfull))
-        inputs = sorted(p for p in source.rglob("*") if p.suffix in {".tex", ".bib"} and build not in p.parents)
+        # Record the files actually read by TeX, including shared figures.
+        # A directory scan can miss external inputs and include unused drafts.
+        inputs = set()
+        for line in (build / "main.fls").read_text().splitlines():
+            if not line.startswith("INPUT "):
+                continue
+            path = Path(line[6:])
+            path = (source / path).resolve() if not path.is_absolute() else path.resolve()
+            if (path.is_file() and path.is_relative_to(ROOT)
+                    and not path.is_relative_to(build)
+                    and path.suffix in {".tex", ".bib", ".pdf", ".png", ".svg"}):
+                inputs.add(path)
+                if path.suffix in {".pdf", ".png", ".svg"}:
+                    native = path.with_suffix(".tex")
+                    if native.is_file():
+                        inputs.add(native)
+        for line in (build / "main.aux").read_text().splitlines():
+            match = re.match(r"\\bibdata\{([^}]+)\}", line)
+            if match:
+                for name in match.group(1).split(","):
+                    bibliography = (source / name).with_suffix(".bib").resolve()
+                    if bibliography.is_file() and bibliography.is_relative_to(ROOT):
+                        inputs.add(bibliography)
+        inputs = sorted(inputs)
         report = {"directory": name, "title": entry["title"], "status": entry["status"],
+                  "edition": catalog.get("edition"),
                   "pages": pages, "page_limit": entry["page_limit"],
                   "imports": entry["imports"], "pdf_sha256": digest(pdf),
                   "source_sha256": {str(p.relative_to(ROOT)): digest(p) for p in inputs},
@@ -74,7 +98,7 @@ def main() -> None:
                   "scope": "Typesetting, page count and declared imports only; not proof verification."}
         (build / "build-manifest.json").write_text(json.dumps(report, indent=2) + "\n")
         reports.append((report, pdf))
-        print(f"{name}: {pages} pages; no unresolved references or overfull boxes.")
+        print(f"{name}: {pages} pages; no unresolved references or overfull boxes.", flush=True)
     # Copy only after every selected paper passes the checks.
     if not args.no_publish:
         destination = ROOT / "docs/papers"
