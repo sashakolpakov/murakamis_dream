@@ -13,7 +13,7 @@ derivatives below are taken at this fixed root, not in a generic-q germ.
 
 ## 1. Direct powers in the original coefficient source
 
-The [homogeneous source theorem](actual_homogeneous_casimir_face_source.md)
+The [homogeneous source theorem](../papers/filling-bounds/README.md)
 assigns a degree-d polynomial H_F(x,b,c,y) to a polynomial F in the
 actual pair Casimir Omega. For two coupons on the SAME pair,
 
@@ -117,7 +117,7 @@ Hermite strategy cannot yield any upper exponential rate strictly
 below the augmented volume, even for arbitrarily large fixed powers.
 
 When a hyperbolic nontrivial filling with smaller volume is under
-consideration, the [representation-volume strictness theorem](general_representation_volume_kernel_strictness.md)
+consideration, the [representation-volume strictness theorem](../papers/casimir-source-asymptotics/README.md)
 identifies the needed strict geometric decrease. Inequality (9)
 shows why a successful direct spectral proof must retain cancellation
 beyond (6). It does not contradict a phase-preserving bound, the volume
@@ -126,7 +126,7 @@ n=0 is excluded: its nilpotent derivative weight vanishes.
 
 ## 3. The exact Gaussian retains the missing phases
 
-The existing [Gaussian filling theorem](actual_coherent_filling_gaussian_chirp.md),
+The existing [Gaussian filling theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_coherent_filling_gaussian_chirp.md),
 section1, proves even powers using full Hermite functional calculus.
 The same value-and-derivative argument gives every integer n:
 

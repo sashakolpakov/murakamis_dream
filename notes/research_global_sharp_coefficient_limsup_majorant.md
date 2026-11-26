@@ -237,7 +237,7 @@ The [original four-state source](research_original_one_sided_four_state_transfer
 supplies the exact full-interval coefficient and unused-row factors. The
 [positive eta-word identity](research_positive_eta_word_transfer.md) gives
 the polynomial domination in section1. The
-[global CROSS proof](actual_global_cross_spectral_gap.md) supplies the
+[global CROSS proof](../papers/casimir-source-asymptotics/README.md) supplies the
 antecedent fixed-block argument; section2 extends it explicitly through
 the cap on the full row range. The
 [full-fiber stationary classification](research_full_fiber_sharp_stationary_classification.md)

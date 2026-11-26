@@ -215,7 +215,7 @@ follow on the SAME polynomial disk (11).
 
 ## 5. Cover all first normals using exact source relations
 
-The [first-normal Ward theorem](actual_partner_first_normal_ward_reduction.md)
+The [first-normal Ward theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_partner_first_normal_ward_reduction.md)
 proves, for each opposite pair and every choice of the other bits,
 
     k(00)-k(01)-k(10)+k(11)=0.                   (16)
@@ -232,7 +232,7 @@ complement of a face, namely a three-edge star. Face sets satisfy
 positive-core theorem. If its maximal face sum is repeated, use the
 proved coherent Fourier bound. Otherwise use the exact controlled
 first-normal difference from the
-[Fourier source involution](actual_coherent_racah_tail_fourier_residues.md#6-the-residual-is-an-exact-partner-involution):
+[Fourier source involution](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_coherent_racah_tail_fourier_residues.md#6-the-residual-is-an-exact-partner-involution):
 
     |k(B)-k(B*)| <= C N^2(1+log N) W_N^2,         (17)
 

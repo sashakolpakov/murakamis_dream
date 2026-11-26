@@ -11,7 +11,7 @@ inferred from volume.
 Let Gamma be the marked complete finite-volume hyperbolic exterior group,
 with its original inclusion iota into PSL2(C). Let rho be ONE fixed
 representation with Vol(rho)=Vol(Gamma\H3)>0, in the normalization of
-[the representation-volume proof](general_representation_volume_kernel_strictness.md). Its proved section3
+[the representation-volume proof](../papers/casimir-source-asymptotics/README.md). Its proved section3
 constructs orientation-preserving target isometries g_j and natural maps
 F_j such that
 

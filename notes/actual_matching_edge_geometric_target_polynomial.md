@@ -87,7 +87,7 @@ choice of framing flags changes (3) or (4).
 
 ## 2. Classification in the certified complete geometry
 
-The [general matching-graph geometry](general_augmented_plat_matching_geometry.md)
+The [general matching-graph geometry](../papers/marked-fillings/README.md)
 puts the crossing-circle rectangle at `(1,E,-1,-E)`, with
 `E=exp(2pi i x)`, `0<x<1/2`, and `c=cot(pi x)>0`. The actual primitive
 collar, calibrated to the quantum half-twist sign in the
@@ -114,7 +114,7 @@ the ordinary packet, which keeps the channel real and discrete, nor the
 shrinking REAL-fold norm theorem is a continuation to it.
 
 There is no general remedy by selecting another matching edge. The
-[strict-quarter theorem](actual_conway_strict_leaf_quarter_bound.md),
+[strict-quarter theorem](../papers/conway-asymptotics/README.md),
 together with the actual marked Conway geometry, proves `x_leaf>1/4`
 for EVERY leaf of EVERY retained robust cylindrical Conway factor.
 Those are its measured primitive rectangle parameters, as follows also
@@ -160,7 +160,7 @@ the sign `(-1)^k` in (7). Also
 `[g-r][g+r+1]=(lambda_g-lambda_r)/(zeta-zeta^-1)^2`.
 
 Here is an own finite proof from the source sum. By symmetry assume
-`a<=g`. Apply the already proved [finite Sears identity](finite_balanced_sears_operator_proof.md)
+`a<=g`. Apply the already proved [finite Sears identity](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/finite_balanced_sears_operator_proof.md)
 to (9), with length a, retained parameter `Q^(g+1)`, and
 `d_S=Q^-d,e_S=Q`. Its new numerator and denominator EXPONENTS are
 

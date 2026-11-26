@@ -13,7 +13,7 @@ maximum. This is a local three-circle result, not a general graph theorem.
 
 Let C be the actual auxiliary [2,1,1,2] three-braid, closed on its
 third head with the original pivot. Its complete-color value is L_N
-by the [all-input circle theorem](actual_crossing_circle_source_and_filling.md).
+by the [all-input circle theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_crossing_circle_source_and_filling.md).
 It is an actual additional link component, with no division by its
 zero ordinary quantum dimension.
 
@@ -33,12 +33,12 @@ This is EXACTLY the original s=3 pretzel source
 
     A_(3,N)(R^(e_1)L_N,R^(e_2)L_N,R^(e_3)L_N)        (1)
 
-in the [literal source and transfer theorem](actual_odd_pretzel_augmented_transfer_source.md).
+in the [literal source and transfer theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_odd_pretzel_augmented_transfer_source.md).
 The black matching is precisely p_16 p_23 p_45, and its white caps
 and marked arc are precisely those used in the
-[all-channel marked contraction](actual_trivalent_all_channel_marked_contraction.md).
+[all-channel marked contraction](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_trivalent_all_channel_marked_contraction.md).
 Thus its raw scalar is the WHOLE channel sum Theta_N(e) in the
-[whole-label theorem](actual_trivalent_marked_theta_label_asymptotic.md).
+[whole-label theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_trivalent_marked_theta_label_asymptotic.md).
 There is no additional trace average, magnetic projection or state
 replacement in (1).
 
@@ -57,7 +57,7 @@ the main component count, not the retained three circles.
 ## 2. Reversible actual face cut and the hyperbolic complement
 
 The explicit projection-plane and crossing-disk cut of the
-[augmented pretzel geometry](actual_augmented_pretzel_geometric_volume.md)
+[augmented pretzel geometry](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_augmented_pretzel_geometric_volume.md)
 applies to (1), including its untwisted diagram. At s=3 each of the
 two cut projection cells P_3 has ideal vertices Z_k,U_k^+,U_k^-,
 k mod3, and faces

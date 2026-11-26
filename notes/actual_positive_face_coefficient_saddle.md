@@ -64,7 +64,7 @@ matrix, independent-entry positivity, or commutativity is required.
 Apply (3) to each original D_a, with its nonzero summands bI,
 xH_-/2,yH_+/2. When all three are present, the two pair traces involving
 the identity summand have lower bounds cN from the exact bulk-square
-argument in the [curvature theorem](actual_q_hahn_boundary_model_curvature.md).
+argument in the [curvature theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_q_hahn_boundary_model_curvature.md).
 For a two-variable220/022 determinant its single pair trace has the
 same bound. For202, with b=0, the pair trace is precisely its log-radius
 variance; the exact positive-polynomial variance proof gives cN.

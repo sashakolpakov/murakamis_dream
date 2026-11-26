@@ -53,7 +53,7 @@ in the congruence subfamily where every exponent in (2) is divisible
 by $3$, the minimal bridge number is exactly $k$. The congruence is used
 only for that lower bound, not for (3).
 
-Here $K_N$ denotes the original normalized root invariant, with the framing and component conventions of the [exact original period](general_localized_unit_charge_filling_period.md). The analytic implication is the [general complete-radius balance theorem](general_complete_radius_balance_filling_volume.md). It remains to prove its hypotheses for the actual
+Here $K_N$ denotes the original normalized root invariant, with the framing and component conventions of the [exact original period](general_localized_unit_charge_filling_period.md). The analytic implication is the [general complete-radius balance theorem](../papers/planar-certificates/README.md). It remains to prove its hypotheses for the actual
 source (1), uniformly in $k$, which occupies Sections 2–5 below.
 
 ## 2. Literal incidence, simple certificate and reflection

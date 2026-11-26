@@ -157,7 +157,7 @@ no assertion that an arbitrary abstract cubic graph is an admissible
 source is needed. A Morse presentation gives its actual cups, caps,
 and complete-circle tensors. This construction does NOT prove that the
 diagram has the fixed flat-plat presentation required by the
-[marked face-coefficient theorem](actual_original_marked_face_coefficient.md),
+[marked face-coefficient theorem](../papers/filling-bounds/README.md),
 sections1--3, with the same designated circle ports and mark. That
 theorem's gap sweep and marked conservation argument cannot simply be
 imported into an arbitrary Morse presentation. Neither a uniform bridge

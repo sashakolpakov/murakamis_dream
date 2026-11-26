@@ -28,7 +28,7 @@ statement.
 ## 1. Geometric input and statement
 
 Let Q be the labeled convex ideal right-angled polyhedron supplied by
-[the actual matching-graph certificate](general_augmented_plat_matching_geometry.md).
+[the actual matching-graph certificate](../papers/marked-fillings/README.md).
 Its shaded faces are triangles; its white faces are the actual projection
 regions. Every edge separates the two colors, and every vertex has four
 alternating incident faces. The shaded triangles are paired by the actual

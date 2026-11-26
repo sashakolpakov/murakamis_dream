@@ -1,12 +1,12 @@
 # Volume limits from the degree and twist at each circle
 
-The [directed all-orders extension](actual_all_circle_directed_all_orders.md) proves the full expansion on the shifted microscopic meridian charts for every certificate below, identifies its preferred-cusp correction, and supplies the selected geometric-factor conclusion for genuine all-level annihilators.
+The [directed all-orders extension](../papers/meridian-expansions/README.md) proves the full expansion on the shifted microscopic meridian charts for every certificate below, identifies its preferred-cusp correction, and supplies the selected geometric-factor conclusion for genuine all-level annihilators.
 
 Start with a fixed finite ordered tree of two-strand integer braids, with
 at least one edge and one crossing circle at every vertex. Turn each child tangle through its
 specified quarter-turn before stacking it at the parent, and use the
 original cylindrical closure. The
-[literal construction and strand test](actual_all_circle_quantitative_volume.md#the-knot-construction)
+[literal construction and strand test](../papers/circle-tree-volume/README.md)
 retain the endpoint frames and require one closed main knot, with no
 component closed inside an intermediate tangle.
 
@@ -183,7 +183,7 @@ polynomial trace is
 \]
 The remainder has degree less than \(N\). This is the full polynomial
 functional, including its derivative values when roots coalesce.
-The [typed turn theorem](actual_main_meridian_turn_comparison.md)
+The [typed turn theorem](../papers/moving-meridian-sources/README.md)
 retains the paired factors
 \[
  W_k(s)=\prod_{r=1}^k
@@ -209,9 +209,9 @@ For the edge action write
 The logarithms and stationary branch are continued from
 \(x=1/4,t=u=0\). The finite factorial interpolation, the actual edge
 contour and this phase are proved in
-[the all-circle finite-sum theorem](actual_all_circle_curvature_filling_limit.md).
+[the all-circle finite-sum theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_all_circle_curvature_filling_limit.md).
 Its polynomial estimates use
-[the full Newton bounds](all_circle_uniform_newton_bounds.md).
+[the full Newton bounds](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/all_circle_uniform_newton_bounds.md).
 Use the exact full kernel
 \[
  K_N(t,u;s)=\sum_{k=0}^{N-1}
@@ -225,7 +225,7 @@ unchanged. It is a polynomial of degree at most \(N-1\) in each of
 The paired factors and their inverses are bounded for fixed \(|s|\le R<1\).
 Every inequality below permits a polynomial factor in N.
 
-The [full-kernel real estimate](actual_all_circle_local_message_volume.md#two-full-kernel-bounds) is
+The [full-kernel real estimate](../papers/circle-tree-volume/README.md) is
 \[
  |K_N(t,u;s)|\le C_RN^{A_R}
    e^{N\{2G_0-k_0[(1-\cos t)+(1-\cos u)]\}},
@@ -311,7 +311,7 @@ For \(|t|\ge1/8\),
 For example \(\sin(1/16)>1/(8\pi)\), \(\pi^2<10\) and \(\alpha>1/250\) already
 prove the first inequality. This proves (15) in this range.
 
-For \(|t|\le1/8\), the [canonical wire contour](actual_all_circle_curvature_filling_limit.md) gives the exact
+For \(|t|\le1/8\), the [canonical wire contour](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_all_circle_curvature_filling_limit.md) gives the exact
 nonzero edge asymptotic on the 1/4 bidisk. Both \(u\) and \(t+iy\) lie strictly
 inside that disk. Integrating the first bound of (17) gives (15) there.
 The original lattice currents and (16) are exponentially smaller.
@@ -335,7 +335,7 @@ trace tensors. Choosing a root merely specifies the order of these
 finite contractions. It does not move a cut through a tangle, commute
 open operators or change a framing.
 
-Consequently the [exact recursions](actual_all_circle_local_message_volume.md#the-full-finite-kernel-and-exact-recursion)
+Consequently the [exact recursions](../papers/circle-tree-volume/README.md)
 hold for any chosen root:
 \[
  M_{v,N}(u)=\gamma_{e_v}(s)\,
@@ -349,7 +349,7 @@ at a nonroot vertex, and
                   \left[\prod_{w\in\mathrm{Ch}(o)}M_{w,N}(t)\right]
  \tag{26}
 \]
-at the root. The [original global closing, framing and reference factors](actual_main_meridian_exact_scalar.md),
+at the root. The [original global closing, framing and reference factors](../papers/meridian-tangles/README.md),
 and the original single reduced cut \(H_N\), remain outside (26). Edge
 gammas are counted once. The exact normal value \(\sigma_v=0\) and the moving
 values \(\pm s\) retain their actual orientation types.
@@ -475,7 +475,7 @@ complete-source magnitudes. Equations (15) and (30) imply
 The root constant is zero. The factor \(2/\pi^2\) in (4) is exactly the
 inequality \(1-\cos t\ge2t^2/\pi^2\) on the original interval.
 
-The [exact finite translated-grid trace](actual_main_meridian_direct_crossing_trace.md), with its endpoint currents,
+The [exact finite translated-grid trace](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_main_meridian_direct_crossing_trace.md), with its endpoint currents,
 has charge coefficients
 \[
  c_{\ell,N}(\sigma)=(-1)^{(N-1)(\ell-1)}
@@ -550,7 +550,7 @@ current is declared removable without its companions.
 
 ## 6. Regenerating the outgoing real bound
 
-The [canonical polynomial bounds](actual_main_meridian_source_bounds.md), equations (D9)–(D14), retain the full source. For real \(u\), (14),
+The [canonical polynomial bounds](../papers/moving-meridian-sources/README.md), equations (D9)–(D14), retain the full source. For real \(u\), (14),
 the polynomial real sup bounds of the normalized children, the actual
 fixed-power crossing polynomial, Chebyshev folding in the correct
 quotient, and the full top-coefficient functional give
@@ -600,7 +600,7 @@ marked positive charge path. Indeed
  \sqrt{d_v^2+n_v^2}=2\pi|D_v|\ge 2\pi\,2^{15}>630.
  \tag{46}
 \]
-The [vertexwise geometric theorem](actual_all_circle_vertexwise_geometry.md) applies with no sum condition.
+The [vertexwise geometric theorem](../papers/circle-tree-geometry/README.md) applies with no sum condition.
 Its original ordered two-octahedron cut, odd seam, primitive periods and
 calibrated action identify \(2\pi\Re\mathcal C(\mathbf1)\) with the volume of the actual
 filled knot complement. This is a geometric input, not a deduction

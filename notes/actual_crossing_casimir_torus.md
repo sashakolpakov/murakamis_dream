@@ -14,7 +14,7 @@ all source divisors explicitly recorded below remain excluded.
 
 ## 1. The exact original kernels and their composition
 
-The [frozen homogeneous theorem](actual_homogeneous_casimir_face_source.md) gives the original coupon polynomial
+The [frozen homogeneous theorem](../papers/filling-bounds/README.md) gives the original coupon polynomial
 H_F(x,b,c,y), homogeneous of degree d. For literal polynomials F,G
 in the SAME pair Casimir, including their full repeated-node data,
 
@@ -230,7 +230,7 @@ interpretation reverses that map.
 
 This recovers an explicit classical coordinate for the EXISTING
 full-Hermite Gaussian functional calculus, rather than replacing it.
-The [existing Gaussian theorem](actual_coherent_filling_gaussian_chirp.md), section1, proves
+The [existing Gaussian theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_coherent_filling_gaussian_chirp.md), section1, proves
 R^(2P)=q^(P d^2/2) exp[P K(Omega)/hbar], where
 K(sigma)=arccosh(-sigma/2)^2 is analytic off[2,infinity) with its
 removable value at sigma=-2. The same node and derivative check gives
@@ -296,8 +296,8 @@ torus theorem does not assert that this reducible fiber is nonsingular.
 ## 7. Existing repository scope and the remaining source question
 
 The repository already has exact full-Hermite Gaussian powers in
-[the Gaussian source note](actual_coherent_filling_gaussian_chirp.md) and its Fourier-Hermite
-source dependencies. It also has [the uniform group-relator note](uniform_twist_relator_source.md),
+[the Gaussian source note](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_coherent_filling_gaussian_chirp.md) and its Fourier-Hermite
+source dependencies. It also has [the uniform group-relator note](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/uniform_twist_relator_source.md),
 sections1--2: a quadratic norm group for the TWIST-KNOT GROUP RELATOR
 w^k, explicitly not the original quantum crossing-source torsor.
 The [intrinsic quantum-A norm-torsor](intrinsic_quantum_a_norm_torsor.md) construction is a different

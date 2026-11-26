@@ -259,9 +259,9 @@ or volume bound for the original source, follows from (12).
 
 ## Inputs
 
-The weights are those of the [exact protected cap](research_trace_one_mark_and_cap_turn_interface.md).
+The weights are those of the [exact protected cap](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/research_trace_one_mark_and_cap_turn_interface.md).
 The polynomial in (9) is precisely the [original-demand cap/CROSS
-convolution](research_two_port_main_cap_original_demand_convolution.md).
+convolution](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/research_two_port_main_cap_original_demand_convolution.md).
 No triangle factor, unused spectral product or projected endpoint is
 changed by defining this inner product.
 

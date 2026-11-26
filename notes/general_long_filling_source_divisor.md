@@ -12,7 +12,7 @@ This removes one source hypothesis. It does not construct the required
 whole-source gap or complex packet for an arbitrary plat, and it does
 not prove that an unknown original source has a nonzero amplitude germ.
 The source, its full normal terms and all peripheral factors remain the
-ones in the [general transfer](general_original_source_long_filling_transfer.md).
+ones in the [general transfer](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/general_original_source_long_filling_transfer.md).
 
 ## 1. The precise weaker packet hypothesis
 

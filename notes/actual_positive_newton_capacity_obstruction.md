@@ -15,7 +15,7 @@ restriction is a lower bound. No signed-source conclusion is made.
 Put q=exp(pi i/N), d=N-1, s_j=2sin(pi j/N), S_j=product_(k=1)^j s_k,
 and B_r(z)=product_(k=0)^(r-1)(q^(2k+1)+q^(-2k-1)-z),
 Bhat_r=B_r/S_r^2. For the original untwisted face operator T of
-[the exact one-port correspondence](actual_small_circle_polynomial_face_insertion.md),
+[the exact one-port correspondence](../papers/triangular-insertion/README.md),
 including its q^(dp) character, the finite identity is
 
     Bhat_r(-T)c^m = sum_(0<=i,j<=r; i+j<=m)
@@ -52,7 +52,7 @@ log-concavity in h puts the maximum at h=N/2; double-angle cancellation
 gives 2 product_(k=1)^r s_(2k)/product_(k=0)^r s_(2k+1). Its successive
 ratio changes once from <=1 to >=1, so the two endpoints suffice.
 They are csc(pi/N) and either N/2 or csc(pi/N), all <=N/2. This is
-also proved in [the pure-leaf calculation](actual_pure_conway_auxiliary_color_leaf.md).
+also proved in [the pure-leaf calculation](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_pure_conway_auxiliary_color_leaf.md).
 The majorant studied here is the TRUE sum sum_r b_(h,r)Z_r, retaining
 these magnitudes rather than replacing all of them by N/2.
 

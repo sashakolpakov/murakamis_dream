@@ -324,9 +324,9 @@ inhomogeneous source factor, or that its period has the geometric
 regulator norm. A positive ideal triangulation supplies the geometric
 Bloch class and gluing branch. The exact comparison between its
 quantum gluing period and the actual cut-state module remains
-necessary, as detailed in [the triangulation bridge](triangulation_regulator_bridge.md).
+necessary, as detailed in [the triangulation bridge](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/triangulation_regulator_bridge.md).
 
-The subsequent [relative octahedral presentation](relative_octahedral_period.md)
+The subsequent [relative octahedral presentation](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/relative_octahedral_period.md)
 now rewrites these very cut-state coefficients into five tetrahedral
 atoms, proves their local ideal-octahedron geometry, and derives
 the finite factorial's source and exact cyclic boundary transition.

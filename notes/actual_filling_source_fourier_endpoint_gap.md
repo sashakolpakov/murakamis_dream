@@ -83,7 +83,7 @@ Its input is precisely the state-specific analytic bound (1).
 ## 2. Apply the lemma BEFORE any Gaussian approximation to the filling
 
 Use the original q,Q,kappa and the exact full-jet kernel from
-[the coherent filling theorem](actual_coherent_filling_gaussian_chirp.md).
+[the coherent filling theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_coherent_filling_gaussian_chirp.md).
 For t_k=(k+1/2)/N and y_k=2pi i(t_k-1/2), write
 
 \[
@@ -131,7 +131,7 @@ endpoint remainder equals that one Ward forcing.
 ## 3. The actual mixed-source input and its precise remaining scope
 
 The EXACT finite packet in
-[the analytic original-source theorem](actual_pretzel_exact_analytic_color_packet.md)
+[the analytic original-source theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_pretzel_exact_analytic_color_packet.md)
 provides (1)--(2) for a mixed pretzel period at fixed odd s>=5,
 on a sufficiently small complete-color corridor. Here the other
 physical cusp colors may be fixed in a sufficiently small corridor.

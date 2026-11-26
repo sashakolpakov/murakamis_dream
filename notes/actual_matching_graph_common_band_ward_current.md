@@ -74,7 +74,7 @@ one must not invent a path joining those components. If the component
 conditions constrain a,l, keep those original affine strata rather
 than asserting a two-dimensional chart. On a geometric two-position
 chart the required connected deleted graph is the explicit criterion
-in the [two-cut construction](actual_two_cut_framing_port_reconstruction.md).
+in the [two-cut construction](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_two_cut_framing_port_reconstruction.md).
 For a chosen route U the graph is checked after its actual expansion;
 connectedness of a different uncut diagram is not a substitute.
 
@@ -98,7 +98,7 @@ kept; their unit-step multipliers are the actual recorded ones.
 One may instead keep an original R as a four-port vertex only when
 using its specified literal factorial continuation. Its exact
 independent-variable Ward ratios are those of the
-[original crossing currents](local_r_ward_transfer_currents.md).
+[original crossing currents](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/local_r_ward_transfer_currents.md).
 This is a second permitted primitive presentation, not an assertion
 that two different off-grid presentations coincide merely because
 their physical matrices agree. The full spectral W/cup presentation

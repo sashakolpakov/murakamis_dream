@@ -16,8 +16,8 @@ the volume conjecture, or a coherent non-diagonal special inner product.
 Use `q=exp(pi*i/N)`, `Q=q^2`, `d=N-1`, `x=-q^-1`,
 `F_a=(Q;Q)_a`, `s_a=|F_a|`. The actual word is `[1,-2,1,-2]`.
 Its clocks are the original overclocks `(h_0,h_1,h_2,h_3)`.
-The [whole charged source](actual_global_charged_bridge_flow.md) and
-[actual closure contractions](actual_general_flow_fusion.md) give
+The [whole charged source](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_global_charged_bridge_flow.md) and
+[actual closure contractions](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_general_flow_fusion.md) give
 
     K_N=sum_h K_(N;h),
     K_(N;h)=(chi_N/N) zeta_(N;h) C_(N;h), |zeta|=1.   (1)
@@ -31,7 +31,7 @@ No unknown knot scalar has been divided out.
 
 The full source support gives `h_0=0`, before any separate-sector
 Schur argument. In the rescaled anchors of
-[the actual alternating-source table](actual_alternating_balanced_source.md#3-a-second-support-inequality-in-the-actual-reduced-polynomial),
+[the actual alternating-source table](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_alternating_balanced_source.md#3-a-second-support-inequality-in-the-actual-reduced-polynomial),
 write `B_L(U,V;Q^p)=product_(r<L)(U-Q^(p+r)V)`. Then
 
     C_(N;h)=[A^d B^d C^d D^d] product of these EIGHT blocks:
@@ -62,7 +62,7 @@ have `D_(d-h_i)D_(h_i)=1` at each crossing. Thus the product of all
 EIGHT table normalizers is exactly one. The coefficient `C_(N;h)`
 is also the completely contracted normalized-b clock STATE in this
 closure-contracted presentation. The co-source remains polynomial,
-as in [the exact clock-source theorem](actual_length_gauge_clock_source.md).
+as in [the exact clock-source theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_length_gauge_clock_source.md).
 
 ## 2. A uniform family with no internal cancellation
 

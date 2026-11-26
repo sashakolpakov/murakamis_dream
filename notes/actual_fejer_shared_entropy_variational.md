@@ -16,7 +16,7 @@ global labels through the literal incidence map. Let
     P_e=-H_(V_N(-2)), V_N(sigma)=chi_N(sigma)(sigma-Omega)^(-1),
     Z_(D,N)=[prod_(f ordinary)L_f^d] prod_e P_e |_(L_u=L_v=0).
 
-The sign has made each local polynomial positive. The [original homogeneous theorem](actual_homogeneous_casimir_face_source.md) makes this the same marked endpoint-numerator source,
+The sign has made each local polynomial positive. The [original homogeneous theorem](../papers/filling-bounds/README.md) makes this the same marked endpoint-numerator source,
 up to its recorded common sign, with no new powers of N. All statements
 below are about this source; it is not being renamed Kashaev's invariant.
 

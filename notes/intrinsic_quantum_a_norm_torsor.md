@@ -18,10 +18,10 @@ norm-one torus from the scalar intertwiner torsor. It records the
 unproved classical-curve and selected-period comparison.
 
 For the actual knot state, the subsequent
-[squared-meridian descent](even_meridian_norm_descent.md) applies this
+[squared-meridian descent](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/even_meridian_norm_descent.md) applies this
 construction with Y=M^2 and cyclic degree N at q=exp(pi*i/N), retaining
 the full state's even-level sign. The
-[regular-period theorem](regularized_kashaev_period.md) then supplies
+[regular-period theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/regularized_kashaev_period.md) then supplies
 the exact complete scalar Tr(Y F_N)/N at Y^N=1 and a positive trace
 norm. The ordinary-color contribution is polynomially bounded, so
 these give equivalent volume targets for hyperbolic knots. Their
@@ -43,7 +43,7 @@ marked normal period. The ambient signed dihedral relation retains
 kappa^N=(-1)^(N-1); it does not assert T-stability of the scalar
 solution line or establish the regulator norm.
 
-The [actual Weyl-descent theorem](actual_weyl_descent.md) now proves
+The [actual Weyl-descent theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_weyl_descent.md) now proves
 the reflection of the literature knot state and forces a unitary
 monomial reciprocity for its primitive minimal normal operator.
 Thus its equivariant structure is not inferred from the classical
@@ -150,7 +150,7 @@ central component, their unpointed module comparison reduces to a
 scalar period line. Identifying their distinguished vectors, cycles
 and level-dependent scalar remains necessary.
 
-The [root-orbit pointing theorem](root_orbit_pointing.md) now gives
+The [root-orbit pointing theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/root_orbit_pointing.md) now gives
 an exact way to fix that central scalar on the relevant fiber.
 The actual reduced state has value one at M=-q, in the same root
 orbit as M=1. A comparison within the same rational solution line
@@ -166,24 +166,24 @@ uses polynomial coherence of the actual integer-color traces to
 give an exact period formula without that rank condition. It needs
 only a fixed initial color window and bounded-order q-jets, whose
 initial values stay bounded near q=1. Its
-[meridian counterpart](bounded_meridian_jets.md) bounds the integral
+[meridian counterpart](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/bounded_meridian_jets.md) bounds the integral
 kernel's Smith exponents by the fixed leading M-span. This supplies
 finite pointing, not the remaining geometric norm comparison.
 
-The [affine source extension](affine_quantum_a_period.md) retains
+The [affine source extension](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/affine_quantum_a_period.md) retains
 additional information when the actual homogeneous operator has
 the stated inhomogeneous source factor. Its root period is a
 cyclic affine fixed point; in the nonresonant case it is an exact
 resolvent. The generic source class is not killed by finite stable
 algebraic covers, by normalized trace. The
-[adequacy proof](adequacy_and_algebraic_periods.md) excludes a
+[adequacy proof](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/adequacy_and_algebraic_periods.md) excludes a
 fixed algebraic meridian trace for all nontrivial adequate knots.
 Under either stated source nonresonance test this forces the
 affine class to be nonsplit. Its identification with the marked
 regulator and its norm remains separate from multiplicative
 Hilbert 90 at any single root level.
 
-The [formal classical-curve construction](formal_a_curve_period_torsor.md)
+The [formal classical-curve construction](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/formal_a_curve_period_torsor.md)
 gives a different, complementary branch construction directly at q=1.
 Its Hensel lift and formal connection do not assume that D_n equals
 the classical A-polynomial. They still require the geometric component
@@ -239,7 +239,7 @@ and the integral period lattice must be tracked together.
 
 Extending one generic eigenline does not recover the whole generalized
 eigenspace or the operators acting on it. The
-[Casimir/recoupling calculation](casimir_braiding_and_recoupling_lattice.md)
+[Casimir/recoupling calculation](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/casimir_braiding_and_recoupling_lattice.md)
 now gives an explicit instance relevant to the actual Kashaev crossing:
 its cyclic spectral algebra is C[z]/(T_N(z)+2), with double roots.
 The crossing and pivotal trace both use first derivatives at those
@@ -311,17 +311,17 @@ is given; its regulator comparison remains missing. A fixed algebraic
 generic-q comparison could be sufficient for the rate; arbitrary
 unrelated finite-level gauges are not.
 
-The subsequent [central normalization theorem](algebraic_central_normalization.md)
+The subsequent [central normalization theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/algebraic_central_normalization.md)
 allows a fixed finite algebraic comparison depending also on the
 central variable z=M^(kN), evaluated as a whole germ. Its value is
 between fixed powers of N. This covers the exact ADO normalization
 and retains factors such as 1+M^N. The levelwise unit (u/2)^n above
 has no such fixed finite algebraic presentation across levels.
 
-The subsequent [local normalization tower](cyclotomic_normalization_tower.md)
+The subsequent [local normalization tower](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/cyclotomic_normalization_tower.md)
 proves distribution between arbitrary levels and its regulator estimate
 directly from finite products and an exact convergent series. The
-[regular cyclic/Steinberg family](cyclic_steinberg_lattice.md) extends
+[regular cyclic/Steinberg family](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/cyclic_steinberg_lattice.md) extends
 the selected local vacuum and gives explicit recoupling lattices at
 degeneration. These supply local comparison data; neither establishes
 the global period identification required in Section 7.
@@ -400,7 +400,7 @@ quantum family and its selected period, rather than assume these two
 curves coincide. Compatibility with the marked geometric regulator
 and the norm statement (7.1) remain unproved.
 
-The subsequent [ramified Weyl-fibre theorem](ramified_weyl_fibre.md)
+The subsequent [ramified Weyl-fibre theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/ramified_weyl_fibre.md)
 specifies the branch-point lattice for the actual normal ADO state.
 Its invariant lattice retains the first negative-sector coefficient
 as an ordinary fibre coordinate, and its full complete period is
@@ -411,7 +411,7 @@ and still change this coordinate, so a comparison must transport
 the marked ramified fibre and functional. No equality of central
 spectra or regulator norms is deduced from that construction.
 
-The subsequent [actual threaded-character theorem](ado_threaded_shadow.md)
+The subsequent [actual threaded-character theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/ado_threaded_shadow.md)
 proves an additional distinction: the selected ADO evaluation has
 abelian even-threaded interior data, whereas a null-homologous loop
 separates the fixed complete hyperbolic character. Hilbert-90

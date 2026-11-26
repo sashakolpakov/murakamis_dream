@@ -5,7 +5,7 @@
 ## 1. Exact normalization and word expansion
 
 Use the original one-sided tail from the
-[relative-energy theorem](actual_one_sided_relative_spectral_energy.md).
+[relative-energy theorem](../papers/casimir-source-asymptotics/README.md).
 For fixed actual rows \(0\le i\le j\), let \(r=j-i\),
 \(\theta=\pi/N\), and
 

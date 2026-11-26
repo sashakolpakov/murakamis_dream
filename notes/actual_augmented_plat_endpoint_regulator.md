@@ -126,7 +126,7 @@ meridian has trace +2. The literal threading word [2,1,1,2] transports
 the main pair by C_aux^-1 and closes the auxiliary because it commutes
 with P. Composing its main half twist gives total conjugator I+cH.
 This uses the
-[proved original peripheral word](actual_mixed_crossing_circle_preferred_longitude.md),
+[proved original peripheral word](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_mixed_crossing_circle_preferred_longitude.md),
 not an assigned auxiliary longitude.
 
 To recover the actual THIRD Gauss head from (11), let
@@ -235,7 +235,7 @@ the original integer marks in the action.
 Apply (19) at every original twist-region coupon. The actual disk words
 and retained half crossings, with the actual outside wires and caps, form
 the original augmented-link diagram. The crossing-block proof in
-[the marked fundamental-cycle calculation](crossing_fundamental_cycle.md),
+[the marked fundamental-cycle calculation](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/crossing_fundamental_cycle.md),
 sections 2--4, is componentwise: its local octahedral balls, arc-strip face
 identifications, and degree-one cusp truncation apply to this multi-component
 diagram as well. No step joins different components or replaces their
@@ -270,7 +270,7 @@ integer logarithmic characters. For matching branches the exact identity is
 
 It follows by expanding Im Li2, the real quadratic, and the imaginary
 linear term; the full proof is in the repo's
-[wall regulator calculation](actual_wall_critical_regulator.md), section 3.
+[wall regulator calculation](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_wall_critical_regulator.md), section 3.
 At a FULL stationary point on the recorded marked sheet the right side
 vanishes. If the channel is held at its endpoint rather than varied, its
 logarithm is log J=i pi modulo 2pi i and has rho_J=0, so its unsolved

@@ -241,7 +241,7 @@ identity is used. All remaining cusp images are parabolic (possibly
 rank deficient) with their actual commuting peripheral words.
 
 Finally restore the original deleted solid-torus cusps. Their meridians
-are trivial. The [proved axis/parabolic flattening](general_representation_volume_kernel_strictness.md) gives a
+are trivial. The [proved axis/parabolic flattening](../papers/casimir-source-asymptotics/README.md) gives a
 zero-volume filling cap, so the representation of the original
 drilled exterior has exactly the same volume. The complete original
 meridian was nontrivial; the strict-kernel
@@ -255,7 +255,7 @@ A_N(N-h_E,N_else) denote the literal original mixed contraction, with
 external color N-h_i at i in E and color N at every other port. The
 other ports may carry their original signed half twists. Let F_N^E(h)
 be its EXACT empty-subset cosine term from the
-[external reflection identity](actual_external_circle_reflection_and_cusp.md),
+[external reflection identity](../papers/marked-fillings/README.md),
 with deficit zero at ports outside E. Put Phi_D=Vol(Y_D)/(2pi).
 There exist delta(D)>0, gamma(D)>0 and a fixed power K(D) such that,
 for every sufficiently large N of EITHER parity and every integer
@@ -273,7 +273,7 @@ off-grid identity or a genuine-q normal theorem.
 Proof. Expand by the exact full-matrix reflection identity. A nonempty
 subset S contains literal L_(h_i) at its ports; a term with h_i=0 is
 zero. If its identity smoothing is connected, the
-[simultaneous polynomial correspondence](actual_simultaneous_small_circle_face_correspondence.md)
+[simultaneous polynomial correspondence](../papers/triangular-insertion/README.md)
 bounds its full finite source by C(l)^sum h_i times the smoothed
 positive-coefficient bound at ANY fixed positive shared radii l. This
 retains the original mark, all carries and the actual tensor endpoints.

@@ -15,7 +15,7 @@ Let N=2m>=4, d=N-1, M=m-1, theta=pi/N, and
     c_j=2cos((2j+1)theta), s_j=2sin(j theta),
     a_j=2+c_j=4cos^2((j+1/2)theta), product_(j=0)^M a_j=2.
 
-Use the [original homogeneous source](actual_homogeneous_casimir_face_source.md)
+Use the [original homogeneous source](../papers/filling-bounds/README.md)
 and its [positive cross/half decomposition](actual_fejer_cross_half_source_reduction.md).
 Thus P=-H_(V_N(-2)), where V_N is the actual polynomial resolvent
 numerator, and P_left contains exactly the physical paths j to i with

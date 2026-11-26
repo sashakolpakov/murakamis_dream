@@ -45,7 +45,7 @@ variables AND epsilon on a common germ. Additional source
 divisors must be kept as additional residues, not discarded by (1).
 
 The original scalar source has the product-cotangent realization in
-[the exact factorial interpolation](exact_factorial_interpolation_and_complex_contours.md),
+[the exact factorial interpolation](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/exact_factorial_interpolation_and_complex_contours.md),
 section 5, now with the moving-period factorial. Use the ACTUAL free
 integral lattice coordinates x after its closure constraints. Its
 initial cycle is the sum of small ordered product tori around the

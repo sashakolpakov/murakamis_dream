@@ -19,7 +19,7 @@ framing unit chi_(D,N). Write Y_D^epsilon for the certified complete
 augmented exterior with those recorded face pairings. Its volume is
 2Vol(Q_D), unchanged by the half-twist pairings.
 
-The [exact marked coefficient identity](actual_original_marked_face_coefficient.md)
+The [exact marked coefficient identity](../papers/filling-bounds/README.md)
 is
 
     A_(D,N)^epsilon = chi_(D,N) N^R

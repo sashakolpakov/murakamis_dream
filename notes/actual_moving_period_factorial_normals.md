@@ -28,7 +28,7 @@ Define, initially where all Gamma arguments have positive real part,
     Fhat_P(z)=exp[pi i z(z+1)/(2P)-pi i z/2]G_P(z).        (2)
 
 This uses the infinite Gamma product from the
-[exact interpolation theorem](exact_factorial_interpolation_and_complex_contours.md),
+[exact interpolation theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/exact_factorial_interpolation_and_complex_contours.md),
 not its finite Barnes product whose number of factors was an integer.
 The log of the kth factor is locally uniformly O(k^-2), with
 leading term -z(z+1)(2z+1)/(6P^2 k^2). Its 1/k coefficient

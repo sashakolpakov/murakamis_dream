@@ -17,7 +17,7 @@ The proof first turns a positive, target-balanced triangle table into
 actual integer source arrays. It retains the different finite degrees at
 even and odd levels. It then combines the known local coefficient
 entropy with the exact rational certificate for the
-[54-region example](actual_singleton_sector_envelope_obstruction.md).
+[54-region example](../papers/planar-certificates/README.md).
 The final cancellation statement also uses the separately proved
 [odd-level signed cap bound](research_cap_uniform_spectral_gap.md).
 No estimate for a filled period or knot invariant is inferred from an
@@ -59,7 +59,7 @@ have \(i\le m-1\), \(j\ge m\); left paths have \(j\le m-1\), and right
 paths have \(i\ge m\). For \(N=2m+1\), central paths have \(i\le m\le j\);
 left paths have \(j\le m-1\), and right paths have \(i\ge m+1\).
 The exact finite factorization is proved in
-[the cofactor calculation](actual_cross_cofactor_factorization.md), §§1–2.
+[the cofactor calculation](../papers/filling-bounds/README.md), §§1–2.
 
 For a fixed string \(\boldsymbol s=(s_e)\), write the local polynomials
 after the protected substitutions as
@@ -416,7 +416,7 @@ set of rows proves (8) on each parity, hence on the full sequence.
 ## 6. The unchanged 54-region diagram
 
 Use the sphere, matching and original mark recorded in
-[the singleton-sector certificate](actual_singleton_sector_envelope_obstruction.md),
+[the singleton-sector certificate](../papers/planar-certificates/README.md),
 §§2–5. It has \(56\) white vertices, \(162\) edges, \(108\) triangles
 and \(54\) matched crossing regions. Its protected faces are \(29,50\),
 and the selected ordered quartet is
@@ -443,7 +443,7 @@ these marked sphere data, and write
  \qquad\text{(29)}
 \]
 The complete action and this absolute volume normalization are
-identified by [the original Morse geometry](actual_morse_geometric_contribution.md).
+identified by [the original Morse geometry](../papers/casimir-source-asymptotics/README.md).
 The rational interval certificate evaluates the entropy of the
 feasible table from below, and the complete positive action at one
 trial radius vector from above. It proves
@@ -600,7 +600,7 @@ On the protected left ray, the exact local formulas are
 The reference and relative-energy identities are the protected case
 of [the exact coefficient energy](actual_protected_outer_spectral_energy.md),
 §2, and
-[the one-sided triangle bound](actual_one_sided_relative_spectral_energy.md).
+[the one-sided triangle bound](../papers/casimir-source-asymptotics/README.md).
 The perspective has mass \(2u\) and a singleton normalized row
 \((1/2,0,0)\), whose entropy is zero. The value at \(u=0\) follows
 by continuity. In particular, the vanishing score is not merely the

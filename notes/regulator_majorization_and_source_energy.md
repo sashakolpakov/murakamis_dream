@@ -225,10 +225,10 @@ are confined to equal-calibrated-action blocks with subexponential
 cost. The exact rigidity (2)--(4) then supplies the missing
 no-upward-action mixing statement and the source estimate (7)--(9).
 
-The [complex representation-path theorem](complex_peripheral_action_and_conversion_bound.md)
+The [complex representation-path theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/complex_peripheral_action_and_conversion_bound.md)
 already supplies calibrated equality at genuine normalized
 ramification and an absolute endpoint volume bound. The
-[two-bridge midpoint theorem](two_bridge_midpoint_regulator_anchor.md)
+[two-bridge midpoint theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/two_bridge_midpoint_regulator_anchor.md)
 supplies the zero anchor on every genuine component of that class.
 The finite quantum connection, its possible nodal jumps, and its
 exact selected energy are still to be identified and bounded.

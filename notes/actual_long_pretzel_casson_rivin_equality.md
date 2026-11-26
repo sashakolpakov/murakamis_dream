@@ -3,13 +3,13 @@
 **Current scope and direct geometric input.** The
 [whole-color improvement](actual_pretzel_all_width_extension.md) lowers
 the odd-width threshold to s>=9. The
-[direct ideal-chart certificate](actual_pretzel_positive_ideal_angle_certificate.md)
+[direct ideal-chart certificate](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_pretzel_positive_ideal_angle_certificate.md)
 constructs a compatible positive ideal subdivision of the ACTUAL
 half-twisted cells and verifies the full edge/peripheral rank. Thus the
 variational proof for this class no longer requires a general ideal
 triangulation existence theorem. The
 [general source certificate](source_volume_casson_rivin_certificate.md)
-and [independent tangent audit](source_angle_stationarity_critical_audit.md)
+and [independent tangent audit](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/source_angle_stationarity_critical_audit.md)
 isolate precisely why stationarity holds on the entire angle slice.
 
 29 October 2026. This records the variational equality argument requested
@@ -18,12 +18,12 @@ augmented volume V_s. The angle constraints must be those of the actual
 filled slopes. A maximum for the unfilled cusp problem would not prove
 the desired equality.
 
-The geometric completion inputs are the [positive-core construction](actual_long_pretzel_geometric_filling_completion.md), the [primitive angle certificate](actual_long_pretzel_primitive_filling_angle.md) and the [log-link/tube lemma](long_pretzel_equality_critical_audit.md). Stationarity does not replace smooth end completion. The [completion argument](long_pretzel_volume_equality_completion_audit.md) gives the full source equality and its scope.
+The geometric completion inputs are the [positive-core construction](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_long_pretzel_geometric_filling_completion.md), the [primitive angle certificate](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_long_pretzel_primitive_filling_angle.md) and the [log-link/tube lemma](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/long_pretzel_equality_critical_audit.md). Stationarity does not replace smooth end completion. The [completion argument](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/long_pretzel_volume_equality_completion_audit.md) gives the full source equality and its scope.
 
 ## 1. The essential established quantum inputs
 
 For each fixed odd s>=9 and independently sufficiently large fixed
-signed integers p_i, the [whole original source theorem](actual_long_pretzel_full_source_survival.md)
+signed integers p_i, the [whole original source theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_long_pretzel_full_source_survival.md)
 with the subsequent [width improvement](actual_pretzel_all_width_extension.md) gives
 
     Kraw_N=N^(3/2) exp[-is*pi*(N-1)/4] kappa^(-sum p_i)
@@ -43,8 +43,8 @@ The steps that matter for this conclusion are:
 4. The exact filling transform retains every endpoint current. Its zero
    charge vanishes and its minimal nonzero signed charges add. This
    establishes the nonzero coefficient for the entire source.
-5. The [literal port lift](actual_pretzel_port_lift_and_geometric_anchor.md)
-   and [marked regulator comparison](actual_pretzel_marked_regulator_and_filling_action.md)
+5. The [literal port lift](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_pretzel_port_lift_and_geometric_anchor.md)
+   and [marked regulator comparison](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_pretzel_marked_regulator_and_filling_action.md)
    supply an actual representation rho_p of the filled knot group and
    the absolute identity Vsrc_s(p)=Vol(rho_p), with the complete oriented
    augmented holonomy as anchor.
@@ -58,7 +58,7 @@ representation.
 
 Let Y_s be the original complete augmented link complement. Choose a
 fixed positive geometric ideal triangulation T of Y_s. The
-[direct subdivision certificate](actual_pretzel_positive_ideal_angle_certificate.md),
+[direct subdivision certificate](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_pretzel_positive_ideal_angle_certificate.md),
 sections 1--3, supplies it from the actual face-labeled polyhedra:
 normalized light lifts are preserved by every white and shaded face
 pairing, and a finite compatible affine subdivision gives nonflat ideal
@@ -151,7 +151,7 @@ Let E be the real space of edge Hamiltonians in the standard shape
 symplectic space Omega=sum dx_t wedge dy_t. Both the real logarithmic
 shape vector of a gluing solution and any tangent satisfying the edge
 angle equations lie in E^perp. The already established
-[boundary pairing](bloch_lift_and_boundary_torsor.md), summed over the
+[boundary pairing](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/bloch_lift_and_boundary_torsor.md), summed over the
 boundary tori, reduces Omega there to
 
     Omega_red=-(1/2)sum_i dU_i wedge dV_i.
@@ -230,11 +230,11 @@ Its flat metric is complete, so its universal developing map is the
 whole complex plane, with its actual rank-two period lattice.
 
 The end contains a full punctured hyperbolic tube. The
-[primitive-angle certificate](actual_long_pretzel_primitive_filling_angle.md)
+[primitive-angle certificate](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_long_pretzel_primitive_filling_angle.md)
 proves that its actual meridian period is exactly -2pi i, not that
 integer merely modulo2pi. Hence the tube completes to a smooth solid
 torus with the specified primitive slope. The main cusp stays complete.
-The [tube lemma](long_pretzel_equality_critical_audit.md) proves both
+The [tube lemma](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/long_pretzel_equality_critical_audit.md) proves both
 the degree-one statement and the finite-volume completion.
 
 The resulting complete oriented metric g_p is on the ACTUAL filled
@@ -243,7 +243,7 @@ equality certificate that strict concavity or scalar PSL holonomy alone
 would not provide.
 
 The user's Gromov-norm observation gives a short final comparison.
-Apply the independently proved [sharp representation-volume inequality](regular_critical_values_and_representation_volume_bound.md)
+Apply the independently proved [sharp representation-volume inequality](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/regular_critical_values_and_representation_volume_bound.md)
 with the specified hyperbolic metric g_hyp as domain and g_p holonomy
 as target. Then reverse their roles using the same oriented topological
 marking. Fundamental chains have degree one in both directions, so

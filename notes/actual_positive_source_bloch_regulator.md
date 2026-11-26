@@ -2,7 +2,7 @@
 
 **Later geometric result, 29 October 2026:** for every retained
 cylindrical robust Conway factor, the
-[actual cell realization](actual_positive_conway_hyperbolic_volume.md)
+[actual cell realization](../papers/strict-conway-geometry/README.md)
 now identifies the source class with the geometric rational Bloch
 class over a common number field, and its regulator with the actual
 complete complement volume. The abstract rational-angle theorem below
@@ -18,7 +18,7 @@ fundamental class of a link complement.
 
 The argument applies to EVERY rational affine ideal-angle volume
 problem in the
-[algebraic maximum theorem](positive_source_algebraic_volume_period.md),
+[algebraic maximum theorem](../papers/newton-calculus/README.md),
 including boundary maxima and nonunique optimizers. It uses that
 theorem's quotient by the exact flat Hessian kernel; it does not assume
 that an optimizer is isolated in the original wire coordinates.
@@ -236,7 +236,7 @@ class is zero over Q.
 ## 5. The full original quantum limit is a Bloch regulator
 
 For EVERY fixed robust actual positive Conway expression E, the
-[whole-source variational theorem](actual_positive_conway_variational_limit.md)
+[whole-source variational theorem](../papers/newton-calculus/README.md)
 and the algebraic maximum theorem yield, along all levels and both
 parities,
 
@@ -253,7 +253,7 @@ normal directions retained. The class is selected by that exact
 source's positive variational problem, not by choosing an arbitrary
 branch of an A-polynomial.
 
-The [cap-sum reduction](actual_conway_cap_sum_reduction.md) is compatible
+The [cap-sum reduction](../papers/newton-calculus/README.md) is compatible
 with this construction. At a cap-closed product, the maximizing
 polytope is a Cartesian product, its final gate is flat, and the
 positive atom list is the union of the two lists. Thus, in a common

@@ -5,7 +5,7 @@ This obstruction keeps the original even-level demand. It disproves the proposed
 ## 1. The original coefficient and the particular proposed norm bound
 
 Use the exact source in
-[original-demand cap/CROSS convolution](research_two_port_main_cap_original_demand_convolution.md):
+[original-demand cap/CROSS convolution](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/research_two_port_main_cap_original_demand_convolution.md):
 the adjacent ordered quartets are
 \[
  E=(A,0,C,Z),\qquad F=(0,A,0,C),
@@ -353,7 +353,7 @@ endpoint rate, nor does it change the original source or its cutoffs.
 
 The single-factor tensor construction and
 norms (6)--(7) are also derived in
-[actual continuant and cap tensor metric](research_cap_demand_continuant_jacobi_interface.md), §§6--7;
+[actual continuant and cap tensor metric](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/research_cap_demand_continuant_jacobi_interface.md), §§6--7;
 the algebra needed here is stated explicitly above. The new inputs are
 the single-component lower bound (8), the elementary maximization
 (11), and their consequence (5). No finite numerical sampling is used to prove the asymptotic obstruction.

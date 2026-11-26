@@ -34,7 +34,7 @@ For any fixed lambda>0,
 
 In particular the desired energy exponent is lambda=Vol/pi.
 
-The [direct ordinary-color coefficient bound](actual_regular_fast_color_elimination.md)
+The [direct ordinary-color coefficient bound](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_regular_fast_color_elimination.md)
 gives, for an ell-crossing b-braid,
 
     ||C_j||_1<=j^(ell+b-1)4^(ell*j).

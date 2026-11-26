@@ -1,7 +1,7 @@
 # The actual primitive Hilbert-90 gauge has a dilogarithm action and exponential norm
 
 27 October 2026. The explicit cyclic source gauge in
-[the actual Fourier twisted-trace theorem](actual_source_fourier_twisted_traces.md)
+[the actual Fourier twisted-trace theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_source_fourier_twisted_traces.md)
 has a rigorously computable exponential scale, even in the flat
 right-regular metric. This is an ACTUAL gauge from the original
 source construction, not an arbitrary central rescaling of a state.
@@ -94,7 +94,7 @@ proves the inverse statement by the identical estimate.
 The Taylor-tail estimate is essential. Nilpotent equality alone
 would not justify evaluating its analytic exponential away from
 zero, as the nonzero endpoint carry in
-[the meridian half-step theorem](actual_euler_meridian_half_step.md)
+[the meridian half-step theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_euler_meridian_half_step.md)
 explicitly demonstrates.
 
 ## 3. A positive exponential lower bound for this comparison gauge
@@ -158,9 +158,9 @@ image and global sector/cancellation estimates remain open.
 
 Subsequent direct source calculations now distinguish that
 operator norm from selected local periods. The
-[canonical resonant endpoint](actual_primitive_gauge_resonant_endpoint.md)
+[canonical resonant endpoint](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_primitive_gauge_resonant_endpoint.md)
 is an explicit Gauss period of size N^-1/2. The
-[normalized top-coefficient period](actual_gauge_period_selects_algebraic_point.md)
+[normalized top-coefficient period](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_gauge_period_selects_algebraic_point.md)
 selects the algebraic point 2 on fixed polynomial observables
 and intertwines fixed ordered gauge meridian steps. Thus this
 specified source has an evaluated local leading period, not

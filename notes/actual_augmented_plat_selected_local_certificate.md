@@ -26,7 +26,7 @@ Fix the actual augmented-plat Morse word, retained half twists, and
 primitive peripheral marks. Supply:
 
 1. An actual marked positive complete gluing certificate, as in
-   [the geometric certificate theorem](general_marked_positive_gluing_certificate.md).
+   [the geometric certificate theorem](../papers/marked-fillings/README.md).
    It gives the geometric representation, not an unrelated component
    of the character equations.
 2. ONE rank-one projector Pi satisfying all the regular-chart,

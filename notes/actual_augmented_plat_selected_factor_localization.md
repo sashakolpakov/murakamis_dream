@@ -9,7 +9,7 @@ localization. It does not identify a contributing global finite cycle.
 Fix an actual augmented plat of arbitrary fixed width, with its retained
 half twists, literal Morse word, original exposed physical mark, and a
 positive convex ideal right-angled matching-polyhedron certificate as in
-[the actual matching geometry](general_augmented_plat_matching_geometry.md).
+[the actual matching geometry](../papers/marked-fillings/README.md).
 The actual source is the full marked matching-graph source; its folded
 labels, partner normals and generic lifts are not replaced by a root-only
 semisimple network. Choose any one crossing-circle matching edge e.

@@ -362,7 +362,7 @@ def main():
         "working_decimal_digits": args.dps,
         "comparison_decimal_digits": args.dps + 40,
         "sample_count": args.samples,
-        "source_identity": "notes/figure_eight_whole_source_identity.md, equation (1.1)",
+        "source_identity": "https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/figure_eight_whole_source_identity.md, equation (1.1)",
         "regularization": "notes/scaled_meridian_regular_profile.md, equations (1)-(7)",
         "source_code_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         "software_versions": {

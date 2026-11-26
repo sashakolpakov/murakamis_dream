@@ -240,7 +240,7 @@ K=P^-1 C_aux P. The exact three outputs are
 Closing the auxiliary sets K=C_aux. Thus the pure physical transport
 is conjugation by C_aux^-1. The actual zero-self-linking disk longitude
 is P=BA, with no meridian factor, as proved in the
-[literal mixed-loop marking](actual_mixed_crossing_circle_preferred_longitude.md),
+[literal mixed-loop marking](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_mixed_crossing_circle_preferred_longitude.md),
 sections 4--5. Its argument uses the two underpasses and the absence
 of an auxiliary self-crossing; it is independent of plat width.
 

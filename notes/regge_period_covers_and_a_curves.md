@@ -161,7 +161,7 @@ ambiguity. Away from shapes with stabilizers it is a sixfold
 unramified cover of the unordered shape space. At fixed shapes,
 including the regular ideal shape, its ramification must be
 retained as an orbifold/root marking. The spectral lattices
-in [the resonant-source calculation](cyclic_source_connection_and_resonant_flags.md)
+in [the resonant-source calculation](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/cyclic_source_connection_and_resonant_flags.md)
 are relevant to that extension, but are not identified with
 this entire classical period object merely by their names.
 
@@ -183,7 +183,7 @@ class still supplies the additive central mark.
 The same finite ordering part can be solved on the existing
 pointed shape module, without asserting a new quantum invariant.
 Use the conventions of
-[the pointed tetrahedron calculation](pointed_tetrahedron_gluing.md#2-explicit-pointed-root-intertwiners):
+[the pointed tetrahedron calculation](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/pointed_tetrahedron_gluing.md#2-explicit-pointed-root-intertwiners):
 
     R=r_0^2, order(R)=N, r_0^N=-1,
     X e_a=s R^a e_a, Y e_a=t e_(a+1),
@@ -424,7 +424,7 @@ A finite sigma-stable algebraic field cover cannot on its
 own split a nonsplit horizontal affine source: taking the
 normalized field trace of a putative splitting gives one
 downstairs. This is proved in
-[the affine source note](affine_quantum_a_period.md#2-finite-algebraic-covers-do-not-kill-a-nonzero-affine-class).
+[the affine source note](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/affine_quantum_a_period.md#2-finite-algebraic-covers-do-not-kill-a-nonzero-affine-class).
 It does not rule out useful manifold covers, which change
 the group and module. Nor does it identify their selected
 Kashaev-type states with (7.1).
@@ -450,7 +450,7 @@ independent of N, and its quantum Gaussian cycles have the
 explicit polynomial norms (3.6). The additional root covers,
 source normalizations and level changes are retained separately.
 
-The [subsequent actual-braid calculation](actual_braid_group_and_spectral_source.md)
+The [subsequent actual-braid calculation](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_braid_group_and_spectral_source.md)
 now proves that the full retained braid transport has a
 connected subgroup with an SL_2 quotient at every level.
 Two genuine pure powers supply square-zero logarithms with

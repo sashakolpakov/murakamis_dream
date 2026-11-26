@@ -163,7 +163,7 @@ large full-twist powers from the number of blocks; those fixed filling
 parameters are not extra copies of a quantum-level dependent packet.
 
 This also computes the physical coefficient tensor entering the
-[marked multiport Chebyshev packet](actual_marked_multiport_chebyshev_source_packet.md).
+[marked multiport Chebyshev packet](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_marked_multiport_chebyshev_source_packet.md).
 That packet's correct C,...,C,H conjugation and final half-bandwidth
 fold may be applied afterward. Neither its polynomial DCT cost nor
 this exact compiler proves a sharp coherent energy bound.
@@ -255,7 +255,7 @@ augmented source concentrates there. The odd simple channel and
 even endpoint pairs must also remain in any endpoint analysis.
 
 Thus the real-concave version of the
-[analytic sewing criterion](actual_six_port_analytic_sewing_criterion.md)
+[analytic sewing criterion](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_six_port_analytic_sewing_criterion.md)
 cannot be applied to this raw expanded phase by ignoring its Fourier
 factor. One needs a source-preserving complex deformation, a selected
 local resummation, or another exact period representation, followed

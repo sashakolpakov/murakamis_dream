@@ -134,7 +134,7 @@ python3 repro/verify.py --output repro/results
 For all registered paper checks:
 
 ```sh
-python3 repro/check_paper_algebra.py --output repro/results/paper-algebra
+python3 repro/check_paper_algebra.py --output repro/results/paper-collection/finite
 ```
 
 The [reproduction guide](../repro/README.md) gives requirements and
@@ -148,7 +148,7 @@ crossing coefficient bound. That bound holds at \(N\ge2\); the
 physical source identity is required only at \(N\ge3\). The source contour, nonzero
 whole packet and primitive geometric comparison remain written inputs. The
 [coverage map](../formal/coverage.json) and
-[cleanup record](../repro/PROOF_PATH_CLEANUP_2026-11-25.md) identify its
+[manuscript and logic audit](../repro/MANUSCRIPT_AND_LOGIC_AUDIT_2026-11-25.md) identify its
 manuscript statements and replay command.
 
 To rebuild the manuscript page in the guide after the PDFs are ready:

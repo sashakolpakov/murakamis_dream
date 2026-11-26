@@ -433,7 +433,7 @@ existing theorem in
 [An exact positive moment form for the original flat-cap coefficients](research_flat_cap_positive_moment_form.md), not a new assertion of
 positivity. Its single-factor metric and the noninvariance of the
 monomial-diagonal subspace are also explained in
-[Actual continuant recurrences and an explicit positive cap tensor metric](research_cap_demand_continuant_jacobi_interface.md).
+[Actual continuant recurrences and an explicit positive cap tensor metric](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/research_cap_demand_continuant_jacobi_interface.md).
 The present proof instead uses the sine-Cauchy matrix (6), the
 self-adjoint recurrence (10), and the finite-degree comparison (36).
 

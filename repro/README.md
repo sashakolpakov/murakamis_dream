@@ -1,355 +1,98 @@
-# Reproducing the calculations
+# Reproducing the retained results
 
-This directory contains the finite certificates, symbolic checks and
-Lean replay commands used by the papers. A successful computation has a
-specific role: it may establish a rational inequality, check an exact
-finite identity, or compile a stated implication. It does not replace the
-written proof that connects that result to the original knot invariant.
+The papers contain the proofs. This directory provides the finite
+certificates, consistency checks and Lean compilation used alongside
+them. Each check has a limited purpose: a rational certificate proves its
+specified inequality, a compiler checks a formal implication, and a
+sampled calculation tests a formula at its sampled inputs.
 
-The [closing assessment](RETAINED_RELEASE_ASSESSMENT.md) records the
-completed review of the retained restricted results. The
-[manuscript audit](MANUSCRIPT_AUDIT.md) locates their written arguments
-and corrections. In particular, the
-[whole-sum review](manuscript_audit/whole-charge/report.md) examines the
-infinite charge estimates and endpoint terms, while the
-[assembly review](manuscript_audit/internal-assembly-completion/report.md)
-checks how the resulting theorem is used. The general source comparison
-remains open. No complete formal proof for an actual knot is claimed.
+The [current audit](MANUSCRIPT_AND_LOGIC_AUDIT_2026-11-25.md) records the
+manuscript corrections. The [formal coverage report](PAPER_FORMAL_COVERAGE.md)
+explains exactly which statements Lean proves. The seven-paper Conway
+edition has its own [exposition report](CONWAY_SERIES_AUDIT_2026-11-25.md).
+Superseded reviews and failed diagnostic runs have been removed from the
+working collection; their sources are preserved in Git history.
 
-The [manuscript-first cleanup](PROOF_PATH_CLEANUP_2026-11-25.md)
-records the rewritten proof routes and the code that follows them. The
-[collection-wide audit](MANUSCRIPT_AND_LOGIC_AUDIT_2026-11-25.md) covers
-the later revision of all remaining papers and the reference, including
-explicit expected-type contracts for their selected Lean statements.
-The [active coverage map](../formal/coverage.json) names each retained
-module's actual manuscript statement.
+## Checking the papers
 
-## Choose the check that matches the claim
+Run these commands from the repository root.
 
-Run these commands from the repository root. Each writes its results to
-the specified directory; the commands use separate directories so that
-one kind of check does not overwrite another.
-
-| Claim being checked | Entry point | Requirements |
-| --- | --- | --- |
-| Finite rational certificates for the original tangle bounds | `python3 repro/verify.py --output repro/results` | Python 3.10 or later; standard library |
-| Current paper sources, compiled exports, PDFs and companion links | `python3 tools/check_paper_collection.py` | Build all current papers first |
-| Finite algebra and rational constants in the registered papers | `python3 repro/check_paper_algebra.py --output repro/results/paper-collection/finite` | SymPy, python-flint, NumPy and mpmath |
-| Retained finite, Fourier/Hermite, variational and complex packet proofs in Lean | `python3 repro/check_lean.py --output repro/results/volume-lean` | Pinned Lean and Mathlib dependencies |
-| Consistency of the declared proof dependencies | `python3 repro/check_manuscript_logic.py --output repro/results/manuscript-logic` | Python standard library |
-
-The [Std-only instructions](../formal/README.md) and
-[Mathlib setup](../formal-real/README.md#pinned-setup-and-replay) explain
-the package requirements. The single current replay cleans generated
-local builds, compiles both libraries and audits every public declaration.
-The [coverage record](PAPER_FORMAL_COVERAGE.md) explains the actual
-manuscript-facing roots, including the derived whole-color remainder
-bound and the explicit written analytic/geometric inputs.
-
-The paper-algebra runner has 20 groups. They cover the finite spectral
-and Newton identities, both parity conventions, filling normalization,
-original peripheral coordinates, and the rational certificates used by
-the restricted families. The combined Casimir and circle-tree groups
-invoke the retained component checks. Consolidation changes their
-organization, not their finite assertions. The runner saves every
-program's output and stops on a failure. Its record identifies the
-registered TeX and bibliography sources, the catalog, and the check
-scripts by their hashes. Superseded editions are excluded.
-
-The two planar certificate groups use outward interval arithmetic and
-explicit Fourier-series remainder bounds. The written proofs explain
-why those finite inequalities cover the required continuous domains.
-Matrix comparisons at selected levels and numerical Gaussian samples
-have a narrower scope: they test the stated formulas and do not prove a
-uniform asymptotic estimate. The specialist checks below retain that
-distinction.
-
-The dependency checker examines premise roles, family assumptions,
-level conventions, references and absence of cycles. Its 49 declared
-steps distinguish the strict Conway route from the separate two-leaf
-source estimate. It also rejects twenty-three deliberately invalid maps.
-This validates the dependency record, not the mathematical assertions
-assigned to its vertices. For the reading order and the numbered
-statements imported between papers, use the
-[paper dependency graph](https://sashakolpakov.github.io/murakamis_dream/papers/dependencies.html).
-
-## Replay the original rational certificates
-
-To inspect the checks before running them:
-
-```sh
-python3 repro/verify.py --list
-python3 repro/verify.py --plan
-```
-
-The command in the table executes them serially, writes fresh results,
-and compares those results with the committed exact reference records.
-It does not overwrite the references. Without `--output`, the runner
-uses a temporary directory and removes it when finished.
-
-Each verifier runs in Python's isolated mode, with assertions enabled.
-A failure must be investigated; changing the reference output is not a
-substitute for resolving it. The [proof-input map](PROOF_INPUTS.md)
-locates the written reductions that make these finite comparisons
-sufficient for their stated inequalities.
-
-## What is being verified
-
-A *leaf* is one basic two-strand twist piece in the manuscript's tangle construction. A *block* joins such pieces. The finite invariant has signed terms outside its selected central contribution; the proof calls those terms *aliases*. The certificates show that their upper bounds are strictly smaller than the relevant central value, throughout the specified parameter regions.
-
-| Check | Mathematical role and finite work |
+| Purpose | Command |
 | --- | --- |
-| Two-leaf block | Controls the two possible alias types in a two-piece block, using 16 slope intervals and 288 exact corner/vertex comparisons. |
-| Single-leaf attachment | Controls an additional piece attached to a constructed box, using 55 dyadic rectangles and 880 exact comparisons over the full two-parameter slope square. |
-| Single-leaf endpoint | Checks four exact vertex comparisons used with the monotone-response argument at the endpoint. |
-| Elementary endpoints | Checks rational lower bounds used for the large-cotangent leaf estimate and the isolated three-piece closure. |
+| Build the 21 current papers | `python3 tools/build_papers.py` |
+| Build the reference manuscript | `python3 tools/build_manuscript.py` |
+| Rebuild the statement dependency graph | `python3 tools/build_dependency_graph.py` |
+| Check sources, compiled statement exports and published PDFs | `python3 tools/check_paper_collection.py` |
+| Run all 20 registered finite algebra and certificate groups | `python3 repro/check_paper_algebra.py --output repro/results/paper-collection/finite` |
+| Replay the three elementary Conway certificates | `python3 repro/verify.py --output repro/results` |
+| Check the declared logical dependency map | `python3 repro/check_manuscript_logic.py --output repro/results/manuscript-and-lean/manuscript-logic` |
+| Compile the retained Lean proofs and statement contracts | `python3 repro/check_lean.py --output repro/results/manuscript-and-lean/lean` |
 
-Here a *slope* is a derivative of an entropy function used in the source estimate. It is not a Dehn-filling slope. The interval engine bounds sine, logarithm, pi and the integrated log-sine function by rational series with explicit remainder estimates. It does not infer a continuum inequality from samples or call a numerical optimizer to certify a maximum.
+The document builds require a TeX installation. The paper algebra suite
+uses SymPy, python-flint, NumPy and mpmath; see
+[requirements-core.txt](../requirements-core.txt). The three-certificate
+replay and dependency-map checker need only Python's standard library.
+The [Std](../formal/README.md) and [Mathlib](../formal-real/README.md)
+instructions describe the pinned Lean environment.
 
-The written proof explains why concavity and affine parameter dependence reduce the continuum statement to these finite comparisons. The [proof-input map](PROOF_INPUTS.md) identifies those arguments and the exact records used by the runner.
+The finite suite saves each program's output and stops on failure. Its
+record identifies the scripts, certificates and manuscript sources by
+hash. The checks include parity endpoints, repeated-root derivatives,
+peripheral conventions and the rational constants used by the retained
+families. A finite sample does not establish a uniform contour estimate
+or a complete hyperbolic metric.
 
-## A cap estimate uniform over its real spectrum
+The dependency checker validates 49 declared proof steps and rejects
+23 deliberately invalid substitutions. It checks the recorded uses of
+written proofs; it does not prove their mathematical assertions. For
+reading order, use the [statement graph](../docs/papers/dependencies.html).
 
-The research notes give a strict bound for one signed contribution in the
-recorded 54-region diagram. The selected cap parameter may vary throughout
-$[-2,2]$; all other spectral parameters remain $-2$, and the exterior
-factorization used in the proof requires odd levels. Run its certificates
-with one command:
+The Lean runner compiles 28 modules from empty local build directories,
+checks all public declarations for additional axioms or admitted proofs,
+and compiles 76 independently stated expected-type contracts. Their
+symbol dictionaries distinguish exact matches, specializations,
+components of written proofs and conditional applications. Three compiler
+controls test incorrect changes to Fourier normalization, the
+holomorphic transpose and the strict remainder gap. Contour estimates,
+physical knot-source identifications and geometric completion retain
+written proofs.
 
-```sh
-python3 repro/check_cap_response.py --output repro/results/cap-response
-```
+## Research calculations
 
-This checks the original triangulated sphere and marking, localizes the
-positive exterior stationary point, bounds its first two responses, and
-compares two explicit pressure values with a complete feasible-flow
-entropy. The three numerical comparisons use outward rational intervals,
-not an optimizer. The response report is recomputed before it is passed to
-the tilted-pressure verifier. The same command checks the finite
-alternating-section inequalities on rational examples.
+The remaining exploratory calculations support the
+[finite-exception research](../notes/research_finite_exceptions_progress.md)
+and the conceptual approaches explained in the illustrated guide. They
+are separate from the frozen paper checks. A successful exploratory run
+is not a new volume theorem.
 
-With SymPy installed, append `--algebra` to check the original spectral
-products and their matrix divided differences in exact cyclotomic fields.
-These finite checks complement the [uniform cap proof](../notes/research_cap_uniform_spectral_gap.md)
-and its [stationary-point argument](../notes/research_cap_common_axis_bound.md).
-They do not replace the all-level analytic estimates or the geometric
-volume theorem. Neither the even-level exterior nor the full filled-knot
-remainder is covered by this certificate.
-
-## Uniform bounds for inserting twists
-
-The local matrix-to-polynomial adapter has its own short check:
-
-~~~sh
-python3 repro/check_local_face_fourier.py
-~~~
-
-It constructs the physical Casimir from its coproduct and the face
-operator separately, then compares them in exact finite fields at
-levels 2 through 12. It also checks the homogeneous kernel for a
-polynomial of degree larger than the level and detects the incorrect
-even-level replacement of an integer displacement by its residue.
-The script uses only the Python standard library. These are finite
-checks of signs and normalization; Appendix N proves the identity
-for every complex root level.
-
-With SymPy and NumPy installed, run:
-
-~~~sh
-python3 repro/run_research_checks.py filling-supremum
-~~~
-
-The program checks the finite derivative interpolation formula in
-cyclotomic fields, the repeated and simple Chebyshev residues, and the
-reconstruction of positive and negative powers of the original crossing
-matrices. It also checks the lower-block numerator derivatives against
-the corresponding spectral projectors. The [proof](../notes/actual_uniform_filling_supremum_bound.md)
-establishes the norm bounds for every level. The finite checks do not
-estimate a volume limit.
-
-## Balanced terminal decorations
-
-~~~sh
-python3 repro/run_research_checks.py balanced-terminal-fans
-~~~
-
-This standard-library group checks exact polynomial recurrences, rational
-balance constants, oriented stellar subdivisions, the matching and face
-parity, and the actual endpoint pairing of even terminal stacks. Results
-are saved in the [result file](../experiments/actual_balanced_terminal_fans_results.json)
-and runner logs. The all-real choice of fan counts, the uniform source
-estimates, and hyperbolic completion are analytic proofs in the
-[theorem](../notes/actual_balanced_terminal_fan_volume.md); the checks do
-not replace those proofs or extrapolate from sampled quantum invariants.
-
-## The quantitative circle-tree theorem
-
-Run its three programs with one command:
+The research runner lists its retained groups without executing them:
 
 ```sh
-python3 repro/run_research_checks.py curvature-fillings
+python3 repro/run_research_checks.py --list
 ```
 
-This group requires Python, SymPy and mpmath. It checks four edge-action
-identities and 990 finite complex Gaussian samples; 46 rational
-octahedral identities and seven bounds; and 128 ordered trees with
-448 local attachments and 28 additional algebraic identities. The
-programs retain both half-twist signs and the original peripheral
-curves. Results record the exact source hashes.
+Choose a group by its stated scope. Do not treat an old output file as
+current evidence without checking its inputs and the associated written
+argument. Useful counterexamples are retained because they rule out
+incorrect proof steps; obsolete parameter pilots and superseded outputs
+are not maintained.
 
-The [proof-input map](PROOF_INPUTS.md#the-quantitative-circle-tree-theorem)
-locates the uniform estimates, arbitrary-tree induction and geometric
-completion. The finite tree examples check the attachment code against
-the original strand compiler; the induction proves the general case.
-The numerical Gaussian samples check formulas, while the written
-bounds control the whole complex domain.
+## The illustrated guide
 
-## Reproducing the local tree argument
-
-This group requires Python and mpmath. Run it using one command:
-
-~~~sh
-python3 repro/run_research_checks.py local-tree-fillings
-~~~
-
-The first two programs check 21 analytic and eight geometric
-constant comparisons by exact rational arithmetic. The third
-compares the polynomial subtree recursion with a separate
-spectral or first-derivative trace calculation in 48 finite cases,
-using 180 choices of root at 80-digit precision. The examples
-include both level parities, zero and signed powers, moving
-parameters, and constant channels with repeated spectral roots.
-All $N$ edge indices are retained; removing the high indices
-changes every tested value.
-
-These checks verify the constants and finite identities used by
-the argument. The written proof supplies the induction for all
-finite trees, the contour bounds, noncancellation, and the metric
-completion. The scripts do not test the asymptotic conclusion
-by extrapolating finite levels.
-
-## Checking the geometric longitude formulas
-
-With Python and SymPy installed, run the four exact-algebra programs
-through one command:
-
-~~~sh
-python3 repro/run_research_checks.py geometric-characteristic
-~~~
-
-The programs check the nonparabolic face maps and peripheral words,
-the four-puncture character matrices, the two eigenline choices in a
-half twist, and the differential and discriminant identities used by
-the rigidity argument. They compare rational functions symbolically,
-rather than sampling hyperbolic knots. The written proof establishes
-the ordered gluing, boundary pairing, constant field and regularity
-over every nonzero main meridian value. Those global arguments are
-not replaced by the script results.
-
-## What a passing run does not replace
-
-The suite verifies the finite arithmetic in the source bounds. It does not mechanically verify the whole manuscript. In particular, the invariant normalization, the ordered tangle identities, the geometric gluing, the complex interpolation estimates and the filling-period argument require their written proofs. A passing result should not be reported as a computer proof of the volume conjecture for arbitrary knots.
-
-## Build the papers and illustrated guide
-
-The [paper catalog](../papers/README.md) gives the current subject
-accounts and their build commands. These are provisional mathematical
-groupings; the dependency graph identifies their shared foundations.
-The [manuscript source guide](../manuscript/README.md) describes the frozen
-volume reference. Its [errata](../manuscript/ERRATA.md) should
-be read with it. Rebuilding documentation does not run the mathematical
-checks above.
-
-The paper and figure builds require TeX Live or MacTeX with `latexmk`, `pdflatex`, TikZ and `standalone`, plus Ghostscript (`gs`) for PNG previews. The guide requires Pandoc. Its builder uses Python's standard library and produces native MathML, with no separate documentation framework.
-
-To rebuild and check the illustrated guide, run:
+After changing guide sources or the retained note collection, rebuild
+and check the site:
 
 ```sh
 python3 tools/build_book.py
 python3 tools/check_book.py
 ```
 
-`python3 tools/build_manuscript.py` builds the reference from its current
-sources, including the proof files shared with the Conway paper.
-It incorporates the listed corrections. It is not needed for an ordinary
-guide update.
+The builder removes generated note pages whose source has been deleted.
+The checker examines local links, section anchors, image descriptions,
+rendered formulas and agreement between the note collection and search
+index. These checks concern the exposition, not its mathematical truth.
 
-The certificate runner itself still requires only Python's standard library. Keeping rendering and verification separate makes a failed build distinguishable from a failed mathematical certificate.
-
-## A limit of the shared-weight envelope method
-
-```sh
-python3 repro/run_research_checks.py singleton-envelope
-```
-
-This standard-library group checks the fifty-four-region example in the
-[fixed-sector obstruction](../notes/actual_singleton_sector_envelope_obstruction.md).
-One program replays the oriented sphere moves and verifies the rational
-face loads and entropy bounds. The other checks the sphere links,
-matching, marked edge, and knot-producing strand parity. The written
-argument also proves that the selected sector has nonzero shared
-coefficient support at all sufficiently large even levels.
-
-The conclusion is that one proposed upper-bound method cannot prove a
-strict volume gap for this fixed source. It is not a lower bound for
-the quantum invariant and is not a counterexample to the volume conjecture.
-
-For the extension to the actual absolute sum of shared-array terms, run:
-
-```sh
-python3 repro/run_research_checks.py source-cancellation
-```
-
-This includes the preceding rational and topology certificates, then
-checks the protected endpoint formula, the odd central cofactor product,
-and exact integer load rounding at both parities. The new check uses only
-the standard library. Its result is saved in
-`repro/results/absolute-source-obstruction.json`. The
-[proof](../notes/research_absolute_source_cancellation_obstruction.md)
-supplies the all-level entropy lower bound and explains why no choice of
-positive diagonal Cauchy weights removes the excess. Cancellation in the
-signed shared sum remains a different quantity.
-
-## Protected triangular sums
-
-With `python-flint` installed, run:
-
-```sh
-python3 repro/check_protected_sums.py --output repro/results/protected-sums
-```
-
-This replays both rational interval certificates for the seventeen-region
-input and checks eight exact tetrahedral attachments. Each resulting
-complex has connected cyclic vertex links, is a connected closed surface
-of Euler characteristic two, has the specified triangle matching, and
-retains the protected nonmatching edge and every ordinary target. The
-regions at which weak balance must fail remain unchanged. Use
-`--attachments` to change the finite number checked. Appendix Q proves
-the general closure theorem and its volume implication; these finite
-checks do not certify its analytic or geometric inputs.
-
-## Ordinary triangular insertion
-
-The explicit construction in Appendix R has a separate finite runner:
-
-```sh
-python3 repro/check_triangular_boundary_certificate.py --output repro/results/triangular-boundary
-```
-
-It requires `python-flint` and NumPy. The command checks the original
-seventeen-region source and its rational corner loads, the forty old
-branches and five new overload bounds, and the restricted dual inequality
-that retains a failure of weak balance. It also constructs the oriented
-cores and their insertions at lengths 2, 4, 8 and 16, checking the exact
-matching and coefficient targets. The reference calculation is stored
-in `repro/triangular-boundary-insertion/`; a fresh run writes separately
-to `repro/results/triangular-boundary/`.
-
-The rate certificate is evaluated at the boundary ratios for length
-`2**20`. It does not construct that many regions: the proof gives their
-curvatures and uniform inequalities explicitly. Monotonicity then extends
-the same witnesses to every larger even length. The all-length topology,
-conditional disk minimum, nonzero asymptotic, knot-component condition
-and identification with the completed metric remain written proofs.
-See the [audit of this argument](manuscript_audit/triangular-boundary.md)
-for the scope of the Lean and finite checks.
+Current compilation and check records are linked from the
+[combined verification record](results/manuscript-and-lean/verification-summary.json).
+The [publication plan](HEXAGON_PUBLICATION_PLAN_2026-11-25.md) concerns
+submission preparation; it is separate from mathematical verification.

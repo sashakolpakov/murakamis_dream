@@ -19,7 +19,7 @@ problem.
 ## 1. A literal NC vertex substitution, including the pointing
 
 Let A,B be ordered NC/Morse graphs of the
-[corrected exposed-source theorem](actual_nc_morse_graph_first_normal_source_reduction.md).
+[corrected exposed-source theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_nc_morse_graph_first_normal_source_reduction.md).
 A has an interval black vertex u on edge slots (a,a+1,a+2), and an
 EXPOSED white marked cap elsewhere. B has an outer white vertex w on
 edge slots (0,k,E_B-1), so every other white block is in one of its
@@ -205,7 +205,7 @@ the whole new scalar is exactly
     sum_(a+b+c>=d) Z_A(a,b,c) Z_B(a,b,c)/Z_theta(a,b,c). (12)
 
 There is no omitted unsaturated correction in this COMPLETE-circle
-operation. The [exposed six-port pruning theorem](actual_exposed_six_port_complete_circle_pruning.md)
+operation. The [exposed six-port pruning theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_exposed_six_port_complete_circle_pruning.md)
 proves it before the exterior or mark acts: remove B's three boundary
 coupons and every ordinary cap other than its omitted outer vertex.
 The remaining physical six-head column is a regular generic invariant,

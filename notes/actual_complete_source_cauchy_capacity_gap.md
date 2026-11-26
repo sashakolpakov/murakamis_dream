@@ -175,9 +175,9 @@ One cannot repair a strict packing imbalance merely by optimizing a single
 positive torus for the full endpoint product, even with radii depending on
 the level. The proved [anchored shared-radius theorem](general_anchored_shared_radius_filling_volume.md)
 avoids this particular loss by separating genuine source sectors first.
-It is not contradicted by (4) or (11). The [finite actual-sector cover theorem](general_actual_sector_cover_filling_volume.md)
+It is not contradicted by (4) or (11). The [finite actual-sector cover theorem](../papers/planar-certificates/README.md)
 retains those common face constraints while permitting finer decompositions.
-A [certified original source](actual_shared_radius_certificate_separation.md)
+A [certified original source](../papers/planar-certificates/README.md)
 shows that the anchored test itself is not universal, although a finer cover succeeds.
 
 The argument uses finite convex geometry, the original uniform local coefficient theorem and its actual endpoint volume calibration; it does not use a numerical optimizer as a proof.

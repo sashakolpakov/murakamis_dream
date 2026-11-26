@@ -110,7 +110,7 @@ $$
 
 If the identity reference is zero, the sector is identically zero. Constants depend on the original fixed diagram. No independently framed norm or unproved physical smoothing has been used.
 
-Second, if all other ports are restricted to their actual CROSS sectors, those ports may range over the entire real spectral interval. The [exact cofactor interpolation theorem](actual_cross_cofactor_factorization.md), Section 8, gives
+Second, if all other ports are restricted to their actual CROSS sectors, those ports may range over the entire real spectral interval. The [exact cofactor interpolation theorem](../papers/filling-bounds/README.md), Section 8, gives
 
 $$
 |P_{N,\mathrm{cross}}(\sigma)|_{\mathrm{coef}}
@@ -198,7 +198,7 @@ The first case of Section 3, where other full ports are controlled only near $-2
 
 ## 5. Remaining scope and verification
 
-The result is compatible with failure of a global coefficientwise endpoint bound for the full numerator. That failure already occurs at $\sigma=\sqrt3$ for a genuinely one-sided path with positive outer exponent, not for (1). Such a remote moving port is not covered by (9) or a small spectral neighborhood in (6). The [short-moving extension](actual_global_short_moving_spectral_sector_gap.md) treats a separate small outer-degree corridor; it does not exhaust macroscopic one-sided paths.
+The result is compatible with failure of a global coefficientwise endpoint bound for the full numerator. That failure already occurs at $\sigma=\sqrt3$ for a genuinely one-sided path with positive outer exponent, not for (1). Such a remote moving port is not covered by (9) or a small spectral neighborhood in (6). The [short-moving extension](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_global_short_moving_spectral_sector_gap.md) treats a separate small outer-degree corridor; it does not exhaust macroscopic one-sided paths.
 
 The [focused audit](../experiments/audit_actual_global_diagonal_spectral_sector_gap.py) and [recorded results](../experiments/actual_global_diagonal_spectral_sector_gap_results.json) retain the exact finite source.
 

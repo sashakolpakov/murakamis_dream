@@ -17,7 +17,7 @@ corner incidences. Its complete source entropy is
  f(s)=\frac{\Lambda(\pi s)+\Lambda(\pi/2-\pi s)}{\pi}.
 \]
 
-This is the normalization in the [triangle Legendre identity](actual_triangle_entropy_algebraic_balance.md).
+This is the normalization in the [triangle Legendre identity](../papers/planar-certificates/README.md).
 For \(0<s<1/2\), direct differentiation gives
 
 \[

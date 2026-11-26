@@ -59,7 +59,7 @@ symbol is substituted for an operator.
 
 ## 2. Put both actual white factors in the same deficient chart
 
-The [boundary/source theorem](actual_generic_boundary_gauge_and_source.md)
+The [boundary/source theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_generic_boundary_gauge_and_source.md)
 gives a finite continuation of the original white map:
 
     mathscr W_a(zeta;sigma,i)
@@ -187,7 +187,7 @@ matching the physical grid alone would not have fixed it.
 
 In the original circle coordinates R=sigma-u, S=ell, the normalized
 entire circle coefficient in the
-[regulator normalization](actual_matching_edge_deficient_packet_regulator.md)
+[regulator normalization](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_matching_edge_deficient_packet_regulator.md)
 satisfies
 
     C_a(sigma;R,S)

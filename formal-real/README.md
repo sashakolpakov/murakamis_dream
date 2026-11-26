@@ -101,7 +101,7 @@ MATHLIB_NO_CACHE_ON_UPDATE=1 lake update volumeLogic mathlib
 rg --no-filename '^import Mathlib\.' --glob '*.lean' --glob '!**/.lake/**' . \
   | cut -d' ' -f2 | sort -u | xargs lake exe cache get
 cd ..
-python3 repro/check_lean.py --output repro/results/volume-lean
+python3 repro/check_lean.py --output repro/results/manuscript-and-lean/lean
 ~~~
 
 Routine replay downloads nothing and changes no dependency pins. It

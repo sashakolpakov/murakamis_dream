@@ -1,7 +1,7 @@
 # A uniform representation-volume gap for fixed peripheral words
 
 30 October 2026. This extends the supplied
-[natural-map proof](general_representation_volume_kernel_strictness.md)
+[natural-map proof](../papers/casimir-source-asymptotics/README.md)
 to a varying sequence of representations. No quantum source estimate
 follows from this geometric statement alone.
 

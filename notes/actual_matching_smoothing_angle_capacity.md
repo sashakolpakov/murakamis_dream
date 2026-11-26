@@ -27,7 +27,7 @@ evaluation of the old source at unrelated b,c. Require for this lemma:
 * all remaining incidences are the actual ones after this smoothing.
 
 No positive polyhedron for the smoothed graph is assumed. The
-[exact marked face coefficient](actual_original_marked_face_coefficient.md)
+[exact marked face coefficient](../papers/filling-bounds/README.md)
 still defines its complete source, including repeated incidences or
 bigons. A disconnected source, a merged pair of marked faces, and a
 retained half twist at the deleted port require separate treatment.

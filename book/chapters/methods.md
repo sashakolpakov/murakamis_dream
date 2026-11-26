@@ -3,8 +3,8 @@
 The manuscript develops completed arguments under their stated hypotheses. This chapter also explains approaches whose general applications remain unresolved. Its purpose is to make the calculation behind each approach intelligible before sending the reader to a technical note.
 
 The [current papers](../../papers/README.md) give the detailed proofs
-used by the retained theorems. The technical archive also preserves
-earlier attempts and examples. Use the
+used by the retained theorems. The library contains supporting arguments
+and current research; superseded versions remain in Git history. Use the
 [dependency graph](../../docs/papers/dependencies.html) to distinguish
 a method that is part of a particular proof from a related proposal
 that has not supplied its required estimate.
@@ -47,7 +47,7 @@ A formal critical point alone proves none of these three estimates. A positive c
 
 ![The proof requires an exact decomposition, a nonzero geometric contribution, a bound on the remainder, and a geometric identification of the critical value.](../figures/methods-proof-map.svg)
 
-For the covered Conway constructions and decorated planar diagrams, the manuscript supplies all these steps. For an unchanged matched simple sphere with the stated Morse presentation and markings, the [geometric contribution theorem](../../notes/actual_morse_geometric_contribution.md) supplies the contribution and its actual filled volume; the general signed remainder estimate remains open. This is why that partial theorem is included without being advertised as a full volume theorem.
+For the covered Conway constructions and decorated planar diagrams, the manuscript supplies all these steps. For an unchanged matched simple sphere with the stated Morse presentation and markings, the [geometric contribution theorem](../../docs/papers/casimir-source-asymptotics.pdf) supplies the contribution and its actual filled volume; the general signed remainder estimate remains open. This is why that partial theorem is included without being advertised as a full volume theorem.
 
 ## Exact polynomials and shared face variables
 
@@ -67,9 +67,9 @@ For the marked spherical construction with \(r\) crossing regions, there are \(r
         \left.\prod_{e=1}^{r}H_e(\boldsymbol L;\sigma_e)
         \right|_{L_u=L_v=0}.
 \]
-The brackets mean coefficient extraction. The parameter \(\sigma_e\) is the spectral variable of crossing region \(e\). The two zero substitutions encode the original marked cut; they are not optional boundary conditions. The [finite source proof](../../notes/actual_homogeneous_casimir_face_source.md) and its [general Morse version](../../notes/research_matched_sphere_morse_source.md) establish this identity with the scalar and endpoint conventions.
+The brackets mean coefficient extraction. The parameter \(\sigma_e\) is the spectral variable of crossing region \(e\). The two zero substitutions encode the original marked cut; they are not optional boundary conditions. The [finite source proof](../../docs/papers/filling-bounds.pdf) and its [general Morse version](../../notes/research_matched_sphere_morse_source.md) establish this identity with the scalar and endpoint conventions.
 
-The terms **central**, **left**, and **right** describe supports of this local polynomial. With \(h=\lfloor d/2\rfloor\), central retains monomials for which both middle-face exponents \(i,t\) are at most \(h\). The left piece has \(t>h\), overloading face \(c\); the right piece has \(i>h\), overloading face \(b\). Since \(i+t\le d\), both exponents cannot exceed \(h\). Expanding the product of these local choices splits \(S_N\) into its all-central part and its complement. These are sectors of one prescribed calculation, not new knot invariants. The [geometric contribution theorem](../../notes/actual_morse_geometric_contribution.md) estimates the original filling functional applied to the all-central sector; a full-invariant theorem must also control the complementary sectors.
+The terms **central**, **left**, and **right** describe supports of this local polynomial. With \(h=\lfloor d/2\rfloor\), central retains monomials for which both middle-face exponents \(i,t\) are at most \(h\). The left piece has \(t>h\), overloading face \(c\); the right piece has \(i>h\), overloading face \(b\). Since \(i+t\le d\), both exponents cannot exceed \(h\). Expanding the product of these local choices splits \(S_N\) into its all-central part and its complement. These are sectors of one prescribed calculation, not new knot invariants. The [geometric contribution theorem](../../docs/papers/casimir-source-asymptotics.pdf) estimates the original filling functional applied to the all-central sector; a full-invariant theorem must also control the complementary sectors.
 
 For a simple illustration of why the variables must remain shared,
 \[
@@ -85,7 +85,7 @@ Repeated spectral roots require derivatives as well as values. If \(J=cI+U\) wit
 \]
 Thus knowing only \(p(c)\) does not determine the operator. This elementary example explains **Hermite data**: values and the derivatives prescribed by the multiplicities of the spectral roots. Derivatives in a spectral variable and derivatives in the generic quantum parameter are different data. Every use of a “normal term” in the notes must specify which derivative it means.
 
-The [finite filling estimate](../../notes/actual_uniform_filling_supremum_bound.md) bounds the next operation, inserting a fixed signed crossing power \(n\). For the original linear functional \(\mathcal L_N^n\) and a polynomial \(H\) of degree at most \(N-1\),
+The [finite filling estimate](../../docs/papers/filling-bounds.pdf) bounds the next operation, inserting a fixed signed crossing power \(n\). For the original linear functional \(\mathcal L_N^n\) and a polynomial \(H\) of degree at most \(N-1\),
 \[
  |\mathcal L_N^n H|
        \le (1+|n|/2)\sup_{\sigma\in[-2,2]}|H(\sigma)|.
@@ -107,7 +107,7 @@ The crossing-power factor disappears from this bound, but the derivatives of \(H
        -\prod_e(1/N+|n_e|/2)\right\}
              \|\mathcal D_N\|_{[-2,2]^r}.
 \]
-The tensor product means that the functionals act successively on their respective spectral variables. This exact saving preserves the shared targets and both level parities. It leaves the size of the between-node polynomial as the remaining problem. The earlier [Fourier–Hermite Gram estimate](../../notes/actual_filling_fourier_hermite_gram.md) also has a level-independent filling cost, in a different positive Hilbert norm; the two estimates should not be identified.
+The tensor product means that the functionals act successively on their respective spectral variables. This exact saving preserves the shared targets and both level parities. It leaves the size of the between-node polynomial as the remaining problem. These supremum-norm bounds are different from bounds in a positive coefficient norm. Passing between them requires the actual Gram matrix and its cost; the norms cannot be identified without a proof.
 
 ## Positive sums, factorial asymptotics, and angle optimization
 
@@ -137,7 +137,7 @@ where
 \]
 is the Lobachevsky function. Near \(t=0,1\), the logarithmic singularities require endpoint estimates; uniformity there is not a consequence of a smooth Riemann-sum rule.
 
-This positive-sum argument is a discrete Laplace principle. It is distinct from both majorization and a Tauberian theorem, even though all three exploit positivity or convexity. The [positive Conway variational proof](../../notes/actual_positive_conway_variational_limit.md) establishes the support and factorial estimates for its stated expressions. The [geometric realization](../../notes/actual_positive_conway_hyperbolic_volume.md) is a further argument. Positivity by itself neither constructs a knot complement nor proves invariance under changes of triangulation. A proposed positive tetrahedral model must also satisfy the appropriate local move identities with its full peripheral factors retained.
+This positive-sum argument is a discrete Laplace principle. It is distinct from both majorization and a Tauberian theorem, even though all three exploit positivity or convexity. The [positive Conway variational proof](../../docs/papers/newton-calculus.pdf) establishes the support and factorial estimates for its stated expressions. The [geometric realization](../../docs/papers/strict-conway-geometry.pdf) is a further argument. Positivity by itself neither constructs a knot complement nor proves invariance under changes of triangulation. A proposed positive tetrahedral model must also satisfy the appropriate local move identities with its full peripheral factors retained.
 
 An **angle structure** on an ideal triangulation assigns positive dihedral angles to its tetrahedra. In each tetrahedron the three angles at a vertex sum to \(\pi\); around each manifold edge the incident angles sum to \(2\pi\). Opposite tetrahedron edges have equal angles. These are linear conditions, so the allowed assignments form a relatively open convex polytope, when it is nonempty.
 
@@ -147,7 +147,7 @@ For one positively oriented ideal tetrahedron with angle triple \((\alpha,\beta,
        =\Lambda(\alpha)+\Lambda(\beta)+\Lambda(\gamma),
  \qquad \alpha+\beta+\gamma=\pi.
 \]
-The total volume is strictly concave on the positive angle domain. This is the concavity used in the Casson–Rivin variational approach; the volume is not described as a convex function to be minimized. Stationarity in all allowed directions supplies the remaining length and gluing conditions. The peripheral equations and the actual face identifications still have to be retained. The [marked positive gluing proof](../../notes/general_marked_positive_gluing_certificate.md) carries out these steps for its stated triangulation certificate.
+The total volume is strictly concave on the positive angle domain. This is the concavity used in the Casson–Rivin variational approach; the volume is not described as a convex function to be minimized. Stationarity in all allowed directions supplies the remaining length and gluing conditions. The peripheral equations and the actual face identifications still have to be retained. The [marked positive gluing proof](../../docs/papers/marked-fillings.pdf) carries out these steps for its stated triangulation certificate.
 
 For one tetrahedron this concavity can be checked directly. Use
 \(\alpha,\beta\) as coordinates and put \(\gamma=\pi-\alpha-\beta\).
@@ -384,25 +384,7 @@ also compares this matrix with the original cap moment matrix at
 polynomial cost. That comparison holds at both parities. Its application
 to a stable exterior still requires the odd-level factorization above.
 
-For the original diagram with 54 crossing regions, let \(S_N(\sigma)\)
-be the signed contribution with region 32 chosen as this cap and the other
-53 central spectral parameters fixed at \(-2\). The protected faces are
-29 and 50; the remaining two cap variables are \(A=L_{16},C=L_0\).
-The exact certificates and the truncation theorem give
-\[
- \limsup_{\substack{N\to\infty\\N\text{ odd}}}
- \frac1N\log\sup_{-2\le\sigma\le2}|S_N(\sigma)|
- \le\Phi-\min\{0.003,\gamma_D\}<\Phi.
-\]
-Here \(\Phi\) is the augmented complement's volume divided by \(2\pi\).
-The positive number \(\gamma_D\) is the strict entropy loss for the
-omitted boundary coefficients; no numerical lower bound for it is claimed.
-The pressure and entropy comparisons are checked by
-`python3 repro/check_cap_response.py`. The written proof supplies
-stability, the limiting coefficient estimates, and the geometric meaning
-of \(\Phi\).
-
-A separate [response criterion](../../notes/research_cap_dirichlet_response_region.md)
+The [response criterion](../../notes/research_cap_dirichlet_response_region.md)
 gives the same type of uniform odd-level cap gap for any exterior satisfying
 its hypotheses. Let
 \(F(z)=\lim N^{-1}\log P_N(e^z,1)\), and set
@@ -411,10 +393,8 @@ its hypotheses. Let
 strict feasibility and connectivity conditions. Its proof interprets
 \(F''\) as the minimum energy of a weighted graph with boundary potentials
 one and zero. This controls the pressure as the boundary weight varies.
-The 54-region example uses the more flexible two-pressure comparison;
-it does not satisfy this simpler response criterion.
 
-![The response graph has one vertex for each ordinary face variable. The two boundary potentials are fixed; all others minimize the weighted energy. The drawing illustrates the construction rather than the particular 54-region graph.](../figures/cap-dirichlet-response.svg)
+![The response graph has one vertex for each ordinary face variable. The two boundary potentials are fixed; all others minimize the weighted energy. The drawing shows the weighted graph and its two fixed boundary potentials.](../figures/cap-dirichlet-response.svg)
 
 More precisely, write \(h_A=1,h_C=0\). For each interior vertex \(i\),
 \(h_i\) is the derivative of its minimizing logarithmic weight with respect
@@ -541,9 +521,9 @@ shared coefficient estimate.
 
 ## Refining the coefficient estimate by genuine sectors
 
-A single positive comparison can be too coarse even when a more detailed finite comparison succeeds. The [sector-cover theorem for certified marked plats](../../notes/general_actual_sector_cover_filling_volume.md) and its [general Morse formulation](../../notes/general_morse_sector_cover_volume.md) make this precise for their stated original sources. They use the actual central, left and right polynomials, not arbitrary pieces of an upper-bound formula.
+A single positive comparison can be too coarse even when a more detailed finite comparison succeeds. The [sector-cover theorem for certified marked plats](../../docs/papers/planar-certificates.pdf) and its [general Morse formulation](../../docs/papers/planar-certificates.pdf) make this precise for their stated original sources. They use the actual central, left and right polynomials, not arbitrary pieces of an upper-bound formula.
 
-For nonnegative weights \(w_1,w_2,w_3\), not all zero, define the [source-normalized triangle potential](../../notes/actual_triangle_entropy_algebraic_balance.md) by
+For nonnegative weights \(w_1,w_2,w_3\), not all zero, define the [source-normalized triangle potential](../../docs/papers/planar-certificates.pdf) by
 \[
 \begin{aligned}
  Q(w_1,w_2,w_3)
@@ -592,7 +572,7 @@ the original source labels.
 
 Choose finitely many branches covering every noncentral label string. If each has one fixed positive shared vector with \(G_B<\Phi_D\), where \(2\pi\Phi_D\) is the complete augmented volume, their finitely many strict gaps give a common bound on the full complementary polynomial. The original filling estimate transfers that bound to the complementary scalar. For independently sufficiently long fixed twists, the nonzero all-central contribution has a rate closer to \(\Phi_D\) than this remainder does; multiplying that rate by \(2\pi\) gives the actual filled volume. When the original endpoint pairing gives a knot, this comparison proves its full volume limit under the certificate hypotheses.
 
-An **anchored** test requires one specified left or right region and allows all labels at every other region. Refining that test splits its allowed strings into smaller branches. The [certificate-separation example](../../notes/actual_shared_radius_certificate_separation.md) proves that all positive weights fail one anchored test on a fixed original source, while forty refined branches pass. It refutes universal applicability of the anchored test, not the volume conjecture or the possibility of a finer certificate.
+An **anchored** test requires one specified left or right region and allows all labels at every other region. Refining that test splits its allowed strings into smaller branches. The [certificate-separation example](../../docs/papers/planar-certificates.pdf) proves that all positive weights fail one anchored test on a fixed original source, while forty refined branches pass. It refutes universal applicability of the anchored test, not the volume conjecture or the possibility of a finer certificate.
 
 Existence of a successful finite cover is a separate condition on
 the chosen envelopes and diagram. Refinement does not prove it:
@@ -600,7 +580,7 @@ even a branch containing a single genuine string still requires
 one shared weight vector giving the stated strict inequality.
 
 There is an exact obstruction at this last level. The
-[54-region example](../../notes/actual_singleton_sector_envelope_obstruction.md)
+[54-region example](../../docs/papers/planar-certificates.pdf)
 has one left region and central at all other regions. For this fixed
 string \(\boldsymbol s\), every positive shared vector satisfies
 \[
@@ -627,7 +607,7 @@ There is a sufficient condition that constructs the shared weights
 directly. Let \(w_f^*>0\) be the ordinary curvatures of the complete
 marked packing, with the protected weights zero. At every region
 put \(X_e=Q(x,b,y)+Q(x,c,y)\), evaluated at these weights.
-The [weak-balance theorem](../../notes/general_weak_balance_volume.md)
+The [weak-balance theorem](../../docs/papers/planar-certificates.pdf)
 assumes
 \[
  X_e\ge\log w_b^*\quad(w_b^*>0),\qquad
@@ -835,7 +815,7 @@ An oscillatory integral or finite sum can have several complex critical points. 
 
 The main issue is not just finding such a point. One must move the original contour to a neighborhood of it without losing boundary contributions, prove that the resulting coefficient is nonzero, and bound the complement. In the filling calculation, Fourier expansion produces integer indices \(\ell_e\), often called charges, in addition to the color variables. The original sum contains all those charges. A calculation for \(\ell_e=1\) alone does not establish the full asymptotic.
 
-The [whole geometric-period proof](../../notes/actual_morse_cross_filling_period.md) treats the large charges on the entire original intervals, retaining their endpoint currents. The remaining finite charges are compared on fixed complex neighborhoods. The phases, derivatives at repeated roots, and signs of independently chosen twists remain in the formula. For the covered full-invariant theorems, a further estimate controls the terms outside this geometric sector.
+The [whole geometric-period proof](../../docs/papers/casimir-source-asymptotics.pdf) treats the large charges on the entire original intervals, retaining their endpoint currents. The remaining finite charges are compared on fixed complex neighborhoods. The phases, derivatives at repeated roots, and signs of independently chosen twists remain in the formula. For the covered full-invariant theorems, a further estimate controls the terms outside this geometric sector.
 
 The same distinction matters for slowly varying recurrences. Distinct instantaneous eigenvalues do not alone exclude exponentially significant transfer between branches. A small off-diagonal entry may be magnified after conjugation by exponential action weights. The [transport counterexamples and bounds](../../notes/actual_local_analytic_transport_action_barrier.md) explain the precise missing estimate. Thus neither diagonalizing each matrix separately nor naming a dominant classical branch is a substitute for controlling their ordered product.
 
@@ -1088,9 +1068,9 @@ Summing over a fixed finite interval \(k=r,\ldots,s\) leaves \(B(j,s+1)-B(j,r)\)
 
 The external results have different roles: Garoufalidis–Lê prove q-holonomicity from the colored-Jones state sum; Brown–Dimofte–Garoufalidis–Geer prove a level-independent ADO family statement in Theorem 4.3 and the specified comparison with colored-Jones recurrences in Theorem 4.4. Their §1.1 also explains why level-dependent periodic recurrences are insufficient. These are recurrence results, not volume or classical-factor conclusions for an arbitrary source.
 
-The [geometric-characteristic theorem](../../notes/actual_strict_tree_geometric_characteristic.md) proves a factor statement under its full asymptotic hypotheses: the selected geometric irreducible factor divides the first nonzero classical symbol of every genuine all-level annihilator. It does not identify every factor, multiplicity, or the complete annihilator ideal. The [moving-meridian argument](../../notes/actual_main_meridian_filled_volume.md) supplies the actual state on its specified shrinking meridian neighborhood. The domain and derivative control are essential when substituting an asymptotic expansion into a recurrence.
+The [geometric-characteristic theorem](../../docs/papers/meridian-expansions.pdf) proves a factor statement under its full asymptotic hypotheses: the selected geometric irreducible factor divides the first nonzero classical symbol of every genuine all-level annihilator. It does not identify every factor, multiplicity, or the complete annihilator ideal. The [moving-meridian argument](../../docs/papers/moving-meridian-sources.pdf) supplies the actual state on its specified shrinking meridian neighborhood. The domain and derivative control are essential when substituting an asymptotic expansion into a recurrence.
 
-To define that symbol, clear the operator's rational denominators and remove the common power of \(q-1\), then take the first nonzero coefficient as \(q\to1\); at this point the shift and multiplication variables commute. The exact changes between reduced and full states must be carried through before making this comparison. The [filtered expansion](../../notes/actual_main_meridian_filtered_characteristic.md) and its [directed-criterion extension](../../notes/actual_all_circle_directed_all_orders.md) provide more than a cusp tangent: they control every finite expansion order on the shifted parameter regions required by the operator, with a polynomial degree bound selecting the whole longitude germ. The factor is a selected complex irreducible component. Over rational coefficients, the theorem uses the rational polynomials vanishing on that component; their irreducible generator may split into several components over \(\mathbb C\). This conclusion is weaker than equality with the full classical A-polynomial or with a quantum operator ideal.
+To define that symbol, clear the operator's rational denominators and remove the common power of \(q-1\), then take the first nonzero coefficient as \(q\to1\); at this point the shift and multiplication variables commute. The exact changes between reduced and full states must be carried through before making this comparison. The [filtered expansion](../../docs/papers/meridian-expansions.pdf) and its [directed-criterion extension](../../docs/papers/meridian-expansions.pdf) provide more than a cusp tangent: they control every finite expansion order on the shifted parameter regions required by the operator, with a polynomial degree bound selecting the whole longitude germ. The factor is a selected complex irreducible component. Over rational coefficients, the theorem uses the rational polynomials vanishing on that component; their irreducible generator may split into several components over \(\mathbb C\). This conclusion is weaker than equality with the full classical A-polynomial or with a quantum operator ideal.
 
 Here is the role of that degree bound. Write \(M=q_N^s\) and
 \[
@@ -1290,7 +1270,7 @@ volume limit follows from this result.
 
 ## Which approaches are retained, and where to read them
 
-The table covers the organized research routes. Each route includes its exact results, examples, and limitations; the [archive](../archive.html) also preserves earlier versions and unsuccessful constructions. Historical claims should be read with their corrections and dates, not promoted to current theorems.
+The table covers the retained research routes, with their exact results, examples and limitations. The [library index](../archive.html) contains the maintained notes. Superseded versions and discarded diagnostic histories are available in the source snapshot in Git; they are not additional premises of the current theorems.
 
 | Approach | What the argument does | Current place in the project |
 |---|---|---|

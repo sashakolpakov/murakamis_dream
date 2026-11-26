@@ -14,8 +14,8 @@ modified-dimension factor.
 
 The obstruction to a uniform nonzero scalar asymptotic expression across
 the two points was already described in the
-[formal A-curve period discussion](formal_a_curve_period_torsor.md#the-actual-peripheral-normalization-includes-a-difference-constant)
-and the [regular-period construction](regularized_kashaev_period.md).
+[formal A-curve period discussion](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/formal_a_curve_period_torsor.md#the-actual-peripheral-normalization-includes-a-difference-constant)
+and the [regular-period construction](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/regularized_kashaev_period.md).
 The quantitative zero bound below makes that obstruction precise for
 the actual knot state. It does not identify a classical A-polynomial
 factor. The canonical regular remainder, defined by subtracting the
@@ -36,8 +36,8 @@ normalized to $1$, and assume
 \]
 
 For example, this applies to the fixed long-twist knots covered by the
-[strict Conway-tree theorem](actual_conway_all_strict_tree_long_twist_volume.md)
-and the [ordered net-twist theorem](actual_conway_net_twist_volume.md).
+[strict Conway-tree theorem](../papers/conway-asymptotics/README.md)
+and the [ordered net-twist theorem](../papers/conway-reductions/README.md).
 In either application, the knot and its integer twist weights are fixed
 before $N$ tends to infinity. The argument below otherwise uses no
 restriction on the knot presentation.
@@ -55,7 +55,7 @@ eigenvalue $M$ is
 
 Thus $\alpha=N-1$ gives $M=1$. The exact
 [ADO normalization](kashaev_ado_pointing.md) and
-[integer-color specialization](root_orbit_pointing.md) give
+[integer-color specialization](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/root_orbit_pointing.md) give
 
 \[
  F_N(-q_N^j)=C_j(q_N)\quad(1\le j\le N),\qquad
@@ -67,7 +67,7 @@ Here $C_j$ denotes the reduced $j$-dimensional ordinary quantum-group
 invariant of the same knot. In particular, its one-dimensional value
 is $1$.
 
-The [squared-meridian descent](even_meridian_norm_descent.md) proves
+The [squared-meridian descent](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/even_meridian_norm_descent.md) proves
 the exact identity
 
 \[
@@ -170,7 +170,7 @@ $L=L_++L_-$ and $w=L_+-L_-$. Put $d=N-1$.
 
 The [finite cut-state construction](finite_sum_annihilator.md) retains
 all indices in $\{0,\ldots,d\}$. The explicit
-[positive and negative crossing entries](relative_octahedral_period.md#exact-formulas-for-both-actual-crossings)
+[positive and negative crossing entries](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/relative_octahedral_period.md#exact-formulas-for-both-actual-crossings)
 make their color dependence particularly transparent. After stripping
 the common Cartan scalar, the positive entry with input indices $(a,b)$
 and shift $k$ is an $x$-independent coefficient times
@@ -357,7 +357,7 @@ consistent with the exact normalization gauge
 
 ## 6. The canonical regular remainder is a different object
 
-The [regular-period construction](regularized_kashaev_period.md)
+The [regular-period construction](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/regularized_kashaev_period.md)
 subtracts prescribed polar data, rather than applying a nonzero
 scalar normalization. Let $P_N^{\mathrm{ord}}$ be the unique polynomial
 of degree at most $N-2$ taking the values $C_j(q_N)$ at $Q_N^j$ for

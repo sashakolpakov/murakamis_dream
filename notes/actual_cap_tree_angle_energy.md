@@ -22,7 +22,7 @@ F_a=(Q;Q)_a, s_a=|F_a|, and the physical gauge
     B_a=N^(1/4)/sqrt(s_a).
 
 Let A=(C'_23)^(-1)C'_12, with the original finite Euler maps.
-The [proved original pivotal-cap identity](actual_pivotal_cap_reassociation_angle_packet.md)
+The [proved original pivotal-cap identity](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_pivotal_cap_reassociation_angle_packet.md)
 uses ellhat=sqrt(N)ell, where ell is the LITERAL original ordinary
 cap including its pivot. Its gauged map Khat=(ellhat_12 tensor I)A is
 

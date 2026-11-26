@@ -14,7 +14,7 @@ mixed source or prove the long-filled knot limit.
 Fix any connected original certified augmented plat, with its actual
 main mark, all matching circles and retained half twists epsilon_i.
 No one-main-component restriction is imposed. Use the exact entire
-complete-image core and its [complex packet](actual_complete_core_complex_packet.md).
+complete-image core and its [complex packet](../papers/casimir-source-asymptotics/README.md).
 Let chi_i=h_i/N denote its external deficit coordinates, and let
 S(chi) be the limiting selected critical action, with the explicit
 chi-independent exterior and maximal-channel phases still outside
@@ -27,7 +27,7 @@ coordinates. Its phase is
       +2pi i sum_i chi_i delta_i.                         (1)
 
 All Q terms retain their actual sine and forced-factor normalization.
-The [marked circle reconstruction](actual_marked_deformed_circle_pattern.md)
+The [marked circle reconstruction](../papers/marked-fillings/README.md)
 proves that its face-stationary radii are the curvatures of one common
 analytic line-circle pattern, with the original two marked lines and
 all actual triangle incidences. Thus this is not a collection of
@@ -44,7 +44,7 @@ triangles. Let C_i transport the incoming pair to the outgoing pair,
 with C_i A_in C_i^-1=A_out and [C_i,P_i]=0. Normalize its eigenvalue
 on the J_i^-1 line to one, and denote its eigenratio by R0_i.
 
-The [primitive-collar theorem](actual_deformed_circle_primitive_collar.md)
+The [primitive-collar theorem](../papers/marked-fillings/README.md)
 proves the ACTUAL primitive, corner-preserving identity
 
     R0_i=E_bi E_ci/D_i, Log R0_i(0)=0,                  (3)
@@ -167,7 +167,7 @@ This fixes the exponential rate without assigning an unproved Chern--
 Simons constant. All actual constant source phases remain explicit.
 
 For genuinely complex meridian logs, the boundary correction is retained.
-The [marked regulator identity](complex_peripheral_action_and_conversion_bound.md)
+The [marked regulator identity](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/complex_peripheral_action_and_conversion_bound.md)
 with U=2Log M,V=2Log ell gives
 
     2pi Re S(chi)=Vol(rho_chi)

@@ -55,7 +55,7 @@ Thus lambda_b=(A_b+sqrt(A_b^2-4B_b))/2. No matrix of virtual
 size beyond the maximal folded channel is introduced.
 
 If b>0, every principal matrix is bounded below by bI. If x,y>0,
-the exact [sum gap](actual_q_hahn_positive_total_boundary_normals.md)
+the exact [sum gap](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_q_hahn_positive_total_boundary_normals.md)
 H_-+H_+>=cos(pi/N)I gives the same uniform positive lower bound.
 On an interior index interval the matrices also have a uniform upper
 bound. Partition that interval into blocks of length ell tending to
@@ -175,7 +175,7 @@ the o(1) in (1)--(3) is NOT used as such a relative estimate.
 
 ## 4. Scope of the whole-source upper bound
 
-The [exact marked coefficient theorem](actual_original_marked_face_coefficient.md)
+The [exact marked coefficient theorem](../papers/filling-bounds/README.md)
 makes every coefficient nonnegative before the explicit half-twist scalar. Evaluating its
 polynomial at the SAME positive radius bounds the selected coefficient
 by that value divided by its prescribed radius monomial. Equations

@@ -246,107 +246,7 @@ Thus \(\mathscr L(\nu,\kappa)>M_{\mathrm{cap}}-\Phi\) proves a strict absolute r
 
 This criterion can be combined with the existing Mahler or higher-derivative criteria by taking their maximum. It is not claimed to dominate each of them for every root distribution. It instead controls the common negative-axis parameter directly. In the limiting root-measure notation of the existing pressure theorem, the conclusion is the additional explicit lower bound \(\chi_D\ge\mathscr L(\nu,\kappa)\).
 
-## 6. Exact scope of the 54-region application
-
-For the recorded original 54-region source, the selected region is \(32\), its quartet is \((0,50,16,29)\), and the protected faces are \(29,50\). Thus (10) uses
-\[
-                         A=L_{16},\qquad C=L_0.
- \tag{30}
-\]
-The response calculation must use the load of face \(16\) for \(\nu\). This is precisely the cap index paired in (14). Its complementary boundary coordinate would give \(1-\nu\), which leaves (28) unchanged. The recorded positive spectator table gives the strict feasible table required in section 4; its ordinary support graph is connected. No changed matching, mark, or knot is introduced.
-
-The following are sufficient **certified classical enclosures**, stated separately from a numerical locating calculation:
-\[
- \frac{27}{100}\le\nu\le\frac{28}{100},\qquad
- \kappa\ge\frac{11}{125},\qquad
- M_{\mathrm{cap}}\le\frac{33947}{500},\qquad
- \Phi\ge\frac{67687}{1000}.
- \tag{31}
-\]
-The three entries of (28) are at most \(.642,.192,.648\), respectively, so their maximum is at most \(81/125\). The elementary exact inequality
-\[
-                  -\frac12\log(81/125)>\frac{27}{125}=0.216
- \tag{32}
-\]
-then gives \(M_{\mathrm{cap}}-\mathscr L<67.678\le\Phi-.009\). Hence (29) gives a positive limiting gap at least \(\min(.009,\gamma/2)\). The constant \(\gamma\) is the original omitted-tail gap; this argument does not claim an explicit lower bound for it.
-
-For a rational proof of (32), put \(x=22/103\). Since \(125/81=(1+x)/(1-x)\), the positive series \(\tfrac12\log((1+x)/(1-x))=x+x^3/3+x^5/5+\cdots\) gives a rational lower bound. Already \(x+x^3/3>27/125\), as an exact cross-multiplication check shows.
-
-Both parts of (31) are supplied by exact rational interval certificates. The complete feasible-flow entropy certificate gives the last inequality without an approximate stationary equation. The response certificate gives the first three by the local argument in the next section. Consequently this particular fixed-spectrum odd singleton satisfies (29) with a positive gap. This conclusion does not depend on a floating-point saddle or on a sample of quantum levels.
-
-## 7. The response certificate localizes the actual stationary point
-
-The source certificate fixes all 54 ordered quartets and the two protected faces. At the selected cap, the two remaining ordinary faces are exactly (30). The response certificate gives positive rational trial weights \(L^0_f\), with \(L^0_A=L^0_C=1\), and rational electrical trial potentials \(h_f\), with \(h_A=1,h_C=0\). There are \(n=52\) free log weights and 106 exterior triangle rows. The proof uses a Euclidean ball of radius \(r=1/1000\) about the exact log vector \(w^0_f=\log L^0_f\). The log vector need not itself be rational; interval evaluation at rational positive weights encloses all required quantities.
-
-For each original supported triangle and each pair of distinct supported corners, its Hessian conductance is
-\[
- g_{ab}=\frac{ab}{2\pi(a+b)\sqrt{ab+ac+bc}},\qquad
-                    0<g_{ab}\le\frac1{4\pi}.
- \tag{33}
-\]
-With exactly two supported corners, put the third weight equal to zero. A singleton row has zero Hessian and its exact value is one half of the logarithm of its weight. In (33), the inequality follows from \(\sqrt{ab+ac+bc}\ge\sqrt{ab}\) and \(a+b\ge2\sqrt{ab}\).
-
-The original supported pair graph has distance at most four from the grounded set \(\{A,C\}\). Let \(g_0\) be the smallest certified lower bound for an individual conductance at the trial weights. For every free vector \(v\), extend it by zero at \(A,C\), choose one path of length at most four from each free vertex to a ground, and use Cauchy's inequality along each path. Even allowing every edge to be counted in all \(n\) paths gives
-\[
- v^TH_{II}(w^0)v\ge\lambda\|v\|_2^2,
-                      \qquad \lambda=\frac{g_0}{4n}.
- \tag{34}
-\]
-Parallel conductance contributions only strengthen this inequality.
-
-On the radius-\(r\) ball, each log coordinate changes by at most \(r\). Each numerator and denominator factor in (33) then gives
-\[
- e^{-4r}g_{ab}(w^0)\le g_{ab}(w)\le e^{4r}g_{ab}(w^0),\qquad
- H_{II}(w)\succeq(1-4r)\lambda I.
- \tag{35}
-\]
-Let \(g_{\max}\) be a certified bound for the largest absolute component of \(\partial_I\mathcal F(0,w^0)\). The exact certificate verifies
-\[
-                  8g_{\max}<(1-4r)\lambda r.
- \tag{36}
-\]
-Since \(\sqrt{52}<8\), at every point of the boundary sphere the radial derivative is positive: the integrated Hessian contribution is at least \((1-4r)\lambda r^2\), while the initial gradient contributes no less than \(-8rg_{\max}\). A minimum on the closed ball therefore lies in its interior. Strict convexity makes this the unique positive stationary exterior. In particular the certified point is the same \(w_*\) used in (23), rather than an unrelated nearby solution.
-
-For the response, let \(E_0=\sum g_{ab}(w^0)(h_a-h_b)^2\) be the trial Dirichlet energy, with original triangle contributions counted once each. Let \(r_I\) be the free electrical residual, namely the free part of the weighted Laplacian applied to \(h\). Orthogonal quadratic minimization with the two boundary potentials fixed gives
-\[
- \kappa(w^0)=E_0-r_I^TH_{II}(w^0)^{-1}r_I
-       \ge E_0-\frac{\|r_I\|_2^2}{\lambda}.
- \tag{37}
-\]
-This is a lower bound; a trial Dirichlet energy by itself would be an upper bound and would not suffice. By (35), minimization over the same boundary potentials gives
-\[
- \kappa(w_*)\ge(1-4r)\kappa(w^0)
- \ge(1-4r)\left(E_0-\frac{n r_{\max}^2}{\lambda}\right),
- \tag{38}
-\]
-where \(r_{\max}\) bounds the largest absolute residual entry. The verifier proves that the last expression exceeds \(11/125\).
-
-The load \(\nu\) is \(\partial_A\mathcal F\). If \(D_A\) counts the original supported pair incidences at \(A\), including multiplicities, (33) and the coordinate bound give
-\[
- |\nu(w_*)-\nu(w^0)|\le\frac{rD_A}{4\pi}.
- \tag{39}
-\]
-The resulting interval lies strictly inside \((27/100,28/100)\). Finally convex minimization gives \(M_{\mathrm{cap}}\le\mathcal F(0,w^0)\), and the certified upper endpoint of that trial value is below \(33947/500\).
-
-All these tests are evaluated with outward integer fixed-point intervals at scale \(10^{40}\). Square roots use integer square-root bounds. Arctangents first use the exact half-angle identity until the argument is at most \(1/2\), then use 80 alternating terms with an explicit next-term remainder. Logarithms use the positive artanh series after power-of-two scaling. For \(0<t<1/2\), the triangle entropy is evaluated through
-\[
- J(t)=t\log(2\pi t)-t
-       -\sum_{k=1}^{20}\frac{\zeta(2k)t^{2k+1}}{k(2k+1)}
-       +\mathcal R(t),\qquad
- -\frac{2t^{43}}{21\cdot43(1-t^2)}\le\mathcal R(t)\le0,
- \tag{40}
-\]
-and \(f(t)=-J(t)-J(1/2-t)\). The positive Euler sine-product series proves this remainder. The stored \(\zeta(2k)\) intervals use positive partial sums and an integral tail; \(\pi\) uses the exact Machin identity with alternating arctangent tails. These are finite elementary enclosures, not floating-point tolerances.
-
-The separate complete-flow certificate checks 108 original triangle rows, each with mass \(1/2\), all 54 ordinary column demands equal to one, and the two original protected loads zero. Its entropy interval is
-\[
- 67.688246275129\ \le E_{\mathrm{complete\ flow}}
-                 \le\ 67.688246636527.
- \tag{41}
-\]
-This is a lower bound for the original complete maximum \(\Phi\); the upper endpoint in (41) is an upper bound for this feasible flow's entropy, not an upper bound for \(\Phi\). In particular \(\Phi>67.687\), which is all that (31) uses.
-
-## 8. Coverage and limitations
+## 6. Scope and limitations
 
 The existing negative-axis note proves the exact exterior extraction, finite moment reduction, omitted-tail estimate, odd real stability, and factorwise Mahler loss. The effective-response note proves the local complex pressure packet and its Schur-complement response. The root-pressure note proves that this germ determines the full root measure and the exact common-variable negative-axis loss; its explicit low-order bounds use the Mahler loss, including the conductance and fourth-derivative improvements. The finite squared-factor estimate (5) adds a direct two-derivative lower bound on that common-variable loss. It does not require continuing a classical saddle through the negative axis or reconstructing the limiting density.
 
@@ -356,12 +256,11 @@ The conclusion concerns one genuine singleton sector and one mixed spectral tupl
 
 ## Sources used in the proof
 
-- [The original one-cap coefficient reduces to two negative-axis suprema](research_global_cap_negative_axis_and_mahler_bound.md), sections 1--4 and 6: the exact original extraction, finite cap completion, odd factorization, and strict omitted tail.
-- [Effective boundary response and the original global cap variance](research_global_cap_effective_response_criterion.md), sections 1--3: strict exterior pressure, connected determinant packet, and the actual Schur response.
-- [The classical boundary-pressure germ determines the cap root loss](research_cap_root_measure_from_classical_pressure.md), sections 2--7: prior root-measure, Mahler, and common-variable criteria; the present bound does not require its logarithmic-potential convergence theorem.
+- [The original one-cap coefficient reduces to two negative-axis suprema](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/research_global_cap_negative_axis_and_mahler_bound.md), sections 1--4 and 6: the exact original extraction, finite cap completion, odd factorization, and strict omitted tail.
+- [Effective boundary response and the original global cap variance](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/research_global_cap_effective_response_criterion.md), sections 1--3: strict exterior pressure, connected determinant packet, and the actual Schur response.
+- [The classical boundary-pressure germ determines the cap root loss](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/research_cap_root_measure_from_classical_pressure.md), sections 2--7: prior root-measure, Mahler, and common-variable criteria; the present bound does not require its logarithmic-potential convergence theorem.
 - [An exact positive moment form for the original flat-cap coefficients](research_flat_cap_positive_moment_form.md): the original finite moments through degree \(d\), with unbounded support retained.
-- [The full numerator after localization: exact cross cofactors and the packet interface](actual_cross_cofactor_factorization.md), section 3, and [Finite local curvature of the original boundary models](actual_q_hahn_boundary_model_curvature.md): actual odd endpoint determinants and their finite curvature/holomorphic estimates.
+- [The full numerator after localization: exact cross cofactors and the packet interface](../papers/filling-bounds/README.md), section 3, and [Finite local curvature of the original boundary models](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_q_hahn_boundary_model_curvature.md): actual odd endpoint determinants and their finite curvature/holomorphic estimates.
 - [The positive face coefficient has one global saddle](actual_positive_face_coefficient_saddle.md), sections 2--4: determinant angular contraction and the primitive finite coefficient Gaussian.
-- [The geometric contribution and all Fourier charges](actual_morse_cross_filling_period.md) and [The original complement and its geometric contribution](actual_morse_geometric_contribution.md): original Morse source marking and complete action normalization; only the exact source and complete geometric action are used here.
-- [The exact even CROSS endpoint is not real stable, and the remaining parity adapter](research_even_cross_stability_obstruction.md): the even-parity limitation.
-- [A fixed source sector beyond the shared-radius envelope criterion](actual_singleton_sector_envelope_obstruction.md): the fixed 54-region incidence data and strict spectator table.
+- [The geometric contribution and all Fourier charges](../papers/casimir-source-asymptotics/README.md) and [The original complement and its geometric contribution](../papers/casimir-source-asymptotics/README.md): original Morse source marking and complete action normalization; only the exact source and complete geometric action are used here.
+- [The exact even CROSS endpoint is not real stable, and the remaining parity adapter](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/research_even_cross_stability_obstruction.md): the even-parity limitation.

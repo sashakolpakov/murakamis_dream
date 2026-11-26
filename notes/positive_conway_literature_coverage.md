@@ -3,8 +3,8 @@
 Checked 29 October 2026. This is a comparison of definitions and
 stated coverage, not an audit of external proofs and not an import of
 their proof techniques. The current own results are the
-[actual local source cells](actual_newton_ideal_prism_and_associativity.md)
-and [whole retained cylindrical Conway theorem](actual_positive_conway_hyperbolic_volume.md).
+[actual local source cells](../papers/strict-conway-geometry/README.md)
+and [whole retained cylindrical Conway theorem](../papers/strict-conway-geometry/README.md).
 The exact grammar is A=h^3, E ::= A | R E | E E, followed by the
 specified cap-sum boundary reduction. It is not identified here with
 all arborescent or all fully augmented links.
@@ -116,7 +116,7 @@ grammar with all arborescent links follows from this limited check.
 
 ## 7. Ordered compositions with long net twists
 
-Checked 31 October 2026. The [net-twist theorem](actual_conway_net_twist_volume.md) uses actual tangle isotopies to reduce an arbitrary fixed ordered cylindrical product closure to a strict template or an elementary two-strand braid closure. Its bound concerns the final disjoint sums of twist integers. The analytic input is the earlier strict-tree theorem in this repository. The comparison below concerns the main statements of primary papers; their proofs are not used or assessed here.
+Checked 31 October 2026. The [net-twist theorem](../papers/conway-reductions/README.md) uses actual tangle isotopies to reduce an arbitrary fixed ordered cylindrical product closure to a strict template or an elementary two-strand braid closure. Its bound concerns the final disjoint sums of twist integers. The analytic input is the earlier strict-tree theorem in this repository. The comparison below concerns the main statements of primary papers; their proofs are not used or assessed here.
 
 | Primary statement | Coverage relevant to this comparison |
 | --- | --- |

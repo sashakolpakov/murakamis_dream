@@ -2,7 +2,7 @@
 
 29 October 2026. For every odd N=2m+1 define the ACTUAL root polynomial
 h=Rturn(E_St) in H_N and the original Frobenius period W_N=phi(h^4).
-The [positive multiplication theorem](actual_positive_newton_multiplication.md)
+The [positive multiplication theorem](../papers/newton-calculus/README.md)
 retains the full source and proves W_N>0. This note proves
 
     lim_(N odd ->infty) (pi/N)log W_N=Vol(Q_cube),   (1)
@@ -12,7 +12,7 @@ where Q_cube is the explicit ideal right-angled cuboctahedron in the
 The proof is a real, strictly concave volume maximization. No
 stationary-phase noncancellation or contour-selection assumption occurs.
 
-The [literal cube source reduction](actual_odd_central_cube_reflection_packet.md)
+The [literal cube source reduction](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_odd_central_cube_reflection_packet.md)
 then gives the corresponding actual hyperbolic-volume rate for its
 ODD CENTRAL JOINT SECTOR. The full color sum and even levels are not
 asserted here. A sector is not substituted for the whole invariant.

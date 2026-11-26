@@ -12,13 +12,13 @@ a [unique geometric maximum](actual_fejer_unique_geometric_maximizer.md).
 This settles the positive endpoint optimization at every certified fixed
 width. The whole-period and conditional full-invariant results below now extend this endpoint calculation.
 
-The [full spectral numerator theorem](general_full_spectral_numerator_geometric_packet.md)
+The [full spectral numerator theorem](../papers/casimir-source-asymptotics/README.md)
 now proves a nonzero relative asymptotic on a fixed complex neighborhood
 of the geometric endpoint, including every spectral Hermite datum. Its
 ordinary-face cycle is the original Cauchy torus. The
-[absolute marked action](actual_cross_cofactor_marked_action.md) identifies
+[absolute marked action](../papers/casimir-source-asymptotics/README.md) identifies
 the unit-charge filling critical value with the actual filled volume.
-The [local charge comparison](general_local_charge_critical_monotonicity.md)
+The [local charge comparison](../papers/casimir-source-asymptotics/README.md)
 proves strict dominance of the all-unit charge among nearby positive
 integer charges, uniformly for independent signed twists with no ratio
 condition. These results hold under the supplied simple-white geometric
@@ -33,10 +33,10 @@ as its normalized logarithmic growth rate, at both level parities.
 The [entire CROSS period theorem](general_all_cross_long_filling_volume.md)
 now controls every original Fourier charge and the whole spectral contour
 for the CROSS sector, with its actual filled-volume rate. The
-[complete-radius balance theorem](general_complete_radius_balance_filling_volume.md)
+[complete-radius balance theorem](../papers/planar-certificates/README.md)
 also proves the FULL original invariant limit whenever the actual marked
 complete packing satisfies its finite test at every port. A sufficient
-[algebraic criterion](actual_triangle_entropy_algebraic_balance.md) is
+[algebraic criterion](../papers/planar-certificates/README.md) is
 
 $$ (x+y+b)(x+y+c)\geq\max\{b^2,c^2\}. $$
 
@@ -68,14 +68,14 @@ half-twist pattern. Both parities and composite levels are included.
 This is an augmented-LINK theorem, including patterns whose main strands
 form one component; it is not yet the general long-filled knot theorem.
 
-The proof uses the [exact positive face coefficient](actual_original_marked_face_coefficient.md),
+The proof uses the [exact positive face coefficient](../papers/filling-bounds/README.md),
 its [global torus saddle](actual_positive_face_coefficient_saddle.md), the
 [uniform all-channel bound](actual_positive_face_channel_rate.md), and the
 [absolute facet-coning volume](actual_original_boundary_stationary_character.md).
 The signed extension derives a uniform relative folded Gaussian from
 the original continuants and sums the actual phases to a nonzero leading
 coefficient. All original factors and the primitive grid measure remain.
-The [fixed complex complete-core theorem](actual_complete_core_complex_packet.md)
+The [fixed complex complete-core theorem](../papers/casimir-source-asymptotics/README.md)
 now supplies a nonzero asymptotic on a fixed neighborhood in EXTERNAL
 crossing-circle colors, for the exact complete-image term of reflection.
 The [marked geometric assembly](actual_complete_core_geometric_deformation.md)
@@ -83,7 +83,7 @@ now identifies its limiting action, including at the zero faces, with
 the actual geometric regulator and its complex boundary correction.
 The [whole-source untwisted corridor](general_untwisted_mixed_source_volume_corridor.md)
 now transfers this volume identity to the original mixed source when
-any chosen set of untwisted ports varies near completeness. The [homogeneous source theorem](actual_homogeneous_casimir_face_source.md)
+any chosen set of untwisted ports varies near completeness. The [homogeneous source theorem](../papers/filling-bounds/README.md)
 now gives the exact original coefficient for all Casimir coupons and
 a JOINT signed/unsigned corridor under finite shared-radius certificates,
 including disconnected subsets. Existence of such signed certificates
@@ -182,7 +182,7 @@ The all-input circle identity gives the original full-twist expansion
 on each pair of strands. Let A_(D,N)(h_1,...,h_r) be the actual
 augmented source with circle color j_s=N-h_s, including all its
 specified half twists, cups, caps, pivots and the exposed first cut.
-Then the [general source transfer](general_original_source_long_filling_transfer.md)
+Then the [general source transfer](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/general_original_source_long_filling_transfer.md)
 has the exact identity
 
     K_N(K_D(p))=chi_N kappa^(-2 sum_s p_s)
@@ -321,7 +321,7 @@ face such that
 
 Here F is the complete triangle potential and G the exact crossing
 coefficient-magnitude potential defined in the
-[homogeneous source theorem](actual_homogeneous_casimir_face_source.md).
+[homogeneous source theorem](../papers/filling-bounds/README.md).
 Different subsets may use different weights. The finite strict margins
 give one fixed color corridor for ALL subsets, including disconnected
 ones, at arbitrary fixed bridge width. Establishing these inequalities
@@ -339,7 +339,7 @@ supplies the complete metric. A triangulation of an unrelated
 manifold or a numerically matching volume does not identify this
 labeled topology.
 
-The [general marked gluing certificate](general_marked_positive_gluing_certificate.md)
+The [general marked gluing certificate](../papers/marked-fillings/README.md)
 proves the geometric implication directly. It also proves the
 Casson--Rivin equivalence with an interior critical point of the
 actual angle-volume function, whose unique maximum is Vol(Y_D).
@@ -366,7 +366,7 @@ these inputs are available. It must not be cited as having supplied
 them for an arbitrary plat.
 
 The new [critical-scheme equivalence](actual_augmented_plat_critical_scheme.md)
-and [marked multi-cusp rigidity](general_marked_multicusp_gluing_rigidity.md)
+and [marked multi-cusp rigidity](../papers/marked-fillings/README.md)
 now supply a nearby geometric stationary branch under an actual positive
 gluing certificate. The only magnetic Hessian null directions are the
 two framing directions; a transverse slice removes them. The branch
@@ -510,15 +510,15 @@ removes the final gluing cancellation for specified three-port
 doubles, retaining the full source. Neither identity already bounds
 the internally coherent half-packets for arbitrary graphs.
 
-The [matching-graph geometry](general_augmented_plat_matching_geometry.md)
+The [matching-graph geometry](../papers/marked-fillings/README.md)
 constructs the actual complete complement and primitive markings
 from a labeled positive right-angled certificate. It also constructs
 a positive ideal triangulation. The
-[geometric endpoint theorem](actual_augmented_plat_geometric_channel_endpoint.md)
+[geometric endpoint theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_augmented_plat_geometric_channel_endpoint.md)
 locates the complete disk character at c=-2, the folded-channel
 endpoint, and retains its marked peripheral square root. This is
 necessary geometric information, not a proof of quantum selection.
-The [endpoint phase calculation](actual_central_endpoint_magnetic_phase_obstruction.md)
+The [endpoint phase calculation](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_central_endpoint_magnetic_phase_obstruction.md)
 also shows that a universal separate-leg positive normalization
 already fails at N=3. It leaves coherent resummation available.
 
@@ -535,7 +535,7 @@ These results remove finite-source and geometric ambiguities. The
 principal remaining theorem is still a coherent asymptotic with
 the required global gap and the actual selected geometric period.
 
-The [arbitrary-width Conway extension](actual_conway_arbitrary_width_seeds.md) is retained as
+The [arbitrary-width Conway extension](../papers/newton-calculus/README.md) is retained as
 an application and a calibration of these interfaces. It does not
 settle (1) for all k-bridge diagrams. The full cube source, which lies
 beyond that grammar, remains one useful branching test, not the

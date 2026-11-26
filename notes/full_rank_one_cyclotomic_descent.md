@@ -1,7 +1,7 @@
 # Full rank-one cyclotomic descent, including ramified zeros and poles
 
 Research proof for independent audit, 27 October 2026. This extends
-[the unramified Q-parameter proof](q_parameter_curvature_extension.md).
+[the unramified Q-parameter proof](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/q_parameter_curvature_extension.md).
 The new ingredient is a weighted sequence-uniqueness lemma allowing
 finite exponential--Puiseux amplitudes. It removes both ramification
 and finite-nonzero limiting-root hypotheses from that rank-one result.

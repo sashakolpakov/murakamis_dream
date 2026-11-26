@@ -7,7 +7,7 @@ the odd simple node. For a full twist ell=2p this supplies the
 coefficient kernel for the entire ordinary circle-color packet,
 rather than an inversion of a single complete-color circle.
 
-The [literal mixed-color circle calculation](actual_crossing_circle_source_and_filling.md)
+The [literal mixed-color circle calculation](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_crossing_circle_source_and_filling.md)
 identifies the displayed operators with the original pivotal
 encircling sources. This is therefore an exact quantitative source
 transformation at arbitrary width, with the marked cut unchanged.
@@ -101,7 +101,7 @@ All phases, including kappa^ell, are retained. Summing (6) gives
 
 For ell=2p, (8) is an exact full-twist filling kernel of mass at
 most 2N(1+|p|). The separate
-[physical circle proof](actual_crossing_circle_source_and_filling.md)
+[physical circle proof](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_crossing_circle_source_and_filling.md)
 realizes L_j as the actual ordinary pivotal j-color encircling
 operator, including its original framing and trace. A single L_N
 is not inverted or declared
@@ -150,7 +150,7 @@ absolute values in (11) gives only a maximum over the base packet;
 it does not automatically yield the smaller filled-manifold volume.
 No broad original-knot volume theorem is claimed by this expansion.
 
-The [complete Fourier--Hermite Gram](actual_filling_fourier_hermite_gram.md)
+The [complete Fourier--Hermite Gram](../papers/filling-bounds/README.md)
 turns these coefficients into an explicit positive Cauchy metric.
 Its exact dual cost is 1+ell^2(N^2-1)/(12N^2), uniformly bounded
 in N for a fixed twist. A literal original normalization insertion

@@ -5,8 +5,9 @@ that remain unfinished. The [current papers](../../papers/README.md) are
 organized by mathematical subject, with shared foundations cited by
 numbered statement. Their 21 drafts are provisional groupings, not a
 decision to publish 21 papers. The [manuscript guide](manuscript.md)
-explains how the frozen 374-page reference account grew and how the
-current papers differ from it.
+describes the current 210-page reference and its relationship to the
+21 subject papers, totaling 420 pages. The papers are separately readable
+accounts of overlapping results, not 21 prerequisites for one theorem.
 
 ## The question and the knots under consideration
 
@@ -144,7 +145,7 @@ The resulting knot satisfies the theorem. This is a way to construct
 new covered knots; it generally changes the knot represented by
 the original core.
 
-The [summed criterion](../../notes/actual_all_circle_quantitative_volume.md)
+The [summed criterion](../../docs/papers/circle-tree-volume.pdf)
 gives a different sufficient test:
 \[
                   \sum_v\frac{d_v}{d_v^2+n_v^2}\le2^{-25}.
@@ -182,7 +183,7 @@ There is also a recurrence formulation. A quantum A-operator is a finite differe
 
 The [pointed quantum A-period theorem](../../notes/actual_conway_pointed_quantum_a_volume.md) gives an exact reconstruction of $K_N(K)$ from this operator and finite initial data, retaining the peripheral factors. For the knots covered above, this reconstructed value therefore has the same hyperbolic volume limit. The theorem also gives a positive determinant expression whose exponential rate is the volume.
 
-For every covered strict long-filling presentation, the [geometric longitude proof](../../notes/actual_strict_tree_geometric_characteristic.md) identifies the whole selected curve with the preferred meridian--longitude deformation of the knot complement. Junctions without crossing circles may have arbitrary valence and adjacency. The earlier summed circle-tree theorem and the local theorem with bound \(2^{-120}\) also have the required geometric identification and full expansion. The selected complex geometric irreducible factor therefore divides the first nonzero classical symbol of every genuine all-level annihilator of the reduced invariant. This does not identify the other factors, their multiplicities, or the full recurrence ideal.
+For every covered strict long-filling presentation, the [geometric longitude proof](../../docs/papers/meridian-expansions.pdf) identifies the whole selected curve with the preferred meridian--longitude deformation of the knot complement. Junctions without crossing circles may have arbitrary valence and adjacency. The earlier summed circle-tree theorem and the local theorem with bound \(2^{-120}\) also have the required geometric identification and full expansion. The selected complex geometric irreducible factor therefore divides the first nonzero classical symbol of every genuine all-level annihilator of the reduced invariant. This does not identify the other factors, their multiplicities, or the full recurrence ideal.
 
 The actual meridian state imposes a concrete constraint: its complete value has volume growth, but its value one quantum shift away is exactly one. The [nearby-zero theorem](../../notes/actual_ado_complete_meridian_zero_accumulation.md) proves that zeros approach completeness at distance $O(1/N)$. A nonvanishing scalar asymptotic for the unchanged state therefore cannot hold on a fixed neighborhood.
 
@@ -201,13 +202,13 @@ read the entire collection. The [manuscript guide](manuscript.md) locates
 the current and earlier accounts, and the [notation chapter](notation.md)
 explains their conventions.
 
-The [closing assessment](../../repro/RETAINED_RELEASE_ASSESSMENT.md)
+The [closing assessment](../../repro/MANUSCRIPT_AND_LOGIC_AUDIT_2026-11-25.md)
 records the review of the retained results. The
 [reproduction chapter](audits.md) distinguishes finite computations,
 compiled mathematical implications, and written analytic and geometric
 proofs. No complete knot-family theorem is claimed as an end-to-end Lean
 formalization.
 
-The [research library](../library.html) organizes the supporting notes by question. It retains the Fourier, weighted Cauchy, torsor, cube, and other approaches, including estimates that failed and the explanations of their failure. Those historical routes are useful evidence about the problem; they are not additional prerequisites for reading the main theorem.
+The [research library](../library.html) organizes the supporting notes by question. It keeps the Fourier, weighted Cauchy, torsor, cube and other retained approaches, with their hypotheses and limits. Superseded proofs are cited through the current papers. Useful obstructions remain explained in the methods chapters; obsolete diagnostic histories belong to the source snapshot in Git.
 
 The [figure gallery](../figures.md) explains what each diagram represents and links to editable sources. The general volume conjecture remains open.

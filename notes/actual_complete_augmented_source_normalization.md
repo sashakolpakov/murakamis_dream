@@ -12,7 +12,7 @@ normalization germ and all actual turns.
 
 Fix N>=2, d=N-1, q=exp(pi i/N), Q=q^2, x=q^d and
 kappa=q^(d^2/2). The raw source here is the one in the
-[literal augmented pretzel diagram](actual_odd_pretzel_augmented_transfer_source.md):
+[literal augmented pretzel diagram](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_odd_pretzel_augmented_transfer_source.md):
 every full physical crossing has its original common Cartan,
 the crossing circles are the exact auxiliary pivotal traces L_N,
 and the main component has k genuine cups, k-1 ordinary caps and

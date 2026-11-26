@@ -27,9 +27,9 @@ chapter are stated with those smaller conclusions.
 
 For the current proof texts, use the [papers by subject](../../papers/README.md)
 and their [statement dependencies](../../docs/papers/dependencies.html).
-The frozen reference account and older technical notes retain their own
-hypotheses; a broader current theorem is not attributed retrospectively
-to an earlier edition. The [closing assessment](../../repro/RETAINED_RELEASE_ASSESSMENT.md)
+The current reference and subject papers retain their own hypotheses.
+Superseded proof notes are cited through the corresponding paper. The
+[collection-wide audit](../../repro/MANUSCRIPT_AND_LOGIC_AUDIT_2026-11-25.md)
 records which proof requirements were checked for the retained results.
 
 The following table separates the principal conclusions. The subsequent
@@ -47,7 +47,7 @@ sections define each construction and give its proof and restrictions.
 
 ## Decorating a planar diagram
 
-The [planar decoration theorem](../../notes/actual_balanced_terminal_fan_volume.md)
+The [planar decoration theorem](../../docs/papers/terminal-decorations.pdf)
 starts from a more general diagram than a tree of tangle operations.
 Its input can be given entirely by finite combinatorial data: take a
 simple triangulation of the sphere with at least four vertices, and pair
@@ -151,7 +151,7 @@ If only one weight \(w_i\) is positive, define
 \(F(w)=\tfrac12\log w_i\). A triangle with all weights zero does not
 occur at a crossing region in this marked simple-sphere construction.
 This is the function denoted \(Q(w)=Q_b(0)\) in the
-[triangle-action theorem](../../notes/actual_triangle_entropy_algebraic_balance.md),
+[triangle-action theorem](../../docs/papers/planar-certificates.pdf),
 §1, with the explicit evaluation in the
 [shared-radius theorem](../../notes/general_anchored_shared_radius_filling_volume.md),
 §5. It is the limiting logarithmic growth, divided by \(N\), of the
@@ -193,7 +193,7 @@ those conclusions are not inferred from numerical examples.
 
 ## An unchanged diagram satisfying weak balance
 
-The [weak-balance theorem](../../notes/general_weak_balance_volume.md),
+The [weak-balance theorem](../../docs/papers/planar-certificates.pdf),
 proved in Appendix P of the manuscript, gives a condition under which
 no terminal tangles need to be inserted. Start with the same simple
 triangulated sphere, matching, and marked strand as above. Let
@@ -407,7 +407,7 @@ constant is fixed at the complete augmented link. Both this
 geometric identification and noncancellation in the finite
 invariant are part of the theorem.
 
-The earlier [local criterion](../../notes/actual_all_circle_local_message_volume.md),
+The earlier [local criterion](../../docs/papers/circle-tree-volume.pdf),
 \(\max_v d_v/(d_v^2+n_v^2)\le2^{-120}\), remains a valid included
 result. The summed condition below is a useful alternative and
 can give a smaller numerical bound for an individual diagram.
@@ -427,7 +427,7 @@ To describe its geometry, replace each integer braid by a crossing
 circle and retain its parity as a half twist. Every junction in this
 tree has such a circle. Let \(d_v\) be its number of incident tree
 edges and \(n_v\) its signed number of half-twists. The
-[quantitative theorem](../../notes/actual_all_circle_quantitative_volume.md)
+[quantitative theorem](../../docs/papers/circle-tree-volume.pdf)
 proves that
 
 \[
@@ -491,7 +491,7 @@ degree condition.
 
 Fix an ordered construction from two-strand twist boxes, quarter-turns and stacking, followed by the cylindrical closure of a product of two boxes. Each original twist box has its own integer $n_i$. The number of boxes and the depth of their nesting may be arbitrary, but remain fixed in the theorem.
 
-Theorem 1.2 of [Ordered tangle reductions and long net twists](../../docs/papers/conway-reductions.pdf) gives a finite reduction of this construction. The [original note](../../notes/actual_conway_net_twist_volume.md) remains available alongside the paper. It partitions the original boxes into disjoint groups $B_1,\ldots,B_s$ and assigns each surviving box the sum
+Theorem 1.2 of [Ordered tangle reductions and long net twists](../../docs/papers/conway-reductions.pdf) gives a finite reduction of this construction. The [original note](../../docs/papers/conway-reductions.pdf) remains available alongside the paper. It partitions the original boxes into disjoint groups $B_1,\ldots,B_s$ and assigns each surviving box the sum
 
 $$
 W_j=\sum_{i\in B_j}n_i.
@@ -535,7 +535,7 @@ The two pieces are joined along the components containing the cut arcs. If the i
 
 ![Cutting a cap-closed stack along a sphere meeting its two connecting strands gives the specified cap closures of the lower and upper tangles.](../figures/conway-cap-splitting.png)
 
-Theorem 1.3 of the [tangle-reduction paper](../../docs/papers/conway-reductions.pdf) repeatedly makes these cuts, combines twists, and removes zero sums. Its [earlier note](../../notes/actual_conway_arbitrary_closure_volume.md) records the same construction. It retains all components and all labels. Its terminal factors are strict presentations, two-strand torus braid closures, or explicit unknots. Every surviving strict weight is still a sum of a disjoint group of original integers. The groups can now change when a sum vanishes. There are only finitely many possibilities for a fixed expression, so one threshold covers them all.
+Theorem 1.3 of the [tangle-reduction paper](../../docs/papers/conway-reductions.pdf) repeatedly makes these cuts, combines twists, and removes zero sums. It retains all components and all labels. Its terminal factors are strict presentations, two-strand torus braid closures, or explicit unknots. Every surviving strict weight is still a sum of a disjoint group of original integers. The groups can now change when a sum vanishes. There are only finitely many possibilities for a fixed expression, so one threshold covers them all.
 
 Suppose the original knot is hyperbolic and every surviving strict weight exceeds this threshold in absolute value. Then there is exactly one strict factor, and all other factors are unknots. To see why, take a meridian in each nontrivial factor. Both a hyperbolic factor and a torus-knot factor contain another commuting element outside the cyclic meridian subgroup. Two such factors would produce two elements which commute with the common meridian but not with each other. In a complete hyperbolic knot group this is impossible: the centralizer of a nontrivial parabolic consists of commuting translations. A sole torus factor is excluded by its nontrivial center.
 
@@ -557,7 +557,7 @@ One can also avoid assuming hyperbolicity in advance. Under the longness conditi
 
 Begin with two strands carrying $n_i$ signed half-twists, denoted by $R^{n_i}$. Turn the box through a quarter-turn $T$ to obtain the basic piece $h_i(n_i)=T(R^{n_i})$. The subscript distinguishes the pieces; their integers are independent. Ordered multiplication $FG$ stacks two boxes, and $C(FG)$ is the prescribed cylindrical closure of their remaining endpoints. The endpoint order, the turns and the closing convention are part of the presentation.
 
-The [strict-tree theorem](../../notes/actual_conway_all_strict_tree_long_twist_volume.md) applies to any fixed expression of this form that passes a finite recursive test. The labels in the test describe possible normalized output states of an open box:
+The [strict-tree theorem](../../docs/papers/conway-asymptotics.pdf) applies to any fixed expression of this form that passes a finite recursive test. The labels in the test describe possible normalized output states of an open box:
 
 | Label | Interval of strict output states |
 | --- | --- |
@@ -586,7 +586,7 @@ own additional arguments and are not inferred from this leading limit.
 
 The proof uses auxiliary circles around the twist regions. Filling these circles inserts the chosen twists. All auxiliary circles are filled in the knot conclusion; the knot cusp remains unfilled. Thus the right side is the knot complement volume, not the complete augmented-link volume and not the volume of a closed three-manifold.
 
-The estimate for a general tree must preserve cancellation across large internal components. The [positive probe bound](../../notes/actual_conway_unflagged_core_probe_bound.md) controls such a component without changing its coefficient targets. The [spectral propagation theorem](../../notes/actual_conway_mixed_core_spectral_propagation.md) carries strict losses in the physical color variables through it. The [geometric comparison](../../notes/actual_conway_unflagged_probe_geometry.md) identifies the exponential constants with the action of the original cells. These estimates restore the full signed source from its nonzero local geometric contribution.
+The estimate for a general tree must preserve cancellation across large internal components. The [positive probe bound](../../docs/papers/conway-source-bounds.pdf) controls such a component without changing its coefficient targets. The [spectral propagation theorem](../../docs/papers/conway-source-bounds.pdf) carries strict losses in the physical color variables through it. The [geometric comparison](../../docs/papers/strict-conway-geometry.pdf) identifies the exponential constants with the action of the original cells. These estimates restore the full signed source from its nonzero local geometric contribution.
 
 ![A source component and the positive comparison used to estimate it. The probe is part of the proof, not an extra crossing circle in the knot.](../figures/mixed-conway-probe.png)
 
@@ -601,7 +601,7 @@ $q_N=e^{\pi i/N}$ and let $f_N(Y)$ be the reduced ADO invariant of
 the figure-eight knot, where $Y=M^2$ is the squared meridian
 eigenvalue. Then $f_N(1)=K_N(4_1)$. Moving to $Y=e^{z/N}$ keeps the
 meridian close to completeness while allowing any fixed complex $z$.
-The [profile theorem](../../notes/actual_paired_factor_meridian_profile.md)
+The [profile theorem](../../docs/papers/moving-meridian-sources.pdf)
 proves
 
 $$
@@ -647,13 +647,13 @@ profile and a preferred-cusp correction on a smaller disk, before those resonanc
 
 ## The volume limit while the meridian varies
 
-The reduced ADO invariant is a Laurent polynomial in a meridian parameter, with Kashaev's invariant as its value at completeness. Write this polynomial as $F_N(M)$, in the zero-framing convention with unknot value one. Thus $F_N(1)=K_N(K)$. The [moving-meridian theorem](../../notes/actual_main_meridian_filled_volume.md) proves a uniform volume limit and a nonzero profile for **every fixed strict Conway tree** with independently sufficiently long signed twists.
+The reduced ADO invariant is a Laurent polynomial in a meridian parameter, with Kashaev's invariant as its value at completeness. Write this polynomial as $F_N(M)$, in the zero-framing convention with unknot value one. Thus $F_N(1)=K_N(K)$. The [moving-meridian theorem](../../docs/papers/moving-meridian-sources.pdf) proves a uniform volume limit and a nonzero profile for **every fixed strict Conway tree** with independently sufficiently long signed twists.
 
 The strictness test is the one defined above. There is no further restriction on the size, valence or adjacency of its multiplication junctions. To describe the proof, group consecutive multiplications with no quarter-turn between them into one junction. A junction carrying an original crossing-circle operator is a circle junction; one with no such operator is bare. A connected group of bare junctions can have any fixed finite tree shape. A product with many branches is treated as a whole product, with its actual turns and branch order retained.
 
-The [general component comparison](../../notes/actual_main_meridian_general_component_comparison.md) controls the cancellations in each such group. The quantum calculation uses a finite polynomial basis with indices $0,\ldots,N-1$. Moving the meridian changes some multiplication traces. The proof first separates each trace into its complete value and its difference from that value. It estimates the entire difference, rather than taking the absolute value of every local crossing term.
+The [general component comparison](../../docs/papers/moving-meridian-sources.pdf) controls the cancellations in each such group. The quantum calculation uses a finite polynomial basis with indices $0,\ldots,N-1$. Moving the meridian changes some multiplication traces. The proof first separates each trace into its complete value and its difference from that value. It estimates the entire difference, rather than taking the absolute value of every local crossing term.
 
-An index is called high when it exceeds $\lfloor(N-1)/2\rfloor$. With one high index $h$, the [Fourier estimate](../../notes/actual_main_meridian_high_fourier_reflection.md) bounds the trace difference by a complete tensor with that index reflected to $N-1-h$. The reflected pairing joins the two neighboring products into one larger product in a positive comparison tree. A [coupled pressure inequality](../../notes/actual_main_meridian_component_pressure.md) shows that deleting these turns cannot increase the maximum exponential rate. It retains the correlations between every remaining branch. With several high indices, a separate half-label comparison gives a boundary state of the same positive calculation. Strict Fourier and boundary estimates then make the total correction exponentially smaller than the original leading rate.
+An index is called high when it exceeds $\lfloor(N-1)/2\rfloor$. With one high index $h$, the [Fourier estimate](../../docs/papers/moving-meridian-sources.pdf) bounds the trace difference by a complete tensor with that index reflected to $N-1-h$. The reflected pairing joins the two neighboring products into one larger product in a positive comparison tree. A [coupled pressure inequality](../../docs/papers/moving-meridian-sources.pdf) shows that deleting these turns cannot increase the maximum exponential rate. It retains the correlations between every remaining branch. With several high indices, a separate half-label comparison gives a boundary state of the same positive calculation. Strict Fourier and boundary estimates then make the total correction exponentially smaller than the original leading rate.
 
 ![A high-index trace difference is bounded by a reflected complete pairing, which is summed as one larger product junction.](../figures/main-meridian-reflected-turn-fusion.svg)
 
@@ -661,7 +661,7 @@ Here $d=N-1$, $h$ is a high summation index, and $r=d-h$. The letter $h$ in this
 
 This is a tree of quantum operations, not a knot diagram. The comparison does not assert that deleting a turn preserves a knot. The invariant keeps the original deformed edge factors, colors and framing, and the geometric conclusion still concerns the original knot complement.
 
-Earlier proofs covered separated bare junctions, arbitrary trivalent components, and components satisfying a path inequality. Those remain included cases, with their original proofs in the [source-bound note](../../notes/actual_main_meridian_source_bounds.md), [trivalent extension](../../notes/actual_main_meridian_trivalent_filled_volume.md), and [path estimate](../../notes/actual_main_meridian_component_extension.md). They are no longer additional conditions on the moving-meridian theorem.
+Earlier proofs covered separated bare junctions, arbitrary trivalent components, and components satisfying a path inequality. Those remain included cases, with their original proofs in the [source-bound note](../../docs/papers/moving-meridian-sources.pdf), [trivalent extension](../../docs/papers/moving-meridian-sources.pdf), and [path estimate](../../docs/papers/moving-meridian-sources.pdf). They are no longer additional conditions on the moving-meridian theorem.
 
 ![A path and a branching tree of trivalent product junctions, both included in the general theorem.](../figures/trivalent-bare-components.svg)
 
@@ -686,7 +686,7 @@ The proof gives more than logarithmic growth. The original crossing and framing 
  A_N(s)=q_N^{a(D)s^2/2},\qquad
  a(D)=-w(D)-\sum_i n_i.
 \]
-Here \(w(D)\) is the oriented writhe, and each \(n_i\) is the signed crossing power in its original braid box. The [scalar calculation](../../notes/actual_main_meridian_exact_scalar.md) derives this from the finite tangle operations. Then
+Here \(w(D)\) is the oriented writhe, and each \(n_i\) is the signed crossing power in its original braid box. The [scalar calculation](../../docs/papers/meridian-tangles.pdf) derives this from the finite tangle operations. Then
 
 \[
 \frac{F_N(q_N^s)}{F_N(1)A_N(s)}
@@ -709,19 +709,19 @@ the result is
  \frac{F_N(q_N^s)}{F_N(1)H_N(s)}
  =1+\frac{\pi i s^2\tau_K}{2N}+O(N^{-2}).
 \]
-The [geometric proof](../../notes/actual_main_meridian_preferred_cusp.md) computes this longitude from the original face identifications and corrects its marking after surgery on the crossing circles. It does not infer the cusp shape from the asymptotic formula. The full modified-trace invariant has exactly the displayed normalized profile because its modified dimension cancels \(H_N\).
+The [geometric proof](../../docs/papers/preferred-longitudes.pdf) computes this longitude from the original face identifications and corrects its marking after surgery on the crossing circles. It does not infer the cusp shape from the asymptotic formula. The full modified-trace invariant has exactly the displayed normalized profile because its modified dimension cancels \(H_N\).
 
 ![The preferred longitude on the filled cusp: the same Euclidean lattice with the augmented and surgery-corrected choices of longitude.](../figures/main-cusp-longitude-shear.svg)
 
-The [full geometric longitude identity](../../notes/actual_strict_tree_geometric_characteristic.md) and this asymptotic apply to the same strict-tree class under the stated long-twist hypotheses. They identify the selected classical geometric factor even with arbitrary bare junctions. Passage through $s=\pm1$, the first ordinary-color resonances, remains open for the general strict-tree profile. The construction and twists cannot grow with $N$. Short surviving twists need a separate sufficient theorem, such as the numerical circle-tree criteria above.
+The [full geometric longitude identity](../../docs/papers/meridian-expansions.pdf) and this asymptotic apply to the same strict-tree class under the stated long-twist hypotheses. They identify the selected classical geometric factor even with arbitrary bare junctions. Passage through $s=\pm1$, the first ordinary-color resonances, remains open for the general strict-tree profile. The construction and twists cannot grow with $N$. Short surviving twists need a separate sufficient theorem, such as the numerical circle-tree criteria above.
 
-The [intrinsic transfer under tangle reduction](../../notes/actual_main_meridian_filled_volume.md#net-twists-and-other-conway-closures) gives the same uniform volume limit, nonvanishing and preferred-cusp expansion for the net-twist and arbitrary-closure presentations described earlier. For a cylindrical input, its reduction must give a strict knot with sufficiently long surviving net twists. For either cylindrical or cap closure with zero sums, the input must satisfy the closure theorem: a hyperbolic input with sufficiently long surviving strict weights reduces to one strict knot factor and unknot factors. The reduction is an actual ambient isotopy after those unknot factors are removed.
+The [intrinsic transfer under tangle reduction](../../docs/papers/moving-meridian-sources.pdf) gives the same uniform volume limit, nonvanishing and preferred-cusp expansion for the net-twist and arbitrary-closure presentations described earlier. For a cylindrical input, its reduction must give a strict knot with sufficiently long surviving net twists. For either cylindrical or cap closure with zero sums, the input must satisfy the closure theorem: a hyperbolic input with sufficiently long surviving strict weights reduces to one strict knot factor and unknot factors. The reduction is an actual ambient isotopy after those unknot factors are removed.
 
 This transfers the whole Laurent family $F_N(M)$ with its transported orientation and zero framing, not just the complete value $F_N(1)$. The meridian and preferred zero-linking longitude are transported as well, so the knot volume and $\tau_K$ agree. A single threshold covers the finitely many parity and zero-sum outcomes of a fixed input expression. The presentation-dependent scalar $A_N(s)$ can be computed on the strict representative; no equality of the two auxiliary augmented complements or their raw scalar ledgers is needed.
 
 ## Source growth near the complete main meridian
 
-Before filling the crossing circles, the [general component comparison](../../notes/actual_main_meridian_general_component_comparison.md) also extends the [source-growth theorem](../../notes/actual_main_meridian_source_bounds.md) to every fixed strict Conway tree. The auxiliary colors can vary independently over their entire finite ranges. Bare product junctions may be adjacent and may have any allowed fixed valence; the original strictness and component conditions remain.
+Before filling the crossing circles, the [general component comparison](../../docs/papers/moving-meridian-sources.pdf) also extends the [source-growth theorem](../../docs/papers/moving-meridian-sources.pdf) to every fixed strict Conway tree. The auxiliary colors can vary independently over their entire finite ranges. Bare product junctions may be adjacent and may have any allowed fixed valence; the original strictness and component conditions remain.
 
 Let $Y^\epsilon$ be the augmented complement with all crossing circles unfilled, and let $\mathcal F_{N,\mathbf j}^{\epsilon}(M)$ be its reduced quantum scalar with colors $\mathbf j=(j_1,\ldots,j_H)$, $1\le j_i\le N$, and the specified retained half-twists. For $M=q_N^s$, $q_N=e^{\pi i/N}$, and every fixed $0\le R<1$,
 
@@ -734,7 +734,7 @@ Let $Y^\epsilon$ be the augmented complement with all crossing circles unfilled,
 
 Both parities are included. The upper bound controls every color tuple and every meridian in the disk, with the original strand orientations and framing retained. The matching lower bound uses the nonzero complete value $s=0$, $j_i=N$. Thus the supremum is essential: this statement is not a lower bound at each displaced meridian. For two original pieces, the theorem retains the knot-producing half-twist patterns and their pure-leaf condition.
 
-The [auxiliary-color gap theorem](../../notes/actual_main_meridian_auxiliary_color_gap.md), with the same general component comparison, gives a strict exponential loss if any original color stays a fixed proportion below completeness. If $j_i\le(1-\delta)N$ for some $i$, with fixed $0<\delta<1$, the whole scalar is bounded by \(\exp N(F_0-\gamma)\), where \(F_0=\operatorname{Vol}(Y^\epsilon)/(2\pi)\) and \(\gamma>0\). The estimate is uniform in the other colors and both parities for \(|s|\le R<1/2\). The smaller radius belongs to this color-loss estimate; the source-growth bound holds for \(R<1\).
+The [auxiliary-color gap theorem](../../docs/papers/moving-meridian-sources.pdf), with the same general component comparison, gives a strict exponential loss if any original color stays a fixed proportion below completeness. If $j_i\le(1-\delta)N$ for some $i$, with fixed $0<\delta<1$, the whole scalar is bounded by \(\exp N(F_0-\gamma)\), where \(F_0=\operatorname{Vol}(Y^\epsilon)/(2\pi)\) and \(\gamma>0\). The estimate is uniform in the other colors and both parities for \(|s|\le R<1/2\). The smaller radius belongs to this color-loss estimate; the source-growth bound holds for \(R<1\).
 
 ![Two bare product junctions separated by a junction carrying an original crossing-circle operator.](../figures/separated-product-junctions.svg)
 
@@ -745,7 +745,7 @@ These estimates concern the source before the crossing circles are filled. Their
 ## An exact calculation for oriented tangles at a varying meridian
 
 There is also a general finite result, independent of any
-large-twist assumption. The [oriented tangle theorem](../../notes/actual_main_meridian_newton_compiler.md)
+large-twist assumption. The [oriented tangle theorem](../../docs/papers/meridian-tangles.pdf)
 expresses every fixed Conway construction using its actual strand
 colors, turns, products and primitive closing trace. It retains the
 dual color on a reversed strand and all repeated-root information.
@@ -753,7 +753,7 @@ The Newton coordinate changes and their inverses have polynomial
 bounds in \(N\) when the displacement \(s\), defined by \(M=q_N^s\),
 stays in a fixed compact set.
 
-The [quarter-turn theorem](../../notes/actual_main_meridian_turn_comparison.md)
+The [quarter-turn theorem](../../docs/papers/moving-meridian-sources.pdf)
 now computes the physical turn itself, with the dual strand colors
 and the braiding that identifies their two orders retained. In fixed
 polynomial coordinates it sends the input Newton coefficient with
@@ -773,7 +773,7 @@ complete turn of the same input, with factors at most \(CN^7\).
 The proof includes the repeated channels and the normalization of
 the actual evaluation and coevaluation maps.
 
-The accompanying [multiplication theorem](../../notes/actual_main_meridian_newton_multiplication.md)
+The accompanying [multiplication theorem](../../docs/papers/meridian-tangles.pdf)
 gives every coefficient explicitly. It includes the products with
 \(i+j\ge N\), where \(i,j\) are Newton basis indices. These products
 vanish at completeness but generally become nonzero when \(s\)
@@ -786,7 +786,7 @@ multiplication by the Casimir changes by a single matrix entry.
 ![The index pairs below the line i+j=N give nonzero Newton products at completeness. Products on and above the line vanish there and can become nonzero when the meridian moves.](../figures/moving-newton-products.png)
 
 These local identities are inputs to the source-growth theorem just stated. The general component proof keeps the signed whole-junction traces, separates their differences from the complete tensors, and compares the resulting entire trees while retaining the original geometric constants. A turn norm by itself would not supply this whole-sum comparison, and polynomial control of node derivatives does not automatically preserve angular localization. The
-[operator criterion](../../notes/actual_main_meridian_finite_matrix_criterion.md)
+[operator criterion](../../docs/papers/meridian-expansions.pdf)
 provides another precise sufficient condition: uniform bounds for
 the reconstruction frame and a lower singular-value bound for a
 linear system of bounded size. Under those conditions, an already
@@ -796,11 +796,19 @@ for a general Conway family.
 
 ## Included tree families and the manuscript
 
-The [weighted-tree theorem](../../notes/actual_conway_weighted_tree_long_twist_volume.md) supplies an explicit construction with one independent integer per vertex, arbitrary fixed branching, and chains of vertices. Its literal closure is specified in the theorem. If $H$ is the number of basic pieces and $v_{\mathrm{oct}}$ the volume of a regular ideal octahedron, its complete augmented exterior has volume $2v_{\mathrm{oct}}(H-1)$. The knot volume is the separately calibrated value after filling; it is not replaced by that complete volume.
+The [weighted-tree theorem](../../docs/papers/conway-asymptotics.pdf) supplies an explicit construction with one independent integer per vertex, arbitrary fixed branching, and chains of vertices. Its literal closure is specified in the theorem. If $H$ is the number of basic pieces and $v_{\mathrm{oct}}$ the volume of a regular ideal octahedron, its complete augmented exterior has volume $2v_{\mathrm{oct}}(H-1)$. The knot volume is the separately calibrated value after filling; it is not replaced by that complete volume.
 
-The [manuscript](manuscript.md) treats an earlier included family. Start with two-piece stacks, then allow turns, stacks of constructed boxes, and the attachment of one basic piece on either side. The technical name “completed box” refers to this recursive class. Close a stack of two such boxes. The paper gives the detailed proof for that class; the strict-tree theorem extends it to all expressions passing the test above.
+The [reference](manuscript.md) and the
+[Conway paper](../../docs/papers/conway-asymptotics.pdf) now use the same
+pure-source proof for the strict construction. The finite grammar,
+strict-state test, knot-component condition and sufficiently long filling
+hypothesis are stated before that proof. Earlier restricted grammars no
+longer supply a second route that the reader must assemble.
 
-Isolated closures $C(h_1\cdots h_s)$ with $s\ge3$ and the proved root-star constructions are included in the later results. The isolated two-piece closure $C(h_1h_2)$ is not added as a limiting case: it fails the strict root test. The [prior-source comparison](../../notes/actual_conway_root_star_prior_source_coverage.md) records overlap between root-star formulas, earlier Fourier cancellation, and the all-odd belt calculation. A scalar source identity alone is not a statement that two tangle diagrams are isotopic.
+The examples below are separate applications of planar packing and
+source criteria. Their additional parity, marking and geometric
+hypotheses remain explicit. A scalar source identity alone is not a
+statement that two tangle diagrams are isotopic.
 
 ## An explicit full-invariant family at every width $k\geq2$
 
@@ -857,11 +865,11 @@ Geometrically, the operation inserts unit disks into an empty region between the
 
 For more general plats, a useful sufficient test is available from the complete circle packing. The diagram must carry the labeled convex ideal right-angled geometry used by its crossing-disk cut; “ideal” means that the vertices lie at infinity. The simple-white condition in the technical theorem is a finite condition on the diagram's white-face cellulation.
 
-At a crossing region, denote the four face curvatures by $(x,b,c,y)$ and put $A=x+y>0$. Curvature is the reciprocal radius, with the marked line faces assigned zero. The [algebraic balance lemma](../../notes/actual_triangle_entropy_algebraic_balance.md) shows that
+At a crossing region, denote the four face curvatures by $(x,b,c,y)$ and put $A=x+y>0$. Curvature is the reciprocal radius, with the marked line faces assigned zero. The [algebraic balance lemma](../../docs/papers/planar-certificates.pdf) shows that
 
 $$ (A+b)(A+c)\ge\max\{b^2,c^2\} $$
 
-at every region is sufficient for the [complete-radius filling theorem](../../notes/general_complete_radius_balance_filling_volume.md). The stronger test $|b-c|\le x+y$ is often easier. Every region must use the same complete packing; choosing unrelated local radii would not establish the hypothesis.
+at every region is sufficient for the [complete-radius filling theorem](../../docs/papers/planar-certificates.pdf). The stronger test $|b-c|\le x+y$ is often easier. Every region must use the same complete packing; choosing unrelated local radii would not establish the hypothesis.
 
 The sharper form uses
 \(Q_b(0)=F(x,b,y)\) and \(Q_c(0)=F(x,c,y)\), with \(F\) defined
@@ -874,7 +882,7 @@ The proof first evaluates the [entire central filling sector](../../notes/genera
 ## The geometric contribution for an unchanged planar core
 
 For a fixed diagram specified by a simple matched sphere, the
-[general Morse theorem](../../notes/actual_morse_cross_filling_period.md)
+[general Morse theorem](../../docs/papers/casimir-source-asymptotics.pdf)
 evaluates the entire central recurrence-path contribution. Cups and
 caps may occur between crossing regions; no flat-plat sweep or added
 terminal tangle is assumed. Write \(I^{\mathrm C}_{N,\boldsymbol n}\)
@@ -886,7 +894,7 @@ parity, it is nonzero at all sufficiently large levels and satisfies
        \log|I^{\mathrm C}_{N,\boldsymbol n}|
        =\operatorname{Vol}(S^3\setminus K_{\boldsymbol p}).
 \]
-The [geometric companion](../../notes/actual_morse_geometric_contribution.md)
+The [geometric companion](../../docs/papers/casimir-source-asymptotics.pdf)
 constructs the labeled positive cells and follows the original primitive
 filling curves to identify this volume. All Fourier charges and both
 level parities are included in the asymptotic.
@@ -940,7 +948,7 @@ The [fractional cycle-packing criterion](../../notes/research_regular_window_cyc
 
 ## From coefficient Cauchy to a shared volume inequality
 
-The [one-sided energy theorem](../../notes/actual_one_sided_relative_spectral_energy.md) bounds every one-sided coefficient, uniformly over real spectra, degree boundaries and both parities. If $p_N(q)$ is the positive endpoint coefficient, its weighted Cauchy estimate controls the rate of $|a_N(q;\sigma)|^2/p_N(q)$ by a complete-triangle entropy. The proof uses a folded angle with the same distribution as the original angle and keeps all unused rows and the odd derivative reference.
+The [one-sided energy theorem](../../docs/papers/casimir-source-asymptotics.pdf) bounds every one-sided coefficient, uniformly over real spectra, degree boundaries and both parities. If $p_N(q)$ is the positive endpoint coefficient, its weighted Cauchy estimate controls the rate of $|a_N(q;\sigma)|^2/p_N(q)$ by a complete-triangle entropy. The proof uses a folded angle with the same distribution as the original angle and keeps all unused rows and the odd derivative reference.
 
 ![The weighted Cauchy estimate and the shared entropy comparison that is still needed.](../figures/spectral-energy-rearrangement.png)
 
@@ -959,8 +967,8 @@ flat-plat class is not asserted.
 
 ## A general finite cover of the source sectors
 
-The [finite-sector criterion for a plat](../../notes/general_actual_sector_cover_filling_volume.md)
-has a [version for a matched spherical diagram](../../notes/general_morse_sector_cover_volume.md).
+The [finite-sector criterion for a plat](../../docs/papers/planar-certificates.pdf)
+has a [version for a matched spherical diagram](../../docs/papers/planar-certificates.pdf).
 Both are proved sufficient criteria. They require a strict estimate
 that must be checked for the chosen diagram. They do not assert that
 such an estimate exists for every diagram.
@@ -1025,9 +1033,9 @@ The known examples distinguish three outcomes:
 | A specified fifty-four-region matched spherical diagram | Even one fixed genuine sector has optimized envelope more than \(1/5\) above the complete action. Further refinement by the same three local labels cannot repair it. |
 
 The first two statements are in the
-[certificate-separation results](../../notes/actual_shared_radius_certificate_separation.md).
+[certificate-separation results](../../docs/papers/planar-certificates.pdf).
 The third has a separate
-[exact obstruction and reproduction suite](../../notes/actual_singleton_sector_envelope_obstruction.md).
+[exact obstruction and reproduction suite](../../docs/papers/planar-certificates.pdf).
 Its sector is left at region 32 and central at all other 53 regions.
 The proof checks the oriented sphere, matching, mark, and a knot-producing
 parity pattern. It also proves that this shared sector is nonzero at
@@ -1061,7 +1069,7 @@ the narrower flat-plat class.
 A strict coefficient bound can be carried through a particular geometric
 composition. This gives a way to construct larger examples from certified
 ones without solving a new optimization problem at every step. The
-[triangular-sum theorem](../../notes/general_protected_triangular_sum_volume.md)
+[triangular-sum theorem](../../docs/papers/planar-certificates.pdf)
 and Appendix Q give the proof.
 
 Start with two simple triangulated spheres, each with a pairing of its
@@ -1174,21 +1182,24 @@ circles are still components of the link. The manifold in this
 formula therefore differs from the knot exterior obtained after
 filling them. The proof uses one shared radius per face, a nonzero coefficient saddle, and an explicit summation of the half-twist phases. The [untwisted proof](../../notes/general_untwisted_augmented_source_volume.md) is a shorter introduction to the positive part of this argument. The theorem requires its geometric certificate; it does not supply one for every plat. The [coverage comparison](../../notes/general_untwisted_augmented_source_literature_coverage.md) explains earlier overlaps and the parallel-belt parity obstruction.
 
-## Earlier Conway, pretzel, belt and cap results
+## Other retained examples
 
-The [arbitrary-width seed construction](../../notes/actual_conway_arbitrary_width_seeds.md) began with stacks $A_s=h_1\cdots h_s$, $s\ge3$, and then allowed turns and stacks of already constructed boxes. The [signed Conway filling theorem](../../notes/actual_odd_conway_long_filling_volume.md) proves the volume limit for its specified closures and any subset of independently long auxiliary fillings. Its parity construction supplies knot-producing choices when all auxiliary circles are filled. That earlier theorem excluded the minimal isolated three-piece closure; the later isolated theorem and strict-tree result now include it. This is a change in coverage, not a change in the hypotheses of the older proof.
+The current strict Conway theorem and its hypotheses are stated above.
+Earlier restricted grammars are not separate proof prerequisites.
+The source snapshot preserves their development.
 
-For the retained-circle diagrams, the [positive Conway theorem](../../notes/actual_positive_conway_hyperbolic_volume.md) constructs the complete complement and identifies the entire positive source rate with its volume. The [coverage comparison](../../notes/positive_conway_literature_coverage.md) records antecedents. The [pure long-filling theorem](../../notes/actual_conway_long_filling_source_limit.md) permits any subset of long auxiliary fillings, but its pure seed diagrams retain internal main components. Full twists cannot join those components; the signed version changes the pairing and requires its own source estimate.
-
-The earlier [long-pretzel width theorem](../../notes/actual_pretzel_all_width_extension.md) and [source-to-volume proof](../../notes/actual_long_pretzel_casson_rivin_equality.md) cover fixed odd widths at least nine and the specified two-component even widths at least ten. Their particular alias estimate does not cover widths three, five and seven. This is a limitation of that proof, not a statement that every smaller presentation lies outside all later results.
-
-The [signed octahedral belt-stack theorem](../../notes/actual_long_filled_octahedral_belt_stack_volume.md) treats every fixed nonempty stack with its prescribed outer crossing power and arbitrary fixed signs. Any subset of auxiliary circles can be filled along independently sufficiently long signed slopes. After all fillings, odd outer power gives knots and even outer power gives two-component links. The [marked theta calculation](../../notes/actual_marked_theta_link_and_angle_geometry.md) supplies a complete augmented-link equality $4v_8$, where $v_8=v_{\mathrm{oct}}$, with a separate sixteen-tetrahedron geometric certificate. Its complete statement alone is not a theorem about arbitrary fillings or arbitrary graphs.
+The [pretzel calculation](../../notes/actual_long_pretzel_casson_rivin_equality.md)
+and [filled belt-stack argument](../../notes/actual_long_filled_octahedral_belt_stack_volume.md)
+remain examples of other source and geometric comparisons. Each has its
+own component, parity, marking and filling assumptions. Their conclusions
+should be read from those statements rather than inferred from a shared
+scalar formula or attributed to the standalone Conway paper.
 
 ## General identities with a smaller conclusion
 
 Several approaches begin with the local algebra at a crossing-circle edge. The [generating-action theorem](../../notes/actual_matching_edge_polynomial_geometric_action.md), [continuant period](../../notes/actual_matching_edge_continuant_operator_period.md), and [rectangle bound](../../notes/actual_matching_circle_rectangle_bound.md) identify a finite operator, its local character relation and the range of certified geometric targets. A local character relation still needs a contributing global period before it gives the volume of a knot.
 
-For arbitrary fixed plat width, the [complete compiler](../../notes/actual_augmented_plat_phase_compiler.md), [mixed-color compiler](../../notes/actual_mixed_augmented_plat_compiler.md), and [entire Fourier core](../../notes/actual_augmented_plat_entire_core_color_packet.md) retain the finite phases and derivative terms. The [matching geometry](../../notes/general_augmented_plat_matching_geometry.md) supplies the complete complement under a positive labeled realization. The [general plat target](../../notes/general_augmented_plat_long_twist_target.md) states the further source estimate needed for unrestricted coverage.
+For arbitrary fixed plat width, the [complete compiler](../../notes/actual_augmented_plat_phase_compiler.md), [mixed-color compiler](../../notes/actual_mixed_augmented_plat_compiler.md), and [entire Fourier core](../../notes/actual_augmented_plat_entire_core_color_packet.md) retain the finite phases and derivative terms. The [matching geometry](../../docs/papers/marked-fillings.pdf) supplies the complete complement under a positive labeled realization. The [general plat target](../../notes/general_augmented_plat_long_twist_target.md) states the further source estimate needed for unrestricted coverage.
 
 Recoupling means changing the order in which local representation factors are paired. The [positive scalar formula](../../notes/actual_matching_edge_racah_positive_scalar.md), [marked block identity](../../notes/actual_matching_edge_marked_four_port_block.md), and [completed-projector formula](../../notes/actual_matching_edge_completed_projector_block.md) fix the normalization of those changes and preserve their first normal derivatives. The [native-energy bound](../../notes/actual_matching_edge_native_projector_energy.md) controls the resulting projectors by explicit magnetic energies, which can themselves grow exponentially. The [Fourier energy profile](../../notes/actual_matching_edge_magnetic_energy_profile.md) gives boundary rate $5v_3/\pi$, with $v_3$ the regular ideal tetrahedron volume; the [shrinking-fold theorem](../../notes/actual_matching_edge_shrinking_fold_native_energy.md) extends it to every sequence approaching the fold. These are local costs, not a volume estimate for their full contraction.
 
@@ -1196,7 +1207,7 @@ The [shared-cycle formula](../../notes/actual_matching_graph_shared_cycle_fourie
 
 The [single-Racah recoupling formula](../../notes/actual_general_four_port_single_racah_kernel.md) is an exact local identity. For its supported folded colors, the [hyperideal-volume theorem](../../notes/actual_four_port_hyperideal_angle_volume.md) identifies the metric-normalized scalar rate as the extended tetrahedron volume divided by $\pi$, uniformly through the stated boundary limits. The normalization matters: the bare factorial sum has a different action. This local volume relation is not asserted to be new.
 
-Finally, the [positive Conway variational theorem](../../notes/actual_positive_conway_variational_limit.md) evaluates the whole positive source as twice the maximum of a concave ideal-tetrahedron volume functional on its exact support polytope. Its cylindrical factors have the geometric interpretation described above. Cap products instead have their exhibited connected-sum decomposition and additive limits; they are not assigned one complete hyperbolic metric.
+Finally, the [positive Conway variational theorem](../../docs/papers/newton-calculus.pdf) evaluates the whole positive source as twice the maximum of a concave ideal-tetrahedron volume functional on its exact support polytope. Its cylindrical factors have the geometric interpretation described above. Cap products instead have their exhibited connected-sum decomposition and additive limits; they are not assigned one complete hyperbolic metric.
 
 ## Cube sectors are kept separate
 
@@ -1208,7 +1219,7 @@ Removing the cycle restrictions, controlling the full cube invariant and treatin
 
 ## The full expansion for the directed criterion
 
-The [directed all-orders theorem](../../notes/actual_all_circle_directed_all_orders.md)
+The [directed all-orders theorem](../../docs/papers/meridian-expansions.pdf)
 extends the meridian expansion to every directed circle-tree certificate,
 including the alternative \(|n_v|\ge2^{27}\) or \(d_v\ge2^{28}\) at each
 vertex. It proves every finite order uniformly on fixed compact subsets
@@ -1232,7 +1243,7 @@ ordinary-color resonances.
 
 ## A classical characteristic selected by the full expansion
 
-The [filtered characteristic theorem](../../notes/actual_main_meridian_filtered_characteristic.md)
+The [filtered characteristic theorem](../../docs/papers/meridian-expansions.pdf)
 applies to the proved strict long-filling sources and the
 circle-tree sources under the summed condition, the local bound
 \(2^{-120}\), or any directed certificate by the extension above.
@@ -1247,7 +1258,7 @@ in this polynomial's zero set.
 The selected factor is reciprocal and has an explicit rational
 peripheral expression. Its tangent is the preferred cusp shape.
 
-The [strict-tree geometric longitude theorem](../../notes/actual_strict_tree_geometric_characteristic.md)
+The [strict-tree geometric longitude theorem](../../docs/papers/meridian-expansions.pdf)
 identifies the entire selected curve for every covered strict
 long-filling presentation, with no restriction on the valence or
 adjacency of bare product junctions. The earlier summed

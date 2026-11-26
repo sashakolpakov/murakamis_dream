@@ -1,0 +1,107 @@
+{
+  "scope": "Independent semantic review of presentation-only compatibility for the actual retained Markdown corpus. This checks notation, scope and rendering, not the mathematical truth of research proofs.",
+  "helper_sha256": "9a2657ad321dbd5563bdd1b444648a9d4dd25aa7e97521663419da29791131a6",
+  "builder_sha256": "7e7b308208049bb2c1e06b634506cdc62a79b039ae76dc7244ca8a1f230e8237",
+  "current_corpus": {
+    "primitive_fractions": 176,
+    "all_primitive_fractions_explicit_unmixed": true,
+    "font_declarations": 2821,
+    "all_font_scopes_explicit_unmixed": true,
+    "text_boxes": 107,
+    "spacing_dimensions": 31,
+    "tagged_math_nodes": 11420,
+    "all_tags_display_math_top_level_terminal": true
+  },
+  "independent_controls": {
+    "scope": "Independent reviewer controls on the bounded renderer, not mathematical theorem verification.",
+    "helper_sha256": "9a2657ad321dbd5563bdd1b444648a9d4dd25aa7e97521663419da29791131a6",
+    "explicit_expected_outputs": 10,
+    "unsupported_scopes_rejected": 11,
+    "exact_metric_values": 6,
+    "visible_tag_renderings": [
+      {
+        "source": "x+y=1\\tag{7}",
+        "visible_label": "(7)",
+        "visible_text": "x+y=1(7)"
+      },
+      {
+        "source": "\\begin{aligned}x&=1\\tag{7}\\end{aligned}",
+        "visible_label": "(7)",
+        "visible_text": "x=1(7)"
+      },
+      {
+        "source": "x+y=1\\tag{31a}",
+        "visible_label": "(31a)",
+        "visible_text": "x+y=1(31a)"
+      }
+    ],
+    "code_and_prose_unchanged": true,
+    "supported_outputs_idempotent": true,
+    "cases": [
+      [
+        "{a+b\\over1-q}",
+        "{\\frac{a+b}{1-q}}"
+      ],
+      [
+        "u+{a-b\\over c+d}",
+        "u+{\\frac{a-b}{ c+d}}"
+      ],
+      [
+        "{{a\\over b}\\over{c\\over d}}",
+        "{\\frac{{\\frac{a}{ b}}}{{\\frac{c}{ d}}}}"
+      ],
+      [
+        "x^{\\rm cut}_{\\cal S}+y",
+        "x^{\\mathrm{ cut}}_{\\mathcal{ S}}+y"
+      ],
+      [
+        "{\\rm a{\\cal B}c}",
+        "{\\mathrm{ a{\\mathcal{ B}}c}}"
+      ],
+      [
+        "{\\rm a\\bf b}c",
+        "{\\mathrm{ a}\\mathbf{ b}}c"
+      ],
+      [
+        "\\Bbb R + X",
+        "\\mathbb R + X"
+      ],
+      [
+        "\\hbox{for \\(q>0\\)}",
+        "\\text{for \\(q>0\\)}"
+      ],
+      [
+        "\\Log z-\\Arg w",
+        "\\operatorname{Log} z-\\operatorname{Arg} w"
+      ],
+      [
+        "\\{x:x>0\\}",
+        "\\{x:x>0\\}"
+      ]
+    ],
+    "rejections": [
+      "a\\over b",
+      "2+\\left(a\\over b\\right)",
+      "{\\left(a\\over b\\right)}",
+      "\\begin{aligned}a\\over b&c\\end{aligned}",
+      "{a\\rm b\\over c}",
+      "{\\rm a\\over b}",
+      "{a\\over b\\over c}",
+      "{\\rm a\\left(b\\right)}",
+      "{x=1\\tag{7}}",
+      "x\\tag{7}+y",
+      "x=1\\tag*{7}"
+    ]
+  },
+  "builder_integration_probe": true,
+  "numeric_sign_or_scope_change_found": false,
+  "resolved_issues": [
+    "Primitive-fraction/font-precedence ambiguity is rejected outside the supported grammar.",
+    "Bbb remains a unary alias.",
+    "Long decimal dimensions convert exactly using sufficient precision.",
+    "Equation labels render visibly in MathML, not merely in annotations.",
+    "Nested or nonterminal tag placement is rejected."
+  ],
+  "source_repairs": "The helper changes parsed Math nodes only. Root separately recorded two unmatched delimiter/bracing source repairs in delimiter-repairs.json.",
+  "remaining_issues": []
+}

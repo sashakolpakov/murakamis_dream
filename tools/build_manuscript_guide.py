@@ -14,7 +14,6 @@ from pathlib import Path
 import posixpath
 import re
 import shutil
-import subprocess
 from urllib.parse import quote, unquote, urlsplit
 
 import build_book
@@ -68,12 +67,10 @@ def main() -> None:
     positions = {row["url"]: i for i, row in enumerate(records)}
     for source, target in SOURCES.items():
         text = (ROOT / source).read_text()
-        result = subprocess.run([
-            "pandoc", "--from=markdown-raw_html+tex_math_dollars+tex_math_single_backslash",
-            "--to=html5", "--mathml", "--wrap=none",
-        ], input=text, text=True, capture_output=True, check=True)
-        if result.stderr.strip():
-            raise RuntimeError(f"Pandoc warning in {source}: {result.stderr}")
+        try:
+            rendered, _ = build_book.render_markdown(text)
+        except RuntimeError as error:
+            raise RuntimeError(f"Cannot publish {source}: {error}") from error
 
         def link(match: re.Match) -> str:
             attr, raw = match.groups()
@@ -94,7 +91,7 @@ def main() -> None:
                 value += "#" + parts.fragment
             return f'{attr}="{escape(value, quote=True)}"'
 
-        body = re.sub(r'(href|src)="([^"]*)"', link, result.stdout)
+        body = re.sub(r'(href|src)="([^"]*)"', link, rendered)
         title = build_book.title_of(text, Path(source).stem)
         is_papers = source == "papers/README.md"
         adjacent = None if is_papers or source == "manuscript/ERRATA.md" else [
@@ -131,7 +128,8 @@ def main() -> None:
     report = {
         "scope": "Only the three manuscript-guide pages and their PDF/figures/search entries; no research-note publication or mathematical proof verification.",
         "source_sha256": {p: hashlib.sha256((ROOT / p).read_bytes()).hexdigest()
-                          for p in SOURCES},
+                          for p in [*SOURCES, "tools/build_manuscript_guide.py",
+                                    "tools/build_book.py", "tools/mathml_compat.py"]},
         "rendered_pages": list(SOURCES.values()),
         "copied_assets": copied,
     }

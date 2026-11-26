@@ -16,7 +16,7 @@ Fix an integer \(N\ge3\), put \(d=N-1\), and write
 \]
 At \(\epsilon=0\), \(P=N\), \(\eta=1\), and \(\Delta=0\). The highest weights and polynomial degrees remain fixed integers as \(\epsilon\) varies. Only their specified coefficients and continued index arguments vary.
 
-At a white vertex, let \(W_a:V_{2a}\to V_d\otimes V_d\) be the actual generic intertwining tensor, with \(0\le a\le\lfloor d/2\rfloor\). The variables \(i,j\) are its two ordered physical indices and \(r\) its channel index. Let \(F_m=(Q;Q)_m=\prod_{k=1}^{m}(1-Q^k)\), with \(F_0=1\). The fixed finite polynomial \(H_m^B(U,V)\) is the q-Hahn numerator specified in the [generic source formula](actual_generic_boundary_gauge_and_source.md). Its polynomial arguments, rather than a newly chosen interpolation of matrix values, define the continuation:
+At a white vertex, let \(W_a:V_{2a}\to V_d\otimes V_d\) be the actual generic intertwining tensor, with \(0\le a\le\lfloor d/2\rfloor\). The variables \(i,j\) are its two ordered physical indices and \(r\) its channel index. Let \(F_m=(Q;Q)_m=\prod_{k=1}^{m}(1-Q^k)\), with \(F_0=1\). The fixed finite polynomial \(H_m^B(U,V)\) is the q-Hahn numerator specified in the [generic source formula](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_generic_boundary_gauge_and_source.md). Its polynomial arguments, rather than a newly chosen interpolation of matrix values, define the continuation:
 \[
  \begin{aligned}
  W_a(i,j;r)&=(-1)^m\zeta^{-dr+di-m(m-1)}

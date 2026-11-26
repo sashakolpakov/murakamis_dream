@@ -20,7 +20,7 @@ not chosen using the symmetric Casimir. We first do that calculation.
 Write the physical input heads as (v,t-v) and output heads as (u,t-u),
 all divided by N at principal order. The exact finite homogeneous
 identity is R^epsilon_entry=N^-1 H_(R^epsilon)/(bc)^(d/2), with its
-recorded log lifts; this is (7a) of the [homogeneous-source theorem](actual_homogeneous_casimir_face_source.md).
+recorded log lifts; this is (7a) of the [homogeneous-source theorem](../papers/filling-bounds/README.md).
 There is no new cap or pivot in this identity. Let Psi_H be the ACTUAL
 homogeneous kernel phase (including lambda0^epsilon). At a regular
 local critical point of its three simplex variables, the envelope

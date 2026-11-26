@@ -24,7 +24,7 @@ original marked physical arc. Put
 
 The all-input complete circle is the sum of its full folded sectors.
 The proved physical factorization in
-[the original all-channel source](actual_trivalent_all_channel_marked_contraction.md)
+[the original all-channel source](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_trivalent_all_channel_marked_contraction.md)
 is
 
     L_N=sum_(j=0)^M L_j,
@@ -52,7 +52,7 @@ For a fixed label vector j=(j_1,...,j_r), split each coupon as W_j pi_j.
 Its intermediate edge Q_j is exactly the crossing-disk edge d_i in
 Delta. The remaining legs follow the actual outside main intervals
 and carry V_N. The vertex cyclic orders are the disk-side sectors
-of [the matching-graph construction](general_augmented_plat_matching_geometry.md).
+of [the matching-graph construction](../papers/marked-fillings/README.md).
 Consequently the state graph has
 
     matching edges D: Q_(j_i),
@@ -191,7 +191,7 @@ ideal triangulation T. Its GLOBAL angle polytope is
 
 All incidence coefficients come from the actual complete face-pairing
 words, including the shaded half twists. The
-[proved positive gluing theorem](general_marked_positive_gluing_certificate.md)
+[proved positive gluing theorem](../papers/marked-fillings/README.md)
 gives its unique positive maximum and absolute value
 
     max_(11) sum_t V_ideal(alpha_t)=2Vol(Q_Delta).          (12)

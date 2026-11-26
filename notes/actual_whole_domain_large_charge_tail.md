@@ -11,7 +11,7 @@ mixed-source estimate is isolated explicitly in Section 5.
 Put $d=N-1$, $q=e^{\pi i/N}$, $\Omega$ equal to the original pair Casimir,
 $\chi_N(z)=2T_N(z/2)+2$ and $V_N(z)=\chi_N(z)(z-\Omega)^{-1}$, interpreted as
 its degree-$d$ polynomial. Work in the original balanced physical basis
-used by the [full endpoint-resolvent theorem](actual_casimir_endpoint_resolvent_bound.md), including its high-total
+used by the [full endpoint-resolvent theorem](../papers/filling-bounds/README.md), including its high-total
 adapter. All physical degrees form its orthogonal direct sum.
 For a fixed integer $n$ define
 
@@ -143,7 +143,7 @@ The resulting geometric sum of $\ell$ times horizontal integrals is
 bounded by the first term of (6), after a harmless adjustment from
 $M+1$ to $M$. It introduces no false coefficientwise real-spectral bound.
 
-Proof of the vertical part. Use the already proved [original closing-region estimate](actual_casimir_closing_region_bound.md) on the right real ray, with $r=2\cosh(2\pi v)-2$:
+Proof of the vertical part. Use the already proved [original closing-region estimate](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_casimir_closing_region_bound.md) on the right real ray, with $r=2\cosh(2\pi v)-2$:
 
 $$
 \|(2\cosh(2\pi v)-\Omega)^{-1}\|

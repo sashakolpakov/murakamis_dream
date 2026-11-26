@@ -9,15 +9,15 @@ source asymptotic or generic-q continuation of the Gaussian is asserted.
 
 [actual matching edge continuant operator period](actual_matching_edge_continuant_operator_period.md) gives the actual
 generic tridiagonal blocks, both continuants, all Jordan poles and the true
-physical high-total adapter. [actual casimir off spectrum prefix action](actual_casimir_off_spectrum_prefix_action.md)
+physical high-total adapter. [actual casimir off spectrum prefix action](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_casimir_off_spectrum_prefix_action.md)
 and [actual matching edge cross central green action](actual_matching_edge_cross_central_green_action.md) give selected
 logarithmic actions only on strict physical prefix/row compacts. They do
 not cover arbitrary complex magnetic heads, midpoint prefixes or a global
 contracted exterior. The latter theorem is explicitly an integrand theorem.
 
-[actual casimir endpoint resolvent bound](actual_casimir_endpoint_resolvent_bound.md) bounds EVERY original block by
+[actual casimir endpoint resolvent bound](../papers/filling-bounds/README.md) bounds EVERY original block by
 CN^17 at +2 and on |sigma-2|<=cN^-18, including genuine resolvent normals.
-The stronger [actual casimir closing region bound](actual_casimir_closing_region_bound.md) gives, for fixed
+The stronger [actual casimir closing region bound](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_casimir_closing_region_bound.md) gives, for fixed
 gamma>0, throughout the angular cone
 
     sigma=2+r exp(i phi), |phi|<=pi-gamma,

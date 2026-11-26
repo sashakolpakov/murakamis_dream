@@ -229,8 +229,8 @@ relative volume. Equations (4)--(5) give
 
     2pi W_D=Vol(rho)<=Vol(Y_D).
 
-The last inequality is the [independently proved representation-volume
-bound](general_representation_volume_kernel_strictness.md) for the original hyperbolic exterior. Together with the all-cross
+The last inequality uses the [classical representation-volume
+bound](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/general_representation_volume_kernel_strictness.md) for the original hyperbolic exterior. Together with the all-cross
 lower bound this proves (2), including the absolute volume constant.
 
 ## 6. A strict identity-insertion consequence
@@ -245,9 +245,13 @@ identity degrees gives a feasible pure-middle assignment in the original
 graph, so the union is again a permitted forest. The hybrid argument
 and actual representation assembly then apply unchanged.
 
+The classical kernel statement below is separate from the construction
+of that representation and its volume identification. It concerns the
+positive endpoint source, not the full signed knot invariant.
+
 The resulting representation kills each specified original auxiliary
-meridian. Those are essential in Y_D. The [already proved strict-kernel
-volume bound](general_representation_volume_kernel_strictness.md) therefore gives
+meridian. Those are essential in Y_D. The [strict-kernel
+volume bound](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/general_representation_volume_kernel_strictness.md) therefore gives
 
     lim_(even N) N^-1 log Z_(D,N;H_1 on I)
                               <Vol(Y_D)/(2pi).         (6)
@@ -270,7 +274,7 @@ are spectral derivatives at the fixed root, not genuine-q normals. Independently
 those quantum inputs, with the original peripheral normals and scalars,
 before the filled hyperbolic volume can be concluded.
 
-The general original Kashaev volume conjecture remains OPEN. Its target
+The general original Kashaev volume conjecture remains open. Its target
 has not been replaced by (2).
 
 ## 8. Finite verification

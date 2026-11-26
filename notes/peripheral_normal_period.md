@@ -12,13 +12,13 @@ cyclic trace metric.
 
 The statements below separate a necessary boundary factor from a further
 rank condition. The positive volume limit is now proved for the knots of
-the [net-twist theorem](actual_conway_net_twist_volume.md). For every such
+the [net-twist theorem](../papers/conway-reductions/README.md). For every such
 knot, Section 2 therefore proves the boundary-factor condition for every
 polynomial all-level annihilator. The special-fiber rank condition in
 Section 4 remains additional; the scalar volume theorem does not prove
 it or identify a full quantum module with the geometric regulator.
 
-The subsequent [actual Weyl-descent proof](actual_weyl_descent.md)
+The subsequent [actual Weyl-descent proof](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_weyl_descent.md)
 constructs P=B*(Y-1) from the primitive minimal normal operator for
 every knot and proves its unitary reciprocity. Thus those symmetry
 data in Section 6 are available for the canonical actual operator.
@@ -26,7 +26,7 @@ Those symmetry statements do not prove special-fiber injectivity or
 give direct estimates for the inverse below. Section 2's necessity
 test still concerns every polynomial annihilator.
 
-The subsequent [peripheral-fusion proof](actual_peripheral_fusion.md)
+The subsequent [peripheral-fusion proof](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_peripheral_fusion.md)
 derives the regular normal boundary lattice from the actual fundamental
 parallel, retaining its pole before changing lattice. Its odd normal
 state w_N=(M-M^(-1))F_N has K_N=(1/2)partial_(Log M)w_N at M=1.
@@ -34,7 +34,7 @@ The adjacent-color splitting there has a nonzero square-zero Casimir
 residue whose pivotal partial trace is identity. These exact quantum
 extension data do not establish the root-fiber rank or the regulator norm.
 
-The subsequent [ramified Weyl-fibre theorem](ramified_weyl_fibre.md)
+The subsequent [ramified Weyl-fibre theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/ramified_weyl_fibre.md)
 retains this derivative as an ordinary coordinate of a descended
 algebraic fibre over s=((U-1)/(U+1))^2. Its - sector generator is
 z e_- rather than a vector discarded by setting z=0 first. The
@@ -53,7 +53,7 @@ Use the actual literature state in
     F_N(Y) Laurent polynomial, K_N=F_N(1)=<K>_N,
     F_N(Q_N^r)=C_r(q_N), 1<=r<N.
 
-The [regular-period theorem](regularized_kashaev_period.md) reconstructs
+The [regular-period theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/regularized_kashaev_period.md) reconstructs
 the positive path trace directly from the actual fundamental crossing.
 For any fixed b-strand knot braid it proves
 
@@ -68,7 +68,7 @@ recorded, in the polynomial quantum torus
 
 An initial power of T permits the nonnegative shift convention.
 The [existence](finite_sum_annihilator.md) and
-[squared-meridian descent](even_meridian_norm_descent.md) theorems
+[squared-meridian descent](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/even_meridian_norm_descent.md) theorems
 supply such an actual operator, but do not yet identify its classical
 geometric factors.
 
@@ -261,7 +261,7 @@ the boundary extension that the ordinary special kernel omits.
 Under (4.4) the rank loss in P is exactly one simple Smith factor;
 no unverified higher-order lift is being used. More singular cases
 need the higher jets retained in the
-[bounded-jet construction](bounded_meridian_jets.md).
+[bounded-jet construction](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/bounded_meridian_jets.md).
 
 ## 6. A bounded source and the exact inverse-matrix period
 
@@ -296,7 +296,7 @@ it is the sum of their two overlaps divided by the corresponding
 singular values. No largest-eigenvalue prescription is being used.
 
 The geometric action already has imaginary value Vol at completeness,
-by the [actual action proof](quantum_longitude_and_regulator_action.md).
+by the [actual action proof](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/quantum_longitude_and_regulator_action.md).
 For a knot covered by the net-twist theorem, whenever the stated rank
 condition holds, (6.2) is an exact expression for its invariant and
 therefore has the scalar volume growth proved there. Deriving this
@@ -346,7 +346,7 @@ It is this inverse and its specified source that need a regulator
 norm theorem. Small singular values in the other symmetry sector
 make no contribution. Reciprocity is additional quantum data;
 it is not assumed merely from the classical A-curve's inversion
-symmetry. The subsequent [actual-state proof](actual_weyl_descent.md)
+symmetry. The subsequent [actual-state proof](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_weyl_descent.md)
 now derives this reciprocity for the primitive minimal normal
 operator of every knot, and also proves J v_0=v_0 directly. An
 arbitrary nonprimitive or left-multiplied operator still needs its
@@ -413,7 +413,7 @@ not replace (4.4), which concerns its special fiber and the normal
 derivative. A rational kernel line may acquire extra special
 solutions; that possibility is exactly what the lattice retains.
 
-The subsequent [torsion initial-rank theorem](torsion_initial_rank.md)
+The subsequent [torsion initial-rank theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/torsion_initial_rank.md)
 extends the pure-binomial test: rational-coefficient initial forms
 have only finitely many isolated torsion-grid exceptions outside
 their contained binomial torsion curves. Their eventual root count
@@ -450,7 +450,7 @@ The audit derives a telescoping operator for the finite block
     H_N(Y)=sum_(k=0)^(N-1) t_k(Y),
     t_k=product_(r=1)^k(Y+Y^(-1)-Q^r-Q^(-r)).
 
-The subsequent [whole-source four-plat proof](figure_eight_whole_source_identity.md)
+The subsequent [whole-source four-plat proof](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/figure_eight_whole_source_identity.md)
 identifies H_N with the actual figure-eight ADO state at every level,
 with all peripheral factors retained. The derivation here does not
 take that equality as a premise. Put Z=Q^k and
@@ -528,7 +528,7 @@ Only its scope is used for coverage; no AJ, state-comparison or
 analytic conclusion from that source is a premise. The weighted
 involutions and source parity above were obtained by direct operator
 identities, with all monomial phases retained.
-The [geometric triangulation bridge](triangulation_regulator_bridge.md)
+The [geometric triangulation bridge](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/triangulation_regulator_bridge.md)
 supplies the marked Bloch action for the comparison with this normal
 period. The scalar volume equality is established for the stated
 strict and net-twist knot classes. The survival and identification of

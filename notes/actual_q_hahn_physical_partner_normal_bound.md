@@ -50,7 +50,7 @@ from the folded channel is required.
 
 The original degree-t Casimir block J_t is complex symmetric
 tridiagonal, as proved directly from the balanced tensor operators in
-[the complete Hermite packet](actual_complete_casimir_hermite_packet.md).
+[the complete Hermite packet](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_complete_casimir_hermite_packet.md).
 For r=0,...,t put U_r=Q^r, T=Q^t. Its entries simplify exactly to
 
     D_r=U_r/T [2(q^(-1)+qT)-(q+q^(-1))U_r],

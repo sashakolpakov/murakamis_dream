@@ -33,7 +33,7 @@ These are bounds on specified coefficient functions. For a classical
 companion, V_0 has columns (1,lambda_i,...,lambda_i^(d-1))^t, so all
 data are directly checkable on its normalized spectral branches.
 An actual recurrence as in
-[the whole-source spectral theorem](actual_macroscopic_a_spectral_upper_bound.md)
+[the whole-source spectral theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_macroscopic_a_spectral_upper_bound.md)
 satisfies (1) on any such regular fixed domain, uniformly on its small
 complex-q source circle. An unverified classical polynomial alone
 does not supply that actual quantum premise.
@@ -193,7 +193,7 @@ Bloch/peripheral action may supply the A_i, but (7) still requires
 the explicit quantitative width comparison.
 
 This does not contradict the
-[Gaussian conversion example](analytic_two_channel_conversion_counterexample.md).
+[Gaussian conversion example](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/analytic_two_channel_conversion_counterexample.md).
 On its whole interval the conversion has positive gain even though
 the complete branch actions vanish. Its global width cannot satisfy
 the sufficient barrier comparison. On a sufficiently short regular

@@ -128,7 +128,7 @@ the Fourier, stationary-elimination and cost comparisons explicitly. The aim is 
 each proof independently readable and citable while giving every shared
 argument one home.
 
-The [closing assessment](../repro/RETAINED_RELEASE_ASSESSMENT.md) records
+The [current audit](../repro/MANUSCRIPT_AND_LOGIC_AUDIT_2026-11-25.md) records
 the completed review of these retained results. It distinguishes written
 analytic and geometric proofs, compiled internal implications, and finite
 diagnostics. The general volume conjecture remains open. Editorial
@@ -718,7 +718,7 @@ complex packet with its finite action retained.
 The exact source identity, contour estimates, nonzero packet and marked
 volume equality remain explicit inputs. The
 [coverage map](../formal/coverage.json) records the manuscript anchors
-and the [cleanup record](../repro/PROOF_PATH_CLEANUP_2026-11-25.md)
+and the [manuscript and logic audit](../repro/MANUSCRIPT_AND_LOGIC_AUDIT_2026-11-25.md)
 records the replay.
 
 ## Building and reproducing the papers
@@ -759,7 +759,7 @@ Replay the papers' finite identities and rational certificate constants
 with one command:
 
 ```sh
-python3 repro/check_paper_algebra.py --output repro/results/paper-algebra
+python3 repro/check_paper_algebra.py --output repro/results/paper-collection/finite
 ```
 
 The finite check runner requires SymPy, python-flint and NumPy. It saves a separate

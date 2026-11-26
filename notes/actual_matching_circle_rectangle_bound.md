@@ -10,7 +10,7 @@ The consequence is a restriction on the trace used by the quantum recoupling for
 
 ## 1. The rectangle and the based meridian matrices
 
-Assume the labeled cut, complete cusp metric and primitive crossing-circle paths of the [matching-polyhedron certificate](general_augmented_plat_matching_geometry.md). In its disk-framed coordinate, the rectangle has vertices
+Assume the labeled cut, complete cusp metric and primitive crossing-circle paths of the [matching-polyhedron certificate](../papers/marked-fillings/README.md). In its disk-framed coordinate, the rectangle has vertices
 \[
  (1,E,-1,-E),\qquad E=e^{2\pi i x},\qquad
  0<x<\tfrac12,\qquad c=\cot(\pi x)>0.

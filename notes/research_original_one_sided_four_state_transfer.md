@@ -19,7 +19,7 @@ negative-row term and the factor \(s_0=0\). All products retain level \(N\).
 
 ## 1. The exact original polynomial
 
-The [original one-sided coefficient expansion](actual_one_sided_relative_spectral_energy.md)
+The [original one-sided coefficient expansion](../papers/casimir-source-asymptotics/README.md)
 has the sign-adjusted form
 \[
  (-1)^dH_{V,\mathrm{LEFT}}

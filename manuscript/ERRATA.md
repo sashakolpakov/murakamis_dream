@@ -93,6 +93,4 @@ preserves the stated uniform core gap and the insertion theorem.
 It changes neither the matching nor the protected zero weight.
 The corrected description and its branch bounds appear in Section 9
 of [the triangular-insertion paper](../papers/triangular-insertion/main.tex),
-after equation (9.5) and in the table following (9.10). The
-[insertion audit](../repro/PLANAR_INSERTION_AUDIT.md) also records
-the correction.
+after equation (9.5) and in the table following (9.10).

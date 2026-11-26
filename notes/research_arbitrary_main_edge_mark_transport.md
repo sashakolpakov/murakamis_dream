@@ -407,11 +407,11 @@ auxiliary generic finite tensor identities are continued to the root.
 
 ## 9. Source dependencies and internal verification
 
-The exact inputs are the [original top-cap transport proof](research_arbitrary_casimir_top_mark_transport.md),
-[literal duality and snakes](relative_pivotal_duality.md),
+The exact inputs are the [original top-cap transport proof](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/research_arbitrary_casimir_top_mark_transport.md),
+[literal duality and snakes](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/relative_pivotal_duality.md),
 [all four balanced turns and the original mark](quantum_bridge_cap_source.md),
-[full homogeneous polynomial adapter](actual_homogeneous_casimir_face_source.md),
-[original face-character and grid theorem](actual_original_marked_face_coefficient.md),
+[full homogeneous polynomial adapter](../papers/filling-bounds/README.md),
+[original face-character and grid theorem](../papers/filling-bounds/README.md),
 and [primitive integral face-potential lattice](actual_original_boundary_transverse_rank.md).
 The full fixed-coupon sphere rerouting is written in section 4; it does
 not require an unrecorded planar-frame transformation.

@@ -4,7 +4,7 @@ Fix an augmented plat diagram: a braid closed by specified cups and caps, with a
 
 This note constructs a particular entire function of the scaled deficits. It is a finite cosine sum whose coefficients are contractions of the original quantum operators. At physical high colors it gives exactly the complete-circle part of the invariant. The remaining terms are also specified by an exact identity. This construction is needed before complex stationary phase: an arbitrary interpolation of the integer color values would not preserve the quantum expression being estimated.
 
-The finite formula works for every fixed augmented plat and both parities of \(N\). It gives exact Fourier reconstruction and a positive squared-norm identity. Those identities alone do not prove cancellation bounds or a nonzero geometric contribution. Such additional estimates are now established for the [strict Conway class](actual_conway_all_strict_tree_long_twist_volume.md) and other stated families; this note does not assert them for every plat.
+The finite formula works for every fixed augmented plat and both parities of \(N\). It gives exact Fourier reconstruction and a positive squared-norm identity. Those identities alone do not prove cancellation bounds or a nonzero geometric contribution. Such additional estimates are now established for the [strict Conway class](../papers/conway-asymptotics/README.md) and other stated families; this note does not assert them for every plat.
 
 ## 1. Splitting one circle operator without losing derivatives
 

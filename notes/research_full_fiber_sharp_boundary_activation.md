@@ -119,7 +119,7 @@ negative monomer action by its regular positive suffix formula.
 Exact reflection treats nu=1 and 0<mu<1/2.
 
 For mu=0,0<nu<1/2 and BOTH outer loads positive, the [protected-middle
-cap lemma](research_protected_middle_spectral_cap_exclusion.md) gives, at small positive k=cos(pi delta),
+cap lemma](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/research_protected_middle_spectral_cap_exclusion.md) gives, at small positive k=cos(pi delta),
 
     h_delta>=2 min(xi,nu-xi)log(1+k)
                         -(2/pi)k^2 cot(pi nu)>0.     (7)
@@ -149,7 +149,7 @@ fiber has no such imposed labels. If a strict non-CROSS port was
 specified, its strict inequality persists for small eps.
 
 For a non-diagonal strict-spectrum port, keep delta fixed. The
-[ordinary-zero barrier table](research_sharp_spectral_ordinary_zero_barrier.md) and exact reflection give nonnegative
+[ordinary-zero barrier table](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/research_sharp_spectral_ordinary_zero_barrier.md) and exact reflection give nonnegative
 eps log(1/eps) coefficients, strictly positive if an ordinary zero
 incidence is activated. Upper rows equal1/2 are regular units at a
 strict spectrum; there is no half-label inequality in this full fiber.
@@ -181,9 +181,9 @@ For a diagonal mu=nu=a, retune its spectrum. At a in(0,1), (1)
 opens a positive interval; placing a simple pole inside it gives
 W eps log(1/eps)+O(eps), or 2W at a=1/2, uniformly in the outer split.
 At a=0 or1 use cos(pi delta_eps)=eps^2; its cost is at worst
-O(eps^2). These are the [free-spectral retuning estimates](research_free_spectral_diagonal_retuning.md).
+O(eps^2). These are the [free-spectral retuning estimates](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/research_free_spectral_diagonal_retuning.md).
 
-For a cap port from (8), the [cap-corner lemma](research_spectral_cap_corner_activation.md) gives the needed
+For a cap port from (8), the [cap-corner lemma](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/research_spectral_cap_corner_activation.md) gives the needed
 ordinary-zero gain. At [0,nu0] with nu0<1/2 and x load zero, choose
 cos^2(pi delta_eps)=eps K. Its singular coefficient is B+X, where
 B=dot_mu and X=dot_xi. It is positive if either zero incidence is

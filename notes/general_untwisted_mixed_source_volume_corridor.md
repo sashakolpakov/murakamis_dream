@@ -22,7 +22,7 @@ and K such that, for all large N of either parity and every integer
        <=N^K exp[N(Phi_D-gamma)],
  Phi_D=Vol(Y_D)/(2pi).
 
-The [global complex-core theorem](actual_complete_core_complex_packet.md),
+The [global complex-core theorem](../papers/casimir-source-asymptotics/README.md),
 sections1 and6, supplies a zero-free relative
 unit asymptotic on one fixed complex neighborhood of completeness,
 with exact finite-N phase S_N tending uniformly to the selected S.

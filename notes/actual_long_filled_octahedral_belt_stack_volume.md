@@ -6,7 +6,7 @@
 
 Fix n>=1, a word epsilon of length n in {+,-}, and an integer a.
 Use the two literal mirror/reversed pieces D_+,D_- of the
-[octahedral stack construction](actual_balanced_octahedral_belt_stack_volume.md),
+[octahedral stack construction](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_balanced_octahedral_belt_stack_volume.md),
 with ONE retained outer complete circle and the actual outer R^a.
 Denote this ACTUAL augmented link by B_(epsilon,a). It has n inner
 crossing circles and one outer belt. Its complement is complete
@@ -55,7 +55,7 @@ full half-Cartan and all dimension endpoints. Coefficient mass is
 polynomial for each fixed slope. No closed auxiliary component is
 assigned an extra modified dimension.
 
-The [inner auxiliary-color theorem](actual_belt_stack_auxiliary_color_inner_packet.md)
+The [inner auxiliary-color theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_belt_stack_auxiliary_color_inner_packet.md)
 proves source-fixed nonzero analytic packets through the quarter-
 index transition, for the ACTUAL colors j_i=N-h_i. Its exact
 finite factorial completion agrees with the actual physical low
@@ -64,7 +64,7 @@ replacement error in a faithful norm containing every first
 Casimir normal. The nonzero RP band and the ENTIRE physical
 inner-color complement have strict gaps, for every fixed n>=1.
 
-The [outer squared-kernel theorem](actual_outer_color_squared_kernel.md)
+The [outer squared-kernel theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_outer_color_squared_kernel.md)
 retains the actual full-Hermite outer ordinary color. Its exact
 double-pole kernel kills the dangerous false h≈N Fourier alias;
 it proves the remaining outer-color complement gap, together with
@@ -81,7 +81,7 @@ m=q-p+a. In x_i=h_i/N its local source action has
 The real quadratic part is strictly negative in every color. The
 ENTIRE source cube complement is gapped, not just the individual
 box coefficients. Thus the hypotheses of the
-[general original-source long-filling transfer](general_original_source_long_filling_transfer.md)
+[general original-source long-filling transfer](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/general_original_source_long_filling_transfer.md)
 hold. Restrict every unfilled color literally to h_j=0/L_N and
 apply only the original filling functionals indexed by I. The
 exact complex packet, nonzero amplitude, negative real Hessian
@@ -95,7 +95,7 @@ sectors are controlled by that proof before its conclusion.
 
 ## 3. The selected point is an actual marked representation
 
-The [typed character composition](actual_belt_stack_typed_character_composition.md)
+The [typed character composition](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_belt_stack_typed_character_composition.md)
 supplies the group/flag lift which is essential after the source
 estimate. Its input is the source-selected internal critical root,
 not an arbitrary branch of a trace polynomial. The local pair

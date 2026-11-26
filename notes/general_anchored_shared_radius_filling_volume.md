@@ -6,7 +6,7 @@ theorem, 31 October 2026. At most $2R$ finite tests on shared face radii imply t
 
 Fix an original marked flat plat $D$ with $R$ ordered ports $(x_e,b_e,c_e,y_e)$, the original adjacent protected MAIN faces $u,v$, and its labeled simple-white convex right-angled certificate for the complete augmented exterior $Y_D$. Write $\Phi_D=\operatorname{Vol}(Y_D)/(2\pi)$. Every ordinary face variable below is positive; the protected variables remain exactly zero. Each vector $L=(L_f)$ is shared across the entire original face incidence graph. These source variables are curvatures, not Euclidean disk radii.
 
-Let $Q(x,t,y)$ be the absolutely normalized [complete triangle action](actual_cross_cofactor_marked_action.md). Its homogeneity is $Q(\lambda x,\lambda t,\lambda y)=Q(x,t,y)+\tfrac12\log\lambda$. Define
+Let $Q(x,t,y)$ be the absolutely normalized [complete triangle action](../papers/casimir-source-asymptotics/README.md). Its homogeneity is $Q(\lambda x,\lambda t,\lambda y)=Q(x,t,y)+\tfrac12\log\lambda$. Define
 
 $$
 \begin{aligned}
@@ -52,7 +52,7 @@ For the prescribed knot parity, this is the actual knot invariant. The threshold
 
 The [global LEFT theorem](actual_global_left_weighted_spectral_envelope.md) proves (2) as a uniform weighted absolute upper rate at all face phases and all real spectral values. It retains both outside products, both parity partitions, and the shrinking final spectral cap. Reflection gives RIGHT. This is a value bound, not a coefficientwise inequality.
 
-The [exact cofactor interpolation theorem](actual_cross_cofactor_factorization.md), Section 8, bounds CROSS coefficientwise by $C\log^2(N+1)$ times its positive zero-spectral CROSS polynomial on the entire real spectral interval. That polynomial has weighted rate $X_e$, by the original determinant and half-block normalization. This includes a single protected outer face and protected middles. The outer faces cannot both be protected: their original edge is MATCHING, while the protected edge is MAIN. Thus $x_e+y_e>0$ at every witness.
+The [exact cofactor interpolation theorem](../papers/filling-bounds/README.md), Section 8, bounds CROSS coefficientwise by $C\log^2(N+1)$ times its positive zero-spectral CROSS polynomial on the entire real spectral interval. That polynomial has weighted rate $X_e$, by the original determinant and half-block normalization. This includes a single protected outer face and protected middles. The outer faces cannot both be protected: their original edge is MATCHING, while the protected edge is MAIN. Thus $x_e+y_e>0$ at every witness.
 
 For $t>0$ and $x+y>0$, the actual triangle action satisfies $Q(x,t,y)>\tfrac12\log t$; its nonstrict version already follows from the endpoint monomial. Therefore
 
@@ -96,7 +96,7 @@ $$
 
 The original normalizing characters and nonzero polynomial factors do not change the exponential limit. This proves (5). The argument uses spectral identities at the fixed root and imposes no extra generic-$q$ derivative hypothesis.
 
-[Complete-radius balance](general_complete_radius_balance_filling_volume.md) implies (4): use the geometric vector for every anchor. There $H_f=X_f$ at all ports and each surviving $A_{e,s}<X_e$. The following example shows that the converse fails for a fixed marked source.
+[Complete-radius balance](../papers/planar-certificates/README.md) implies (4): use the geometric vector for every anchor. There $H_f=X_f$ at all ports and each surviving $A_{e,s}<X_e$. The following example shows that the converse fails for a fixed marked source.
 
 ## 4. An original flat plat failing complete-radius balance
 

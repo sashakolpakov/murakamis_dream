@@ -85,7 +85,7 @@ labels
 The untwisted within-copy gluing fixes \(O\) and sends
 \(C_1\mapsto C_0\), \(C_2\mapsto C_3\). Thus the cut is literally
 the inverse of sections 1–4 of
-[original matching-graph cut](general_augmented_plat_matching_geometry.md). Its medial
+[original matching-graph cut](../papers/marked-fillings/README.md). Its medial
 boundary graph is the medial graph of the supplied \(\Delta\), with
 every original white face and matching edge retained. The proof there
 that opening the disjoint half disks gives two balls is local and

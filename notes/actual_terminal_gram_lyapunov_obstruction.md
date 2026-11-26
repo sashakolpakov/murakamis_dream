@@ -8,7 +8,7 @@ obstruction to Cauchy, a substantially changing positive metric, or a
 source estimate which first retains the relevant coherent cancellations.
 
 Use the original principal root and complete source module W from
-[the closed kernel](actual_terminal_packet_closed_kernel.md):
+[the closed kernel](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_terminal_packet_closed_kernel.md):
 q=exp(pi*i/N), Q=q^2, d=N-1, x=q^d, F_a=(Q;Q)_a,
 s_a=|F_a|, kappa=q^(d^2/2), e_j=|j,d-j>. Let R be the FULL original
 positive checked crossing on W, and let T be the actual terminal
@@ -29,7 +29,7 @@ where P0=1 and the ACTUAL endpoint satisfies
 
 The full original pivotal functional, odd simple node, even levels,
 Cartan and framing phases behind (2) are retained in
-[the quantitative Green proof](actual_terminal_green_capacity_bound.md#2-the-actual-endpoint-closes-polynomially-at-every-parity).
+[the quantitative Green proof](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_terminal_green_capacity_bound.md#2-the-actual-endpoint-closes-polynomially-at-every-parity).
 No estimate of a sum of absolute Green currents is used here.
 
 ## 1. A complete exact energy comparison
@@ -161,7 +161,7 @@ necessary quantitative condition such a construction must meet.
 
 ## 3. Original-source scope
 
-The [literal all-input cup slide](actual_terminal_source_normalization_packet.md)
+The [literal all-input cup slide](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_terminal_source_normalization_packet.md)
 now strengthens the test to an ACTUAL fixed source trajectory:
 
     R23 p=N R12^(-1)e0, R12 R23 p=N e0.
@@ -176,7 +176,7 @@ Their scalar closures retain cancellation: the second complete
 packet is x^(-d)(Q^(-j) conjugate(F_j))_j and sums to the unit phase
 x^(-d)Q. It is an explicit factorial divergence, with its endpoint
 and arbitrary spectator finite differences retained in the linked
-proof. The [shrinking-clock disk bound](actual_normalization_clock_disk_bound.md)
+proof. The [shrinking-clock disk bound](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_normalization_clock_disk_bound.md)
 now proves a sharp zero-exponent energy estimate for this particular
 normalization packet in a different coherent metric. No general
 interior-source energy estimate follows from that repair.

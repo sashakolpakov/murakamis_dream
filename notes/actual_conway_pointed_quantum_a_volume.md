@@ -6,13 +6,13 @@ A recurrence operator does not determine a knot invariant by itself: a recurrenc
 
 At a root of unity, some coefficients of the recurrence may have poles when solved in forward form. The reconstruction keeps the whole Laurent expansion, so those poles can cancel before evaluation. Only a bounded number of derivatives of the initial data is needed, with a bound determined by the fixed operator and independent of the quantum level.
 
-For the knots of the [net-twist theorem](actual_conway_net_twist_volume.md) and its [closure extension](actual_conway_arbitrary_closure_volume.md), this exact reconstruction has exponential growth equal to the knot complement volume. Every admitted knot is isotopic to a sufficiently long strict Conway knot. The closure extension also allows cap closures and zero sums, retaining the connected-sum factors until the hyperbolic input is shown to equal one strict factor. The proof transfers the invariant-volume theorem through an exact identity. The [strict-tree longitude theorem](actual_strict_tree_geometric_characteristic.md) also identifies the selected classical geometric factor for the covered strict presentations and their marked reductions. Comparison of the entire quantum module remains a further question.
+For the knots of the [net-twist theorem](../papers/conway-reductions/README.md) and its [closure extension](../papers/conway-asymptotics/README.md), this exact reconstruction has exponential growth equal to the knot complement volume. Every admitted knot is isotopic to a sufficiently long strict Conway knot. The closure extension also allows cap closures and zero sums, retaining the connected-sum factors until the hyperbolic input is shown to equal one strict factor. The proof transfers the invariant-volume theorem through an exact identity. The [strict-tree longitude theorem](../papers/meridian-expansions/README.md) also identifies the selected classical geometric factor for the covered strict presentations and their marked reductions. Comparison of the entire quantum module remains a further question.
 
 The same reconstruction and volume conclusion also apply to the
-[quantitative circle-tree theorem](actual_all_circle_quantitative_volume.md),
+[quantitative circle-tree theorem](../papers/circle-tree-volume/README.md),
 under its explicit condition
 \(\sum_vd_v/(d_v^2+n_v^2)\le2^{-25}\).
-Alternatively, the [local tree criterion](actual_all_circle_local_message_volume.md)
+Alternatively, the [local tree criterion](../papers/circle-tree-volume/README.md)
 \(\max_vd_v/(d_v^2+n_v^2)\le2^{-120}\) supplies the same conclusion.
 The [directed criterion](actual_all_circle_directed_volume.md), including its sufficient bound \(|n_v|\ge2^{27}\) at every vertex and its mixed degree alternative, supplies the same volume conclusion. The exact operator identity is valid for every knot; each volume theorem
 supplies its volume growth, including the short powers admitted by
@@ -49,7 +49,7 @@ Two coordinates must be distinguished:
 
 The parameter \(\alpha\) is the unrolled color, \(x\) is its raw exponential coordinate, and \(M\) is the marked meridian coordinate. The change \(M=-q_Nx\) includes a sign and a quantum shift. In particular, the complete color \(\alpha=N-1\) gives \(x=-q_N^{-1}\) and \(M=1\). The quotient color \(\alpha=j-1\) gives \(x=q_N^{j-1}\) and \(M=-q_N^j\).
 
-The [single-component quotient-color theorem](root_orbit_pointing.md) proves
+The [single-component quotient-color theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/root_orbit_pointing.md) proves
 
 \[
  F_N(-q_N^j)=C_j(q_N)\quad(1\le j\le N),\qquad
@@ -247,7 +247,7 @@ This is the fixed Ore gauge: it changes the recurrence coefficients in the nonco
 
 ## 5. A positive determinant formula for the same limit
 
-The scalar in (13) is signed and can involve substantial cancellation. There is also a positive algebraic formulation, supplied by the [pointed Gram-period theorem](pointed_a_gram_period.md). It is a different exact expression, not the result of taking absolute values of the summands in (13).
+The scalar in (13) is signed and can involve substantial cancellation. There is also a positive algebraic formulation, supplied by the [pointed Gram-period theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/pointed_a_gram_period.md). It is a different exact expression, not the result of taking absolute values of the summands in (13).
 
 Use the fixed derivative bound \(B=D(s-1)\). At level \(N\), introduce the Taylor coefficients through order \(B\) of every color from \(j_0\) to \(N\). Put these unknowns into a vector \(y\). The square banded system \(\mathsf M_Ny=b_N\) fixes the first \(d\) color blocks to the actual jets of \(c_0\), and imposes the generic recurrence (7) modulo \(t^{B+1}\) at subsequent steps. The selector \(\mathsf R_N\) keeps the constant coefficient of each color block. Define
 
@@ -281,7 +281,7 @@ The finite valuation argument gives \(\ker\mathsf M_N\subset\ker\mathsf R_N\) an
 
 The bracket extracts the indicated polynomial coefficient, and the denominator is positive. On the orthogonal complement of \(\ker\mathsf M_N\), the matrix \(\mathsf H_N\) is positive definite. The derivative in \(z\) of the bordered Schur complement is the squared norm of the unique constant-color output. The zero modes contribute precisely the common factor \(\lambda^{\nu_N}\). This proves the ratio, while Cauchy–Binet expresses its coefficients as nonnegative sums of squared minors with the source border retained.
 
-For a fixed braid presentation of the knot with \(b\) strands, the [ordinary-color bound](regularized_kashaev_period.md) gives
+For a fixed braid presentation of the knot with \(b\) strands, the [ordinary-color bound](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/regularized_kashaev_period.md) gives
 
 \[
  \mathscr G_N(P,j_0)=|K_N(K)|^2+O_K(N^{2b-1}).
@@ -316,12 +316,12 @@ These are norm equalities for the selected periods. They do not identify an enti
 
 For the knots in the theorem, three objects are available: a genuine all-level ADO annihilator, fixed finite data selecting its solution, and an exact complete period with the knot-volume limit. The operator exists before the period is evaluated. Its initial jets contain no level-dependent exponential normalization, and (11) shows that a different invariant has not been substituted.
 
-The [full microscopic expansion](actual_main_meridian_filtered_characteristic.md), combined with the [strict-tree longitude theorem](actual_strict_tree_geometric_characteristic.md), identifies the selected geometric factor for the strict long-twist class and the previously established summed and local circle-tree classes. The [directed all-orders theorem](actual_all_circle_directed_all_orders.md) now supplies the shifted-chart expansion for every directed certificate, so the selected-factor conclusion also holds for those additional cases. This uses the full expansion, not just the leading volume limit.
+The [full microscopic expansion](../papers/meridian-expansions/README.md), combined with the [strict-tree longitude theorem](../papers/meridian-expansions/README.md), identifies the selected geometric factor for the strict long-twist class and the previously established summed and local circle-tree classes. The [directed all-orders theorem](../papers/meridian-expansions/README.md) now supplies the shifted-chart expansion for every directed certificate, so the selected-factor conclusion also holds for those additional cases. This uses the full expansion, not just the leading volume limit.
 
 Comparing the entire pointed quantum module with the marked regulator germ remains a stronger problem. The crossing-circle deformation used to prove the volume theorem keeps the main meridian complete. It is not by itself a semiclassical theorem for varying that main-meridian ADO coordinate. Likewise, a rational root-state solution always gives a central monodromy eigenvalue \(1\); this does not identify its central spectral curve with the classical knot \(A\)-polynomial.
 
 The [complete-meridian zero theorem](actual_ado_complete_meridian_zero_accumulation.md) gives an explicit restriction on that comparison. Exactly \(F_N(q_N)=1\), whereas \(F_N(1)=K_N(K)\) has positive volume growth. Actual zeros therefore approach \(M=1\) within \(O(1/N)\), and a uniform nonzero scalar branch for the unchanged state across completeness is impossible. The full modified state has a pole at \(M=q_N\).
 
-The ordinary-color argument also forces every polynomial annihilator in the squared coordinate to have the right factor \(Y-1\), as proved in the [peripheral normal-period theorem](peripheral_normal_period.md). This condition now holds for all knots covered here. It retains a boundary module and a normal derivative of the state; it does not identify the geometric longitude factor. The [regular-period construction](regularized_kashaev_period.md) subtracts the ordinary-color polar data and gives an affine equation for the resulting regular remainder. Its neighborhood asymptotics remain an additional problem.
+The ordinary-color argument also forces every polynomial annihilator in the squared coordinate to have the right factor \(Y-1\), as proved in the [peripheral normal-period theorem](peripheral_normal_period.md). This condition now holds for all knots covered here. It retains a boundary module and a normal derivative of the state; it does not identify the geometric longitude factor. The [regular-period construction](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/regularized_kashaev_period.md) subtracts the ordinary-color polar data and gives an affine equation for the resulting regular remainder. Its neighborhood asymptotics remain an additional problem.
 
 No equality of full annihilator ideals with another knot recurrence ideal, equality of classical symbols, or efficient minimal-order algorithm is asserted here. Nor does the corollary enlarge the knot class to arbitrary short twists, trees growing with \(N\), or all arborescent presentations. None of these additional statements is needed for the exact reconstruction and limits (14), (20) and (21).

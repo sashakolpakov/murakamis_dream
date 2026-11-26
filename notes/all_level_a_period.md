@@ -122,7 +122,7 @@ Consequently the total pole budget of the companion product obeys
 
 This counts tangencies of the moving curve M=-q^j as well as
 ordinary root-orbit zeros. The simpler meridian bound D from
-[the preceding note](bounded_meridian_jets.md) cannot just be
+[the preceding note](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/bounded_meridian_jets.md) cannot just be
 reused for q-jets, because M moves with q.
 
 Use t=q/q_N-1 and expand
@@ -193,7 +193,7 @@ first transport it by the fixed rational gauge already checked in
 [the pointing note](kashaev_ado_pointing.md). Retain the actual
 whole factor d_N in comparing states. Its exact evaluation is
 N_N(1)=eta_N <K>_N/N; its reference residue and target jet are
-those in [the preceding note](bounded_meridian_jets.md#5-the-full-ado-normalization-keeps-its-residue-and-first-jet).
+those in [the preceding note](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/bounded_meridian_jets.md#5-the-full-ado-normalization-keeps-its-residue-and-first-jet).
 No generic factor such as 1+M^N is being replaced by one.
 
 The theorem has these inputs: a specified actual nonzero all-level
@@ -221,15 +221,15 @@ diagnostics, not evidence that an unaudited knot operator has the
 required symbol or volume growth. No novelty claim is made for the
 standard recurrence or sparse-polynomial arguments.
 
-The subsequent [affine source construction](affine_quantum_a_period.md)
+The subsequent [affine source construction](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/affine_quantum_a_period.md)
 retains a specified inhomogeneous source as an extension class,
 with a cyclic resolvent when its homogeneous block is nonresonant.
-The [adequacy argument](adequacy_and_algebraic_periods.md) proves
+The [adequacy argument](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/adequacy_and_algebraic_periods.md) proves
 that fixed algebraic meridian sections cannot reproduce the
 actual adequate color periods. It supplies nonsplitting tests
 for this extension, without inferring the missing volume norm.
 
-The [cyclotomic Mellin uniqueness theorem](mellin_cyclotomic_jet_uniqueness.md)
+The [cyclotomic Mellin uniqueness theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/mellin_cyclotomic_jet_uniqueness.md)
 extends the same bounded-jet argument to the whole rational
 root generating function. The actual source window through
 orders zero to D(s-1), together with the exact cyclotomic

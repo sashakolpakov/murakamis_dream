@@ -219,11 +219,12 @@ names each module's manuscript statement. The
 [statement contracts](repro/PAPER_FORMAL_COVERAGE.md) check the precise
 hypotheses and conclusions; their dictionaries distinguish complete formal
 statements from components and conditional applications. The
-[cleanup record](repro/PROOF_PATH_CLEANUP_2026-11-25.md) gives the source
+[manuscript and logic audit](repro/MANUSCRIPT_AND_LOGIC_AUDIT_2026-11-25.md) gives the source
 changes and replay.
 
 Superseded proof sources and modules are deleted rather than copied
-into backup directories. Use Git history for earlier tracked versions.
+into backup directories. The [cleanup record](repro/results/repository-cleanup/summary.json)
+identifies the retained material and the pushed source snapshot.
 
 To build only the standalone Conway paper:
 
@@ -247,6 +248,6 @@ python3 tools/build_manuscript_guide.py
 | `formal-real/` | Gram, Fourier–Hermite, Conway assembly and variational proofs in Mathlib |
 | `book/` | Illustrated-guide sources and editable diagrams |
 | `docs/` | Published guide, dependency graph and PDFs |
-| `notes/` | Detailed arguments and historical research notes |
+| `notes/` | Supporting arguments and current research |
 | `experiments/` | Verification programs and recorded calculations |
 | `tools/` | Paper, guide, graph and figure builders |

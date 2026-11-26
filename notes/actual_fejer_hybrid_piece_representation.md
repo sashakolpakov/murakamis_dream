@@ -42,7 +42,7 @@ GREEN ports cut in half would NOT satisfy them.
 
 ## 2. Each piece has one actual signed circle development
 
-Apply the [cooriented developing-disk argument, §2](actual_fejer_marked_signed_development.md)
+Apply the [cooriented developing-disk argument, §2](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_fejer_marked_signed_development.md)
 to each piece, with the following explicit multigraph and boundary adaptations.
 Its new protected edge need not be MAIN. If it is MAIN, the two adjacent
 triangles have protected middles, so they cannot be negative. If the
@@ -99,7 +99,7 @@ nondegenerate. The original main prefixes telescope and cups/caps give
 their literal inverse pairs, exactly as before the cuts.
 
 For a GREEN port both triangles lie in the same piece, so its actual
-source collar C is already supplied by the [literal signed Green formula, §3](actual_fejer_marked_signed_development.md)
+source collar C is already supplied by the [literal signed Green formula, §3](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_fejer_marked_signed_development.md)
 and is conjugated by that piece's ONE gluing map.
 
 For an original CROSS port whose two triangles lie in different pieces,
@@ -180,7 +180,7 @@ original auxiliary meridian to identity. The literal threading word
 is then the identity. Its original outer product may be axial (loxodromic or elliptic),
 parabolic or central, because the removed matching edge imposed no
 remaining tangency. Choose its recorded peripheral flag and use the
-[proved zero-volume axis/parabolic filling-cap construction, §4](general_representation_volume_kernel_strictness.md). No artificial
+[proved zero-volume axis/parabolic filling-cap construction, §4](../papers/casimir-source-asymptotics/README.md). No artificial
 outer contact is inserted.
 
 This gives a representation rho of the original drilled group, factoring
@@ -189,7 +189,7 @@ through the actual meridional identity smoothing, with
   Vol(rho)=Vol(rho_sm)=2pi W_D                         (2)
 
 IF the exact hybrid decomposition/regularity hypotheses in section1
-have been established for that maximum. The [representation-volume bound and strict-kernel theorem, §§1–3](general_representation_volume_kernel_strictness.md)
+have been established for that maximum. The [representation-volume bound and strict-kernel theorem, §§1–3](../papers/casimir-source-asymptotics/README.md)
 then give W_D<=Vol(Y_D)/(2pi). If at least one original meridian was
 killed, the already proved strict-kernel bound is strict; comparison
 with the known all-cross lower bound would exclude such a maximizing

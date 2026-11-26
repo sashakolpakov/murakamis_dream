@@ -23,7 +23,7 @@ sine factorial and beta_a=S_(2a)/S_a^2. Retain the original constants
     P_s(T)=product_(j=a)^(m-1)(T-Q^j).
 
 All heads in this section use the specified moving-factorial continuation
-of the [regular original source](actual_original_network_resonant_source_envelope.md).
+of the [regular original source](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_original_network_resonant_source_envelope.md).
 Let sigma=i+j, r=sigma-m, x=2a-r=d+a-sigma, T=Q^sigma.
 At the root its ordinary channel cup is exactly
 
@@ -59,7 +59,7 @@ The remaining head dependence of h0_a W_a pi_a is
        R_a(q^(sigma-2R);c_sigma)R_a(q^(sigma-2S);c_sigma).
 
 The entire coefficient C_a in the
-[absolute regulator normalization](actual_matching_edge_deficient_packet_regulator.md)
+[absolute regulator normalization](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_matching_edge_deficient_packet_regulator.md)
 has precisely this dependence, because its residual sine product obeys
 
     V_a(d-sigma)=q^(-sd-s sigma)P_s(T).
@@ -111,7 +111,7 @@ principal branch. The numerator in (2a) has degree 2a+s=d.
 Fix the labeled certified diagram and the common boundary sample
 r_frame=N rho, s_frame=exp(-2pi i alpha)-1. The parameters range in
 the compact sets of the
-[common boundary chart](actual_original_network_resonant_boundary_chart.md).
+[common boundary chart](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_original_network_resonant_boundary_chart.md).
 Keep the actual physical half-index shifts, auxiliary integer offsets,
 all original turns, the ordinary or marked exposed cap, and fixed labels
 with S=sum_i(d-2a_i)=o(N).
@@ -355,7 +355,7 @@ unproved global winding coefficient.
 Fix the two neighboring original physical heads from the primitive
 slice theorem. Equivalently take its fixed integral complementary
 log-clock basis C and write Z=Z_N+Cw, w in C^n, n=R-1. The existing
-rank theorem and [finite core curvature](actual_q_hahn_boundary_model_curvature.md)
+rank theorem and [finite core curvature](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_q_hahn_boundary_model_curvature.md)
 give, in this basis, a real positive reference Hessian bounded between
 cN I and CN I. The exact finite clocks and near-fold corrections change
 it by o(N). On a fixed complex neighborhood all fixed derivatives of

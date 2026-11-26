@@ -13,19 +13,19 @@ positive quantum state or a claim that real convexity determines
 the original finite period.
 
 Current source frontier (27 October):
-[exact complete Fourier localization](universal_resonant_fourier_source_completion.md)
+[exact complete Fourier localization](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/universal_resonant_fourier_source_completion.md)
 places the original period entirely at the resonant row; regular
 finite Fourier rows vanish exactly. The
-[all-strand Euler/Cauchy theorem](all_strand_euler_cauchy_cap.md)
+[all-strand Euler/Cauchy theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/all_strand_euler_cauchy_cap.md)
 now expresses that original period as a specified finite coefficient
 or endpoint divided difference, with the whole word retained.
-Its [physical-clock equation](actual_fusion_right_euler_clock.md)
+Its [physical-clock equation](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_fusion_right_euler_clock.md)
 has a nilpotent apparent denominator. The
-[full peripheral boundary calculation](resonant_boundary_blowup_and_actual_peripheral_line.md)
+[full peripheral boundary calculation](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/resonant_boundary_blowup_and_actual_peripheral_line.md)
 proves the required first pole cancellation and corrects a raw-prefix
 half-shift. These provide exact inputs for the geometric comparison;
 Rivin uniqueness still does not prove its selected nonzero image or
-the sharp norm. The [critical-path audit](critical_path_to_original_volume_conjecture.md)
+the sharp norm. The [critical-path audit](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/critical_path_to_original_volume_conjecture.md)
 keeps those three final gates open.
 
 ## 1. Existing scope and the correct optimization problem
@@ -57,7 +57,7 @@ Volume is strictly concave on A. The convex objective is its
 negative, rather than volume itself. An ideal triangulation alone
 does not guarantee an interior critical point. The positive
 complete triangulation from
-[the audited geometric input](ge_geometric_triangulation_audit.md)
+[the audited geometric input](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/ge_geometric_triangulation_audit.md)
 does supply one; this is where that input is decisive.
 
 ## 2. An exact flow-network representation
@@ -100,7 +100,7 @@ Its determinant is one and its first diagonal entry is
 sin beta/(sin alpha sin gamma)>0. Thus it is positive definite.
 This proves strict concavity on every affine angle domain.
 
-The existing [positive-factorial note](quantum_a_volume.md)
+The existing [positive-factorial note](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/quantum_a_volume.md)
 already gives the independent stationary-point argument. Choose
 compatible cusp horospheres in a complete geometric triangulation.
 The truncated length of each global edge agrees across its incident
@@ -287,7 +287,7 @@ issue by staying in the positive primal domain.
 
 ## 6. A paired source identity needed by a quantum flow lift
 
-The [actual cyclic-source comparison](controlled_cyclic_euler_source.md)
+The [actual cyclic-source comparison](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/controlled_cyclic_euler_source.md)
 has B_N(M)=gamma_N(M) J_N, with nu=M^2 and primitive center
 s=1-M^(2N). Its normalization obeys an exact inversion relation:
 
@@ -319,7 +319,7 @@ from the scalar identity alone.
 
 Actual cap gluing also retains an operator, not only this scalar.
 Use the actual dual colors and caps of
-[the pivotal-duality calculation](relative_pivotal_duality.md).
+[the pivotal-duality calculation](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/relative_pivotal_duality.md).
 Write x=-M/q, x^vee=x^(-1)Q^(-1), and
 
     C_x e_a=(-x)^a Q^(a(a+1)/2)e_(N-1-a).
@@ -348,7 +348,7 @@ cycle, and gave a nonzero contribution at the geometric point.
 The local frame and cap identities above constrain that lift;
 they do not construct the global cycle transport.
 
-The [actual normal-period calculation](actual_geometric_normal_period.md)
+The [actual normal-period calculation](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_geometric_normal_period.md)
 already constructs the geometric critical point and its nonzero
 formal transverse block from the original crossing action. The
 additional question here is its occurrence in the selected finite
@@ -387,7 +387,7 @@ Reproduce with:
 
 ## 8. The local source connection and its resonant lattice
 
-The [subsequent exact source calculation](cyclic_source_connection_and_resonant_flags.md)
+The [subsequent exact source calculation](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/cyclic_source_connection_and_resonant_flags.md)
 supplies a local part of the required lift. The entire comparison
 scalar is an explicit cyclic product with its marked phase and
 rational logarithmic connection. Its generating action has a
@@ -436,7 +436,7 @@ sectors retained. These formulas specify what descent must
 compare. Neither classical nilpotence nor an upstairs volume
 alone supplies the actual selected-state comparison.
 
-The [actual braid-source calculation](actual_braid_group_and_spectral_source.md)
+The [actual braid-source calculation](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_braid_group_and_spectral_source.md)
 now shows why nilpotence must be restricted to an appropriate
 period extension or quotient. The entire original braid image
 has a connected subgroup with an SL_2 quotient at every level,
@@ -468,7 +468,7 @@ whole root transport
     sum_(j=0)^(N-1)c(zeta_N,zeta_N^jY)=0
 
 implies a single rational solution c=sigma(b)-b. The
-[proof](additive_unipotent_cyclotomic_descent.md) allows ramified
+[proof](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/additive_unipotent_cyclotomic_descent.md) allows ramified
 moving poles. Together with the full multiplicative theorem it
 solves every rational upper triangular transport with identity
 cyclic curvature. In particular finite unipotence makes the
@@ -482,11 +482,11 @@ The geometric formal period has the structure
 
 The algebraic coefficient a_0 is its Gaussian density; the leading
 coefficient S_0 of the logarithm is the marked regulator action.
-The [uniform density theorem](quantum_source_bridge_extension.md)
+The [uniform density theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/quantum_source_bridge_extension.md)
 now compares that variable Gaussian density with the holonomy
 torsion for arbitrary knot braids. The actual quantum period has
 also been constructed as the exact
-[whole cyclotomic Mellin residue](cyclotomic_mellin_residue.md).
+[whole cyclotomic Mellin residue](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/cyclotomic_mellin_residue.md).
 
 The remaining quantum statement is that this selected residue
 carries the marked geometric period with its volume norm. To use
@@ -496,7 +496,7 @@ actual source, cut and peripheral factors. The optimizer and its
 unique formal shape lift supply the geometric branch of this
 comparison. They do not yet establish those quantum identities.
 
-The [applicability audit](regulator_curvature_obstruction.md) also
+The [applicability audit](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/regulator_curvature_obstruction.md) also
 proves that absolute zero curvature cannot model the marked
 regulator in a regular rational differential limit. Its dlog M
 extension has a nonzero residue, surviving finite covers. Thus
@@ -505,7 +505,7 @@ carrying the same marked periods. Identity curvature of that
 relative object is an input to prove; equal noncentral absolute
 curvatures alone do not imply it for the entire Hom module.
 
-The [whole-source Newton theorem](whole_source_newton_transport.md)
+The [whole-source Newton theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/whole_source_newton_transport.md)
 provides an explicit quantum boundary object before taking jets.
 Writing U=Y^N and X=Y+Y^(-1), its source lattice has basis
 v_n=(1-Y) product_(r=1)^n(X-Q^r-Q^(-r)), n<N. The invariant
@@ -520,7 +520,7 @@ source object before replacing it by ordinary root values.
 
 ## 11. The source chart now lifts to a whole dilogarithm connection
 
-The [actual Rees construction](irregular_rees_full_cyclic_module.md)
+The [actual Rees construction](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/irregular_rees_full_cyclic_module.md)
 now supplies a full cyclic quantum-normal chart whose root center is
 
     k=gamma M^N/U,
@@ -532,7 +532,7 @@ At fixed M the symplectic form is both du wedge dp and
 -dLog k wedge dLog e. This connects the source to the full
 fixed-Casimir leaf, extending the earlier reducible source charts.
 
-The [exact period transgression](rees_gauss_period_transgression.md)
+The [exact period transgression](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/rees_gauss_period_transgression.md)
 further gives the function generating the difference of the specified
 source and holonomy primitives. Write B=M^N and work with B as an
 independent coordinate first. Then
@@ -553,7 +553,7 @@ W-Li_2(1)=-Li_2(1-U)-(Log U)^2/2 extends across U=1, including
 the resolved parabolic source. This is a whole function identity;
 quantum jets are subsequent restrictions.
 
-The [whole crossing factorization](rees_whole_crossing_source_factorization.md)
+The [whole crossing factorization](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/rees_whole_crossing_source_factorization.md)
 also derives the marked cyclic factor and resonant dilogarithm period
 directly from the actual Verma R. Its rational conjugation gives the
 full characteristic holonomy braiding. The source vacuum and every
@@ -564,7 +564,7 @@ comparison with the marked geometric period and its physical N-growth
 is still required. A choice of primitive in (11.1) alone does not
 prove that comparison.
 
-The [quantum matrix/base theorem](quantum_matrix_base_intertwiner_torsor.md)
+The [quantum matrix/base theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/quantum_matrix_base_intertwiner_torsor.md)
 also removes the need to guess the local matrix part. On the dense
 quantized-leaf cover it is constructed by a finite sum of matrix units.
 The resonant dilogarithm generates all six characteristic center
@@ -572,7 +572,7 @@ formulas after the actual Cartan transport. What remains in this
 local theorem is the quantized base and the independently specified
 source residual, rather than another matrix deformation calculation.
 
-The [pointed flatness theorem](flat_pointed_torsor_and_quantum_lifting.md)
+The [pointed flatness theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/flat_pointed_torsor_and_quantum_lifting.md)
 now makes one sufficient rigidity hypothesis exact. Over R=k[[h]],
 a separated marked comparison algebra with reduced fiber k is R/I;
 if it is h-torsion-free, then I=0 and the whole formal comparison
@@ -586,7 +586,7 @@ do not imply it; the note gives exact rational counterexamples.
 
 ## 12. The actual source now has a fixed compact period class
 
-The [compact coherent source theorem](compact_coherent_source_period.md)
+The [compact coherent source theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/compact_coherent_source_period.md)
 replaces an unspecified final functional by an exact algebraic cycle
 for the original state. Its surface is
 
@@ -606,10 +606,10 @@ wall functions and their finite endpoint rows remain explicit.
 The physical principal symbols have the actual Gauss coordinates
 and their holonomy symplectic form.
 
-The [strict relative-word transport](relative_word_green_transport.md)
+The [strict relative-word transport](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/relative_word_green_transport.md)
 carries the whole weighted state and all least-moment Green currents
 through this same actual source. The
-[constrained Verma extension](constrained_verma_word_source_extension.md)
+[constrained Verma extension](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/constrained_verma_word_source_extension.md)
 retains all intermediate head constraints without either wall or
 characteristic localization. Thus these are specified whole
 current/source objects, not an arbitrary final normalization.
@@ -633,7 +633,7 @@ does not prove that global pushforward or its selected volume norm.
 
 ## 13. A nonzero geometric boundary class is now computed
 
-The [resolved centralizer calculation](springer_centralizer_boundary_source.md)
+The [resolved centralizer calculation](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/springer_centralizer_boundary_source.md)
 now supplies the relevant shell geometry. The full geometric framing
 torsor PGL2 over a nonzero unipotent cut meridian has additive
 transition b_S=b_N+1/(v eta). This torsor cannot extend across the
@@ -646,7 +646,7 @@ which is exactly the actual compact-source cotangent torsor X.
 The resulting threefold Y has Y minus E=PGL2 and exceptional
 divisor E=X. The nontrivial Chern transition is retained.
 
-The [explicit actual gauge calculation](compact_framing_gauge_and_boundary_residue.md)
+The [explicit actual gauge calculation](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/compact_framing_gauge_and_boundary_residue.md)
 computes its principal Gaussian class, including the extra common
 momentum p that is absent from the fixed-cut-flag B1 chart. Its
 whole classical form identity is
@@ -673,7 +673,7 @@ to this exceptional residue. Higher Green moments can contain
 normal logarithms, so dropping their relative endpoints would
 erase the very class being compared.
 
-The [actual Weyl source adapter](twisted_cotangent_source_and_weyl_gluing.md)
+The [actual Weyl source adapter](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/twisted_cotangent_source_and_weyl_gluing.md)
 also now has its exact scalar square
 c_N=N M^(N-1)/S_N(M^2), equal to the original modified-dimension
 function times its recorded phase and N factor. Its marked rational
@@ -683,7 +683,7 @@ unipotent dressing or selected regulator norm.
 
 ## 14. The cycle correction, whole flux and an actual moving-q source
 
-The [Gauss-wall calculation](gauss_wall_flux_and_actual_peripheral_character.md)
+The [Gauss-wall calculation](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/gauss_wall_flux_and_actual_peripheral_character.md)
 now computes the difference between the physical and exceptional
 compact cycles. With F=1-eta v, the closed form
 
@@ -704,10 +704,10 @@ The log-deck character is one at every root but has first
 logarithmic-Q derivative 2N^2, so root values alone lose data.
 This geometric period lift is not yet the actual off-root
 finite-source normal connection. The
-[exponential-current homotopy](compact_exponential_cech_current_detour.md)
+[exponential-current homotopy](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/compact_exponential_cech_current_detour.md)
 has a holomorphic target and also does not intertwine the clock.
 
-The [actual integral-color calculation](integral_color_coherent_symbols_and_uniform_poles.md)
+The [actual integral-color calculation](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/integral_color_coherent_symbols_and_uniform_poles.md)
 does address the latter issue. Along q=exp(pi*i lambda/N),
 M=-q^N, the head is a genuine quotient of the common Verma module.
 Exact quantum-factorial diagonal maps retain the source, every
@@ -726,7 +726,7 @@ with the whole finite clock, not merely its leading symbol.
 At every root U is precisely the actual balanced frame map;
 its top phase is the original i^(N+3). The off-root factorial
 residual is explicit and remains present. The
-[frame/period theorem](quantum_factorial_frames_and_cyclotomic_source.md)
+[frame/period theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/quantum_factorial_frames_and_cyclotomic_source.md)
 also computes the whole dilogarithmic frame function. Another
 natural frame has conditioning exp[N(log(2pi)-1)+o(N)] at the
 root. A frame change therefore cannot discard its metric or source.
@@ -742,7 +742,7 @@ required exponential norm remains necessary.
 
 ## 15. The normal source comparison now has one whole Gamma line
 
-The [whole Gamma-source theorem](whole_gamma_frame_profile.md)
+The [whole Gamma-source theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/whole_gamma_frame_profile.md)
 computes the remaining actual frame factor, rather than replacing
 it by its root value. Let c=2pi*i,
 
@@ -803,7 +803,7 @@ been retained, not the critical shapes alone.
 
 ## 16. The actual quantum-normal crossing response carries the regulator
 
-The [full-head source theorem](full_head_gamma_source_transport.md)
+The [full-head source theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/full_head_gamma_source_transport.md)
 now removes a color-range restriction in the scalar comparison.
 Writing beta_j(M)=(M^2Q_0;Q_0)_j/(Q_0;Q_0)_j, the lower chart
 uses beta_j(M_-); the upper chart uses its actual complement,
@@ -818,14 +818,14 @@ The source, dual lattice and position moments are transported;
 no separate zero or pole coordinate is dropped. A bounded
 whole quadratic chirp completes the source-frame comparison.
 
-The [actual crossing calculation](actual_crossing_q_normal_meridian_ratio.md)
+The [actual crossing calculation](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_crossing_q_normal_meridian_ratio.md)
 shows why the full transport is more than this source gauge.
 Changing Log Q by ca/N^2 changes quadratic index powers by
 order one. Exact coefficient ratios have a nonconstant bulk
 insertion; nonzero periodic sine walls have genuinely different
 zero divisors, and the q-normal central power retains a clock.
 Thus the scalar/source unit is not a fixed-fiber R intertwiner.
-The [independent spectral theorem](crossing_normal_spectra_obstruction.md)
+The [independent spectral theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/crossing_normal_spectra_obstruction.md)
 strengthens this: the generic integral crossing multiplicities
 are 1,3,...,2N-1, whereas the typical root crossing has N copies
 of each eigenvalue. No scalar-adjusted similarity on that same
@@ -834,7 +834,7 @@ one. The proposed torsor comparison must act on the selected
 period or an extended base instead.
 
 There is nevertheless a constructive whole-word result. The
-[closed bulk-response theorem](quantum_normal_crossing_bulk_response.md)
+[closed bulk-response theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/quantum_normal_crossing_bulk_response.md)
 keeps the original cut 1/N, all Cartan scalars, the auxiliary
 pivot K^(1-N), and its exact adapter to the ordinary integral
 closure. For a fixed knot braid its actual root array is
@@ -881,10 +881,10 @@ the required global steps toward the unchanged volume conjecture.
 ## 17. A source-corrected normal equation removes a precise ambiguity
 
 Root equations alone leave central multipliers c(U), U=Y^N.
-The [regular-profile audit](central_source_freedom_in_regular_profiles.md)
+The [regular-profile audit](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/central_source_freedom_in_regular_profiles.md)
 shows that even the same root operator, its bounded affine source
 and all color values allow such changes to a whole profile.
-The [source-corrected theorem](source_corrected_quantum_normal_connection.md)
+The [source-corrected theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/source_corrected_quantum_normal_connection.md)
 now supplies a constructive restriction from the actual whole
 preoperator, rather than imposing an unrelated normalization.
 
@@ -928,7 +928,7 @@ for the knot module in the intended general theorem.
 
 ## 18. The canonical Mellin source supplies the witness for every knot
 
-The [actual Mellin normal-source theorem](actual_mellin_normal_source_rigidity.md)
+The [actual Mellin normal-source theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_mellin_normal_source_rigidity.md)
 now removes the selected-symbol hypothesis in that sourced
 polarization. Its original formal series satisfies
 
@@ -951,7 +951,7 @@ extension, so the rational normal obstruction vanishes.
 The selected Mellin line is horizontal, and compatible central
 rescalings on it are constant. Its exact residue remains K_N.
 
-The [whole-function reconstruction theorem](mellin_cyclotomic_jet_uniqueness.md)
+The [whole-function reconstruction theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/mellin_cyclotomic_jet_uniqueness.md)
 also handles homogeneous additions outside that line. If the
 leading color coefficient has Y-span D and s monomials, set
 
@@ -977,7 +977,7 @@ can identify its period with the actual one.
 
 ## 19. One actual framing-current boundary map is now explicit
 
-The [cut-current theorem](actual_gauss_wall_cut_current_complex.md)
+The [cut-current theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_gauss_wall_cut_current_complex.md)
 computes the two anchored Gauss-wall primitives of the original
 coherent kernel. Their Cech difference has class
 
@@ -1004,7 +1004,7 @@ this yields an exact two-current equation: the first framing
 divergence becomes the known wall row, and the second remains
 its literal finite difference.
 
-The [degree-elevated source audit](degree_elevated_wall_source_and_divided_ward.md)
+The [degree-elevated source audit](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/degree_elevated_wall_source_and_divided_ward.md)
 also identifies why that row is not already supplied by the
 fixed-head divided-source orbit. Its ordinary binomial entropy
 phase can change a framing critical direction, whereas the
@@ -1021,7 +1021,7 @@ prove a nonzero geometric contribution to the selected residue.
 
 ## 20. The soft optimizer is algebraic in the two boundary phases
 
-The [doubled-phase theorem](doubled_phase_rivin_optimizer.md) strengthens
+The [doubled-phase theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/doubled_phase_rivin_optimizer.md) strengthens
 Section 3's boundary potential at the whole-function level. On the
 product of the normalized geometric curve and its conjugate place put
 
@@ -1059,7 +1059,7 @@ separately marked.
 
 ## 21. A finite descended source can force the leading coefficient
 
-The [critical-source theorem](irreducible_critical_source_and_whole_norm.md)
+The [critical-source theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/irreducible_critical_source_and_whole_norm.md)
 gives a precise source target beyond classical uniqueness.
 If the ACTUAL action-normalized source line and co-source descend
 to a fixed finite critical FIELD A/F, trace duality gives
@@ -1082,7 +1082,7 @@ and dominance over its TOTAL complement remain necessary. This
 is weaker than identifying entire crossing modules, which the
 earlier spectral obstruction excludes in the naive same-fiber form.
 
-The [whole unit/level-weight theorem](whole_torsor_unit_weights_and_irregular_type.md)
+The [whole unit/level-weight theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/whole_torsor_unit_weights_and_irregular_type.md)
 also makes normalization control finite: total character weight
 O(N^d) and units 1+O(N^(-k)) give logarithmic error divided by N
 of order N^(d-k-1), hence no rate change for k>=d. A classically
@@ -1093,7 +1093,7 @@ series or classical unit value, must control those factors.
 
 ## 22. Actual cut clocks now have a global relative normal lift
 
-The [normal-residue/current theorem](centralizer_normal_residue_and_actual_cut_moments.md)
+The [normal-residue/current theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/centralizer_normal_residue_and_actual_cut_moments.md)
 constructs an actual part of the framing pushforward. On the resolved
 chart b=-a/eta,T=va, the original density has
 
@@ -1115,7 +1115,7 @@ quantization. Its monomial rows are
 They pair every actual cut matrix with its residue, and their
 derivative identity has the literal adjacent-difference covariance
 and both cut endpoints. The
-[dual-clock theorem](dual_clock_normal_cut_source.md) inverts this
+[dual-clock theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/dual_clock_normal_cut_source.md) inverts this
 map on the whole clock: T_N(P^dual_(N,w))=w^J exactly. At the scaled
 clock w=exp(z/N), its polynomials tend locally uniformly to exp(-zb)
 with factorial coefficient bounds. Every fixed normalized cut-log
@@ -1131,7 +1131,7 @@ one-clock formula or bounded unipotence.
 
 ## 23. The degree-N wall source is realized on an actual high color
 
-The [high integral-color theorem](high_integral_color_frobenius_wall_source.md)
+The [high integral-color theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/high_integral_color_frobenius_wall_source.md)
 supplies the degree-N source missing from the old fixed-head Ward
 orbit. Integral color N(r+1), in an explicit unit sign basis, has
 r+1 Steinberg blocks at q_N. Its actual regular divided powers give
@@ -1166,7 +1166,7 @@ isomorphism supplies that coupling.
 
 ## 24. The actual high-color normal source has the resolved quadric geometry
 
-The [two-clock source theorem](high_color_two_clock_normal_source.md)
+The [two-clock source theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/high_color_two_clock_normal_source.md)
 now gives more than a high-color multiplicity count. For the actual
 index J=S+NR, with S in {0,...,N-1} and R in {0,...,r},
 
@@ -1200,7 +1200,7 @@ and the full relative Green-current transport still require proof.
 
 ## 25. The normal crossing and coupled wall source are actual finite operators
 
-The [first-normal crossing theorem](high_color_first_normal_r_and_frobenius_degree.md)
+The [first-normal crossing theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/high_color_first_normal_r_and_frobenius_degree.md)
 computes the complete first-normal integral crossing. Put delta=1-Q^N.
 Transfers k>=2N vanish to order at least two; transfers N<=k<2N
 give exactly
@@ -1215,7 +1215,7 @@ the two-flag Ward formulas make it an actual differential operator
 of order at most two on the divided source. It is not a uniform
 numerical norm estimate or an all-normal-orders theorem.
 
-The [cyclotomic diagonal source](cyclotomic_diagonal_wall_current_source.md)
+The [cyclotomic diagonal source](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/cyclotomic_diagonal_wall_current_source.md)
 also replaces an unexplained Kronecker coupling by an intrinsic
 finite Fourier projector
 
@@ -1249,7 +1249,7 @@ charged terms remain in the relative complex. Its comparison
 with the geometric two-current Gaussian pushforward is still
 the next map to construct.
 
-The [actual memory-clock refinement](actual_memory_clock_and_normal_transfer.md)
+The [actual memory-clock refinement](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_memory_clock_and_normal_transfer.md)
 keeps the transfer-clock carry explicitly. With C=R-S and J=NR+S,
 a positive route has k=Delta C-(N+1)Delta R; the negative route
 has the opposite sign. At first normal order Delta R is 0 or -1
@@ -1262,7 +1262,7 @@ independent geometric current map.
 
 ## 26. All normal depths have a uniform finite divided-source filtration
 
-The [all-order theorem](high_color_all_normal_frobenius_filtration.md)
+The [all-order theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/high_color_all_normal_frobenius_filtration.md)
 now proves the stronger actual matrix statement
 
     R_0^(-1)R_j in U_(<=2j)(sl2 direct_sum sl2) tensor End(heads).
@@ -1285,7 +1285,7 @@ theorem for their resummation.
 
 ## 27. Physical polarization and the missing source scale are explicit
 
-The [actual current/conormal dictionary](controlled_fourier_current_and_conormal_dictionary.md)
+The [actual current/conormal dictionary](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/controlled_fourier_current_and_conormal_dictionary.md)
 proves that H_0 sends the OLD physical head clock to the NEW
 shift V^(-1), not to Q^R. The transformed ordinary head currents
 have explicit finite Fourier coefficients, with their integral/
@@ -1309,18 +1309,18 @@ which the normalized projector erased. This scalar identity is
 not an equality of the two root clock observables, and the
 operator normal commutators must remain in a current comparison.
 
-The [clock/current/metric audit](frobenius_clock_and_internal_centralizer_map.md)
+The [clock/current/metric audit](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/frobenius_clock_and_internal_centralizer_map.md)
 also isolates the relevant norm scope. The selected coupled anchor
 has a polynomial coherent norm by binomial cancellation. The full
 gauge or entire real source orbit need not have such a norm. The
-[finite inserted-clock graph](finite_frobenius_clock_graph_and_marked_flux.md)
+[finite inserted-clock graph](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/finite_frobenius_clock_graph_and_marked_flux.md)
 does have the exact marked wall flux and a regular source-form
 homotopy to the known physical graph, but its inserted clock is
 still not the old physical cut without the conormal adapter above.
 
 ## 28. Retaining scale and one descendant recovers the full framing form
 
-The [actual unprojectivized source theorem](actual_unprojectivized_frobenius_borel_torsor.md)
+The [actual unprojectivized source theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_unprojectivized_frobenius_borel_torsor.md)
 realizes the framing Borel on the marked STANDARD cover of the
 actual high-color Sym^N source. A normalized projector loses the
 scale needed at the chosen anchor. Its ket alone can also have
@@ -1365,7 +1365,7 @@ remain unproved.
 
 ## 29. Whole clock flow has an explicit flat endpoint lattice
 
-The [endpoint-completed current](endpoint_completed_normal_clock_euler_current.md)
+The [endpoint-completed current](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/endpoint_completed_normal_clock_euler_current.md)
 is now an exact identity of original whole divided matrices. Set
 Z=Q^N and C_Q=Q^S Z^R. Inverting their interior divided arrows
 gives regular e^dagger,f^dagger with complementary endpoint kernels.
@@ -1400,7 +1400,7 @@ For general whole insertions the extra first-normal Fr commutators
 in equation (8d) of that theorem remain. This separates a proved
 head Ward boundary from the further network/source comparison.
 
-The [whole function-algebra audit](whole_clock_function_algebra_and_endpoint_extension.md)
+The [whole function-algebra audit](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/whole_clock_function_algebra_and_endpoint_extension.md)
 constructs its regular flow lattice. Over R=k[[delta]], Z=1-delta,
 the algebras A_L=R[x^+/-1]/product_(r=0)^L(x-cZ^r) are free, and
 
@@ -1415,18 +1415,18 @@ Thus a whole function and its finite matrix value need different
 endpoint data even when arbitrarily many fixed low normal orders
 agree. This is a constructive clock-flow resolution before jets.
 
-The [global P1 source](global_frobenius_cech_source_and_endpoints.md)
+The [global P1 source](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/global_frobenius_cech_source_and_endpoints.md)
 also retains the actual source/co-source as global sections and
 Serre residue classes. Its weighted relative interval gives an
 explicit rational whole co-source, with the original pairing unit
 as density and a root-identity unipotent gauge to the normalized
-uniform row. The [relative endpoint analysis](actual_frobenius_relative_endpoint_period.md)
+uniform row. The [relative endpoint analysis](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_frobenius_relative_endpoint_period.md)
 keeps the moving endpoint rows and their connection correction.
 These results construct additional pieces of the desired whole
 object. They do not assert full geometric-source descent, nor
 infer the selected volume norm from the algebraic Rivin optimizer.
 
-The further [degree-elevation map](degree_elevation_actual_head_ward_map.md)
+The further [degree-elevation map](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/degree_elevation_actual_head_ward_map.md)
 now corrects the Fr/head endpoint mismatch on ALL matrices:
 
     (E_N C)_(ij)=((N-i)/N)C_(ij)+(i/N)C_(i-1,j-1).
@@ -1445,7 +1445,7 @@ products and the mixed normal coproduct need their ordered map.
 
 ## 30. The missing cut component is one source-marked wall line
 
-The [highest-spin complement theorem](degree_elevation_complement_bockstein_wall.md)
+The [highest-spin complement theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/degree_elevation_complement_bockstein_wall.md)
 now gives an exact algebraic reduction of that remaining cut piece.
 The quotient of End(Sym^N) by the degree-elevation image is the
 2N+1 dimensional spin-N module, with global boundary polynomial
@@ -1467,7 +1467,7 @@ on the elevation image cannot equate the two rows on this extra
 root-closed endpoint. The literal current and both nonzero source
 values are proved in that note, not assumed from a model coupon.
 
-The [Clebsch memory theorem](clebsch_memory_dilation_and_actual_r_excursions.md)
+The [Clebsch memory theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/clebsch_memory_dilation_and_actual_r_excursions.md)
 also strictifies degree elevation on arbitrary ordered OLD-head
 words, using Sym^N direct_sum Sym^(N-2) and a two-state auxiliary
 factor before splitting. Its lower channel is minimal and its
@@ -1479,7 +1479,7 @@ at even levels. No geometric Ward cancellation of those excursions
 or equality with a different high-color R is inferred.
 
 There is a positive selected-source bound in the
-[metric audit](frobenius_clock_and_internal_centralizer_map.md#7-the-selected-coupled-source-is-orthogonal-in-a-hybrid-metric):
+[metric audit](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/frobenius_clock_and_internal_centralizer_map.md#7-the-selected-coupled-source-is-orthogonal-in-a-hybrid-metric):
 the Fr-coherent/flat-head metric makes the actual root controlled
 shift unitary, Fourier/N scalar-unitary, and the coupled original
 coupon an orthogonal projector of norm one. The previously computed
@@ -1491,7 +1491,7 @@ The remaining source-sensitive calculation is therefore on a
 specified class: transport the ACTUAL relative co-source and its
 normal/charged terms to the invariant gluing line, retaining this
 wall coefficient and all lower memory channels. The
-[whole translation/gluing test](whole_translation_gluing_source_test.md)
+[whole translation/gluing test](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/whole_translation_gluing_source_test.md)
 records its six signed local norm characters and exact orbit
 pairing. Rivin's regular place supplies an algebraic evaluation
 point; the selected co-source value and regulator growth remain
@@ -1499,7 +1499,7 @@ the theorem to prove.
 
 ## 31. Actual divided words now give a whole pole-free cut contraction
 
-The [whole Ward grid theorem](whole_high_color_ward_grid_contraction.md)
+The [whole Ward grid theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/whole_high_color_ward_grid_contraction.md)
 uses genuine operators on D_(N(r+1)-1), with r=N for the selected
 high-color source:
 
@@ -1523,7 +1523,7 @@ memory-Borel resonance has therefore become an explicit actual
 Cartan-current endpoint. It has not been set to zero on an unsummed
 or moment-inserted operator.
 
-The [divided current/closure theorem](actual_divided_ward_closure_and_green_caps.md)
+The [divided current/closure theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_divided_ward_closure_and_green_caps.md)
 supplies that endpoint for every actual weighted braid word.
 For coupling-moment polynomial p it retains the exact finite
 differences Delta_t p, and the frozen pivotal cap contributes
@@ -1532,7 +1532,7 @@ after freezing the root pivot misses a supplied current. The
 new actual Cartan wall inverse is a rational unit before jets.
 Its coproduct and cap images keep the ordinary/divided mixed terms.
 
-The [full old-head memory closure](clebsch_hopf_closure_and_auxiliary_wall_homotopy.md)
+The [full old-head memory closure](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/clebsch_hopf_closure_and_auxiliary_wall_homotopy.md)
 is also explicit: an auxiliary two-row Ward contraction kills the
 upper wall on the represented old-head operator algebra and carries
 the literal source with normalized auxiliary trace1/2. This proves
@@ -1541,7 +1541,7 @@ not identify its source with the high-color or geometric ones.
 
 ## 32. The whole source itself is an actual norm-torsor trace
 
-The [Fermat-cover source theorem](whole_frobenius_source_fermat_trace.md)
+The [Fermat-cover source theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/whole_frobenius_source_fermat_trace.md)
 now constructs a source function from the original integral divided
 powers, rather than defining a new list of normal jets. On residue
 string s of high color m=N(N+1)-1 put L_s=m-s and
@@ -1583,7 +1583,7 @@ must carry these actual current, source, cap and norm data together.
 
 ## 33. Two actual physical cuts retain the whole framing input
 
-The [two-cut reconstruction](actual_two_cut_framing_port_reconstruction.md)
+The [two-cut reconstruction](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_two_cut_framing_port_reconstruction.md)
 now uses two literal diagram edge positions as a unimodular flow
 coordinate pair. Opening the second identity edge introduces no extra
 pivot or normalized trace. Its four-port tensor reconstructs the
@@ -1591,11 +1591,11 @@ original scalar with the original factor 1/N. Its full port bands
 retain the true Hopf prefix currents; their off-diagonal source values
 cannot be replaced by the source on the double diagonal alone.
 
-The [whole Green/coherent map](two_cut_matrix_green_and_coherent_source.md)
+The [whole Green/coherent map](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/two_cut_matrix_green_and_coherent_source.md)
 carries both shifts, every tail and corner, and both whole physical
 clocks to a global relative source. A bounded interior port shift
 also has a nonzero map through the same transverse Gaussian. The
-[independent audit](two_cut_port_band_current_audit.md) verifies these
+[independent audit](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/two_cut_port_band_current_audit.md) verifies these
 identities and the actual tensor tests. Neither theorem has yet
 identified the selected global framing cycle or its polar continuation.
 In relating geometric matrices to physical edge momenta, the actual
@@ -1603,7 +1603,7 @@ developed-prefix conjugation remains necessary.
 
 ## 34. The whole quantum object retains its cyclotomic and period divisors
 
-The [actual atom theorem](unfolded_atom_cyclotomic_divisors_and_two_nome_source.md)
+The [actual atom theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/unfolded_atom_cyclotomic_divisors_and_two_nome_source.md)
 now proves an exact source extension before taking quantum jets.
 For the original unfolded Ward factorial F(Q,z)=1/(z;Q)_infinity
 retain U independently and put R=F(Q,zU)/F(Q,z). At a fixed n-th
@@ -1627,7 +1627,7 @@ completion have accumulating singular data at the physical parameter
 origin, explicitly ruling out automatic meromorphic differential-line
 descent for these local objects.
 
-The [finite polar-character theorem](whole_selected_line_polar_character.md)
+The [finite polar-character theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/whole_selected_line_polar_character.md)
 remains sufficient if a WHOLE selected meromorphic line is separately
 constructed. Its pole primitive would give the volume rate directly.
 It is not a consequence of the local atoms; the actual program
@@ -1635,7 +1635,7 @@ keeps their difference transports and cyclotomic/source divisors.
 Proving the corresponding global original-source descent and
 regulator norm remains necessary.
 
-The [whole finite transport realization](whole_two_period_transport_and_actual_coefficients.md)
+The [whole finite transport realization](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/whole_two_period_transport_and_actual_coefficients.md)
 now places every actual crossing coefficient in this two-period
 object without replacing the knot state. Its first-period ratios
 are exactly the finite Pochhammer products, so the extra completion
@@ -1649,7 +1649,7 @@ with the invariant dual-nome coordinate off the root.
 
 ## 35. The actual framing cover and cap have explicit whole source data
 
-The [prefix-adapted framing theorem](prefix_adapted_two_position_framing_cover.md)
+The [prefix-adapted framing theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/prefix_adapted_two_position_framing_cover.md)
 uses signed developed prefixes U,V, not a substituted local meridian.
 On the rank-one projector quadric the physical second clock is
 k=ell_U/ell_V. Together with the original cut clock it gives a
@@ -1662,7 +1662,7 @@ Its field trace is generally nonzero. The exact reciprocal momentum
 deck still holds at completeness, and an actual prefix clock with
 its full q/M adapter realizes the normalized orientation insertion.
 
-More strongly the [identity-cap theorem](identity_cut_orientation_cover_and_marked_source.md)
+More strongly the [identity-cap theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/identity_cut_orientation_cover_and_marked_source.md)
 preserves the original source by a whole rational-form identity.
 For eta the actual second-port band variable, u=eta+eta^(-1),
 v=eta-eta^(-1), the source form is exactly
@@ -1684,7 +1684,7 @@ an equality of rational forms alone did not transport that source.
 The finite band/clock theorem and the actual polarization below
 retain the two variables independently and repair that distinction.
 
-The [finite framing-density source theorem](cyclic_framing_density_source.md)
+The [finite framing-density source theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/cyclic_framing_density_source.md)
 also computes its root filter exactly as
 
     gamma N lambda^(N-1)/(1-lambda^N)^2.
@@ -1697,7 +1697,7 @@ actual Gaussian/source pairing is not assumed.
 
 ## 36. The first correction is absolutely exact but retains relative data
 
-The [first actual Gaussian correction](figure_eight_first_loop_cap_residue.md)
+The [first actual Gaussian correction](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/figure_eight_first_loop_cap_residue.md)
 now gives a characteristic-zero test on the figure-eight coefficient
 model with the literal two external positions (a_0,a_2). It retains
 the actual three-dimensional transverse complement, every closed
@@ -1728,7 +1728,7 @@ is inferred.
 
 ## 37. Actual Fourier polarization reduces the remaining source to one index
 
-The [whole Fourier polarization](actual_two_cut_fourier_polarization_and_cap.md)
+The [whole Fourier polarization](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_two_cut_fourier_polarization_and_cap.md)
 now makes an actual change of basis on the second identity wire.
 Its Vandermonde inverse is retained before taking normal jets,
 with the exact forced connection, both endpoint carries and
@@ -1745,7 +1745,7 @@ at the first cut would have removed that coordinate and is not
 the chosen source. The finite Fourier/alias theorem preserves
 all independent power characters on unwrapped current tails.
 
-The [geometric Fourier theorem](actual_fourier_polarized_geometric_normal_block.md)
+The [geometric Fourier theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_fourier_polarized_geometric_normal_block.md)
 uses the original macroscopic open phase S_open+vt, not an
 unbounded extrapolation of bounded-band jets. The mixed Hessian
 along the old framing tangent is dLog p_e, so the enlarged
@@ -1754,14 +1754,14 @@ discrete-faithful holonomy makes (A,p_e) birational on that framing
 torsor; generic old projection caustics disappear. The marked
 regulator action is unchanged.
 
-The [extended partial-support proof](partial_geometric_support_theorem.md)
+The [extended partial-support proof](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/partial_geometric_support_theorem.md)
 applies finite proper-coefficient linear algebra and least-moment
 repair to this SAME actual root partial family. Its constructed
 operator has a geometric A-factor before the final source sum.
 The auxiliary proper root lift and whole inverse Fourier normal
 germs are explicitly distinguished.
 
-Finally the [fixed-column source theorem](actual_one_index_fourier_source_and_ward_reduction.md)
+Finally the [fixed-column source theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_one_index_fourier_source_and_ward_reduction.md)
 uses actual scalar root closure to remove the a average exactly:
 
     original period=sum_j Jtilde_(a_N,j).
@@ -1784,10 +1784,10 @@ with Z=Q^N and e=e_0 e_0^t,
     BPB inverse P inverse=Q[I+(Z inverse-1)e],
     original source matrix=e sum_(r=0)^(N-1)P^r.
 
-The [rank-one moment/source proof](actual_rank_one_multiplicative_moment_and_orbit_source.md)
+The [rank-one moment/source proof](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_rank_one_multiplicative_moment_and_orbit_source.md)
 keeps its divided wall projector, the original orbit co-source
 and both actual endpoint deletions. The
-[aligned cyclic frame theorem](flat_cyclic_source_frame_and_scalar_period.md)
+[aligned cyclic frame theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/flat_cyclic_source_frame_and_scalar_period.md)
 classifies this whole source-cyclic chart directly: its
 endpoint-corrected function/shift algebra is Mat_N. Its unmarked
 frame ambiguity is a line bundle, removed by a vector marking.
@@ -1801,7 +1801,7 @@ prefix sign sigma, the ACTUAL momentum is
 
     p=sigma[c(1-r)-ds]/[ar+bs].
 
-The [Möbius theorem](mobius_fourier_framing_and_intrinsic_norm_pole.md)
+The [Möbius theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/mobius_fourier_framing_and_intrinsic_norm_pole.md)
 gives its inverse and identifies r=infinity with the intrinsic
 pole lambda=-sigma c/a, independent of the cut s. The whole
 principal density retains the norm 1-lambda^N. For the figure-eight
@@ -1810,7 +1810,7 @@ when six divides N even though the actual finite tensor is regular.
 The independent wall divisors 1-Q^N and 1-lambda^N therefore
 cannot be equated or canceled without their actual word/source map.
 
-Finally, the [actual zero-source Fourier current](actual_fourier_source_cancellation.md)
+Finally, the [actual zero-source Fourier current](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_fourier_source_cancellation.md)
 is not an abstract countermodel. For the original two-cut tensor,
 
     W=[(I tensor B)T(I tensor B inverse)-T]/(Q-1)
@@ -1892,7 +1892,7 @@ moment reconstruction are the general algebraic progress here.
 
 ## 40. Actual horizontal transport and a universal complete cut
 
-The [actual open meridian theorem](actual_open_meridian_horizontal_source_transport.md)
+The [actual open meridian theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_open_meridian_horizontal_source_transport.md)
 now derives the port character q^(-ell nu) from the unwrapped
 crossing potential. An actual SECOND-wire scaled Vandermonde
 W_(j,b)=(M^ell Q^j)^b removes it. Its whole inverse, both normal
@@ -1903,7 +1903,7 @@ isometry of the root cyclic source complex. Its remaining
 meridian operator is the literal longitude insertion, including
 its Green/current terms.
 
-An [actual inverse-pair cut normalization](universal_resonant_cut_and_actual_source.md)
+An [actual inverse-pair cut normalization](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/universal_resonant_cut_and_actual_source.md)
 now gives a general geometric simplification. Choose the first
 initial meridian U with nonzero lower-left entry relative to J.
 The preceding upper meridians are J by discreteness. Inverse
@@ -1928,12 +1928,12 @@ in this escaping region, and the global selected geometric
 coefficient, remain unproved. No replacement of that completion
 by the sampled principal density is made.
 
-The [actual meridian/shell audit](actual_meridian_companion_source_compatibility.md)
-and [Borel divided-cap period](actual_borel_regular_fusion_and_divided_cap_period.md)
+The [actual meridian/shell audit](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_meridian_companion_source_compatibility.md)
+and [Borel divided-cap period](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_borel_regular_fusion_and_divided_cap_period.md)
 also distinguish genuine source transport from the auxiliary
 companion chart. The latter's root-center normal is abelian-local;
 it is not the hyperbolic critical branch. The next comparison
 must retain the actual word while crossing to that branch and
 controlling the marked escaping source. The three central gates
-in [the critical-path audit](critical_path_to_original_volume_conjecture.md)
+in [the critical-path audit](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/critical_path_to_original_volume_conjecture.md)
 are still open.

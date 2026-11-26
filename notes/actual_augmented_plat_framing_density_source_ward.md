@@ -12,7 +12,7 @@ period is asserted.
 
 Write Q=zeta^2, d=N-1, m=d-a, B=Q^(-N), and use the actual LARGE
 polynomial H=H_m^B(U,V) of the
-[generic white-source theorem](actual_generic_boundary_gauge_and_source.md).
+[generic white-source theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_generic_boundary_gauge_and_source.md).
 With A0=Q^d=1/(BQ), it satisfies the two exact identities
 
     (1-U)H(U/Q,V)+U(1-V)H(U,V/Q)
@@ -205,7 +205,7 @@ No independent edge maximization or cyclic wrapping is involved.
 Ordinary pivotal contractions cancel the matched Hopf insertions.
 The only cut terms are the literal dual rows of the original mark,
 computed in the next section. This is the same finite Green-product
-construction as in the [ordered Gaussian-current calculation](residual_gaussian_ward_currents.md),
+construction as in the [ordered Gaussian-current calculation](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/residual_gaussian_ward_currents.md),
 but here its local inputs are the independent-head Casimir identities
 (1),(2), not a braid mixed-Hessian model. The construction is an
 algorithm on the actual word and works at every fixed width and both

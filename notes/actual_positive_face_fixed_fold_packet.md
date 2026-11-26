@@ -168,7 +168,7 @@ For m=d-a>=a and s=m-a, the actual root numerator collision is
 
 It follows either from the original Newton coefficient identity or
 the already proved large-partner relation in
-[the source gauge theorem](actual_generic_boundary_gauge_and_source.md).
+[the source gauge theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_generic_boundary_gauge_and_source.md).
 Here UV=Q^-1 x/y. Its product is
 Q^-s y^-s P_s(x,y), while the ratio of monomials in (10) is
 (-1)^s q^[s-(m^2-a^2)] y^s. Since m+a=d and q^N=-1,

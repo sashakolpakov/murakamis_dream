@@ -19,7 +19,7 @@ $$
 =\operatorname{Vol}\bigl(S^3\setminus K_k(\mathbf p)\bigr).
 $$
 
-The twists can have independent signs and magnitudes; they are fixed before $N\to\infty$. The conclusion concerns the full original invariant. The proof below verifies the complete-radius balance hypothesis of the [general full-source filling theorem](general_complete_radius_balance_filling_volume.md) on one actual marked packing for every member of this source family. The comparison includes both level parities and the entire charge sum through that theorem.
+The twists can have independent signs and magnitudes; they are fixed before $N\to\infty$. The conclusion concerns the full original invariant. The proof below verifies the complete-radius balance hypothesis of the [general full-source filling theorem](../papers/planar-certificates/README.md) on one actual marked packing for every member of this source family. The comparison includes both level parities and the entire charge sum through that theorem.
 
 The supplied knots have bridge number at most $k$. The congruence subfamily in which every displayed braid exponent is divisible by $3$ has bridge number **exactly $k$**. This additional congruence is used only for the bridge lower bound, not for the volume theorem. Thus the family has unbounded minimal bridge complexity, rather than merely unbounded presentation width.
 

@@ -299,7 +299,7 @@ corollary uses a separately checked geometric input.
 
 Assume additionally an ACTUAL marked positive complete ideal gluing
 certificate for this augmented exterior. The
-[multi-cusp marked rigidity theorem](general_marked_multicusp_gluing_rigidity.md)
+[multi-cusp marked rigidity theorem](../papers/marked-fillings/README.md)
 identifies its decorated representation germ modulo PGL2 with a smooth
 germ whose coordinates are the primitive peripheral eigenvalue logs.
 It proves this identification on Artin rings, with the exact main

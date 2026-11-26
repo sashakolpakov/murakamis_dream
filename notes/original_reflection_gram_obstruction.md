@@ -90,7 +90,7 @@ The actual nonzero cup and cap obey
 They therefore cannot be Hermitian adjoints in a positive-definite
 reflection structure: that identity would be the squared norm
 of the nonzero cup. This is the actual isotropic cup/cap channel
-already exhibited in [the sewn-source construction](sewn_source_and_meridian_charge.md).
+already exhibited in [the sewn-source construction](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/sewn_source_and_meridian_charge.md).
 One marked cap changes its specified channel and gives the
 normalized unknot value, but it does not convert ALL ordinary
 cup/cap pairings in a multi-bridge plat into positive adjoint
@@ -156,7 +156,7 @@ a fixed number of repetitions.
 This statement concerns the transfer as an operator. A positive
 scalar identity for a particular closure could still result from
 source cancellation and a nontrivial finite-sum identity, as
-the [actual figure-eight proof](figure_eight_whole_source_identity.md)
+the [actual figure-eight proof](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/figure_eight_whole_source_identity.md)
 demonstrates. Operator positivity is stronger than that scalar
 conclusion.
 
@@ -184,9 +184,9 @@ No new positive high-weight channel satisfying these conditions
 has been constructed here.
 
 There IS already a valid positive formulation for all knots:
-the [original cyclic norm](regularized_kashaev_period.md#6-a-positive-trace-norm-gives-another-exact-formulation)
+the [original cyclic norm](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/regularized_kashaev_period.md#6-a-positive-trace-norm-gives-another-exact-formulation)
 satisfies H_N=|K_N|^2/N+O(poly(N)), and the
-[pointed A-Gram theorem](pointed_a_gram_period.md) expresses its
+[pointed A-Gram theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/pointed_a_gram_period.md) expresses its
 equivalent pointed norm by positive polynomial coefficients.
 Those constructions retain the actual source and target. They
 are not an ordinary reflection-positive word trace, and their

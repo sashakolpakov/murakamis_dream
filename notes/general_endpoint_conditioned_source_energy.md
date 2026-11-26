@@ -23,7 +23,7 @@ arbitrary positive diagonal Cauchy weights cannot remove it.
 
 Fix the original certified flat plat \(D\), with \(R\) coupons, degree
 \(d=N-1\), ordinary face targets \(d\), and two protected targets zero.
-Keep the [actual homogeneous source](actual_homogeneous_casimir_face_source.md)
+Keep the [actual homogeneous source](../papers/filling-bounds/README.md)
 and its full polynomial resolvent numerator
 
 $$
@@ -259,7 +259,7 @@ Write \(h(q)\) for the proved continuous full reference entropy. In the
 closed CROSS region \(q_b,q_c\le1/2\), it is the two-triangle entropy
 \(h_C(q)\), including the constrained split of the outer loads.
 
-The [one-sided relative-energy theorem](actual_one_sided_relative_spectral_energy.md)
+The [one-sided relative-energy theorem](../papers/casimir-source-asymptotics/README.md)
 and the CROSS interpolation bound give, uniformly on the actual finite
 supports and on the whole real spectral interval,
 
@@ -421,7 +421,7 @@ entropy problem.
 
 ## 7. Proved inputs and remaining limits
 
-The [CROSS cofactor interpolation theorem](actual_cross_cofactor_factorization.md)
+The [CROSS cofactor interpolation theorem](../papers/filling-bounds/README.md)
 already gives coefficientwise \(O(\log^2N)\) domination by the CROSS
 endpoint polynomial. That polynomial is at most \(H_{F_N}\) at both
 parities. CROSS factors therefore have polynomial energy cost. The
@@ -435,15 +435,15 @@ computes \(k_N^*\) and its relative-energy limit there, with uniform closed
 boundary control. It is a local input to (14), not a shared-flow estimate.
 
 Earlier metrics do not supply (10). The
-[complete-circle positive quotient](actual_complete_circle_reflection_positive.md)
+[complete-circle positive quotient](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_complete_circle_reflection_positive.md)
 bounds transmission on an already inserted \(L_N\), not replacement by
 \(V_N\) or overlapping coupons. The
-[full Fourier–Hermite Gram](actual_filling_fourier_hermite_gram.md) has an
+[full Fourier–Hermite Gram](../papers/filling-bounds/README.md) has an
 actual whole-source excess-energy example on a redundant normalization
 insertion, but is not the energy (7). The
-[Newton-turn Gram](actual_newton_turn_positive_gram.md) keeps turns and
+[Newton-turn Gram](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_newton_turn_positive_gram.md) keeps turns and
 coherent reflected circuits; it does not bound arbitrary source energies.
-The [length-normalized star](actual_length_normalized_star_gram.md) retains
+The [length-normalized star](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_length_normalized_star_gram.md) retains
 both coefficient and dual weights, which cannot be dropped.
 
 The new joint and combined-score reductions use the proved uniform local theorem; their global strict inequalities remain hypotheses, not general volume comparison theorems.

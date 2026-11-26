@@ -275,8 +275,8 @@ Dehn filling, discrete-faithfulness, or character-uniqueness theorem.
 Let rho_z now be an actual connected marked representation family
 near rho0, and use the small squared peripheral logs U_i,V_i above.
 The elementary marked Bloch boundary/fundamental-chain calculation
-used in [the general peripheral volume proof](general_peripheral_representation_volume_bound.md)
-and [the source regulator proof](actual_pretzel_marked_regulator_and_filling_action.md)
+used in [the general peripheral volume proof](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/general_peripheral_representation_volume_bound.md)
+and [the source regulator proof](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_pretzel_marked_regulator_and_filling_action.md)
 is independent of the diagram and number of cusps. In these coordinates
 it says
 
@@ -400,9 +400,9 @@ normal block or representation-volume upper bound implies (16).
 Nor does it assume every augmented diagram has a known positive
 original-source base period. Those conclusions need independent proofs.
 
-The [existing full original-source pretzel theorem](actual_long_pretzel_full_source_survival.md),
-its [literal global lift](actual_pretzel_port_lift_and_geometric_anchor.md),
-and its [marked regulator certificate](actual_pretzel_marked_regulator_and_filling_action.md)
+The [existing full original-source pretzel theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_long_pretzel_full_source_survival.md),
+its [literal global lift](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_pretzel_port_lift_and_geometric_anchor.md),
+and its [marked regulator certificate](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_pretzel_marked_regulator_and_filling_action.md)
 do supply all four inputs for fixed odd s>=25 and independently
 sufficiently long fixed signed slopes, subject to the unchanged
 quantifiers of those source theorems. The subsequently independently
@@ -412,7 +412,7 @@ its entire-color bound is B_*<.81, whereas the exact width-nine
 source margin is greater than .812633708. All other local analytic
 and geometric ingredients were already valid there. The remaining
 widths3,5,7 are not proved by this envelope. The
-[specific positive-core proof](actual_long_pretzel_geometric_filling_completion.md)
+[specific positive-core proof](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_long_pretzel_geometric_filling_completion.md)
 was already sufficient for that class. The present result removes
 ALL graph/polyhedron/width restrictions from the GEOMETRIC implication,
 but does not claim a new unproved original-invariant family.
@@ -427,7 +427,7 @@ not residual uncertainty about which hyperbolic volume (15) denotes.
 
 There is now a stronger, independently checked way to supply the last
 quantum bullet for integral crossing-circle fillings: the
-[general original-source long-filling transfer](general_original_source_long_filling_transfer.md)
+[general original-source long-filling transfer](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/general_original_source_long_filling_transfer.md)
 proves the filled nonzero asymptotic from an EXACT even holomorphic
 BASE color packet, its uniform complex Gaussian expansion, and a strict
 gap over the entire complementary physical color cube. Its exact

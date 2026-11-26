@@ -17,7 +17,7 @@ invariant or arbitrary cubic graphs is inferred.
 
 Keep N=2m+1>=3, d=2m, q=exp(pi i/N), the literal ordered cube and
 its EXPOSED marked white vertex from the
-[central cube theorem](actual_odd_central_cube_reflection_packet.md).
+[central cube theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_odd_central_cube_reflection_packet.md).
 Its two cycles have edge orders
 
     top (0,11,3,2), bottom (9,5,6,8),
@@ -102,7 +102,7 @@ formula is not substituted off the root. At the root
     L_j=h0_j W_j pi_j.
 
 Choose the regular generic W_j and pi_j lift of the original
-[first-normal theorem](actual_nc_morse_graph_first_normal_source_reduction.md).
+[first-normal theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_nc_morse_graph_first_normal_source_reduction.md).
 The latter identity is asserted at the root; its chosen lift is
 h0_j W_j(t)pi_j(t). Every denominator in W_j and pi_j is a unit
 at this odd root. Paired generic projectors are NOT used.

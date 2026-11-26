@@ -32,7 +32,7 @@ For each FIXED j, C_j(q) is the specified Laurent-polynomial
 ordinary-color period, C_j(1)=1. The exact all-level recurrence,
 its actual finite initial window and its bounded quantum jets
 determine K_N uniquely. The
-[Mellin theorem](mellin_cyclotomic_jet_uniqueness.md) strengthens
+[Mellin theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/mellin_cyclotomic_jet_uniqueness.md) strengthens
 this to the entire rational root section with its pole lattice.
 
 There is consequently no freedom to alter the knot period while
@@ -105,7 +105,7 @@ section is much stronger than algebraicity at each separate N.
 ## 3. An original-source obstruction to a regular central-fibre comparison
 
 Take the original figure-eight knot. The independently proved
-[whole-source identity](figure_eight_whole_source_identity.md)
+[whole-source identity](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/figure_eight_whole_source_identity.md)
 gives
 
     lim_(N->infinity) N^-1 Log|F_N(1)|
@@ -170,7 +170,7 @@ Then the unconditional original state identity is
 whereas the central state v_N(0) contains only the polynomially
 bounded ordinary-color row. The source has degree minus one;
 it is not ordinary evaluation of the lowest state degree.
-See [the source-adapted filtration](source_adapted_leading_filtration_and_actual_scale_test.md).
+See [the source-adapted filtration](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/source_adapted_leading_filtration_and_actual_scale_test.md).
 
 The elementary expression
 
@@ -235,7 +235,7 @@ The existing
 [whole-comparison rigidity theorem](whole_period_cyclotomic_rigidity.md)
 can promote bounded algebraic quantum-jet identities to an exact
 whole comparison. The existing
-[critical-source theorem](irreducible_critical_source_and_whole_norm.md)
+[critical-source theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/irreducible_critical_source_and_whole_norm.md)
 can then force every geometric coefficient nonzero from an
 irreducible descended critical line and a nonzero exact source
 moment, or from a faithful trace realization. Fixed algebraic

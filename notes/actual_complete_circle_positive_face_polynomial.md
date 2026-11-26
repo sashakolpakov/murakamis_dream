@@ -47,7 +47,7 @@ of the specified regular root complete-circle source is EXACTLY
          D_a(x,b,y) D_a(x,c,y) Ptilde_s(x,y)/(bc)^(d/2). (3)
 
 This is the fixed-root Hopf lift from the
-[original source envelope](actual_original_network_resonant_source_envelope.md),
+[original source envelope](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_original_network_resonant_source_envelope.md),
 not a newly chosen off-grid continuation of a canceled exceptional
 kernel. A retained half twist multiplies (3) by its original fixed
 scalar omega_a^epsilon. Every power in (3) uses the logarithms in (1).

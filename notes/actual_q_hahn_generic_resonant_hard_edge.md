@@ -11,7 +11,7 @@ global selected cycle is removed.
 ## 1. The original generic polynomial and its exact reindexing
 
 Use the ACTUAL polynomial H_m^B(U,V) in the
-[generic white-source theorem](actual_generic_boundary_gauge_and_source.md),
+[generic white-source theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_generic_boundary_gauge_and_source.md),
 not a small root-colliding replacement for the large white channel.
 Write Q=q^2, B=Q^(-N), and
 

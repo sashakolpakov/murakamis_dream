@@ -101,7 +101,7 @@ GLOBAL coefficientwise CROSS bound, on any fixed strip |Im delta|<=T,
 P_{e,\mathrm{CROSS}}(-2).\tag{7}
 \]
 
-This is equation (27) of [the original cofactor factorization](actual_cross_cofactor_factorization.md),
+This is equation (27) of [the original cofactor factorization](../papers/filling-bounds/README.md),
 section 8, not an inferred coefficient lower asymptotic. Its nodal
 positivity covers ALL j,a<=J: for j<=a it is the direct positive
 original recurrence; for j>a it is the retained physical tail adapter.
@@ -490,12 +490,12 @@ weighted, phase-uniform star estimate as the main theorem.
 ## Inputs
 
 The original cap factors follow from the exact polynomial tail formula
-in the [all-demand source proof](research_cap_cross_all_demand_subexponential_contraction.md)
-and its [original-demand dictionary](research_two_port_main_cap_original_demand_convolution.md).
+in the [all-demand source proof](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/research_cap_cross_all_demand_subexponential_contraction.md)
+and its [original-demand dictionary](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/research_two_port_main_cap_original_demand_convolution.md).
 The all-strip coefficientwise bound is the
-[original cofactor factorization](actual_cross_cofactor_factorization.md),
+[original cofactor factorization](../papers/filling-bounds/README.md),
 section 8, equations (22)–(27). The
-[global cofactor angular theorem](actual_cross_cofactor_global_angular_gap.md),
+[global cofactor angular theorem](../papers/casimir-source-asymptotics/README.md),
 sections 1–4, supplies the fixed strip and the polynomial omitted-node
 cost. The [mixed CROSS/window note](research_mixed_cross_window_cycle_packing.md),
 sections 1–2, also records the exact central comparisons and support.
@@ -508,7 +508,7 @@ The endpoint action comes from the
 section 5, and the [odd raw factorization and coefficient theorem](actual_fejer_odd_regularized_full_numerator.md),
 sections 1–3. The stationary interpretation uses the
 [full-fiber common-weight classification](research_full_fiber_sharp_stationary_classification.md).
-The [incidence and assembly note](research_cap_cross_incidence_and_disjoint_assembly.md)
+The [incidence and assembly note](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/research_cap_cross_incidence_and_disjoint_assembly.md)
 explains why the present whole-star operation is different from attaching
 a two-port estimate to an exterior carrying A.
 

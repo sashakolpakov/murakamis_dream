@@ -1,5 +1,5 @@
 {
-  "scope": "Rewritten subject collection and reference, with manually reviewed mathematical dictionaries and kernel-checked expected-type contracts for every selected Lean statement; source-pinned compilation, compiled exports, finite checks, typesetting, dependency graphs and local guide checks. Analytic and geometric application lemmas retain written proofs.",
+  "scope": "Current manuscripts and retained source collection after research cleanup; manually reviewed mathematical dictionaries and kernel-checked expected-type contracts, source-pinned compilation, finite checks, compiled exports, typesetting, dependency graphs and full-site MathML/link checks. Analytic and geometric application lemmas retain written proofs.",
   "status": "complete",
   "records": {
     "lean": {
@@ -9,7 +9,7 @@
     },
     "manuscript_logic": {
       "record": "repro/results/manuscript-and-lean/manuscript-logic/summary.json",
-      "sha256": "b7b4faae3897d7ea8277f8d0bbc80b8e118317c3fadef8d3003e454fef8d57e8",
+      "sha256": "2c1f06f2e1bda06d57524dfac7c439dcd38442ccb3e2a8b3d73b421e038a3c7d",
       "current_inputs": 33
     },
     "conway_finite": {
@@ -24,23 +24,23 @@
     },
     "paper_collection": {
       "record": "repro/results/paper-collection/summary.json",
-      "sha256": "bceb564740170eda0dddec5d9fa859135efed49a4c18bc8bcaea0e196f910392",
+      "sha256": "54ab14e425bd361b03bcf96c443a2841caa814948c89e21dc45a457be2ef1a4c",
       "current_inputs": 236
     },
     "paper_finite_suite": {
       "record": "repro/results/paper-collection/finite/summary.json",
-      "sha256": "4bafd0ae4193285c086a084ff5b47a52ed9772c6e6fd347b84e79d2099c32efe",
+      "sha256": "83ca66557a61b98c32d117bfc69c517166342eb2fae61940be95bbe6f1e39a91",
       "current_inputs": 194
     },
     "paper_graph": {
       "record": "docs/papers/dependency-analysis.json",
-      "sha256": "682dc80e2d712cf34300c51e71c7e98ce89a03185fc1f60fc8df82df0652f2e3",
+      "sha256": "960106ffa19e165cab87a133d484f75ffe3a26f73af1fbfdff05ab30c5a58553",
       "current_inputs": 135
     },
     "guide": {
       "record": "repro/results/manuscript-and-lean/guide-build.json",
-      "sha256": "1d38dc06a65ceb4909068bbe09c16bc06e1ac39145188db3bdb3c0ed6653a11e",
-      "current_inputs": 3
+      "sha256": "cfa2e7b96fa28fbe0feef4cb2e10f44946a1243bf8b8aa4d85f1fb74029ddf1c",
+      "current_inputs": 6
     },
     "reference": {
       "record": "manuscript/build/build-manifest.json",
@@ -59,13 +59,18 @@
     },
     "guide_check": {
       "record": "repro/results/manuscript-and-lean/guide-check.json",
-      "sha256": "e13d19c0a361a74ba048df4913a1c426971e5704eb5d9e67dfd82b4dfb3da43f",
-      "current_inputs": 4
+      "sha256": "a3bdf4d98e0d85965b0e386b823792eb682636c750b1c30fc0baed11f7afe087",
+      "current_inputs": 623
     },
     "hexagon_preparation": {
       "record": "repro/results/conway-submission/summary.json",
       "sha256": "c328eda590f70b50352e9a4d2db3d3ce15ca1acf14be1471d27ed012b58502a4",
       "current_inputs": 51
+    },
+    "repository_cleanup": {
+      "record": "repro/results/repository-cleanup/summary.json",
+      "sha256": "d90cbacdccd1e092da5ed5d76ea1bacd1b875b2af85fef5288d81c4819b751a8",
+      "current_inputs": 6
     }
   },
   "pdfs": {
@@ -885,9 +890,9 @@
     "docs/papers/index.html",
     "docs/papers/dependencies.html"
   ],
-  "guide_local_links": 120,
-  "guide_mathml_and_local_links": "checked",
-  "retired_sources": "Deleted, not archived; see deletions.json.",
+  "guide_local_links": 16981,
+  "guide_mathml_and_local_links": "All 619 current pages checked; 11,420 equation labels visibly rendered.",
+  "retired_sources": "Removed from the working collection; source/small-record snapshot and verification are described in repro/results/repository-cleanup/summary.json.",
   "no_new_volume_scope_claim": true,
   "no_hexagon_submission_made": true,
   "hexagon_preparation": {
@@ -925,5 +930,13 @@
   "audit_report": {
     "path": "repro/MANUSCRIPT_AND_LOGIC_AUDIT_2026-11-25.md",
     "sha256": "8ae04cfa3176ccb43a55265b4c611804d66a8898713efcaf0bdd5ceaad59eef4"
+  },
+  "guide_checked_site_total_pages": 619,
+  "repository_cleanup": {
+    "snapshot_branch": "snapshot/pre-cleanup-2026-11-25",
+    "snapshot_commit": "19d5b911bc409486f0e72b51a876a6a2bc70ee02",
+    "retained_notes": 594,
+    "obsolete_notes_removed": 3121,
+    "bulk_raw_outputs_not_snapshotted": true
   }
 }

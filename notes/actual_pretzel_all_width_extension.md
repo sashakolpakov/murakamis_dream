@@ -20,7 +20,7 @@ by naming this positive envelope a sharp source asymptotic.
 
 Use q=exp(pi i/N), Q=q^2, d=N-1, s_a=|(Q;Q)_a| and the monic
 physical middle continuants p_l. The exact identity in
-[the original global alias theorem](actual_pretzel_global_alias_and_colored_source_gap.md)
+[the original global alias theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_pretzel_global_alias_and_colored_source_gap.md)
 is
 
     (-1)^(N+h-1) P_(N,h)(z)

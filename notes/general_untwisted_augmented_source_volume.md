@@ -24,7 +24,7 @@ is its complete hyperbolic augmented exterior Y_D and
 
     Vol(Y_D)=2Vol(Q_D).
 
-This is the [marked geometric certificate](general_augmented_plat_matching_geometry.md),
+This is the [marked geometric certificate](../papers/marked-fillings/README.md),
 not merely the existence of an unlabeled polyhedron or a positive
 triangulation of unspecified topology. There is no restriction on R,
 bridge width, a Conway grammar, or an octahedral decomposition.
@@ -46,7 +46,7 @@ levels. It is not an iterated limit in which the diagram grows with N.
 ## 2. The exact positive finite source
 
 Set d=N-1 and M=floor(d/2). The
-[marked face-coefficient theorem](actual_original_marked_face_coefficient.md)
+[marked face-coefficient theorem](../papers/filling-bounds/README.md)
 gives EXACTLY
 
     A_(D,N)=chi_(D,N) N^R sum_(a in {0,...,M}^R)

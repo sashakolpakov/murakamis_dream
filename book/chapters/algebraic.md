@@ -309,13 +309,13 @@ each coefficient while \(L\) remains an independent variable.
 Subsequently setting \(L=\ell(u)\) can kill a nonzero polynomial:
 \(L+1\) vanishes at \(\ell(u)=-1\).
 
-This is the finite linear algebra needed to preserve the nonzero
-classical symbol under meridian expansion. The
-[Lean proof](../../formal-real/MeridianSeriesEmbedding.lean) formalizes
-the moment calculation, reconstruction and coefficientwise polynomial map.
-It does not construct the
-quantum recurrence or prove that the source supplies the required jets.
-Those remain separate steps in the operator argument.
+Vandermonde injectivity applies here to a fixed operator with a fixed
+finite exponent set. The [meridian-expansion paper](../../papers/meridian-expansions/README.md)
+states the further all-orders and operator hypotheses used for its
+classical-symbol consequence. It assumes a specified nonzero all-level
+annihilator; it does not construct one. The finite argument above is a
+written proof. Its scope is distinct from the retained Lean statements
+listed in the [coverage report](../../repro/PAPER_FORMAL_COVERAGE.md).
 
 There is also an established uniqueness theorem for a different,
 precisely specified class. Habiro's cyclotomic completion is

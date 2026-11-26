@@ -8,7 +8,7 @@ The normalizer comes from a true boundary entry and a leading
 coefficient, not a quoted 6j evaluation or polynomial norm formula.
 
 The independent source is the actual two-sum/all-entry construction in
-[the ordinary four-port theorem](actual_ordinary_four_port_recoupling_kernel.md).
+[the ordinary four-port theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_ordinary_four_port_recoupling_kernel.md).
 All high channels and generic normal tails are retained. Root sign
 coherence, positive recoupling and sharp graph energy are not inferred.
 
@@ -243,7 +243,7 @@ Indeed lambda_G=lambda_Gmax+K(Q^-n-1)(1-PQ^(n-1)).
 This is the exact affine eigenvalue conversion, not a replacement
 of the physical Casimir.
 
-Our OWN [finite symmetric polynomial calculation](finite_balanced_sears_operator_proof.md)
+Our OWN [finite symmetric polynomial calculation](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/finite_balanced_sears_operator_proof.md)
 proves that G_n solves (19), with leading coefficient C_n in
 lambda_E=z_E+z_E^-1. Its degree is n and its generic leading
 coefficient is nonzero. The finite grid has distinct Casimir nodes,

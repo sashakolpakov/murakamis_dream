@@ -106,7 +106,7 @@ the volume conjecture.
 Run from the repository root:
 
 ~~~sh
-python3 repro/check_lean.py --output repro/results/volume-lean
+python3 repro/check_lean.py --output repro/results/manuscript-and-lean/lean
 ~~~
 
 The runner rebuilds both packages from empty local build directories,

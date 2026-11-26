@@ -26,7 +26,7 @@ followed by that pivot trace gives, as a full physical matrix,
     P_0=1, P_1=z, P_(r+1)=z P_r-P_(r-1).                 (1)
 
 Thus L_1=I and L_2=-Omega. This normalization, including the sign,
-is the proved [original mixed-circle identity](actual_crossing_circle_source_and_filling.md).
+is the proved [original mixed-circle identity](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_crossing_circle_source_and_filling.md).
 It is not a replacement of an ordinary module by an N-dimensional
 ADO component at a putative meridian value.
 

@@ -321,7 +321,7 @@ def profile_diagnostic():
                              "ratio_error": mp.nstr(error,18),
                              "log_error_per_N": mp.nstr(mp.log(error)/N,18)})
     return {"precision": 80,
-            "source": "research_archive/main-meridian-profile-2026-11-01/md-direct-filled-root-diagnostic.py",
+            "source": "https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/research_archive/main-meridian-profile-2026-11-01/md-direct-filled-root-diagnostic.py",
             "scope": "Optional local numerical diagnostic only; no convergence or whole-knot theorem is inferred.",
             "formula": "Cartan factors divided out; the complete trace uses the exact first normal.",
             "rows": rows}

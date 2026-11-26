@@ -55,7 +55,7 @@ records the substantive corrections made during the revision.
 Run the combined check from the repository root:
 
 ~~~sh
-python3 repro/check_lean.py --output repro/results/volume-lean
+python3 repro/check_lean.py --output repro/results/manuscript-and-lean/lean
 ~~~
 
 It compiles both packages, checks the expected-type contracts and runs

@@ -111,7 +111,7 @@ orientations. It does not assert that the result has the previous
 one-row NC edge order, nor insert unrecorded edge permutations or
 structural crossings to force such an order.
 
-The [geometric source certificate](actual_planar_three_port_double_topology.md)
+The [geometric source certificate](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_planar_three_port_double_topology.md)
 records this disk construction, including its six-terminal reversal.
 The algebra below uses only its specified physical port joining and
 one-circle-per-seam convention. Applying two old root circle coupons

@@ -66,7 +66,7 @@ The residual combination is
 
 Its proved principal framing field is partial_r in the actual
 F(r,s) chart, with the first cut clock A_cut=(1+s)^-1 fixed; see
-[the actual Ward fields](actual_borel_ward_cut_contraction.md).
+[the actual Ward fields](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_borel_ward_cut_contraction.md).
 Multiplication by s gives s partial_r. We do not identify a finite
 translation with this infinitesimal field merely from its symbol.
 
@@ -169,7 +169,7 @@ X_j its original Fourier projectors,
     (X_j)_(r,s)=Q^[j(s-r)]/N, eta_j=Q^j, j mod N.
 
 For the ROUTED first-slot channel C(X)=P_V[A U^-1(X tensor I)U B],
-the [complete Fourier source theorem](universal_resonant_fourier_source_completion.md)
+the [complete Fourier source theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/universal_resonant_fourier_source_completion.md)
 applies: A U^-1 and U B are still actual covariant maps. Thus
 C(X_j)=z X_j. Its proof uses the actual root adjoint equations and
 C(I)=zI and also applies to the rectangular maps above. Since
@@ -312,7 +312,7 @@ with z_coh=t/(1-t) and w=p^-1. Put D_p=diag(p^a). Directly,
     D_p^-1 e_eff D_p=e_(t_eff),
     t_eff=t/[p(1-t)+t].                                 (13b)
 
-The [original common diagonal gauge](compact_framing_gauge_and_boundary_residue.md)
+The [original common diagonal gauge](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/compact_framing_gauge_and_boundary_residue.md)
 preserves t_eff and removes this common momentum p. Its one-cut
 physical map forgets the residual centralizer coordinate. Therefore
 the absorption supplies no additional pin of that coordinate:
@@ -466,7 +466,7 @@ use the SAME actual generator family and fixed highest weights,
 are regular covariant, preserve unwrapped charge, and C_0=Ctilde_0
 as maps on End(V_d). The quotient L_e=(C_e-Ctilde_e)/e is then regular,
 covariant and scalar on I. The proof in Sections 3--4 of the
-[universal root theorem](universal_resonant_fourier_source_completion.md)
+[universal root theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/universal_resonant_fourier_source_completion.md)
 applies to this quotient: it uses only linearity, root adjoint
 covariance and L(I)=zI. Our actual root generators are precisely its
 M=1 generators, with BOTH missing endpoint arrows zero. Its K row,

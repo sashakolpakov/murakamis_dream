@@ -98,7 +98,7 @@ as identity on this common kernel and has image in it. Restricting
 the cabled finite universal R to these images gives the original
 j-color R, by its coproduct identities. A direct coefficient proof of
 both identities, including the Cartan factors, is given in the
-[independent color audit](actual_ordinary_color_comparison_audit.md#4-the-fundamental-cable-is-the-literal-colored-r).
+[independent color audit](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_ordinary_color_comparison_audit.md#4-the-fundamental-cable-is-the-literal-colored-r).
 The retained highest-vector
 Cartan scalar is q^(n^2/2); the ordinary framing twist is
 q^(n(n+2)/2). Both have modulus one.
@@ -230,11 +230,11 @@ zeros or exponentially small values would invalidate that inference.
 
 The finite Plancherel checks do not establish a volume limit. The remaining analytical questions are stated below.
 
-* [Positive path algebra](ordinary_color_positive_trace_independent_audit.md):
+* [Positive path algebra](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/ordinary_color_positive_trace_independent_audit.md):
   both Markov identities on noncommuting words, the full projection
   induction including the first zero-dimension projection, and 42 signed
   colored closures including j=N-1.
-* [Original color identification](actual_ordinary_color_comparison_audit.md):
+* [Original color identification](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_ordinary_color_comparison_audit.md):
   the uniform one-component filtered trace proof and direct R coproduct
   calculation, supplemented by 228 exact whole-knot cut comparisons and
   22 signed-cable families, with the original Cartan and twist phases.

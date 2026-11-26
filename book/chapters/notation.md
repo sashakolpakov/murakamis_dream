@@ -7,7 +7,7 @@ defines the topological objects, writes out a finite contraction, and
 derives the coefficient estimate. This chapter is a reference for the
 notation used after those definitions.
 
-Letters are reused in the technical archive. In particular, a tangle turn, a crossing matrix, and a shift of a meridian variable are different operations. Local definitions take precedence when a note uses another convention.
+Letters are reused in the papers and retained research notes. In particular, a tangle turn, a crossing matrix, and a shift of a meridian variable are different operations. Local definitions take precedence when a note uses another convention.
 
 Each [current paper](../../papers/README.md) defines its own notation
 and identifies the numbered statements it imports. When moving between
@@ -71,7 +71,7 @@ The choice \(r/N\), \(r/(N-1)\), or \((r+1/2)/N\) must remain visible. They have
 
 A **normal** is a derivative in a specified direction. At a repeated Casimir node \(c\), a polynomial operator can depend on both \(p(c)\) and \(p'(c)\); evaluating only \(p(c)\) loses its nilpotent part. This is the reason for Hermite data. A derivative in the generic parameter \(\zeta=q_Ne^t\), with \(N\) fixed, is another operation. A factor that vanishes at \(t=0\) can have a nonzero derivative there. Neither derivative is the next coefficient of an \(N\to\infty\) expansion.
 
-The [physical polynomial compiler](../../notes/actual_main_meridian_newton_compiler.md) records the finite Casimir algebra and its repeated-root data. The [homogeneous face source](../../notes/actual_homogeneous_casimir_face_source.md) records how its polynomials become original matrix entries. Root-only identities must not be differentiated in a generic parameter without that additional source calculation.
+The [physical polynomial compiler](../../docs/papers/meridian-tangles.pdf) records the finite Casimir algebra and its repeated-root data. The [homogeneous face source](../../docs/papers/filling-bounds.pdf) records how its polynomials become original matrix entries. Root-only identities must not be differentiated in a generic parameter without that additional source calculation.
 
 For the complete Newton basis, the convention used in the moving-meridian bounds is
 \[
@@ -88,7 +88,7 @@ For a polynomial \(F\), the coefficient trace in an equal-color channel with \(M
 \]
 Here \(\operatorname{rem}_{P_s}F\) is the unique remainder of degree less than \(N\) after polynomial division. This retains the full repeated-root data. The normalized polynomial \(\mathsf T_N(z)\) is \(2T_N(z/2)\) in the convention \(T_N(\cos\theta)=\cos(N\theta)\). Opposite-color channels use the constant quotient \(P_0\), with their original reference maps retained. The compiler fixes which channel occurs; one cannot move every quotient in a diagram indiscriminately.
 
-Changing coordinates, changing the quotient product, and applying a physical turn are three different operations. In particular, an entry of a moving multiplication tensor need not be bounded by its complete value at the same indices. The [same-index obstruction](../../notes/actual_main_meridian_same_index_obstruction.md) disproves that estimate. The [reflected-trace bound](../../notes/actual_main_meridian_high_fourier_reflection.md) compares the change in the tensor with a different index and keeps the neighboring source profiles. Neither statement concerns a counterexample to a knot-volume limit.
+Changing coordinates, changing the quotient product, and applying a physical turn are three different operations. In particular, an entry of a moving multiplication tensor need not be bounded by its complete value at the same indices. The [same-index obstruction](../../notes/actual_main_meridian_same_index_obstruction.md) disproves that estimate. The [reflected-trace bound](../../docs/papers/moving-meridian-sources.pdf) compares the change in the tensor with a different index and keeps the neighboring source profiles. Neither statement concerns a counterexample to a knot-volume limit.
 
 ## Source polynomials, sectors and the invariant
 
@@ -173,7 +173,7 @@ Several decompositions of the source are used:
 | All-central contraction | The coefficient or period obtained by selecting central at every box, while retaining the shared face targets and original trace. |
 | Full contraction | The sum over all the prescribed sector choices, with their signs and normal data. |
 
-These sector names describe finite subsets of the recurrence paths; central does not mean a physical crossing matrix. A color core and an all-central projection arise from different decompositions and must not be identified by their names. A nonzero all-central period with the correct geometric rate does not by itself prove the full invariant's rate: the other sectors might contribute or cancel it. The [cofactor theorem](../../notes/actual_cross_cofactor_factorization.md) defines that projection, and the [balanced planar theorem](../../notes/actual_balanced_terminal_fan_volume.md) explains a sufficient comparison with the remaining sectors.
+These sector names describe finite subsets of the recurrence paths; central does not mean a physical crossing matrix. A color core and an all-central projection arise from different decompositions and must not be identified by their names. A nonzero all-central period with the correct geometric rate does not by itself prove the full invariant's rate: the other sectors might contribute or cancel it. The [cofactor theorem](../../docs/papers/filling-bounds.pdf) defines that projection, and the [balanced planar theorem](../../docs/papers/terminal-decorations.pdf) explains a sufficient comparison with the remaining sectors.
 
 A **finite-sector cover** groups genuine central/left/right choices for estimates. A branch has one full shared face-weight vector; it does not assign unrelated weights to the two occurrences of a face. The maxima inside a scalar upper bound are comparison terms, not additional quantum sectors. This combinatorial use of “cover” is different from a covering space of a link complement. The [methods chapter](methods.md#refining-the-coefficient-estimate-by-genuine-sectors) gives the cost and the remaining coverage question.
 
@@ -209,9 +209,9 @@ The guide usually writes \(R\) for a checked crossing operator, including the in
 
 A construction tree records products and turns; it is not a knot projection. A **circle-marked junction** contains a crossing-circle operator. A **bare junction** is a maximal consecutive group of products without one. Resolving a high-valence product into binary products introduces internal bookkeeping variables, not new physical quarter-turn edges. For a vertex \(v\), \(d_v\) is its graph degree, including the specified boundary attachments. It has no relation to the quantum top index \(d=N-1\).
 
-In strict-tree geometry, a physical turn edge has a normalized polynomial label \(x_e\). When exposed as the ordinary output of a rooted branch, that output angle is \(1-x_e\). The set \(\mathcal E_T\) in the longitude formulas consists of the original physical turn edges; hidden binary-resolution edges are excluded. The [strict-tree geometric theorem](../../notes/actual_strict_tree_geometric_characteristic.md) explains this convention and the case \(x_e=1/2\).
+In strict-tree geometry, a physical turn edge has a normalized polynomial label \(x_e\). When exposed as the ordinary output of a rooted branch, that output angle is \(1-x_e\). The set \(\mathcal E_T\) in the longitude formulas consists of the original physical turn edges; hidden binary-resolution edges are excluded. The [strict-tree geometric theorem](../../docs/papers/meridian-expansions.pdf) explains this convention and the case \(x_e=1/2\).
 
-A geometric gluing face may be a quadrilateral with four ordered ideal vertices. “Ideal” means that its vertices lie on the sphere at infinity of hyperbolic space. The vertex order specifies the face identification. Some archive notes call such a boundary face a *port*; elsewhere that word refers to an external representation factor. It is necessary to check which meaning is intended.
+A geometric gluing face may be a quadrilateral with four ordered ideal vertices. “Ideal” means that its vertices lie on the sphere at infinity of hyperbolic space. The vertex order specifies the face identification. An external representation factor is different from a geometric gluing face. The older word “port” was used for both and is avoided in this guide.
 
 ## Circle packings, shapes and geometric actions
 
@@ -307,7 +307,7 @@ These are logarithms of **similarity multipliers**, equivalently twice the norma
 \[
                        U_i+p_iV_i=-2\pi i.
 \]
-The equation is an equality of the continued logarithms. Its exponential alone would allow a wrong winding, and at a parabolic longitude could permit a nontrivial filling holonomy. The [primitive collar calculation](../../notes/actual_deformed_circle_primitive_collar.md) fixes the paths; the [metric completion theorem](../../notes/general_source_regulator_hyperbolic_equality.md) checks the actual log-link periods and the smooth solid torus.
+The equation is an equality of the continued logarithms. Its exponential alone would allow a wrong winding, and at a parabolic longitude could permit a nontrivial filling holonomy. The [primitive collar calculation](../../docs/papers/marked-fillings.pdf) fixes the paths; the [metric completion theorem](../../notes/general_source_regulator_hyperbolic_equality.md) checks the actual log-link periods and the smooth solid torus.
 
 Two useful descriptions of the auxiliary deformation are
 \[
@@ -326,7 +326,7 @@ Under surgery on the auxiliary circles, the image of the augmented main longitud
           =\lambda_{\mathrm{aug}}\,
                     \mu_K^{\sum_i p_i k_i^2}.
 \]
-This shear changes the marked basis on the filled cusp. The [preferred-longitude proof](../../notes/actual_main_meridian_preferred_cusp.md) tracks it independently of the quantum asymptotic.
+This shear changes the marked basis on the filled cusp. The [preferred-longitude proof](../../docs/papers/preferred-longitudes.pdf) tracks it independently of the quantum asymptotic.
 
 ## The main-meridian quantum \(A\)-period
 
@@ -369,7 +369,7 @@ For the covered moving-meridian knots, the first correction in the zero-framed c
  =1+\frac{\pi i s^2\tau_K}{2N}+O(N^{-2})
  =1+\frac{\tau_K z^2}{8\pi iN}+O(N^{-2}).
 \]
-The exact scalar contributes to this coefficient. The [scalar proof](../../notes/actual_main_meridian_exact_scalar.md) and [geometric cusp proof](../../notes/actual_main_meridian_preferred_cusp.md) are separate arguments. Their combination is the [filled profile theorem](../../notes/actual_main_meridian_filled_volume.md), with its stated domain and fixed-presentation hypotheses.
+The exact scalar contributes to this coefficient. The [scalar proof](../../docs/papers/meridian-tangles.pdf) and [geometric cusp proof](../../docs/papers/preferred-longitudes.pdf) are separate arguments. Their combination is the [filled profile theorem](../../docs/papers/moving-meridian-sources.pdf), with its stated domain and fixed-presentation hypotheses.
 
 ## Difference operators, classical curves and selected solutions
 
@@ -427,11 +427,11 @@ In the geometric convention, \(M\) is the eigenvalue of the positively oriented 
            \frac{M^2-X_e(M)}{1-M^2X_e(M)},
  \qquad X_e=e^{2\pi ix_e}.
 \]
-The [full strict-tree longitude theorem](../../notes/actual_strict_tree_geometric_characteristic.md) identifies these source variables and paths, including bare product junctions. This replaces the earlier circle-tree-only identification. Its operator corollary, and the [directed all-orders theorem](../../notes/actual_all_circle_directed_all_orders.md), specify when the selected geometric irreducible factor divides the first nonzero classical symbol. Such divisibility does not identify every factor, its multiplicity, or the complete quantum recurrence ideal.
+The [full strict-tree longitude theorem](../../docs/papers/meridian-expansions.pdf) identifies these source variables and paths, including bare product junctions. This replaces the earlier circle-tree-only identification. Its operator corollary, and the [directed all-orders theorem](../../docs/papers/meridian-expansions.pdf), specify when the selected geometric irreducible factor divides the first nonzero classical symbol. Such divisibility does not identify every factor, its multiplicity, or the complete quantum recurrence ideal.
 
 ## What a torsor records
 
-A **torsor** is a space with a free and transitive action of a group, without a preferred origin. Choosing one point identifies it with that group, but a formula using the chosen coordinate must record the choice. Several different torsors occur in the archive.
+A **torsor** is a space with a free and transitive action of a group, without a preferred origin. Choosing one point identifies it with that group, but a formula using the chosen coordinate must record the choice. Several different torsors occur in the retained approaches.
 
 For auxiliary holonomy, a half-longitude eigenvalue satisfies \(\ell^2=e^V\), and the logarithm of \(\ell\) has integral-period ambiguity. The actual collar and complete anchor select the sheet and logarithm. A retained half twist changes
 \[

@@ -20,7 +20,7 @@ crossing-disk pairs (mu_i,lambda_i).
 
 Supply a positive complete ideal gluing certificate for this ACTUAL
 marked Y_D, as in
-[the general positive certificate](general_marked_positive_gluing_certificate.md).
+[the general positive certificate](../papers/marked-fillings/README.md).
 A certified right-angled matching-graph realization is one existing
 way to supply it. The conclusion below applies at every fixed k
 and fixed r; neither k nor r is sent to infinity, and constants may
@@ -51,7 +51,7 @@ The empty subset recovers the supplied complete augmented geometry.
 
 Here is the direct proof, including the existence step that the older
 completion theorem did not assert on its own. By
-[multi-cusp marked rigidity](general_marked_multicusp_gluing_rigidity.md),
+[multi-cusp marked rigidity](../papers/marked-fillings/README.md),
 with main meridian logs fixed to zero, the auxiliary PROJECTIVE meridian
 logs U=(U_1,...,U_r) are holomorphic coordinates on the decorated geometric
 germ. The actual preferred longitude logs obey
@@ -110,7 +110,7 @@ on a different pure link is not substituted for (4).
 
 For this SAME D, suppose the original mixed-color marked source satisfies
 all hypotheses of
-[the general original-source long-filling transfer](general_original_source_long_filling_transfer.md):
+[the general original-source long-filling transfer](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/general_original_source_long_filling_transfer.md):
 an exact analytic color packet, uniform complex asymptotic with nonzero
 leading density, the full complementary-color/alias/normal-current gap,
 and selection of the actual marked geometric action and its complete

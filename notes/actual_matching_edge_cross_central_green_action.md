@@ -72,7 +72,7 @@ The row indices remain physical integers. They are not analytically
 continued to complex magnetic coordinates.
 
 Use the selected prefix action proved in
-[the original off-spectrum prefix theorem](actual_casimir_off_spectrum_prefix_action.md):
+[the original off-spectrum prefix theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_casimir_off_spectrum_prefix_action.md):
 
     A_tau(s)=-4 exp[i pi(2s-tau)]
                          sin(pi(tau-s))sin(pi s),

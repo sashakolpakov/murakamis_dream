@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Build the static research guide, full note archive, and search index.
+"""Build the static research guide, retained technical notes, and search index.
 
-Only Python's standard library and Pandoc are required. Source note and
-experiment paths remain unchanged. The generated site needs no CDN.
+Only Python's standard library and Pandoc are required. The generated site
+needs no CDN. Stale generated note pages are removed when sources disappear.
 """
 from concurrent.futures import ThreadPoolExecutor
+from collections import Counter
 from html import escape, unescape
 from html.parser import HTMLParser
 from pathlib import Path
@@ -16,6 +17,8 @@ import re
 import shutil
 import subprocess
 from urllib.parse import quote, unquote, urlsplit
+
+from mathml_compat import normalize_document
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "docs"
@@ -30,6 +33,66 @@ CHAPTERS = [
     ("audits", "Reproducing calculations"),
 ]
 COLLECTIONS = json.loads((ROOT / "book/collections.json").read_text())
+
+
+
+
+def equation_labels(document):
+    """Read expected equation labels from Math nodes, excluding prose/code."""
+    labels = Counter()
+    def walk(node):
+        if isinstance(node, dict):
+            if node.get('t') == 'Math':
+                labels.update(re.findall(r'\\tag\s*\{([A-Za-z0-9]+)\}', node['c'][1]))
+            else:
+                for value in node.values(): walk(value)
+        elif isinstance(node, list):
+            for value in node: walk(value)
+    walk(document)
+    return labels
+
+
+def visible_equation_labels(body):
+    """Count upright labels in visible MathML, never in TeX annotations."""
+    class Labels(HTMLParser):
+        def __init__(self):
+            super().__init__(); self.annotation = 0; self.text = None; self.labels = Counter()
+        def handle_starttag(self, tag, attrs):
+            if tag in {'annotation', 'annotation-xml'}: self.annotation += 1
+            if tag == 'mtext' and not self.annotation: self.text = []
+        def handle_data(self, data):
+            if self.text is not None and not self.annotation: self.text.append(data)
+        def handle_endtag(self, tag):
+            if tag in {'annotation', 'annotation-xml'}: self.annotation -= 1
+            if tag == 'mtext' and self.text is not None:
+                match = re.fullmatch(r'\(([A-Za-z0-9]+)\)', ''.join(self.text))
+                if match: self.labels[match[1]] += 1
+                self.text = None
+    parser = Labels(); parser.feed(body)
+    return parser.labels
+
+
+def render_markdown(text):
+    """Render parsed math with presentation-only TeX compatibility expansions."""
+    parsed = subprocess.run([
+        "pandoc", "--from=markdown-raw_html+tex_math_dollars+tex_math_single_backslash",
+        "--to=json",
+    ], input=text, text=True, capture_output=True, check=True)
+    if parsed.stderr.strip():
+        raise RuntimeError(parsed.stderr.strip())
+    document = json.loads(parsed.stdout)
+    expected_labels = equation_labels(document)
+    document, changes = normalize_document(document)
+    rendered = subprocess.run([
+        "pandoc", "--from=json", "--to=html5", "--mathml", "--wrap=none",
+    ], input=json.dumps(document, ensure_ascii=False), text=True,
+        capture_output=True, check=True)
+    if rendered.stderr.strip():
+        raise RuntimeError(rendered.stderr.strip())
+    missing_labels = expected_labels - visible_equation_labels(rendered.stdout)
+    if missing_labels:
+        raise RuntimeError(f"Equation labels missing from visible MathML: {dict(missing_labels)}")
+    return rendered.stdout, changes
 
 
 def repair_numbered_fragments(directory):
@@ -81,7 +144,7 @@ def repair_numbered_fragments(directory):
 
 def note_context(source, base, status):
     stem = Path(source).stem
-    related = [c for c in COLLECTIONS if stem in [c["entry"], *c["notes"]]]
+    related = [c for c in COLLECTIONS if stem in [c.get("entry", ""), *c["notes"]]]
     links = [f'<a href="{REPO}/blob/main/{quote(source)}">Markdown source</a>']
     for candidates, label in (((f"audit_{stem}.py",), "Audit script"),
                               ((f"{stem}_results.json", f"audit_{stem}_results.json"), "Recorded output")):
@@ -135,7 +198,7 @@ def page(url, title, body, active, source=None, topic="Research guide", status="
     nav += f'<a href="{base}papers/index.html" class="{"active" if active == "papers" else ""}">Quantum invariants and volume</a>'
     nav += f'<a href="{base}library.html" class="{"active" if active == "library" else ""}">Research library</a>'
     nav += f'<a href="{base}figures.html" class="{"active" if active == "figures" else ""}">Figure gallery</a>'
-    nav += f'<a href="{base}archive.html" class="{"active" if active == "archive" else ""}">Search the archive</a>'
+    nav += f'<a href="{base}archive.html" class="{"active" if active == "archive" else ""}">Search technical notes</a>'
     headings = Headings(); headings.feed(body)
     toc = '<aside class="toc" aria-label="On this page"><p>On this page</p>' + "".join(
         f'<a href="#{escape(identifier)}">{escape(label)}</a>'
@@ -160,7 +223,7 @@ def page(url, title, body, active, source=None, topic="Research guide", status="
 <div class="mobile-bar"><a href="{base}index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
 <aside class="sidebar" id="sidebar"><a class="brand" href="{base}index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
 <button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation">{nav}</nav>
-<div class="sidebar-bottom">Research edition · 1 November 2026<br>General conjecture remains open.<a href="{REPO}">Repository ↗</a><a href="{REPO}/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<div class="sidebar-bottom">Research edition · 25 November 2026<br>General conjecture remains open.<a href="{REPO}">Repository ↗</a><a href="{REPO}/blob/main/RESEARCH_LOG.md">Research status ↗</a></div></aside>
 <main id="main" class="layout"><div class="eyebrow">{escape(topic)}</div><div class="reading-grid"><article class="content">{context}{body}{chapter_nav}
 <footer class="page-footer">{source_link}<a href="{REPO}">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article>{toc}</div></main>
 <dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
@@ -171,8 +234,13 @@ def main():
     if not shutil.which("pandoc"):
         raise SystemExit("Pandoc is required. Install it, then run this script again.")
     catalog = json.loads((ROOT / "book/catalog.json").read_text())
+    paper_names = {p["directory"] for p in
+                   json.loads((ROOT / "papers/catalog.json").read_text())["papers"]}
     for collection in COLLECTIONS:
-        for stem in [collection["entry"], *collection["notes"]]:
+        if collection.get("paper") and collection["paper"] not in paper_names:
+            raise SystemExit(f"Unknown paper in reading route: {collection['paper']}")
+    for collection in COLLECTIONS:
+        for stem in [*([collection["entry"]] if collection.get("entry") else []), *collection["notes"]]:
             if not (ROOT / "notes" / f"{stem}.md").is_file():
                 raise SystemExit(f"Collection {collection['id']} refers to missing note {stem}")
     mapping = {}
@@ -194,7 +262,14 @@ def main():
         mapping["manuscript/build/main.pdf"] = "papers/conway-composition.pdf"
         (OUT / "papers").mkdir(parents=True, exist_ok=True)
         shutil.copyfile(manuscript_pdf, OUT / "papers/conway-composition.pdf")
-    for source in sorted((ROOT / "notes").glob("*.md")):
+    note_sources = sorted((ROOT / "notes").glob("*.md"))
+    current_notes = {source.stem for source in note_sources}
+    removed_pages = 0
+    for generated in (OUT / "notes").glob("*.html"):
+        if generated.stem not in current_notes:
+            generated.unlink()
+            removed_pages += 1
+    for source in note_sources:
         mapping[source.relative_to(ROOT).as_posix()] = f"notes/{source.stem}.html"
     figures = [p for p in (ROOT / "book/figures").iterdir() if p.suffix in (".png", ".svg", ".pdf", ".tex")]
     for source in figures:
@@ -214,6 +289,7 @@ def main():
     (OUT / ".nojekyll").touch()
     broken = []
     restored_math = []
+    math_compatibility = []
 
     def rewrite(body, source, target):
         # Older notes write products such as [a](b;Q) as plain text.
@@ -275,14 +351,17 @@ def main():
 
     def convert(item):
         source, target = item; text = (ROOT / source).read_text()
-        result = subprocess.run(["pandoc", "--from=markdown-raw_html+tex_math_dollars+tex_math_single_backslash", "--to=html5", "--mathml", "--wrap=none"], input=text, text=True, capture_output=True, check=True)
-        if result.stderr.strip():
-            raise RuntimeError(f"Cannot publish {source}:\n{result.stderr.strip()}")
-        body = rewrite(result.stdout, source, target)
+        try:
+            rendered, changes = render_markdown(text)
+        except (RuntimeError, ValueError, subprocess.CalledProcessError) as error:
+            raise RuntimeError(f"Cannot publish {source}:\n{error}") from error
+        if changes:
+            math_compatibility.append({"source": source, "normalizations": changes})
+        body = rewrite(rendered, source, target)
         stem = Path(source).stem
         is_errata = source == "manuscript/ERRATA.md"
         is_guide = source.startswith("book/") or is_errata
-        topic, status = ("Research guide", "Guide") if is_guide else catalog.get(stem, ["Research archive", "See note"])
+        topic, status = ("Research guide", "Guide") if is_guide else catalog.get(stem, ["Technical notes", "See note"])
         is_papers = source == "papers/README.md"
         if is_papers:
             topic, status = "Research papers", ""
@@ -335,24 +414,26 @@ def main():
         preview = (f'<a class="collection-picture" href="guide/{c["guide"]}.html" aria-label="Read the guide to {escape(c["title"], quote=True)}">'
                    f'<img src="assets/figures/{c["figure"]}.png" alt="{escape(c["title"], quote=True)} — explanatory diagram" loading="lazy"></a>') if c.get("figure") else ''
         selected = ''.join(f'<li><a href="notes/{stem}.html">{escape(by_url[f"notes/{stem}.html"]["title"])}</a></li>' for stem in c["notes"])
+        entry_url = (f"papers/{c['paper']}.pdf" if c.get("paper")
+                     else f"notes/{c['entry']}.html")
         cards.append(f'''<section class="collection-card" id="{c['id']}">
 <div class="collection-number">{number:02d} · {escape(c['topic'])}</div>
 <h2 id="{c['id']}-heading">{escape(c['title'])}</h2>{preview}<p>{escape(c['summary'])}</p>
 <p class="collection-scope">{escape(c['scope'])}</p>
-<a class="collection-entry" href="notes/{c['entry']}.html">{escape(c['entry_label'])} →</a>
+<a class="collection-entry" href="{entry_url}">{escape(c['entry_label'])} →</a>
 <details><summary>Supporting arguments ({len(c['notes'])})</summary><ul>{selected}</ul></details>
 <div class="collection-links"><a href="guide/{c['guide']}.html">Read the explanation</a><a href="archive.html?type=Note&amp;topic={quote(c['topic'])}">Browse topic</a></div></section>''')
-    library = ('<h1>Research library</h1><p>Choose a question, then follow its main argument and supporting notes. Each route states its scope; the archive keeps the full research history.</p>'
+    library = ('<h1>Research library</h1><p>Choose a question, then follow its current paper and supporting notes. Each route states its scope. Superseded material is kept in Git history.</p>'
                '<div class="library-intro"><a href="guide/results.html"><strong>Start with the results</strong><span>Families, hypotheses, and exact conclusions</span></a>'
                '<a href="guide/frontier.html"><strong>Find the remaining gap</strong><span>What the general conjecture still needs</span></a>'
                '<a href="figures.html"><strong>Explore the diagrams</strong><span>Geometry, source operations, and peripheral data</span></a></div>'
                '<div class="collection-grid">' + ''.join(cards) + '</div>'
-               '<h2 id="complete-archive">The complete archive</h2><p>These routes are curated entry points. All technical notes, including uncatalogued and historical work, remain available in the <a href="archive.html">searchable archive</a>. A note’s audit and recorded output are linked beside its source when a matching pair exists.</p>')
+               '<h2 id="complete-archive">All retained notes</h2><p>The <a href="archive.html">technical-note index</a> contains the current supporting arguments and open research. A note’s check script and recorded output are linked beside its source when a matching pair exists.</p>')
     (OUT / "library.html").write_text(page("library.html", "Research library", library, "library", "book/collections.json"))
     fallback = ''.join(f'<li><a href="{escape(row["url"])}">{escape(row["title"])}</a></li>' for row in records if row['type'] == 'Note')
-    body = f'''<h1>Research archive</h1><p>Search the complete technical notes, audit scripts, and recorded data. For an organized starting point, <a href="library.html">browse the research library</a>. Archived notes retain their own hypotheses, dates, and corrections.</p><p>Recorded computations check their stated finite identities; the mathematical arguments and hypotheses are given in the associated notes. Uncatalogued notes carry the neutral “See note” status. Notes are shown first; select another record type to browse scripts or data.</p>
+    body = f'''<h1>Technical notes</h1><p>Search the retained notes, check scripts and recorded data. For an organized starting point, <a href="library.html">browse the research library</a>. Superseded notes and experiment code are available in Git history.</p><p>Recorded computations check their stated finite identities; the mathematical arguments and hypotheses are given in the associated notes. Uncatalogued notes carry the neutral “See note” status. Notes are shown first; select another record type to browse scripts or data.</p>
 <div class="archive-controls"><input id="archive-query" type="search" aria-label="Search archive" placeholder="Search full notes or audit names…"><select id="archive-type" aria-label="Record type"><option value="">All types</option><option>Guide</option><option selected>Note</option><option>Audit script</option><option>Recorded data</option></select><select id="archive-topic" aria-label="Research topic"><option value="">All topics</option></select><button id="archive-reset" type="button">Reset filters</button></div><p id="archive-count" class="archive-count" role="status">Loading the index…</p><div id="archive-results"></div><button id="archive-more" class="more" hidden>Show more</button><noscript><h2>Technical notes</h2><p>Enable JavaScript for search and topic filtering.</p><ul>{fallback}</ul></noscript>'''
-    (OUT / "archive.html").write_text(page("archive.html", "Research archive", body, "archive"))
+    (OUT / "archive.html").write_text(page("archive.html", "Technical notes", body, "archive"))
     # Keep previously published companion URLs useful without maintaining a
     # second set of explanations or requiring a second documentation tool.
     legacy = OUT / "sphinx"
@@ -376,9 +457,18 @@ def main():
             '<body><p>This material is now part of the illustrated guide. '
             f'<a href="{url}">Continue to the guide.</a></p></body></html>\n')
     repaired_fragments = repair_numbered_fragments(OUT)
-    info = {"guide_chapters": len(CHAPTERS), "technical_notes": sum(r['type'] == 'Note' for r in records), "search_records": len(records), "figures": len([f for f in figures if f.suffix == '.png']), "literal_math_links_restored": len(restored_math), "numbered_heading_links_repaired": repaired_fragments, "unresolved_source_links": sorted(broken, key=lambda r: (r['source'], r['link']))}
+    info = {"guide_chapters": len(CHAPTERS), "stale_note_pages_removed": removed_pages, "math_rendering_compatibility": sorted(math_compatibility, key=lambda r: r["source"]), "technical_notes": sum(r['type'] == 'Note' for r in records), "search_records": len(records), "figures": len([f for f in figures if f.suffix == '.png']), "literal_math_links_restored": len(restored_math), "numbered_heading_links_repaired": repaired_fragments, "unresolved_source_links": sorted(broken, key=lambda r: (r['source'], r['link']))}
     (OUT / "build-info.json").write_text(json.dumps(info, indent=2) + "\n")
-    print(json.dumps({k: v for k, v in info.items() if k != 'unresolved_source_links'}, indent=2))
+    summary = {k: v for k, v in info.items()
+               if k not in {'unresolved_source_links', 'math_rendering_compatibility'}}
+    normalization_counts = Counter()
+    for item in math_compatibility:
+        normalization_counts.update(item['normalizations'])
+    summary['math_rendering_compatibility'] = {
+        'sources': len(math_compatibility),
+        'normalizations': dict(sorted(normalization_counts.items())),
+    }
+    print(json.dumps(summary, indent=2))
     print(f"Unresolved historical source links: {len(broken)} (recorded in docs/build-info.json)")
     current_broken = [row for row in broken if row['source'].startswith('book/')]
     if current_broken: raise SystemExit(f"Guide has unresolved links: {current_broken}")

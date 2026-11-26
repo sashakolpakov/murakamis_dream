@@ -37,7 +37,7 @@ I_{\mathrm{cross}}={}&q^{\frac{d^2}{4}\sum_i n_i}(-i)^R
 \end{aligned}\tag{1}
 $$
 
-Every $n_i=\epsilon_i-2p_i$ is its actual nonzero fixed integer crossing power. A separately recorded final-diagram framing/component character multiplies (1) when converting the raw contraction to the final invariant convention. No additional mark or power of N is inserted. Formula (1) follows by linear projection of the [exact full numerator identity](actual_cross_cofactor_factorization.md) onto these path sectors; a separate covariance claim for an individual path sector is unnecessary.
+Every $n_i=\epsilon_i-2p_i$ is its actual nonzero fixed integer crossing power. A separately recorded final-diagram framing/component character multiplies (1) when converting the raw contraction to the final invariant convention. No additional mark or power of N is inserted. Formula (1) follows by linear projection of the [exact full numerator identity](../papers/filling-bounds/README.md) onto these path sectors; a separate covariance claim for an individual path sector is unnecessary.
 
 For every fixed $N$ and $\mathbf n$ the whole-domain charge series is absolutely convergent. Indeed $B_N=(\prod_i\sin(2\pi\delta_i))C_Ne^{\pi iN\sum_i n_i\delta_i^2}$ has zero endpoint values and matching first derivatives in each variable, including after differentiating other variables. Three integrations by parts in each coordinate give $O_{N,\mathbf n}(\prod_i|\ell_i|^{-3})$; after the charge factors this is summable. This observation alone is not a bound uniform in $N$.
 
@@ -52,7 +52,7 @@ C_N(\boldsymbol\delta)
 \left[1+O(N^{-1})\right].\tag{2}
 $$
 
-with its exact finite anchors and determinant branch. $A_N$ is real on the real chart, even in each coordinate, and tends with fixed derivatives to $A_0$, with $A_0(0)=\Phi_D$ and $A_0''(0)=-2\operatorname{diag}(C_i)$, $C_i>0$. On a smaller chart $\operatorname{Re}A_N''$ is uniformly negative definite. This is the CROSS packet proved before the full-numerator restoration in the [whole-source packet theorem](general_full_spectral_numerator_geometric_packet.md), so it uses the same $A_N$ and $H_N$. Equivalently the full packet plus its independently controlled noncross error gives the same local asymptotic.
+with its exact finite anchors and determinant branch. $A_N$ is real on the real chart, even in each coordinate, and tends with fixed derivatives to $A_0$, with $A_0(0)=\Phi_D$ and $A_0''(0)=-2\operatorname{diag}(C_i)$, $C_i>0$. On a smaller chart $\operatorname{Re}A_N''$ is uniformly negative definite. This is the CROSS packet proved before the full-numerator restoration in the [whole-source packet theorem](../papers/casimir-source-asymptotics/README.md), so it uses the same $A_N$ and $H_N$. Equivalently the full packet plus its independently controlled noncross error gives the same local asymptotic.
 
 (H2) For every fixed $\eta>0$, there are $\tau_\eta,\gamma_\eta>0$ such that
 
@@ -60,7 +60,7 @@ $$
 |C_N(\boldsymbol\delta)|\leq e^{N(\Phi_D-\gamma_\eta)}.\tag{3}
 $$
 
-for all sufficiently large N, $\max_i|\operatorname{Re}\delta_i|\geq\eta$ on the centered real cube, and $|\operatorname{Im}\delta_i|\leq\tau_\eta$. Periodicity extends this to equivalent real representatives. Every fixed derivative has the same strict exponential bound on smaller strips. The [global CROSS spectral-gap theorem](actual_global_cross_spectral_gap.md) retains the protected zero faces and all original start rows.
+for all sufficiently large N, $\max_i|\operatorname{Re}\delta_i|\geq\eta$ on the centered real cube, and $|\operatorname{Im}\delta_i|\leq\tau_\eta$. Periodicity extends this to equivalent real representatives. Every fixed derivative has the same strict exponential bound on smaller strips. The [global CROSS spectral-gap theorem](../papers/casimir-source-asymptotics/README.md) retains the protected zero faces and all original start rows.
 
 **Theorem.** There is a diagram-dependent threshold $n_0$ such that for every fixed independently signed integer vector with $|n_i|\geq n_0$, the entire period (1) equals
 
@@ -85,7 +85,7 @@ Q_{N,\boldsymbol\ell}&=-\Phi_{N,\boldsymbol\ell}''(\boldsymbol\delta_{N,\boldsym
 \end{aligned}
 $$
 
-and the $Q$ determinant root is the Gaussian branch $\operatorname{Re}Q>0$. The coefficient in (4) is nonzero for each fixed $\mathbf n$, at both level parities. Its normalized logarithmic modulus limit is the actual smooth filled hyperbolic volume, by the [marked action and boundary correction](actual_cross_cofactor_marked_action.md). The same exact half twist $\mathbf n=\boldsymbol\epsilon-2\mathbf p$ occurs only once.
+and the $Q$ determinant root is the Gaussian branch $\operatorname{Re}Q>0$. The coefficient in (4) is nonzero for each fixed $\mathbf n$, at both level parities. Its normalized logarithmic modulus limit is the actual smooth filled hyperbolic volume, by the [marked action and boundary correction](../papers/casimir-source-asymptotics/README.md). The same exact half twist $\mathbf n=\boldsymbol\epsilon-2\mathbf p$ occurs only once.
 
 The proof uses no separately summed infinite sharp-cube series. Only a finite charge set is localized. The infinite tail is estimated on whole original intervals before any charge summation.
 

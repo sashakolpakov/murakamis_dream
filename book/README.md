@@ -30,17 +30,18 @@ rigidity, Regge symmetries, and descent from a cover.
 [Remaining questions](chapters/frontier.md), [notation](chapters/notation.md),
 and [reproduction](chapters/audits.md) are reference chapters.
 The [research library](https://sashakolpakov.github.io/murakamis_dream/library.html)
-connects these explanations to the detailed arguments and historical notes.
+connects these explanations to the retained arguments and current research notes.
 
 For a particular theorem, use the
 [dependency graph](../docs/papers/dependencies.html) and its **recorded
 proof route** to find the prerequisites in order. A shared result appears
 once in that route. The [manuscript chapter](chapters/manuscript.md)
-explains why the frozen account reached 374 pages and how the current
-21 subject drafts, totaling 403 pages, differ from it. The drafts are
-provisional groupings; splitting alone has not shortened the collection.
+describes the current 210-page reference and the 21 subject papers,
+which total 420 pages. The papers repeat the conventions needed for
+independent reading and citation; their total is not the length of one
+proof. The seven-paper Conway route has 160 pages.
 
-The [closing assessment](../repro/RETAINED_RELEASE_ASSESSMENT.md) states
+The [closing assessment](../repro/MANUSCRIPT_AND_LOGIC_AUDIT_2026-11-25.md) states
 what the retained-results review covered. Analytic and geometric proofs
 remain written proofs; the Lean results verify their stated mathematical
 implications without providing an end-to-end formal knot theorem.
@@ -51,7 +52,7 @@ source or build to maintain.
 
 The chapter sources are in the chapters directory. The figures directory contains editable TikZ drawings and their PDF, SVG and PNG versions. The [figure gallery](figures.md) explains what each diagram represents and links it to the relevant chapter. A schematic diagram illustrates a construction; it is not a substitute for its labeled face-pairing or analytic proof.
 
-The file collections.json organizes the technical library into reading routes. The file catalog.json records topic and status descriptions where these have been supplied. An uncatalogued note has the neutral label “See note”; absence of a catalog entry does not change its mathematics. The original notes and experiments directories stay in place so existing proof and script links remain usable.
+The file collections.json organizes reading routes around current papers and retained supporting notes. The file catalog.json supplies topic and scope descriptions for those notes. A note without an entry has a neutral description. Superseded proofs now link to their current paper; obsolete working notes and diagnostic outputs have been removed. The source snapshot in Git preserves the earlier research history.
 
 ## Rebuilding the guide
 
@@ -88,4 +89,4 @@ The generated site can be inspected locally with:
 
 Add a reading-route entry when it helps explain a sequence of arguments, and give a status description only with the scope of the linked result in view. The builder can associate a note with a correspondingly named audit script and result file. That association makes the computation reproducible; it does not mean a finite computation proves an asymptotic theorem.
 
-Archive browsing uses a small metadata index. Full-text search loads its larger index only when requested. Search and topic filters are stored in the URL, so a selected part of the library can be shared without moving any underlying files.
+Library browsing uses a small metadata index. Full-text search loads its larger index only when requested. Search and topic filters are stored in the URL, so a selected part of the retained library can be shared. The builder removes pages for notes no longer in that collection; an old generated page is not another source edition.

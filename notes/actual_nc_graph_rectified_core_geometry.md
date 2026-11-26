@@ -109,7 +109,7 @@ arcs at that end of the box. At each trivalent graph vertex the three
 original nested cup/cap arcs connect the three incident disks in a
 triangle. Consequently the white-face and cusp incidence is exactly
 the Fisher expansion T(Gamma), as independently traced in
-[the actual boundary construction](actual_six_pants_boundary_torsor_and_sewing.md).
+[the actual boundary construction](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_six_pants_boundary_torsor_and_sewing.md).
 
 This is a reversible topological cut: shrink each opposite white
 triangle toward the original vertex cup/cap matching; trace each
@@ -226,7 +226,7 @@ the finite certificate is transported by the explicit face isometry.
 This gives a constructive closure operation on the geometric input
 class, not an existence assumption for every planar graph. When the
 operation uses the ordered interval/outer-face graft of
-[the NC cube insertion](actual_nc_spin_one_flow_order_certificate.md),
+[the NC cube insertion](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_nc_spin_one_flow_order_certificate.md),
 it also retains the actual original source topology.
 
 In particular, start with the literal cube and repeatedly insert an

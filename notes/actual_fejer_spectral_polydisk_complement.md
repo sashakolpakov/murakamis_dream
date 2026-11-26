@@ -16,7 +16,7 @@ face targets d=N-1 and its two protected targets zero. Write
   F_N=-V_N(-2)                              (N even),
   F_N=V_N(-2)-N^(-2)partial_sigma V_N(-2)    (N odd).
 
-These are the actual covariant coupons in the [homogeneous source theorem](actual_homogeneous_casimir_face_source.md), with the [exact odd/even majorants](actual_fejer_odd_regularized_full_numerator.md).
+These are the actual covariant coupons in the [homogeneous source theorem](../papers/filling-bounds/README.md), with the [exact odd/even majorants](actual_fejer_odd_regularized_full_numerator.md).
 The coefficient of H_(F_N) at every local degree-d exponent is positive,
 and its logarithmic rate is uniformly the same continuous h(q), q=n/d,
 at both parities. Let Z_F be their original whole shared coefficient.

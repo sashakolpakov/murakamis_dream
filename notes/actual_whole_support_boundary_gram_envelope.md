@@ -9,7 +9,7 @@ the same action as a positive main term. All low/high partner branches,
 the original marked normal and every lower moment are retained.
 
 This controls the pointed algebraic Gram from the
-[actual six-pants boundary](actual_six_pants_boundary_torsor_and_sewing.md).
+[actual six-pants boundary](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_six_pants_boundary_torsor_and_sewing.md).
 It does not identify its constructed reflection with a physical
 mirror, bound the physical change of frame or general recouplings,
 or prove a graph's sharp geometric energy/noncancellation.
@@ -49,7 +49,7 @@ coordinate cell into the physical tensor product.
 
 ## 2. The original generic trace and all its normal factors
 
-The [proved generic source identity](actual_generic_trivalent_racah_source_identity.md)
+The [proved generic source identity](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_generic_trivalent_racah_source_identity.md)
 and the genuine ordered physical trace give, for each unfolded ordinary
 triangle j=(a,b,c), the EXACT rational function
 
@@ -213,7 +213,7 @@ Use the common disk |Z|<=c/N^2. A quantum-factorial ratio with a
 fixed number of factors and indices <=3N has, after explicitly
 removing its zeros, a polynomial envelope relative to its nonzero
 root product on this disk. This follows either from the proved
-[bounded normal factorial estimate](bounded_normal_quantum_factorial_envelope.md)
+[bounded normal factorial estimate](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/bounded_normal_quantum_factorial_envelope.md)
 or directly: a nonzero 1-q^(2k) has magnitude >=c0/N; its change
 is O(|Z|), and O(N) such factors accumulate only bounded relative
 growth here. Removed [N] and [2N] factors and the symmetric-int

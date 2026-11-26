@@ -1,6 +1,6 @@
 # Non-diagonal maximizers have no free zero degrees
 
-, 31 October 2026. This uses the actual shared
+31 October 2026. This uses the actual shared
 entropy theorem and the labeled complete geometric all-cross flow. It
 does not assume a global entropy redistribution or exchange inf and max.
 It supplies ordinary finite positive Lagrange multipliers on a precise
@@ -11,7 +11,7 @@ stratum. The remaining diagonal strata are expressly excluded.
 Use the [shared entropy theorem](actual_fejer_shared_entropy_variational.md), with the actual
 two protected faces and fixed incidence map. A maximizer includes the
 two triangular allocations at each cross port. First perform the
-proved [batch terminal reduction](actual_fejer_batch_terminal_reduction.md): every one-sided port with nu=1/2 is
+proved [batch terminal reduction](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_fejer_batch_terminal_reduction.md): every one-sided port with nu=1/2 is
 retagged cross at the SAME degree vector and entropy. Eventual
 feasibility of the new pattern follows by mixing with the geometric
 all-cross flow, scaling by d and rounding with strict middle slack.
@@ -193,9 +193,14 @@ the protected MAIN edge. These formulas also include the forced joint
 corner x=b=0: the input is the two-line angle vector and the remaining
 terminal equation is unchanged.
 
+The local argument supplies finite positive multipliers, not a volume
+comparison by itself. The following conclusion also uses a conditional
+marked development and the global sewn-chain calculation cited below.
+The marked development retains its stated stationary-stratum hypotheses.
+
 Thus these maxima supply the FINITE positive ordinary multipliers and
 strict remaining equations required by the [marked signed-circle
-development](actual_fejer_marked_signed_development.md). The [global
+development](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_fejer_marked_signed_development.md). The [global
 signed cut-ball regulator](actual_fejer_signed_cut_ball_regulator.md)
 uses the original labeled degree-one fundamental chain, actual face
 pairings, one reflection of the second ball, and the retained peripheral

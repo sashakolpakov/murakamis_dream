@@ -20,7 +20,7 @@ Fix the finite ordered Morse word of the augmented plat and its actual
 complete geometric representation. Use common trace -2 lifts of the
 main meridians. At each circle box its two puncture flags are distinct
 and their ordered product P is noncentral parabolic with trace -2,
-as in the [geometric endpoint theorem](actual_augmented_plat_geometric_channel_endpoint.md).
+as in the [geometric endpoint theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_augmented_plat_geometric_channel_endpoint.md).
 The same statements hold after its retained Hurwitz half twists.
 
 These hypotheses do not require a right-angled cell decomposition. In

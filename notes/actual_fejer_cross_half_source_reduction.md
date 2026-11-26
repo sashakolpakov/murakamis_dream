@@ -13,7 +13,7 @@ In the actual face monomial basis,
 
     Omega z^j=c_j z^j-s_j^2(x+y)z^(j-1)-s_js_(j-1)xy z^(j-2).
 
-Use the [original homogeneous compiler](actual_homogeneous_casimir_face_source.md).
+Use the [original homogeneous compiler](../papers/filling-bounds/README.md).
 Let chi_N(z)=2T_N(z/2)+2 and V_N(z)=chi_N(z)(z-Omega)^(-1), its
 polynomial resolvent numerator. Let P=-H_(V_N(-2)) be the positive Fejer
 homogeneous polynomial. The exact fixed-root resolvent convention is
@@ -111,7 +111,7 @@ d=2m-1, so it cannot receive TWO such arrows. Each protected face has
 target0, so it receives none.
 
 The original flat-plat middle graph has the
-[frozen gap description](actual_simultaneous_small_circle_face_correspondence.md):
+[frozen gap description](../papers/triangular-insertion/README.md):
 each odd gap is a path of distinct bounded faces; each internal even
 gap is a cycle based at the SAME exterior face u, with its other faces
 unique to that gap. Therefore every selected-edge cycle contains u.

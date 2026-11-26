@@ -9,7 +9,7 @@ Let $D$ be a fixed original flat $2k$-plat, $k\geq2$, with $R$ ordered crossing 
 - Its first zero-based box slot is $1$.
 - No box uses slot $0$.
 - The first original top cap, on slots $(0,1)$, is marked.
-- Its white sphere is simple, carries the actual labeled right-angled certificate, and its one complete marked packing satisfies the [complete-radius balance condition](general_complete_radius_balance_filling_volume.md) at every port.
+- Its white sphere is simple, carries the actual labeled right-angled certificate, and its one complete marked packing satisfies the [complete-radius balance condition](../papers/planar-certificates/README.md) at every port.
 
 Retain every original half-twist sign and the original cup/cap conventions. For any integer $m\geq0$, form the literal bottom-to-top word
 
@@ -64,7 +64,7 @@ $$
 (v,f_m,e,a^{(m)}).\tag{5}
 $$
 
-Every later core quartet is unchanged under that one face relabeling. The mark remains $u,v$. This is an exact instance of the [original Morse face dictionary](actual_original_marked_face_coefficient.md), without isotopy, stabilization or a change to the quantum marked cap.
+Every later core quartet is unchanged under that one face relabeling. The mark remains $u,v$. This is an exact instance of the [original Morse face dictionary](../papers/filling-bounds/README.md), without isotopy, stabilization or a change to the quantum marked cap.
 
 ## 3. The actual empty gap and complete packing
 
@@ -118,7 +118,7 @@ The minimum local balance margin of $D^{(m)}$ is at least the smaller of the old
 
 Every new exponent $-2p$ is even, of either sign, so its endpoint permutation is the identity. The new boxes do not change the original component graph. Every original half twist remains in its original box, and the marked cap remains fixed. These even exponents are independent genuine crossing regions; their trivial endpoint permutation is not an identity on the finite quantum source.
 
-For each fixed extended diagram, its certificate and proved balance let the [full-source theorem](general_complete_radius_balance_filling_volume.md) control the entire one-sided remainder and apply the original all-charge filling theorem. This proves (2), including the original normalization and sufficiently long smooth hyperbolic filling. The conclusion is not inferred from the packing picture alone.
+For each fixed extended diagram, its certificate and proved balance let the [full-source theorem](../papers/planar-certificates/README.md) control the entire one-sided remainder and apply the original all-charge filling theorem. This proves (2), including the original normalization and sufficiently long smooth hyperbolic filling. The conclusion is not inferred from the packing picture alone.
 
 If the original parity gives a knot and all old and new full exponents are additionally divisible by $3$, the [Fox-coloring certificate](actual_fox_coloring_exact_plat_bridge.md) gives exactly $3^k$ colorings. The supplied $2k$-plat then has minimal bridge number exactly $k$. For the new boxes, this condition is $p\equiv0\pmod3$. Every required congruence allows independent arbitrarily large positive and negative parameters. It is used only for the bridge lower bound, not for the volume theorem.
 

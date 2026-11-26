@@ -80,7 +80,7 @@ Consequently the already specified enhanced period satisfies
 This is a uniform matrix and pairing comparison for knots, with the
 zero framing and unknot normalization fixed.
 
-The subsequent [root-orbit pointing proof](root_orbit_pointing.md)
+The subsequent [root-orbit pointing proof](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/root_orbit_pointing.md)
 extends this calculation to every integer color 1<=j<=r:
 F_r(M=-q^j)=C_j(q), where C_j is the reduced j-dimensional period.
 Its proof uses the invariant quotient of the color and a filtered
@@ -137,7 +137,7 @@ is a fixed rational gauge tensored with the sign character of the shift.
 Its root-level realization is the explicit peripheral divisor in (3.1).
 It is not a collection of arbitrary independent finite-level scalars.
 
-The subsequent [relative octahedral calculation](relative_octahedral_period.md)
+The subsequent [relative octahedral calculation](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/relative_octahedral_period.md)
 also derives 1/P_r(M^2) as the missing cyclic transition of the
 finite factorial actually appearing in these R entries. Its
 polynomial recurrence retains the source M^(2r)e_partial, and
@@ -173,7 +173,7 @@ At M=1 the comparison uses the lattices and regular whole period germs
 in (3.1)--(3.2), since the localized coefficient g is meromorphic there.
 Localization alone does not specify this specialization.
 
-The subsequent [actual peripheral-fusion proof](actual_peripheral_fusion.md)
+The subsequent [actual peripheral-fusion proof](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_peripheral_fusion.md)
 derives this gauge from the pivotal partial traces of the two
 adjacent-color projectors, without a modified-trace comparison theorem.
 The full state has elementary boundary actions M+M^(-1) and

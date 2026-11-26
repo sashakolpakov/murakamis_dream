@@ -414,7 +414,7 @@ python3 repro/verify.py --output repro/results
 For the registered paper checks:
 
 ```sh
-python3 repro/check_paper_algebra.py --output repro/results/paper-algebra
+python3 repro/check_paper_algebra.py --output repro/results/paper-collection/finite
 ```
 
 The output records each bounded scope. Finite samples do not prove

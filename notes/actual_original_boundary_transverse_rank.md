@@ -16,7 +16,7 @@ contraction, or assign a coefficient in the original relative period.
 ## 1. The literal graph and its homogeneous lattice
 
 Use the labeled certificate and original reference meridian of the
-[common boundary chart](actual_original_network_resonant_boundary_chart.md).
+[common boundary chart](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_original_network_resonant_boundary_chart.md).
 Let Delta be its plane cubic graph, with R matching edges D and 2R
 vertices. The [full original source](general_matching_graph_full_normal_source.md),
 section 2, identifies this SAME graph with the actual W/pi contraction:
@@ -221,9 +221,9 @@ differ; (3)--(5) do not identify them or erase an endpoint current.
 ## 5. Assembly of the finite transverse curvature bounds
 
 This section uses the separately proved local estimates in
-[the finite boundary curvature theorem](actual_q_hahn_boundary_model_curvature.md).
+[the finite boundary curvature theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_q_hahn_boundary_model_curvature.md).
 Retain the exact models of the
-[correlated-band theorem](actual_correlated_boundary_band_ratio.md),
+[correlated-band theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_correlated_boundary_band_ratio.md),
 their scalar phases, the literal pi reversal, and every cup and mark.
 The statement concerns the original uncontracted root product. It does
 not include the nonlinear binomial co-source or replace its actual weight.

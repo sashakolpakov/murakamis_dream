@@ -106,7 +106,7 @@ Every factor of b_epsilon is nonzero. Errors and fixed derivatives are
 uniform on smaller compacts, with smooth dependence on real alpha.
 
 The exceptional circle has the SAME assertion. Indeed its correctly
-restored [entire coefficient](actual_matching_edge_deficient_packet_regulator.md)
+restored [entire coefficient](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_matching_edge_deficient_packet_regulator.md)
 is exactly
 
     C_a(t;r,s)=k_a beta_a^2 V_a(d-t) q^[d(r+s-t)]
@@ -115,7 +115,7 @@ is exactly
 Its scalar-one reflection sends (t,r,s) to
 (N-t-2,r+N-t-1,s+N-t-1). At negative determinant arguments the
 reflected values lie in the ordinary physical packet (6). The
-[joint deficient theorem](actual_q_hahn_joint_deficient_degree_packet.md)
+[joint deficient theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_q_hahn_joint_deficient_degree_packet.md)
 then supplies a nowhere-zero relative packet for each ratio
 R_a(z)/R_a(z_*), uniformly for the actual real alpha through the fold.
 The remaining ratio is the EXACT nonzero monomial

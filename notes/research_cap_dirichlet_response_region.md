@@ -23,10 +23,8 @@ The argument allows arbitrary fixed matched simple spheres satisfying
 these hypotheses, with no restriction on their number of vertices or
 cycles. It estimates one source contribution. It does not estimate
 several noncentral regions, varying neighboring spectra, even levels,
-or the full filling period. The recorded 54-region example does not
-satisfy this response condition; its separate tilted certificate is
-proved in [the uniform cap estimate](research_cap_uniform_spectral_gap.md).
-No strict enlargement of a known knot-volume class is asserted here.
+or the full filling period. No strict enlargement of a known knot-volume
+class is asserted here.
 
 ## 1. Original coordinates and the exact restoration problem
 
@@ -51,8 +49,7 @@ left contribution, also called the cap, has arguments
 Here \(A\) is the ordinary overloaded middle; \(C\) is the other
 ordinary face. Thus the two omitted complete triangles have supports
 \(\{C\}\) and \(\{A,C\}\). They are not two copies of a
-two-supported triangle. In the 54-region source, \(A=L_{16}\) and
-\(C=L_0\); the protected faces are \(50,29\).
+two-supported triangle.
 
 At level \(N\), write \(d=N-1\). A protected face variable is set
 to zero by the original main mark; every ordinary face retains the
@@ -100,7 +97,7 @@ weights are positive, and at least one weight is positive in each
 triangle under consideration. Thus a supported triangle carries total load
 \(1/2\), and a singleton of weight \(w\) has potential
 \(\frac12\log w\). These are the absolute source conventions of
-[the triangle entropy formula](actual_triangle_entropy_algebraic_balance.md).
+[the triangle entropy formula](../papers/planar-certificates/README.md).
 
 Retain every other original triangle, every other ordinary target one,
 and both protected zeros. Fix \(C=1\), put \(A=e^z\), and minimize over
@@ -120,7 +117,7 @@ Strict positivity means that every unprotected corner of a retained
 triangle has positive load. The graph has one vertex for each ordinary
 face and joins two faces whenever they occur in the same retained
 triangle.
-These are the hypotheses of [the effective-response theorem](research_global_cap_effective_response_criterion.md).
+These are the hypotheses of [the effective-response theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/research_global_cap_effective_response_criterion.md).
 It identifies the pressure below with the odd-level limit of
 \(N^{-1}\log P_N(e^z,1)\), with locally uniform holomorphic derivatives.
 Define
@@ -155,7 +152,7 @@ the complete action of the unchanged diagram is exactly
 
 This is the complete-capacity duality with the original targets. It is
 not a filling equation or a geometric interpretation of a tilted
-exterior. [The complete matched-sphere construction](actual_morse_geometric_contribution.md)
+exterior. [The complete matched-sphere construction](../papers/casimir-source-asymptotics/README.md)
 identifies \(2\pi\Phi\) with the volume of the original augmented exterior.
 
 The useful identities for the restored triangle are
@@ -560,12 +557,12 @@ The [common-axis theorem](research_cap_common_axis_bound.md) supplies the
 original extraction, moment weights, odd stable factorization,
 squared-factor estimate and omitted-tail bound. The exact restoration
 of the two complete triangles is recorded in
-[the cap-capacity comparison](research_cap_constrained_capacity_budget.md)
-and [the algebraic boundary pressure](research_cap_algebraic_boundary_curve_and_volume_period.md).
-The [effective-response theorem](research_global_cap_effective_response_criterion.md)
+[the cap-capacity comparison](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/research_cap_constrained_capacity_budget.md)
+and [the algebraic boundary pressure](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/research_cap_algebraic_boundary_curve_and_volume_period.md).
+The [effective-response theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/research_global_cap_effective_response_criterion.md)
 gives the original triangle conductance and positive coefficient packet.
 The limitation discussed in section 7 is compared with
-[the original one-cap geometric volume budget](research_one_cap_original_chain_volume_budget.md).
+[the original one-cap geometric volume budget](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/research_one_cap_original_chain_volume_budget.md).
 
 Sections 2–6 keep these original loads and the same complete action.
 The Dirichlet estimate controls how the exterior changes with its

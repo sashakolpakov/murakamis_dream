@@ -24,7 +24,7 @@ exponents and the recorded peripheral signs. They define an algebraic
 variety over Q after inverting the shape denominators. Use the
 normalized geometric component, with its selected complete lift.
 
-The [positive rigidity proof](geometric_rigidity_and_cyclic_source.md)
+The [positive rigidity proof](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/geometric_rigidity_and_cyclic_source.md)
 shows that its marked-meridian Jacobian is invertible at the complete
 geometric point. Consequently:
 
@@ -79,7 +79,7 @@ The actual cyclotomic point on this graph is
     q=q_N=exp(pi*i/N), M=1, v=-1, w=1.           (2.2)
 
 The other meridian lift is handled in the same way. The finite phase
-cover of [the source base](uniform_frobenius_source_base.md) can be
+cover of [the source base](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/uniform_frobenius_source_base.md) can be
 retained component by component, using levels in its specified residue
 class modulo four. None of its phases is reset here.
 
@@ -364,7 +364,7 @@ proved, however, generic algebraic existence follows from the
 finite rank argument above; a comparison matrix need not be guessed
 from a list of knot examples.
 
-The subsequent [divisor-flow descent theorem](cyclotomic_divisor_descent.md)
+The subsequent [divisor-flow descent theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/cyclotomic_divisor_descent.md)
 supplies such a bound for a stated rank-one class. If the comparison
 coefficient has a fixed product of linear factors in known q-shift
 orbits, equality of its full cyclic norm characters at every large
@@ -380,7 +380,7 @@ line's stated hypotheses and norm compatibility remains necessary.
 
 ## 6. Relation to the existing work and the volume target
 
-The earlier [uniform source base](uniform_frobenius_source_base.md)
+The earlier [uniform source base](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/uniform_frobenius_source_base.md)
 already proves whole-root-graph Zariski density for fixed rational
 functions of q,M,M^N and the finite phases. The
 [all-level period proof](all_level_a_period.md) already uses sparse
@@ -400,7 +400,7 @@ quantum comparison, with its period marking. Rivin optimization
 and algebraic gluing supply its geometric place; they do not by
 themselves algebraize the quantum period or choose its global source.
 
-The [central normalization theorem](algebraic_central_normalization.md)
+The [central normalization theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/algebraic_central_normalization.md)
 already proves that a nonzero factor from a fixed finite algebraic
 central presentation has log norm O(log N), after whole-germ
 specialization. Thus a comparison of that type would have controlled
@@ -422,7 +422,7 @@ removes the earlier unramified and nonresonance restrictions for
 rational Q-coefficients. Weighted exponential--Puiseux uniqueness
 detects all moving divisor orbits, including poles tending to zero
 or infinity at Q=1. The
-[additive/unipotent extension](additive_unipotent_cyclotomic_descent.md)
+[additive/unipotent extension](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/additive_unipotent_cyclotomic_descent.md)
 then treats source differences and upper triangular rational
 comparison systems. Its generic gauge is constructed from whole
 cyclic transport, without a supplied bound for unrelated levelwise
@@ -452,7 +452,7 @@ at BOTH C_Q and Z C_Q, the endpoint-completed current is exactly
                   =[g(C_Q)-g(Z C_Q)]/(1-Z).             (7.1)
 
 The proof and original-matrix checks are in
-[the whole Jackson-current theorem](endpoint_completed_normal_clock_euler_current.md).
+[the whole Jackson-current theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/endpoint_completed_normal_clock_euler_current.md).
 The quotient is regular at Z=1 and gives C g'(C). The shifted
 argument in the first commutator is essential. Keeping only g(C_Q)
 does not specify (7.1): the finite evaluation kernel need not be
@@ -473,7 +473,7 @@ endpoint. The degree of p_N grows with N, so this example respects
 the FIXED-presentation hypothesis of Section 3. It does not contradict
 the independent bounded-lattice Mellin uniqueness theorem either.
 
-[The function-algebra audit](whole_clock_function_algebra_and_endpoint_extension.md)
+[The function-algebra audit](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/whole_clock_function_algebra_and_endpoint_extension.md)
 also proves the general algebraic reason: for generic Z of infinite
 multiplicative order, the Laurent function algebra has no nonzero
 proper finite-codimension ideal preserved by x->Zx. Thus a whole
@@ -501,8 +501,8 @@ solvability for this clock complex. The full pointed knot/geometric
 comparison is a further complex with its own flatness condition.
 
 The source has a compatible global
-[P1/Serre model](global_frobenius_cech_source_and_endpoints.md)
-and an [actual relative interval](actual_frobenius_relative_endpoint_period.md).
+[P1/Serre model](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/global_frobenius_cech_source_and_endpoints.md)
+and an [actual relative interval](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_frobenius_relative_endpoint_period.md).
 Its retained pairing density gives a rational whole comparison of
 the interval co-source with a normalized uniform row. These are
 explicit source constructions before taking any normal jets.
@@ -512,7 +512,7 @@ action, or agreement of its root two-form, does not supply that last
 intertwining identity.
 
 At the finite cut a further
-[whole degree-elevation map](degree_elevation_actual_head_ward_map.md)
+[whole degree-elevation map](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/degree_elevation_actual_head_ward_map.md)
 now supplies such a current/co-source comparison for the actual
 two-row head K/F complex. Its explicit matrix formula and retained
 whole diagonal gauges preserve the image complex, while an explicit

@@ -11,7 +11,7 @@ $$
 \qquad s_j=2\sin(\pi j/N).
 $$
 
-The LEFT sector has $0\leq i\leq j\leq m-1$. Up to its recorded overall sign, its [exact start/end summand](actual_cross_cofactor_factorization.md) is
+The LEFT sector has $0\leq i\leq j\leq m-1$. Up to its recorded overall sign, its [exact start/end summand](../papers/filling-bounds/README.md) is
 
 $$
 A_{\mathrm{rest}}(\delta)b^ic^{d-j}
@@ -33,7 +33,7 @@ $$
 
 The quotient is a finite alternating cosine sum, bounded by $N$ on the real interval. Thus $|A_{\mathrm{rest}}|\leq4N$ at odd levels, including its removable endpoint. These exact factors have zero exponential upper rate.
 
-The uniform transfer estimate in the [global CROSS proof](actual_global_cross_spectral_gap.md) applies to $K_{i,j}$ with any interval endpoints, by the same fixed-block matrix power argument. Together with uniform upper Riemann bounds for both unused prefix and suffix, it gives the upper action
+The uniform transfer estimate in the [global CROSS proof](../papers/casimir-source-asymptotics/README.md) applies to $K_{i,j}$ with any interval endpoints, by the same fixed-block matrix power argument. Together with uniform upper Riemann bounds for both unused prefix and suffix, it gives the upper action
 
 $$
 F_L(\mu,\nu,\delta)
@@ -63,7 +63,7 @@ $$
 =\max\left\{\log c,Q_b(0)+\frac12\log c\right\},\tag{3}
 $$
 
-for $c>0$ and $b\geq0$. Here $Q_b$ is the same absolutely normalized [original triangle action](actual_cross_cofactor_marked_action.md). Equality in (3) concerns the continuum upper envelope; it does not claim that every oscillatory finite polynomial realizes that rate.
+for $c>0$ and $b\geq0$. Here $Q_b$ is the same absolutely normalized [original triangle action](../papers/casimir-source-asymptotics/README.md). Equality in (3) concerns the continuum upper envelope; it does not claim that every oscillatory finite polynomial realizes that rate.
 
 ## 2. Exact endpoint optimization
 
@@ -178,7 +178,7 @@ The proof extends to $b=0$ by its sole-start limit and to $xy=0$ by the exact fi
 
 ## 4. All face phases and the final spectral cap
 
-The [exact continuous-real positivity lemma](actual_continuous_real_tail_coefficient_positivity.md) supplies a finite strengthening. Normalize
+The [exact continuous-real positivity lemma](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_continuous_real_tail_coefficient_positivity.md) supplies a finite strengthening. Normalize
 
 $$
 Q_r=\frac{K_{i,i+r}}{\prod_{v=i+1}^{i+r}s_v^2}.
@@ -222,7 +222,7 @@ $$
 \max\{Q_b(0)+Q_c(0),\log b,\log c\},
 $$
 
-because $Q_b(0)\geq\tfrac12\log b$, $Q_c(0)\geq\tfrac12\log c$, and a geometric mean never exceeds the larger endpoint. Zero-middle terms are interpreted by the exact vanishing statements above. A [strict complete-radius balance condition](general_complete_radius_balance_filling_volume.md) permits a shared-source application; no general capacity equality follows here.
+because $Q_b(0)\geq\tfrac12\log b$, $Q_c(0)\geq\tfrac12\log c$, and a geometric mean never exceeds the larger endpoint. Zero-middle terms are interpreted by the exact vanishing statements above. A [strict complete-radius balance condition](../papers/planar-certificates/README.md) permits a shared-source application; no general capacity equality follows here.
 
 ## Validation and scope
 

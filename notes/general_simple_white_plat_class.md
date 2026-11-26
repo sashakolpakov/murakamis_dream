@@ -1,6 +1,6 @@
 # A combinatorial geometric certificate for actual plats at every fixed width
 
-The subsequent [planar decoration theorem](actual_balanced_terminal_fan_volume.md) constructs balanced diagrams from every simple triangulated sphere with a chosen dual matching. It includes the full general Morse source and independently long fillings. The theorem below retains its own original scope.
+The subsequent [planar decoration theorem](../papers/terminal-decorations/README.md) constructs balanced diagrams from every simple triangulated sphere with a chosen dual matching. It includes the full general Morse source and independently long fillings. The theorem below retains its own original scope.
 
 31 October 2026. Combinatorial sufficient class and arbitrary-width construction. The main class
 is ALL actual flat plats with a simple white triangulated sphere. The
@@ -13,7 +13,7 @@ Start with an original ordered 2k-strand flat plat, k>=2, whose boxes
 cover all crossings, retaining the original cups, caps, marked top cap,
 cyclic port order and crossing-disk matching. Build its actual plane
 cubic matching graph and dual white triangular cellulation by the
-literal construction in [the actual matching geometry](general_augmented_plat_matching_geometry.md),
+literal construction in [the actual matching geometry](../papers/marked-fillings/README.md),
 sections1–2, or equivalently by the original middle-gap sweep.
 
 Require that this white cellulation is a SIMPLE triangulated sphere:
@@ -34,7 +34,7 @@ constructs a convex three-dimensional ideal right-angled polyhedron
 with exactly these LABELED white faces, shaded triangles, ideal contacts
 and cyclic orders. Separating triangles are allowed by that proof.
 
-Sections3–6 of [the actual matching geometry](general_augmented_plat_matching_geometry.md) identify
+Sections3–6 of [the actual matching geometry](../papers/marked-fillings/README.md) identify
 this labeled medial sphere with the TWO actual projection/crossing-disk
 cut balls. They glue white faces across the copies and shaded triangles
 by the original retained half-twist permutations. The original meridians,
@@ -151,7 +151,7 @@ only on k. A maximum over the finitely many cusp subsets gives one
 threshold for partial fillings as well, with unfilled inverse slopes0.
 
 The endpoint/complete-source results apply with their separately stated
-source and parity scopes. The later [balance theorem](general_complete_radius_balance_filling_volume.md)
+source and parity scopes. The later [balance theorem](../papers/planar-certificates/README.md)
 proves the full fixed long-filling limit under its additional geometric
 condition. The [one-end layer family](general_one_end_layer_long_filling_volume.md)
 establishes that condition for its actual words at every k>=2. This class

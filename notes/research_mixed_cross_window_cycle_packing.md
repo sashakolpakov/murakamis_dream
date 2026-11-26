@@ -22,7 +22,7 @@ Write
 \]
 The sign in (1) is part of the actual numerator convention; it has modulus
 one and is restored when taking products of raw coupons. The
-[exact factorization](actual_cross_cofactor_factorization.md), at the same
+[exact factorization](../papers/filling-bounds/README.md), at the same
 level \(N\), uses
 \[
  \begin{aligned}
@@ -126,7 +126,7 @@ some supported incidence has circular distance at least \(\eta\) from
 separated; if it is \(c\), those of \((x,c,y)\) are separated. If it is
 the other outer incidence, both sides are separated. The selected side
 therefore has at least two positive entries. The
-[actual cofactor angular theorem](actual_cross_cofactor_global_angular_gap.md)
+[actual cofactor angular theorem](../papers/casimir-source-asymptotics/README.md)
 gives
 \[
  |R_j(\text{phased side};u)|
@@ -169,7 +169,7 @@ source-rate interface without an unspecified exponential scalar.
 For completeness, (13) follows from the existing endpoint cofactor packets
 with a quantitative product estimate. For \(b>0\), including exactly one
 zero outer weight, the
-[interior-start packet](actual_cross_cofactor_interior_packet.md)
+[interior-start packet](../papers/casimir-source-asymptotics/README.md)
 has its starting saddle in a fixed compact subset of \((0,1/2)\).
 The finite prefix diagonal is bounded away from zero before that saddle,
 and the positive tail root is bounded away from zero from there to the
@@ -182,14 +182,14 @@ unit times \(\sqrt N\); hence
 \(\log R_{J-k}(b;0)=NQ(x,b,y)+O(\log N)\), for fixed \(k\).
 
 For \(b=0\) and \(xy>0\), the
-[protected-middle packet](actual_cross_cofactor_protected_packet.md)
+[protected-middle packet](../papers/casimir-source-asymptotics/README.md)
 is a bounded nonzero amplitude times
 \(\prod_{j=1}^n s_j\lambda_{j,+}\). The positive \(\lambda_{j,+}\)
 is uniformly bounded away from zero even at the lower endpoint and differs
 from a smooth limiting root by \(O(N^{-1})\). Its logarithmic sum has
 bounded Riemann error. The remaining sine product has only the endpoint
 logarithm: comparison with \(\log t\) gives Riemann error \(O(\log N)\).
-The [absolute marked-action identity](actual_cross_cofactor_marked_action.md)
+The [absolute marked-action identity](../papers/casimir-source-asymptotics/README.md)
 identifies the resulting integral with the same \(Q(0;x,y)\).
 Finally, if \(b=0\) and exactly one outer weight is positive, (2) is the
 literal monomial

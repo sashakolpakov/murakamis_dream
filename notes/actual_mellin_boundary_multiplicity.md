@@ -42,8 +42,8 @@ reduced, zero-framed ADO state. Its fixed normalization is
 Here $K_N$ is the reduced Kashaev invariant, and $C_r(q)$ is the
 reduced ordinary invariant in dimension $r$. The equality at $r=N$
 means $C_N(q_N)=K_N$. These are the
-[actual color specializations](root_orbit_pointing.md), with the
-[squared-meridian convention](even_meridian_norm_descent.md) retained.
+[actual color specializations](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/root_orbit_pointing.md), with the
+[squared-meridian convention](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/even_meridian_norm_descent.md) retained.
 
 Choose a specified all-level annihilator, whose existence follows
 from the [finite cut-state construction](finite_sum_annihilator.md).
@@ -146,13 +146,13 @@ the prescribed space $X^{n_0}\mathbb C(q)[[X]]$. If a nonzero
 homogeneous difference had least exponent $r\ge n_0$, its image
 under $A$ would have a nonzero coefficient at $X^{r-d}$, namely
 $a_d(q,Q^{r-d})$ times that least coefficient. This is impossible.
-This is the [finite-start source construction](fourier_mellin_actual_source.md);
+This is the [finite-start source construction](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/fourier_mellin_actual_source.md);
 it is stronger than choosing any rational solution of its root
 specialization.
 
 ## 3. Root rationality and the finite Fourier comparison
 
-The [actual root color-periodicity theorem](cyclotomic_mellin_residue.md)
+The [actual root color-periodicity theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/cyclotomic_mellin_residue.md)
 gives $C_{n+N}(q_N)=C_n(q_N)$ for all $n\ge1$, including the
 multiples of $N$. Consequently, for $N\ge n_0$,
 
@@ -234,7 +234,7 @@ modulo $X^N-1$. Thus the finite map compares the meridian orbit
 with the Mellin pole numerator. It does not evaluate $Z_N$ at a
 pole or identify their meridian neighborhoods. In particular it
 does not replace the retained normal coordinate of the
-[ramified Weyl fibre](ramified_weyl_fibre.md) by an ordinary orbit
+[ramified Weyl fibre](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/ramified_weyl_fibre.md) by an ordinary orbit
 value.
 
 ## 4. Why the root clock cannot be lifted as a finite matrix gauge
@@ -263,7 +263,7 @@ $Q^N=1$ rather than $1+N\epsilon$.
 This rules out lifting (14) as an ordinary finite matrix gauge
 through the quantum-normal direction. It does not rule out a
 comparison with differential normal operators or retained relative
-sources. The [first quantum-normal construction](first_quantum_normal_connection.md)
+sources. The [first quantum-normal construction](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/first_quantum_normal_connection.md)
 includes a derivation because an off-root shift no longer has
 finite order. That derivation and its source cannot be inferred
 from the root Fourier matrix alone.
@@ -278,8 +278,8 @@ Assume now that the knot has positive exponential complete growth:
 \]
 
 This is supplied, for example, by the established
-[strict-tree](actual_conway_all_strict_tree_long_twist_volume.md) and
-[net-twist](actual_conway_net_twist_volume.md) volume theorems for
+[strict-tree](../papers/conway-asymptotics/README.md) and
+[net-twist](../papers/conway-reductions/README.md) volume theorems for
 their stated knot classes. The next argument only uses (17).
 
 For every coefficient in (3), form the fixed Laurent polynomial
@@ -289,7 +289,7 @@ $|r_i(q_N)|\ge cN^{-\nu_i}$ for all large $N$. Evaluate the actual
 root equation at $Y=Q_N^{-i}$. When $N>d$, its $i$th term is
 $r_i(q_N)K_N$ and all other terms are ordinary-color values.
 Those values are polynomially bounded in $N$ by the
-[positive ordinary-color trace](regularized_kashaev_period.md).
+[positive ordinary-color trace](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/regularized_kashaev_period.md).
 The fixed Laurent coefficients are bounded on the root torus, so
 this equation would bound $K_N$ polynomially as well, contradicting
 (17). Therefore every $r_i$ is identically zero.
@@ -353,7 +353,7 @@ Nor does it contradict selection of the actual series. The extra
 constant solution is outside $X^{n_0}\mathbb C[[X]]$. The source
 equation and that starting condition still distinguish $Z$ from
 the larger rational solution space. At roots, the
-[cyclotomic quantum-jet theorem](mellin_cyclotomic_jet_uniqueness.md)
+[cyclotomic quantum-jet theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/mellin_cyclotomic_jet_uniqueness.md)
 retains further source and pole-lattice data when selecting the
 entire rational function.
 
@@ -382,7 +382,7 @@ companion form, $\sigma(\ell)\mathsf C=\ell$, so at a root
 The row kills the image of $H_0-I$ but does not kill the selected
 vector. Therefore the natural map from the kernel to the cokernel
 of $H_0-I$ is nonzero on $JZ_N$. This is the
-[observable-source criterion](actual_mellin_normal_source_rigidity.md),
+[observable-source criterion](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_mellin_normal_source_rigidity.md),
 which remains valid even though the simple-root test in (20)
 fails. It detects a specified direction rather than asserting
 semisimplicity of the entire monodromy.
@@ -397,7 +397,7 @@ $\mathbb C(q,X)$ as a rank-one trivial difference module. The
 two rational localizations thus retain different boundary data.
 The row (21) is an observable of the sourced Mellin presentation;
 it is not automatically a row for a localized main-meridian
-companion. The [source-symbol comparison](source_symbol_duality_and_presentation.md)
+companion. The [source-symbol comparison](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/source_symbol_duality_and_presentation.md)
 also gives explicit examples where an extra homogeneous factor
 changes that test.
 

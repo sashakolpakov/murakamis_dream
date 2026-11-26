@@ -2,7 +2,7 @@
 
 source-normalized lemma, 31 October 2026. This is a local analytic test on actual complete curvatures. It does not by itself construct a family of diagrams or assert that the test holds for one.
 
-Let a port have middle curvatures $0$ and $e>0$, outer curvatures $x,y\geq0$, and $A=x+y>0$. Retain the original complete triangle potential $Q$ from the [calibrated source](actual_cross_cofactor_marked_action.md). If
+Let a port have middle curvatures $0$ and $e>0$, outer curvatures $x,y\geq0$, and $A=x+y>0$. Retain the original complete triangle potential $Q$ from the [calibrated source](../papers/casimir-source-asymptotics/README.md). If
 
 $$
 \frac eA\leq\frac94,\tag{1}
@@ -122,7 +122,7 @@ Suppose an actual certified source has only the following port types in its one 
 - Equal middle curvatures $b=c$, with $A>0$.
 - One zero middle and the other $e$ satisfying $e/(x+y)\leq9/4$.
 
-Every such port is balanced. For equal positive middles, this follows from $Q_b(0)>\tfrac12\log b$; if both are zero, the one-sided sectors vanish. For the second type, it follows from (2). The [conditional full-invariant balance theorem](general_complete_radius_balance_filling_volume.md) therefore applies to any literal source for which these actual geometric statements have been proved.
+Every such port is balanced. For equal positive middles, this follows from $Q_b(0)>\tfrac12\log b$; if both are zero, the one-sided sectors vanish. For the second type, it follows from (2). The [conditional full-invariant balance theorem](../papers/planar-certificates/README.md) therefore applies to any literal source for which these actual geometric statements have been proved.
 
 The [reduced-layer family theorem](general_reduced_layer_long_filling_volume.md) establishes the required packing, reflection, original mark and uniform ratio bound for its literal words at every $k\geq4$. Those are separate geometric conclusions, not consequences of the local inequality alone.
 

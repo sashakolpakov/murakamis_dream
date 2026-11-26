@@ -29,7 +29,7 @@ $$
 =\operatorname{Vol}\!\left(S^3\setminus K_{k,\mathbf m}(\mathbf p)\right).\tag{3}
 $$
 
-This is the full original normalized invariant, both level parities and the entire charge sum, through the [full-source balance theorem](general_complete_radius_balance_filling_volume.md). Depths and twists are fixed before $N$ grows. No comparison between twist magnitudes, or threshold uniform in widths or depths, is asserted. Requiring every actual exponent to be divisible by $3$ gives a subfamily of minimal bridge number exactly $k$; that congruence is not required for (3).
+This is the full original normalized invariant, both level parities and the entire charge sum, through the [full-source balance theorem](../papers/planar-certificates/README.md). Depths and twists are fixed before $N$ grows. No comparison between twist magnitudes, or threshold uniform in widths or depths, is asserted. Requiring every actual exponent to be divisible by $3$ gives a subfamily of minimal bridge number exactly $k$; that congruence is not required for (3).
 
 More generally, the same closure works for any balanced certified core with the initial $O$ layer, no slot $0$, the first-cap mark, and ordered actual initial curvatures
 
@@ -67,7 +67,7 @@ $$
 
 Identify old $B$ with $b^{(m)}$. If $m_j=0$, retain (4) unchanged.
 
-These formulas hold simultaneously. Before processing bridge $j$, earlier blocks have changed only gap positions up to $2j-1$. The face there is already the identified old $A$; the current bottom odd gap $2j+1$ has not changed. The even gaps $2j$ and $2j+2$ remain exterior $u$, the latter being exterior outright when $j=L$. The two local slots change only their own gaps. Thus (5) is the [original gap sweep](actual_original_marked_face_coefficient.md); after (6), the current middle gap contains old $e_j$. Induction on $j$ proves the entire first-layer dictionary. Every later core quartet is unchanged under these face identifications. The first marked face is never crossed because slot $0$ is absent.
+These formulas hold simultaneously. Before processing bridge $j$, earlier blocks have changed only gap positions up to $2j-1$. The face there is already the identified old $A$; the current bottom odd gap $2j+1$ has not changed. The even gaps $2j$ and $2j+2$ remain exterior $u$, the latter being exterior outright when $j=L$. The two local slots change only their own gaps. Thus (5) is the [original gap sweep](../papers/filling-bounds/README.md); after (6), the current middle gap contains old $e_j$. Induction on $j$ proves the entire first-layer dictionary. Every later core quartet is unchanged under these face identifications. The first marked face is never crossed because slot $0$ is absent.
 
 Introduce symbols $C_{j,n}$ with $C_{j,0}=a_j$. For depth $m$,
 

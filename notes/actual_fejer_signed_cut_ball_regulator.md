@@ -2,7 +2,7 @@
 
 31 October 2026. conditional stationary-stratum lemma. Hypotheses are exactly the
 finite-positive-ordinary-radius stationary stratum and signed/cooriented
-circle development of [the marked signed-development lemma](actual_fejer_marked_signed_development.md).
+circle development of [the marked signed-development lemma](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_fejer_marked_signed_development.md).
 This proof does NOT use invariance of an open crossing regulator under
 resetting a Gauss frame: that assertion failed the recorded direct test.
 The original graph, marking and untwisted shaded pairings stay fixed.
@@ -116,7 +116,7 @@ write its two shaded triangles as
   S_0=(O,C_1,C_2), S_1=(O,C_3,C_0).
 
 They pair WITHIN that same ball by O->O, C_1->C_0, C_2->C_3; this is
-exactly (3) of [the original matching geometry](general_augmented_plat_matching_geometry.md), not the
+exactly (3) of [the original matching geometry](../papers/marked-fillings/README.md), not the
 across-copy half-twist permutation (4). In the first ball, input A_b
 has its fixed flag C_1=x/b contact, input B_b its fixed flag C_2=b/y
 contact, and P=B_b A_b its flag O=x/y contact. Equation (5) of the
@@ -186,7 +186,7 @@ the actual local E values, with their absolute normalization. Therefore
   sum_e E_e = (1/(2pi)) sum_t sigma_t V(theta_t)
             = Vol(rho)/(2pi) <= Vol(Y_D)/(2pi).         (6)
 
-The last inequality is the [proved representation-volume bound](general_representation_volume_kernel_strictness.md)
+The last inequality is the [proved representation-volume bound](../papers/casimir-source-asymptotics/README.md)
 for the actual original hyperbolic exterior. No action constant, reference-flag
 normalization or separately chosen regulator has been introduced.
 

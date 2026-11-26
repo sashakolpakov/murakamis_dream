@@ -1,6 +1,6 @@
 # Which derivatives the current direct-power route actually requires
 
-The [whole-source local packet](general_full_spectral_numerator_geometric_packet.md) now assembles these results for the actual full numerator. The original global spectral filling period remains open.
+The [whole-source local packet](../papers/casimir-source-asymptotics/README.md) now assembles these results for the actual full numerator. The original global spectral filling period remains open.
 
 31 October 2026. .
 

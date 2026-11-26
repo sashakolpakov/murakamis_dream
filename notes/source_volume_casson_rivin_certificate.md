@@ -12,7 +12,7 @@ quantum limit has been proved for arbitrary knots.
 
 The existing [filled-source proof](actual_long_pretzel_casson_rivin_equality.md)
 already supplies this certificate for its selected long-filling branch.
-The [independent tangent-space audit](source_angle_stationarity_critical_audit.md)
+The [independent tangent-space audit](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/source_angle_stationarity_critical_audit.md)
 checks the distinction between a source saddle and a critical point on
 the FULL angle domain. Sections 2--3 below give an elementary proof of
 the complete-cusp Casson--Rivin implication, including completeness.
@@ -196,7 +196,7 @@ gluing kills the internal directions; the remaining quotient consists
 of these boundary directions. At a complete point U_i=V_i=0, (8)
 proves stationarity on all of P.
 
-The [tangent-space audit](source_angle_stationarity_critical_audit.md)
+The [tangent-space audit](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/source_angle_stationarity_critical_audit.md)
 states the necessary full-rank edge/peripheral hypotheses and proves
 the analogous equivalence for arbitrary Lagrangian boundary slices.
 In particular this is stronger than differentiating volume merely
@@ -218,22 +218,22 @@ Strict concavity again makes it the unique global maximum.
 
 For our selected source these inputs are established as follows:
 
-* The [literal port lift](actual_pretzel_port_lift_and_geometric_anchor.md)
+* The [literal port lift](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_pretzel_port_lift_and_geometric_anchor.md)
   is a representation of the actual augmented-link group, based at
   its explicitly constructed complete oriented geometry. The
-  [direct positive ideal subdivision](actual_pretzel_positive_ideal_angle_certificate.md)
+  [direct positive ideal subdivision](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_pretzel_positive_ideal_angle_certificate.md)
   supplies a compatible ideal chart for these actual cells, with no
   general triangulation existence assumption. Transporting this fixed
   positive triangulation by its marked flags gives the
   positive source point for sufficiently long fixed fillings.
 * Its source equation is U_i+p_i V_i=-2pi i on the selected unit-charge
-  branch. The [primitive-period proof](actual_long_pretzel_primitive_filling_angle.md)
+  branch. The [primitive-period proof](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_long_pretzel_primitive_filling_angle.md)
   fixes this as an actual period, not a congruence modulo 2pi i.
-* The [marked action calculation](actual_pretzel_marked_regulator_and_filling_action.md)
+* The [marked action calculation](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_pretzel_marked_regulator_and_filling_action.md)
   proves V_src,s(p)=V_T(theta_p), including the actual filling
   quadratic and the absolute complete-volume anchor. There is no
   unidentified boundary constant left in this equality.
-* The [geometric completion](actual_long_pretzel_geometric_filling_completion.md)
+* The [geometric completion](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_long_pretzel_geometric_filling_completion.md)
   proves that these primitive periods close to smooth solid tori,
   with complete retained ends. This rules out a cone metric or a
   multiple covering at the core.

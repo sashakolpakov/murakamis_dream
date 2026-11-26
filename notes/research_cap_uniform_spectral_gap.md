@@ -1,12 +1,12 @@
 # A stable exterior controls the whole protected spectral interval
 
 This note proves a strict bound for one left contribution of the original
-finite source. All the neighboring crossing regions retain their actual
+finite source. All neighboring crossing regions retain their actual
 central numerators at spectrum \(-2\), while the selected spectrum ranges
-over the entire real interval \([-2,2]\). The application to the original
-54-region example holds along odd levels. It retains every original face
-coefficient and gives the strict inequality (31). It does not estimate all
-source sectors or prove a new knot-volume limit.
+over the entire real interval \([-2,2]\). Section 3 states sufficient
+pressure hypotheses for a strict gap. Checking those hypotheses for a
+given diagram remains a separate task. This is not a bound for all
+source sectors or a new knot-volume theorem.
 
 Here a *source* is the polynomial obtained from the literal finite crossing
 operators before its original face coefficients and filling functionals are
@@ -323,72 +323,13 @@ boundary loads. Since \(M/d\to1/2\), it proves the third line of (23)
 with \(\gamma=\gamma_D\), even though \(M\) lies just below the first
 omitted index. This uses no lower estimate and no asymptotic rounding.
 
-## 4. The unchanged 54-region source
-
-The selected region is \(32\), with ordered quartet \((0,50,16,29)\);
-the protected faces are \(29,50\). In (8)--(9),
-\(A=L_{16}\) and \(C=L_0\), so the cap is literally
-\((C,0,A,0)\). Every other ordinary face target is extracted at degree
-\(d\) before forming \(P_N\). The other \(53\) original regions use
-their actual central endpoint numerators at \(-2\).
-
-The exact response and complete-flow certificates give
-\[
- F_0\le\frac{33947}{500},\qquad
- \frac{27}{100}\le\nu\le\frac{11}{40},\qquad
- k\ge\frac{11}{125},\qquad
- \Phi\ge\frac{67687}{1000}.
- \tag{27}
-\]
-Take \(T=17/5\). Direct rational arithmetic gives
-\[
- a-Tb=1-(1+T)\nu+(T-1)k\ge\frac3{2500}>0.
- \tag{28}
-\]
-Thus the last entry in (13) is at most \(1-4k\); the other entries
-give \(R_T\le81/125\). The elementary positive artanh series proves
-\[
- -\tfrac12\log(81/125)>\frac{27}{125},\qquad
- F_0+\tfrac12\log R_T<\Phi-\frac9{1000}.
- \tag{29}
-\]
-
-The additional tilted certificate is a positive rational trial vector
-with \(A=17/5,C=1\). It retains all \(106\) original exterior
-triangle rows and the \(52\) other ordinary targets. Evaluating the
-ordinary positive Cauchy upper at that vector gives
-\[
- \limsup_{\substack{N\to\infty\\N\text{ odd}}}
- \frac1N\log\frac{P_N(17/5,1)}{(17/5)^{d/2}}
- <\frac{16921}{250}=67.684\le\Phi-\frac3{1000}.
- \tag{30}
-\]
-No stationarity of the trial vector is required for this upper bound.
-Its interval evaluation uses positive rational weights, outward integer
-fixed-point arithmetic, bounded arctangent and log-sine series, and the
-original entropy normalization. The displayed pressure is not a different
-source or a reweighted final face target.
-
-Combining (24), (26), (29), and (30) proves the concrete conclusion
-\[
- \boxed{\quad
- \limsup_{\substack{N\to\infty\\N\text{ odd}}}
- \frac1N\log\sup_{\sigma\in[-2,2]}|S_N(\sigma)|
- \le\Phi-\min\{3/1000,\gamma_D\}<\Phi.
- \quad}
- \tag{31}
-\]
-Every fixed smaller positive gap holds for all sufficiently large odd
-levels. This is a bound for the signed original singleton coefficient,
-not for its sum of absolute local arrays.
-
-## 5. Normals, exact scope, and proof inputs
+## 4. Normals, exact scope, and proof inputs
 
 The scalar in (9) is a polynomial of degree at most \(d\) in \(\sigma\).
 The complex-coefficient Markov inequality on \([-2,2]\) therefore gives
 \[
  \|S_N'\|_{[-2,2]}\le\frac{d^2}{2}\|S_N\|_{[-2,2]}.
- \tag{32}
+ \tag{27}
 \]
 To see that complex coefficients cause no problem, rotate the derivative
 at a point to a positive real number and apply the real Markov inequality
@@ -402,7 +343,7 @@ not supplied here.
 
 The actual even central exterior is not known to satisfy (11), and its
 positive stable comparator cannot replace it in a signed estimate.
-Accordingly (31) is odd-level only. The finite theorem (14), the local
+Accordingly the actual-source specialization of (24) is odd-level only. The finite theorem (14), the local
 spectral metric (6), and the parity cutoff (5) themselves hold at both
 parities. The proof does not bound the beta-square spectator energy by
 \(e^{2N\Phi}\); it proves the desired spectral functional bound using
@@ -416,37 +357,25 @@ The proof uses the following exact source results.
   sections 1--2, gives the unused-row vector, sine-Cauchy metric, and
   spectral divided difference. Its subsequent comparison with the
   beta-square measure is not needed here.
-- [The original cap and its two negative-axis intervals](research_global_cap_negative_axis_and_mahler_bound.md),
+- [The original cap and its two negative-axis intervals](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/research_global_cap_negative_axis_and_mahler_bound.md),
   sections 1--4, gives the original exterior targets and the closed
   boundary capacity (26).
-- [Factorization of the central cofactor](actual_cross_cofactor_factorization.md),
-  section 3, and [the boundary model and its curvature](actual_q_hahn_boundary_model_curvature.md)
+- [Factorization of the central cofactor](../papers/filling-bounds/README.md),
+  section 3, and [the boundary model and its curvature](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_q_hahn_boundary_model_curvature.md)
   give the actual odd central determinant pencils and their scalar
   normalization.
-- [The exterior response criterion](research_global_cap_effective_response_criterion.md),
+- [The exterior response criterion](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/research_global_cap_effective_response_criterion.md),
   sections 1--3, and [the common-axis mean and response bound](research_cap_common_axis_bound.md),
-  sections 3--7, give the positive coefficient packet, its differentiated
-  pressure, and the original complete-flow normalization. Only the response
-  at zero is differentiated in the 54-region application here.
+  sections 3--5, give the positive coefficient packet, its differentiated
+  pressure, and the original complete-flow normalization.
 - [Restoring the omitted cap triangles](research_cap_dirichlet_response_region.md)
-  gives a geometric sufficient response region, independent of the
-  54-region certificate. Its final section combines that region with the
+  gives a geometric sufficient response region. Its final section combines
+  that region with the
   finite section estimate proved here; all neighboring spectra stay fixed.
-- [The finite filling supremum bound](actual_uniform_filling_supremum_bound.md)
-  gives the optional one-variable full-Hermite consequence following (32).
+- [The finite filling supremum bound](../papers/filling-bounds/README.md)
+  gives the optional one-variable full-Hermite consequence following (27).
 
-The exact rational data for (27)--(30) are the
-[exterior response certificate](../experiments/r54_response_certificate.json),
-[complete feasible-flow lower certificate](../experiments/r54_complete_flow_lower_certificate.json),
-and [tilted-pressure certificate](../experiments/r54_tilted_pressure_certificate.json).
-From the repository root, their portable verification command is
-
-```sh
-python3 repro/check_cap_response.py
-```
-
-The verifier encloses the displayed finite classical quantities by rational
-arithmetic. The analytic coefficient and spectral arguments are the proofs
-above and in the linked source results; they are not consequences of
-sampling quantum levels. The conclusion remains the odd-level, one-cap
-bound (31), with the neighboring spectra fixed as stated.
+The finite inequalities (6), (10) and (14) hold without a diagram-specific
+certificate. A strict source rate follows only after the actual pressure,
+response and cutoff bounds in (23) have been established. The old
+54-region numerical application is omitted from this general account.

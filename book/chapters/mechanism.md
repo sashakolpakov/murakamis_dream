@@ -10,7 +10,7 @@ gives definitions, examples and literature references; the
 
 The main result concerns a particular, already defined knot invariant. For a knot \(K\) and an integer level \(N\), write \(K_N(K)\) for its reduced Kashaev invariant, normalized to be \(1\) on the unknot. The quantum parameter is \(q_N=e^{\pi i/N}\). A diagram computes \(K_N\) by multiplying crossing matrices, joining their indices along strands, and summing the remaining indices. Cups, caps and the marked cut specify how the strands close. In the technical notes, this entire prescribed expression is called the **source**. It includes its scalar factors and derivatives, not just the part that seems largest.
 
-The [strict Conway tree theorem](../../notes/actual_conway_all_strict_tree_long_twist_volume.md) proves
+The [strict Conway tree theorem](../../docs/papers/conway-asymptotics.pdf) proves
 \[
  \lim_{N\to\infty}\frac{2\pi}{N}\log|K_N(K)|
    =\operatorname{Vol}(S^3\setminus K)
@@ -53,13 +53,6 @@ repeated spectral roots. Positive comparison sums and boundary profiles
 control the expression outside its central region. Its Theorem 1.1
 treats at least three leaves; Corollary 9.1 proves the two-leaf case
 separately. A local saddle estimate is not substituted for either bound.
-
-The earlier [decorated-character](../../notes/actual_conway_decorated_character_spectral_closure.md),
-[auxiliary comparison](../../notes/actual_conway_unflagged_core_probe_bound.md),
-and [spectral propagation](../../notes/actual_conway_mixed_core_spectral_propagation.md)
-arguments remain in the archive. They explain the development of the
-estimates and retain their own hypotheses. The current paper gives the
-proof and import list for the full strict class in one account.
 
 This yields two global facts. Every physical color tuple obeys the required upper bound, and any tuple with at least one color a fixed fraction away from complete has a strict exponential loss. The difference between a full leaf and its chosen local expression is an explicit complementary-color term, called an **alias**. Expanding these differences turns every unwanted term into an actual full quantum evaluation with at least one small color. The global color bound suppresses them. This is why the argument controls all aliases at once; it does not assume that individual absolute-value estimates preserve the cancellations.
 
@@ -138,9 +131,9 @@ Here \(c_0\) is a fixed vector of small-color Laurent polynomials, \(r_N\) is th
 
 The [pointed quantum \(A\)-volume corollary](../../notes/actual_conway_pointed_quantum_a_volume.md) proves that this exact signed scalar has the knot-volume limit above. It also gives a positive ratio of coefficients of Gram determinants, equal to a sum of squared color periods, with the corresponding volume limit. The signed scalar is not replaced by a matrix norm or by a sum of absolute values. The full ADO normalization is retained as a rational factor whose whole value at \(M=1\) is \(i^{N+3}/N\).
 
-The [strict-tree geometric longitude theorem](../../notes/actual_strict_tree_geometric_characteristic.md) identifies the selected curve with the preferred-longitude deformation for every covered strict long-filling presentation, including arbitrary product junctions without crossing circles. The full microscopic expansion then forces the selected geometric irreducible factor to divide the first nonzero classical symbol of every genuine all-level reduced annihilator.
+The [strict-tree geometric longitude theorem](../../docs/papers/meridian-expansions.pdf) identifies the selected curve with the preferred-longitude deformation for every covered strict long-filling presentation, including arbitrary product junctions without crossing circles. The full microscopic expansion then forces the selected geometric irreducible factor to divide the first nonzero classical symbol of every genuine all-level reduced annihilator.
 
-The [directed all-orders theorem](../../notes/actual_all_circle_directed_all_orders.md) proves the needed expansion separately for every presentation satisfying the directed criterion above. Define
+The [directed all-orders theorem](../../docs/papers/meridian-expansions.pdf) proves the needed expansion separately for every presentation satisfying the directed criterion above. Define
 \[
  H_N(s)=\frac{\sin(\pi s)}{N\sin(\pi s/N)},\qquad
  \mathcal Z_N(s)=\frac{F_N(q_N^s)}{F_N(1)H_N(s)}.
@@ -159,7 +152,7 @@ The degree bound retains the full local longitude germ, not only its cusp tangen
 
 The shared-face method has a broader statement with a different conclusion. A simple triangulated sphere with a perfect matching of its cubic dual gives ordered crossing regions: matching means that each dual vertex belongs to exactly one chosen dual edge. Retain the actual strand pairings, crossing disks and marked main edge. A **Morse presentation** arranges this diagram by height, so cups create two strands, caps remove two, and the number of strands can change between levels. The [general source theorem](../../notes/research_matched_sphere_morse_source.md) keeps those maps in the original coefficient formula; it does not require a fixed-width braid picture.
 
-The [geometric contribution theorem](../../notes/actual_morse_geometric_contribution.md) proves a nonzero asymptotic for the all-central sector of that source, at both level parities, with the actual filled volume as its rate. central is the central recurrence-path support defined in the [methods chapter](methods.md#exact-polynomials-and-shared-face-variables). The signed twist powers are fixed, independently sufficiently long, and have the original parity determining the main components. For a knot pairing, the geometric rate is the volume of that original knot complement.
+The [geometric contribution theorem](../../docs/papers/casimir-source-asymptotics.pdf) proves a nonzero asymptotic for the all-central sector of that source, at both level parities, with the actual filled volume as its rate. central is the central recurrence-path support defined in the [methods chapter](methods.md#exact-polynomials-and-shared-face-variables). The signed twist powers are fixed, independently sufficiently long, and have the original parity determining the main components. For a knot pairing, the geometric rate is the volume of that original knot complement.
 
 The theorem controls the entire Fourier filling of this sector, including all charges and endpoint currents. It requires neither terminal decoration nor a local balance condition. What remains open in this general unchanged diagram is the estimate on the other sectors of the full invariant. The balanced terminal-fan construction supplies such control for its decorated family, but adding those tangles generally changes the knot. This separates a proved geometric contribution from a full-invariant volume theorem.
 
@@ -248,7 +241,7 @@ Its original Green entries retain both continuants and the full characteristic d
 
 The [finite-propagation identity](../../notes/actual_matching_edge_polynomial_finite_propagation.md) does give exact scalar action on a forward continuant in rows $u\leq t-a$, and on a backward continuant in rows $u\geq a$. These precise windows can leave a central gap. The environment and any complex magnetic continuation remain additional input.
 
-Separate [polynomial](../../notes/actual_matching_edge_polynomial_endpoint_control.md) and [full-resolvent](../../notes/actual_casimir_endpoint_resolvent_bound.md) bounds control the closing point $+2$ and its genuine normals on shrinking neighborhoods. They do not settle the possible geometric parabolic target $-2$, or the contour between the endpoint neighborhood and the candidate saddle. In this general-plat method, one must still estimate that actual contour integral and join it to the surrounding quantum sum without discarding its phases.
+Separate [polynomial](../../notes/actual_matching_edge_polynomial_endpoint_control.md) and [full-resolvent](../../docs/papers/filling-bounds.pdf) bounds control the closing point $+2$ and its genuine normals on shrinking neighborhoods. They do not settle the possible geometric parabolic target $-2$, or the contour between the endpoint neighborhood and the candidate saddle. In this general-plat method, one must still estimate that actual contour integral and join it to the surrounding quantum sum without discarding its phases.
 
 ## Exact shifts transport finite quantum jets
 
@@ -349,8 +342,12 @@ For sources with phases, a matching lower bound requires survival of the geometr
 
 The [local energy geometry](../../notes/actual_native_magnetic_energy_local_geometry.md) makes this distinction explicit. The highest-weight block at the fold has the volume action of a variable ideal octahedron. Away from the fold, its actual measure forces a signed boundary term. Even at the real energy maximum, the marked complex phase need not be stationary. A global argument must use the original incidence and peripheral conditions to address those phases.
 
-The earlier positive-only Conway theorem used a different route, which is worth distinguishing from the current signed theorem. Exact support is an additive integer semigroup, which approximates a maximizing configuration along every sufficiently large level. Uniform factorial estimates prove the whole-source variational limit. The new geometric argument then proves that the reduced maximum is strict, matches the actual quadrilateral faces, and reconstructs the complete complement of every retained cylindrical factor. The new mixed-color proof supplies the additional filling estimates: exact leaf aliases lie in a square-zero radical, a strict seed-level gap survives arbitrary positive composition, and a finite complex lattice window has a nonzero Gaussian amplitude. This proves the long-full-twist source limit. The separate exact face-map and peripheral construction now identifies its rate with actual filled volume. The unchanged pure grammar still cannot produce knots by those fillings.
-
-Signed half twists change that source and its connectivity. The new [supporting-plane argument](../../notes/actual_odd_conway_uniform_mixed_source_gap.md) bounds any number of propagated aliases by adding tangents to the same global action; the linear terms cancel under the actual wire constraints. A separately checked finite complex packet supplies the nonzero contribution. That earlier result applies to a fixed expression $C(FG)$ whose two children belong to its stated seed-generated grammar. Its marked geometry gives the corresponding filled knot and link equality. The strict-tree theorem at the start of this chapter removes that grammar restriction by the later character/probe induction, while retaining its explicit strictness and knot-pairing tests.
+Positive-source calculations explain why angle maximization appears, but
+the current strict Conway volume proof uses the pure auxiliary source and
+the whole filling argument described above. Its exact full-power expansion
+retains signed and odd twists. The supporting source paper supplies the
+physical and Fourier complements, and the marked geometry identifies the
+filled action. A character identity or positive comparison alone is not
+used as a replacement for those estimates.
 
 The next boundary pieces now use the same original geometry: [literal prefix signs](../../notes/actual_right_angled_resonant_prefix_signs.md), [generic complemented heads and the outgoing determinant](../../notes/actual_q_hahn_complementary_hard_edge.md), and the [finite negative-clock boundary rate](../../notes/actual_q_hahn_negative_clock_boundary.md). The finite-current theorem also supplies an exact family of band weights that extracts the original root scalar after explicit bounded normalization. At the complete root this functional reduces to the existing coherent cut after a parameter change, so the residual framing freedom remains. This boundary-current route still lacks its unrestricted global internal-period comparison; the strict-tree theorem uses the different global argument explained above.

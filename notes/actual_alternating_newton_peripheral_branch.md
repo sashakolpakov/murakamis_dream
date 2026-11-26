@@ -301,7 +301,7 @@ from equations(4)--(10) alone.
 
 ## 5. The actual primitive-collar polynomial closure and selected germ
 
-Use the [actual primitive collar](actual_deformed_circle_primitive_collar.md),
+Use the [actual primitive collar](../papers/marked-fillings/README.md),
 sections1--3 and its marked-strip orientation in section5. Its original
 order is A_in=r_b r_x, B_in=r_y r_b, P=r_y r_x; its corner-preserving
 sidepairing carries the input b triangle to the output c triangle.

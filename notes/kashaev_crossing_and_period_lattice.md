@@ -12,7 +12,7 @@ volume theorem. It fixes the literature state to which a quantum
 A-module argument must apply. All integers N>=2, including even and
 composite levels, are allowed.
 
-The subsequent [Casimir/lattice comparison](casimir_braiding_and_recoupling_lattice.md)
+The subsequent [Casimir/lattice comparison](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/casimir_braiding_and_recoupling_lattice.md)
 expresses this same crossing and its inverse by confluent Casimir
 polynomials, retaining the double-point derivatives and exact writhe
 phase. It also derives the actual pivotal closing trace on that

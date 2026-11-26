@@ -86,7 +86,7 @@ whole Q-unit base, of relative dimension N-1. This follows
 from the displayed coordinate ring, not from a nonroot generic
 smoothness theorem.
 
-The surrounding [framed moment scheme](actual_resonant_framed_moment_smoothness.md)
+The surrounding [framed moment scheme](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_resonant_framed_moment_smoothness.md)
 also has a direct root Jacobian proof and a cyclic-vector quotient
 of relative dimension 2N. The present formulas describe its full
 sourced subchart globally, rather than merely near that root.
@@ -159,7 +159,7 @@ Then G=I, X=B, Y=P is the original cyclic repair, and
     ell=e_0^t sum_(j=0)^(N-1)L^j=(1,...,1).               (15)
 
 This is exactly the original orbit co-source of
-[the moment/source theorem](actual_rank_one_multiplicative_moment_and_orbit_source.md).
+[the moment/source theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_rank_one_multiplicative_moment_and_orbit_source.md).
 The finite head itself still uses its two explicit endpoint
 deletions; unfolding P has not changed those actual matrices.
 
@@ -241,7 +241,7 @@ not determine its scalar period or give a growing-N norm bound.
 An upper-unipotent gauge can have large condition number, so its
 determinant one is not a subexponential estimate.
 
-In particular [the actual Fourier cancellation theorem](actual_fourier_source_cancellation.md)
+In particular [the actual Fourier cancellation theorem](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_fourier_source_cancellation.md)
 continues to apply. A nonzero formal block with the regulator
 action can lie in the zero-source current sector. To prove the
 volume conjecture the actual word class, source polynomial and
@@ -259,11 +259,11 @@ gauge/source formulas above follow from the entry proof.
 and [saved results](../experiments/companion_source_shell_results.json)
 check the universal formulas at six symbolic levels and twelve
 full generic/primitive-root moment fibers. The
-[independent proof audit](companion_source_shell_independent_audit.md)
+[independent proof audit](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/companion_source_shell_independent_audit.md)
 checks the chart, periodic section, polynomial gauge and retained
 co-source separately.
 
-The [actual meridian compatibility audit](actual_meridian_companion_source_compatibility.md)
+The [actual meridian compatibility audit](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_meridian_companion_source_compatibility.md)
 now proves a universal mismatch if one tries to use the invariant's
 meridian orbit state directly as this normalized highest source.
 Its canonical highest residual has pairing K_N. This chart remains

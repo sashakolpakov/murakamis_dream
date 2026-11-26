@@ -1,7 +1,7 @@
 # The actual quantum source at every bridge
 
 Research note, 27 October 2026. This continues the
-[arbitrary-bridge classical contraction](arbitrary_bridge_source_reduction.md)
+[arbitrary-bridge classical contraction](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/arbitrary_bridge_source_reduction.md)
 using the original finite quantum matrices. It computes all four
 balanced turns, a literal marked closure, their cyclic boundary
 sources and a flat completion under the actual meridian half-step.
@@ -50,7 +50,7 @@ On their support the right-cap coefficient is
 The coefficients (1.3)--(1.4) are whole identities in the original
 finite matrices. The unbalanced J_x, its exact double dual g and
 all four snake identities were independently proved in
-[the pivotal duality note](relative_pivotal_duality.md).
+[the pivotal duality note](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/relative_pivotal_duality.md).
 Equations (1.2)--(1.5) do not change their normalization. In
 particular, every cup contributes exactly N and every cap 1/N,
 in addition to the displayed monomials and pivots.

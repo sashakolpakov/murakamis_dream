@@ -6,7 +6,7 @@ No contour deformation or uniform exponential estimate is asserted.
 
 Put N>=3,d=N-1,q=exp(pi i/N). Let chi(z)=2T_N(z/2)+2,
 and let Omega be the ACTUAL pair Casimir from the
-[original source theorem](actual_homogeneous_casimir_face_source.md).
+[original source theorem](../papers/filling-bounds/README.md).
 Define its polynomial resolvent numerator
 
     V(z)=chi(z)(z-Omega)^(-1).
@@ -67,7 +67,7 @@ convergent: periodic B is C^1 with piecewise smooth higher derivatives,
 so hat B(j)=O(j^-3). Constants here may depend exponentially on N;
 this observation gives no uniform global bound. Formula (3) is an
 alternative exact source period, closely related to the existing
-[Fourier-Hermite Gaussian formulas](actual_coherent_filling_gaussian_chirp.md). It does not erase their endpoint
+[Fourier-Hermite Gaussian formulas](https://github.com/sashakolpakov/murakamis_dream/blob/19d5b911bc409486f0e72b51a876a6a2bc70ee02/notes/actual_coherent_filling_gaussian_chirp.md). It does not erase their endpoint
 currents or determine which nonzero charge contributes after sewing.
 
 ## Why complete-channel samples do not control the derivative
