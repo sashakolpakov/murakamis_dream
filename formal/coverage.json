@@ -1,5 +1,5 @@
 {
-  "scope": "Selected formal proof roots for the cleaned volume manuscripts. The role and exact manuscript statement explain why each active module is retained. Supporting lemmas are audited too. Written physical source identities, complex contours and geometric calibration are not inferred from these records.",
+  "scope": "Selected Lean statements used by the current manuscripts. Per-root correspondence records specify their symbol dictionaries, hypotheses, conclusions and logical scope. Anonymous expected-type contracts are checked separately by Lean. Source hashes and anchors do not establish correspondence or discharge written analytic, combinatorial or geometric application inputs.",
   "projects": {
     "std": {
       "directory": "formal",
@@ -8,7 +8,8 @@
       ],
       "infrastructure": [
         "VolumeLogic.lean",
-        "AxiomAudit.lean"
+        "AxiomAudit.lean",
+        "StatementContracts.lean"
       ],
       "modules": [
         {
@@ -247,7 +248,9 @@
         "TriangleHall"
       ],
       "infrastructure": [
-        "AxiomAudit.lean"
+        "AxiomAudit.lean",
+        "AnalysisContracts.lean",
+        "VariationalContracts.lean"
       ],
       "modules": [
         {
@@ -567,5 +570,11 @@
         }
       ]
     }
-  }
+  },
+  "correspondence": [
+    "formal/correspondence/finite.json",
+    "formal/correspondence/analysis.json",
+    "formal/correspondence/variational.json"
+  ],
+  "contract_controls": "formal/correspondence/controls.json"
 }

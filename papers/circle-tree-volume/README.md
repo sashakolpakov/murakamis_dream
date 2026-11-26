@@ -1,41 +1,65 @@
 # Volume asymptotics for trees of crossing circles
 
-[Read the PDF](../../docs/papers/circle-tree-volume.pdf) · [TeX source](main.tex) · [Dependency graph](https://sashakolpakov.github.io/murakamis_dream/papers/dependencies.html)
+[Read the PDF](../../docs/papers/circle-tree-volume.pdf) · [TeX source](main.tex)
 
-This 27-page paper treats a fixed ordered tree of crossing circles whose literal tangle closure is a knot, with no component already closed inside an intermediate tangle. Every product junction carries a crossing circle. The tree, orientations and signed powers are fixed before the level tends to infinity.
+This paper proves the volume conjecture for two explicitly described
+sets of fixed crossing-circle tree diagrams. Every vertex carries its
+own crossing circle, and the ordered tangle closure must give one main
+knot with no internal closed component. The diagram and all signed
+crossing powers stay fixed while the level $N$ tends to infinity.
 
-The paper gives two independently sufficient conditions for the nonzero leading asymptotic of the reduced zero-framed invariant, through both level parities. The exponent is the volume of the original knot complement, by the primitive metric-completion theorem used with its hypotheses checked.
+There are two sufficient conditions. They have common finite
+preliminaries but separate proofs:
 
-- **Theorem 1.1** assumes the summed bound `sum_v d_v/(d_v^2+n_v^2) <= 2^-25`. **Theorem 1.2** retains the exact framing scalar and sine quotient and gives the explicit first microscopic meridian correction, with remainder of order `N^-2`.
-- **Theorem 1.3** assumes the finite directed inequalities (7.3), (7.8), (7.9), with a chosen final vertex and a positive decay parameter at each nonroot vertex. It proves the leading asymptotic and a centered microscopic meridian ratio `1+O(N^-1)`.
-- **Corollary 1.4** gives the sufficient alternative `d_v >= 2^28` or `|n_v| >= 2^27`, chosen independently at every vertex. Corollary 8.1 retains the smaller uniform ratio criterion.
+- Theorem 1.1 assumes
+  $\sum_v d_v/(d_v^2+n_v^2)\le2^{-25}$, where $d_v$ is degree
+  and $n_v$ is the signed crossing power. It gives a nonzero leading
+  asymptotic at both level parities. Theorem 1.2 also computes the first
+  centered meridian correction with error $O(N^{-2})$.
+- Theorem 1.3 uses a chosen final vertex and a positive decay parameter
+  at every other vertex. The test is the finite set of inequalities
+  (7.3), (7.8), (7.9). Corollary 1.4 gives the simpler sufficient
+  alternative $d_v\ge2^{28}$ or $|n_v|\ge2^{27}$ at every vertex,
+  with the choice made independently. This proof gives the centered
+  meridian ratio $1+O(N^{-1})$.
 
-The summed theorem does not serve as a premise for the directed theorem. Their common finite Newton estimates, complex edge sum and exact Fourier trace occupy Sections 2–5. The joint Fourier proof is in Section 6; the normalized subtree induction is in Section 7. Section 8 includes the degree-or-twist construction, its endpoint pairing calculation, and a star showing why the final root must not be required to produce an outgoing decay bound.
+The summed proof evaluates all angular variables jointly. The directed
+proof evaluates a subtree as a polynomial in its parent angle and
+divides that polynomial by its exact value at zero before continuing.
+This normalization avoids repeatedly paying for the same loss in
+exponential rate. The final vertex needs no outgoing polynomial bound.
+Section 8 gives a star that illustrates this distinction, and a
+construction that adds long terminal tangles while keeping arbitrarily
+many prescribed short powers at the old vertices. Adding those tangles
+can change the knot.
 
-The claims concern bounded microscopic meridian parameters `M=q_N^s`, not a fixed neighborhood of `M=1`. Only the summed theorem here proves the explicit first meridian correction. An all-orders expansion, a preferred-longitude calculation, and more general tangles with bare product junctions require separate results.
+Both proofs keep the full finite polynomial contraction, including
+first derivatives at double spectral roots. Fourier-tail and contour
+estimates establish a nonzero coefficient for the selected critical
+point. The classical primitive-filling theorem then identifies its real
+action with the volume of the knot complement.
 
-## Imported statements
+The exact finite inputs come from
+[Exact Newton calculus for tangles with a moving meridian](../meridian-tangles/README.md),
+Proposition 6.1, Theorem 7.1 and Proposition 8.1. The strict Conway
+analysis supplies only its canonical factorial lemma. The classical
+volume equality is Theorem 1.1 of
+[Positive octahedra and primitive fillings for trees of crossing circles](../circle-tree-geometry/README.md);
+each analytic proof verifies that theorem's quantitative hypothesis.
 
-| Source | Exact input | Use |
-| --- | --- | --- |
-| *Exact Newton calculus for tangles with a moving meridian* | Proposition 6.1 and equation (6.4); Theorem 7.1; Proposition 8.1 | Full physical crossing trace, original finite tree contraction and all scalar factors. |
-| *Holomorphic source asymptotics and volume limits for strict Conway compositions* | Lemma 2.1 | Canonical sine factorial, reflections and uniform complex expansion. No Conway grammar or volume theorem is imported from that paper. |
-| *Positive octahedra and primitive fillings for trees of crossing circles* | Theorem 1.1 | Original primitive smooth filling and absolute action-volume equality when `sqrt(d_v^2+n_v^2) >= 630`; each proof checks this condition and its critical point. |
+The meridian statements use $M=q_N^s$ with bounded $|s|<1$. They concern
+a shrinking neighborhood of $M=1$. The paper does not prove an
+all-orders expansion or a theorem for arbitrary tangles with several
+exposed boundary components.
 
-## Building and finite reproduction
-
-For typesetting, in this directory run:
+From the repository root:
 
 ```sh
-latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error -outdir=build main.tex
-```
-
-From the repository root, the combined finite runner is:
-
-```sh
+python3 tools/build_papers.py circle-tree-volume
 python3 -I papers/circle-tree-volume/check.py --output /tmp/circle-tree-volume-check
 ```
 
-It invokes [check_summed.py](check_summed.py) and [check_directed.py](check_directed.py) with isolated Python, removes old results before launching them, requires both runs to succeed, and checks the recorded input hashes. It covers their exact identities, rational inequalities, endpoint pairings and finite comparisons. It does not certify the uniform estimates, Gaussian induction or geometric theorem by finite samples.
-
-The two conditions share the finite preliminaries but retain their separate proofs. The local ratio criterion is a corollary of the directed condition; it has no separate quantum induction. Only the summed condition gives the explicit first microscopic correction. Earlier tracked editions remain in Git history.
+The combined runner executes the summed and directed finite checks,
+including rational inequalities, endpoint pairings and comparisons of
+the exact recursion with finite-grid evaluation. These checks supplement
+the written analytic and geometric proofs.

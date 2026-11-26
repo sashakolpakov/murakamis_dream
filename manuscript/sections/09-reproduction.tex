@@ -10,24 +10,31 @@ implication and locates its hypotheses in the preceding arguments.
 It also separates the written proofs from the repository's finite
 certificates and supplementary checks.
 
-\section{A complete packet-to-volume implication}
+\section{From a complex leading term to a logarithmic limit}
 \label{sec:proof-dependencies}
 
-The statement is complex from the outset. No positivity of the
-invariant or of its leading coefficient is assumed. All logarithms
-in rate bounds use $\log0=-\infty$.
-For a nonnegative sequence $b_N$, the assertion of upper exponential
-rate at most $b$ means equivalently that, for every $\eta>0$,
+We use the ordinary complex modulus; the invariant and its leading
+coefficient may have arbitrary phases. It is convenient to express an
+upper exponential bound without taking a logarithm at a zero term.
+For a real sequence $B_N$ that is eventually nonnegative, write
 \[
- b_N\le \exp\bigl(N(b+\eta)\bigr)
- \quad\hbox{for all sufficiently large }N.
+ \operatorname{UR}_b(B)\quad\Longleftrightarrow\quad
+ \forall\eta>0\ \exists N_0\ \forall N\ge N_0,\qquad
+ B_N\le e^{N(b+\eta)}.
 \]
-This exponential-envelope formulation includes zero terms and will be
-used in the comparisons below.
+This is an upper-rate bound, not an assertion that a limit exists.
+With the extended convention $\log0=-\infty$, it is equivalent to
+$\limsup N^{-1}\log B_N\le b$. Indeed an eventual exponential bound
+gives the corresponding logarithmic bound; conversely the definition
+of the limit superior gives the exponential inequality for each
+positive $\eta$. Using $\operatorname{UR}$ as the hypothesis keeps
+zero budgets and zero remainder terms within the statement.
 
-\begin{theorem}[A leading packet with a strict entire-remainder gap]
+\begin{theorem}[A nonzero leading term with a strict remainder gap]
 \label{prop:volume-rate-transfer}
-Let $K_N\in\CC$ be the invariant of one fixed knot at integer levels.
+Let $(K_N)$ be a complex sequence indexed by positive integer levels.
+For the knot application it will be the reduced invariant of one fixed
+knot.
 Suppose that, for all sufficiently large $N$,
 \begin{equation}\label{eq:complex-packet-decomposition}
  K_N=u_N\bigl(N^\rho a_N e^{NS_N}+E_N\bigr),
@@ -36,12 +43,15 @@ Suppose that, for all sufficiently large $N$,
 where $\rho\in\RR$ is fixed, $a_N,S_N\in\CC$ satisfy
 \[
                 a_N\longrightarrow a\ne0,
-                \qquad S_N\longrightarrow S,
+                \qquad S_N\longrightarrow S.
 \]
-and the \emph{entire} remainder satisfies
+Assume the bound is on the whole remainder $E_N$, and that for some
+real $b<\Re S$,
 \begin{equation}\label{eq:entire-remainder-gap}
- \limsup_{N\to\infty}\frac1N\log|E_N|<\Re S.
+                  \operatorname{UR}_b(|E|)
 \end{equation}
+holds. Equivalently, with the extended logarithmic convention,
+$\limsup N^{-1}\log|E_N|<\Re S$.
 Then $K_N\ne0$ for all sufficiently large $N$, and the ordinary
 all-level limit exists:
 \[
@@ -63,15 +73,12 @@ sufficiently large $N$. In particular $G_N\ne0$, and
  =\rho\frac{\log N}{N}+\frac{\log|a_N|}{N}+\Re S_N
  \longrightarrow\Re S.
 \]
-Choose a real number $r<\Re S$ strictly above the limsup in
-\eqref{eq:entire-remainder-gap}; if that limsup is $-\infty$,
-any fixed $r<\Re S$ will do. Choose
-$0<\eta<(\Re S-r)/3$. For all sufficiently large $N$,
+Choose $0<\eta<(\Re S-b)/3$. For all sufficiently large $N$,
 \[
-       |E_N|\le e^{N(r+\eta)},\qquad
+       |E_N|\le e^{N(b+\eta)},\qquad
        |G_N|\ge e^{N(\Re S-\eta)}.
 \]
-Thus $|E_N/G_N|\le e^{-N(\Re S-r-2\eta)}$.
+Thus $|E_N/G_N|\le e^{-N(\Re S-b-2\eta)}$.
 This tends exponentially to zero and is eventually smaller than
 $1/2$. The triangle and reverse triangle inequalities give
 \[
@@ -102,24 +109,25 @@ vanishes.
 
 \begin{lemma}[A subexponential cost preserves an upper rate]
 \label{lem:subexponential-remainder-transfer}
-Let $B_N,C_N\ge0$ for all sufficiently large $N$, let $b\in\RR$,
-and suppose
+Let $B_N,C_N\ge0$ eventually, let $b\in\RR$, and suppose
+$\operatorname{UR}_b(B)$ and $\operatorname{UR}_0(C)$.
+If $|E_N|\le C_NB_N$ eventually, then $\operatorname{UR}_b(|E|)$.
+In the extended-logarithm notation, this is the implication
 \[
- \limsup_{N\to\infty}\frac1N\log B_N\le b,\qquad
- \limsup_{N\to\infty}\frac1N\log C_N\le0.
-\]
-If a complex remainder satisfies $|E_N|\le C_NB_N$, then
-\[
-             \limsup_{N\to\infty}\frac1N\log|E_N|\le b.
+ \limsup N^{-1}\log B_N\le b,\quad
+ \limsup N^{-1}\log C_N\le0
+ \quad\Longrightarrow\quad
+ \limsup N^{-1}\log|E_N|\le b.
 \]
 \end{lemma}
 
 \begin{proof}
-For every $\eta>0$, the two limsup bounds imply, eventually,
-$B_N\le e^{N(b+\eta)}$ and $C_N\le e^{N\eta}$.
+For every $\eta>0$, apply the two upper-rate bounds with
+$\eta/2$. Eventually
+$B_N\le e^{N(b+\eta/2)}$ and $C_N\le e^{N\eta/2}$.
 These inequalities also hold at their zero values. Hence
-$|E_N|\le e^{N(b+2\eta)}$. Taking the limsup and then letting
-$\eta$ decrease to zero proves the result. No division by $B_N$
+$|E_N|\le e^{N(b+\eta)}$, which is the required upper-rate
+bound. No division by $B_N$
 or $C_N$ is used.
 \end{proof}
 
@@ -128,11 +136,15 @@ or $C_N$ is used.
 Suppose $B_N\ge0$ and $|E_N|\le C_NB_N$ for all sufficiently
 large $N$. Suppose also that
 \[
- \limsup_{N\to\infty}N^{-1}\log B_N\le b,\qquad
+ \operatorname{UR}_b(B),\qquad
  0\le C_N\le C_0N^m
 \]
 eventually, with fixed $b,m\in\RR$ and $C_0\ge0$.
-Then $\limsup N^{-1}\log|E_N|\le b$.
+Then $\operatorname{UR}_b(|E|)$. Equivalently, in the extended
+logarithmic convention,
+\[
+                 \limsup N^{-1}\log|E_N|\le b.
+\]
 \end{corollary}
 \begin{proof}
 If $C_0=0$, the remainder is eventually zero. Otherwise
@@ -154,7 +166,7 @@ value one, including the writhe correction. Turns and the final
 closing relation are solved exactly before a lattice is chosen.
 The remaining cell volume is one.
 
-Theorem~\ref{ca:strict-pure} gives the exact holomorphic pure window,
+Theorem~\ref{ca:strict-pure} gives the restricted holomorphic finite sum,
 its nonzero local amplitude and the physical-source comparison
 \eqref{ca:source-error}. The same theorem bounds every macroscopic
 color deficit. Proposition~\ref{ca:Fourier-theorem} proves both
@@ -272,20 +284,16 @@ inequalities and their reduction to finite rational checks.
 Candidate generation and numerical optimization are not run by
 verification.
 
-The independent constructions have the following supplementary
-commands:
+The collection has one runner for the finite algebra and constants
+used by its supporting papers:
 \begin{verbatim}
-python3 repro/run_research_checks.py curvature-fillings
-python3 repro/run_research_checks.py local-tree-fillings
-python3 repro/run_research_checks.py directed-tree-fillings
-python3 repro/run_research_checks.py balanced-terminal-fans
-python3 repro/run_research_checks.py filling-supremum
+python3 repro/check_paper_algebra.py \\
+  --output repro/results/paper-collection/finite
 \end{verbatim}
-They check finite identities, rational constants, endpoint
-connections and the indicated sample contractions. Their output
-does not replace the uniform estimates and geometric arguments
-in the corresponding chapters and appendices. Requirements beyond
-the standard Python library are recorded by each runner.
+Individual paper READMEs give narrower commands. These programs check
+the identities and certificates specified by each suite. Their finite
+examples do not replace the uniform estimates and geometric arguments
+in the corresponding chapters.
 
 The dependency record can be checked with
 \begin{verbatim}
@@ -294,7 +302,7 @@ python3 repro/check_manuscript_logic.py \
 \end{verbatim}
 This checks an authored map: premise roles, references, level
 scope and circular dependencies. It does not prove the statements
-assigned to its vertices. The Lean code proves the Gram identities,
+assigned to its vertices. The Lean code proves the explicitly matched Gram identities,
 shifted Parseval and Hermite coefficient bound, the linearized stationary
 equations, the complex packet theorem, and the whole-color remainder
 assembly. It also contains the finite polynomial and supported-graph
@@ -324,8 +332,7 @@ python3 tools/build_papers.py conway-asymptotics
 
 The illustrated guide is built separately:
 \begin{verbatim}
-python3 tools/build_book.py
-python3 tools/check_book.py
+python3 tools/build_manuscript_guide.py
 \end{verbatim}
 Documentation builds do not execute research scripts. The guide
 also describes exploratory methods, whose open steps are

@@ -25,8 +25,7 @@
 \newcommand{\calQ}{\mathcal Q}
 \newcommand{\Rea}{\operatorname{Re}}
 \title{Balanced circle packings from terminal tangle decorations}
-\author{}
-\date{2 November 2026}
+\author{Alexander Kolpakov}\date{25 November 2026}
 \begin{document}
 \maketitle
 
@@ -74,6 +73,13 @@ Filling the crossing circle along its disk-framed primitive slope
 Its parity is fixed by \(\epsilon_e\). We require that the chosen
 parities join the main strands into one knot, with no additional
 closed main component.
+
+A \emph{terminal insertion} means attaching a new crossing-circle
+tangle immediately before or after an original box in its local
+stacking coordinate. Repeating this operation on one side gives the
+sequence called a \emph{fan} below. The surrounding diagram need not
+have a global stacking order. Section~\ref{td:local} specifies the
+joining arcs and derives the new matching.
 
 The complete packing can be normalized by sending the contact at
 the mark to infinity. Its two incident white circles become
@@ -221,7 +227,7 @@ is a polynomial divided difference. The local Casimir is substituted
 for \(z\); \(T_N(\cos\phi)=\cos(N\phi)\).
 The homogeneous polynomial has degree \(d\) in the face variables
 and degree at most \(d\) in \(\sigma\). The theorem retains cups,
-caps, the original mark, even-level grids and repeated-root normals.
+caps, the original mark, even-level grids and derivatives at repeated roots.
 \item Theorem 1.1 of \cite{CasimirSources} gives the three local upper rates
 \begin{equation}\label{td:rates}
  \begin{aligned}
@@ -232,8 +238,7 @@ caps, the original mark, even-level grids and repeated-root normals.
 \end{equation}
 The estimates are uniform for all face phases and
 \(\sigma\in[-2,2]\), with fixed positive ordinary moduli and exact
-protected zeros. An overloaded zero middle removes that one-sided
-sector. Their hypothesis \(x+y>0\) is \eqref{td:outer}.
+protected zeros. A one-sided sector vanishes when the variable carrying its positive middle exponent is protected and hence zero. Their hypothesis \(x+y>0\) is \eqref{td:outer}.
 \item Definition 3.1 and Theorems 1.1 and 4.3 of \cite{Planar}
 give the following implication. A finite shared-weight certificate
 for every locally allowed noncentral string implies the full
@@ -266,9 +271,9 @@ volume. These statements include both level parities. The
 construction below supplies the missing full-sector inequality,
 rather than inferring it from the central contribution alone.
 
-\section{The literal terminal insertion}\label{td:local}
+\section{The local terminal insertion}\label{td:local}
 
-\subsection{The product frame and its two strip substitutions}
+\subsection{Endpoint conventions for the two insertions}
 
 Label the four half-segments of a turned two-strand tangle \(h_v\)
 in cyclic order by
@@ -317,8 +322,7 @@ matching edge. The two source factors after insertion are
 \begin{equation}\label{td:local-factors}
              H_f(x,w,c,y)\,H_g(b,y,x,w).
 \end{equation}
-They are the coupons in their inherited orientation-preserving
-frames, with no reflection or change of crossing sign.
+These are the polynomial factors of the two boxes in the endpoint frames inherited from the insertion; the operation does not reflect a box or reverse its crossing sign.
 \end{lemma}
 
 \begin{proof}
@@ -569,7 +573,12 @@ Indeed the nearest-integer choice gives the last inequality, and
 the four entries in the maximum give the other conditions.
 Adding the same nonnegative even number to \(j,k\) preserves all
 three inequalities. This is a finite construction at each region,
-not an eventual assertion without specified counts.
+not merely a claim that sufficiently many insertions work.
+For example, if the local curvatures are $x=y=b=c=1$, then
+$u=v=\sqrt3/2$, $m=0$ and the displayed choice gives $j=k=4$.
+The retained middle curvatures are both $33+8\sqrt3$. This example
+illustrates the count formula; the proof applies to the curvatures
+of every permitted complete packing.
 
 After each insertion the new crossing region consists of the other
 two new triangles; neither is subdivided by the next step on the
@@ -734,7 +743,7 @@ Finally Lemma~\ref{td:parity} gives the endpoint and component
 assertions because both counts at every region are even.
 \end{proof}
 
-\section{The actual refined source and the filled limit}
+\section{The refined polynomial and the filled knot}
 
 The sphere changes, so its invariant also changes. It is important
 to identify the new source rather than substitute a scalar
@@ -764,17 +773,16 @@ The old target exponents are unchanged, and the new exponent
 \(\frac d2(T_w-M_w)=-d\) supplies exactly the new target.
 At even \(N\), the face parity changes by one across a strand edge
 and by zero across a matching edge. Because \(xy\) is matching,
-\(\tau_x=\tau_y\), and the unique new clock is
+\(\tau_x=\tau_y\), and the new face parity is uniquely determined by
 \(\tau_w=\tau_b=\tau_x+1\) modulo two. Thus the new matching
 edge \(bw\) and all the new strand edges have the prescribed
 parities. These computations agree with the full source theorem,
-including its unchanged reduced mark. The extra coupon factor
-\(N^{-1}\) is canceled by the new primitive \(N\)-point face grid;
+including its unchanged reduced mark. The factor $N^{-1}$ from the new box is canceled by the new primitive \(N\)-point face grid;
 there is no residual quantum-dimension factor.
 
 \begin{lemma}[A certificate at the complete weights]\label{td:certificate}
 For a fixed strictly balanced marked sphere, its complete packing
-itself is an unabridged shared-weight certificate.
+itself gives a certificate for every locally allowed sector.
 \end{lemma}
 \begin{proof}
 For an allowed left label with positive overloaded middle \(c\),
@@ -796,7 +804,7 @@ label is allowed the certificate is vacuous.
 
 \begin{proof}[Proof of Corollary~\ref{td:volume}]
 Theorem~\ref{td:main} produces a fixed marked simple sphere, and
-Lemma~\ref{td:certificate} gives its unabridged certificate.
+Lemma~\ref{td:certificate} gives its certificate.
 Apply \cite[Theorem 1.1]{Planar} through
 Proposition~\ref{td:imports}. Every original and added crossing
 circle retains its own primitive disk slope. Choose
@@ -850,8 +858,8 @@ used to recover the new quartet, and connected components of
 the literal pairing graph test both terminal products.
 The runner also checks the matching, the protected edge and
 the even-level parity extension through sixteen recorded
-insertions. Its forty-nine rational count examples are checks
-of the formula \eqref{td:counts}; the all-real proof is the
+insertions. Its rational count examples check
+the formula \eqref{td:counts}; the all-real proof is the
 nearest-integer argument above.
 
 The output records source hashes and the exact scope of these

@@ -28,23 +28,28 @@
 \newcommand{\Rrev}{\mathcal R}
 \newcommand{\Acal}{\mathcal A}
 \title{Exact Newton calculus for tangles with a moving meridian}
-\author{}\date{}
+\author{Alexander Kolpakov}\date{25 November 2026}
 \begin{document}\maketitle
 \begin{abstract}
-We compute the finite two-strand calculus when the main meridian is
-$M=q^s$, at $q=e^{\pi\ii/N}$. Equal and opposite strand orientations
-have different Casimir relations. Keeping these relations distinct,
-we prove all six physical quarter-turn formulas, the full pivotal
-closing functional and the crossing polynomials at colliding roots.
-The turns reverse fixed Newton coordinates with an explicit paired
-sine product and an orientation-dependent quadratic scalar. We then
-contract an original ordered tangle tree without dropping any index
-or repeated-root derivative, and prove its exact boundary degree and
-independence of contraction root. One reduced-cut factor survives;
-the remaining scalar is determined by the physical crossing exponents
-and writhe. The results hold at every level and on the disk $|s|<1$.
-They are finite operator identities, without an asymptotic or volume
-conclusion.
+We describe how two-strand tangle operators change when the highest
+weights on the main strands move away from the complete color. Write
+$q=e^{\pi\ii/N}$ and parametrize the meridian by $M=q^s$, with
+$|s|<1$. Reversing a strand replaces highest weight $N-1+s$ by
+$N-1-s$. The resulting ordered tensor products have two different
+Casimir relations. We use one fixed Newton basis in both quotient
+algebras, while keeping their multiplication laws distinct.
+
+In these coordinates we calculate all six quarter-turn maps, the
+pivotal closing functional and every integer crossing power. The
+formulas remain holomorphic when spectral roots collide because they
+retain first derivatives. We then assemble the operators along an
+ordered tangle tree. Contracting any subtree produces a polynomial of
+degree at most $N-1$ in its remaining boundary variable, regardless
+of the number of vertices. The same calculation determines the
+orientation and framing factors, including negative crossing powers
+and the single reduced closure. All statements are finite identities
+at every integer level $N\ge2$; their use in asymptotic estimates is a
+separate question.
 \end{abstract}
 
 \section{The statement and the objects it evaluates}
@@ -53,7 +58,11 @@ Fix $N\ge2$ and write
  d=N-1,\quad \theta=\pi/N,\quad q=e^{\ii\theta},\quad Q=q^2,
  \quad \rho=q-q^{-1},\quad M=q^s,\quad |s|<1.
 \]
-All powers $q^a$ mean $\exp(\pi\ii a/N)$. A positively directed main
+The parameter $s$ is complex, and all powers $q^a$ mean
+$\exp(\pi\ii a/N)$. Thus the disk in this paper is a disk in the
+scaled logarithm $s$: its image in the $M$-plane shrinks toward one
+as $N$ grows. It is not a fixed neighborhood in the meridian variable.
+A positively directed main
 strand carries the $N$-dimensional nilpotent module of highest weight
 $d+s$; its dual has highest weight $d-s$. We denote them by $V_+$
 and $V_-$. The parameter is that of the main strand, not the integer
@@ -73,9 +82,11 @@ $\Cheb_{r+1}=z\Cheb_r-\Cheb_{r-1}$. Put
  P_\sigma(z)=\Cheb_N(z)+2\cos(2\pi\sigma),\qquad
  \Acal_\sigma=\CC[z]/(P_\sigma).
 \end{equation}
-The two equal-color objects use $\sigma=s,-s$; the opposite-color
-objects use $\sigma=0$. Though $P_s=P_{-s}$, their ordered physical
-objects remain distinct. Set
+The two same-orientation tensor products use $\sigma=s,-s$;
+the opposite-orientation tensor products use $\sigma=0$. Although
+$P_s=P_{-s}$, the two ordered modules are different objects.
+For a monic polynomial $P$, write $\remd_Pf$ for the unique remainder
+of degree less than $\deg P$, and $[z^k]f$ for its coefficient of $z^k$. Set
 \begin{equation}\label{mt:fixed-basis}
  S_k=\prod_{r=1}^k2\sin(r\theta),\quad
  c_j=2\cos((2j+1)\theta),\quad
@@ -125,10 +136,13 @@ for this finite summation, provided all original tensors and reference
 maps are retained.
 \end{theorem}
 
-The theorem supplies the finite adapter needed when the meridian moves.
-It does not bound the signed contraction by a positive complete-color
-sum. Nor does it replace the two quotient multiplications by one:
-products which vanish in $\Acal_0$ can return in $\Acal_s$.
+The point of the fixed basis is to compare the deformed calculation
+with the complete one without changing coordinates at every bend.
+The comparison preserves a nondegenerate closing pairing, but not
+multiplication: a product that vanishes in $\Acal_0$ can be nonzero
+in $\Acal_s$. The finite formulas therefore keep both quotient
+relations throughout. A bound for the resulting signed sum requires
+additional estimates.
 
 We use the complete calculations of \cite{Newton} only where the color
 is exactly complete: Proposition~3.2 for the physical turn and closing
@@ -145,7 +159,7 @@ provide the construction's background, not a substitute for the
 moving-coordinate calculations.
 
 \section{Physical modules, bending maps and the cut}
-For a highest root $x=q^\alpha$, let $V_x$ have basis $v_0,\ldots,v_d$
+For a highest $K$-eigenvalue $x=q^\alpha$, let $V_x$ have basis $v_0,\ldots,v_d$
 and matrices
 \begin{equation}\label{mt:module}
  \begin{aligned}
@@ -247,7 +261,7 @@ On $V_x\otimes V_y$ define
        =\rho^2E_{12}F_{12}+qK_{12}^{-1}+q^{-1}K_{12}.
 \end{equation}
 It commutes with the three total generators. For arbitrary nonzero
-roots $x,y$, let
+highest $K$-eigenvalues $x,y$, let
 \[
  P_{x,y}(z)=\prod_{j=0}^{d}
        (z-qxyQ^{-j}-q^{-1}(xy)^{-1}Q^j).
@@ -276,7 +290,7 @@ $h_j=\sum_{a=0}^jb_av_a\otimes w_{j-a}$, $b_0=1$, is determined by
  -\frac{\varepsilon_{j-a}(y)}
  {\varepsilon_{a+1}(x)yQ^{-(j-a-1)}}.
 \]
-Its highest root is $xyQ^{-j}$. The commutation relation shows that
+Its highest $K$-eigenvalue is $xyQ^{-j}$. The commutation relation shows that
 its first $N$ lowering vectors are nonzero: a shorter string would
 contradict a nonzero raising factor. The root binomial identity for
 the two $Q$-commuting summands of $F_{12}$ gives $F_{12}^N=0$;
@@ -434,9 +448,17 @@ For example, if $i+j\ge N$ then $e_ie_j=P_0A$ and
 The right side need not vanish. A coordinate reversal is a linear map
 between the relevant polynomial spaces, not an identification of their
 products.
+For instance, at $N=2$ one has $P_0=z^2$ and $e_1=-z/4$.
+Thus $e_1^2=0$ in $\Acal_0$, whereas
+\[
+ e_1^2=\frac{\sin^2\pi s}{4}\quad\text{in }\Acal_s.
+\]
+The fixed coordinates and their closing pairing remain valid in both
+algebras; it is the multiplication that has changed.
 
-The trace also gives a division-free way to recover the polynomial
-of any physical intertwiner $A(s)$ on one ordered pair:
+The trace recovers the polynomial of any intertwiner $A(s)$ without
+dividing by differences of spectral nodes. On one ordered pair the
+extraction formula is
 \begin{equation}\label{mt:extract}
  [e_i]A(s)=\frac{1}{H_N(s)}
        \ptr_{g}\bigl(A(s)e_{d-i}(\Omega)\bigr).
@@ -463,13 +485,15 @@ It also proves that replacing a polynomial by its remainder preserves
 these complete data. At $s=0$ every root is double except the simple
 root $-2$ when $N$ is odd. At $s=\pm1/2$ the endpoint roots which
 occur are simple and the other roots are double. Thus
-\eqref{mt:hermite} specifies every normal that is needed below.
+\eqref{mt:hermite} specifies every first derivative required at a repeated root.
 
 \section{The physical quarter-turn}
-We now compute the turn itself. It is helpful to keep three kinds of
-indices separate: $e_k$ is a polynomial, $\mathbf e_j$ below is a
-coordinate vector in a pair module, and $a,b$ in a matrix entry are
-physical strand colors.
+We now compute a bend using the evaluation and coevaluation maps,
+rather than choosing an arbitrary reversal of polynomial coordinates.
+Three kinds of notation occur: $e_k$ is a polynomial,
+$\mathbf e_j$ below is a vector in a tensor-product module, and
+$a,b,j,k$ in a matrix entry are basis indices. The parameters $x,y$
+label the modules, not their basis vectors.
 
 For $A:V_{x_1}\otimes V_{x_2}\to V_{y_1}\otimes V_{y_2}$, bending the first output
 and second input gives a map $V_{y_1}^*\otimes V_{x_1}\to V_{y_2}\otimes V_{x_2}^*$.
@@ -478,24 +502,24 @@ Inserting \eqref{mt:duality} in evaluation and coevaluation gives
  (\Turn A)^{jb}_{ak}=
        \frac{\gamma_a(y_1)}{\gamma_b(x_2)}A^{d-a,j}_{k,d-b}.
 \end{equation}
-In this formula the arguments of $\gamma$ are highest roots; the
+In this formula the arguments of $\gamma$ are highest $K$-eigenvalues; the
 subscripts are basis indices. In particular the denominator is
 $\gamma_b(x)$ for an $xx$ endomorphism, and $\gamma_b(y)$ for an
 $xy$ endomorphism. The formula fixes which forward turn we mean.
 
-Put $A=V_x\otimes V_y$, $B=V_y\otimes V_x$. For morphisms between
-them use the carriers
+Put $A=V_x\otimes V_y$, $B=V_y\otimes V_x$. For maps between
+them choose the following reference intertwiners
 \begin{equation}\label{mt:carriers}
  G_A=I,\qquad G_B=\check R_{x,y}r_0(\Omega_A)^{-1},\qquad
  C_{T,S}=G_TG_S^{-1}.
 \end{equation}
 Here $r_0$ is the complete crossing polynomial, including its full
 normal data; its nodal values are nonzero, so it is a unit.
-For the equal-color objects the carrier is the identity. A morphism
+For the equal-color objects the reference map is the identity. A map
 $S\to T$ is written $C_{T,S}f(\Omega_S)$, in this order. The
-Casimir intertwines with each carrier. Therefore composition is the
+Casimir intertwines with each reference map. Therefore composition is the
 product of the polynomials in the source quotient, with no scalar
-left between adjacent carriers. At $s=0$, $G_B=I$ after the complete
+left between adjacent reference maps. At $s=0$, $G_B=I$ after the complete
 physical identification.
 
 \subsection{A three-strand calculation with all channels retained}
@@ -523,22 +547,24 @@ $I_w:V_x\to V_x\otimes V_x\otimes V_y$ by the highest vector
 \end{equation}
 Indeed its highest-vector equation says
 $z_{c+1}=-yQ^{-c}E_{12}z_c/\varepsilon_{c+1}(y)$; its last
-condition is $E_{12}^Nw=0$. Its highest root is
+condition is $E_{12}^Nw=0$. Its highest $K$-eigenvalue is
 $x^2yQ^{-d}=x$, and its $F$-string defines the intertwiner on all
-of $V_x$. Conversely, third color zero in a highest vector of this
+of $V_x$. Conversely, third-factor basis index zero in a highest vector of this
 weight forces first-pair degree $d$: the other congruent degree
 $2N-1$ is outside the pair. The recursion then determines every
 coefficient. Hence \eqref{mt:highest-three} describes the whole
 $N$-dimensional Hom space, including repeated-channel directions.
 
 Let $\mathbf e_j=\delta_j\delta_{d-j}v_j\otimes v_{d-j}$ in
-$W_d$. The two pair Casimirs act on its coordinates as $\mathsf A_s$
-and $\mathsf C_s$, respectively. Set
+$W_d$. Under the correspondence $w\mapsto I_w$, the Casimirs of the first
+two and last two tensor factors act on $W_d$. Denote their matrices
+in the basis $\mathbf e_j$ by $\mathsf A_s$ and $\mathsf C_s$,
+respectively. Set
 \[
  P_j(s)=\prod_{r=1}^j\frac{\sin((r-s)\theta)}{\sin(r\theta)},
  \qquad \mathsf D_s=\diag(P_0(s),\ldots,P_d(s)).
 \]
-Extracting third color zero from \eqref{mt:highest-three} gives
+Extracting third-factor basis index zero from \eqref{mt:highest-three} gives
 \begin{equation}\label{mt:two-matrices}
 \begin{aligned}
  \mathsf C_s&=\mathsf D_s^{-1}\mathsf C_0\mathsf D_s,\\
@@ -548,7 +574,7 @@ Extracting third color zero from \eqref{mt:highest-three} gives
  (\mathsf A_s)_{j,j-1}&=-\rho^2Q^j[j][j+s].
 \end{aligned}
 \end{equation}
-Only third colors zero and one contribute to the first extraction.
+Only third-factor indices zero and one contribute to the first extraction.
 Their $F_2E_2$ terms cancel, leaving
 $-\rho^2yF_2E_1K_2$ and the two Cartan terms. These give the
 diagonal $c_j$ and superdiagonal $\rho^2[j][j-s]$ displayed above.
@@ -711,7 +737,7 @@ This is the dual endomorphism with reversed tensor order.
 The antipode fixes $\Omega$ by the two expressions
 \eqref{mt:casimir}. Hence a double turn is the same fixed polynomial
 on the dual equal-color pair. The second turn is the inverse of the
-first. There remains one carrier scalar when the opposite reference
+first. There remains one reference map scalar when the opposite reference
 order is changed, which we now compute rather than normalize away.
 
 Temporarily take generic highest weights
@@ -729,11 +755,16 @@ factorial ratios and gives
 \[
  q^{\alpha\beta-2j(\alpha+\beta)+2j(j-1)}.
 \]
-Replace both weights by $d+\epsilon/2$. Every Casimir node stays
-fixed; the original exponent is the equal-weight exponent minus $s^2$. The generic identity
-therefore extends to $\epsilon=0$ as a matrix identity, including
-normals: the canonical coefficients are recovered by the
-nondegenerate moment pairing \eqref{mt:extract}. Thus
+Replace both weights by $d+\epsilon/2$. Their sum, and hence every
+Casimir node, stays fixed; the original exponent is the equal-weight
+exponent minus $s^2$. This proves the required identity at distinct
+nodes. To pass to $\epsilon=0$, use the general moment formula
+\eqref{mt:physical-trace}. Its polynomial coefficient extractor is
+$(s_0/s_x)\ptr_g(Ae_{d-i}(\Omega))$, the general form of
+\eqref{mt:extract}. The denominator tends to
+$s_0H_N(s)\ne0$, so the coefficients extend holomorphically across
+the colliding nodes. The identity therefore specializes as an
+identity of matrices, with the first derivatives retained. Thus
 \begin{equation}\label{mt:monodromy}
  \check R_{y,x}\check R_{x,y}=q^{-s^2}r_0(\Omega)^2,
  \qquad G'G_B=q^{-s^2}I,\quad G'=\check R_{y,x}r_0^{-1}.
@@ -754,7 +785,7 @@ $\End(A)$ & $\End(B)$ & $1$\\
 $\End(B)$ & $\End(A)$ & $1$\\\bottomrule
 \end{tabular}
 \caption{The six physical forward turns. Here $A=V_+\otimes V_-$
-and $B=V_-\otimes V_+$; every morphism uses the carriers
+and $B=V_-\otimes V_+$; every morphism uses the reference maps
 \eqref{mt:carriers}.}\label{mt:types}
 \end{table}
 Since $W_kW_{d-k}=H_N^2$, the common map
@@ -762,7 +793,7 @@ $H_N^{-1}\Rrev\diag(W_k)$ is an involution. Together with the
 listed reciprocal scalars this proves the asserted inverse turns
 as well as every forward turn.
 
-\section{Crossings, their normals and ordinary circles}
+\section{Crossings at repeated roots and ordinary circles}
 \begin{proposition}[The actual crossing polynomial]\label{mt:crossing}
 On $V_+\otimes V_+$ the checked crossing has a unique canonical
 polynomial $R_s\in\Acal_s$, holomorphic for $|s|<1$. At generic
@@ -789,7 +820,7 @@ Alternatively apply \eqref{mt:extract} to the holomorphic physical
 matrix inverse. This proves the assertion for all negative powers.
 \end{proof}
 
-For completeness the normal is explicit. Suppose $s_*=0,1/2$ or
+The first polynomial derivative at a collision can also be written explicitly. Suppose $s_*=0,1/2$ or
 $-1/2$, $j<l$, and $j+l+1-2s_*=N$. The two crossing values agree,
 since their ratio is $(-1)^{l-j}q^{N(l-j)}=1$.
 Their $s$ derivatives differ by $-2\ii\theta(l-j)R_s(c_j(s))$;
@@ -805,7 +836,7 @@ The prime is the polynomial derivative. The coefficient derivatives
 cancel in the divided difference of the single holomorphic
 polynomial $R_s^n(z)$, which justifies this limiting calculation.
 A reflection-fixed endpoint node is simple, so it has no prescribed
-normal. In particular at odd $N$ and $s=0$, the simple node $-2$
+first derivative. In particular at odd $N$ and $s=0$, the simple node $-2$
 has the value in \eqref{mt:crossing-values} with $j=d/2$.
 These formulas include both parities and composite levels.
 
@@ -894,18 +925,21 @@ indices and all ordinary colors are retained by the same polynomial
 formula. No positive-range truncation is made here.
 
 \section{Exact contraction of an ordered tree}
-A strict tree expression puts an actual two-strand coupon $p_v$ at
+For the tree contraction, a coupon is a box containing a specified
+two-strand operator. Place such an operator $p_v$ at
 each vertex and a physical turn on each edge inserting a child in
 its parent. The ordered children and strand directions are part of
 the data. Coupons can be crossing powers, ordinary-circle
 polynomials with retained crossings, or the identity. Remove the
-carrier of any opposite-order morphism by \eqref{mt:carriers};
+reference map of any opposite-order morphism by \eqref{mt:carriers};
 compose the polynomials in the correct source algebra. More
 generally a binary expression permits arbitrary finite ordered
-stacking and turns. Induction on this expression is the exact
-compiler: stack compatible carriers and multiply, or apply the
-appropriate row of Table~\ref{mt:types}.
+stacking and turns. This gives a recursive evaluation: at a stack, compose the reference
+maps and multiply in the appropriate quotient; at a turn, apply the
+corresponding row of Table~\ref{mt:types}. Neither strict real
+feasibility nor positivity is needed for this finite calculation.
 
+Let the underlying finite tree have vertex set $V$ and edge set $E$.
 For the tree formula let $D_v$ be the number of incident edges at
 $v$, distinct from the level degree $d$. Let
 $\sigma_v\in\{0,s,-s\}$ be its actual pair type and put
@@ -916,7 +950,7 @@ $\sigma_v\in\{0,s,-s\}$ be its actual pair type and put
 \end{equation}
 Reduction is applied after the entire product. Each edge has the
 scalar $\gamma_e$ of its original physical turn; these and the
-carriers are fixed by the typed diagram.
+reference maps are fixed by the typed diagram.
 
 \begin{theorem}[Tree contraction and boundary degree]\label{mt:tree}
 For a typed tree whose last boundary is an endomorphism, the
@@ -933,14 +967,19 @@ After retaining any final closing turn, the zero-framed scalar is
 All physical crossing scalars remain in the coupons; every sum
 uses all $N$ indices. Any root may be chosen for this summation.
 
-For $z=-2\cos t$, its child-to-parent recursion is
+Choose a root to describe a summation order. The function
+$M_{v\to p}$ is the contraction of the component on the $v$ side of
+an edge $vp$, leaving its parent boundary variable $u$ free. For
+$z=-2\cos t$, the recursion is
 \begin{equation}\label{mt:message}
  M_{v\to p}(u)=\gamma_{vp}\,
  \phi_{\sigma_v}^{,z}\left[
  p_v(z)K_N(t,u;s)\prod_{w\text{ child of }v}M_{w\to v}(t)\right].
 \end{equation}
-At the root omit the kernel and apply $\phi_{\sigma_0}$ to its
-coupon times its incoming messages. As a polynomial in
+Here $\phi_{\sigma_v}^{,z}$ acts only in the polynomial variable
+$z=-2\cos t$; the angle $u$ is a parameter. At the root omit the
+kernel and apply $\phi_{\sigma_0}$ to its operator times the incoming
+subtree contractions. As a polynomial in
 $-2\cos u$, every message has degree at most $d$.
 \end{theorem}
 \begin{proof}
@@ -956,7 +995,7 @@ covariant legs. Since $W_{d-k}/H_N=H_N/W_k$, this becomes
 \end{equation}
 This proves both the equal edge indices and their inverse $W_k$.
 The respective source and target quotients have the same fixed
-pairing; physical carriers telescope before this contraction.
+pairing; physical reference maps telescope before this contraction.
 Removing one terminal vertex therefore produces exactly
 \eqref{mt:message}. Induction proves \eqref{mt:network}.
 The final physical partial closure is \eqref{mt:physical-trace},
@@ -967,7 +1006,7 @@ degree regardless of the size or unreduced degrees of the subtree.
 
 Finally \eqref{mt:network} is a finite sum of fixed tensors, so its
 indices can be summed in any leaf order. Changing the contraction
-root keeps the original $\gamma_e$, carriers and coupons. It does
+root keeps the original $\gamma_e$, reference maps and coupons. It does
 not reverse all physical turns while assigning new forward scalars.
 Independence of the actual cut was proved separately following
 \eqref{mt:physical-trace}.
@@ -992,9 +1031,9 @@ Only the two turn phases cancel; all edge and vertex factors remain.
 Identity coupons are allowed, so no valence or nonzero-exponent
 condition has entered the result.
 
-\section{The scalar ledger, including negative mixed words}
+\section{Crossing and framing factors, including negative powers}
 The preceding contraction already includes all physical scalars.
-We isolate a useful scalar when equal-color chirps are separated
+We isolate a useful scalar when equal-color quadratic exponentials are separated
 from their normalized values and mixed words use $r_0^n$. This is
 an exact bookkeeping identity, not a relative estimate for the
 whole invariant.
@@ -1030,13 +1069,13 @@ where $\delta(n)$ is Euclidean parity, including when $n<0$.
 Both formulas \eqref{mt:mixed-words} then leave $q^{-ns^2/2}$.
 For equal-color words the same scalar is
 $C_{N,n}(s)/C_{N,n}(0)$ in \eqref{mt:angles}; their remaining
-chirps are still evaluated at shifted angles.
+quadratic exponentials are still evaluated at shifted angles.
 
 \begin{proposition}[Exact quadratic scalar]\label{mt:scalar}
 Let the actual checked-crossing powers in the original diagram be
 $n_i$, and let $w(D)$ be its oriented writhe. Exclude the
 index-dependent factors $H_N/W_k$, the single closing factor $H_N$,
-and the shifted chirp or fixed $r_0^{n_i}$ at each box. The product
+and the shifted quadratic exponential or fixed $r_0^{n_i}$ at each box. The product
 of the remaining scalar ratios is
 \begin{equation}\label{mt:scalar-value}
  A_N(s)=q^{(-w(D)-\sum_i n_i)s^2/2}.
@@ -1062,7 +1101,7 @@ does not say that a whole polynomial or invariant is its complete
 value times $A_N(s)$: moving arguments and changed quotient
 products remain inside the exact expression.
 
-\section{Finite reproduction and interfaces}
+\section{Finite checks and subsequent analytic questions}
 The accompanying \texttt{check.py} compares physical module
 matrices, finite crossing sums and explicit currying contractions
 with these polynomial formulas in exact finite fields. Its report
@@ -1082,7 +1121,7 @@ The finite input to an analytic tree theorem is now explicit:
 \eqref{mt:kernel-main} its edge kernel and
 \eqref{mt:message} its original recursion. An asymptotic theorem
 must estimate the whole contraction, including complementary
-Newton indices and repeated-root normals. None of the identities
+Newton indices and repeated-root first derivatives. None of the identities
 above establishes dominance of a selected saddle or positive
 subcollection.
 

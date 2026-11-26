@@ -1,9 +1,10 @@
 \chapter{The ordered octahedral geometry and the filled cusp}\label{app:quantitative-geometry}
 
 This appendix supplies the geometric proof for
-Theorem~\ref{thm:circle-quantitative}. It starts with the actual ordered
-tangle diagram and identifies its projection cut, rather than
-recovering a manifold from a scalar identity. Section~\ref{sec:ft}
+Theorem~\ref{thm:circle-quantitative}. It begins with the ordered tangle diagram, identifies the two balls
+obtained by its projection and disk cuts, and assigns hyperbolic cells
+to those balls. The resulting identification keeps the specified link
+components and peripheral curves. Section~\ref{sec:ft}
 constructs the two-octahedron block at every physical tree edge and
 tracks the primitive peripheral curves. Section~\ref{sec:fa} gives
 positive tetrahedral shapes and the complete face maps.
@@ -33,26 +34,26 @@ by its definition in Section~\ref{sec:fa-1}.
 
 \section{The ordered octahedral decomposition}\label{sec:ft}
 
-The construction below also appears as \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_all_circle_octahedral_decomposition.html}{the ordered octahedral decomposition}.
-
 A crossing circle surrounds two strands of a link and bounds a disk punctured by them. Cutting along the projection regions and these disks opens the augmented link exterior into two balls. For the ordered tangle constructions considered here, each ball can be assembled from octahedra, with one octahedron for each edge of the tangle-operation tree. The proof identifies every boundary vertex and face, so it also identifies the original meridians and disk longitudes after the pieces are joined.
 
 The tangles have two strings and four ordered endpoints. Their operations are vertical stacking, quarter-turns in the projection plane, and the specified cylindrical closure. Every product junction in the reduced operation tree carries an original crossing circle; there are no junctions without a circle. The tree, the order of its branches, and all endpoint frames are retained throughout. Faces created by opening crossing disks are called shaded faces; the pieces of the projection regions are called white faces.
 
 This is the topological input for the \hyperref[ch:quantitative-circle-trees]{quantitative volume theorem}. The \hyperref[sec:fa]{angular cell calculation} provides positive shapes for its octahedra, and the \hyperref[sec:fg]{completion theorem} uses the path supplied by the \hyperref[sec:qe]{analytic filling criterion}. The present proof concerns the augmented exterior before filling.
 
-\subsection{The actual ordered object and the statement}\label{sec:ft-1}
+\subsection{The ordered tangle diagram and its cut}\label{sec:ft-1}
 
-At each vertex \(v\) of a finite tree put an original two-strand crossing-circle tangle \(P_v\). It retains the crossing \(R^{\epsilon_v}\), where \(\epsilon_v\in\{-1,0,1\}\), and its auxiliary component bounds the original twice-punctured disk. Every edge is an actual quarter-turn between two ordered product junctions. There are no product junctions without their own original circle. Terminal circles are included as vertices of degree one. The tree has at least one edge. Write \(T\) for the actual quarter-turn, \(C\) for the cylindrical closure, and \(R\) for one positive braid crossing in the original ordered terminal frame.
+At each vertex \(v\) of a finite tree put an original two-strand crossing-circle tangle \(P_v\). It retains the crossing \(R^{\epsilon_v}\), where \(\epsilon_v\in\{-1,0,1\}\), and its auxiliary component bounds the original twice-punctured disk. Every edge is a quarter-turn between two ordered product junctions. There are no product junctions without their own original circle. Terminal circles are included as vertices of degree one. The tree has at least one edge. Write \(T\) for the quarter-turn, \(C\) for the cylindrical closure, and \(R\) for one positive braid crossing in the original ordered terminal frame.
 
 The product order, the four endpoint frames, every rotation of a child ball, and every original disk orientation are part of the data. A representative recursive description has
 \begin{equation}
 W_v=P_v\prod_{w\text{ child of }v}T(W_w).
 \label{eq:ft-1}
 \end{equation}
-The product here is in its specified order. At the closing sphere one may use the actual collar move to expose a root circle. A double turn then leaves its actual half-turn decoration on the affected subtree; it is not replaced by the scalar identity \(T^2=1\). The relevant moves are the literal closed-turn and cyclic collar isotopies in \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_conway_net_twist_volume.html}{the original ordered tangle moves}, equations (14)--(18). Their four collar sectors, and any reversal of the child order, are retained. Thus \eqref{eq:ft-1}, with those transported frames, describes the original all-circle ordered operation tree. It does not introduce a commutativity move on open two-tangles.
+The product here is in its specified order. At the closing sphere one may use the collar move to expose a root circle. A double turn then leaves its half-turn decoration on the affected subtree; it is not replaced by the scalar identity \(T^2=1\). The relevant closed-turn and cyclic collar isotopies are proved in
+\cite[Lemmas~3.1--3.2]{ConwayReductions}. Their four collar sectors, and any reversal of the child order, are retained. Thus \eqref{eq:ft-1}, with those transported frames, describes the original all-circle ordered operation tree. It does not introduce a commutativity move on open two-tangles.
 
-For clarity, the literal root adapter is
+To relate the two ways of drawing the closure, use the following
+rotation of its collar:
 \begin{equation}
 C\!\left(h_0T(E)\right)
  =C\!\left((TP_0)T(E)\right)
@@ -60,15 +61,15 @@ C\!\left(h_0T(E)\right)
  =C\!\left(P_0\,\tau(E)\right).
 \label{eq:ft-1a}
 \end{equation}
-Here \(\tau\) is the actual half-turn of the ball. If \(E=L_1\cdots L_k\), then \(\tau(E)=\tau(L_k)\cdots\tau(L_1)\), and \(\tau(TW)=T\tau(W)\). Thus the adapter reverses the displayed root order and transports every child frame; it does not suppress this rotation. The two-leaf case of \eqref{eq:ft-1a} is the base used below.
+Here \(\tau\) is the half-turn of the ball. If \(E=L_1\cdots L_k\), then \(\tau(E)=\tau(L_k)\cdots\tau(L_1)\), and \(\tau(TW)=T\tau(W)\). Thus this collar rotation reverses the displayed root order and transports every child frame; it does not suppress this rotation. The two-leaf case of \eqref{eq:ft-1a} is the base used below.
 
-More generally the original circle coupon can occur between two ordered lists of child factors in a nonroot junction. Keep that position:
+More generally the crossing-circle box can occur between two ordered lists of child factors in a nonroot junction. Keep that position:
 \begin{equation}
 W_v=\left(\prod_{w\in I_v^-}T(W_w)\right)P_v
           \left(\prod_{w\in I_v^+}T(W_w)\right).
 \label{eq:ft-1b}
 \end{equation}
-The lists record the cut at the parent edge in the original cyclic order. The left-insertion version of the calculation below handles this form without moving \(P_v\) through a child. Reassociation of a stack and transport of genuine turn-chain rotations put the literal circle-only tree in this form. At the root only the actual cyclic closed-collar move is used to choose its cutting position.
+The lists record the cut at the parent edge in the original cyclic order. The left-insertion version of the calculation below handles this form without moving \(P_v\) through a child. Reassociation of a stack and transport of genuine turn-chain rotations put the specified circle-only tree in this form. At the root only the cyclic closed-collar move is used to choose its cutting position.
 
 Write \(E\) for the number of tree edges, \(V=E+1\) for the number of circles, and \(d_v\) for the number of edges incident to circle \(v\). The exterior admits the following labeled cut:
 
@@ -88,14 +89,14 @@ union of several cells to be convex.
 
 \subsection{How endpoint pairings determine the cut}\label{sec:ft-2}
 
-Use the closed-cut convention of \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_conway_bowtie_projection_cut.html}{the projection and crossing-disk cut}, sections 2--4. For the turned elementary leaf \(h_v=T(P_v)\), label its four physical half-segments
+We specify the projection cut by its endpoint pairings. For the turned elementary leaf \(h_v=T(P_v)\), label its four physical half-segments
 \begin{equation}
 (v_0,v_1,v_2,v_3)
  =(\text{lower left},\text{lower right},
    \text{upper right},\text{upper left}).
 \label{eq:ft-2}
 \end{equation}
-A quarter-turn cyclically shifts this tuple. A lower factor \(F\) followed by an upper factor \(G\) joins \(F_2\) to \(G_1\) and \(F_3\) to \(G_0\), leaving exposed \((F_0,F_1,G_2,G_3)\). Cylindrical closure joins positions 0 to 3 and 1 to 2. These are actual empty joining strips in the projection plane.
+A quarter-turn cyclically shifts this tuple. A lower factor \(F\) followed by an upper factor \(G\) joins \(F_2\) to \(G_1\) and \(F_3\) to \(G_0\), leaving exposed \((F_0,F_1,G_2,G_3)\). Cylindrical closure joins positions 0 to 3 and 1 to 2. These are empty joining strips in the projection plane.
 
 One ideal vertex is assigned to each paired main segment and one vertex \(O_v\) to each original crossing-circle semicircle. The two shaded triangles of a leaf are
 \begin{equation}
@@ -110,7 +111,7 @@ white face boundary. Thus the matching records the full oriented
 boundary graph, including its cyclic orders, rather than only face or
 component counts.
 
-This endpoint construction records the reversible projection/disk cut. Drilling a boundary-parallel auxiliary semicircle and then opening its recorded half disk restores a ball. The disjoint leaf boxes permit this for all circles. White faces reglue by their actual projection labels. The two shaded faces reglue by the original disk map, including the retained half twist. The proof of that cut uses no quantum source identity.
+This endpoint construction records the reversible projection/disk cut. Drilling a boundary-parallel auxiliary semicircle and then opening its recorded half disk restores a ball. The disjoint leaf boxes permit this for all circles. White faces reglue by their projection labels. The two shaded faces reglue by the original disk map, including the retained half twist. The proof of that cut uses no quantum source identity.
 
 For the next local calculation it is useful to use an inverse turn:
 \begin{equation}
@@ -122,7 +123,7 @@ This is an exact physical identity by the definition of \(h_v\). It avoids using
 
 \subsection{One terminal insertion is exactly one octahedron}\label{sec:ft-3}
 
-Suppose the unturned \(P_v\) occurs at the beginning of its specified local stack. In the current full diagram, let \(x_1\) and \(x_2\) be the half-segments matched to \(v_1\) and \(v_2\) outside that box. Insert a new terminal child \(h_w\) immediately after \(P_v\). The literal product rule changes precisely the following two matches:
+Suppose the unturned \(P_v\) occurs at the beginning of its specified local stack. In the current full diagram, let \(x_1\) and \(x_2\) be the half-segments matched to \(v_1\) and \(v_2\) outside that box. Insert a new terminal child \(h_w\) immediately after \(P_v\). The specified product rule changes precisely the following two matches:
 \begin{equation}
 \begin{array}{c|c}
  \text{before}&\text{after}\\ \hline
@@ -167,7 +168,7 @@ checks both kinds of face at once.
 
 Perform the same attachment in the other projection copy. This adds exactly one two-octahedron edge block and introduces one new original circle. It neither identifies two old circles nor inserts a circle at the attachment seam.
 
-The calculation also proves the inverse operation: remove a terminal edge block, restore the deleted triangular face, and undo \eqref{eq:ft-5}. The original diagram loses that terminal child and otherwise retains its actual strand connections and order.
+The calculation also proves the inverse operation: remove a terminal edge block, restore the deleted triangular face, and undo \eqref{eq:ft-5}. The original diagram loses that terminal child and otherwise retains its strand connections and order.
 
 There is also an explicit left-insertion version, needed for \eqref{eq:ft-1b}. Inserting \(h_w\) immediately before \(P_v\) changes
 \begin{equation}
@@ -181,16 +182,18 @@ This is the same octahedral attachment on the other shaded face \((O_v,v_3,v_0)\
 
 \subsection{Why this covers every ordered tree}\label{sec:ft-4}
 
-Start with one actual tree edge. The two-leaf matching gives exactly the octahedral boundary \eqref{eq:ft-7}, in both projection copies. This is \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_reflected_two_circle_octahedral_base.html}{the labeled two-circle block}, after the recorded endpoint-frame rotation. Its proof is a disk/projection cut, not an equality of two scalar sources.
+Start with one tree edge. The two-leaf matching gives exactly the octahedral boundary \eqref{eq:ft-7}, in both projection copies. It is the two-circle block with the endpoint-frame rotation already
+recorded. The preceding disk and projection cuts identify its boundary
+faces directly.
 
-For a general tree, choose a terminal vertex as root and start with its unique incident edge. Expose that root by the actual closed-collar moves from section~\ref{sec:ft-1}, retaining all transported frames and orders. The initial root then has no further children to insert; at the other endpoint the only existing edge is its parent edge. At each vertex add the children on the right of \(P_v\) in reverse final order, always immediately after \(P_v\). Add the children on its left in their final order, always immediately before \(P_v\). This is a construction of the specified word, not a permutation of an existing word: successive insertions produce exactly the two ordered lists in \eqref{eq:ft-1b}, including the special case \eqref{eq:ft-1}. A new child initially has only its own crossing-circle tangle; its children are subsequently inserted inside its own ball. Its actual quarter-turn carries the whole local insertion, including the two projection sides and all four endpoint labels. Any previously recorded half-turn or input/output reversal similarly carries the complete insertion and its order. It does not remove the frame decoration.
+For a general tree, choose a terminal vertex as root and start with its unique incident edge. Expose that root by the closed-collar moves from section~\ref{sec:ft-1}, retaining all transported frames and orders. The initial root then has no further children to insert; at the other endpoint the only existing edge is its parent edge. At each vertex add the children on the right of \(P_v\) in reverse final order, always immediately after \(P_v\). Add the children on its left in their final order, always immediately before \(P_v\). This is a construction of the specified word, not a permutation of an existing word: successive insertions produce exactly the two ordered lists in \eqref{eq:ft-1b}, including the special case \eqref{eq:ft-1}. A new child initially has only its own crossing-circle tangle; its children are subsequently inserted inside its own ball. Its quarter-turn carries the whole local insertion, including the two projection sides and all four endpoint labels. Any previously recorded half-turn or input/output reversal similarly carries the complete insertion and its order. It does not remove the frame decoration.
 
 Induction now gives exactly the original recursive word and its full boundary ribbon graph. Every step glues a ball along a triangular disk, so each projection copy stays a ball. There are \(E-1\) attachments after the initial octahedron. The shaded face count is
 \begin{equation}
 4E-2(E-1)=2V.
 \label{eq:ft-8}
 \end{equation}
-The count is only a consistency check: the insertion proof has already identified each of these two faces with its particular original circle and each main-segment vertex with its literal pair.
+The count is only a consistency check: the insertion proof has already identified each of these two faces with its particular original circle and each main-segment vertex with its specified pair.
 
 The boundary identification extends over each ball. Since it respects
 every original face pairing, it descends to the required homeomorphism
@@ -209,17 +212,18 @@ original seam through all insertions. Its signed disk map is used once,
 after the untwisted page attachments; the newly created seams carry
 identity maps.
 
-For \(\epsilon_v=0\) the original pure disk map pairs the two sides within the same projection copy. For \(\epsilon_v=+1\) or \(-1\) use its actual odd pairings: the punctures exchange and the two projection copies are permuted as in the original A,B disk maps. The signs +1 and -1 have their distinct primitive meridian words even though their endpoint permutation has the same parity. The explicit collar permutation is also recorded in \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_balanced_octahedral_belt_stack_volume.html}{the original half-twist collar}, section 3a. A full twist changes the peripheral marking and must not be discarded simply because its endpoint permutation is trivial.
+For \(\epsilon_v=0\) the original pure disk map pairs the two sides within the same projection copy. For \(\epsilon_v=+1\) or \(-1\) use its odd pairings: the punctures exchange and the two projection copies are permuted as in the original A,B disk maps. The signs +1 and -1 have their distinct primitive meridian words even though their endpoint permutation has the same parity. The explicit collar maps and their copy exchange are calculated in
+\cite[Section~3.2]{CircleTreeGeometry}. A full twist changes the peripheral marking and must not be discarded simply because its endpoint permutation is trivial.
 
 A physical rotation or reflection of a disk frame transports its puncture labels, its two pages, and its chosen meridian and longitude together. Apply the insertion table in that transported frame. In particular a reversal that exchanges the projection copies is applied to both halves of every incident block. There is no use of an arbitrary puncture permutation justified only by the rigidity of an abstract thrice-punctured sphere.
 
-These conventions cover the original signed and reversed diagrams. The local geometric block may be relabeled by these same actual rotations. Its shape formula is not used to determine the topology.
+These conventions cover the original signed and reversed diagrams. The local geometric block may be relabeled by these same rotations. Its shape formula is not used to determine the topology.
 
 \subsection{Exact primitive peripheral concatenation}\label{sec:ft-6}
 
 Fix one auxiliary circle \(v\) and orient its original disk-framed longitude \(\lambda_v\) and meridian \(\mu_v\) as in the original marked leaf theorem. After the page cut, a small cusp torus of \(v\) consists of \(d_v\) annular sectors, one from each incident edge block. Every page boundary on this torus is the same primitive disk-longitude class. A small meridian crosses these sectors once in their cyclic order. The insertion \eqref{eq:ft-5} subdivides one such transverse passage into two consecutive passages; it neither winds the meridian a second time nor changes its longitude class.
 
-This can also be read as a face-word statement. Each insertion replaces one original disk-face passage by two passages separated by the new triangular interface. In the final word all internal interface changes of coordinates occur in inverse consecutive pairs. After eliminating them, the retained word is the original disk meridian. Its ordered factors are one endpoint passage for each incident block, followed at the distinguished seam by the single original half-twist correction. This is a statement about the actual marked loop before evaluating its holonomy.
+This can also be read as a face-word statement. Each insertion replaces one original disk-face passage by two passages separated by the new triangular interface. In the final word all internal interface changes of coordinates occur in inverse consecutive pairs. After eliminating them, the retained word is the original disk meridian. Its ordered factors are one endpoint passage for each incident block, followed at the distinguished seam by the single original half-twist correction. This is a statement about the marked loop before evaluating its holonomy.
 
 Use the \hyperref[sec:fa]{local angular chart}, with common oriented longitude variable \(\tau_v\) at all pages of this circle. Its incoming/outgoing edge-ratio tables give exactly the inverse seam maps with the just-established puncture matching. In one edge block its small pure meridional increment is
 \begin{equation}
@@ -229,16 +233,18 @@ u_{v,e}=-2\pi\,\partial_{\tau_v}\psi_e,
 \end{equation}
 This is the local primitive word, not an arbitrary logarithm of its multiplier. The longitude conjugates to the same element on all pages. Whenever it is loxodromic, its two fixed points are therefore carried to the same two marked points. In a coordinate with one at infinity and the other at \(q\), integrate \(d\log(z-q)\). The coordinate changes telescope in the concatenated path; the integral is the sum of the local increments \eqref{eq:ft-9}. At the complete value it is the continuous limit of this equality.
 
-The original disk words fix the half-twist correction unambiguously. In the notation of the marked-leaf theorem, the pure meridian has multiplier \(\rho\), and the two odd primitive words have multipliers \(\rho Q\) and \(\rho/Q\). Write \(\nu\) for the local leaf response, so \(Q=e^{-\nu}=e^{i\tau_v}\) and \(\nu=-i\tau_v\). The physical \(R^{-1}\) tangle uses the first word and \(R\) uses the second. Thus the single retained crossing contributes \(\epsilon_v\nu=-i\epsilon_v\tau_v\), or equivalently \(-\epsilon_vV_v/2\). Consequently the actual continued primitive logs are
+The original disk words fix the half-twist correction unambiguously. In the notation of the marked-leaf theorem, the pure meridian has multiplier \(\rho\), and the two odd primitive words have multipliers \(\rho Q\) and \(\rho/Q\). Write \(\nu\) for the local leaf response, so \(Q=e^{-\nu}=e^{i\tau_v}\) and \(\nu=-i\tau_v\). The physical \(R^{-1}\) tangle uses the first word and \(R\) uses the second. Thus the single retained crossing contributes \(\epsilon_v\nu=-i\epsilon_v\tau_v\), or equivalently \(-\epsilon_vV_v/2\). Consequently the continued primitive logs are
 \begin{equation}
 U_v=-2\pi\sum_{e\sim v}\partial_{\tau_v}\psi_e
                    -i\epsilon_v\tau_v,
  \qquad V_v=2i\tau_v.
 \label{eq:ft-10}
 \end{equation}
-The original proof of these primitive words is \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_conway_general_mask_marked_filling.html}{the original marked face maps}, sections 5--6, including its equations (15)--(18). The two-rectangle cusp lattice there certifies their primitivity. Our page insertion preserves those same paths; it does not choose a new rational meridian slope.
+These primitive words, with both crossing signs, are calculated in
+\cite[Sections~2.1 and~3.2]{CircleTreeGeometry}.
+The two-rectangle cusp lattice there certifies their primitivity. Our page insertion preserves those same paths; it does not choose a new rational meridian slope.
 
-In particular the integral in \eqref{eq:ft-10} is not reset to a principal logarithm after several pages. Each summand follows its local small branch, and the actual concatenated loop retains their full sum. This is precisely where a large total logarithm can occur while every individual block stays in its small positive chart.
+In particular the integral in \eqref{eq:ft-10} is not reset to a principal logarithm after several pages. Each summand follows its local small branch, and the concatenated loop retains their full sum. This is precisely where a large total logarithm can occur while every individual block stays in its small positive chart.
 
 Along the continuous first-charge equations, with charge \(c\in[0,1]\),
 \begin{equation}
@@ -257,21 +263,19 @@ At \(c=1\) this is one primitive turn. This calculation identifies the word and 
 
 \subsection{From the cut to the geometric filling}\label{sec:ft-7}
 
-This proof applies to the actual ordered circle-only tree, with all its inherited frames and disk collars. It does not assert such a cut for an arbitrary scalar tensor network, for arbitrary branching of six independent boundary slots, or for a graph with cycles. It uses neither commutativity of pair-algebra polynomials nor equality of source actions. No auxiliary component is filled or deleted in the topological identification.
+This proof applies to the ordered circle-only tree, with all its inherited frames and disk collars. It does not assert such a cut for an arbitrary scalar tensor network, for arbitrary branching of six independent boundary slots, or for a graph with cycles. It uses neither commutativity of pair-algebra polynomials nor equality of source actions. No auxiliary component is filled or deleted in the topological identification.
 
 The explicit terminal substitution \eqref{eq:ft-5}, its ribbon-face realization \eqref{eq:ft-7}, and the primitive path concatenation supply the ordered topological identification. The \hyperref[sec:fa]{local angular charts} give the positive cells and their full complex seam ratios. The \hyperref[sec:qe]{analytic criterion} constructs the charge path, and the \hyperref[sec:fg]{geometric completion} proves that its endpoint is a smooth complete metric on the stated filled topology.
 
 \section{Positive angular coordinates on each edge block}\label{sec:fa}
 
-The formulas below are the \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_all_circle_angular_octahedra.html}{angular coordinates on an edge block}.
-
 Each edge in an ordered tree of crossing circles contributes two octahedra to the cut link exterior, one in each projection copy. This section gives their vertices and tetrahedron shapes as explicit functions of the two endpoint longitude parameters. The shapes remain positive on a fixed complex disk, independently of the size of the tree. The two-triangle disk boundaries depend only on their own circle parameter, which is what allows incident blocks with different other endpoints to be joined.
 
-The \hyperref[sec:ft]{ordered decomposition} identifies these cells and all their labels with the original link exterior. The \hyperref[sec:fg]{completion proof} then follows their actual logarithmic periods to the smooth filling. These are the geometric inputs to the \hyperref[ch:quantitative-circle-trees]{quantitative volume theorem}, whose angular path is supplied by the \hyperref[sec:qe]{analytic criterion}.
+The \hyperref[sec:ft]{ordered decomposition} identifies these cells and all their labels with the original link exterior. The \hyperref[sec:fg]{completion proof} then follows their logarithmic periods to the smooth filling. These are the geometric inputs to the \hyperref[ch:quantitative-circle-trees]{quantitative volume theorem}, whose angular path is supplied by the \hyperref[sec:qe]{analytic criterion}.
 
-\subsection{The actual two-leaf model}\label{sec:fa-1}
+\subsection{The two-leaf model and its coordinate normalization}\label{sec:fa-1}
 
-Start with the literal two-leaf closure \(C(h_0T(h_1))\). At a pure leaf use the original coordinates below. Here \(T\) is the quarter-turn, \(C\) is the cylindrical closure, and \(h_j\) is the turned two-strand piece with its original crossing circle.
+Start with the specified two-leaf closure \(C(h_0T(h_1))\). At a pure leaf use the original coordinates below. Here \(T\) is the quarter-turn, \(C\) is the cylindrical closure, and \(h_j\) is the turned two-strand piece with its original crossing circle.
 \begin{equation}
 Q=(0,\infty,1,R),\qquad
  Z=\frac{1+E}{1+H},\qquad
@@ -285,9 +289,11 @@ T(z)=\frac{R_1-1}{z-1},\qquad
  C(z)=\frac{z-R}{z-1},\qquad R_1=1-R.
 \label{eq:fa-2}
 \end{equation}
-These are the actual maps of \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_conway_general_mask_marked_filling.html}{the original marked face maps}, equations (11), (14), and the original closed projection cut. In particular both maps must be used when placing the second leaf. Applying only the turn would put the two complete apices at the same point.
+These are the ordered turn and closing maps of
+\cite[Section~3, equation~(3.2)]{CircleTreeGeometry}.
+In particular both maps must be used when placing the second leaf. Applying only the turn would put the two complete apices at the same point.
 
-The complete two-leaf wire is \(x=1/4\). In each projection ball, the two ideal pyramids are joined along their ordered quadrilateral bases. Their six outer vertices form an octahedron. This is a literal local cut statement, not a deduction from its volume.
+The complete two-leaf wire is \(x=1/4\). In each projection ball, the two ideal pyramids are joined along their ordered quadrilateral bases. Their six outer vertices form an octahedron. This is a specified local cut statement, not a deduction from its volume.
 
 \subsection{Solving in the two angular longitude variables}\label{sec:fa-2}
 
@@ -296,7 +302,7 @@ In this section \(\tau_v\) is an angular longitude parameter, with
 is also often denoted by \(\tau\). The chart is centered at the
 complete cusp \(\tau_v=0\).
 
-Write \(\tau_0=\tau\), \(\tau_1=\upsilon\), and prescribe the actual disk longitude logarithms
+Write \(\tau_0=\tau\), \(\tau_1=\upsilon\), and prescribe the disk longitude logarithms
 \begin{equation}
 V_j=2i\tau_j.
 \label{eq:fa-3}
@@ -348,12 +354,19 @@ The corresponding complete cells are the regular octahedra in their opposite lab
 
 \subsection{Uniform positive tetrahedra on an explicit complex bidisk}\label{sec:fa-3}
 
-Subdivide the plus octahedron into the four tetrahedra with ordered vertices \((A_+,B_+,q_j,q_{j+1})\), \(j\bmod4\). Reverse the last two vertices in the minus copy. Use the cross ratio
+We use the orientation of upper half-space for which
+\((0,\infty,1,w)\) is positive when \(\Im w>0\). The positive
+geometric orders are \((B_+,A_+,q_j,q_{j+1})\) in the plus copy
+and \((B_-,A_-,q_{j+1},q_j)\) in the minus copy, with indices
+modulo four. To compute the numerical shape, reverse the first two
+entries of either ordered tuple and use the edge-ratio convention
 \begin{equation}
 [a,b,c,d]=\frac{(a-c)(b-d)}{(a-d)(b-c)}.
 \label{eq:fa-9}
 \end{equation}
-All eight complete shapes are \(i\). This triangulates the actual two-pyramid union, with the internal diagonal joining its two apices.
+The reversal is essential: this edge-ratio formula has a different
+vertex convention from the positively ordered tetrahedron model.
+All eight complete shapes are \(i\). This triangulates the two-pyramid union, with the internal diagonal joining its two apices.
 
 There is a uniform positive chart on
 \begin{equation}
@@ -369,9 +382,11 @@ Every finite pair of distinct complete vertices occurring in \eqref{eq:fa-9} has
 \end{equation}
 For a factor involving infinity there are fewer factors and the same bound suffices. Thus every ordered shape lies in \(|w-i|<0.4\), and in particular has positive imaginary part. All denominators and ideal vertices remain distinct. The internal diagonal has total angle \(2\pi\): its product relation telescopes exactly, and its integer angle branch is fixed by \eqref{eq:fa-8}.
 
-This is positivity of the actual local geometric tetrahedra, not positivity of the original real \((x,t_j)\) angle chamber. For complex angular parameters the equatorial quadrilateral need not be planar. The triangular octahedral boundary and the positive tetrahedral subdivision are the retained geometric objects.
+The result concerns the geometric tetrahedra with the orders just
+specified. The parameters \((x,t_j)\) need not stay in their real
+angle domain. For complex angular parameters the equatorial quadrilateral need not be planar. The triangular octahedral boundary and the positive tetrahedral subdivision are the retained geometric objects.
 
-\subsection{The two disk-side pants depend only on their longitude}\label{sec:fa-4}
+\subsection{The doubled disk boundaries depend only on their longitude}\label{sec:fa-4}
 
 The local white matrices in a leaf frame are
 \begin{equation}
@@ -388,7 +403,7 @@ The relation \(Z^2-(1+E)Z+ER=0\) is retained. Put
 Q=\frac{E-Z}{Z-1}=e^{-v}=e^{i\tau}.
 \label{eq:fa-13}
 \end{equation}
-The incoming shaded triangle has cyclic vertices \((Z,\infty,1)\), and the outgoing one has \((Z,R,0)\). A disk cut doubles each of them across its adjacent white faces, producing the actual two-triangle pants boundary. In the plus chart, transport the opposite triangle through the appropriate \(W_j^{-1}\).
+The incoming shaded triangle has cyclic vertices \((Z,\infty,1)\), and the outgoing one has \((Z,R,0)\). A disk cut doubles each of them across its adjacent white faces, producing the two-triangle pants boundary. In the plus chart, transport the opposite triangle through the appropriate \(W_j^{-1}\).
 
 If an oriented edge has endpoints \((a,b)\) and the third vertices on its two sides are \(c,d\), measure its complex ratio by \eqref{eq:fa-9}. Direct substitution gives the following cyclic tables:
 \begin{equation}
@@ -412,59 +427,68 @@ Consequently an outgoing disk-side boundary of one local block and an incoming b
 
 \subsection{Local logarithmic increments and the edge action}\label{sec:fa-5}
 
-Let \(\psi(\tau,\upsilon)\) be the pure two-leaf action in the angular variables, retaining its complete constant. Its actual Legendre relation gives
+Define the edge potential \(\psi\) by its complete value
+\(\psi(0,0)=v_{\rm oct}/\pi\), and by
 \begin{equation}
 \partial_\tau\psi=it_0
    =-\frac1\pi\operatorname{arsinh}
                    (\tan(\tau/2)\cos(\upsilon/2)),
 \label{eq:fa-15}
 \end{equation}
-with the branch through zero; interchange the endpoints for the other derivative. To verify the last equality, use \(\operatorname{artanh}(ky)=
-\operatorname{arsinh}(y/\sqrt{1+z^2})\).
+with the branch through zero and the corresponding formula after
+interchanging the endpoints. The two mixed derivatives agree, so these
+formulas determine a holomorphic potential. They also have a direct
+geometric meaning. The pure meridian map has multiplier
+\(\rho=H_0^{-1}\); hence its logarithm is
+\(2\operatorname{artanh}(ky)\), by \eqref{eq:fa-5}.
+The identity
+\(\operatorname{artanh}(ky)=
+\operatorname{arsinh}(y/\sqrt{1+z^2})\)
+shows that this equals \(-2\pi\partial_\tau\psi\).
+The two-leaf action introduced earlier has the same derivatives and
+complete value, and is therefore this same function.
 
 The local pure meridional increment is therefore
 \begin{equation}
 -2\pi it_0=-2\pi\partial_\tau\psi.
 \label{eq:fa-16}
 \end{equation}
-It is a small actual log-link increment in this fixed local chart. The ordered disk-page proof in Section~\ref{sec:ft-6}, concatenates these local paths in their original order. The total pure meridian period is therefore the sum of \eqref{eq:fa-16}. A single retained half twist of sign \(\epsilon_v\) adds \(-\epsilon_vV_v/2\), in the original primitive basis. Consequently
+It is a small log-link increment in this fixed local chart. The ordered disk-page proof in Section~\ref{sec:ft-6} concatenates these local paths in their original order. The total pure meridian period is therefore the sum of \eqref{eq:fa-16}. A single retained half twist of sign \(\epsilon_v\) adds \(-\epsilon_vV_v/2\), in the original primitive basis. Consequently
 \begin{equation}
 U_v=-2\pi\sum_{e\sim v}\partial_{\tau_v}\psi_e
                          -i\epsilon_v\tau_v,
  \qquad V_v=2i\tau_v.
 \label{eq:fa-17}
 \end{equation}
-The direct first-charge saddle with \(n_v=\epsilon_v-2p_v\) makes \eqref{eq:fa-17} exactly \(U_v+p_vV_v=-2\pi i\). The integer is fixed by concatenating the actual local increments and continuing the periods from the complete cusp, even when the total is no longer a small logarithm. Section~\ref{sec:fg-4} establishes that period statement without resetting a principal log.
+The direct first-charge saddle with \(n_v=\epsilon_v-2p_v\) makes \eqref{eq:fa-17} exactly \(U_v+p_vV_v=-2\pi i\). The integer is fixed by concatenating the local increments and continuing the periods from the complete cusp, even when the total is no longer a small logarithm. Section~\ref{sec:fg-4} establishes that period statement without resetting a principal log.
 
 \subsection{Assembly in the original ordered exterior}\label{sec:fa-6}
 
-The \hyperref[sec:ft]{ordered decomposition} constructs the following finite assembly. Associate the two octahedra above to each physical edge of the circle tree. At a circle vertex, list its incident edges in the actual cyclic order and join the corresponding outgoing and incoming disk-side pants cyclically. Insert the prescribed retained half twist at its specified disk page. Table \eqref{eq:fa-14} supplies geometric seam matching for a common angular variable at that circle. The complete model has two octahedra per edge and \(D\) meridional sectors at a degree-\(D\) circle.
+The \hyperref[sec:ft]{ordered decomposition} constructs the following finite assembly. Associate the two octahedra above to each physical edge of the circle tree. At a circle vertex, list its incident edges in the cyclic order and join the corresponding outgoing and incoming disk-side pants cyclically. Insert the prescribed retained half twist at its specified disk page. Table \eqref{eq:fa-14} supplies geometric seam matching for a common angular variable at that circle. The complete model has two octahedra per edge and \(D\) meridional sectors at a degree-\(D\) circle.
 
-The topological proof cuts each original circle neighborhood into ordered disk pages and uses terminal-vertex insertion to identify the two-leaf block at each physical quarter-turn, including its four marked main segments. The two-circle endpoint pairs are interlaced by the actual quarter-turn. The proof retains that matching and every left or right insertion in the original product order. It also proves that the primitive meridian crosses the pages once in their cyclic order, with only the single recorded half-twist shear. These facts justify the actual paths used in \eqref{eq:fa-17}.
+The topological proof cuts each original circle neighborhood into ordered disk pages and uses terminal-vertex insertion to identify the two-leaf block at each physical quarter-turn, including its four marked main segments. The two-circle endpoint pairs are interlaced by the quarter-turn. The proof retains that matching and every left or right insertion in the original product order. It also proves that the primitive meridian crosses the pages once in their cyclic order, with only the single recorded half-twist shear. These facts justify the paths used in \eqref{eq:fa-17}.
 
 At a distinguished odd seam one uses the original puncture-and-copy exchange, rather than an arbitrary permutation of the three pants punctures. The original matrices and their three full projective edge-return words are given in Section~\ref{sec:fg-3}. Table \eqref{eq:fa-14} transports that specified map between incident blocks with a common longitude parameter.
 
-Together, \eqref{eq:fa-10}, \eqref{eq:fa-14}, and the actual period equations provide the positive cells and link data used by that completion. The \hyperref[sec:qe]{analytic criterion} keeps every angular parameter below \(0.00111\), within the radius \(0.01\) proved here. The complete conclusion and its precise class of diagrams are stated in the \hyperref[ch:quantitative-circle-trees]{quantitative volume theorem}.
+Together, \eqref{eq:fa-10}, \eqref{eq:fa-14}, and the period equations provide the positive cells and link data used by that completion. The \hyperref[sec:qe]{analytic criterion} keeps every angular parameter below \(0.00111\), within the radius \(0.01\) proved here. The complete conclusion and its precise class of diagrams are stated in the \hyperref[ch:quantitative-circle-trees]{quantitative volume theorem}.
 
-\section{Completing the actual fillings and calibrating volume}\label{sec:fg}
+\section{Completing the prescribed fillings and fixing the volume constant}\label{sec:fg}
 
-The completion argument below also appears in \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_all_circle_geometric_completion.html}{the geometric completion theorem}.
-
-The octahedral cells of an ordered tree of crossing circles stay positive while their angular longitude parameters vary in a fixed small disk. This section proves that the parameter path selected by the analytic filling equations completes those cells to the actual filled link exterior. It follows the full logarithmic period of each primitive filling curve, so the completed meridian makes exactly one turn at the endpoint. It then identifies the absolute volume with the continued critical action.
+The octahedral cells of an ordered tree of crossing circles stay positive while their angular longitude parameters vary in a fixed small disk. This section proves that the parameter path selected by the analytic filling equations completes those cells to the filled link exterior. It follows the full logarithmic period of each primitive filling curve, so the completed meridian makes exactly one turn at the endpoint. It then identifies the absolute volume with the continued critical action.
 
 The \hyperref[sec:ft]{ordered decomposition} supplies the original topology and primitive curves. The \hyperref[sec:fa]{angular charts} supply the positive cells and their exact face maps. The \hyperref[sec:qe]{analytic criterion} supplies the path under the explicit bound in \eqref{eq:fg-4}. Together these establish the geometric part of the \hyperref[ch:quantitative-circle-trees]{quantitative volume theorem}. Only the original crossing circles are filled; the main knot cusp remains complete and unfilled.
 
 \subsection{Exact topological and local inputs}\label{sec:fg-1}
 
-Fix a finite circle-only Conway tree with at least two circle vertices. Every edge is a physical quarter-turn and every vertex is an original crossing circle. Keep its actual ribbon orders, projection-copy labels, half twists and primitive disk curves.
+Fix a finite circle-only Conway tree with at least two circle vertices. Every edge is a physical quarter-turn and every vertex is an original crossing circle. Keep its ribbon orders, projection-copy labels, half twists and primitive disk curves.
 
 The \hyperref[sec:ft]{ordered cut theorem} supplies three marked facts.
 
 \begin{itemize}
 \item
-  The original projection and disk-page cuts give two octahedra per edge, with the six vertices and face maps of the literal two-leaf \hyperref[sec:fa]{angular chart}. Any transported corner permutations and projection-copy changes are retained.
+  The original projection and disk-page cuts give two octahedra per edge, with the six vertices and face maps of the specified two-leaf \hyperref[sec:fa]{angular chart}. Any transported corner permutations and projection-copy changes are retained.
 \item
-  At each original circle, outgoing and incoming pages are joined in their actual cyclic order. The retained half twist occurs at its distinguished original seam. The face maps keep their full three-point labels.
+  At each original circle, outgoing and incoming pages are joined in their cyclic order. The retained half twist occurs at its distinguished original seam. The face maps keep their full three-point labels.
 \item
   The disk longitude is the boundary loop with period \(V_v=2i\tau_v\). The original meridian concatenates the local meridional page paths, with the single half-longitude shear \(-\epsilon_vV_v/2\). These are the original primitive curves.
 \end{itemize}
@@ -476,9 +500,9 @@ The local positive eight-tetrahedron chart is valid on
 |\tau_v|,|\tau_w|\le10^{-2}.
 \label{eq:fg-1}
 \end{equation}
-Its incoming pants edge ratios are \((-Q^{-1},-Q,-Q^{-1})\), and its outgoing ratios are their inverses, where \(Q=e^{i\tau_v}\). Thus the marked seam cancels the full complex shears, and its two interior-angle branches sum to \(2\pi\). This includes both projection copies. At zero these are the two regular octahedra in the actual two-leaf cut.
+Its incoming pants edge ratios are \((-Q^{-1},-Q,-Q^{-1})\), and its outgoing ratios are their inverses, where \(Q=e^{i\tau_v}\). Thus the marked seam cancels the full complex shears, and its two interior-angle branches sum to \(2\pi\). This includes both projection copies. At zero these are the two regular octahedra in the two-leaf cut.
 
-\subsection{The analytic path and the actual peripheral formulas}\label{sec:fg-2}
+\subsection{The deformation path and its peripheral logarithms}\label{sec:fg-2}
 
 Let \(F_0\) be the complete positive action, normalized so that \(2\pi F_0\) is the volume of the original augmented exterior. There are two regular octahedra per tree edge at completeness. Let
 \begin{equation}
@@ -512,7 +536,7 @@ U_v=-2\pi\Psi_{\tau_v}-i\epsilon_v\tau_v,
                       \qquad V_v=2i\tau_v.
 \label{eq:fg-5}
 \end{equation}
-Their exponentials are the actual holonomy multipliers. Section~\ref{sec:fg-4} proves that the chosen lifts are also the actual log-link periods. The stationary equation gives
+Their exponentials are the holonomy multipliers. Section~\ref{sec:fg-4} proves that the chosen lifts are also the log-link periods. The stationary equation gives
 \begin{equation}
 U_v+p_vV_v=-2\pi ic.
 \label{eq:fg-6}
@@ -529,7 +553,7 @@ A=\begin{pmatrix}R&-R\\1&ER-1-E\end{pmatrix},\qquad
  B=\begin{pmatrix}R/E-1-1/E&R\\-1&R\end{pmatrix}.
 \label{eq:fg-6a}
 \end{equation}
-They send respectively \((Z,\infty,1)\) to \((Z/E,R,0)\) and \((Z,R,0)\) to \((Z/E,\infty,1)\). Thus they specify all three ideal vertices and the actual exchange of projection copies. With the four original white maps \(W_j\), direct multiplication gives the full projective edge returns
+They send respectively \((Z,\infty,1)\) to \((Z/E,R,0)\) and \((Z,R,0)\) to \((Z/E,\infty,1)\). Thus they specify all three ideal vertices and the exchange of projection copies. With the four original white maps \(W_j\), direct multiplication gives the full projective edge returns
 \begin{equation}
 W_0^{-1}BW_2^{-1}A=I,\qquad
  W_2^{-1}BW_0^{-1}A=I,\qquad
@@ -549,7 +573,7 @@ keep their distinct primitive words and the correction in
 
 This gives a nonsingular local hyperbolic metric at every finite point of the original exterior. Face pairings are isometries, edge links have angle \(2\pi\) and identity return, and a finite subdivision vertex has a nonsingular spherical metric on its topological sphere link. Its complete local spherical development is the ordinary sphere. No global injectivity of the developing map is assumed.
 
-The actual horospherical triangles form a nonsingular similarity structure on each topological cusp torus. Main puncture holonomies are the nontrivial parabolics of the local pants and remain so in the fixed local charts. The actual primitive main meridian is one of these local words. Its commutant is the translation group at its flag. Hence each main torus has a complete Euclidean translation link.
+The horospherical triangles form a nonsingular similarity structure on each topological cusp torus. Main puncture holonomies are the nontrivial parabolics of the local pants and remain so in the fixed local charts. The primitive main meridian is one of these local words. Its commutant is the translation group at its flag. Hence each main torus has a complete Euclidean translation link.
 
 For \(c>0\), \eqref{eq:fg-3} and \eqref{eq:fg-5} give
 \begin{equation}
@@ -567,7 +591,7 @@ Its real derivative is invertible. The metric \(|df_v|^2\) descends to a nonsing
 
 \subsection{The periods throughout the charge path}\label{sec:fg-4}
 
-Let \(P_{\mu_v},P_{\lambda_v}\) be the actual periods of \eqref{eq:fg-8} on the retained primitive paths. Their exponentials are the actual peripheral multipliers, so
+Let \(P_{\mu_v},P_{\lambda_v}\) be the periods of \eqref{eq:fg-8} on the retained primitive paths. Their exponentials are the peripheral multipliers, so
 \begin{equation}
 P_{\mu_v}-U_v,\quad P_{\lambda_v}-V_v
                                          \in2\pi i\mathbb Z.
@@ -582,16 +606,16 @@ At completeness \(a(0)=1\) and \(b(0)\ne0\). For \(c>0\),
 \eqref{eq:fg-7} gives \(a(c)\ne1\), so the second fixed point is
 \(q_v(c)=b(c)/(1-a(c))\), which escapes to infinity as \(c\downarrow0\).
 
-For this fixed finite tree, the developed fixed-generator paths remain in one bounded region and have bounded Euclidean lengths as \(c\downarrow0\). They use finitely many actual triangles and transition maps, all continuous in the complete charts. If their images lie in \(|z|\le B\) and their lengths are at most \(L\), their actual logarithmic increments obey
+For this fixed finite tree, the developed fixed-generator paths remain in one bounded region and have bounded Euclidean lengths as \(c\downarrow0\). They use finitely many triangles and transition maps, all continuous in the complete charts. If their images lie in \(|z|\le B\) and their lengths are at most \(L\), their logarithmic increments obey
 \begin{equation}
 |P_\gamma(c)|\le\frac{L}{|q_v(c)|-B}\longrightarrow0.
 \label{eq:fg-9a}
 \end{equation}
 Meanwhile \eqref{eq:fg-5} gives \(U_v,V_v\to0\). Each integer difference in \eqref{eq:fg-9} is therefore zero for sufficiently small \(c\), and hence on all of \((0,1]\). This fixes the winding without importing a small-neighborhood completion theorem or resetting principal logs at the endpoint.
 
-Equivalently, each page increment in \eqref{eq:fg-5} is small in its local two-leaf chart. Changes of a pants frame add logarithmic constants at the ends of a page path; those constants telescope around the circle. Its meridian accumulates the sum of the actual increments, even when high degree makes that sum close to \(-2\pi i\). The preceding continuity argument fixes the possible integer.
+Equivalently, each page increment in \eqref{eq:fg-5} is small in its local two-leaf chart. Changes of a pants frame add logarithmic constants at the ends of a page path; those constants telescope around the circle. Its meridian accumulates the sum of the increments, even when high degree makes that sum close to \(-2\pi i\). The preceding continuity argument fixes the possible integer.
 
-The actual slope period is thus \(-2\pi ic\). Its complementary primitive curve is the original longitude: the determinant of \((\mu_v+p_v\lambda_v,\lambda_v)\) in the original basis is one. Its positive core translation length is
+The slope period is thus \(-2\pi ic\). Its complementary primitive curve is the original longitude: the determinant of \((\mu_v+p_v\lambda_v,\lambda_v)\) in the original basis is one. Its positive core translation length is
 \begin{equation}
 \ell_v=\Re V_v=-2\Im\tau_v.
 \label{eq:fg-10}
@@ -611,11 +635,11 @@ The metric is exactly
 dR^2+\cosh^2R\,dX^2+\sinh^2R\,d\theta^2.
 \label{eq:fg-12}
 \end{equation}
-Compactness of the actual similarity link shows that the end contains a whole punctured tube \(0<R<R_0\). Its primitive meridian period is \(-2\pi ic\), and its independent longitude has positive real part \eqref{eq:fg-10}. Adding the axis produces a cone solid torus of angle \(2\pi c\), with the specified topological meridian. At \(c=1\) it is an ordinary smooth solid torus.
+Compactness of the similarity link shows that the end contains a whole punctured tube \(0<R<R_0\). Its primitive meridian period is \(-2\pi ic\), and its independent longitude has positive real part \eqref{eq:fg-10}. Adding the axis produces a cone solid torus of angle \(2\pi c\), with the specified topological meridian. At \(c=1\) it is an ordinary smooth solid torus.
 
 Main cusps remain complete horoball quotients, and the remaining middle is compact. Thus the \(c=1\) metric is complete and has finite volume on the original filled topology. The complete universal local development covers simply connected hyperbolic space, so the resulting representation is the geometric holonomy. When the original component test gives one main component, the metric is on that original knot complement. Its main cusp is unfilled.
 
-The intermediate cone description makes no discreteness claim for \(0<c<1\). It records the positive metric and its actual link completion; smoothness is asserted at \(c=1\).
+The intermediate cone description makes no discreteness claim for \(0<c<1\). It records the positive metric and its link completion; smoothness is asserted at \(c=1\).
 
 \subsection{Absolute action and the primitive normalization}\label{sec:fg-6}
 
@@ -634,25 +658,25 @@ Direct differentiation gives
 dG^0=\tfrac12\sum_vV_v\,dU_v^0.
 \label{eq:fg-14}
 \end{equation}
-The actual half twist changes \(U_v^0\) to \(U_v=U_v^0-\epsilon_vV_v/2\). Its marked primitive is therefore
+The half twist changes \(U_v^0\) to \(U_v=U_v^0-\epsilon_vV_v/2\). Its marked primitive is therefore
 \begin{equation}
 G=G^0-\sum_v\frac{\epsilon_vV_v^2}{8}
  =2\pi i\left(\Psi-\sum_v\tau_v\Psi_{\tau_v}\right)
                           +\sum_v\frac{\epsilon_v\tau_v^2}{2}.
 \label{eq:fg-15}
 \end{equation}
-This is the Legendre transform of the actual circle-edge action
+This is the Legendre transform of the circle-edge action
 \eqref{eq:qe-9}, whose derivatives are identified with the local
 periods in \eqref{eq:fa-15}--\eqref{eq:fa-17}. Its complete constant
 is retained. In particular \(\Im G(0)=2\pi F_0\).
 
-The original boundary fundamental-chain differential, applied to these actual positive blocks and their marked paths, gives
+The original boundary fundamental-chain differential, applied to these positive blocks and their marked paths, gives
 \begin{equation}
 \operatorname{Vol}(\rho)
                   =\Im G-\tfrac12\sum_v\Re U_v\Im V_v.
 \label{eq:fg-16}
 \end{equation}
-The constant is fixed at the complete assembly. Every local shape stays in a simply connected positive neighborhood of \(i\), and Section~\ref{sec:fg-4} retains the actual period lifts. No volume period is reset. The positive tetrahedral volume sum also shows directly that the volume tends to \(2\pi F_0\) as \(c\downarrow0\).
+The constant is fixed at the complete assembly. Every local shape stays in a simply connected positive neighborhood of \(i\), and Section~\ref{sec:fg-4} retains the period lifts. No volume period is reset. The positive tetrahedral volume sum also shows directly that the volume tends to \(2\pi F_0\) as \(c\downarrow0\).
 
 We now compare the representation volume in \eqref{eq:fg-16}
 with the volume of the metric just constructed. Both are computed from the same oriented cell chain:
@@ -684,7 +708,7 @@ homotopy by \(O(Y^{-2})\), which tends to zero.
 For each fixed \(0<c\le1\), the same comparison applies to the cone
 tube of Section~\ref{sec:fg-5}. It compares the metric away from the
 axis, which contributes no three-dimensional volume; it does not
-assert smooth filling or descent to the filled group when \(c<1\). At \(c=1\), its meridian is the actual primitive curve
+assert smooth filling or descent to the filled group when \(c<1\). At \(c=1\), its meridian is the primitive curve
 \(\mu_v+p_v\lambda_v\), with period \(-2\pi i\). Its real period
 vanishes, so the axis assignment extends over that meridian disk;
 extend the same boundary triangulation through the solid torus
@@ -728,13 +752,13 @@ The primitive normalization has an independent differential check:
 \end{equation}
 The core is represented by the complementary primitive curve \(\lambda_v\), its length is \eqref{eq:fg-10}, and its cone angle is \(2\pi c\). The finite-cell Schläfli differential \(-\tfrac12\sum_v\ell_v\,d(2\pi c)\) gives \eqref{eq:fg-20}. This checks the factor and sign; \eqref{eq:fg-19} already follows from the marked regulator and the complete anchor, without cone rigidity.
 
-At \(c=1\), \eqref{eq:fg-19} identifies the actual analytic first-charge rate with the original smooth filled volume. The ordered topological theorem and the analytic criterion supply the topology and path \eqref{eq:fg-3} used in this proof. The finite-source dominance and its exact normalization are proved in the \hyperref[sec:qe]{analytic theorem}.
+At \(c=1\), \eqref{eq:fg-19} identifies the analytic first-charge rate with the original smooth filled volume. The ordered topological theorem and the analytic criterion supply the topology and path \eqref{eq:fg-3} used in this proof. The finite-source dominance and its exact normalization are proved in the \hyperref[sec:qe]{analytic theorem}.
 
 \subsection{Scope of the completion}\label{sec:fg-7}
 
 The metric argument permits large global meridian logs while every edge block remains uniformly close to its regular geometry. It does not require a globally small framed-representation norm.
 
-The conclusion applies to the ordered all-circle trees of Section~\ref{sec:fg-1} under \eqref{eq:fg-4}, or more generally whenever their actual analytic path satisfies \eqref{eq:fg-3}. It does not assert that every bounded crossing power gives a hyperbolic filling. The degree-weighted bound permits some small powers because the resulting local angular changes remain small while the primitive meridian is assembled from many sectors.
+The conclusion applies to the ordered all-circle trees of Section~\ref{sec:fg-1} under \eqref{eq:fg-4}, or more generally whenever their analytic path satisfies \eqref{eq:fg-3}. It does not assert that every bounded crossing power gives a hyperbolic filling. The degree-weighted bound permits some small powers because the resulting local angular changes remain small while the primitive meridian is assembled from many sectors.
 
 The geometric and analytic conclusions are collected in the
 \hyperref[ch:quantitative-circle-trees]{quantitative volume theorem}.

@@ -1,9 +1,31 @@
 \chapter{The exact certificate arithmetic}\label{app:certificate}
 
-The alias inequalities hold on continuous domains, but their proof reduces to rational arithmetic. Concavity bounds an alias action from above by a supporting tangent plane. A feasible pure point bounds the pure maximum from below. Subtracting these bounds leaves a function affine in the domain variables and slope parameters, so its minimum occurs among finitely many vertices and corners. This appendix explains the reduction, the exact cover of the parameter domain, and the error bounds for the transcendental functions.
+The two source comparisons in \cite[Lemmas 4.1 and 5.1]{Bounds}
+are inequalities on continuous domains. The terms called aliases there
+are the complementary Newton terms in the finite tangle expansion.
+Their comparison with the positive part reduces to rational interval
+arithmetic, using the concavity established in that paper. Concavity bounds an alias action from above by a supporting tangent plane. A feasible pure point bounds the pure maximum from below. Subtracting these bounds leaves a function affine in the domain variables and slope parameters, so its minimum occurs among finitely many vertices and corners. This appendix explains the reduction, the exact cover of the parameter domain, and the error bounds for the transcendental functions.
 
 \section{From concavity to a finite certificate}
-The two main certificates consist of rational points and exact coverage data. The two-leaf block table has sixteen closed slope intervals, one rational feasible pure point and two strict alias tangent points per interval. The attachment table is a recursively subdivided dyadic cover of $[-2,0]^2$ with 55 leaves, one pure point and one alias tangent point per leaf. The verifier checks feasibility and coverage before evaluating an inequality. It then checks every slope corner and every vertex of the appropriate product polytope.
+For clarity, the supporting-plane argument has the following form.
+Let $P_\lambda$ be a pure concave objective and $H_\lambda$ its
+competing alias objective on a compact polytope $D$. Their dependence
+on a real slope vector $\lambda$ is affine. A feasible pure point $p$
+gives $\max P_\lambda\ge P_\lambda(p)$. At a strict tangent point $v$,
+concavity gives
+\[
+ H_\lambda(w)\le H_\lambda(v)
+             +\nabla H_\lambda(v)\cdot(w-v),\qquad w\in D.
+\]
+Thus a positive lower bound on the difference between the pure value
+and this affine majorant proves a gap between the two maxima. For fixed
+$p,v$, it suffices to check the vertices of $D$ and the corners of each
+slope rectangle. The actual inequalities are (4.5) and (5.5) of
+\cite{Bounds}, with gaps $1/100$ and $1/1000$ on their stated parameter
+domains. This appendix explains how their entries are enclosed, rather
+than assuming numerical values of the maximizing points.
+
+The two certificates consist of rational points and exact coverage data. The two-leaf block table has sixteen closed slope intervals, one rational feasible pure point and two strict alias tangent points per interval. The attachment table is a recursively subdivided dyadic cover of $[-2,0]^2$ with 55 leaves, one pure point and one alias tangent point per leaf. The verifier checks feasibility and coverage before evaluating an inequality. It then checks every slope corner and every vertex of the appropriate product polytope.
 
 The certificate proves the inequality independently of how its candidate points were found. A feasible pure value is a lower bound for the pure maximum. A tangent to a concave alias action is a global upper bound, including at boundary points and on the core plateau. The difference is affine in the slope parameters and the product-domain point. Corner and vertex checks therefore prove the continuum inequality. Numerical optimization may suggest the points; only their rational supporting inequalities enter the proof.
 
@@ -11,9 +33,11 @@ The exact files are
 \begin{itemize}
 \item \sourcefile{experiments/conway_two_leaf_block_alias_certificate.json};
 \item \sourcefile{experiments/conway_single_leaf_attachment_certificate.json};
-\item the corresponding \sourcefile{verify_conway_..._certificate.py} programs and recorded result files.
+
 \end{itemize}
-The reproduction runner supplies the complete, unambiguous path list and verifies fresh results against the committed records. The optional endpoint certificate strengthens the attachment margin; it is not an input to the strict Conway volume theorem.
+The wrapper \sourcefile{papers/conway-source-bounds/check.py} reads
+these tables, invokes their exact verifiers and writes fresh results.
+The filenames and input hashes are recorded in that output. The optional endpoint certificate strengthens the attachment margin; it is not an input to the strict Conway volume theorem.
 
 \section{Rational bounds for the elementary functions}
 Every interval endpoint is an integer multiple of $10^{-40}$. Addition and subtraction are exact on this grid. Products and quotients use floor and ceiling integer division in the outward directions, with sign cases handled explicitly. A denominator interval must avoid zero. Intersections and monotone range reductions are checked, rather than inferred from floating-point values.

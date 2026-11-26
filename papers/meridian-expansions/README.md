@@ -12,10 +12,10 @@ This is the last analytic step in the recurrence route, not a premise of the ear
 
 The main imports are precise and one-way:
 
-- *Moving-meridian source estimates for strict Conway tangles*, Theorems 1.1–1.2: whole-source reduction, primitive local packet, real-angular bounds, all charges and nonzero joint first contribution.
+- *Moving-meridian source estimates for strict Conway tangles*, Theorems 1.1–1.2: whole-source reduction, local expansion at the selected stationary point, real-angular bounds, all charges and nonzero joint first contribution.
 - *Volume asymptotics for trees of crossing circles*, Theorems 1.1–1.2 and Sections 2–6: the summed source, full Newton kernel and joint Fourier contours. Its Theorem 1.3, Corollary 1.4, equations (7.3), (7.8), (7.9), and Sections 7.1–7.6 supply the directed conditional recursion, error margins, regenerated bounds and restored original endpoint. The directed criterion is recalled in full in Section 4 of this paper.
 - *Finite spectral evaluation and uniform filling bounds*, equation (10.11): the full modified-dimension convention, including its $N$-only phase.
-- *Exact Newton calculus for tangles with a moving meridian*, Proposition 6.1, Theorem 7.1 and Proposition 8.1: full spectral normals, actual contraction and scalar ledger.
+- *Exact Newton calculus for tangles with a moving meridian*, Proposition 6.1, Theorem 7.1 and Proposition 8.1: spectral values and first derivatives at repeated roots, actual contraction and scalar ledger.
 - *Spectral estimates for Conway tangle sources*, Lemma 2.1: finite complete Hermite conditioning.
 - *Holomorphic source asymptotics and volume limits for strict Conway compositions*, Lemma 2.1 only: canonical factorial interpolation and every finite bulk order. Only the canonical factorial result is used here.
 - *Nonparabolic holonomy of trees of crossing circles*, Theorem 1.2 and Corollary 7.1, and *Preferred longitudes of Conway tree complements*, Theorems 1.2–1.3: original-group branch and preferred-longitude identification used only in Section 8.
@@ -28,6 +28,6 @@ The bounded algebra checker requires Python and SymPy:
 python3 -I papers/meridian-expansions/check.py --output /tmp/meridian-expansion-check
 ```
 
-The output directory receives `summary.json`; an older summary is removed before validation. The checks derive the reduced/full ratio modulo the actual relation $q^N=-1$, verify the cleared classical divisor/sign, check the rational sine identities, and exercise formal coefficient recovery with finite-jet negative controls. They do not test analytic remainders or identify a geometric representation by finite samples. The coefficient, gauge and meridian-substitution arguments are written
+The output identifies the sources and algebraic checks used. The checks derive the reduced/full ratio modulo the actual relation $q^N=-1$, verify the cleared classical divisor/sign, check the rational sine identities, and exercise formal coefficient recovery with finite-jet negative controls. They do not test analytic remainders or identify a geometric representation by finite samples. The coefficient, gauge and meridian-substitution arguments are written
 proofs in this paper. The source estimates, specified annihilating
 recurrence and geometric identification remain their stated inputs.

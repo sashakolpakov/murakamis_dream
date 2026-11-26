@@ -16,7 +16,7 @@
 \theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
 \theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
 \title{Triangular insertion and volume limits for augmented diagrams}
-\author{}\date{}
+\author{Alexander Kolpakov}\date{25 November 2026}
 \begin{document}\maketitle
 \begin{abstract}
 A triangulated disk can replace a triangular face of a marked
@@ -48,17 +48,26 @@ their primitive meridian--longitude bases retained. The final outside
 strand connections must form one component whenever we call its
 filled link a knot.
 
-An ordinary triangular face has three positive coefficient weights. It need not contain either protected face of the marked source. This paper proves that a diagram already controlled at a protected edge can be inserted at such an ordinary face when two boundary curvatures are sufficiently small relative to the third. The coefficient demands on the old boundary vertices remain the original core demands.
+An ordinary triangular face has three positive coefficient weights,
+so it contains neither protected vertex. We insert a diagram which was
+controlled at its own protected edge into such a face. The condition
+is that two boundary curvatures are sufficiently small relative to the
+third at each required weight vector. The old boundary vertices keep
+their coefficient demands from the core.
+
+A certificate, as used here, chooses one positive face-weight vector
+for every locally allowed noncentral label string and gives a common
+strict bound below the complete action; see Definition~\ref{ti:certificate}.
 
 The mechanism has two parts. The complete packing inside a triangular boundary contributes exactly the old triangle potential plus a constant. For complementary sectors, the old protected certificate extends to small positive boundary weights. Any local comparison error is absorbed by the same boundary correction. Explicit strictly balanced cores supply arbitrarily thin ordinary faces, so the theorem applies to any fixed finite collection of certified inputs.
 
-\begin{theorem}[Ordinary triangular insertion]\label{ti:main} Let \(B_1,\ldots,B_s\), \(s\ge1\), be fixed marked simple-sphere diagrams satisfying the unabridged certificate \eqref{ti:eq-C2}. Choose a marked boundary triangle in each input. There are positive boundary thresholds \(\eta_j\) such that the following holds.
+\begin{theorem}[Ordinary triangular insertion]\label{ti:main} Let \(B_1,\ldots,B_s\), \(s\ge1\), be fixed marked simple-sphere diagrams satisfying the certificate \eqref{ti:eq-C2}. Choose a marked boundary triangle in each input. There are positive boundary thresholds \(\eta_j\) such that the following holds.
 
 Let \(D\) be a fixed certified core, with chosen witnesses for every locally allowed noncentral string and its complete vector. Select \(s\) distinct matching pairs and one all-ordinary triangle in each, with no pair used twice. At the \(j\)-th triangle, write its weights as \((u_j,v_j,b_j)\). Suppose every chosen core vector satisfies
 \begin{equation}\label{ti:eq-T1}
 u_j/b_j\le\eta_j,\qquad v_j/b_j\le\eta_j.
 \end{equation}
-Insert the rooted disks of the \(B_j\)'s by the oriented operation in Section~\ref{ti:sec-5}. The resulting marked simple sphere has an unabridged full-source certificate with gap at least
+Insert the rooted disks of the \(B_j\)'s by the oriented operation in Section~\ref{ti:sec-5}. The resulting marked simple sphere has a certificate with gap at least
 \begin{equation}\label{ti:eq-T2}
 \min\{\gamma_D,\gamma_{B_1}/2,\ldots,\gamma_{B_s}/2\}.
 \end{equation}
@@ -71,7 +80,7 @@ The construction may change knot type. The filling threshold depends on the enti
 
 \section{The original source and the disk action}\label{ti:sec-1}
 
-An input is a finite simple oriented triangulated white sphere with at least four vertices, a perfect matching of its dual triangles, and a marked nonmatching edge. The literal inverse cut of \cite[Section 2]{Marked} supplies its augmented link in \(S^3\), with the cyclic crossing orders and the original twice-punctured crossing disks retained. A matched pair is one crossing-circle region. The two endpoints of the mark are the protected zero variables; every other white vertex has coefficient target \(d=N-1\). There are \(R\) ordinary vertices and \(R\) matched pairs.
+An input is a finite simple oriented triangulated white sphere with at least four vertices, a perfect matching of its dual triangles, and a marked nonmatching edge. The literal inverse cut of \cite[Section 2]{Marked} supplies its augmented link in \(S^3\), with the cyclic crossing orders and the original twice-punctured crossing disks retained. A matched pair is one crossing-circle region. The two endpoints of the mark are the protected zero variables; every other white vertex has coefficient target \(d=N-1\). There are $R$ ordinary vertices and $R$ matched pairs. Write $\mathcal O_D$ for the ordinary vertices.
 
 For clarity, the finite source behind the certificate is fixed here.
 At level \(N\ge3\), set \(d=N-1\), \(J=\lfloor d/2\rfloor\),
@@ -95,8 +104,9 @@ an eigenvalue. The three disjoint row selections are
 C:\ i\le J,\ d-j\le J;\qquad
 L:\ d-j>J;\qquad R:\ i>J.
 \]
-They exhaust the entries since \(i\le j\). At a protected overload
-the corresponding homogeneous monomials vanish. With the same face
+They exhaust the entries since \(i\le j\). The left sector has a positive exponent of $c$, and the right
+sector a positive exponent of $b$. Setting that variable to a protected
+zero therefore makes the corresponding polynomial vanish. With the same face
 variable at every occurrence, the original shared source is
 \begin{equation}\label{ti:finite-source}
 S_{D,N}(\boldsymbol\sigma)=
@@ -129,7 +139,9 @@ A_L&=\max\{\log c,Q(x,b,y)+\tfrac12\log c\},\\
 A_R&=\max\{\log b,Q(x,c,y)+\tfrac12\log b\}.
 \end{aligned}
 \end{equation}
-The label \(L\) overloads the middle \(c\), and \(R\) overloads \(b\). A label overloaded at a protected zero is absent from the finite source. These are the phase-uniform bounds on the whole real spectral interval
+Thus the left rate applies when the power of $c$ is above the central
+range, and the right rate when the power of $b$ is above it. The
+corresponding label is omitted if that variable is protected. These are the phase-uniform bounds on the whole real spectral interval
 of \cite[Theorem 1.1]{CasimirSources}. Both level parities and the unused
 recurrence factors in the original source are included. The label
 \(C\), written \(\mathrm C\) in the companion papers, means central.
@@ -141,12 +153,12 @@ G_{D,\omega}(q)=\sum_e A_{e,\omega_e}(q)-\sum_{f\in\mathcal O_D}q_f,
 \Phi_D=\min P_D=\frac{\operatorname{Vol}(Y_D)}{2\pi}.
 \end{equation}
 Here \(Y_D\) is the original augmented exterior before crossing-circle filling.
-\begin{definition}[Unabridged certificate]\label{ti:certificate}
-This is the certificate of \cite[Definition 3.1]{Planar}. A finite unabridged certificate means that there is \(\gamma_D>0\) and, for every locally allowed \(\omega\ne C\), a real log-weight vector \(q^\omega\) with
+\begin{definition}[Certificate for every allowed sector]\label{ti:certificate}
+This is the certificate of \cite[Definition 3.1]{Planar}. A certificate for every locally allowed noncentral label string means that there is \(\gamma_D>0\) and, for every locally allowed \(\omega\ne C\), a real log-weight vector \(q^\omega\) with
 \begin{equation}\label{ti:eq-C2}
 G_{D,\omega}(q^\omega)\le\Phi_D-\gamma_D.
 \end{equation}
-The same face weight is used at every occurrence within a string. Different strings may use different witnesses. Strings whose global coefficient happens to vanish are still included. Only local protected-overload zeros are omitted. There are finitely many strings because the diagram is fixed.
+The same face weight is used at every occurrence within a string. Different strings may use different witnesses. Strings whose global coefficient happens to vanish are still included. Only the local zero polynomials just described are omitted. There are finitely many strings because the diagram is fixed.
 \end{definition}
 Every local rate has logarithmic homogeneity one. Since the number
 of ordinary targets equals the number of regions, \(G_{D,\omega}\)
@@ -155,7 +167,7 @@ constant. We may therefore normalize any chosen ordinary weight to one.
 
 Weak balance means \(X_e\ge\log b_e,\log c_e\) at the complete
 packing, omitting a comparison whose middle weight is zero. It supplies
-an unabridged certificate by \cite[Theorem~4.3]{Planar}; the
+a certificate by \cite[Theorem~4.3]{Planar}; the
 forty-branch seventeen-region example of \cite[Theorem~6.1]{Planar}
 supplies another. The input hypothesis is strictly about these actual rate functions and original demands. It does not assume the desired gap for an assembled diagram.
 
@@ -428,8 +440,6 @@ Indeed, let the three boundary centers and radii be \(p_i,r_i\). On their center
 
 The root middle \(a\in I\) has \(e^{q_a^{u,v}}\to e^{q_a^0}>0\). Thus \(a\ge v\) for all sufficiently small \(u/b,v/b\), after common scaling.
 
-An equivalent boundary-load statement is available. Maximizing entropy subject to the interior demands and a boundary vector \(\beta\) of total \(1/2\) gives a closed concave function. Its conjugate is \eqref{ti:eq-3}. Closed concave duality therefore identifies that function with \(\sum f(\beta_i)+\Phi_B\) on the whole closed half-simplex. This preserves aggregate boundary loads, including zero loads; it does not add boundary coefficient demands.
-
 \section{Oriented sewing and exact target allocation}\label{ti:sec-5}
 
 Let the fixed core have its own protected nonmatching edge, away from the selected all-ordinary faces. At one selected core region and one block root use the polynomial argument orders
@@ -509,7 +519,7 @@ R_{\mathrm{new}}=R_D+\sum_j(R_{B_j}-1),
 
 \section{From protected certificates to a full source estimate}\label{ti:sec-6}
 
-Assume each block has a finite unabridged certificate at its standalone protected mark \(uv\), with gap \(\gamma_B>0\). It covers every locally allowed noncentral string, including old strings whose global extraction happened to vanish.
+Assume each block has a finite certificate at its standalone protected mark \(uv\), with gap \(\gamma_B>0\). It covers every locally allowed noncentral string, including old strings whose global extraction happened to vanish.
 
 Choose one positive interior witness per old string at \(u=v=0,b=1\). Their rates are continuous when \(u,v\to0\), because every triangle contains a positive ordinary corner. Finiteness preserves half the gap on one common small square. A newly allowed side overloaded at \(u\) or \(v\) has rate
 \[
@@ -519,7 +529,7 @@ or its \(v\)-analogue. At one fixed positive interior vector it tends uniformly 
 
 Combining these finite choices with \eqref{ti:eq-12}, there is \(\eta_B>0\) such that \(u/b,v/b\le\eta_B\) permits a central conditional minimizer of value \(\Phi_B+\Delta\), or a noncentral witness of value at most \(\Phi_B-\gamma_B/2\). The central conditional root satisfies \(a>v\) by \eqref{ti:eq-14a}; no ordering is required of noncentral witnesses.
 
-Suppose the core has an unabridged certificate whose finitely many witnesses, together with its complete vector, meet the selected thin-boundary conditions. There is no required inequality between core middles. Choose one induced core witness, then classify each induced \textbf{whole block string}:
+Suppose the core has a certificate whose finitely many witnesses, together with its complete vector, meet the selected thin-boundary conditions. There is no required inequality between core middles. Choose one induced core witness, then classify the induced string on each entire inserted block:
 
 \begin{itemize}
 \item
@@ -539,9 +549,9 @@ The local bounds \eqref{ti:eq-C1} are uniform in phases and all real spectral va
 
 \section{Original primitive fillings and the actual volume conclusion}\label{ti:sec-7}
 
-The new sphere and matching are fed into the original Morse inverse-cut construction. This constructs the augmented link \(Y_{\mathrm{new}}\) in \(S^3\), its crossing-circle balls, local signed half twists, outside strands and disk-framed primitive bases. It is not necessary to interpret the operation as a preexisting named topological sum.
+Apply the inverse-cut construction to the new sphere and matching. This constructs the augmented link \(Y_{\mathrm{new}}\) in \(S^3\), its crossing-circle balls, local signed half twists, outside strands and disk-framed primitive bases. It is not necessary to interpret the operation as a preexisting named topological sum.
 
-There is one new crossing circle at each merged pair. Its primitive word is the ordered two-head product from its new quartet. The two input crossing circles do not survive as two independently fillable cusps. The independent integers in the conclusion belong to the \textbf{final} regions. Choose a retained parity pattern passing the final one-component test; such a pattern exists as follows. The underlying connected four-valent
+There is one new crossing circle at each merged pair. Its primitive word is the ordered two-head product from its new quartet. The two input crossing circles do not survive as two independently fillable cusps. The independent integers in the conclusion belong to the final regions. Choose a retained parity pattern passing the final one-component test; such a pattern exists as follows. The underlying connected four-valent
 strand graph has two allowed local pairings at each crossing box. Start
 with any pairing. If its circuit decomposition has several components,
 connectedness gives a box traversed by two distinct circuits. Switching
@@ -555,7 +565,7 @@ The simple-sphere packing theorem \cite[Proposition 2.1]{Marked} applies to the 
 \end{equation}
 This is not a claim that filled volumes add.
 
-The five companion results stated in Proposition~\ref{ti:imports} now apply to the final original Morse source. The exact scalar is retained; every final ordinary face has target \(d=N-1\), and each final spectral variable has degree at most \(d\). The full filling norm costs at most
+The five companion results stated in Proposition~\ref{ti:imports} now apply to the polynomial source of the final diagram. The exact scalar is retained; every final ordinary face has target \(d=N-1\), and each final spectral variable has degree at most \(d\). The full filling norm costs at most
 \(\prod_e(1+|n_e|/2)\). The entire central period is nonzero at both parities for independently sufficiently long fixed signed powers.
 
 The representation constructed from the final original circles has
@@ -738,13 +748,13 @@ For one octahedral core, every subdivision and final block lies inside the all-o
 
 Every nontrivial protected triangular sum at that mark creates a separating three-cycle containing the two protected vertices, with interior vertices on both sides. Therefore these one-core ordinary-face assemblies cannot be decomposed as a nontrivial protected sum at their recorded mark. This is a precise distinction of marked presentations, not a claim about all presentations of the resulting knot.
 
-An explicit certified input also produces examples failing weak balance. Use the seventeen-region input of \cite[Theorem~6.1]{Planar} and attach at its crossing-15 face. Its restricted anchor-12 dual \cite[Equation (6.3)]{Planar} has zero loads at the protected vertices and mixes spectator rows only at \(2,4,7\). After assigning positive boundary weights the same rational table remains feasible, because it still assigns zero load to those two boundary variables. With \(b=1\), it gives
+An explicit certified input also produces examples failing weak balance. Use the seventeen-region input of \cite[Theorem~6.1]{Planar} and attach at its crossing-15 face. Its restricted anchor-12 dual \cite[Equation (6.3)]{Planar} has zero loads at the protected vertices and uses mixtures of local bounds only at \(2,4,7\). After assigning positive boundary weights the same rational table remains feasible, because it still assigns zero load to those two boundary variables. With \(b=1\), it gives
 \begin{equation}\label{ti:eq-30}
 \widehat G_{\mathrm{restricted}}(u,v;q_I)>
 \Phi_B+\frac1{40}
 \quad\text{for every positive interior vector}.
 \end{equation}
-If all four candidate regions \(2,4,7,12\) were weak-balanced at the conditional complete vector, their mixed spectators would equal their complete rates and the anchor would be at most its complete rate. Thus
+If all four candidate regions \(2,4,7,12\) were weak-balanced at the conditional complete vector, their unrestricted-sector maxima would equal their complete rates and the anchor would be at most its complete rate. Thus
 \begin{equation}\label{ti:eq-31}
 \widehat G_{\mathrm{restricted}}\le
 \widehat P_B=\Phi_B+\Delta.
@@ -782,20 +792,20 @@ retain their other ordinary weights. Outward interval evaluation of the original
 \begin{equation}\label{ti:eq-36}
 (0,R,0),\ (1,R,0),\ (12,L,16),\ (15,L,0),\ (16,L,0),
 \end{equation}
-where each triple lists the region, side, and overloaded face. For each, take that anchored side and all genuine spectator labels at one fixed old witness. The same evaluation gives a gap greater than \(1/50\) for these five branches. The forty old branches and five new anchors cover every locally allowed noncentral string, including any previously globally zero string.
+where each triple lists the region, side, and overloaded face. For each, take that anchored side and all locally allowed labels at the other boxes at one fixed old witness. The same evaluation gives a gap greater than \(1/50\) for these five branches. The forty old branches and five new anchors cover every locally allowed noncentral string, including any previously globally zero string.
 
 The portable runner \href{https://github.com/sashakolpakov/murakamis_dream/blob/main/repro/check_triangular_boundary_certificate.py}{check\_triangular\_boundary\_certificate.py} checks the original Morse incidence and forty-branch division, the rational complete-flow demands, the five new anchors, and all forty-five rate inequalities with the Fourier tail in \eqref{ti:eq-28g}. It also replays the restricted dual used in \eqref{ti:eq-30}. These finite interval inequalities concern the source weights; they do not replace the all-length geometric or asymptotic proof.
 
 Every selected rate is nondecreasing in \(w_0,w_{16}\), and the block comparison subtracts no target at these boundary vertices. Since \(b_n\) increases, the same forty-five witnesses work for every even \(n\ge n_0\). The correction \(\Delta\) also decreases. Combining their gap with the core gap \(>3/50\) and the whole-block comparison gives an assembled source gap at least \(1/50\).
 
-\begin{corollary}[Explicit ordinary-face sequence]\label{ti:explicit} For every even \(n\ge2^{20}\), attach the seventeen-region block at crossing 15 to the terminal face of the length-\(n\) octahedral chain. The resulting original marked sphere has \(n+20\) regions, an unabridged full-source gap of at least \(1/50\), and a complete weak-balance failure among the retained regions \(2,4,7,12\). It has no separating three-cycle containing both protected endpoints. After choosing any final knot-producing parity, independently sufficiently long fixed signed primitive fillings satisfy \eqref{ti:eq-27}. Any fixed finite number of these blocks can similarly be attached to the multi-core construction, with the same source-gap lower bound. The filling threshold still depends on the entire fixed final diagram.
+\begin{corollary}[Explicit ordinary-face sequence]\label{ti:explicit} For every even \(n\ge2^{20}\), attach the seventeen-region block at crossing 15 to the terminal face of the length-\(n\) octahedral chain. The resulting original marked sphere has \(n+20\) regions, a source gap of at least \(1/50\), and a complete weak-balance failure among the retained regions \(2,4,7,12\). It has no separating three-cycle containing both protected endpoints. After choosing any final knot-producing parity, independently sufficiently long fixed signed primitive fillings satisfy \eqref{ti:eq-27}. Any fixed finite number of these blocks can similarly be attached to the multi-core construction, with the same source-gap lower bound. The filling threshold still depends on the entire fixed final diagram.
 \end{corollary}
 
 \section{Dependencies and finite certificate data}\label{ti:sec-9}
 
 Variational approaches to Euclidean surface structures and circle patterns were developed by Rivin~\cite{Rivin1994} and Bobenko and Springborn~\cite{BobenkoSpringborn2004}. The argument above proves the required fixed-boundary existence and uniqueness directly, and fixes the disk action in the normalization of the original source. The source-certificate transport uses that explicit identity and the retained coefficient demands.
 
-The complete disk identity is classical variational elimination with the original triangle normalization. It gives neither an equality of finite spectral polynomials nor an independent-radius source bound. The complementary estimates here use the actual phase-uniform rates \eqref{ti:eq-C1}, a shared torus for each string, and every original coefficient target.
+The complete disk identity is classical variational elimination with the original triangle normalization. It gives neither an equality of finite spectral polynomials nor an bound in which different occurrences of a face have independent weights. The complementary estimates here use the actual phase-uniform rates \eqref{ti:eq-C1}, a shared torus for each string, and every original coefficient target.
 
 The imported results are precisely those listed in
 Proposition~\ref{ti:imports}, together with the protected certificate

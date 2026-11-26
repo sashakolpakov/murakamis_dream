@@ -1,5 +1,5 @@
 \section{The summed degree-and-twist condition}\label{ct:summed-section}
-\subsection{Critical points with degree in the denominator}
+\subsection{The critical point and its dependence on degree and crossing power}
 \label{cta:critical}
 
 Set
@@ -78,14 +78,14 @@ is nonzero. Also
 \(\prod_v\sin\tau_v\ne0\) at every positive-charge saddle.
 
 
-\subsection{Infinite tails with real spectators}\label{cta:Fourier}
+\subsection{The infinite Fourier tails with the other coordinates kept real}\label{cta:Fourier}
 
 Let \(A_0=1/400\), and use the heights
 \begin{equation}\label{cta:height}
  y_v=A_0t_0\,\frac{a_v}{|D_v|}.
 \end{equation}
-In coordinate \(v\), with all spectators real or on their
-physical translated grids, \eqref{cta:global-Gaussian} bounds
+In coordinate \(v\), with every other coordinate real or on its
+physical translated grid, \eqref{cta:global-Gaussian} bounds
 the exponent on the lower horizontal side by
 \[
  F_0-A_0a_v t^2+|b_vty_v|-\ell y_v+70a_vy_v^2.
@@ -130,8 +130,9 @@ Use the exact telescoping identity
         (\mathcal D_j-\mathcal P_j)
         \left(\prod_{v>j}\mathcal D_v\right).
 \end{equation}
-The left spectators are finite real integrals and the right
-spectators are physical grids. Each costs only a polynomial
+In each term of this identity, the operators to the left are finite
+sums of real integrals, while those to the right are the original
+finite-grid evaluations. Each costs only a polynomial
 in \(N\), with constants depending on fixed powers.
 Their grid heights are \(O(N^{-1})\), not another
 coordinate's slope-dependent contour height. This is why
@@ -153,17 +154,17 @@ that fixed loss, the finite sum
                      \,\dd\boldsymbol\tau .
  \end{split}
 \end{equation}
-The \emph{whole difference} is holomorphic in every formal
+The difference between the two sides is holomorphic in every formal
 \(\sigma_v\) on the unit disk. The original side has the
 holomorphic full crossing traces; the finite approximation
 has polynomial coefficients \(c_{\ell,N}\).
 The maximum principle, one parameter at a time, extends the
 estimate from the circles to the disks. We can now set
-\(\sigma_v=0,s,-s\) as the actual types require. This step
+\(\sigma_v=0,s,-s\) as the types require. This step
 does not claim that each divided endpoint current separately
 has a removable singularity.
 
-\subsection{The connecting contours and the selected charge}
+\subsection{Moving the remaining integrals to their critical points}
 Restrict the real integrals in \eqref{cta:finite-charges} to
 \([-\rho,\rho]^r\), with \(\rho=1/8\).
 Their complement loses at least \(1/(51200\pi)\) by
@@ -193,13 +194,14 @@ By \eqref{cta:imaginary},
 The last two sums in \eqref{cta:connector} are therefore at
 most \(-\tfrac14\sum_v\ell_vv_v\). Each connector has some
 \(|t_v|=\rho\), and loses at least \(1/(1024\pi)\).
-The negative Fourier terms of all spectators are retained
-in this calculation; replacing them by independent imaginary
-growth estimates would lose the result.
+The negative linear Fourier term from every displaced coordinate
+has been retained in this inequality. These terms control the
+quadratic growth caused by moving several coordinates off the real
+axis.
 
 On the translated horizontal box the critical point has
 \(|\Rea\tau_v|<t_0/(1-\delta)<\rho\), and the real Hessian
-is strictly negative. Apply the holomorphic packet expansion
+is strictly negative. Apply the holomorphic edge expansion
 \eqref{cta:packet-expansion} there. Taylor expansion at that
 critical point gives its Gaussian contribution; the rest has
 an exponential loss, and the odd Gaussian corrections vanish.

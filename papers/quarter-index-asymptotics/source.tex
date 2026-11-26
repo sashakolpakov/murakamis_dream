@@ -1,6 +1,8 @@
-\section{Propagating the original source across quarter}\label{qi:source-proof}
+\section{Transport through the equality of characteristic moduli}\label{qi:source-proof}
 
-We now choose the interval after the analytic barrier $\sigma$ in Lemma~\ref{qi:diagonal} has been fixed. Let $x_0=1/4$, choose a small $\delta>0$, and put
+Fix the analytic domain and the error exponent $\sigma$ of
+Lemma~\ref{qi:diagonal} first. We now choose the shorter real
+propagation interval. Let $x_0=1/4$, choose a small $\delta>0$, and put
 \[
  h_0=\delta/4,\qquad b_N=\lceil N(x_0+2\delta)\rceil,\qquad x_b=b_N/N.
 \]
@@ -29,7 +31,7 @@ The nonzero root ratio has an analytic logarithm on the fixed regular domain. It
  \left|\Log(\mu_f/\mu_s)(x,t)
        -\Log(\mu_f/\mu_s)(x,0)\right|\le C_1|t|^2.
 \end{equation}
-Taking real parts controls the actual moduli for complex $t$, not just for real colors. Choose $\delta$ first with
+Taking real parts controls the moduli for complex $t$, not just for real colors. Choose $\delta$ first with
 $C_0\delta^2<\sigma/8$, and then choose $t_0>0$ with
 $3C_1\delta t_0^2<\pi\delta^2$. Ordinary uniform Riemann estimates, nonvanishing roots, and $d_i=\mu_i+O(N^{-1})$ give
 \begin{align}
@@ -38,14 +40,14 @@ $3C_1\delta t_0^2<\pi\delta^2$. Ordinary uniform Riemann estimates, nonvanishing
  \left|\log|G_f(j)/G_s(j)|\right|&\le \sigma N/4+C
              &&\text{at every intermediate }j.\label{qi:partial-ratio}
 \end{align}
-The rounding of $b_N$ and all diagonal corrections contribute $O(1)$ to the logarithms. The two inequalities have different roles: \eqref{qi:target-ratio} suppresses the actual competing source, whereas \eqref{qi:partial-ratio} bounds conversions anywhere along its propagation.
+The rounding of $b_N$ and all diagonal corrections contribute $O(1)$ to the logarithms. The two inequalities have different roles: \eqref{qi:target-ratio} suppresses the competing component, whereas \eqref{qi:partial-ratio} bounds conversions anywhere along its propagation.
 
 \begin{figure}[ht]
  \centering\input{figures/quarter-action}
- \caption{The relative logarithmic modulus $f(x)=2\log\cot(\pi x)$ changes sign at $x_0=1/4$. Both roots are nonzero and distinct there. The short positive area below quarter is outweighed by the negative area up to the fixed anchor $x_b$ for every target in $[x_0-\delta/4,x_0+\delta/4]$. The proof additionally bounds the absolute action accumulated to every intermediate index, so a conversion at such an index is controlled. Horizontal distances in the drawing are rescaled; the fixed width is chosen only after the analytic remainder barrier.}\label{qi:action-figure}
+ \caption{The relative logarithmic modulus $f(x)=2\log\cot(\pi x)$ changes sign at $x_0=1/4$. Both roots are nonzero and distinct there. The short positive area below quarter is outweighed by the negative area up to the fixed anchor $x_b$ for every target in $[x_0-\delta/4,x_0+\delta/4]$. The proof additionally bounds the absolute action accumulated to every intermediate index, so a conversion at such an index is controlled. Horizontal distances in the drawing are rescaled; the fixed width is chosen only after the exponent in the analytic remainder bound.}\label{qi:action-figure}
 \end{figure}
 
-\subsection{Both initial components come from the finite sum}
+\subsection{The initial values of both recurrence components}
 
 Shrink $t_0$ further to lie in the color disk of
 Lemma~\ref{qi:high-index} on a fixed interval containing the anchor
@@ -68,7 +70,9 @@ $U_{Nt,b_N}/U_{Nt,b_N+1}=\mu_s(x_b,t)+O(N^{-1})$.
 Therefore $X_{b_N}$ is
 $U_{Nt,b_N}\mu_s(x_b,t)^{-1}(\mu_s(x_b,t),1)^{\mathsf T}$
 plus a relative $O(N^{-1})$ vector. Applying $V_N^{-1}$ gives
-\eqref{qi:anchor}. In particular $a_{s,N}$ is holomorphic and nonzero on the fixed smaller disk. No conclusion about source overlap was drawn from the eigenvalues alone, and the second component is not set to zero.
+\eqref{qi:anchor}. In particular $a_{s,N}$ is holomorphic and nonzero on the fixed smaller disk. Thus the first component is nonzero, while the second is smaller by
+$O(N^{-1})$ at the anchor. Both are the projections of the specified
+finite sum; we continue to include the second one in the calculation.
 
 By \eqref{qi:interaction} and \eqref{qi:partial-ratio},
 \[
@@ -84,7 +88,7 @@ Let $v_1(x,t)=[V_N(x,t)]_{1,s}$. The first component after restoring $V_NG_r$ is
 \end{equation}
 for target indices and some $c_1>0$.
 Indeed the direct fast term has relative size at most
-$C N^{-1}e^{-6\pi\delta^2N}$ by \eqref{qi:anchor} and \eqref{qi:target-ratio}. The interaction error was bounded with the full partial-action width; at the target its fast output is smaller again. Bounded endpoint frames and their nonzero selected first component preserve these estimates. This proves a relative assertion for the original finite source with both channels retained.
+$C N^{-1}e^{-6\pi\delta^2N}$ by \eqref{qi:anchor} and \eqref{qi:target-ratio}. The interaction error was bounded with the full partial-action width; at the target its fast output is smaller again. Bounded endpoint frames and their nonzero selected first component preserve these estimates. This proves a relative assertion for the original finite coefficient with both channels retained.
 
 \subsection{A fixed complex interpolation of the selected product}
 
@@ -100,7 +104,7 @@ $|\partial_x^j l_N|\le B j! a^{-j}$. Put $K_N=\lfloor c_2N\rfloor$, with $c_2>0$
 \end{align}
 Here the Bernoulli numbers use $z/(e^z-1)=\sum B_jz^j/j!$.
 The Euler--Maclaurin formula with periodic Bernoulli remainder
-\cite[equation (2.10.1)]{DLMF}, applied separately to real and imaginary parts, gives the remainder for the actual product from $r$ to $b_N-1$. The Fourier series of the periodic Bernoulli polynomial
+\cite[equation (2.10.1)]{DLMF}, applied separately to real and imaginary parts, gives the remainder for the product from $r$ to $b_N-1$. The Fourier series of the periodic Bernoulli polynomial
 \cite[equation (24.8.1)]{DLMF} bounds its absolute value by
 $4(2k)!/(2\pi)^{2k}$. Combining this with the Cauchy derivative estimate bounds the remainder by
 \[
@@ -114,12 +118,13 @@ It holds uniformly for the physical index grid and complex colors. Hence the exp
 \end{equation}
 is holomorphic and nonzero on a fixed smaller joint domain, and
 \eqref{qi:selected-source} proves \eqref{qi:grid}.
-The anchor is an explicitly specified finite coefficient, not an unknown closed invariant. There is no interpolation of a moving support cutoff.
+The anchor is an explicitly specified finite coefficient, not an unknown closed invariant. Its only discrete input is the coefficient at the fixed anchor; the
+upper support boundary is handled by the preceding endpoint argument.
 
 \subsection{Recovering the same leading amplitude}
 
 It remains to show that \eqref{qi:I} has the leading expression in
-\eqref{qi:complex}, including its normalization. The selected diagonal column of \eqref{qi:diagonal-identity} obeys the actual scalar recurrence up to an exponentially small relative defect. Its one-step scalar ratio is
+\eqref{qi:complex}, including its normalization. The selected diagonal column of \eqref{qi:diagonal-identity} obeys the scalar recurrence up to an exponentially small relative defect. Its one-step scalar ratio is
 \[
  v_{s,N}(x,t)=d_s(x,t)\frac{v_1(x,t)}{v_1(x+e,t)}.
 \]
@@ -160,7 +165,8 @@ $\Log\mu_s(x_b)-\Log\mu_s(x)$. Combining it with the half-endpoint term and $v_1
        +\int_x^{x_b}\frac{\nu}{\mu_s}\,\dd u\right\}
        (1+O(N^{-1})).\label{qi:selected-leading}
 \end{align}
-This calculation holds at complex $x$; it is not a uniqueness argument on a finite mesh. At the anchor,
+The calculation is holomorphic in $x$, and therefore establishes
+the asserted complex-domain expansion in addition to its grid values. At the anchor,
 $a_{s,N}v_1(x_b)=C(x_b,t)e^{NS(x_b,t)}(1+O(N^{-1}))$
 by \eqref{qi:anchor}. Multiplication in \eqref{qi:selected-leading} proves
 \eqref{qi:complex} with exactly the $C,S$ of \eqref{qi:SC}.
@@ -171,4 +177,6 @@ At $t=0$ the values inherited from the original high-index normalization are, on
  S(x,0)=\pi\ii(1/2-x)^2,\qquad
  C(x,0)=\sqrt{\sin\pi x}\,e^{-3\pi\ii(1/2-x)/2}.
 \]
-No connection constant or parity-dependent factor has been chosen at the crossing.
+The same endpoint normalization has therefore been continued across
+$x=1/4$, at either parity, without an additional multiplicative
+constant.

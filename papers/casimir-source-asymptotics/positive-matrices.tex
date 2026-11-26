@@ -23,7 +23,7 @@ Empty matrices have determinant one. Put
  \mathcal D_a(x,b,y)=\det[bI+xH_-^{(a)}/2+yH_+^{(a)}/2].
 \end{equation}
 
-\begin{lemma}[Exact node adapter]\label{sa:node}
+\begin{lemma}[Determinant formula at a spectral node]\label{sa:node}
 For $u_a=-a_a$ and $a\le j\le J$,
 \begin{equation}\label{sa:node-id}
  R_a(b,u_a)=S_{2a}\mathcal D_a(x,b,y),\qquad
@@ -42,11 +42,11 @@ row equations are
 The leading coefficient is
 $\prod_{r<a}(a_r-a_a)=S_{2a}$, by
 $a_r-a_a=4\sin((a+r+1)\theta)\sin((a-r)\theta)$.
-Define $\partial_q b^j=s_j b^{j-1}$. Since
+Define the linear operator $\mathfrak d$ by $\mathfrak d b^j=s_j b^{j-1}$. Since
 $a_i-a_a=s_as_{a+1}-s_is_{i+1}$, the normalized monic polynomial
 is the unique degree-$a$ eigenpolynomial of
 \[
- \mathcal L=\partial_q\bigl((b^2+Ab+P)\partial_q\bigr),
+ \mathcal L=\mathfrak d\bigl((b^2+Ab+P)\mathfrak d\bigr),
                      \qquad\lambda_a=s_as_{a+1}.
 \]
 The eigenvalues through $J$ are distinct: their successive differences
@@ -96,8 +96,8 @@ vanishes, and the solutions of the normalized recurrence
 signed second term.
 \end{proof}
 
-At the maximal physical fold the scalar can be read without any
-interpolation. For $\delta_*=0$ at odd levels and $\delta_*=1/(2N)$
+The central polynomial also has a useful exact value at the
+spectral node closest to $-2$. For $\delta_*=0$ at odd levels and $\delta_*=1/(2N)$
 at even levels, \eqref{sa:even}--\eqref{sa:node-id} give
 \begin{equation}\label{sa:anchor}
  P_{\mathrm C}(\delta_*)=N^2\beta_J^2
@@ -106,5 +106,5 @@ at even levels, \eqref{sa:even}--\eqref{sa:node-id} give
 \end{equation}
 Indeed $S_{N-1}=N$, $S_J^2=N$ at odd levels; at even levels
 $S_{N-2}=N/(2\sin\theta)$, $S_J^2=N/2$, and $s_m=2$.
-Thus both the even forced factor and the odd simple node are literal.
+This formula includes the different even-level factor and the odd-level simple root.
 

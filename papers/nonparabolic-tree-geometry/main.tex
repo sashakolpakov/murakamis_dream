@@ -22,22 +22,24 @@
 \newcommand{\diag}{\operatorname{diag}}
 \newcommand{\Vol}{\operatorname{Vol}}
 \title{Nonparabolic holonomy of trees of crossing circles}
-\author{}\date{}
+\author{Alexander Kolpakov}\date{25 November 2026}
 \begin{document}\maketitle
 \begin{abstract}
-We construct marked holonomy for an ordered tree of crossing circles
-while allowing the main meridian to become nonparabolic.
-An explicit two-octahedron chart gives all face maps, the two primitive
-auxiliary similarities and a regular four-puncture character chart.
-The disk-side shear ratios sew in the original page order. Retained
-half twists require the full Hurwitz action on the puncture generators,
-followed by a compatible choice of eigenflags.
-At a positive primitive filling point the original augmented
-triangulation supplies an unramified one-dimensional filled
-representation germ. The proof keeps logarithmic filling marks and
-distinguishes killing a slope word from merely setting its eigenvalue
-ratio to one. No quantum asymptotic or preferred-longitude formula is
-assumed.
+We describe deformations of augmented link complements built from an
+ordered tree of crossing circles, allowing the main meridian to cease
+to be parabolic. Explicit ideal vertices and face maps give the
+representation on each two-octahedron piece. We calculate its auxiliary
+meridian and longitude, and give a rational matrix description of the
+associated four-punctured-sphere representation. The pieces glue in
+the order prescribed by the tangle diagram. At a retained half twist,
+the braid automorphism must be applied to the puncture generators and
+the corresponding peripheral eigenlines must be chosen consistently.
+At a positive smooth filling supplied by the geometric companion, we
+prove that the continued primitive filling equations describe exactly
+the representations of the filled group. Their local family is smooth
+and one-dimensional, with the main meridian eigenvalue as coordinate.
+The logarithm branches and peripheral curves are retained throughout;
+setting a slope's eigenvalue ratio to one alone would not suffice.
 \end{abstract}
 
 \section{The original diagram and the statements}\label{ng:introduction}
@@ -59,8 +61,15 @@ balls. Each edge contributes a pair of octahedra. Around a circle,
 its disk-side pages occur in the original cyclic order; one
 distinguished seam carries its retained half twist. This topological
 result includes the inverse cut, the original peripheral paths and
-the primitive crossing-circle basis. We use that specific cut,
-not an arbitrary collection of algebraically matching octahedra.
+the primitive crossing-circle basis. We use this cut to identify the group relations and peripheral
+curves of the given diagram before calculating its holonomy.
+
+A peripheral \emph{flag} means a common fixed point of the peripheral
+group on the sphere at infinity, or equivalently an eigenline in a
+determinant-one matrix description. A \emph{decorated representation}
+keeps these choices and their eigenvalue characters, as well as the
+representation itself. The latter distinction also records infinitesimal
+deformations at a parabolic matrix, where its two eigenlines coalesce.
 
 The positive main meridian has determinant-one eigenvalues $M,M^{-1}$.
 We select the $M^{-1}$ eigenline. The auxiliary disk longitude at
@@ -81,6 +90,10 @@ Set
  \rho_{v,e}=\frac{Q_v+X_e}{1+Q_vX_e},
  \qquad f_e=\frac{M^2-X_e}{1-M^2X_e}.
 \end{equation}
+The variable $X_e$ will be recovered from the primitive auxiliary
+meridian, rather than introduced by an arbitrary change of roots.
+The factor $f_e$ occurs in a local main-boundary commutator; identifying
+a preferred longitude of the entire knot is a separate question.
 All rational statements are on the open sets where their displayed
 denominators are nonzero. They continue on the same irreducible
 component; clearing a denominator does not add a geometric branch.
@@ -99,14 +112,13 @@ are
 The family is the local decorated representation germ, modulo
 simultaneous projective conjugation, with coordinates
 $(\log M,(\log Q_v)_v)$.
-Its actual ideal triangulation remains positive nearby.
+The ideal triangulation from the projection cut has positively
+oriented tetrahedral shapes throughout a sufficiently small neighborhood.
 The same construction and marking continue to the positive
 circle-filling endpoints supplied by \cite[Theorem~1.1 or
 Theorem~7.1]{Circle}.
 \end{theorem}
 
-Here a decorated representation retains a common fixed flag for each
-peripheral subgroup and its exact eigenvalue character.
 At a nonparabolic main cusp the structure is incomplete; the theorem
 does not assert a complete metric there. The explicit character
 matrices in Theorem~\ref{ng:character} also give rational full-group
@@ -124,7 +136,7 @@ Exponentiating the primitive slope equation gives
 
 \begin{theorem}[The marked filled meridian germ]\label{ng:filled-germ}
 Suppose an original primitive filling has a positive retained
-augmented triangulation and its endpoint is the actual complete
+augmented triangulation and its endpoint is the complete
 filled holonomy. Suppose also that every filled auxiliary longitude
 has distinct eigenvalues. Near that endpoint, imposing the continued
 logarithmic equations
@@ -145,8 +157,8 @@ satisfy the first condition for every fixed tree. The theorem also
 allows a small or zero power when the stated geometric criterion holds.
 \end{theorem}
 
-The first paragraph is a general local statement about an original
-positive augmented triangulation. It does not require a newly added
+The first paragraph applies to a specified augmented triangulation
+with positive shapes at the filling point. It does not require a newly added
 subdivision to be positive, nor a positive ideal triangulation of the
 filled manifold. This form permits its use with another independently
 constructed positive anchor.
@@ -157,9 +169,9 @@ longitude. At $Q_v=\pm1$ that assertion fails in general:
 a nontrivial parabolic matrix also has eigenvalue ratio one.
 Likewise, an arbitrary exponentiated solution does not specify the
 logarithmic mark \eqref{ng:A2} or prove metric completion.
-Theorem~\ref{ng:filled-germ} retains the actual smooth endpoint.
+Theorem~\ref{ng:filled-germ} retains the smooth endpoint.
 
-The proofs below use three classical companion inputs:
+The proof has three geometric inputs from the companion papers:
 the ordered cut and positive geometric anchors of \cite{Circle};
 the original positive odd-meridian convention of
 \cite[Section~5, equations~(5.1)--(5.2)]{Strict}; and the
@@ -167,7 +179,12 @@ normal-path row/intersection identity of
 \cite[Section~7.1, equation~(7.2)]{Marked}.
 The last input will be used only for the real gluing-row ranks and
 polarization, not for any quantum source or longitude conclusion.
-We prove the needed local rigidity on the retained triangulation.
+We prove the remaining local rigidity on the augmented triangulation
+itself. Sections~\ref{ng:the-local-face-maps} and~\ref{ng:a-regular-character-chart-for-the-same-piece}
+construct one block and compare its two descriptions;
+Section~\ref{ng:ordered-pages-and-the-half-twist-collar} assembles the
+ordered tree. The final two sections continue to the positive filling
+point and prove the coordinate statement there.
 
 \input{faces}
 \input{character}

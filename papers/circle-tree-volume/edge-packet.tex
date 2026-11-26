@@ -1,4 +1,4 @@
-\section{An exact complex edge sum}\label{cta:edge}
+\section{Evaluating the finite edge sum}\label{cta:edge}
 
 \subsection{The interpolation and its normalization}
 We use the canonical factorial lemma
@@ -72,7 +72,7 @@ For the second identity use
 in the symmetric difference. All remainders are holomorphic
 with uniform fixed derivatives on a smaller tube.
 
-\subsection{The exact stationary phase and an available contour}
+\subsection{The stationary point and a contour for the finite sum}
 For \(A(x,t,u)=b(x,t)+b(x,u)\), its critical branch satisfies
 \begin{equation}\label{cta:critical-wire}
  \cos(2\pi x)=\frac{1-\cos t\cos u}{2+\cos t+\cos u},
@@ -128,7 +128,7 @@ the right side is below \(-0.002+o(1)\).
 On a horizontal side its maximum in \(X\) is at most
 \((308/3)Y^2\le77/30000\), less than
 \(2\pi h=\pi/250\). All nonconstant cotangent modes and
-vertical currents therefore have a fixed exponential loss
+vertical side integrals therefore have a fixed exponential loss
 relative to \(e^{N\psi}\).
 
 The constant horizontal terms give \(N\) times a real integral.
@@ -172,7 +172,7 @@ Multiplication by its prefactor \(1/N\) in
 \eqref{cta:bulk} therefore makes the last remainder \(O(N^{-2})\).
 The common \(a_1\) cancels in this ratio.
 
-\section{Angular bounds and weighted curvature}\label{cta:angular}
+\section{Bounds away from the maximum and control of the local Hessian}\label{cta:angular}
 
 \subsection{A bound on the entire real angular period}
 Let \(N\ge160\), \(k/N\in I\), and
@@ -182,7 +182,10 @@ Let \(N\ge160\), \(k/N\in I\), and
    =\prod_{j<k}Q_{r_j}(z),\qquad
  Q_r(z)=\frac{r+\cos z}{1+r}.
 \]
-Reserve the first \(m_0=\lfloor N/32\rfloor\) factors, where
+We first combine some factors before estimating their absolute
+values. This gives a bound that holds on the entire real angular
+circle even when an individual factor has a negative Laurent
+coefficient. Reserve the first \(m_0=\lfloor N/32\rfloor\) factors, where
 \(r_j>\cos(\pi/16)>9/10\).
 There are at most \(N/20+1\) negative parameters, all \(>-2/5\).
 Pair them injectively with parameters among the next
@@ -198,7 +201,9 @@ are \(1,2(r+s),2+4rs,2(r+s),1\), all positive.
 Normalized at \(z=1\), with its central Laurent power removed,
 it is a symmetric probability measure on
 \(\{-2,-1,0,1,2\}\).
-A remaining single factor has the analogous interpretation
+Here a symmetric probability measure means a Laurent polynomial
+with nonnegative coefficients summing to one, unchanged by reversing
+its powers. A remaining single factor has the analogous interpretation
 on \(\{-1,0,1\}\). Its complex-angular modulus is at most
 \(\cosh(by)\le e^{b^2y^2/2}\), where \(b\) is its Laurent degree.
 
@@ -235,7 +240,7 @@ only polynomial factors for the fixed tree; one may apply
 Cauchy's formula on radius \(1/N\) disks. This is a bound on
 the entire angular period, not only near its maximum.
 
-\subsection{The local nonlinear terms}
+\subsection{The quadratic part and its nonlinear remainder}
 With
 \(Q=\sqrt{1-\sin^2(t/2)\sin^2(u/2)}\), differentiation gives
 \begin{equation}\label{cta:edge-Hessian}

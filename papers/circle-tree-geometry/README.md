@@ -1,65 +1,57 @@
 # Positive octahedra and primitive fillings for trees of crossing circles
 
-[Read the PDF](../../docs/papers/circle-tree-geometry.pdf) ·
-[TeX source](main.tex)
+[Read the PDF](../../docs/papers/circle-tree-geometry.pdf) · [TeX source](main.tex)
 
-An ordered tree of crossing-circle tangles determines the diagrams in
-this paper. Every vertex has its own crossing circle, every tree edge
-is a physical quarter-turn attachment, and the order of the factors and
-the original crossing disks are retained. The tree has at least one
-edge. The theorem concerns this literal construction, rather than all
-strict Conway presentations.
+This paper constructs hyperbolic metrics for a specified class of augmented
+link diagrams. The diagram is built from an ordered tree: every vertex
+has a crossing circle, and every edge describes a quarter-turn attachment
+of two-strand tangles. The branch order, crossing disks and endpoint
+labels are retained. The tree alone does not determine the link.
 
-Let $d_v$ be a vertex degree, let $\epsilon_v$ be its retained half-twist
-choice, and let $p_v$ be its disk-framed filling integer. Put
-$n_v=\epsilon_v-2p_v$ and $L_v=\sqrt{d_v^2+n_v^2}$.
-Theorem 1.1 constructs the positive cone deformation and smooth
-hyperbolic endpoint when $L_v\ge630$ at every vertex. The degree
-alternative allows an internal vertex to have a short or zero crossing
-power. The original strand connections determine whether the endpoint
-is a knot complement.
+Write $d_v$ for the degree at a vertex and $n_v$ for the crossing power
+restored by filling its circle. Theorem 1.1 proves that
+$\sqrt{d_v^2+n_v^2}\ge630$ at every vertex is sufficient for a smooth,
+complete hyperbolic filling. This allows a short or zero power at a
+vertex of large degree. The strand connections must still be checked to
+determine whether the remaining main link is a knot.
 
-## What is proved
+The proof begins with the topology. Each tree edge gives one octahedron
+on each side of the projection plane. Explicit ideal vertices then give
+eight positive tetrahedra per edge block and determine the face maps.
+A contraction argument solves the filling equations uniformly in the
+number of vertices. The meridian and disk longitude are traced through
+the cells, including the two signs of a retained half twist.
 
-Proposition 2.1 identifies the ordered projection cut with two octahedra
-per tree edge and records the original primitive peripheral paths.
-Lemma 3.1 gives a positive eight-tetrahedron chart and its full face
-maps. The charge equations then have a unique solution in the stated
-polydisk, with the sign needed for geometric completion.
+For cone angle $2\pi c$, these curves have continued logarithmic periods
 
-For cone angle $2\pi c$, the auxiliary periods satisfy
+$$
+U_v=-2\pi\Psi_{\tau_v}-i\epsilon_v\tau_v,
+\qquad V_v=2i\tau_v,
+\qquad U_v+p_vV_v=-2\pi i c,
+\quad n_v=\epsilon_v-2p_v.
+$$
 
-\[
- U_v=-2\pi\Psi_{\tau_v}-i\epsilon_v\tau_v,\qquad
- V_v=2i\tau_v,\qquad U_v+p_vV_v=-2\pi i c.
-\]
+The proof establishes the full periods, rather than just their
+exponentials. At $c=1$ the primitive filling slope makes exactly one
+angular turn, so its metric completion is smooth. The volume is the
+absolute critical value of the stated classical potential. Corollary 6.1
+bounds the core lengths and volume loss; Theorem 7.1 permits different
+parameter radii at different vertices.
 
-The proof retains these full logarithms. At $c=1$ the primitive filling
-meridian makes one turn and the completed metric is smooth. The action
-is calibrated at the complete regular octahedra, and comparison of the
-same fundamental chain fixes its absolute volume. Corollary 6.1 bounds
-the core lengths and volume loss. Theorem 7.1 gives a more flexible
-finite criterion with different parameter radii at different vertices.
-
-The sole specialized companion input is the local peripheral-volume
+The only specialized companion input is the peripheral-volume
 differential from Section 7 of
 [Circle patterns and primitive fillings of augmented links](../marked-fillings/README.md).
-The ordered topology, positive path, primitive winding and completion
-are proved here. This geometric theorem supplies no estimate of an
-oscillatory quantum sum; the circle-tree volume paper proves that
-separate analytic assertion under its own hypotheses.
-
-## Build and finite checks
+The topology, deformation, primitive winding and metric completion are
+proved here. A quantum volume limit requires the additional finite-sum
+analysis in [Volume asymptotics for trees of crossing circles](../circle-tree-volume/README.md).
 
 From the repository root:
 
-~~~sh
+```sh
 python3 tools/build_papers.py circle-tree-geometry
 python3 -I papers/circle-tree-geometry/check.py --output /tmp/circle-tree-geometry-check.json
-~~~
+```
 
-The checker requires SymPy and runs the two specified exact block and
-vertexwise-constant programs with temporary output paths. It also checks
-the full primitive multiplier dictionary. Its finite identities and
-rational constants support the written proof; they do not replace the
-cut topology, contraction argument, metric completion or chain comparison.
+The checker verifies the finite block identities, primitive multiplier
+formulas and rational bounds. The topological and analytic arguments
+remain written proofs in the paper.

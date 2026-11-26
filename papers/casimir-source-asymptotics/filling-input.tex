@@ -24,7 +24,7 @@ negative spectral Hessian, the resulting leading expression is
 \]
 The relative error and eventual nonvanishing are precisely the
 conclusions of the oscillatory theorem. Its proof supplies the whole
-charge sum and endpoint currents; none is inferred from the present
+Fourier sum and its endpoint contributions; none is inferred from the present
 face Gaussian alone. Exterior framing or component units, and the
 modified-dimension factor when that convention is used, remain those
 of \cite{FinitePaper}.
@@ -35,3 +35,12 @@ require its marked peripheral and metric proofs. A full invariant
 limit also requires control of the complementary degree sectors.
 Neither conclusion is part of Theorem~\ref{sa:main}.
 
+
+\paragraph{Finite checks.}
+The accompanying program \texttt{check.py} replays the cofactor,
+node-determinant and parity identities at the levels recorded in its
+output. It is run from the repository root by
+\texttt{python3 papers/casimir-source-asymptotics/check.py}.
+These finite algebra checks supplement the written uniform transfer,
+contour and Gaussian arguments; the latter do not follow from a
+sample of levels.

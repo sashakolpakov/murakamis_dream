@@ -123,6 +123,129 @@ def inventory_controls() -> list[str]:
     return rejected
 
 
+
+def correspondence_inputs(coverage: dict) -> tuple[dict, set[Path]]:
+    """Validate the authored semantic map and its expected-type checks.
+
+    The records explain the mathematical dictionary; Lean checks each
+    independent contract type. Neither source anchors nor a relation's
+    prose are treated as a proof that TeX has been formalized.
+    """
+    expected = {root: item['module']
+                for project in coverage['projects'].values()
+                for item in project['modules'] for root in item['roots']}
+    local_imports = {item['module'] for project in coverage['projects'].values()
+                     for item in project['modules']} | {'VolumeLogic'}
+    records, contracts, inputs = {}, {}, set()
+    for relative in coverage.get('correspondence', []):
+        path = (ROOT / relative).resolve()
+        if not path.is_relative_to(ROOT / 'formal/correspondence'):
+            raise ValueError('Correspondence records must be in formal/correspondence/.')
+        obj = json.loads(path.read_text())
+        if obj.get('schema') != 1:
+            raise ValueError(f'Unknown correspondence schema: {relative}')
+        inputs.add(path)
+        for entry in obj['contracts']:
+            contract = (ROOT / entry['path']).resolve()
+            project = coverage['projects'][entry['project']]
+            directory = ROOT / project['directory']
+            if not contract.is_relative_to(directory):
+                raise ValueError(f'Contract outside its project: {contract}')
+            name = str(contract.relative_to(directory))
+            if name not in project['infrastructure']:
+                raise ValueError(f'Unregistered statement contract: {contract}')
+            if contract in contracts:
+                raise ValueError(f'Duplicate statement contract: {contract}')
+            text = contract.read_text()
+            code = code_without_comments(text)
+            if re.search(r'\b(?:sorry|admit|sorryAx|skipKernelTC|native_decide|ofReduceBool)\b', code):
+                raise ValueError(f'Admitted statement contract: {contract}')
+            for line in re.findall(r'^import\s+([^\n]+)', code, re.M):
+                for imported in line.split():
+                    if imported not in local_imports and not re.fullmatch(
+                            r'(?:Mathlib|Std|Lean|Init)(?:\.\w+)*', imported):
+                        raise ValueError(f'Unregistered contract import: {imported}')
+            if re.search(r'^\s*(?:@\[[^\n]*\]\s*)*'
+                         r'(?:(?:private|protected|unsafe|noncomputable|local)\s+)*'
+                         r'(?:axiom|opaque|constant|elab|initialize|structure|inductive|'
+                         r'class|def|abbrev|theorem|lemma|instance)\b', code, re.M):
+                raise ValueError(f'Contracts must contain anonymous type checks, not declarations: {contract}')
+            markers = re.findall(r'^\s*--\s*manuscript-contract:\s*(\S+)\s*$', text, re.M)
+            if len(markers) != len(set(markers)) or set(markers) != set(entry['roots']):
+                raise ValueError(f'Contract root markers differ from their record: {contract}')
+            if not re.search(r'^\s*example\b', code, re.M):
+                raise ValueError(f'No independent expected-type examples in {contract}')
+            contracts[contract] = entry
+            inputs.add(contract)
+        for relation in obj['relations']:
+            root = relation['root']
+            if root not in expected or relation['module'] != expected[root] or root in records:
+                raise ValueError(f'Duplicate or unregistered semantic proof root: {root}')
+            if relation['kind'] not in {'exact', 'specialization', 'component', 'conditional'}:
+                raise ValueError(f'Unknown logical relation: {root}')
+            for field in ['symbol_dictionary', 'hypotheses', 'conclusion', 'unformalized', 'notes']:
+                if field not in relation:
+                    raise ValueError(f'Missing semantic field {field}: {root}')
+            if not relation['symbol_dictionary'] or not relation['conclusion']:
+                raise ValueError(f'Empty statement dictionary or conclusion: {root}')
+            if relation['kind'] == 'exact' and relation['unformalized']:
+                raise ValueError(f'An exact match cannot omit part of its statement: {root}')
+            contract = (ROOT / relation['contract']).resolve()
+            if contract not in contracts or root not in contracts[contract]['roots']:
+                raise ValueError(f'No compiled expected-type contract for {root}')
+            if not relation['manuscript']:
+                raise ValueError(f'No written counterpart for {root}')
+            for source in relation['manuscript']:
+                manuscript = (ROOT / source['path']).resolve()
+                if (not manuscript.is_relative_to(ROOT) or manuscript.suffix != '.tex'
+                        or source['anchor'] not in manuscript.read_text()):
+                    raise ValueError(f'Missing precise manuscript anchor: {source}')
+                inputs.add(manuscript)
+            records[root] = relation
+    if set(records) != set(expected):
+        raise ValueError('The semantic map must cover every selected proof root: '
+                         + str(set(expected) ^ set(records)))
+    return {'relations': records, 'contracts': contracts}, inputs
+
+
+def contract_controls(lake: str, key: str, project: dict,
+                      controls: list[dict], target: Path, output: Path) -> list[dict]:
+    """Compile valid contracts and reject specified changes of their types."""
+    directory = ROOT / project['directory']
+    results = []
+    for item in controls:
+        if item['project'] != key:
+            continue
+        if (not re.fullmatch(r'[a-z0-9_-]+', item['id']) or not item['reason']
+                or item['positive'] == item['negative']):
+            raise ValueError('A signature control needs a name, reason and distinct types.')
+        for source in [item['positive'], item['negative']]:
+            code = code_without_comments(source)
+            if re.search(r'\b(?:sorry|admit|sorryAx|skipKernelTC|native_decide|ofReduceBool)\b', code):
+                raise ValueError('A signature control may not contain an admission or bypass.')
+            if re.search(r'^\s*(?:(?:private|unsafe|noncomputable)\s+)*'
+                         r'(?:axiom|opaque|constant|elab|initialize)\b', code, re.M):
+                raise ValueError('An unchecked declaration entered a signature control.')
+        with tempfile.TemporaryDirectory(prefix='statement-control-',
+                                          dir=directory / '.lake/build') as temporary:
+            temporary = Path(temporary)
+            positive, negative = temporary / 'Positive.lean', temporary / 'Negative.lean'
+            positive.write_text(item['positive'])
+            negative.write_text(item['negative'])
+            good_log = target / (item['id'] + '-positive.txt')
+            bad_log = target / (item['id'] + '-negative.txt')
+            execute([lake, 'env', 'lean', str(positive)], directory, good_log)
+            run = subprocess.run([lake, 'env', 'lean', str(negative)], cwd=directory,
+                                 env=dict(os.environ, LEAN_NUM_THREADS='2'), text=True,
+                                 stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+            bad_log.write_text(run.stdout)
+            if not run.returncode or not re.search(item['expected_error'], run.stdout):
+                raise ValueError('The intended type error was not detected: ' + item['id'])
+        results.append({'id': item['id'], 'reason': item['reason'],
+                        'positive_log': str(good_log.relative_to(output)),
+                        'negative_log': str(bad_log.relative_to(output))})
+    return results
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
@@ -136,8 +259,17 @@ def main() -> None:
     coverage = json.loads(coverage_file.read_text())
     dependencies = json.loads((ROOT / "formal/dependency-pins.json").read_text())
     projects = coverage["projects"]
+    semantic, semantic_files = correspondence_inputs(coverage)
+    type_control_path = ROOT / coverage['contract_controls']
+    type_controls = json.loads(type_control_path.read_text())
+    if type_controls.get('schema') != 1 or not type_controls.get('controls'):
+        raise ValueError('Expected nonempty typed statement controls.')
+    if len({c['id'] for c in type_controls['controls']}) != len(type_controls['controls']):
+        raise ValueError('Duplicate statement controls.')
     controls = inventory_controls()
     inputs = {coverage_file, ROOT / "formal/dependency-pins.json", Path(__file__).resolve()}
+    inputs |= semantic_files
+    inputs.add(type_control_path)
     active_modules = {item['module'] for p in projects.values() for item in p['modules']}
     for project in projects.values():
         directory = ROOT / project['directory']
@@ -260,6 +392,19 @@ def main() -> None:
                 execute([lake, "env", "lean", "-o", str(destination), item["path"]],
                         directory, target / (item["module"] + ".txt"))
                 done.add(name)
+        # These examples state the expected mathematical types independently
+        # of the theorem declaration being applied. A signature mismatch is a
+        # kernel-checked type error, rather than a stale source-hash warning.
+        contract_logs = []
+        for contract, specification in semantic['contracts'].items():
+            if specification['project'] != key:
+                continue
+            relative = str(contract.relative_to(directory))
+            log_path = target / (contract.stem + '.txt')
+            execute([lake, 'env', 'lean', relative], directory, log_path)
+            contract_logs.append(str(log_path.relative_to(output)))
+        rejected_types = contract_controls(lake, key, project, type_controls['controls'],
+                                           target, output)
         log = execute([lake, "env", "lean", "AxiomAudit.lean"], directory, target / "axioms.txt")
         axioms = {}
         entries = re.findall(r"'([^']+)' depends on axioms:\s*\[([^\]]*)\]", log)
@@ -274,7 +419,9 @@ def main() -> None:
             raise ValueError("An admitted proof or additional axiom entered the proof chain.")
         if any(digest(ROOT / name) != sha for name, sha in source_pins.items()):
             raise ValueError("An input changed during replay.")
-        reports[key] = {"modules": list(by_module), "declarations": names, "axioms": axioms}
+        reports[key] = {"modules": list(by_module), "declarations": names, "axioms": axioms,
+                        "statement_contracts": contract_logs,
+                        "invalid_type_contracts_rejected": rejected_types}
         print(f"{key}: {len(by_module)} modules compiled; {len(names)} public declarations audited.", flush=True)
     for project in projects.values():
         directory = ROOT / project['directory']
@@ -287,6 +434,13 @@ def main() -> None:
         raise ValueError('An input changed before the combined replay completed.')
     result = {"scope": "Actual compilation and axiom checks of the retained manuscript-facing statements. Written analytic/geometric inputs remain those stated in the manuscripts.",
               "toolchain": TOOLCHAIN, "projects": reports, "inventory_controls_rejected": controls,
+              "statement_correspondence": {
+                  "scope": "Authored statement dictionaries and anonymous independently stated Lean type contracts; no automatic inference of TeX semantics.",
+                  "selected_roots": len(semantic['relations']),
+                  "relation_kinds": {kind: sum(r['kind'] == kind for r in semantic['relations'].values())
+                                     for kind in ['exact', 'specialization', 'component', 'conditional']},
+                  "contract_files": [str(p.relative_to(ROOT)) for p in semantic['contracts']],
+              },
               "source_sha256": dict(sorted(source_pins.items()))}
     (output / "summary.json").write_text(json.dumps(result, indent=2) + "\n")
 

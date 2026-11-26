@@ -31,7 +31,10 @@ Each step preserves or unions disjoint label blocks. Fixing the original paritie
 
 \section{The net blocks before assigning parities}\label{cr:partition}
 
-There is a useful finite graph underlying the normalization. It records tangle operations and turn parity, not a new knot projection. Remove the last closing product and join the output ends of $F$ and $G$. Represent every remaining product by a trivalent vertex. Put a bit in $\{0,1\}$ on each edge recording the number of quarter-turns on it modulo two. A leaf ends at the integral braid $R^{n_i}$, so the turn in $h_i=\Turn R^{n_i}$ contributes one to its leaf-edge bit.
+The label partition can be read directly from a tree. Its edge bits
+record the parity of the number of \emph{quarter-turn operations}.
+They do not record the parity of a twist count $n_i$; the latter
+controls the spatial rotations during sliding. Remove the last closing product and join the output ends of $F$ and $G$. Represent every remaining product by a trivalent vertex. Put a bit in $\{0,1\}$ on each edge recording the number of quarter-turns on it modulo two. A leaf ends at the integral braid $R^{n_i}$, so the turn in $h_i=\Turn R^{n_i}$ contributes one to its leaf-edge bit.
 
 For $m\ge3$ the graph is an unrooted tree with $m$ labelled leaves and internal vertices of valence three. Contract every internal edge with bit zero. This joins associative product regions. The result is a tree of junctions of valence at least three, with bit one on every internal edge. At a junction $v$, call the labels on its bit-zero leaf edges $I_v$. These are exactly its direct integral labels. The partition is
 \begin{equation}\label{cr:partition-formula}
@@ -58,7 +61,7 @@ For two leaves there is no junction. Equal bits have total bit zero: with two tu
 \caption{The net blocks for \eqref{cr:example}. Each leaf is an integral box; its edge label is the turn bit. The internal edge has bit one, so the two junctions stay separate. The direct leaves at the left junction fuse to $\{1,2\}$ and those at the right to $\{4,5\}$. Leaves $3,6$ are ordinary singleton blocks. These are label unions; no numerical zero test has been made.}\label{cr:net-figure}
 \end{figure}
 
-\subsection{An example and a zero wall}
+\subsection{An example, including a vanishing net sum}
 
 Consider the explicit ordered expression
 \begin{equation}\label{cr:example}
@@ -71,7 +74,7 @@ It is in the original syntax since $R^{n_i}=\Turn h_i$. Put $a=n_1+n_2$ and $b=n
 \]
 The partition is $\{1,2\},\{3\},\{4,5\},\{6\}$. The inner stack has type $HL=H$, its turn has type $L$, and the closing pair can be chosen $HA$. Thus the resulting formal expression is strict even on $a=0$ or $b=0$; the long-filling theorem applies only when its actual four weights are long.
 
-On the wall $a=0$, removing the through identity is an additional evaluated move. The original rotations give
+When $a=0$, removing the through identity is an additional evaluated move. The original rotations give
 \begin{align*}
  C\bigl(h_3\Turn(R^b h_6)\bigr)
  &\simeq C\bigl(R^{n_3}\tau(R^b h_6)\bigr)\\

@@ -1,6 +1,10 @@
-\section{Fixed complex cofactor neighborhoods}\label{sa:packets}
-We next prove the local analytic input for the actual polynomial,
-independently of its nodal samples. Positive face entries range in a
+\section{Holomorphic logarithms of the cofactors}\label{sa:packets}
+To take a complex stationary point we need more than bounds on real
+spectral values. We prove that each required cofactor is nonzero on
+a fixed complex neighborhood and that its normalized logarithm has
+a holomorphic limit. Throughout this section a \emph{unit} means a
+holomorphic function which is nowhere zero on the chosen neighborhood;
+shrinking that neighborhood gives uniform bounds for its reciprocal. Positive face entries range in a
 fixed compact set; each zero entry stays zero. Write $n=N/2+O(1)$,
 $n\le\lfloor N/2\rfloor$, for any terminal row used in
 \eqref{sa:even}--\eqref{sa:odd}.
@@ -9,10 +13,10 @@ Section~\ref{cs:shared}. The entropy in \eqref{sa:entropy} also allows the diffe
 singleton $(0,b,0)$, but that singleton is not an admissible cofactor
 chart here.
 
-\begin{proposition}[Actual local logarithms]\label{sa:local-log}
+\begin{proposition}[Local logarithms]\label{sa:local-log}
 Assume $x,y,b\ge0$ and $x+y>0$ at the real reference.
 On a fixed sufficiently small complex $u$ disk and fixed complex
-logarithmic neighborhood of the positive faces, every nonzero
+logarithmic neighborhood of the positive faces, the cofactor
 $R_n(b,u)$ is zero-free for all large $N$. Its logarithm, continued
 from positive faces at $u=0$, satisfies
 \begin{equation}\label{sa:log-limit}
@@ -29,7 +33,7 @@ locally uniformly, with every fixed parameter derivative. The limit is
  \sin^2\pi t_b(u)&=\frac{(1+u/4)b^2}{(b+x)(b+y)}.\notag
 \end{align}
 For $b=0$, the expression means $\int_0^{1/2}\Loga\lambda$;
-the sole-variable case is the exact monomer product.
+if only one outer variable is positive, the formula reduces to the exact product of one-step weights.
 All branches continue their positive values at $u=0$.
 \end{proposition}
 
@@ -129,10 +133,10 @@ at most one. The latter retain the endpoint rate loss. The horizontal
 phase cost at the real reference is $O(\eta^2N)$, so choose $\eta$
 first with $2\pi\eta>C\eta^2$, then choose the parameter neighborhood.
 Cauchy's theorem compares \eqref{sa:cot} with $N$ times the actual
-integral, retaining exponentially smaller vertical currents.
+integral, retaining the exponentially smaller integrals over the vertical sides.
 The holomorphic implicit function theorem gives its saddle $t_N$.
 Deforming to the horizontal line through $t_N$, with the same
-endpoint currents, and rescaling by $N^{-1/2}$ yields
+endpoint integrals, and rescaling by $N^{-1/2}$ yields
 \begin{equation}\label{sa:interior-packet}
  R_n=\frac{\sqrt{2\pi N}\,a_N(t_N)e^{N\phi_N(t_N)}}
                   {\sqrt{-\phi_N''(t_N)}}(1+O(N^{-1})).
@@ -190,7 +194,7 @@ derivatives. If $b=0,xy=0$, the exact answer is
 $R_n=A^n\prod_{j=1}^ns_j^2$, independent of $u$.
 This completes Proposition~\ref{sa:local-log}.
 
-\subsection{The exact central interpolant and its action}
+\subsection{The central polynomial and its logarithmic action}
 The terminal ratios in both proofs tend uniformly to
 \[
  \frac{R_n}{R_{n-1}}\longrightarrow
@@ -213,7 +217,7 @@ Define the exact holomorphic interpolation
 \end{equation}
 It is zero-free on a fixed chart, is separately even in $\delta$,
 and is positive on its sufficiently small real positive-face chart.
-Its physical maximal-fold value is exactly \eqref{sa:anchor}/$N^2$.
+Its value at the node closest to $-2$ is exactly \eqref{sa:anchor}/$N^2$.
 Its logarithm is therefore fixed without a fitted scalar. Equations
 \eqref{sa:log-limit} and \eqref{sa:central-unit} show
 \begin{equation}\label{sa:B-limit}

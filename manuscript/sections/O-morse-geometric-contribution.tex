@@ -6,7 +6,7 @@ selected from the exact finite source, and identifies its rate with the
 volume of the original filled complement. It does not assert that the
 complementary contribution is smaller for every undecorated diagram.
 There are three steps. A finite character sum first selects the exact
-face coefficient, including its marked normalization. A positive
+face coefficient, including the reduced-mark normalization. A positive
 Laplacian then gives one saddle on the quotient by common scale, and
 the Fourier contour through that saddle selects the unit filling
 charges. Finally the labeled cell construction identifies their action
@@ -118,9 +118,9 @@ square-root Jacobian appears. The displayed \(q\) power is the original
 unwrapped scalar \(\exp(\pi i d^2\sum n_e/(4N))\). An exterior
 framing/component character multiplies the raw contraction when
 converting to the specified invariant convention; it has modulus one at
-complete color. The full one-cut modified convention additionally
-retains its stated \(i^{N+3}/N\). These conventions are not changed by a
-central projection.
+complete color. For a knot, the same framing character converts the full raw
+contraction to the reduced invariant. The central projection changes
+only the local polynomial pieces; it introduces no new normalization.
 
 There is a fixed small complex polydisk and finite holomorphic actions
 \(A_N\), face Hessians \(H_N\), such that the following two source
@@ -166,8 +166,11 @@ critical value and negative Hessian of \begin{equation}\label{mca:eq-5}
                          +2\pi i\sum_e\ell_e\delta_e.
 \end{equation} The face determinant root is continued from the positive complete
 Hessian. The spectral root is the Gaussian branch on matrices with
-positive real part. The coefficient in \eqref{mca:eq-4} tends to a
-nonzero number after the explicit level factors and action are removed.
+positive real part. The matrices $H_N$ converge holomorphically to a nonsingular face
+Hessian $H_0$, as follows from the finite phase construction below.
+Consequently the coefficient in \eqref{mca:eq-4} tends to a nonzero
+number after the displayed scalar phase, level power and exponential
+are removed.
 In particular the period is nonzero for all sufficiently large levels of
 either parity, and \begin{equation}\label{mca:eq-6}
 \lim_{N\to\infty}\frac{2\pi}{N}\log|I_{N,\mathbf n}^{\mathrm C}|
@@ -194,7 +197,7 @@ positive. These facts also cover the smallest simple sphere. They
 require neither complete-radius balance nor a tree in the ordinary
 graph.
 
-At the actual complete packing, the circle-center angle sums make the
+At the complete packing, the circle-center angle sums make the
 common face action stationary. Its Hessian is positive on the
 common-scale quotient: each nonmonomial triangle detects the differences
 of its finite logarithmic face radii, and the connected ordinary graph
@@ -218,8 +221,9 @@ holomorphic function is the actual central polynomial itself:
  \mathcal B_{e,N}(\delta_e;L)
        =N^{-2}P_{\mathrm C,e}(\delta_e;L).
 \end{equation}
-The logarithm starts from its positive value at the complete
-positive-face chart. Every protected
+At zero spectral parameter and positive ordinary face variables,
+$\mathcal B_{e,N}>0$. We choose its logarithm to be real there and
+continue it on the stated zero-free neighborhood. Every protected
 face remains exactly zero, while the positive faces vary in a fixed
 logarithmic neighborhood. Section~\ref{mca:sec-2} gives \(x+y>0\)
 and a nonmonomial triangle at every box, as required by the theorem.
@@ -260,7 +264,7 @@ is zero-free on one fixed chart for all large \(N\), and that
        \longrightarrow Q_b(\delta;L)+Q_c(\delta;L)
 \]
 with every fixed derivative. Its complete value is fixed by the
-original finite cofactor; no scalar is fitted. The limiting functions
+original finite cofactor; its additive normalization is fixed. The limiting functions
 satisfy \(Q_t(0)=F(x,t,y)\), with exactly the constant in
 \eqref{bl:F8}. The construction includes a protected middle: that
 case uses its actual start-zero transfer, and a one-variable triangle
@@ -279,7 +283,8 @@ radius vectors.
 \subsection{The local asymptotic from the actual face
 torus}\label{mca:sec-4}
 
-Fix one ordinary face as the scale reference, and write
+Choose one ordinary face as the scale reference, leaving $R-1$
+independent logarithmic face coordinates, and write
 \(L_f=\rho_f e^{z_f}\) for the others. Define the finite phase \begin{equation}\label{mca:eq-9}
 \Psi_N(z,\delta)=\frac1N\sum_e\operatorname{Log}
      \mathcal B_{e,N}(\delta_e;L(z))
@@ -327,7 +332,7 @@ spectral second derivative there. In the limit this gives
 \begin{equation}\label{mca:eq-11}
 C_e=\frac{\pi(T_{b_e}+T_{c_e})}{x_e+y_e}>0,
  \qquad T_t=\sqrt{(x_e+y_e)t+x_ey_e},
-\end{equation} at the actual complete packing.
+\end{equation} at the complete packing.
 Section~\ref{mca:sec-2} ensures that at least one
 summand is positive. Thus \eqref{mca:eq-3} holds, and on a smaller fixed
 complex chart \(\operatorname{Re}A_N''\) is uniformly negative definite.
@@ -374,6 +379,21 @@ thin fixed strip. Cauchy's formula gives the fixed derivative bounds
 on smaller strips. This proves \eqref{mca:eq-H2} on the entire cube,
 including its original endpoints. No left/right restoration or balance
 assumption enters this argument.
+
+We have now verified the hypotheses of \cite[Theorem 1.1]{Filling}
+for this central coefficient. In that theorem's notation, take
+\[
+ r=R,\quad \alpha=\frac{3R+1}{2},\quad
+ \varepsilon_N=(-1)^{dR},\quad
+ a_N(\delta)=\frac{(2\pi)^{-(R-1)/2}}{\sqrt{\det H_N(\delta)}}.
+\]
+Its phase is the $A_N$ above and its limiting diagonal constants are
+$C_e$ from \eqref{mca:eq-11}. The finite phase must remain inside the
+exponential. The next two subsections give the critical-point and
+Fourier estimates in these coordinates, including the factors needed
+for the geometric comparison. Thus the use of the filling theorem
+has explicit hypotheses and normalization, rather than an assumed
+noncancellation property of a critical point.
 
 \subsection{The first packet, its phase, and charge
 comparison}\label{mca:sec-6}
@@ -427,7 +447,7 @@ N^{2R}(2\pi N)^{-(R-1)/2}(2\pi/N)^{R/2}
 \(O(N^{-1})\); the ordinary cubic Gaussian term integrates to zero,
 while its square and the quartic term have this same order. Constants
 may depend on the fixed charges and powers. The limiting prefactor is
-nonzero by \eqref{mca:eq-17} and the determinant units.
+nonzero by \eqref{mca:eq-17} and the nonsingular determinant factors.
 
 The critical points belong to one joint charge family. Differentiate
 its critical value; the derivatives of the critical point disappear
@@ -452,7 +472,8 @@ charge}\label{mca:sec-7}
 For any entire polynomial in the \(\sigma_e\), multiply it by the
 original sines and quadratic chirps. In each variable the resulting
 \(B\) has zero endpoint values and equal first derivatives at
-\(\pm1/2\). This remains true after spectator derivatives. Three
+\(\pm1/2\). This remains true after differentiation in any of the other
+coordinates. We refer to those other variables as spectator coordinates. Three
 integrations by parts give exactly \begin{equation}\label{mca:eq-21}
 \int_{-1/2}^{1/2}B(t)e^{2\pi iN\ell t}\,dt
  =(2\pi iN\ell)^{-3}
@@ -524,8 +545,7 @@ contributions are then exponentially smaller than the nonzero unit
 packet. This proves \eqref{mca:eq-4}--\eqref{mca:eq-6} for the whole
 all-central period.
 
-\subsection{The geometric interface and the precise remaining
-problem}\label{mca:sec-8}
+\subsection{From the critical action to geometry}\label{mca:sec-8}
 
 The analytic proof retains the untwisted selected action \(A_0\) and the
 original half twists exactly once. Put \begin{equation}\label{mca:eq-25}
@@ -536,7 +556,8 @@ A_{\epsilon}=A_0+\pi i\sum_e\epsilon_e\delta_e^2,
 \(n_e=\epsilon_e-2p_e\), is \begin{equation}\label{mca:eq-26}
 U_{\epsilon,e}+p_eV_e=-2\pi i\ell_e.
 \end{equation} Once the original ordered Morse diagram has the marked
-action/primitive collar adapter and smooth long-filling completion, its
+identity between action derivatives and primitive cusp periods,
+together with smooth metric completion, its
 regulator boundary term cancels the Gaussian terms at \(\ell_e=1\). Then
 \(2\pi\operatorname{Re}S_{0,\mathbf1}\) is the actual filled exterior's
 hyperbolic volume. This identifies the asymptotic of the sector
@@ -606,7 +627,7 @@ There are two equivalent permitted inputs:
 Fix the retained half twist \(\epsilon_e\in\{-1,0,1\}\) and its sign at
 every disk. Its auxiliary peripheral basis \((\mu_e,\lambda_e)\) is the
 original disk-framed primitive basis. The longitude \(\lambda_e\) is
-represented by the ordered two-head product \(P_e=B_eA_e\). Integer
+represented by the ordered product of the two puncture meridians \(P_e=B_eA_e\). Integer
 filling coordinate \(p_e\) means filling the slope
 \(\mu_e+p_e\lambda_e\); the main crossing power is \begin{equation}\label{mcg:eq-1}
 n_e=\epsilon_e-2p_e.
@@ -769,12 +790,18 @@ point identifies these curvatures with the limiting source saddle.
 The common strip also handles a triangle containing both protected
 lines. If its finite radius is \(r\), its strip width is
 \(r(1+\cos(2\pi\delta))\). This shared width cannot be chosen
-independently at two triangles. The corresponding repeated scalar root
-does not remove the selected eigenflag: the noncentral complete
-parabolic has a nonzero off-diagonal matrix entry, and its eigenline for
+independently at two triangles. The collision of the two eigenvalues at zero does not prevent us
+from continuing the selected eigenline. To see this, write the relevant
+matrix as $\bigl(\begin{smallmatrix}a&b\\c&d\end{smallmatrix}\bigr)$
+in a frame where the complete parabolic has $b\ne0$. For a prescribed
+holomorphic eigenvalue $J$, the vector $(b,J-a)$ is a holomorphic
+nonzero eigenvector, also when the two eigenvalues coincide. Here that
+eigenvalue is
 \begin{equation}\label{mcg:eq-11}
 J=-e^{-2\pi i\delta}
-\end{equation} continues holomorphically, including its collision at zero.
+\end{equation} with the branch fixed by the complete matrix. This $J$ is an
+eigenvalue, distinct from the log-sine primitive used in the Conway
+chapters.
 
 This proves the rank and face identification, as in
 \cite[Section~3]{MarkedFillings}. Simplicity is important: a matching
@@ -784,23 +811,37 @@ is the marked strand edge. Hence \(A>0\) in every local formula.
 \subsection{Full group relations and the original primitive peripheral
 words}\label{mcg:sec-5}
 
-Choose the two holomorphic white-reflection matrices
-\(\mathcal R_f^\pm\), with \(\mathcal R_f^-\mathcal R_f^+=I\), from the
-one pattern. At a regular Morse slice with regions \(F_0,\ldots,F_k\),
-the original heads and prefixes are \begin{equation}\label{mcg:eq-12}
+For a finite white circle put $z_f^\pm=X_f\pm\ii Y_f$. Its
+complexified reflection between the two projection copies is represented
+by the mutually inverse matrices
+\[
+ \mathcal R_f^\pm=\frac1{r_f}
+ \begin{pmatrix}
+ z_f^\pm&r_f^2-z_f^+z_f^-\\
+ 1&-z_f^\mp
+ \end{pmatrix},\qquad \mathcal R_f^-\mathcal R_f^+=I.
+\]
+For real circle data this is the usual reflection in its boundary
+circle. The two fixed lines use their line-reflection limits. These
+matrices are formed from the single global pattern, so the same circle
+has the same matrix at every incidence. At a regular Morse slice with regions \(F_0,\ldots,F_k\),
+the main meridian generators and their successive products are \begin{equation}\label{mcg:eq-12}
 H_j=\mathcal R_{F_j}^+\mathcal R_{F_{j-1}}^-,
  \qquad
  H_j\cdots H_1=\mathcal R_{F_j}^+\mathcal R_{F_0}^- .
-\end{equation} Their marked lifts give the original parabolic main meridians. Shared
+\end{equation} At completeness these determinant-one products have trace $-2$.
+Their negatives give the positive parabolic lifts; the projective
+meridians are the same. The telescoping identities are written for
+the displayed products, with this choice of representatives retained. Shared
 physical wire ends have the same adjacent region labels. At a cup or cap
 the consecutive regions are \(F,G,F\), so the inserted ordered pair has
 product \(I\), and all later prefixes are unchanged. This proves the
 relations also when \(k\) changes.
 
 At one crossing disk the ordered input pair is \begin{equation}\label{mcg:eq-13}
-A_{\mathrm{in}}=\mathcal R_b\mathcal R_x,\qquad
- B_{\mathrm{in}}=\mathcal R_y\mathcal R_b,\qquad
- P=B_{\mathrm{in}}A_{\mathrm{in}}=\mathcal R_y\mathcal R_x,
+A_{\mathrm{in}}=\mathcal R_b^+\mathcal R_x^-,\qquad
+ B_{\mathrm{in}}=\mathcal R_y^+\mathcal R_b^-,\qquad
+ P=B_{\mathrm{in}}A_{\mathrm{in}}=\mathcal R_y^+\mathcal R_x^-,
 \end{equation} and the output pair replaces \(b\) by \(c\). The labeled contact map
 of the disk, taking \(C_1\mapsto C_0,\ C_2\mapsto C_3\), is \begin{equation}\label{mcg:eq-14}
 R_0=\frac{E_bE_c}{D},\qquad
@@ -808,7 +849,7 @@ R_0=\frac{E_bE_c}{D},\qquad
 \end{equation} It sends both input generators to their respective output generators
 by simultaneous conjugation and commutes with \(P\).
 
-The primitive normalization in \eqref{mcg:eq-14} is geometric. Sending
+The normalization of the disk map in \eqref{mcg:eq-14} is fixed by its labeled contact points. Sending
 the two outer intersection points to \(0,\infty\) makes the two shaded
 contact circles concentric, with radii \(\sqrt D/E_b\) and
 \(E_c/\sqrt D\). Their ordered corner map is multiplication by \(R_0\);
@@ -847,16 +888,18 @@ threading and signed Hurwitz relations.
 Equations \eqref{mcg:eq-12}--\eqref{mcg:eq-16} cover every shared wire,
 cup, cap, drilled box, and half twist in the actual Morse van Kampen
 presentation. There is no extra consistency equation at a cycle of the
-matched graph: all heads came from the same global reflections and all
-ordered box maps use those heads. The resulting family
-\(\rho_{\boldsymbol\delta}\) is an actual framed representation of
-\(\pi_1(Y_D)\). At zero it is the complete cut representation. Every
+matched graph: all meridian generators came from the same global reflections and all
+ordered box maps use those generators. The resulting family is a framed representation
+$\rho_{\boldsymbol\delta}:\pi_1(Y_D)\to\mathrm{PSL}_2(\CC)$.
+The determinant-one matrices represent these projective isometries;
+peripheral logarithms use their centered eigenvalues as explained in
+Appendix~\ref{app:marked-calibration}. At zero it is the complete cut representation. Every
 main meridian remains noncentral parabolic; its commuting longitude has
 multiplier one. Thus every unfilled main peripheral group is parabolic.
 
 The full matrices, including the parabolic limit, agree with the
 primitive collar in \cite[Section~4]{MarkedFillings}. At a Morse event
-the number of heads changes, but the telescoping identity
+the number of strand generators changes, but the telescoping identity
 \eqref{mcg:eq-12} remains the same and gives the required consistency.
 
 \subsection{Absolute action and the first-charge filling
@@ -867,7 +910,11 @@ A_0(\boldsymbol\delta)=
  \operatorname{crit}_{L}
  \left\{\sum_e(Q_{b_e}+Q_{c_e})
                 -\sum_{f\ne u,v}\operatorname{Log}L_f\right\}.
-\end{equation} It is separately even, real on real parameters, and anchored by
+\end{equation} Here $\operatorname{crit}_L$ means evaluation at the unique nearby
+stationary values of the ordinary face variables after one common scale
+has been fixed; it is not a minimization over unrelated local variables.
+The resulting function is separately even, real on real parameters,
+and anchored by
 \(A_0(0)=\Phi_D\). Put \[
  A_\epsilon=A_0+\pi i\sum_e\epsilon_e\delta_e^2.
 \] Envelope differentiation of \eqref{mcg:eq-10}, retaining
@@ -929,11 +976,13 @@ following metric argument.
 filling}\label{mcg:sec-7}
 
 The near-complete metric construction in
-\cite[Section~6]{MarkedFillings} applies to the actual
-complete finite-volume exterior. Its neighborhood is a neighborhood of
-the \textbf{framed representation}, not only of the peripheral traces.
-Its essential points are equivariant local development, the actual
-logarithmic periods, and the primitive smooth solid-torus completion.
+\cite[Proposition 6.1]{MarkedFillings} applies to the complete
+finite-volume exterior constructed above. Its neighborhood is a neighborhood of
+the framed representation, not only of the peripheral traces.
+Here a framed representation includes a selected fixed point for each
+peripheral subgroup, continued from the complete cusp. We recall the
+local development, identification of the logarithmic periods and smooth
+solid-torus completion that the theorem supplies.
 
 On a compact truncated core choose a finite lifted partition of unity
 \(\eta_{j,\gamma}\). In the future unit hyperboloid form \begin{equation}\label{mcg:eq-26}
@@ -941,7 +990,12 @@ Y_\rho(x)=\sum_{j,\gamma}\eta_{j,\gamma}(x)
                 \rho(\gamma)\rho_0(\gamma)^{-1}x,\qquad
  E_\rho(x)=\frac{Y_\rho(x)}
                     {\sqrt{-\langle Y_\rho(x),Y_\rho(x)\rangle}} .
-\end{equation} The future cone is convex; this is defined and equivariant. On a
+\end{equation} The vector $x$ lies on the unit hyperboloid in Minkowski space,
+$\langle\ ,\ \rangle$ is its Lorentz form, $\rho_0$ is the complete
+holonomy, and $\gamma$ ranges over deck transformations. The sum is
+locally finite because it comes from a lifted finite cover of the core.
+The future timelike cone is convex, so the normalization is defined.
+Reindexing the lifted partition proves equivariance. On a
 compact fundamental part it is \(C^1\)-close to the identity, so is a
 positive local diffeomorphism.
 
@@ -966,7 +1020,7 @@ At the selected unit-charge critical point, the limiting version of
 of \(n_e\), since the limiting \(B_{e,N}\) in \eqref{mca:eq-15} has positive real part. Consequently
 \(\operatorname{Re}V_e=4\pi\operatorname{Im}\delta_e>0\), so the
 longitude multiplier has \(|e^{V_e}|>1\). This is a nonunit
-\textbf{modulus}, not merely the weaker assertion \(e^{V_e}\ne1\). The
+modulus, not merely the weaker assertion \(e^{V_e}\ne1\). The
 commuting affine maps therefore have a second common fixed point
 \(q=b/(1-a)\), using \(a=e^{V_e}\) for the longitude. As
 \(\rho\to\rho_0\), \(q\) escapes to infinity, whereas the developed
@@ -982,7 +1036,7 @@ For each fixed generator path of image length at most \(L\), in
 hence tends to zero. Its exponential is the corresponding similarity
 multiplier. The difference from the small prescribed log \(U\) or \(V\)
 is a multiple of \(2\pi i\) tending to zero, so is exactly zero. This
-proves the actual log periods \textbf{before} multiplying them by
+proves the actual log periods before multiplying them by
 \(p_e\). One neighborhood works for all slopes.
 
 After moving \(q\) to zero, the tail contains a full epigraph
@@ -1033,8 +1087,7 @@ section~\ref{mcg:sec-2}. Thus the filled topology is the
 original diagram with powers \eqref{mcg:eq-1}, not a comparison diagram,
 a tree replacement, or an unnamed representation component.
 
-\subsection{Analytic interface and the remaining full-source
-problem}\label{mcg:sec-8}
+\subsection{The resulting asymptotic and its scope}\label{mcg:sec-8}
 
 The independent analytic verification is recorded in
 \hyperref[mca:unit]{the
@@ -1048,8 +1101,9 @@ at least one nonmonomial triangle. These give the ordinary Hessian rank
 and primitive angular differences used by the complex coefficient
 saddle. They do not require a flat gap forest.
 
-The proof above establishes the local holomorphic packet and global
-complex-strip spectral gap, including all odd simple-node normals. It
+The analytic proof establishes the local holomorphic expansion and
+its global complex-strip spectral gap. It retains the derivatives at
+double nodes and the values at odd simple nodes. It
 then applies the original contour proof to \eqref{mca:eq-2}, with real
 spectators during infinite-tail removal, exact endpoint currents, and
 independent signed reciprocal slopes. That proof returns the nonzero
@@ -1063,7 +1117,7 @@ Consequently this theorem applies to its all-central term at every fixed
 size, with the original parity/knot qualification. No Conway-tree
 decomposition or new plat presentation is required.
 
-What remains for its \textbf{full} invariant is a strict estimate of the
+What remains for its full invariant is a strict estimate of the
 signed contribution outside central, for example \begin{equation}\label{mcg:eq-29}
 \bigl|\mathcal I_{N,\mathrm{full}}
             -\mathcal I_{N,\mathrm C}\bigr|

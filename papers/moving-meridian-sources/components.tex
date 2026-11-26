@@ -1,8 +1,29 @@
-\section{The whole bare component}\label{ms:components}
-An estimate of a tensor with one high incidence cannot generally use
-the complete tensor at that same index. The reflection in
-Lemma~\ref{ms:reflected} changes the pairing across that edge. We
-now keep that change throughout the neighboring component.
+\section{Comparison on a connected region of bare junctions}\label{ms:components}
+The complete tensor at the same indices is not always a valid
+majorant. For example, at $N=3$ one has
+$P_0=(z-1)^2(z+2)$, $e_1=(1-z)/3$ and
+$e_2=(z^2+z-2)/9$. Therefore
+\[
+ e_2e_1^3=-\frac{P_0(z-1)^2}{243},\qquad
+ \phi_0(e_2e_1^3)=0,\qquad
+ \phi_s(e_2e_1^3)=\frac{\Delta_s}{27}.
+\]
+The last expression need not vanish. Lemma~\ref{ms:reflected}
+replaces the high index by its complement, which also changes the
+pairing with the neighboring vertex. We now follow that change
+through a whole connected region instead of estimating each vertex
+independently.
+
+Remove the circle vertices and take a connected component of the
+remaining bare junctions. Choose an attachment as its output and
+write $A$ for its polynomial before the final turn to the parent;
+then $Q=\Turn(A)$ is the outgoing polynomial. The other attachments
+carry the incoming arrays in the next theorem. The reference $A^0$
+is formed from the same component with complete tensors and complete
+positive leaves at those attachments. Its comparison closure
+$C(hA^0)$ includes one additional complete leaf at the output.
+That leaf measures the norm bound; it is not an additional circle
+in the knot diagram.
 
 \begin{theorem}[Component comparison]\label{ms:component}
 Let $A$ be a fixed unturned bare component, and $Q=\Turn(A)$ its
@@ -42,7 +63,7 @@ Lemma~\ref{ms:reflected}, or the full norm bound
 \end{equation}
 The last inequality follows from \eqref{ms:basis-norm}, fixed-valence
 quotient reduction and the polynomial trace norm. It retains the
-high normals, even when all their values vanish.
+high-index derivatives, even when all their values vanish.
 
 Consider a selected one-high difference whose high incidence is
 internal. Its neighboring vertex is constant because moving
@@ -128,26 +149,26 @@ the corresponding constant $c_j$ without changing any optimizer.
 to a constant trace. The original covariant labels agree, $h,h$.
 Reflection changes only the left label to $r=d-h$. The complete
 metric then pairs $r$ with $d-r$ and fuses the disks in their
-boundary order. Every other arm remains in the same contraction.
-The picture depicts the tensor calculation used for an upper bound.}
+boundary order. The labels $a_i,b_j$ are the unchanged low basis
+indices on the other attachments. The right-hand tensor is an upper
+bound after applying Lemma~\ref{ms:reflected} and extending the positive
+sum over $r$; the arrow is not an equality for the deformed tensor.}
 \label{ms:reflection-figure}
 \end{figure}
 
-We explain how this component statement is used in the original
-tree. A circle vertex, including its fixed signed crossing and
-typed turn, converts the actual incoming spectral norm into
-\eqref{ms:incoming} by Lemma~\ref{ms:coupon-bound}. A maximal bare
-component uses Theorem~\ref{ms:component} and preserves its full
-clean low profile. Thus a small spectral-norm error is converted
-to a coefficient cone at a circle interface, where the exact
-extractor proves that conversion. It is never converted by an
-unsupported inversion of the Newton coefficient matrix inside a
-bare component. The mutual induction terminates because the
-original reduced graph is a finite tree. The root budgets of
-\cite[Corollary 7.5]{Newton} identify its accumulated pressure
-with $F_0$, retaining every additive constant.
+We now apply the comparison to the entire tree. At a circle vertex,
+Lemma~\ref{ms:coupon-bound} turns a bound in $\|\cdot\|_{\mathrm J}$
+for the incoming polynomial into the two-band coefficient estimate
+\eqref{ms:incoming}. A maximal connected region of bare vertices
+then uses Theorem~\ref{ms:component}, retaining the complete low-output
+profile in its principal term. The exact extractor
+\eqref{ms:turned-probe} passes the error to the next circle with the
+same exponential loss. These two steps give a mutual induction on
+the finite reduced tree. The root identities of
+\cite[Corollary~7.5]{Newton} identify the accumulated maximum with
+$F_0$, including every additive branch constant.
 
-This also gives fresh angular localization at any exposed circle.
+The same comparison gives angular localization at any exposed circle.
 The clean output-probe profile is $f_A(1-u)+g(u)+\sum c_j$, with a
 unique maximizing $u\in(0,1/2)$. Outside a compact interval about
 it there is a strict loss. Within it the low Newton angular estimate

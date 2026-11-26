@@ -5,7 +5,7 @@ white and shaded face labels. In this section \(E_0\) is a preliminary
 white-face coordinate, and \(X\) is the edge variable in \eqref{ng:T1}.
 Their distinction matters when \(M\ne1\).
 
-\subsection{The parameters and the actual faces}\label{ng:the-parameters-and-the-actual-faces}
+\subsection{Parameters, ideal vertices, and face identifications}\label{ng:the-parameters-and-the-actual-faces}
 
 Write \(M\) for the main meridian eigenvalue parameter and set
 \(m=M^2\). The symbols \(Q\) and \(P\) are the chosen square roots
@@ -59,7 +59,7 @@ Put \(L=E_0^{-1}\), and define
 Thus \(W_2(z)=1+\ell_2(z-1)/(1+c_2(z-1))\).
 Every map sends its two equatorial vertices in \eqref{ng:N2} correctly.
 
-If \(q=(0,\infty,1,R)\), the native main corner word
+If \(q=(0,\infty,1,R)\), the geometric main corner word
 \(W_{j-1}^{-1}W_j\) fixes \(q_j\) and has local derivative
 
 \begin{equation}\label{ng:N4}
@@ -71,7 +71,9 @@ start with \(W_0(z)=Lz\). The derivatives at infinity, 1 and 0
 give respectively \(\ell_1=L/m,\ell_2=L/m^2,\ell_3=Lm\).
 The remaining derivative at \(R\), on its branch through the
 complete chart, gives the displayed formula for \(S\).
-This supplies the actual peripheral condition, not just equal traces.
+Thus the prescribed derivative at each labeled corner fixes its
+peripheral eigenvalue ratio. Equality of puncture traces alone would
+leave this choice undetermined.
 
 \subsection{The auxiliary longitude equations and the local gluing locus}\label{ng:the-auxiliary-longitude-equations-and-the-local-gluing-locus}
 
@@ -140,7 +142,7 @@ and \(1\) to infinity. The minus maps are the same formulas with
 \((A,B,R)\) replaced by \((a,b,S)\); denote them by
 \(S_v^-\) and \(S_w^-\).
 
-All the actual white/shaded edge returns hold projectively:
+All the white/shaded edge returns hold projectively:
 
 \begin{equation}\label{ng:N9}
 \begin{array}{lll}
@@ -152,9 +154,8 @@ All the actual white/shaded edge returns hold projectively:
 The first row follows already on \(R=R_v\), and the second on
 \(R=R_w\). One can verify each equality by multiplying one side
 by the adjugate of the other: both off-diagonal entries and the
-diagonal difference vanish. Consequently these are the face maps
-of the marked local representation of the original cut, rather than
-maps chosen solely to reproduce a character polynomial.
+diagonal difference vanish. Consequently the face maps satisfy the edge relations of the
+projection cut and define its marked local representation.
 
 At completeness their apices are
 
@@ -171,7 +172,7 @@ neighborhood. This is a local incomplete hyperbolic structure with
 decorated main eigenflags; it does not assert completeness at a
 nonparabolic main cusp.
 
-\subsection{The wire coordinate is determined by the actual meridian}\label{ng:the-wire-coordinate-is-determined-by-the-actual-meridian}
+\subsection{Recovering the edge coordinate from its meridian holonomy}\label{ng:the-wire-coordinate-is-determined-by-the-actual-meridian}
 
 The positively chosen auxiliary meridians are \(S_v^{-1}\) and
 \(S_w^{-1}\). Sending the corresponding apex to infinity changes
@@ -190,7 +191,7 @@ at those apices. Direct differentiation of \eqref{ng:N8} gives
 \end{equation}
 
 These are similarities of the primitive words, not the squares of
-unrecorded primitive words. The actual longitude similarities are
+unrecorded primitive words. The longitude similarities are
 exactly \(Q^2,P^2\), as established in Section~\ref{ng:the-auxiliary-longitude-equations-and-the-local-gluing-locus}.
 
 Solve \(U_v^{\exp}=(Q+X)/(1+QX)\) for \(X\).
@@ -219,8 +220,7 @@ U_v^{\exp}=\frac{Q+X}{1+QX},\qquad
  U_w^{\exp}=\frac{P+X}{1+PX},\qquad X|_{m=1}=E_0.
 \end{equation}
 
-Thus the same source wire variable is selected from both actual
-auxiliary meridians.
+Thus both auxiliary meridians determine the same edge coordinate $X$.
 
 Substitution of \eqref{ng:N12} and \eqref{ng:N7} now gives
 
@@ -251,13 +251,13 @@ Equation \eqref{ng:N15} is
 The denominator in the last expression is \(8\) at completeness.
 This is the effective edge equation with \(m=M^2\).
 
-\subsection{The full disk-side seam, including its main punctures}\label{ng:the-full-disk-side-seam-including-its-main-punctures}
+\subsection{Matching the doubled disk boundary and its punctures}\label{ng:the-full-disk-side-seam-including-its-main-punctures}
 
 Use the ordered cross ratio
 \([a,b,c,d]=(a-c)(b-d)/((a-d)(b-c))\).
 The incoming plus-copy triangle at the first circle is
 \((A,\infty,1)\); the outgoing triangle is \((A,R,0)\).
-Develop the adjacent minus triangle back through its actual white
+Develop the adjacent minus triangle back through its white
 map. The six neighboring third vertices are respectively
 
 \begin{equation}\label{ng:N17}
@@ -281,15 +281,18 @@ The other five reduce by the same single substitution. In particular
 the table is independent of the other circle parameter \(P\) and
 of the preliminary wire coordinate \(E_0\).
 
-The original pure disk-side matching reverses the two main
+Doubling a disk-side triangle across the projection gives a
+three-punctured sphere, triangulated by two ideal triangles. To glue
+such boundaries, the second triangle must match as well as the first.
+The pure disk-side matching reverses the two main
 punctures: outgoing \((A,R,0)\) is identified with incoming
 \((A',1,\infty)\). Thus the outgoing entries are paired with
 the incoming entries in reverse order. Each resulting product is
 one, including its complex shear. A map of the three ordered
 vertices identifies the first triangles; the three ratios then
-identify the adjacent second triangles. This proves equality of
-the full marked two-triangle disk-side structures. It does not
-replace that matching by an arbitrary pants permutation.
+identify the adjacent second triangles. This proves equality of both triangles and their specified puncture
+labels. In particular, it gives a face identification of the doubled
+boundaries, not only agreement of their angle sums.
 
 The main puncture multipliers visible in the incoming table are
 \(m,m^{-1}\), and the circle multiplier is \(Q^{-2}\);
@@ -303,6 +306,6 @@ can be sewn in its original cyclic order. The geometric seam at
 each step uses the same \(m,Q\); it requires no parameter from
 the opposite end of an edge. Products of the auxiliary meridian
 increments are therefore products of the factors in \eqref{ng:N14}.
-The actual main component and its globally positive meridian
+The main component and its globally positive meridian
 must still be traced through the endpoint frames, as explained
 in Section~\ref{ng:ordered-pages-and-the-half-twist-collar} below.

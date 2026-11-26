@@ -1,15 +1,15 @@
 {
-  "scope": "Synchronized subject collection and retained manuscript/Lean proofs: source-pinned kernel compilation, compiled exports, finite examples, typesetting, paper graph and local guide checks. Analytic and geometric premises retain their written proofs.",
+  "scope": "Rewritten subject collection and reference, with manually reviewed mathematical dictionaries and kernel-checked expected-type contracts for every selected Lean statement; source-pinned compilation, compiled exports, finite checks, typesetting, dependency graphs and local guide checks. Analytic and geometric application lemmas retain written proofs.",
   "status": "complete",
   "records": {
     "lean": {
       "record": "repro/results/manuscript-and-lean/lean/summary.json",
-      "sha256": "f622db6c2ff6913ae94ed51217415cc21e24217811cead8c558a942de44d984f",
-      "current_inputs": 51
+      "sha256": "c9e7b340b6395739931c4ee7334b12e2b560b2234841361d69d67a420975dab5",
+      "current_inputs": 60
     },
     "manuscript_logic": {
       "record": "repro/results/manuscript-and-lean/manuscript-logic/summary.json",
-      "sha256": "ba1628bc3836d957bcefbb40385844dbddd99ef8ad15bcf288cf2e7492e9623d",
+      "sha256": "b7b4faae3897d7ea8277f8d0bbc80b8e118317c3fadef8d3003e454fef8d57e8",
       "current_inputs": 33
     },
     "conway_finite": {
@@ -19,33 +19,33 @@
     },
     "quarter_index_finite": {
       "record": "repro/results/paper-collection/finite/quarter-index-asymptotics/summary.json",
-      "sha256": "4f9c0adf23699a174114933c02cc9c0f46e501265a7c85e8cc74c92b95113ba2",
+      "sha256": "9608249fe0034a735b9e51ed76de0f130a518167abec1416b431c9597346d05a",
       "current_inputs": 0
     },
     "paper_collection": {
       "record": "repro/results/paper-collection/summary.json",
-      "sha256": "7643faaf8bf449a7431416278db3fe345e31e358c440b19b926f2854456fe45c",
-      "current_inputs": 235
+      "sha256": "bceb564740170eda0dddec5d9fa859135efed49a4c18bc8bcaea0e196f910392",
+      "current_inputs": 236
     },
     "paper_finite_suite": {
       "record": "repro/results/paper-collection/finite/summary.json",
-      "sha256": "8ee6589ecd6c5e28d433e392f12fe41b4e87fd532edb3b640e30d93c5dc35844",
+      "sha256": "4bafd0ae4193285c086a084ff5b47a52ed9772c6e6fd347b84e79d2099c32efe",
       "current_inputs": 194
     },
     "paper_graph": {
       "record": "docs/papers/dependency-analysis.json",
-      "sha256": "383f073d1755d70dbbadcd280c63a2931e5bf1ac04ceb875c0009c11393ce1b4",
-      "current_inputs": 134
+      "sha256": "682dc80e2d712cf34300c51e71c7e98ce89a03185fc1f60fc8df82df0652f2e3",
+      "current_inputs": 135
     },
     "guide": {
       "record": "repro/results/manuscript-and-lean/guide-build.json",
-      "sha256": "f268b5051d0a405db2d3f31a0b99fe7bd43fe9ee643389b83b1d0d1225111253",
+      "sha256": "1d38dc06a65ceb4909068bbe09c16bc06e1ac39145188db3bdb3c0ed6653a11e",
       "current_inputs": 3
     },
     "reference": {
       "record": "manuscript/build/build-manifest.json",
-      "sha256": "00133f7c45a8a40842e22ab0aef85974883c3735fcfe6b876ccc831bb6b86200",
-      "current_inputs": 40
+      "sha256": "223afb91611b9bd5bb5402366c6ace2eccd4cc1947c41b90e9554bbd0336ff4a",
+      "current_inputs": 42
     },
     "conway_pdf": {
       "record": "papers/conway-asymptotics/build/build-manifest.json",
@@ -54,13 +54,13 @@
     },
     "quarter_index_pdf": {
       "record": "papers/quarter-index-asymptotics/build/build-manifest.json",
-      "sha256": "b294d085fd084ca3e73d3aae338ee53c745e8e7a04e484cfbda13690d1e0e119",
+      "sha256": "64b979f23ba899636e6c52dbb9c390f6cda82c1c3a42d267ff222ac335054095",
       "current_inputs": 6
     },
     "guide_check": {
       "record": "repro/results/manuscript-and-lean/guide-check.json",
-      "sha256": "8e83c6437aea10bf1c3bcde35b7a3600206d04524368346663444fab21340cde",
-      "current_inputs": 0
+      "sha256": "e13d19c0a361a74ba048df4913a1c426971e5704eb5d9e67dfd82b4dfb3da43f",
+      "current_inputs": 4
     },
     "hexagon_preparation": {
       "record": "repro/results/conway-submission/summary.json",
@@ -70,8 +70,8 @@
   },
   "pdfs": {
     "manuscript/build/main.pdf": {
-      "pages": 205,
-      "sha256": "73758b25899e9136111de9d32cf1454963732aebd3ee0784c050428272b479ab",
+      "pages": 210,
+      "sha256": "a9f22cf45e72c4b8893473f03eca8b79a3bab2f2fd2800a5021548b1fd6de95f",
       "published_pdf": "docs/papers/conway-composition.pdf"
     },
     "papers/conway-asymptotics/build/main.pdf": {
@@ -81,15 +81,789 @@
     },
     "papers/quarter-index-asymptotics/build/main.pdf": {
       "pages": 14,
-      "sha256": "d382d6def5b9826e99088a0f87bb1c54afd5b60d0689c0e5a70446c793431671",
+      "sha256": "0a2219cb906d0fea359e19bd5cd79b61650732e3288df1aef7511bad8818c179",
       "published_pdf": "docs/papers/quarter-index-asymptotics.pdf"
     }
   },
   "paper_collection": {
     "papers": 21,
-    "pages": 414,
-    "compiled_graph_exports": 524,
-    "companion_links": 62,
+    "pages": 420,
+    "compiled_graph_exports": {
+      "filling-bounds:prop:canonical-polynomial-remainder": "2.1",
+      "filling-bounds:prop:canonical-remainder-products": "2.2",
+      "filling-bounds:prop:resolvent-reproduction": "2.3",
+      "filling-bounds:uf:eq-8": "3.1",
+      "filling-bounds:uf:eq-10": "3.3",
+      "filling-bounds:uf:eq-12": "3.5",
+      "filling-bounds:uf:eq-13": "3.6",
+      "filling-bounds:fb:gaussian-normal": "3.8",
+      "filling-bounds:uf:eq-15": "3.10",
+      "filling-bounds:prop:local-face-fourier": "4.1",
+      "filling-bounds:uf:face-fourier-conjugacy": "4.3",
+      "filling-bounds:uf:physical-local-adapter": "4.5",
+      "filling-bounds:fb:crossing-polynomial": "5.1",
+      "filling-bounds:fb:polynomial-power": "3.9",
+      "filling-bounds:uf:eq-16": "6.1",
+      "filling-bounds:uf:eq-18": "6.3",
+      "filling-bounds:uf:eq-19": "6.4",
+      "filling-bounds:fb:main": "1.1",
+      "filling-bounds:uf:eq-1": "1.1",
+      "filling-bounds:uf:eq-2": "1.2",
+      "filling-bounds:uf:eq-3": "1.3",
+      "filling-bounds:uf:eq-4": "1.4",
+      "filling-bounds:de:J": "9.2",
+      "filling-bounds:de:pivot": "9.3",
+      "filling-bounds:de:root-turns": "9.5",
+      "filling-bounds:de:spherical-traces": "9.8",
+      "filling-bounds:de:coefficient-theorem": "9.1",
+      "filling-bounds:de:face-grid": "9.11",
+      "filling-bounds:de:unsupported-zero": "9.12",
+      "filling-bounds:de:marked-summand": "9.16",
+      "filling-bounds:de:shared-numerator": "9.18",
+      "filling-bounds:de:exact-filling": "9.2",
+      "filling-bounds:fb:source-hypothesis": "11.1",
+      "filling-bounds:fb:source-application": "11.1",
+      "oscillatory-fillings:of:finite-equality": "2.1",
+      "filling-bounds:de:invariant-normalization": "10.1",
+      "filling-bounds:de:simultaneous-braid-gauge": "10.8",
+      "filling-bounds:de:modified-dimension": "10.11",
+      "marked-fillings:mf:packing": "2.1",
+      "marked-fillings:mf:Phi": "2.5",
+      "marked-fillings:mf:topology": "2",
+      "marked-fillings:mf:even-corners": "2.2",
+      "marked-fillings:mf:odd-corners": "2.3",
+      "marked-fillings:mf:complete-volume": "2.4",
+      "casimir-source-asymptotics:sa:stationarity": "8.2",
+      "casimir-source-asymptotics:sa:laplacian": "12.1",
+      "casimir-source-asymptotics:sa:Psi": "12.2",
+      "casimir-source-asymptotics:sa:AH": "12.3",
+      "casimir-source-asymptotics:sa:triangle-gap": "11.1",
+      "casimir-source-asymptotics:sa:cofactor-gap": "11.2",
+      "casimir-source-asymptotics:sa:global-angular": "11.3",
+      "casimir-source-asymptotics:sa:main": "8.1",
+      "casimir-source-asymptotics:sa:H1": "8.3",
+      "casimir-source-asymptotics:sa:saddle": "12",
+      "casimir-source-asymptotics:sa:exact-B": "10.10",
+      "casimir-source-asymptotics:lc:slow-transfer": "4.1",
+      "casimir-source-asymptotics:lc:action-identity": "5.1",
+      "casimir-source-asymptotics:sa:real-upper": "13.1",
+      "casimir-source-asymptotics:sa:spectral": "13",
+      "casimir-source-asymptotics:lc:cofactor-max": "5.2",
+      "casimir-source-asymptotics:sa:H2": "8.5",
+      "casimir-source-asymptotics:sa:Poisson": "13.3",
+      "oscillatory-fillings:of:main": "1.1",
+      "oscillatory-fillings:of:Hlocal": "{{(i)",
+      "oscillatory-fillings:of:Hgap": "{{(ii)",
+      "oscillatory-fillings:of:far": "6.1",
+      "oscillatory-fillings:of:critical": "4.1",
+      "oscillatory-fillings:of:charge-gap": "4.2",
+      "oscillatory-fillings:of:local-integral": "5.1",
+      "casimir-source-asymptotics:sa:export": "14.1",
+      "oscillatory-fillings:of:source-result": "9.2",
+      "marked-fillings:mf:pattern-rank": "3.1",
+      "marked-fillings:mf:circle-system": "3.1",
+      "marked-fillings:mf:angle-gradient": "3.4",
+      "marked-fillings:mf:ordered-pairs": "4.1",
+      "marked-fillings:mf:C": "4.4",
+      "marked-fillings:mf:peripheral": "4.8",
+      "marked-fillings:mf:meridian-matrix": "4.9",
+      "marked-fillings:mf:normal-flow": "7.2",
+      "marked-fillings:mf:volume-differential": "7.3",
+      "marked-fillings:mf:absolute-regulator": "7.4",
+      "marked-fillings:mf:completion-prop": "6.1",
+      "marked-fillings:mf:actual-periods": "6.4",
+      "marked-fillings:mf:tube-metric": "6.5",
+      "marked-fillings:mf:main": "1.1",
+      "marked-fillings:mf:volume": "1.8",
+      "marked-fillings:mf:boundary-cancel": "7.5",
+      "marked-fillings:mf:boundary-homotopy": "7.6",
+      "casimir-source-asymptotics:sa:Q-derivative": "10.12",
+      "marked-fillings:mf:Q": "1.4",
+      "marked-fillings:mf:interface-cor": "8.1",
+      "planar-certificates:pc:side-loss": "4.2",
+      "planar-certificates:pc:weak-balance": "4.3",
+      "planar-certificates:pc:remainder": "3.3",
+      "planar-certificates:pc:cover": "1.1",
+      "planar-certificates:pc:volume": "1.7",
+      "planar-certificates:pc:central-import": "2.3",
+      "terminal-decorations:td:main": "1.2",
+      "terminal-decorations:td:patch": "3.1",
+      "terminal-decorations:td:parity": "3.2",
+      "terminal-decorations:td:interstice": "4.1",
+      "terminal-decorations:td:counts": "5.3",
+      "terminal-decorations:td:retained": "6.1",
+      "terminal-decorations:td:added": "6.2",
+      "terminal-decorations:td:imports": "2.1",
+      "terminal-decorations:td:source": "2.1",
+      "terminal-decorations:td:rates": "2.2",
+      "terminal-decorations:td:certificate": "7.1",
+      "terminal-decorations:td:volume": "1.3",
+      "planar-certificates:pc:certificate": "3.1",
+      "planar-certificates:pc:joining": "5",
+      "planar-certificates:pc:counts": "5.3",
+      "planar-certificates:pc:action-sum": "5.1",
+      "planar-certificates:pc:merge": "5.2",
+      "planar-certificates:pc:gluing": "5.3",
+      "planar-certificates:pc:iteration": "5.6",
+      "planar-certificates:pc:seed": "6.1",
+      "planar-certificates:pc:seed-cover-values": "6.2",
+      "planar-certificates:pc:restricted": "6.3",
+      "planar-certificates:pc:seed-obstruction-values": "6.4",
+      "planar-certificates:pc:example": "6",
+      "triangular-insertion:ti:disk": "2.3",
+      "triangular-insertion:ti:eq-3": "2.8",
+      "triangular-insertion:ti:sec-2": "3",
+      "triangular-insertion:ti:sec-3": "4",
+      "triangular-insertion:ti:sec-4": "5",
+      "triangular-insertion:ti:eq-13": "5.5",
+      "triangular-insertion:ti:main": "1.1",
+      "triangular-insertion:ti:eq-T1": "1.1",
+      "triangular-insertion:ti:eq-T2": "1.2",
+      "triangular-insertion:ti:sec-5": "6",
+      "triangular-insertion:ti:sec-6": "7",
+      "triangular-insertion:ti:imports": "2.2",
+      "triangular-insertion:ti:sec-7": "8",
+      "triangular-insertion:ti:eq-27": "8.4",
+      "triangular-insertion:ti:sec-8": "9",
+      "triangular-insertion:ti:explicit": "9.1",
+      "triangular-insertion:a-fully-specified-infinite-sequence": "9.2",
+      "conway-source-bounds:cs:main": "1.1",
+      "conway-source-bounds:cs:whole": "1.2",
+      "conway-source-bounds:cs:color-gap": "1.3",
+      "conway-source-bounds:cs:alias-gap": "1.4",
+      "conway-source-bounds:cs:assembly": "9",
+      "conway-source-bounds:cs:physical-alias": "9.6",
+      "conway-source-bounds:cs:two-leaf-source": "9.1",
+      "conway-asymptotics:ca:main": "1.1",
+      "conway-asymptotics:ca:asymptotic": "1.4",
+      "conway-asymptotics:ca:volume": "1.6",
+      "conway-asymptotics:ca:classical-action": "4.15",
+      "conway-reductions:cr:ordered": "1.2",
+      "conway-reductions:cr:import": "1.1",
+      "conway-reductions:cr:crossing-threshold": "1.6",
+      "conway-reductions:cr:product-threshold": "8.1",
+      "conway-reductions:cr:invariant": "8.3",
+      "conway-reductions:cr:net-slope": "8.5",
+      "conway-reductions:cr:arbitrary": "1.3",
+      "conway-reductions:cr:all-threshold": "8.2",
+      "conway-reductions:cr:separated": "8.1",
+      "meridian-tangles:mt:kernel-main": "1.5",
+      "meridian-tangles:mt:tree": "7.1",
+      "meridian-tangles:mt:scalar": "8.1",
+      "circle-tree-geometry:ctg:main": "1.1",
+      "circle-tree-geometry:ctg:tube-metric": "5.6",
+      "circle-tree-geometry:ctg:chain-volume": "6.5",
+      "circle-tree-geometry:ctg:cancellation": "6.6",
+      "circle-tree-geometry:ctg:heterogeneous": "7.1",
+      "circle-tree-volume:cta:word": "1.1",
+      "circle-tree-volume:cta:main": "1.1",
+      "circle-tree-volume:cta:profile": "1.2",
+      "circle-tree-volume:cta:conclusion": "6.4",
+      "circle-tree-volume:dt:local": "8.1",
+      "circle-tree-volume:dt:main": "1.3",
+      "circle-tree-volume:dt:mixed": "1.4",
+      "three-braids:braid:sec-1": "1",
+      "three-braids:braid:sec-2": "2",
+      "three-braids:braid:eq-7": "2.2",
+      "three-braids:source:sec-3": "5",
+      "three-braids:source:sec-4": "6",
+      "three-braids:source:sec-5": "7",
+      "three-braids:source:sec-6": "8",
+      "three-braids:source:eq-A31": "7.11",
+      "three-braids:source:eq-A33": "8.2",
+      "three-braids:app:constants": "A",
+      "three-braids:thm:braids": "1",
+      "three-braids:source:sec-7": "9",
+      "three-braids:source:sec-8": "10",
+      "preferred-longitudes:pl:all-circle": "1.2",
+      "preferred-longitudes:pl:T4": "1.6",
+      "preferred-longitudes:pl:T6": "1.7",
+      "preferred-longitudes:pl:T7": "1.8",
+      "preferred-longitudes:pl:strict-longitude": "1.3",
+      "preferred-longitudes:pl:deformed-action": "1.9",
+      "preferred-longitudes:plb:stationary-elimination-at-a-nonparabolic-main-meridian": "13",
+      "preferred-longitudes:plb:23a": "13.2",
+      "preferred-longitudes:plb:24": "13.3",
+      "casimir-source-asymptotics:lc:main": "1.1",
+      "casimir-source-asymptotics:lc:central-comparison": "3.3",
+      "casimir-source-asymptotics:lc:left-maximum": "6.1",
+      "casimir-source-asymptotics:lc:tail-positive": "7.1",
+      "casimir-source-asymptotics:lc:last-cap": "7.1",
+      "newton-calculus:lem:commutant": "3.1",
+      "newton-calculus:prop:newton-turn": "3.2",
+      "newton-calculus:nt:generic-trace": "3.10",
+      "newton-calculus:thm:positive-product": "3.3",
+      "newton-calculus:prop:circle": "4.1",
+      "newton-calculus:eq:core-alias": "4.4",
+      "newton-calculus:eq:low-alias": "4.5",
+      "newton-calculus:nt:crossing-newton": "4.8",
+      "conway-asymptotics:ca:crossing-data": "4.1",
+      "conway-asymptotics:ca:Hermite-inverse": "4.2",
+      "conway-asymptotics:ca:crossing-split": "4.4",
+      "conway-asymptotics:ca:midpoint": "4.7",
+      "conway-asymptotics:ca:period": "4.10",
+      "newton-calculus:def:grammar": "9.1",
+      "newton-calculus:lem:strict-feasible": "9.2",
+      "newton-calculus:st:lattice": "6.1",
+      "newton-calculus:lem:factorial-action": "6.2",
+      "newton-calculus:prop:strict-maximum": "9.3",
+      "newton-calculus:cor:complete-limit": "9.4",
+      "conway-asymptotics:ca:lattice-method": "2.2",
+      "filling-bounds:fb:rate-transfer": "11.2",
+      "marked-fillings:mf:critical": "5",
+      "marked-fillings:mf:sign": "5.2",
+      "marked-fillings:mf:action-peripheral": "5.3",
+      "circle-tree-geometry:ctg:cut": "2.1",
+      "circle-tree-geometry:ctg:right-insertion": "2.2",
+      "circle-tree-geometry:ctg:left-insertion": "2.4",
+      "circle-tree-geometry:ctg:collar-topology": "2.1",
+      "circle-tree-geometry:ctg:positive-chart": "3.1",
+      "circle-tree-geometry:ctg:pants": "3.9",
+      "circle-tree-geometry:ctg:pure-returns": "3.11",
+      "circle-tree-geometry:ctg:odd-returns": "3.12",
+      "circle-tree-geometry:ctg:charge": "1.4",
+      "circle-tree-geometry:ctg:error-bound": "4.1",
+      "circle-tree-geometry:ctg:contraction-bounds": "4.5",
+      "circle-tree-geometry:ctg:sign": "4.7",
+      "circle-tree-geometry:ctg:scope": "8",
+      "circle-tree-geometry:ctg:primitive-words": "3.13",
+      "circle-tree-geometry:ctg:increment": "3.14",
+      "circle-tree-geometry:ctg:actual-periods": "5.1",
+      "circle-tree-geometry:ctg:period-limit": "5.4",
+      "nonparabolic-tree-geometry:ng:positive-germ": "6.1",
+      "nonparabolic-tree-geometry:ng:real-rows": "6.2",
+      "nonparabolic-tree-geometry:ng:polarization": "6.3",
+      "nonparabolic-tree-geometry:ng:the-local-face-maps": "2",
+      "nonparabolic-tree-geometry:ng:N9": "2.9",
+      "nonparabolic-tree-geometry:ng:N18": "2.18",
+      "nonparabolic-tree-geometry:ng:character": "3.1",
+      "nonparabolic-tree-geometry:ng:C17": "3.15",
+      "nonparabolic-tree-geometry:ng:C25": "3.23",
+      "nonparabolic-tree-geometry:ng:C33": "3.31",
+      "nonparabolic-tree-geometry:ng:representation": "1.1",
+      "nonparabolic-tree-geometry:ng:ordered-pages-and-the-half-twist-collar": "4",
+      "nonparabolic-tree-geometry:ng:S14b": "4.13",
+      "nonparabolic-tree-geometry:ng:S14d": "4.15",
+      "nonparabolic-tree-geometry:ng:representation-gluing-followed-by-global-decoration": "4.7",
+      "nonparabolic-tree-geometry:ng:S16": "4.17",
+      "nonparabolic-tree-geometry:ng:filled-germ": "1.2",
+      "nonparabolic-tree-geometry:ng:A2": "1.5",
+      "nonparabolic-tree-geometry:ng:filling-germ-proof": "7",
+      "preferred-longitudes:pl:R3": "2.3",
+      "preferred-longitudes:pl:R4": "2.4",
+      "preferred-longitudes:pl:R6": "2.6",
+      "preferred-longitudes:pl:R7": "2.7",
+      "preferred-longitudes:pl:R8": "2.8",
+      "preferred-longitudes:pl:the-constant-field-of-the-source-equations": "3",
+      "preferred-longitudes:pl:R10": "3.2",
+      "preferred-longitudes:pl:R11": "3.3",
+      "preferred-longitudes:pl:R12": "3.4",
+      "preferred-longitudes:pl:regular-reconstruction-at-every-nonzero-main-value": "4",
+      "preferred-longitudes:pl:G5": "4.5",
+      "preferred-longitudes:pl:G14a": "4.15",
+      "preferred-longitudes:pl:G16a": "4.19",
+      "preferred-longitudes:pl:G17": "4.20",
+      "preferred-longitudes:pl:local-sections-and-the-integral-total-family": "4.6",
+      "preferred-longitudes:pl:F1": "6.1",
+      "preferred-longitudes:pl:F2": "6.2",
+      "preferred-longitudes:pl:F3": "6.3",
+      "preferred-longitudes:pl:F4": "6.4",
+      "preferred-longitudes:pl:F5": "6.5",
+      "preferred-longitudes:pl:F6": "6.6",
+      "preferred-longitudes:pl:L1": "7.1",
+      "preferred-longitudes:pl:L4": "7.4",
+      "preferred-longitudes:pl:L6": "7.6",
+      "preferred-longitudes:pl:L7": "7.7",
+      "preferred-longitudes:pl:L9": "7.9",
+      "circle-tree-volume:dt:eq-15": "7.12",
+      "circle-tree-volume:dt:eq-28": "7.25",
+      "circle-tree-volume:dt:eq-37": "7.34",
+      "circle-tree-volume:dt:sec-5": "7.4",
+      "circle-tree-volume:dt:sec-6": "7.5",
+      "meridian-expansions:me:all-orders": "1.1",
+      "meridian-expansions:me:expansion": "1.5",
+      "meridian-expansions:me:diagonal": "1.6",
+      "meridian-expansions:me:translated": "2.1",
+      "meridian-expansions:me:local-expansion": "3.1",
+      "meridian-expansions:me:directed-orders": "4.1",
+      "meridian-expansions:me:log-family": "5.2",
+      "meridian-expansions:me:regrading": "7.1",
+      "meridian-expansions:me:coefficient-recovery": "7.2",
+      "meridian-expansions:me:symbol": "1.2",
+      "meridian-expansions:me:operator": "1.8",
+      "meridian-expansions:me:longitude-formula": "1.9",
+      "meridian-expansions:me:modified-dimension": "6.1",
+      "meridian-expansions:me:gauge-ratio": "6.2",
+      "meridian-expansions:me:full-operator": "6.3",
+      "meridian-expansions:me:gauged-symbol": "6.4",
+      "meridian-expansions:me:symbol-identity": "7.3",
+      "meridian-expansions:me:geometric-factor": "8.1",
+      "meridian-expansions:me:edge-equation": "8.1",
+      "meridian-expansions:me:angle-log": "8.2",
+      "meridian-expansions:me:primitive": "8.3",
+      "meridian-expansions:me:deformed-action": "1.4",
+      "casimir-source-asymptotics:sa:local-log": "10.1",
+      "casimir-source-asymptotics:sa:interior-packet": "10.7",
+      "casimir-source-asymptotics:sa:protected-packet": "10.8",
+      "casimir-source-asymptotics:sa:central-unit": "10.9",
+      "casimir-source-asymptotics:lc:nodal-positive": "3.1",
+      "casimir-source-asymptotics:lc:interpolation": "3.2",
+      "newton-calculus:st:finite-support": "5.1",
+      "newton-calculus:st:types": "5.2",
+      "newton-calculus:st:hub-support": "5.4",
+      "newton-calculus:st:reduced-junctions": "5.5",
+      "newton-calculus:st:any-root": "5.6",
+      "newton-calculus:st:profiles": "7.3",
+      "newton-calculus:st:probe": "7.4",
+      "newton-calculus:st:root-budget": "7.5",
+      "newton-calculus:st:quarter": "8.1",
+      "conway-source-bounds:cs:duality": "7.1",
+      "conway-source-bounds:cs:low-strip": "7.2",
+      "conway-source-bounds:cs:decorated-turn": "7.3",
+      "conway-source-bounds:cs:regular-deficit": "7.4",
+      "conway-source-bounds:cs:cone": "8.1",
+      "conway-source-bounds:cs:unflagged": "8.2",
+      "conway-source-bounds:cs:trivalent": "8.7",
+      "conway-source-bounds:cs:loss-transfer": "8.3",
+      "conway-source-bounds:cs:probe-strip": "8.4",
+      "strict-conway-geometry:sm:fillings": "1.3",
+      "strict-conway-geometry:sm:UV": "1.7",
+      "strict-conway-geometry:sm:filled-action": "1.8",
+      "strict-conway-geometry:sm:filled-volume": "1.9",
+      "strict-conway-geometry:sm:hessian": "6.1",
+      "strict-conway-geometry:sm:marked-deformation": "8.1",
+      "strict-conway-geometry:sm:logs": "8.6",
+      "strict-conway-geometry:sm:Jacobian": "9.2",
+      "strict-conway-geometry:sm:primitive-equations": "9.3",
+      "strict-conway-geometry:sm:volume-differential": "10.2",
+      "strict-conway-geometry:sm:regulator": "10.3",
+      "strict-conway-geometry:sm:chain-homotopy": "10.5",
+      "conway-asymptotics:ca:generic-period": "4.9",
+      "conway-asymptotics:ca:filled-error": "4.12",
+      "conway-asymptotics:ca:D": "1.5",
+      "quarter-index-asymptotics:qi:unnormalized-recurrence": "1.4",
+      "quarter-index-asymptotics:qi:high-index": "3.1",
+      "quarter-index-asymptotics:qi:high-index-leading": "3.1",
+      "quarter-index-asymptotics:qi:high-index-ratio": "3.3",
+      "quarter-index-asymptotics:qi:actual-interpolants": "5.5",
+      "strict-conway-geometry:sm:complete": "1.2",
+      "strict-conway-geometry:sm:complete-volume": "1.5",
+      "strict-conway-geometry:sm:variational": "2",
+      "strict-conway-geometry:sm:mask-invariant": "3.1",
+      "strict-conway-geometry:sm:mask-support": "3.2",
+      "strict-conway-geometry:sm:terminal-product": "3.5",
+      "strict-conway-geometry:sm:cut": "4",
+      "strict-conway-geometry:sm:peripheral-words": "5.1",
+      "strict-conway-geometry:sm:translations": "5.2",
+      "quarter-index-asymptotics:qi:main": "1.1",
+      "quarter-index-asymptotics:qi:anchor": "4.6",
+      "quarter-index-asymptotics:qi:partial-ratio": "4.5",
+      "quarter-index-asymptotics:qi:I": "4.9",
+      "meridian-tangles:mt:main": "1.1",
+      "meridian-tangles:mt:moments": "3.1",
+      "meridian-tangles:mt:centralizer": "3.2",
+      "meridian-tangles:mt:dual-bases": "4.1",
+      "meridian-tangles:mt:crossing": "6.1",
+      "conway-source-bounds:cs:envelopes": "3.1",
+      "conway-source-bounds:cs:Ward": "3.7",
+      "conway-source-bounds:cs:terminal": "3.10",
+      "conway-source-bounds:cs:matrix-power": "3.17",
+      "conway-source-bounds:cs:global-V": "3.15",
+      "conway-source-bounds:cs:strict-V": "3.16",
+      "marked-fillings:mf:volume-independence": "7.1",
+      "conway-asymptotics:ca:factorial": "2.1",
+      "conway-asymptotics:ca:G": "2.1",
+      "conway-asymptotics:ca:reflection": "2.3",
+      "conway-asymptotics:ca:small-reflection": "2.4",
+      "conway-asymptotics:ca:all-Stirling": "2.6",
+      "circle-tree-volume:cta:norms": "2.1",
+      "circle-tree-volume:cta:discard": "2.7",
+      "circle-tree-volume:cta:interpolant": "3.3",
+      "circle-tree-volume:cta:packet-expansion": "3.11",
+      "circle-tree-volume:cta:global-Gaussian": "4.2",
+      "circle-tree-volume:cta:charge-order": "6.5",
+      "circle-tree-volume:cta:telescoping": "6.9",
+      "circle-tree-volume:cta:finite-charges": "6.10",
+      "circle-tree-volume:cta:connector": "6.11",
+      "circle-tree-volume:cta:budget": "6.13",
+      "circle-tree-volume:cta:amplitude": "6.14",
+      "circle-tree-volume:cta:raw": "4.1",
+      "quarter-index-asymptotics:qi:diagonal": "2.1",
+      "quarter-index-asymptotics:qi:one-step": "2.3",
+      "quarter-index-asymptotics:qi:interaction-product": "2.7",
+      "newton-calculus:st:weight-rate": "6.6",
+      "newton-calculus:st:barrier": "6.3",
+      "newton-calculus:st:positive-action": "6.4",
+      "newton-calculus:st:gate-curvature": "6.5",
+      "newton-calculus:st:port": "7.1",
+      "newton-calculus:st:port-product": "7.1",
+      "newton-calculus:st:port-types": "7.2",
+      "conway-source-bounds:cs:two-leaf-gap": "4.1",
+      "conway-source-bounds:cs:attachment-gap": "5.1",
+      "conway-source-bounds:cs:two-margin": "4.6",
+      "conway-source-bounds:cs:single-margin": "5.6",
+      "conway-source-bounds:cs:elementary-margin": "5.8",
+      "conway-source-bounds:cs:arithmetic": "10",
+      "conway-source-bounds:cs:conditioning-lemma": "2.1",
+      "conway-source-bounds:cs:finite-cost": "2.19",
+      "conway-source-bounds:cs:basis-norm": "2.20",
+      "conway-source-bounds:cs:ellipse": "2.22",
+      "conway-source-bounds:cs:high-normal": "2.23",
+      "conway-source-bounds:cs:character-fourier": "6.1",
+      "conway-source-bounds:cs:root-bound": "6.2",
+      "conway-source-bounds:cs:chirp": "6.5",
+      "conway-source-bounds:cs:repair": "6.9",
+      "conway-source-bounds:cs:fourier-tail": "6.11",
+      "conway-asymptotics:ca:pure-index": "3.4",
+      "conway-asymptotics:ca:strict-pure": "3.1",
+      "conway-asymptotics:ca:strict-pure-hessian": "3.5",
+      "conway-asymptotics:ca:Fourier-source": "3.9",
+      "conway-asymptotics:ca:Fourier-theorem": "3.2",
+      "conway-asymptotics:ca:Fourier-amplitude": "3.11",
+      "conway-asymptotics:ca:Fourier-global": "3.13",
+      "conway-asymptotics:ca:pure-leaf": "3.3",
+      "conway-asymptotics:ca:source-error": "3.6",
+      "conway-asymptotics:ca:color-gaussian": "3.7",
+      "conway-asymptotics:ca:global-shear": "4.13",
+      "conway-asymptotics:ca:Legendre-shear": "4.14",
+      "newton-calculus:lem:port-bounds": "9.5",
+      "newton-calculus:eq:leaf-window": "9.1",
+      "strict-conway-geometry:sm:tetra": "2.5",
+      "strict-conway-geometry:sm:leaf": "2.6",
+      "strict-conway-geometry:sm:prism-P": "2.8",
+      "strict-conway-geometry:sm:prism-angles": "2.10",
+      "strict-conway-geometry:sm:prism-volume": "2.11",
+      "strict-conway-geometry:sm:kappa": "2.12",
+      "strict-conway-geometry:sm:input-kappa": "2.13",
+      "strict-conway-geometry:sm:output-kappa": "2.14",
+      "strict-conway-geometry:sm:flags": "7.1",
+      "strict-conway-geometry:sm:world-matrices": "7.4",
+      "strict-conway-geometry:sm:world-table": "7.5",
+      "strict-conway-geometry:sm:turn-maps": "7.7",
+      "strict-conway-geometry:sm:edge-words": "8.2",
+      "strict-conway-geometry:sm:multiplier-calculation": "8.5",
+      "conway-reductions:cr:rotation-rules": "2.2",
+      "conway-reductions:cr:slide": "2.1",
+      "conway-reductions:cr:closed-moves": "3.1",
+      "conway-reductions:cr:expose": "3.2",
+      "conway-reductions:cr:normalization": "4",
+      "conway-reductions:cr:reduced-stacks": "4.1",
+      "conway-reductions:cr:blocks": "5.1",
+      "conway-reductions:cr:zero-delete": "6.1",
+      "conway-reductions:cr:cap-split": "6.1",
+      "conway-reductions:cr:endings": "6.3",
+      "conway-reductions:cr:patterns": "6.2",
+      "conway-reductions:cr:component-count": "7.1",
+      "conway-reductions:cr:amalgam": "7.2",
+      "conway-reductions:cr:factors": "7.1",
+      "conway-reductions:cr:hyperbolic-centralizer": "7.2",
+      "conway-reductions:cr:one-factor": "7.3",
+      "marked-fillings:mf:cusp-side-table": "7.1",
+      "nonparabolic-tree-geometry:ng:anchor": "5",
+      "nonparabolic-tree-geometry:ng:angular-match": "5.1",
+      "nonparabolic-tree-geometry:ng:anchor-logs": "5.2",
+      "nonparabolic-tree-geometry:ng:charge-path": "5.3",
+      "nonparabolic-tree-geometry:ng:branch-identification": "7.1",
+      "preferred-longitudes:pl:cusp": "5",
+      "preferred-longitudes:plc:10": "5.8",
+      "preferred-longitudes:plc:17": "5.15",
+      "preferred-longitudes:plc:20": "5.18",
+      "preferred-longitudes:plc:23": "5.21",
+      "preferred-longitudes:plc:29": "5.27",
+      "preferred-longitudes:plc:32": "5.30",
+      "preferred-longitudes:plc:37": "5.35",
+      "conway-source-bounds:cs:fourier-exact": "6.1",
+      "conway-source-bounds:cs:sampling": "6.2",
+      "preferred-longitudes:plb:a-unique-regular-zero-power-angular-saddle": "9",
+      "preferred-longitudes:plb:6": "9.4",
+      "preferred-longitudes:plb:8": "10.1",
+      "preferred-longitudes:plb:10": "10.3",
+      "preferred-longitudes:plb:12": "10.5",
+      "preferred-longitudes:plb:the-literal-insertion": "8",
+      "preferred-longitudes:plb:17": "11.3",
+      "preferred-longitudes:plb:20": "11.6",
+      "preferred-longitudes:plb:22c": "12.1",
+      "preferred-longitudes:plb:22a": "12.6",
+      "preferred-longitudes:plb:22b": "12.7",
+      "moving-meridian-sources:ms:reflected": "3.3",
+      "moving-meridian-sources:ms:low-trace": "3.2",
+      "moving-meridian-sources:ms:regular-trace": "3.4",
+      "moving-meridian-sources:ms:Fourier": "3.1",
+      "moving-meridian-sources:ms:low-coefficients": "3.2",
+      "moving-meridian-sources:ms:convolution-drop": "3.10",
+      "moving-meridian-sources:ms:deletion": "4.2",
+      "moving-meridian-sources:ms:half-boundaries": "4.3",
+      "moving-meridian-sources:ms:pressure-existence": "4.1",
+      "moving-meridian-sources:ms:cardinal-action": "4.8",
+      "moving-meridian-sources:ms:component": "5.1",
+      "moving-meridian-sources:ms:packet-main": "1.1",
+      "moving-meridian-sources:ms:finite-packet": "6.7",
+      "moving-meridian-sources:ms:coupon-bound": "2.1",
+      "moving-meridian-sources:ms:dimension": "6.3",
+      "moving-meridian-sources:ms:summand": "6.13",
+      "moving-meridian-sources:ms:filled-main": "1.2",
+      "moving-meridian-sources:ms:joint-loss": "7.8",
+      "moving-meridian-sources:ms:trace": "7.1",
+      "moving-meridian-sources:ms:charges": "7.4",
+      "moving-meridian-sources:ms:source-to-functional": "7.3",
+      "moving-meridian-sources:ms:filled-packet": "7.10",
+      "conway-source-bounds:cs:low-gaussian": "7.4",
+      "conway-source-bounds:cs:B-action": "7.6",
+      "conway-asymptotics:ca:shifted-parseval": "4.5",
+      "conway-asymptotics:ca:stationary-schur": "3.8",
+      "conway-asymptotics:ca:coherent-error": "4.11",
+      "conway-asymptotics:ca:subexponential-cost": "4.1"
+    },
+    "companion_links": [
+      [
+        "casimir-source-asymptotics",
+        "filling-bounds"
+      ],
+      [
+        "casimir-source-asymptotics",
+        "oscillatory-fillings"
+      ],
+      [
+        "circle-tree-geometry",
+        "marked-fillings"
+      ],
+      [
+        "circle-tree-volume",
+        "circle-tree-geometry"
+      ],
+      [
+        "circle-tree-volume",
+        "conway-asymptotics"
+      ],
+      [
+        "circle-tree-volume",
+        "meridian-tangles"
+      ],
+      [
+        "conway-asymptotics",
+        "conway-source-bounds"
+      ],
+      [
+        "conway-asymptotics",
+        "filling-bounds"
+      ],
+      [
+        "conway-asymptotics",
+        "newton-calculus"
+      ],
+      [
+        "conway-asymptotics",
+        "oscillatory-fillings"
+      ],
+      [
+        "conway-asymptotics",
+        "strict-conway-geometry"
+      ],
+      [
+        "conway-reductions",
+        "conway-asymptotics"
+      ],
+      [
+        "conway-reductions",
+        "filling-bounds"
+      ],
+      [
+        "conway-reductions",
+        "newton-calculus"
+      ],
+      [
+        "conway-source-bounds",
+        "filling-bounds"
+      ],
+      [
+        "conway-source-bounds",
+        "newton-calculus"
+      ],
+      [
+        "marked-fillings",
+        "oscillatory-fillings"
+      ],
+      [
+        "meridian-expansions",
+        "circle-tree-volume"
+      ],
+      [
+        "meridian-expansions",
+        "conway-asymptotics"
+      ],
+      [
+        "meridian-expansions",
+        "conway-source-bounds"
+      ],
+      [
+        "meridian-expansions",
+        "filling-bounds"
+      ],
+      [
+        "meridian-expansions",
+        "meridian-tangles"
+      ],
+      [
+        "meridian-expansions",
+        "moving-meridian-sources"
+      ],
+      [
+        "meridian-expansions",
+        "nonparabolic-tree-geometry"
+      ],
+      [
+        "meridian-expansions",
+        "preferred-longitudes"
+      ],
+      [
+        "meridian-tangles",
+        "filling-bounds"
+      ],
+      [
+        "meridian-tangles",
+        "newton-calculus"
+      ],
+      [
+        "moving-meridian-sources",
+        "conway-asymptotics"
+      ],
+      [
+        "moving-meridian-sources",
+        "conway-source-bounds"
+      ],
+      [
+        "moving-meridian-sources",
+        "meridian-tangles"
+      ],
+      [
+        "moving-meridian-sources",
+        "newton-calculus"
+      ],
+      [
+        "newton-calculus",
+        "filling-bounds"
+      ],
+      [
+        "nonparabolic-tree-geometry",
+        "circle-tree-geometry"
+      ],
+      [
+        "nonparabolic-tree-geometry",
+        "marked-fillings"
+      ],
+      [
+        "nonparabolic-tree-geometry",
+        "strict-conway-geometry"
+      ],
+      [
+        "oscillatory-fillings",
+        "filling-bounds"
+      ],
+      [
+        "planar-certificates",
+        "casimir-source-asymptotics"
+      ],
+      [
+        "planar-certificates",
+        "filling-bounds"
+      ],
+      [
+        "planar-certificates",
+        "marked-fillings"
+      ],
+      [
+        "planar-certificates",
+        "oscillatory-fillings"
+      ],
+      [
+        "preferred-longitudes",
+        "conway-source-bounds"
+      ],
+      [
+        "preferred-longitudes",
+        "newton-calculus"
+      ],
+      [
+        "preferred-longitudes",
+        "nonparabolic-tree-geometry"
+      ],
+      [
+        "preferred-longitudes",
+        "strict-conway-geometry"
+      ],
+      [
+        "quarter-index-asymptotics",
+        "conway-asymptotics"
+      ],
+      [
+        "quarter-index-asymptotics",
+        "newton-calculus"
+      ],
+      [
+        "strict-conway-geometry",
+        "marked-fillings"
+      ],
+      [
+        "strict-conway-geometry",
+        "newton-calculus"
+      ],
+      [
+        "terminal-decorations",
+        "casimir-source-asymptotics"
+      ],
+      [
+        "terminal-decorations",
+        "filling-bounds"
+      ],
+      [
+        "terminal-decorations",
+        "marked-fillings"
+      ],
+      [
+        "terminal-decorations",
+        "oscillatory-fillings"
+      ],
+      [
+        "terminal-decorations",
+        "planar-certificates"
+      ],
+      [
+        "three-braids",
+        "casimir-source-asymptotics"
+      ],
+      [
+        "three-braids",
+        "filling-bounds"
+      ],
+      [
+        "three-braids",
+        "marked-fillings"
+      ],
+      [
+        "three-braids",
+        "oscillatory-fillings"
+      ],
+      [
+        "triangular-insertion",
+        "casimir-source-asymptotics"
+      ],
+      [
+        "triangular-insertion",
+        "filling-bounds"
+      ],
+      [
+        "triangular-insertion",
+        "marked-fillings"
+      ],
+      [
+        "triangular-insertion",
+        "oscillatory-fillings"
+      ],
+      [
+        "triangular-insertion",
+        "planar-certificates"
+      ]
+    ],
     "conway_reading_route": {
       "theorem": "recursive_strict_volume",
       "lead": "conway-asymptotics",
@@ -123,5 +897,33 @@
     "local_artifact_directory": "build/submission/conway-series-2026-11-25",
     "source_archives": "Seven standalone compilations; PDF text and link targets match canonical PDFs.",
     "remote_submission_made": false
+  },
+  "formal_logic": {
+    "scope": "Authored statement dictionaries and anonymous independently stated Lean type contracts; no automatic inference of TeX semantics.",
+    "selected_roots": 76,
+    "relation_kinds": {
+      "exact": 15,
+      "specialization": 10,
+      "component": 41,
+      "conditional": 10
+    },
+    "contract_files": [
+      "formal/StatementContracts.lean",
+      "formal-real/AnalysisContracts.lean",
+      "formal-real/VariationalContracts.lean"
+    ],
+    "modules": 28,
+    "public_declarations_audited": 534,
+    "compiler_negative_controls": 3,
+    "written_proofs": [
+      "contour and stationary phase estimates",
+      "analytic stationary-germ existence and differentiation",
+      "physical knot-source identifications",
+      "marked geometric completion and action-volume comparison"
+    ]
+  },
+  "audit_report": {
+    "path": "repro/MANUSCRIPT_AND_LOGIC_AUDIT_2026-11-25.md",
+    "sha256": "8ae04cfa3176ccb43a55265b4c611804d66a8898713efcaf0bdd5ceaad59eef4"
   }
 }

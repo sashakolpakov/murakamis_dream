@@ -32,8 +32,7 @@ The following current companion papers supply the common foundations:
 | [Oscillatory filling sums with independently long twists](../oscillatory-fillings/main.tex) | Theorem 1.1 evaluates the whole oscillatory sum once its local and global source hypotheses hold. |
 | [Circle patterns and primitive fillings of augmented links](../marked-fillings/main.tex) | Theorem 1.1 gives the original primitive completion and its absolute volume. |
 
-Those imported analytic and geometric proofs are not reproduced in this
-14-page application. Its own global comparison is the additional step
+Those imported analytic and geometric proofs are not reproduced in this application. Its own global comparison is the additional step
 that makes the central contribution determine the rate of the full
 invariant. The theorem gives no threshold uniform in a growing number
 of factors, and no assertion for powers growing with the quantum level.

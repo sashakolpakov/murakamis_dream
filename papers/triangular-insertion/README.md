@@ -8,7 +8,7 @@ curvatures are now positive. Two must be sufficiently small relative to
 the third at every required core certificate witness and at the complete
 packing. Smallness at the complete point alone is not the hypothesis.
 
-The input diagrams carry unabridged certificates: every locally allowed
+The input diagrams carry complete certificates: every locally allowed
 noncentral sector has a common face-weight witness with a strict source
 gap. The insertion retains the old coefficient demands at the boundary
 vertices. Its proof combines a fixed-boundary variational problem with

@@ -13,28 +13,30 @@
 \newcommand{\Z}{\mathcal Z}
 \newcommand{\Kern}{\mathcal K}
 \title{Meridian expansions and classical symbols of quantum recurrences}
-\author{}\date{}
+\author{Alexander Kolpakov}\date{25 November 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
-For fixed strict Conway diagrams with independently long powers, and
-for circle trees satisfying a summed or directed degree--twist
-criterion, we prove meridian expansions to every inverse-level
-order. They hold on fixed translated microscopic charts and retain
-the full normal coordinates at repeated spectral roots. At order
-$N^{-r}$ the logarithmic coefficient has degree at most $r+1$ in
-the microscopic parameter. Its highest degree is the stationary
-value of an explicit analytic deformation of the original source.
-We then prove that every specified fixed recurrence annihilating
-the whole reduced invariant at all sufficiently large levels has
-this analytic characteristic germ in its first nonzero classical
-symbol. The reduced-to-full gauge retains both its meridian divisor
-and its sign. A separate marked geometric identification determines
-when the germ is the preferred meridian--longitude branch.
+We study the reduced knot invariant when its meridian is
+$M=\exp(\pi\ii s/N)$, with $s$ bounded and the level $N$ tending
+to infinity. For strict Conway constructions with sufficiently long
+fixed twists, and for the circle-tree classes specified below, we
+prove expansions to every inverse-level order. After the exact
+reduced-to-full normalization, the coefficient of $N^{-r}$ in the
+logarithm is an even polynomial in $s$ of degree at most $r+1$.
+The terms of degree $r+1$ come from the stationary value of one
+explicit deformation of the source action. We then suppose that a
+fixed finite meridian-shift operator annihilates the whole invariant
+at every sufficiently large level. Its first nonzero specialization
+at $q=1$ must vanish on the analytic curve determined by that stationary
+action. The proof keeps the meridian factor and sign introduced by
+normalization. A separate geometric argument identifies the curve's
+selected branch with the preferred longitude. The result is conditional
+on the specified recurrence; it does not construct one.
 \end{abstract}
 
 \section{Fixed diagrams, normalization and conclusions}\label{me:intro}
-Throughout, a diagram is one fixed literal ordered tangle expression,
+Throughout, a diagram is one fixed ordered tangle expression,
 with its physical turns, original crossing circles, endpoint orders,
 cut and zero-framing convention. Its closure is one knot and no
 component is closed inside a proper tangle. All signed integer
@@ -62,22 +64,27 @@ that criterion.
 
 Let $F_N(M)$ be the actual zero-framed reduced state of
 \cite{Meridian}, with $q_N=e^{\pi\ii/N}$ and marked meridian
-$M=q_N^s$. In its highest-weight coordinate the pointing is
-$M=-q_Nx$; the source flag has eigenvalue $M^{-1}$. Put
+$M=q_N^s:=\exp(\pi\ii s/N)$. The highest-weight coordinate $x$ of the tangle representation
+is related by $M=-q_Nx$; the selected meridian eigenline has
+eigenvalue $M^{-1}$. Put
 \begin{equation}\label{me:normalization}
  K_N=F_N(1),\qquad H_N(s)=\frac{\sin\pi s}{N\sin(\pi s/N)},
  \qquad \Z_N(s)=\frac{F_N(q_N^s)}{K_NH_N(s)}.
 \end{equation}
+In level-$N$ finite formulas we write $q=q_N$.
 The value of $H_N$ at zero is one. The imported source theorems
 prove $K_N\ne0$ for all sufficiently large levels, in both parities.
 For $N\ge3$ it is the reduced Kashaev value with the fixed complete
-normalization. The one factor $H_N$ is the actual reduced/full
-conversion, not an adjustable regularization.
+normalization. The factor $H_N$ is fixed by the reduced-to-full conversion.
+A bounded set of $s$ is a \emph{microscopic chart}: its image in the
+$M$-plane shrinks to $M=1$. We shall need charts translated by integers
+because a shift $M\mapsto q_NM$ sends $s$ to $s+1$.
 
-The local action needs its full normalization. Let $X$ collect
-all original physical wire coordinates $x_e$, all hidden unturned
-product coordinates where present, and the original circle angles
-$\tau_v$. Define
+The local action needs its full normalization. Let $X$ collect the physical turn-edge indices $x_e$, divided by
+$N$, the circle angles $\tau_v$, and any intermediate indices used
+to resolve products. We call the last indices \emph{hidden product
+coordinates}: they record multiplication, rather than another
+physical turn edge. The corresponding action functions are
 \begin{align}
  J(x)&=\int_0^x\log(2\sin\pi u)\,du,\notag\\
  b(x,\tau)&=\int_0^x\log(2\cos2\pi u+2\cos\tau)\,du-2J(x),\notag\\
@@ -85,7 +92,9 @@ $\tau_v$. Define
                  -J(z-x)-J(z-y)-J(x+y-z).\label{me:local-actions}
 \end{align}
 The logarithms continue the original positive complete branch.
-For strict Conway sources retain the complete bare gates and set
+At a bare junction, three pieces are multiplied without adding a
+crossing circle; its contribution is $m$. For strict Conway sources
+retain these junctions and set
 \begin{equation}\label{me:base-action}
  \Phi(X)=\sum_{\text{bare gates}}m(x,y,z)
   +\sum_{v\text{ circle}}\sum_{e\ni v}b(x_e,\tau_v)
@@ -96,8 +105,10 @@ original first Fourier charge and is part of the mark. Write $X_0$
 for its selected filled critical point. The source theorems prove
 its nondegeneracy; in the directed case the joint statement follows
 also from the conditional Hessians in Section~\ref{me:directed}.
-Let $\mathcal E_T$ denote only the original physical turn edges,
-not the hidden unturned resolution wires. Set
+Let $\mathcal E_T$ be the set of physical turn edges. The meridian
+insertion will be applied at these edges and not at the intermediate
+product coordinates. Write $w(D)$ for the writhe, the signed crossing
+count of the fixed oriented filled diagram. Set
 \begin{align}
  \Kern(x,t)&=2J(x)-J(x+t)-J(x-t),\notag\\
  a(D)&=-w(D)-\sum_v n_v,\notag\\
@@ -140,7 +151,9 @@ A recurrence here means a specified finite operator
  P(q,M,T)=\sum_{j=0}^{r_P}a_j(q,M)T^j,\qquad TM=qMT,
  \qquad a_j\in\mathbb C(q,M),
 \end{equation}
-which annihilates the whole reduced function $F_N(M)$ for every
+where $T$ acts at level $N$ by $(TF)(M)=F(q_NM)$. The order
+$r_P$ is fixed independently of $N$. Assume that this operator
+annihilates the whole reduced function $F_N(M)$ for every
 sufficiently large integer level. Neither interpolation from finitely
 many levels nor an equation for the values $F_N(1)$ is this hypothesis.
 Negative shifts can first be removed by multiplication by a power
@@ -163,9 +176,11 @@ writing $M=e^{\pi\ii t}$ and $E_e(M)=e^{2\pi\ii x_e(X_*(t))}$,
  L_{\rm an}(M)=-M^{a(D)}\prod_{e\in\mathcal E_T}
                           \frac{M^2-E_e(M)}{1-M^2E_e(M)}.
 \end{equation}
-The selected irreducible Laurent-polynomial factor of this germ
-therefore divides every such $P_0$. This conclusion does not
-identify a full polynomial, multiplicity or recurrence ideal.
+Whenever at least one such operator is supplied, the germ lies on
+a unique irreducible Laurent-polynomial curve. Its defining factor
+divides every such $P_0$. This conclusion determines neither the
+other factors nor their multiplicities, and it does not determine
+the entire recurrence ideal.
 \end{theorem}
 
 The analytic assertion is proved without a representation-variety

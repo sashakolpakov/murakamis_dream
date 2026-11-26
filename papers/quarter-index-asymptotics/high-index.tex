@@ -1,11 +1,12 @@
-\section{Selection by the original upper endpoint}\label{qi:high-index-section}
+\section{Determining the solution from the finite endpoint}\label{qi:high-index-section}
 
-The transport argument needs a nonzero source coefficient at an
-anchor above quarter. We prove that input here. It follows from a
-contracting scalar recurrence and uses neither the quarter-index
-theorem nor an asymptotic of a closed tangle.
+To start the transport argument we need the coefficient and the ratio
+of two consecutive values above $x=1/4$. We obtain both directly
+from the endpoint conditions \eqref{qi:wall}. The scalar ratio
+recurrence is contracting in this region, so the finite endpoint
+determines a nonzero solution with a uniform expansion.
 
-\begin{lemma}[The high-index source]\label{qi:high-index}
+\begin{lemma}[The high-index solution]\label{qi:high-index}
 Let $I=[\tau_0,\tau_1]\subset(1/4,1/2)$ be fixed. For all
 sufficiently large $N$ of either parity, there is a nonzero holomorphic
 function $v_N(x,t)$ on a fixed complex neighborhood of $I$ and a fixed
@@ -57,8 +58,8 @@ Thus \eqref{qi:high-index-ratio} is holomorphic, nonzero and equal
 to $\mu_s+O(e)$.
 
 For a physical $x=r/N$, this composition passes through the row
-$M-1$. There $q_c=0$, so the artificial tail is erased and
-$v_N((M-1)/N,t)=p((M-1)/N,t)$. The actual wall values
+$M-1$. There $q_c=0$, so all dependence on the artificial terminal value is erased and
+$v_N((M-1)/N,t)=p((M-1)/N,t)$. The wall values
 \eqref{qi:wall} and backward substitution prove the ratio identity.
 They also prove nonvanishing of every $U_{Nt,r}$ used in the product;
 there is no division by an unknown zero of the source.
@@ -72,7 +73,7 @@ which is exponentially small. All bounds are holomorphic, so
 Cauchy's estimate gives every fixed derivative bound on a smaller
 domain.
 
-The actual source is the finite product
+The source is the finite product
 \[
  U_{Nt,r}=\prod_{j=r}^{M-1}v_N(j/N,t).
 \]

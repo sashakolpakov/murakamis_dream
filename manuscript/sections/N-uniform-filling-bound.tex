@@ -21,8 +21,10 @@ crossing regions therefore retain their common face constraints. To
 obtain a volume theorem from it, one must still bound this shared
 polynomial and prove that the geometric contribution survives.
 
-Here is the precise statement. Let \(N\ge2\), \(d=N-1\),
-\(q=e^{\pi i/N}\), and let \(\mathcal L_N^{n}\) be the full-Hermite
+Here is the precise statement. Let $N\ge2$, $d=N-1$,
+$q=e^{\pi i/N}$, and let $T_N$ be the Chebyshev polynomial defined by
+$T_N(\cos\theta)=\cos(N\theta)$. For a polynomial $H$, write
+$\|H\|_{[-2,2]}=\sup_{-2\le s\le2}|H(s)|$. Let \(\mathcal L_N^{n}\) be the full-Hermite
 functional for the actual crossing power \(R^n\), with
 \(n\in\mathbb Z\), defined below. ``Full-Hermite'' means that it
 uses values at the spectral nodes and first derivatives at the double
@@ -81,22 +83,20 @@ V_N(z;\Omega)=\chi_N(z)(z-\Omega)^{-1}.
 every spectral node. It is not the determinant adjugate of the full
 \(N^2\)-dimensional matrix.
 
-The
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_homogeneous_casimir_face_source.html}{original
-homogeneous face source} associates to \eqref{uf:eq-5} a four-face polynomial
-\(H_V(x,b,c,y;z)\), with input/output middle faces \(b,c\). Fix
-a connected diagram at \(N\ge3\), with its cups, caps,
-unrestricted marked cap, protected face targets, and every ordered box.
-The applications include connected flat plats and the connected matched
-simple-sphere Morse diagrams of
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/research_matched_sphere_morse_source.html}{the
-general Morse source theorem}, §§1,5--6, and
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_balanced_terminal_fan_volume.html}{the
-terminal-fan source proof}, §§5--7. For the latter, the actual cyclic
-orders and crossing-disk frames are retained, and the marked main edge
-determines the two protected faces. The exact coefficient identity is
-the only input here: no complete-radius balance or geometric certificate
-is required for this finite norm estimate. The shared spectral
+The face construction in \cite[Section 4]{Finite} associates to
+$V_N$ a homogeneous degree-$d$ polynomial
+$H_V(x,b,c,y;\sigma)$. Its variables label the four white faces
+adjacent to a crossing, with $b,c$ the middle faces and $x,y$ the
+outer faces. We prove the matrix-to-polynomial formula in
+Section~\ref{uf:local-fourier}.
+
+Fix a connected matched-sphere Morse diagram at $N\ge3$, with the
+cups, caps, reduced mark, cyclic orders and disk framings of
+Appendix~\ref{app:morse-preliminaries}. That appendix derives the
+coefficient identity from the matrix contraction. It is also
+\cite[Theorem 9.1 and Corollary 9.2]{Finite}. No inequality on its
+circle-packing curvatures is needed for this finite identity.
+The shared spectral
 polynomial is \begin{equation}\label{uf:eq-6}
 S_N(\boldsymbol\sigma)=
  [\textstyle\prod_{f\ \mathrm{ordinary}}L_f^d]
@@ -106,16 +106,12 @@ S_N(\boldsymbol\sigma)=
 inserting the signed powers is exactly \begin{equation}\label{uf:eq-7}
 Z_N(\boldsymbol n)=
         \left(\bigotimes_{e=1}^r\mathcal L_N^{n_e}\right)S_N.
-\end{equation} The face-grid factors, cup/cap factors and the original \(N^{-1}\)
-marked scalar have already canceled as in those source theorems; there
-is no additional \(N^r\) in \eqref{uf:eq-7}. Thus \(Z_N\) is the original reduced
-ribbon contraction. Conversion to the prescribed zero-framed enhanced
-Kashaev convention uses the recorded framing/component character, of
-modulus one at complete color; for a knot the enhanced component sign is
-one. In the specified full one-cut modified convention, retain the
-additional factor \(i^{N+3}/N\). Original exterior Cartan and framing
-factors remain in their prescribed locations throughout. These conventions fix the normalization of the functional used in
-the estimate.
+\end{equation} The face-grid factors, cup and cap factors, and the single reduced
+mark have canceled in the coefficient formula. In particular there is
+no additional factor $N^r$ in \eqref{uf:eq-7}. It is the reduced ribbon
+contraction. For a knot, the framing factor $\zeta_{N,D}$ of modulus
+one converts it to the reduced Kashaev invariant by
+\cite[Theorem 10.1]{Finite}.
 
 The polynomial degree and the identities \eqref{uf:eq-5}--\eqref{uf:eq-7}, rather than a
 hypothesis about arbitrary polynomial solutions of a recurrence, are the
@@ -196,7 +192,7 @@ The only potentially negative powers have coefficients
 \(N\)-dimensional space of polynomials of degree at most \(d\),
 and it preserves total degree when \(x,y,z\) all have degree one.
 
-\begin{proposition}[The actual Casimir and the face operator]
+\begin{proposition}[The pair Casimir and the face operator]
 \label{prop:local-face-fourier}
 For \(s=0,\ldots,d\), let \(\Omega_s\) be the restriction of
 \(\Omega\) to the ordered basis
@@ -259,7 +255,8 @@ of the full pair space, proving the assertion for \(\Omega\).
 The conclusion therefore includes every nilpotent part of the pair matrix.
 \end{proof}
 
-The same transform gives the complete local polynomial adapter.
+The same transform gives the homogeneous polynomial representing
+any polynomial in the Casimir.
 For any polynomial \(f\), write
 \[
  f(-T)z^j=\sum_{\alpha,\beta\ge0,\ \alpha+\beta\le j}
@@ -289,8 +286,10 @@ the result is
  (f(\Omega_s))_{ru}
    =\frac1N q^{-d(r-u)}c^{-d}H_f(x,b,c,y).
 \end{equation}
-This identifies the factor \(1/N\) and the direction of the shift
-in the face-polynomial formula.
+Thus the finite Fourier transform determines both the factor $1/N$
+and the direction of the index shift. The variables $b,c$ denote
+values of the same middle-face coordinate before and after the local
+operator.
 If the input and output have different integer totals, the left
 side is zero: the modular block is the direct sum of its actual-total
 blocks. Hence the right side also vanishes at such a grid point.
@@ -304,7 +303,7 @@ face-logarithm lifts, \(c=Q^{-(r-u)}b\) converts the prefactor to
 \(N^{-1}(bc)^{-d/2}\), exactly as in the global source calculation.
 
 This argument holds at every fixed root with \(N\ge2\), including
-composite levels. It proves the annihilator and the adapter for
+composite levels. It proves the annihilator and the face-polynomial formula for
 polynomials of the actual Casimir. The polynomial representing a
 crossing power, its repeated-node derivatives, and the comparison
 with the specified knot invariant are separate inputs. No derivative
@@ -505,15 +504,22 @@ h(c)=\frac{N^2}{4-c^2},\qquad
 its derivative at \(c\), using \(\chi_N(c)=\chi_N'(c)=0\), to obtain
 \eqref{uf:eq-9}.
 
-If the resolvent at \(c\) is \(P_c/(z-c)+Q_c/(z-c)^2\), then
-\(V_N(c)=h(c)Q_c\) and \(V_N'(c)=h(c)P_c+h'(c)Q_c\). Consequently the
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_spectral_total_derivative_source.html}{original
-spectral derivative functional}, on any scalar entry \(H\), is \begin{equation}\label{uf:eq-10}
+Write the polar part of the resolvent at $c$ as
+$P_c/(z-c)+Q_c/(z-c)^2$, where $P_c$ is its spectral projection and
+$Q_c$ its square-zero part. Then
+\(V_N(c)=h(c)Q_c\) and \(V_N'(c)=h(c)P_c+h'(c)Q_c\). Consequently, for a scalar polynomial $H$, define the Hermite
+functional
+\begin{equation}\label{uf:eq-10}
 \mathcal L_N^fH=
  \sum_a\frac{(4-c_a^2)(fH)'(c_a)-c_af(c_a)H(c_a)}{N^2}
  +\mathbf1_{N\ \mathrm{odd}}\frac{f(-2)H(-2)}{N^2}.
-\end{equation} It sends \(V_N\) to \(f(\Omega)\), with \(f'(c)Q_c\) included. The
-prime in \eqref{uf:eq-10} is a derivative in \(z\).
+\end{equation} The sum is over the distinct double roots in \eqref{uf:eq-8}.
+The prime is differentiation in the spectral variable $z$, with $q$
+fixed. Applied entrywise to $V_N$, this functional gives $f(\Omega)$,
+including the term $f'(c)Q_c$. Only the values and first derivatives
+of $f$ at double roots, and its value at the odd simple root, are
+used. Hence the same formula is meaningful for any choice of
+holomorphic germs with those data.
 
 Let \begin{equation}\label{uf:eq-11}
 \phi_k=\frac{(2k+1)\pi}{N},\quad 0\le k<N,\qquad
@@ -528,14 +534,18 @@ its weight in \eqref{uf:eq-10}. Thus \eqref{uf:eq-10} is equivalently \begin{equ
        \right|_{\phi=\phi_k}.
 \end{equation} The sine derivative thus accounts for the odd simple node with its required weight.
 
-For the actual positive or negative integral crossing power, the
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_direct_long_power_source.html}{full-Hermite
-Gaussian} is \begin{equation}\label{uf:eq-13}
+For an integer crossing power $R^n$, the required spectral data are
+proved in \cite[Proposition 5.1]{Finite}. They agree with the following
+Gaussian function, which we denote by $f_n$:
+\begin{equation}\label{uf:eq-13}
 f_n(2\cos\phi)=q^{nd^2/4}
           \exp\left(\frac{inN(\phi-\pi)^2}{4\pi}\right),
  \qquad 0\le\phi\le2\pi.
-\end{equation} Here \(q^a\) means \(e^{\pi ia/N}\), fixing the original square-root
-lift even for nonintegral \(a\). In particular \begin{equation}\label{uf:eq-14}
+\end{equation} This formula specifies an interpolating function with the required
+Hermite data; it need not equal the canonical polynomial representative
+away from the nodes. Using it in the functional is legitimate because
+the functional depends only on those data. Here $q^a=e^{\pi ia/N}$,
+which fixes the phase also for nonintegral $a$. In particular \begin{equation}\label{uf:eq-14}
 |f_n|=1,\qquad |\partial_\phi f_n|\le\frac{|n|N}{2},\qquad
  f_n(c_a)=q^{nd^2/2}(-1)^{an}q^{na(a+1)}.
 \end{equation} Keep this nodal phase in the functional; only its estimate uses the modulus. Formula \eqref{uf:eq-13} is symmetric about \(\pi\); it
@@ -642,10 +652,11 @@ Every other term is bounded by
 \(\prod_{e\in A}(d/N)\prod_{e\notin A}(1/N+|n_e|/2)\|\mathcal D\|\).
 Adding the nonempty subsets proves \eqref{uf:eq-4}.
 
-In the
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_cross_cofactor_factorization.html}{original
-central-cut decomposition}, the lower and upper pieces have the factor
-\eqref{uf:eq-21}. The full numerator is the sum of those pieces and the central
+In the central/left/right decomposition of
+Section~\ref{mca:sec-1}, the lower and upper pieces have the factor
+\eqref{uf:eq-21}. This is the row-restriction factorization proved in
+\cite[Section 2]{CasimirSources}.
+The full numerator is the sum of those pieces and the central
 piece defined by the endpoint conditions in Section~\ref{mca:sec-1}. At odd levels the
 central row belongs to that crossing piece. Hence every local full
 numerator agrees with its central piece at every spectral node. Multiplication and
@@ -659,15 +670,15 @@ though its remaining shared supremum can be large.
 
 \section{Relation to the remaining source estimate}\label{uf:sec-what-the-norm-theorem-does-and-does-not-supply}
 
-There is already a level-independent dual filling cost in the
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_filling_fourier_hermite_gram.html}{positive
-Fourier--Hermite Gram construction}: its squared Hilbert dual norm is
-exactly \(1+n^2(N^2-1)/(12N^2)\). That theorem uses a specified positive
-energy of the entire mixed-color packet. The present bounds use instead
-the supremum of the original shared resolvent numerator. The additional
-statements here are the twist-independent vanishing-node estimate and
-the unsplit product-grid cancellation. Neither construction by itself
-supplies the geometric exponential bound for its remaining source norm.
+The norm in this appendix is the supremum of a single shared
+spectral polynomial. The Hermitian coefficient estimate in
+Proposition~\ref{prop:hermite-coefficient-mass} uses a different norm
+and a different coefficient representation. Either estimate is useful
+only after its corresponding source norm has been bounded. The
+vanishing-node bounds above exploit an additional exact cancellation:
+when the polynomial vanishes at the nodes, differentiation of the
+crossing phase contributes zero, although differentiation of the source
+polynomial can still contribute.
 
 For a fixed diagram and fixed powers, all constants in \eqref{uf:eq-1}--\eqref{uf:eq-4} are
 independent of \(N\). Thus any sharp exponential estimate for the same
@@ -683,16 +694,12 @@ Separate absolute local envelopes may exceed that rate, and \eqref{uf:eq-23}
 prevents an argument that every one-sided channel is identically killed.
 Those conclusions require the separate saddle and geometric arguments.
 
-The \href{https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_uniform_filling_supremum_bound.py}{finite reproduction program}
-takes \texttt{-\/-repo} pointing to the research checkout. It checks the
-Chebyshev double/simple-root identities at levels 2--12 and the Riesz
-formula at degrees 1--12 exactly in cyclotomic fields. It also compares
-the midpoint reconstruction with independently built original
-coproduct/Casimir and signed braid matrices at levels 3--8, for powers
-\(\pm1,\ldots,\pm5\), and checks the lower-block compression including
-its normal data. The JSON output distinguishes the exact rational
-cyclotomic calculations from exact finite-field matrix checks. These finite cases check the algebraic formulas. The preceding proofs
-establish the inequalities at all levels.
+The finite checks accompanying \cite{Finite} compare the matrix,
+Hermite and Riesz formulas at their stated levels. The inequalities
+above follow for all $N\ge2$ from the interpolation identity and its
+coefficient mass, not from those examples. Their algebraic replays
+are included in the collection runner described in
+Chapter~\ref{ch:reproduction}.
 
 \section{The estimate needed for long
 fillings}\label{uf:sec-the-estimate-needed-for-long-fillings}

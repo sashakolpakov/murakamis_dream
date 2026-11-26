@@ -71,22 +71,17 @@ theorem monicRemainder_unique_padded (roots f q r : List R)
     (monicRemainder_quotient_invariant roots f r q hdivision)
     (monicRemainder_of_coeff_degree_lt roots r hdegree)
 
-/-- Two reconstructions of the same input have the same small-degree remainder. -/
+/-- Two reconstructions have the same small-degree polynomial remainder.
+The degree conditions are coefficientwise, so arbitrary trailing zeros in
+either input representation do not strengthen the manuscript hypothesis. -/
 theorem monic_remainder_unique_between (roots f q₁ q₂ r₁ r₂ : List R)
-    (hd₁ : r₁.length ≤ roots.length) (hd₂ : r₂.length ≤ roots.length)
+    (hd₁ : ∀ n, roots.length ≤ n → coefficient r₁ n = 0)
+    (hd₂ : ∀ n, roots.length ≤ n → coefficient r₂ n = 0)
     (h₁ : CoeffEq f (polyAdd r₁ (monicMultiple roots q₁)))
     (h₂ : CoeffEq f (polyAdd r₂ (monicMultiple roots q₂))) :
     CoeffEq r₁ r₂ := by
-  exact coeffEq_trans (coeffEq_symm (monicRemainder_unique roots f q₁ r₁ hd₁ h₁))
-    (monicRemainder_unique roots f q₂ r₂ hd₂ h₂)
-
-/-- The coefficient functional can be computed from any such reconstruction. -/
-theorem newtonFunctional_from_remainder (roots f q r : List R)
-    (hdegree : r.length ≤ roots.length)
-    (hdivision : CoeffEq f (polyAdd r (monicMultiple roots q))) :
-    newtonFunctional roots f = coefficient r (roots.length-1) := by
-  rw [← top_coefficient_is_newton]
-  exact monicRemainder_unique roots f q r hdegree hdivision (roots.length-1)
+  exact coeffEq_trans (coeffEq_symm (monicRemainder_unique_padded roots f q₁ r₁ hd₁ h₁))
+    (monicRemainder_unique_padded roots f q₂ r₂ hd₂ h₂)
 
 theorem monicRemainder_idempotent (roots f : List R) :
     monicRemainder roots (monicRemainder roots f) = monicRemainder roots f := by
@@ -154,10 +149,12 @@ theorem newtonFunctional_characterization (roots : List R) (F : List R → R)
     (hcongr : ∀ a b, CoeffEq a b → F a = F b)
     (hadd : ∀ a b, F (polyAdd a b) = F a + F b)
     (hkill : ∀ q, F (monicMultiple roots q) = 0)
-    (hnorm : ∀ r, r.length ≤ roots.length → F r = coefficient r (roots.length-1))
+    (hnorm : ∀ r, (∀ n, roots.length ≤ n → coefficient r n = 0) →
+      F r = coefficient r (roots.length-1))
     (f : List R) : F f = newtonFunctional roots f := by
   rw [hcongr f _ (monic_division_identity roots f), hadd, hkill,
-    hnorm (monicRemainder roots f) (by simp), top_coefficient_is_newton]
+    hnorm (monicRemainder roots f)
+      (fun n hn => monic_remainder_degree_bound roots f n hn), top_coefficient_is_newton]
   grind
 
 end VolumeLogic

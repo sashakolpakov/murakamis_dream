@@ -1,6 +1,6 @@
 \section{Signed leaves and strict finite wire windows}\label{qi:signed}
 
-The preceding theorem was stated for a normalized scalar recurrence. We now restore its actual tangle coefficient. Let
+The preceding theorem was stated for a normalized scalar recurrence. We now relate it to the coefficient in the tangle evaluation. Let
 $S_r=\prod_{a=1}^r2\sin(\pi a/N)$.
 For an integer wire $r$ near quarter and $h=Nt$, the original pure coefficient and its retained half twist are
 \begin{align}
@@ -77,7 +77,8 @@ The chirp $q^{h^2}$ is therefore retained in
  b_-(x,t)&=b_0(x,t)e^{\pi\ii(3/4-x)}C(x,t),\qquad
  b_+(x,t)=\overline{b_-(\bar x,\bar t)}.\label{qi:density}
 \end{align}
-All marks continue those fixed at the upper endpoint; no new square-root choice is made here.
+The logarithms and square roots are continued from their upper-endpoint
+normalization in \eqref{qi:SC}.
 On a compact high-index interval, replace $I_N$ by the interpolation
 $H_N$ of Lemma~\ref{qi:high-index} in
 \eqref{qi:actual-interpolants}. The same exact finite identity and
@@ -128,13 +129,19 @@ Formula \eqref{qi:density} and the complete $C$ at the end of Section~\ref{qi:so
 
 \subsection{An application with explicit local hypotheses}
 
-The following consequence concerns an exact finite window in an original Newton contraction. It has no assumption about the contribution outside that window.
+We now apply the coefficient estimate to a sum over a fixed small
+rectangle of integer tangle indices. The conclusion evaluates this
+restricted sum. It places no bound on the part of the tangle
+evaluation outside the rectangle.
 
 \begin{corollary}[A local finite-window Gaussian]\label{qi:window}
 Fix a finite Newton contraction with $b$ leaf factors
-\eqref{qi:signed-source}, $g$ retained multiplication gates, and $k$ free primitive integer wire coordinates. Suppose a strict real state $y_0$ has the following properties:
+\eqref{qi:signed-source}, $g$ retained multiplication gates, and $k$ free primitive integer wire coordinates. Here the leaf indices and the input and output indices of every
+multiplication coefficient are called wires. A strict state is a real
+assignment satisfying all their support inequalities strictly. Suppose
+such a state $y_0$ has the following properties:
 \begin{enumerate}
- \item Every wire has its actual form $r_w=NL_w(y)+\delta_w$, with $L_w$ integral affine and $\delta_w$ a fixed integer. The retained summation lattice is all of $\mathbb Z^k$ in these coordinates.
+ \item Every wire has its form $r_w=NL_w(y)+\delta_w$, with $L_w$ integral affine and $\delta_w$ a fixed integer. The retained summation lattice is all of $\mathbb Z^k$ in these coordinates.
  \item All factorial arguments of every retained gate are strictly between $0$ and $N$ at the limiting state, and every leaf coordinate lies in the union of the quarter neighborhood of Theorem~\ref{qi:main} and fixed compact intervals in $(1/4,1/2)$.
  \item The pure limiting phase is stationary at $y_0$ and has negative definite Hessian there.
 \end{enumerate}
@@ -175,7 +182,7 @@ Lemma~\ref{qi:high-index} this gives an interpolated summand
  N^{b/2-3g/2}b_\epsilon(y,t)e^{NF_\epsilon(y,t)}
                          (1+O(N^{-1})).
 \]
-Here $F_\epsilon$ is the sum of the actual leaf actions and gate actions. The density multiplies the leaf and gate densities and every offset factor:
+Here $F_\epsilon$ is the sum of the leaf actions and gate actions. The density multiplies the leaf and gate densities and every offset factor:
 $e^{\delta_\ell\partial_xf_{\epsilon_\ell}}$ for a leaf and
 $e^{\delta_i m_x+\delta_j m_y+\delta_r m_z}$ for a gate.
 They are evaluated at the changed variables, not at the complete point. All are nonzero.
@@ -194,7 +201,7 @@ At zero the phase is independent of the retained signs and has the specified neg
 \]
 To identify its coefficient in the finite sum, enclose each index interval by a rectangle with vertical half-grid sides and heights $\pm a$. The exact residue kernel $\pi N\cot(\pi Nz)$ has residue one at each retained $j/N$. Vertical sides keep the fixed real boundary loss. Horizontal sides have constant terms $\mp\ii$ and error $O(e^{-2\pi Na})$. Choose $a$ first so its $O(a^2)$ phase cost is less than one quarter of the real boundary gap and less than $\pi a$; then shrink the complex color disk. All boundary and nonconstant-kernel terms are exponentially smaller. Iterating gives $N^k$ times the ordinary integral over the rectangle with exponentially small error. Because the integer coordinates are primitive, there is no extra density factor.
 
-Translate the integral to the parallel real contour through $y_*(t)$. Its connecting boundary faces retain the loss; the local negative Hessian has positive real part. Gaussian integration gives the coefficient and power in \eqref{qi:window-asymptotic}. Odd Taylor terms have zero Gaussian integral, so the relative error is $O(N^{-1})$, uniformly holomorphically. At zero the density differs from the positive pure density by
+Translate the integral to the parallel real contour through $y_*(t)$. Its connecting boundary faces retain the loss; the negative of the local Hessian has positive definite real part. Gaussian integration gives the coefficient and power in \eqref{qi:window-asymptotic}. Odd Taylor terms have zero Gaussian integral, so the relative error is $O(N^{-1})$, uniformly holomorphically. At zero the density differs from the positive pure density by
 $\prod_{\epsilon_\ell\ne0}\sqrt{\sin\pi a_\ell}
  e^{-\epsilon_\ell\pi\ii a_\ell/2}$, which is nonzero.
 Finally evenness makes all mixed wire--color derivatives vanish at zero, and the local color Hessian in Corollary~\ref{qi:signed-corollary} gives the displayed formula.
@@ -209,4 +216,4 @@ The paper-local command
 uses Python's standard library and writes a JSON record to its paper-local build directory; \texttt{--output} selects another directory.
 It checks the recurrence directly from the original finite factorial sum over finite fields at both parities, including its terminal zero. Independently chosen rational matrices test the exact backward conjugation formula and the two-channel interaction reconstruction, retaining both input components. Input hashes are recorded before and after the run and an earlier summary is removed before validation.
 
-These are finite algebra checks of the direction, normalization and endpoint identities. They do not prove the analytic bounds or infer an all-level theorem from examples. The analytic proof chooses a fixed recurrence domain and its exponential barrier first, then the shorter crossing width, then the complex color disk, and only then lets $N$ grow. It controls a short regular modulus crossing. It does not continue the selected solution arbitrarily far below quarter, pass through colliding roots, discard a global alias, or evaluate an entire filled invariant. Any such application requires its own global source and geometric inputs.
+These are finite algebra checks of the direction, normalization and endpoint identities. They do not prove the analytic bounds or infer an all-level theorem from examples. The analytic proof chooses a fixed recurrence domain and its exponential error bound first, then the shorter crossing width, then the complex color disk, and only then lets $N$ grow. It controls a short regular modulus crossing. It does not continue the selected solution arbitrarily far below quarter, pass through colliding roots, bound the other Fourier terms of a global sum, or evaluate a filled invariant. Any such application requires its own global source and geometric inputs.

@@ -62,7 +62,9 @@ keeps their sources, compiled exports and PDFs synchronized.
 The [series audit](repro/CONWAY_SERIES_AUDIT_2026-11-25.md) explains the
 notation corrections, added definitions and proof simplifications.
 The seven papers use one [dated series edition](papers/conway-series.json)
-for their mutual citations.
+for their mutual citations. The [collection-wide audit](repro/MANUSCRIPT_AND_LOGIC_AUDIT_2026-11-25.md)
+covers the other fourteen papers, the reference, and the logical correspondence
+with Lean.
 
 For each eligible fixed construction, the long-filling assignments have
 natural density one in their integer lattice. This is not density one
@@ -214,6 +216,9 @@ filled-remainder estimate from the exact coherent color contraction and
 that coefficient bound. The source contour, nonzero packet and marked
 geometry remain explicit written inputs. The [coverage map](formal/coverage.json)
 names each module's manuscript statement. The
+[statement contracts](repro/PAPER_FORMAL_COVERAGE.md) check the precise
+hypotheses and conclusions; their dictionaries distinguish complete formal
+statements from components and conditional applications. The
 [cleanup record](repro/PROOF_PATH_CLEANUP_2026-11-25.md) gives the source
 changes and replay.
 
@@ -230,8 +235,7 @@ To build the reference and guide:
 
 ```sh
 python3 tools/build_manuscript.py
-python3 tools/build_book.py
-python3 tools/check_book.py
+python3 tools/build_manuscript_guide.py
 ```
 
 | Directory | Contents |

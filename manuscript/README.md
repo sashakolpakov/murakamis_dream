@@ -4,6 +4,10 @@
 [Current papers](../papers/README.md) ·
 [Illustrated reading guide](../book/chapters/manuscript.md)
 
+The current reference has 210 pages. The
+[revision report](../repro/MANUSCRIPT_AND_LOGIC_AUDIT_2026-11-25.md) records
+its mathematical corrections and the comparison of its statements with Lean.
+
 The reference begins with the strict Conway theorem, proved through
 its pure auxiliary source. It includes the same proof files as the
 [19-page Conway paper](../papers/conway-asymptotics/README.md).
@@ -140,7 +144,8 @@ complex bilinear Schur block identities, actual shifted Parseval and
 Fourier–Hermite mass bounds, and ordinary complex rate transfer.
 [ConwayAssembly](../formal-real/ConwayAssembly.lean) derives the entire
 filled-remainder estimate from the actual coherent color sum and proved
-crossing coefficient bound at \(N\ge2\). The source contour, nonzero
+crossing coefficient bound. That bound holds at \(N\ge2\); the
+physical source identity is required only at \(N\ge3\). The source contour, nonzero
 whole packet and primitive geometric comparison remain written inputs. The
 [coverage map](../formal/coverage.json) and
 [cleanup record](../repro/PROOF_PATH_CLEANUP_2026-11-25.md) identify its

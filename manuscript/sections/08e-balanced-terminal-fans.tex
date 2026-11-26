@@ -5,14 +5,16 @@ The tree constructions are not the only diagrams whose full invariant
 can be controlled. This chapter starts with an arbitrary connected
 marked augmented diagram whose white faces form a simple triangulated
 sphere. The diagram may have cyclic couplings in its finite source.
-We add finitely many terminal tangles near each crossing circle and
+A terminal tangle is a new crossing-circle piece placed immediately
+before or after an old box in its local stacking coordinate. We add
+finitely many such pieces near each crossing circle and
 prove the volume limit for the resulting knots after independently
 sufficiently long fixed fillings.
 
 The decoration serves one purpose: it makes the geometric contribution
 dominate the other terms of the finite source. It leaves all old circles
 of the complete packing fixed and inserts new disks into triangular
-gaps. Two independently chosen fan lengths make a strict inequality
+gaps. Two explicitly chosen insertion counts make a strict inequality
 hold at every crossing circle on that same packing. The inequality
 controls the \emph{one-sided} cofactor terms, whose paths stay on one
 side of the middle index. The complementary, central terms carry the
@@ -64,8 +66,7 @@ infinity. The threshold depends on the final diagram; it imposes no
 ratio bound on the different powers. In particular the original boxes
 are also filled sufficiently long. This is not a statement about
 arbitrary short fillings or about the invariant of the undecorated
-core. It concerns the complete main color, without a new moving
-main-meridian or operator conclusion.
+core. The main strand color is complete throughout.
 
 There is also a wholly combinatorial way to supply starting diagrams.
 Take any finite oriented simple triangulated sphere with at least four
@@ -158,8 +159,11 @@ Choose even nonnegative counts $j,k$ so that
 This is possible by rounding the difference to an even integer and
 then adding the same sufficiently large even integer to both counts.
 
-Let $F(x,b,y)$ be the source-normalized complete triangle action.
-Its entropy formula fixes the constant in the useful identity
+Let $F(x,b,y)$ be the complete triangle potential of
+Appendix~\ref{app:morse-preliminaries}, equation~\eqref{bl:F8}. It
+maximizes the sum of the triangle entropy and the logarithmic weight
+terms, with total load $1/2$ and zero load at a zero weight. This
+normalization fixes the constant in the identity
 \begin{equation}\label{bf:remainder}
 \begin{aligned}
  F(x,b,y)&=\tfrac12\log b+R(b),\\
@@ -189,10 +193,10 @@ insertion the two exact homogeneous factors are
 \end{equation}
 The face-winding identity preserves every old coefficient target and
 gives the new ordinary target $N-1$. At even levels the new face has
-the same parity clock as $b$. The extra factor $N^{-1}$ from its
-coupon is cancelled by its new primitive face grid; the original
+the same even-level parity label as $b$. The extra factor $N^{-1}$ from its
+box is cancelled by its new primitive face grid; the original
 unrestricted mark is restricted only after whole-source conservation.
-Consequently the full spectral numerator, including Casimir normals,
+Consequently the full spectral numerator, including derivatives at repeated Casimir roots,
 is the original marked coefficient on the refined diagram.
 
 The source estimate has two separate parts. First, the central cofactor
@@ -205,15 +209,19 @@ factor at a smaller exponential rate, using those same face radii.
 Together they control the full spectral numerator.
 
 The Fourier--Hermite filling formula then evaluates the original
-integer powers. It keeps the sine endpoints, parity factors and
-second-derivative endpoint currents. The primitive charge has a nonzero
+integer powers. It keeps the nodal values and first derivatives at double roots,
+including the parity factors in the original functional. The primitive charge has a nonzero
 coefficient, and all other charges are smaller for independently long
 fixed powers. This is the step that upgrades a geometric contribution
 to an asymptotic for the whole invariant.
 
 The geometric conclusion has a separate metric step. The common
 deformed circle pattern and its full ordered collar maps give the
-actual representation, with primitive logarithms
+representation of the augmented link group. Let $R_{0,e}$ be the
+dilation ratio of the primitive disk pairing and $J_e$ the selected
+longitude eigenvalue, with $R_{0,e}=1$ and $J_e=-1$ at the complete
+structure. With logarithms continued from that point, the primitive
+peripheral logarithms are
 \[
  U_e=-\log R_{0,e}-\epsilon_e\log(-J_e),\qquad
  V_e=2\log(-J_e),\qquad U_e+p_eV_e=-2\pi i.

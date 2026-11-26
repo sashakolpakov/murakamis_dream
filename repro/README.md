@@ -17,7 +17,10 @@ checks how the resulting theorem is used. The general source comparison
 remains open. No complete formal proof for an actual knot is claimed.
 
 The [manuscript-first cleanup](PROOF_PATH_CLEANUP_2026-11-25.md)
-records the rewritten proof routes and the code that follows them.
+records the rewritten proof routes and the code that follows them. The
+[collection-wide audit](MANUSCRIPT_AND_LOGIC_AUDIT_2026-11-25.md) covers
+the later revision of all remaining papers and the reference, including
+explicit expected-type contracts for their selected Lean statements.
 The [active coverage map](../formal/coverage.json) names each retained
 module's actual manuscript statement.
 
@@ -62,9 +65,9 @@ uniform asymptotic estimate. The specialist checks below retain that
 distinction.
 
 The dependency checker examines premise roles, family assumptions,
-level conventions, references and absence of cycles. Its 61 declared
+level conventions, references and absence of cycles. Its 49 declared
 steps distinguish the strict Conway route from the separate two-leaf
-source estimate. It also rejects nineteen deliberately invalid maps.
+source estimate. It also rejects twenty-three deliberately invalid maps.
 This validates the dependency record, not the mathematical assertions
 assigned to its vertices. For the reading order and the numbered
 statements imported between papers, use the

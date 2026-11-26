@@ -1340,7 +1340,7 @@
         },
         {
           "path": "papers/terminal-decorations/main.tex",
-          "anchor": "\\section{The actual refined source and the filled limit}"
+          "anchor": "\\section{The refined polynomial and the filled knot}"
         }
       ],
       "depends_on": [
@@ -2098,6 +2098,50 @@
       ],
       "coverage": "The summed criterion and its microscopic profile have written proofs in the current circle-tree volume paper. The joint source estimates, nonzero coefficient, complete remainder budget and marked geometric comparison are its actual inputs. The general complex rate implication is retained in Lean; no deleted profile module is claimed.",
       "article": "circle-tree-volume"
+    },
+    {
+      "id": "tree_preferred_cusp_correction",
+      "title": "Interpreting the tree meridian correction as the preferred cusp shape",
+      "group": "geometric_longitude",
+      "statement": "Under the summed circle-tree criterion, the analytic first meridian correction is compared with a separately computed peripheral translation on the same filled branch. The direct path and homology calculation gives tau_K=a(D)+2i sum_e cot(pi x_e*), with the preferred filling shear retained. Combining this identity with the exact scalar A_N gives the stated microscopic expansion with coefficient tau_K; the cusp shape is not defined by the quantum correction.",
+      "sources": [
+        {
+          "path": "manuscript/sections/08a-quantitative-circle-trees.tex",
+          "anchor": "\\label{eq:circle-21}"
+        },
+        {
+          "path": "manuscript/sections/08a-quantitative-circle-trees.tex",
+          "anchor": "\\label{eq:circle-22}"
+        },
+        {
+          "path": "manuscript/sections/08a-quantitative-circle-trees.tex",
+          "anchor": "\\label{eq:circle-24}"
+        }
+      ],
+      "depends_on": [
+        {
+          "id": "analytic_circle_joint_source",
+          "reason": "Supplies the analytic first-correction coefficient and its uniform O(N^-2) remainder after the exact A_N and H_N factors; it does not identify the coefficient with a cusp translation."
+        },
+        {
+          "id": "geo_direct_preferred_cusp_word",
+          "reason": "Computes the actual peripheral path and its integral meridional framing correction. Only this path/homology result is used, not the full rational longitude theorem or a volume limit."
+        },
+        {
+          "id": "geo_positive_marked_gluing",
+          "reason": "The specified main and auxiliary logarithms identify the marked geometric germs near augmented completeness, before analytic continuation along the classical path."
+        },
+        {
+          "id": "geo_circle_primitive_periods",
+          "reason": "Keeps the exact primitive period branches and slope marking during continuation to the filling endpoint."
+        },
+        {
+          "id": "tree_positive_completion",
+          "reason": "Provides the classical smooth filled endpoint and its complete main cusp. This is the classical completion theorem, not the quantum circle-tree volume theorem."
+        }
+      ],
+      "article": null,
+      "coverage": "This comparison is stated in the reference, not in the circle-tree paper first-correction theorem. It is therefore a reference-only node with no article owner. The analytic correction, the classical cusp calculation, and their comparison remain separate, avoiding an unnecessary dependency of the volume criterion on preferred-longitude calibration."
     },
     {
       "id": "tree_local_volume",
@@ -5466,13 +5510,18 @@
         },
         {
           "id": "recursive_strict_marked_metric",
-          "reason": "Supplies the actual-versus-completion-map identification at the closed original peripheral paths and the marked positive geometric branch."
+          "reason": "Uses its marked local deformation and the identification of the closed peripheral paths with actual adjacent white faces. Neither its filled-volume conclusion nor a quantum correction is used to compute the cusp word."
         },
         {
           "id": "geo_nonparabolic_edge_character",
           "reason": "At M=1 identifies these matrices and physical wire labels with the rational all-circle family."
+        },
+        {
+          "id": "geo_positive_marked_gluing",
+          "reason": "The augmented-complete main-meridian and auxiliary-longitude logarithms give local decorated coordinates, as in Nonparabolic Theorem 1.1 and Proposition 6.1. This identifies the two classical constructions for prescribed periods before their translation ratios are compared; no quantum asymptotic or full volume theorem is used."
         }
-      ]
+      ],
+      "coverage": "This is the direct path and meridional-homology calculation in Preferred Longitudes Section5. It is separate from the later rational longitude identity and sign calibration. Its use in the reference first-correction interpretation does not make the analytic tree profile depend on a preferred-longitude theorem."
     },
     {
       "id": "recursive_complete_fourier_trace",
@@ -5680,7 +5729,7 @@
           "anchor": "\\label{ms:cardinal-action}"
         }
       ],
-      "statement": "Actual unturned profiles compare whole fused pressures, while simultaneous marked high boundaries move to half and the exact odd projector calibrates cardinal actions, with supported integer approximation.",
+      "statement": "Whole fused pressures are compared using the original shared gate variables. At most one external incidence of each junction may be prescribed near one half; that boundary parameter carries no leaf action g, although its additive branch constant is retained. Under this hypothesis the constrained pressure is analytic with negative definite Hessian. Simultaneous high boundaries and the exact odd projector then calibrate the cardinal actions, with supported integer approximation.",
       "depends_on": [
         {
           "id": "recursive_strict_boundary_profiles",
@@ -5688,7 +5737,7 @@
         },
         {
           "id": "recursive_strict_optimizer",
-          "reason": "Primitive gate/leaf action and strict optimizer framework; the enlarged constrained boundary proof is supplied here."
+          "reason": "Supplies the strict gate and ordinary-leaf action and the stationary Hessian framework. The enlarged constrained-boundary proof is supplied here, with no g term at a prescribed half boundary; the ordinary-leaf endpoint formula is not applied to that parameter."
         },
         {
           "id": "recursive_finite_source",
@@ -5699,7 +5748,8 @@
           "reason": "The odd-projector calibration and supported lattice rounding identify the cardinal action V_D with the uniform closed sine-factorial rate. This is a direct use of the real Newton estimate, even though it is also reachable through the optimizer."
         }
       ],
-      "article": "moving-meridian-sources"
+      "article": "moving-meridian-sources",
+      "coverage": "The action-free boundary hypothesis is explicit in Moving Sources Lemma ms:pressure-existence and is already satisfied by every consumer. It does not remove an ordinary leaf term from an unconstrained branch. The component gap remains a statement about the entire coupled contraction."
     },
     {
       "id": "recursive_moving_component_gap",
@@ -7424,6 +7474,13 @@
             "geometric_longitude_circle_trees"
           ],
           "reason": "Identifies the actual nonconstant filled meridian germ with original flags and logarithmic slopes."
+        },
+        {
+          "path": [
+            "geo_positive_marked_gluing",
+            "geo_direct_preferred_cusp_word"
+          ],
+          "reason": "The augmented-complete main-meridian and auxiliary-longitude logarithms give local decorated coordinates, as in Nonparabolic Theorem 1.1 and Proposition 6.1. This identifies the two classical constructions for prescribed periods before their translation ratios are compared; no quantum asymptotic or full volume theorem is used."
         }
       ]
     },

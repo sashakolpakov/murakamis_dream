@@ -7,7 +7,7 @@ are paired, a nonmatching marked edge, and a half-twist pattern producing
 one main knot. Its complete circle packing has two marked parallel lines
 of curvature zero and positive curvatures at all other faces.
 
-This paper gives a finite construction that adds crossing-circle tangles
+A terminal is a new crossing-circle tangle inserted immediately before or after an old box in its local stacking coordinate. This paper gives a finite construction that adds crossing-circle tangles
 until every original and new region satisfies the strict shared-face
 balance inequality. It leaves the old circles fixed, but it generally
 changes the knot. Each old region receives an even number of terminals
@@ -48,7 +48,7 @@ controls the signed central period.
 
 The direct volume implication uses **Shared face estimates and triangular
 gluing for planar link diagrams**, Definition 3.1 and Theorems 1.1 and
-4.3: strict balance supplies a full-sector certificate. The present paper
+4.3: strict balance supplies a certificate. The present paper
 proves that its finite geometric modification supplies this hypothesis;
 it does not infer a complementary-source estimate from the central
 contribution alone.

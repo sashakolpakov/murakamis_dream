@@ -2,11 +2,43 @@
 
 [Read the PDF](../../docs/papers/preferred-longitudes.pdf) · [TeX source](main.tex) · [Dependency graph](https://sashakolpakov.github.io/murakamis_dream/papers/dependencies.html)
 
-This classical paper proves the preferred-longitude product for the actual marked Conway tree representation. It separates boundary isotropy, the generic constant field, regular reconstruction through every nonzero main-meridian value, preferred-cusp calibration, and the determinant-one sign. Zero-circle insertion then identifies the same formula for arbitrary strict bare junctions, including the possible half-label fold.
+The paper determines the preferred longitude on the geometric
+meridian germ of a fixed strict Conway construction with independently
+sufficiently long signed fillings:
 
-The geometric inputs are the original ordered representation and positive filled germ in [Nonparabolic holonomy of trees of crossing circles](../nonparabolic-tree-geometry/README.md), and the strict complete/marked filling construction in [Marked geometry of strict Conway compositions](../strict-conway-geometry/README.md). The only finite polynomial input is the local complete Newton trace; its elementary sine-coefficient rate identifies a hub action. No knot-invariant asymptotic or recurrence theorem is a premise.
+$$
+L_{\mathrm{geom}}(M)=-M^{a(D)}
+ \prod_{e\in\mathcal E}\frac{M^2-X_e(M)}{1-M^2X_e(M)},
+\qquad a(D)=-w(D)-\sum_v n_v.
+$$
 
-The [meridian-expansion paper](../meridian-expansions/README.md) uses this longitude formula only for its geometric-factor corollary. Keeping this classical proof separate makes its group, marking and sign assumptions visible without depending on a quantum recurrence.
+Here $M$ is the selected main-meridian eigenvalue, $L_{\mathrm{geom}}$
+is the preferred-longitude eigenvalue on the same eigenline, $w(D)$
+is the oriented writhe, and $n_v$ is the signed crossing power at
+circle $v$. Each $X_e=e^{2\pi i x_e}$ belongs to one original
+quarter-turn edge. The complete filled knot fixes the branch and the
+minus sign.
+
+The proof first works on the algebraic family of augmented
+representations. Boundary isotropy and a constant-field calculation
+show that the unknown factor in the squared longitude depends only on
+$M$. Regular matrix reconstruction through every nonzero value of $M$
+makes this factor a monomial, including at the split trace-zero fibers.
+An explicit cusp path determines its exponent after the framing
+correction; a Seifert-surface frame calculation determines its sign.
+Meridionally filling a newly inserted zero-crossing circle at each bare
+junction then proves the same formula for arbitrary strict junctions.
+That operation restores the original tangle and its peripheral paths.
+
+The geometric inputs are the ordered representations and their local
+peripheral coordinate charts in [Nonparabolic holonomy of trees of
+crossing circles](../nonparabolic-tree-geometry/README.md), together
+with the strict complete and filling geometry in [Marked geometry of
+strict Conway compositions](../strict-conway-geometry/README.md).
+The finite Newton trace is used only to identify a classical junction
+action and its additive constant. A quantum asymptotic or recurrence
+is not a premise. The [meridian-expansion paper](../meridian-expansions/README.md)
+uses the result for its separate geometric-factor consequence.
 
 Build from this directory with:
 
@@ -20,6 +52,8 @@ The bounded exact checker requires Python 3 and SymPy. From the repository root:
 python3 -I papers/preferred-longitudes/check.py --output /tmp/preferred-longitudes-check.json
 ```
 
-It checks rational identities symbolically, including the actual character transports and cusp rebasing matrices. The finite integer cases check the framing convention and lift parity; they are not the proof for all integers. The checker deletes any old output before rejecting optimized Python, pins its own source and paper files before and after execution, and includes four controls that fail for altered inverse, differential, endpoint-orientation, and surgery conventions.
-
-The written proof, rather than the checker, supplies the algebraic generic-fiber argument, existence of open sets in every nonzero fiber, actual peripheral paths, spin sign, and analytic stationary elimination. It does not identify a different unfilled exterior or infer a geometric branch from exponentiated slope equations alone. There is no claim of a quantum volume limit or an annihilator in this paper.
+The checker verifies rational matrix and differential identities,
+including the cusp coordinate changes, and tests integer framing and
+lift conventions. The generic-fiber argument, regular reconstruction,
+peripheral paths, spin calculation and stationary elimination have
+written proofs in the paper. Finite examples do not prove those results.

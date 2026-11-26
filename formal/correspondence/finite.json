@@ -1,0 +1,1055 @@
+{
+  "schema": 1,
+  "group": "finite",
+  "contracts": [
+    {
+      "project": "std",
+      "path": "formal/StatementContracts.lean",
+      "roots": [
+        "VolumeLogic.boundary_certified_rate",
+        "VolumeLogic.boundary_conditional_action_cancels",
+        "VolumeLogic.boundary_noncentral_block_margin",
+        "VolumeLogic.boundary_total_central_block",
+        "VolumeLogic.central_endpoint_even",
+        "VolumeLogic.central_endpoint_odd",
+        "VolumeLogic.double_root_jet_identity",
+        "VolumeLogic.double_root_remainder",
+        "VolumeLogic.doubled_flattening_gain",
+        "VolumeLogic.face_grid_selection_iff",
+        "VolumeLogic.filled_remainder_identity",
+        "VolumeLogic.filled_remainder_strictly_below",
+        "VolumeLogic.finite_sector_filling_bound",
+        "VolumeLogic.left_endpoint_cutoff",
+        "VolumeLogic.monicRemainder_mul_reduce_both",
+        "VolumeLogic.monicRemainder_permutation",
+        "VolumeLogic.monicRemainder_polyAdd",
+        "VolumeLogic.monicRemainder_polyScale",
+        "VolumeLogic.monic_division_identity",
+        "VolumeLogic.monic_remainder_degree_bound",
+        "VolumeLogic.monic_remainder_unique_between",
+        "VolumeLogic.newtonFunctional_characterization",
+        "VolumeLogic.newtonFunctional_product",
+        "VolumeLogic.newtonFunctional_quotient_invariant",
+        "VolumeLogic.newtonFunctional_resolvent_reproduces",
+        "VolumeLogic.nonempty_sector_gap",
+        "VolumeLogic.polynomialResolvent_identity",
+        "VolumeLogic.protected_finite_assembly_gap",
+        "VolumeLogic.protected_sum_central_total",
+        "VolumeLogic.protected_sum_certified_rate",
+        "VolumeLogic.quotientProduct_assoc",
+        "VolumeLogic.quotientProduct_double_head_derivative",
+        "VolumeLogic.simultaneous_sector_threshold",
+        "VolumeLogic.strict_weak_balance_gain",
+        "VolumeLogic.tensor_grid_subtraction",
+        "VolumeLogic.three_supports",
+        "VolumeLogic.top_coefficient_is_newton"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "module": "VolumeLogic.FiniteSupport",
+      "root": "VolumeLogic.three_supports",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
+          "anchor": "\\label{mca:sec-1}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "level is N; left and right are the nonnegative endpoint exponents i,t. Natural subtraction is truncated at zero.",
+        "The dividing index is floor((N−1)/2). The application starts at N≥3, while the arithmetic theorems allow any smaller level consistent with their explicit hypotheses."
+      ],
+      "hypotheses": [
+        "i+t≤N−1."
+      ],
+      "conclusion": "Every admissible exponent pair is central, right-sided or left-sided, and the two strict one-sided conditions cannot occur together.",
+      "unformalized": [
+        "The finite R-matrix formula and the identification of its actual monomials with this exponent budget."
+      ],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "This is the arithmetic partition used after the source support has been proved, not a theorem about the quantum source by itself."
+    },
+    {
+      "module": "VolumeLogic.FiniteSupport",
+      "root": "VolumeLogic.left_endpoint_cutoff",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
+          "anchor": "\\label{mca:sec-1}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "level is N; left and right are the nonnegative endpoint exponents i,t. Natural subtraction is truncated at zero.",
+        "The dividing index is floor((N−1)/2). The application starts at N≥3, while the arithmetic theorems allow any smaller level consistent with their explicit hypotheses.",
+        "endpoint is the retained row index j, so the left exponent is N−1−j."
+      ],
+      "hypotheses": [
+        "N≥2 and j<N."
+      ],
+      "conclusion": "floor((N−1)/2)<N−1−j if and only if j<floor(N/2).",
+      "unformalized": [
+        "The identification of this row index with the actual matrix entry."
+      ],
+      "contract": "formal/StatementContracts.lean",
+      "notes": ""
+    },
+    {
+      "module": "VolumeLogic.FiniteSupport",
+      "root": "VolumeLogic.central_endpoint_even",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
+          "anchor": "\\label{mca:sec-1}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "level is N; left and right are the nonnegative endpoint exponents i,t. Natural subtraction is truncated at zero.",
+        "The dividing index is floor((N−1)/2). The application starts at N≥3, while the arithmetic theorems allow any smaller level consistent with their explicit hypotheses.",
+        "N=2m and the two endpoint exponents are first and N−1−last."
+      ],
+      "hypotheses": [
+        "m≥1 and last<2m."
+      ],
+      "conclusion": "The central support is equivalent to first<m and m≤last.",
+      "unformalized": [
+        "The formula giving the matrix endpoint exponents."
+      ],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "The interval includes exactly the indicated half-open endpoints."
+    },
+    {
+      "module": "VolumeLogic.FiniteSupport",
+      "root": "VolumeLogic.central_endpoint_odd",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/O-morse-geometric-contribution.tex",
+          "anchor": "\\label{mca:sec-1}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "level is N; left and right are the nonnegative endpoint exponents i,t. Natural subtraction is truncated at zero.",
+        "The dividing index is floor((N−1)/2). The application starts at N≥3, while the arithmetic theorems allow any smaller level consistent with their explicit hypotheses.",
+        "N=2m+1 and the endpoint exponents are first and 2m−last."
+      ],
+      "hypotheses": [
+        "last≤2m."
+      ],
+      "conclusion": "The central support is equivalent to first≤m≤last.",
+      "unformalized": [
+        "The formula giving the matrix endpoint exponents."
+      ],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "The central zero-step row is retained; no even-level cutoff is silently substituted."
+    },
+    {
+      "module": "VolumeLogic.FiniteAlgebra",
+      "root": "VolumeLogic.double_root_jet_identity",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/N-uniform-filling-bound.tex",
+          "anchor": "\\label{uf:eq-10}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "All eight entries lie in one commutative ring. hValue=h(c), hDerivative=h′(c), fValue=f(c), fDerivative=f′(c).",
+        "projection and nilpotent stand for the local primary projector and its nilpotent partner in the application; numerator=V(c), numeratorDerivative=V′(c)."
+      ],
+      "hypotheses": [
+        "numerator=hValue·nilpotent and numeratorDerivative=hValue·projection+hDerivative·nilpotent."
+      ],
+      "conclusion": "The cleared identity hValue²(fValue·projection+fDerivative·nilpotent)=hValue·fValue·numeratorDerivative+(hValue·fDerivative−hDerivative·fValue)·numerator.",
+      "unformalized": [
+        "The concrete Hermite decomposition, the invertibility needed to divide by h(c), and the normalized matrix functional in the displayed manuscript formula."
+      ],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "No unit hypothesis on hValue is needed for the cleared polynomial identity."
+    },
+    {
+      "module": "VolumeLogic.FiniteAlgebra",
+      "root": "VolumeLogic.tensor_grid_subtraction",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/N-uniform-filling-bound.tex",
+          "anchor": "\\label{uf:eq-4}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "Each pair (a_e,b_e) records an evaluation cost and a first-derivative cost. In the norm application a_e=1/N+|n_e|/2 and b_e=(N−1)/N.",
+        "nonemptySecondChoices sums products in which at least one derivative cost is selected; product is the finite ring product."
+      ],
+      "hypotheses": [
+        "A finite list of cost pairs over a commutative ring."
+      ],
+      "conclusion": "The sum with at least one derivative selection is product_e(a_e+b_e)−product_e(a_e).",
+      "unformalized": [
+        "The joint spectral-node vanishing that removes the all-evaluation term, the Riesz derivative inequality, and the actual tensor norm estimate."
+      ],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "This is precisely the algebraic subtraction inside the norm proof, not an estimate for a signed contraction."
+    },
+    {
+      "module": "VolumeLogic.MonicRemainder",
+      "root": "VolumeLogic.monic_division_identity",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/N-uniform-filling-bound.tex",
+          "anchor": "\\label{prop:canonical-polynomial-remainder}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "R is any commutative ring through Lean.Grind.CommRing; distinct roots, characteristic zero and division by root differences are not assumed.",
+        "A polynomial is a finite list of ascending monomial coefficients. coefficient f n is zero beyond the list. CoeffEq is equality of every coefficient, so trailing zeros do not change the polynomial; it is not merely equality of evaluations.",
+        "nodes is the finite root list with repetitions retained. monicMultiple nodes q represents p(X)q(X), where p is the product of X minus each node.",
+        "monicRemainder is the constructed Newton remainder, padded to exactly nodes.length coefficients. The formal degree bound is vanishing of all coefficients at indices at least nodes.length."
+      ],
+      "hypotheses": [
+        "Arbitrary root list and input coefficient list."
+      ],
+      "conclusion": "Coefficientwise f=p·monicQuotient(nodes,f)+monicRemainder(nodes,f).",
+      "unformalized": [
+        "The remaining assertions of the canonical-remainder proposition are separate selected roots."
+      ],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "The coefficient-list quotient by CoeffEq is the intended polynomial interpretation. No Mathlib Polynomial equivalence is constructed. This algebraic result does not identify any concrete Casimir, physical normalization, norm or quantum invariant."
+    },
+    {
+      "module": "VolumeLogic.MonicRemainder",
+      "root": "VolumeLogic.monic_remainder_degree_bound",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/N-uniform-filling-bound.tex",
+          "anchor": "\\label{prop:canonical-polynomial-remainder}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "R is any commutative ring through Lean.Grind.CommRing; distinct roots, characteristic zero and division by root differences are not assumed.",
+        "A polynomial is a finite list of ascending monomial coefficients. coefficient f n is zero beyond the list. CoeffEq is equality of every coefficient, so trailing zeros do not change the polynomial; it is not merely equality of evaluations.",
+        "nodes is the finite root list with repetitions retained. monicMultiple nodes q represents p(X)q(X), where p is the product of X minus each node.",
+        "monicRemainder is the constructed Newton remainder, padded to exactly nodes.length coefficients. The formal degree bound is vanishing of all coefficients at indices at least nodes.length."
+      ],
+      "hypotheses": [
+        "n≥nodes.length."
+      ],
+      "conclusion": "The nth coefficient of the constructed remainder is zero.",
+      "unformalized": [
+        "Division, uniqueness, linearity and order independence are separate selected roots."
+      ],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "The coefficient-list quotient by CoeffEq is the intended polynomial interpretation. No Mathlib Polynomial equivalence is constructed. This algebraic result does not identify any concrete Casimir, physical normalization, norm or quantum invariant."
+    },
+    {
+      "module": "VolumeLogic.MonicRemainder",
+      "root": "VolumeLogic.top_coefficient_is_newton",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/N-uniform-filling-bound.tex",
+          "anchor": "\\label{prop:canonical-polynomial-remainder}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "R is any commutative ring through Lean.Grind.CommRing; distinct roots, characteristic zero and division by root differences are not assumed.",
+        "A polynomial is a finite list of ascending monomial coefficients. coefficient f n is zero beyond the list. CoeffEq is equality of every coefficient, so trailing zeros do not change the polynomial; it is not merely equality of evaluations.",
+        "nodes is the finite root list with repetitions retained. monicMultiple nodes q represents p(X)q(X), where p is the product of X minus each node.",
+        "monicRemainder is the constructed Newton remainder, padded to exactly nodes.length coefficients. The formal degree bound is vanishing of all coefficients at indices at least nodes.length.",
+        "newtonFunctional nodes f is the last Newton coefficient; it is zero for the empty root list by the implementation convention."
+      ],
+      "hypotheses": [
+        "Arbitrary finite root list and input polynomial."
+      ],
+      "conclusion": "The coefficient of degree nodes.length−1 in the canonical remainder equals newtonFunctional nodes f.",
+      "unformalized": [
+        "The physical functional has the separate normalization (−1)^d N², which is not asserted by this abstract root."
+      ],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "The coefficient-list quotient by CoeffEq is the intended polynomial interpretation. No Mathlib Polynomial equivalence is constructed. This algebraic result does not identify any concrete Casimir, physical normalization, norm or quantum invariant."
+    },
+    {
+      "module": "VolumeLogic.MonicRemainder",
+      "root": "VolumeLogic.double_root_remainder",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/N-uniform-filling-bound.tex",
+          "anchor": "\\label{prop:canonical-polynomial-remainder}"
+        }
+      ],
+      "kind": "exact",
+      "symbol_dictionary": [
+        "R is any commutative ring through Lean.Grind.CommRing; distinct roots, characteristic zero and division by root differences are not assumed.",
+        "A polynomial is a finite list of ascending monomial coefficients. coefficient f n is zero beyond the list. CoeffEq is equality of every coefficient, so trailing zeros do not change the polynomial; it is not merely equality of evaluations.",
+        "nodes is the finite root list with repetitions retained. monicMultiple nodes q represents p(X)q(X), where p is the product of X minus each node.",
+        "monicRemainder is the constructed Newton remainder, padded to exactly nodes.length coefficients. The formal degree bound is vanishing of all coefficients at indices at least nodes.length.",
+        "horner f r evaluates the coefficient polynomial. formalDerivativeValue f r evaluates its formal algebraic derivative, without a topological differentiability assumption."
+      ],
+      "hypotheses": [
+        "The modulus has root list [r,r]."
+      ],
+      "conclusion": "The padded canonical remainder is exactly [f(r)−r f′(r), f′(r)], representing f(r)+f′(r)(X−r).",
+      "unformalized": [],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "The coefficient-list quotient by CoeffEq is the intended polynomial interpretation. No Mathlib Polynomial equivalence is constructed. This algebraic result does not identify any concrete Casimir, physical normalization, norm or quantum invariant."
+    },
+    {
+      "module": "VolumeLogic.MonicLinearity",
+      "root": "VolumeLogic.monicRemainder_polyAdd",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/N-uniform-filling-bound.tex",
+          "anchor": "\\label{prop:canonical-polynomial-remainder}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "R is any commutative ring through Lean.Grind.CommRing; distinct roots, characteristic zero and division by root differences are not assumed.",
+        "A polynomial is a finite list of ascending monomial coefficients. coefficient f n is zero beyond the list. CoeffEq is equality of every coefficient, so trailing zeros do not change the polynomial; it is not merely equality of evaluations.",
+        "nodes is the finite root list with repetitions retained. monicMultiple nodes q represents p(X)q(X), where p is the product of X minus each node.",
+        "monicRemainder is the constructed Newton remainder, padded to exactly nodes.length coefficients. The formal degree bound is vanishing of all coefficients at indices at least nodes.length."
+      ],
+      "hypotheses": [
+        "Arbitrary f,g and root list."
+      ],
+      "conclusion": "The canonical remainder of f+g equals the sum of the canonical remainders coefficientwise.",
+      "unformalized": [
+        "Scalar linearity and the other parts of the proposition are separate selected roots."
+      ],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "The coefficient-list quotient by CoeffEq is the intended polynomial interpretation. No Mathlib Polynomial equivalence is constructed. This algebraic result does not identify any concrete Casimir, physical normalization, norm or quantum invariant."
+    },
+    {
+      "module": "VolumeLogic.MonicLinearity",
+      "root": "VolumeLogic.monicRemainder_polyScale",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/N-uniform-filling-bound.tex",
+          "anchor": "\\label{prop:canonical-polynomial-remainder}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "R is any commutative ring through Lean.Grind.CommRing; distinct roots, characteristic zero and division by root differences are not assumed.",
+        "A polynomial is a finite list of ascending monomial coefficients. coefficient f n is zero beyond the list. CoeffEq is equality of every coefficient, so trailing zeros do not change the polynomial; it is not merely equality of evaluations.",
+        "nodes is the finite root list with repetitions retained. monicMultiple nodes q represents p(X)q(X), where p is the product of X minus each node.",
+        "monicRemainder is the constructed Newton remainder, padded to exactly nodes.length coefficients. The formal degree bound is vanishing of all coefficients at indices at least nodes.length.",
+        "polyScale is multiplication of each coefficient by the given ring scalar."
+      ],
+      "hypotheses": [
+        "An arbitrary ring scalar, input polynomial and root list."
+      ],
+      "conclusion": "The remainder commutes with scalar multiplication coefficientwise.",
+      "unformalized": [
+        "Additivity and the other parts of the proposition are separate selected roots."
+      ],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "The coefficient-list quotient by CoeffEq is the intended polynomial interpretation. No Mathlib Polynomial equivalence is constructed. This algebraic result does not identify any concrete Casimir, physical normalization, norm or quantum invariant."
+    },
+    {
+      "module": "VolumeLogic.MonicLinearity",
+      "root": "VolumeLogic.newtonFunctional_quotient_invariant",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/N-uniform-filling-bound.tex",
+          "anchor": "\\label{prop:canonical-polynomial-remainder}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "R is any commutative ring through Lean.Grind.CommRing; distinct roots, characteristic zero and division by root differences are not assumed.",
+        "A polynomial is a finite list of ascending monomial coefficients. coefficient f n is zero beyond the list. CoeffEq is equality of every coefficient, so trailing zeros do not change the polynomial; it is not merely equality of evaluations.",
+        "nodes is the finite root list with repetitions retained. monicMultiple nodes q represents p(X)q(X), where p is the product of X minus each node.",
+        "monicRemainder is the constructed Newton remainder, padded to exactly nodes.length coefficients. The formal degree bound is vanishing of all coefficients at indices at least nodes.length."
+      ],
+      "hypotheses": [
+        "Coefficientwise f=g+p q for a supplied quotient polynomial q."
+      ],
+      "conclusion": "The Newton coefficient functional takes the same value on f and g.",
+      "unformalized": [
+        "The concrete spectral polynomial and the normalization of the physical functional."
+      ],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "The coefficient-list quotient by CoeffEq is the intended polynomial interpretation. No Mathlib Polynomial equivalence is constructed. This algebraic result does not identify any concrete Casimir, physical normalization, norm or quantum invariant."
+    },
+    {
+      "module": "VolumeLogic.MonicUniqueness",
+      "root": "VolumeLogic.monic_remainder_unique_between",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/N-uniform-filling-bound.tex",
+          "anchor": "\\label{prop:canonical-polynomial-remainder}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "R is any commutative ring through Lean.Grind.CommRing; distinct roots, characteristic zero and division by root differences are not assumed.",
+        "A polynomial is a finite list of ascending monomial coefficients. coefficient f n is zero beyond the list. CoeffEq is equality of every coefficient, so trailing zeros do not change the polynomial; it is not merely equality of evaluations.",
+        "nodes is the finite root list with repetitions retained. monicMultiple nodes q represents p(X)q(X), where p is the product of X minus each node.",
+        "monicRemainder is the constructed Newton remainder, padded to exactly nodes.length coefficients. The formal degree bound is vanishing of all coefficients at indices at least nodes.length."
+      ],
+      "hypotheses": [
+        "Each proposed remainder has every coefficient at index n≥nodes.length equal to zero, with no list-length or padding restriction.",
+        "Each supplied quotient gives a coefficientwise reconstruction f=remainder+p·quotient."
+      ],
+      "conclusion": "The two proposed remainders are coefficientwise equal.",
+      "unformalized": [
+        "Existence of a canonical remainder is provided by the division and degree roots, rather than assumed to follow from uniqueness."
+      ],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "The revised binders use polynomial degree itself, not the storage length of a chosen coefficient list. The coefficient-list quotient by CoeffEq is the intended polynomial interpretation. No Mathlib Polynomial equivalence is constructed. This algebraic result does not identify any concrete Casimir, physical normalization, norm or quantum invariant."
+    },
+    {
+      "module": "VolumeLogic.MonicUniqueness",
+      "root": "VolumeLogic.monicRemainder_permutation",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/N-uniform-filling-bound.tex",
+          "anchor": "\\label{prop:canonical-polynomial-remainder}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "R is any commutative ring through Lean.Grind.CommRing; distinct roots, characteristic zero and division by root differences are not assumed.",
+        "A polynomial is a finite list of ascending monomial coefficients. coefficient f n is zero beyond the list. CoeffEq is equality of every coefficient, so trailing zeros do not change the polynomial; it is not merely equality of evaluations.",
+        "nodes is the finite root list with repetitions retained. monicMultiple nodes q represents p(X)q(X), where p is the product of X minus each node.",
+        "monicRemainder is the constructed Newton remainder, padded to exactly nodes.length coefficients. The formal degree bound is vanishing of all coefficients at indices at least nodes.length."
+      ],
+      "hypotheses": [
+        "The two root lists are permutations, including multiplicity."
+      ],
+      "conclusion": "Their constructed padded monomial remainders are literally equal as lists.",
+      "unformalized": [
+        "Other parts of the canonical-remainder proposition are separate selected roots."
+      ],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "Literal equality is valid here because both canonical outputs have the same fixed length. The coefficient-list quotient by CoeffEq is the intended polynomial interpretation. No Mathlib Polynomial equivalence is constructed. This algebraic result does not identify any concrete Casimir, physical normalization, norm or quantum invariant."
+    },
+    {
+      "module": "VolumeLogic.MonicUniqueness",
+      "root": "VolumeLogic.newtonFunctional_characterization",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/N-uniform-filling-bound.tex",
+          "anchor": "\\label{prop:canonical-polynomial-remainder}"
+        }
+      ],
+      "kind": "exact",
+      "symbol_dictionary": [
+        "R is any commutative ring through Lean.Grind.CommRing; distinct roots, characteristic zero and division by root differences are not assumed.",
+        "A polynomial is a finite list of ascending monomial coefficients. coefficient f n is zero beyond the list. CoeffEq is equality of every coefficient, so trailing zeros do not change the polynomial; it is not merely equality of evaluations.",
+        "nodes is the finite root list with repetitions retained. monicMultiple nodes q represents p(X)q(X), where p is the product of X minus each node.",
+        "monicRemainder is the constructed Newton remainder, padded to exactly nodes.length coefficients. The formal degree bound is vanishing of all coefficients at indices at least nodes.length.",
+        "candidate is an additive functional on coefficient lists which respects CoeffEq; this is the condition for it to descend to polynomials."
+      ],
+      "hypotheses": [
+        "The candidate vanishes on every explicitly constructed multiple p q.",
+        "For every coefficient polynomial of degree below nodes.length, including arbitrarily padded lists, the candidate returns its coefficient of degree nodes.length−1."
+      ],
+      "conclusion": "The candidate agrees with newtonFunctional nodes on every input polynomial.",
+      "unformalized": [],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "The degree condition in the normalization has been made coefficientwise, matching R[X] rather than a storage convention. The coefficient-list quotient by CoeffEq is the intended polynomial interpretation. No Mathlib Polynomial equivalence is constructed. This algebraic result does not identify any concrete Casimir, physical normalization, norm or quantum invariant."
+    },
+    {
+      "module": "VolumeLogic.MonicProduct",
+      "root": "VolumeLogic.monicRemainder_mul_reduce_both",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/N-uniform-filling-bound.tex",
+          "anchor": "\\label{prop:canonical-remainder-products}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "R is any commutative ring through Lean.Grind.CommRing; distinct roots, characteristic zero and division by root differences are not assumed.",
+        "A polynomial is a finite list of ascending monomial coefficients. coefficient f n is zero beyond the list. CoeffEq is equality of every coefficient, so trailing zeros do not change the polynomial; it is not merely equality of evaluations.",
+        "nodes is the finite root list with repetitions retained. monicMultiple nodes q represents p(X)q(X), where p is the product of X minus each node.",
+        "monicRemainder is the constructed Newton remainder, padded to exactly nodes.length coefficients. The formal degree bound is vanishing of all coefficients at indices at least nodes.length.",
+        "polyMul is convolution of the monomial coefficient lists."
+      ],
+      "hypotheses": [
+        "Arbitrary factors, with no unreduced degree bound."
+      ],
+      "conclusion": "R_p(fg)=R_p((R_p f)(R_p g)), as an equality of padded lists.",
+      "unformalized": [
+        "The coefficient-functional and iterated-product consequences are separate selected roots."
+      ],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "The coefficient-list quotient by CoeffEq is the intended polynomial interpretation. No Mathlib Polynomial equivalence is constructed. This algebraic result does not identify any concrete Casimir, physical normalization, norm or quantum invariant."
+    },
+    {
+      "module": "VolumeLogic.MonicProduct",
+      "root": "VolumeLogic.newtonFunctional_product",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/N-uniform-filling-bound.tex",
+          "anchor": "\\label{prop:canonical-remainder-products}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "R is any commutative ring through Lean.Grind.CommRing; distinct roots, characteristic zero and division by root differences are not assumed.",
+        "A polynomial is a finite list of ascending monomial coefficients. coefficient f n is zero beyond the list. CoeffEq is equality of every coefficient, so trailing zeros do not change the polynomial; it is not merely equality of evaluations.",
+        "nodes is the finite root list with repetitions retained. monicMultiple nodes q represents p(X)q(X), where p is the product of X minus each node.",
+        "monicRemainder is the constructed Newton remainder, padded to exactly nodes.length coefficients. The formal degree bound is vanishing of all coefficients at indices at least nodes.length.",
+        "polyProduct forms the full finite product. canonicalProduct multiplies and reduces after each step."
+      ],
+      "hypotheses": [
+        "An arbitrary finite list of arbitrary-degree polynomial factors."
+      ],
+      "conclusion": "The Newton functional of the full product equals the top coefficient of the iteratively reduced product.",
+      "unformalized": [
+        "The matrix factor attached to a particular tangle and its marked closing functional."
+      ],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "The factor list may be empty; the implementation uses the multiplicative identity. The coefficient-list quotient by CoeffEq is the intended polynomial interpretation. No Mathlib Polynomial equivalence is constructed. This algebraic result does not identify any concrete Casimir, physical normalization, norm or quantum invariant."
+    },
+    {
+      "module": "VolumeLogic.MonicProduct",
+      "root": "VolumeLogic.quotientProduct_assoc",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/N-uniform-filling-bound.tex",
+          "anchor": "\\label{prop:canonical-remainder-products}"
+        }
+      ],
+      "kind": "exact",
+      "symbol_dictionary": [
+        "R is any commutative ring through Lean.Grind.CommRing; distinct roots, characteristic zero and division by root differences are not assumed.",
+        "A polynomial is a finite list of ascending monomial coefficients. coefficient f n is zero beyond the list. CoeffEq is equality of every coefficient, so trailing zeros do not change the polynomial; it is not merely equality of evaluations.",
+        "nodes is the finite root list with repetitions retained. monicMultiple nodes q represents p(X)q(X), where p is the product of X minus each node.",
+        "monicRemainder is the constructed Newton remainder, padded to exactly nodes.length coefficients. The formal degree bound is vanishing of all coefficients at indices at least nodes.length.",
+        "quotientProduct nodes f g is monicRemainder nodes (polyMul f g)."
+      ],
+      "hypotheses": [
+        "Arbitrary three polynomial representatives."
+      ],
+      "conclusion": "Reduced multiplication is associative, with literal equality of its padded canonical outputs.",
+      "unformalized": [],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "The coefficient-list quotient by CoeffEq is the intended polynomial interpretation. No Mathlib Polynomial equivalence is constructed. This algebraic result does not identify any concrete Casimir, physical normalization, norm or quantum invariant."
+    },
+    {
+      "module": "VolumeLogic.MonicProduct",
+      "root": "VolumeLogic.quotientProduct_double_head_derivative",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/N-uniform-filling-bound.tex",
+          "anchor": "\\label{prop:canonical-remainder-products}"
+        }
+      ],
+      "kind": "specialization",
+      "symbol_dictionary": [
+        "R is any commutative ring through Lean.Grind.CommRing; distinct roots, characteristic zero and division by root differences are not assumed.",
+        "A polynomial is a finite list of ascending monomial coefficients. coefficient f n is zero beyond the list. CoeffEq is equality of every coefficient, so trailing zeros do not change the polynomial; it is not merely equality of evaluations.",
+        "nodes is the finite root list with repetitions retained. monicMultiple nodes q represents p(X)q(X), where p is the product of X minus each node.",
+        "monicRemainder is the constructed Newton remainder, padded to exactly nodes.length coefficients. The formal degree bound is vanishing of all coefficients at indices at least nodes.length.",
+        "The repeated root r is placed in the first two positions of the root list. formalDerivativeValue is the algebraic first derivative evaluated at r."
+      ],
+      "hypotheses": [
+        "The root list is r::r::otherNodes; the input factors are arbitrary."
+      ],
+      "conclusion": "The derivative of the final reduced product at r is f′(r)g(r)+f(r)g′(r).",
+      "unformalized": [],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "The manuscript allows r in any two positions. The separately proved permutation invariance transports that statement to this head-root form. Higher-order jets are not claimed. The coefficient-list quotient by CoeffEq is the intended polynomial interpretation. No Mathlib Polynomial equivalence is constructed. This algebraic result does not identify any concrete Casimir, physical normalization, norm or quantum invariant."
+    },
+    {
+      "module": "VolumeLogic.ResolventFunctional",
+      "root": "VolumeLogic.polynomialResolvent_identity",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/N-uniform-filling-bound.tex",
+          "anchor": "\\label{prop:resolvent-reproduction}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "R is any commutative ring through Lean.Grind.CommRing; distinct roots, characteristic zero and division by root differences are not assumed.",
+        "A polynomial is a finite list of ascending monomial coefficients. coefficient f n is zero beyond the list. CoeffEq is equality of every coefficient, so trailing zeros do not change the polynomial; it is not merely equality of evaluations.",
+        "nodes is the finite root list with repetitions retained. monicMultiple nodes q represents p(X)q(X), where p is the product of X minus each node.",
+        "monicRemainder is the constructed Newton remainder, padded to exactly nodes.length coefficients. The formal degree bound is vanishing of all coefficients at indices at least nodes.length.",
+        "element=w lies in the same commutative ring. polynomialResolvent nodes w is the synthetic quotient (p(X)−p(w))/(X−w), where the fraction denotes a polynomial.",
+        "timesLinear w multiplies by X−w."
+      ],
+      "hypotheses": [
+        "p(w)=0, expressed as horner (monicPolynomial nodes) w=0."
+      ],
+      "conclusion": "Coefficientwise (X−w)V_w(X)=p(X).",
+      "unformalized": [
+        "The coefficient-functional reproduction is a separate selected root; no concrete matrix annihilator is proved here."
+      ],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "For a matrix application the commutative ring must be the subalgebra generated by that one matrix and the scalar coefficients. Matrices at distinct boxes are not required to commute."
+    },
+    {
+      "module": "VolumeLogic.ResolventFunctional",
+      "root": "VolumeLogic.newtonFunctional_resolvent_reproduces",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/N-uniform-filling-bound.tex",
+          "anchor": "\\label{prop:resolvent-reproduction}"
+        }
+      ],
+      "kind": "exact",
+      "symbol_dictionary": [
+        "R is any commutative ring through Lean.Grind.CommRing; distinct roots, characteristic zero and division by root differences are not assumed.",
+        "A polynomial is a finite list of ascending monomial coefficients. coefficient f n is zero beyond the list. CoeffEq is equality of every coefficient, so trailing zeros do not change the polynomial; it is not merely equality of evaluations.",
+        "nodes is the finite root list with repetitions retained. monicMultiple nodes q represents p(X)q(X), where p is the product of X minus each node.",
+        "monicRemainder is the constructed Newton remainder, padded to exactly nodes.length coefficients. The formal degree bound is vanishing of all coefficients at indices at least nodes.length.",
+        "The element w lies in the same commutative coefficient ring. polynomialResolvent is the polynomial synthetic quotient, not an inverse of X−w."
+      ],
+      "hypotheses": [
+        "nodes≠[], so p has positive degree; p(w)=0; f has arbitrary degree."
+      ],
+      "conclusion": "The top canonical-remainder coefficient of f(X)V_w(X) equals f(w).",
+      "unformalized": [],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "This proves the abstract reproduction identity, including repeated roots. Identifying w with a concrete Casimir still requires the written matrix relation; the code does not assume all tangle operators commute."
+    },
+    {
+      "module": "VolumeLogic.FaceGridSupport",
+      "root": "VolumeLogic.face_grid_selection_iff",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/Morse-preliminaries.tex",
+          "anchor": "\\label{mcg:face-grid-selection}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "level=N>0. exteriorExponent=a is the protected face exponent that is not averaged; markedExponent=b is the other protected exponent that is averaged.",
+        "ordinaryExponents is the finite list of ordinary-face exponents. Their number is the degree-budget multiplier."
+      ],
+      "hypotheses": [
+        "a+b+sum ordinaryExponents≤length(ordinaryExponents)·(N−1).",
+        "The left-hand selector requires b≡0 mod N and every ordinary exponent≡N−1 mod N."
+      ],
+      "conclusion": "The selector holds exactly when a=b=0 and every ordinary exponent is N−1.",
+      "unformalized": [
+        "The construction of face exponents from the original diagram, the face-potential bijection, parity cosets, character orthogonality and normalization of the averaging grid."
+      ],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "The source application has a homogeneous equality, which implies the weaker degree-budget hypothesis used in Lean. The arithmetic root alone does not reconstruct the marked coefficient."
+    },
+    {
+      "module": "VolumeLogic.RateComparison",
+      "root": "VolumeLogic.doubled_flattening_gain",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/P-weak-balance.tex",
+          "anchor": "\\label{wb:loss}"
+        },
+        {
+          "path": "manuscript/sections/P-weak-balance.tex",
+          "anchor": "\\label{wb:choice}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "Scalars lie in any linearly ordered commutative ring using Lean.Grind.OrderedRing; the manuscript applies the inequalities over the real numbers.",
+        "total is the ordinary finite sum. No entropy, convex function, minimizer, diagram or asymptotic rate is defined by this scalar module.",
+        "flatten=t, entropy=h_*, energy=mathcal E and defect=mathcal D; the displayed comparison is the manuscript comparison multiplied by two."
+      ],
+      "hypotheses": [
+        "t≥0 and t·energy≤entropy."
+      ],
+      "conclusion": "t·entropy−2(1−t)defect≤2t·entropy−2(1−t)defect−t²·energy.",
+      "unformalized": [
+        "The entropy lower bound, Hessian bound and construction of a flattening path with 0<t<1."
+      ],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "The scalar implication itself does not need t≤1. That restriction belongs to constructing the admissible analytic path."
+    },
+    {
+      "module": "VolumeLogic.RateComparison",
+      "root": "VolumeLogic.strict_weak_balance_gain",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/P-weak-balance.tex",
+          "anchor": "\\label{wb:criterion}"
+        },
+        {
+          "path": "manuscript/sections/P-weak-balance.tex",
+          "anchor": "\\label{wb:choice}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "Scalars lie in any linearly ordered commutative ring using Lean.Grind.OrderedRing; the manuscript applies the inequalities over the real numbers.",
+        "total is the ordinary finite sum. No entropy, convex function, minimizer, diagram or asymptotic rate is defined by this scalar module.",
+        "The formal margin is twice t h_*−t² mathcal E/2."
+      ],
+      "hypotheses": [
+        "t>0, entropy>0 and t·energy≤entropy."
+      ],
+      "conclusion": "2t·entropy−t²·energy>0.",
+      "unformalized": [
+        "Positivity of the actual entropy and the existence of a common t satisfying the analytic inequalities."
+      ],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "No entropy positivity is inferred merely from the theorem name."
+    },
+    {
+      "module": "VolumeLogic.RateComparison",
+      "root": "VolumeLogic.nonempty_sector_gap",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/P-weak-balance.tex",
+          "anchor": "\\label{wb:remainder}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "Scalars lie in any linearly ordered commutative ring using Lean.Grind.OrderedRing; the manuscript applies the inequalities over the real numbers.",
+        "total is the ordinary finite sum. No entropy, convex function, minimizer, diagram or asymptotic rate is defined by this scalar module.",
+        "central is the complete action, actionCost is the central flattening cost, selectedLoss pays for one active noncentral entry, and additionalLosses contains all other nonnegative losses."
+      ],
+      "hypotheses": [
+        "actionCost+gap≤selectedLoss; every additional loss is nonnegative."
+      ],
+      "conclusion": "central+actionCost−(selectedLoss+sum additionalLosses)≤central−gap.",
+      "unformalized": [
+        "The actual finite sector decomposition, an active entry in each noncentral sector, and its entropy/Hessian estimates."
+      ],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "This root gives a weak bound with a specified gap; its hypotheses do not require that the specified gap be positive."
+    },
+    {
+      "module": "VolumeLogic.RateComparison",
+      "root": "VolumeLogic.filled_remainder_strictly_below",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/P-weak-balance.tex",
+          "anchor": "\\label{wb:transfer}"
+        },
+        {
+          "path": "manuscript/sections/P-weak-balance.tex",
+          "anchor": "\\label{wb:filled-action}"
+        }
+      ],
+      "kind": "conditional",
+      "symbol_dictionary": [
+        "Scalars lie in any linearly ordered commutative ring using Lean.Grind.OrderedRing; the manuscript applies the inequalities over the real numbers.",
+        "total is the ordinary finite sum. No entropy, convex function, minimizer, diagram or asymptotic rate is defined by this scalar module.",
+        "complete=Phi_D, sourceGap=eta_D, actionDrop=delta and filled=the filled central action rate."
+      ],
+      "hypotheses": [
+        "sourceGap>0; 2·actionDrop<sourceGap; complete−actionDrop≤filled."
+      ],
+      "conclusion": "complete−sourceGap<filled.",
+      "unformalized": [
+        "The complete-source error bound, the filled-action calibration and nonzero central asymptotic."
+      ],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "This is the strict numerical comparison needed before a separate asymptotic transfer theorem can exclude cancellation."
+    },
+    {
+      "module": "VolumeLogic.ProtectedSum",
+      "root": "VolumeLogic.protected_sum_certified_rate",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/Q-protected-triangular-sums.tex",
+          "anchor": "\\label{pts:eq-17}"
+        }
+      ],
+      "kind": "conditional",
+      "symbol_dictionary": [
+        "Scalars lie in any linearly ordered commutative ring using Lean.Grind.OrderedRing; the manuscript applies the inequalities over the real numbers.",
+        "total is the ordinary finite sum. No entropy, convex function, minimizer, diagram or asymptotic rate is defined by this scalar module.",
+        "All costs, complete actions, target corrections and gaps in these expressions are doubled relative to Appendix Q.",
+        "a=log A, b=log B, c=log C, qa=2Q_a and qc=2Q_c. protectedBridgeRate is qa+qc in the central sector, max(2c,qa+c) on the left, and max(2a,qc+a) on the right.",
+        "protectedFirstRate and protectedSecondRate are the two old crossing costs at the selected sector. protectedFirstSide and protectedSecondSide give their forced active-side labels.",
+        "The duplicate ordinary-face target is 2b. outsideFirst and outsideSecond detect a noncentral label anywhere else in each whole input block."
+      ],
+      "hypotheses": [
+        "b≤qa and b≤qc, supplied geometrically by the simplex-vertex bound.",
+        "At common compatible weights, both complete block upper bounds and their whole-block noncentral gap bounds hold.",
+        "At least one outside flag is true or the merged crossing sector is noncentral; both supplied doubled gaps are positive."
+      ],
+      "conclusion": "The merged doubled cost is at most phiFirst+phiSecond−min(gapFirst,gapSecond), and is strictly below phiFirst+phiSecond.",
+      "unformalized": [
+        "The geometric triangle potentials, compatible common-weight normalization, and full source/Cauchy estimates that supply the hypotheses."
+      ],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "The scalar proof constructs the sector-side alternatives rather than assuming them independently. Divide its result by two to return to Appendix Q conventions."
+    },
+    {
+      "module": "VolumeLogic.ProtectedSum",
+      "root": "VolumeLogic.protected_sum_central_total",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/Q-protected-triangular-sums.tex",
+          "anchor": "\\label{pts:eq-10}"
+        }
+      ],
+      "kind": "exact",
+      "symbol_dictionary": [
+        "Scalars lie in any linearly ordered commutative ring using Lean.Grind.OrderedRing; the manuscript applies the inequalities over the real numbers.",
+        "total is the ordinary finite sum. No entropy, convex function, minimizer, diagram or asymptotic rate is defined by this scalar module.",
+        "All costs, complete actions, target corrections and gaps in these expressions are doubled relative to Appendix Q.",
+        "a=log A, b=log B, c=log C, qa=2Q_a and qc=2Q_c. protectedBridgeRate is qa+qc in the central sector, max(2c,qa+c) on the left, and max(2a,qc+a) on the right.",
+        "protectedFirstRate and protectedSecondRate are the two old crossing costs at the selected sector. protectedFirstSide and protectedSecondSide give their forced active-side labels.",
+        "The duplicate ordinary-face target is 2b. outsideFirst and outsideSecond detect a noncentral label anywhere else in each whole input block."
+      ],
+      "hypotheses": [
+        "Arbitrary ring scalars; order assumptions in the enclosing contract are unnecessary for the identity itself."
+      ],
+      "conclusion": "The merged central cost with target correction targetFirst+targetSecond−2b equals the sum of the two original central costs with their respective targets.",
+      "unformalized": [],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "This is only the exact scalar target bookkeeping in the displayed central identity, not existence or minimization of any packing."
+    },
+    {
+      "module": "VolumeLogic.ProtectedSum",
+      "root": "VolumeLogic.protected_finite_assembly_gap",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/Q-protected-triangular-sums.tex",
+          "anchor": "\\label{pts:eq-17}"
+        },
+        {
+          "path": "manuscript/sections/Q-protected-triangular-sums.tex",
+          "anchor": "\\label{pts:sec-8}"
+        }
+      ],
+      "kind": "conditional",
+      "symbol_dictionary": [
+        "Scalars lie in any linearly ordered commutative ring using Lean.Grind.OrderedRing; the manuscript applies the inequalities over the real numbers.",
+        "total is the ordinary finite sum. No entropy, convex function, minimizer, diagram or asymptotic rate is defined by this scalar module.",
+        "blockCostsAndActions is a finite list of pairs (cost, complete action); assembled is the final cost under the already established joining inequality."
+      ],
+      "hypotheses": [
+        "assembled≤sum block costs; each block cost≤its action; at least one actual list member has cost≤action−gap; gap>0."
+      ],
+      "conclusion": "assembled≤sum block actions−gap and therefore assembled<sum block actions.",
+      "unformalized": [
+        "The geometric/combinatorial construction of an iterated protected sum, its joining inequality, and an active block with a certified margin."
+      ],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "The selected root does not claim that arbitrary diagram gluings satisfy the required assembly inequality."
+    },
+    {
+      "module": "VolumeLogic.TriangularBoundary",
+      "root": "VolumeLogic.boundary_certified_rate",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:eq-23}"
+        }
+      ],
+      "kind": "conditional",
+      "symbol_dictionary": [
+        "Scalars lie in any linearly ordered commutative ring using Lean.Grind.OrderedRing; the manuscript applies the inequalities over the real numbers.",
+        "total is the ordinary finite sum. No entropy, convex function, minimizer, diagram or asymptotic rate is defined by this scalar module.",
+        "Appendix R uses undoubled actions; the Lean local comparison doubles all complete actions, costs, targets and source gaps.",
+        "a=log A, b=log B, c=log C, t=2T, qa=2Q_a and qc=2Q_c. Hence t−b is the undoubled boundary correction Delta=2T−log B.",
+        "The duplicate ordinary target is 2b, not 2t. protectedBridgeRate/FirstRate/SecondRate are the explicit scalar maxima defined in ProtectedSum.",
+        "The condition blockOutside || protectedSecondSide sector=false means the entire inserted block is central; a central root sector alone is insufficient."
+      ],
+      "hypotheses": [
+        "b≤t, b≤qa and b≤qc.",
+        "The core has a complete upper bound and its active whole-block gap bound; the block has its active whole-block gap bound.",
+        "When the entire block is central its doubled conditional upper bound is phiBlock+2(t−b), and the geometric conditional packing gives t≤qa.",
+        "The final sector is noncentral somewhere in the core, inserted block or merged crossing."
+      ],
+      "conclusion": "The final doubled cost is at most phiCore+phiBlock−min(gapCore,gapBlock).",
+      "unformalized": [
+        "Conditional disk minimizers, the boundary-packing comparison, the supplied positive margins and the full finite-source bounds."
+      ],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "This root has no positivity hypothesis on either gap and concludes a weak inequality only. The written positive source gap additionally uses their separately proved positivity. Under the manuscript calibration gapCore=2 gamma_core and gapBlock=gamma_B, division by two gives min(gamma_core,gamma_B/2)."
+    },
+    {
+      "module": "VolumeLogic.TriangularBoundary",
+      "root": "VolumeLogic.boundary_conditional_action_cancels",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:eq-14}"
+        },
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:eq-23}"
+        }
+      ],
+      "kind": "exact",
+      "symbol_dictionary": [
+        "Scalars lie in any linearly ordered commutative ring using Lean.Grind.OrderedRing; the manuscript applies the inequalities over the real numbers.",
+        "total is the ordinary finite sum. No entropy, convex function, minimizer, diagram or asymptotic rate is defined by this scalar module.",
+        "Appendix R uses undoubled actions; the Lean local comparison doubles all complete actions, costs, targets and source gaps.",
+        "a=log A, b=log B, c=log C, t=2T, qa=2Q_a and qc=2Q_c. Hence t−b is the undoubled boundary correction Delta=2T−log B.",
+        "The duplicate ordinary target is 2b, not 2t. protectedBridgeRate/FirstRate/SecondRate are the explicit scalar maxima defined in ProtectedSum.",
+        "The condition blockOutside || protectedSecondSide sector=false means the entire inserted block is central; a central root sector alone is insufficient."
+      ],
+      "hypotheses": [
+        "Arbitrary ring scalars."
+      ],
+      "conclusion": "core+(block+2 Delta)−2 Delta=core+block.",
+      "unformalized": [],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "This is the doubled conditional-action cancellation. The analytic fixed-boundary action identity producing the correction is a written input."
+    },
+    {
+      "module": "VolumeLogic.TriangularBoundary",
+      "root": "VolumeLogic.boundary_total_central_block",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:eq-19}"
+        },
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:eq-20}"
+        }
+      ],
+      "kind": "conditional",
+      "symbol_dictionary": [
+        "Scalars lie in any linearly ordered commutative ring using Lean.Grind.OrderedRing; the manuscript applies the inequalities over the real numbers.",
+        "total is the ordinary finite sum. No entropy, convex function, minimizer, diagram or asymptotic rate is defined by this scalar module.",
+        "Appendix R uses undoubled actions; the Lean local comparison doubles all complete actions, costs, targets and source gaps.",
+        "a=log A, b=log B, c=log C, t=2T, qa=2Q_a and qc=2Q_c. Hence t−b is the undoubled boundary correction Delta=2T−log B.",
+        "The duplicate ordinary target is 2b, not 2t. protectedBridgeRate/FirstRate/SecondRate are the explicit scalar maxima defined in ProtectedSum.",
+        "The condition blockOutside || protectedSecondSide sector=false means the entire inserted block is central; a central root sector alone is insufficient."
+      ],
+      "hypotheses": [
+        "The inserted block root-side label is inactive, and t≤qa."
+      ],
+      "conclusion": "The joined doubled cost is bounded by the two separated costs minus 2(t−b).",
+      "unformalized": [
+        "For an application the whole-block central hypothesis must establish the inactive root side and the conditional packing inequality t≤qa."
+      ],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "The formal theorem isolates the stronger central-block comparison from the general bridge comparison, whose subtraction is only t−b."
+    },
+    {
+      "module": "VolumeLogic.TriangularBoundary",
+      "root": "VolumeLogic.boundary_noncentral_block_margin",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:eq-20a}"
+        },
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:eq-23}"
+        }
+      ],
+      "kind": "conditional",
+      "symbol_dictionary": [
+        "Scalars lie in any linearly ordered commutative ring using Lean.Grind.OrderedRing; the manuscript applies the inequalities over the real numbers.",
+        "total is the ordinary finite sum. No entropy, convex function, minimizer, diagram or asymptotic rate is defined by this scalar module.",
+        "Appendix R uses undoubled actions; the Lean local comparison doubles all complete actions, costs, targets and source gaps.",
+        "a=log A, b=log B, c=log C, t=2T, qa=2Q_a and qc=2Q_c. Hence t−b is the undoubled boundary correction Delta=2T−log B.",
+        "The duplicate ordinary target is 2b, not 2t. protectedBridgeRate/FirstRate/SecondRate are the explicit scalar maxima defined in ProtectedSum.",
+        "The condition blockOutside || protectedSecondSide sector=false means the entire inserted block is central; a central root sector alone is insufficient."
+      ],
+      "hypotheses": [
+        "joined≤coreCost+blockCost−Delta; coreCost≤phiCore; blockCost≤phiBlock−blockGap."
+      ],
+      "conclusion": "joined≤phiCore+phiBlock−blockGap−Delta.",
+      "unformalized": [
+        "The source and joining estimates, positivity of Delta and the block margin, and their geometric construction."
+      ],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "This root is scalar substitution. It does not itself assert that Delta or blockGap is positive."
+    },
+    {
+      "module": "VolumeLogic.SourceAssembly",
+      "root": "VolumeLogic.filled_remainder_identity",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/Q-protected-triangular-sums.tex",
+          "anchor": "\\label{pts:eq-19}"
+        },
+        {
+          "path": "manuscript/sections/Q-protected-triangular-sums.tex",
+          "anchor": "\\label{pts:eq-20}"
+        },
+        {
+          "path": "manuscript/sections/P-weak-balance.tex",
+          "anchor": "\\label{wb:transfer}"
+        }
+      ],
+      "kind": "exact",
+      "symbol_dictionary": [
+        "allSectors is the entire finite list of noncentral sectors, including any multiplicities, fixed before the level tends to infinity. sector is the coherent polynomial contribution of one whole sector.",
+        "whole and central lie in a commutative coefficient ring A; fill maps A to a commutative ring B and is explicitly assumed additive and zero-preserving. No multiplication preservation is used."
+      ],
+      "hypotheses": [
+        "whole=central+sectorSum allSectors sector; fill(0)=0 and fill(x+y)=fill(x)+fill(y)."
+      ],
+      "conclusion": "fill(whole)−fill(central) equals the coherent sum of the filled sectors.",
+      "unformalized": [],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "The equality formalizes the additive assembly step only. A particular diagram must supply the complete list and its decomposition; matrix operators at different boxes are not identified with commuting elements."
+    },
+    {
+      "module": "VolumeLogic.SourceAssembly",
+      "root": "VolumeLogic.finite_sector_filling_bound",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/Q-protected-triangular-sums.tex",
+          "anchor": "\\label{pts:eq-20}"
+        },
+        {
+          "path": "manuscript/sections/P-weak-balance.tex",
+          "anchor": "\\label{wb:transfer}"
+        }
+      ],
+      "kind": "conditional",
+      "symbol_dictionary": [
+        "allSectors is the entire finite list of noncentral sectors, including any multiplicities, fixed before the level tends to infinity. sector is the coherent polynomial contribution of one whole sector.",
+        "whole and central lie in a commutative coefficient ring A; fill maps A to a commutative ring B and is explicitly assumed additive and zero-preserving. No multiplication preservation is used.",
+        "Scalars lie in any linearly ordered commutative ring using Lean.Grind.OrderedRing; the manuscript applies the inequalities over the real numbers.",
+        "total is the ordinary finite sum. No entropy, convex function, minimizer, diagram or asymptotic rate is defined by this scalar module.",
+        "polynomialSize is the supplied polynomial norm and absoluteValue is the supplied filled-value magnitude; they are arbitrary maps with the explicitly stated bounds, not a constructed Hermitian form.",
+        "degreeAdmissible records the separately bounded spectral degree at every box. operatorBound is required only on this admissible class, not on arbitrary higher-degree polynomials.",
+        "operatorCost is the nonnegative product filling cost, weights are the sector prefactors, and envelope is their shared exponential bound."
+      ],
+      "hypotheses": [
+        "The coherent full decomposition and additivity hypotheses hold; absoluteValue is zero at zero and subadditive.",
+        "Every listed sector is degreeAdmissible. Its filled magnitude is bounded by operatorCost times polynomialSize, and its polynomialSize is bounded by weights(index) times envelope.",
+        "operatorCost≥0."
+      ],
+      "conclusion": "The magnitude of fill(whole)−fill(central) is at most operatorCost·(sum sector weights)·envelope.",
+      "unformalized": [
+        "The actual sector decomposition, admissibility proof, full-source norm estimates, polynomial filling cost and their geometric calibration."
+      ],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "The source is assembled coherently before the magnitude triangle inequality. The theorem neither replaces a Gram matrix by the identity nor infers a lower bound on the marked closing coefficient."
+    },
+    {
+      "module": "VolumeLogic.SourceAssembly",
+      "root": "VolumeLogic.simultaneous_sector_threshold",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/Q-protected-triangular-sums.tex",
+          "anchor": "\\label{pts:eq-20}"
+        },
+        {
+          "path": "manuscript/sections/P-weak-balance.tex",
+          "anchor": "\\label{wb:transfer}"
+        }
+      ],
+      "kind": "exact",
+      "symbol_dictionary": [
+        "allSectors is a fixed finite list, individualThreshold gives a natural cutoff for each list member, and sectorThreshold is their list maximum.",
+        "levelScope is any retained predicate on levels, such as all levels N≥3 or the prescribed parity; estimate is an arbitrary sector-and-level proposition."
+      ],
+      "hypotheses": [
+        "For each member, the estimate holds at every level above its individual threshold that also satisfies levelScope."
+      ],
+      "conclusion": "Above sectorThreshold the estimates hold simultaneously for every listed sector, with the original levelScope unchanged.",
+      "unformalized": [],
+      "contract": "formal/StatementContracts.lean",
+      "notes": "This is the finite logical step after the individual estimates. It does not prove their analytic content and does not replace an all-level claim by a subsequence."
+    }
+  ]
+}

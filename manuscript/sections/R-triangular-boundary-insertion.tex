@@ -16,13 +16,13 @@ The same boundary correction absorbs every gluing defect. Finally an
 explicit chain of tangent circles supplies faces with the required
 small curvature ratios.
 
-\begin{theorem}[Ordinary triangular insertion]\label{tbi:main} Let \(B_1,\ldots,B_s\), \(s\ge1\), be fixed marked simple-sphere diagrams satisfying the unabridged certificate \eqref{tbi:eq-C2}. Choose a marked boundary triangle in each input. There are positive boundary thresholds \(\eta_j\) such that the following holds.
+\begin{theorem}[Ordinary triangular insertion]\label{tbi:main} Let \(B_1,\ldots,B_s\), \(s\ge1\), be fixed marked simple-sphere diagrams satisfying the certificate \eqref{tbi:eq-C2}. Choose a marked boundary triangle in each input. There are positive boundary thresholds \(\eta_j\) such that the following holds.
 
 Let \(D\) be a fixed certified core, with chosen witnesses for every locally allowed noncentral string and its complete vector. Select \(s\) distinct matching pairs and one all-ordinary triangle in each, with no pair used twice. At the \(j\)-th triangle, write its weights as \((u_j,v_j,b_j)\). Suppose every chosen core vector satisfies
 \begin{equation}\label{tbi:eq-T1}
 u_j/b_j\le\eta_j,\qquad v_j/b_j\le\eta_j.
 \end{equation}
-Insert the rooted disks of the \(B_j\)'s by the oriented operation in Section~\ref{tbi:sec-5}. The resulting marked simple sphere has an unabridged full-source certificate with gap at least
+Insert the rooted disks of the \(B_j\)'s by the oriented operation in Section~\ref{tbi:sec-5}. The resulting marked simple sphere has a full-source certificate with gap at least
 \begin{equation}\label{tbi:eq-T2}
 \min\{\gamma_D,\gamma_{B_1}/2,\ldots,\gamma_{B_s}/2\}.
 \end{equation}
@@ -46,7 +46,7 @@ Q(w_1,w_2,w_3)=
 f(t)=\frac{\Lambda(\pi t)+\Lambda(\pi/2-\pi t)}{\pi},
 \end{equation}
 where loads at a zero weight are required to vanish and
-\(\Lambda(s)=-\int_0^s\log(2\sin r)\,dr\). In particular \(f(0)=f(1/2)=0\), \(f\ge0\), and \(f\) is strictly concave on \((0,1/2)\).
+\(\Lambda(s)=-\int_0^s\log|2\sin r|\,dr\). In particular \(f(0)=f(1/2)=0\), \(f\ge0\), and \(f\) is strictly concave on \((0,1/2)\).
 
 For an ordered polynomial quartet \((x,b,c,y)\), the input and output triangles are \((x,b,y)\) and \((x,c,y)\). The complete and one-sided rate functions are
 \begin{equation}\label{tbi:eq-C1}
@@ -64,7 +64,7 @@ G_{D,\omega}(q)=\sum_e A_{e,\omega_e}(q)-\sum_{f\in\mathcal O_D}q_f,
 \qquad P_D=G_{D,C},\qquad
 \Phi_D=\min P_D=\frac{\operatorname{Vol}(Y_D)}{2\pi}.
 \end{equation}
-Here \(Y_D\) is the original augmented exterior before crossing-circle filling. A finite unabridged certificate means that there is \(\gamma_D>0\) and, for every locally allowed \(\omega\ne C\), a real log-weight vector \(q^\omega\) with
+Here \(Y_D\) is the original augmented exterior before crossing-circle filling. A finite certificate means that there is \(\gamma_D>0\) and, for every locally allowed \(\omega\ne C\), a real log-weight vector \(q^\omega\) with
 \begin{equation}\label{tbi:eq-C2}
 G_{D,\omega}(q^\omega)\le\Phi_D-\gamma_D.
 \end{equation}
@@ -299,7 +299,7 @@ R_{\mathrm{new}}=R_D+\sum_j(R_{B_j}-1),
 
 \section{From protected certificates to a full source estimate}\label{tbi:sec-6}
 
-Assume each block has a finite unabridged certificate at its standalone protected mark \(uv\), with gap \(\gamma_B>0\). It covers every locally allowed noncentral string, including old strings whose global extraction happened to vanish.
+Assume each block has a finite certificate at its standalone protected mark \(uv\), with gap \(\gamma_B>0\). It covers every locally allowed noncentral string, including old strings whose global extraction happened to vanish.
 
 Choose one positive interior witness per old string at \(u=v=0,b=1\). Their rates are continuous when \(u,v\to0\), because every triangle contains a positive ordinary corner. Finiteness preserves half the gap on one common small square. A newly allowed side overloaded at \(u\) or \(v\) has rate
 \[
@@ -322,7 +322,7 @@ each inserted block by all of its labels, not just its root label:
 
 Every noncentral output induces a noncentral label in the core or in
 an inserted block. The first case keeps the core gap; the second keeps
-that block's half-gap. Each interface absorbs its own defect.
+that block's half-gap. Each attachment absorbs its own defect.
 For finitely many insertions this proves
 \begin{equation}\label{tbi:eq-23}
 \gamma_{\mathrm{new}}\ge
@@ -336,9 +336,9 @@ The local bounds \eqref{tbi:eq-C1} are uniform in phases and all real spectral v
 
 The new sphere and matching are fed into the original Morse inverse-cut construction. This constructs the augmented link \(Y_{\mathrm{new}}\) in \(S^3\), its crossing-circle balls, local signed half twists, outside strands and disk-framed primitive bases. It is not necessary to interpret the operation as a preexisting named topological sum.
 
-There is one new crossing circle at each merged pair. Its primitive word is the ordered two-head product from its new quartet. The two input crossing circles do not survive as two independently fillable cusps. The independent integers in the conclusion belong to the \textbf{final} regions. Choose a retained parity pattern passing the final one-component test; such a pattern exists by the original spanning-tree pairing argument. No old knot parity or knot type is silently transported.
+There is one new crossing circle at each merged pair. Its primitive word is the ordered product of its two puncture meridians from its new quartet. The two input crossing circles do not survive as two independently fillable cusps. The independent integers in the conclusion belong to the \textbf{final} regions. Choose a retained parity pattern passing the final one-component test; such a pattern exists by the original spanning-tree pairing argument. No old knot parity or knot type is silently transported.
 
-The simple-sphere packing theorem of Appendix~\ref{app:balanced-terminal-fans} applies to the final sphere and fixes its positive complete cells. Equations \eqref{tbi:eq-21}--\eqref{tbi:eq-22} identify its actual augmented action:
+The simple-sphere packing theorem of Appendix~\ref{app:morse-preliminaries} applies to the final sphere and fixes its positive complete cells. Equations \eqref{tbi:eq-21}--\eqref{tbi:eq-22} identify its actual augmented action:
 \begin{equation}\label{tbi:eq-24}
 2\pi\Phi_{\mathrm{new}}=\operatorname{Vol}(Y_{\mathrm{new}}).
 \end{equation}
@@ -478,7 +478,7 @@ v/b_n=1/b_n\longrightarrow0.
 \end{equation}
 Choose an even \(n\) large enough for the prescribed block threshold \(\eta_B\). This meets \eqref{tbi:eq-T1} with the same complete vector for all core strings.
 
-For finitely many inputs, first form a protected sum of finitely many octahedral cores, as in Appendix~\ref{app:protected-triangular-sums}, leaving their \(T_2,Z_2\) pairs untouched. The complete vectors agree after the common joining weight is fixed, and strict balance is retained: the new complete bridge exceeds each old complete rate by a strictly positive triangle contribution. Build one chain in each selected disk. The old joined comparisons are unchanged, and \eqref{tbi:eq-28d}--\eqref{tbi:eq-28h} control every new region. Choosing the finite list of even chain lengths separately gives \eqref{tbi:eq-T1} at every interface. Shared boundary vertices still carry the same core weight and one original target.
+For finitely many inputs, first form a protected sum of finitely many octahedral cores, as in Appendix~\ref{app:protected-triangular-sums}, leaving their \(T_2,Z_2\) pairs untouched. The complete vectors agree after the common joining weight is fixed, and strict balance is retained: the new complete bridge exceeds each old complete rate by a strictly positive triangle contribution. Build one chain in each selected disk. The old joined comparisons are unchanged, and \eqref{tbi:eq-28d}--\eqref{tbi:eq-28h} control every new region. Choosing the finite list of even chain lengths separately gives \eqref{tbi:eq-T1} at every attachment. Shared boundary vertices still carry the same core weight and one original target.
 
 \subsection{Separation from protected sums and weak balance}\label{separation-from-protected-sums-and-weak-balance}
 
@@ -542,7 +542,7 @@ monotonicity argument below.
 
 Every selected rate is nondecreasing in \(w_0,w_{16}\), and the block comparison subtracts no target at these boundary vertices. Since \(b_n\) increases, the same forty-five witnesses work for every even \(n\ge n_0\). The correction \(\Delta\) also decreases. Combining their gap with the core gap \(>3/50\) and the whole-block comparison gives an assembled source gap at least \(1/50\).
 
-\begin{corollary}[Explicit ordinary-face sequence]\label{tbi:explicit} For every even \(n\ge2^{20}\), attach the seventeen-region block at crossing 15 to the terminal face of the length-\(n\) octahedral chain. The resulting original marked sphere has \(n+20\) regions, an unabridged full-source gap of at least \(1/50\), and a complete weak-balance failure among the retained regions \(2,4,7,12\). It has no separating three-cycle containing both protected endpoints. After choosing any final knot-producing parity, independently sufficiently long fixed signed primitive fillings satisfy \eqref{tbi:eq-27}. Any fixed finite number of these blocks can similarly be attached to the multi-core construction, with the same source-gap lower bound. The filling threshold still depends on the entire fixed final diagram.
+\begin{corollary}[Explicit ordinary-face sequence]\label{tbi:explicit} For every even \(n\ge2^{20}\), attach the seventeen-region block at crossing 15 to the terminal face of the length-\(n\) octahedral chain. The resulting original marked sphere has \(n+20\) regions, a full-source gap of at least \(1/50\), and a complete weak-balance failure among the retained regions \(2,4,7,12\). It has no separating three-cycle containing both protected endpoints. After choosing any final knot-producing parity, independently sufficiently long fixed signed primitive fillings satisfy \eqref{tbi:eq-27}. Any fixed finite number of these blocks can similarly be attached to the multi-core construction, with the same source-gap lower bound. The filling threshold still depends on the entire fixed final diagram.
 \end{corollary}
 
 \section{What is used from the earlier volume theorems}\label{tbi:sec-9}
@@ -551,4 +551,7 @@ Variational approaches to Euclidean surface structures and circle patterns were 
 
 The complete disk identity is classical variational elimination with the original triangle normalization. It gives neither an equality of finite spectral polynomials nor an independent-radius source bound. The complementary estimates here use the actual phase-uniform rates \eqref{tbi:eq-C1}, a shared torus for each string, and every original coefficient target.
 
-Appendix~\ref{app:balanced-terminal-fans} supplies the simple-sphere packing and the local spectral bounds. Appendix~\ref{app:uniform-filling-bound} supplies the exact finite filling-functional norm with its degree restrictions and scalar. Appendix~\ref{app:morse-geometric-contribution} supplies the whole nonzero central period, its primitive metric completion and absolute action calibration for the final diagram. The full complementary estimate \eqref{tbi:eq-23} is the additional input that allows the elementary rate transfer to the full invariant. No open general matched-sphere source estimate is used.
+Appendix~\ref{app:morse-preliminaries} supplies the simple-sphere
+packing. The local spectral bounds are those of
+\cite[Theorem 1.1]{CasimirSources}, used with the same shared face
+weights. Appendix~\ref{app:uniform-filling-bound} supplies the exact finite filling-functional norm with its degree restrictions and scalar. Appendix~\ref{app:morse-geometric-contribution} supplies the whole nonzero central period, its primitive metric completion and absolute action calibration for the final diagram. The full complementary estimate \eqref{tbi:eq-23} is the additional input that allows the elementary rate transfer to the full invariant. No open general matched-sphere source estimate is used.

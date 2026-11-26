@@ -113,7 +113,6 @@
         "VolumeLogic.monicRemainder_unique": "theorem",
         "VolumeLogic.monicRemainder_unique_padded": "theorem",
         "VolumeLogic.monic_remainder_unique_between": "theorem",
-        "VolumeLogic.newtonFunctional_from_remainder": "theorem",
         "VolumeLogic.monicRemainder_idempotent": "theorem",
         "VolumeLogic.monicMultiple_congr": "theorem",
         "VolumeLogic.timesLinear_commute": "theorem",
@@ -568,11 +567,6 @@
           "Quot.sound"
         ],
         "VolumeLogic.monic_remainder_unique_between": [
-          "propext",
-          "Classical.choice",
-          "Quot.sound"
-        ],
-        "VolumeLogic.newtonFunctional_from_remainder": [
           "propext",
           "Classical.choice",
           "Quot.sound"
@@ -1167,7 +1161,11 @@
         "VolumeLogic.total": [],
         "VolumeLogic.sectorSum": [],
         "VolumeLogic.sectorThreshold": []
-      }
+      },
+      "statement_contracts": [
+        "std/StatementContracts.txt"
+      ],
+      "invalid_type_contracts_rejected": []
     },
     "mathlib": {
       "modules": [
@@ -3077,7 +3075,31 @@
           "Quot.sound"
         ],
         "VolumeLogic.WeightedGraph.edgeStep": []
-      }
+      },
+      "statement_contracts": [
+        "mathlib/AnalysisContracts.txt",
+        "mathlib/VariationalContracts.txt"
+      ],
+      "invalid_type_contracts_rejected": [
+        {
+          "id": "analysis_parseval_normalization",
+          "reason": "The coefficient transform is normalized by 1/N. Its squared l\u00b2 norm is (1/N) times the input energy, not the input energy. For N=2 and the constant array f=1 the two energies are 1 and 2.",
+          "positive_log": "mathlib/analysis_parseval_normalization-positive.txt",
+          "negative_log": "mathlib/analysis_parseval_normalization-negative.txt"
+        },
+        {
+          "id": "analysis_holomorphic_schur_transpose",
+          "reason": "A holomorphic Hessian identifies its external/internal block D with B\u1d40, not B*. The negative control supplies only D=B* but attempts the same block identification required to interpret the Schur formula. In one dimension B=i and D=\u2212i satisfy the mistaken premise while D=B\u1d40 is false. The second conjunct applies the actual effective_hessian theorem; its matrix statement is unchanged.",
+          "positive_log": "mathlib/analysis_holomorphic_schur_transpose-positive.txt",
+          "negative_log": "mathlib/analysis_holomorphic_schur_transpose-negative.txt"
+        },
+        {
+          "id": "analysis_strict_remainder_gap",
+          "reason": "A remainder with the same exponential rate may cancel the leading term exactly. With \u03c1=0, unit=1, amplitude=1, S_N=b real and E_N=\u2212exp(Nb), all other hypotheses hold and K_N=0. Strict b<Re S is essential to eventual nonvanishing.",
+          "positive_log": "mathlib/analysis_strict_remainder_gap-positive.txt",
+          "negative_log": "mathlib/analysis_strict_remainder_gap-negative.txt"
+        }
+      ]
     }
   },
   "inventory_controls_rejected": [
@@ -3085,10 +3107,26 @@
     "unused private opaque",
     "admitted proof"
   ],
+  "statement_correspondence": {
+    "scope": "Authored statement dictionaries and anonymous independently stated Lean type contracts; no automatic inference of TeX semantics.",
+    "selected_roots": 76,
+    "relation_kinds": {
+      "exact": 15,
+      "specialization": 10,
+      "component": 41,
+      "conditional": 10
+    },
+    "contract_files": [
+      "formal/StatementContracts.lean",
+      "formal-real/AnalysisContracts.lean",
+      "formal-real/VariationalContracts.lean"
+    ]
+  },
   "source_sha256": {
+    "formal-real/AnalysisContracts.lean": "44a405ed7a165fc9c00148b1d39ba66742fe685671083fc032eaa0d8a6ea7a8f",
     "formal-real/AxiomAudit.lean": "372e3856e4bd5133094165491a1182a271c171fab5474446ac2fbd46eacf890a",
     "formal-real/CoefficientGram.lean": "1ad0370079a6b447dab76729a904b8d772e9071a75c374e8ce7e246af2cfed9f",
-    "formal-real/ConwayAssembly.lean": "579fbb6e956c10b239a105b1d82fdea61f8a4c71c2b49a5bd713cd415d90a46d",
+    "formal-real/ConwayAssembly.lean": "0b823a66b56867447bba13ddf8d2d0c626a64882b28836e9bd7522a3a510045d",
     "formal-real/Flattening.lean": "cb2af0e3d616f4c29234585f0fcca0c1baccd3c18f2efc60ceb2e6e7384846a0",
     "formal-real/FourierHermite.lean": "17acc98f3006c7c29ff026330473cdc6f63c4fb33f83096635cc2c285409c7c3",
     "formal-real/GroundedConvexity.lean": "ad17ca142c49f83f7353d8a7e75502bc4fc3e818ecd4aafb4edd005c0cca6e18",
@@ -3102,40 +3140,48 @@
     "formal-real/TriangleLoads.lean": "9fb64199f60f62488b902f087461b1e566568c77248049a596ed17f684a5f59c",
     "formal-real/TriangleMinimizer.lean": "50ccf8b488523b4e0cfbc1eddaf52a3bac7d2b1994dea925f14b4dabc234d8ec",
     "formal-real/TrianglePotential.lean": "48a34b92ea3a9911a6d27ac05744f69324a77b29749b3a44bbcfb36dc6aaeb59",
+    "formal-real/VariationalContracts.lean": "8923012e66770b7501b65555915b35fbc38ae31b517ca971cad8e25409818e58",
     "formal-real/WeightedGraph.lean": "9594bc44a971cdb67277e1a5f74f29017b818bebe7ba0cee7f10aaff30d19f39",
     "formal-real/lake-manifest.json": "e4b572de88e8c9a6bf79817a5b36f982d825c86725f6d161e65bad42aadd6b5b",
     "formal-real/lakefile.toml": "c319bfe5692fb86e40dd1c62915b87c4ac14edb3289ce1888c98de475d52eae6",
     "formal-real/lean-toolchain": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
-    "formal/AxiomAudit.lean": "f9eb75643ac35afe00b71236820dacdf7ee57a7ffa66f80e4500fb3c94ca6bd5",
+    "formal/AxiomAudit.lean": "1d7d3f54fd6bfa55e47f47c96c40366e470575b7b334fbd57c3181d558392378",
+    "formal/StatementContracts.lean": "19e0adfa9bfbffb9fb4b1ee8333f886f643d1b0eaabf1266170eb6c834b35ed7",
     "formal/VolumeLogic.lean": "7cc9329a71ac5bbd085149b1dab90efaf30cd15048b4699fd696e9e9058e9e9a",
     "formal/VolumeLogic/FaceGridSupport.lean": "8ee975dbb132d003f3ae31752d5999ab25547143b3b43b4c86027280a3ee8d5c",
     "formal/VolumeLogic/FiniteAlgebra.lean": "6fcf9498917b62a42b4ebb2805350563fd646fdc821a541b929ecf815bdbf3d9",
     "formal/VolumeLogic/FiniteSupport.lean": "1bfa85773a7f86cd6bed589bfb21e7395cb196449f164d4c272cb1dafc5b1d35",
     "formal/VolumeLogic/MonicLinearity.lean": "75b8cebc8e8bd4cd72257cff082ffe2d74f67391f90942df59f80782f6a8db2b",
     "formal/VolumeLogic/MonicProduct.lean": "77c70ef655c3e7af4c0d877dd5b110e53a22d3f421bc0581470e5e7c1735cd0b",
-    "formal/VolumeLogic/MonicRemainder.lean": "f6781dba17c7677adcfe2aec41d31f8742004fc38a45be9732c24ce98b65dbfd",
-    "formal/VolumeLogic/MonicUniqueness.lean": "5b1923608c3117ba4875879310b51d56995b8548f1bc93e9491eda2238d4ab1c",
+    "formal/VolumeLogic/MonicRemainder.lean": "b4d40903cc6d651a28682a30beacbf649695f16f0056a1b19b0771bc373d38be",
+    "formal/VolumeLogic/MonicUniqueness.lean": "6ca22b2f27aba612a97c0d09f19ca904b7af1eb9403439a99c020a12d0d43226",
     "formal/VolumeLogic/ProtectedSum.lean": "6083dc9764da8ffdee625f01bc2c6a8929cdddf6adc8bcfbce5fed188b37e60d",
     "formal/VolumeLogic/RateComparison.lean": "837a19f87080465b55b8f9373d99eda56900829c166e98a8f16c1136ae06123b",
     "formal/VolumeLogic/ResolventFunctional.lean": "3fd0e71216901b57867cefad3bbaa423c5b1c0196e7b48286ba09cea5f0df01f",
     "formal/VolumeLogic/SourceAssembly.lean": "40a6a714a71eefeef2aa9ddf429a6852fe2f8d7360d72a7e2ba03821f2387865",
     "formal/VolumeLogic/TriangularBoundary.lean": "4e28e5b0ea179f4abae23c4541e1dd29e0fc599e2637531807abd387dcfae02b",
-    "formal/coverage.json": "5565837452285408fdc3c5fd4858e960a67589ec0b0f63d43ceb3a57e97424a7",
+    "formal/correspondence/analysis.json": "7a6cdd8acf83f4f4296fa85104dd6dcb65d1e5a642ba703ecece80b3121b1abf",
+    "formal/correspondence/controls.json": "ef662fbb233c803ff1622b7a33da0bb3120e35fb2fabbc5ee47b9e0b554c8ffe",
+    "formal/correspondence/finite.json": "f053e3c72c3cf00d6ed092b1b78281587a2afc3ce8504f32982f87aed9d967f7",
+    "formal/correspondence/variational.json": "8f88343ab7a65385fc2c6bd6a796b54930ad962702e466739e803cecd430e9c7",
+    "formal/coverage.json": "414d790b3fef505b1f8c79991508e6d85e8db2a573246cbe9a241d4fd1e17e96",
     "formal/dependency-pins.json": "f5c2a8f4f20174b592b6ef20fe2c085f1016d2403e3b2308af140a4eb7557f33",
     "formal/lake-manifest.json": "94a62178292dabc02ac925f33a78081a26da3b9fc9b5c3ea33e97e9a8dce25da",
     "formal/lakefile.toml": "71a7a9b5284cf174da995a33b0eacd876b7a02a5aceb34263293078d22109d33",
     "formal/lean-toolchain": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
-    "manuscript/sections/02-exact-concepts.tex": "3e238b139a78b4c8ab085a800b21ec3c579ce6fb5deb2a32375bac7dbea85b0e",
-    "manuscript/sections/09-reproduction.tex": "57f8411977fae16d614a7ccd2c9f80dee668cfb5ce89a424a0cc59db17b5ad19",
-    "manuscript/sections/Morse-preliminaries.tex": "d6dfc0d1f2d49c9ac669181126ea3c4400040e910374254e3e02fa3a013fe06c",
-    "manuscript/sections/N-uniform-filling-bound.tex": "13acdb347c1e944cb86818d3d8d5958ffc92cdd2375541fb99933a3ff04ad55d",
-    "manuscript/sections/O-morse-geometric-contribution.tex": "4d2c66502910cf82c125e14cb93cffe62e94d92852bd31baeb1a98814a9bb8f8",
-    "manuscript/sections/P-weak-balance.tex": "3aac4d8656bf069f87d7fb4d8fa609290028c34a59769ebe51bc72a45612f727",
-    "manuscript/sections/Q-protected-triangular-sums.tex": "e0fea23dd758c9a43036613cb78a32d7d1e6efd9d89fc54573d617c985763aa6",
-    "manuscript/sections/R-triangular-boundary-insertion.tex": "5678dd95836916c2aee3e1de9616c95b80ce310415399ea3c37dca8c05875a4b",
+    "manuscript/sections/02-exact-concepts.tex": "88b59fab5ca4c2a0d58bf37cfa7759cd70f375dbb722c343448eb4d3b8ee5ad4",
+    "manuscript/sections/09-reproduction.tex": "a37064eaffb43cd1de06a066c26c19edea7124630df31d87c53e3b7d3c025645",
+    "manuscript/sections/Morse-preliminaries.tex": "e63484698dce3a12e65767d98f1951f776f3b245c53675800fead9cd054ad0e1",
+    "manuscript/sections/N-uniform-filling-bound.tex": "62f141bea3f18e78770c1a80657e8228036d6b93bb00158867a6adf3a36b0374",
+    "manuscript/sections/O-morse-geometric-contribution.tex": "198125ac21a44d8b97502d828a3cee05533c17ef4e37160045186e16f5273b55",
+    "manuscript/sections/P-weak-balance.tex": "87331975a5ac9fa9aaccb636057c30de381ad581d4a06f8e7f28d327025ed831",
+    "manuscript/sections/Q-protected-triangular-sums.tex": "4597a2b1d6fbae3c578361c9d02fd98054636a3b1f1afea7d4bbb2c4a29cec6f",
+    "manuscript/sections/R-triangular-boundary-insertion.tex": "d4476274a1e8e7e664fe29c8283a7079765ceea5f9c4b076658aa2bed1a1cf88",
     "papers/conway-asymptotics/filling.tex": "60844fa7ec1bf749d35c27144feefdd1f48eb005e50262119cb60afc8f241347",
     "papers/conway-asymptotics/introduction.tex": "0bd7c80b6f4d575776c53a9a658c0462336573bb7431725a2bc308637e67778e",
     "papers/conway-asymptotics/pure-window.tex": "7d5a6d807aace1b8c9036e2f6060a9b624248887c07383299944063fddecb8fa",
-    "repro/check_lean.py": "3d124f22291e40983f8c469a7fbd9d64af7a547ce7ab2cf011b3c29f26631e81"
+    "papers/planar-certificates/main.tex": "7afe6ea35b04dac6b9f7b9ad027311985c1b1352304155a0cdd322f0874af3e0",
+    "papers/triangular-insertion/main.tex": "48cf0f9f35c4015bfc3163e982c6cc9355704607ac3ff8f6858fb3b9e4a7dd50",
+    "repro/check_lean.py": "43bfe022b9de065c36a94498232f5323986fbea6ab2f8dfe4792a743ec6c256e"
   }
 }

@@ -4,8 +4,8 @@
 \subsection{Fixed coordinates and the physical factors}
 Write \(\theta=\pi/N\), \(\eta=(-1)^{N-1}\), and let
 \(\mathsf T_N(z)\) be the monic polynomial with
-\(\mathsf T_N(t+t^{-1})=t^N+t^{-N}\). The pair algebra at a vertex
-has relation \(P_\sigma=\mathsf T_N+2\cos(2\pi\sigma)\), with
+\(\mathsf T_N(t+t^{-1})=t^N+t^{-N}\). At a vertex we work in the quotient algebra
+$\mathbb C[z]/(P_\sigma(z))$, with relation \(P_\sigma=\mathsf T_N+2\cos(2\pi\sigma)\), with
 \(\sigma=0,s\), or \(-s\) prescribed by its oriented pair type.
 The common vector-space basis is
 \begin{equation}\label{cta:basis}
@@ -13,8 +13,10 @@ The common vector-space basis is
  S_k=\prod_{j=1}^k2\sin(j\theta),\qquad
  c_j=2\cos((2j+1)\theta),\quad 0\le k<N.
 \end{equation}
-An empty product is one. A canonical representative has degree
-less than \(N\), obtained using its actual relation \(P_\sigma\).
+An empty product is one. Here $[z^d]$ below means the coefficient of $z^d$, and
+$\rem_{P_\sigma}$ means the polynomial remainder on division by
+the monic polynomial $P_\sigma$. A canonical representative has degree
+less than \(N\), obtained using its relation \(P_\sigma\).
 The different relations are not identified as algebras.
 
 The closing functional and paired edge factors are
@@ -33,8 +35,9 @@ Lowering its index with \eqref{cta:pairing} identifies the equal
 indices on the two ends of the edge and leaves
 \(\gamma_e H_N/W_k\), not its reciprocal.
 
-Let \(p_v\) be the actual crossing power, including the carrier
-specified by the original oriented diagram. The exact identity
+Let \(p_v\) denote the polynomial representing the crossing
+power at vertex $v$, in the quotient and orientation type specified
+by the diagram. Here $p_v$ is a polynomial, not a Dehn filling integer. The exact identity
 of \cite[Theorem~7.1]{Meridian} is
 \begin{equation}\label{cta:exact-source}
  \begin{split}
@@ -59,17 +62,20 @@ their endpoint limits are \(1-s^2/j^2\), also zero-free.
 Compactness, including the finitely many small \(N\), gives the
 bound and its inverse. The same argument applies to \(H_N\).
 
-\subsection{Bounds that retain the first normal}
+\subsection{Polynomial bounds including derivatives at double roots}
 Let \(m=\lfloor d/2\rfloor\). Indices \(k\le m\) will be called
-low, the others high. For a canonical polynomial use the complete
+low, the others high. For a canonical polynomial use the Hermite
 norm
 \[
  \|f\|_{\mathcal J}=
  \max\{|f(c)|,\ |f'(c)|:\ c\text{ a double node of }P_0;
                  \ |f(-2)|\text{ if }N\text{ is odd}\}.
 \]
-The derivative at the odd simple node is absent. All first
-derivatives at double nodes are retained.
+This is a norm on canonical polynomials of degree less than $N$: a
+polynomial is determined by its value and first derivative at each
+double root, and its value at the odd-level simple root. We call these
+data its Hermite data. Later uses of a \emph{first normal} mean precisely
+the first-derivative part of these data.
 
 \begin{lemma}\label{cta:norms}
 For fixed \(R<1\), a fixed number of factors and fixed integer
@@ -110,7 +116,7 @@ The values of \(h\) at the double nodes are
 \((f'(c)-I'(c))/Q_N'(c)\). These determine \(h\), whose degree
 is less than their number. Use \(Q_N\) for this interpolation at
 even levels and \(Q_N/(z+2)\) at odd levels; the same cardinal
-bound applies. Consequently the interval norm, the complete
+bound applies. Consequently the interval norm, the Hermite
 normal norm, and the Chebyshev coefficient sum are polynomially
 equivalent. One may bound derivatives without any conditioning
 assumption: a degree-\(n\) Chebyshev expansion has coefficients
@@ -129,7 +135,7 @@ Iteration bounds reduction of degree at most \(hN\) by
 Finally \([z^d]C_d=1/2\). These facts prove the asserted
 polynomial costs of multiplication and \(\phi_\sigma\).
 
-The actual crossing polynomial and its inverse are holomorphic
+The crossing polynomial and its inverse are holomorphic
 through the collisions in \(|\sigma|<1\), with the normals of
 \cite[Proposition~6.1]{Meridian}. On a parameter circle of radius
 \(R'\in(R,1)\), \(R'\ne1/2\), Lagrange interpolation has
@@ -187,7 +193,7 @@ Equation \eqref{cta:high-normal} is consequently at most
 The odd simple-node value is zero. This proves \eqref{cta:basis-bound}.
 \end{proof}
 
-\subsection{Discard before forming an angular sum}
+\subsection{Bounding the indices omitted from the local edge sums}
 Retain \(k_e/N\in I=[1/5,3/10]\) at every edge.
 Each edge index occurs in two vertex factors of
 \eqref{cta:exact-source}. Lemma~\ref{cta:norms} therefore bounds
@@ -208,9 +214,9 @@ We have proved the full-source estimate
        \le C_R N^A e^{N(F_0-\eta_0)},\qquad \eta_0=\pi/200.
 \end{equation}
 The exponent loss is independent of tree size and powers; the
-prefactor and starting level are not. This argument estimates
-the actual vertex traces, rather than replacing a small spectral
-norm by a positive coefficient cone.
+prefactor and starting level are not. The bound is applied to the vertex traces in the finite contraction.
+It therefore includes every derivative at a repeated root before any
+angular or asymptotic representation is introduced.
 
 On the retained indices, the edge sums commute with the polynomial
 traces. Remove only the already recorded edge scalars and put

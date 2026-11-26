@@ -1,11 +1,14 @@
-\section{All charges of the original crossing traces}\label{ms:filling}
+\section{Fourier modes of the crossing traces}\label{ms:filling}
 The powers $n_v$ are fixed signed integers. In the primitive filling
-convention they are $n_v=\epsilon_v-2p_v$; odd powers are included.
+convention they are $n_v=\epsilon_v-2p_v$, where $p_v\in\mathbb Z$
+is the full-twist parameter and $\epsilon_v\in\{-1,0,1\}$ records
+the retained half twist. Thus odd powers are included.
 This section proves Theorem~\ref{ms:filled-main} analytically. It
 does not identify a geometric action.
 
-\subsection{The full finite functional and its currents}
-For an even polynomial $f(\tau)=f^\sharp(-2\cos\tau)$ define
+\subsection{The finite trace and its endpoint contour integrals}
+For a polynomial $f^\sharp(z)$ set $f(\tau)=f^\sharp(-2\cos\tau)$,
+an even trigonometric polynomial, and define
 $\mathcal D_{n,\sigma,N}f=\phi_\sigma(R_\sigma^n f^\sharp)$.
 The full crossing data in \cite[Proposition 6.1 and equation (6.4)]{Meridian}
 give, with $\eta=(-1)^d$,
@@ -65,7 +68,7 @@ The grid sign and the contour orientations give
                  U_{\ell-1}(\cos2\pi\sigma),\qquad c_{1,N}=1.
 \end{equation}
 The zero-frequency real integral vanishes by oddness. Its endpoint
-currents, and the connectors from the translated endpoints, remain
+integrals, and the connectors from the translated endpoints, remain
 in the contour identity. This calculation explains why replacing
 the repeated-node functional by values would lose the factor
 $c_{\ell,N}(0)=\eta^{\ell-1}\ell$.
@@ -81,7 +84,7 @@ The finite real functional retained from this exact contour is
              e^{\ii nN\tau^2/(4\pi)-\ii\ell N\tau}\,d\tau.
 \end{equation}
 Here is a uniform bound for what was omitted. On the lower
-horizontal side the packet and chirp have real rate at most
+horizontal side the packet and quadratic exponential have real rate at most
 \[
  F_0-ct^2+\frac{|n||t|y}{2\pi}-\ell y+Cy^2.
 \]
@@ -99,12 +102,11 @@ The bound $|c_{\ell,N}(\sigma)|\le\ell e^{2\pi R'(\ell-1)}$
 makes the remaining geometric sum convergent for all sufficiently
 large $N$. Constants depending on fixed $n$ do not change this rate.
 
-At the vertical endpoints the angular loss is fixed. Their chirp
-cost is $O(N|n|y)=O(Nt_0)$, and the retained-charge connector cost
+At the vertical endpoints the angular loss is fixed. The cost of their quadratic phase is $O(N|n|y)=O(Nt_0)$, and the retained-charge connector cost
 is $O(NLy)=O(Nt_0^2)$. Decrease $t_0$ to preserve the loss. This
-also controls the zero-mode current. All spectator variables can
+also controls the zero-mode endpoint integral. All spectator variables can
 remain real or on their physical translated grids: those grid
-heights are $O(1/N)$ and their fixed chirps have bounded modulus.
+heights are $O(1/N)$ and their fixed quadratic exponentials have bounded modulus.
 Use the exact telescoping identity
 \[
  \prod_v\mathcal D_v-\prod_v\mathcal P_v
@@ -121,14 +123,14 @@ complex height during another coordinate's tail estimate.
 The whole trace-minus-finite-approximation is holomorphic in each
 $\sigma_v$. Apply the maximum principle successively to extend
 the estimate from the parameter circles to $|\sigma_v|\le R$.
-This includes all normal limits at $0,\pm1/2$. For any fixed
+This includes all limits at repeated roots at $0,\pm1/2$. For any fixed
 upper-half-plane compact use the same translated contour directly;
 its sine denominator is bounded away from zero and its endpoint
 translation is still $O(1/N)$. Constant vertices can independently
 be brought to zero by the preceding disk argument. Fixed
 derivatives follow on smaller compacts.
 
-\subsection{A common critical branch for every retained charge}
+\subsection{A common critical branch for the retained Fourier modes}
 After truncating the real integral to a small angular box, with
 fixed loss, its phase is
 \[
@@ -176,9 +178,9 @@ $\Re Q_v<0$ in that neighborhood. Then
 Every angle and every sine in the amplitude is nonzero. Translate
 the small real box to this critical point. The real part of its
 Hessian on real tangent vectors is that of $\Psi''$, since the
-chirp Hessian is purely imaginary, and stays negative definite.
+Hessian of the quadratic phase is purely imaginary, and stays negative definite.
 The connectors preserve the face loss: their heights are at most
-$C|t_v|/|n_v|$, their chirp cost on a face of size $\rho$ is at
+$C|t_v|/|n_v|$, the cost of their quadratic phase on a face of size $\rho$ is at
 most $CN\rho|t_v|$, and their Fourier factors decrease under the
 downward displacement. Choose $t_0$ small compared with the fixed
 face loss before increasing the slope threshold.

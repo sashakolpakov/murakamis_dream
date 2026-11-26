@@ -1,4 +1,4 @@
-\section{Uniform finite bounds with all normal data}\label{ms:finite}
+\section{Uniform bounds for values and first derivatives}\label{ms:finite}
 For a canonical polynomial of degree less than $N$, let $\normJ F$
 be the largest absolute value at a distinct complete node and the
 largest first derivative at a double node. At odd levels $-2$ is
@@ -11,7 +11,20 @@ the interval norm and the Chebyshev coefficient sum. It also proves
  \qquad \log w_r=Ng(r/N)+O(\log N)\quad(r\le m).
 \end{equation}
 The high polynomials have zero complete values but generally nonzero
-first normals. No argument below discards those derivatives.
+first derivatives. No argument below discards those derivatives.
+
+The finite formulas of \cite{Meridian} were stated on $|s|<1$.
+We shall also use them on fixed compact subsets of $\Im s>0$.
+Here is the continuation needed for that use. The module matrices,
+crossings and duality maps are holomorphic in $s$; the crossing
+inverse is holomorphic by its finite nilpotent formula. On the upper
+half-plane the factors $[a\pm s]$, $H_N(s)$ and $W_k(s)$ are all
+nonzero, since their zeros lie on the real axis. The same cyclic
+Casimir argument and moment extractor therefore have no singularity
+there. Each identity continues from the disk to its connected union
+with the upper half-plane. Uniform estimates on the two kinds of
+compact set will be proved below, rather than inferred from analytic
+continuation alone.
 
 Write $C_j(u+u^{-1})=(u^j+u^{-j})/2$, with $C_0=1$. Their
 coefficient sum is submultiplicative, since
@@ -28,13 +41,13 @@ coefficient of $C_d$ is $1/2$, both the full trace and fixed-valence
 quotient products have polynomial cost in $\normJ{\cdot}$. This
 proves these statements at collisions as polynomial identities.
 
-\begin{lemma}[Physical coupons on a fixed microscopic chart]
+\begin{lemma}[Local operators on a fixed meridian chart]
 \label{ms:coupon-bound}
 Every fixed signed crossing power has polynomial canonical norm,
 uniformly on $|s|\le R<1$ and on fixed nonreal compacts. The same
 holds after multiplication by any ordinary circle polynomial
-$L_j=(-1)^{j-1}U_{j-1}(z/2)$, $1\le j\le N$. Every typed turned
-coupon with input $E$ has coefficients bounded by
+$L_j=(-1)^{j-1}U_{j-1}(z/2)$, $1\le j\le N$. Every turned
+operator of a specified orientation type, with input $E$, has coefficients bounded by
 \begin{equation}\label{ms:cone}
  |[e_k]\Turn(pE)|\le C N^A\normJ E\,w_k.
 \end{equation}
@@ -102,8 +115,9 @@ The exact identities $W_kW_{d-k}=H_N^2$ and
 now prove \eqref{ms:cone} by the full norm and quotient estimates.
 \end{proof}
 
-A coefficient loss in $E$ is inherited linearly in
-\eqref{ms:cone}; there is no substitution of independent branch
-maxima. Conversely a bare turned output will be estimated by its
-actual complete probe profile, rather than repeatedly charging the
-coarser cost $2\max g$.
+Because \eqref{ms:cone} is linear in $\normJ E$, an exponentially
+smaller input remains smaller by the same factor after this operation.
+For a bare product region we will need a sharper comparison: we
+optimize the whole region together with a closing complete leaf. This
+preserves the boundary profile instead of paying the larger uniform
+cost $2\max g$ at each successive junction.

@@ -1,8 +1,8 @@
-\section{The literal insertion}\label{plb:the-literal-insertion}
+\section{Adding and meridionally filling zero-crossing circles}\label{plb:the-literal-insertion}
 
 Use the reduced tree of original product junctions, with consecutive unturned products already grouped. A bare vertex has full valence at least three. Its incident edges are the original quarter-turns; a binary resolution used to describe its positive kernel does not add physical edges.
 
-At a bare vertex insert the literal unturned box \(R^0=I\), at the distinguished position immediately before the original ordered child product. Encircle its two strands by a new crossing circle. Keep every child in its original order. Put
+At a bare vertex insert the literal unturned box \(\sigma^0=I\), at the distinguished position immediately before the original ordered child product. Encircle its two strands by a new crossing circle. Keep every child in its original order. Put
 
 \begin{equation}\label{plb:1}
 \epsilon_v=p_v=n_v=0
@@ -14,7 +14,8 @@ at this new circle. Filling its original primitive meridian removes the auxiliar
 
 \begin{figure}[tb]
 \centering\input{figures/zero-collar}
-\caption{A new circle surrounds the two straight strands in the fixed product collar. Its disk longitude retains the ordered word $ba$. Meridian filling deletes the circle and restores the same framed collar, with the same access paths. This is a filling operation, not an isotopy of the unfilled exteriors.}
+\caption{A new circle surrounds the two straight strands in the fixed product collar. The labels $a,b$ name based puncture meridians on the two end disks;
+its disk longitude retains their ordered word $ba$. Meridian filling deletes the circle and restores the same framed collar, with the same access paths. This is a filling operation, not an isotopy of the unfilled exteriors.}
 \end{figure}
 
 The fixed access paths make these ordered equalities precise. They
@@ -125,7 +126,7 @@ with value \(i/2\) at \(x=1/2\). Indeed
  \int_0^x\frac{\sinh y}{\cosh y+\cos2\pi r}\,dr
    =\frac1\pi\arctan\bigl(k\tan\pi x\bigr).
 \]
-The zero-power first-charge equation is therefore
+The zero-power stationary equation is therefore
 
 \begin{equation}\label{plb:6}
 \sum_jb_\tau(x_j,\tau)-i=0
@@ -158,7 +159,9 @@ V_m(\mathbf x)=
  \qquad \tau=-iy \text{ from \eqref{plb:6}}.
 \end{equation}
 
-The equality includes its constant.
+Here $\operatorname{stat}$ means evaluation at the unique critical
+point in \eqref{plb:6}. The equality includes its additive constant;
+it is not merely an equality of derivatives.
 
 Here is one derivation retaining the exact complete normalization. The Newton factors are the finite polynomial basis used for the
 tangle evaluation. For a factor with normalized index \(0<x<1/2\),
@@ -255,27 +258,26 @@ b(x,-iy)=\max_{|r|\le x}\{B_x(r)+yr\}.
 To verify the constant, at \(y=0\) both sides are
 \(J(2x)-4J(x)\). Their \(y\)-derivatives are the same \(r\) by \eqref{plb:5} and \eqref{plb:11}. The constrained maximizer \eqref{plb:10} has common multiplier \(y>0\), determined by \(\sum r_j=1\). Equations \eqref{plb:10}--\eqref{plb:12} prove \eqref{plb:8}. A half label follows by continuity. Equivalently \(B_{1/2}(r)=0\), so its tilted maximum is \(y/2\), as also follows directly from \eqref{plb:4}.
 
-For a cubic vertex one can avoid the finite trace altogether. The old action is
-
+For comparison, the original action of a cubic junction is
 \begin{equation}\label{plb:13}
-t(x_1,x_2,x_3)=
+t_{\mathrm{cub}}(x_1,x_2,x_3)=
  \sum_{i<j}J(x_i+x_j)-\sum_iJ(x_i)-J(x_1+x_2+x_3-1).
 \end{equation}
-
-Writing \(a_j=\tan\pi x_j\), equation \eqref{plb:6} gives
-\(k^2=(a_1+a_2+a_3)/(a_1a_2a_3)\).
-The derivative of the right side of \eqref{plb:8} in \(x_j\) is
-
+It is the case $m=3$ of \eqref{plb:8}; a second calibration of its
+constant is unnecessary. At any valence, the envelope theorem and
+differentiation of \eqref{plb:4} give
 \begin{equation}\label{plb:14}
+\partial_jV_m=
 \log\frac{\cosh y+\cos2\pi x_j}{2\sin^2\pi x_j}
-   =\log\frac{k^2+\cot^2\pi x_j}{1-k^2},
+   =\log\frac{k^2+\cot^2\pi x_j}{1-k^2}.
 \end{equation}
-
-which is exactly \(\partial_jt\). As \(\sum x_j\downarrow1\), \(y\to\infty\), and both actions tend to \(-2\sum_jJ(x_j)\). This proves the cubic identity with its absolute constant.
+This derivative will identify the added disk-longitude word in the
+next section. It is valid with the absolute constant already fixed
+by the finite trace calculation.
 
 Both sides of \eqref{plb:8} are holomorphic near the fixed strict tuple. Their equality on an open real set proves equality of the continued germs. At the possible half label, use their holomorphic continuation from labels below half; both Hessians remain invertible there.
 
-\section{The actual added longitude in the old prism geometry}\label{plb:the-actual-added-longitude-in-the-old-prism-geometry}
+\section{The added longitude in the product geometry}\label{plb:the-actual-added-longitude-in-the-old-prism-geometry}
 
 The previous section identifies actions. The following matrix calculation identifies the new circle inside the
 original marked geometry. A white map is the full Möbius transition
@@ -314,8 +316,8 @@ P=\frac1R W_1^{-1}W_3,\qquad
 
 This is the same \(W_1^{-1}W_3\) disk word used at the corresponding end of an all-circle edge; it is not a trace chosen to fit \eqref{plb:6}.
 
-The response metric records the ordered quadrilateral shape at a
-product boundary. Its coordinate \(X_{\mathrm{met}}\) is distinct
+The stationary response parameters record the ordered quadrilateral
+shape at a product boundary. The coordinate \(X_{\mathrm{met}}\) is distinct
 from the exponential wire variable \(X_e=e^{2\pi ix_e}\). It is
 \[
  X_{\mathrm{met}}^2=\frac{1+\cot^2\pi b}{1+\kappa}.
@@ -346,7 +348,7 @@ When an incidence is viewed through its physical turn, the old identity
 \(T W_{j+1}(E,R)=W_j(E^{-1},1-R)T\)
 takes the \(W_1^{-1}W_3\) word to the appropriate inverse of the \(W_2^{-1}W_0\) word. Its trace is unchanged. The auxiliary flag may be selected on the eigenvalue \(-Q\), \(Q>1\); the main meridian flags are not changed by this auxiliary choice.
 
-\section{What the edge equations see at the complete bare representation}\label{plb:what-the-edge-equations-see-at-the-complete-bare-representation}
+\section{Matching the edge equations with the complete representation}\label{plb:what-the-edge-equations-see-at-the-complete-bare-representation}
 
 Pull the original complete holonomy back along the exact filling quotient obtained in Section~\ref{plb:the-literal-insertion}. This gives a representation of the enlarged augmented link with every newly added meridian equal to identity. It is a representation-theoretic pullback; no assertion that the drilled link carries this metric is needed.
 
@@ -385,7 +387,7 @@ loops to the face basepoints along the original specified paths.
 If the old transport is \(C_0\), \eqref{plb:22c} becomes the simultaneous
 conjugacy \(C_0aC_0^{-1}=a'\), \(C_0bC_0^{-1}=b'\).
 Reading the other side of a puncture changes the corresponding
-native generator to its inverse. Those inversions are recorded
+all-circle generator to its inverse. Those inversions are recorded
 explicitly in \eqref{plb:22b} below; they do not change \eqref{plb:22c} into a braid.
 This is the marked van Kampen statement used at every added seam.
 Only a retained nonzero half twist changes \eqref{plb:22c}, by the separately
@@ -398,7 +400,7 @@ original coordinate \((0,\infty,1,R)\) and its phase \(E=e^{2\pi ix}\).
 This is the transported physical-edge frame from the last paragraph
 of Section~\ref{plb:the-actual-added-longitude-in-the-old-prism-geometry}; its phase is the reciprocal of the ordinary-output
 phase \(e^{2\pi ib}\), with the corresponding change \(R\mapsto1-R\).
-At \(M=1\) the four native all-circle white matrices of \cite{Nonparabolic} are exactly the universal old \(W_j(E,R)\), projectively. This follows by putting \(m=1\) in the explicit native chart, without specializing the auxiliary eigenvalues to one.
+At \(M=1\) the four all-circle all-circle white matrices of \cite{Nonparabolic} are exactly the universal old \(W_j(E,R)\), projectively. This follows by putting \(m=1\) in the explicit all-circle chart, without specializing the auxiliary eigenvalues to one.
 
 The two disk words have normalized traces \(-\beta,-\gamma\), where
 
@@ -414,7 +416,7 @@ A=\frac{4-\beta\gamma}{\beta+\gamma+4},
  \qquad A=E+E^{-1},
 \end{equation}
 
-which is exactly the all-circle edge equation at \(M=1\). Thus the old phase is one of its two reciprocal roots. The native white maps retain \(E\) itself, not just \(E+E^{-1}\); the existing native/character comparison identifies the all-circle source variable with that \(E\).
+which is exactly the all-circle edge equation at \(M=1\). Thus the old phase is one of its two reciprocal roots. The all-circle white maps retain \(E\) itself, not just \(E+E^{-1}\); the existing all-circle/character comparison identifies the all-circle source variable with that \(E\).
 
 All character-chart denominators are units at this point: \(\beta,\gamma\ge2\), \(E\ne1\), and the displayed quadrilateral vertices are distinct. The allowed value \(E=-1\) on the two-hub half edge does not cause a character-matrix singularity. In that case the edge quadratic may ramify over its endpoint parameters; one must use the full stationary branch or another local coordinate, not assert that \(E\) is a simple quadratic root.
 
@@ -430,7 +432,7 @@ by \eqref{plb:18}. This is the possible half-edge fold of the old geometry.
 The normalized matrices and the two irreducible puncture pairs
 below remain regular there.
 
-Here is the boundary-group comparison, including the tuple that has to be retained. First choose the normalized native matrix representatives for the four old projective white maps. In terms of the raw universal representatives used in \eqref{plb:15}, their scalar factors are respectively
+Here is the boundary-group comparison, including the tuple that has to be retained. First choose the normalized all-circle matrix representatives for the four old projective white maps. In terms of the raw universal representatives used in \eqref{plb:15}, their scalar factors are respectively
 
 \begin{equation}\label{plb:22d}
 E^{-1},\quad E^{-1},\quad
@@ -441,7 +443,7 @@ Each normalized matrix has determinant \(E^{-1}\) at \(M=1\).
 The raw universal representatives do not all have that determinant:
 in particular the factors involving \(R\) and \(1-R\) cannot be
 discarded when taking an SL trace. With \(W_j\) now denoting these
-normalized native representatives, put in each original edge frame
+normalized all-circle representatives, put in each original edge frame
 
 \begin{equation}\label{plb:22a}
 N_j=W_{j-1}^{-1}W_j,\qquad
@@ -467,14 +469,15 @@ To apply that table to the old holonomy, first insert the zero-crossing box in t
 
 The paths across the added disk pages are still the paths of this cut. By van Kampen they intertwine both generators in the appropriate row of \eqref{plb:22b}, with precisely the displayed inversions; the product column is their original primitive disk boundary. The inserted box has no crossing, so no Hurwitz exchange is made at its distinguished seam. The old retained half twists keep their original exchanges.
 
-At \(M=1\), either input pair in \eqref{plb:22b} is irreducible. Both punctures have trace two, and the products in the two rows have traces \(-\beta\) and \(-\gamma\), respectively, with \(\beta,\gamma\ge2\). Their irreducibility obstructions are \((\beta+2)^2\ne0\) and \((\gamma+2)^2\ne0\). Two intertwiners of either full ordered pair differ by its scalar centralizer. Therefore the pulled-back page transport equals the native pure transport in PGL. At an original odd seam the same argument is applied after the already calibrated full Hurwitz action. The corner flags on the main cusp are the old parabolic flags, and the extra auxiliary flags are chosen from \eqref{plb:20}; these choices do not alter a group generator.
+At \(M=1\), either input pair in \eqref{plb:22b} is irreducible. Both punctures have trace two, and the products in the two rows have traces \(-\beta\) and \(-\gamma\), respectively, with \(\beta,\gamma\ge2\). Their irreducibility obstructions are \((\beta+2)^2\ne0\) and \((\gamma+2)^2\ne0\). Two intertwiners of either full ordered pair differ by its scalar centralizer. Therefore the pulled-back page transport equals the all-circle pure transport in PGL. At an original odd seam the same argument is applied after the already calibrated full Hurwitz action. The corner flags on the main cusp are the old parabolic flags, and the extra auxiliary flags are chosen from \eqref{plb:20}; these choices do not alter a group generator.
 
 All white and shaded generators of the cut now agree, in their original tree frames. This proves equality of the complete representations, not only of the local character triples or the main-cusp translation. It identifies the selected all-circle algebraic point with the pullback of the original bare-tree holonomy. The newly introduced ideal vertices need not form positive tetrahedra in this pulled-back representation. In particular an edge with \(E=-1\) can make that added subdivision flat. No metric on the enlarged unfilled exterior is asserted or required.
 
 \section{Stationary elimination at a nonparabolic main meridian}\label{plb:stationary-elimination-at-a-nonparabolic-main-meridian}
 
 Let \(t\) be the actual main deformation parameter, \(M=e^{\pi it}\).
-In the existing strict-tree filtered action it enters only through
+The classical deformation in Theorem~\ref{pl:strict-longitude}
+adds precisely the following edge and framing terms to the complete action:
 
 \begin{equation}\label{plb:23}
 \sum_{e\in\mathcal E_T}
@@ -514,7 +517,7 @@ definite by \cite[Theorem 6.4]{Newton}. Direct differentiation gives
  b_\tau(x,0)=0,\qquad b_{x\tau}(x,0)=0,\qquad
  b_{\tau\tau}(x,0)=-\frac{\tan\pi x}{2\pi}.
 \]
-For each original circle put $\eta_v=1/n_v$ and multiply its first-charge
+For each original circle put $\eta_v=1/n_v$ and multiply its primitive stationary
 equation by $\eta_v$. At $\boldsymbol\eta=0$ the system is the strict
 wire equations together with $\tau_v=0$; its Jacobian is block diagonal,
 with the strict wire Hessian and $(\ii/2\pi)I$. The holomorphic

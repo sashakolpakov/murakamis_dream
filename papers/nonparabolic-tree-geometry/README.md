@@ -1,84 +1,62 @@
 # Nonparabolic holonomy of trees of crossing circles
 
-[Read the PDF](../../docs/papers/nonparabolic-tree-geometry.pdf) · [TeX source](main.tex) · [Dependency graph](https://sashakolpakov.github.io/murakamis_dream/papers/dependencies.html)
+[Read the PDF](../../docs/papers/nonparabolic-tree-geometry.pdf) · [TeX source](main.tex)
 
-This classical paper constructs the actual marked representation of an
-ordered tree of crossing circles with a variable main meridian. It proves
-the complete face and character maps, ordered page sewing, the physical
-Hurwitz collar, and the locally unramified primitive filled germ.
-This supplies the marked geometric branch used by the [preferred-longitude paper](../preferred-longitudes/README.md) and the geometric corollary of [meridian expansions](../meridian-expansions/README.md). The longitude formula and the quantum asymptotic require their separate arguments.
+This paper allows the main meridian of an ordered crossing-circle tree
+to vary away from its parabolic value. It constructs the representation
+of the specified augmented link group, follows its peripheral curves,
+and describes the local representations of its smooth fillings.
+An eigenline is retained at every cusp; this choice is needed when the
+two main-meridian eigenvalues separate.
 
-## Statements and proof locations
+Theorem 1.1 gives the augmented family with main eigenvalue $M$ and
+auxiliary longitude parameters $Q_v$. Its meridian and longitude
+similarity logarithms are
 
-- **Theorem 1.1, ng:representation**: the original augmented group,
-  selected main $M^{-1}$ flag and primitive auxiliary logarithms
-  $U_v=\sum\log\rho_{v,e}-\epsilon_v\log Q_v$, $V_v=2\log Q_v$.
-  Sections 2–4 construct the full maps and actual gluing.
-- **Theorem 3.1, ng:character**: the explicit four-puncture chart,
-  rational two-generator intertwinings and its native marked conjugacy.
-  Equations (3.15), (3.23) and (3.31) give the transport identities,
-  local commutator and native conjugacies.
-- **Proposition 6.1, ng:positive-germ**: any original positive
-  retained ideal triangulation with torus ends has a local decorated
-  germ coordinated by one primitive similarity log at each torus.
-  The ends may be incomplete. The proof includes the real row rank,
-  positive polarization and shape/representation inverse, also for
-  local Artin algebras with exact peripheral characters.
-- **Theorem 1.2, ng:filled-germ**: at an actual positive smooth
-  filled endpoint with distinct auxiliary longitude eigenvalues,
-  the continued primitive slope equations are exactly the filled-group
-  relations. With one unfilled main cusp, $\log M$ is a local coordinate.
-- **Corollary 7.1, ng:branch-identification**: a separately constructed
-  branch with the same original representation, flags and logarithmic
-  slopes is this same marked geometric germ.
+$$
+U_v=\sum_{e\ni v}\log\frac{Q_v+X_e}{1+Q_vX_e}
+       -\epsilon_v\log Q_v,
+\qquad V_v=2\log Q_v.
+$$
 
-The tree criterion is the published geometric condition
-$\sqrt{d_v^2+n_v^2}\ge630$, or its heterogeneous refinement.
-It does not require a lower bound on each twist alone. The actual
-main strand pairing must have one component for the knot statement.
-At a parabolic auxiliary longitude, an exponentiated slope equation
-alone does not kill the word. Intermediate cone charges are not
-asserted to factor through the smooth filled group.
+The edge coordinates $X_e$ satisfy the displayed algebraic gluing
+relation. Sections 2–4 prove that relation from ideal vertices and face
+maps, compare it with explicit four-punctured-sphere matrices, and glue
+the blocks in their prescribed order. The half-twist calculation follows
+both puncture generators and their eigenlines, rather than using traces
+alone.
 
-## Exact companion inputs
+Proposition 6.1 proves a general local coordinate theorem on a specified
+positive ideal triangulation: one primitive peripheral similarity
+logarithm at each torus gives coordinates on the decorated representation
+space. It includes infinitesimal deformations with exact peripheral
+characters. Theorem 1.2 applies this result at a positive smooth filling
+whose auxiliary longitudes have distinct eigenvalues. The equations
+$U_v+p_vV_v=-2\pi i$ then impose precisely the filled-group relations;
+with one main cusp left unfilled, $\log M$ is a local coordinate.
 
-- **Positive octahedra and primitive fillings for trees of crossing
-  circles**: Proposition 2.1 for the original inverse cut and ordered
-  pages; Lemma 3.1 for the positive eight-tetrahedron chart; Theorems
-  1.1 and 7.1 for the actual primitive smooth filling anchor.
-  Section 5 of this paper matches all local coordinates and maps along
-  that angular path, not just at the complete point.
-- **Marked geometry of strict Conway compositions**: Section 5,
-  equations (5.1)–(5.2), only for the physically signed original
-  half-twist meridian. Its global strict theorem is not an input.
-- **Circle patterns and primitive fillings of augmented links**:
-  Section 7.1, equations (7.1)–(7.2), for actual normal-path rows and
-  their intersection pairing. The real edge-rank and positive-Jacobian
-  argument are written here. No quantum source theorem or preferred
-  longitude is imported.
+The geometric hypotheses are supplied by
+[Positive octahedra and primitive fillings for trees of crossing circles](../circle-tree-geometry/README.md)
+when $\sqrt{d_v^2+n_v^2}\ge630$ at every circle, or under its
+vertex-dependent refinement. The proof uses the positive augmented
+triangulation at that endpoint. It does not require a new positive
+triangulation of the filled manifold. The other companion inputs are
+the signed meridian convention of the strict Conway geometry paper and
+the normal-path intersection calculation of the circle-pattern paper.
 
-The general germ proposition is applied on the **original positive
-augmented triangulation**. It does not require positivity of an added
-flat subdivision or a positive triangulation of the filled manifold.
+The results provide the geometric branch for
+[preferred longitudes](../preferred-longitudes/README.md) and
+[meridian expansions](../meridian-expansions/README.md). Neither a quantum
+asymptotic nor a global preferred-longitude formula is proved here.
 
-## Build and bounded exact checks
+From the repository root:
 
-From this folder:
+```sh
+python3 tools/build_papers.py nonparabolic-tree-geometry
+python3 -I papers/nonparabolic-tree-geometry/check.py --output /tmp/nonparabolic-tree.json
+```
 
-    latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build main.tex
-
-From the repository root with SymPy installed:
-
-    python -I papers/nonparabolic-tree-geometry/check.py --output /tmp/nonparabolic-tree.json
-
-The checker reuses the three explicitly pinned exact matrix scripts
-audit_all_circle_nonparabolic_edge.py,
-audit_all_circle_four_punctured_adapter.py, and
-audit_all_circle_hurwitz_line_transport.py. It adds independent angular
-chart, edge-row and polarization identities and negative controls.
-All subprocess outputs are private temporary records. A stale requested
-summary is removed before checking, optimized Python is rejected, and
-the success record is written only if all pinned inputs are unchanged.
-
-These are rational identities, not sampling evidence for topology,
-positive development, metric completion or analytic uniformity.
+The checker verifies rational face, character and braid identities,
+including alternatives that must fail if a factor or eigenline choice
+is changed. The topology, positivity and local-coordinate theorem are
+proved in the text.

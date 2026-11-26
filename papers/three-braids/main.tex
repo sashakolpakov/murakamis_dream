@@ -17,8 +17,7 @@
 \newtheorem{foundation}{Companion theorem}
 \providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \title{Volume limits for long alternating-generator three-braids}
-\author{}
-\date{1 November 2026}
+\author{Alexander Kolpakov}\date{25 November 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -119,17 +118,16 @@ and \begin{equation}\label{braid:eq-5}
 
 Here \(K_N\) is the zero-framed reduced Kashaev normalization with
 unknot value one. The signs and relative sizes of the fixed powers are
-unrestricted. There is no uniformity in growing \(m\), no growing-twist
-assertion, and no moving-color conclusion.
+unrestricted. The number of syllables and all powers are fixed before $N$ tends to infinity. The threshold may depend on $m$.
 
 \section{Exact strand maps and the three-strand
 braid}\label{braid:sec-2}
 
 Number the sides of a cyclic quadrilateral by \begin{equation}\label{braid:eq-6}
 0=xb,\quad1=by,\quad2=yc,\quad3=cx.
-\end{equation} These are the native cut corners \((C_1,C_2,C_3,C_0)\), respectively.
-The literal pure shaded map \(C_1\mapsto C_0,\ C_2\mapsto C_3\) gives
-main-strand pairs \((0,3),(1,2)\). Either signed odd half twist gives
+\end{equation} The untwisted box joins the sides adjacent to the outer vertex $x$
+and the sides adjacent to $y$. Its main-strand pairs are therefore
+$(0,3),(1,2)$. Either signed odd half twist gives
 \((0,2),(1,3)\). The shaded grouping of corners is a different pairing
 and is not used to count main components.
 
@@ -172,8 +170,7 @@ outside strip.
 The north source frame already has increasing angular time and the
 inside track on its left. At a south box, both the time direction and
 the transverse order are reversed. Thus the change from its source frame
-to \eqref{braid:eq-7} is a planar half-turn. It is not a reflection or a one-head
-orientation reversal.
+to \eqref{braid:eq-7} is a planar half-turn. It is not a reflection or a reversal of only one strand.
 
 For a single crossing a planar half-turn preserves each diagonal pair of
 endpoints and therefore preserves which diagonal is over. It retains the
@@ -224,7 +221,7 @@ curvatures}\label{braid:sec-3}
 Put \begin{equation}\label{braid:eq-9}
 \theta=\pi/m,\qquad a=\csc\theta.
 \end{equation} In the complex projection plane take the north disk \(|z|\le a-1\),
-the south \textbf{exterior} disk \(|z|\ge a+1\), and the unit disks \begin{equation}\label{braid:eq-10}
+the south exterior disk \(|z|\ge a+1\), and the unit disks \begin{equation}\label{braid:eq-10}
 v_j:\quad |z-ae^{2ij\theta}|\le1.
 \end{equation} Every rim disk is tangent to both pole disks. Rim centers at cyclic
 separation \(r\) have distance \(2a\sin(r\theta)\), which is 2 exactly
@@ -299,7 +296,7 @@ bounded}\label{source:sec-2}
 For the original cut of a fixed connected marked simple matched sphere
 at \(N\ge3\), let \(d=N-1\), let \(\Omega\) be the complete-color two-strand Casimir,
 and form its polynomial numerator
-\(V_N(\sigma;\Omega)=(2T_N(\sigma/2)+2)(\sigma-\Omega)^{-1}\).
+\(V_N(\sigma;\Omega)=(\chi_N(\sigma)-\chi_N(\Omega))/(\sigma-\Omega)\), where $\chi_N(t)=2T_N(t/2)+2$ and the quotient is a polynomial divided difference.
 The homogeneous face polynomial \(H_V(x,b,c,y;\sigma)\) is the Fourier
 transform of this original matrix numerator in the four boundary
 states, with the turn and crossing frames retained. It has total face
@@ -316,7 +313,7 @@ polynomial \(H\) of degree at most \(d\),
  \qquad n\in\mathbb Z.
 \]
 The scalar polynomial norm also holds at \(N=2\); the diagram source
-is used only at \(N\ge3\). These statements hold for both level parities, with first normal data
+is used only at \(N\ge3\). These statements hold for both level parities, with first derivative data
 at every double spectral root and the value at the odd simple root.
 \end{foundation}
 
@@ -334,11 +331,24 @@ matrix numerator is made.
 
 Put \(q=e^{\pi i/N}\), \(d=N-1\), and \begin{equation}\label{source:eq-A6}
 \chi_N(z)=2T_N(z/2)+2,
- \qquad V_N(z;\Omega)=\chi_N(z)(z-\Omega)^{-1}.
+ \qquad V_N(z;\Omega)=\frac{\chi_N(z)-\chi_N(\Omega)}{z-\Omega}.
 \end{equation} Polynomial division defines the degree-at-most-\(d\) matrix
-polynomial in \eqref{source:eq-A6}, including at every spectral root. It is the original
-Casimir numerator, not the adjugate of an unrelated matrix. Let
-\(H_V(x,b,c,y;z)\) be its original homogeneous four-face polynomial.
+polynomial in \eqref{source:eq-A6}, including at every spectral root, since $\chi_N(\Omega)=0$.
+The homogeneous four-face polynomial can be specified directly as
+follows. Put $s_j=2\sin(\pi j/N)$ and let $\mathsf C$ act on
+$1,z,\ldots,z^d$ by
+\[
+ \mathsf C z^j=2\cos((2j+1)\pi/N)z^j
+ -s_j^2(x+y)z^{j-1}-s_js_{j-1}xy z^{j-2},
+\]
+with terms of negative degree omitted. Then
+\[
+ H_V(x,b,c,y;\sigma)=
+ \sum_{0\le i\le j\le d}
+          V_N(\sigma;\mathsf C)_{ij}b^ic^{d-j}.
+\]
+The finite theorem identifies this formula with the tangle operator
+in the stated frames.
 
 Writing the pole variables as \(A,B\) and the rim variables as \(z_j\),
 the full shared spectral polynomial is exactly \begin{equation}\label{source:eq-A7}
@@ -365,20 +375,19 @@ D_N=S_N-S_{N,\mathrm C}.
 \end{equation} The task is a strict real-cube bound on \eqref{source:eq-A8}. The complete drilled
 rate of \(S_N\) alone would not give the smaller fixed-filled rate.
 
-The general Morse compiler proves \eqref{source:eq-A7} on this diagram. In its proof
+The finite diagram theorem proves \eqref{source:eq-A7} on this diagram. In its proof
 each actual box has factor \(N^{-1}H_V/(bc)^{d/2}\); the physical cups,
 caps and unrestricted mark leave \(N^{-m-1}\). The primitive
 face-potential lattice has \(m+1\) independent \(N\)-point grids,
 canceling that factor. Endpoint support is imposed before specializing
 those grids. The total numerator degree \(md\) forces the unique
 nonnegative alias: the two marked targets are zero and every other
-target is \(d\). This retains all repeated-node normal channels.
+target is \(d\). The polynomial division also retains the derivative data at double roots.
 
-At even levels a literal integrated parity cochain is \begin{equation}\label{source:eq-A9}
+At even levels the required parity labels, assigned in $\mathbb Z/2$, are \begin{equation}\label{source:eq-A9}
 t(v_j)=j\pmod2,\qquad t(N_0)=1,\qquad t(S_0)=0.
 \end{equation} It agrees across matched spokes and differs across each strand edge;
-in particular the two protected endpoints differ. The integrated coset
-character at the unique supported target is one. No extra parity or
+in particular the two protected endpoints differ. The resulting sign in the face-grid Fourier sum is one at the indicated coefficient target. No extra parity or
 power of \(N\) multiplies \eqref{source:eq-A7}.
 
 The raw filled contraction is \begin{equation}\label{source:eq-A10}
@@ -396,8 +405,7 @@ These exact formulas follow from \cite[Sections 9--10]{FillingPaper},
 applied to the displayed Morse diagram with the face order and parity
 cochain above.
 
-\section{The spectator envelope is exactly the union of the genuine
-rates}\label{source:sec-3}
+\section{Taking the maximum over the local sectors}\label{source:sec-3}
 
 Use the source-normalized triangle potential \begin{equation}\label{source:eq-A11}
 \begin{aligned}
@@ -434,8 +442,9 @@ omitted. From \eqref{source:eq-A12}, \begin{equation}\label{source:eq-A14}
  \max(X,A_{\mathrm L},A_{\mathrm R})
      =H:=\max(X,\{\log b:b>0\},\{\log c:c>0\}).
 \end{gathered}
-\end{equation} Thus the spectator \(H\) used by the three-vector proof is precisely
-the maximum of the genuine local rate bounds. No mixed term has been
+\end{equation} When the label at a box has not yet been fixed, $H$ is its upper
+bound over all locally allowed sectors. This is the only meaning of
+an unrestricted box in the three-vector argument. No mixed term has been
 lost. It is also the spectator identity in
 \cite[equation (1.4)]{CasimirSources}.
 
@@ -525,8 +534,7 @@ face is changed at once. Protected weights remain exactly zero.
 
 The surviving one-sided anchors at \(j=0,1\) belong to the left sector; those at
 \(j=2,m-1\) belong to the right sector. Every other box has both possible one-sided
-anchors. This follows directly from \eqref{braid:eq-2}, not from a reflected physical
-coupon. Use \(W^{(1)}\) for \(1\mathrm L\), \(W^{(0)}\) for
+anchors. This follows directly from \eqref{braid:eq-2}, not from a reflected tangle box. Use \(W^{(1)}\) for \(1\mathrm L\), \(W^{(0)}\) for
 \(0\mathrm L\), and \(W\) for all other anchors.
 
 \section{Bounds for every even number of
@@ -578,7 +586,7 @@ rim weight is \(a\). The same derivative bounds and \(c\le C\) give \begin{equat
  Q(1,c,a)-\tfrac12\log c
        &\ge Q(1,C,a)-\tfrac12\log C=:C_{\mathrm{near}}>21/50.
 \end{split}
-\end{equation} At boxes 0 and 1, \(X=F(a)>\log a\). Thus every spectator has \(H=X\)
+\end{equation} At boxes 0 and 1, \(X=F(a)>\log a\). Thus every unrestricted box has \(H=X\)
 at \(W\). An anchored left-sector loss is
 \(\min(X-\log c,Q_c-\tfrac12\log c)\), and the right-sector formula is
 symmetric. Equations \eqref{source:eq-A25}--\eqref{source:eq-A26}, less \eqref{source:eq-A23}, give a net loss greater
@@ -592,7 +600,7 @@ change from \(W\) is \begin{equation}\label{source:eq-A27}
 T(c)=2[F(1)-F(a)+Q(1,1,c)-Q(1,a,c)]+\log a.
 \end{equation} It increases in \(c\): the logarithmic derivative at \(c\) of the
 first \(Q\) is larger than that of the second. The only possible
-spectator excess is at box 2, \begin{equation}\label{source:eq-A28}
+excess from an unrestricted box is at box 2, \begin{equation}\label{source:eq-A28}
 E(c)=\max(0,\log c-F(1)-Q(1,1,c))\le E(C).
 \end{equation} At box 3, put \(z=w_4\). Here \(z\ge1\), \(z/c\le2\), and
 \(1/c\ge4/27\), so \begin{equation}\label{source:eq-A29}
@@ -629,7 +637,7 @@ face vector from Section~\ref{source:sec-4}.
 For fixed real spectra, apply the multivariate Cauchy coefficient
 estimate to \eqref{source:eq-A7} on the ordinary face torus of that vector. The
 protected variables are already zero and have no integration circle. The
-local estimates \eqref{source:eq-A15}, and the exact spectator identity \eqref{source:eq-A14}, give \begin{equation}\label{source:eq-A32}
+local estimates \eqref{source:eq-A15}, and the identity for the maximum over sectors \eqref{source:eq-A14}, give \begin{equation}\label{source:eq-A32}
 \frac1N\log\|D_{N,\text{string}}\|_{[-2,2]^m}
  \le A_{j,s}+\sum_{i\ne j}H_i
        -\frac dN\sum_{f\,\mathrm{ordinary}}\log L_f+o_m(1).
@@ -667,17 +675,15 @@ spectral variable. Applying \eqref{source:eq-A34} successively yields \begin{equ
  \le\prod_{j=0}^{m-1}(1+|n_j|/2)\,
                      \|D_N\|_{[-2,2]^m}.
 \end{equation} The polynomial need not factor and its shared targets are unchanged.
-The stronger bound exploiting product-node vanishing is optional. For
-each fixed tuple \(\mathbf n\), the product in \eqref{source:eq-A35} is independent of
+For each fixed tuple \(\mathbf n\), the product in \eqref{source:eq-A35} is independent of
 \(N\); hence \eqref{source:eq-A33} is the actual filled scalar remainder rate. No
 Fourier-tail argument is needed for this remainder.
 
-\section{The nonzero original Morse contribution and its filled
-volume}\label{source:sec-8}
+\section{The nonzero central contribution and its volume}\label{source:sec-8}
 
 
 \begin{foundation}[The nonzero geometric filling contribution]\label{found:period}
-Consider the original general Morse diagram of a fixed connected simple
+Consider the diagram, with its cups and caps, of a fixed connected simple
 matched sphere, with its cyclic orders, crossing-disk frames and marked
 strand edge. Assume its complete labeled packing is realized by the
 original positive ideal-cell cut, the ordinary face graph is connected,
@@ -797,8 +803,8 @@ This is the metric statement used in \eqref{source:eq-A39}; a regulator
 identity alone would not supply it. The continuation permits
 independently long signed powers, with no ratio condition.
 
-Fix \(0<\eta<7/100\). Increase the long-filling threshold until both
-Morse theorems apply and the action drop is less than \(\eta/2\).
+Fix \(0<\eta<7/100\). Increase the long-filling threshold until the companion
+analytic and geometric theorems apply and the action drop is less than \(\eta/2\).
 Equations \eqref{source:eq-A33}, \eqref{source:eq-A35} and the nonzero asymptotic \eqref{source:eq-A36} give \begin{equation}\label{source:eq-A40}
 \frac{Z_N-Z_{N,\mathrm C}}{Z_{N,\mathrm C}}
        =O_{m,\mathbf n}(e^{-\kappa_{m,\mathbf n}N})

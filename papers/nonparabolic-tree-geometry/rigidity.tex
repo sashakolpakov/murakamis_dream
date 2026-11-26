@@ -1,9 +1,11 @@
-\section{The positive anchor and the continued filling mark}
+\section{Continuing the representation to a positive smooth filling}
 \label{ng:anchor}
 
-We first identify the family at $M=1$ with the original positive
-geometric family, including the endpoint of its filling path.
-This step does not follow just from agreement at the complete point.
+We compare the family at $M=1$ with the positive cone deformation
+constructed in the geometric companion. The comparison must hold
+along the whole path to the smooth filling point, since equality
+in an unspecified neighborhood of the complete point would not
+justify its use at that endpoint.
 
 Put $Q=e^{\ii t}$, $P=e^{\ii u}$ with $|t|,|u|\le10^{-2}$,
 and write $y=\tan(t/2)$, $z=\tan(u/2)$ and
@@ -58,7 +60,7 @@ Moreover
 \]
 has a simple root on this bidisk. The change \eqref{ng:N12}
 has derivative one in $E_0$ at $m=1$.
-Thus the native charts extend holomorphically in $M$ around every
+Thus the geometric charts extend holomorphically in $M$ around every
 point of the angular family. For a fixed finite tree, compactness of
 its charge path supplies finitely many overlapping such charts.
 No unspecified complete-point radius is substituted for this path.
@@ -71,7 +73,7 @@ its normalization and its derivatives are
  \psi_t(t,u)=-\frac1\pi
        \operatorname{arsinh}\bigl(\tan(t/2)\cos(u/2)\bigr).
 \]
-The actual auxiliary increments in that paper give
+The auxiliary increments in that paper give
 \begin{equation}\label{ng:anchor-logs}
  U_v=-2\pi\Psi_{\tau_v}-\ii\epsilon_v\tau_v,\qquad
  V_v=2\ii\tau_v,\qquad Q_v=e^{\ii\tau_v}.
@@ -109,17 +111,19 @@ particular positive triangulation required here.
 \begin{proposition}[Marked positive gluing]\label{ng:positive-germ}
 Let an oriented ideal triangulation of a specified manifold have $t$
 tetrahedra, all with positive shapes, and $c$ torus ends. Retain all
-actual face pairings, peripheral paths, developed flags and continuous
+face pairings, peripheral paths, developed flags and continuous
 edge-log branches. The ends may be incomplete. Suppose the edge
 equations hold and all face triples are distinct.
 Choose one nonzero primitive peripheral class on each torus.
 Its $c$ similarity logarithms are local holomorphic coordinates on
 the decorated representation germ modulo simultaneous projective
-conjugation. The shape and decorated-representation descriptions are
-inverse also over local Artin algebras with this residue point.
+conjugation. The description remains valid for infinitesimal deformations: the
+shape and decorated-representation constructions are inverse over
+local Artin algebras with this base representation. Such algebras
+are defined below.
 \end{proposition}
 
-\subsection{The real row space}
+\subsection{Edge and peripheral equations as real coefficient rows}
 For each positively ordered tetrahedron use
 \begin{equation}\label{ng:shape-coordinates}
  u_j=\log z_j,\qquad v_j=-\log(1-z_j),\qquad
@@ -146,7 +150,7 @@ The assignment is injective, since the three zero endpoint sums
 on one triangle force all three vertex values to vanish.
 The edge-row space $\mathcal E$ therefore has dimension $t-c$.
 
-We use the actual normal-path identity proved in
+We use the normal-path identity proved in
 \cite[Section~7.1, equations~(7.1)--(7.2)]{Marked}.
 It identifies each path row with its developed similarity logarithm
 and proves that the row pairing is twice oriented intersection,
@@ -179,8 +183,9 @@ Its kernel is spanned by $(-B^{\mathsf T}y,A^{\mathsf T}y)$ and
 is a real Lagrangian space for
 $\Omega((a,b),(a',b'))=a\cdot b'-b\cdot a'$.
 
-\subsection{Positive polarization and the actual representation germ}
-The selected logarithmic Jacobian is
+\subsection{Positivity and local coordinates on the representation space}
+Write $\diag(T_j)$ for the diagonal matrix of shape derivatives.
+The Jacobian of the selected edge and peripheral logarithms is
 $J=A+B\diag(T_j)$.
 If $Jx=0$, then
 $w=(x,\diag(T_j)x)$ and $\overline w$ belong to the
@@ -195,11 +200,11 @@ constants because the given point satisfies all original equations.
 The holomorphic implicit-function theorem proves the asserted
 coordinate statement for the shape germ.
 
-This is the actual decorated representation germ. Normalize one
+This is the decorated representation germ. Normalize one
 ordered developed triple. The shapes develop successive tetrahedra
 across their paired faces by the unique map of three distinct
 vertices. An edge return fixes its two distinct endpoints and
-has multiplier one by the actual edge equation; hence it is
+has multiplier one by the edge equation; hence it is
 projectively identity. The dual two-skeleton of the original
 triangulation presents its fundamental group. The constructed
 face maps therefore give a representation of that group, with

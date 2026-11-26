@@ -39,28 +39,20 @@ finite-cover certificate.
 \section{The diagrams, local envelopes, and exact certificate
 hypothesis}\label{pts:sec-1}
 
-An input \(D\) is a fixed connected oriented simple triangulated white
-sphere, a perfect matching of its dual triangles, the literal
-inverse-cut diagram in \(S^3\), its cyclic crossing orders and disk
-framings, and a marked nonmatching edge \(uv\). The two protected face
-variables are exactly \(L_u=L_v=0\). Every other vertex has the original
-target \(d=N-1\). Write \(R_D\) for their number, which is also the
-number of matching regions.
+Fix a marked matched sphere as in
+Appendix~\ref{app:morse-preliminaries}: a simple triangulation of
+$S^2$, a perfect matching of its dual, an orientation and a marked
+nonmatching edge $uv$. The vertices label white circles and projection
+faces; a matched pair of triangles determines a crossing circle with
+its ordered disk framing. Let $Y_D$ be the resulting augmented exterior
+in $S^3$.
 
-The white sphere is the combinatorial record of the two reflected
-polyhedral pieces obtained by cutting the augmented diagram. A matched
-pair of white triangles records one crossing circle and its
-twice-punctured disk. The inverse-cut construction retains the order of
-the four adjacent white faces and the disk framing; these are part of
-the data, not choices made after the gluing. Let \(Y_D\) denote the
-complete augmented exterior in \(S^3\), before filling its
-crossing-circle cusps and with the main strand components retained. Its
-positive convex cell realization is supplied by the simple-sphere
-construction in Appendix~\ref{app:balanced-terminal-fans}, equivalently \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_balanced_terminal_fan_volume.html}{the
-terminal-fan theorem, §§2--4}. The literal diagram realization and
-primitive disk curves are those of
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_morse_geometric_contribution.html}{the general Morse
-geometric theorem, §§1--2}, also given in Appendix~\ref{app:morse-geometric-contribution}.
+Write $R_D$ for the number of matched pairs. There are $R_D+2$
+white-face variables. The protected variables $L_u,L_v$ are zero;
+each of the $R_D$ ordinary variables has coefficient target $d=N-1$.
+The complete packing and the link realization are constructed in
+Appendix~\ref{app:morse-preliminaries}. The deformation and primitive
+filling comparison are in Appendix~\ref{app:morse-geometric-contribution}.
 
 Use the source-normalized complete triangle potential \begin{equation}\label{pts:eq-1}
 Q(w_1,w_2,w_3)=
@@ -114,8 +106,7 @@ witness per string is a finite cover. This is a hypothesis about the
 original phase-uniform envelopes, not merely a bound for a signed
 coefficient at a selected spectrum.
 
-The word unabridged specifies an important requirement: the cover includes every locally allowed noncentral
-string, including one whose final shared coefficient might vanish
+The condition includes every locally allowed noncentral string, including one whose final shared coefficient might vanish
 identically for a separate reason. A certificate that omits strings by a
 global support or cancellation argument is not automatically an input to
 this theorem. No transfer of such an omission is assumed.
@@ -124,7 +115,7 @@ Protected-overloaded labels are the only automatic omissions used here.
 Multiplying all ordinary weights by \(t>0\) increases each triangle
 potential by \(\tfrac12\log t\), and each local rate by \(\log t\).
 Since there are \(R_D\) rates and \(R_D\) ordinary targets, every \(G_{D,\omega}\) is
-invariant under \(q\mapsto q+t\mathbf1\). Thus a whole witness may
+invariant under \(q\mapsto q+c\mathbf1,\ c\in\mathbb R\). Thus a whole witness may
 always be normalized at any specified ordinary face.
 
 \section{The oriented protected triangular
@@ -176,8 +167,7 @@ a spanning tree, switch precisely its boxes to the odd terminal pairing,
 and leave all others even. Each tree edge joins two distinct current
 components; induction leaves a single main component. Either odd sign is
 allowed. This is the marked construction of
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/research_matched_sphere_morse_source.html}{the inverse-cut source
-theorem, §3}. The theorem permits any parity choice passing the
+Appendix~\ref{app:morse-preliminaries}. The theorem permits any parity choice passing the
 new diagram's original one-component test, with no internally closed
 extra main component. It does not assert that arbitrary old parity
 choices can be merged without that test.
@@ -303,7 +293,7 @@ expansion, a recurrence path from index \(j\) to \(i\) has middle powers
 supports are disjoint and exhaustive. This fixes the source
 normalization and the meaning of every label used above.
 
-The original full numerator is \begin{equation}\label{pts:eq-19}
+The full numerator is \begin{equation}\label{pts:eq-19}
 S_{N,\mathrm{full}}(\boldsymbol\sigma)
  =[\prod_{f\ne u,v}L_f^{N-1}]\,
        \left.\prod_eH_{V_N}(L_x,L_b,L_c,L_y;\sigma_e)
@@ -315,11 +305,8 @@ Each local polynomial has degree at most \(N-1\) in its spectral
 variable. The C/L/R partition and rates \eqref{pts:eq-2} are valid at both parities
 and uniformly over all face phases and \(\sigma_e\in[-2,2]\). The
 literal coefficient identity is
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/research_matched_sphere_morse_source.html}{the general Morse source
-theorem, §§5--6}; the phase-uniform estimates \eqref{pts:eq-2} are the cofactor
-bounds used in \href{https://sashakolpakov.github.io/murakamis_dream/notes/general_actual_sector_cover_filling_volume.html}{the
-finite-cover theorem} and \href{https://sashakolpakov.github.io/murakamis_dream/notes/general_weak_balance_volume.html}{weak
-balance, §§4--6}.
+Appendix~\ref{app:morse-preliminaries}; the phase-uniform estimates \eqref{pts:eq-2} are the cofactor
+bounds used in \cite[Theorem 1.1]{CasimirSources} and Appendix~\ref{app:weak-balance}.
 
 Use the vector supplied by \eqref{pts:eq-17} for each genuine noncentral string.
 Cauchy's coefficient inequality, with the original targets \(N-1\),
@@ -336,9 +323,7 @@ many strings. Therefore \begin{equation}\label{pts:eq-20}
 proves a bound for the entire complementary polynomial, not merely a
 fixed endpoint slice.
 
-Apply the finite Hermite functional of Appendix~\ref{app:uniform-filling-bound}, equivalently
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_uniform_filling_supremum_bound.html}{the uniform filling
-bound}, to \eqref{pts:eq-20}. It inserts the original power \(R^{n_e}\), including
+Apply the Hermite-functional bound \eqref{uf:eq-1} to \eqref{pts:eq-20}. It inserts the original power \(R^{n_e}\), including
 the normal data at double spectral roots. More precisely, the original
 reduced ribbon contraction is \begin{equation}\label{pts:eq-20a}
 Z_N(\boldsymbol n)=
@@ -349,10 +334,8 @@ Z_N(\boldsymbol n)=
 \end{equation} For fixed integer powers this bound has zero exponential rate, so the
 complementary filled contribution has rate at most \(\Phi-\gamma\).
 
-Appendix~\ref{app:morse-geometric-contribution}, equivalently \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_morse_cross_filling_period.html}{the
-Morse period theorem} and
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_morse_geometric_contribution.html}{its geometric
-identification}, supplies the nonzero full all-central period for this
+The central asymptotic \eqref{mca:eq-4} and the geometric comparison
+in Appendix~\ref{app:morse-geometric-contribution} give the nonzero all-central period for this
 original matched sphere. Its selected action \(S_{\boldsymbol p}\) obeys
 \begin{equation}\label{pts:eq-21}
 \Re S_{\boldsymbol p}\longrightarrow\Phi
@@ -380,8 +363,7 @@ reduced zero-framed invariant satisfies \begin{equation}\label{pts:eq-22}
 complete-color Kashaev invariant, with unknot value one. Conversion from
 \(Z_N\) retains the original framing/component character, which has
 modulus one at complete color; for a knot its enhanced component sign is
-one. The full one-cut modified convention retains its additional factor
-\(i^{N+3}/N\), whose exponential rate is zero. The knot pattern and
+one.  The knot pattern and
 every signed integer \(p_e\), with \(n_e=\epsilon_e-2p_e\), are fixed
 before \(N\) tends to infinity. No ratio bound between the large
 fillings or uniform threshold over growing diagrams is asserted.
@@ -418,7 +400,7 @@ X=Q_a+Q_c\ge C_1\ge\log c,\qquad
 \end{equation} where the first comparisons use \eqref{pts:eq-12}. They are in fact strict at this
 merged crossing. Thus protected triangular sums of weak-balanced inputs
 are themselves weak-balanced. The existing power-flattening theorem
-supplies their unabridged certificates. This gives a direct constructive
+supplies their certificates. This gives a direct constructive
 family, with unrestricted finite numbers of certified pieces and
 arbitrary cycles already present inside those pieces.
 
@@ -440,7 +422,7 @@ mark. At the complete vector \(q^*\), let
 \(P(q)=\sum_eX_e(q)-\sum_fq_f\), where \(X_e=A_C\), and put \begin{equation}\label{pts:eq-25}
 H_e=\max\{X_e,q_b,q_c\},
 \end{equation} omitting protected logarithms. The entropy proof of
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/general_weak_balance_volume.html}{weak balance, §§3--5} gives
+Appendix~\ref{app:weak-balance} gives
 \(h_*>0\), a finite \(\mathcal E\ge0\), and, for \(q(t)=(1-t)q^*\),
 \(0<t<1\), \begin{equation}\label{pts:eq-26}
 P(q(t))\le\Phi+\tfrac12t^2\mathcal E,\qquad
@@ -457,12 +439,30 @@ A_{a,s}(q(t))+\sum_{e\ne a}H_e(q(t))-\sum_fq_f(t)
 implication without treating equality in the original balance test as a
 strict loss.
 
-Now take the original width-three source with word \begin{equation}\label{pts:eq-28}
-(1,3,0,2,4,1,3,0,2,4,1,3,0,2,4,1,3),\qquad
- \{u,v\}=\{0,16\}.
-\end{equation} Its construction and rational certificates are given in
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_shared_radius_certificate_separation.html}{the separation
-theorem}. The exact data are
+Take the marked sphere with vertices $0,\ldots,18$, protected edge
+$\{0,16\}$, and the following ordered crossing quartets:
+\begin{equation}\label{pts:eq-28}
+\begin{array}{c|c@{\qquad}c|c}
+e&(x,b,c,y)&e&(x,b,c,y)\\ \hline
+0&(1,0,4,2)&9&(10,8,13,0)\\
+1&(2,0,5,3)&10&(11,9,14,12)\\
+2&(0,1,6,4)&11&(12,10,15,13)\\
+3&(4,2,7,5)&12&(0,11,16,14)\\
+4&(5,3,8,0)&13&(14,12,17,15)\\
+5&(6,4,9,7)&14&(15,13,18,0)\\
+6&(7,5,10,8)&15&(16,14,0,17)\\
+7&(0,6,11,9)&16&(17,15,0,18)\\
+8&(9,7,12,10)&&
+\end{array}
+\end{equation}
+A row specifies triangles $(x,b,y)$ and $(x,y,c)$ paired along $xy$.
+There are 34 faces and 51 edges. Every edge occurs twice with opposite
+orientations, every vertex link is a cycle, and the face adjacency graph
+is connected. Since $19-51+34=2$, these data form an oriented simple
+sphere. The listed matching edges are distinct, and $\{0,16\}$ is
+nonmatching. This defines the diagram without a separate word compiler.
+Its certificate is \cite[Theorem 6.1]{PlanarCertificates}.
+The exact data are
 \href{https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_sector_cover_certificate.json}{the
 forty-branch certificate} and
 \href{https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_shared_radius_anchor_obstruction_certificate.json}{the
@@ -481,7 +481,7 @@ choose any surviving one-sided anchor, allow central/left at the other
 regions of \(J\), and all surviving labels elsewhere. There are
 twenty-five such anchor branches. Every locally allowed noncentral
 string is covered by this combinatorial division, whether or not its
-global coefficient vanishes. Thus this is exactly the unabridged
+global coefficient vanishes. Thus this is exactly the full certificate
 hypothesis \eqref{pts:eq-5}. The rational bounds prove a uniform gap greater than
 \(0.04\).
 
@@ -534,7 +534,7 @@ ordinary face receives load \(1/2\) from one singleton triangle and
 \(1/4\) from each of the other two triangles. This is the complete
 stationary vector. Each local complete rate is \(2f(1/4)>0\), whereas
 its positive middle logarithm is zero. This input is strictly balanced
-and therefore has an unabridged certificate.
+and therefore has a certificate.
 
 Attach any fixed number \(r\ge1\) of these tetrahedral inputs, always
 continuing on the newly attached side of the retained marked edge. The
@@ -567,14 +567,10 @@ phase-uniform source certificates, with every shared target retained,
 and its consequence for independently long fixed fillings of the recorded
 diagrams.
 
-An arbitrary block need not satisfy \eqref{pts:eq-5}: the
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_singleton_sector_envelope_obstruction.html}{fifty-four-region
-example} has a genuine fixed-sector envelope capacity exceeding its
-complete action by more than \(1/5\). The present proof does not assert
-an exact scalar factorization of finite spectral kernels. It proves an
-inequality for every genuine sector with its full real spectrum and all
-face phases, and therefore retains the normal data required by the
-finite filling functional.
+Condition \eqref{pts:eq-5} remains an additional hypothesis on each
+input. The proof transports its bounds for the full real spectral cube
+and every shared face phase. It uses inequalities, rather than a scalar
+factorization of finite spectral kernels.
 
 The certificate hypothesis cannot be weakened here to an arbitrary
 closed-source cancellation estimate, or to a cap estimate with other

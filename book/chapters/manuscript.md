@@ -19,7 +19,10 @@ also contains results outside this seven-paper route. The
 [exposition audit](../../repro/CONWAY_SERIES_AUDIT_2026-11-25.md) describes
 the corrections and expanded explanations. The seven-paper series has
 160 pages in total; it is the complete prerequisite collection for the
-19-page Conway result.
+19-page Conway result. The [collection-wide audit](../../repro/MANUSCRIPT_AND_LOGIC_AUDIT_2026-11-25.md)
+extends that revision to all fourteen remaining papers and this 210-page
+reference. Its logical comparison records exactly which statements Lean
+proves and which application lemmas retain written proofs.
 
 The signed local calculation used for the separate recurrence problem
 is proved in the [quarter-index paper](../../papers/quarter-index-asymptotics/README.md).

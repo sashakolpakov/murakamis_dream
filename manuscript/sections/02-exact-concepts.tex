@@ -10,7 +10,7 @@ nondegenerate critical point and an estimate for the original sum.
 This chapter records the elementary facts needed to keep these
 operations and their estimates separate.
 
-\section{The coefficient space and its actual pairing}
+\section{The coefficient space and its Gram pairing}
 
 Let $V$ be a finite-dimensional complex inner-product space. We take
 the inner product to be conjugate-linear in its first argument.
@@ -20,7 +20,9 @@ Choose vectors $v_1,\ldots,v_m$ spanning a subspace of $V$, and let
 \]
 The spanning vectors need not be independent or orthogonal. The
 adjoint is denoted by $B^*$; in orthonormal coordinates it is the
-conjugate transpose. Define the Gram matrix $G=B^*B$.
+conjugate transpose. Define the Gram matrix $G=B^*B$. Its entries are
+$G_{ij}=\langle v_i,v_j\rangle$, so the pairings between distinct
+spanning vectors are included explicitly.
 
 \begin{proposition}[The transported coefficient pairing]
 \label{prop:coefficient-gram}
@@ -50,7 +52,8 @@ zero energy because they represent the zero vector, not because a
 later estimate is expected to cancel them.
 
 A closing functional is additional data. For a fixed complex-linear
-map $\ell:V\to\CC$,
+map $\ell:V\to\CC$, with operator norm
+$\|\ell\|=\sup_{\|v\|=1}|\ell(v)|$,
 \[
  |\ell(Bc)|\le \|\ell\|\,\sqrt{c^*Gc}.
 \]
@@ -68,8 +71,10 @@ $J^*J=I$, so
 \[
  |a^{\mathsf T}Jb|\le\|a\|_2\|b\|_2.
 \]
-The equality with the physical cap and the normalization of these
-coordinates are the exact finite identities cited in
+Indeed $a^{\mathsf T}Jb=\langle\overline a,Jb\rangle$;
+Cauchy--Schwarz applies because $\|\overline a\|_2=\|a\|_2$ and
+$\|Jb\|_2=\|b\|_2$. The equality with the tangle's closing cap
+and the normalization of these coordinates are the finite identities in
 Chapter~\ref{ch:conway-current}. The bilinear closing itself is not
 a Hermitian inner product.
 
@@ -96,9 +101,9 @@ then
  T_s\cdots T_1B_0=B_sA_s\cdots A_1.
 \]
 This follows by successive substitution. In particular a vector
-in $\ker B_0$ remains physically zero after the contraction.
-All phases and derivative coordinates are retained by the matrix
-product. One may not discard a vector merely because the present
+in $\ker B_0$ still represents the zero vector after the contraction.
+The matrix product retains phases and derivative coordinates whenever
+they were included in the specified maps. One may not discard a vector merely because the present
 closing row kills it: a subsequent map can move that vector out of
 the closing kernel.
 
@@ -234,10 +239,16 @@ requires the finite-lattice contour argument and the nonzero density
 in Chapter~\ref{ch:conway-current}, followed by the estimate of the
 whole filling sum.
 
-Grounding a graph Laplacian is a different operation. If
-$L=B^{\mathsf T}WB$ is a real weighted graph Laplacian with connected
-positive support, fixing one coordinate to zero removes its constant
-kernel. The reduced principal matrix is positive definite. Eliminating
+For comparison, take a finite connected graph, orient its edges, and
+let $B$ be its incidence matrix: $(Bh)_e$ is the difference of the
+endpoint values of $h$ along edge $e$. Let $W$ be diagonal, with one
+positive weight on each edge. The weighted Laplacian is
+$L=B^{\mathsf T}WB$, and
+\[
+ h^{\mathsf T}Lh=\sum_{e=ij}W_{ee}(h_i-h_j)^2.
+\]
+Its kernel consists of constant vectors. Fixing one vertex value to
+zero, often called \emph{grounding}, removes this kernel. The reduced principal matrix is positive definite. Eliminating
 other free coordinates after that step produces a Schur complement.
 The shared-weight variational arguments later in this reference use
 both ideas in these respective roles.

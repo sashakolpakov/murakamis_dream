@@ -18,18 +18,39 @@
 \newcommand{\diag}{\operatorname{diag}}
 \newcommand{\eps}{\varepsilon}
 \title{Asymptotics of signed Newton coefficients near the quarter index}
-\author{}\date{}
+\author{Alexander Kolpakov}\date{25 November 2026}
 \begin{document}\maketitle
 
 \begin{abstract}
-A signed Newton coefficient in a root-of-unity tangle evaluation satisfies a second-order finite recurrence. At one quarter of the level its two characteristic roots have equal modulus but remain distinct. We prove a holomorphic asymptotic for the actual finite coefficient on a fixed neighborhood crossing that boundary. An analytic matrix reduction has exponentially small off-diagonal error on a domain chosen before the crossing width. The original high-index source supplies both initial channels. A strict cumulative action estimate suppresses its competing channel and every mode-conversion error, even for small complex color parameters. The selected product then admits exponentially accurate index interpolation, with the same nonzero amplitude, endpoint normalization and absolute shear action at both level parities. A local finite-window corollary retains the original affine lattice offsets. No estimate of the complementary global source or of a whole filling sum is asserted.
+We study a finite coefficient in a root-of-unity tangle evaluation
+whose normalized values satisfy a second-order recurrence. At one
+quarter of the level, the two characteristic roots have equal modulus
+but are distinct. We prove that the coefficient has one nonzero
+holomorphic asymptotic expression on a fixed neighborhood extending
+across this point. The proof uses the finite sum at its upper endpoint
+to determine the initial values of both recurrence components. An
+analytic change of basis makes their coupling exponentially small,
+and an integral estimate shows that neither the second component nor
+this small coupling changes the leading term over the chosen interval.
+We then interpolate the selected product with exponentially small
+error on the integer grid. This fixes its action and amplitude,
+including their absolute normalization at both level parities. We also
+give a local Gaussian formula for finite tangle sums made from these
+coefficients. Contributions outside that local summation window are
+not estimated here.
 \end{abstract}
 
 \section{The finite coefficient and the question}\label{qi:intro}
 
-Rigorous asymptotics for finite-order recurrences form an established discrete WKB theory; see Costin and Costin \cite{CostinCostin} for a general treatment with smooth coefficients. We give the analytic matrix reduction used here directly, then identify the particular finite quantum source by its original endpoint. No novelty is claimed for the general diagonalization procedure.
+Rigorous asymptotics for finite-order recurrences form an established discrete WKB theory; see Costin and Costin \cite{CostinCostin} for a general treatment with smooth coefficients. We give the analytic change of basis used here directly. The additional
+step is to determine which solution describes the given finite sum:
+we do this from its endpoint values and retain the resulting two
+components throughout the transport argument.
 
-Equal characteristic moduli do not by themselves determine an asymptotic of a finite recurrence. Below the equality point a locally smaller branch can become larger; an initially small component can then grow. We prove a local statement in which the actual source at a higher index, the cumulative relative actions and all conversions between the two branches are controlled together.
+Equal characteristic moduli do not by themselves determine an asymptotic of a finite recurrence. Below the equality point a locally smaller branch can become larger; an initially small component can then grow. We prove a local statement in which the coefficient at a higher index, the accumulated ratio of the two
+solutions, and the error caused by their coupling are controlled
+together. Comparing only the eigenvalue moduli at the target index
+would not give this information.
 
 Fix an integer $N\ge2$, and put
 \[
@@ -38,13 +59,21 @@ Fix an integer $N\ge2$, and put
  F_j=(Q;Q)_j=\prod_{a=1}^j(1-Q^a).
 \]
 Complex powers of $q,Q$ mean their displayed exponential lifts.
-Let $G_N$ be the canonical factorial of \cite[Lemma 2.1]{Conway}, and set
+Let $G_N$ be the holomorphic interpolation of the sine factorial
+constructed in \cite[Lemma 2.1]{Conway}. We use its exact shift
+identity, its specified normalization on integer arguments, and its
+uniform holomorphic bulk expansion. These properties, including the
+choice of logarithm in that expansion, are the input from that lemma.
+Set
 \[
  \widehat F_N(z)=e^{\pi\ii z(z+1)/(2N)-\pi\ii z/2}G_N(z).
 \]
 Thus $G_N(j)=\prod_{a=1}^j2\sin(\pi a/N)$ and
 $\widehat F_N(z+1)=(1-Q^{z+1})\widehat F_N(z)$ exactly.
-For the color deficit $h=Nt$ and integer index $r$ near $N/4$ define
+The discrete index is $r$, with scaled value $x=r/N$. The color
+deficit is $h=Nt$; physical deficits are integers, but $t$ will also
+be allowed to vary in a fixed complex disk about zero. For $r/N$
+near $1/4$, define
 \begin{align}
  A_{h,r}
  &=\sum_{v=r}^{M}
@@ -55,7 +84,7 @@ For the color deficit $h=Nt$ and integer index $r$ near $N/4$ define
  {F_r\widehat F_N(r-h)\widehat F_N(r+h)},\qquad
  U_{h,r}=A_{h,r}/D_{h,r}.\label{qi:source}
 \end{align}
-Only the two color-shifted factorials are continued. For physical integer $0\le h\le r$ this is the normalization of the signed Newton coefficient obtained from the circle and crossing identities of \cite[Proposition 4.1 and equation (4.8)]{Newton}. Section~\ref{qi:signed} writes that coefficient explicitly and checks the normalization. For a fixed small complex disk in $t$, all factorial arguments in \eqref{qi:source} remain regular. Hence the finite source is holomorphic and even in $t$.
+Only the two color-shifted factorials are continued. For physical integer $0\le h\le r$ this is the normalization of the signed Newton coefficient obtained from the circle and crossing identities of \cite[Proposition 4.1 and equation (4.8)]{Newton}. Section~\ref{qi:signed} writes that coefficient explicitly and checks the normalization. For a fixed small complex disk in $t$, all factorial arguments in \eqref{qi:source} remain regular. Hence the finite coefficient is holomorphic and even in $t$.
 
 Here is its exact recurrence. With $e=1/N$, $x=r/N$, $Y=e^{2\pi\ii x}$, $H=e^{2\pi\ii t}$ and
 $\operatorname{den}(x)=(1-QY/H)(1-QYH)$,
@@ -100,13 +129,16 @@ Division by the nonzero normalizing factors $D_{h,r}$ proves
 \eqref{qi:recurrence}. The calculation uses the exact factorial shift,
 so it proves the identity for complex $h$ as well as for integer colors.
 
-Let $p_0=p(x,t,0)$ and $q_0=q_c(x,t,0)$, and label the roots of
+Let $p_0=p(x,t,0)$ and $q_0=q_c(x,t,0)$, and label the two characteristic roots of
 $\mu^2-p_0\mu-q_0=0$ by
 \begin{equation}\label{qi:roots}
  \mu_s(x,0)=-e^{-2\pi\ii x},\qquad
  \mu_f(x,0)=e^{-2\pi\ii x}\cot^2(\pi x).
 \end{equation}
-At $x_0=1/4$ these roots are $\ii$ and $-\ii$. They extend as distinct nonzero holomorphic functions of $(x,t)$ on a fixed neighborhood.
+The subscript $s$ labels the branch selected by the upper endpoint;
+$f$ labels the other branch. These labels are continued analytically
+and are not reassigned when their moduli change order. At
+$x_0=1/4$ the roots are $\ii$ and $-\ii$. They extend as distinct nonzero holomorphic functions of $(x,t)$ on a fixed neighborhood.
 Use the logarithm of $\mu_s$ continued from its value zero at
 $(x,t)=(1/2,0)$; in fact $\mu_s(1/2,t)=1$ for all small $t$.
 Define, by continuation from the high-index domain,
@@ -120,9 +152,9 @@ Define, by continuation from the high-index domain,
 \end{align}
 Here $p_1=\partial_ep(x,t,0)$ and $q_1=\partial_eq_c(x,t,0)$.
 The square root is one at $1/2$. The denominator
-$1-\mu_f/\mu_s$ is nonzero, including at quarter.
+$1-\mu_f/\mu_s$ is nonzero, including at $x=1/4$.
 
-\begin{theorem}[The actual source across quarter]\label{qi:main}
+\begin{theorem}[The finite coefficient near the quarter index]\label{qi:main}
 There are fixed constants $h_0,a_0,t_0,c>0$ and, for all sufficiently large $N$ of either parity, a nonzero holomorphic function $I_N(x,t)$ on
 \[
  |\Re x-1/4|<h_0,\qquad |\Im x|<a_0,\qquad |t|<t_0,
@@ -135,14 +167,14 @@ On a smaller fixed joint complex domain,
 \begin{equation}\label{qi:complex}
  I_N(x,t)=C(x,t)e^{NS(x,t)}(1+O(N^{-1})).
 \end{equation}
-Every fixed derivative of the normalized remainder satisfies the same bound on smaller domains. The first estimate concerns the original finite source on its integer index set. The second concerns the explicitly constructed holomorphic interpolation. All constants are independent of $N$.
+Every fixed derivative of the normalized remainder satisfies the same bound on smaller domains. The first estimate concerns the original finite coefficient on its integer index set. The second concerns the explicitly constructed holomorphic interpolation. All constants are independent of $N$.
 \end{theorem}
 
-Lemma~\ref{qi:high-index} proves the needed source anchor directly
+Lemma~\ref{qi:high-index} proves the needed starting value directly
 from the upper endpoint. Above quarter the unwanted ratio has modulus
 strictly less than one. That proof cannot be applied below quarter,
-where $|\mu_f/\mu_s|$ can exceed one. The matrix reduction and
-cumulative-action argument in
+where $|\mu_f/\mu_s|$ can exceed one. The matrix change of basis and
+accumulated-ratio estimate in
 Sections~\ref{qi:diagonalization}--\ref{qi:source-proof} supply the
 additional control needed to cross the equality point.
 

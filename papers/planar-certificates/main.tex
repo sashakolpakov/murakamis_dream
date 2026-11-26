@@ -23,25 +23,25 @@
 \newcommand{\Rgt}{\mathrm R}
 \newcommand{\calQ}{\mathcal Q}
 \title{Shared face estimates and triangular gluing for planar link diagrams}
-\author{}\date{}
+\author{Alexander Kolpakov}\date{25 November 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
-The exact polynomial of a marked planar link diagram uses one variable
-for each face, shared by all its appearances. We give finite criteria
-on these common variables that bound every noncentral part of the
-invariant over the full real spectral cube. A weak, non-strict balance
-condition at the complete circle packing suffices: a common power
-change of the face weights gives a linear entropy gain and only a
-quadratic cost. A second theorem preserves arbitrary unabridged
-sector certificates under an oriented triangular gluing, retaining
-the single coefficient target at the joining face. Both criteria
-imply the volume limit for independently sufficiently long fixed
-signed fillings, using numbered finite, analytic and geometric
-companion theorems. An explicit seventeen-region certificate and its
-iterated tetrahedral attachments give marked diagrams outside weak
-balance. The proof includes the finite-cover logic and the rigorous
-interval verification of this example.
+A face of a planar diagram contributes one variable to its finite
+polynomial evaluation, even when that face meets several crossing boxes.
+We give two sufficient conditions for the terms outside the central
+path sector to have a smaller exponential rate than the central term.
+The first condition is a weak inequality at the complete circle packing.
+Raising all positive face weights to the same power creates a first-order
+entropy gain, while changing the central coefficient bound only to
+second order. The second condition allows a different weight vector
+for each sector and is preserved when two marked diagrams are glued
+along a specified triangle. We prove the gluing inequality with the
+coefficient at the identified face counted once. An explicit
+seventeen-box example satisfies this certificate condition but fails
+the first condition. With the finite evaluation, central asymptotic and
+geometric filling theorems stated below, either condition gives the
+volume limit for independently sufficiently long fixed signed twists.
 \end{abstract}
 
 \section{Common face weights and the volume statement}
@@ -59,7 +59,10 @@ cubic dual. The \(R\) matched pairs comprise \(2R\) triangles and
 \(R+2\) vertices. At pair \(e\) write the cyclic quadrilateral as
 \((x_e,b_e,y_e,c_e)\), with matching diagonal \(x_ey_e\).
 Its polynomial arguments are ordered \((x_e,b_e,c_e,y_e)\).
-Choose a nonmatching edge \(uv\). The two corresponding face variables
+A vertex of this triangulation labels a circle in the packing and
+a face of the link projection. We use that label also for the
+corresponding polynomial variable. Choose an edge $uv$ whose dual
+is not in the matching. The two corresponding face variables
 are \emph{protected}: \(L_u=L_v=0\). Let \(V\) be the set of the
 \(R\) remaining, ordinary faces.
 
@@ -163,8 +166,7 @@ proved the volume conjecture for Whitehead chains. We do not identify
 our marked operation with all such constructions, or claim that its
 unmarked knot types avoid other known presentations. The assertion here
 is closure of shared source estimates with the original targets and
-primitive fillings retained. No classification result from that
-literature is used in the proof.
+primitive fillings retained. The gluing estimates below are proved for the recorded faces and coefficient targets; they do not use a classification theorem.
 
 \section{The exact source and the imported foundations}\label{pc:finite}
 
@@ -214,8 +216,10 @@ Since \(i\le j\), two one-sided conditions cannot hold together.
 This partition is exhaustive. At odd levels its central zero-step
 path appears once, and a path skipping the central row keeps its
 unused spectral factor. Denote the resulting polynomials by
-\(H_{V,s}\). A protected overloaded middle kills the corresponding
-one-sided polynomial exactly.
+\(H_{V,s}\). In a left sector the exponent of $c$ is larger than $h$, so setting
+$c=0$ makes the polynomial zero. In a right sector the same holds
+for $b$. This explains exactly which protected coordinates remove
+a local sector.
 
 Take the single original coefficient
 \begin{equation}\label{pc:source}
@@ -256,7 +260,7 @@ lattice, and even-level affine coset. In particular there is no
 extra factor \(N^R\) multiplying \eqref{pc:source}.
 Theorem 1.1 of that paper gives the one-variable norm;
 successive application gives \eqref{pc:norm}. Its functional uses
-both values and first normals at repeated spectral roots, and the
+both values and first derivatives at repeated spectral roots, and the
 value at the odd simple root. The separate-degree condition just
 verified is exactly its hypothesis. Negative powers are included.
 \end{proof}
@@ -351,14 +355,14 @@ give \eqref{pc:central-rate}; a formal critical point alone would not.
 
 \section{Finite certificates and the whole remainder}
 
-\begin{definition}[Unabridged certificate]\label{pc:certificate}
-An unabridged certificate for \(D\), with gap \(g>0\), assigns a
+\begin{definition}[Certificate for every allowed sector]\label{pc:certificate}
+A certificate for \(D\), with gap \(g>0\), assigns a
 positive shared ordinary vector \(L^\omega\) to every
 \(\omega\in\Sigma_D\), such that
 \[
                      G_{D,\omega}(L^\omega)\le\Phi_D-g.
 \]
-Only the local protected-overloaded labels have been removed from
+Only sectors which vanish because their positive-power variable is protected have been removed from
 \(\Sigma_D\). In particular no string is omitted because of a
 separate global vanishing or cancellation argument.
 \end{definition}
@@ -376,11 +380,13 @@ must retain its correlations. Passing to the Cartesian hull is an
 upper bound, not an equality in general. Choosing a branch of a
 local maximum is also not the same as selecting an actual path sector.
 
-\begin{lemma}[Homogeneity and full spectators]\label{pc:homogeneity}
+\begin{lemma}[Homogeneity and maxima over local sectors]\label{pc:homogeneity}
 For \(\lambda>0\), every local rate increases by \(\log\lambda\)
 when all its positive weights are multiplied by \(\lambda\).
 Consequently every \(G_{D,B}\) is unchanged by common rescaling.
-Moreover, with protected logarithms omitted,
+When a local sector has not been fixed, its upper bound is the
+maximum over all allowed sectors. With logarithms of protected
+coordinates omitted, these maxima are
 \begin{equation}\label{pc:spectators}
 \begin{aligned}
  \max\{A_\C,A_\Lft,A_\Rgt\}&=\max\{X,\log b,\log c\}=:H,\\
@@ -576,7 +582,7 @@ Suppose for some \(0<t<1\)
        \{t h_{e,s}-(1-t)\epsilon_{e,s}\}
                        -\tfrac12t^2\mathcal E>0.
 \end{equation}
-Then \(L(t)\) is an unabridged certificate with gap \(\gamma(t)\);
+Then \(L(t)\) is a certificate with gap \(\gamma(t)\);
 hence Theorem~\ref{pc:cover} applies. In particular it suffices that
 the complete packing be \emph{weak-balanced}:
 \begin{equation}\label{pc:weak}
@@ -739,7 +745,7 @@ requires \(q_B\) to be positive. Both branches of the one-sided
 maximum have been retained.
 \end{proof}
 
-\begin{theorem}[Closure of unabridged certificates]\label{pc:gluing}
+\begin{theorem}[Closure of certificates]\label{pc:gluing}
 If \(D_1,D_2\) have certificates in the sense of
 Definition~\ref{pc:certificate}, with gaps \(g_1,g_2>0\), their
 protected triangular gluing has one with gap at least
@@ -833,15 +839,14 @@ assertions can be checked directly from the table by the procedure
 in Section~\ref{pc:reproduce}.
 
 \begin{theorem}[The seed and its attachments]\label{pc:seed}
-The marked sphere \eqref{pc:seed-quartets} has an unabridged
-forty-branch certificate with gap greater than \(1/25\).
+The marked sphere \eqref{pc:seed-quartets} has a forty-branch certificate with gap greater than \(1/25\).
 Its complete packing fails weak balance at at least one of
 the boxes
 \[
                               J=\{2,4,7,12\}.
 \]
 For every fixed \(r\ge0\), it admits \(r\) successive tetrahedral
-attachments that retain those boxes and yield an unabridged
+attachments that retain those boxes and yield a full sector
 certificate on \(17+r\) regions, still outside weak balance at the
 retained mark. All knot-producing long fixed signed fillings of
 these recorded diagrams satisfy \eqref{pc:volume}.
@@ -899,14 +904,14 @@ certificate assertion, including strings that might have zero
 shared coefficient.
 
 \subsection{Locating the failure of weak balance}
-The second rational file \cite{AnchorData} gives a weak-duality
+The second rational file \cite{AnchorData} gives a variational
 lower bound for the smaller comparison
 \begin{equation}\label{pc:restricted}
  \widetilde G(q)=A_{12,\Rgt}(q)+
        \sum_{e\in\{2,4,7\}}H_e(q)+
        \sum_{e\notin J}X_e(q)-\sum_{f\in V}q_f.
 \end{equation}
-At spectator \(e\in\{2,4,7\}\), choose a rational mass
+At an unrestricted box \(e\in\{2,4,7\}\), choose a rational mass
 \(0<\lambda_e\le1\) for its two complete triangle rows and mass
 \(1-\lambda_e\) on the pure \(b_e\)-coordinate. Each weighted
 triangle row has loads \(\alpha_{ti}\ge0\) summing to
@@ -945,8 +950,7 @@ This would give \(\widetilde G(q^*)\le P(q^*)=\Phi_{17}\),
 a contradiction.
 
 This comparison does not assert that a fixed genuine sector has
-rate exceeding volume. The three spectator mixtures are atoms of
-the upper function \(H\). They serve here only to locate a failure
+rate exceeding volume. The three mixtures belong to the maximum defining $H$. They serve here only to locate a failure
 of weak balance in the recorded diagram.
 
 \subsection{Reproducible exact and interval verification}\label{pc:reproduce}
@@ -1037,7 +1041,7 @@ failure of weak balance therefore persists. For \(r\) attachments,
                  R_r=17+r,\qquad
                  \Phi_r=\Phi_{17}+4r\,e(1/4).
 \]
-Theorem~\ref{pc:gluing} provides the unabridged certificate and
+Theorem~\ref{pc:gluing} provides the certificate and
 Theorem~\ref{pc:cover} the knot volume limit. This proves
 Theorem~\ref{pc:seed}. The fixed diagram and its parity pattern
 are chosen before the independent long fillings and before \(N\).
@@ -1058,7 +1062,7 @@ spectral parameters fixed at their endpoints. Such bounds need
 not supply the input vectors in \eqref{pc:merge-table}. Likewise,
 discarding an input string because its coefficient vanishes
 globally would require a separate support-transfer proof.
-The unabridged definition avoids that unproved step.
+The complete definition avoids that unproved step.
 
 No certificate is asserted for every simple matched sphere.
 No threshold is uniform over a growing number of pieces or over

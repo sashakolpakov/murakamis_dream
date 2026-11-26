@@ -106,7 +106,6 @@ import VolumeLogic.SourceAssembly
 #print axioms VolumeLogic.monicRemainder_unique
 #print axioms VolumeLogic.monicRemainder_unique_padded
 #print axioms VolumeLogic.monic_remainder_unique_between
-#print axioms VolumeLogic.newtonFunctional_from_remainder
 #print axioms VolumeLogic.monicRemainder_idempotent
 #print axioms VolumeLogic.monicMultiple_congr
 #print axioms VolumeLogic.timesLinear_commute

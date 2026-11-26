@@ -17,11 +17,24 @@
 \newcommand{\Vol}{\operatorname{Vol}}
 \newcommand{\ii}{\mathrm i}
 \title{Ordered tangle reductions and long net twists}
-\author{}\date{}
+\author{Alexander Kolpakov}\date{25 November 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
-We give a finite reduction of ordered two-strand tangle expressions that keeps the signed sum and original labels of every fused twist region. For a cylindrical product closure, the surviving label partition is independent of the twist parities; the parities determine the rotations and orders in the resulting presentation. Allowing either closure and vanishing sums gives a tree of explicitly marked connected sums. The reduction uses ambient isotopies with prescribed collars and retains every closed component. Combining it with the volume theorem for strict Conway compositions gives an all-integer-level volume limit whenever the surviving strict factors have sufficiently long net twists and the input knot is hyperbolic. Under the same longness condition the terminal factors also give a finite criterion for hyperbolicity. The original expression is arbitrary but fixed, and longness is imposed on the surviving sums, not on the written summands.
+A statement about long twists must allow cancellation of consecutive
+twist regions. We give a terminating reduction which records exactly
+which signed sums of the original twist counts survive. The reduction
+uses stacking, spatial rotations and specified closing arcs; it carries
+all closed components and records every connected-sum attachment. For a
+cylindrical product closure, the surviving sets of labels can be found
+before assigning the twist parities. Zero sums and the other closure
+require additional splitting steps, which we describe explicitly.
+We then apply the volume theorem for strict Conway constructions to the
+surviving factors. If their net twists are sufficiently long, an explicit
+terminal-factor test decides whether a one-component input is hyperbolic.
+In the hyperbolic case the input is isotopic to one strict factor and
+inherits its volume limit. The original expression and all integers
+are fixed before the quantum level tends to infinity.
 \end{abstract}
 
 \section{The question and the precise input}\label{cr:introduction}
@@ -57,7 +70,19 @@ Here and below equality of such diagrams means the displayed actual isotopy clas
 
 \subsection{Strict expressions and the imported theorem}
 
-The formal strictness test does not inspect the numerical twist counts. The possible open types are
+The volume theorem used below applies to expressions satisfying a
+real feasibility condition. Give each formal leaf a label in $(0,1/2)$.
+A turn sends $x$ to $1-x$. A product with inputs $x,y$ and output $z$
+requires
+\[
+                    \max(x,y)<z<x+y<1.
+\]
+At the final closing product, require instead that its two input labels
+sum to one. These labels represent normalized polynomial indices;
+they are independent of the numerical twists $n_i$.
+An expression is \emph{strict} if such labels exist.
+
+The same condition has a finite recursive test. Its possible open types are
 \[
  L=(0,1/2),\qquad H=(1/2,1),\qquad A=(0,1).
 \]
@@ -70,7 +95,7 @@ Each formal $h$ has type $L$. A turn exchanges $L,H$ and fixes $A$. The product 
  A&A&H&A
 \end{array}
 \end{equation}
-The allowed closing pairs are $AA,AL,AH,LH$, in either order. An expression $C(FG)$ is \emph{strict} if every product and its closing pair pass this test. The intervals are the possible normalized output states of the positive Newton variational problem. Their exact support interpretation and the equivalence with a strict interior state are \cite[Lemma 5.2 and Theorem 5.5]{Newton}. This test concerns the written formal expression. A formal piece with count zero still has its formal type; no geometric conclusion for a zero filling follows from that convention.
+The allowed closing pairs are $AA,AL,AH,LH$, in either order. An expression $C(FG)$ is strict exactly when every product and its closing pair pass this test. The intervals are the possible normalized output states of the positive Newton variational problem. Their exact support interpretation and the equivalence with a strict interior state are \cite[Lemma 5.2 and Theorem 5.5]{Newton}. This test concerns the written formal expression. A formal piece with count zero still has its formal type; no geometric conclusion for a zero filling follows from that convention.
 
 \begin{proposition}[The strict-volume input]\label{cr:import}
 Fix a literal strict expression with at least two leaves. Fix a retained half-twist pattern $\epsilon_i\in\{0,1\}$ whose complete strand pairing, including internal circles, has one component. There is $P_0$ such that every fixed signed integer tuple with $|p_i|>P_0$, and physical crossing powers
@@ -98,7 +123,9 @@ Indeed $|n_i|>B_\sigma$ implies $|p_i|=|\epsilon_i-n_i|/2>P_\sigma$. This is the
 
 \subsection{The conclusions}
 
-Fix a finite expression on labels $\{1,\ldots,m\}$. For a nonempty block of labels $B$, put
+Fix a finite expression on labels $\{1,\ldots,m\}$. A \emph{net
+block} is a nonempty subset $B$ of these labels which has been fused
+into one twist region. Its weight is
 \begin{equation}\label{cr:net}
                          W_B=\sum_{i\in B}n_i.
 \end{equation}

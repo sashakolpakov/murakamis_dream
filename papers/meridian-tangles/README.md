@@ -2,26 +2,34 @@
 
 [Read the PDF](../../docs/papers/meridian-tangles.pdf) · [TeX source](main.tex) · [Dependency graph](https://sashakolpakov.github.io/murakamis_dream/papers/dependencies.html)
 
-This paper proves finite operator identities when the main meridian is
-$M=q^s$, with $q=e^{\pi i/N}$ and $|s|<1$. The integer $N\ge2$ is the
-level. The two strand orientations carry different ordered modules and
-Casimir quotients; the calculation keeps those types distinct.
+Turning a two-strand tangle reverses one strand orientation. Away from
+the complete color, that reversal changes the representation and can
+change the polynomial relation satisfied by the pair Casimir. This
+paper gives coordinates in which the turns, products, crossings and
+closure can all be followed without identifying these different
+algebras.
+
+The parameter is $M=q^s$, with $q=e^{\pi i/N}$, $N\ge2$ and complex
+$|s|<1$. This is a disk in the scaled logarithm $s$; its image in the
+$M$-plane shrinks toward one as $N$ grows. It is not a fixed meridian
+neighborhood independent of the level.
 
 Theorem 1.1 gives the moving-meridian calculus: the Casimir relation,
 full pivotal closing functional, all six physical quarter-turns and
 crossing polynomials at repeated roots. The fixed Newton basis retains
-both values and first derivatives. Its paired sine products and quadratic
-orientation scalars are derived from the actual bending maps.
+both values and first derivatives. The matrices are derived from the
+evaluation and coevaluation maps, so the orientation factors are
+determined by the tangle convention.
 
 The main later exports are:
 
 - Proposition 3.1: the Casimir polynomial and pivotal moments.
 - Lemma 4.1: exact coordinate dualities, including confluent root data.
-- Proposition 6.1: the physical crossing polynomial, its inverse and its
-  full repeated-root normals.
+- Proposition 6.1: the crossing polynomial, its inverse and its
+  first derivatives at repeated roots.
 - Theorem 7.1: exact ordered-tree contraction. An outgoing boundary
   polynomial has degree at most $N-1$, independent of subtree size.
-- Proposition 8.1: the scalar ledger for the original reduced cut,
+- Proposition 8.1: the scalar factors from the reduced cut,
   crossing exponents, orientations and zero-framing correction.
 
 The complete-color calibration uses [Newton calculus and stationary
@@ -34,8 +42,11 @@ The nilpotent and unrolled ribbon-tangle literature supplies the framework;
 the moving coordinate, turn, crossing and closing calculations are proved
 in this paper.
 
-These are exact finite identities. They supply no large-level source
-estimate, noncancellation theorem or hyperbolic volume comparison.
+The example at $N=2$ shows why keeping the two algebras matters: a
+product that is zero at $s=0$ becomes a nonzero scalar when $s$ moves.
+The tree formula retains that product and every basis index. Subsequent
+papers use these finite identities to estimate the whole sum and
+compare its growth with hyperbolic volume.
 
 Build from the repository root:
 

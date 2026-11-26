@@ -3,14 +3,14 @@ We recall exactly what the directed certificate controls. Put
 $a_0=1/(2\pi)$, $k_0=2^{-16}$, $R_0=1/8$, $b_0=2^{-11}$,
 $r_0=1/16$, $t_0=2^{-14}$ and $\chi=1-\cos r_0$.
 Choose a root and, at every nonroot vertex, $0<c_v<k_0$ and
-$\delta_v=\min\{b_0/2,c_v\chi/[4(1+c_v)]\}$. Let $q_v$ be
+$\delta_v=\min\{b_0/2,c_v\chi/[4(1+c_v)]\}$. Let $\iota_v$ be
 one at a nonroot vertex and zero at the root. With children
 $\operatorname{Ch}(v)$ define
 \begin{align}
  a_v&=\frac{d_v}{2\pi},& b_v&=\frac{n_v}{2\pi},&D_v&=a_v-\ii b_v,
        \notag\\
- A_v&=\frac2{\pi^2}\left(q_vk_0+\frac12\sum_{w\in\operatorname{Ch}(v)}c_w\right),&
- B_v&=16q_v+|\operatorname{Ch}(v)|,&
+ A_v&=\frac2{\pi^2}\left(\iota_vk_0+\frac12\sum_{w\in\operatorname{Ch}(v)}c_w\right),&
+ B_v&=16\iota_v+|\operatorname{Ch}(v)|,&
  C_v&=B_v+\frac{b_v^2}{4A_v}.\label{me:directed-data}
 \end{align}
 All $A_v,B_v$ are positive because the tree has an edge. Put
@@ -38,7 +38,7 @@ Its trigonometric degree in either angle is at most $N-1$;
 there is no high-index truncation in this definition. Let
 $M_{v,N}(u;s)$ denote the exact polynomial sent by a subtree to
 its parent angle $u$. It is the actual trace of the parent kernel
-times the exact child messages, with the original typed scalar.
+times the exact child messages, with the scalar prescribed by the orientations of that edge.
 At the root the parent kernel is absent. This is an evaluation
 order for a fixed contraction, not a new diagram.
 
@@ -58,7 +58,7 @@ $(k_0-c_v)\chi-\beta_v>0$ when an outgoing edge exists. There is
 no outgoing requirement at the root. These assertions are the
 conditional conclusions of that proof, not consequences inferred
 solely from its final scalar asymptotic. The full kernel, all
-normal data and the exact child scalars are retained there.
+value-and-derivative data and the exact child scalars are retained there.
 Lemma~\ref{me:translated} verifies these same finite interfaces
 on the translated parameter compacts. For one fixed finite tree
 all these finitely many positive margins have positive minimum.
@@ -88,7 +88,7 @@ estimate. It is never replaced by an estimate for its modulus.
 
 For a terminal vertex, Lemma~\ref{me:local-expansion} applied to
 its full kernel and trace proves \eqref{me:message-orders}; its
-complement and currents retain the original positive margins.
+complement and endpoint terms retain the original positive margins.
 Suppose it holds for all children. Their finite product has an
 expansion to every chosen relative order, with a nonzero normalized
 leading amplitude. On the first-charge local contour use that
@@ -105,8 +105,8 @@ for the child expansion are not substituted on a tail. Nonminimal
 charges are their local contributions plus additive errors already
 below the first charge; a relative expansion at an exponentially
 small nonminimal saddle is unnecessary. Inequality
-\eqref{me:directed-charge-loss} and the original endpoint and
-regeneration margins make these errors smaller than any prescribed
+\eqref{me:directed-charge-loss} and the original endpoint losses and
+normalized-envelope margins make these errors smaller than any prescribed
 relative inverse power. The outgoing-envelope step again uses the
 exact normalized message. It is unaffected by the additional local
 Taylor coefficients. This closes the induction on the finite tree.

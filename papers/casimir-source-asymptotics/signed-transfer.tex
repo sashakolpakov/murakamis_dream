@@ -1,6 +1,8 @@
 \section{A signed interval transfer estimate}\label{lc:transfer}
-This section bounds the signed recurrence. It is not a Perron estimate
-for its entrywise absolute value. Parametrize the real interval by
+For the one-sided sectors we must estimate products of recurrence
+matrices while retaining their signs. The following argument bounds
+both characteristic roots and their couplings, including a repeated
+root; it does not choose an eigenvector at each row. Parametrize the real interval by
 \[
  \sigma=-2\cos(2\pi\delta),\qquad u=-4\sin^2(\pi\delta),
                     \qquad0\le\delta\le\tfrac12.
@@ -74,10 +76,10 @@ The exact scalar factors \(s_r\) have the same integrable endpoint
 bound, and their logarithmic Riemann sums converge uniformly over
 subintervals. Choose \(\eta\) first, then the fixed block length,
 and finally \(N\). Restoring these factors proves the estimate.
-If a perturbation of the reference matrices is wanted, it must be
-chosen after the block length; a sufficiently small fixed perturbation
-then fits the same finite-product error. No complex perturbation is
-needed for the theorem here.
+We will also use this observation in Section~\ref{sa:spectral}:
+a sufficiently small fixed perturbation of the face parameters
+preserves the estimate. Choose its size after the fixed block length,
+so continuity of that finite matrix product gives the same error.
 \end{proof}
 
 \subsection{Unused spectral rows}

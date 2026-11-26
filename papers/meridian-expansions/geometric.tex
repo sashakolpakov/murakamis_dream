@@ -1,17 +1,17 @@
 \section{Identifying the preferred longitude}\label{me:geometric}
 The preceding theorems construct an analytic characteristic from
-an actual source and a specified recurrence. Its geometric
+the source and a specified recurrence. Its geometric
 identification uses two separately proved classical statements.
 For all-circle trees, \cite[Theorem 1.2 and Corollary 7.1]{Nonparabolic}
-construct the full original-group filled germ at its positive
+construct a germ of representations of the filled knot group at its positive
 hyperbolic endpoint, with the $M^{-1}$ flag and primitive
-logarithms. They give uniqueness after the actual endpoint and
+logarithms. They give uniqueness after the selected endpoint and
 those marks have been identified. For strict sources with bare
 junctions, \cite[Theorem 1.3]{Longitudes} identifies the stationary
 branch of precisely \eqref{me:deformed-action}, retaining the
 original physical edges and all bare junctions. Its proof uses
 classical zero-circle insertion and elimination; it includes the
-half-label fold and makes no quantum asymptotic assumption.
+case of an edge label $1/2$ and makes no quantum asymptotic assumption.
 
 We spell out the all-circle interface to avoid replacing a group
 identification by an equality of second derivatives. Put
@@ -50,7 +50,7 @@ $\sqrt{d_v^2+n_v^2}\ge\sqrt{2^{25}d_v}>630$ at every vertex,
 and the directed criterion gives
 $\sqrt{d_v^2+n_v^2}=2\pi|D_v|\ge2\pi\,2^{15}>630$.
 Thus the marked geometric theorem applies also to high-degree
-vertices with zero twist. Its full-group reconstruction uses
+vertices with zero twist. Its reconstruction of the group representation uses
 \eqref{me:edge-equation} and the original flags, not just traces.
 At that endpoint $Q_v^2\ne1$ for each filled disk. It persists on
 a neighborhood, so a slope word commuting with its semisimple
@@ -78,14 +78,14 @@ before its stationary elimination. Its original physical-edge
 set is $\mathcal E_T$. The nondegenerate source branch proved
 here therefore equals that classical branch by the local implicit
 uniqueness theorem; no individual half-edge elimination is used
-at a folded label.
+at an edge label $1/2$.
 
 \begin{corollary}[The selected geometric factor]\label{me:geometric-factor}
 For every fixed source in Section~\ref{me:intro}, with the strict-class
 threshold enlarged to the common threshold just specified, the germ
 $L_{\rm an}$ is its preferred-longitude eigenvalue on the $M$
 line, equivalently the inverse value on the source $M^{-1}$ line.
-It has lift $L_{\rm an}(1)=-1$. Every specified actual all-level
+It has lift $L_{\rm an}(1)=-1$. Every specified all-level
 annihilator in Theorem~\ref{me:symbol} contains this selected
 geometric factor in its first nonzero classical symbol. If
 $\tau_K=\left.\frac{d}{du}\log[-L_{\rm an}(e^u)]\right|_{u=0}$,
@@ -107,7 +107,9 @@ statement, and \eqref{me:first-coefficient} gives the expansion.
 \end{proof}
 
 \section{Finite reproduction and boundaries}\label{me:checks}
-The accompanying \texttt{check.py} checks the finite rational
+From the repository root, run
+\texttt{python3 -I papers/meridian-expansions/check.py}.
+The program checks the finite rational
 reduced/full gauge for several operator orders, the rational sine
 ratios in \eqref{me:sine-ratios}, and coefficient recovery and
 finite-jet truncation for sparse formal polynomials. These are

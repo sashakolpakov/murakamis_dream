@@ -15,35 +15,45 @@
 \newcommand{\normJ}[1]{\lVert #1\rVert_{\mathrm J}}
 \newcommand{\poly}{\operatorname{poly}}
 \title{Moving-meridian source estimates for strict Conway tangles}
-\author{}\date{}
+\author{Alexander Kolpakov}\date{25 November 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
-We estimate the actual Newton contraction of a fixed ordered Conway
-tangle when its main meridian moves on the scale of the inverse level.
-At a product junction the deformed trace need not be bounded by its
-complete value at the same indices. We prove a reflected-index
-comparison instead, and assemble it over arbitrary connected regions
-of product junctions. The resulting error has a strict exponential
-loss at the original shared pressure. The retained finite sum has
-primitive wire coordinates, a nonzero holomorphic saddle and a shared
-angular bound. Its actual crossing traces have one nonzero joint
-first-charge contribution for independently long fixed signed powers.
-The proof includes both level parities, all first normal coordinates,
-and fixed translated nonreal meridian charts. It supplies the analytic
-source needed for higher meridian expansions; no longitude
-identification is used.
+We study the reduced quantum invariant of a fixed strict Conway
+tangle construction when the meridian varies on the scale $N^{-1}$.
+The finite calculus involves deformed polynomial quotients, so its
+intermediate traces cannot in general be bounded by their complete
+values at the same indices. We prove a comparison that reflects one
+high Newton index and follows the resulting change of pairing through
+the entire connected region of product junctions.
+
+This comparison bounds the discarded terms below the complete
+exponential rate. The remaining finite sum has a unique nondegenerate
+holomorphic critical point and uniform bounds on its full real angular
+domain. We apply the original crossing traces and prove that, for
+independently sufficiently long fixed signed powers, the Fourier mode
+with every frequency index equal to one has a nonzero leading
+coefficient; all competing modes have smaller real action. The result
+holds along all integer levels, retains first derivatives at repeated
+spectral roots, and is uniform on fixed compact meridian charts. After
+the explicitly determined closure and framing factors are removed,
+the meridian enters the local integral only through one paired
+sine-factorial ratio for each original edge. This gives the analytic
+input for higher meridian expansions without requiring a longitude
+interpretation.
 \end{abstract}
 
-\section{The actual source and the assertions}\label{ms:intro}
-Fix a literal ordered expression in products, physical quarter-turns
-and crossing boxes. Consecutive products without a turn are combined
-into one junction. A junction carrying an original crossing operator
-is a \emph{circle vertex}; a junction with no such operator is
-\emph{bare}. Every bare junction has valence at least three, counting
-its external attachments. The reduced graph is a tree. Its endpoint
-orders, orientations, closing cut and framing remain fixed. Identity
-coupons at bare vertices are not additional crossing circles.
+\section{The diagram and the main estimates}\label{ms:intro}
+Fix an ordered expression formed by stacking and turning two-strand
+tangle boxes. Combine consecutive products that have no intervening
+turn into one junction. The resulting graph is a tree. Its designated
+twist sites are called \emph{circle vertices}, referring to their
+crossing circles in the associated augmented diagram. A junction used
+only to assemble the subtangles is called \emph{bare}; it carries the
+identity operator and has valence at least three. The designation is
+part of the diagram, rather than a property inferred from the value
+of its crossing power. We fix the endpoint orders, strand orientations,
+reduced cut and framing throughout.
 
 We require the expression to be strict in the sense of
 \cite[Lemma 5.2 and Theorem 5.5]{Newton}. Explicitly its positive
@@ -52,7 +62,9 @@ forced final flat gate, each multiplication has
 \[
  \max(x,y)<z<x+y<1.
 \]
-All hidden indices in an ordered binary resolution are retained.
+A product with several inputs can be evaluated by successive binary
+products. Every intermediate Newton index in this chosen resolution
+remains a summation variable; these are the hidden indices below.
 Theorem 6.4 of \cite{Newton} proves that the resulting compact
 positive action has a unique strict maximum, with negative definite
 Hessian. Write its value as $F_0$. If a knot invariant is mentioned,
@@ -106,13 +118,21 @@ The elementary action functions used throughout are
  m(x,y,z)&=J(x+y)+J(z)-J(x)-J(y)\notag\\
  &\hspace{9mm}-J(z-x)-J(z-y)-J(x+y-z).
 \end{align}
-$J$ is continuous on $[0,1]$, with $J(1-x)=-J(x)$. An ordinary
-boundary branch has profile $g+c$, where the constant $c$ records
-the entire action already accumulated in that branch. Such constants
-will always be restored, rather than assigned independently to an
-edge.
+$J$ is continuous on $[0,1]$, with $J(1-x)=-J(x)$. A branch of type $L$ in the strict-support classification of
+\cite[Lemma~5.2]{Newton} has output interval $(0,1/2)$ and optimized
+profile $g+c$. The constant $c$ is the action already accumulated
+inside that branch. We keep it when optimizing the assembled tree;
+separate maximizations of its incident factors would lose this
+information. We use \emph{pressure} to mean the maximum of such a
+shared action, with any stated boundary labels fixed.
 
-\begin{theorem}[The original finite packet]\label{ms:packet-main}
+The central partial sum below retains the state indices in a small
+rectangle about the positive maximum. We call it a \emph{packet};
+its exact finite formula is \eqref{ms:finite-packet}. The rectangle
+is in independent integer coordinates, not in independently chosen
+edge labels.
+
+\begin{theorem}[The central finite sum]\label{ms:packet-main}
 For every fixed strict expression there are a primitive rectangular
 wire window $\mathcal W$, a number $\eta>0$ and a holomorphic finite
 packet $B_N(\boldsymbol\tau,s)$ with the following properties.
@@ -132,7 +152,7 @@ offset. Uniformly on a fixed complex angular neighborhood,
     a(\boldsymbol\tau)e^{N\Psi(\boldsymbol\tau)}
     (1+O(N^{-1})),
 \end{equation}
-where $a$ is holomorphic and nonzero. The real action $\Psi$ is
+where $a$ is holomorphic and nonzero. The holomorphic action $\Psi$ is real on nearby real angles and
 separately even, $\Psi(0)=F_0$, and
 \[
  \Psi_{\tau_v\tau_w}(0)=-\delta_{vw}a_v,
@@ -154,10 +174,15 @@ Section~\ref{ms:packet}. The source error is bounded before moving
 the circle contours. In particular its proof does not multiply
 relative errors at several independently filled local saddles.
 
-\begin{theorem}[The joint filled source]\label{ms:filled-main}
+The crossing trace is expanded into positive Fourier frequencies
+$\ell_v=1,2,\ldots$ in Section~\ref{ms:filling}. Its \emph{first
+mode} is the joint index $(1,\ldots,1)$. The following theorem
+asserts both that this mode contributes and that it dominates the
+other terms of the finite invariant.
+
+\begin{theorem}[The filled contraction]\label{ms:filled-main}
 For each fixed strict knot expression there is a constant $B$ such
-that all fixed signed powers $|n_v|>B$ have a nonzero joint first-charge
-asymptotic. No ratio between the $|n_v|$ is restricted. On the same
+that all fixed signed powers $|n_v|>B$ have a nonzero asymptotic from the joint first Fourier mode. No ratio between the $|n_v|$ is restricted. On the same
 meridian compacts as above,
 \begin{equation}\label{ms:filled-leading}
  \frac{F_N(q^s)}{F_N(1)}=H_N(s)
@@ -175,8 +200,8 @@ edges of
 \end{equation}
 $G_N$ is the canonical sine-factorial interpolation of
 \cite[Lemma 2.1]{Asymptotics}; the exact affine edge index is used in
-\eqref{ms:exact-insertion}. All other charges and endpoint currents
-have a fixed exponential loss relative to the joint first charge.
+\eqref{ms:exact-insertion}. All other Fourier modes and endpoint contour integrals
+have a fixed exponential loss relative to the joint first Fourier mode.
 The threshold $B$ is chosen before the meridian compact.
 \end{theorem}
 

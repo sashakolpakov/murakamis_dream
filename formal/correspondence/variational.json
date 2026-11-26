@@ -1,0 +1,737 @@
+{
+  "schema": 1,
+  "group": "variational",
+  "contracts": [
+    {
+      "project": "mathlib",
+      "path": "formal-real/VariationalContracts.lean",
+      "roots": [
+        "VolumeLogic.WeightedGraph.energy_eq_zero_iff_constant",
+        "VolumeLogic.WeightedGraph.grounded_laplacian_pos",
+        "VolumeLogic.Flattening.stationary_quadratic_cost",
+        "VolumeLogic.Flattening.weak_balance_sector_gap",
+        "VolumeLogic.TransportCoercivity.exists_grounded_minimizer",
+        "VolumeLogic.GroundedConvexity.exists_unique_grounded_minimizer",
+        "VolumeLogic.GroundedLaplacian.reducedMatrix_det_ne_zero",
+        "VolumeLogic.GroundedLaplacian.exists_unique_grounded_solution",
+        "VolumeLogic.TriangleLoads.jacobian_energy",
+        "VolumeLogic.TriangleLoads.sum_load_pairing_hasDerivAt",
+        "VolumeLogic.TriangleLoads.singletonLoad_hasDerivAt",
+        "VolumeLogic.TrianglePotential.summedPotential_mixed_hasDerivAt",
+        "VolumeLogic.TrianglePotential.summedPotential_mixed_second_at",
+        "VolumeLogic.TriangleMinimizer.exists_unique_prescribed_minimizer",
+        "VolumeLogic.TriangleBalance.exists_unique_balance",
+        "VolumeLogic.HallRecession.connected_of_strict_cuts",
+        "VolumeLogic.HallRecession.exists_grounded_minimizer",
+        "VolumeLogic.TriangleHall.exists_unique_balance",
+        "VolumeLogic.TriangleHall.exists_unique_minimizer"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "module": "WeightedGraph",
+      "root": "VolumeLogic.WeightedGraph.energy_eq_zero_iff_constant",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:eq-5}"
+        },
+        {
+          "path": "papers/triangular-insertion/main.tex",
+          "anchor": "\\label{ti:eq-5}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "V = supported destinations; E = labelled unordered corner pairs, retaining parallel edges and loops",
+        "src,dst = endpoint maps; w(e) = conductance κᵗᵢⱼ; energy(f) = Σₑ wₑ(f(src e)−f(dst e))²",
+        "connected means finite paths in strictly positive support; zero-weight edges impose no equality",
+        "grounded root = the scale coordinate or the destination pooling the fixed boundary corners"
+      ],
+      "hypotheses": [
+        "Finite edge type; nonnegative edge weights; connected strictly positive support"
+      ],
+      "conclusion": "The graph energy vanishes exactly on constant vertex functions.",
+      "unformalized": [
+        "Specializing the graph to triangle conductances and verifying connected supported incidence for the particular triangulated disk."
+      ],
+      "contract": "formal-real/VariationalContracts.lean",
+      "notes": "Read the sum-of-nonnegative-squares proof and its finite-path induction. Nonpositive edges are not used to propagate equality. TriangleMinimizer supplies the generic row-path to conductance-path adapter."
+    },
+    {
+      "module": "WeightedGraph",
+      "root": "VolumeLogic.WeightedGraph.grounded_laplacian_pos",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:eq-5}"
+        },
+        {
+          "path": "papers/triangular-insertion/main.tex",
+          "anchor": "\\label{ti:eq-5}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "V = supported destinations; E = labelled unordered corner pairs, retaining parallel edges and loops",
+        "src,dst = endpoint maps; w(e) = conductance κᵗᵢⱼ; energy(f) = Σₑ wₑ(f(src e)−f(dst e))²",
+        "connected means finite paths in strictly positive support; zero-weight edges impose no equality",
+        "grounded root = the scale coordinate or the destination pooling the fixed boundary corners",
+        "laplacian = BᵀWB, built from the same endpoint incidence"
+      ],
+      "hypotheses": [
+        "Finite vertex and edge types; nonnegative weights; connected positive support; f(root)=0; f≠0"
+      ],
+      "conclusion": "The constructed Laplacian quadratic form is strictly positive on a nonzero grounded vector.",
+      "unformalized": [
+        "The geometric/variational application must supply the supported incidence graph; no geometric Hessian is postulated by this graph theorem."
+      ],
+      "contract": "formal-real/VariationalContracts.lean",
+      "notes": "The matrix quadratic identity is proved by finite incidence summation before invoking the energy kernel theorem. Grounding removes the constant kernel, rather than performing stationary elimination."
+    },
+    {
+      "module": "Flattening",
+      "root": "VolumeLogic.Flattening.stationary_quadratic_cost",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/P-weak-balance.tex",
+          "anchor": "\\label{wb:cost}"
+        },
+        {
+          "path": "papers/planar-certificates/main.tex",
+          "anchor": "\\label{pc:cost}"
+        }
+      ],
+      "kind": "conditional",
+      "symbol_dictionary": [
+        "g(t)=P((1−t)q); dg and ddg are its supplied first and second derivatives",
+        "E=ℰ=(4π)⁻¹ΣₜΣᵢ<ⱼ(qᵢ−qⱼ)²; t is the common weight perturbation parameter"
+      ],
+      "hypotheses": [
+        "t≥0; g and dg have the stated derivatives on [0,t]",
+        "dg(0)=0 and 0≤ddg≤E on that same interval"
+      ],
+      "conclusion": "0≤g(t)−g(0)≤Et²/2.",
+      "unformalized": [
+        "The action-path derivative identities, complete-packing stationarity, and κ≤1/(4π) that establish the hypotheses for this P."
+      ],
+      "contract": "formal-real/VariationalContracts.lean",
+      "notes": "The bound follows from convexity of g and of Ex²/2−g(x). It is derived from the derivative hypotheses, not passed in as an assumed Taylor estimate. Both endpoints are included in the chosen sufficient regularity assumptions."
+    },
+    {
+      "module": "Flattening",
+      "root": "VolumeLogic.Flattening.weak_balance_sector_gap",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/P-weak-balance.tex",
+          "anchor": "\\label{wb:loss}"
+        },
+        {
+          "path": "manuscript/sections/P-weak-balance.tex",
+          "anchor": "\\label{wb:remainder}"
+        },
+        {
+          "path": "papers/planar-certificates/main.tex",
+          "anchor": "\\label{pc:weak-balance}"
+        }
+      ],
+      "kind": "conditional",
+      "symbol_dictionary": [
+        "g(t)=the total shared central action P((1−t)q)",
+        "Qk(β),Qo(β)=the retained and overloaded triangle actions along βq",
+        "z=q at the overloaded positive middle; Qo(1)−dover=its entropy; Qk(1)−dk=retained entropy",
+        "The displayed max is the actual two-branch one-sided envelope; others is a list of further nonnegative losses"
+      ],
+      "hypotheses": [
+        "0<t≤1; the stationary derivative and second-derivative bounds used in stationary_quadratic_cost",
+        "Convexity of both triangle-path functions on [0,1] and their derivatives at1",
+        "Retained entropy nonnegative; overloaded entropy positive; z/2≤Qo(1); weak balance z≤Qk(1)+Qo(1)",
+        "tE≤Qo(1)−dover; every other retained loss is nonnegative"
+      ],
+      "conclusion": "The perturbed total action minus this one-sided loss and the additional losses is strictly below g(0).",
+      "unformalized": [
+        "Actual phase-uniform quantum envelopes and coefficient extraction are written inputs.",
+        "Selection of one side from each noncentral string and the finite sum over all strings give the full polynomial estimate in the written proof."
+      ],
+      "contract": "formal-real/VariationalContracts.lean",
+      "notes": "The code retains both max branches and uses one common t. It does not optimize the same shared face independently at different crossings. General positive-defect criteria use the supporting lemma side_loss_from_convexity and the written finite minimum; this selected root is the zero-defect specialization."
+    },
+    {
+      "module": "TransportCoercivity",
+      "root": "VolumeLogic.TransportCoercivity.exists_grounded_minimizer",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:eq-6}"
+        },
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:eq-7}"
+        },
+        {
+          "path": "papers/triangular-insertion/main.tex",
+          "anchor": "\\label{ti:eq-7}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "At a positive triangular boundary take V=interior vertices plus one root; map all three boundary corners to root but retain their separate a values u,v,b",
+        "Set a=1 at free ordinary corners and a=0 at protected corners; root grounding q(root)=0 keeps each prescribed positive boundary coefficient unchanged",
+        "There are 2k+1 disk rows of supply1/2; prescribed interior demand is1 and the pooled boundary demand used for transport is1/2",
+        "The disk action itself subtracts no boundary target: one may put d(root)=0 because changing that root demand changes the potential by a multiple of q(root)=0",
+        "Common scaling of every physical weight by exp(c) changes a triangle action by c/2 and the disk action by c/2; it is not an independent rescaling of coincident boundary corners",
+        "S(t)=supported destinations in row t; α is a positive table on those supports",
+        "rowMass and demand are the row and column sums of that same α",
+        "Q(t,h) is a continuous row potential; C(t) accounts for the fixed corner-log offsets"
+      ],
+      "hypotheses": [
+        "Finite rows and destinations; nonempty row supports; α>0 on every allowed entry",
+        "Row co-occurrence paths connect all destinations; root is fixed",
+        "Q(t,h)≥rowMass(t)max_{i∈S(t)}hᵢ−C(t) for every h; each Q(t,·) is continuous"
+      ],
+      "conclusion": "The resulting sum of row potentials minus its table-derived demands attains a global minimum on h(root)=0.",
+      "unformalized": [
+        "The application must provide the positive table, its interior column demands, and its connected supports.",
+        "Identification of this abstract row potential with the triangle envelope is performed by the triangle adapter, not this root."
+      ],
+      "contract": "formal-real/VariationalContracts.lean",
+      "notes": "The proof constructs nonnegative gap recession, proves its grounded positivity, obtains a uniform margin by compactness, and minimizes on a compact sublevel. It does not assume coercivity or a minimizer. The three fixed boundary coefficients can differ after pooling."
+    },
+    {
+      "module": "GroundedConvexity",
+      "root": "VolumeLogic.GroundedConvexity.exists_unique_grounded_minimizer",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:sec-2}"
+        },
+        {
+          "path": "papers/triangular-insertion/main.tex",
+          "anchor": "\\label{ti:sec-2}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "V = supported destinations; E = labelled unordered corner pairs, retaining parallel edges and loops",
+        "src,dst = endpoint maps; w(e) = conductance κᵗᵢⱼ; energy(f) = Σₑ wₑ(f(src e)−f(dst e))²",
+        "connected means finite paths in strictly positive support; zero-weight edges impose no equality",
+        "grounded root = the scale coordinate or the destination pooling the fixed boundary corners",
+        "At a positive triangular boundary take V=interior vertices plus one root; map all three boundary corners to root but retain their separate a values u,v,b",
+        "Set a=1 at free ordinary corners and a=0 at protected corners; root grounding q(root)=0 keeps each prescribed positive boundary coefficient unchanged",
+        "There are 2k+1 disk rows of supply1/2; prescribed interior demand is1 and the pooled boundary demand used for transport is1/2",
+        "The disk action itself subtracts no boundary target: one may put d(root)=0 because changing that root demand changes the potential by a multiple of q(root)=0",
+        "Common scaling of every physical weight by exp(c) changes a triangle action by c/2 and the disk action by c/2; it is not an independent rescaling of coincident boundary corners"
+      ],
+      "hypotheses": [
+        "All supported-table and row-lower-bound hypotheses of TransportCoercivity",
+        "First derivatives along every grounded affine segment and second derivatives equal to the specified graph energy",
+        "Nonnegative weights and connected positive graph support at every point of every segment"
+      ],
+      "conclusion": "There is exactly one grounded global minimizer of the table-derived potential.",
+      "unformalized": [
+        "The first/second derivative formulas and their relation to the chosen potential must be supplied; TriangleMinimizer proves these for the supported triangle supremum.",
+        "No smooth dependence on varying boundary data or implicit-function theorem is encoded by this root."
+      ],
+      "contract": "formal-real/VariationalContracts.lean",
+      "notes": "Strict Jensen inequalities are derived from graph positivity along actual common-coordinate segments. The transport support and energy-graph support are separate explicit inputs; their compatibility is not inferred from notation."
+    },
+    {
+      "module": "GroundedLaplacian",
+      "root": "VolumeLogic.GroundedLaplacian.reducedMatrix_det_ne_zero",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:eq-5}"
+        },
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:eq-7}"
+        },
+        {
+          "path": "papers/triangular-insertion/main.tex",
+          "anchor": "\\label{ti:eq-5}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "V = supported destinations; E = labelled unordered corner pairs, retaining parallel edges and loops",
+        "src,dst = endpoint maps; w(e) = conductance κᵗᵢⱼ; energy(f) = Σₑ wₑ(f(src e)−f(dst e))²",
+        "connected means finite paths in strictly positive support; zero-weight edges impose no equality",
+        "grounded root = the scale coordinate or the destination pooling the fixed boundary corners",
+        "reducedMatrix is the principal submatrix deleting root, not a Schur complement"
+      ],
+      "hypotheses": [
+        "Finite vertex and edge types; nonnegative weights; positive-support connectivity"
+      ],
+      "conclusion": "The determinant of the grounded principal matrix is nonzero, including the empty reduced matrix.",
+      "unformalized": [
+        "The nonlinear triangle action must be specialized to these conductances and this grounding; the implicit-function application is written."
+      ],
+      "contract": "formal-real/VariationalContracts.lean",
+      "notes": "Zero extension proves equality with the original energy. Strict positivity implies injectivity, and finite-dimensional linear algebra gives nonsingularity. No inverse-norm bound is concluded."
+    },
+    {
+      "module": "GroundedLaplacian",
+      "root": "VolumeLogic.GroundedLaplacian.exists_unique_grounded_solution",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:eq-5}"
+        },
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:eq-7}"
+        },
+        {
+          "path": "papers/triangular-insertion/main.tex",
+          "anchor": "\\label{ti:eq-7}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "V = supported destinations; E = labelled unordered corner pairs, retaining parallel edges and loops",
+        "src,dst = endpoint maps; w(e) = conductance κᵗᵢⱼ; energy(f) = Σₑ wₑ(f(src e)−f(dst e))²",
+        "connected means finite paths in strictly positive support; zero-weight edges impose no equality",
+        "grounded root = the scale coordinate or the destination pooling the fixed boundary corners",
+        "b is an arbitrary real right-hand side on vertices; the root equation records a reaction and is not imposed"
+      ],
+      "hypotheses": [
+        "Finite vertex and edge types; nonnegative weights; connected positive support; a specified root"
+      ],
+      "conclusion": "For every b there is exactly one f with f(root)=0 solving the Laplacian equations at all free vertices.",
+      "unformalized": [
+        "Application to differentiation of the nonlinear balance equations and smooth parameter dependence remains written."
+      ],
+      "contract": "formal-real/VariationalContracts.lean",
+      "notes": "There is no hidden total-demand compatibility: the root equation is intentionally omitted. The root-demand residual for the nonlinear system is separately proved in TriangleBalance."
+    },
+    {
+      "module": "TriangleLoads",
+      "root": "VolumeLogic.TriangleLoads.jacobian_energy",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:eq-5}"
+        },
+        {
+          "path": "papers/triangular-insertion/main.tex",
+          "anchor": "\\label{ti:eq-5}"
+        },
+        {
+          "path": "papers/planar-certificates/main.tex",
+          "anchor": "\\label{pc:hessian}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "c(t,i) = destination of corner i of triangle t, with repeated destinations retained before column aggregation",
+        "weights(a,q,i) = aᵢ exp(qᵢ); fixed aᵢ=0 excludes a protected corner from the feasible simplex",
+        "entropy = [Λ(π α)+Λ(π/2−πα)]/π; every row has load 1/2",
+        "regular rows have at least two positive corners; singleton load = 1/2 at its only positive corner, with zero Hessian",
+        "D²=w₀w₁+w₁w₂+w₂w₀; κᵢⱼ=wᵢwⱼ/[2πD(wᵢ+wⱼ)], each unordered pair counted once",
+        "jacobianAction(w,h,i)=Σⱼκᵢⱼ(hᵢ−hⱼ)"
+      ],
+      "hypotheses": [
+        "Arbitrary real w and h; this algebraic identity itself does not require positivity"
+      ],
+      "conclusion": "Pairing h with the constructed Jacobian action equals the sum over the three unordered pairs κᵢⱼ(hᵢ−hⱼ)².",
+      "unformalized": [
+        "That this matrix is the derivative of the arctangent loads uses the proved derivative identities in the same module."
+      ],
+      "contract": "formal-real/VariationalContracts.lean",
+      "notes": "The finite expansion uses conductance symmetry and counts each unordered pair once. The derivative theorem and the entropy-envelope theorem supply the analytic interpretation; the identity alone is not called a Hessian computation."
+    },
+    {
+      "module": "TriangleLoads",
+      "root": "VolumeLogic.TriangleLoads.sum_load_pairing_hasDerivAt",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:eq-4}"
+        },
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:eq-5}"
+        },
+        {
+          "path": "papers/planar-certificates/main.tex",
+          "anchor": "\\label{pc:hessian}"
+        }
+      ],
+      "kind": "exact",
+      "symbol_dictionary": [
+        "c(t,i) = destination of corner i of triangle t, with repeated destinations retained before column aggregation",
+        "weights(a,q,i) = aᵢ exp(qᵢ); fixed aᵢ=0 excludes a protected corner from the feasible simplex",
+        "entropy = [Λ(π α)+Λ(π/2−πα)]/π; every row has load 1/2",
+        "regular rows have at least two positive corners; singleton load = 1/2 at its only positive corner, with zero Hessian",
+        "D²=w₀w₁+w₁w₂+w₂w₀; κᵢⱼ=wᵢwⱼ/[2πD(wᵢ+wⱼ)], each unordered pair counted once",
+        "Shared h at repeated corner destinations yields a labelled product graph T×Fin3, retaining parallel edges"
+      ],
+      "hypotheses": [
+        "Finite triangle type; arbitrary destination map; nonnegative fixed corner coefficients",
+        "Positive radicand in every row at the point in question; a zero corner is allowed but singleton rows are not part of this proposition"
+      ],
+      "conclusion": "The derivative of the sum of load-direction pairings along q+th is exactly the assembled graph energy with the same conductance factor1/(2π).",
+      "unformalized": [],
+      "contract": "formal-real/VariationalContracts.lean",
+      "notes": "This is the finite shared-variable derivative statement used to sum the local quadratic forms. Singleton rows are covered by singletonLoad_hasDerivAt and by the mixed potential statement; they are not evaluated with D=0."
+    },
+    {
+      "module": "TriangleLoads",
+      "root": "VolumeLogic.TriangleLoads.singletonLoad_hasDerivAt",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:eq-4}"
+        },
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:eq-5}"
+        },
+        {
+          "path": "papers/planar-certificates/main.tex",
+          "anchor": "\\label{pc:triangle-calculus}"
+        }
+      ],
+      "kind": "exact",
+      "symbol_dictionary": [
+        "c(t,i) = destination of corner i of triangle t, with repeated destinations retained before column aggregation",
+        "weights(a,q,i) = aᵢ exp(qᵢ); fixed aᵢ=0 excludes a protected corner from the feasible simplex",
+        "entropy = [Λ(π α)+Λ(π/2−πα)]/π; every row has load 1/2",
+        "regular rows have at least two positive corners; singleton load = 1/2 at its only positive corner, with zero Hessian",
+        "D²=w₀w₁+w₁w₂+w₂w₀; κᵢⱼ=wᵢwⱼ/[2πD(wᵢ+wⱼ)], each unordered pair counted once",
+        "singletonLoad(active,q,i)=1/2 when i=active and0 otherwise, independently of q"
+      ],
+      "hypotheses": [
+        "A chosen active corner and arbitrary logarithmic base/direction"
+      ],
+      "conclusion": "Every singleton load has zero derivative along every logarithmic direction.",
+      "unformalized": [],
+      "contract": "formal-real/VariationalContracts.lean",
+      "notes": "This is the constant-load convention explicitly stated in the manuscripts. It avoids the invalid attempt to recover a singleton by substituting D=0 in the regular arctangent formula."
+    },
+    {
+      "module": "TrianglePotential",
+      "root": "VolumeLogic.TrianglePotential.summedPotential_mixed_hasDerivAt",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:eq-2}"
+        },
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:eq-4}"
+        },
+        {
+          "path": "papers/triangular-insertion/main.tex",
+          "anchor": "\\label{ti:eq-2}"
+        }
+      ],
+      "kind": "exact",
+      "symbol_dictionary": [
+        "c(t,i) = destination of corner i of triangle t, with repeated destinations retained before column aggregation",
+        "weights(a,q,i) = aᵢ exp(qᵢ); fixed aᵢ=0 excludes a protected corner from the feasible simplex",
+        "entropy = [Λ(π α)+Λ(π/2−πα)]/π; every row has load 1/2",
+        "regular rows have at least two positive corners; singleton load = 1/2 at its only positive corner, with zero Hessian",
+        "D²=w₀w₁+w₁w₂+w₂w₀; κᵢⱼ=wᵢwⱼ/[2πD(wᵢ+wⱼ)], each unordered pair counted once",
+        "At a positive triangular boundary take V=interior vertices plus one root; map all three boundary corners to root but retain their separate a values u,v,b",
+        "Set a=1 at free ordinary corners and a=0 at protected corners; root grounding q(root)=0 keeps each prescribed positive boundary coefficient unchanged",
+        "There are 2k+1 disk rows of supply1/2; prescribed interior demand is1 and the pooled boundary demand used for transport is1/2",
+        "The disk action itself subtracts no boundary target: one may put d(root)=0 because changing that root demand changes the potential by a multiple of q(root)=0",
+        "Common scaling of every physical weight by exp(c) changes a triangle action by c/2 and the disk action by c/2; it is not an independent rescaling of coincident boundary corners",
+        "summedPotential = Σₜsup_{supported Σα=1/2}(Σf(α)+α log w)−Σᵥdᵥqᵥ",
+        "The word mixed denotes regular rows together with singleton rows, not mixed partial derivatives"
+      ],
+      "hypotheses": [
+        "Finite rows and vertices; nonnegative fixed coefficients; every row is explicitly regular or singleton",
+        "Regular rows have positive radicand; the singleton has one positive active coefficient and all others zero",
+        "Arbitrary shared affine path, demand vector, and evaluation parameter u"
+      ],
+      "conclusion": "The derivative of the actual constrained-supremum potential is the assembled load-direction pairing minus the demand-direction pairing.",
+      "unformalized": [],
+      "contract": "formal-real/VariationalContracts.lean",
+      "notes": "The maximizer and supporting inequality are proved from the entropy supremum. Derivatives of maximizing loads cancel through their common multiplier and mass1/2. This root does not assume an envelope theorem as a premise."
+    },
+    {
+      "module": "TrianglePotential",
+      "root": "VolumeLogic.TrianglePotential.summedPotential_mixed_second_at",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:eq-5}"
+        },
+        {
+          "path": "papers/triangular-insertion/main.tex",
+          "anchor": "\\label{ti:eq-5}"
+        },
+        {
+          "path": "papers/planar-certificates/main.tex",
+          "anchor": "\\label{pc:hessian}"
+        }
+      ],
+      "kind": "exact",
+      "symbol_dictionary": [
+        "c(t,i) = destination of corner i of triangle t, with repeated destinations retained before column aggregation",
+        "weights(a,q,i) = aᵢ exp(qᵢ); fixed aᵢ=0 excludes a protected corner from the feasible simplex",
+        "entropy = [Λ(π α)+Λ(π/2−πα)]/π; every row has load 1/2",
+        "regular rows have at least two positive corners; singleton load = 1/2 at its only positive corner, with zero Hessian",
+        "D²=w₀w₁+w₁w₂+w₂w₀; κᵢⱼ=wᵢwⱼ/[2πD(wᵢ+wⱼ)], each unordered pair counted once",
+        "At a positive triangular boundary take V=interior vertices plus one root; map all three boundary corners to root but retain their separate a values u,v,b",
+        "Set a=1 at free ordinary corners and a=0 at protected corners; root grounding q(root)=0 keeps each prescribed positive boundary coefficient unchanged",
+        "There are 2k+1 disk rows of supply1/2; prescribed interior demand is1 and the pooled boundary demand used for transport is1/2",
+        "The disk action itself subtracts no boundary target: one may put d(root)=0 because changing that root demand changes the potential by a multiple of q(root)=0",
+        "Common scaling of every physical weight by exp(c) changes a triangle action by c/2 and the disk action by c/2; it is not an independent rescaling of coincident boundary corners"
+      ],
+      "hypotheses": [
+        "The same fixed-support regular/singleton partition and shared affine path as the first-derivative statement",
+        "No positive-radicand assumption is imposed on a singleton; its graph weights are defined to be zero"
+      ],
+      "conclusion": "At every point u of the shared affine path, the derivative of the first derivative is the assembled graph energy; singleton rows contribute zero.",
+      "unformalized": [],
+      "contract": "formal-real/VariationalContracts.lean",
+      "notes": "The theorem differentiates the constrained supremum already defined in TrianglePotential. It is a second derivative along one common logarithmic direction, not a mixed derivative between stationary and boundary coordinates. Fixed-support offsets are retained."
+    },
+    {
+      "module": "TriangleMinimizer",
+      "root": "VolumeLogic.TriangleMinimizer.exists_unique_prescribed_minimizer",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:eq-7}"
+        },
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:sec-2}"
+        },
+        {
+          "path": "papers/triangular-insertion/main.tex",
+          "anchor": "\\label{ti:eq-7}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "c(t,i) = destination of corner i of triangle t, with repeated destinations retained before column aggregation",
+        "weights(a,q,i) = aᵢ exp(qᵢ); fixed aᵢ=0 excludes a protected corner from the feasible simplex",
+        "entropy = [Λ(π α)+Λ(π/2−πα)]/π; every row has load 1/2",
+        "regular rows have at least two positive corners; singleton load = 1/2 at its only positive corner, with zero Hessian",
+        "D²=w₀w₁+w₁w₂+w₂w₀; κᵢⱼ=wᵢwⱼ/[2πD(wᵢ+wⱼ)], each unordered pair counted once",
+        "At a positive triangular boundary take V=interior vertices plus one root; map all three boundary corners to root but retain their separate a values u,v,b",
+        "Set a=1 at free ordinary corners and a=0 at protected corners; root grounding q(root)=0 keeps each prescribed positive boundary coefficient unchanged",
+        "There are 2k+1 disk rows of supply1/2; prescribed interior demand is1 and the pooled boundary demand used for transport is1/2",
+        "The disk action itself subtracts no boundary target: one may put d(root)=0 because changing that root demand changes the potential by a multiple of q(root)=0",
+        "Common scaling of every physical weight by exp(c) changes a triangle action by c/2 and the disk action by c/2; it is not an independent rescaling of coincident boundary corners",
+        "β is a positive supported corner table; column(c,β) sums all corners with a common destination"
+      ],
+      "hypotheses": [
+        "Finite rows and vertices; nonnegative fixed corner coefficients",
+        "β>0 exactly on active corners, β=0 on excluded corners; every row sum is1/2",
+        "Connected row co-occurrence support; δ(v)=column(c,β)(v) at every free vertex",
+        "No equality of δ(root) with the table root column is required"
+      ],
+      "conclusion": "The exact triangle supremum with the prescribed free-vertex demands has a unique finite minimizer after grounding root.",
+      "unformalized": [
+        "For a particular disk the planar combinatorial counts must verify strict cuts or directly supply a positive feasible table and connected supported incidence.",
+        "Packing realization, fixed-boundary identity, zero-weight continuity and smooth dependence on boundary parameters are written arguments."
+      ],
+      "contract": "formal-real/VariationalContracts.lean",
+      "notes": "This is the full generic potential adapter: continuity, coercivity, graph connectivity, derivative identities and uniqueness are derived from the displayed data. Pooling never merges the separate boundary coefficients; changing root demand is proved harmless only because q(root)=0."
+    },
+    {
+      "module": "TriangleBalance",
+      "root": "VolumeLogic.TriangleBalance.exists_unique_balance",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:sec-2}"
+        },
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:sec-4}"
+        },
+        {
+          "path": "papers/triangular-insertion/main.tex",
+          "anchor": "\\label{ti:sec-2}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "c(t,i) = destination of corner i of triangle t, with repeated destinations retained before column aggregation",
+        "weights(a,q,i) = aᵢ exp(qᵢ); fixed aᵢ=0 excludes a protected corner from the feasible simplex",
+        "entropy = [Λ(π α)+Λ(π/2−πα)]/π; every row has load 1/2",
+        "regular rows have at least two positive corners; singleton load = 1/2 at its only positive corner, with zero Hessian",
+        "D²=w₀w₁+w₁w₂+w₂w₀; κᵢⱼ=wᵢwⱼ/[2πD(wᵢ+wⱼ)], each unordered pair counted once",
+        "At a positive triangular boundary take V=interior vertices plus one root; map all three boundary corners to root but retain their separate a values u,v,b",
+        "Set a=1 at free ordinary corners and a=0 at protected corners; root grounding q(root)=0 keeps each prescribed positive boundary coefficient unchanged",
+        "There are 2k+1 disk rows of supply1/2; prescribed interior demand is1 and the pooled boundary demand used for transport is1/2",
+        "The disk action itself subtracts no boundary target: one may put d(root)=0 because changing that root demand changes the potential by a multiple of q(root)=0",
+        "Common scaling of every physical weight by exp(c) changes a triangle action by c/2 and the disk action by c/2; it is not an independent rescaling of coincident boundary corners",
+        "vertexLoad sums supported maximizing loads at their actual destinations"
+      ],
+      "hypotheses": [
+        "The positive half-mass table and connected-support hypotheses of the minimizer theorem",
+        "d(v)=column(c,β)(v) only at free vertices"
+      ],
+      "conclusion": "Exactly one grounded q satisfies every free load equation vertexLoad(v)=d(v).",
+      "unformalized": [
+        "The combinatorial disk adapter supplies its particular row incidence and feasible table.",
+        "The root load equation requires the separate total-mass compatibility; this theorem does not silently add it."
+      ],
+      "contract": "formal-real/VariationalContracts.lean",
+      "notes": "The proof derives coordinate derivatives, proves grounded minimum iff free balance, and transfers the already proved existence/uniqueness. The module separately proves root_residual=(number of rows)/2−Σd and root_balance_iff_total."
+    },
+    {
+      "module": "HallRecession",
+      "root": "VolumeLogic.HallRecession.connected_of_strict_cuts",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:eq-6}"
+        },
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:sec-2}"
+        },
+        {
+          "path": "papers/triangular-insertion/main.tex",
+          "anchor": "\\label{ti:sec-2}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "S(t) is the set of destinations touched by row t",
+        "capacity(A)=(1/2)·number of rows meeting A, counting each row once regardless of repeated corner destinations",
+        "deficit(A)=capacity(A)−Σ_{v∈A}d(v)"
+      ],
+      "hypotheses": [
+        "Finite nonempty row supports",
+        "Total demand equals half the number of rows",
+        "Every nonempty proper destination set has strictly positive deficit"
+      ],
+      "conclusion": "Every pair of destinations is joined by a finite row co-occurrence path.",
+      "unformalized": [
+        "The planar triangle-count inequalities verifying strict cuts for the stated disk and protected-sphere supports."
+      ],
+      "contract": "formal-real/VariationalContracts.lean",
+      "notes": "A disconnected component and its complement would have positive deficits whose sum is zero. The theorem does not assume a transport table or a geometric embedding."
+    },
+    {
+      "module": "HallRecession",
+      "root": "VolumeLogic.HallRecession.exists_grounded_minimizer",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:eq-6}"
+        },
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:eq-7}"
+        },
+        {
+          "path": "papers/triangular-insertion/main.tex",
+          "anchor": "\\label{ti:eq-7}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "recession(q)=(1/2)Σₜmax_{i∈S(t)}qᵢ−Σᵥd(v)qᵥ",
+        "Strict-cut capacity counts each adjacent half-mass row once",
+        "P is any continuous potential bounded below by that recession minus a fixed constant"
+      ],
+      "hypotheses": [
+        "Nonempty finite row supports; compatible total mass; every proper nonempty cut has positive deficit",
+        "A root; continuity of P; the stated global recession lower bound"
+      ],
+      "conclusion": "P attains a minimum on q(root)=0 without assuming a feasible table or coercivity.",
+      "unformalized": [
+        "The actual triangle-envelope lower bound is supplied by TriangleHall; the diagram-specific strict cuts remain written."
+      ],
+      "contract": "formal-real/VariationalContracts.lean",
+      "notes": "Peeling the least positive height decomposes recession into finite cut contributions. Translation invariance uses total mass, compactness supplies a uniform grounded margin, and a compact-sublevel argument gives attainment. This is a second proof route retained to construct positive tables without importing a separate flow theorem."
+    },
+    {
+      "module": "TriangleHall",
+      "root": "VolumeLogic.TriangleHall.exists_unique_balance",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:sec-2}"
+        },
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:sec-4}"
+        },
+        {
+          "path": "papers/triangular-insertion/main.tex",
+          "anchor": "\\label{ti:sec-2}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "c(t,i) = destination of corner i of triangle t, with repeated destinations retained before column aggregation",
+        "weights(a,q,i) = aᵢ exp(qᵢ); fixed aᵢ=0 excludes a protected corner from the feasible simplex",
+        "entropy = [Λ(π α)+Λ(π/2−πα)]/π; every row has load 1/2",
+        "regular rows have at least two positive corners; singleton load = 1/2 at its only positive corner, with zero Hessian",
+        "D²=w₀w₁+w₁w₂+w₂w₀; κᵢⱼ=wᵢwⱼ/[2πD(wᵢ+wⱼ)], each unordered pair counted once",
+        "At a positive triangular boundary take V=interior vertices plus one root; map all three boundary corners to root but retain their separate a values u,v,b",
+        "Set a=1 at free ordinary corners and a=0 at protected corners; root grounding q(root)=0 keeps each prescribed positive boundary coefficient unchanged",
+        "There are 2k+1 disk rows of supply1/2; prescribed interior demand is1 and the pooled boundary demand used for transport is1/2",
+        "The disk action itself subtracts no boundary target: one may put d(root)=0 because changing that root demand changes the potential by a multiple of q(root)=0",
+        "Common scaling of every physical weight by exp(c) changes a triangle action by c/2 and the disk action by c/2; it is not an independent rescaling of coincident boundary corners",
+        "S(t)=image under c(t,·) of active corners; capacity counts a row once when its destination set meets a cut"
+      ],
+      "hypotheses": [
+        "Finite rows and vertices; nonnegative coefficients and at least one positive corner per row",
+        "Σd=(number of rows)/2; all proper nonempty destination cuts have positive deficit"
+      ],
+      "conclusion": "There is exactly one grounded q satisfying the prescribed maximizing-load equation at every vertex, including root.",
+      "unformalized": [
+        "The strict-cut inequalities for the particular disk or protected sphere are proved by planar counting in the manuscripts.",
+        "The embedding/development of the resulting tangent-circle metric is not a Lean conclusion."
+      ],
+      "contract": "formal-real/VariationalContracts.lean",
+      "notes": "The proof constructs a minimizer directly from cuts, then its positive load table, then invokes the established uniqueness theorem. The root equation is recovered from total mass; it is not an independent unverified condition."
+    },
+    {
+      "module": "TriangleHall",
+      "root": "VolumeLogic.TriangleHall.exists_unique_minimizer",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:eq-7}"
+        },
+        {
+          "path": "manuscript/sections/R-triangular-boundary-insertion.tex",
+          "anchor": "\\label{tbi:sec-2}"
+        },
+        {
+          "path": "papers/triangular-insertion/main.tex",
+          "anchor": "\\label{ti:eq-7}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "c(t,i) = destination of corner i of triangle t, with repeated destinations retained before column aggregation",
+        "weights(a,q,i) = aᵢ exp(qᵢ); fixed aᵢ=0 excludes a protected corner from the feasible simplex",
+        "entropy = [Λ(π α)+Λ(π/2−πα)]/π; every row has load 1/2",
+        "regular rows have at least two positive corners; singleton load = 1/2 at its only positive corner, with zero Hessian",
+        "D²=w₀w₁+w₁w₂+w₂w₀; κᵢⱼ=wᵢwⱼ/[2πD(wᵢ+wⱼ)], each unordered pair counted once",
+        "At a positive triangular boundary take V=interior vertices plus one root; map all three boundary corners to root but retain their separate a values u,v,b",
+        "Set a=1 at free ordinary corners and a=0 at protected corners; root grounding q(root)=0 keeps each prescribed positive boundary coefficient unchanged",
+        "There are 2k+1 disk rows of supply1/2; prescribed interior demand is1 and the pooled boundary demand used for transport is1/2",
+        "The disk action itself subtracts no boundary target: one may put d(root)=0 because changing that root demand changes the potential by a multiple of q(root)=0",
+        "Common scaling of every physical weight by exp(c) changes a triangle action by c/2 and the disk action by c/2; it is not an independent rescaling of coincident boundary corners"
+      ],
+      "hypotheses": [
+        "The same nonnegative nonempty supported triangle rows, total demand, and strict-cut hypotheses as TriangleHall.exists_unique_balance"
+      ],
+      "conclusion": "The explicit supported Lobachevsky potential has exactly one grounded global minimizer.",
+      "unformalized": [
+        "The planar enumeration proving strict cuts for the selected triangulation.",
+        "The boundary action identity and hyperbolic cell/volume interpretation remain written."
+      ],
+      "contract": "formal-real/VariationalContracts.lean",
+      "notes": "The conclusion combines the proved balance/minimum equivalence with the all-vertex balance theorem. Neither a transport table, coercive constant, strict convexity, nor a minimizer is assumed in this statement."
+    }
+  ]
+}

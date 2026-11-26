@@ -2,11 +2,11 @@
 
 [Read the PDF](../../docs/papers/casimir-source-asymptotics.pdf) · [TeX source](main.tex) · [Dependency graph](https://sashakolpakov.github.io/murakamis_dream/papers/dependencies.html)
 
-This 25-page paper studies a finite polynomial attached to a pair of strands and the coefficients obtained by identifying its variables across a diagram. It brings the uniform local bounds and the shared central-coefficient asymptotic into one account, so that the second proof can use the first directly.
+This paper studies a finite polynomial attached to a pair of strands and the coefficients obtained by identifying its variables across a diagram. It brings the uniform local bounds and the shared central-coefficient asymptotic into one account, so that the second proof can use the first directly.
 
-Theorem 1.1 bounds each of the three local degree sectors uniformly over the real spectral interval and all face phases. Its hypotheses allow any fixed zero pattern with positive sum of the two outer face moduli. The proof retains the signs of the interval recurrence, both unused diagonal products, and the odd skipped-row term. The one-sided conclusions are bounds on polynomial values; they do not assert coefficientwise domination.
+Theorem 1.1 bounds each of the three local degree sectors uniformly over the real spectral interval and all face phases. Here the face weights are coefficient-torus radii; when they come from a packing they are its circle curvatures. Its hypotheses allow any fixed zero pattern with positive sum of the two outer face moduli. The proof retains the signs of the interval recurrence, both unused diagonal products, and the odd skipped-row term. The one-sided conclusions are bounds on polynomial values; they do not assert coefficientwise domination.
 
-Theorem 8.1 concerns the central coefficient of a finite simple triangulated sphere with a dual perfect matching and a marked nonmatching edge. The variables at the endpoints of the marked edge are zero. The theorem assumes a stationary positive radius vector for the remaining variables. Under this hypothesis it proves a nonzero holomorphic Gaussian asymptotic and a strict spectral gap, for both parities and all sufficiently large integer levels. The primitive face lattice and the bound on the complementary angular domain are part of its proof.
+Theorem 8.1 concerns the central coefficient of a finite simple triangulated sphere with a dual perfect matching and a marked nonmatching edge. The variables at the endpoints of the marked edge are zero. The theorem assumes a stationary positive vector of Cauchy weights for the remaining variables. Under this hypothesis it proves a nonzero holomorphic Gaussian asymptotic and a strict spectral gap, for both parities and all sufficiently large integer levels. The primitive face lattice and the bound on the complementary angular domain are part of its proof.
 
 The exact finite coefficient and its normalization come from [Finite spectral evaluation and uniform filling bounds](../filling-bounds/README.md), Proposition 4.1, equations (4.4)–(4.5), Theorem 9.1 and Corollary 9.2. Thus this paper starts after the original matrix evaluation has been converted to the prescribed shared coefficient.
 
@@ -31,5 +31,4 @@ python3 papers/casimir-source-asymptotics/check.py \
 The runner invokes the two component suites in this folder,
 [check_local.py](check_local.py) and [check_central.py](check_central.py). The local check compares the finite matrix polynomial, path partition, central factors, protected-zero identities, and nodal signs at levels 3–6. The central-source check compares cofactors with positive matrix determinants and checks the parity normalization at levels 3–8. These exact finite checks help detect formula errors. The uniform estimates, complex contour arguments, and Gaussian asymptotics have written proofs in the paper.
 
-The checks record the current consolidated TeX sources. They require no
-previous paper edition or archived proof.
+The output identifies the TeX sources and data used in the calculation.

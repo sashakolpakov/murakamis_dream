@@ -1,0 +1,620 @@
+{
+  "schema": 1,
+  "group": "analysis",
+  "contracts": [
+    {
+      "project": "mathlib",
+      "path": "formal-real/AnalysisContracts.lean",
+      "roots": [
+        "VolumeLogic.CoefficientGram.closing_bound",
+        "VolumeLogic.CoefficientGram.coordinate_change",
+        "VolumeLogic.CoefficientGram.corridor_comp",
+        "VolumeLogic.CoefficientGram.corridor_preserves_zero",
+        "VolumeLogic.CoefficientGram.ker_gram",
+        "VolumeLogic.CoefficientGram.quadratic_eq_norm_sq",
+        "VolumeLogic.ConwayAssembly.conway_packet_volume_limit",
+        "VolumeLogic.ConwayAssembly.fullColorContraction_norm_le",
+        "VolumeLogic.FourierHermite.centered_variance",
+        "VolumeLogic.FourierHermite.crossing_coefficient_mass",
+        "VolumeLogic.FourierHermite.hermite_coefficient_mass",
+        "VolumeLogic.FourierHermite.shiftedDFT_eq_sum",
+        "VolumeLogic.FourierHermite.shifted_parseval",
+        "VolumeLogic.FourierHermite.shifted_reconstruction",
+        "VolumeLogic.RealModel.complex_packet_volume_transfer",
+        "VolumeLogic.RealModel.upperRate_norm_of_cost",
+        "VolumeLogic.RealModel.upperRate_of_polynomial_bound",
+        "VolumeLogic.StationaryElimination.effective_hessian",
+        "VolumeLogic.StationaryElimination.schur_zero_mixed",
+        "VolumeLogic.StationaryElimination.solve_linearized"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "module": "RealTransfer",
+      "root": "VolumeLogic.RealModel.complex_packet_volume_transfer",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/09-reproduction.tex",
+          "anchor": "\\label{prop:volume-rate-transfer}"
+        }
+      ],
+      "kind": "exact",
+      "symbol_dictionary": [
+        "K N is the arbitrary complex scalar K_N; u N is its unit-modulus phase. No knot type is defined in this module.",
+        "amp N is a_N, S N is the finite-level action S_N, a is its nonzero amplitude limit and A is the limiting action S.",
+        "Complex norm is the ordinary modulus. The real exponent ρ uses Real.rpow, not a natural-number power.",
+        "UpperRate B b means eventual nonnegativity and, for each ε>0, the eventual bound B_N≤exp(N(b+ε)). The contract spells out this bound for the norm remainder.",
+        "geometry is exactly the additional scalar equality 2π Re S=V; V is an arbitrary real number."
+      ],
+      "hypotheses": [
+        "The exact scalar decomposition and unit-modulus condition hold eventually.",
+        "The amplitudes converge to a nonzero complex limit and the finite actions converge.",
+        "The entire remainder has an exponential upper envelope with b<Re S.",
+        "The final scaled-limit conclusion assumes 2π Re S=V."
+      ],
+      "conclusion": "Eventual nonvanishing, the ordinary limit log|K_N|/N→Re S, and the scaled limit 2π log|K_N|/N→V.",
+      "unformalized": [],
+      "contract": "formal-real/AnalysisContracts.lean",
+      "notes": "The contract retains S_N inside the exponential and permits arbitrary phases and eventual rather than all-level identities. N=0 is an irrelevant finite initial level. No extended-real logarithm is used: eventual nonvanishing is proved before the ordinary limit. External application boundary: Identifying K_N with a knot invariant. Proving a source identity, contour estimate, nonzero combined Gaussian coefficient, or a metric-volume calibration for a knot."
+    },
+    {
+      "module": "RealTransfer",
+      "root": "VolumeLogic.RealModel.upperRate_norm_of_cost",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/09-reproduction.tex",
+          "anchor": "\\label{lem:subexponential-remainder-transfer}"
+        },
+        {
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:subexponential-cost}"
+        }
+      ],
+      "kind": "exact",
+      "symbol_dictionary": [
+        "B,C are real nonnegative budgets, E is the complex filled error.",
+        "UpperRate is the zero-safe exponential envelope defined at the start of reference Section 9; no division by B or C occurs."
+      ],
+      "hypotheses": [
+        "B,C are eventually nonnegative.",
+        "For each ε>0, eventually B_N≤exp(N(b+ε)) and C_N≤exp(Nε).",
+        "|E_N|≤C_N B_N eventually."
+      ],
+      "conclusion": "The complex norm sequence |E_N| has upper exponential envelope b, including zero budgets.",
+      "unformalized": [],
+      "contract": "formal-real/AnalysisContracts.lean",
+      "notes": "For the Conway lemma, the conclusion is its eventual exponential inequality for every positive error tolerance; nonnegativity of the norm is included in Lean. External application boundary: The supplied budget bound for a particular finite contraction."
+    },
+    {
+      "module": "RealTransfer",
+      "root": "VolumeLogic.RealModel.upperRate_of_polynomial_bound",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/09-reproduction.tex",
+          "anchor": "\\label{cor:polynomial-remainder-transfer}"
+        },
+        {
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:subexponential-cost}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "C is the nonnegative filling cost C_N, C₀ is its fixed nonnegative prefactor, and m is any fixed real exponent.",
+        "The formal exponent is Real.rpow and therefore permits negative m."
+      ],
+      "hypotheses": [
+        "0≤C₀.",
+        "Eventually 0≤C_N≤C₀ N^m."
+      ],
+      "conclusion": "C_N has upper envelope zero.",
+      "unformalized": [
+        "The source budget B_N and the error inequality |E_N|≤C_N B_N are inputs to the separate upperRate_norm_of_cost theorem."
+      ],
+      "contract": "formal-real/AnalysisContracts.lean",
+      "notes": "This root is the polynomial-cost part of the reference corollary, not the corollary by itself. Composing it with upperRate_norm_of_cost gives the full stated error transfer; the case C₀=0 is proved explicitly."
+    },
+    {
+      "module": "CoefficientGram",
+      "root": "VolumeLogic.CoefficientGram.quadratic_eq_norm_sq",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/02-exact-concepts.tex",
+          "anchor": "\\label{prop:coefficient-gram}"
+        }
+      ],
+      "kind": "specialization",
+      "symbol_dictionary": [
+        "E is a complete complex inner-product space, with conjugate-linear first argument; finite-dimensional manuscript spaces are special cases.",
+        "EuclideanSpace ℂ ι is the finite coefficient space with its l² norm.",
+        "synthesis v is c↦Σ_i c_i v_i; gram B is the actual operator B.adjoint composed with B."
+      ],
+      "hypotheses": [
+        "The index type ι is finite.",
+        "The vectors v_i are arbitrary and may be dependent or nonorthogonal."
+      ],
+      "conclusion": "The Gram quadratic form ⟨c,B*Bc⟩ equals the squared norm of Σ_i c_i v_i, as a complex value with zero imaginary part.",
+      "unformalized": [
+        "No tangle representation or pivotal form is identified with this positive pairing."
+      ],
+      "contract": "formal-real/AnalysisContracts.lean",
+      "notes": "The expected-type contract specializes the more general operator theorem to the displayed synthesis map. The quotient positivity in the prose also uses supporting pairing_descends and quadratic_pos_iff, which were read in the audit but are not separate selected roots."
+    },
+    {
+      "module": "CoefficientGram",
+      "root": "VolumeLogic.CoefficientGram.ker_gram",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/02-exact-concepts.tex",
+          "anchor": "\\label{prop:coefficient-gram}"
+        }
+      ],
+      "kind": "specialization",
+      "symbol_dictionary": [
+        "E is a complete complex inner-product space, with conjugate-linear first argument; finite-dimensional manuscript spaces are special cases.",
+        "EuclideanSpace ℂ ι is the finite coefficient space with its l² norm.",
+        "synthesis v is c↦Σ_i c_i v_i; gram B is the actual operator B.adjoint composed with B."
+      ],
+      "hypotheses": [
+        "B is any bounded complex-linear synthesis map from the finite l² coefficient space."
+      ],
+      "conclusion": "ker(B*B)=ker B as linear subspaces.",
+      "unformalized": [
+        "Constructing a particular tangle synthesis map or its quotient."
+      ],
+      "contract": "formal-real/AnalysisContracts.lean",
+      "notes": "In the finite-dimensional manuscript setting every complex-linear B is continuous. No independence of its columns is assumed."
+    },
+    {
+      "module": "CoefficientGram",
+      "root": "VolumeLogic.CoefficientGram.coordinate_change",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/02-exact-concepts.tex",
+          "anchor": "\\label{prop:coefficient-gram}"
+        }
+      ],
+      "kind": "specialization",
+      "symbol_dictionary": [
+        "E is a complete complex inner-product space, with conjugate-linear first argument; finite-dimensional manuscript spaces are special cases.",
+        "EuclideanSpace ℂ ι is the finite coefficient space with its l² norm.",
+        "synthesis v is c↦Σ_i c_i v_i; gram B is the actual operator B.adjoint composed with B.",
+        "S is the linear substitution c=S d, with another finite l² coefficient domain."
+      ],
+      "hypotheses": [
+        "B,S are bounded complex-linear maps of the indicated dimensions."
+      ],
+      "conclusion": "(B S)*(B S)=S*(B*B)S, retaining cross terms and null directions.",
+      "unformalized": [
+        "Selecting coefficient maps for a concrete diagram."
+      ],
+      "contract": "formal-real/AnalysisContracts.lean",
+      "notes": ""
+    },
+    {
+      "module": "CoefficientGram",
+      "root": "VolumeLogic.CoefficientGram.closing_bound",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/02-exact-concepts.tex",
+          "anchor": "\\label{prop:coefficient-gram}"
+        }
+      ],
+      "kind": "specialization",
+      "symbol_dictionary": [
+        "E is a complete complex inner-product space, with conjugate-linear first argument; finite-dimensional manuscript spaces are special cases.",
+        "EuclideanSpace ℂ ι is the finite coefficient space with its l² norm.",
+        "synthesis v is c↦Σ_i c_i v_i; gram B is the actual operator B.adjoint composed with B.",
+        "ℓ is the fixed complex-linear closing functional; its norm is the operator norm."
+      ],
+      "hypotheses": [
+        "The closing functional is bounded, as every finite-dimensional linear functional is."
+      ],
+      "conclusion": "|ℓ(Bc)|≤‖ℓ‖ sqrt(Re⟨c,B*Bc⟩).",
+      "unformalized": [
+        "The physical identification and normalization of a tangle closing functional.",
+        "Any positive lower bound or noncancellation statement."
+      ],
+      "contract": "formal-real/AnalysisContracts.lean",
+      "notes": "The real part in the square root makes the manuscript real-valued square root explicit; quadratic_eq_norm_sq proves that the complex Gram value is already nonnegative real."
+    },
+    {
+      "module": "CoefficientGram",
+      "root": "VolumeLogic.CoefficientGram.corridor_comp",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/02-exact-concepts.tex",
+          "anchor": "\\label{prop:coefficient-gram}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "E is a complete complex inner-product space, with conjugate-linear first argument; finite-dimensional manuscript spaces are special cases.",
+        "EuclideanSpace ℂ ι is the finite coefficient space with its l² norm.",
+        "synthesis v is c↦Σ_i c_i v_i; gram B is the actual operator B.adjoint composed with B.",
+        "T₁,T₂ are consecutive specified linear pieces, B_j are synthesis maps and A_j their exact coordinate maps."
+      ],
+      "hypotheses": [
+        "T₁ B₀=B₁ A₁ and T₂ B₁=B₂ A₂."
+      ],
+      "conclusion": "(T₂ T₁)B₀=B₂(A₂ A₁).",
+      "unformalized": [
+        "The finite tangle identities supplying the two coordinate intertwinings.",
+        "A chosen arbitrary-length diagram corridor; the selected root is the binary composition step, which iterates."
+      ],
+      "contract": "formal-real/AnalysisContracts.lean",
+      "notes": "Corresponds to Section 2, Contracting a linear part of the diagram, following the Gram proposition. It assumes no unitarity and no closing-kernel quotient."
+    },
+    {
+      "module": "CoefficientGram",
+      "root": "VolumeLogic.CoefficientGram.corridor_preserves_zero",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/02-exact-concepts.tex",
+          "anchor": "\\label{prop:coefficient-gram}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "E is a complete complex inner-product space, with conjugate-linear first argument; finite-dimensional manuscript spaces are special cases.",
+        "EuclideanSpace ℂ ι is the finite coefficient space with its l² norm.",
+        "synthesis v is c↦Σ_i c_i v_i; gram B is the actual operator B.adjoint composed with B.",
+        "c is a coefficient vector with B₀c=0; T is a specified physical linear map, represented by A."
+      ],
+      "hypotheses": [
+        "T B₀=B₁ A.",
+        "B₀ c=0."
+      ],
+      "conclusion": "B₁(Ac)=0.",
+      "unformalized": [
+        "Identifying the given linear map with a tangle piece."
+      ],
+      "contract": "formal-real/AnalysisContracts.lean",
+      "notes": "The premise is the synthesis kernel, not merely the kernel of a current closing row. This is precisely the zero-direction implication in the linear-corridor section."
+    },
+    {
+      "module": "StationaryElimination",
+      "root": "VolumeLogic.StationaryElimination.solve_linearized",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/02-exact-concepts.tex",
+          "anchor": "\\label{prop:stationary-schur}"
+        },
+        {
+          "path": "papers/conway-asymptotics/pure-window.tex",
+          "anchor": "\\label{ca:stationary-schur}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "A is the internal complex Hessian F_yy, B the mixed block F_yt, and Y the derivative Dy_* of an already supplied stationary family.",
+        "Matrices use ordinary complex bilinear multiplication. Transpose is not conjugate transpose.",
+        "IsUnit A.det is equivalent to det A≠0 over ℂ."
+      ],
+      "hypotheses": [
+        "The internal Hessian is invertible.",
+        "The differentiated stationarity equation A Y+B=0 has been supplied."
+      ],
+      "conclusion": "Y=−A⁻¹B.",
+      "unformalized": [
+        "Holomorphic implicit-function existence of y_*(t).",
+        "Differentiating F_y(y_*(t),t)=0 to obtain A Y+B=0."
+      ],
+      "contract": "formal-real/AnalysisContracts.lean",
+      "notes": "This is the first matrix identity after differentiation, not a formalization of the implicit-function theorem."
+    },
+    {
+      "module": "StationaryElimination",
+      "root": "VolumeLogic.StationaryElimination.effective_hessian",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/02-exact-concepts.tex",
+          "anchor": "\\label{prop:stationary-schur}"
+        },
+        {
+          "path": "papers/conway-asymptotics/pure-window.tex",
+          "anchor": "\\label{ca:stationary-schur}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "A is the internal complex Hessian F_yy, B the mixed block F_yt, and Y the derivative Dy_* of an already supplied stationary family.",
+        "Matrices use ordinary complex bilinear multiplication. Transpose is not conjugate transpose.",
+        "IsUnit A.det is equivalent to det A≠0 over ℂ.",
+        "C is F_tt and D is F_ty. The contract states D=B.transpose explicitly."
+      ],
+      "hypotheses": [
+        "A is invertible and A Y+B=0.",
+        "D=B.transpose, the Hessian symmetry supplied by the holomorphic phase."
+      ],
+      "conclusion": "C+D Y=C−D A⁻¹B.",
+      "unformalized": [
+        "The chain rule giving Φ_tt=C+D Y.",
+        "The holomorphic Hessian symmetry and the envelope identity Φ_t=F_t."
+      ],
+      "contract": "formal-real/AnalysisContracts.lean",
+      "notes": "The root substitutes the linearized solution into the external Hessian block. The expected-type contract exposes the D=Bᵀ identification rather than silently treating a conjugate transpose as the mixed Hessian."
+    },
+    {
+      "module": "StationaryElimination",
+      "root": "VolumeLogic.StationaryElimination.schur_zero_mixed",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/02-exact-concepts.tex",
+          "anchor": "\\label{prop:stationary-schur}"
+        },
+        {
+          "path": "papers/conway-asymptotics/pure-window.tex",
+          "anchor": "\\label{ca:stationary-schur}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "A is the internal complex Hessian F_yy, B the mixed block F_yt, and Y the derivative Dy_* of an already supplied stationary family.",
+        "Matrices use ordinary complex bilinear multiplication. Transpose is not conjugate transpose.",
+        "IsUnit A.det is equivalent to det A≠0 over ℂ.",
+        "schur A B C denotes C−BᵀA⁻¹B."
+      ],
+      "hypotheses": [
+        "The mixed block is zero. This algebraic identity does not require A invertible."
+      ],
+      "conclusion": "schur A 0 C=C.",
+      "unformalized": [
+        "Differentiating the phase evenness to prove that the mixed block is zero.",
+        "Identifying the remaining block with the actual reduced phase Hessian."
+      ],
+      "contract": "formal-real/AnalysisContracts.lean",
+      "notes": ""
+    },
+    {
+      "module": "FourierHermite",
+      "root": "VolumeLogic.FourierHermite.shiftedDFT_eq_sum",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/02-exact-concepts.tex",
+          "anchor": "\\label{prop:shifted-parseval}"
+        },
+        {
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:shifted-parseval}"
+        }
+      ],
+      "kind": "specialization",
+      "symbol_dictionary": [
+        "Finite index types Fin N represent exactly 0,…,N−1.",
+        "shiftedDFT α f a is exp(−2πi αa/N) times the normalized Mathlib DFT of the same array.",
+        "The explicit sum uses exp(−2πi(k+α)a/N), so it is H_a=(1/N)Σ_k f_k w_k^(−a), with w_k=exp(2πi(k+α)/N)."
+      ],
+      "hypotheses": [
+        "The manuscript level N≥2 and any real shift α; the Lean root only needs N≠0.",
+        "f is any complex array."
+      ],
+      "conclusion": "The bundled shiftedDFT definition equals the explicit manuscript finite Fourier sum.",
+      "unformalized": [
+        "A knot-theoretic interpretation of the array."
+      ],
+      "contract": "formal-real/AnalysisContracts.lean",
+      "notes": "This verifies the dictionary before Parseval and inversion are used; α=1/2 is obtained by substitution, without changing normalization."
+    },
+    {
+      "module": "FourierHermite",
+      "root": "VolumeLogic.FourierHermite.shifted_reconstruction",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/02-exact-concepts.tex",
+          "anchor": "\\label{prop:shifted-parseval}"
+        },
+        {
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:shifted-parseval}"
+        }
+      ],
+      "kind": "specialization",
+      "symbol_dictionary": [
+        "Finite index types Fin N represent exactly 0,…,N−1.",
+        "shiftedDFT α f a is exp(−2πi αa/N) times the normalized Mathlib DFT of the same array.",
+        "The explicit sum uses exp(−2πi(k+α)a/N), so it is H_a=(1/N)Σ_k f_k w_k^(−a), with w_k=exp(2πi(k+α)/N)."
+      ],
+      "hypotheses": [
+        "N≥2, α real, and f arbitrary."
+      ],
+      "conclusion": "Σ_a H_a exp(2πi(k+α)a/N)=f_k at every original grid index k.",
+      "unformalized": [
+        "Any interpolation in an off-grid index or color."
+      ],
+      "contract": "formal-real/AnalysisContracts.lean",
+      "notes": "Reconstruction is on the same shifted grid and includes its nonintegral phase."
+    },
+    {
+      "module": "FourierHermite",
+      "root": "VolumeLogic.FourierHermite.shifted_parseval",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/02-exact-concepts.tex",
+          "anchor": "\\label{prop:shifted-parseval}"
+        },
+        {
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:shifted-parseval}"
+        }
+      ],
+      "kind": "specialization",
+      "symbol_dictionary": [
+        "Finite index types Fin N represent exactly 0,…,N−1.",
+        "shiftedDFT α f a is exp(−2πi αa/N) times the normalized Mathlib DFT of the same array.",
+        "The explicit sum uses exp(−2πi(k+α)a/N), so it is H_a=(1/N)Σ_k f_k w_k^(−a), with w_k=exp(2πi(k+α)/N)."
+      ],
+      "hypotheses": [
+        "N≥2, α real, and f arbitrary."
+      ],
+      "conclusion": "Σ_a |H_a|²=(1/N)Σ_k |f_k|².",
+      "unformalized": [
+        "No scalar lower bound for a tangle closing follows from this norm identity."
+      ],
+      "contract": "formal-real/AnalysisContracts.lean",
+      "notes": "The proof derives the equality from Mathlib DFT inversion and finite character sums; it does not assume an abstract norm-preserving transform."
+    },
+    {
+      "module": "FourierHermite",
+      "root": "VolumeLogic.FourierHermite.centered_variance",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/02-exact-concepts.tex",
+          "anchor": "\\label{prop:hermite-coefficient-mass}"
+        }
+      ],
+      "kind": "component",
+      "symbol_dictionary": [
+        "The center (N−1)/2 is real; k is the real cast of the integer array index.",
+        "The selected root proves the variance for all N, including 0; the contract specializes to the manuscript range N≥2."
+      ],
+      "hypotheses": [
+        "No array or sign assumptions are needed."
+      ],
+      "conclusion": "Σ_k (k−(N−1)/2)²=N(N²−1)/12.",
+      "unformalized": [
+        "Connecting this finite variance to the normal-data array uses the supporting normal_energy theorem."
+      ],
+      "contract": "formal-real/AnalysisContracts.lean",
+      "notes": "This is the elementary arithmetic identity inside the proof of the Hermite mass bound, not the full coefficient estimate."
+    },
+    {
+      "module": "FourierHermite",
+      "root": "VolumeLogic.FourierHermite.hermite_coefficient_mass",
+      "manuscript": [
+        {
+          "path": "manuscript/sections/02-exact-concepts.tex",
+          "anchor": "\\label{prop:hermite-coefficient-mass}"
+        }
+      ],
+      "kind": "exact",
+      "symbol_dictionary": [
+        "Finite index types Fin N represent exactly 0,…,N−1.",
+        "shiftedDFT α f a is exp(−2πi αa/N) times the normalized Mathlib DFT of the same array.",
+        "The explicit sum uses exp(−2πi(k+α)a/N), so it is H_a=(1/N)Σ_k f_k w_k^(−a), with w_k=exp(2πi(k+α)/N).",
+        "normalData n h k is n(k−(N−1)/2)h_k, exactly −(n/2)(d−2k)h_k for d=N−1.",
+        "hermiteCoefficients keeps a₀=H₀; for a>0 it is ((N−a)H_a+D_a)/N. Only the transformed D₀ is omitted, not a physical normal datum.",
+        "shiftTwo is a_j↦a_(j+2) with zero outside 0,…,N−1, not cyclic reduction. circleCoefficients is (−1)^j(a_j−a_(j+2))."
+      ],
+      "hypotheses": [
+        "N≥2, α real, n a fixed signed integer, and |h_k|=1 at every node."
+      ],
+      "conclusion": "Σ_j |β_j|≤2√N(1+|n|/√12) for the full reconstructed array.",
+      "unformalized": [],
+      "contract": "formal-real/AnalysisContracts.lean",
+      "notes": "The contract expands the normal-data definition and retains the exceptional coefficient and truncated shift. The proof reads Parseval, the exact variance, both contraction estimates, and finite Cauchy–Schwarz. External application boundary: The physical quotient identity that these coefficients expand a crossing power."
+    },
+    {
+      "module": "FourierHermite",
+      "root": "VolumeLogic.FourierHermite.crossing_coefficient_mass",
+      "manuscript": [
+        {
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:crossing-split}"
+        },
+        {
+          "path": "manuscript/sections/02-exact-concepts.tex",
+          "anchor": "\\label{prop:hermite-coefficient-mass}"
+        }
+      ],
+      "kind": "specialization",
+      "symbol_dictionary": [
+        "Finite index types Fin N represent exactly 0,…,N−1.",
+        "shiftedDFT α f a is exp(−2πi αa/N) times the normalized Mathlib DFT of the same array.",
+        "The explicit sum uses exp(−2πi(k+α)a/N), so it is H_a=(1/N)Σ_k f_k w_k^(−a), with w_k=exp(2πi(k+α)/N).",
+        "normalData n h k is n(k−(N−1)/2)h_k, exactly −(n/2)(d−2k)h_k for d=N−1.",
+        "hermiteCoefficients keeps a₀=H₀; for a>0 it is ((N−a)H_a+D_a)/N. Only the transformed D₀ is omitted, not a physical normal datum.",
+        "shiftTwo is a_j↦a_(j+2) with zero outside 0,…,N−1, not cyclic reduction. circleCoefficients is (−1)^j(a_j−a_(j+2)).",
+        "crossingValues N n k is (−1)^(nk) exp(πi n k(k+1)/N), with an integer power of −1 also when n<0.",
+        "crossingCoefficients substitutes α=1/2 and this explicit unit-modulus array into fillingCoefficients."
+      ],
+      "hypotheses": [
+        "The physical manuscript range N≥3 and any fixed integer n. The mass theorem itself also holds at N=2."
+      ],
+      "conclusion": "The explicit physical value/normal coefficient array has l¹ mass at most 2√N(1+|n|/√12).",
+      "unformalized": [
+        "The operator identity R^n=κ^nΣ_j β_j L_(j+1), including the identification of the physical normal data with quotient derivatives."
+      ],
+      "contract": "formal-real/AnalysisContracts.lean",
+      "notes": "This selected root proves the numerical coefficient cost, not the finite tangle operator identity, which remains the independently proved written input."
+    },
+    {
+      "module": "ConwayAssembly",
+      "root": "VolumeLogic.ConwayAssembly.fullColorContraction_norm_le",
+      "manuscript": [
+        {
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:coherent-error}"
+        },
+        {
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:filled-error}"
+        }
+      ],
+      "kind": "specialization",
+      "symbol_dictionary": [
+        "Fin r indexes the fixed crossing circles and Fin N the complete ordinary-color list.",
+        "D j is the shared full-color error array, with no independently chosen maximizing color at separate vertices.",
+        "fullColorContraction β D is the coherent scalar Σ_j (Π_ℓ β_ℓ(j_ℓ))D(j)."
+      ],
+      "hypotheses": [
+        "The same real budget B bounds |D(j)| for every full color tuple j."
+      ],
+      "conclusion": "|Σ_j(Π_ℓβ_ℓ(j_ℓ))D(j)|≤B Π_ℓΣ_k|β_ℓ(k)|.",
+      "unformalized": [
+        "The physical closing identity giving this same coherent finite sum.",
+        "The analytic source estimate giving the uniform budget B."
+      ],
+      "contract": "formal-real/AnalysisContracts.lean",
+      "notes": "The formal theorem also handles empty finite index sets. The manuscript application has a fixed nonempty crossing list and N≥3. Norms are taken only after the exact scalar sum is formed."
+    },
+    {
+      "module": "ConwayAssembly",
+      "root": "VolumeLogic.ConwayAssembly.conway_packet_volume_limit",
+      "manuscript": [
+        {
+          "path": "papers/conway-asymptotics/introduction.tex",
+          "anchor": "\\label{ca:volume}"
+        },
+        {
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:coherent-error}"
+        },
+        {
+          "path": "papers/conway-asymptotics/filling.tex",
+          "anchor": "\\label{ca:filled-error}"
+        },
+        {
+          "path": "manuscript/sections/09-reproduction.tex",
+          "anchor": "\\label{prop:volume-rate-transfer}"
+        }
+      ],
+      "kind": "conditional",
+      "symbol_dictionary": [
+        "K is an arbitrary complex sequence standing for the complete filled scalar once the written source identity is supplied; no actual knot or admissibility type is defined in Lean.",
+        "n : Fin r→ℤ is fixed outside the level variable N.",
+        "β N ℓ is the explicit Fourier–Hermite crossing coefficient array for n_ℓ, for every N≥3.",
+        "D N is the entire original full-color remainder and B N is its common nonnegative envelope.",
+        "The contract specializes the general Lean root to the strict Conway power N^(3/2) and to the constant critical action S; the reference transfer root separately permits N-dependent actions.",
+        "V is a real scalar; identifying it with the metric volume is the explicit geometry hypothesis."
+      ],
+      "hypotheses": [
+        "The full source decomposition, including its coherent remainder, holds eventually.",
+        "The coefficient dictionary holds at the manuscript levels N≥3.",
+        "The uniform full-color budget has upper rate b, and b<Re S.",
+        "The unit scalar has norm one; the combined amplitude tends to a nonzero limit.",
+        "2π Re S=V is supplied."
+      ],
+      "conclusion": "Eventual nonvanishing and the ordinary all-level logarithmic limits log|K_N|/N→Re S and 2πlog|K_N|/N→V.",
+      "unformalized": [
+        "The strict Conway knot construction, its admissibility and endpoint pairing.",
+        "The exact physical source identity and coefficient operator identity.",
+        "Parseval contour localization, finite-lattice stationary phase, global Fourier-tail bounds, and the uniform source remainder gap.",
+        "The marked hyperbolic filling and absolute action-volume equality."
+      ],
+      "contract": "formal-real/AnalysisContracts.lean",
+      "notes": "This verifies the final scalar assembly of the manuscript theorem, conditional on its written analytic, finite-algebra and geometric inputs. During the semantic audit the public coefficient hypothesis was weakened from N≥2 to N≥3, removing an unnecessary identity at an undefined initial physical level. No parity subsequence is taken and no independent source budgets are substituted before contraction."
+    }
+  ]
+}

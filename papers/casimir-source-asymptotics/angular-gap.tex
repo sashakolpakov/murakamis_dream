@@ -1,5 +1,7 @@
-\section{All face phases and the primitive Gaussian}\label{sa:angles}
-We prove a global angular bound, not just positive real convexity.
+\section{Excluding the other face phases}\label{sa:angles}
+The local logarithm will give a Gaussian contribution near equal face
+phases. To extract the coefficient, we must also bound the rest of the
+same torus. A determinant inequality provides that global estimate.
 For positive semidefinite matrices $X_j$ with $M=\sum X_j>0$, put
 $A_j=M^{-1/2}X_jM^{-1/2}$ and $B=\sum e^{\ii\vartheta_j}A_j$.
 The map $z\mapsto(A_j^{1/2}z)_j$ is an isometry, so $B$ is a
@@ -73,17 +75,17 @@ and on a sufficiently thin fixed complex $\delta$ strip.
 We first bound its actual nodes $u_a$, $a\le J-k$. Choose a small
 fixed $\delta_0>0$. For $a/N\ge1/2-\delta_0$, use
 \eqref{sa:node-id} and Lemma~\ref{sa:triangle-gap}; the remaining
-$K$ has nonnegative coefficients and its positive value is bounded
-by its all-monomer product. Both factors are bounded coefficientwise
+interval polynomial $K$ has nonnegative coefficients and its positive value is bounded
+by its product of one-step weights. Both factors are bounded coefficientwise
 by their $u=0$ counterparts, as in Lemma~\ref{lc:nodal-positive}.
 
 For the far nodes $a/N\le1/2-\delta_0$, there is a strict loss even
 without a phase restriction. If $xy>0$, choose $cN$ disjoint pairs
 of steps in $[1/2-\delta_0/2,1/2-\delta_0/4]N$. At $u=0$, replacing
-either selected monomer pair by its dimer multiplies its weight by
+either selected monomer pair by its two-step jump multiplies its weight by
 at least a fixed positive constant. The independent choices show
 $K_{a,j}(0)\ge e^{c'N}\prod_{v=a+1}^j s_v^2A$.
-But $K_{a,j}(u_a)$ is bounded by that monomer product. The product
+But $K_{a,j}(u_a)$ is bounded by that product of one-step weights. The product
 $K_{a,j}(0)R_a(0)$ is an actual subset of paths in $R_j(0)$,
 so the asserted nodal loss follows.
 If $xy=0,b>0$, write the zero-spectral starts as
@@ -121,7 +123,7 @@ $w^{-j}p(-2-w-w^{-1})$, $|w|=e^{2\pi|\Im\delta|}$.
 A small fixed strip preserves half the loss.
 \end{proof}
 
-Delete the protected vertices $u,v$ from the ordinary graph. It remains
+Delete the protected vertices $u,v$ from the triangulation graph. It remains
 connected: reroute a path around $u$ along its cyclic link, then around
 $v$ along its link with $u$ removed; the latter is a path or cycle and
 is connected. Every surviving edge is in a triangle with two ordinary
@@ -129,7 +131,7 @@ positive entries. No matched edge is $uv$, so $x+y>0$ in every box.
 Each box has at least one nonmonomial triangle: if an outer variable
 is zero, the other protected variable can kill at most one middle.
 
-The active difference rows $e_f-e_g$ therefore contain a spanning tree
+Write $e_f$ for the standard coordinate vector at face $f$. The differences $e_f-e_g$ along these edges contain a spanning tree
 of the $R$ ordinary vertices. They span the integer lattice
 $\{k\in\mathbb Z^R:\sum k_f=0\}$, not a proper sublattice. Fixing one
 face phase leaves an $(R-1)$-torus with no additional aliases.

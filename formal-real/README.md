@@ -1,69 +1,98 @@
-# Complex estimates and exact operations in the volume proof
+# Complex estimates and variational arguments in Lean
 
-Start with [ConwayAssembly.lean](ConwayAssembly.lean). It takes the
-original finite coherent color contraction, bounds its entire remainder
-using the actual crossing coefficients, and applies the complex packet
-theorem. The coefficient bound is proved in
-[FourierHermite.lean](FourierHermite.lean); it is not an assumed norm
-bound for the filled expression.
+This package proves specified internal implications from the
+[reference manuscript](../manuscript/README.md) and the
+[19-page Conway paper](../papers/conway-asymptotics/README.md). It contains
+16 mathematical modules: five for complex and asymptotic arguments, and
+eleven for fixed-boundary optimization. Together with the
+[finite algebra package](../formal/README.md), the formalization has 28
+modules and 76 selected theorem roots: 37 finite, 20 analysis and 19
+variational roots.
 
-The code follows the retained statements of the
-[reference](../manuscript/README.md) and the
-[17-page Conway paper](../papers/conway-asymptotics/README.md).
-The [coverage map](../formal/coverage.json) records each module's exact
-manuscript anchors, public roots and role.
+Start with [ConwayAssembly.lean](ConwayAssembly.lean) to see how the
+Conway implication is assembled. Its inputs include an exact finite
+color contraction, estimates for its source terms, and the geometric
+identification of the limiting action. It derives the coefficient cost
+and controls the whole remainder before applying the scalar asymptotic
+theorem. Constructing those inputs for a knot remains part of the written
+proof; the code does not define a knot invariant independently.
 
-## The Conway and conceptual statements
+## Complex norms, Fourier coefficients and asymptotic transfer
 
-| Module | Statement proved |
+| Module | What is proved |
 | --- | --- |
-| CoefficientGram | Finite synthesis in the complex l² coefficient space, adjoint Gram pairing, kernel equality, coordinate changes, the closing upper bound and exact corridor composition. Dependent spanning vectors are allowed. |
-| FourierHermite | The actual shifted discrete Fourier transform, exact reconstruction, Parseval, centered normal energy, the exceptional zeroth coefficient and truncated two-place shift. Its physical specialization proves the full crossing coefficient mass bound at every level $N\ge2$. |
-| StationaryElimination | Solve the linearized stationary matrix equation and derive its complex bilinear Schur complement. The transpose is ordinary transpose, as required for a holomorphic Hessian. |
-| RealTransfer | Ordinary complex norms, real logarithms, zero-safe exponential envelopes and polynomial costs. A nonzero limiting amplitude, finite actions and a strict gap for the whole remainder give eventual nonvanishing and the volume-normalized limit. |
-| ConwayAssembly | Retain the exact finite color sum, derive the product-of-coefficient-masses estimate, prove the resulting cost has zero upper rate, and transfer the whole remainder before applying RealTransfer. |
+| [CoefficientGram](CoefficientGram.lean) | Finite synthesis in complex l², its adjoint Gram form, equality of their kernels, coordinate changes, an upper bound for a closing functional, and composition of linear corridors. The spanning vectors may be dependent. |
+| [FourierHermite](FourierHermite.lean) | The shifted discrete Fourier transform, inversion and Parseval with their stated normalization; centered normal energy; reconstruction retaining both values and derivatives; and the crossing coefficient mass estimate for every level N ≥ 2. |
+| [StationaryElimination](StationaryElimination.lean) | The solution of the linearized stationary equation and its complex bilinear Schur complement. The mixed Hessian blocks use ordinary transpose. |
+| [RealTransfer](RealTransfer.lean) | Exponential upper envelopes, polynomial costs, and scalar asymptotic transfer. A convergent nonzero amplitude, convergent finite-level action and strictly smaller exponential rate for the whole remainder imply eventual nonvanishing and the logarithmic growth limit. |
+| [ConwayAssembly](ConwayAssembly.lean) | The coherent finite color contraction, its product coefficient cost, the vanishing exponential rate of that cost, and the resulting conditional volume-limit implication. The physical coefficient identity is required only from level three. |
 
-The Fourier estimate retains both spectral values and normal data. It
-does not replace a double root by its value. The Gram estimates retain
-the physical closing functional as additional data; they supply no
-unjustified lower bound for a matrix coefficient.
+The distinctions matter. Parseval includes a factor 1/N. Repeated roots
+retain derivative data, and the two-place shift is truncated rather than
+cyclic. A Gram estimate supplies an upper bound; it does not prove that a
+closing functional has a nonzero value. The stationary elimination module
+checks block algebra after the required differentiations and local
+existence argument have been supplied. It does not prove a holomorphic
+implicit-function theorem.
 
-The analytic implicit-function and chain-rule step is written in the
-reference; StationaryElimination checks the resulting block algebra.
-The source-specific contour estimates, nonzero whole filling packet and
-marked geometric volume equality are the written inputs of the Conway
-assembly. Their actual formulae and quantifiers are visible in the
-theorem's hypotheses.
+The scalar transfer theorem keeps the finite-level action inside the
+exponential. It allows an arbitrary unit scalar phase and proves
+eventual nonvanishing before taking an ordinary real logarithm. The
+equality between the limiting action and hyperbolic volume is an explicit
+additional hypothesis in its geometric application.
 
-## The independent fixed-boundary variational argument
+## Fixed-boundary optimization
 
-The remaining modules support the reference's ordinary triangular
-insertion and weak-balance proofs:
+The other eleven modules formalize the variational argument used for
+ordinary triangular insertion. WeightedGraph and GroundedLaplacian
+construct the graph energy and remove its constant kernel by fixing one
+vertex. TriangleLoads and TrianglePotential differentiate the supported
+triangle action, including singleton rows and fixed zero corners.
+TransportCoercivity, GroundedConvexity and TriangleMinimizer prove
+attainment and uniqueness. TriangleBalance, HallRecession and TriangleHall
+derive balance from strict cut inequalities and compatible total demand.
+Flattening supplies the accompanying one-variable comparisons.
 
-- WeightedGraph and GroundedLaplacian construct the actual graph energy,
-  its constant kernel and its grounded inverse.
-- TriangleLoads and TrianglePotential differentiate the supported
-  triangle action, retaining singleton rows and fixed zero corners.
-- TransportCoercivity, GroundedConvexity and TriangleMinimizer prove
-  attainment and uniqueness for the fixed-boundary potential.
-- TriangleBalance, HallRecession and TriangleHall derive balance from
-  strict finite cuts and compatible total demand.
-- Flattening proves the one-variable cost and gain comparisons used
-  with those actions.
+These are generic finite-dimensional theorems. Applying them to a
+particular planar diagram requires the written construction of its
+supports, coefficients and cuts. They do not replace the distinct Newton
+optimizer in the Conway argument.
 
-These are the dual fixed-boundary arguments in the ordinary-insertion
-appendix. They are not substituted for the different strict Newton
-optimizer in the Conway proof.
+## Statement correspondence and checks
+
+The [analysis](../formal/correspondence/analysis.json) and
+[variational](../formal/correspondence/variational.json) records give
+author-reviewed symbol dictionaries and spell out the hypotheses and
+conclusion of each selected root. They distinguish exact statements,
+specializations, components and conditional implications.
+[AnalysisContracts.lean](AnalysisContracts.lean) and
+[VariationalContracts.lean](VariationalContracts.lean) separately state
+the expected propositions and prove them using the library. Lean checks
+those types; the interpretation of manuscript notation remains a
+mathematical reading task.
+
+Three [compiler controls](../formal/correspondence/controls.json) check
+that essential changes are rejected: omitting the Parseval factor 1/N,
+substituting conjugate transpose for the holomorphic mixed-block
+identification, and replacing the strict remainder gap by a nonstrict
+one. Each control pairs a compiling application with a well-formed
+application that must fail with a type mismatch. These tests check the
+stated distinctions, not the correctness of a written contour argument.
+
+The [coverage guide](../repro/PAPER_FORMAL_COVERAGE.md) and
+[manuscript and logic audit](../repro/MANUSCRIPT_AND_LOGIC_AUDIT_2026-11-25.md)
+describe the scope and corrections. Geometric constructions, contour
+deformations, local analytic existence and the knot-specific application
+of the abstract statements retain written proofs.
 
 ## Pinned setup and replay
 
 The projects use Lean 4.32.2 and Mathlib
-905b95818eb32af7874a58b427f50c1711a5e96c. All nine Git dependency pins
-are recorded in [dependency-pins.json](../formal/dependency-pins.json);
-the Std package remains the relative dependency at ../formal.
+905b95818eb32af7874a58b427f50c1711a5e96c. The nine Git dependency pins
+are in [dependency-pins.json](../formal/dependency-pins.json); the finite
+package is a relative dependency at `../formal`.
 
-For a fresh checkout, install the toolchain, materialize the pinned
-dependencies and request only the imports used by the active sources:
+For a fresh checkout:
 
 ~~~sh
 elan toolchain install leanprover/lean4:v4.32.2
@@ -75,12 +104,11 @@ cd ..
 python3 repro/check_lean.py --output repro/results/volume-lean
 ~~~
 
-Routine replay makes no dependency downloads or pin updates. It cleans
-only local generated build directories, builds the finite dependency,
-compiles the selected Mathlib modules in dependency order, and audits
-every public declaration. Admitted proofs and additional axioms are
-rejected. The runner also detects retired-module imports, unexpected
-source files and source changes during the run.
-
-The [cleanup record](../repro/PROOF_PATH_CLEANUP_2026-11-25.md) gives the
-actual replay result and the retained proof chain.
+Routine replay downloads nothing and changes no dependency pins. It
+rebuilds local artifacts, checks all registered contracts and compiler
+controls, and separately audits the axiom dependencies of every public
+definition and theorem. The permitted axioms are `propext`,
+`Classical.choice` and `Quot.sound`; admitted proofs and additional axioms
+are rejected. The [completed replay](../repro/results/manuscript-and-lean/lean/summary.json)
+records 28 compiled modules, 534 public declarations audited, all 76
+statement contracts checked and all three intended type errors rejected.

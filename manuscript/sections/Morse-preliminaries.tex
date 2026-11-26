@@ -1,23 +1,52 @@
 \chapter{The common source for matched spherical diagrams}
 \label{app:morse-preliminaries}
 
-A simple matched white sphere determines the complete augmented
-geometry and the exact reduced finite source used in the following
-volume theorems. This chapter records those common inputs once.
-No terminal decoration or source-balance inequality is needed here.
-The two faces adjacent to the marked strand edge are protected; after
-sending their common contact to infinity they have curvature zero.
-All other face variables are shared throughout the actual diagram.
+The planar volume theorems use the same two constructions: a hyperbolic
+exterior obtained from a circle packing, and an exact polynomial formula
+for its reduced tensor evaluation. We describe both for one fixed marked
+diagram. The two constructions do not require any terminal decoration or
+balance inequality.
+
+Here is the combinatorial input. A \emph{simple triangulated sphere} is
+a triangulation of $S^2$ with distinct vertices on each triangle, no
+loops and no multiple edges. Choose a perfect matching of its dual
+cubic graph, so that every triangle is paired with exactly one triangle
+across a common side. A paired side will be called a matching edge.
+The vertices of this triangulation label the white circles of the
+packing, or equivalently the white faces of the ideal polyhedron.
+The triangles label shaded faces. These are two different uses of
+``face'': a triangular face of the combinatorial sphere records one
+shaded face and its three incident white circles.
+
+Each matched pair determines a crossing-circle region. Choose one
+nonmatching edge as the reduced mark. Its endpoints label the two
+protected white faces; after their contact is sent to infinity their
+circles become parallel lines, of curvature zero. Every other white
+face is ordinary and has a positive finite curvature. A face variable
+is shared by all its incidences in the diagram.
+
+\begin{figure}[ht]
+\centering
+\input{../papers/marked-fillings/figures/matched-packing}
+\caption{The smallest example. The four vertices form a tetrahedral
+triangulation; the thick edges $01$ and $23$ pair its four triangles.
+The dashed nonmatching edge $02$ is the mark. Sending its tangency to
+infinity gives the strip on the right. Labels $0,2$ then denote the
+boundary lines, and circles $1,3$ have radius $1/2$, hence curvature
+$2$. The marked packing and its associated link are constructed before
+any auxiliary filling.}
+\label{fig:morse-matched-sphere}
+\end{figure}
 
 \section{A simple sphere supplies the actual metric}\label{bl:a-simple-sphere-supplies-the-actual-metric}
 
 \subsection{A combinatorial starting hypothesis}\label{bl:a-combinatorial-starting-hypothesis}
 
-It is enough to start with an actual connected marked augmented diagram
-whose white cellulation is a simple triangulated sphere with at least
-four vertices. The matching pairs, cyclic orders and marked strand edge
-are those of its projection/crossing-disk cut. A positive geometric
-certificate need not be supplied independently.
+Start with a connected augmented diagram whose projection-sphere and
+crossing-disk cut gives this simple triangulation, with at least four
+vertices. Retain the cyclic order at every matched pair and the marked
+strand edge. The following construction supplies its positive geometric
+realization from those combinatorial data.
 
 Three steps turn the combinatorial sphere into a polyhedron: an
 angle assignment, a planar development of its center triangles, and
@@ -52,7 +81,10 @@ For an angle triple of sum \(\pi\), use
  \qquad \Lambda(t)=-\int_0^t\log|2\sin u|\,du .
 \end{equation}
 
-Its corner derivative is \(-\log\tan(\theta_j/2)\), and its one-corner endpoint value is zero. Maximize the sum of these calibrated triangle entropies, with the fixed
+The Lobachevsky integral $\Lambda$ is continuous at the endpoints.
+The derivative of the displayed summand in corner $j$ is
+$-\log\tan(\theta_j/2)$. When just one corner has angle $\pi$,
+the whole triangle value is zero. Maximize the sum of these calibrated triangle entropies, with the fixed
 boundary linear terms \(\theta_f\log(1/r_f)\). Their derivative
 \(-\log\tan(\theta/2)\) diverges positively at a new zero corner.
 Moving toward the strictly positive assignment excludes a boundary
@@ -102,8 +134,9 @@ shaded supporting halfspaces contain every contact, strictly unless
 incident. Their exposed faces form the full closed labeled sphere,
 so the convex hull has exactly those facets and no additional face.
 Every ideal vertex has alternating white/shaded faces and successive
-right angles. This constructs the required convex ideal right-angled
-polyhedron. The proof did not use a height ordering or a flat plat.
+right angles. This constructs a convex ideal right-angled polyhedron with the
+specified white and shaded faces. The argument applies to the sphere
+itself; no particular height presentation of its link was used.
 
 Sending any chosen strand contact to infinity turns its adjacent white
 circles into two parallel marked lines. Every other disk is finite in
@@ -126,11 +159,14 @@ dual edges. Put the standard perpendicular crossing circle in a disjoint
 three-ball neighborhood of each disk. This constructs an augmented
 link in \(S^3\), with exactly the prescribed cut graph and disk frames.
 
-Choose a regular height after straightening each local box in its
-orientation-preserving frame. The outside arcs give finitely many
-ordinary cups and caps and no new crossing. This is the literal
-general Morse diagram, not an assumed flat-plat presentation. A strand
-edge may be chosen for the original reduced mark.
+Straighten each local box in its oriented frame and choose a generic
+height function. Away from its finitely many nondegenerate extrema,
+the strands run monotonically between boxes. At a local minimum two
+strands are created by a cup; at a local maximum they are removed by a
+cap. We call this a \emph{Morse diagram}. The number of strands may
+change from one regular height slice to another. Planarity lets the
+outside arcs be drawn without adding crossings. The chosen nonmatching
+edge gives the reduced mark on a main strand.
 
 The graph whose vertices are the untwisted main circles and whose
 edges are the crossing boxes is connected. Otherwise the union of
@@ -183,8 +219,9 @@ is inserted and does not require a flat-plat presentation.
 
 \section{The calibrated triangle action}\label{bl:an-exact-integral-for-the-source-normalized-triangle-action}
 
-Let \(F(x,b,y)\) be the complete triangle action with the original
-determinant, beta and half-forced-product normalization. Put
+For the coefficient calculation we use a triangle function of its
+three nonnegative curvature weights $x,b,y$, at least one of which is
+positive. Put
 \(A=x+y\) and \(P=xy\). Its exact
 entropy definition is
 
@@ -194,24 +231,42 @@ F(x,b,y)=\max_{\alpha_x+\alpha_b+\alpha_y=1/2}
 \alpha_b\log b+\alpha_y\log y\right\},
 \end{equation}
 
-where \(f'(t)=\log\cot(\pi t)\), \(f(0)=f(1/2)=0\), and zero
-weights force zero allocation. The complete stationary middle load is
+Here
+\[
+ f(a)=\frac{\Lambda(\pi a)+\Lambda(\pi/2-\pi a)}{\pi},
+ \qquad0\le a\le1/2.
+\]
+In particular $f'(a)=\log\cot(\pi a)$ in the interior and
+$f(0)=f(1/2)=0$. A zero weight forces its allocation to be zero;
+its logarithmic term is omitted. If exactly one weight $b$ is
+positive, the value is $\tfrac12\log b$. When $b>0$ and $Ab+P>0$, the maximizing middle load is
 
 \begin{equation}\label{bl:F9}
 \frac{\partial F}{\partial\log b}
 =\frac1\pi\arctan\frac{b}{\sqrt{Ab+P}}.
 \end{equation}
 
-The entropy derivatives give these identities with their displayed
-absolute constant; the same normalization is used in
+If $x=y=0<b$, the middle load is $1/2$ by the singleton formula;
+if $b=0$, that corner is omitted and its load is zero. Every matched
+crossing below has $A=x+y>0$, so these statements cover its protected
+and ordinary cases. The entropy derivatives give the identities with
+their displayed absolute constant; the same normalization is used in
 \cite[Section~5]{CasimirSources} and \cite[Section~1]{MarkedFillings}.
 
-\section{The physical face adapter}
+\section{From matrix entries to face variables}
 \label{morse:face-adapter}
 
-Fix \(N\ge3\), \(d=N-1\), \(q=e^{\pi i/N}\), \(Q=q^2\). Let \(H_f(x,b,c,y)\) be the original homogeneous degree-\(d\) face polynomial of an arbitrary full coupon \(f(\Omega)\). This includes actual signed crossing powers and cleared resolvent numerators, with all repeated-node data.
+Fix \(N\ge3\), \(d=N-1\), \(q=e^{\pi i/N}\), \(Q=q^2\). Let $f$ be a polynomial and $f(\Omega)$ its value at the two-strand
+Casimir matrix. The Fourier construction in
+\cite[equation (4.5)]{Finite} associates to it a homogeneous polynomial
+$H_f(x,b,c,y)$ of total degree $d$. Here $b,c$ are the input and
+output middle-face variables and $x,y$ are the outer-face variables.
+Appendix~\ref{app:uniform-filling-bound} gives the explicit construction
+in \eqref{uf:homogeneous-local-adapter}. It applies in particular to
+the polynomials representing signed crossing powers and to the
+resolvent numerator, retaining derivatives at repeated spectral roots.
 
-The finite Fourier face adapter of \cite[equation~(4.5)]{Finite} is
+In the basis indexed by $0,\ldots,d$, its matrix entries satisfy
 
 \begin{equation}\label{bl:S5}
 f(\Omega)_{r,s;u,v}
@@ -219,7 +274,20 @@ f(\Omega)_{r,s;u,v}
  =N^{-1}\frac{H_f(x,b,c,y)}{(bc)^{d/2}} .
 \end{equation}
 
-The last equality uses the coherent integer face-log lifts of that physical state. No head is independently reduced modulo \(N\). The physical Casimir lowering arrows vanish at their genuine endpoints; hence a modular output with a wrong unwrapped total has zero coefficient before it is interpreted as a physical state. This is valid for every polynomial in the full Casimir, not only for the complete circle.
+For a nonzero entry, $r+s=u+v$ as integers. To describe the local
+Fourier grid, let $[a]_N$ denote the representative of $a$ in
+$\{0,\ldots,N-1\}$. Put $\tau=[u+v]_N$, choose $y\ne0$, and set
+\[
+ x=Q^{\tau+1}y,\qquad
+ b=-q^{-1}xQ^{-u},\qquad c=-q^{-1}xQ^{-r}.
+\]
+In particular $c=Q^{-(r-u)}b$. Choose the logarithmic lifts with
+$\log c=\log b-2(r-u)\log q$; this gives the second expression in
+\eqref{bl:S5}. The Casimir matrix preserves the integer total, not
+just its residue. Its off-diagonal entries vanish at the endpoints,
+so any modular transition with the wrong integer total is zero.
+This fact, proved in \cite[Section 4]{Finite}, is essential at even
+levels, where reducing an exponent modulo $N$ can change a sign.
 
 Let \(M_f\) count middle incidences and \(T_f\) outside minus
 inside Morse turns in a face, temporarily restoring the cap at the
@@ -234,7 +302,7 @@ exterior face \(a\). Consequently
 The equality uses the actual region boundary, so adding a cancelling
 Morse cup--cap pair leaves it unchanged.
 
-\section{The physical mark and the full finite source}\label{bl:the-physical-mark-measure-and-normals}
+\section{The reduced mark and the full finite evaluation}\label{bl:the-physical-mark-measure-and-normals}
 
 Choose a strand edge as the mark, with adjacent protected faces
 \(a,b_*\). The pivotal self-duality transports its reduced cut through
@@ -244,7 +312,9 @@ row by an ordinary cap. The regular generic pivot \((-1)^HK\), where
 The transported cut and literal duality frames are those of
 \cite[Section~9]{Finite}.
 
-In literal left-to-right physical order the cup, cap and mark are
+Write the cup as a column with entries $p_{ij}$, and the cap and
+marked cap as rows with entries $\ell_{ij}$ and $m_{ij}$, in the
+left-to-right tensor order. Their entries are
 
 \begin{equation}\label{bl:S12}
 p_{ij}=Nq^{-d^2+di}\mathbf1_{i+j=d},\qquad
@@ -252,7 +322,7 @@ p_{ij}=Nq^{-d^2+di}\mathbf1_{i+j=d},\qquad
  m_{ij}=N^{-2}q^{dj}.
 \end{equation}
 
-The marked row is initially unrestricted. The whole-network degree conservation, after the other actual caps act, forces its two heads to sum to \(d\). Only then is its ratio to the ordinary cap
+The marked row is initially unrestricted. The whole-network degree conservation, after the other actual caps act, forces its two strand indices to sum to \(d\). Only then is its ratio to the ordinary cap
 
 \begin{equation}\label{bl:S13}
 \frac m\ell=N^{-1}(L_{b_*}/L_a)^d .
@@ -269,7 +339,7 @@ N^{-R-1}\,
 \end{equation}
 
 The integer conservation law is a face-potential law on the sphere.
-Integrate head differences along dual paths: zero divergence makes
+Integrate strand-index differences along dual paths: zero divergence makes
 the result path independent, up to one common constant. This gives a
 primitive lattice, unchanged by bending an arc. There are \(R+2\)
 faces and hence \(R+1\) independent \(N\)-point grids after fixing
@@ -339,7 +409,11 @@ as a polynomial before setting \(z=\Omega\), where
 and retains the first derivative at every double Casimir node. No
 value-only interpolation or paired-channel retraction is used.
 
-If an ordinary generic closure is used instead, the full open regular network is a scalar endomorphism of the generic highest-weight object \(V_d\). Its ordinary closure is \((-1)^d[N]_q\) times that scalar. The one genuine normal at the root recovers \eqref{bl:S15}. No additional normal occurs at a crossing circle or at a separator. This uses the regular physical lift, not a derivative of an arbitrary fixed-root identity.
+The mark is responsible for extracting the scalar of the open tangle
+rather than its vanishing pivotal trace. Formula \eqref{bl:S15}
+is consequently a reduced evaluation with no extra dimension factor.
+The comparison with the zero-framed invariant is the one fixed in
+Chapter~\ref{ch:introduction}.
 
 \subsection{The original signed Fourier/Hermite period}\label{bl:the-original-signed-fourierhermite-period}
 
@@ -370,12 +444,16 @@ Multilinearity of the original ordered contraction gives
  \end{split}
 \end{equation}
 
-This is the original whole Hermite functional applied to the general
-Morse source. The Cartan scalar, charge weights, parity and endpoint
-sine factors have not changed. The original matrix identity excludes
-charge zero. Three integrations by parts on whole intervals give
-absolute summability, retaining the second-derivative endpoint currents.
-No constant-headcount assumption occurs.
+This is the tensor product of the exact Hermite functionals applied
+to $S_N$. The integers $\ell_e$ are Fourier indices, also called
+charges. Their zero values are absent by the midpoint identity.
+Three integrations by parts on the full intervals give absolute
+summability, with the surviving second-derivative boundary terms
+retained. The argument allows the number of strands to change at
+cups and caps.
 
-The exterior framing/component character remains separately recorded. At complete main color it has modulus one. The full one-cut modified convention also retains its specified polynomial-level factor. These source conversions do not change the exponential rate. The invariant in \eqref{bl:S18} belongs to the specified filled diagram, with its original component and framing convention.
+For a knot, multiplication by the prescribed framing character
+$\zeta_{N,D}$ converts $I_{N,\boldsymbol n}$ to $K_N(K)$, as in
+\cite[Theorem 10.1]{Finite}. Since $|\zeta_{N,D}|=1$, this conversion
+leaves its modulus and exponential rate unchanged.
 

@@ -1,8 +1,10 @@
 \chapter{A local corollary and a vertexwise geometric criterion}
 \label{ch:local-circle-messages}
 
-The local ratio condition below is a convenient one-number sufficient
-test. It implies the directed criterion proved in the next chapter.
+The maximum of the vertex ratios gives a convenient sufficient test
+that does not depend on the number of vertices. We prove it by showing
+that every vertex then satisfies the degree-or-twist alternative of
+the directed theorem in Chapter~\ref{ch:directed-circle-messages}.
 We then give a weaker geometric condition that completes the metric
 without asserting the quantum limit.
 
@@ -11,7 +13,7 @@ Section~\ref{sec:circle-the-knot-construction}, with at least one edge.
 Each vertex has its original crossing circle, degree \(d_v\ge1\),
 and fixed signed power \(n_v=\epsilon_v-2p_v\). Cyclic orders,
 quarter-turn frames and primitive disk markings are retained. The
-actual strand test must give one main knot, including no component
+strand test must give one main knot, including no component
 closed inside an intermediate tangle. The tree and powers are fixed
 before the quantum level tends to infinity.
 
@@ -44,13 +46,13 @@ If both inequalities failed at a vertex, then
 \(d_v^2+n_v^2<2^{56}+2^{54}<2^{57}\). Since \(d_v\ge1\),
 its local ratio would exceed \(2^{-57}>2^{-120}\), a contradiction.
 This is the implication used in the local-ratio corollary of the
-consolidated directed proof; it does not bound a sum over vertices.
+directed proof; it does not bound a sum over vertices.
 \end{proof}
 
 \begin{corollary}[A local degree and twist condition]
 \label{thm:local-circle-volume}
 For the fixed marked knot diagram above, suppose
-\eqref{eq:local-criterion}. Then the actual filled knot complement
+\eqref{eq:local-criterion}. Then the filled knot complement
 is hyperbolic. For every fixed \(0\le R<1\),
 \begin{equation}\label{eq:local-profile}
  \frac{F_N(q_N^s)}{F_N(1)A_N(s)H_N(s)}
@@ -65,18 +67,18 @@ uniformly on that disk. These values are nonzero at all sufficiently
 large integer levels, including both parities and composite levels.
 \end{corollary}
 \begin{proof}
-Lemma~\ref{lem:local-implies-directed} supplies the actual degree-or-twist
+Lemma~\ref{lem:local-implies-directed} supplies the degree-or-twist
 hypothesis of Theorem~\ref{thm:directed-degree-twist}. That theorem
 uses the same ordered diagram, knot test and scalars
 \eqref{eq:local-normalizations}, and gives every displayed conclusion.
 No directed condition is added as an independent assumption here.
 \end{proof}
 
-The local test has no vertex-count factor. Error constants and the
+The sufficient threshold has no factor involving the vertex count. Error constants and the
 initial level can still depend on the entire fixed tree and its
 powers. Its conclusion is the centered profile
-\(1+O(N^{-1})\); the explicit first correction under the separate
-summed condition remains the conclusion of
+\(1+O(N^{-1})\); the explicit first correction is proved separately in
+\eqref{eq:circle-21}, under the summed condition of
 Theorem~\ref{thm:circle-quantitative}.
 
 \section{The common finite boundary polynomial}
@@ -86,7 +88,10 @@ pointing toward a final vertex. Let \(K_N\) denote the full kernel
 \eqref{dk:eq-13}, and let \(\mathcal D_{n_v,\sigma_v,N}^{(t)}\)
 be the original full crossing trace acting in \(-2\cos t\), with
 \(\sigma_v\in\{0,s,-s\}\) prescribed by the orientation type.
-For a nonfinal vertex its outgoing polynomial is exactly
+The edge scalar $\gamma_{e_v}(s)$ is the turn factor prescribed by
+the orientation of that attachment; its possible values are
+$1,q_N^{s^2/2},q_N^{-s^2/2}$. We call the polynomial contributed
+by a subtree its message. At a nonfinal vertex its exact recursion is
 \begin{equation}\label{eq:local-recursion}
  M_{v,N}(u)=\gamma_{e_v}(s)
  \mathcal D_{n_v,\sigma_v,N}^{(t)}
@@ -109,7 +114,7 @@ with the quantum estimate.
 
 \begin{theorem}[Positive completion from vertexwise data]
 \label{thm:vertexwise-geometry}
-For the same actual ordered construction, suppose
+For the same ordered construction, suppose
 \begin{equation}\label{eq:vertexwise-criterion}
  L_v=\sqrt{d_v^2+n_v^2}\ge630\qquad\text{for every }v.
 \end{equation}
@@ -125,7 +130,7 @@ in $c$ near the closed unit disk and satisfies
  \frac{2\pi c}{L_v-d_v/39000},\qquad
  \Im\tau_v(c)<0\quad(c>0).
 \end{equation}
-The actual cells complete to cone solid tori of angle $2\pi c$,
+The auxiliary ends of the positive cell metric complete to cone solid tori of angle $2\pi c$,
 and to smooth solid tori at $c=1$. The main cusp remains complete.
 When the component test gives a knot, the endpoint is its complete
 finite-volume hyperbolic complement.
@@ -155,13 +160,16 @@ The original primitive periods are
  V_v=2i\tau_v,\qquad U_v+p_vV_v=-2\pi ic.
 \end{equation}
 Appendix~\ref{app:quantitative-geometry} proves that these are
-actual logarithmic periods along a positive path. At the initial
+the full logarithmic periods of the primitive curves along the
+positive path. At the initial
 cusp their integral ambiguities vanish; continuity preserves that
 choice. At $c=1$ the primitive filling slope therefore makes one
 full turn. The conclusion concerns the original marked exterior,
 even if a total meridian logarithm has moved far from zero.
 
-The geometric criterion alone supplies no quantum source estimate or
-noncancellation theorem. It is weaker than the hypotheses used for the
-volume asymptotics: those require either the summed source proof or
-the directed source proof. The local corollary above uses the latter.
+The geometric criterion is weaker than either hypothesis used to
+prove the invariant volume limit. It constructs the metric and its
+classical action, but it does not estimate the finite invariant or
+prove that its leading contribution survives cancellation. The local
+corollary at the start of this chapter uses the directed analytic
+proof for those additional steps.

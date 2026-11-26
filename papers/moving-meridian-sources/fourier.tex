@@ -1,7 +1,9 @@
 \section{Whole traces and reflected high indices}\label{ms:fourier}
-The following comparisons concern the actual top-coefficient trace.
-They retain all its Fourier aliases, including the alternating signs
-at even levels. Put $\epsilon=(-1)^{N+1}$.
+We first express the coefficient functional by Fourier coefficients
+of the same polynomial. Frequencies congruent to $1$ or $-1$ modulo
+$N$ all contribute; these are the aliases in the formula below.
+They are part of the exact finite trace, including the alternating
+signs at even levels. Put $\epsilon=(-1)^{N+1}$.
 
 \begin{lemma}[The finite Fourier trace]\label{ms:Fourier}
 If $F(-u-u^{-1})=\sum a_k u^k$, then
@@ -10,10 +12,11 @@ If $F(-u-u^{-1})=\sum a_k u^k$, then
     (a_{lN-1}-a_{lN+1})U_{l-1}(\cos2\pi s).
 \end{equation}
 Only finitely many summands occur. The formula holds at every
-collision with the full normal functional.
+collision with the full value-and-derivative functional.
 \end{lemma}
 \begin{proof}
-At generic $s$ choose $u_j^N=\epsilon e^{2\pi\ii s}$ and put
+At generic $s$ let $u_0,\ldots,u_d$ be the $N$ roots of
+$u^N=\epsilon e^{2\pi\ii s}$, and put
 $z_j=-u_j-u_j^{-1}$. These are the distinct roots of $P_s$, and
 \[
  P_s'(z_j)=\frac{2\ii N\sin2\pi s}{u_j-u_j^{-1}},\qquad
@@ -24,7 +27,7 @@ The root sum selects multiples of $N$. Pairing opposite exponents
 gives \eqref{ms:Fourier-trace}, since $a_{-k}=a_k$. Both sides are
 polynomials in $2\cos2\pi s$: the left by monic reduction, the right
 by the finite Chebyshev sum. Polynomial continuation proves the
-collision assertion, including all first normals.
+collision assertion, including all first derivatives.
 \end{proof}
 
 For low $n$, the exact coefficients are positive:
@@ -44,7 +47,10 @@ Thus these sequences are symmetric and unimodal. Their convolutions
 are too: write a symmetric unimodal sequence as a nonnegative sum
 of centered interval indicators.
 
-We will also use an elementary quantitative tail fact. If $a$ is
+To control alternating aliases we need to compare a tail coefficient
+with a discrete difference, since the trace contains differences of
+neighboring coefficients. The following elementary estimate does this.
+If $a$ is
 the convolution of $B$ nonnegative symmetric unimodal sequences
 supported in $[-m,m]$, then
 \begin{equation}\label{ms:interval-tail}

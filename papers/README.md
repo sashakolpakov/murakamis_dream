@@ -28,7 +28,7 @@ sources confirming its results. The division follows mathematical
 prerequisites. It is not a division of the reference into five equal parts.
 The reference also contains other volume families.
 
-The 17-page [Conway application](conway-asymptotics/README.md) uses five
+The 19-page [Conway application](conway-asymptotics/README.md) uses five
 companion papers directly. Its geometry paper uses one further geometric
 result, so the complete reading route has six supporting manuscripts:
 
@@ -53,6 +53,12 @@ argument removed in this revision. The seven manuscripts total 160 pages;
 the Conway article itself is 19 pages. Their mutual citations refer to
 one [fixed series edition](conway-series.json), so its theorem numbers
 can be used together.
+
+The [collection-wide revision](../repro/MANUSCRIPT_AND_LOGIC_AUDIT_2026-11-25.md)
+covers the other fourteen papers and the 210-page reference. All twenty-one
+subject papers have now been revised; together they have 420 pages. The
+report explains the mathematical corrections and the statement-by-statement
+comparison with Lean.
 
 Build and check the collection from the repository root:
 
@@ -173,7 +179,7 @@ illustrations and the stronger special-case result remain. The paper
 proves a positive-source limit; estimates for signed fillings and a
 geometric interpretation of the limiting action are separate inputs.
 
-**Exact Newton calculus for tangles with a moving meridian.** 15 pages.
+**Exact Newton calculus for tangles with a moving meridian.** 16 pages.
 [TeX source](meridian-tangles/main.tex) ·
 [PDF](../docs/papers/meridian-tangles.pdf)
 
@@ -270,7 +276,7 @@ files. The separate quarter-index paper proves its own signed local
 source statements. Its recurrence theorem is not a
 premise of the volume result.
 
-**Moving-meridian source estimates for strict Conway tangles.** 20 pages.
+**Moving-meridian source estimates for strict Conway tangles.** 21 pages.
 [TeX source](moving-meridian-sources/main.tex) ·
 [PDF](../docs/papers/moving-meridian-sources.pdf)
 
@@ -344,7 +350,7 @@ lattice hypotheses explicitly. These are local analytic results for use
 in broader Conway arguments; they do not bound a whole complementary
 source or prove a further knot-family volume theorem.
 
-**Spectral bounds and asymptotics of Casimir sources.** 25 pages.
+**Spectral bounds and asymptotics of Casimir sources.** 26 pages.
 [TeX source](casimir-source-asymptotics/main.tex) ·
 [PDF](../docs/papers/casimir-source-asymptotics.pdf)
 
@@ -425,7 +431,7 @@ peripheral-volume differential, not that paper's long-filling existence
 theorem. It supplies geometry for subsequent asymptotic applications;
 it does not select a nonzero contribution to a quantum invariant.
 
-**Nonparabolic holonomy of trees of crossing circles.** 22 pages.
+**Nonparabolic holonomy of trees of crossing circles.** 23 pages.
 [TeX source](nonparabolic-tree-geometry/main.tex) ·
 [PDF](../docs/papers/nonparabolic-tree-geometry.pdf)
 
@@ -446,7 +452,7 @@ circle-tree geometry paper supplies the actual positive filling point;
 the present paper identifies its coordinates and markings. These results
 neither determine the preferred longitude nor estimate a quantum source.
 
-**Preferred longitudes of Conway tree complements.** 29 pages.
+**Preferred longitudes of Conway tree complements.** 30 pages.
 [TeX source](preferred-longitudes/main.tex) ·
 [PDF](../docs/papers/preferred-longitudes.pdf)
 
@@ -471,7 +477,7 @@ longitude germ. Applying it to a recurrence requires a separate
 all-orders expansion and an actual annihilating operator, as specified
 in the following paper.
 
-**Meridian expansions and classical symbols of quantum recurrences.** 13 pages.
+**Meridian expansions and classical symbols of quantum recurrences.** 14 pages.
 [TeX source](meridian-expansions/main.tex) ·
 [PDF](../docs/papers/meridian-expansions.pdf)
 

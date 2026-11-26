@@ -52,7 +52,7 @@ geometric volume by comparing numerical critical values. Since \eqref{pl:R4} is
 an identity of rational differential forms, it holds on every smooth
 part of the same algebraic component.
 
-\subsection{The actual boundary pairing}\label{pl:the-actual-boundary-pairing}
+\subsection{The boundary pairing of the representation}\label{pl:the-actual-boundary-pairing}
 
 The marked reconstruction input in Proposition~\ref{pl:imports} has assembled the ordered pieces into a representation
 of the original augmented link exterior. Let \(L\) be the
@@ -123,8 +123,11 @@ main flag retained.
 
 \subsection{Why the discrepancy is rational in the main meridian}\label{pl:why-the-discrepancy-is-rational-in-the-main-meridian}
 
-Let \(k=\mathbb C(M)\), and let the graph have distinct unordered
-edges. In particular this applies to a tree. The edge quadratic
+Let \(k=\mathbb C(M)\), and let the graph be finite and simple,
+so that its edges join distinct pairs of vertices and no pair is
+repeated. In particular this applies to a tree. Its vertex variables
+\(Q_v\), indexed by its vertex set \(V\), are independent over
+\(k\). The edge quadratic
 gives, on putting \(Z=X+X^{-1}\):
 
 \begin{equation}\label{pl:R9}
@@ -164,13 +167,24 @@ even after extending \(k\) to \(\overline{k}\). This proves
 geometric integrality of the generic source fiber over \(M\).
 In particular \(k\) is algebraically closed in its function
 field \(\mathcal F\).
+Indeed, a nontrivial finite algebraic extension of \(k\) inside
+\(\mathcal F\) would be separable in characteristic zero. After
+base change to \(\overline k\), its distinct conjugates would split
+the generic algebra into components. This contradicts the field
+extension of full degree just established over
+\(\overline k(Q_v:v\in V)\).
 
 The logarithmic derivatives in all the \(Q_v\) extend uniquely
 to the finite separable field \(\mathcal F\). If an element of
 \(\mathcal F\) is killed by every such derivative, its relative
 differential over \(k\) vanishes. In characteristic zero it is
 algebraic over \(k\), and therefore belongs to \(k\) by the
-preceding paragraph. Applying this to \eqref{pl:R7}--\eqref{pl:R8} gives
+preceding paragraph. To justify the intermediate assertion, a
+transcendental element could be included in a separating
+transcendence basis. Differentiation in that basis direction
+extends over a finite separable extension and would not kill the
+element, contradicting its vanishing relative differential.
+Applying this to \eqref{pl:R7}--\eqref{pl:R8} gives
 
 \begin{equation}\label{pl:R12}
 R\in\mathbb C(M)^*.

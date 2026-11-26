@@ -9,8 +9,7 @@ crossing-disk frames. The two endpoints of the mark have weight zero;
 every other face has one positive weight shared by all its occurrences.
 
 A noncentral sector is a choice of a left, central or right local term at
-each crossing region, with at least one noncentral term. An unabridged
-certificate covers every locally allowed sector, including a sector whose
+each crossing region, with at least one noncentral term. A certificate covers every locally allowed sector, including a sector whose
 final shared coefficient happens to vanish. It assigns one common face
 weight vector to each sector or finite group of sectors, with a strict
 rate gap below the augmented volume divided by twice pi. It does not
@@ -18,14 +17,14 @@ choose different radii for different occurrences of the same face.
 
 ## Results
 
-- **Theorem 1.1:** a finite unabridged certificate implies the whole
+- **Theorem 1.1:** a finite certificate implies the whole
   knot-invariant volume limit after independently sufficiently long fixed
   signed primitive fillings. The final strand pairing must be one knot.
 - **Definition 3.1:** the exact certificate data and their full-sector scope.
 - **Theorem 4.3:** weak balance of the complete packing, including the stated
   quantified defect variant, produces such a certificate by a common
   change of weights.
-- **Theorem 5.3:** an oriented triangular gluing preserves unabridged
+- **Theorem 5.3:** an oriented triangular gluing preserves these
   certificates, with the original joining-face coefficient target.
 - **Theorem 6.1:** an explicit seventeen-region example and its repeated
   tetrahedral attachments satisfy the certificate criterion while failing

@@ -9,12 +9,20 @@ same filled fundamental chain. The calculations start with ideal cells
 and their labeled faces; their matrix coordinates are independent of
 the quantum level.
 
-All matrices below are projective: a nonzero scalar multiple represents
+A \emph{flag} at an ideal vertex means the selected point of the
+sphere at infinity, or the selected eigenline of its holonomy matrix.
+Keeping these choices fixes which branches of the peripheral logarithms
+are followed. All matrices below are projective: a nonzero scalar multiple represents
 the same M\"obius map. A crossing disk has two separately labeled shaded
 triangles, meeting at its ideal apex. A quadrilateral used to attach
 cells is an auxiliary cut face; it is not the physical four-punctured
-boundary of a tangle box. Peripheral logarithms are logarithms of
-similarity multipliers, hence twice the corresponding eigenvalue logs.
+boundary of a tangle box. A peripheral transformation fixing infinity acts on the boundary
+plane by $z\mapsto az+b$. Its \emph{similarity logarithm} is the branch
+of $\log a$ continued from the complete point. For a local $\mathrm{SL}_2$ representative with selected eigenvalue
+$\eta$ and complete value $\eta(0)=\pm1$, this is twice the centered
+logarithm $\log(\eta/\eta(0))$. The centering fixes the germ at zero;
+it does not assert that all these representatives form one global
+$\mathrm{SL}_2$ lift.
 Only auxiliary cusps are filled. The main cusps remain complete.
 
 \section{Local formulas and the two assembly inputs}
@@ -86,7 +94,9 @@ projection charts have apices \(Z,Z/E\), where
  R=\frac{T(1+E)^2}{E(1+T)^2},\qquad
  Z^2-(1+E)Z+ER=0.
 \]
-The four white transitions are
+The four matrices below fix, respectively, the ordered pairs
+$(0,\infty)$, $(\infty,1)$, $(1,R)$ and $(R,0)$ of quadrilateral
+vertices. They describe the white-face transitions in these charts:
 \begin{equation}\label{eq:app-white-matrices}
 \begin{aligned}
  W_0&=\begin{pmatrix}1&0\\0&E\end{pmatrix},&
@@ -104,8 +114,11 @@ The pure shaded map and the two odd cross-copy maps are
  A=\begin{pmatrix}R&-R\\1&ER-1-E\end{pmatrix},\qquad
  B=\begin{pmatrix}R/E-1-1/E&R\\-1&R\end{pmatrix}.
 \]
-Their ordered vertex assignments follow by substitution; the apex
-equation verifies the remaining flag. A second projection chart uses
+Their actions are checked by substitution of the corresponding
+vertices; the quadratic equation for $Z$ gives the required image of
+the apex. The complete ordered assignments, including the adjacent
+cells supplying the missing white faces, are those of
+\cite[Sections 7--8]{StrictGeometry}. A second projection chart uses
 reciprocal phase variables, not complex conjugates of variable
 parameters. The resulting identities are consequently holomorphic.
 
@@ -141,8 +154,9 @@ Put
  \rho=\frac{Z}{1+E-Z},\qquad Q=\frac{E-Z}{Z-1}.
 \]
 Here \(Q\) is a local multiplier parameter, unrelated to a
-finite-level root of unity. The disk longitude and three meridians,
-traced in the unchanged two-rectangle collar, are
+finite-level root of unity. The cusp cross section is made of two rectangles. Its disk longitude
+and the meridians for zero, negative and positive retained half twist
+are represented, in that order, by
 \[
  \lambda=W_2^{-1}W_0,\qquad
  \mu_0=S^{-1},\qquad
@@ -179,6 +193,19 @@ sublattice. The odd paths have the same area and are primitive too.
 As translations on the respective marked tori,
 \(\mu_\eps=\mu_0-\eps\lambda/2\). This compares half-twist partners;
 it does not make half a longitude an integral curve on the pure torus.
+\begin{figure}[ht]
+\centering\input{figures/primitive-cusp-basis}
+\caption{The regular leaf $x=1/4$, after rescaling so that the pure
+meridian is $\mu_0=1$ and the disk longitude is $\lambda=2\ii$.
+The pure cross section on the left consists of two unit squares.
+On the right the vectors $\mu_\pm=1\mp\ii$ display the half-twist
+shear while $\lambda$ is retained. They are meridians on the respective
+half-twist partners, whose lattices are different from the pure lattice.
+Each displayed pair has the same fundamental area, so no double cover
+is introduced by the peripheral calculation.}
+\label{fig:primitive-cusp-basis}
+\end{figure}
+
 The longitude-to-meridian ratio is therefore
 \[
  \tau_\eps=\frac{2\ii c}{1-\eps\ii c},\qquad
@@ -285,7 +312,9 @@ are continuous integers times \(2\pi\ii\), so remain zero. Section
 \ref{sec:fg-4} proves these link and period properties for the
 circle-tree path even when a total meridian log is not small.
 
-Writing the logarithmic link coordinate as \(f=\operatorname{Log}z\), put
+In the upper half space, write a point as $(z,y)$, where $y>0$ is
+height and the core axis has horizontal coordinate $z=0$. With
+$f=\operatorname{Log}z$ on the lifted cusp link, put
 \[
  r=\frac{y}{|z|},\qquad R=\operatorname{arsinh}(1/r),\qquad
  \theta=\operatorname{Im}f,\qquad

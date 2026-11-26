@@ -2,21 +2,21 @@
 \label{app:local-messages}
 
 This appendix proves the geometry-only statement
-Theorem~\ref{thm:vertexwise-geometry}. It uses the actual edge action,
+Theorem~\ref{thm:vertexwise-geometry}. It uses the edge action,
 ordered cells and primitive markings of
 Appendix~\ref{app:quantitative-geometry}. The hypothesis is
 \(L_v=\sqrt{d_v^2+n_v^2}\ge630\), not a quantum source-gap condition.
 The final section permits a different radius at each vertex.
 
-The local quantum ratio criterion is now proved by
-Lemma~\ref{lem:local-implies-directed} and the single directed source
-argument in Appendix~\ref{app:directed-circle-messages}. Its older
-small-domain subtree induction is not needed for this geometric proof.
+The invariant limit under the local ratio condition is a separate
+consequence of the directed analytic theorem in
+Appendix~\ref{app:directed-circle-messages}. Here we need only the
+explicit cell formulas and the peripheral curves.
 
 \section{A vertexwise geometric criterion}\label{sec:vg-derivatives}
 
-For the geometric conclusion alone we can use a much larger parameter
-range. We prove Theorem~\ref{thm:vertexwise-geometry} from the original
+For the geometric conclusion alone, the required lower bound on the
+combined degree and crossing power is much weaker. We prove Theorem~\ref{thm:vertexwise-geometry} from the original
 ordered cells and primitive markings of
 Appendix~\ref{app:quantitative-geometry}. None of this section uses
 the local quantum condition.
@@ -52,7 +52,8 @@ a=\frac1{79000},\qquad b=\frac1{199},\qquad
 E(t,u)=tH(t,u),\qquad
  H(t,u)=\int_0^1 E_t(\lambda t,u)\,d\lambda,\qquad
  |H(t,u)|\le\delta.
-\end{equation} The function \(H\) is holomorphic also at \(t=0\). No division by a possibly vanishing unknown is needed to define it.
+\end{equation} The function \(H\) is holomorphic also at \(t=0\). This integral defines the removable value at $t=0$ as well as the
+values away from zero.
 
 \subsection{A contraction independent of the size of the tree}\label{sec:vg-3}
 
@@ -85,7 +86,7 @@ A_v(\boldsymbol\tau)\tau_v=-2\pi ic,\qquad
 
 This argument allows arbitrary signs of \(n_v\), and \(n_v=0\). It makes no assumption that neighboring powers are comparable. The same sign proof works even when a large degree makes the total meridian logarithm in \eqref{eq:vertexwise-periods} close to \(-2\pi i\).
 
-\subsection{Actual metric and absolute volume}\label{sec:vg-4}
+\subsection{Metric completion and the absolute volume}\label{sec:vg-4}
 
 The contraction gives a marked positive geometric path. Every edge pair
 stays in the positive octahedral chart by
@@ -95,13 +96,13 @@ Section~\ref{sec:fg} therefore applies with the original primitive
 meridians and longitudes; exponentiated gluing alone is not being used
 to choose those paths.
 
-In particular, the actual logarithmic periods start at zero as \(c\downarrow0\): in a fixed complete peripheral frame the second fixed point escapes to infinity, and the increments of \(\log(z-q_v)\) along the fixed generator paths tend to zero. Their differences from \eqref{eq:vertexwise-periods} are continuous integers times \(2\pi i\), and hence vanish along the whole path. The slope in \eqref{eq:vertexwise-periods} makes one full primitive turn at \(c=1\). This is the winding information that exponentiated filling equations alone would not supply.
+In particular, the full logarithmic periods start at zero as \(c\downarrow0\): in a fixed complete peripheral frame the second fixed point escapes to infinity, and the increments of \(\log(z-q_v)\) along the fixed generator paths tend to zero. Their differences from \eqref{eq:vertexwise-periods} are continuous integers times \(2\pi i\), and hence vanish along the whole path. The slope in \eqref{eq:vertexwise-periods} makes one full primitive turn at \(c=1\). This is the winding information that exponentiated filling equations alone would not supply.
 
 Let \begin{equation}\label{eq:vg-18}
 \mathcal C(c)=\operatorname*{stat}_{\boldsymbol\tau}
  \left[\Psi+\frac{i}{4\pi}\sum_vn_v\tau_v^2
                          -ic\sum_v\tau_v\right].
-\end{equation} The same actual fundamental chain and primitive period calibration as in Section~\ref{sec:fg-6} give \begin{equation}\label{eq:vg-19}
+\end{equation} The same oriented fundamental chain and primitive period calibration as in Section~\ref{sec:fg-6} give \begin{equation}\label{eq:vg-19}
 \operatorname{Vol}_c=2\pi\operatorname{Re}\mathcal C(c),
  \qquad
  \frac{d}{dc}\operatorname{Vol}_c
@@ -142,6 +143,11 @@ s_v=\sinh(r_v/2),\qquad a_v=\cosh(r_v/2)-1,\qquad
  \end{split}
 \end{equation} The first line makes \eqref{eq:vg-13} preserve the product of the vertex disks and gives the sign in \eqref{eq:vg-17}. The second is a contraction bound in the weighted norm \(\max_v|\tau_v|/r_v\). The proof of Sections~\ref{sec:vg-3}--\ref{sec:vg-4} applies unchanged, with \begin{equation}\label{eq:vg-26}
 |\tau_v(c)|\le\frac{2\pi c}{L_v-h_v}.
-\end{equation} This is a finite numerical certificate in the integer degrees and powers and the chosen positive radii. All quantities can be bounded by rational Taylor enclosures; it does not assume the existence of a saddle or a geometric representation.
+\end{equation} Thus the degrees, powers and chosen radii give an explicit finite
+test for existence, uniqueness and metric completion. All quantities can be bounded by rational Taylor enclosures; it does not assume the existence of a saddle or a geometric representation.
 
-More generally, the second line of \eqref{eq:vg-25} can be replaced by a positive-vector certificate for the derivative matrix with diagonal entries \(h_v/L_v\) and off-diagonal entries \(\beta_{vw}/L_v\). If a positive vector \(q\) and a number \(\kappa<1\) satisfy \(Mq\le\kappa q\), contraction holds in the \(q\)-weighted norm. The invariant polydisk is still supplied separately by the first line of \eqref{eq:vg-25}. Thus choosing the contraction norm does not change the geometric parameter region.
+More generally, let $M$ be the nonnegative matrix whose diagonal
+entries are $h_v/L_v$ and whose entry at adjacent distinct vertices
+$v,w$ is $\beta_{vw}/L_v$, with zero entries elsewhere. The
+second line of \eqref{eq:vg-25} can be replaced by a positive-vector
+test for this matrix. If a positive vector \(q\) and a number \(\kappa<1\) satisfy \(Mq\le\kappa q\), contraction holds in the \(q\)-weighted norm. The invariant polydisk is still supplied separately by the first line of \eqref{eq:vg-25}. Thus choosing the contraction norm does not change the geometric parameter region.

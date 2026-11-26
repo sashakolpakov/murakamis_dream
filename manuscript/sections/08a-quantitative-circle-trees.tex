@@ -3,8 +3,9 @@ circles}\label{ch:quantitative-circle-trees}
 
 The preceding filling theorem makes every twist long. For the ordered
 circle trees considered here, high degree can play the same role.
-A degree-$d_v$ circle meets $d_v$ edge pieces: their curvatures add in
-the quantum sum, and their disk sectors add in the cusp geometry.
+A degree-$d_v$ circle meets $d_v$ edge pieces. The negative second
+derivatives of their local phases add at that vertex in the quantum
+sum, and their disk sectors concatenate on its cusp torus.
 Both calculations lead to the quantity $d_v/(d_v^2+n_v^2)$.
 We obtain an explicit volume theorem allowing short or zero powers
 at vertices whose degrees are sufficiently large.
@@ -22,9 +23,9 @@ lower right to upper right outside the final ball.
 Fix a finite tree \(\mathcal T\) with at least one edge, together with
 the cyclic order of the edges and the tangle frame at each vertex. There
 is one original crossing circle at every vertex, including the terminal
-vertices. There is no unmarked product junction. Each edge represents an
-actual quarter-turn of a child tangle, rather than a crossing of two
-drawn edges.
+vertices. There is no unmarked product junction. Each edge specifies a quarter-turn attachment of a child tangle.
+Crossings of edges in a drawing of the abstract tree have no meaning
+for the knot diagram.
 
 To specify the order and the frames, choose a terminal vertex as root.
 At a nonroot vertex \(v\), put the integer
@@ -35,8 +36,8 @@ braid \(R^{n_v}\) between the two ordered lists of its child tangles: \begin{equ
 \end{equation} The lists \(I_v^-\) and \(I_v^+\) specify the position of the
 crossing box in the original cyclic order. Empty lists are allowed. If
 \(w\) is the root's unique neighbor, close \(R^{n_0}T(W_w)\)
-cylindrically. This is an actual link diagram, not a tensor network
-considered only up to scalar identities. Other choices of cutting
+cylindrically. The expression specifies the link diagram and its crossing disks,
+not just a scalar evaluation. Other choices of cutting
 section are related by the physical closed-collar moves, with their
 induced rotations and reversals of factor order retained.
 
@@ -61,8 +62,8 @@ level \(N\).
 \section{The quantitative theorem}\label{sec:circle-the-quantitative-theorem}
 
 Let \(F_N(M)\) be the zero-framed reduced Akutsu--Deguchi--Ohtsuki (ADO)
-invariant of the actual knot, normalized to one on the unknot. Its
-marked meridian coordinate is \(M\), and at \(q_N=e^{\pi i/N}\) its
+invariant of the knot, normalized to one on the unknot. Its
+marked meridian eigenvalue is \(M\), and at \(q_N=e^{\pi i/N}\) its
 complete value is the reduced Kashaev invariant \(K_N(K)=F_N(1)\).
 Moving the meridian on the scale considered here means setting
 \(M=q_N^s\), with \(s\) in a fixed complex disk. Define \begin{equation}
@@ -70,15 +71,14 @@ Moving the meridian on the scale considered here means setting
        =\sum_v\frac{d_v}{d_v^2+n_v^2},\qquad
  H_N(s)=\frac{\sin(\pi s)}{N\sin(\pi s/N)},\quad H_N(0)=1.
  \label{eq:circle-3}
-\end{equation} Let \(w(D)\) be the oriented writhe of the actual filled diagram,
-using the same positive checked-crossing convention as \(R\). The exact
+\end{equation} Let \(w(D)\) be the oriented writhe of the filled diagram,
+using the positive-crossing convention that defines \(R\). The exact
 framing and crossing factor is \begin{equation}
  A_N(s)=q_N^{a(D)s^2/2},\qquad
                          a(D)=-w(D)-\sum_v n_v.
  \label{eq:circle-4}
 \end{equation} The power uses the fixed logarithm \(\log q_N=\pi i/N\). All crossing
-and strand-turn factors are included in \eqref{eq:circle-4}; it is not a chosen
-normalizing phase.
+and strand-turn factors are included in \eqref{eq:circle-4}; it is determined by the diagram, rather than chosen after the asymptotic calculation.
 
 \begin{theorem}[A degree and twist criterion]\label{thm:circle-quantitative} Fix the ordered tree, its diagram frames, and its
 signed integer powers before letting \(N\) tend to infinity. Suppose the
@@ -106,17 +106,10 @@ and the radius \(R\) do not grow with \(N\).
 \end{theorem}
 
 The constant in \eqref{eq:circle-5} is a sufficient bound, not an
-optimal threshold. Strict feasibility requires no further hypothesis
-for this construction. An unturned elementary circle has
-attainable output interval \((1/2,1)\), and a turned subtree has
-interval \((0,1/2)\). The exact product interval shows that one
-upper-interval factor together with any number of lower-interval factors
-again has the full upper interval, in any fixed association. The turn
-changes it to the lower interval. At the terminal root the two
-complementary intervals give a strict closing pair. This inductive
-construction supplies the strict augmented geometry used by the
-finite-source proof. In the two-circle case the excluded two-odd pattern
-is not a knot; the knot test retains the necessary even, or pure, leaf.
+optimal threshold. The proof below uses the finite edge kernels and
+their octahedral geometry directly. In the two-circle case, two odd
+crossing powers give two main components rather than a knot, so that
+case is excluded by the endpoint test already imposed above.
 
 Two consequences make the range of \eqref{eq:circle-5} concrete.
 
@@ -134,8 +127,8 @@ Two consequences make the range of \eqref{eq:circle-5} concrete.
   including zero. The knot/parity test remains necessary.
 \end{itemize}
 
-An unmarked product junction can also be included by inserting the
-literal identity braid \(R^0\) at its prescribed position in the ordered
+A product junction without a crossing circle can be included by
+inserting the identity braid \(R^0\) at its prescribed position in the ordered
 stack. Add a crossing circle there in the augmented diagram and fill it
 with \(\epsilon=p=n=0\). The filled diagram is unchanged. The augmented
 exterior is different, and the added degree-\(d\) circle contributes
@@ -144,11 +137,9 @@ sufficiently large-degree unmarked junctions when the same total bound
 holds. It does not treat such junctions as free or assert that a
 low-degree unmarked junction satisfies \eqref{eq:circle-5}.
 
-All these are finite constructions. Their potentially large size is
-fixed before the quantum limit. Related results use several invariant
-and root conventions;
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/general_untwisted_augmented_source_literature_coverage.html}{the
-coverage discussion} records their precise scopes.
+These constructions can be large, but their size is fixed before the
+level tends to infinity. Comparisons with other volume conjectures require their invariant
+normalizations and root conventions to be specified.
 
 \section{Why the original exterior has the required geometric
 pieces}\label{sec:circle-why-the-original-exterior-has-the-required-geometric-pieces}
@@ -158,7 +149,7 @@ crossing disks. The two resulting balls carry white projection faces and
 shaded disk triangles. At a leaf with half-segments
 \((v_0,v_1,v_2,v_3)\), the shaded triangles are \((O_v,v_1,v_2)\) and
 \((O_v,v_3,v_0)\), where \(O_v\) is the auxiliary-circle end. The
-literal strand matching fixes every cyclic vertex order and hence every
+strand matching fixes every cyclic vertex order and hence every
 white face boundary.
 
 The geometric induction follows the same operation as the tangle
@@ -178,14 +169,13 @@ equator \(A,B,C,D\) has shaded faces \begin{equation}
 \end{equation} Glue its first face to the old face \((O_v,C,B)\), with the opposite
 boundary orientation. The other three faces are precisely the new shaded
 faces prescribed by \eqref{eq:circle-9}. The adjacent white sectors also concatenate in
-the literal strand order. Thus this is an attachment in the original
-cut, not a recognition based on equal volumes.
+the prescribed strand order. Thus the attachment gives the boundary of the cut diagram, with
+its strand labels, before any hyperbolic shapes are assigned.
 
 \begin{figure}[ht]
 \centering
 \input{figures/octahedral-page-attachment}
-\caption{Attaching one octahedron in a projection half of the actual
-augmented tangle diagram. Equal labels are identified, and the blue
+\caption{Attaching one octahedron in a projection half of the augmented tangle diagram. Equal labels are identified, and the blue
 faces have opposite boundary orientations. The triangle becomes
 internal; the other three shaded disk faces retain the parent circle
 and introduce the child circle, as listed in
@@ -208,12 +198,9 @@ degree \(d_v\), the \(d_v\) incident blocks occur in the original cyclic
 order. One distinguished seam retains the original half twist; the other
 seams are the untwisted insertion maps. In particular the construction
 does not put one copy of the retained crossing on every incident edge.
-It also retains the actual half-turn produced when a turn is moved
+It also retains the half-turn produced when a turn is moved
 across the closing sphere. Restoring the labeled faces recovers the
-original augmented link and its primitive disk paths. The
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_all_circle_octahedral_decomposition.html}{ordered
-decomposition proof} gives the full half-segment and face-word
-calculation.
+original augmented link and its primitive disk paths. Section~\ref{sec:ft} gives the full endpoint and face-map calculation.
 
 \section{Positive cells and primitive filling periods}\label{sec:circle-a-positive-geometric-path-rather-than-a-small-total-logarithm}
 
@@ -226,7 +213,10 @@ is \begin{equation}
  J(x)&=\int_0^x\log(2\sin\pi v)\,dv.
  \end{aligned}
  \label{eq:circle-11}
-\end{equation} Branches continue \(x=1/4,t=u=0\). In particular \begin{equation}
+\end{equation} The stationary branch is the holomorphic solution of
+$\partial_x[b(x,t)+b(x,u)]=0$ through $x=1/4$ at $t=u=0$.
+The notation $\operatorname{stat}_x$ means substitution of this
+solution; logarithm branches are continued from that point. In particular \begin{equation}
  \tan^2(\pi x)=\frac1{1+\tan^2(t/2)+\tan^2(u/2)},\qquad
  \psi_t=-\frac1\pi\operatorname{arsinh}
                        (\tan(t/2)\cos(u/2)).
@@ -254,15 +244,15 @@ whenever both angular parameters have modulus at most \(0.01\). Their
 complete shapes are \(i\), and their deformed shapes stay within
 distance \(0.4\) of \(i\). On a disk page put \(Q=e^{i\tau_v}\). The
 three complex ratios on its incoming edges are \((-Q^{-1},-Q,-Q^{-1})\);
-the outgoing ratios are their inverses. These ratios keep both angle and
-shear, and depend only on this circle's parameter. Consequently adjacent
+the outgoing ratios are their inverses. These complex ratios determine the relative positions of the two
+triangles, including the displacement along each edge, and depend only on this circle's parameter. Consequently adjacent
 blocks fit even if their other endpoints have different parameters. At
 the distinguished odd seam the original cross-copy disk maps exchange
 the prescribed punctures. Their full matrix edge words are identities.
 Positivity and continuation fix every interior edge angle at \(2\pi\).
 
 We must use the original peripheral paths, rather than infer a filling
-slope from the exponentiated equations. The actual meridian crosses
+slope from the exponentiated equations. The meridian crosses
 the consecutive disk-page sectors once. A
 pure edge contributes \(-2\pi\psi_{\tau_v}\); the single retained half
 twist contributes \(-i\epsilon_v\tau_v\). The original primitive
@@ -271,7 +261,10 @@ logarithms are therefore \begin{equation}
  V_v=2i\tau_v,
  \qquad U_v+p_vV_v=-2\pi ic.
  \label{eq:circle-16}
-\end{equation} These are continued logarithms of actual paths. Their last identity
+\end{equation} The logarithms are continued along the specified peripheral paths.
+They are similarity logarithms: after sending the chosen peripheral
+fixed point to infinity, they are logarithms of the affine dilation
+multiplier. They are twice the corresponding eigenvalue logarithms. Their last identity
 cannot be obtained by reducing \(U_v\) to a principal logarithm.
 
 For completeness, the link of an auxiliary ideal vertex is a torus with
@@ -291,12 +284,9 @@ positive core length. At \(c=1\), attaching the core produces a smooth
 solid torus on precisely the original primitive slope. The main cusp
 stays a complete parabolic cusp. This constructs a complete
 finite-volume hyperbolic metric on the original knot complement,
-including the short coefficients permitted by \eqref{eq:circle-5}. The
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_all_circle_angular_octahedra.html}{local angular cells} give
-the explicit vertex and face formulas, and the
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_all_circle_geometric_completion.html}{geometric completion
-proof} retains the original odd seams and logarithmic periods throughout
-this path.
+including the short coefficients permitted by \eqref{eq:circle-5}. Sections~\ref{sec:fa} and~\ref{sec:fg} give the vertex and face
+formulas and the metric completion, including the odd seams and the
+continued logarithmic periods.
 
 \section{The action and the invariant have the same
 normalization}\label{sec:circle-the-action-and-the-invariant-have-the-same-normalization}
@@ -335,7 +325,7 @@ and its imaginary growth constant as \(70\).
 
 Preconditioning \eqref{eq:circle-14} by \((d_v-i n_v)/(2\pi)\) gives a contraction with
 constant at most \(1/25\). The same estimates compare every retained
-nonzero Fourier charge with charge one, with a strict loss unless every
+nonzero integer Fourier index, also called a charge, with charge one, with a strict loss unless every
 charge has magnitude one. The exact crossing-trace identity has already
 paired the reflected positive and negative modes, and the resulting
 coefficient of the first charge is exactly one. Exact contour identities
@@ -351,14 +341,13 @@ combine into the exact \(A_N\) in \eqref{eq:circle-4}. The bounded insertion on 
 retained edge is \(1+O(N^{-1})\); the conditioned saddle evaluation
 therefore gives \eqref{eq:circle-7}. The full constant and the scalar are retained when
 passing to \eqref{eq:circle-6}--\eqref{eq:circle-8}. Neither the volume of a comparison diagram nor the
-complete augmented volume replaces the filled knot volume. The
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_all_circle_curvature_filling_limit.html}{quantitative
-finite-sum proof} contains the uniform contraction, Fourier-tail and
-joining-contour estimates; the
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/all_circle_uniform_newton_bounds.html}{elementary Newton bounds}
-give an independent derivation of the graph-independent decay constants.
-The \href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_main_meridian_exact_scalar.html}{exact scalar proof}
-retains the physical strand orientations and framing in \eqref{eq:circle-4}.
+complete augmented volume replaces the filled knot volume. Appendix~\ref{app:quantitative-sums} gives the finite-sum
+proof, including the contraction, Fourier tails and connecting
+contours. Sections~\ref{sec:qu-1}--\ref{sec:qu-2} prove the
+Newton polynomial bounds and decay constants.
+The exact scalar calculation in
+\cite[Proposition~8.1]{MeridianTangles} retains the physical strand
+orientations and framing in \eqref{eq:circle-4}.
 
 \section{A geometric form of the numerical
 condition}\label{sec:circle-a-geometric-form-of-the-numerical-condition}
@@ -367,7 +356,7 @@ The numerical condition has a direct interpretation on the original
 complete cusps. At an auxiliary cusp the primitive shape is
 \(2i c_v/(1-i\epsilon_v c_v)\), where \(c_v=1/d_v\). The normalized
 length of a slope means its Euclidean length divided by the square root
-of the cusp area. For the actual primitive filling slope this gives \begin{equation}
+of the cusp area. For the primitive filling slope this gives \begin{equation}
  \mathcal L_v^2=\frac{d_v^2+n_v^2}{2d_v},\qquad
                  \mathfrak S=\frac12\sum_v\mathcal L_v^{-2}.
  \label{eq:circle-20}
@@ -392,8 +381,8 @@ The finite edge-insertion calculation retains one further term: \begin{equation}
  =1-\frac{\pi s^2}{N}\sum_e\cot(\pi x_e^*)
                  +O_{\mathcal T,\mathbf n,R}(N^{-2}).
  \label{eq:circle-21}
-\end{equation} The finite insertion calculation, derived in Sections 5--6 and 8 of
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_main_meridian_grouped_wire_packet.html}{the joint wire calculation},
+\end{equation} The finite insertion calculation of
+\cite[Theorem~1.2 and Section~6.6]{CircleTreeVolume}
 has an integrand independent of \(s\), multiplied by
 \(1-\pi s^2\sum_e\cot(\pi x_e)/N+O(N^{-2})\), uniformly with derivatives.
 At the nondegenerate joint saddle, the normalized expectation of this
@@ -404,52 +393,62 @@ charges and contour terms are exponentially smaller by the quantitative
 estimate. This proves the remainder in \eqref{eq:circle-21} under the
 present summed criterion.
 
-The geometric translation calculation gives, on the same filled
-branch, \begin{equation}
+There is one additional geometric input in interpreting this
+coefficient as a preferred cusp shape. The direct peripheral-word
+calculation in
+\cite[Section~5]{PreferredLongitudes}
+constructs the main boundary path from the face maps, follows every
+strand once, and computes its meridional homology. Correcting that path
+by the resulting integer framing gives, on the same filled branch,
+\begin{equation}
                    \tau_K=a(D)+2i\sum_e\cot(\pi x_e^*).
  \label{eq:circle-22}
-\end{equation} This identification follows from the actual preferred longitude; it
-is not a definition of the cusp shape from \eqref{eq:circle-21}.
+\end{equation}
+This is a classical peripheral-path calculation. It does not use the
+quantum correction \eqref{eq:circle-21} to define the cusp shape.
+We explain how the marking is carried to the filling point.
 
-Let \(\lambda_{\mathrm{aug}}\) be the preferred main longitude in the
-augmented exterior and \(\mu_K\) its meridian. For the fixed filling
-integers retain the boundary word
-\(\lambda_{\mathrm{fill}}=\lambda_{\mathrm{aug}}
-\mu_K^{\sum_vp_v\ell_v^2}\), where \(\ell_v\) is the actual linking
-number with crossing circle \(v\). Before the endpoint this is simply a
-fixed curve on the unfilled main boundary. At \(c=1\), surgery homology
-identifies it with the preferred longitude of the smooth filled knot
-complement.
+Let \(\lambda_{\mathrm{aug}}\) be the preferred main longitude in
+the augmented exterior and \(\mu_K\) its meridian. If \(\ell_v\)
+is the linking number of the main knot with crossing circle \(v\),
+retain the boundary word
+\[
+ \lambda_{\mathrm{fill}}=\lambda_{\mathrm{aug}}
+                \mu_K^{\sum_vp_v\ell_v^2}.
+\]
+The integers \(p_v\) are fixed throughout the path. Before its
+endpoint this is a curve on the unfilled main boundary. Surgery
+homology makes it the preferred longitude at the smooth filling.
+The peripheral-word calculation supplies both the nonintegral
+translation \(2i\sum_e\cot(\pi x_e)\) and the integer correction.
+With the crossing and writhe conventions of this chapter, their
+combination is exactly \(a(D)=-w(D)-\sum_vn_v\).
 
-To continue the translation formula along the filling path, use the
-marked geometric representation. The edge blocks form a positive ideal
-triangulation of the original augmented exterior. Near completeness,
-prescribing the main meridian logarithm and the primitive auxiliary
-longitude logarithms determines its marked shape germ uniquely. The
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/general_marked_multicusp_gluing_rigidity.html}{marked multicusp
-gluing theorem}, Sections 2--3 and 5, proves precisely these mixed
-peripheral coordinates and the corresponding decorated representation
-statement. Its logarithmic gluing Jacobian has the form
-\(A+B\operatorname{diag}(1/(z_j-1))\). The edge and peripheral rows are
-Lagrangian, whereas positivity of the shapes gives \(\Im(1/(z_j-1))<0\);
-pairing a supposed kernel vector with its complex conjugate proves that
-the Jacobian is invertible.
+The representation used by that calculation agrees with the geometric
+cell representation. At augmented completeness, the main meridian
+logarithm and the primitive auxiliary longitude logarithms are local
+coordinates on its decorated representation space. This is proved in
+\cite[Proposition~6.1]{NonparabolicTreeGeometry},
+and applied to this particular choice of curves in its Theorem~1.1.
+The proof uses the real Lagrangian space of edge and peripheral rows.
+In coordinates \(u_j=\log z_j\),
+\(v_j=-\log(1-z_j)\), the shape derivative is
+\(T_j=z_j/(1-z_j)\), with \(\Im T_j>0\). Pairing a possible
+Jacobian-kernel vector with its complex conjugate forces it to vanish.
+Thus the specified peripheral logarithms determine the nearby marked
+shapes uniquely, including their chosen fixed points.
 
-Developing this triangulation with the earlier marked representation and
-its actual cusp flags therefore identifies the two representation germs.
-The exact circle-variable elimination identifies their retained
-physical-edge labels by \eqref{eq:circle-12}, before any edge is eliminated. The
-\href{https://sashakolpakov.github.io/murakamis_dream/notes/actual_main_meridian_preferred_cusp.html}{preferred-longitude
-face-word calculation} then supplies the translation
-\(a(D)+2i\sum_e\cot(\pi x_e)\) for this fixed boundary word near
-completeness. Both sides continue holomorphically on the small angular
-chart: the main meridian remains a nonidentity parabolic, so the
-commuting longitude has a uniquely defined translation in its
-unit-meridian frame. This ratio has no logarithmic integer ambiguity.
-Their equality thus continues along the whole positive charge path. At
-the smooth endpoint the fixed word is the preferred longitude, giving
-\eqref{eq:circle-22}. The same original surgery homology gives exactly the integer
-\(a(D)=-w(D)-\sum_vn_v\), with no unrecorded framing shear.
+The exact circle-variable elimination identifies their edge labels by
+\eqref{eq:circle-12}. The two translation formulas therefore agree
+near augmented completeness. They then continue along the positive
+angular path: the main meridian stays nonidentity parabolic, so its
+commuting longitude has a unique translation in the frame where the
+meridian translates by one. This ratio has no logarithmic integer
+ambiguity. The angular face charts remain regular along the path, and
+Section~\ref{sec:fg-4} keeps the peripheral logarithms on their
+continued branches. Equality consequently holds at the smooth
+endpoint, where \(\lambda_{\mathrm{fill}}\) is the preferred
+longitude. This proves the identification in \eqref{eq:circle-22}.
 
 Put \(z=2\pi i s\) and \begin{equation}
  \mathcal H_N(z)=\frac{\sinh(z/2)}{N\sinh(z/(2N))},

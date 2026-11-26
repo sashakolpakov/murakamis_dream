@@ -32,7 +32,7 @@ A strand edge is an edge of the white triangulation not used in its crossing-dis
   A parity vector for the original boxes makes their filled main strands a knot, with no internally closed extra component.
 \end{itemize}
 
-There is a finite literal terminal decoration \(\widehat D\) of this diagram with even numbers of new terminal pieces on both sides of each original box such that:
+There is a finite terminal decoration \(\widehat D\) of this diagram with even numbers of new terminal pieces on both sides of each original box such that:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -40,7 +40,7 @@ There is a finite literal terminal decoration \(\widehat D\) of this diagram wit
 \item
   The original endpoint pairing and knot condition are preserved when each new terminal power is odd.
 \item
-  The refined white sphere is simple, has its actual positive cut certificate, and its one marked complete packing satisfies the strict complete-radius balance inequalities at every old and new crossing circle.
+  The refined white sphere is simple, has its convex polyhedron with the prescribed face identifications, and its one marked complete packing satisfies the strict complete-radius balance inequalities at every old and new crossing circle.
 \item
   There is a threshold \(T(\widehat D)\) such that, for every fixed integer filling vector \(p\) with all \(|p_e|\ge T(\widehat D)\), independently in sign and size, and the recorded retained half twists \(\epsilon_e\in\{-1,0,1\}\), the actual powers \(n_e=\epsilon_e-2p_e\) produce a hyperbolic knot \(K_p\) and
 \end{enumerate}
@@ -229,9 +229,14 @@ U=u+j\ge4,\qquad V=v+k\ge4,\qquad |U-V|\le1.
 \end{equation}
 
 Indeed choose an integer \(m\) nearest \(-(u-v)/2\). Then
-\(|u-v+2m|\le1\). Set \(j=2(L+m)\), \(k=2L\), and take the
-integer \(L\) large enough to make both counts nonnegative and both
-quantities in \eqref{bl:F7} at least four. Adding the same even count to both
+\(|u-v+2m|\le1\). Set \(j=2(L+m)\), \(k=2L\), with the explicit choice
+\[
+ L=\max\left\{0,-m,
+       \left\lceil\frac{4-v}{2}\right\rceil,
+       \left\lceil\frac{4-u}{2}-m\right\rceil\right\}.
+\]
+This makes both counts nonnegative and both quantities in
+\eqref{bl:F7} at least four. Adding the same even count to both
 sides preserves the difference condition.
 
 Give each inserted terminal an odd crossing power. Its turned
@@ -311,7 +316,7 @@ F(x,b',y)+F(x,c',y)-\max(\log b',\log c')
 >\frac{3347}{27720\min(U,V)}>0.
 \end{equation}
 
-Thus it satisfies the true complete-radius balance condition, including
+Thus it satisfies the strict complete-radius balance condition, including
 the source's exact absolute normalization. The simpler algebraic
 sufficient test need not hold here; using it instead of \eqref{bl:F10} would lose
 the construction.
@@ -362,7 +367,7 @@ two-sided decoration makes every crossing strictly balanced in one
 complete packing. Even fan sizes preserve the endpoint pairing and the
 marked edge. The required sizes depend on the starting packing.
 
-\section{The insertion preserves the original source}\label{bl:the-full-finite-source-at-both-level-parities}
+\section{The refined finite source}\label{bl:the-full-finite-source-at-both-level-parities}
 
 \subsection{The literal insertion}\label{bl:the-literal-insertion}
 
@@ -380,7 +385,7 @@ The old box has outer faces \(x,y\), input middle \(b\), and output middle \(c\)
 
 The triples in \eqref{bl:S1}--\eqref{bl:S2} carry the orientation of the original projection sphere. Removing the common side \(bw\) from the first two new triangles leaves the boundary walk \(b\to y\to w\to x\to b\); hence its cyclic quartet is \((b,y,w,x)\). The triangle \((y,x,w)\) and the unchanged neighbor \((y,c,x)\), joined across \(xy\), have boundary walk \(x\to w\to y\to c\to x\). Thus their retained quartet is \((x,w,y,c)\). This derives both frames from their oriented boundaries, not from a reflection symmetry of the entropy.
 
-The old matching side \(xy\) now has input/output middles \(w,c\). The new matching side \(bw\) has the orientation-preserving cyclic quartet \((b,y,w,x)\): its outer faces are \(b,w\), its input middle is \(y\), and its output middle is \(x\). Its signed crossing power is measured in precisely that frame. No reflection of the new coupon is used.
+The old matching side \(xy\) now has input/output middles \(w,c\). The new matching side \(bw\) has the orientation-preserving cyclic quartet \((b,y,w,x)\): its outer faces are \(b,w\), its input middle is \(y\), and its output middle is \(x\). Its signed crossing power is measured in precisely that frame. The new box has this orientation without a reflection.
 
 This is a physical insertion, not an arbitrary change of matching. Expose the old box as \(P_v=T^{-1}h_v\), with half-segment tuple \((v_3,v_0,v_1,v_2)\). A terminal child on its right changes exactly
 
@@ -407,7 +412,7 @@ An odd two-strand braid has the diagonal pairing \(X=\{(0,2),(1,3)\}\). Its phys
 \subsection{Endpoint support and the new coefficient target}\label{bl:endpoint-support-and-the-new-coefficient-target}
 
 Fix \(N\ge3\), \(d=N-1\), \(q=e^{\pi i/N}\), and \(Q=q^2\).
-The full-coupon adapter \eqref{bl:S5} applies before any endpoint
+The polynomial matrix formula \eqref{bl:S5} applies before any endpoint
 reduction. Thus every polynomial in the full Casimir, including a
 signed crossing power or cleared resolvent, can be inserted with its
 original root derivatives.
@@ -418,7 +423,7 @@ After \eqref{bl:S2}, the two local factors in the numerator are exactly
 H_f(x,w,c,y)\,H_g(b,y,x,w).
 \end{equation}
 
-Here \(g\) is the new coupon in its actual four-leg frame. Equation \eqref{bl:S6} identifies the refined source; it does not equate the old and new invariants or posit a multiplicative rule for quarter-turns.
+Here \(g\) denotes the new box in its inherited endpoint frame. Equation \eqref{bl:S6} identifies the refined source; it does not equate the old and new invariants or posit a multiplicative rule for quarter-turns.
 
 Let \(M_f\) count middle incidences and \(T_f\) outside minus
 inside Morse turns, as in \eqref{bl:S8}. The two quartet changes give
@@ -427,7 +432,7 @@ inside Morse turns, as in \eqref{bl:S8}. The two quartet changes give
 \qquad M_w=1,\qquad \delta M_c=0.
 \end{equation}
 
-Every old face retains its winding, while \(w\) is a new bounded face. Subtracting \eqref{bl:S8}, with \eqref{bl:S7}, gives
+Every old face retains its boundary winding number, while \(w\) is a new bounded face. Subtracting \eqref{bl:S8}, with \eqref{bl:S7}, gives
 
 \begin{equation}\label{bl:S9}
 \delta T_b=-1,\qquad \delta T_x=\delta T_y=1,
@@ -448,7 +453,7 @@ For even \(N\), the face parity cochain differs by one across strand edges and b
 t_w=t_b,\qquad t_w-t_x=t_w-t_y=1\pmod2 .
 \end{equation}
 
-Thus \(bw\) has zero parity difference, every new strand side has difference one, and all old clocks are unchanged. Swapping the order in which the two new middle faces are read does not change these equations: in the actual frame the input is \(y\), the output is \(x\), and \(t_x=t_y\). The original even-level coset is therefore still exactly \eqref{bl:S11}.
+Thus \(bw\) has zero parity difference, every new strand side has difference one, and all old parity labels are unchanged. Swapping the order in which the two new middle faces are read does not change these equations: in the actual frame the input is \(y\), the output is \(x\), and \(t_x=t_y\). The original even-level coset is therefore still exactly \eqref{bl:S11}.
 
 \section{One geometric contribution for the refined diagram}
 \label{bl:the-calibrated-complete-action-and-all-cross-packet}
@@ -467,7 +472,7 @@ all-central period. Equations~\eqref{mca:eq-H1}--\eqref{mca:eq-3}
 give the finite holomorphic face-critical action \(A_N\), the
 positive-branch face determinant and the global spectral gap on the
 original cube. Equation~\eqref{mca:eq-4} then evaluates the whole
-period, including all charges and original endpoint currents. Its
+period, including all charges and original endpoint terms. Its
 coefficient is nonzero at both level parities for every fixed
 independently signed sufficiently long filling vector.
 
@@ -524,19 +529,28 @@ Take any original path sector with at least one one-sided crossing circle and ce
 
 uniformly on the entire real spectral cube \([-2,2]^R\), at both parities. Here \(\sum_eX_e\) minus the original ordinary log-radius targets is exactly \(\Phi_D=\operatorname{Vol}(Y_D)/(2\pi)\), by the calibrated complete source. The protected variables stay zero throughout. No infimum of a sum of local maxima or independent-radius capacity equality is used.
 
-There are only \(3^R-1\) such sectors. Their sum is exactly the full shared numerator minus its all-central part. Thus \eqref{bl:B5} also holds for that remainder, after reducing \(\gamma\). It is a polynomial of spectral degree at most \(d\) in each variable. Multivariate cosine Bernstein extends \eqref{bl:B5} to a sufficiently thin fixed complex \(\delta\) strip, at cost \(\exp[2\pi d\sum_i|\operatorname{Im}\delta_i|]\). Reducing the strip height and \(\gamma\) gives the same strict gap there.
+There are only \(3^R-1\) such sectors. Their sum is exactly the full shared numerator minus its all-central part. Thus \eqref{bl:B5} also holds for that remainder, after reducing \(\gamma\). It is a polynomial of spectral degree at most $d$ in each variable.
 
-\subsection{Entire original Fourier remainder and the full invariant}\label{bl:entire-original-fourier-remainder-and-the-full-invariant}
+\subsection{The filling norm and the full invariant}\label{bl:entire-original-fourier-remainder-and-the-full-invariant}
 
-Apply the whole-interval integration-by-parts identity
-\eqref{mca:eq-21} to the remainder polynomial. The original sine factors vanish at both endpoints, first derivatives match, and the second-derivative endpoint current is retained. Source derivatives use the fixed strip; Gaussian derivatives are taken only on the real cube. Summing all nonzero original charges with their actual weights and parity gives
-
+Apply the finite Hermite-functional norm from
+\cite[Theorem~1.1]{Finite} to this remainder polynomial. The norm
+includes its first derivatives at double spectral roots and the value
+at the odd-level simple root. For the fixed filling vector it gives
+\[
+ |I_{\mathrm{full}}-I_{\mathrm{cross}}|
+ \le \prod_i(1+|n_i|/2)
+       \|S_N-C_N\|_{[-2,2]^R}.
+\]
+Thus \eqref{bl:B5} implies, in particular, the bound
 \begin{equation}\label{bl:B6}
-|I_{\mathrm{full}}-I_{\mathrm{cross}}|
-\leq C_D\prod_i(1+|n_i|)^3e^{N(\Phi_D-\gamma')},
+ |I_{\mathrm{full}}-I_{\mathrm{cross}}|
+ \le C_D\prod_i(1+|n_i|)^3e^{N(\Phi_D-\gamma')}
 \end{equation}
-
-for a fixed \(\gamma'>0\). No infinite sharp-cube charge series is split. All framing and component scalars remain the original ones.
+for some fixed $\gamma'>0$. All framing and component factors are
+the same as in the original evaluation. This estimate treats the
+entire filled remainder at once; no separate expansion or truncation
+of its Fourier series is needed.
 
 The central period of Appendix~\ref{app:morse-geometric-contribution} has a nonzero
 relative asymptotic. Its rate approaches \(\Phi_D\), with loss
@@ -557,7 +571,7 @@ and
 =\operatorname{Vol}(\text{the actual smooth filled exterior}).
 \end{equation}
 
-The same conclusion holds after multiplying by the separately recorded original normalization characters and nonzero polynomial-level factors. For the prescribed parity yielding a knot, this is the corresponding full original knot invariant, not a chosen spectral contribution. It does not assert that a given \(2k\)-plat has minimal bridge number \(k\).
+The same conclusion holds after multiplying by the separately recorded original normalization characters and nonzero polynomial-level factors. For the prescribed parity yielding a knot, this is the corresponding full original knot invariant, with every path sector included.
 
 The quantifiers are: for this fixed decorated diagram satisfying the balance inequalities, there exists \(T(D)\) such that every independently signed fixed filling vector with all \(|p_i|\geq T(D)\), in the prescribed parity convention, has \eqref{bl:B7}--\eqref{bl:B8} as \(N\to\infty\). No bound on ratios \(|p_i|/|p_j|\) is needed. There is no joint growing-twist/level estimate or uniform threshold over different diagrams or widths.
 

@@ -18,10 +18,10 @@ root-of-unity colored Jones polynomial is given in
 This book proves the comparison under several sufficient hypotheses
 on a fixed diagram. It does not claim it for every knot, every
 arborescent presentation, or every short filling. The first proof is
-the strict Conway theorem, Theorem~\ref{ca:main}. Its current source
-is shared with the standalone Conway paper in
-Chapter~\ref{ch:conway-current}. The proof expands the complete crossing powers in the pure circle
-basis before estimating the resulting finite sum.
+the strict Conway theorem, Theorem~\ref{ca:main}. Chapter~\ref{ch:conway-current} gives the proof, using the same source
+files as the standalone Conway paper. It first expands each integer
+crossing power in untwisted colored circles, and then estimates the
+resulting finite sum.
 
 In every quantum limit below, the finite diagram, its strand
 connections, disk framings, retained half twists and integer powers
@@ -29,6 +29,51 @@ are fixed first. The level then tends to infinity through all
 sufficiently large integers, including both parities and composite
 levels. Only auxiliary crossing-circle cusps are filled. The main
 knot cusp remains complete.
+
+\section{The finite evaluation and the notation}
+
+We use one reduced normalization throughout the volume arguments.
+Cutting one main strand produces a scalar endomorphism
+$I_N\,\mathrm{id}_{V_N}$ on the complete-color representation.
+After the recorded integer framing correction,
+\[
+ K_N(K)=\zeta_{N,D} I_N,\qquad |\zeta_{N,D}|=1.
+\]
+The finite spectral paper proves this comparison with Kashaev's
+invariant, including scalarity and the unknot normalization
+\cite[Theorem 10.1]{Finite}. The cut is made once on a main component.
+The auxiliary circles are ordinary components of the finite diagram.
+
+The level notation is $N\ge2$, $d=N-1$, $q=e^{\pi\ii/N}$ and
+$Q=q^2$. Whenever $q^a$ occurs with a nonintegral exponent, it means
+$e^{\pi\ii a/N}$. The invariant comparison is used for $N\ge3$;
+including the finitely many smaller levels has no effect on a limit.
+A \emph{color} is a representation dimension, while a \emph{strand
+index} labels a vector in that representation. For example, a strand
+of color $N$ has basis indices $0,\ldots,N-1$.
+
+The following objects recur in the planar chapters:
+\begin{center}
+\begin{tabular}{@{}p{.19\textwidth}p{.72\textwidth}@{}}
+$H_f(L;\sigma)$ & A homogeneous polynomial in the adjacent face
+variables $L$, representing a specified local matrix.\\[3pt]
+$S_N(\boldsymbol\sigma)$ & The shared face coefficient after all
+local polynomials have been multiplied.\\[3pt]
+$C_N$ & The part with central recurrence endpoints at every crossing
+region; the relevant chapter specifies whether its arguments are
+spectral variables or their cosine coordinates.\\[3pt]
+$D_N=S_N-C_N$ & The entire omitted part of that same coefficient.\\[3pt]
+$\Phi$ & The complete augmented volume divided by $2\pi$.\\[3pt]
+$S_{\boldsymbol n}$ & A critical value after inserting the fixed
+signed crossing powers. Its real part gives the filled volume only
+after the geometric comparison.\\
+\end{tabular}
+\end{center}
+A face has one variable wherever it occurs. The two faces adjacent to
+the reduced mark are called \emph{protected}; their variables are set
+to zero in the coefficient formula. Each remaining, or \emph{ordinary},
+face has coefficient target $d$. These terms are defined geometrically
+and algebraically in Appendix~\ref{app:morse-preliminaries}.
 
 \section{A map of the results}
 
@@ -92,7 +137,7 @@ Appendix~\ref{app:morse-geometric-contribution}.\\
 \end{longtable}
 }
 
-The strict theorem gives a complete first route through the argument.
+The strict theorem can be read first, without the tree and planar applications.
 The circle-tree and planar results have their own source estimates
 and can then be read through the prerequisites listed in their
 chapters. The finite filling theorem and the geometric-contribution
@@ -221,7 +266,7 @@ Terminal decoration can create a covered knot from a fixed
 matched-sphere core, but generally changes its knot type.
 For an unchanged diagram, weak balance or a complete shared-weight
 certificate supplies the additional source estimate. The
-geometric-contribution theorem alone leaves that estimate unpaid.
+geometric-contribution theorem alone does not establish the required remainder bound.
 
 \section{How to read and reproduce the proofs}
 

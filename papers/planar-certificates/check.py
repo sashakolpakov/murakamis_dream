@@ -14,6 +14,7 @@ from collections import defaultdict
 import hashlib
 import json
 from pathlib import Path
+import re
 import subprocess
 import sys
 
@@ -35,6 +36,23 @@ QUARTETS = [
     (12, 10, 15, 13), (0, 11, 16, 14), (14, 12, 17, 15),
     (15, 13, 18, 0), (16, 14, 0, 17), (17, 15, 0, 18),
 ]
+
+
+def printed_seed_quartets(
+    source: str, label: str = "pc:seed-quartets"
+) -> list[tuple[int, int, int, int]]:
+    """Read the numbered quartets in a labeled mathematical table."""
+    start = source.index(r"\label{" + label + "}")
+    end = source.index(r"\end{equation}", start)
+    rows = re.findall(
+        r"(?<![A-Za-z0-9_])(\d+)\s*&\s*"
+        r"\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)",
+        source[start:end],
+    )
+    numbered = [(int(row[0]), tuple(map(int, row[1:]))) for row in rows]
+    assert len(numbered) == 17
+    assert sorted(index for index, _ in numbered) == list(range(17))
+    return [quartet for _, quartet in sorted(numbered)]
 
 
 def digest(path: Path) -> str:
@@ -66,6 +84,9 @@ def main() -> None:
             raise SystemExit(f"Certificate hash changed: {relative}: {actual}")
     cover = json.loads((ROOT / next(iter(CERTIFICATES))).read_text())
     assert list(map(tuple, cover["ports"])) == QUARTETS
+    assert printed_seed_quartets((PAPER / "main.tex").read_text()) == QUARTETS
+    reference_table = ROOT / "manuscript/sections/Q-protected-triangular-sums.tex"
+    assert printed_seed_quartets(reference_table.read_text(), "pts:eq-28") == QUARTETS
     assert cover["protected"] == [0, 16]
     assert cover["bad_ports"] == [2, 4, 7, 12]
 
@@ -108,6 +129,7 @@ def main() -> None:
 
     source_paths = [
         Path(__file__), PAPER / "main.tex",
+        reference_table,
         PAPER / "figures/shared-weight-gain.tex",
         PAPER / "figures/protected-triangle.tex",
         ROOT / "repro/check_protected_sums.py",
@@ -124,6 +146,8 @@ def main() -> None:
             "arbitrary-iteration and volume implications are written proofs."
         ),
         "seed_regions": 17,
+        "printed_table_matches_certificate": True,
+        "reference_table_matches_certificate": True,
         "unabridged_branches": 40,
         "uniform_source_gap": "1/25",
         "restricted_comparison_excess": "1/40",

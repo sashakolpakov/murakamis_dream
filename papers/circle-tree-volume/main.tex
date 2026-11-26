@@ -28,7 +28,7 @@
 \newcommand{\calE}{\mathcal E}
 \newcommand{\Ch}{\operatorname{Ch}}
 \title{Volume asymptotics for trees of crossing circles}
-\author{}\date{}
+\author{Alexander Kolpakov}\date{25 November 2026}
 \begin{document}\maketitle
 \begin{abstract}
 We prove two sufficient conditions for the volume asymptotic of the
@@ -54,7 +54,7 @@ its explicit first correction.
 
 A crossing circle is an auxiliary component bounding a disk punctured
 by two main strands. Filling it restores an integer power of the
-crossing in that disk's original frame. Consider the following literal
+crossing in that disk's original frame. Consider the following
 ordered construction, as in \cite[Section~1]{Geometry}. A finite tree
 \(\mathcal T=(V,E)\) has at least one edge. Every vertex has its own
 crossing-circle tangle \(P_v\). A rooted expression is
@@ -62,20 +62,23 @@ crossing-circle tangle \(P_v\). A rooted expression is
  W_v=\left(\prod_{w\in I_v^-}\Turn(W_w)\right)P_v
              \left(\prod_{w\in I_v^+}\Turn(W_w)\right).
 \end{equation}
-The lists have their specified orders. The turn rotates the whole
+The two ordered lists $I_v^-$ and $I_v^+$ are the children placed
+on either side of the box $P_v$. Their order and their position
+relative to the parent edge are part of the diagram. The turn rotates the whole
 tangle and its disk frame; it is not just a scalar change of variable.
 Choose a terminal root and the prescribed cylindrical closure. Keep
-the actual strand orientations, a reduced cut on a main strand, and
+the strand orientations, a reduced cut on a main strand, and
 zero framing. Require that the endpoint tracing gives one main
-component and no internal closed component. There are no bare product
-junctions. This is an input condition on the diagram, not a consequence
+component and no internal closed component. Each junction carries the crossing circle assigned to its vertex.
+A junction at which branches are merely multiplied, without such a
+circle, is outside this class. This is an input condition on the diagram, not a consequence
 of the abstract graph.
 
 Write \(r=|V|\), \(e=|E|=r-1\), and \(d_v\ge1\) for graph degree.
 At vertex \(v\) the physical crossing power is \(n_v\in\mathbb Z\).
 The diagram, all powers and orientations are fixed throughout.
 Only the level \(N\ge3\) tends to infinity. Let \(F_N(M)\) be its
-reduced zero-framed ADO invariant, with unknot value one, in the
+reduced zero-framed Akutsu--Deguchi--Ohtsuki (ADO) invariant, with unknot value one, in the
 physical convention of \cite{Meridian}. At \(M=1\) it is the reduced
 Kashaev invariant of the same knot \(K_{\mathbf n}\). Put
 \[
@@ -84,7 +87,11 @@ Kashaev invariant of the same knot \(K_{\mathbf n}\). Put
 For every complex \(z\), the power means
 \(q_N^z=\exp(\pi\ii z/N)\); all fractional and complex powers
 below use this exponential lift.
-The level degree \(d\) is unrelated to \(d_v\).
+The level degree \(d\) is unrelated to the vertex degree \(d_v\).
+The restriction $|s|<1$ makes the main-meridian displacement of
+order $N^{-1}$. Thus the profile results below describe a shrinking
+neighborhood of the complete meridian, not a fixed neighborhood in
+the variable $M$.
 
 The first sufficient condition bounds a sum over all vertices:
 \begin{equation}\label{cta:sum}
@@ -137,7 +144,8 @@ The original knot complement is hyperbolic and
 Both level parities are included.
 \end{theorem}
 
-For the centered profile put
+The leading asymptotic has scalar factors that can be removed exactly.
+For the centered meridian profile, define
 \begin{equation}\label{dt:scalars}
  H_N(s)=\frac{\sin\pi s}{N\sin(\pi s/N)},\qquad
  A_N(s)=q_N^{(-w(D)-\sum_vn_v)s^2/2}.
@@ -166,8 +174,11 @@ with \(F_N(1)\) replaced by \(F_N(q_N^s)\).
 The second sufficient condition evaluates the finite contraction one
 vertex at a time. Choose any vertex as the last one to be evaluated
 and direct every edge toward it. At each nonroot vertex choose a
-number \(0<c_v<2^{-16}\). This number bounds the decay of the
-polynomial sent to the parent after division by its value at zero.
+number \(0<c_v<2^{-16}\). The subtree below $v$ will contribute a polynomial in the angle
+at its parent. We call this polynomial a \emph{message}. After dividing
+by its value at zero, its absolute value on the real angular circle
+will decay at least as $\exp[-Nc_v(1-\cos t)]$, up to a polynomial
+factor in $N$.
 Section~\ref{dt:criterion} gives explicit inequalities in the degrees,
 powers and numbers \(c_v\). They require no knowledge of the invariant
 or its critical value, and they contain no sum over the whole tree.
@@ -209,9 +220,11 @@ explicit correction in Theorem~\ref{cta:profile}; the directed proof
 establishes \eqref{dt:profile} without asserting that sharper expansion.
 In both cases the tree and all powers are fixed before \(N\) tends
 to infinity. The implied constants and initial levels may depend on
-that fixed diagram and on \(R\). The curvature bounds in the directed
-proof do not acquire a factor from the depth of the tree.
-These are microscopic meridian statements: \(s\) is bounded and
+that fixed diagram and on \(R\). The bounds on the second derivatives of the normalized subtree
+phases remain uniform as the recursion moves toward the root. The
+proof therefore avoids multiplying an exponential error cost by the
+depth of the tree.
+In these meridian statements, \(s\) is bounded and
 \(q_N^s\) tends to one. No expansion on a fixed neighborhood of
 \(M=1\) or all-orders annihilator theorem is asserted here.
 
@@ -219,9 +232,12 @@ The exact finite inputs are \cite[Proposition~6.1, Theorem~7.1 and
 Proposition~8.1]{Meridian}: the crossing polynomials and traces, the
 original tree contraction, and its scalar factors. The canonical
 factorial of \cite[Lemma~2.1]{ConwayAnalysis} fixes the holomorphic
-interpolation. Sections~\ref{cta:finite}--\ref{ct:trace-section}
-prove the polynomial estimates, edge asymptotic and exact Fourier
-trace used by both arguments; they assume neither degree-and-twist
+interpolation. The common proof begins with three steps.
+Section~\ref{cta:finite} writes the full finite contraction and
+bounds discarded indices while retaining derivatives at double roots.
+Section~\ref{cta:edge} evaluates one edge sum on an explicit contour.
+Section~\ref{ct:trace-section} expresses each closing trace by its
+Fourier modes, including its endpoint terms. These results assume neither degree-and-twist
 condition. Section~\ref{ct:summed-section} proves the summed theorem,
 and Section~\ref{dt:criterion} proves the directed theorem.
 The classical geometric input is \cite[Theorem~1.1]{Geometry}.

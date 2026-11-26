@@ -69,7 +69,7 @@ private theorem upperRate_prod_zero {ι : Type*} (s : Finset ι)
 
 private theorem coefficient_cost_upperRate {r : ℕ}
     (β : (N : ℕ) → Fin r → Fin N → ℂ) (n : Fin r → ℤ)
-    (coefficients : ∀ (N : ℕ) [NeZero N], 2 ≤ N → ∀ ℓ,
+    (coefficients : ∀ (N : ℕ) [NeZero N], 3 ≤ N → ∀ ℓ,
       β N ℓ = VolumeLogic.FourierHermite.crossingCoefficients (n ℓ)) :
     UpperRate (fun N => ∏ ℓ, ∑ k, ‖β N ℓ k‖) 0 := by
   have hmass : ∀ ℓ : Fin r, UpperRate (fun N => ∑ k, ‖β N ℓ k‖) 0 := by
@@ -77,12 +77,12 @@ private theorem coefficient_cost_upperRate {r : ℕ}
     apply upperRate_of_polynomial_bound
       (C₀ := 2 * (1 + |(n ℓ : ℝ)| / Real.sqrt 12)) (m := 1 / 2)
     · positivity
-    · filter_upwards [eventually_ge_atTop (2 : ℕ)] with N hN
+    · filter_upwards [eventually_ge_atTop (3 : ℕ)] with N hN
       letI : NeZero N := ⟨by omega⟩
       refine ⟨Finset.sum_nonneg fun k _ => norm_nonneg _, ?_⟩
       rw [coefficients N hN ℓ]
       simpa [Real.sqrt_eq_rpow, mul_assoc, mul_left_comm, mul_comm] using
-        VolumeLogic.FourierHermite.crossing_coefficient_mass hN (n ℓ)
+        VolumeLogic.FourierHermite.crossing_coefficient_mass (by omega : 2 ≤ N) (n ℓ)
   simpa using upperRate_prod_zero Finset.univ
     (fun ℓ N => ∑ k, ‖β N ℓ k‖) (fun ℓ _ => hmass ℓ)
 
@@ -103,7 +103,7 @@ theorem conway_packet_volume_limit {r : ℕ}
     (D : (N : ℕ) → (Fin r → Fin N) → ℂ)
     (n : Fin r → ℤ) (B : ℕ → ℝ)
     {a A : ℂ} {b volume : ℝ} (ρ : ℝ)
-    (coefficients : ∀ (N : ℕ) [NeZero N], 2 ≤ N → ∀ ℓ,
+    (coefficients : ∀ (N : ℕ) [NeZero N], 3 ≤ N → ∀ ℓ,
       β N ℓ = VolumeLogic.FourierHermite.crossingCoefficients (n ℓ))
     (sourceIdentity : ∀ᶠ N in atTop,
       K N = u N * ((((N : ℝ) ^ ρ : ℝ) : ℂ) *

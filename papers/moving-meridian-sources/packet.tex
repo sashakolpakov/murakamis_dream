@@ -1,5 +1,8 @@
-\section{The original finite wire packet}\label{ms:packet}
-We now construct the packet in Theorem~\ref{ms:packet-main}. Let
+\section{The central finite sum and its holomorphic asymptotic}\label{ms:packet}
+The previous section controlled errors on whole bare components.
+We now retain the complete tensors there, restrict the independent
+state indices near the positive maximum, and evaluate this partial
+sum. This constructs the packet of Theorem~\ref{ms:packet-main}. Let
 $J_b$ be the number of bare vertices and $E=H+J_b-1$ the number
 of physical edges. Denote the sums of the circle and bare valences
 by $D_c,D_b$, so $D_c+D_b=2E$.
@@ -28,6 +31,8 @@ Their number and the gate count are
  K=E+D_b-3J_b,\qquad G=D_b-2J_b,
  \qquad -D_c-\tfrac32G+\tfrac12K=\tfrac32(1-H).
 \end{equation}
+Write $\mathbf k$ for this tuple of physical and intermediate integer
+indices and $\mathbf y=\mathbf k/N$ for its scaled coordinates.
 All other indices are integral affine functions of them, with
 the literal complements $d-n=N(1-n/N)-1$. The lattice is
 $\mathbb Z^K$ for both parities. The tree creates no additional
@@ -82,7 +87,8 @@ The original complete positive expansion gives a strict compact
 complement gap, including its closed faces.
 
 Choose a small rectangular box $\mathcal W$ about this maximum.
-All gate factorial arguments are bulk, every circle-incident label
+Every sine-factorial argument in a gate is a fixed positive distance
+from both ends of its normalized interval, every circle-incident label
 lies in a compact subinterval of $(0,1/2)$, and the incident sum
 at each bare vertex is greater than one by a fixed amount. The
 last assertion also follows by summing $x+y-z>0$ over its gates.
@@ -102,7 +108,7 @@ fixed-power circle trace satisfies
 \end{equation}
 Indeed at a shifted root the angular imaginary part is $O(1/N)$.
 Positive Laurent coefficients bound $|E_0|$ there by $C E_0(-2)$;
-the fixed-power chirp has bounded modulus. The exact root formula
+the quadratic exponential for a fixed crossing power has bounded modulus. The exact root formula
 gives $C N^2E_0(-2)$ on a larger parameter circle avoiding
 $\sin2\pi\sigma=0$. Divide by \eqref{ms:circle-positive} and
 use the maximum principle for the whole holomorphic trace to
@@ -124,7 +130,7 @@ The retained exact packet is
  \left(\prod_e\gamma_{e,N}(s)\frac{H_N(s)}{W_{n_e}(s)}\right).
 \end{equation}
 It is separately even and periodic in every angle. Crossing
-chirps and sine trace factors are not part of this definition.
+quadratic exponentials and sine trace factors are not part of this definition.
 
 \subsection{A holomorphic interpolation of this finite sum}
 Use the fixed canonical $G_N$ of \cite[Lemma 2.1]{Asymptotics},

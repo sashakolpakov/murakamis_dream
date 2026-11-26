@@ -18,10 +18,28 @@
 \newcommand{\tr}{\operatorname{tr}}
 \newcommand{\stat}{\operatorname{stat}}
 \title{Preferred longitudes of Conway tree complements}
-\author{}\date{}
+\author{Alexander Kolpakov}\date{25 November 2026}
 \begin{document}\maketitle
 \begin{abstract}
-We identify the preferred-longitude eigenvalue of the geometric meridian germ of an ordered Conway tree. Each physical quarter-turn edge contributes a rational factor, and the original writhe and crossing powers determine the remaining meridian monomial. Boundary isotropy first makes the discrepancy independent of the auxiliary variables. A constant-field calculation and regular reconstruction at every nonzero main parameter then exclude additional rational factors; the argument includes the split trace-zero fibers. An explicit cusp-path calculation fixes the monomial and a Seifert-surface frame calculation fixes the determinant-one sign. Inserting meridian-filled zero-crossing circles extends the formula to arbitrary strict product junctions, including adjacent bare junctions and a folded half-label edge. The proof concerns marked representations and classical stationary actions. It uses no invariant asymptotic or recurrence hypothesis.
+We compute the preferred-longitude eigenvalue on the geometric
+meridian curve of a filled Conway tree. The formula is a product of
+one rational factor for each quarter-turn edge and one meridian
+monomial determined by the crossing powers and writhe.
+
+The proof first establishes the squared formula on the algebraic
+family of augmented representations. Boundary isotropy makes its
+unknown factor independent of the auxiliary variables. A calculation
+of the constant field shows that this factor is rational in the main
+meridian alone. Regular reconstruction over every nonzero meridian
+value, including the split trace-zero fibers, then makes it a monomial.
+We determine its exponent by following an explicit peripheral path
+and correcting its framing. A Seifert-surface frame calculation fixes
+the remaining determinant-one sign at the complete filled knot.
+Finally, inserting and meridionally filling a zero-crossing circle at
+each bare product junction extends the formula to every fixed strict
+Conway construction with independently sufficiently long signed
+fillings. The argument uses marked representations and classical
+actions, independently of quantum asymptotics or recurrences.
 \end{abstract}
 
 \section{The marked curve and the theorem}\label{pl:introduction}
@@ -30,16 +48,27 @@ A meridian eigenvalue does not determine a preferred longitude merely by fixing 
 \subsection{The original diagram and its peripheral curves}
 Take an ordered two-string Conway construction: products stack two tangles in their recorded order, physical quarter-turns rotate the whole four-point boundary, and the prescribed cylindrical closing pairs the final endpoints. Its main strands must form one knot, including any component already closed inside a subtangle. A crossing circle is an auxiliary component bounding the specified disk with two main punctures. Its retained half twist is $\epsilon_v\in\{-1,0,1\}$; filling the primitive slope $\mu_v+p_v\lambda_v$ gives signed crossing power
 \begin{equation}\label{pl:power} n_v=\epsilon_v-2p_v.\end{equation}
-All product orders, disk basepaths and endpoint flags remain part of the diagram. The auxiliary circles are pairwise unlinked.
+Write $\sigma$ for the positive two-strand crossing in this framing;
+$\sigma^{-1}$ is the negative crossing.
+We retain every product order and every path from the basepoint to a
+crossing disk. A flag means a selected eigenline of the corresponding
+peripheral holonomy; these choices are retained as well. The auxiliary circles are pairwise unlinked.
 
 Group consecutive products with no intervening physical turn into junctions. An \emph{all-circle tree} has a crossing circle at every junction; its finite underlying graph has at least one edge. A \emph{bare junction} has none. The strict class is defined by a nonempty angle domain: each original leaf has $0<a<1/2$, and each retained binary product with inputs $x,y$ and output $b$ has
 \begin{equation}\label{pl:strict} \max(x,y)<b<x+y<1.\end{equation}
 The forced final flat product is replaced by its exact complementary-label pairing. Any binary resolution of a bare junction keeps its original order; its hidden unturned wires are not physical edges. These support statements and the unique strict stationary state are proved in \cite[Sections 5--7]{Newton}. Retain the original knot/parity test. In the strict two-leaf knot case at least one retained disk is pure ($\epsilon=0$); the two-odd pattern is a link and is excluded.
 
-Let $\mathcal E$ denote the physical quarter-turn edges. Their covariant angle label $x_e$ is the one shared by the two ends in the symmetric product action; its ordinary output label is $1-x_e$. Set $X_e=e^{2\pi\ii x_e}$. The main positive meridian has eigenvalue $M$. The recorded source flag is its $M^{-1}$ eigenline; throughout this paper $L$ is the inverse longitude eigenvalue on that line, equivalently the longitude eigenvalue on the $M$ line. At circle $v$ the selected primitive disk-longitude eigenvalue is $-Q_v$. We use eigenvalue ratios for projective representations, so its longitude similarity is $Q_v^2$.
+By a geometric meridian germ we mean the local holomorphic family
+of marked holonomy representations through a specified complete
+hyperbolic structure, with $M$ as its local parameter. We quotient
+by conjugation while retaining the selected peripheral eigenlines.
+This is a local family, rather than the entire character variety.
+
+Let $T$ be the underlying tree and let $\mathcal E=\mathcal E_T$
+denote its physical quarter-turn edges. Their covariant angle label $x_e$ is the one shared by the two ends in the symmetric product action; its ordinary output label is $1-x_e$. Set $X_e=e^{2\pi\ii x_e}$. The main positive meridian has eigenvalue $M$. The recorded source flag is its $M^{-1}$ eigenline; throughout this paper $L$ is the inverse longitude eigenvalue on that line, equivalently the longitude eigenvalue on the $M$ line. At circle $v$ the selected primitive disk-longitude eigenvalue is $-Q_v$. We use eigenvalue ratios for projective representations, so its longitude similarity is $Q_v^2$.
 
 \subsection{The exact geometric inputs}
-\begin{proposition}[Companion inputs, with their scope]\label{pl:imports}
+\begin{proposition}[Geometric input statements]\label{pl:imports}
 The following marked statements are used.
 \begin{enumerate}
 \item The all-circle edge equation
@@ -53,10 +82,30 @@ reconstructs the original ordered augmented group near its complete point $M=Q_v
 \end{equation}
 The rational character formulas and their full ordered conjugacies, not only their traces, are part of this input.
 \item The strict construction has its original positive complete geometry, actual white and shaded maps, primitive collar paths and sufficiently long independently signed fillings, as in \cite[Theorems 1.2--1.3 and Sections 6--8]{StrictGeometry}. Fixed crossing counts, including all their signs, are chosen before considering a deformation. The main cusp remains unfilled.
-\item At a positive filled endpoint in the \emph{original augmented} triangulation, fixed primitive slope logarithms and the main meridian logarithm give the full local decorated representation germ. Thus the filled germ is smooth of dimension one, with coordinate $\log M$. This is the positive augmented germ statement of \cite[Theorem 1.2 and Proposition 6.1]{Nonparabolic}. A reconstructed representation must first be identified with that endpoint; slope eigenvalues alone do not supply the anchor. No positive triangulation of a newly drilled bare-junction diagram is required.
+\item At the augmented complete point, the main meridian logarithm and
+the original auxiliary longitude logarithms give local coordinates
+on the decorated representation germ; see \cite[Theorem~1.1 and
+Proposition~6.1]{Nonparabolic}. At a positive filled endpoint, the
+main meridian logarithm and the fixed primitive slope logarithms
+give another such coordinate chart. Fixing those slopes leaves a
+smooth one-dimensional filled germ, with coordinate $\log M$;
+see \cite[Theorem~1.2 and Proposition~6.1]{Nonparabolic}.
+The representation constructed from the algebraic equations must
+first be matched with the actual geometric representation at the
+stated endpoint. These local uniqueness statements concern the
+original augmented manifold and its positive triangulation.
 \end{enumerate}
 \end{proposition}
 These inputs identify the group representation and its metric; none asserts a main preferred-longitude formula. Section~\ref{plb:exact-elimination-of-the-angular-action} also uses the finite turn and multiplication identities of \cite[Proposition 3.2 and Theorem 3.3]{Newton}, the scalar factorial estimate of \cite[Lemma 6.2]{Newton}, and the exact Fourier trace of \cite[Lemma 6.1]{SourceBounds}. It does not use the later color-loss theorem in that paper or an asymptotic of a knot invariant.
+
+The algebraic parameter space used below has nonzero coordinates
+$M,Q_v,X_e$, subject to \eqref{pl:T1} for every edge. We work on
+the open set where the displayed rational expressions are defined.
+Section~\ref{pl:the-constant-field-of-the-source-equations} proves
+that this family is integral: its coordinate ring has no zero divisors.
+We call it the \emph{source variety}; this is a geometric parameter
+space, not a quantum state sum. Its function field contains the
+squared marked peripheral eigenvalues.
 
 \begin{theorem}[All-circle longitude]\label{pl:all-circle}
 For the literal all-circle tree, put
@@ -79,8 +128,9 @@ The branch retains the original logarithms $U_v+p_vV_v=-2\pi\ii$. If one uses on
 \begin{theorem}[Bare junctions and the original strict action]\label{pl:strict-longitude}
 For every fixed strict ordered construction with the original knot qualification and sufficiently long independently signed original fillings, formula~\eqref{pl:T7} holds on its geometric meridian germ. The product is over its original physical edges, including edges between bare junctions. No restriction is imposed on bare-junction valence or adjacency.
 
-More precisely, put $M=e^{\pi\ii t}$ and
-$J(x)=\int_0^x\log(2\sin\pi r)\,dr$, continued from $0<x<1$. If $\Phi$ is the classical joint first-charge action of the same construction at $M=1$, the continued stationary branch is that of
+More precisely, let $t=\log M/(\pi\ii)$, with $t=0$ at the
+complete main cusp, and put
+$J(x)=\int_0^x\log(2\sin\pi r)\,dr$, continued from $0<x<1$. If $\Phi$ is the classical stationary action specified below of the same construction at $M=1$, the continued stationary branch is that of
 \begin{equation}\label{pl:deformed-action}
  \Phi_t=\Phi+\sum_{e\in\mathcal E}
  [2J(x_e)-J(x_e+t)-J(x_e-t)]+\frac{\pi\ii a(D)}2t^2.
@@ -106,7 +156,7 @@ The geometric completion and marked local representation theorem remain the expl
 \bibitem{StrictGeometry} \emph{Marked geometry of strict Conway compositions}, companion paper, \href{https://sashakolpakov.github.io/murakamis_dream/papers/strict-conway-geometry.pdf}{source and proof}.
 \bibitem{Newton}
 \emph{Newton calculus and stationary profiles of Conway tangles},
-consolidated companion paper,
+companion paper,
 \href{https://sashakolpakov.github.io/murakamis_dream/papers/newton-calculus.pdf}{repository edition}.
 
 \bibitem{SourceBounds} \emph{Spectral estimates for Conway tangle sources}, companion paper, \href{https://sashakolpakov.github.io/murakamis_dream/papers/conway-source-bounds.pdf}{source and proof}.

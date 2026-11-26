@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "controls": [
+    {
+      "id": "analysis_parseval_normalization",
+      "project": "mathlib",
+      "positive": "import FourierHermite\nopen scoped BigOperators\nset_option autoImplicit false\nexample {N : ℕ} [NeZero N] (α : ℝ) (f : Fin N → ℂ) :\n    (∑ a, ‖VolumeLogic.FourierHermite.shiftedDFT α f a‖ ^ 2) =\n      (∑ k, ‖f k‖ ^ 2) / (N : ℝ) := by\n  exact VolumeLogic.FourierHermite.shifted_parseval α f\n",
+      "negative": "import FourierHermite\nopen scoped BigOperators\nset_option autoImplicit false\nexample {N : ℕ} [NeZero N] (α : ℝ) (f : Fin N → ℂ) :\n    (∑ a, ‖VolumeLogic.FourierHermite.shiftedDFT α f a‖ ^ 2) =\n      (∑ k, ‖f k‖ ^ 2) := by\n  exact VolumeLogic.FourierHermite.shifted_parseval α f\n",
+      "reason": "The coefficient transform is normalized by 1/N. Its squared l² norm is (1/N) times the input energy, not the input energy. For N=2 and the constant array f=1 the two energies are 1 and 2.",
+      "expected_error": "(?i)type mismatch"
+    },
+    {
+      "id": "analysis_holomorphic_schur_transpose",
+      "project": "mathlib",
+      "positive": "import StationaryElimination\nimport Mathlib.LinearAlgebra.Matrix.ConjTranspose\nset_option autoImplicit false\nexample {ι τ : Type*} [Fintype ι] [DecidableEq ι]\n    {A : Matrix ι ι ℂ} {B Y : Matrix ι τ ℂ}\n    (D : Matrix τ ι ℂ) (C : Matrix τ τ ℂ)\n    (invertible : IsUnit A.det) (stationarity : A * Y + B = 0)\n    (mixed_block : D = B.transpose) :\n    D = B.transpose ∧\n      C + B.transpose * Y = VolumeLogic.StationaryElimination.schur A B C := by\n  exact ⟨mixed_block,\n    VolumeLogic.StationaryElimination.effective_hessian C invertible stationarity⟩\n",
+      "negative": "import StationaryElimination\nimport Mathlib.LinearAlgebra.Matrix.ConjTranspose\nset_option autoImplicit false\nexample {ι τ : Type*} [Fintype ι] [DecidableEq ι]\n    {A : Matrix ι ι ℂ} {B Y : Matrix ι τ ℂ}\n    (D : Matrix τ ι ℂ) (C : Matrix τ τ ℂ)\n    (invertible : IsUnit A.det) (stationarity : A * Y + B = 0)\n    (mixed_block : D = B.conjTranspose) :\n    D = B.transpose ∧\n      C + B.transpose * Y = VolumeLogic.StationaryElimination.schur A B C := by\n  exact ⟨mixed_block,\n    VolumeLogic.StationaryElimination.effective_hessian C invertible stationarity⟩\n",
+      "reason": "A holomorphic Hessian identifies its external/internal block D with Bᵀ, not B*. The negative control supplies only D=B* but attempts the same block identification required to interpret the Schur formula. In one dimension B=i and D=−i satisfy the mistaken premise while D=Bᵀ is false. The second conjunct applies the actual effective_hessian theorem; its matrix statement is unchanged.",
+      "expected_error": "(?i)type mismatch"
+    },
+    {
+      "id": "analysis_strict_remainder_gap",
+      "project": "mathlib",
+      "positive": "import RealTransfer\nopen Filter\nset_option autoImplicit false\nexample {K u amp S E : ℕ → ℂ} {a A : ℂ} {b ρ : ℝ}\n    (source : ∀ᶠ N in atTop,\n      K N = u N * ((((N : ℝ) ^ ρ : ℝ) : ℂ) *\n        (amp N * Complex.exp ((N : ℂ) * S N)) + E N))\n    (unit : ∀ᶠ N in atTop, ‖u N‖ = 1)\n    (amplitude : Tendsto amp atTop (nhds a)) (nonzero : a ≠ 0)\n    (action : Tendsto S atTop (nhds A))\n    (remainder : VolumeLogic.RealModel.UpperRate (fun N => ‖E N‖) b)\n    (gap : b < A.re) :\n    ∀ᶠ N in atTop, K N ≠ 0 := by\n  exact (VolumeLogic.RealModel.complex_packet_volume_transfer\n    (volume := 2 * Real.pi * A.re) ρ source unit amplitude nonzero action\n      remainder gap rfl).1\n",
+      "negative": "import RealTransfer\nopen Filter\nset_option autoImplicit false\nexample {K u amp S E : ℕ → ℂ} {a A : ℂ} {b ρ : ℝ}\n    (source : ∀ᶠ N in atTop,\n      K N = u N * ((((N : ℝ) ^ ρ : ℝ) : ℂ) *\n        (amp N * Complex.exp ((N : ℂ) * S N)) + E N))\n    (unit : ∀ᶠ N in atTop, ‖u N‖ = 1)\n    (amplitude : Tendsto amp atTop (nhds a)) (nonzero : a ≠ 0)\n    (action : Tendsto S atTop (nhds A))\n    (remainder : VolumeLogic.RealModel.UpperRate (fun N => ‖E N‖) b)\n    (gap : b ≤ A.re) :\n    ∀ᶠ N in atTop, K N ≠ 0 := by\n  exact (VolumeLogic.RealModel.complex_packet_volume_transfer\n    (volume := 2 * Real.pi * A.re) ρ source unit amplitude nonzero action\n      remainder gap rfl).1\n",
+      "reason": "A remainder with the same exponential rate may cancel the leading term exactly. With ρ=0, unit=1, amplitude=1, S_N=b real and E_N=−exp(Nb), all other hypotheses hold and K_N=0. Strict b<Re S is essential to eventual nonvanishing.",
+      "expected_error": "(?i)type mismatch"
+    }
+  ]
+}

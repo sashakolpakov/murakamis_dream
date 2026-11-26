@@ -1,5 +1,8 @@
 \section{Finite source estimates on the shifted charts}\label{me:analytic}
-The exact moving finite calculus is imported from
+We first specify which finite formulas are used. The source is a
+polynomial contraction with one basis index per physical edge; the
+meridian changes its quotient, trace and edge coefficients. These
+identities are imported from
 \cite[Proposition 6.1, Theorem 7.1 and Proposition 8.1]{Meridian}:
 these are respectively the full crossing polynomial and trace,
 the original tree contraction, and its scalar ledger. In its fixed
@@ -9,8 +12,13 @@ Newton basis, with $d=N-1$,
  S_k=\prod_{r=1}^k2\sin(\pi r/N),\quad
  c_j=2\cos((2j+1)\pi/N),
 \]
-the quotient is $P_\sigma=\mathsf T_N+2\cos2\pi\sigma$,
-$\mathsf T_N(u+u^{-1})=u^N+u^{-N}$. The metric is
+the quotient algebra is $\mathbb C[z]/(P_\sigma)$, with
+$P_\sigma=\mathsf T_N+2\cos2\pi\sigma$,
+where the ordered same-orientation pair types use $\sigma=s,-s$
+and opposite-orientation types use $\sigma=0$. Their scalar
+polynomials can agree while the ordered tensor products remain
+different. Here
+$\mathsf T_N(u+u^{-1})=u^N+u^{-N}$. The bilinear closing pairing is
 $\phi_\sigma(e_i e_j)=\mathbf1_{i+j=d}$ with
 $\phi_\sigma=(-1)^dN^2[z^d]\operatorname{rem}_{P_\sigma}$.
 An original physical edge, in lower-index convention, has equal
@@ -20,8 +28,10 @@ indices and coefficient $\gamma_{e,N}(s)H_N(s)/W_k(s)$, where
        \left(1-\frac{\sin^2(\pi s/N)}{\sin^2(\pi r/N)}\right),
  \qquad\gamma_{e,N}\in\{1,q^{s^2/2},q^{-s^2/2}\}.
 \end{equation}
-The complete Hermite norm uses all distinct node values and the
-first derivative at each double node. The odd node $-2$ is simple.
+For estimates we measure canonical polynomials of degree below $N$
+in the complete, $\sigma=0$, value-and-derivative norm: it uses all
+distinct spectral values and first derivatives at double roots, with
+only the value at the odd-level simple root $-2$.
 Polynomial equivalence with interval and Chebyshev norms is
 \cite[Lemma 2.1]{Bounds}; quotient products of fixed valence are
 first reduced, so the assertion does not identify the full matrix
@@ -49,7 +59,7 @@ Products of the minima with one and maxima with one give bounds
 for every subset, uniformly in $N,k$. Thus $W_k$, its inverse,
 $H_N$ and its inverse are uniformly bounded. Positivity in the
 all-circle estimates is used only for the complete Newton factors;
-these bounded multipliers do not change their exponential budgets.
+these bounded multipliers do not change their exponential rates.
 
 For clarity the exact fixed-power interpolation is
 \begin{equation}\label{me:crossing}
@@ -67,25 +77,33 @@ ellipse of angular height $O_K(1/N)$. The divided difference and
 its derivative have polynomial bounds there, while the fixed
 positive or negative powers of the eigenvalues and carrier have
 bounded modulus. This proves the same full-polynomial bounds as
-on a disk. Exact Chebyshev folding costs a bounded factor per
-fold; the number of folds is fixed by the vertex valence.
+on a disk. Reduction in the quotient uses
+$\mathsf T_{N+j}=-2\cos(2\pi\sigma)\mathsf T_j-\mathsf T_{N-j}$
+for $0<j<N$. Each such replacement has bounded coefficients on
+the parameter compact, and the number of replacements is fixed
+by the vertex valence.
 
 At a constant opposite-color vertex keep a separate formal
-$\sigma$ and use its whole trace on a parameter circle avoiding
-collisions. Its confluent normals are removable by the finite
-crossing theorem. The maximum principle for the whole trace
+$\sigma$ and use its trace, including derivative data on a parameter circle avoiding
+collisions. The finite crossing theorem makes the apparent poles
+in the trace removable; at zero the resulting trace uses both
+values and first derivatives. The maximum principle for the whole trace
 minus its finite approximation brings this formal parameter to
 zero, while the edge parameter $s$ stays independent. This is not
 an identification of constant and moving orientation types.
 
-The actual trace grid is shifted by $2\pi\sigma/N$. Its exact
-pole kernel has vertical-side value
-$\ii N e^{-Nv}/(1+e^{-Nv})$ after that translation. Thus the
+The finite trace grid is shifted by $2\pi\sigma/N$. Put
+$\eta=(-1)^d$. The residue kernel
+$K_\sigma(\tau)=\ii N e^{\ii N\tau}/(e^{\ii N\tau}-\eta e^{2\pi\ii\sigma})$
+satisfies
+$K_\sigma(\pm\pi+\ii v+2\pi\sigma/N)=\ii N e^{-Nv}/(1+e^{-Nv})$
+on the vertical sides of the translated rectangle. Thus the
 endpoint action loss survives the $O_K(1/N)$ displacement. A
 translated chart $s+j$ may wrap finitely many grid points across
-$\pm\pi$; retain those entries and their chirps. Their endpoint
-loss persists, but the chirp itself is not periodic. Paired charge
-coefficients are
+$\pm\pi$; retain those entries with their quadratic phases. Their endpoint
+loss persists, but the quadratic phase itself is not periodic.
+Pair the positive and negative Fourier modes with frequency
+$\ell\ge1$. Their coefficients are
 \begin{equation}\label{me:charge}
  (-1)^{d(\ell-1)}U_{\ell-1}(\cos2\pi\sigma),\qquad
  |U_{\ell-1}(\cos2\pi\sigma)|
@@ -125,7 +143,8 @@ including its fixed normalization, sine shift and reflection:
  G_N(k)=S_k,\qquad G_N(z)G_N(N-1-z)=N,
  \qquad G_N(s)G_N(-s)=H_N(s)^{-1}.
 \]
-On every smaller complex bulk compact it supplies, with all fixed
+On a fixed complex neighborhood of a compact subinterval of
+$(0,1)$, called a \emph{bulk neighborhood}, it supplies, with all fixed
 derivatives and every requested finite order,
 \begin{equation}\label{me:factorial-expansion}
  \log G_N(Nx)=NJ(x)+\tfrac12\log(2N\sin\pi x)
@@ -163,48 +182,54 @@ free, and to a joint strict Conway or summed-circle integral.
 All factorial arguments lie in fixed bulk complex tubes on these
 contours. For strict sources this is proved in
 \cite[Section 6]{MovingSources}; hidden unturned indices need not
-be below half. The exceptional half physical edge is bulk and
-causes no pole. For all-circle sources the edge saddle is in the
+be below half. The exceptional physical edge at label $x=1/2$ joins bare
+junctions: it contributes $\mathcal I_N$, whose arguments are near
+$N/2$, rather than a circle factor with an endpoint argument.
+The circle incidences themselves have labels strictly below $1/2$.
+Thus this exceptional edge causes no pole in the factorial expansion.
+For all-circle sources the edge saddle is in the
 fixed tube about $1/5<x<3/10$, as proved in
 \cite[Sections 3 and 7.1]{CircleTree}.
 Substitute \eqref{me:factorial-expansion} into the exact ratios.
-Powers of $N$, integer offsets and square-root marks give the
-original leading amplitude and complete inverse-power expansions.
+Powers of $N$, integer offsets and the square-root branches fixed at the complete state give the leading amplitude and complete inverse-power expansions.
 
 The finite lattice is handled before asymptotic integration.
 Enclose each primitive coordinate interval by half-grid rectangles
 and use $\pi N\cot(\pi Nz)$. On horizontal sides the difference
 from its constant value is $O(e^{-2\pi Nh})$; on vertical sides
 it is bounded. Choose the height $h$ before the parameter tube,
-with the phase gain $C h^2$ less than both a fixed fraction of the
+with the phase increase $C h^2$ less than both a fixed fraction of the
 boundary loss and $\pi h$. Thus nonconstant modes and boundary
-currents have a fixed exponential loss. The constant terms give
-exactly $N^K$ times the local integral, up to those errors. The
+contour integrals have a fixed exponential loss. The constant terms give
+exactly $N^\nu$ times the local integral, where $\nu$ is the number
+of primitive lattice coordinates, up to those errors. The
 primitive lattice and all offsets are the ones in the imported
 finite source, so no sublattice multiplicity is introduced.
 
 Translate the local contour to its selected critical point. Its
 real quadratic part is uniformly negative on compact parameter
 sets; its inverse Hessian and leading amplitude are bounded and
-nonzero there. To obtain relative order $L$, Taylor expand phase
-and amplitude to a sufficiently high finite order, set
-$X-X_*=N^{-1/2}Y$, and split at $|X-X_*|=N^{-\epsilon}$,
-with $0<\epsilon<1/6$ chosen first. Outside this shrinking region
-the quadratic bound is $e^{-cN^{1-2\epsilon}}$. Inside it expand
-the exponential of the cubic and higher terms with its integral
-remainder. Taking enough Taylor terms makes that remainder at most
-$N^{-L-1}$ times an integrable polynomial times
-$e^{-c|Y|^2/2}$. The finitely many Gaussian moments give integer
-relative powers: odd total moments vanish. Fixed derivatives are
+nonzero there. To obtain relative order $L$, set $X-X_*=N^{-1/2}Y$ and fix
+$0<\epsilon<1/6$. Split the integral at $|Y|=N^\epsilon$.
+The complement is bounded by $e^{-cN^{2\epsilon}}$ relative to
+the Gaussian scale. Inside, Taylor expand phase and amplitude to
+sufficiently high finite order. The first correction to the quadratic
+phase is $N^{-1/2}$ times a cubic polynomial in $Y$. After $m$ terms,
+its exponential remainder is bounded by $C_mN^{-m/2}$ times a
+polynomial in $Y$ and $e^{c|Y|^2/4}$. The latter factor is absorbed
+by the negative quadratic. Higher phase and amplitude remainders
+have the same Gaussian domination when their Taylor orders are chosen
+large enough. Taking $m$ and those orders above $2L+2$ therefore
+gives an integrable relative error $O(N^{-L-1})$. Odd total Gaussian
+moments vanish, so the surviving relative powers are integers.
+Fixed derivatives are
 obtained by starting with more terms and using a smaller tube.
 
 The absolute Gaussian integral is bounded by a constant times the
 modulus of its nonzero leading complex integral. Thus a uniform
 holomorphic relative remainder stays of the same order after
 integration. The bound may depend on fixed degrees and powers,
-which is permitted. This proves the claim directly, rather than
-promoting a first-order estimate to all orders without a remainder
-argument. Conditional angular and edge integrations use the same
+which is permitted. Conditional angular and edge integrations use the same
 proof with the unevaluated parent coordinate as parameter.
 \end{proof}
 
