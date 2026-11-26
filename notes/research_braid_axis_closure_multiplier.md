@@ -1,0 +1,510 @@
+# The marked braid-axis closure multiplier and the actual twisted source
+
+Private written proof, 19 November 2026.
+
+Trace observables determine an irreducible ordered tuple up to common
+conjugation. Consequently, their fixed equations for a braid leave a
+specific closure multiplier. This note constructs that multiplier on
+the regular-total eigenvalue cover, including its scheme meaning and
+full-twist transformation. The same distinction has an exact quantum
+form: the full twist acts trivially by conjugation on the actual
+degree-preserving observable algebra but remains a central insertion
+in the original pointed source, with its meridian normal intact.
+
+The complete directs are S, the finite trace separator; W, the actual
+full-twist calculation; and R, the actual reduced pointed source.
+The closure-coordinate and group calculations are proved below.
+No original geometric integration coefficient is asserted.
+
+## 1. The ordered convention and the character-fixed locus
+
+Let \(H=(H_1,\ldots,H_m)\), \(m\ge2\), be an ordered tuple in
+
+\[
+ SL_2(\mathbb C)^m,\qquad P=H_m\cdots H_1.
+ \tag{1}
+\]
+
+Use the inverse-Hurwitz convention of S's operator conjugation:
+
+\[
+ \sigma_i(H_i,H_{i+1})
+   =(H_{i+1},H_{i+1}H_iH_{i+1}^{-1}).
+ \tag{2}
+\]
+
+Every such move preserves \(P\). A word \(\beta\) in these moves and
+their inverses denotes this specified tuple transformation. This is
+the observable convention; Section 3 explicitly records the opposite
+physical point convention.
+
+Work on one of S's irreducible trace-Gram charts. Concretely, either
+
+\[
+ (B_0,B_1,B_2,B_3)=(I,H_a,H_b,H_aH_b)
+ \quad\hbox{or}\quad (I,H_a,H_b,H_c)
+ \tag{3}
+\]
+
+has invertible Gram matrix \(G_{\nu\eta}=\operatorname{tr}(B_\nu B_\eta)\).
+These charts cover irreducible complex tuples. Keep the single, pair,
+and oriented triple traces of S, with their fixed order. Equality of
+all these traces for \(H\) and \(\beta H\) is called character
+fixedness here; it does not mean equality of the ordered matrices.
+
+S's explicit Gram reconstruction proves, also over a complex local
+Artin ring, that character fixedness is equivalent to the existence
+of an invertible matrix \(C\) with
+
+\[
+             (\beta H)_i=C H_i C^{-1}\quad(1\le i\le m).
+ \tag{4}
+\]
+
+For clarity, the reconstructed map sends a matrix basis in (3) to
+its counterpart and preserves its multiplication table. The images
+of matrix units then give a basis in which this algebra map is
+conjugation. Since the \(H_i\) generate the full matrix algebra on
+the chart, their common commutant is precisely the scalars, over
+the same local ring. Thus the solutions \(C\) form an invertible
+scalar torsor: the projective matrix is unique, while an actual
+\(GL_2\) representative requires a local choice. We do not declare
+a canonical \(SL_2\) lift or a global choice of its sign.
+
+Taking the ordered product in (4) and using preservation of (1)
+gives
+
+\[
+                              CP=PC.
+ \tag{5}
+\]
+
+Thus regularity of \(P\) leaves its one-dimensional projective
+centralizer; irreducibility alone has not removed this closure datum.
+
+## 2. An explicit closure coordinate, including nilpotent directions
+
+Pass to the specified eigenvalue cover
+
+\[
+ k^2-\operatorname{tr}(P)k+1=0,\qquad k-k^{-1}\ne0.
+ \tag{6}
+\]
+
+The two spectral idempotents are
+
+\[
+ e_k=\frac{P-k^{-1}I}{k-k^{-1}},\qquad
+ e_{k^{-1}}=I-e_k.
+ \tag{7}
+\]
+
+They are rank-one idempotents also over the local Artin rings under
+consideration. By (5),
+
+\[
+ C=c_+e_k+c_-e_{k^{-1}},\qquad
+ c_+=\operatorname{tr}(Ce_k),\quad
+ c_-=\operatorname{tr}(Ce_{k^{-1}}).
+ \tag{8}
+\]
+
+Both coefficients are units because \(C\) is invertible. Their ratio
+is independent of the choice of representative of the intertwiner
+line. Define the marked closure multiplier by
+
+\[
+ \boxed{\quad
+ z_\beta=\frac{c_+}{c_-}
+ =\frac{\operatorname{tr}(PC)-k^{-1}\operatorname{tr}C}
+        {k\operatorname{tr}C-\operatorname{tr}(PC)}.
+ \quad} \tag{9}
+\]
+
+The displayed denominator is the unit \((k-k^{-1})c_-\).
+Changing the eigenvalue mark \(k\leftrightarrow k^{-1}\) replaces
+\(z_\beta\) by its reciprocal.
+
+On the character-fixed locus the literal ordered closure is exactly
+
+\[
+                    \beta H=H\quad\Longleftrightarrow\quad z_\beta=1.
+ \tag{10}
+\]
+
+Indeed \(z_\beta=1\) makes \(C\) scalar in (8), and hence (4) is
+literal equality. Conversely literal equality makes \(C\) commute
+with the full matrix algebra, so it is scalar. This proof works
+over local Artin rings, not only on reduced complex points.
+
+There is also an elementary ideal-level check. The differences
+\((\beta H)_i-H_i\), multiplied by the unit \(C\), are the
+commutators \([C,H_i]\). Product rules express \([C,B_\nu]\) in
+their generated ideal. The inverse basis map in (3) expresses
+ordinary matrix units in the \(B_\nu\), so the same ideal contains
+the entries measuring the nonscalar part of \(C\). Using (8), this
+is precisely the ideal generated by \(c_+-c_-\), or equivalently
+by \(z_\beta-1\). The converse inclusion follows directly from
+(8). Thus (10) retains the infinitesimal closure equations.
+
+Mixed traces give a coordinate-free finite test for the same
+literal equations:
+
+\[
+ r_{i\nu}(H)
+   =\operatorname{tr}\bigl(((\beta H)_i-H_i)B_\nu\bigr),
+ \qquad 1\le i\le m,\quad0\le\nu\le3.
+ \tag{11}
+\]
+
+The Gram inverse shows that their simultaneous vanishing is
+equivalent to all matrix differences being zero, over the same
+local rings. Both the transformed and untransformed matrices occur
+in (11). These are not supplied merely by requiring
+\(f(H)=f(\beta H)\) for every invariant trace function \(f\).
+Section 3 gives a direct test of that distinction. No quantum
+closed-source annihilation row for a lift of (11) is asserted.
+
+## 3. Full twists and the retained stable letter
+
+Apply positions \(1,2,\ldots,m-1\) successively in (2), and denote
+the resulting full pass by \(\delta\). Direct substitution gives
+
+\[
+ \delta(H)=(H_2,\ldots,H_m,P H_1P^{-1}).
+ \tag{12}
+\]
+
+The product remains \(P\) throughout. Repeating the pass \(m\)
+times therefore gives
+
+\[
+ \Gamma H=P H P^{-1},\qquad \Gamma=\delta^m.
+ \tag{13}
+\]
+
+In the braid convention of S, \(\delta=\sigma_1\cdots\sigma_{m-1}\)
+and \(\Gamma=\Delta_m^2\). The latter is the elementary braid-word
+identity obtained by moving consecutive full passes into the two
+staircase words for \(\Delta_m\), using the adjacent braid relation
+and the commutation of nonadjacent generators. It is the same
+positive full twist used in W.
+
+For \(\beta_n=\Gamma^n\beta\), equations (4),(5),(13) give the
+representative \(C_n=P^n C\), hence
+
+\[
+ z_{\beta_n}=k^{2n}z_\beta,\qquad
+       \beta_nH=H\quad\Longleftrightarrow\quad k^{2n}z_\beta=1.
+ \tag{14}
+\]
+
+Every simultaneous-conjugation invariant function has exactly the
+same pullback by \(\beta_n\) as by \(\beta\). Their invariant
+character-fixed ideals are consequently identical. Nevertheless
+(14) changes the marked literal closure equation. For example,
+with \(\beta\) the identity, its closure is automatic; for
+\(\Gamma^n\) it requires \(P^n\) to be scalar. At a regular \(P\)
+with \(k^{2n}\ne1\) this fails. This is a tuple-level test on the
+actual braid action, not a claim about any particular knot.
+The full twist has identity permutation, so multiplying by it
+does not change the component permutation of a braid word.
+
+The group-theoretic interpretation can be stated without a
+geometric or peripheral identification. Let \(\mathbb F_m\) have
+generators \(h_i\), put \(p=h_m\cdots h_1\), and take the
+automorphism \(\beta\) specified by (2). Form
+
+\[
+ G_\beta=\langle h_1,\ldots,h_m,t\mid
+                 t h_i t^{-1}=\beta(h_i)\rangle.
+ \tag{15}
+\]
+
+Because \(\beta(p)=p\), this group has \([t,p]=1\).
+An irreducible tuple on the character-fixed locus extends
+projectively to (15) with stable letter \([C]\); its projective
+stable letter is unique. Imposing the additional relation
+\(tp^n=1\) is precisely
+
+\[
+                              z_\beta k^{2n}=1.
+ \tag{16}
+\]
+
+For a chosen \(SL_2\) lift, one must retain the additional scalar
+sign: (16) gives \(CP^n=\pm I\) after determinant normalization,
+whereas the written relation requires \(+I\). Locally the sign
+can be chosen if the stable-letter lift is not already marked.
+No identification of an unspecified stable letter with a
+preferred knot longitude, or of (16) with a knot A-polynomial,
+is part of this statement.
+
+The physical point-map convention in R is contravariant to (2):
+its positive adjacent move is
+\((H_i^{-1}H_{i+1}H_i,H_i)\). In that convention the positive full
+twist acts by \(P^{-1}\)-conjugation. Accordingly the physical
+point multiplier changes by \(k^{-2n}\), and its literal closure
+condition is \(z_\beta=k^{2n}\). Equations (14)--(16) use the
+displayed inverse-Hurwitz convention throughout; the two signs
+must not be interchanged without this conversion.
+
+## 4. Actual quantum observables and the twisted pointed source
+
+Fix \(N\ge2\), \(d=N-1\), \(q=e^{\pi i/N}\), \(Q=q^2\),
+\(M=e^\mu\), and \(x=-M/q\). Let \(V_N(M)^{\otimes m}\) be the
+original finite balanced tensor module. Its ordered totals are
+
+\[
+ K_{AB}=K_AK_B,\quad E_{AB}=E_AK_B+E_B,\quad
+ F_{AB}=F_A+K_A^{-1}F_B.
+ \tag{17}
+\]
+
+Let \(\mathscr C_N(M)\) denote actual whole-meridian families in
+its total \(E,F,K\) commutant, and \(\mathscr C_N^{\deg}(M)\) the
+subalgebra that also preserves the integer physical occupation
+sum. This degree is not taken
+modulo \(N\). S constructs the finite separator observables
+
+\[
+ \mathcal O_I=\operatorname{tr}_q(H_{i_s}\cdots H_{i_1})
+       =\operatorname{Ad}_{R_{\tau_I}}\Omega_{[s]},\quad s\le3.
+ \tag{18}
+\]
+
+Here S's based quantum matrices are defined by
+\[
+ L_i^+=\begin{pmatrix}K_i&qE_i\\0&1\end{pmatrix},\quad
+ L_i^-=\begin{pmatrix}1&0\\-K_iF_i&K_i\end{pmatrix},\quad
+ H_i=(L_{i-1}^-\cdots L_1^-)^{-1}(L_i^-)^{-1}L_i^+
+                                      (L_{i-1}^-\cdots L_1^-).
+\]
+The empty prefix is the identity,
+\(\operatorname{tr}_q A=qA_{11}+q^{-1}A_{22}\), and
+\(\Omega_{[s]}=F_{[s]}E_{[s]}+qK_{[s]}+q^{-1}K_{[s]}^{-1}\).
+All inverses in this displayed definition are triangular matrix
+inverses with Laurent-polynomial entries.
+Let \(\mathscr O_N\) be the unital algebra generated by these
+block Casimirs and all their actual braid conjugates. Each
+generator lies in \(\mathscr C_N^{\deg}\), as does every product.
+The algebra is stable under every braid conjugation. For any
+fixed braid and fixed observable word, S's finite Hurwitz
+matrix formulas give a Laurent expression of degree bounded
+independently of \(N\). At \(M=1\), S computes its bounded
+observable symbols as the corresponding classical traces.
+This does not assert a uniform meridian-normal symbol theorem:
+the finite lowering endpoint row must be retained away from
+\(M=1\).
+
+Let \(W=W_\beta(M)\) be an actual braid operator with all its
+crossing scalars. The original pointed source of R is
+
+\[
+ \Phi_M(X)=\operatorname{Tr}\bigl((P_0\otimes K_{\rm r}^{1-N})X\bigr),
+ \qquad \lambda_W(a)=\Phi_M(aW).
+ \tag{19}
+\]
+
+The head basis is \(w_0,\ldots,w_d\), \(P_0\) projects onto \(w_0\),
+and the subscript \({\rm r}\) denotes the ordered remaining heads
+\(2,\ldots,m\). Set \(i_0v=w_0\otimes v\), let \(p_0\) extract that
+coefficient, and let \(L_1w_a=w_{a-1}\) with \(L_1w_0=0\).
+With \(f_j=\prod_{a=1}^j(1-Q^a)\), \(f_0=1\), the actual prefix is
+\(S_m=\sum_{j=0}^d(x^{-1}L_1F_{\rm r})^j/f_j\).
+Thus every prefix term and every endpoint below is finite.
+
+For actual total intertwiners it is a trace as a meridian germ.
+Indeed R's algebra map \(\mathcal B(X)=p_0S_m^{-1}Xi_0\) gives
+
+\[
+ \Phi_M(X)=\operatorname{Tr}_{\rm r}(D(M)\mathcal B(X)),\qquad
+ D(M)=\frac{D_N(M)}{D_N(MK_{\rm r})},\qquad
+ D_N(z)=\frac{z^N-z^{-N}}{z-z^{-1}}.
+ \tag{20}
+\]
+
+The images commute with \(K_{\rm r}\), hence with \(D(M)\).
+Ordinary trace cyclicity proves the assertion generically;
+analyticity of the original finite expression (19) extends it
+through completeness. Therefore
+
+\[
+ \boxed{\quad
+ \lambda_W\bigl(ab-b\operatorname{Ad}_W(a)\bigr)=0
+       \quad(a,b\in\mathscr O_N).
+ \quad}\tag{21}
+\]
+
+All insertions here are whole-meridian intertwiners. Their
+commutators with the total \(E,F,K\) vanish identically, so
+there is no omitted forced Ward-current term. This statement
+does not extend (21) to arbitrary nonintertwining shape matrices.
+
+## 5. The full twist is still present in the original source
+
+Write \(L=m(m-1)\), and normalize the actual positive full twist by
+
+\[
+                   Z_m(M)=\kappa(M)^{-L}W_\Gamma(M).
+ \tag{22}
+\]
+
+W proves directly from the capped crossing matrices that, for
+generic \(M\), every highest string of exact highest degree \(j\)
+has full-twist scalar
+
+\[
+                        z_j(M)=x^{-2mj}Q^{j(j-1)}.
+ \tag{23}
+\]
+
+It is the same scalar on every multiplicity copy. In a fixed
+physical degree \(T\), the possible labels satisfy
+
+\[
+ \max(0,T-d)\le j\le\min(T,(m-1)d).
+ \tag{24}
+\]
+
+There are at most \(N\) consecutive labels. Their total Casimir
+scalars \(q x^m Q^{-j}+q^{-1}x^{-m}Q^j\) are generically
+distinct: equality identically in \(M\)
+would force equality of their \(Q^j\), and the interval (24)
+contains no two labels differing by \(N\). Every member of
+\(\mathscr C_N^{\deg}\) preserves these Casimir subspaces.
+Equation (23), including its multiplicity assertion, thus gives
+
+\[
+                         [Z_m,a]=0\qquad(a\in\mathscr C_N^{\deg}).
+ \tag{25}
+\]
+
+This is an equality of actual analytic finite matrix families and
+continues through all meridian collisions, including their
+Jordan and normal terms. The argument applies to their whole
+meridian lifts, not to a root-only operator without a supplied
+lift. It is not a claim on arbitrary degree-mixing members of
+the full commutant: the scalars at
+\(j+N\) and \(j\) differ by \(M^{-2mN}\).
+
+In particular the twists in (21) for \(W\) and \(Z_m^nW\) are
+identical on \(\mathscr O_N\), while their actual functionals obey
+
+\[
+ \lambda_{Z_m^nW}(a)=\lambda_W(aZ_m^n),\qquad
+ \Phi_M(aW_{\Gamma^n\beta})
+      =\kappa(M)^{nL}\Phi_M(aZ_m^nW_\beta).
+ \tag{26}
+\]
+
+These hold for every integer \(n\). The central insertion is a
+unit, not an omitted scalar of the whole tensor space. Its
+generic logarithmic-meridian slope on the \(j\) string is
+\(-2mj\). At collisions the exact matrices, not separate singular
+projectors, give the continuation. For example differentiation
+of (25) retains
+
+\[
+                 [Z_m'(0),a(0)]+[Z_m(0),a'(0)]=0.
+ \tag{27}
+\]
+
+The first normal of the source is also explicit in (20). Set
+\(K_{\rm r}(M)=M^{m-1}K_0\), \(K_0^N=\epsilon I\), where
+\(\epsilon=(-1)^{(N+1)(m-1)}\). Expansion of the finite ratio gives
+
+\[
+ D(M)=\frac{D_{-1}}\mu+D_0+O(\mu),\qquad
+ D_{-1}=\frac{K_0-K_0^{-1}}{2\epsilon m},\quad
+ D_0=\frac{K_0+K_0^{-1}}{2\epsilon}.
+ \tag{28}
+\]
+
+For \(T(M)=\mathcal B(a)\mathcal B(Z_m)^n\mathcal B(W)=T_0+\mu T_1+\cdots\),
+the original analyticity implies
+
+\[
+ \operatorname{Tr}(D_{-1}T_0)=0,\qquad
+ \Phi_1(aZ_m^nW)=\operatorname{Tr}(D_0T_0+D_{-1}T_1).
+ \tag{29}
+\]
+
+Here \(\Phi_1\) means evaluation at \(M=1\), not differentiation.
+The coefficient \(T_1\) includes all moving prefix matrices and
+all derivatives of the displayed factors. Differentiating the
+original source generally requires the next coefficient as well.
+Thus the central unit in (26) retains its true first-normal role.
+
+R's zero-framing factor is \(\alpha^{-\operatorname{wr}(\beta)}\),
+where \(\alpha=\kappa x^{-d}\). If \(\Xi_N(M)\) denotes any same
+prescribed outside dimension line, put
+
+\[
+ \Psi_\beta(a)=\Xi_N(M)\alpha(M)^{-\operatorname{wr}(\beta)}
+                         \Phi_M(aW_\beta).
+ \tag{30}
+\]
+
+Then (26) yields the exact normalized identity
+
+\[
+              \Psi_{\Gamma^n\beta}(a)
+                  =x^{dnL}\Psi_\beta(aZ_m^n).
+ \tag{31}
+\]
+
+The external line on the two sides is the same specified line;
+no rate or derivative of it has been discarded. The zero-framed
+central eigenvalue is \(x^{dL-2mj}Q^{j(j-1)}\), with true
+logarithmic-meridian slope \(dL-2mj\).
+
+## 6. What the twisted relation does and does not determine
+
+At a fixed level, on the full commutant, multiplication on the
+right by \(W\) sends a twisted commutator to an ordinary one:
+
+\[
+              (ab-bWaW^{-1})W=[a,bW].
+ \tag{32}
+\]
+
+It therefore identifies the corresponding vector-space
+commutator quotients. This is not a multiplicative quotient,
+and need not preserve a uniform bounded-degree filtration as
+\(N\) varies. The same argument on a proper observable algebra
+requires \(W\) and \(W^{-1}\) to belong to that algebra; no such
+bounded-degree assertion is made here. Consequently (32) does
+not rule out a useful associated-graded fixed-character module.
+
+What is explicit is its missing marked condition. On a regular
+irreducible trace chart, fixed character gives (4), while literal
+closure additionally requires (9)--(10), or the mixed equations
+(11). Full twists leave every invariant fixed equation unchanged
+but change that condition by (14). The exact quantum source
+retains that additional central insertion through (26)--(31), even
+though its observable automorphism is unchanged. A nonconstant
+central operator alone does not prove different evaluated source
+values for a particular word; no such assertion is needed here.
+These statements do not construct a quantum annihilation row for \(z_\beta-1\),
+a contour realizing the literal closure, or a nonzero geometric
+coefficient of the original source. Meridian first jets and
+semiclassical expansions are not identified.
+
+## Complete proof-source pins
+
+* S: notes/research_finite_trace_separator_and_opposite_characteristic.md,
+  SHA256 1d5abd4e14df7aa32f17405e27543a35d815c130903ed379ab9c60bec2eef0f6
+  (561 lines).
+* W: notes/research_actual_full_twist_highest_multiplicities.md,
+  SHA256 2014de44e1ab880c61c6d1017d6f6a4bf3ed18cd6065e1fcf1fe84d1c8e7090f
+  (453 lines).
+* R: notes/research_actual_reduced_braid_source.md,
+  SHA256 9a472ef27b08305a519ff1f24b6d2b909e63a0acbdc49b3a29e001c52a2f2243
+  (330 lines).
+
+All three complete directs were freshly read nontruncated in the
+active author sequence. The initial truncated S attempt was not
+counted; its three complete covering chunks were read afterward.
+Only written mathematics and text/hash operations were used.
+Frozen and public files were not changed.

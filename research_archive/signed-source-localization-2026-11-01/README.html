@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Bounds and finite transfer for the complementary contribution</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+<style id="research-reader-style">
+body {max-width:52rem; margin:2.5rem auto; padding:0 1.25rem; font-size:18px; line-height:1.6;}
+h1 {font-size:2rem;line-height:1.2;} h2 {margin-top:2.25rem;line-height:1.25;}
+p, li, a {overflow-wrap:anywhere;} pre {overflow-x:auto;}
+.display-math {overflow-x:auto;max-width:100%;margin:1.25em 0;padding:.2em 0;}
+.display-math math {min-width:max-content;margin-inline:auto;}
+@media(max-width:600px) {body{margin:1.5rem auto;padding:0 1rem;font-size:17px;}}
+</style>
+</head>
+<body>
+
+<h1
+id="bounds-and-finite-transfer-for-the-complementary-contribution">Bounds
+and finite transfer for the complementary contribution</h1>
+<p>This archive records the research following public commit <a
+href="https://github.com/sashakolpakov/murakamis_dream/commit/d8e0449891654ab1178b4f8e5b960045e04ba737"><code>d8e0449</code></a>.
+It contains two quantitative bounds, an exact transfer reduction, and a
+check of a possible geometric route. These results reduce parts of the
+remaining problem. They do not establish the volume conjecture for a new
+family of knots.</p>
+<p>The published manuscript and guide are unchanged by this archive. The
+<a
+href="https://sashakolpakov.github.io/murakamis_dream/guide/methods.html">guide’s
+methods chapter</a> explains the existing approaches, and its <a
+href="https://sashakolpakov.github.io/murakamis_dream/guide/notation.html">notation
+chapter</a> defines their objects. The former Sphinx pages redirect to
+the guide.</p>
+<h2 id="the-quantity-that-still-needs-to-be-bounded">The quantity that
+still needs to be bounded</h2>
+<p>Fix one of the marked diagrams to which the exact homogeneous source
+formula applies. Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>
+be its number of crossing regions and let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+be the quantum level. Its spectral variables are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold-italic">𝝈</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>σ</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>σ</mi><mi>r</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mn>2</mn><mo>,</mo><mn>2</mn><msup><mo stretchy="false" form="postfix">]</mo><mi>r</mi></msup></mrow><annotation encoding="application/x-tex">\boldsymbol{\sigma}=(\sigma_1,\ldots,\sigma_r)\in[-2,2]^r</annotation></semantics></math>.
+The source polynomial
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝝈</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">S_N(\boldsymbol{\sigma})</annotation></semantics></math>
+is obtained by multiplying the local four-variable polynomials and
+extracting their prescribed shared face coefficient. A face has one
+coefficient target, even when it belongs to several local factors.</p>
+<p>Set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">d=N-1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mo stretchy="false" form="prefix">⌊</mo><mi>d</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo></mrow><annotation encoding="application/x-tex">h=\lfloor d/2\rfloor</annotation></semantics></math>.
+Each local polynomial has two distinguished middle exponents, denoted
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>.
+Retaining only monomials with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>,</mo><mi>c</mi><mo>≤</mo><mi>h</mi></mrow><annotation encoding="application/x-tex">a,c\le h</annotation></semantics></math>
+in every factor gives a second shared coefficient
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>N</mi></msub><annotation encoding="application/x-tex">C_N</annotation></semantics></math>.
+This is the contribution called <strong>CROSS</strong> in the existing
+formulas. The letters name a precise projection of the original source;
+they do not define a second knot invariant. Write
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mi>N</mi></msub><mo>=</mo><msub><mi>S</mi><mi>N</mi></msub><mo>−</mo><msub><mi>C</mi><mi>N</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+D_N=S_N-C_N.
+</annotation></semantics></math></div></p>
+<p>The published geometric-contribution theorem identifies the
+exponential rate of the selected contribution after the original filling
+operations with the volume of the resulting knot complement. It also
+proves that this contribution is nonzero. To infer the same rate for the
+whole invariant, the contribution of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>D</mi><mi>N</mi></msub><annotation encoding="application/x-tex">D_N</annotation></semantics></math>
+must still be controlled. For the broader class of unchanged
+matched-sphere diagrams, that estimate is open.</p>
+<p>One sufficient estimate would be
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mi mathvariant="normal">sup</mi><mrow><mi mathvariant="bold-italic">𝝈</mi><mo>∈</mo><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mn>2</mn><mo>,</mo><mn>2</mn><msup><mo stretchy="false" form="postfix">]</mo><mi>r</mi></msup></mrow></munder><mo stretchy="false" form="prefix">|</mo><msub><mi>D</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝝈</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mspace width="-0.167em"></mspace><mo minsize="120%" maxsize="120%" stretchy="true" form="prefix">(</mo><mi>N</mi><mo stretchy="false" form="prefix">(</mo><mi mathvariant="normal">Φ</mi><mo>−</mo><mi>η</mi><mo>+</mo><mi>o</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo minsize="120%" maxsize="120%" stretchy="true" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mi mathvariant="normal">Φ</mi><mo>=</mo><mfrac><mrow><mrow><mi mathvariant="normal">Vol</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mn>2</mn><mi>π</mi></mrow></mfrac><mo>,</mo><mspace width="1.0em"></mspace><mi>η</mi><mo>&gt;</mo><mn>0</mn><mo>,</mo></mrow><annotation encoding="application/x-tex">
+\sup_{\boldsymbol{\sigma}\in[-2,2]^r}|D_N(\boldsymbol{\sigma})|
+\le \exp\!\bigl(N(\Phi-\eta+o(1))\bigr),
+\qquad
+\Phi=\frac{\operatorname{Vol}(Y)}{2\pi},\quad \eta&gt;0,
+</annotation></semantics></math></div> where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>
+is the augmented complement before the crossing circles are filled. The
+previously proved filling bound would then transfer this strict gap to
+independently sufficiently long, fixed signed twists. The strict gap
+matters: the volume of the filled knot complement is smaller than the
+limiting augmented volume. An estimate merely at rate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="normal">Φ</mi><annotation encoding="application/x-tex">\Phi</annotation></semantics></math>
+does not suffice.</p>
+<h2 id="a-fixed-interval-near-the-positive-spectral-endpoint">A fixed
+interval near the positive spectral endpoint</h2>
+<p>The first result replaces an estimate at the single endpoint
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">+2</annotation></semantics></math>
+by an estimate on an interval whose width is independent of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>.
+Put
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>δ</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">[</mo><mn>2</mn><mo>−</mo><mi>δ</mi><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">]</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>A</mi><mi>δ</mi></msub><mo>=</mo><mn>1</mn><mo>+</mo><msup><mi>δ</mi><mrow><mi>−</mi><mn>1</mn><mi>/</mi><mn>2</mn></mrow></msup><mo>,</mo><mspace width="2.0em"></mspace><mi>ω</mi><mo stretchy="false" form="prefix">(</mo><mi>δ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msqrt><mi>δ</mi></msqrt><mo minsize="120%" maxsize="120%" stretchy="true" form="prefix">(</mo><mn>2</mn><mo>+</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mn>2</mn><mi>/</mi><msqrt><mi>δ</mi></msqrt><mo stretchy="false" form="postfix">)</mo><mo minsize="120%" maxsize="120%" stretchy="true" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+I_\delta=[2-\delta,2],\qquad
+A_\delta=1+\delta^{-1/2},\qquad
+\omega(\delta)=\sqrt{\delta}\bigl(2+\log(1+2/\sqrt{\delta})\bigr),
+</annotation></semantics></math></div> where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>δ</mi><mo>≤</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0&lt;\delta\le1</annotation></semantics></math>.
+Every coefficient of an original local numerator satisfies
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mi mathvariant="normal">sup</mi><mrow><mi>σ</mi><mo>∈</mo><msub><mi>I</mi><mi>δ</mi></msub></mrow></munder><mo stretchy="false" form="prefix">|</mo><mtext mathvariant="normal">coefficient</mtext><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><msub><mi>A</mi><mi>δ</mi></msub><msup><mi>N</mi><mn>3</mn></msup><msup><mi>e</mi><mrow><mi>N</mi><mi>ω</mi><mo stretchy="false" form="prefix">(</mo><mi>δ</mi><mo stretchy="false" form="postfix">)</mo></mrow></msup><mspace width="2.0em"></mspace><mrow><mtext mathvariant="normal">for </mtext><mspace width="0.333em"></mspace></mrow><mi>N</mi><mo>≥</mo><mi>π</mi><mi>/</mi><msqrt><mi>δ</mi></msqrt><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\sup_{\sigma\in I_\delta}|\text{coefficient}|
+\le A_\delta N^3 e^{N\omega(\delta)}
+\qquad\text{for }N\ge\pi/\sqrt{\delta}.
+</annotation></semantics></math></div> The useful feature is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ω</mi><mo stretchy="false" form="prefix">(</mo><mi>δ</mi><mo stretchy="false" form="postfix">)</mo><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\omega(\delta)\to0</annotation></semantics></math>
+as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\delta\to0</annotation></semantics></math>.</p>
+<p>The proof first combines the signed one-step and two-step paths in
+the local recurrence. An exact Green formula expresses the resulting
+polynomial in nonnegative perturbation parameters. A weighted norm then
+bounds its growth. Taking absolute values before combining those paths
+would lose the small rate. The proof retains the unused spectral
+factors, so it also applies at coincident roots.</p>
+<p>The corresponding part of the filling functional includes both values
+and derivatives at repeated roots. Markov’s polynomial inequality on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>I</mi><mi>δ</mi></msub><annotation encoding="application/x-tex">I_\delta</annotation></semantics></math>
+bounds these derivatives with only a polynomial cost in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>.
+Consequently, the part of the original filling sum with all its spectral
+coordinates in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>I</mi><mi>δ</mi></msub><annotation encoding="application/x-tex">I_\delta</annotation></semantics></math>
+is exponentially smaller than the geometric contribution when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>
+is sufficiently small and the fixed twists are sufficiently long.</p>
+<p>The <a
+href="proofs/md-fixed-spectrum-positive-end-continuant-and-source-corner.html">complete
+interval proof</a> also shows why a polynomial bound on a fixed interval
+would be false: some individual local coefficients grow exponentially at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><mn>2</mn><mo>−</mo><mi>δ</mi></mrow><annotation encoding="application/x-tex">\sigma=2-\delta</annotation></semantics></math>.
+The theorem proves a small exponential rate, not a polynomial bound.</p>
+<h2 id="mixed-spectral-regions">Mixed spectral regions</h2>
+<p>The same argument works when only some coordinates are near
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">+2</annotation></semantics></math>.
+An elementary estimate bounds every local coefficient on the entire
+interval
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mn>2</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[-2,2]</annotation></semantics></math>
+by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>B</mi><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">B^{N-1}</annotation></semantics></math>,
+where
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mn>4</mn><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><msqrt><mn>2</mn></msqrt><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+B=4(1+\sqrt2).
+</annotation></semantics></math></div> Combining this bound with the interval
+estimate gives, for any specified set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>J</mi><annotation encoding="application/x-tex">J</annotation></semantics></math>
+of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+coordinates,
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mi mathvariant="normal">sup</mi><mtable><mtr><mtd columnalign="center" style="text-align: center"><mrow><msub><mi>σ</mi><mi>e</mi></msub><mo>∈</mo><msub><mi>I</mi><mi>δ</mi></msub><mspace width="0.222em"></mspace><mo stretchy="false" form="prefix">(</mo><mi>e</mi><mo>∈</mo><mi>J</mi><mo stretchy="false" form="postfix">)</mo></mrow></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mrow><msub><mi>σ</mi><mi>e</mi></msub><mo>∈</mo><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mn>2</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">]</mo><mspace width="0.222em"></mspace><mo stretchy="false" form="prefix">(</mo><mi>e</mi><mo>∉</mo><mi>J</mi><mo stretchy="false" form="postfix">)</mo></mrow></mtd></mtr></mtable></munder><mo stretchy="false" form="prefix">|</mo><msub><mi>D</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mn>2</mn><msubsup><mi>A</mi><mi>δ</mi><mi>k</mi></msubsup><msup><mi>N</mi><mrow><mn>3</mn><mi>r</mi><mo>+</mo><mn>3</mn><mi>k</mi></mrow></msup><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mspace width="-0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo minsize="120%" maxsize="120%" stretchy="true" form="prefix">[</mo><mi>k</mi><mi>ω</mi><mo stretchy="false" form="prefix">(</mo><mi>δ</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mo>−</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><mi mathvariant="normal">log</mi><mi>B</mi><mo minsize="120%" maxsize="120%" stretchy="true" form="postfix">]</mo><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\sup_{\substack{\sigma_e\in I_\delta\ (e\in J)\\
+                 \sigma_e\in[-2,2]\ (e\notin J)}}|D_N|
+\le
+2A_\delta^kN^{3r+3k}
+\exp\!\left(N\bigl[k\omega(\delta)+(r-k)\log B\bigr]\right).
+</annotation></semantics></math></div></p>
+<p>The finite filling sum can be partitioned according to which root
+coordinates belong to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>I</mi><mi>δ</mi></msub><annotation encoding="application/x-tex">I_\delta</annotation></semantics></math>.
+The same exponential rate bounds each specified part, including all its
+mixed derivatives. Thus, if
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mo>−</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>B</mi><mo>&lt;</mo><mi mathvariant="normal">Φ</mi><mo>,</mo></mrow><annotation encoding="application/x-tex">
+(r-k)\log B&lt;\Phi,
+</annotation></semantics></math></div> one can choose
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>
+so that the part with at least
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+coordinates near
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">+2</annotation></semantics></math>
+is strictly smaller than the geometric contribution after sufficiently
+long fixed fillings. The <a
+href="proofs/md-fixed-spectrum-mixed-region-bound.html">mixed-region
+proof</a> gives the constants and the original filling formula.</p>
+<p>This removes a union of regions from the remaining problem. Tuples
+with fewer than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+coordinates in the interval remain uncontrolled by this argument.</p>
+<h2 id="a-finite-transfer-reduction-for-even-bipyramids">A finite
+transfer reduction for even bipyramids</h2>
+<p>The second approach preserves the signs and shared face constraints
+in a cyclic matrix product. Here the diagram is an opposite-offset
+bipyramid with an even equator of size
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>≥</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">m\ge6</annotation></semantics></math>.
+The construction is specific to that class; it has not yet been extended
+to all matched spheres.</p>
+<p>A transfer state records two partial face loads
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>,</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">u,v</annotation></semantics></math>,
+each between zero and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>,
+together with the current position around the equator. The matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
+advances this position by one. Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+project onto the states that enforce the local conditions defining
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>N</mi></msub><annotation encoding="application/x-tex">C_N</annotation></semantics></math>,
+and put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo>=</mo><mi>I</mi><mo>−</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">Q=I-P</annotation></semantics></math>.
+The new support theorem is
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>Q</mi><mi>L</mi><mi>Q</mi><msup><mo stretchy="false" form="postfix">)</mo><mrow><mn>3</mn><mi>m</mi></mrow></msup><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+(QLQ)^{3m}=0.
+</annotation></semantics></math></div> The exponent depends on the diagram and
+is independent of the quantum level and the spectral parameters.</p>
+<p>The reason is a capacity constraint. A monomial outside the selected
+local range has exactly one middle exponent greater than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>.
+Two such high exponents cannot enter the same ordinary face, whose
+target is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>.
+The protected face has target zero and accepts none. A complete run
+through the north factors therefore contains a factor in the selected
+range. Repeating the run forces more such factors than a path confined
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>
+can accommodate. This proves nilpotence before evaluating any
+coefficients.</p>
+<p>Writing
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mi>A</mi></mtd><mtd columnalign="center" style="text-align: center"><msub><mi>B</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>C</mi><mn>1</mn></msub></mtd><mtd columnalign="center" style="text-align: center"><mi>D</mi></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
+L=\begin{pmatrix}A&amp;B_1\\ C_1&amp;D\end{pmatrix}
+</annotation></semantics></math></div> relative to the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>
+spaces, and using a formal variable
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>
+to count transfer steps, the matrix
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>z</mi><mn>2</mn></msup><msub><mi>B</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo>−</mo><mi>z</mi><mi>D</mi><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>−</mi><mn>1</mn></mrow></msup><msub><mi>C</mi><mn>1</mn></msub><mo>=</mo><msup><mi>z</mi><mn>2</mn></msup><msub><mi>B</mi><mn>1</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mrow><mn>3</mn><mi>m</mi><mo>−</mo><mn>1</mn></mrow></munderover><msup><mi>z</mi><mi>j</mi></msup><msup><mi>D</mi><mi>j</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>C</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">
+z^2B_1(I-zD)^{-1}C_1
+=z^2B_1\left(\sum_{j=0}^{3m-1}z^jD^j\right)C_1
+</annotation></semantics></math></div> records a passage from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+through
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>
+and back. A Schur complement expresses the original
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>D</mi><mi>N</mi></msub><annotation encoding="application/x-tex">D_N</annotation></semantics></math>
+as a coefficient of a finite sum of these passages and the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>-transfer
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>.
+The <a
+href="proofs/md-shifted-cyclic-excursion-and-clock-reduction.html">transfer
+proof</a> gives the exact formula, phases, and coefficient targets.</p>
+<p>The Schur identity itself is general algebra. The additional theorem
+is the level-independent nilpotence of this particular projected
+transfer. Neither fact bounds the size of its entries. The next analytic
+step is to estimate the coupled passages at the geometric exponential
+rate, retaining their signs.</p>
+<p>The same note records a necessary correction to shifted
+integration-by-parts identities: shifted face targets require the larger
+range
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>u</mi><mo>≤</mo><mn>2</mn><mi>d</mi></mrow><annotation encoding="application/x-tex">0\le u\le2d</annotation></semantics></math>,
+and the common south-face coefficient must still be extracted. The
+original nilpotence argument cannot be reused after changing a face’s
+capacity without checking it again.</p>
+<h2 id="what-representation-rigidity-does-give">What representation
+rigidity does give</h2>
+<p>For one fixed complete hyperbolic knot complement
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>,
+boundary-parabolic representations have only finitely many signed
+volumes. The volume bound and its equality case therefore give a strict
+gap below
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">Vol</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{Vol}(X)</annotation></semantics></math>
+away from the geometric representation and its orientation reversal.
+These geometric facts are established in the literature. The <a
+href="proofs/md-filled-complement-representation-gap.html">representation
+note</a> spells out the finite-type and continuity argument, including
+trivial peripheral images, and records the relevant hypotheses.</p>
+<p>The primary coverage is <a
+href="https://arxiv.org/pdf/1111.2828v2">Garoufalidis–D.
+Thurston–Zickert, §1 and Theorem 1.8</a>, <a
+href="https://arxiv.org/pdf/0710.2049v2">Zickert, Definition 4.3 and
+Theorem 6.10</a>, and <a
+href="https://arxiv.org/pdf/math/0305275">Francaviglia, Theorems 5.1 and
+7.2</a>. The note distinguishes the signed volume from the real and
+imaginary parts of the complex regulator.</p>
+<p>The existing full critical-point equations of the original marked
+source produce representations of the knot group and the correct
+fundamental-class volume. The gap therefore applies to their
+nongeometric regular critical points. A maximum obtained by restricting
+some local exponents need not satisfy those full equations. This is the
+remaining limitation of using representation rigidity directly on
+separated parts of the source.</p>
+<p>The <a
+href="proofs/md-filled-complement-half-charge-obstruction.html">half-charge
+calculation</a> makes that limitation concrete. Keeping the exact
+omitted spectral factors changes a local Fourier charge from an integer
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℓ</mi><annotation encoding="application/x-tex">\ell</annotation></semantics></math>
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℓ</mi><mo>±</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\ell\pm\tfrac12</annotation></semantics></math>.
+It does not change the original prefactor, parity rule, or summation
+convention. The resulting equation cannot be identified with the
+original primitive filling relation merely by choosing another logarithm
+branch. No geometric interpretation or negligibility estimate for these
+isolated modes is asserted.</p>
+<h2 id="reproduction-and-preserved-evidence">Reproduction and preserved
+evidence</h2>
+<p>Run the finite checks from this directory with</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> reproduce.py</span></code></pre></div>
+<p>The continuant check requires NumPy and SymPy; the other two checks
+use the standard library. The runner writes to reproduction-output/ and
+compares the results with the saved records. It checks local matrix
+identities, direct shared coefficient extraction, transfer and Schur
+formulas, finite support graphs, shifted targets, and the exact
+half-charge products. These finite calculations do not replace the
+all-level proofs or prove an asymptotic gap.</p>
+<p>The evidence/originals/ directory preserves the original drafts,
+result files, and review records. Earlier versions of the representation
+and half-charge notes are retained there. The dependencies/ directory
+contains the preceding private algebraic notes, and
+evidence/public-inputs/ records the exact published dependencies. The
+readable copies under proofs/ change only local links. The manifest
+records file hashes.</p>
+<p>The obstruction examples remain part of the evidence. In particular,
+the previously proposed unshifted sewn current does not vanish, and the
+remainder at the
+all-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">-2</annotation></semantics></math>
+corner is positive at even levels. The latter has a polynomial lower
+witness; it does not contradict the desired exponential gap.</p>
+<p>The unresolved task is still quantitative: bound the rest of the
+original complementary contribution, either throughout the spectral cube
+or directly after the original filling operations. The results above
+provide exact objects and some controlled regions for that task.</p>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<h1
+id="why-the-old-message-bounds-do-not-by-themselves-enlarge-the-parent-disk">Why
+the old message bounds do not by themselves enlarge the parent disk</h1>
+<p>This is an obstruction to a proof shortcut, not a counterexample for
+an actual tangle. The larger conditional kernel estimate in
+<code>md-variable-local-volume-directed-budget.md</code> supplies extra
+information which is absent from the older three message assertions.</p>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><msup><mn>2</mn><mrow><mi>−</mi><mn>12</mn></mrow></msup></mrow><annotation encoding="application/x-tex">r=2^{-12}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>=</mo><msup><mn>2</mn><mrow><mi>−</mi><mn>18</mn></mrow></msup></mrow><annotation encoding="application/x-tex">c=2^{-18}</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><msup><mn>2</mn><mrow><mi>−</mi><mn>20</mn></mrow></msup></mrow><annotation encoding="application/x-tex">p=2^{-20}</annotation></semantics></math>.
+Restrict temporarily to levels divisible by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>⋅</mo><msup><mn>2</mn><mn>21</mn></msup></mrow><annotation encoding="application/x-tex">3\cdot2^{21}</annotation></semantics></math>.
+Put
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mn>2</mn></msup><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>B</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>w</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>N</mi><mi>/</mi><mn>3</mn></mrow></msup><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ w(u)=\sin^2(u/2),\qquad
+ B_N(u)=(1-w(u))^{N/3},
+ \tag{1}
+</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>e</mi><mrow><mi>−</mi><mn>4</mn><mi>c</mi><mi>N</mi><mi>p</mi></mrow></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><mi>w</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo></mrow><mi>p</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>N</mi><mi>p</mi><mi>/</mi><mn>2</mn></mrow></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><mn>1</mn><mo>−</mo><mi>w</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mn>1</mn><mo>−</mo><mi>p</mi></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>N</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mn>2</mn></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ G_N(u)=e^{-4cNp}
+       \left(\frac{w(u)}p\right)^{Np/2}
+       \left(\frac{1-w(u)}{1-p}\right)^{N(1-p)/2}.
+ \tag{2}
+</annotation></semantics></math> Both are even trigonometric
+polynomials, and their degrees are at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>/</mi><mn>2</mn><mo>&lt;</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">N/2&lt;N</annotation></semantics></math>.
+Equivalently they are canonical polynomials of degree less than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>2</mn><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">-2\cos u</annotation></semantics></math>,
+so this example stays inside the same finite polynomial space as an
+exact message.</p>
+<p>For real
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>u</mi><annotation encoding="application/x-tex">u</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>∈</mo><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">w\in[0,1]</annotation></semantics></math>.
+Weighted arithmetic-geometric mean gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>w</mi><mi>/</mi><mi>p</mi><msup><mo stretchy="false" form="postfix">)</mo><mi>p</mi></msup><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">)</mo><msup><mo stretchy="false" form="postfix">)</mo><mrow><mn>1</mn><mo>−</mo><mi>p</mi></mrow></msup><mo>≤</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ (w/p)^p((1-w)/(1-p))^{1-p}\le1.
+ \tag{3}
+</annotation></semantics></math> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>≤</mo><mn>2</mn><mi>p</mi></mrow><annotation encoding="application/x-tex">w\le2p</annotation></semantics></math>,
+(2) therefore has modulus at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><mi>−</mi><mn>2</mn><mi>c</mi><mi>N</mi><mi>w</mi></mrow></msup><annotation encoding="application/x-tex">e^{-2cNw}</annotation></semantics></math>.
+If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>≥</mo><mn>2</mn><mi>p</mi></mrow><annotation encoding="application/x-tex">w\ge2p</annotation></semantics></math>,
+write the negative logarithm in (3) as the relative entropy
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo stretchy="false" form="prefix">(</mo><mi>p</mi><mo stretchy="false" form="postfix">‖</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>p</mi><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>p</mi><mi>/</mi><mi>w</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">)</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ D(p\Vert w)=p\log(p/w)+(1-p)\log((1-p)/(1-w)).
+ \tag{4}
+</annotation></semantics></math> Its derivative is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>w</mi><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mi>w</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">(w-p)/(w(1-w))\ge1/2</annotation></semantics></math>
+in that range. Consequently
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo stretchy="false" form="prefix">(</mo><mi>p</mi><mo stretchy="false" form="postfix">‖</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><mo stretchy="false" form="prefix">(</mo><mi>w</mi><mo>−</mo><mn>2</mn><mi>p</mi><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">D(p\Vert w)\ge(w-2p)/2</annotation></semantics></math>,
+and the same bound for (2) follows since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>&lt;</mo><mn>1</mn><mi>/</mi><mn>8</mn></mrow><annotation encoding="application/x-tex">c&lt;1/8</annotation></semantics></math>.
+Also
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><msup><mi>e</mi><mrow><mi>−</mi><mi>N</mi><mi>w</mi><mi>/</mi><mn>3</mn></mrow></msup><mo>≤</mo><msup><mi>e</mi><mrow><mi>−</mi><mn>2</mn><mi>c</mi><mi>N</mi><mi>w</mi></mrow></msup></mrow><annotation encoding="application/x-tex">B_N(u)\le e^{-Nw/3}\le e^{-2cNw}</annotation></semantics></math>.
+Thus for any
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>λ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|\lambda_N|\le1</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>B</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><msub><mi>λ</mi><mi>N</mi></msub><msub><mi>G</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mspace width="1.0em"></mspace><mtext mathvariant="normal">satisfies</mtext><mspace width="1.0em"></mspace><mo stretchy="false" form="prefix">|</mo><msub><mi>F</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mn>2</mn><msup><mi>e</mi><mrow><mi>−</mi><mi>N</mi><mi>c</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mi>u</mi><mo stretchy="false" form="postfix">)</mo></mrow></msup><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>F</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ F_N(u)=B_N(u)+\lambda_NG_N(u)
+ \quad\text{satisfies}\quad
+ |F_N(u)|\le2e^{-Nc(1-\cos u)},\qquad F_N(0)=1.
+ \tag{5}
+</annotation></semantics></math></p>
+<p>On the complex disk
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>u</mi><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mn>2</mn><mi>r</mi></mrow><annotation encoding="application/x-tex">|u|\le2r</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>w</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><msup><mrow><mi mathvariant="normal">sinh</mi><mo>&#8289;</mo></mrow><mn>2</mn></msup><mi>r</mi><mo>&lt;</mo><mi>p</mi><mi>/</mi><mn>8</mn></mrow><annotation encoding="application/x-tex">|w(u)|\le\sinh^2r&lt;p/8</annotation></semantics></math>.
+Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mn>8</mn><mo>&gt;</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\log8&gt;2</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">)</mo><mo>&lt;</mo><mn>17</mn><mi>p</mi><mi>/</mi><mn>16</mn></mrow><annotation encoding="application/x-tex">p/(1-p)&lt;17p/16</annotation></semantics></math>,
+formula (2) gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>G</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><msup><mi>e</mi><mrow><mi>−</mi><mn>13</mn><mi>N</mi><mi>p</mi><mi>/</mi><mn>32</mn></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ |G_N(u)|\le e^{-13Np/32}.
+ \tag{6}
+</annotation></semantics></math> Furthermore
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>B</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><msup><mo stretchy="false" form="prefix">|</mo><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>≤</mo><msup><mi>e</mi><mrow><mi>N</mi><mi>p</mi><mi>/</mi><mn>21</mn></mrow></msup></mrow><annotation encoding="application/x-tex">|B_N(u)|^{-1}\le e^{Np/21}</annotation></semantics></math>.
+Hence
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mfrac><mrow><msub><mi>F</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><msub><mi>B</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><msup><mi>e</mi><mrow><mi>−</mi><mi>N</mi><mi>p</mi><mi>/</mi><mn>3</mn></mrow></msup><mo>,</mo><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">|</mo><mi>u</mi><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mn>2</mn><mi>r</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \left|\frac{F_N(u)}{B_N(u)}-1\right|
+             \le e^{-Np/3},\qquad |u|\le2r.
+ \tag{7}
+</annotation></semantics></math> Its phase is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mn>2</mn><mn>3</mn></mfrac><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msup><mi>h</mi><mo>″</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>−</mi><mfrac><mn>1</mn><mn>6</mn></mfrac><msup><mrow><mi mathvariant="normal">sec</mi><mo>&#8289;</mo></mrow><mn>2</mn></msup><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ h(u)=\frac23\log\cos(u/2),\qquad
+ h&#39;&#39;(u)=-\frac16\sec^2(u/2).
+ \tag{8}
+</annotation></semantics></math> On the old disk it satisfies the old
+phase class
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msup><mi>h</mi><mo>″</mo></msup><mo>+</mo><mn>1</mn><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>π</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>&lt;</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>π</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mn>20</mn></mrow><annotation encoding="application/x-tex">|h&#39;&#39;+1/(2\pi)|&lt;(1/(2\pi))/20</annotation></semantics></math>.
+For example the relative error at zero is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi><mi>/</mi><mn>3</mn><mo>−</mo><mn>1</mn><mo>&lt;</mo><mn>1</mn><mi>/</mi><mn>21</mn></mrow><annotation encoding="application/x-tex">\pi/3-1&lt;1/21</annotation></semantics></math>,
+and the additional error on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>u</mi><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mn>2</mn><mi>r</mi></mrow><annotation encoding="application/x-tex">|u|\le2r</annotation></semantics></math>
+is smaller than the remaining
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>420</mn></mrow><annotation encoding="application/x-tex">1/420</annotation></semantics></math>
+margin. Thus the nonzero local normalized expansion holds with
+exponentially small error, and (5) is the old global real envelope. The
+exact degree, Poisson estimate, and the local expansion imply the old
+narrow-strip bound by precisely the published near/far argument.</p>
+<p>Nevertheless let
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>u</mi><mo>*</mo></msub><mo>=</mo><mn>2</mn><mrow><mi mathvariant="normal">arcsin</mi><mo>&#8289;</mo></mrow><msqrt><mi>p</mi></msqrt><mo>&gt;</mo><mn>2</mn><mi>r</mi><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>λ</mi><mi>N</mi></msub><mo>=</mo><mi>−</mi><mfrac><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>N</mi><mi>/</mi><mn>3</mn></mrow></msup></mrow><msup><mi>e</mi><mrow><mi>−</mi><mn>4</mn><mi>c</mi><mi>N</mi><mi>p</mi></mrow></msup></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ u_* =2\arcsin\sqrt p&gt;2r,
+ \qquad
+ \lambda_N=-\frac{(1-p)^{N/3}}{e^{-4cNp}}.
+ \tag{9}
+</annotation></semantics></math> The modulus of this coefficient is less
+than one: its logarithm divided by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>3</mn></mfrac></mstyle><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mn>4</mn><mi>c</mi><mi>p</mi><mo>&lt;</mo><mi>−</mi><mi>p</mi><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">\tfrac13\log(1-p)+4cp&lt;-p/4</annotation></semantics></math>.
+Equations (1)–(2) give the exact zero
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>u</mi><mo>*</mo></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                              F_N(u_*)=0.
+ \tag{10}
+</annotation></semantics></math> All the old normalized local, real,
+strip and degree assertions remain true. Thus they cannot imply
+nonvanishing, a prescribed logarithm, or the same conditional phase on a
+larger parent compact containing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>u</mi><mo>*</mo></msub><annotation encoding="application/x-tex">u_*</annotation></semantics></math>.
+Taking a nearby fixed complex point and the corresponding ratio in (9)
+gives the same example whenever that ratio still decays
+exponentially.</p>
+<p>This construction does not preserve the actual finite edge recursion.
+It therefore disproves only an automatic inference from its older output
+estimates. The directed-budget proof uses the actual kernel to establish
+its larger rectangle before carrying out the induction; it does not
+obtain that rectangle by analytic continuation of the old asymptotic
+formula.</p>

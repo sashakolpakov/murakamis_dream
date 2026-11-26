@@ -264,6 +264,76 @@ intrinsic normalization
 gives the same local-uniform limits and the same equivalence.
 No division by an unproved nonzero period is made before (3).
 
+### 4.1 Unnormalized odd jets need no growth assumption
+
+There is an unconditional consequence of the same exact identity.
+It is useful when a lower bound for the complete value is the question,
+so division by \(K_N\) would be premature. Define
+\[
+ \widehat R_N(z)=e^{(N-1)z/(2N)}R_N(e^{z/N}),\qquad
+ \mathscr D_N=N^{-1}Y\partial_Y,\qquad
+ \lambda_N=\frac{N-1}{2N}.
+\]
+The balanced function \(\widehat R_N\) has no normalization by
+the unknown complete value. The evenness of \(F_N(e^{z/N})\)
+and \(H_N\) gives exactly
+\[
+ H_N(z)\{\widehat R_N(z)-\widehat R_N(-z)\}
+   =\frac{P_N(e^{-z/N})-P_N(e^{z/N})}{N}.
+\]
+For any fixed disk, choose a larger circular boundary avoiding
+the zeros of \(H\). The coefficient estimate (2) bounds the
+right side by a constant times \(D_N\) there. The entire
+quotient on the left already exists, so the removable-division
+estimate (11) proves
+\[
+ \sup_{|z|\le r}|\widehat R_N(z)-\widehat R_N(-z)|\le C_rD_N
+\]
+for every fixed \(r\) and all sufficiently large levels. In
+particular, for every fixed odd integer \(m\), Cauchy's formula
+gives
+\[
+ \widehat R_N^{(m)}(0)
+ =\left.(\mathscr D_N+\lambda_N)^m R_N\right|_{Y=1}
+ =O_m(D_N).
+\]
+Thus the odd derivatives of the balanced regular function are
+polynomially bounded even if \(K_N=0\). No lower-growth or
+normal-family premise is used.
+
+At first order the exact relation is especially simple:
+\[
+ \mathscr D_NR_N(1)
+   =-\frac{N-1}{2N}R_N(1)-\frac{P_N'(1)}{N^2},
+ \qquad \frac{|P_N'(1)|}{N^2}\le D_N.
+\]
+The inequality follows by summing
+\(r|[Y^r]P_N|\le2rD_N\) for \(0\le r\le N-2\).
+Since \(1/4\le\lambda_N<1/2\) for \(N\ge2\), this identity
+gives two-sided bounds between the complete value and this first
+derivative, with only polynomial additive errors. More precisely,
+the difference between any two of
+\[
+ \frac1N\log(1+|K_N|),\qquad
+ \frac1N\log(1+|R_N(1)|),\qquad
+ \frac1N\log(1+|\mathscr D_NR_N(1)|)
+\]
+tends to zero. For the first comparison use
+\(K_N=NR_N(1)+P_N(1)\) and the polynomial bound on \(P_N(1)\).
+Consequently their limsup and liminf rates agree, separately.
+This is a comparison of observations, not a positive lower bound
+for any of them.
+
+For a fixed higher jet order, the binomial change of basis between
+\(\mathscr D_N^rR_N(1)\) and \(\widehat R_N^{(r)}(0)\) and its inverse
+have uniformly bounded coefficients. The full finite jet norm at
+the complete point therefore has the same positive exponential
+rates as its even balanced derivatives. Symmetry controls the
+odd derivatives; it does not bound those higher even derivatives
+by \(\widehat R_N(0)\). Nor does it identify jets at other root-orbit
+points with the complete-point jet. Those are still missing
+observations in applying the orbit-jet growth theorem.
+
 ## 5. Fixed-root and integral-color normal maps have the same U but different sources
 
 Compare the preceding path with the actual integral-color one

@@ -1,0 +1,589 @@
+<h1
+id="shared-coefficient-paths-and-low-rank-transport-of-the-cap-estimate">Shared
+coefficient paths and low-rank transport of the cap estimate</h1>
+<p>This note proves a finite support and root-count theorem for an
+actual product of positive-semidefinite determinant pencils. It
+preserves the original shared face extraction, including repeated
+occurrences of a face and all monomial target shifts. It does not assert
+that an arbitrary physical spectral perturbation has the required signed
+determinant decomposition. That remains a separate source-identity
+problem.</p>
+<h2 id="exact-polynomial-setting">1. Exact polynomial setting</h2>
+<p>Let the ordinary face variables be
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>L</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">L_1,\ldots,L_s</annotation></semantics></math>,
+and retain two boundary variables
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">A,C</annotation></semantics></math>.
+Introduce insertion variables
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>t</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">t_1,\ldots,t_k</annotation></semantics></math>.
+Consider</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo>,</mo><mi>C</mi><mo>,</mo><mi mathvariant="bold-italic">𝑳</mi><mo>,</mo><mi mathvariant="bold-italic">𝒕</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>c</mi><mn>0</mn></msub><munderover><mo>∏</mo><mrow><mi>b</mi><mo>=</mo><mn>1</mn></mrow><mi>B</mi></munderover><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><mspace width="-0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><msub><mi>M</mi><mrow><mi>b</mi><mo>,</mo><mi>A</mi></mrow></msub><mo>+</mo><mi>C</mi><msub><mi>M</mi><mrow><mi>b</mi><mo>,</mo><mi>C</mi></mrow></msub><mo>+</mo><munder><mo>∑</mo><mi>f</mi></munder><msub><mi>L</mi><mi>f</mi></msub><msub><mi>M</mi><mrow><mi>b</mi><mo>,</mo><mi>f</mi></mrow></msub><mo>+</mo><munder><mo>∑</mo><mi>j</mi></munder><msub><mi>t</mi><mi>j</mi></msub><msub><mi>V</mi><mrow><mi>b</mi><mo>,</mo><mi>j</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>c</mi><mn>0</mn></msub><mo>&gt;</mo><mn>0</mn><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ F(A,C,\boldsymbol L,\boldsymbol t)
+ =c_0\prod_{b=1}^B\det\!\left(
+ A M_{b,A}+C M_{b,C}+\sum_f L_fM_{b,f}
+                    +\sum_jt_jV_{b,j}\right),\qquad c_0&gt;0,
+\tag{1}
+</annotation></semantics></math></p>
+<p>where every coefficient matrix is Hermitian positive semidefinite and
+all matrices are finite. Fixed positive scalar factors are retained in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>c</mi><mn>0</mn></msub><annotation encoding="application/x-tex">c_0</annotation></semantics></math>.
+A fixed monomial factor may be included by adjoining one-dimensional
+diagonal blocks. Protected zero faces are set to zero by removing their
+matrices; they are never replaced by positive weights.</p>
+<p>Assume the product is nonzero. The sum of each block’s coefficient
+matrices is then positive definite. Thus (1) is real stable: when all
+variables have positive imaginary part, the imaginary part of each
+pencil is positive definite, precluding a kernel vector. A
+block-diagonal matrix combines the product into one determinant of size
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>,
+the total degree of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>.
+The coefficients of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>
+are nonnegative, as also follows from the Cauchy–Binet expansion
+below.</p>
+<p>Fix the original target vector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="bold-italic">𝑲</mi><annotation encoding="application/x-tex">\boldsymbol K</annotation></semantics></math>,
+and put</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo>,</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">[</mo><msup><mi mathvariant="bold-italic">𝑳</mi><mi mathvariant="bold-italic">𝑲</mi></msup><msup><mi mathvariant="bold-italic">𝒕</mi><mn>0</mn></msup><mo stretchy="false" form="postfix">]</mo><mi>F</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>d</mi><mo>=</mo><mi>D</mi><mo>−</mo><mo stretchy="false" form="prefix">|</mo><mi mathvariant="bold-italic">𝑲</mi><mo stretchy="false" form="prefix">|</mo><mo>≥</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ P(A,C)=[\boldsymbol L^{\boldsymbol K}\boldsymbol t^0]F,
+ \qquad d=D-|\boldsymbol K|\ge1.
+\tag{2}
+</annotation></semantics></math></p>
+<p>Suppose
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">P\ne0</annotation></semantics></math>.
+A compensated
+rank-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>
+piece has the exact form</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo>,</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>A</mi><mi>α</mi></msup><msup><mi>C</mi><mi>β</mi></msup><mo stretchy="false" form="prefix">[</mo><msup><mi mathvariant="bold-italic">𝑳</mi><mrow><mi mathvariant="bold-italic">𝑲</mi><mo>−</mo><mi mathvariant="bold-italic">𝝁</mi></mrow></msup><msup><mi mathvariant="bold-italic">𝒕</mi><mi mathvariant="bold-italic">𝜼</mi></msup><mo stretchy="false" form="postfix">]</mo><mi>F</mi><mo>,</mo><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">|</mo><mi mathvariant="bold-italic">𝜼</mi><mo stretchy="false" form="prefix">|</mo><mo>=</mo><mi>r</mi><mo>=</mo><mo stretchy="false" form="prefix">|</mo><mi mathvariant="bold-italic">𝝁</mi><mo stretchy="false" form="prefix">|</mo><mi>+</mi><mi>α</mi><mo>+</mo><mi>β</mi><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ Q(A,C)=A^\alpha C^\beta
+   [\boldsymbol L^{\boldsymbol K-\boldsymbol\mu}
+                         \boldsymbol t^{\boldsymbol\eta}]F,
+ \qquad
+ |\boldsymbol\eta|=r=|\boldsymbol\mu|+\alpha+\beta,
+\tag{3}
+</annotation></semantics></math></p>
+<p>where all entries are nonnegative integers,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold-italic">𝝁</mi><mo>≤</mo><mi mathvariant="bold-italic">𝑲</mi></mrow><annotation encoding="application/x-tex">\boldsymbol\mu\le\boldsymbol K</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">Q\ne0</annotation></semantics></math>.
+Equivalently it is the original extraction of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>A</mi><mi>α</mi></msup><msup><mi>C</mi><mi>β</mi></msup><msup><mi mathvariant="bold-italic">𝑳</mi><mi mathvariant="bold-italic">𝝁</mi></msup><mo stretchy="false" form="prefix">[</mo><msup><mi mathvariant="bold-italic">𝒕</mi><mi mathvariant="bold-italic">𝜼</mi></msup><mo stretchy="false" form="postfix">]</mo><mi>F</mi></mrow><annotation encoding="application/x-tex">A^\alpha C^\beta\boldsymbol L^{\boldsymbol\mu}
+[\boldsymbol t^{\boldsymbol\eta}]F</annotation></semantics></math>. Both
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>,</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">P,Q</annotation></semantics></math>
+have exactly degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>.
+No face has been duplicated and no target has been independently
+optimized.</p>
+<p>For rank-one insertions
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>V</mi><mrow><mi>b</mi><mo>,</mo><mi>j</mi></mrow></msub><mo>=</mo><msub><mi>v</mi><mrow><mi>b</mi><mo>,</mo><mi>j</mi></mrow></msub><msubsup><mi>v</mi><mrow><mi>b</mi><mo>,</mo><mi>j</mi></mrow><mo>*</mo></msubsup></mrow><annotation encoding="application/x-tex">V_{b,j}=v_{b,j}v_{b,j}^*</annotation></semantics></math>,
+a coefficient selecting
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>
+insertion columns is a compression determinant with its exact positive
+Gram factor. Formula (3) uses the coefficient itself and does not
+silently divide out this factor. The theorem below also permits
+higher-rank positive insertions and multiplicities in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="bold-italic">𝜼</mi><annotation encoding="application/x-tex">\boldsymbol\eta</annotation></semantics></math>.</p>
+<h2
+id="nonzero-determinant-coefficients-an-elementary-linear-selection-lemma">2.
+Nonzero determinant coefficients: an elementary linear selection
+lemma</h2>
+<p>Factor each coefficient matrix of the combined pencil as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>i</mi></msub><msubsup><mi>U</mi><mi>i</mi><mo>*</mo></msubsup></mrow><annotation encoding="application/x-tex">U_iU_i^*</annotation></semantics></math>.
+Give every column of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>U</mi><mi>i</mi></msub><annotation encoding="application/x-tex">U_i</annotation></semantics></math>
+the color
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>.
+For variables
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>z</mi><mi>i</mi></msub><annotation encoding="application/x-tex">z_i</annotation></semantics></math>,
+Cauchy–Binet gives</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><mo minsize="180%" maxsize="180%" stretchy="true" form="prefix">(</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>z</mi><mi>i</mi></msub><msub><mi>U</mi><mi>i</mi></msub><msubsup><mi>U</mi><mi>i</mi><mo>*</mo></msubsup><mo minsize="180%" maxsize="180%" stretchy="true" form="postfix">)</mo><mo>=</mo><munder><mo>∑</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mrow><mi>S</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> column subset</mtext></mrow><mspace width="0.222em"></mspace><mo stretchy="false" form="prefix">|</mo><mi>S</mi><mo stretchy="false" form="prefix">|</mo><mo>=</mo><mi>D</mi></mrow></mtd></mtr></mtable></munder><mo stretchy="false" form="prefix">|</mo><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><msub><mi>U</mi><mi>S</mi></msub><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup><munder><mo>∏</mo><mrow><mi>e</mi><mo>∈</mo><mi>S</mi></mrow></munder><msub><mi>z</mi><mrow><mrow><mi mathvariant="normal">col</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>e</mi><mo stretchy="false" form="postfix">)</mo></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \det\Bigl(\sum_i z_iU_iU_i^*\Bigr)
+ =\sum_{\substack{S\text{ column subset}\ |S|=D}}
+             |\det U_S|^2\prod_{e\in S}z_{\operatorname{col}(e)}.
+\tag{4}
+</annotation></semantics></math></p>
+<p>Thus an integer color vector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>x</mi><mo stretchy="false" form="prefix">|</mo><mo>=</mo><mi>D</mi></mrow><annotation encoding="application/x-tex">|x|=D</annotation></semantics></math>,
+has a positive coefficient if and only if one can choose a column basis
+with exactly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>i</mi></msub><annotation encoding="application/x-tex">x_i</annotation></semantics></math>
+columns of each color. Write</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mi mathvariant="normal">dim</mi><mo>&#8289;</mo></mrow><mrow><mi mathvariant="normal">span</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><mrow><mtext mathvariant="normal">columns whose colors lie in </mtext><mspace width="0.333em"></mspace></mrow><mi>I</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ r(I)=\dim\operatorname{span}\{\text{columns whose colors lie in }I\}.
+\tag{5}
+</annotation></semantics></math></p>
+<p>The exact criterion is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>≥</mo><mn>0</mn><mo>,</mo><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">|</mo><mi>x</mi><mo stretchy="false" form="prefix">|</mo><mo>=</mo><mi>D</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>x</mi><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo stretchy="false" form="postfix">)</mo><mo>:=</mo><munder><mo>∑</mo><mrow><mi>i</mi><mo>∈</mo><mi>I</mi></mrow></munder><msub><mi>x</mi><mi>i</mi></msub><mo>≤</mo><mi>r</mi><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo stretchy="false" form="postfix">)</mo><mspace width="1.0em"></mspace><mrow><mtext mathvariant="normal">for every color subset </mtext><mspace width="0.333em"></mspace></mrow><mi>I</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ x_i\ge0,\qquad |x|=D,\qquad x(I):=\sum_{i\in I}x_i\le r(I)
+                      \quad\text{for every color subset }I.
+\tag{6}
+</annotation></semantics></math></p>
+<p>Necessity is immediate. Here is a proof of sufficiency which does not
+assume a support theorem for stable polynomials.</p>
+<p>First prove the following linear Hall statement by induction. For
+finite vector sets
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>E</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>E</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">E_1,\ldots,E_n</annotation></semantics></math>,
+one can choose independent representatives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mi>j</mi></msub><mo>∈</mo><msub><mi>E</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">e_j\in E_j</annotation></semantics></math>
+if every subfamily indexed by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math>
+spans dimension at least
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>I</mi><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">|I|</annotation></semantics></math>.
+For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n=1</annotation></semantics></math>,
+choose a nonzero vector. If some nonempty proper subfamily is tight, let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>W</mi><annotation encoding="application/x-tex">W</annotation></semantics></math>
+be its span. Induction chooses representatives spanning
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>W</mi><annotation encoding="application/x-tex">W</annotation></semantics></math>.
+In the quotient by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>W</mi><annotation encoding="application/x-tex">W</annotation></semantics></math>,
+every subfamily of the remaining sets still spans at least its
+cardinality: apply the original inequality to its union with the tight
+family, and subtract
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">dim</mi><mo>&#8289;</mo></mrow><mi>W</mi></mrow><annotation encoding="application/x-tex">\dim W</annotation></semantics></math>.
+Induction in the quotient completes the selection. If no nonempty proper
+family is tight, choose any nonzero vector from the last set and
+quotient by its span. Every subfamily of the remaining
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math>
+sets originally had at least one unit of dimension slack, so the
+quotient still satisfies the required inequality. Induction again
+completes the selection.</p>
+<p>Now repeat the set of columns of color
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>
+exactly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>i</mi></msub><annotation encoding="application/x-tex">x_i</annotation></semantics></math>
+times. For any collection of these copies, let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math>
+be its set of colors. The number of copies in the collection is at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mi>r</mi><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">x(I)\le r(I)</annotation></semantics></math>,
+so the linear Hall hypothesis holds. The resulting
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>
+independent representatives are a basis and have the desired counts.
+This proves (6).</p>
+<p>The rank function is submodular:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>r</mi><mo stretchy="false" form="prefix">(</mo><mi>J</mi><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><mi>r</mi><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo>∪</mo><mi>J</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>r</mi><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo>∩</mo><mi>J</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ r(I)+r(J)\ge r(I\cup J)+r(I\cap J).
+\tag{7}
+</annotation></semantics></math></p>
+<p>Indeed the span for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi><mo>∩</mo><mi>J</mi></mrow><annotation encoding="application/x-tex">I\cap J</annotation></semantics></math>
+is contained in the intersection of the two spans, while the span for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi><mo>∪</mo><mi>J</mi></mrow><annotation encoding="application/x-tex">I\cup J</annotation></semantics></math>
+is their sum. Consequently the union and intersection of two sets tight
+for a feasible
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+are also tight: combine (7), modularity of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>,
+and both lower bounds
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>≥</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">r\ge x</annotation></semantics></math>.</p>
+<h2 id="a-monotone-nonzero-path-preserving-the-shared-targets">3. A
+monotone nonzero path preserving the shared targets</h2>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x,y</annotation></semantics></math>
+satisfy (6), and choose any color
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>&gt;</mo><msub><mi>y</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">x_i&gt;y_i</annotation></semantics></math>.
+There exists a deficient color
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>,
+meaning
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>j</mi></msub><mo>&lt;</mo><msub><mi>y</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">x_j&lt;y_j</annotation></semantics></math>,
+such that</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">w</mi></mrow></msup><mo>=</mo><mi>x</mi><mo>−</mo><msub><mi>e</mi><mi>i</mi></msub><mo>+</mo><msub><mi>e</mi><mi>j</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+x^{\mathrm{new}}=x-e_i+e_j.
+\tag{8}
+</annotation></semantics></math></p>
+<p>also satisfies (6). To prove this, suppose every deficient
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>
+is blocked. A violation after (8) can only occur on a set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>I</mi><mi>j</mi></msub><annotation encoding="application/x-tex">I_j</annotation></semantics></math>
+containing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>
+and excluding
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>,
+and integrality forces that set to be tight for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>.
+Their union
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math>
+is tight, contains every deficient color and excludes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>.
+On the complementary set there are no deficient colors and there is the
+strictly excessive color
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>,
+so</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>I</mi><mi>c</mi></msup><mo stretchy="false" form="postfix">)</mo><mo>&gt;</mo><mi>y</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>I</mi><mi>c</mi></msup><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>y</mi><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo stretchy="false" form="postfix">)</mo><mo>&gt;</mo><mi>x</mi><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>r</mi><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ x(I^c)&gt;y(I^c),\qquad y(I)&gt;x(I)=r(I),
+\tag{9}
+</annotation></semantics></math></p>
+<p>contradicting feasibility of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>.
+This proves the one-step exchange. Repeating it constructs a path
+changing only coordinates where the endpoints differ, monotonically
+toward the endpoint, with every intermediate coefficient positive.</p>
+<p>Apply this result only for support purposes after substituting
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mi>C</mi><mo>=</mo><mi>Z</mi></mrow><annotation encoding="application/x-tex">A=C=Z</annotation></semantics></math>
+in (1). This merges the two boundary column colors. It does not merge
+the two variables in either final binary polynomial. Their nonvanishing
+is detected faithfully because the coefficients are nonnegative. The
+endpoint color-count vectors are</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>d</mi><mo>,</mo><mi mathvariant="bold-italic">𝑲</mi><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>y</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>d</mi><mo>−</mo><mi>α</mi><mo>−</mo><mi>β</mi><mo>,</mo><mi mathvariant="bold-italic">𝑲</mi><mo>−</mo><mi mathvariant="bold-italic">𝝁</mi><mo>,</mo><mi mathvariant="bold-italic">𝜼</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ x=(d,\boldsymbol K,0),\qquad
+ y=(d-\alpha-\beta,\boldsymbol K-\boldsymbol\mu,
+                                      \boldsymbol\eta).
+\tag{10}
+</annotation></semantics></math></p>
+<p>The colors in this display are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math>,
+the original ordinary faces, and the insertions. Feasibility of both
+vectors follows from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>,</mo><mi>Q</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">P,Q\ne0</annotation></semantics></math>.
+The exchange path has exactly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>
+steps. Each removes one unit either from an ordinary face target or from
+the boundary degree and adds one insertion unit. There are exactly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>μ</mi><mi>f</mi></msub><annotation encoding="application/x-tex">\mu_f</annotation></semantics></math>
+removals from face
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>+</mo><mi>β</mi></mrow><annotation encoding="application/x-tex">\alpha+\beta</annotation></semantics></math>
+boundary removals. Assign the latter their prescribed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>
+factors of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math>
+factors of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>.</p>
+<p>At every stage take the original shared coefficient with the current
+targets and insertion multiplicities, and multiply by the accumulated
+compensating boundary monomial. It is nonzero and has degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>.
+All unchanged face targets remain fixed. These intermediate polynomials
+are an algebraic comparison path; they need not individually be new
+physical diagram sectors. The initial and final polynomials are exactly
+(2) and (3), including their original scalar factors and
+multiplicities.</p>
+<h2 id="one-swap-changes-the-root-count-by-at-most-one">4. One swap
+changes the root count by at most one</h2>
+<p>Coefficient extraction of a real-stable polynomial is real stable or
+zero. This follows by differentiation in the extracted variables and
+then specialization to zero. Differentiation preserves stability by the
+elementary logarithmic-derivative proof of the one-variable Gauss–Lucas
+property; real specialization follows by a limit from the upper
+half-plane. Positive monomial multiplication preserves stability as
+well.</p>
+<p>For an ordinary-face step, after the other fixed extractions, the two
+binary polynomials are proportional by positive constants to</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mo stretchy="false" form="prefix">[</mo><msup><mi>L</mi><mi>K</mi></msup><msup><mi>t</mi><mn>0</mn></msup><mo stretchy="false" form="postfix">]</mo><mover><mi>F</mi><mo accent="true">̃</mo></mover><mo>,</mo><mspace width="2.0em"></mspace><mi>q</mi><mo>=</mo><mo stretchy="false" form="prefix">[</mo><msup><mi>L</mi><mrow><mi>K</mi><mo>−</mo><mn>1</mn></mrow></msup><msup><mi>t</mi><mn>1</mn></msup><mo stretchy="false" form="postfix">]</mo><mover><mi>F</mi><mo accent="true">̃</mo></mover><mo>,</mo><mspace width="2.0em"></mspace><mi>h</mi><mo>=</mo><mo stretchy="false" form="prefix">[</mo><msup><mi>L</mi><mrow><mi>K</mi><mo>−</mo><mn>1</mn></mrow></msup><msup><mi>t</mi><mn>0</mn></msup><mo stretchy="false" form="postfix">]</mo><mover><mi>F</mi><mo accent="true">̃</mo></mover><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ p=[L^Kt^0]\widetilde F,\qquad
+ q=[L^{K-1}t^1]\widetilde F,
+ \qquad h=[L^{K-1}t^0]\widetilde F.
+\tag{11}
+</annotation></semantics></math></p>
+<p>If insertion multiplicities have already been extracted, the
+constants in (11) are the relevant positive differentiation factorials
+and do not affect roots.</p>
+<p>First suppose
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">h\ne0</annotation></semantics></math>.
+Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>
+each interlace the same degree-one-higher binary polynomial
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>.
+To verify this precisely, fix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">C=1</annotation></semantics></math>,
+differentiate the required number of times in the auxiliary variable,
+and consider
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+in the upper half-plane. Every auxiliary-variable root
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ζ</mi><annotation encoding="application/x-tex">\zeta</annotation></semantics></math>
+lies in the closed lower half-plane. The ratio of the first auxiliary
+coefficient to its constant coefficient is therefore</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>∑</mo><mi>ζ</mi></munder><mfrac><mrow><mi>−</mi><mn>1</mn></mrow><mi>ζ</mi></mfrac><mo>,</mo></mrow><annotation encoding="application/x-tex">
+                  \sum_\zeta\frac{-1}{\zeta},
+\tag{12}
+</annotation></semantics></math></p>
+<p>with nonpositive imaginary part. It follows that the ratio
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mi>/</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">p/h</annotation></semantics></math>,
+and likewise
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mi>/</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">q/h</annotation></semantics></math>,
+has nonpositive imaginary part on the upper half-plane. A real proper
+rational function with this property has only simple real poles with
+nonnegative residues; a higher-order real pole would give both signs of
+imaginary part on small upper semicircles. Its partial fraction
+expansion is then strictly decreasing between consecutive poles, which
+proves interlacing, including common roots. For degree drops at
+infinity, first substitute
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>↦</mo><mi>A</mi><mo>+</mo><mi>δ</mi><mi>C</mi></mrow><annotation encoding="application/x-tex">A\mapsto A+\delta C</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>↦</mo><mi>C</mi><mo>+</mo><mi>δ</mi><mi>A</mi></mrow><annotation encoding="application/x-tex">C\mapsto C+\delta A</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>δ</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0&lt;\delta&lt;1</annotation></semantics></math>,
+and then let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>↓</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\delta\downarrow0</annotation></semantics></math>.
+This keeps stability and makes the leading and constant coefficients
+positive. Repeated roots follow by the same limiting/interlacing
+argument.</p>
+<p>The case
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">h=0</annotation></semantics></math>
+cannot simply be discarded. After the appropriate derivatives, the
+lowest nonzero total degree in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>L</mi><mo>,</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(L,t)</annotation></semantics></math>
+is one, and positive rescaling of these two variables followed by a
+limit gives a stable polynomial of the form</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mi>L</mi><mi>p</mi><mo>+</mo><mi>b</mi><mi>t</mi><mi>q</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>a</mi><mo>,</mo><mi>b</mi><mo>&gt;</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                          a Lp+b tq,\qquad a,b&gt;0.
+\tag{13}
+</annotation></semantics></math></p>
+<p>For fixed upper-half-plane
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">A,C</annotation></semantics></math>,
+stability in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>,</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">L,t</annotation></semantics></math>
+forces
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mi>/</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">q/p</annotation></semantics></math>
+to be a nonnegative real number. Otherwise some upper-half-plane
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>
+makes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>b</mi><mi>t</mi><mi>q</mi><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mi>p</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">-btq/(ap)</annotation></semantics></math>
+lie in the upper half-plane as well, giving a zero. Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>,</mo><mi>q</mi></mrow><annotation encoding="application/x-tex">p,q</annotation></semantics></math>
+are nonzero stable polynomials, their ratio is holomorphic there. A
+holomorphic function taking only real values on the connected domain is
+constant. Hence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>,</mo><mi>q</mi></mrow><annotation encoding="application/x-tex">p,q</annotation></semantics></math>
+are positive scalar multiples and have identical roots.</p>
+<p>For a boundary-removal step, the unmultiplied child interlaces the
+parent and has degree one less. The compensating
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+factor adds one endpoint root. Any common previously accumulated
+boundary monomial adds the same roots to both sides.</p>
+<p>Write every
+degree-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>
+nonzero binary polynomial in positive normalization as</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo>,</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mo>=</mo><munderover><mo>∏</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>d</mi></munderover><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>λ</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo><mi>C</mi><mo>+</mo><msub><mi>λ</mi><mi>j</mi></msub><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mn>0</mn><mo>≤</mo><msub><mi>λ</mi><mi>j</mi></msub><mo>≤</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \frac{P(A,C)}{P(1,1)}
+   =\prod_{j=1}^d((1-\lambda_j)C+\lambda_j A),
+                       \qquad 0\le\lambda_j\le1.
+\tag{14}
+</annotation></semantics></math></p>
+<p>The endpoints
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\lambda=0,1</annotation></semantics></math>
+record factors
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>,</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">C,A</annotation></semantics></math>.
+Interlacing, including the case (13), proves that the unnormalized root
+distribution functions of successive
+degree-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>
+polynomials differ by at most one. The path from Section 3 therefore
+proves</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mi mathvariant="normal">sup</mi><mrow><mn>0</mn><mo>≤</mo><mi>s</mi><mo>≤</mo><mn>1</mn></mrow></munder><mrow><mo stretchy="true" form="prefix">|</mo><mi>#</mi><mo stretchy="false" form="prefix">{</mo><mi>j</mi><mo>:</mo><msubsup><mi>λ</mi><mi>j</mi><mi>P</mi></msubsup><mo>≤</mo><mi>s</mi><mo stretchy="false" form="postfix">}</mo><mo>−</mo><mi>#</mi><mo stretchy="false" form="prefix">{</mo><mi>j</mi><mo>:</mo><msubsup><mi>λ</mi><mi>j</mi><mi>Q</mi></msubsup><mo>≤</mo><mi>s</mi><mo stretchy="false" form="postfix">}</mo><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mi>r</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \sup_{0\le s\le1}
+ \left|\#\{j:\lambda_j^P\le s\}
+             -\#\{j:\lambda_j^Q\le s\}\right|\le r.
+\tag{15}
+</annotation></semantics></math></p>
+<p>No nonzero intermediate coefficient or nonzero common interlacer has
+been assumed.</p>
+<h2 id="quantitative-moment-and-common-axis-bounds">5. Quantitative
+moment and common-axis bounds</h2>
+<p>For any absolutely continuous function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>
+on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[0,1]</annotation></semantics></math>,
+integration by parts in (15) gives</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><munder><mo>∑</mo><mi>j</mi></munder><mi>g</mi><mo stretchy="false" form="prefix">(</mo><msubsup><mi>λ</mi><mi>j</mi><mi>Q</mi></msubsup><mo stretchy="false" form="postfix">)</mo><mo>−</mo><munder><mo>∑</mo><mi>j</mi></munder><mi>g</mi><mo stretchy="false" form="prefix">(</mo><msubsup><mi>λ</mi><mi>j</mi><mi>P</mi></msubsup><mo stretchy="false" form="postfix">)</mo><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mi>r</mi><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup><mo stretchy="false" form="prefix">|</mo><msup><mi>g</mi><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mspace width="0.167em"></mspace><mi>d</mi><mi>s</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \left|\sum_j g(\lambda_j^Q)-\sum_jg(\lambda_j^P)\right|
+                    \le r\int_0^1|g&#39;(s)|\,ds.
+\tag{16}
+</annotation></semantics></math></p>
+<p>Define
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ν</mi><mo>=</mo><msup><mi>d</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>∑</mo><msub><mi>λ</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">\nu=d^{-1}\sum\lambda_j</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mo>=</mo><msup><mi>d</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>∑</mo><msub><mi>λ</mi><mi>j</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>λ</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\kappa=d^{-1}\sum\lambda_j(1-\lambda_j)</annotation></semantics></math>.
+Then</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>ν</mi><mi>Q</mi></msub><mo>−</mo><msub><mi>ν</mi><mi>P</mi></msub><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mi>r</mi><mi>/</mi><mi>d</mi><mo>,</mo><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">|</mo><msub><mi>κ</mi><mi>Q</mi></msub><mo>−</mo><msub><mi>κ</mi><mi>P</mi></msub><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mi>r</mi><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>d</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ |\nu_Q-\nu_P|\le r/d,\qquad
+ |\kappa_Q-\kappa_P|\le r/(2d).
+\tag{17}
+</annotation></semantics></math></p>
+<p>Use the exact quantities from the common-negative-axis cap
+estimate,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mn>1</mn><mo>−</mo><mi>ν</mi><mo>−</mo><mi>κ</mi><mo>=</mo><mfrac><mn>1</mn><mi>d</mi></mfrac><mo>∑</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>λ</mi><mi>j</mi></msub><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo>,</mo><mspace width="1.0em"></mspace><mi>b</mi><mo>=</mo><mi>ν</mi><mo>−</mo><mi>κ</mi><mo>=</mo><mfrac><mn>1</mn><mi>d</mi></mfrac><mo>∑</mo><msubsup><mi>λ</mi><mi>j</mi><mn>2</mn></msubsup><mo>,</mo><mspace width="1.0em"></mspace><mi>R</mi><mo>=</mo><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mn>1</mn><mo>−</mo><mn>4</mn><mi>κ</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ a=1-\nu-\kappa=\frac1d\sum(1-\lambda_j)^2,
+ \quad b=\nu-\kappa=\frac1d\sum\lambda_j^2,
+ \quad R=\max(a,b,1-4\kappa).
+\tag{18}
+</annotation></semantics></math></p>
+<p>The respective total variations in (16) are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">1,1,2</annotation></semantics></math>.
+Consequently</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>a</mi><mi>Q</mi></msub><mo>−</mo><msub><mi>a</mi><mi>P</mi></msub><mo stretchy="false" form="prefix">|</mo><mo>,</mo><mo stretchy="false" form="prefix">|</mo><msub><mi>b</mi><mi>Q</mi></msub><mo>−</mo><msub><mi>b</mi><mi>P</mi></msub><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mi>r</mi><mi>/</mi><mi>d</mi><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>R</mi><mi>Q</mi></msub><mo>≤</mo><msub><mi>R</mi><mi>P</mi></msub><mo>+</mo><mn>2</mn><mi>r</mi><mi>/</mi><mi>d</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ |a_Q-a_P|,|b_Q-b_P|\le r/d,
+ \qquad R_Q\le R_P+2r/d.
+\tag{19}
+</annotation></semantics></math></p>
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">T\ge1</annotation></semantics></math>,
+put</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>T</mi></msub><mo>=</mo><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mn>1</mn><mo>−</mo><mn>4</mn><mi>κ</mi><mo>,</mo><mi>a</mi><mi>/</mi><mi>T</mi><mo>+</mo><mi>b</mi><mi>T</mi><mo>−</mo><mn>2</mn><mi>κ</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ R_T=\max\{a,b,1-4\kappa,a/T+bT-2\kappa\}.
+\tag{20}
+</annotation></semantics></math></p>
+<p>The last entry is the average of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mi>/</mi><msqrt><mi>T</mi></msqrt><mo>−</mo><msqrt><mi>T</mi></msqrt><mi>s</mi><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">((1-s)/\sqrt T-\sqrt T s)^2</annotation></semantics></math>,
+whose total variation on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[0,1]</annotation></semantics></math>
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>+</mo><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">T+T^{-1}</annotation></semantics></math>.
+Hence</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mrow><mi>T</mi><mo>,</mo><mi>Q</mi></mrow></msub><mo>≤</mo><msub><mi>R</mi><mrow><mi>T</mi><mo>,</mo><mi>P</mi></mrow></msub><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>T</mi><mo>+</mo><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo><mi>r</mi><mi>/</mi><mi>d</mi><mo>,</mo><mspace width="2.0em"></mspace><mfrac><mrow><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mi>T</mi><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mo>≤</mo><msup><mi>T</mi><mi>r</mi></msup><mfrac><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>T</mi><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ R_{T,Q}\le R_{T,P}+(T+T^{-1})r/d,
+ \qquad
+ \frac{Q(T,1)}{Q(1,1)}
+       \le T^r\frac{P(T,1)}{P(1,1)}.
+\tag{21}
+</annotation></semantics></math></p>
+<p>The second assertion follows from (16) applied to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>T</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">g(s)=\log(1+(T-1)s)</annotation></semantics></math>,
+with total variation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">\log T</annotation></semantics></math>.
+These inequalities retain exact finite degree and all endpoint root
+masses.</p>
+<p>The finite common-axis estimate gives</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mi mathvariant="normal">max</mi><mrow><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mn>1</mn></mrow></munder><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">|</mo><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>t</mi><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>,</mo><mo stretchy="false" form="prefix">|</mo><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo>,</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo stretchy="false" form="postfix">}</mo><mo>≤</mo><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>R</mi><mi>P</mi></msub><mo>+</mo><mn>2</mn><mi>r</mi><mi>/</mi><mi>d</mi><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>d</mi><mi>/</mi><mn>2</mn></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \max_{0\le t\le1}\{|Q(-t,1)|,|Q(-1,t)|\}
+                  \le Q(1,1)(R_P+2r/d)^{d/2}.
+\tag{22}
+</annotation></semantics></math></p>
+<p>Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>P</mi></msub><mo>≥</mo><mn>1</mn><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">R_P\ge1/4</annotation></semantics></math>,
+the factor on the right is at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><msubsup><mi>R</mi><mi>P</mi><mrow><mi>d</mi><mi>/</mi><mn>2</mn></mrow></msubsup><msup><mi>e</mi><mrow><mn>4</mn><mi>r</mi></mrow></msup></mrow><annotation encoding="application/x-tex">Q(1,1)R_P^{d/2}e^{4r}</annotation></semantics></math>.
+This is a loss relative to the proven common-axis <strong>upper
+bound</strong>, not a pointwise comparison to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>,
+which can vanish on that axis.</p>
+<h2
+id="the-actual-alternating-section-and-a-signed-finite-decomposition">6.
+The actual alternating section and a signed finite decomposition</h2>
+<p>Now use the source degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">d=N-1</annotation></semantics></math>,
+with either parity, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mo stretchy="false" form="prefix">⌊</mo><mi>N</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">M=\lfloor N/2\rfloor-1</annotation></semantics></math>.
+For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo>,</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mi>d</mi></msubsup><msub><mi>q</mi><mi>j</mi></msub><msup><mi>A</mi><mi>j</mi></msup><msup><mi>C</mi><mrow><mi>d</mi><mo>−</mo><mi>j</mi></mrow></msup></mrow><annotation encoding="application/x-tex">Q(A,C)=\sum_{j=0}^d q_j A^jC^{d-j}</annotation></semantics></math>,
+let</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">𝒮</mi><mi>M</mi></msub><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mi>M</mi></munderover><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>j</mi></msup><msub><mi>q</mi><mi>j</mi></msub><msup><mi>t</mi><mi>j</mi></msup><mo>,</mo><mspace width="2.0em"></mspace><msub><mi mathvariant="sans-serif">𝖢</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><mfrac><mrow><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>π</mi><mi>/</mi><mi>N</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mi>i</mi><mo>+</mo><mi>j</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>π</mi><mi>/</mi><mi>N</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \mathscr S_MQ(t)=\sum_{j=0}^M(-1)^jq_jt^j,
+ \qquad
+ \mathsf C_{ij}=\frac{\sin(\pi/N)}{\sin((i+j+1)\pi/N)}.
+\tag{23}
+</annotation></semantics></math></p>
+<p>This is the positive sine-Cauchy Gram matrix on the original section.
+The published alternating-section inequality is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><msub><mi mathvariant="script">𝒮</mi><mi>M</mi></msub><mi>Q</mi><msub><mo stretchy="false" form="postfix">∥</mo><mi mathvariant="sans-serif">𝖢</mi></msub><mo>≤</mo><msqrt><mrow><mn>1</mn><mo>+</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>T</mi></mrow></msqrt><mspace width="0.167em"></mspace><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><msubsup><mi>R</mi><mrow><mi>T</mi><mo>,</mo><mi>Q</mi></mrow><mrow><mi>d</mi><mi>/</mi><mn>2</mn></mrow></msubsup><mo>+</mo><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mi>T</mi><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>/</mi><msup><mi>T</mi><mi>M</mi></msup><mo>,</mo><mo stretchy="false" form="prefix">(</mo><mi>d</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><msub><mi>q</mi><mi>M</mi></msub><mo stretchy="false" form="postfix">}</mo><mo>+</mo><msub><mi>q</mi><mi>M</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \|\mathscr S_MQ\|_{\mathsf C}
+ \le\sqrt{1+\log T}\,Q(1,1)R_{T,Q}^{d/2}
+       +\max\{Q(T,1)/T^M,(d+1)q_M\}+q_M.
+\tag{24}
+</annotation></semantics></math></p>
+<p>There is a useful finite simplification: coefficient positivity gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mi>M</mi></msub><msup><mi>T</mi><mi>M</mi></msup><mo>≤</mo><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mi>T</mi><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">q_MT^M\le Q(T,1)</annotation></semantics></math>.
+Thus (21) and (24) imply</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><msub><mi mathvariant="script">𝒮</mi><mi>M</mi></msub><mi>Q</mi><msub><mo stretchy="false" form="postfix">∥</mo><mi mathvariant="sans-serif">𝖢</mi></msub><mo>≤</mo><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mrow><mo stretchy="true" form="prefix">[</mo><msqrt><mrow><mn>1</mn><mo>+</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>T</mi></mrow></msqrt><mo minsize="120%" maxsize="120%" stretchy="true" form="prefix">(</mo><msub><mi>R</mi><mrow><mi>T</mi><mo>,</mo><mi>P</mi></mrow></msub><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>T</mi><mo>+</mo><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo><mi>r</mi><mi>/</mi><mi>d</mi><msup><mo minsize="120%" maxsize="120%" stretchy="true" form="postfix">)</mo><mrow><mi>d</mi><mi>/</mi><mn>2</mn></mrow></msup><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>d</mi><mo>+</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo><msup><mi>T</mi><mi>r</mi></msup><mfrac><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>T</mi><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><msup><mi>T</mi><mi>M</mi></msup></mrow></mfrac><mo stretchy="true" form="postfix">]</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \|\mathscr S_MQ\|_{\mathsf C}
+ \le Q(1,1)\left[
+ \sqrt{1+\log T}\bigl(R_{T,P}+(T+T^{-1})r/d\bigr)^{d/2}
+ +(d+2)T^r\frac{P(T,1)}{P(1,1)T^M}\right].
+\tag{25}
+</annotation></semantics></math></p>
+<p>This needs no separate coefficient-cutoff gap when the tilted
+positive pressure in the last term already has a strict gap. All moments
+used by the section have degree at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>M</mi><mo>≤</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">2M\le d</annotation></semantics></math>.</p>
+<p>Suppose a source-exact finite signed decomposition, with the same
+target and degree, is given by</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">w</mi></mrow></msup><mo>=</mo><munder><mo>∑</mo><mi>α</mi></munder><msub><mi>c</mi><mi>α</mi></msub><msub><mi>Q</mi><mi>α</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>r</mi><mi>α</mi></msub><mo>≤</mo><mi>r</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>W</mi><mo>=</mo><munder><mo>∑</mo><mi>α</mi></munder><mo stretchy="false" form="prefix">|</mo><msub><mi>c</mi><mi>α</mi></msub><mo stretchy="false" form="prefix">|</mo><mfrac><mrow><msub><mi>Q</mi><mi>α</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ P^{\mathrm{new}}=\sum_\alpha c_\alpha Q_\alpha,
+ \qquad r_\alpha\le r,
+ \qquad
+ W=\sum_\alpha |c_\alpha|\frac{Q_\alpha(1,1)}{P(1,1)}.
+\tag{26}
+</annotation></semantics></math></p>
+<p>Every nonzero
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mi>α</mi></msub><annotation encoding="application/x-tex">Q_\alpha</annotation></semantics></math>
+must be of the form (3), possibly with different insertions assembled in
+a common larger pencil. Linearity of the original section and the
+triangle inequality in its non-diagonal Gram norm yield</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><msub><mi mathvariant="script">𝒮</mi><mi>M</mi></msub><msup><mi>P</mi><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">w</mi></mrow></msup><msub><mo stretchy="false" form="postfix">∥</mo><mi mathvariant="sans-serif">𝖢</mi></msub><mo>≤</mo><mi>W</mi><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mrow><mo stretchy="true" form="prefix">[</mo><msqrt><mrow><mn>1</mn><mo>+</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>T</mi></mrow></msqrt><mo minsize="120%" maxsize="120%" stretchy="true" form="prefix">(</mo><msub><mi>R</mi><mrow><mi>T</mi><mo>,</mo><mi>P</mi></mrow></msub><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>T</mi><mo>+</mo><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo><mi>r</mi><mi>/</mi><mi>d</mi><msup><mo minsize="120%" maxsize="120%" stretchy="true" form="postfix">)</mo><mrow><mi>d</mi><mi>/</mi><mn>2</mn></mrow></msup><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>d</mi><mo>+</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo><msup><mi>T</mi><mi>r</mi></msup><mfrac><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>T</mi><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><msup><mi>T</mi><mi>M</mi></msup></mrow></mfrac><mo stretchy="true" form="postfix">]</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \|\mathscr S_MP^{\mathrm{new}}\|_{\mathsf C}
+ \le WP(1,1)\left[
+ \sqrt{1+\log T}\bigl(R_{T,P}+(T+T^{-1})r/d\bigr)^{d/2}
+ +(d+2)T^r\frac{P(T,1)}{P(1,1)T^M}\right].
+\tag{27}
+</annotation></semantics></math></p>
+<p>The exact polynomial cap dual norm from
+<code>research_cap_uniform_spectral_gap.md</code> then transfers (27)
+uniformly over the cap’s original real spectrum, with only its stated
+polynomial factor in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>.
+This step applies to the whole extracted binary polynomial. It does not
+use an independent norm for each incident local coupon.</p>
+<p>A crude bound needed for large-rank pieces is also exact:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><msub><mi mathvariant="script">𝒮</mi><mi>M</mi></msub><mi>Q</mi><msub><mo stretchy="false" form="postfix">∥</mo><mi mathvariant="sans-serif">𝖢</mi></msub><mo>≤</mo><munder><mo>∑</mo><mrow><mi>j</mi><mo>≤</mo><mi>M</mi></mrow></munder><msub><mi>q</mi><mi>j</mi></msub><msqrt><msub><mi mathvariant="sans-serif">𝖢</mi><mrow><mi>j</mi><mi>j</mi></mrow></msub></msqrt><mo>≤</mo><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \|\mathscr S_MQ\|_{\mathsf C}
+       \le\sum_{j\le M}q_j\sqrt{\mathsf C_{jj}}
+       \le Q(1,1).
+\tag{28}
+</annotation></semantics></math></p>
+<p>Indeed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="sans-serif">𝖢</mi><mrow><mi>j</mi><mi>j</mi></mrow></msub><mo>≤</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\mathsf C_{jj}\le1</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>j</mi><mo>≤</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">0\le j\le M</annotation></semantics></math>
+at both parities. The odd terminal diagonal is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>π</mi><mi>/</mi><mi>N</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">1/(2\cos(\pi/N))</annotation></semantics></math>,
+while the even terminal diagonal is one. No endpoint or cutoff term is
+omitted.</p>
+<h2 id="what-is-established-for-the-original-odd-endpoint-exterior">7.
+What is established for the original odd endpoint exterior</h2>
+<p>At odd levels every unchanged central endpoint coupon is exactly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>N</mi><mn>2</mn></msup><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mi>I</mi><mo>+</mo><mi>x</mi><msub><mi>H</mi><mo>−</mo></msub><mi>/</mi><mn>2</mn><mo>+</mo><mi>y</mi><msub><mi>H</mi><mo>+</mo></msub><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mi>I</mi><mo>+</mo><mi>x</mi><msub><mi>H</mi><mo>−</mo></msub><mi>/</mi><mn>2</mn><mo>+</mo><mi>y</mi><msub><mi>H</mi><mo>+</mo></msub><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">N^2\det(bI+xH_-/2+yH_+/2)\det(cI+xH_-/2+yH_+/2)</annotation></semantics></math>.
+Their product is (1), with the shared face variables identified before
+extraction and the original scalar
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>N</mi><mrow><mn>2</mn><mo stretchy="false" form="prefix">(</mo><mi>R</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow></msup><annotation encoding="application/x-tex">N^{2(R-1)}</annotation></semantics></math>
+retained when a cap is removed. Extracting the other
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">R-2</annotation></semantics></math>
+ordinary targets gives the original binary degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>,
+not a sum of independently optimized local degrees. Therefore every
+nonzero positive-PSD compression piece with compensating original face
+monomials satisfies (15)–(27), with no additional support-path
+hypothesis.</p>
+<p>The argument does not assert that the actual varying-spectrum central
+source is such a decomposition with a controlled value of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>W</mi><annotation encoding="application/x-tex">W</annotation></semantics></math>.
+Constructing it, bounding its total positive mass after the same
+extraction, and handling any macroscopic-rank tail remain separate
+obligations. Local physical nonstability makes that distinction
+necessary: a single neighboring central coupon is not itself stable
+throughout any one-sided endpoint neighborhood at all large odd
+levels.</p>
+<p>The spectral order of a term must not be confused with its
+compression rank. The original skipping term
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><msubsup><mi>s</mi><mi>m</mi><mn>2</mn></msubsup><mi>x</mi><mi>y</mi><msub><mi>D</mi><mi>b</mi></msub><msub><mi>D</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">u s_m^2xyD_bD_c</annotation></semantics></math>
+has order one in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>u</mi><annotation encoding="application/x-tex">u</annotation></semantics></math>
+but removes two determinant degrees. A spectral series application must
+prove a relation such as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>α</mi></msub><mo>≤</mo><mi>J</mi><msub><mi>k</mi><mi>α</mi></msub></mrow><annotation encoding="application/x-tex">r_\alpha\le Jk_\alpha</annotation></semantics></math>,
+with a fixed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>J</mi><annotation encoding="application/x-tex">J</annotation></semantics></math>,
+between rank and perturbation order; it cannot silently set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>J</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">J=1</annotation></semantics></math>.</p>
+<p>The present theorem supplies a finite transport tool for a proposed
+signed decomposition. It proves no new volume family, no even-level
+determinant identity, and no global remainder estimate without those
+missing source inputs.</p>

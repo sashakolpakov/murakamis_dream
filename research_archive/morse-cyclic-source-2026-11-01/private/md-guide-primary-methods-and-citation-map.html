@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>md-guide-primary-methods-and-citation-map</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<h1
+id="primary-references-and-method-definitions-for-the-illustrated-guide">Primary
+references and method definitions for the illustrated guide</h1>
+<p>Checked 1 November 2026. This is a private editorial and coverage
+map, not an imported proof of any result in the project. The public
+checkout inspected is
+<code>/private/tmp/murakamis_dream-publication</code>. No public file
+was changed.</p>
+<p>The guide should explain a method, cite the precise external
+statement or definition, then identify the additional argument supplied
+locally. The research library may retain unsuccessful approaches and
+counterexamples. A manuscript theorem should refer only to completed
+arguments with their hypotheses. A citation is neither a substitute for
+a missing source estimate nor a reason to suppress an independently
+proved argument.</p>
+<h2 id="what-the-present-bibliography-covers">1. What the present
+bibliography covers</h2>
+<p><code>manuscript/references.bib</code> currently contains five
+entries: Kashaev (1995), Kashaev (1997), Murakami–Murakami (2001), Rivin
+(1994), and Menal-Ferrer–Porti (2012). Their metadata agree with the
+primary records inspected. This list does not yet cover most of the
+guide’s named analytic and algebraic methods.</p>
+<p>The relevant guide passages occur in
+<code>book/chapters/geometry.md</code> (positive angle structures,
+regulators, scale torsors), <code>mechanism.md</code> (finite Fourier
+transforms, energy, shared constraints), <code>frontier.md</code>
+(recurrences, boundary factors, torsors, surviving cancellation
+problems), and <code>results.md</code> (weighted Cauchy, positive
+partitions, completed source theorems and their limits). Local coverage
+paragraphs already exist in the following notes and should be connected
+to the guide rather than replaced:</p>
+<ul>
+<li><code>general_marked_positive_gluing_certificate.md</code>,
+especially §9;</li>
+<li><code>finite_sum_annihilator.md</code>, opening coverage
+paragraph;</li>
+<li><code>regulator_majorization_and_source_energy.md</code>;</li>
+<li><code>actual_fourier_energy_tauberian_criterion.md</code>;</li>
+<li><code>research_routes_and_preserved_ideas.md</code>;</li>
+<li><code>factorial_source_torsor.md</code>, §10.</li>
+</ul>
+<p>The larger <code>structural_literature_delta.md</code> is a useful
+archive of coverage searches. Some entries there explicitly record only
+an abstract read; those entries should not be promoted to a claim that a
+complete proof was checked.</p>
+<h2 id="angle-structures-and-cassonrivin-optimization">2. Angle
+structures and Casson–Rivin optimization</h2>
+<h3 id="a-definition-the-guide-can-use">A definition the guide can
+use</h3>
+<p>An angle structure assigns a positive dihedral angle to each
+opposite-edge pair of every ideal tetrahedron. The three angles of a
+tetrahedron sum to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>π</mi><annotation encoding="application/x-tex">\pi</annotation></semantics></math>,
+and the angles around every internal edge sum to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>π</mi></mrow><annotation encoding="application/x-tex">2\pi</annotation></semantics></math>.
+These linear equations define an open convex polytope. Its volume
+function is the sum of the ideal tetrahedron volumes. A critical point
+means that the derivative of this function vanishes along every allowed
+infinitesimal angle change.</p>
+<p><strong>Precise primary coverage:</strong> David Futer and François
+Guéritaud, <em>From angled triangulations to hyperbolic structures</em>
+(2010), <a href="https://arxiv.org/abs/1004.0440">author paper</a>, <a
+href="https://arxiv.org/pdf/1004.0440">full text</a>. Definition 3.1
+defines angle structures; Theorem 1.2 states the Casson–Rivin
+critical-point criterion for an ideal triangulation of an orientable
+3-manifold with torus boundary. The volume and strict concavity are
+discussed in §5, with the relevant tangent directions constructed in §4.
+This is the most direct reference for the exact statement used in the
+guide.</p>
+<p><strong>Historical reference already present:</strong> Igor Rivin,
+<em>Euclidean Structures on Simplicial Surfaces and Hyperbolic
+Volume</em>, Annals of Mathematics 139 (1994), 553–580, <a
+href="https://annals.math.princeton.edu/1994/139-3/p02">publisher
+record</a>, DOI 10.2307/2118572. Publisher metadata were verified; this
+audit does not claim a new full reading of that paper. It should not be
+the only reference attached to a more general precisely formulated
+torus-boundary theorem.</p>
+<p><strong>Local contribution and limit:</strong>
+<code>general_marked_positive_gluing_certificate.md</code> independently
+proves the marked criterion needed here. An angle structure is not
+automatically an interior critical point of the chosen volume
+functional: the maximum can reach the boundary. Nor does a volume
+maximum prove a lower bound for a signed quantum sum. The guide should
+identify separately the positive geometric realization, the selected
+source saddle, and the noncancellation estimate.</p>
+<p><strong>Useful illustration:</strong> an angle polytope with its
+interior critical point and a separate boundary maximum. Label the
+latter as the reason that positivity of the domain alone is
+insufficient.</p>
+<h2
+id="majorization-convexity-and-the-two-different-karamata-theorems">3.
+Majorization, convexity, and the two different Karamata theorems</h2>
+<h3 id="convex-majorization">3.1 Convex majorization</h3>
+<p>For real vectors with decreasing rearrangements,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>≺</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x\prec y</annotation></semantics></math>
+means
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>k</mi></munderover><msubsup><mi>x</mi><mi>i</mi><mo>↓</mo></msubsup><mo>≤</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>k</mi></munderover><msubsup><mi>y</mi><mi>i</mi><mo>↓</mo></msubsup><mspace width="1.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>≤</mo><mi>k</mi><mo>&lt;</mo><mi>r</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>x</mi><mi>i</mi></msub><mo>=</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>y</mi><mi>i</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\sum_{i=1}^k x_i^\downarrow\leq\sum_{i=1}^k y_i^\downarrow
+\quad(1\leq k&lt;r),\qquad
+\sum_i x_i=\sum_i y_i.
+</annotation></semantics></math> Karamata’s inequality says that a
+convex function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>φ</mi><annotation encoding="application/x-tex">\varphi</annotation></semantics></math>
+then satisfies
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mi>i</mi></msub><mi>φ</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><msub><mo>∑</mo><mi>i</mi></msub><mi>φ</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>y</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\sum_i\varphi(x_i)\leq\sum_i\varphi(y_i)</annotation></semantics></math>.
+The equal-total condition and the direction of convexity must be stated.
+Weak majorization is a different hypothesis and usually requires an
+additional monotonicity condition on the test function.</p>
+<p><strong>Original reference:</strong> Jovan Karamata, <em>Sur une
+inégalité relative aux fonctions convexes</em>, Publications
+Mathématiques de l’Université de Belgrade 1 (1932), 145–148. The <a
+href="https://elib.mi.sanu.ac.rs/files/journals/publ/1/11.pdf">original
+archive link</a> was located, but repeated retrieval failed with a
+gateway error. It is a bibliographic pointer, not a full-text
+verification in this audit.</p>
+<p><strong>Verified textbook record for reader definitions:</strong>
+Albert W. Marshall, Ingram Olkin, and Barry C. Arnold, <em>Inequalities:
+Theory of Majorization and Its Applications</em>, second edition (2011),
+<a
+href="https://link.springer.com/book/10.1007/978-0-387-68276-1">publisher</a>.
+Use this as background reading; no specific unchecked theorem number is
+needed.</p>
+<p>The local note
+<code>regulator_majorization_and_source_energy.md</code> proves the
+needed finite convex inequality directly. Its application to singular
+values first proves a logarithmic majorization statement by exterior
+powers. This is a legitimate independent proof; it should not be called
+a new general majorization theorem.</p>
+<h3 id="product-singular-values-one-actual-attribution-correction">3.2
+Product singular values: one actual attribution correction</h3>
+<p>Alfred Horn, <em>On the singular values of a product of completely
+continuous operators</em>, Proceedings of the National Academy of
+Sciences 36 (1950), 374–375, DOI <a
+href="https://doi.org/10.1073/pnas.36.7.374">10.1073/pnas.36.7.374</a>,
+is the original product-singular-value reference. The <a
+href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1063207/">primary
+archive</a> and article metadata were checked; the archived first-page
+text was available, though subsequent PDF access was intermittent.</p>
+<p>The linked contemporary paper is <strong>J. Tao, J. Jeong, and M.
+Seetharama Gowda</strong>, <em>Some log and weak majorization
+inequalities in Euclidean Jordan algebras</em> (2020), <a
+href="https://userpages.umbc.edu/~gowda/papers/trGOW20-02.pdf">author
+PDF</a>. Its introduction, equation (1), states the matrix
+log-majorization and attributes it to Horn; the paper develops
+Jordan-algebra analogues.</p>
+<p><strong>Correction:</strong> the local link label “Gowda, Some log
+and weak majorization inequalities” omits two authors and truncates the
+distinguishing title. Replace it with the full authors and title. Do not
+attribute the original matrix product inequality to that 2020 paper.</p>
+<p><strong>Application limit:</strong> convex inequalities compare
+quantities after the relevant vectors or operators have been supplied.
+They do not construct an insertion-compatible quantum transport, or show
+that a regulator-preserving positive channel is the actual channel of
+the knot source. Those are explicitly separate obligations in the local
+note.</p>
+<h3 id="tauberian-karamata-is-a-different-method">3.3 Tauberian Karamata
+is a different method</h3>
+<p>For a positive measure
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>
+on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mi>∞</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">[0,\infty)</annotation></semantics></math>,
+a power-law singularity of its Laplace transform can determine the
+growth of the cumulative mass. Michael Taylor’s author lecture note,
+<em>Karamata’s Tauberian Theorem</em>, <a
+href="https://mtaylor.web.unc.edu/wp-content/uploads/sites/16915/2020/07/karamata.pdf">PDF</a>,
+§1, gives the implication
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∫</mo><msup><mi>e</mi><mrow><mi>−</mi><mi>t</mi><mi>x</mi></mrow></msup><mspace width="0.167em"></mspace><mi>d</mi><mi>μ</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>∼</mo><mi>A</mi><msup><mi>t</mi><mrow><mi>−</mi><mi>α</mi></mrow></msup><mspace width="1.0em"></mspace><mo>⇒</mo><mspace width="1.0em"></mspace><mi>μ</mi><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mi>X</mi><mo stretchy="false" form="postfix">]</mo><mo stretchy="false" form="postfix">)</mo><mo>∼</mo><mfrac><mrow><mi>A</mi><msup><mi>X</mi><mi>α</mi></msup></mrow><mrow><mi mathvariant="normal">Γ</mi><mo stretchy="false" form="prefix">(</mo><mi>α</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">
+\int e^{-t x}\,d\mu(x)\sim A t^{-\alpha}
+\quad\Longrightarrow\quad
+\mu([0,X])\sim \frac{A X^\alpha}{\Gamma(\alpha+1)}
+</annotation></semantics></math> for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">A&gt;0</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\alpha&gt;0</annotation></semantics></math>.
+The indexed first-page statement was verified; direct retrieval was
+intermittent. This is an author exposition, not the original historical
+paper.</p>
+<p>In <code>actual_fourier_energy_tauberian_criterion.md</code>, the
+positive measure comes from Fourier energies. The local proof supplies
+this cumulative conclusion independently. An abscissa of convergence
+gives a limsup, and a cumulative asymptotic does not by itself give the
+same limit at every quantum level. The note’s additional cross-level
+transport hypothesis is essential.</p>
+<p><strong>Editorial rule:</strong> use “Karamata’s convex-majorization
+inequality” and “Karamata’s Tauberian theorem,” not the unqualified word
+“Karamata” for both. A diagram of partial sums belongs to the first; a
+Laplace transform and cumulative measure belong to the second.</p>
+<h2 id="fourier-transforms-plancherel-and-weighted-cauchy">4. Fourier
+transforms, Plancherel, and weighted Cauchy</h2>
+<p>For the unitary discrete transform
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>a</mi><mo accent="true">̂</mo></mover><mi>j</mi></msub><mo>=</mo><msup><mi>N</mi><mrow><mi>−</mi><mn>1</mn><mi>/</mi><mn>2</mn></mrow></msup><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></munderover><msub><mi>a</mi><mi>k</mi></msub><msup><mi>e</mi><mrow><mi>−</mi><mn>2</mn><mi>π</mi><mi>i</mi><mi>j</mi><mi>k</mi><mi>/</mi><mi>N</mi></mrow></msup><mo>,</mo></mrow><annotation encoding="application/x-tex">
+\widehat a_j=N^{-1/2}\sum_{k=0}^{N-1}a_k e^{-2\pi i jk/N},
+</annotation></semantics></math> finite character orthogonality gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mi>j</mi></msub><mo stretchy="false" form="prefix">|</mo><msub><mover><mi>a</mi><mo accent="true">̂</mo></mover><mi>j</mi></msub><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup><mo>=</mo><msub><mo>∑</mo><mi>k</mi></msub><mo stretchy="false" form="prefix">|</mo><msub><mi>a</mi><mi>k</mi></msub><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sum_j|\widehat a_j|^2=\sum_k|a_k|^2</annotation></semantics></math>.
+This identity is elementary and can be proved in two lines in the guide.
+The transform convention should appear beside the formula: an
+unnormalized transform changes the factor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>.</p>
+<p><strong>Verified reader reference:</strong> Audrey Terras,
+<em>Fourier Analysis on Finite Groups and Applications</em>, London
+Mathematical Society Student Texts 43, Cambridge University Press
+(1999), <a
+href="https://www.cambridge.org/core/books/abs/fourier-analysis-on-finite-groups-and-applications/frontmatter/7898F7935FE41A36DA3AF66E3960C346">publisher
+front matter</a>, <a
+href="https://assets.cambridge.org/97805214/57187/excerpt/9780521457187_excerpt.pdf">publisher
+excerpt</a>, DOI 10.1017/CBO9780511626265. The publisher confirms the
+title, author, year, and finite abelian/nonabelian organization. This is
+a background reference; no unchecked page-specific theorem is asserted
+here.</p>
+<p>Weighted Cauchy–Schwarz is the finite identity-level tool
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">|</mo><munder><mo>∑</mo><mi>k</mi></munder><msub><mi>a</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">|</mo></mrow><mn>2</mn></msup><mo>≤</mo><mrow><mo stretchy="true" form="prefix">(</mo><munder><mo>∑</mo><mi>k</mi></munder><msub><mi>w</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><munder><mo>∑</mo><mi>k</mi></munder><mfrac><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>a</mi><mi>k</mi></msub><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup></mrow><msub><mi>w</mi><mi>k</mi></msub></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>w</mi><mi>k</mi></msub><mo>&gt;</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\left|\sum_k a_k\right|^2
+\leq\left(\sum_k w_k\right)\left(\sum_k\frac{|a_k|^2}{w_k}\right),
+\qquad w_k&gt;0.
+</annotation></semantics></math> For a positive definite Gram matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>,
+its matrix form is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msup><mi>ℓ</mi><mo>*</mo></msup><mi>v</mi><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup><mo>≤</mo><mo stretchy="false" form="prefix">(</mo><msup><mi>v</mi><mo>*</mo></msup><mi>G</mi><mi>v</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><msup><mi>ℓ</mi><mo>*</mo></msup><msup><mi>G</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mi>ℓ</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+|\ell^*v|^2\leq(v^*Gv)(\ell^*G^{-1}\ell).
+</annotation></semantics></math> These formulas need no claim of novelty
+or obscure historical attribution. Explain the weight or metric actually
+used.</p>
+<p><strong>What is specific to this project:</strong> the physical range
+of magnetic indices; vanishing at unused Fourier nodes; coupled integer
+flows; the marked charge; the bilinear measure; and the exponential cost
+of the dual functional. These are proved in
+<code>actual_matching_edge_magnetic_energy_profile.md</code>,
+<code>actual_matching_graph_shared_cycle_fourier_compiler.md</code>,
+<code>actual_matching_graph_positive_fourier_partition.md</code>, and
+`actual_filling_fourier_hermite_gram.md).</p>
+<p><strong>Limit:</strong> Parseval preserves energy, not the phase of a
+signed contraction. Weighted Cauchy gives an upper bound, not a nonzero
+leading coefficient. Independent local norms may discard the shared
+constraints that make the original geometric rate sharp. The finite
+filling norms and the new exact one-exception obstruction reinforce this
+distinction; they are not new volume theorems.</p>
+<p><strong>Useful illustration:</strong> the same complex arrows before
+and after a unitary transform, next to a separate diagram showing how
+replacing arrows by their lengths loses cancellation.</p>
+<h2 id="recurrences-quantum-operators-and-the-classical-a-curve">5.
+Recurrences, quantum operators, and the classical A-curve</h2>
+<p>A recurrence is an exact equation for a sequence or color-dependent
+function. If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><msub><mi>f</mi><mi>n</mi></msub><mo>=</mo><msup><mi>q</mi><mi>n</mi></msup><msub><mi>f</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">M f_n=q^n f_n</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><msub><mi>f</mi><mi>n</mi></msub><mo>=</mo><msub><mi>f</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">L f_n=f_{n+1}</annotation></semantics></math>,
+then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mi>M</mi><mo>=</mo><mi>q</mi><mi>M</mi><mi>L</mi></mrow><annotation encoding="application/x-tex">LM=qML</annotation></semantics></math>.
+A
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>-difference
+operator is a finite polynomial in these noncommuting operations, with
+specified coefficient ring. “All-level” means the same operator works
+before specializing the quantum parameter to each root of unity.</p>
+<p><strong>Primary colored-Jones coverage:</strong> Stavros Garoufalidis
+and Thang T. Q. Lê, <em>The colored Jones function is q-holonomic</em>,
+Geometry &amp; Topology 9 (2005), 1253–1293, <a
+href="https://arxiv.org/abs/math/0309214">paper</a>, DOI
+10.2140/gt.2005.9.1253. It proves q-holonomicity for the colored Jones
+function using its multisum structure. Their <a
+href="https://arxiv.org/abs/1601.07487"><em>A survey of q-holonomic
+functions</em></a> is a suitable definitions/closure reference. These
+are not, by themselves, proofs of the ADO normalization or of a
+classical geometric-factor statement.</p>
+<p><strong>Primary ADO coverage:</strong> Jennifer Brown, Tudor Dimofte,
+Stavros Garoufalidis, and Nathan Geer, <em>The ADO Invariants are a
+q-Holonomic Family</em>, <a
+href="https://arxiv.org/abs/2005.08176">paper</a>, <a
+href="https://arxiv.org/pdf/2005.08176">full text</a>. Theorem 4.3 gives
+the q-holonomic family statement. Theorem 4.4 relates an ADO annihilator
+to the colored-Jones recurrence with the explicit substitution
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>q</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mi>x</mi><mo>,</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>f</mi><mo>+</mo><mn>1</mn></mrow></msup><mi>y</mi><mo>;</mo><mi>q</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">A(q^{-1}x,(-1)^{f+1}y;q)</annotation></semantics></math>,
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+is framing. Its colored Jones normalization is stated in the theorem.
+The reverse ideal comparison mentioned in the introduction also uses
+Willetts’s separate result; do not attribute both directions to this
+paper alone.</p>
+<p><strong>Algorithmic background:</strong> Herbert S. Wilf and Doron
+Zeilberger, <em>An algorithmic proof theory for hypergeometric (ordinary
+and “q”) multisum/integral identities</em>, Inventiones Mathematicae 108
+(1992), 575–633, <a
+href="https://sites.math.rutgers.edu/~zeilberg/mamarim/mamarimhtml/multiwz.html">author
+publication page</a>, DOI 10.1007/BF02100618. This supplies coverage for
+creative telescoping of proper hypergeometric multisums. It does not
+automatically retain the root-specialization boundary terms or the
+normal data in the present source.</p>
+<p>The local <code>finite_sum_annihilator.md</code> gives its own
+finite-boundary and filtered-dimension argument. It should cite prior
+q-holonomicity plainly while explaining what its exact source
+construction keeps.</p>
+<h3 id="the-classical-curve-is-a-separate-object">The classical curve is
+a separate object</h3>
+<p>Daryl Cooper, Marc Culler, Henri Gillet, D. D. Long, and Peter B.
+Shalen, <em>Plane curves associated to character varieties of
+3-manifolds</em>, Inventiones Mathematicae 118 (1994), 47–84, <a
+href="https://homepages.math.uic.edu/~culler/papers/PlaneCurves/curves.pdf">author
+PDF</a>, DOI 10.1007/BF01231526, defines the peripheral eigenvalue curve
+of representations after choosing a meridian–longitude basis. It is the
+natural primary reference for the classical A-polynomial.</p>
+<p>Stavros Garoufalidis, <em>On the characteristic and deformation
+varieties of a knot</em>, <a
+href="https://arxiv.org/abs/math/0306230">paper</a>, Geometry &amp;
+Topology Monographs 7 (2004), 291–309, formulates the comparison of the
+recurrence characteristic variety with the classical deformation variety
+as a conjecture and studies examples. Cite it as the origin of that
+proposed relation, not as a general AJ theorem.</p>
+<p>In the guide, distinguish: existence of an annihilator; a selected
+solution with its starting data; a first nonzero classical symbol;
+divisibility by one selected complex geometric factor; and equality of
+complete operator ideals. The locally completed filtered-source theorem
+proves its explicitly scoped factor conclusion with gauges retained. It
+does not establish the full A-polynomial with multiplicities, the whole
+annihilator ideal, or general AJ equality.</p>
+<p><strong>Useful illustration:</strong> a recurrence with several
+solutions, one highlighted by initial/pointing data, followed by the
+selected component of the classical curve. This makes clear why the
+operator alone does not choose the invariant.</p>
+<h2 id="peripheral-potentials-regulators-and-torsors">6. Peripheral
+potentials, regulators, and torsors</h2>
+<p>Walter D. Neumann and Don Zagier, <em>Volumes of hyperbolic
+three-manifolds</em>, Topology 24 (1985), 307–332, <a
+href="https://people.mpim-bonn.mpg.de/zagier/files/doi/10.1016/0040-9383(85)90004-7/fulltext.pdf">author-hosted
+full text</a>, DOI 10.1016/0040-9383(85)90004-7. Theorem 3 and equations
+(7)–(8) give the symmetry of the peripheral logarithmic derivatives and
+a local potential; §5, especially equations (46)–(50), relates
+peripheral differentials to volume. These are local marked deformation
+statements. A guide citation must retain the meridian/longitude
+convention and distinguish eigenvalues from eigenvalue ratios; it cannot
+silently import the project’s filling signs or primitive period.</p>
+<p>Walter D. Neumann, <em>Extended Bloch group and the
+Cheeger–Chern–Simons class</em>, Geometry &amp; Topology 8 (2004),
+413–474, <a href="https://arxiv.org/abs/math/0307092">paper</a>, <a
+href="https://www.math.columbia.edu/department/neumann/preprints/extbloch04.pdf">author
+PDF</a>, DOI 10.2140/gt.2004.8.413. Definition 1.1 introduces the
+pre-Bloch group through the five-term relation. The extended group
+retains logarithmic data and gives the Cheeger–Chern–Simons class
+through a Rogers-dilogarithm construction. Ordinary Bloch–Wigner volume
+and a lifted complex regulator should not be conflated.</p>
+<p>For teaching purposes, a torsor is a nonempty space on which a group
+acts freely and transitively: differences between two points are
+meaningful, but there is no preferred zero until a point is chosen. In
+algebraic families the base, group scheme, and topology of local
+triviality must also be specified. <a
+href="https://stacks.math.columbia.edu/tag/0497">Stacks Project, §39.11,
+tag 0497</a>, Definitions 39.11.1 and 39.11.3 and Lemma 39.11.2, gives
+precise scheme-theoretic definitions and the relation between a section
+and triviality.</p>
+<p>Pere Menal-Ferrer and Joan Porti, <em>Twisted Cohomology for
+Hyperbolic Three Manifolds</em>, Osaka Journal of Mathematics 49 (2012),
+741–769, <a href="https://arxiv.org/abs/1001.2242">primary record</a>,
+is already in the bibliography. Its stated results concern
+twisted-cohomology vanishing for representations obtained from a lifted
+complete hyperbolic holonomy, with applications to local rigidity. This
+audit verified the abstract and bibliographic record, not every theorem
+hypothesis. It should support the specifically cited rigidity input, not
+an unspecified global continuation or quantum noncancellation claim.</p>
+<p>The guide has several different torsors: positive horosphere scales,
+algebraic norm-one coordinates, and a proposed period-selection object.
+They should not be identified merely because the same word applies. A
+classical regulator or a trivialized algebraic torsor does not determine
+a finite quantum cycle, its endpoint conditions, or its normalization.
+The local counterexamples and boundary-factor results are part of the
+explanation.</p>
+<p><strong>Root-of-unity phase coverage:</strong> Ivan Chi-Ho Ip and
+Masahito Yamazaki, <em>Quantum Dilogarithm Identities at Root of
+Unity</em>, <a href="https://arxiv.org/abs/1412.5777">paper</a>, IMRN
+(2016), DOI 10.1093/imrn/rnv141, treats cyclic quantum-dilogarithm
+identities associated with quiver mutations. The local factorial-source
+note already points to Definition 3.3 with a normalization
+qualification. Tsukasa Ishibashi’s <a
+href="https://arxiv.org/abs/2610.23572"><em>Phases in the cyclic quantum
+dilogarithm: correction to “Cyclic quantum Teichmüller theory”</em></a>,
+submitted 16 October 2026, is a real primary record: its abstract
+explicitly adds lifting data and possible root-of-unity phase factors,
+with a strict-lift locus restoring the stated identities. This audit
+verified that abstract and date, not the complete correction proof. It
+is relevant caution about phase data, not a substitute for the project’s
+exact carrier ledger.</p>
+<h2 id="state-sums-local-asymptotics-and-whole-period-estimates">7.
+State sums, local asymptotics, and whole-period estimates</h2>
+<p>A state sum is an exact finite sum over labels satisfying the
+diagram’s incidence constraints. An asymptotic packet is a local
+expansion near a selected critical point, including a nonzero leading
+amplitude and uniform error. A period is the original contour or finite
+Fourier reconstruction. Equality of exponential actions does not
+identify those three objects.</p>
+<p><strong>Foundational quantum-invariant references already in the
+bibliography:</strong></p>
+<ul>
+<li>R. M. Kashaev, <em>A Link Invariant from Quantum Dilogarithm</em>
+(1995), <a href="https://arxiv.org/abs/q-alg/9504020">paper</a>, DOI
+10.1142/S0217732395001526: the quantum-dilogarithm link invariant and
+its R-matrix construction.</li>
+<li>R. M. Kashaev, <em>The Hyperbolic Volume of Knots from the Quantum
+Dilogarithm</em> (1997), <a
+href="https://arxiv.org/abs/q-alg/9601025">paper</a>, DOI
+10.1023/A:1007364912784: evidence from particular knot asymptotics for
+the volume relation, not a general proof.</li>
+<li>Hitoshi Murakami and Jun Murakami, <em>The Colored Jones Polynomials
+and the Simplicial Volume of a Knot</em> (2001), <a
+href="https://arxiv.org/abs/math/9905075">paper</a>, DOI
+10.1007/BF02392716: the relation between the Kashaev and colored-Jones
+viewpoints and the volume-conjecture formulation, not the unrestricted
+conjecture’s proof.</li>
+</ul>
+<p><strong>A precise all-orders comparison reference:</strong> Stavros
+Garoufalidis and Don Zagier, <em>Asymptotics of Nahm sums at roots of
+unity</em>, <a href="https://arxiv.org/abs/1812.07690">paper</a>, <a
+href="https://arxiv.org/pdf/1812.07690">full text</a>, Ramanujan Journal
+55 (2021), 219–238, DOI 10.1007/s11139-020-00266-x. Lemma 2.1 gives a
+q-Pochhammer expansion; Theorem 3.1 gives radial all-orders asymptotics
+for the stated positive-definite Nahm-sum data; §4.3 handles congruence
+classes and summation. This is a useful methodological comparison. Its
+fixed-root radial limit is not automatically the growing-root-order
+finite knot sum. The paper explicitly describes the matching knot formal
+series as conjectural in that comparison.</p>
+<p>Lars Hörmander, <em>The Analysis of Linear Partial Differential
+Operators I: Distribution Theory and Fourier Analysis</em>, <a
+href="https://link.springer.com/book/10.1007/978-3-642-61497-2">publisher
+edition</a>, Classics in Mathematics (2003), is appropriate background
+for Fourier analysis and local stationary-phase methods. The publisher
+metadata were verified; no page-specific theorem was checked here. Do
+not attach a theorem number from this book to the different 1963 book
+<em>Linear Partial Differential Operators</em>.</p>
+<p>The project’s source proofs must still verify: the actual lattice and
+measure; analytic interpolation rather than an arbitrary interpolant;
+nondegenerate complex saddles; contour endpoints; every Fourier charge;
+both level parities and normal terms; and a nonzero contribution after
+summing. The newly completed general-Morse geometric contribution
+concerns the original CROSS sector. Its unproved full LEFT/RIGHT
+remainder estimate must remain visible. None of the references above
+supplies that missing comparison by authority.</p>
+<h2 id="concrete-editorial-corrections-and-scope-checks">8. Concrete
+editorial corrections and scope checks</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Location or proposed phrase</th>
+<th>Correction or qualification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“Gowda, Some log and weak majorization inequalities”</td>
+<td>Use Tao–Jeong–Gowda and the full Jordan-algebra title; distinguish
+Horn’s original matrix result.</td>
+</tr>
+<tr>
+<td>“Karamata’s theorem” without context</td>
+<td>State convex-majorization or positive-measure Tauberian theorem.
+Their inputs and conclusions differ.</td>
+</tr>
+<tr>
+<td>Rivin 1994 as sole support for a general marked critical-point
+theorem</td>
+<td>Add Futer–Guéritaud Theorem 1.2, then cite the independently proved
+local marked version for this source.</td>
+</tr>
+<tr>
+<td>“Positive angle structures give the selected geometric maximum”</td>
+<td>An interior critical point of the chosen functional is an additional
+requirement.</td>
+</tr>
+<tr>
+<td>“Plancherel/weighted Cauchy proves the volume rate”</td>
+<td>It proves the stated energy identity/upper bound. Shared constraints
+and cancellation require the separate local source theorem.</td>
+</tr>
+<tr>
+<td>“q-holonomicity proves the geometric A-polynomial”</td>
+<td>Keep recurrence existence, selected branch, classical factor, and
+full ideal equality distinct; retain framing and variable
+substitutions.</td>
+</tr>
+<tr>
+<td>“A regulator/torsor selects the quantum state”</td>
+<td>Specify the action, reference, boundary conditions, and actual cycle
+map. This implication is not automatic.</td>
+</tr>
+<tr>
+<td>“Nahm-sum asymptotics prove the knot state-sum asymptotics”</td>
+<td>Different objects and limiting regimes; an exact source adapter is
+required.</td>
+</tr>
+<tr>
+<td>Ishibashi correction listed as hypothetical or unverified
+metadata</td>
+<td>The primary 16 October 2026 record is verified; only its abstract,
+not its full proof, was checked here.</td>
+</tr>
+<tr>
+<td>General-Morse CROSS theorem described as the full invariant</td>
+<td>Retain the explicit remainder problem. The exact one-exception
+counterexample excludes a proposed automatic support argument but is not
+a knot-volume counterexample.</td>
+</tr>
+</tbody>
+</table>
+<p>The currently inspected guide already makes many of these
+distinctions correctly. Apart from the incomplete Tao–Jeong–Gowda
+attribution, the table primarily identifies phrases to avoid when
+expanding the lecture-note explanations; it is not a claim that every
+misleading phrase is currently present.</p>
+<h2 id="a-compact-teaching-order-and-citation-policy">9. A compact
+teaching order and citation policy</h2>
+<ol type="1">
+<li>Define the exact state sum and its shared labels.</li>
+<li>Explain the positive geometric optimization and its angle
+constraints.</li>
+<li>Explain Fourier energy and weighted inequalities, including what is
+lost by taking absolute values.</li>
+<li>Explain local saddle expansions and the separate whole-period
+problem.</li>
+<li>Introduce recurrence operators, initial data, and the selected
+classical component.</li>
+<li>Introduce peripheral logarithms, regulator branches, and the several
+torsors only after their concrete objects have appeared.</li>
+</ol>
+<p>For each method, a small panel can state “standard tool,” “what is
+proved here,” and “what this does not settle.” The guide can keep all
+the attempted routes with this scope. The manuscript should state only
+completed proofs and clearly identified external background. References
+should be placed beside the claim they support, with authors, full
+title, and a primary or author-hosted link; a bibliography alone does
+not explain which statement is being attributed.</p>
+<p>No novelty priority claim has been assessed. No external proof
+technique was substituted for a local argument during this coverage
+audit.</p>
+</body>
+</html>

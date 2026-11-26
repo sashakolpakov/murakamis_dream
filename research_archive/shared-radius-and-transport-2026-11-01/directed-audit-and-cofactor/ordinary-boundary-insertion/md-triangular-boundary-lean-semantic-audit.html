@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>md-triangular-boundary-lean-semantic-audit</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<h1
+id="semantic-check-of-the-triangular-boundary-scalar-module">Semantic
+check of the triangular-boundary scalar module</h1>
+<p>The files read were the current public-staging copies of
+formal/VolumeLogic/TriangularBoundary.lean and its imported
+formal/VolumeLogic/ProtectedSum.lean. This is a mathematical binding
+check of the nine new theorem statements and their use of the existing
+sector definitions. It is not a new kernel execution.</p>
+<h2 id="binding-to-the-written-proof">Binding to the written proof</h2>
+<p>The Lean variables have the following meanings:</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Lean variable</th>
+<th>Mathematical quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a, c</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>a</mi><mo>,</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">\log a,\log c</annotation></semantics></math>,
+the two retained ordinary middle log weights</td>
+</tr>
+<tr>
+<td>b</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">\log b</annotation></semantics></math>,
+the common boundary log weight</td>
+</tr>
+<tr>
+<td>t</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>T</mi></mrow><annotation encoding="application/x-tex">2T</annotation></semantics></math>,
+twice the removed triangle potential</td>
+</tr>
+<tr>
+<td>qa, qc</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msub><mi>Q</mi><mi>a</mi></msub><mo>,</mo><mn>2</mn><msub><mi>Q</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">2Q_a,2Q_c</annotation></semantics></math>,
+twice the retained triangle potentials</td>
+</tr>
+<tr>
+<td>rest1, rest2</td>
+<td>Twice the sums of all nonroot input local rates</td>
+</tr>
+<tr>
+<td>target1, target2</td>
+<td>Twice the complete core and comparison-block target sums</td>
+</tr>
+<tr>
+<td>phi1, phi2</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msub><mi mathvariant="normal">Φ</mi><mi>D</mi></msub><mo>,</mo><mn>2</mn><msub><mi mathvariant="normal">Φ</mi><mi>B</mi></msub></mrow><annotation encoding="application/x-tex">2\Phi_D,2\Phi_B</annotation></semantics></math></td>
+</tr>
+<tr>
+<td>gap1, gap2</td>
+<td>Twice the respective available witness gaps</td>
+</tr>
+</tbody>
+</table>
+<p>Thus
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>−</mo><mi>b</mi><mo>=</mo><mn>2</mn><mi>T</mi><mo>−</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>b</mi><mo>=</mo><mi mathvariant="normal">Δ</mi></mrow><annotation encoding="application/x-tex">t-b=2T-\log b=\Delta</annotation></semantics></math>
+is <strong>undoubled</strong>. A defect of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>−</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">t-b</annotation></semantics></math>
+in a doubled local rate is exactly the allowed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\Delta/2</annotation></semantics></math>
+in the ordinary rate.</p>
+<p>The imported bridge definitions are precisely
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msub><mi>X</mi><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">w</mi></mrow></msub><mo>=</mo><mi>q</mi><mi>a</mi><mo>+</mo><mi>q</mi><mi>c</mi><mo>,</mo><mspace width="1.0em"></mspace><mn>2</mn><msub><mi>A</mi><mrow><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">w</mi></mrow><mo>,</mo><mi>L</mi></mrow></msub><mo>=</mo><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>c</mi><mo>,</mo><mi>q</mi><mi>a</mi><mo>+</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="1.0em"></mspace><mn>2</mn><msub><mi>A</mi><mrow><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">w</mi></mrow><mo>,</mo><mi>R</mi></mrow></msub><mo>=</mo><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>a</mi><mo>,</mo><mi>q</mi><mi>c</mi><mo>+</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+2X_{\mathrm{new}}=qa+qc,\quad
+2A_{{\mathrm{new}},L}=\max(2c,qa+c),\quad
+2A_{{\mathrm{new}},R}=\max(2a,qc+a).
+</annotation></semantics></math> Substituting
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>
+for the singleton parameter of the old protected definitions gives the
+correct original core and block rates: central
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>+</mo><mi>q</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">t+qc</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mi>a</mi><mo>+</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">qa+t</annotation></semantics></math>;
+left core
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>c</mi><mo>,</mo><mi>t</mi><mo>+</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\max(2c,t+c)</annotation></semantics></math>;
+right block
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>a</mi><mo>,</mo><mi>t</mi><mo>+</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\max(2a,t+a)</annotation></semantics></math>.
+It does not assert that the removed triangle is a singleton.</p>
+<h2 id="each-theorems-role">Each theorem’s role</h2>
+<ol type="1">
+<li>boundary_left_with_defect bounds both branches of the left maximum
+under
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>≤</mo><mi>q</mi><mi>a</mi><mo>+</mo><mrow><mi mathvariant="normal">d</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi></mrow></mrow><annotation encoding="application/x-tex">t\le qa+\mathrm{defect}</annotation></semantics></math>
+and nonnegative defect.</li>
+<li>boundary_right_with_defect gives the separately checked right
+version.</li>
+<li>boundary_bridge_with_defect uses
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>≤</mo><mi>t</mi><mo>,</mo><mi>q</mi><mi>a</mi><mo>,</mo><mi>q</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">b\le t,qa,qc</annotation></semantics></math>,
+the simplex-vertex bounds, to choose defect
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>−</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">t-b</annotation></semantics></math>
+for all three labels. This has exactly the doubled scaling above.</li>
+<li>boundary_bridge_central_block excludes the right output through
+protectedSecondSide=false and uses
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>≤</mo><mi>q</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">t\le qa</annotation></semantics></math>
+only for the left case. It requires no comparison with qc.</li>
+<li>boundary_total_with_defect subtracts
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mi>a</mi><mi>r</mi><mi>g</mi><mi>e</mi><mi>t</mi><mn>1</mn><mo>+</mo><mi>t</mi><mi>a</mi><mi>r</mi><mi>g</mi><mi>e</mi><mi>t</mi><mn>2</mn><mo>−</mo><mn>2</mn><mi>b</mi></mrow><annotation encoding="application/x-tex">target1+target2-2b</annotation></semantics></math>,
+so the ordinary common-boundary target is counted once. The result is a
+loss
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>−</mo><mi>b</mi><mo>=</mo><mi mathvariant="normal">Δ</mi></mrow><annotation encoding="application/x-tex">t-b=\Delta</annotation></semantics></math>
+in doubled costs, equivalently
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\Delta/2</annotation></semantics></math>.</li>
+<li>boundary_total_central_block gives the sharp loss
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo>−</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>2</mn><mi mathvariant="normal">Δ</mi></mrow><annotation encoding="application/x-tex">2(t-b)=2\Delta</annotation></semantics></math>
+in doubled costs.</li>
+<li>boundary_conditional_action_cancels cancels the doubled conditional
+addition
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi mathvariant="normal">Δ</mi></mrow><annotation encoding="application/x-tex">2\Delta</annotation></semantics></math>
+against precisely that sharp target-corrected subtraction.</li>
+<li>boundary_noncentral_block_margin retains the extra
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>−</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">t-b</annotation></semantics></math>
+loss. Its standalone conclusion does not itself need to discard that
+quantity. Nonnegativity follows from ht in its intended
+application.</li>
+<li>boundary_certified_rate splits on the entire block Boolean
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>o</mi><mi>u</mi><mi>t</mi><mi>s</mi><mi>i</mi><mi>d</mi><mi>e</mi><mi>S</mi><mi>e</mi><mi>c</mi><mi>o</mi><mi>n</mi><mi>d</mi><mspace width="0.222em"></mspace><mo>∨</mo><mspace width="0.222em"></mspace><mi>p</mi><mi>r</mi><mi>o</mi><mi>t</mi><mi>e</mi><mi>c</mi><mi>t</mi><mi>e</mi><mi>d</mi><mi>S</mi><mi>e</mi><mi>c</mi><mi>o</mi><mi>n</mi><mi>d</mi><mi>S</mi><mi>i</mi><mi>d</mi><mi>e</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+outsideSecond\ \lor\ protectedSecondSide(s).
+</annotation></semantics></math> It does not split on the root alone. A
+locally central root with a noncentral spectator is correctly placed in
+the noncentral-block branch. When the whole block is central, the
+imported sector-map theorem and the output noncentral assumption force
+the whole core to be noncentral. The conditional packing bound and the
+conditional triangle comparison are used only in this branch.</li>
+</ol>
+<p>The duplicate target is correctly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>b</mi><mo>=</mo><mn>2</mn><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">2b=2\log b</annotation></semantics></math>,
+not
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>t</mi><mo>=</mo><mn>4</mn><mi>T</mi></mrow><annotation encoding="application/x-tex">2t=4T</annotation></semantics></math>.
+Replacing one by the other would eliminate the essential geometric
+correction and would not match the source extraction.</p>
+<h2 id="hypotheses-that-remain-mathematical-inputs">Hypotheses that
+remain mathematical inputs</h2>
+<p>The formal final inequality does not require positive gaps, because
+the ordered-ring inequality is valid for arbitrary gap values. A strict
+source conclusion additionally uses the positive certificate gaps proved
+in the written argument. The written construction supplies coreUpper by
+choosing either a complete minimizer or a noncentral witness with a
+positive gap.</p>
+<p>The module does not prove the local spectral-envelope estimates, the
+finite shared coefficient identity, the zero-boundary certificate
+extension, the disk pressure identity, the Soddy comparison, or the
+primitive filling and metric-volume theorem. It checks the scalar case
+split and exact target correction once those inputs are supplied. The
+Boolean correspondence to whole source strings is provided by the
+written sector map; the old imported sector-map lemma verifies that one
+induced input is active.</p>
+<p>No scaling or binding discrepancy was found in these nine statements.
+No Lean source was edited in this check.</p>
+</body>
+</html>

@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>md-shifted-cyclic-excursion-and-clock-reduction</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+<style id="research-reader-style">
+body {max-width:52rem; margin:2.5rem auto; padding:0 1.25rem; font-size:18px; line-height:1.6;}
+h1 {font-size:2rem;line-height:1.2;} h2 {margin-top:2.25rem;line-height:1.25;}
+p, li, a {overflow-wrap:anywhere;} pre {overflow-x:auto;}
+.display-math {overflow-x:auto;max-width:100%;margin:1.25em 0;padding:.2em 0;}
+.display-math math {min-width:max-content;margin-inline:auto;}
+@media(max-width:600px) {body{margin:1.5rem auto;padding:0 1rem;font-size:17px;}}
+</style>
+</head>
+<body>
+
+<h1
+id="shifted-clocks-and-finite-excursions-in-the-actual-bipyramid-source">Shifted
+clocks and finite excursions in the actual bipyramid source</h1>
+<p>This note gives an exact reduction of the original full-minus-CROSS
+numerator on the opposite-offset bipyramid. It retains the protected
+face, the ordinary coefficient targets, the two middle positions of
+every coupon, and all source phases. The main new reduction is a
+nilpotent bad-state transfer and its finite Schur complement. It does
+not prove the remaining exponential bound on that Schur complement.</p>
+<p>Throughout, a high index means a middle <strong>monomial
+exponent</strong> greater than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⌊</mo><mo stretchy="false" form="prefix">(</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo></mrow><annotation encoding="application/x-tex">\lfloor(N-1)/2\rfloor</annotation></semantics></math>,
+not a physical color. All derivative identities are at the prescribed
+root. They are not
+generic-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>
+identities that can be differentiated in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>.</p>
+<h2 id="the-exact-source-and-its-two-kinds-of-indices">1. The exact
+source and its two kinds of indices</h2>
+<p>Let
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>≥</mo><mn>2</mn><mo>,</mo><mspace width="1.0em"></mspace><mi>d</mi><mo>=</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo>,</mo><mspace width="1.0em"></mspace><mi>h</mi><mo>=</mo><mo stretchy="false" form="prefix">⌊</mo><mi>d</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo><mo>,</mo><mspace width="1.0em"></mspace><mi>q</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>π</mi><mi>i</mi><mi>/</mi><mi>N</mi></mrow></msup><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>s</mi><mi>r</mi></msub><mo>=</mo><mn>2</mn><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>π</mi><mi>r</mi><mi>/</mi><mi>N</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>c</mi><mi>r</mi></msub><mo>=</mo><msup><mi>q</mi><mrow><mn>2</mn><mi>r</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>+</mo><msup><mi>q</mi><mrow><mi>−</mi><mn>2</mn><mi>r</mi><mo>−</mo><mn>1</mn></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ N\ge2,\quad d=N-1,\quad h=\lfloor d/2\rfloor,\quad
+ q=e^{\pi i/N},\quad
+ s_r=2\sin(\pi r/N),\quad
+ c_r=q^{2r+1}+q^{-2r-1}.
+ \tag{1}
+</annotation></semantics></math></div> The equator size
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>≥</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">m\ge6</annotation></semantics></math>
+is even. Rim subscripts are taken modulo
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>.
+The north face is set to zero. The other protected face
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>z</mi><mn>0</mn></msub><annotation encoding="application/x-tex">z_0</annotation></semantics></math>
+has target zero, equivalently it is set to zero after forming the local
+polynomials. The south face is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>.
+The remaining targets are
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><msup><mi>S</mi><mi>d</mi></msup><msubsup><mi>z</mi><mn>1</mn><mi>d</mi></msubsup><mi>⋯</mi><msubsup><mi>z</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow><mi>d</mi></msubsup><mo stretchy="false" form="postfix">]</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>t</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>t</mi><mi>j</mi></msub><mo>=</mo><mi>d</mi><mspace width="0.222em"></mspace><mo stretchy="false" form="prefix">(</mo><mi>j</mi><mo>≠</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ [S^d z_1^d\cdots z_{m-1}^d],\qquad t_0=0,\quad t_j=d\ (j\ne0).
+ \tag{2}
+</annotation></semantics></math></div> The polynomial statements are valid
+also at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">N=2</annotation></semantics></math>.
+Their application to the published general-Morse physical source uses
+that exact source identity in its stated range
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>≥</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">N\ge3</annotation></semantics></math>,
+with its original component, cup, cap, and marked-cut normalization. For
+an actual polynomial coupon
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>,
+retain the root face operator
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><msup><mi>z</mi><mi>r</mi></msup><mo>=</mo><msub><mi>c</mi><mi>r</mi></msub><msup><mi>z</mi><mi>r</mi></msup><mo>−</mo><msubsup><mi>s</mi><mi>r</mi><mn>2</mn></msubsup><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><msup><mi>z</mi><mrow><mi>r</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>−</mo><msub><mi>s</mi><mi>r</mi></msub><msub><mi>s</mi><mrow><mi>r</mi><mo>−</mo><mn>1</mn></mrow></msub><mi>x</mi><mi>y</mi><msup><mi>z</mi><mrow><mi>r</mi><mo>−</mo><mn>2</mn></mrow></msup><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>H</mi><mi>p</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munderover><mo>∑</mo><mrow><mi>r</mi><mo>=</mo><mn>0</mn></mrow><mi>d</mi></munderover><mo stretchy="false" form="prefix">[</mo><mi>p</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>C</mi><mi>b</mi></msub><mo stretchy="false" form="postfix">)</mo><msup><mi>b</mi><mi>r</mi></msup><mo stretchy="false" form="postfix">]</mo><msup><mi>c</mi><mrow><mi>d</mi><mo>−</mo><mi>r</mi></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ C(x,y)z^r
+ =c_rz^r-s_r^2(x+y)z^{r-1}
+                  -s_rs_{r-1}xy z^{r-2},
+ \qquad
+ H_p(x,b,c,y)=\sum_{r=0}^d[p(C_b)b^r]c^{d-r}.
+ \tag{3}
+</annotation></semantics></math></div> Terms with negative exponents vanish.
+The operator acts on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">ℂ</mi><mo stretchy="false" form="prefix">[</mo><mi>b</mi><mo stretchy="false" form="postfix">]</mo><mi>/</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>b</mi><mi>N</mi></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathbb C[b]/(b^N)</annotation></semantics></math>,
+with the full repeated-root functional calculus. In particular, no
+derivative at a double spectral node is discarded. For the full spectral
+numerator the coupon is
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi mathvariant="normal">Ω</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>V</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo>;</mo><mi mathvariant="normal">Ω</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><msub><mi>χ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><msub><mi>χ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi mathvariant="normal">Ω</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mi>σ</mi><mo>−</mo><mi mathvariant="normal">Ω</mi></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>χ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>2</mn><msub><mi>T</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mn>2</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ p(\Omega)=V_N(\sigma;\Omega)
+ =\frac{\chi_N(\sigma)-\chi_N(\Omega)}{\sigma-\Omega},
+ \qquad
+ \chi_N(z)=2T_N(z/2)+2.
+ \tag{4}
+</annotation></semantics></math></div> Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mi>N</mi></msub><annotation encoding="application/x-tex">T_N</annotation></semantics></math>
+is the usual first-kind Chebyshev polynomial. The quotient in (4) is a
+polynomial identity, including
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><mi mathvariant="normal">Ω</mi></mrow><annotation encoding="application/x-tex">\sigma=\Omega</annotation></semantics></math>.
+The same finite transport below applies to any original fixed-power
+coupon reduced modulo
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>χ</mi><mi>N</mi></msub><annotation encoding="application/x-tex">\chi_N</annotation></semantics></math>.</p>
+<p>The literal cyclic factors are
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>j</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>H</mi><msub><mi>p</mi><mi>j</mi></msub></msub><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><msub><mi>z</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>z</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>z</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mi>j</mi><mspace width="0.222em"></mspace><mtext mathvariant="normal">odd</mtext><mo>,</mo></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>H</mi><msub><mi>p</mi><mi>j</mi></msub></msub><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo>,</mo><msub><mi>z</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>z</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>z</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mi>j</mi><mspace width="0.222em"></mspace><mtext mathvariant="normal">even</mtext><mi>.</mi></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">
+ F_j=
+ \begin{cases}
+ H_{p_j}(0,z_{j-1},z_{j+1},z_j),&amp;j\ \text{odd},\\
+ H_{p_j}(S,z_{j+1},z_{j-1},z_j),&amp;j\ \text{even}.
+ \end{cases}
+ \tag{5}
+</annotation></semantics></math></div> The reversed middle order in the second
+row is part of the original source, not a convention to be dropped.
+Write
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>j</mi></msub><mo>=</mo><munder><mo>∑</mo><mrow><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi></mrow></munder><msub><mi>h</mi><mi>j</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo>;</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><msubsup><mi>z</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow><mi>a</mi></msubsup><msubsup><mi>z</mi><mi>j</mi><mi>b</mi></msubsup><msubsup><mi>z</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow><mi>c</mi></msubsup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ F_j=\sum_{a,b,c}h_j(a,b,c;S)
+                  z_{j-1}^{a}z_j^b z_{j+1}^c.
+ \tag{6}
+</annotation></semantics></math></div> For a north coupon, a nonzero
+coefficient has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>+</mo><mi>b</mi><mo>+</mo><mi>c</mi><mo>=</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">a+b+c=d</annotation></semantics></math>.
+For a south coupon it is a scalar times
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>S</mi><mi>p</mi></msup><annotation encoding="application/x-tex">S^p</annotation></semantics></math>,
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mi>d</mi><mo>−</mo><mi>a</mi><mo>−</mo><mi>b</mi><mo>−</mo><mi>c</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">p=d-a-b-c\ge0</annotation></semantics></math>.
+In either case
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>,</mo><mi>c</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a,c\ge0</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>+</mo><mi>c</mi><mo>≤</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">a+c\le d</annotation></semantics></math>.
+The symbols
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>,</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">a,c</annotation></semantics></math>
+in (6) are the two middle exponents, whereas
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>
+is the central rim exponent, an outer position of (3).</p>
+<p>The original matrix support says exactly
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>F</mi><mi>j</mi><mi mathvariant="normal">C</mi></msubsup><mo>:</mo><mspace width="1.0em"></mspace><mi>a</mi><mo>≤</mo><mi>h</mi><mo>,</mo><mspace width="1.0em"></mspace><mi>c</mi><mo>≤</mo><mi>h</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+       F_j^{\mathrm C}:\quad a\le h,\quad c\le h.
+ \tag{7}
+</annotation></semantics></math></div> Indeed an entry
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>C</mi><msub><mo stretchy="false" form="postfix">)</mo><mrow><mi>i</mi><mo>,</mo><mi>r</mi></mrow></msub></mrow><annotation encoding="application/x-tex">p(C)_{i,r}</annotation></semantics></math>
+has middle powers
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>b</mi><mi>i</mi></msup><msup><mi>c</mi><mrow><mi>d</mi><mo>−</mo><mi>r</mi></mrow></msup></mrow><annotation encoding="application/x-tex">b^i c^{d-r}</annotation></semantics></math>.
+At even level, CROSS joins the lower half to the upper half; at odd
+level it includes the central row and column. Both cases give (7). Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo stretchy="false" form="prefix">(</mo><mi>h</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>&gt;</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">2(h+1)&gt;d</annotation></semantics></math>,
+a non-CROSS coupon has exactly one high middle exponent.</p>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">𝒮</mi><annotation encoding="application/x-tex">\mathscr S</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="script">𝒮</mi><mi mathvariant="normal">C</mi></msub><annotation encoding="application/x-tex">\mathscr S_{\mathrm C}</annotation></semantics></math>
+denote (2) applied to the products of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>j</mi></msub><annotation encoding="application/x-tex">F_j</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>F</mi><mi>j</mi><mi mathvariant="normal">C</mi></msubsup><annotation encoding="application/x-tex">F_j^{\mathrm C}</annotation></semantics></math>,
+respectively. Our object is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">𝒟</mi><mo>=</mo><mi mathvariant="script">𝒮</mi><mo>−</mo><msub><mi mathvariant="script">𝒮</mi><mi mathvariant="normal">C</mi></msub></mrow><annotation encoding="application/x-tex">\mathscr D=\mathscr S-\mathscr S_{\mathrm C}</annotation></semantics></math>.
+These are the original scalar source coefficients. No absolute values,
+reduced head count, or replacement face demands are used.</p>
+<h2 id="literal-transfer-including-the-unique-marked-jump">2. Literal
+transfer, including the unique marked jump</h2>
+<p>At the incoming state of row
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>,
+use
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>d</mi><msup><mo stretchy="false" form="postfix">}</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(u,v)\in\{0,\ldots,d\}^2</annotation></semantics></math>,
+and put
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>T</mi><mi>j</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><msub><mo stretchy="false" form="postfix">)</mo><mrow><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mo stretchy="false" form="prefix">(</mo><msup><mi>u</mi><mo>′</mo></msup><mo>,</mo><msup><mi>v</mi><mo>′</mo></msup><mo stretchy="false" form="postfix">)</mo></mrow></msub><mo>=</mo><msub><mi>h</mi><mi>j</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>t</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mi>u</mi><mo>,</mo><mspace width="0.222em"></mspace><msup><mi>u</mi><mo>′</mo></msup><mo>−</mo><mi>v</mi><mo>,</mo><mspace width="0.222em"></mspace><msup><mi>v</mi><mo>′</mo></msup><mo>;</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ (T_j(S))_{(u,v),(u&#39;,v&#39;)}
+ =h_j(t_{j-1}-u,\ u&#39;-v,\ v&#39;;S).
+ \tag{8}
+</annotation></semantics></math></div> Every negative or unsupported exponent
+gives zero. For a nonzero path, if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>a</mi><mi>j</mi></msub><mo>,</mo><msub><mi>b</mi><mi>j</mi></msub><mo>,</mo><msub><mi>c</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a_j,b_j,c_j)</annotation></semantics></math>
+is its local triple, then
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>u</mi><mi>j</mi></msub><mo>=</mo><msub><mi>c</mi><mrow><mi>j</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><msub><mi>b</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>v</mi><mi>j</mi></msub><mo>=</mo><msub><mi>c</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>a</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>b</mi><mi>j</mi></msub><mo>+</mo><msub><mi>c</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>t</mi><mi>j</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ u_j=c_{j-2}+b_{j-1},\qquad v_j=c_{j-1},
+ \qquad
+ a_{j+1}+b_j+c_{j-1}=t_j.
+ \tag{9}
+</annotation></semantics></math></div> These relations prove the exact,
+multiplicity-one correspondence between cyclic transfer paths and
+original monomial selections. Thus
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">tr</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>T</mi><mn>0</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><mi>⋯</mi><msub><mi>T</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>S</mi><mi>d</mi></msup><mi mathvariant="script">𝒮</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \operatorname{tr}(T_0(S)\cdots T_{m-1}(S))
+                         =S^d\mathscr S.
+ \tag{10}
+</annotation></semantics></math></div> The common
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+can therefore be set to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>
+after forming the literal transfer. It cannot be replaced by independent
+local specializations. One direct check of (10) is
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>j</mi></msub><mo>=</mo><mi>d</mi><mo>−</mo><msub><mi>t</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>u</mi><mi>j</mi></msub><mo>+</mo><msub><mi>v</mi><mi>j</mi></msub><mo>−</mo><msub><mi>u</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>v</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>;</mo><mspace width="2.0em"></mspace><munder><mo>∑</mo><mi>j</mi></munder><msub><mi>p</mi><mi>j</mi></msub><mo>=</mo><mi>d</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ p_j=d-t_{j-1}+u_j+v_j-u_{j+1}-v_{j+1};
+ \qquad \sum_j p_j=d.
+ \tag{11}
+</annotation></semantics></math></div> North rows have
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>j</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">p_j=0</annotation></semantics></math>.
+All ordinary rows preserve or decrease the grade
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>+</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">u+v</annotation></semantics></math>;
+row
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">j=1</annotation></semantics></math>
+is the unique possible upward jump by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>.
+This is the protected mark, not a periodic grading reset.</p>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">𝒱</mi><annotation encoding="application/x-tex">\mathcal V</annotation></semantics></math>
+be the direct sum of the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+state spaces, with row
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>
+interpreted as the incoming state before
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mi>j</mi></msub><annotation encoding="application/x-tex">T_j</annotation></semantics></math>.
+Define the position-clock transfer
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">L(S)</annotation></semantics></math>
+by its only nonzero blocks
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo stretchy="false" form="prefix">(</mo><mi>S</mi><msub><mo stretchy="false" form="postfix">)</mo><mrow><mi>j</mi><mo>,</mo><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>T</mi><mi>j</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                L(S)_{j,j+1}=T_j(S).
+ \tag{12}
+</annotation></semantics></math></div> Block subscripts are cyclic. It follows
+that
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">tr</mi><mo>&#8289;</mo></mrow><mi>L</mi><mo stretchy="false" form="prefix">(</mo><mi>S</mi><msup><mo stretchy="false" form="postfix">)</mo><mi>m</mi></msup><mo>=</mo><mi>m</mi><msup><mi>S</mi><mi>d</mi></msup><mi mathvariant="script">𝒮</mi><mo>,</mo><mspace width="2.0em"></mspace><mi mathvariant="script">𝒮</mi><mo>=</mo><mi>−</mi><mo stretchy="false" form="prefix">[</mo><msup><mi>z</mi><mi>m</mi></msup><mo stretchy="false" form="postfix">]</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo>−</mo><mi>z</mi><mi>L</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \operatorname{tr}L(S)^m
+      =mS^d\mathscr S,\qquad
+ \mathscr S=-[z^m]\log\det(I-zL(1)).
+ \tag{13}
+</annotation></semantics></math></div> The second identity is formal at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">z=0</annotation></semantics></math>;
+it does not choose a branch of a numerical logarithm.</p>
+<h2 id="cross-becomes-a-diagonal-state-restriction">3. CROSS becomes a
+diagonal state restriction</h2>
+<p>At incoming position
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>,
+let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mi>j</mi></msub><annotation encoding="application/x-tex">P_j</annotation></semantics></math>
+project onto
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>≤</mo><mi>h</mi><mo>,</mo><mspace width="2.0em"></mspace><mn>0</mn><mo>≤</mo><msub><mi>t</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mi>u</mi><mo>≤</mo><mi>h</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+             v\le h,\qquad 0\le t_{j-1}-u\le h.
+ \tag{14}
+</annotation></semantics></math></div> States with a negative
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mi>u</mi></mrow><annotation encoding="application/x-tex">t_{j-1}-u</annotation></semantics></math>
+have zero outgoing row in (8), so their arbitrary assignment would not
+change a cyclic contraction. We use (14) to fix the definition. Put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>=</mo><msub><mo>⨁</mo><mi>j</mi></msub><msub><mi>P</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">P=\bigoplus_jP_j</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo>=</mo><mi>I</mi><mo>−</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">Q=I-P</annotation></semantics></math>.</p>
+<p>The two inequalities in (14) are respectively
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>≤</mo><mi>h</mi></mrow><annotation encoding="application/x-tex">c_{j-1}\le h</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>j</mi></msub><mo>≤</mo><mi>h</mi></mrow><annotation encoding="application/x-tex">a_j\le h</annotation></semantics></math>.
+Consequently
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">tr</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>P</mi><mi>L</mi><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><mi>P</mi><msup><mo stretchy="false" form="postfix">)</mo><mi>m</mi></msup><mo>=</mo><mi>m</mi><msup><mi>S</mi><mi>d</mi></msup><msub><mi mathvariant="script">𝒮</mi><mi mathvariant="normal">C</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \operatorname{tr}(PL(S)P)^m=mS^d\mathscr S_{\mathrm C}.
+ \tag{15}
+</annotation></semantics></math></div> This is an exact equality of signed
+polynomials. It uses the factorization of the local mask in (7), rather
+than treating a projected coupon as another arbitrary polynomial in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>.
+Away from the marked row, the good states are simply
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>≥</mo><mi>d</mi><mo>−</mo><mi>h</mi><mo>,</mo><mspace width="0.222em"></mspace><mi>v</mi><mo>≤</mo><mi>h</mi></mrow><annotation encoding="application/x-tex">u\ge d-h,\ v\le h</annotation></semantics></math>.
+At the marked row,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">u=0</annotation></semantics></math>
+is required.</p>
+<p>This choice of states is useful because every bad <em>internal</em>
+interface of a nonzero path has a witness: either the preceding coupon
+has high
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>,
+or the following coupon has high
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>.
+A coupon can witness at most one interface.</p>
+<h2 id="the-bad-transfer-is-nilpotent-uniformly-in-the-level">4. The bad
+transfer is nilpotent, uniformly in the level</h2>
+<p>We prove the polynomial matrix identity
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>Q</mi><mi>L</mi><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><mi>Q</mi><msup><mo stretchy="false" form="postfix">)</mo><mrow><mn>3</mn><mi>m</mi></mrow></msup><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                         (QL(S)Q)^{3m}=0.
+ \tag{16}
+</annotation></semantics></math></div> It is independent of the spectral
+parameters, the values of the coupons, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>.</p>
+<p>First consider an aligned block of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m+1</annotation></semantics></math>
+consecutive nonzero transitions, starting at row
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>
+and ending at the next row
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>.
+Its first north coupon has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a_1=0</annotation></semantics></math>,
+since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">t_0=0</annotation></semantics></math>
+in (8). At the ending row
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>,
+the same protected equation gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>b</mi><mn>0</mn></msub><mo>+</mo><msubsup><mi>a</mi><mn>1</mn><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi><mi mathvariant="normal">t</mi></mrow></msubsup><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">c_{m-1}+b_0+a_1^{\mathrm{next}}=0</annotation></semantics></math>;
+all exponents are nonnegative, so the last north coupon has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">c_{m-1}=0</annotation></semantics></math>.</p>
+<p>The
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">m/2</annotation></semantics></math>
+north coupons between these endpoints have their middle incidences on
+the even rim faces. A high middle incidence cannot use the protected
+face
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>z</mi><mn>0</mn></msub><annotation encoding="application/x-tex">z_0</annotation></semantics></math>.
+Each of the remaining
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mi>/</mi><mn>2</mn><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m/2-1</annotation></semantics></math>
+even rim faces can receive at most one high incidence, because two such
+incidences sum to more than its original target
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>;
+its additional outer incidence is nonnegative. Therefore at least one of
+these north coupons is CROSS.</p>
+<p>Now take an open nonzero path of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>m</mi></mrow><annotation encoding="application/x-tex">3m</annotation></semantics></math>
+transitions all of whose states lie in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>.
+There are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>m</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">3m-1</annotation></semantics></math>
+internal bad interfaces. Each needs a high incidence of one of the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>m</mi></mrow><annotation encoding="application/x-tex">3m</annotation></semantics></math>
+coupons, and a coupon can supply at most one such incidence. Thus at
+most one coupon along this path can be CROSS.</p>
+<p>On the other hand, among any
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>m</mi></mrow><annotation encoding="application/x-tex">3m</annotation></semantics></math>
+consecutive row indices there are two consecutive aligned blocks of the
+preceding kind: the first row
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>
+occurs within the first
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+transitions, and the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>m</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2m+1</annotation></semantics></math>
+transitions from there through the second following row
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>
+fit in the path. The two lists of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">m/2</annotation></semantics></math>
+north coupons are disjoint. Each list contains a CROSS coupon. This
+contradicts the preceding upper bound of one, and proves (16). The
+argument applies to the support of the matrix before any signed
+cancellation.</p>
+<p>In particular no all-bad directed cycle exists. This conclusion is
+stronger than saying that the trace of one bad loop happens to cancel.
+It also explains why the protected target cannot be replaced by an
+ordinary periodic face target.</p>
+<h2 id="an-exact-finite-excursion-formula-for-full-minus-cross">5. An
+exact finite-excursion formula for full-minus-CROSS</h2>
+<p>Decompose
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mi>L</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">L=L(1)</annotation></semantics></math>
+relative to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mi mathvariant="script">𝒱</mi><mo>⊕</mo><mi>Q</mi><mi mathvariant="script">𝒱</mi></mrow><annotation encoding="application/x-tex">P\mathcal V\oplus Q\mathcal V</annotation></semantics></math>:
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mi>A</mi></mtd><mtd columnalign="center" style="text-align: center"><mi>B</mi></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>C</mi></mtd><mtd columnalign="center" style="text-align: center"><mi>D</mi></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                 L=\begin{pmatrix}A&amp;B\\ C&amp;D\end{pmatrix}.
+ \tag{17}
+</annotation></semantics></math></div> By (16),
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>D</mi><mrow><mn>3</mn><mi>m</mi></mrow></msup><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">D^{3m}=0</annotation></semantics></math>,
+so
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>Q</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo>−</mo><mi>z</mi><mi>D</mi><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>=</mo><munderover><mo>∑</mo><mrow><mi>r</mi><mo>=</mo><mn>0</mn></mrow><mrow><mn>3</mn><mi>m</mi><mo>−</mo><mn>1</mn></mrow></munderover><msup><mi>z</mi><mi>r</mi></msup><msup><mi>D</mi><mi>r</mi></msup><mo>,</mo><mspace width="2.0em"></mspace><mi>K</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>z</mi><mn>2</mn></msup><mi>B</mi><msub><mi>R</mi><mi>Q</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mi>C</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ R_Q(z)=(I-zD)^{-1}=\sum_{r=0}^{3m-1}z^rD^r,\qquad
+ K(z)=z^2B R_Q(z)C.
+ \tag{18}
+</annotation></semantics></math></div> The matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>
+records an actual excursion from a good state through one or more bad
+states and back to a good state. All offsets, grades, original source
+coefficients, and their signs are still in its entries.</p>
+<p>The Schur complement gives
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo>−</mo><mi>z</mi><mi>L</mi><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo>−</mo><mi>z</mi><mi>D</mi><mo stretchy="false" form="postfix">)</mo><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo>−</mo><mi>z</mi><mi>A</mi><mo>−</mo><msup><mi>z</mi><mn>2</mn></msup><mi>B</mi><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo>−</mo><mi>z</mi><mi>D</mi><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>−</mi><mn>1</mn></mrow></msup><mi>C</mi><mo stretchy="false" form="postfix">)</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo>−</mo><mi>z</mi><mi>A</mi><mo>−</mo><mi>K</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+ \begin{split}
+ \det(I-zL)&amp;=\det(I-zD)
+          \det(I-zA-z^2B(I-zD)^{-1}C)\\
+          &amp;=\det(I-zA-K(z)).
+ \end{split}
+ \tag{19}
+</annotation></semantics></math></div> Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo>−</mo><mi>z</mi><mi>D</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\det(I-zD)=1</annotation></semantics></math>
+follows from the proven nilpotence. Combining (13),(15),(19) yields the
+closed formula
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><mi mathvariant="script">𝒟</mi><mo>=</mo><mi>−</mi><mo stretchy="false" form="prefix">[</mo><msup><mi>z</mi><mi>m</mi></msup><mo stretchy="false" form="postfix">]</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><mspace width="-0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>I</mi><mo>−</mo><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo>−</mo><mi>z</mi><mi>A</mi><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>−</mi><mn>1</mn></mrow></msup><mi>K</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munderover><mo>∑</mo><mrow><mi>ℓ</mi><mo>=</mo><mn>1</mn></mrow><mrow><mo stretchy="false" form="prefix">⌊</mo><mi>m</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo></mrow></munderover><mfrac><mn>1</mn><mi>ℓ</mi></mfrac><mo stretchy="false" form="prefix">[</mo><msup><mi>z</mi><mi>m</mi></msup><mo stretchy="false" form="postfix">]</mo><mrow><mi mathvariant="normal">tr</mi><mo>&#8289;</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo>−</mo><mi>z</mi><mi>A</mi><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>−</mi><mn>1</mn></mrow></msup><mi>K</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><msup><mo stretchy="false" form="postfix">)</mo><mi>ℓ</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow></menclose><annotation encoding="application/x-tex">
+ \boxed{\displaystyle
+ \mathscr D
+ =-[z^m]\log\det\!\left(I-(I-zA)^{-1}K(z)\right)
+ =\sum_{\ell=1}^{\lfloor m/2\rfloor}
+       \frac1\ell[z^m]\operatorname{tr}
+       \left(((I-zA)^{-1}K(z))^\ell\right).}
+ \tag{20}
+</annotation></semantics></math></div> Everything is a formal finite
+coefficient calculation. For the coefficient
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>z</mi><mi>m</mi></msup><annotation encoding="application/x-tex">z^m</annotation></semantics></math>,
+only the terms of degree at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+in the displayed resolvents are needed. Formula (20) is not an expansion
+into absolute local sectors. It first retains the signed sum inside each
+excursion and inside each good-state propagator.</p>
+<p>For a single coefficient
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>z</mi><mi>m</mi></msup><annotation encoding="application/x-tex">z^m</annotation></semantics></math>,
+a formal Schur expansion would truncate even without nilpotence. The
+additional theorem here is the level-independent identity (16) for the
+entire bad transfer, proved with the actual source mask and protected
+targets. The Schur rewrite itself is a general algebraic identity, not
+an analytic estimate.</p>
+<p>The same identity may be written before setting
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">S=1</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><msup><mi>S</mi><mi>d</mi></msup><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[S^d]</annotation></semantics></math>
+outside. Homogeneity (11) then removes that coefficient only after the
+entire closed walk is formed. Thus the south target has not disappeared
+from the derivation.</p>
+<p>This formula isolates a concrete sufficient object for a source
+bound: the finitely many signed excursion insertions in (20), coupled to
+the original good-state transfer
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>.
+Neither nilpotence nor the polynomial dimension of these matrices bounds
+their entries or their norms. An estimate on those coupled terms at the
+original geometric rate is still required.</p>
+<h2 id="exact-incidence-clocks-and-the-actual-seam-holonomy">6. Exact
+incidence clocks and the actual seam holonomy</h2>
+<p>The shifts in root integration by parts can be retained without
+adding informal phase gauges. Multiply each local monomial in row
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>
+by
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>q</mi><mrow><msub><mi>α</mi><mi>j</mi></msub><mi>a</mi><mo>+</mo><msub><mi>β</mi><mi>j</mi></msub><mi>b</mi><mo>+</mo><msub><mi>γ</mi><mi>j</mi></msub><mi>c</mi><mo>+</mo><msub><mi>μ</mi><mi>j</mi></msub><mi>p</mi></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                q^{\alpha_j a+\beta_j b+\gamma_j c+\mu_jp}.
+ \tag{21}
+</annotation></semantics></math></div> Initially the exponents in (21) can be
+integers; they are then periodic modulo
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>N</mi></mrow><annotation encoding="application/x-tex">2N</annotation></semantics></math>.
+They are independent <em>incidence</em> clocks, not independent
+replacements of the physical face variables. Using (8),(11), the
+modified transfer is exactly
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>T</mi><mo accent="true">̃</mo></mover><mi>j</mi></msub><mo>=</mo><msub><mi>κ</mi><mi>j</mi></msub><msubsup><mi>R</mi><mi>j</mi><mo>−</mo></msubsup><mspace width="0.167em"></mspace><msub><mi>T</mi><mi>j</mi></msub><mspace width="0.167em"></mspace><msubsup><mi>R</mi><mi>j</mi><mo>+</mo></msubsup><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>κ</mi><mi>j</mi></msub><mo>=</mo><msup><mi>q</mi><mrow><msub><mi>α</mi><mi>j</mi></msub><msub><mi>t</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>μ</mi><mi>j</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>d</mi><mo>−</mo><msub><mi>t</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="postfix">)</mo></mrow></msup><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ \widetilde T_j
+ =\kappa_j R_j^-\,T_j\,R_j^+,\qquad
+ \kappa_j=q^{\alpha_jt_{j-1}+\mu_j(d-t_{j-1})},
+ \tag{22}
+</annotation></semantics></math></div> where the two diagonal matrices are
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msubsup><mi>R</mi><mi>j</mi><mo>−</mo></msubsup><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><msup><mi>q</mi><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>μ</mi><mi>j</mi></msub><mo>−</mo><msub><mi>α</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo><mi>u</mi><mo>+</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>μ</mi><mi>j</mi></msub><mo>−</mo><msub><mi>β</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo><mi>v</mi></mrow></msup><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msubsup><mi>R</mi><mi>j</mi><mo>+</mo></msubsup><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><msup><mi>q</mi><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>β</mi><mi>j</mi></msub><mo>−</mo><msub><mi>μ</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo><mi>u</mi><mo>+</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>γ</mi><mi>j</mi></msub><mo>−</mo><msub><mi>μ</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo><mi>v</mi></mrow></msup><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+ \begin{split}
+ R_j^-(u,v)&amp;=q^{(\mu_j-\alpha_j)u+(\mu_j-\beta_j)v},\\
+ R_j^+(u,v)&amp;=q^{(\beta_j-\mu_j)u+(\gamma_j-\mu_j)v}.
+ \end{split}
+ \tag{23}
+</annotation></semantics></math></div> In a sewn product the intervening
+diagonal holonomy is therefore
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><msubsup><mi>R</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow><mo>+</mo></msubsup><msubsup><mi>R</mi><mi>j</mi><mo>−</mo></msubsup><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>q</mi><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>β</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>μ</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>μ</mi><mi>j</mi></msub><mo>−</mo><msub><mi>α</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo><mi>u</mi></mrow></msup><msup><mi>q</mi><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>γ</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>μ</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>μ</mi><mi>j</mi></msub><mo>−</mo><msub><mi>β</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo><mi>v</mi></mrow></msup><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+ \begin{split}
+ R_{j-1}^+R_j^-(u,v)
+ =q^{(\beta_{j-1}-\mu_{j-1}+\mu_j-\alpha_j)u}
+  q^{(\gamma_{j-1}-\mu_{j-1}+\mu_j-\beta_j)v}.
+ \end{split}
+ \tag{24}
+</annotation></semantics></math></div> This is a closed finite clock system on
+the original transfer states. The good/bad projections commute with
+every matrix in (23), so the same holonomies are retained in the
+excursion formula, not discarded at its endpoints.</p>
+<p>For a genuine common face shift
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mi>j</mi></msub><mo>↦</mo><msup><mi>q</mi><msub><mi>λ</mi><mi>j</mi></msub></msup><msub><mi>z</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">z_j\mapsto q^{\lambda_j}z_j</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>↦</mo><msup><mi>q</mi><mi>μ</mi></msup><mi>S</mi></mrow><annotation encoding="application/x-tex">S\mapsto q^\mu S</annotation></semantics></math>,
+the incidence clocks satisfy
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>α</mi><mi>j</mi></msub><mo>=</mo><msub><mi>λ</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>β</mi><mi>j</mi></msub><mo>=</mo><msub><mi>λ</mi><mi>j</mi></msub><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>γ</mi><mi>j</mi></msub><mo>=</mo><msub><mi>λ</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>μ</mi><mi>j</mi></msub><mo>=</mo><mi>μ</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \alpha_j=\lambda_{j-1},\quad \beta_j=\lambda_j,\quad
+ \gamma_j=\lambda_{j+1},\quad \mu_j=\mu.
+ \tag{25}
+</annotation></semantics></math></div> Then (24) is the identity and the
+remaining scalar is exactly
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>∏</mo><mi>j</mi></munder><msub><mi>κ</mi><mi>j</mi></msub><mo>=</mo><msup><mi>q</mi><mrow><mi>d</mi><mo stretchy="false" form="prefix">(</mo><mi>μ</mi><mo>+</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></munderover><msub><mi>λ</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+              \prod_j\kappa_j
+                =q^{d(\mu+\sum_{j=1}^{m-1}\lambda_j)}.
+ \tag{26}
+</annotation></semantics></math></div> This is precisely the original
+coefficient target (2). Relative shifts of only some incident factors
+generally do not satisfy (25). Their nontrivial matrices (24) are the
+reason the shifted Ward current cannot be replaced by the old unshifted
+current.</p>
+<h2 id="root-ward-identities-close-only-with-shifted-targets">7. Root
+Ward identities close only with shifted targets</h2>
+<p>For clarity, the root operators in one ordinary face are
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mi>f</mi></msub><mi>P</mi><mo>=</mo><mfrac><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>q</mi><msub><mi>z</mi><mi>f</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>P</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>q</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msub><mi>z</mi><mi>f</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mi>i</mi><msub><mi>z</mi><mi>f</mi></msub></mrow></mfrac><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>T</mi><mi>f</mi></msub><mi>P</mi><mo>=</mo><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>q</mi><msub><mi>z</mi><mi>f</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>C</mi><mi>f</mi></msub><mo>=</mo><msub><mi>c</mi><mn>0</mn></msub><mo>−</mo><msub><mi>D</mi><mi>f</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>Z</mi><mi>f</mi></msub><mo>+</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>Z</mi><mi>f</mi></msub><mo>+</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>D</mi><mi>f</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ D_fP=\frac{P(qz_f)-P(q^{-1}z_f)}{iz_f},\quad
+ T_fP=P(qz_f),\quad
+ C_f=c_0-D_f(Z_f+x)(Z_f+y)D_f.
+ \tag{27}
+</annotation></semantics></math></div> On the quotient by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>z</mi><mi>f</mi><mi>N</mi></msubsup><annotation encoding="application/x-tex">z_f^N</annotation></semantics></math>,
+the top coefficient pairing satisfies
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>D</mi><mi>f</mi><mo>*</mo></msubsup><mo>=</mo><msub><mi>D</mi><mi>f</mi></msub></mrow><annotation encoding="application/x-tex">D_f^*=D_f</annotation></semantics></math>,
+but its product rule is
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mi>f</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>P</mi><mi>Q</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>D</mi><mi>f</mi></msub><mi>P</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>T</mi><mi>f</mi></msub><mi>Q</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mo stretchy="false" form="prefix">(</mo><msubsup><mi>T</mi><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mi>P</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>D</mi><mi>f</mi></msub><mi>Q</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ D_f(PQ)=(D_fP)(T_fQ)+(T_f^{-1}P)(D_fQ).
+ \tag{28}
+</annotation></semantics></math></div> In particular
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><msubsup><mi>z</mi><mi>f</mi><mi>d</mi></msubsup><mo stretchy="false" form="postfix">]</mo><msub><mi>D</mi><mi>f</mi></msub><mi>P</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">[z_f^d]D_fP=0</annotation></semantics></math>,
+whereas the analogous assertion at the protected target zero is
+false.</p>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Z</mi><mi mathvariant="bold-italic">𝒕</mi></msub><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝜼</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">Z_{\mathbf t}(\boldsymbol\eta)</annotation></semantics></math>
+be the original product of coupons with incidence clocks, extracted at
+the explicitly specified target
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="bold-italic">𝒕</mi><annotation encoding="application/x-tex">\mathbf t</annotation></semantics></math>.
+For a derivative of one factor at one incidence, the exact reduction is
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><msup><mi mathvariant="bold-italic">𝒛</mi><mi mathvariant="bold-italic">𝒕</mi></msup><mo stretchy="false" form="postfix">]</mo><mo stretchy="false" form="prefix">(</mo><msubsup><mi>D</mi><mi>f</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>j</mi><mo stretchy="false" form="postfix">)</mo></mrow></msubsup><msub><mi>F</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo><munder><mo>∏</mo><mrow><mi>k</mi><mo>≠</mo><mi>j</mi></mrow></munder><msub><mi>F</mi><mi>k</mi></msub><mo>=</mo><mfrac><mn>1</mn><mi>i</mi></mfrac><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Z</mi><mrow><mi mathvariant="bold-italic">𝒕</mi><mo>+</mo><msub><mi mathvariant="bold-italic">𝒆</mi><mi>f</mi></msub></mrow></msub><mo stretchy="false" form="prefix">(</mo><msup><mi mathvariant="bold-italic">𝜼</mi><mrow><mspace width="0.167em"></mspace><mi>j</mi><mi>f</mi><mo>,</mo><mi>+</mi></mrow></msup><mo stretchy="false" form="postfix">)</mo><mo>−</mo><msub><mi>Z</mi><mrow><mi mathvariant="bold-italic">𝒕</mi><mo>+</mo><msub><mi mathvariant="bold-italic">𝒆</mi><mi>f</mi></msub></mrow></msub><mo stretchy="false" form="prefix">(</mo><msup><mi mathvariant="bold-italic">𝜼</mi><mrow><mspace width="0.167em"></mspace><mi>j</mi><mi>f</mi><mo>,</mo><mi>−</mi></mrow></msup><mo stretchy="false" form="postfix">)</mo><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ [\mathbf z^{\mathbf t}]
+      (D_f^{(j)}F_j)\prod_{k\ne j}F_k
+ =\frac1i\left(
+ Z_{\mathbf t+\mathbf e_f}(\boldsymbol\eta^{\,jf,+})
+ -Z_{\mathbf t+\mathbf e_f}(\boldsymbol\eta^{\,jf,-})\right).
+ \tag{29}
+</annotation></semantics></math></div> Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="bold-italic">𝜼</mi><mrow><mspace width="0.167em"></mspace><mi>j</mi><mi>f</mi><mo>,</mo><mi>±</mi></mrow></msup><annotation encoding="application/x-tex">\boldsymbol\eta^{\,jf,\pm}</annotation></semantics></math>
+multiplies the existing clock
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>η</mi><mrow><mi>j</mi><mi>f</mi></mrow></msub><annotation encoding="application/x-tex">\eta_{jf}</annotation></semantics></math>
+by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>q</mi><mrow><mi>±</mi><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">q^{\pm1}</annotation></semantics></math>
+and leaves every other clock unchanged; it does not reset that clock to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>q</mi><mrow><mi>±</mi><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">q^{\pm1}</annotation></semantics></math>.
+The factor on the left is understood with the same existing incidence
+clocks. A
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>-fold
+derivative has the corresponding clock multiplier
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∏</mo><mrow><mi>r</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></munderover><mfrac><mrow><msup><mi>q</mi><mrow><mi>−</mi><mi>r</mi></mrow></msup><msub><mi mathvariant="script">𝒯</mi><mrow><mi>j</mi><mi>f</mi></mrow></msub><mo>−</mo><msup><mi>q</mi><mi>r</mi></msup><msubsup><mi mathvariant="script">𝒯</mi><mrow><mi>j</mi><mi>f</mi></mrow><mrow><mi>−</mi><mn>1</mn></mrow></msubsup></mrow><mi>i</mi></mfrac><mspace width="1.0em"></mspace><mrow><mtext mathvariant="normal">at target </mtext><mspace width="0.333em"></mspace></mrow><mi mathvariant="bold-italic">𝒕</mi><mo>+</mo><mi>k</mi><msub><mi mathvariant="bold-italic">𝒆</mi><mi>f</mi></msub><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ \prod_{r=0}^{k-1}
+       \frac{q^{-r}\mathcal T_{jf}
+                    -q^{r}\mathcal T_{jf}^{-1}}{i}
+ \quad\text{at target }\mathbf t+k\mathbf e_f,
+ \tag{30}
+</annotation></semantics></math></div> where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="script">𝒯</mi><mrow><mi>j</mi><mi>f</mi></mrow></msub><annotation encoding="application/x-tex">\mathcal T_{jf}</annotation></semantics></math>
+shifts only that incidence by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>.
+Multiplication by a face monomial shifts the target in the opposite
+direction. Equations (29),(30) follow coefficient by coefficient from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>D</mi><mi>f</mi><mi>k</mi></msubsup><msup><mi>z</mi><mi>a</mi></msup><mo>=</mo><msubsup><mo>∏</mo><mrow><mi>r</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msubsup><msub><mi>s</mi><mrow><mi>a</mi><mo>−</mo><mi>r</mi></mrow></msub><msup><mi>z</mi><mrow><mi>a</mi><mo>−</mo><mi>k</mi></mrow></msup></mrow><annotation encoding="application/x-tex">D_f^kz^a=\prod_{r=0}^{k-1}s_{a-r}z^{a-k}</annotation></semantics></math>.</p>
+<p>Iterating (28) in the original factor order gives
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>∑</mo><mi>j</mi></munder><mo stretchy="false" form="prefix">[</mo><msup><mi mathvariant="bold-italic">𝒛</mi><mi mathvariant="bold-italic">𝒕</mi></msup><mo stretchy="false" form="postfix">]</mo><mrow><mo stretchy="true" form="prefix">(</mo><munder><mo>∏</mo><mrow><mi>k</mi><mo>&lt;</mo><mi>j</mi></mrow></munder><msubsup><mi>T</mi><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><msub><mi>F</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>D</mi><mi>f</mi></msub><msub><mi>F</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo><mrow><mo stretchy="true" form="prefix">(</mo><munder><mo>∏</mo><mrow><mi>k</mi><mo>&gt;</mo><mi>j</mi></mrow></munder><msub><mi>T</mi><mi>f</mi></msub><msub><mi>F</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">(</mo><msub><mi>t</mi><mi>f</mi></msub><mo>=</mo><mi>d</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \sum_j [\mathbf z^{\mathbf t}]
+       \left(\prod_{k&lt;j}T_f^{-1}F_k\right)
+       (D_fF_j)
+       \left(\prod_{k&gt;j}T_fF_k\right)=0
+       \qquad(t_f=d).
+ \tag{31}
+</annotation></semantics></math></div> Factors not incident to the face are
+unchanged. This finite system can be represented entirely by the clocks
+(22)–(24) and the shifted target family (29),(30). There are finitely
+many targets: each local factor has degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>,
+targets outside the nonnegative total support are zero, derivatives of
+order
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+of a local incidence vanish, and clocks have period
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>N</mi></mrow><annotation encoding="application/x-tex">2N</annotation></semantics></math>.</p>
+<p>There is one state-space qualification. For general shifted rim
+targets, the partial load
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>=</mo><msub><mi>c</mi><mrow><mi>j</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><msub><mi>b</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">u=c_{j-2}+b_{j-1}</annotation></semantics></math>
+can exceed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>.
+To represent these auxiliary
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Z</mi><mi mathvariant="bold-italic">𝒕</mi></msub><annotation encoding="application/x-tex">Z_{\mathbf t}</annotation></semantics></math>
+by transfer, use
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>u</mi><mo>≤</mo><mn>2</mn><mi>d</mi><mo>,</mo><mspace width="0.222em"></mspace><mn>0</mn><mo>≤</mo><mi>v</mi><mo>≤</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">0\le u\le2d,\ 0\le v\le d</annotation></semantics></math>,
+the shifted target in (8), and retain the requested coefficient of the
+common
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>.
+Alternatively, use their defining coefficient extraction directly. The
+original smaller state space suffices only for the original targets
+because then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>≤</mo><msub><mi>t</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>≤</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">u\le t_{j-1}\le d</annotation></semantics></math>.</p>
+<p>This is algebraic closure, not uniqueness or a norm bound for Ward
+equations alone. In particular the good/bad nilpotence proof in §4 uses
+the <em>original</em> targets. A shifted target that can accommodate two
+high incidences must not be treated as if it still had capacity
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>.
+At even level, raising an ordinary target from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mn>2</mn><mi>h</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">d=2h+1</annotation></semantics></math>
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">d+1</annotation></semantics></math>
+already changes that capacity. The exact target shifts in (29) are
+therefore essential.</p>
+<p>The finite resolvent construction (3),(4),(8),(20) supplies the
+actual solution of these identities. It retains the finite spectral
+endpoints and normal data even when spectral values coincide.
+Differentiation in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>
+of the resulting polynomial identities is legitimate; differentiation of
+the
+fixed-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+root quotient identities in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>
+is not.</p>
+<h2 id="a-sign-holonomy-and-a-noncancelling-corner">8. A sign holonomy
+and a noncancelling corner</h2>
+<p>There is also a useful exact sign version of the clock description
+for the full numerator. Fix real
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>&lt;</mo><msub><mi>c</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\sigma&lt;c_0</annotation></semantics></math>,
+away from the nodes, and set
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mi>r</mi></msub><mo>=</mo><mrow><mi mathvariant="normal">sgn</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo>−</mo><msub><mi>c</mi><mi>r</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>ϵ</mi><mi>i</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>i</mi></msup><munder><mo>∏</mo><mrow><mi>r</mi><mo>&lt;</mo><mi>i</mi></mrow></munder><msub><mi>b</mi><mi>r</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ b_r=\operatorname{sgn}(\sigma-c_r),\qquad
+ \epsilon_i=(-1)^i\prod_{r&lt;i}b_r.
+ \tag{32}
+</annotation></semantics></math></div> Every nonzero coefficient of an entry
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>V</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo>;</mo><mi>C</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><msub><mo stretchy="false" form="postfix">)</mo><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">V_N(\sigma;C(x,y))_{i,j}</annotation></semantics></math>
+has sign
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>d</mi></msup><msub><mi>ϵ</mi><mi>i</mi></msub><msub><mi>ϵ</mi><mrow><mi>d</mi><mo>−</mo><mi>j</mi></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                   (-1)^d\epsilon_i\epsilon_{d-j}.
+ \tag{33}
+</annotation></semantics></math></div> Here is a direct proof retaining the
+unused factors. The division-free path numerator
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub><annotation encoding="application/x-tex">P_{i,j}</annotation></semantics></math>
+satisfies
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mrow><mi>i</mi><mo>,</mo><mi>i</mi></mrow></msub><mo>=</mo><mn>1</mn><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>P</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub><mo>=</mo><mi>−</mi><msubsup><mi>s</mi><mi>j</mi><mn>2</mn></msubsup><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>P</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>s</mi><mi>j</mi></msub><msub><mi>s</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mi>x</mi><mi>y</mi><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo>−</mo><msub><mi>c</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="postfix">)</mo><msub><mi>P</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi><mo>−</mo><mn>2</mn></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ P_{i,i}=1,\quad
+ P_{i,j}=-s_j^2(x+y)P_{i,j-1}
+        -s_js_{j-1}xy(\sigma-c_{j-1})P_{i,j-2}.
+ \tag{34}
+</annotation></semantics></math></div> With
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mi>S</mi><mo>,</mo><mi>y</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x=S,y=1</annotation></semantics></math>,
+divide it by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>j</mi><mo>−</mo><mi>i</mi></mrow></msup><msubsup><mo>∏</mo><mrow><mi>r</mi><mo>=</mo><mi>i</mi><mo>+</mo><mn>1</mn></mrow><mi>j</mi></msubsup><msubsup><mi>s</mi><mi>r</mi><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">(-1)^{j-i}\prod_{r=i+1}^j s_r^2</annotation></semantics></math>.
+The normalized polynomial
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mi>k</mi></msub><annotation encoding="application/x-tex">H_k</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mi>j</mi><mo>−</mo><mi>i</mi></mrow><annotation encoding="application/x-tex">k=j-i</annotation></semantics></math>,
+has
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn><mo>+</mo><mi>S</mi><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>H</mi><mi>k</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>H</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mi>S</mi><msub><mi>H</mi><mrow><mi>k</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><mfrac><mrow><msub><mi>c</mi><mn>0</mn></msub><mo>−</mo><mi>σ</mi></mrow><mrow><msub><mi>s</mi><mrow><mi>i</mi><mo>+</mo><mi>k</mi></mrow></msub><msub><mi>s</mi><mrow><mi>i</mi><mo>+</mo><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow></mfrac><mi>S</mi><msub><mi>H</mi><mrow><mi>k</mi><mo>−</mo><mn>2</mn></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ H_0=1,\quad H_1=1+S,\qquad
+ H_k=(1+S)H_{k-1}-SH_{k-2}
+       +\frac{c_0-\sigma}{s_{i+k}s_{i+k-1}}SH_{k-2}.
+ \tag{35}
+</annotation></semantics></math></div> For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>k</mi></msub><mo>=</mo><mn>1</mn><mo>+</mo><mi>⋯</mi><mo>+</mo><msup><mi>S</mi><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">F_k=1+\cdots+S^k</annotation></semantics></math>,
+the exact free recurrence gives
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mi>k</mi></msub><mo>=</mo><msub><mi>F</mi><mi>k</mi></msub><mo>+</mo><munderover><mo>∑</mo><mrow><mi>r</mi><mo>=</mo><mn>2</mn></mrow><mi>k</mi></munderover><mfrac><mrow><msub><mi>c</mi><mn>0</mn></msub><mo>−</mo><mi>σ</mi></mrow><mrow><msub><mi>s</mi><mrow><mi>i</mi><mo>+</mo><mi>r</mi></mrow></msub><msub><mi>s</mi><mrow><mi>i</mi><mo>+</mo><mi>r</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow></mfrac><mi>S</mi><msub><mi>F</mi><mrow><mi>k</mi><mo>−</mo><mi>r</mi></mrow></msub><msub><mi>H</mi><mrow><mi>r</mi><mo>−</mo><mn>2</mn></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ H_k=F_k+\sum_{r=2}^k
+   \frac{c_0-\sigma}{s_{i+r}s_{i+r-1}}
+                 S F_{k-r}H_{r-2}.
+ \tag{36}
+</annotation></semantics></math></div> Its coefficients are positive.
+Homogenization recovers all outer splits. Multiplying the unused prefix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∏</mo><mrow><mi>r</mi><mo>&lt;</mo><mi>i</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo>−</mo><msub><mi>c</mi><mi>r</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\prod_{r&lt;i}(\sigma-c_r)</annotation></semantics></math>
+and suffix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∏</mo><mrow><mi>r</mi><mo>&gt;</mo><mi>j</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo>−</mo><msub><mi>c</mi><mi>r</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\prod_{r&gt;j}(\sigma-c_r)</annotation></semantics></math>,
+and using
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mrow><mi>d</mi><mo>−</mo><mi>r</mi></mrow></msub><mo>=</mo><msub><mi>c</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">c_{d-r}=c_r</annotation></semantics></math>,
+proves (33).</p>
+<p>Consequently the literal transfer factors as a nonnegative matrix
+with diagonal signs on each side. At an incoming interface
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>,
+the resulting sewn sign is exactly
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>ϵ</mi><mi>v</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>j</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow></msubsup><msubsup><mi>ϵ</mi><mrow><msub><mi>t</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mi>u</mi></mrow><mrow><mo stretchy="false" form="prefix">(</mo><mi>j</mi><mo stretchy="false" form="postfix">)</mo></mrow></msubsup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                 \epsilon^{(j-1)}_v
+                    \epsilon^{(j)}_{t_{j-1}-u}.
+ \tag{37}
+</annotation></semantics></math></div> The common local factor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>d</mi></msup></mrow><annotation encoding="application/x-tex">(-1)^d</annotation></semantics></math>
+contributes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>
+around the even
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>-cycle.
+Formula (37) preserves the independent spectra and the original grade,
+and is not a claim that the signs cancel. Any diagonal sign on the
+finite state space can equivalently be expanded in the finite root
+clocks. When it is written as a full diagonal matrix, values of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>ϵ</mi><mrow><msub><mi>t</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mi>u</mi></mrow></msub><annotation encoding="application/x-tex">\epsilon_{t_{j-1}-u}</annotation></semantics></math>
+at unsupported negative indices may be set arbitrarily to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>;
+the corresponding outgoing rows vanish.</p>
+<p>At even level and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mi>j</mi></msub><mo>=</mo><mi>−</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\sigma_j=-2</annotation></semantics></math>
+for every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>,
+all
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ϵ</mi><mi>i</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\epsilon_i=1</annotation></semantics></math>.
+Every local coefficient has sign
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>d</mi></msup><mo>=</mo><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">(-1)^d=-1</annotation></semantics></math>;
+hence every sewn product has positive sign. Full-minus-CROSS is then a
+nonnegative complementary sum. It is nonzero at every even level. For
+example select the pure outer monomial
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>S</mi><mi>d</mi></msup><annotation encoding="application/x-tex">S^d</annotation></semantics></math>
+in box
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>,
+the pure outer monomial
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>z</mi><mi>j</mi><mi>d</mi></msubsup><annotation encoding="application/x-tex">z_j^d</annotation></semantics></math>
+in every other box except
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>,</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">2,3</annotation></semantics></math>,
+and the middle monomials
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>z</mi><mn>3</mn><mi>d</mi></msubsup><mo>,</mo><msubsup><mi>z</mi><mn>2</mn><mi>d</mi></msubsup></mrow><annotation encoding="application/x-tex">z_3^d,z_2^d</annotation></semantics></math>
+in boxes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>,</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">2,3</annotation></semantics></math>.
+These have exactly the targets (2). Both exceptional coupons are
+non-CROSS. Each pure outer coefficient is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>d</mi></msup><msubsup><mo>∏</mo><mrow><mi>r</mi><mo>=</mo><mn>1</mn></mrow><mi>d</mi></msubsup><msubsup><mi>s</mi><mi>r</mi><mn>2</mn></msubsup><mo>=</mo><mi>−</mi><msup><mi>N</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(-1)^d\prod_{r=1}^d s_r^2=-N^2</annotation></semantics></math>,
+and each selected middle diagonal coefficient is
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><msub><mi>χ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mi>−</mi><mn>2</mn><mo>−</mo><msub><mi>c</mi><mn>0</mn></msub></mrow></mfrac><mo>=</mo><mi>−</mi><msup><mrow><mi mathvariant="normal">sec</mi><mo>&#8289;</mo></mrow><mn>2</mn></msup><mspace width="-0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mi>π</mi><mrow><mn>2</mn><mi>N</mi></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \frac{\chi_N(-2)}{-2-c_0}
+     =-\sec^2\!\left(\frac{\pi}{2N}\right).
+ \tag{38}
+</annotation></semantics></math></div> Thus this one actual contribution gives
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">𝒟</mi><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>2</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>−</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mspace width="0.222em"></mspace><mo>≥</mo><mspace width="0.222em"></mspace><mo stretchy="false" form="prefix">(</mo><msup><mi>N</mi><mn>2</mn></msup><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>m</mi><mo>−</mo><mn>2</mn></mrow></msup><msup><mrow><mi mathvariant="normal">sec</mi><mo>&#8289;</mo></mrow><mn>4</mn></msup><mspace width="-0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mi>π</mi><mrow><mn>2</mn><mi>N</mi></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>&gt;</mo><mn>0</mn><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mi>N</mi><mspace width="0.222em"></mspace><mtext mathvariant="normal">even</mtext><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \mathscr D(-2,\ldots,-2)
+       \ \ge\ (N^2)^{m-2}
+                    \sec^4\!\left(\frac{\pi}{2N}\right)&gt;0
+       \qquad(N\ \text{even}).
+ \tag{39}
+</annotation></semantics></math></div> This polynomial lower witness does not
+refute an exponential gap below the geometric source rate. It does rule
+out an argument that seeks that gap solely by cancellation at every
+spectral point.</p>
+<h2 id="the-general-middle-incidence-obstruction">9. The general
+middle-incidence obstruction</h2>
+<p>There is a useful graph formulation that does not depend on this
+bipyramid. In an original matched quadrilateral source, make a bipartite
+incidence graph with one left vertex for each coupon and one right
+vertex for each ordinary middle face. Connect a coupon to its two middle
+faces, deleting protected faces whose target is zero. A non-CROSS coupon
+must assign its unique high middle exponent to one of these neighbors.
+Since two high incidences exceed an ordinary target
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>,
+different such coupons must use different neighbors.</p>
+<p>It follows directly, without a matching theorem, that for every set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>E</mi><mn>0</mn></msub><annotation encoding="application/x-tex">E_0</annotation></semantics></math>
+of coupons,
+<div class="display-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>#</mi><mo stretchy="false" form="prefix">{</mo><mrow><mtext mathvariant="normal">CROSS coupons in </mtext><mspace width="0.333em"></mspace></mrow><msub><mi>E</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">}</mo><mo>≥</mo><mo stretchy="false" form="prefix">|</mo><msub><mi>E</mi><mn>0</mn></msub><mo stretchy="false" form="prefix">|</mo><mi>−</mi><mo stretchy="false" form="prefix">|</mo><msub><mi mathvariant="script">𝒩</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">d</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>E</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \#\{\text{CROSS coupons in }E_0\}
+                  \ge |E_0|-|\mathcal N_{\mathrm{ord}}(E_0)|.
+ \tag{40}
+</annotation></semantics></math></div> The right side can be negative, in
+which case the statement is vacuous. Protected faces, actual middle
+positions, and ordinary target capacities are part of (40). For the
+bipyramid north coupons the right side is one. This is a necessary
+support restriction; it is not a sufficient description of the full
+source or a statement about every assignment with at least one non-CROSS
+coupon.</p>
+<p>For a matched triangulated sphere with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+coupons, the middle-incidence multigraph has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+edges on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>+</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">R+2</annotation></semantics></math>
+white vertices, including isolated vertices, and two protected vertices.
+There is an injection of every edge to an ordinary endpoint if and only
+if each connected component is either a tree containing exactly one
+protected vertex, or a unicyclic component containing neither protected
+vertex. To prove necessity, a component with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>E</mi><mi>C</mi></msub><annotation encoding="application/x-tex">E_C</annotation></semantics></math>
+edges,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>V</mi><mi>C</mi></msub><annotation encoding="application/x-tex">V_C</annotation></semantics></math>
+vertices, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>p</mi><mi>C</mi></msub><annotation encoding="application/x-tex">p_C</annotation></semantics></math>
+protected vertices has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>E</mi><mi>C</mi></msub><mo>≤</mo><msub><mi>V</mi><mi>C</mi></msub><mo>−</mo><msub><mi>p</mi><mi>C</mi></msub></mrow><annotation encoding="application/x-tex">E_C\le V_C-p_C</annotation></semantics></math>.
+The sums of the two sides are both
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>,
+so equality holds in every component. Connectedness gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>E</mi><mi>C</mi></msub><mo>≥</mo><msub><mi>V</mi><mi>C</mi></msub><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">E_C\ge V_C-1</annotation></semantics></math>,
+whence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>C</mi></msub><mo>≤</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">p_C\le1</annotation></semantics></math>
+and the stated two possibilities. Conversely, orient each tree away from
+its protected root, and orient each unique cycle cyclically with its
+attached trees away from the cycle. Assign an edge to its head. This
+gives the desired injection, also for multiple edges. This characterizes
+absence of the all-high incidence obstruction only; the remaining
+monomial degrees and original targets can impose further
+restrictions.</p>
+<p>If another literal finite transfer realizes the original targets and
+has a repeated deficient coupon block, the same open-path counting
+method can be used there. Constructing such a transfer with its actual
+Morse heads and marked targets is a separate requirement. No general
+sphere transfer or analytic gap follows from (40) alone.</p>
+<h2 id="what-has-and-has-not-been-reduced">10. What has and has not been
+reduced</h2>
+<p>The full sewn difference is now an exact finite-excursion coefficient
+(20), with a bad resolvent of length bounded independently of the level.
+The relative face shifts are the explicit finite seam holonomies (24);
+actual common face shifts reduce to the correct target scalar (26). The
+root Ward identities close on those clocks only when their shifted
+coefficient targets are retained.</p>
+<p>The older unshifted Green-current cancellation is false and is not
+used. Nor is there a claim that every non-CROSS sector requires several
+spectral perturbations: the exact odd-level one-exception counterexample
+survives. The remaining analytic problem is to bound the signed, fully
+coupled terms in (20) at the original geometric rate. Nilpotence
+supplies a finite list of excursion types; it does not supply their
+exponential size.</p>
+<h2 id="bounded-exact-reproduction">11. Bounded exact reproduction</h2>
+<p>The standalone standard-library runner
+md-shifted-cyclic-excursion-audit.py constructs the local numerators by
+powers of the original matrix (3), checks their full polynomial
+resolvent equation, and compares direct homogeneous monomial extraction
+with the transfer and Schur formulas. Its recorded scope is:</p>
+<ul>
+<li>sixteen exact finite-field cases,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">N=2,3,4,5</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">m=6</annotation></semantics></math>,
+using two fields and two spectral tuples per level; both FULL and CROSS
+coefficients and (20) are checked;</li>
+<li>ninety-six incidence-clock checks of (22),(23);</li>
+<li>ten homogeneous support graphs,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>2</mn><mo>,</mo><mi>…</mi><mo>,</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">N=2,\ldots,6</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mn>6</mn><mo>,</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">m=6,8</annotation></semantics></math>,
+checked for acyclicity and longest bad path below
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>m</mi></mrow><annotation encoding="application/x-tex">3m</annotation></semantics></math>;</li>
+<li>two shifted-target checks that agree with direct extraction only
+after enlarging
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>u</mi><annotation encoding="application/x-tex">u</annotation></semantics></math>
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>d</mi></mrow><annotation encoding="application/x-tex">2d</annotation></semantics></math>;</li>
+<li>exact integer recovery of the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">N=3</annotation></semantics></math>
+nonzero sewn current and the one-exception full-minus-CROSS
+counterexample.</li>
+</ul>
+<p>The output is md-shifted-cyclic-excursion-results.json. These are
+finite identity checks, separate from the all-level support proof in §4.
+They assert neither a uniform spectral estimate nor an asymptotic
+gap.</p>
+</body>
+</html>

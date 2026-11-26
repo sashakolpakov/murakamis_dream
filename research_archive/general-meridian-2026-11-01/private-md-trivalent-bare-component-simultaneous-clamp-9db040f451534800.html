@@ -1,0 +1,523 @@
+<h1
+id="simultaneous-half-boundary-clamping-for-typed-trivalent-bare-components">Simultaneous
+half-boundary clamping for typed trivalent bare components</h1>
+<p>Private derivation, 1 November 2026. No repository changes.</p>
+<p>This proof retains all labels on internal edges of a bare component.
+The complete maximum need not put such a label below one half. It
+instead compares every genuine return sector with a boundary stratum of
+the original complete positive source. The comparison reoptimizes each
+intervening old region jointly. Its essential source restriction is that
+every bare vertex is trivalent and every internal edge is an original
+physical quarter-turn. Actual orientation types then make return
+vertices nonadjacent.</p>
+<h2 id="the-old-cubic-action-and-a-constrained-region">1. The old cubic
+action and a constrained region</h2>
+<p>Let
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msubsup><mo>∫</mo><mn>0</mn><mi>x</mi></msubsup><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mi>π</mi><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mspace width="0.167em"></mspace><mi>d</mi><mi>t</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mn>4</mn><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="1.0em"></mspace><mn>0</mn><mo>≤</mo><mi>x</mi><mo>≤</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ J(x)=\int_0^x\log(2\sin\pi t)\,dt,\qquad
+ g(x)=J(2x)-4J(x),\quad 0\le x\le\tfrac12.
+ \tag{1}
+</annotation></semantics></math> The old symmetric cubic action is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo>+</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo>+</mo><mi>z</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ t(x,y,z)=J(x+y)+J(x+z)+J(y+z)
+       -J(x)-J(y)-J(z)-J(x+y+z-1),
+ \tag{2}
+</annotation></semantics></math> on the closed domain
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo>≥</mo><mn>0</mn><mo>,</mo><mspace width="2.0em"></mspace><mi>x</mi><mo>+</mo><mi>y</mi><mo>,</mo><mspace width="0.222em"></mspace><mi>x</mi><mo>+</mo><mi>z</mi><mo>,</mo><mspace width="0.222em"></mspace><mi>y</mi><mo>+</mo><mi>z</mi><mo>≤</mo><mn>1</mn><mo>,</mo><mspace width="2.0em"></mspace><mi>x</mi><mo>+</mo><mi>y</mi><mo>+</mo><mi>z</mi><mo>≥</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ x,y,z\ge0,\qquad x+y,\ x+z,\ y+z\le1,
+ \qquad x+y+z\ge1.
+ \tag{3}
+</annotation></semantics></math> Its strict domain has all three labels
+positive, all pair sums less than one, and total greater than one.
+Writing its third covariant label as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mn>1</mn><mo>−</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">z=1-b</annotation></semantics></math>
+identifies (2) with the original product action
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">m(x,y,b)</annotation></semantics></math>.
+Thus it is concave, continuous on (3), and has negative definite Hessian
+in the strict domain, by the original three-tetrahedron
+decomposition.</p>
+<p>Consider a finite connected tree of old trivalent vertices. Its
+external incidences have two kinds. An ordinary incidence carries the
+profile
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">g(a)</annotation></semantics></math>
+with freely varying
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>∈</mo><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">a\in[0,1/2]</annotation></semantics></math>;
+additive constants may be retained separately. A marked incidence has a
+prescribed label
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>z</mi><mi>i</mi></msub><annotation encoding="application/x-tex">z_i</annotation></semantics></math>
+and no boundary action. Each vertex has at most one marked incidence.
+Internal edges identify equal covariant labels.</p>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Ψ</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>z</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>z</mi><mi>r</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\Psi(z_1,\ldots,z_r)</annotation></semantics></math>
+be the maximum of the sum of all old cubic actions and all ordinary
+profiles. Its domain is the projection of the closed linear support
+polytope, hence convex. The maximization is over a compact polytope.
+Concavity of the summands implies joint concavity of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="normal">Ψ</mi><annotation encoding="application/x-tex">\Psi</annotation></semantics></math>
+on its finite domain. The case
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">r=0</annotation></semantics></math>
+is just an ordinary old region; no clamping is required.</p>
+<p><strong>Half-boundary lemma.</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">r\ge1</annotation></semantics></math>,
+the point
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold-italic">𝒛</mi><mo>=</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mn mathvariant="bold">𝟏</mn></mrow><annotation encoding="application/x-tex">\mathbf z=\tfrac12\mathbf1</annotation></semantics></math>
+has a unique strict constrained optimizer. The pressure is analytic near
+that point and
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>∂</mi><mi mathvariant="normal">Ψ</mi></mrow><mrow><mi>∂</mi><msub><mi>z</mi><mi>i</mi></msub></mrow></mfrac><mo stretchy="false" form="prefix">(</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mn mathvariant="bold">𝟏</mn><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mn>0</mn><mspace width="1.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>≤</mo><mi>i</mi><mo>≤</mo><mi>r</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \frac{\partial\Psi}{\partial z_i}
+       (\tfrac12\mathbf1)\le0\quad(1\le i\le r).
+ \tag{4}
+</annotation></semantics></math> Consequently, for every feasible
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="bold-italic">𝒛</mi><annotation encoding="application/x-tex">\mathbf z</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mi>i</mi></msub><mo>≥</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">z_i\ge1/2</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Ψ</mi><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝒛</mi><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mi mathvariant="normal">Ψ</mi><mo stretchy="false" form="prefix">(</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mn mathvariant="bold">𝟏</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                  \Psi(\mathbf z)\le\Psi(\tfrac12\mathbf1).
+ \tag{5}
+</annotation></semantics></math> This is a simultaneous assertion. It
+does not assert coordinatewise monotonicity while other marked labels
+are held above one half.</p>
+<h2 id="strict-feasibility-and-the-boundary-barrier">2. Strict
+feasibility and the boundary barrier</h2>
+<p>Set every marked label to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1/2</annotation></semantics></math>,
+every internal label to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>/</mi><mn>8</mn></mrow><annotation encoding="application/x-tex">3/8</annotation></semantics></math>,
+and every ordinary boundary label to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>/</mi><mn>8</mn></mrow><annotation encoding="application/x-tex">3/8</annotation></semantics></math>.
+A vertex without a marked incidence has triple
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>3</mn><mi>/</mi><mn>8</mn><mo>,</mo><mn>3</mn><mi>/</mi><mn>8</mn><mo>,</mo><mn>3</mn><mi>/</mi><mn>8</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(3/8,3/8,3/8)</annotation></semantics></math>:
+its total is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>9</mn><mi>/</mi><mn>8</mn></mrow><annotation encoding="application/x-tex">9/8</annotation></semantics></math>
+and its pair sums are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">3/4</annotation></semantics></math>.
+A marked vertex has triple
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo><mn>3</mn><mi>/</mi><mn>8</mn><mo>,</mo><mn>3</mn><mi>/</mi><mn>8</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1/2,3/8,3/8)</annotation></semantics></math>:
+its total is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">5/4</annotation></semantics></math>
+and its largest pair sum is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn><mi>/</mi><mn>8</mn></mrow><annotation encoding="application/x-tex">7/8</annotation></semantics></math>.
+Both are strict. Ordinary leaf profiles are strict. This assignment
+remains feasible and strict when the marked labels vary in a small open
+box around
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1/2</annotation></semantics></math>.</p>
+<p>Root the region at one marked incidence. Each old vertex is now an
+ordinary binary product with output equal to one minus its outgoing
+covariant label; each internal edge supplies the physical turn between
+these output and input coordinates. Other marked incidences are fixed
+primitive terminals with label
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1/2</annotation></semantics></math>,
+and have no leaf volume atom. Ordinary terminals have the original leaf
+action
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>.</p>
+<p>The old boundary barrier applies with this one change in the list of
+terminals. Join any boundary state to the strict state just constructed.
+A tetrahedron with angles
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>a</mi><mo>,</mo><mn>1</mn><mo>−</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,a,1-a)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>a</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0&lt;a&lt;1</annotation></semantics></math>,
+has directional derivative
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mi>∞</mi></mrow><annotation encoding="application/x-tex">+\infty</annotation></semantics></math>
+along this segment. A vertex-flat tetrahedron
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,0,1)</annotation></semantics></math>
+has a finite derivative; a positive tetrahedron has a finite derivative.
+Thus none can cancel a nonvertex-flat infinite derivative with a
+negative infinite term.</p>
+<p>No variable wire at a maximum can equal zero or one. An output zero
+forces both product inputs zero. An output one either has two interior
+inputs summing to one, which gives a nonvertex-flat atom, or it has an
+endpoint child and the descent continues. Turns exchange zero and one. A
+finite descent cannot terminate at a marked terminal, because that
+terminal is fixed to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1/2</annotation></semantics></math>.
+It must reach an ordinary leaf at zero, with its nonvertex-flat leaf
+atom, or an interior pair summing to one. The distinguished root output
+is fixed to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1/2</annotation></semantics></math>
+and cannot be the endpoint causing the descent. This excludes all
+variable endpoint wires. An ordinary leaf at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1/2</annotation></semantics></math>
+has its own nonvertex-flat atom and is also excluded. No atom is
+assigned to a fixed marked terminal; its prescribed half value is not
+being varied.</p>
+<p>With every variable wire interior, each saturated gate inequality
+gives the same barrier as in the original strict source. In product
+coordinates put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mi>b</mi><mo>−</mo><mi>x</mi><mo>,</mo><mi>q</mi><mo>=</mo><mi>b</mi><mo>−</mo><mi>y</mi><mo>,</mo><mi>r</mi><mo>=</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo>−</mo><mi>b</mi><mo>,</mo><mi>w</mi><mo>=</mo><mn>1</mn><mo>−</mo><mi>x</mi><mo>−</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">p=b-x,q=b-y,r=x+y-b,w=1-x-y</annotation></semantics></math>.
+If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">w=0</annotation></semantics></math>,
+the first tetrahedron has angles
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo>,</mo><mi>x</mi><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(y,x,0)</annotation></semantics></math>.
+If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">r=0</annotation></semantics></math>,
+the third has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>,</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>−</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(b,0,1-b)</annotation></semantics></math>.
+If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>0</mn><mo>,</mo><mi>q</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">p=0,q&gt;0</annotation></semantics></math>,
+the second has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>q</mi><mo>,</mo><mn>1</mn><mo>−</mo><mi>q</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,q,1-q)</annotation></semantics></math>;
+the case
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>0</mn><mo>,</mo><mi>p</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">q=0,p&gt;0</annotation></semantics></math>
+is symmetric. If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mi>q</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">p=q=0</annotation></semantics></math>,
+the third has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>x</mi><mo>,</mo><mn>1</mn><mo>−</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,x,1-x)</annotation></semantics></math>.
+All are nonvertex-flat because the relevant wires are interior. Hence
+every retained gate at the constrained maximum is strict.</p>
+<p>Each strict gate Hessian is negative definite in its three labels.
+Every free variable occurs at a gate. Thus their sum, together with the
+concave leaf Hessians, is negative definite on the constrained
+free-coordinate space. The maximum is unique. The implicit-function
+theorem gives an analytic critical branch under small independent
+variations of the marked labels; compactness and uniqueness show that it
+remains the maximum. This proves the asserted interiority and
+analyticity at the all-half assignment. It uses the existing tetrahedron
+barrier, not a claimed metric completion for an artificial terminal.</p>
+<h2 id="boundary-derivatives-from-the-actual-product-equations">3.
+Boundary derivatives from the actual product equations</h2>
+<p>At a stationary subtree with output coordinate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>,
+write
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mrow><mi mathvariant="normal">cot</mi><mo>&#8289;</mo></mrow><mi>π</mi><mi>b</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>κ</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>−</mi><msup><mi>f</mi><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo></mrow></msup><mo>,</mo><mspace width="2.0em"></mspace><msup><mi>X</mi><mn>2</mn></msup><mo>=</mo><mfrac><mrow><mn>1</mn><mo>+</mo><msup><mi>B</mi><mn>2</mn></msup></mrow><mrow><mn>1</mn><mo>+</mo><mi>κ</mi></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><msup><mi>Y</mi><mn>2</mn></msup><mo>=</mo><mi>κ</mi><msup><mi>X</mi><mn>2</mn></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ B=\cot\pi b,\qquad \kappa=e^{-f&#39;(b)},\qquad
+ X^2=\frac{1+B^2}{1+\kappa},\qquad Y^2=\kappa X^2.
+ \tag{6}
+</annotation></semantics></math> At an ordinary leaf
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>=</mo><mi>g</mi></mrow><annotation encoding="application/x-tex">f=g</annotation></semantics></math>,
+these variables satisfy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mi>X</mi><mo>&gt;</mo><mn>0</mn><mo>,</mo><mi>Y</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">B=X&gt;0,Y=1</annotation></semantics></math>.
+At a fixed marked half terminal there is no intrinsic profile
+derivative. Instead use its incident strict prism to define its positive
+boundary response: in an input coordinate take
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mo>=</mo><msup><mi>e</mi><msub><mi>m</mi><mi>x</mi></msub></msup></mrow><annotation encoding="application/x-tex">\kappa=e^{m_x}</annotation></semantics></math>,
+or the prescribed reciprocal after a turn. Since the terminal has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">B=0</annotation></semantics></math>,
+every such positive response gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>Y</mi><mo>&lt;</mo><mn>0</mn><mo>&lt;</mo><mi>X</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                          -Y&lt;0&lt;X.
+ \tag{7}
+</annotation></semantics></math> This is all that is needed from that
+terminal. It is not an added physical leaf and carries no leaf
+action.</p>
+<p>At internal variable wires the usual stationarity equations identify
+the child response with the reciprocal prism response. Direct
+differentiation of the unchanged action gives a common positive
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+at a product, and, if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mn>1</mn></msub><mo>,</mo><msub><mi>B</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">B_1,B_2</annotation></semantics></math>
+are its input cotangents,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mfrac><mrow><msub><mi>B</mi><mn>1</mn></msub><msub><mi>B</mi><mn>2</mn></msub><mo>+</mo><msup><mi>X</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow><mrow><msub><mi>B</mi><mn>1</mn></msub><mo>+</mo><msub><mi>B</mi><mn>2</mn></msub></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><mi>Y</mi><mo>=</mo><mfrac><mrow><msub><mi>Y</mi><mn>1</mn></msub><msub><mi>Y</mi><mn>2</mn></msub></mrow><mrow><msub><mi>B</mi><mn>1</mn></msub><mo>+</mo><msub><mi>B</mi><mn>2</mn></msub></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>B</mi><mn>1</mn></msub><mo>+</mo><msub><mi>B</mi><mn>2</mn></msub><mo>&gt;</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ B=\frac{B_1B_2+X^2-1}{B_1+B_2},\qquad
+ Y=\frac{Y_1Y_2}{B_1+B_2},\qquad B_1+B_2&gt;0.
+ \tag{8}
+</annotation></semantics></math> A turn takes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo>,</mo><mi>X</mi><mo>,</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(B,X,Y)</annotation></semantics></math>
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>B</mi><mo>,</mo><mi>Y</mi><mo>,</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(-B,Y,X)</annotation></semantics></math>.
+In the rooted region an ordinary boundary is an input directly, with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mi>X</mi><mo>,</mo><mi>Y</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">B=X,Y=1</annotation></semantics></math>;
+a fixed half terminal is a proper input by (7). Every product of these
+ordinary or proper inputs has a proper output
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>Y</mi><mo>&lt;</mo><mi>B</mi><mo>&lt;</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">-Y&lt;B&lt;X</annotation></semantics></math>.
+Only such completed product outputs are followed by internal physical
+turns, which preserve the proper condition. No turn of an uncompleted
+ordinary leaf is invoked. Indeed, rooting a covariant cubic at its
+outgoing incidence makes the output coordinate one minus that incidence,
+and each original physical-turn edge supplies exactly the subsequent
+complement before the next product. Thus this rooted induction is
+literal for the stated edge convention.</p>
+<p>Here is the relevant product verification. The inputs obey
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msub><mi>Y</mi><mi>i</mi></msub><mo>&lt;</mo><msub><mi>B</mi><mi>i</mi></msub><mo>≤</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">-Y_i&lt;B_i\le X</annotation></semantics></math>.
+If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">X\ge1</annotation></semantics></math>,
+then each
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mi>i</mi></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">B_i&gt;0</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mi>i</mi></msub><mo>≥</mo><msqrt><mrow><msup><mi>X</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow></msqrt></mrow><annotation encoding="application/x-tex">B_i\ge\sqrt{X^2-1}</annotation></semantics></math>,
+with strict inequality for a proper input. Formula (8) gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">B&gt;0</annotation></semantics></math>,
+and
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>−</mo><mi>X</mi><mo>=</mo><mfrac><mrow><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo>−</mo><msub><mi>B</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo>−</mo><msub><mi>B</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mn>1</mn></mrow><mrow><msub><mi>B</mi><mn>1</mn></msub><mo>+</mo><msub><mi>B</mi><mn>2</mn></msub></mrow></mfrac><mo>&lt;</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ B-X=\frac{(X-B_1)(X-B_2)-1}{B_1+B_2}&lt;0.
+ \tag{9}
+</annotation></semantics></math> If an input is an ordinary leaf its
+first factor is zero; otherwise each factor is less than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>−</mo><msqrt><mrow><msup><mi>X</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow></msqrt><mo>≤</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">X-\sqrt{X^2-1}\le1</annotation></semantics></math>.
+Thus the strict inequality holds, including
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">X=1</annotation></semantics></math>.
+If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>X</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0&lt;X&lt;1</annotation></semantics></math>,
+put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>X</mi><mn>2</mn></msup></mrow></msqrt></mrow><annotation encoding="application/x-tex">h=\sqrt{1-X^2}</annotation></semantics></math>
+and write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mi>i</mi></msub><mo>=</mo><mi>h</mi><mrow><mi mathvariant="normal">cot</mi><mo>&#8289;</mo></mrow><msub><mi>α</mi><mi>i</mi></msub><mo>,</mo><msub><mi>Y</mi><mi>i</mi></msub><mo>=</mo><mi>h</mi><mrow><mi mathvariant="normal">csc</mi><mo>&#8289;</mo></mrow><msub><mi>α</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">B_i=h\cot\alpha_i,Y_i=h\csc\alpha_i</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><msub><mi>α</mi><mi>i</mi></msub><mo>&lt;</mo><mi>π</mi></mrow><annotation encoding="application/x-tex">0&lt;\alpha_i&lt;\pi</annotation></semantics></math>.
+The upper input bound gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>α</mi><mi>i</mi></msub><mo>≥</mo><mrow><mi mathvariant="normal">arccos</mi><mo>&#8289;</mo></mrow><mi>X</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\alpha_i\ge\arccos X&gt;0</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mn>1</mn></msub><mo>+</mo><msub><mi>B</mi><mn>2</mn></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">B_1+B_2&gt;0</annotation></semantics></math>
+gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>α</mi><mn>1</mn></msub><mo>+</mo><msub><mi>α</mi><mn>2</mn></msub><mo>&lt;</mo><mi>π</mi></mrow><annotation encoding="application/x-tex">\alpha_1+\alpha_2&lt;\pi</annotation></semantics></math>.
+Equation (8) becomes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mi>h</mi><mrow><mi mathvariant="normal">cot</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>α</mi><mn>1</mn></msub><mo>+</mo><msub><mi>α</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mi>Y</mi><mo>=</mo><mi>h</mi><mrow><mi mathvariant="normal">csc</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>α</mi><mn>1</mn></msub><mo>+</mo><msub><mi>α</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">B=h\cot(\alpha_1+\alpha_2),Y=h\csc(\alpha_1+\alpha_2)</annotation></semantics></math>,
+proving
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>Y</mi><mo>&lt;</mo><mi>B</mi><mo>&lt;</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">-Y&lt;B&lt;X</annotation></semantics></math>.
+Turns exchange the two strict inequalities. This proves the needed bound
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mi>i</mi></msub><mo>≤</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">B_i\le X</annotation></semantics></math>
+at every input.</p>
+<p>Now root the region separately at marked boundary
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>,
+still with all marked labels equal to half. Its last product has output
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>=</mo><mn>1</mn><mo>−</mo><msub><mi>z</mi><mi>i</mi></msub><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">b=1-z_i=1/2</annotation></semantics></math>,
+so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">B=0</annotation></semantics></math>.
+Strict support makes its two input labels less than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1/2</annotation></semantics></math>,
+hence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mn>1</mn></msub><mo>,</mo><msub><mi>B</mi><mn>2</mn></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">B_1,B_2&gt;0</annotation></semantics></math>.
+From (8) and the hyperboloid identity,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><msup><mi>X</mi><mn>2</mn></msup><mo>=</mo><msup><mi>Y</mi><mn>2</mn></msup><mo>=</mo><msub><mi>B</mi><mn>1</mn></msub><msub><mi>B</mi><mn>2</mn></msub><mo>≤</mo><msup><mi>X</mi><mn>2</mn></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ 1-X^2=Y^2=B_1B_2\le X^2.
+ \tag{10}
+</annotation></semantics></math> The envelope derivative in this root
+output is therefore
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>f</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi></mrow><mo>′</mo></msubsup><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msup><mi>X</mi><mn>2</mn></msup><mi>/</mi><msup><mi>Y</mi><mn>2</mn></msup><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><mn>0</mn><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>∂</mi><msub><mi>z</mi><mi>i</mi></msub></msub><mi mathvariant="normal">Ψ</mi><mo stretchy="false" form="prefix">(</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mn mathvariant="bold">𝟏</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>−</mi><msubsup><mi>f</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi></mrow><mo>′</mo></msubsup><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ f&#39;_{\mathrm{out}}(1/2)=\log(X^2/Y^2)\ge0,
+ \qquad
+ \partial_{z_i}\Psi(\tfrac12\mathbf1)=-f&#39;_{\mathrm{out}}(1/2)\le0.
+ \tag{11}
+</annotation></semantics></math> The fixed marked terminals elsewhere
+were used only through (7), so the argument works for every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>
+on the same constrained maximum. Joint concavity and the supporting
+plane at the all-half point now give
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Ψ</mi><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝒛</mi><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mi mathvariant="normal">Ψ</mi><mo stretchy="false" form="prefix">(</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mn mathvariant="bold">𝟏</mn><mo stretchy="false" form="postfix">)</mo><mo>+</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>∂</mi><msub><mi>z</mi><mi>i</mi></msub></msub><mi mathvariant="normal">Ψ</mi><mo stretchy="false" form="prefix">(</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mn mathvariant="bold">𝟏</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>z</mi><mi>i</mi></msub><mo>−</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mi mathvariant="normal">Ψ</mi><mo stretchy="false" form="prefix">(</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mn mathvariant="bold">𝟏</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \Psi(\mathbf z)\le\Psi(\tfrac12\mathbf1)
+    +\sum_i\partial_{z_i}\Psi(\tfrac12\mathbf1)(z_i-1/2)
+ \le\Psi(\tfrac12\mathbf1).
+ \tag{12}
+</annotation></semantics></math> This proves the half-boundary lemma,
+including arbitrary feasible boundary points by continuity of the
+supporting inequality.</p>
+<h2 id="exact-return-sectors-and-actual-orientation-types">4. Exact
+return sectors and actual orientation types</h2>
+<p>For the fixed Newton basis, the old cubic tensor is supported on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>+</mo><mi>j</mi><mo>,</mo><mi>i</mi><mo>+</mo><mi>k</mi><mo>,</mo><mi>j</mi><mo>+</mo><mi>k</mi><mo>≤</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">i+j,i+k,j+k\le d</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>+</mo><mi>j</mi><mo>+</mo><mi>k</mi><mo>≥</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">i+j+k\ge d</annotation></semantics></math>.
+Its action is (2). The extra tensor has support
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>+</mo><mi>j</mi><mo>,</mo><mspace width="0.222em"></mspace><mi>i</mi><mo>+</mo><mi>k</mi><mo>,</mo><mspace width="0.222em"></mspace><mi>j</mi><mo>+</mo><mi>k</mi><mo>≥</mo><mi>N</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>i</mi><mo>+</mo><mi>j</mi><mo>+</mo><mi>k</mi><mo>≥</mo><mn>2</mn><mi>N</mi><mo>−</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ i+j,\ i+k,\ j+k\ge N,\qquad i+j+k\ge2N-1.
+ \tag{13}
+</annotation></semantics></math> Writing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mn>0</mn></msub><mo>=</mo><mi>i</mi><mo>+</mo><mi>j</mi><mo>+</mo><mi>k</mi><mo>−</mo><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>N</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">t_0=i+j+k-(2N-1)</annotation></semantics></math>,
+it is exactly
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>V</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo>,</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>−</mi><msub><mi mathvariant="normal">Δ</mi><mi>s</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>i</mi><mo>+</mo><mi>j</mi><mo>+</mo><mi>k</mi><mo>−</mo><mi>d</mi></mrow></msup><mfrac><msup><mi>N</mi><mn>2</mn></msup><mrow><msub><mi>S</mi><mi>i</mi></msub><msub><mi>S</mi><mi>j</mi></msub><msub><mi>S</mi><mi>k</mi></msub><msub><mi>S</mi><msub><mi>t</mi><mn>0</mn></msub></msub><msub><mi>S</mi><mrow><mi>i</mi><mo>−</mo><msub><mi>t</mi><mn>0</mn></msub></mrow></msub><msub><mi>S</mi><mrow><mi>j</mi><mo>−</mo><msub><mi>t</mi><mn>0</mn></msub></mrow></msub><msub><mi>S</mi><mrow><mi>k</mi><mo>−</mo><msub><mi>t</mi><mn>0</mn></msub></mrow></msub></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ V_{\mathrm{ret}}(i,j,k)
+ =-\Delta_s(-1)^{i+j+k-d}
+ \frac{N^2}{S_iS_jS_kS_{t_0}S_{i-t_0}S_{j-t_0}S_{k-t_0}}.
+ \tag{14}
+</annotation></semantics></math> For the finite-to-continuous rate
+comparison use
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">d=N-1</annotation></semantics></math>
+and complementary variables
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mn>1</mn><mo>−</mo><mi>i</mi><mi>/</mi><mi>d</mi><mo>,</mo><mi>b</mi><mo>=</mo><mn>1</mn><mo>−</mo><mi>j</mi><mi>/</mi><mi>d</mi><mo>,</mo><mi>c</mi><mo>=</mo><mn>1</mn><mo>−</mo><mi>k</mi><mi>/</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">a=1-i/d,b=1-j/d,c=1-k/d</annotation></semantics></math>.
+Exact return support then gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a,b,c\ge0</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>+</mo><mi>b</mi><mo>+</mo><mi>c</mi><mo>≤</mo><mn>1</mn><mo>−</mo><mn>1</mn><mi>/</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">a+b+c\le1-1/d</annotation></semantics></math>,
+so every argument below lies in the real domain of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>J</mi><annotation encoding="application/x-tex">J</annotation></semantics></math>.
+Its absolute closed rate is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">ℛ</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo>+</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>+</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>+</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>−</mi><msup><mi>π</mi><mn>2</mn></msup><msubsup><mo>∫</mo><mn>0</mn><mi>a</mi></msubsup><msubsup><mo>∫</mo><mn>0</mn><mi>b</mi></msubsup><msubsup><mo>∫</mo><mn>0</mn><mi>c</mi></msubsup><msup><mrow><mi mathvariant="normal">csc</mi><mo>&#8289;</mo></mrow><mn>2</mn></msup><mi>π</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>+</mo><mi>v</mi><mo>+</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo><mspace width="0.167em"></mspace><mi>d</mi><mi>w</mi><mspace width="0.167em"></mspace><mi>d</mi><mi>v</mi><mspace width="0.167em"></mspace><mi>d</mi><mi>u</mi><mo>≤</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \mathcal R(a,b,c)
+ =J(a)+J(b)+J(c)+J(a+b+c)
+              -J(a+b)-J(a+c)-J(b+c)
+ =-\pi^2\int_0^a\int_0^b\int_0^c
+               \csc^2\pi(u+v+w)\,dw\,dv\,du\le0.
+ \tag{15}
+</annotation></semantics></math> Replacing the factorial arguments
+divided by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+by these
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>-normalized
+arguments changes each by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mi>N</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(1/N)</annotation></semantics></math>.
+The endpoint modulus of continuity of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>J</mi><annotation encoding="application/x-tex">J</annotation></semantics></math>
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mi>ε</mi><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mi>ε</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(\varepsilon\log(1/\varepsilon))</annotation></semantics></math>;
+hence uniform closed factorial rates still have only
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>N</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(\log N)</annotation></semantics></math>
+error in the logarithm. In particular, no finite tuple with
+complementary sum
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>+</mo><mn>1</mn><mi>/</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">1+1/N</annotation></semantics></math>
+is substituted into (15). The exact coefficient itself is uniformly
+polynomially bounded after its displayed common
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="normal">Δ</mi><mi>s</mi></msub><annotation encoding="application/x-tex">\Delta_s</annotation></semantics></math>
+factor. This retains every endpoint and repeated-root normal.</p>
+<p>In the actual six-type table an equal-color endomorphism turns into
+an opposite-order mixed morphism, and the next turn into the other
+equal-color endomorphism; the two opposite-color endomorphism spaces
+turn into one another. Only the equal-color endomorphism classes have
+moving relations. Thus two moving vertices cannot be joined by an
+original physical turn. Compatible products share their Casimir class.
+Return vertices, which must be moving, consequently form an independent
+set in the original reduced trivalent tree.</p>
+<p>A return vertex has at least two high incidences, where high means
+the exact index exceeds
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mi>N</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">⌊</mo><mi>d</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo></mrow><annotation encoding="application/x-tex">M_N=\lfloor d/2\rfloor</annotation></semantics></math>.
+An old vertex has at most one. In a closed limiting sector, retain which
+incidences were high before taking the limit; those recorded labels may
+become exactly half. A return with two recorded high arms has one
+remaining low arm; a return with three has none. This convention
+prevents false counts at tied endpoints.</p>
+<h2 id="replacing-all-returns-at-once-including-their-low-arms">5.
+Replacing all returns at once, including their low arms</h2>
+<p>Consider one closed trivalent component with effective boundary
+profiles
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>+</mo><msub><mi>c</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">g+c_i</annotation></semantics></math>
+on low indices and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>c</mi><mi>i</mi></msub><annotation encoding="application/x-tex">c_i</annotation></semantics></math>
+on high indices. Its pure old comparison replaces all boundaries by
+their full pure profiles
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>+</mo><msub><mi>c</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">g+c_i</annotation></semantics></math>.
+Assume the original strict-source hypotheses, so that this old reference
+has a compact support polytope, a unique strict maximizing state, and
+action
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mn>0</mn></msub><annotation encoding="application/x-tex">F_0</annotation></semantics></math>.
+The output probe is one of these effective boundary profiles when
+bounding an open component.</p>
+<p>Fix a sector containing at least one return, including its recorded
+high/low pattern. Remove every return vertex. Since returns are
+nonadjacent, every remaining edge from a return ends either at an old
+region or directly at an original boundary leaf. Mark each high
+incidence on an old region, including any high original external
+boundary. There is at most one such marked incidence at each old vertex,
+by old support.</p>
+<p>A low arm of a return requires special accounting. After its two high
+arms are clamped to half, the replacement old vertex has action
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                         t(1/2,1/2,x)=g(x)\ge0.
+ \tag{16}
+</annotation></semantics></math> If that low arm ends in an old region,
+regard this additional
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">g(x)</annotation></semantics></math>
+as an ordinary boundary profile of that region and optimize
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+there. At the starting returned state this adds a nonnegative amount,
+whereas the discarded return action is nonpositive. Because returns are
+nonadjacent, the low arm belongs to exactly one old region and this
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>
+is counted exactly once.</p>
+<p>If a low arm ends directly in an original low boundary leaf, retain
+its original label or optimize it independently. The new old vertex and
+original boundary contribute
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">g(x)+g(x)+c</annotation></semantics></math>,
+at least the old boundary contribution
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">g(x)+c</annotation></semantics></math>.
+A high original boundary incidence is replaced by half; its original
+high profile is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>,
+and the new pure boundary profile is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>c</mi><mo>=</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">g(1/2)+c=c</annotation></semantics></math>.
+A return with three high arms becomes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1/2,1/2,1/2)</annotation></semantics></math>,
+whose old action is zero. No boundary constant is lost.</p>
+<p>Apply the half-boundary lemma to each old region, including the new
+pure low-arm profiles just described. It jointly reoptimizes that region
+at all its marked half boundaries, with action at least its previous old
+action plus the assigned nonnegative profiles. Regions without any
+marked boundary can simply be optimized with their ordinary profiles.
+Distinct regions have disjoint free variables. Their low-arm values are
+determined by their own optimizers; each is used by exactly one replaced
+return vertex. All high interfaces agree at half.</p>
+<p>Reassemble the unchanged tree. At every replaced return vertex use
+either
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1/2,1/2,x)</annotation></semantics></math>
+with the optimized adjacent low-arm value, or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1/2,1/2,1/2)</annotation></semantics></math>.
+These are feasible old triples. Equation (16) makes their action exactly
+the profile assigned to the adjacent old region, not an extra copy.
+Every remaining vertex is an old feasible vertex, and each original
+boundary now has a feasible pure label. The total action of the
+resulting old state is at least the entire absolute return-sector
+action.</p>
+<p>At least one replaced vertex has a pair sum equal to one. The
+resulting state therefore lies in the fixed old boundary stratum
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">ℬ</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mrow><mtext mathvariant="normal">old feasible states with at least one retained
+ cubic pair sum equal to </mtext><mspace width="0.333em"></mspace></mrow><mn>1</mn><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \mathcal B=\{\text{old feasible states with at least one retained
+                         cubic pair sum equal to }1\}.
+ \tag{17}
+</annotation></semantics></math> The original maximizing state is
+strict. Compactness gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>=</mo><msub><mi>F</mi><mn>0</mn></msub><mo>−</mo><munder><mi mathvariant="normal">max</mi><mi mathvariant="script">ℬ</mi></munder><msub><mi mathvariant="script">𝒜</mi><mn>0</mn></msub><mo>&gt;</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                    \delta=F_0-\max_{\mathcal B}\mathcal A_0&gt;0.
+ \tag{18}
+</annotation></semantics></math> Thus every nonempty return sector has
+absolute action at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mn>0</mn></msub><mo>−</mo><mi>δ</mi></mrow><annotation encoding="application/x-tex">F_0-\delta</annotation></semantics></math>.
+This uses a feasible comparison state in the same coupled old source. It
+does not add separately optimized caps or assign a representation to an
+absolute stationary return state.</p>
+<p>All endpoint and exact-half configurations are included. The record
+of finite high incidences gives at most one marked incidence per old
+vertex and at least two per return vertex; it persists in the closed
+sector. The entropy functions are continuous on their closed domains.
+Equation (12) applies to closed feasible boundary values, so no limiting
+division by a zero sine or a strict-label counting shortcut is
+needed.</p>
+<h2 id="consequence-for-the-finite-source-and-the-remaining-scope">6.
+Consequence for the finite source and the remaining scope</h2>
+<p>At a fixed finite trivalent component there are finitely many
+old/return assignments and polynomially many integer states. The paired
+edge factors and all prescribed typed scalars are bounded on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>s</mi><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mi>R</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|s|\le R&lt;1</annotation></semantics></math>.
+Uniform closed coefficient rates and (18) therefore bound the entire
+absolute sum of all nonempty return sectors by
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mrow><mi>N</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>F</mi><mn>0</mn></msub><mo>−</mo><mi>δ</mi><mo>+</mo><mi>o</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                         e^{N(F_0-\delta+o(1))}.
+ \tag{19}
+</annotation></semantics></math> No return cancellation is used for this
+estimate. In sectors without returns, the bounded paired weights are
+compared termwise with the original positive complete contraction. A
+high original boundary input or high output probe has the old
+complete-component strict gap. This is the arbitrary-array theorem in
+<code>notes/actual_conway_unflagged_core_probe_bound.md</code>; it
+permits low rates
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>+</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">g+c</annotation></semantics></math>
+and high rates
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>.
+Thus the component has its original full norm budget, and its clean part
+retains all old-supported internal labels while keeping its boundary
+inputs and output low. The remainder has a strict spectral deficit.
+Inherited full-cone deficits pass by affine homogeneity in the
+constants, as in the published component refinement.</p>
+<p>Near the original strict maximizing state, every cubic has total
+normalized degree less than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">3/2</annotation></semantics></math>.
+Consequently its raw polynomial trace has degree less than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2N-1</annotation></semantics></math>
+on a fixed window, and the moving trace equals the complete trace
+exactly there. The regular internal labels may cross half, but stay in a
+compact subinterval of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,1)</annotation></semantics></math>,
+where the canonical paired-edge interpolation is regular.
+Circle-incident labels remain in the original regular low interval.
+These are the corrected local inputs for the grouped-window argument; no
+high cutoff is imposed on bare–bare edges.</p>
+<p>The theorem established here is a component comparison for
+arbitrary-size <strong>trivalent</strong> bare components in the actual
+typed tree. It is independent of the earlier many-boundary condition. It
+can coexist with singleton higher-valence components and other already
+controlled components in the mutual source induction. A full filled
+theorem still requires stating this enlarged class in the global
+source-to-window argument and retaining the joint filling contour and
+exact scalar ledger; those are not republished or modified here.</p>
+<p>Higher-valence bare components are not settled by this proof. Their
+binary resolutions have unturned complementary-label edges, on which
+adjacent moving return vertices can occur. A raw low higher-valence
+product can also have a return trace without a high exterior incidence.
+The independent-return and unique-low-arm accounting above must not be
+applied to such artificial resolutions.</p>

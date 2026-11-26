@@ -1,0 +1,101 @@
+{
+  "scope": "Floating evaluation of exact original endpoint row formulas and a bounded1D maximization. The low-row critical locations also have the displayed exact algebraic descriptions; no outward numerical certificate is claimed. Any comparison involving A5 remains diagnostic because its incoming maxima were estimated.",
+  "type_star": [
+    4,
+    3,
+    4
+  ],
+  "targets": [
+    0.5,
+    0,
+    0.5
+  ],
+  "profiles": [
+    {
+      "epsilon": 0,
+      "grid_size": 10001,
+      "grid_maximum": 0.2915609040308188,
+      "optimized_u": 0.25000000370828973,
+      "optimized_value": 0.2915609040308188,
+      "explicit_algebraic_u": 0.25,
+      "explicit_algebraic_value": 0.2915609040308188,
+      "high_half_maximum": 1.4537115187821073e-15,
+      "reflection_grid_error": 2.9074230375642145e-15
+    },
+    {
+      "epsilon": 1,
+      "grid_size": 10001,
+      "grid_maximum": 0.4435337176507873,
+      "optimized_u": 0.2148237883224376,
+      "optimized_value": 0.4435337205845544,
+      "explicit_algebraic_u": 0.21482379162519158,
+      "explicit_algebraic_value": 0.4435337205845544,
+      "high_half_maximum": 1.4672215528573517e-15,
+      "reflection_grid_error": 2.9344431057147035e-15
+    }
+  ],
+  "raw_pair_rate": 0.7350946246153732,
+  "actual_reference": [
+    [
+      0.3535833329697804,
+      -0.01678382500517984
+    ],
+    [
+      0.2845277776565761,
+      -0.042367208360519916
+    ]
+  ],
+  "critical_gradient_residual": 3.116231291928326e-13,
+  "geometric_pair_rate": 1.512513711823297,
+  "actual_pair_plane_real": 1.5125137118234318,
+  "plane_minus_critical": 1.34781075189494e-13,
+  "raw_pair_gap": 0.7774190872079237,
+  "known_common_A5_difference_estimate": 0.40256810970684714,
+  "endpoint_occupation_debit": 0.0026249999999999997,
+  "net_with_endpoint_raw_profile": -0.3774759775010766,
+  "collar_rho": 0.001,
+  "collar_rate_cost_2Delta": 0.013526051882888395,
+  "net_with_collar_rate": -0.36394992561818823,
+  "three_distinct_comparisons": {
+    "universal_gap": {
+      "pair_gap": 0.30342449349264144,
+      "net_estimate": 0.09651861621420571,
+      "collar_already_included": true
+    },
+    "actual_plane_constant_source": {
+      "source_ceiling": 0.963539,
+      "pair_gap": 0.5354486599405434,
+      "net_estimate": -0.1355055502336962,
+      "collar_cost": 0.013526051882888395
+    },
+    "actual_plane_angular_source": {
+      "source_ceiling": 0.7350946246153732,
+      "pair_gap": 0.7638930353251702,
+      "net_estimate": -0.363949925618323,
+      "collar_cost": 0.013526051882888395
+    }
+  },
+  "all_type_source_ceiling": "A[beta,alpha]+B[gamma]+2*Delta_rho+beta*nu_rho; compare to ACTUAL Re(C+P_L*z_L+P_R*z_R). No second Q subtraction.",
+  "certified_constant_table": {
+    "A": [
+      [
+        0.36005,
+        0.447948
+      ],
+      [
+        0.485081,
+        0.551147
+      ]
+    ],
+    "B": [
+      0.347548,
+      0.515591
+    ]
+  },
+  "finite_rows": [
+    "C0(-1,1)=sum_j (-1)^j p_j(-1)/P_j",
+    "C1(1,-1)=sum_j p_j(-1)/P_j^2"
+  ],
+  "parity": "For evenN p_j(-1)=0 at j>=N/2; for oddN those high rows remain and have the retained full profile. Both profile maxima occur belowN/2. Fourier d_N(-1) has uniform upper rate0 for all levels; no root-grid equality is assumed at oddN.",
+  "selected_factors": "All relevant selected monomials have modulus1 on these real arguments."
+}

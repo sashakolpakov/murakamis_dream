@@ -1,0 +1,181 @@
+<h1
+id="boundary-compensation-for-the-one-high-valence-nine-obstruction">Boundary
+compensation for the one-high valence-nine obstruction</h1>
+<p>Private derivation, 1 November 2026. No repository changes.</p>
+<p>The exact family in
+<code>/private/tmp/md-one-high-admissible-hub-trace-exponential-obstruction.md</code>
+disproves a pointwise comparison with the complete tensor at the same
+indices. It does not exceed the actual geometric pressure when the nine
+boundary inputs have ordinary rigid profiles. This note records that
+distinction with the original pressure, and records the separate
+complete-pressure argument that can be used for more general neighboring
+regions.</p>
+<h2 id="a-whole-junction-upper-bound-at-the-obstruction-indices">1. A
+whole-junction upper bound at the obstruction indices</h2>
+<p>Use the fixed complete Newton polynomials
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>e</mi><mi>r</mi></msub><annotation encoding="application/x-tex">e_r</annotation></semantics></math>,
+the moving quotient
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mi>s</mi></msub><annotation encoding="application/x-tex">P_s</annotation></semantics></math>,
+and the full trace
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>ϕ</mi><mi>s</mi></msub><annotation encoding="application/x-tex">\phi_s</annotation></semantics></math>.
+The complete spectral norm
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">𝒥</mi><annotation encoding="application/x-tex">\mathcal J</annotation></semantics></math>
+includes first normals. The already proved finite estimates give
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><msub><mi>e</mi><mi>h</mi></msub><msub><mo stretchy="false" form="postfix">∥</mo><mi mathvariant="script">𝒥</mi></msub><mo>≤</mo><msup><mi>N</mi><mi>C</mi></msup><mspace width="1.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mi>h</mi><mo>&gt;</mo><mo stretchy="false" form="prefix">⌊</mo><mo stretchy="false" form="prefix">(</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mo stretchy="false" form="postfix">∥</mo><msub><mi>e</mi><mi>a</mi></msub><msub><mo stretchy="false" form="postfix">∥</mo><mi mathvariant="script">𝒥</mi></msub><mo>≤</mo><msup><mi>N</mi><mi>C</mi></msup><msup><mi>e</mi><mrow><mi>N</mi><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mi>/</mi><mi>N</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>N</mi><mo stretchy="false" form="postfix">)</mo></mrow></msup><mspace width="1.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> low</mtext></mrow><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \|e_h\|_{\mathcal J}\le N^C\quad(h&gt;\lfloor(N-1)/2\rfloor),
+ \qquad
+ \|e_a\|_{\mathcal J}\le N^C e^{Ng(a/N)+O(\log N)}
+                                  \quad(a\text{ low}).
+\tag{1}
+</annotation></semantics></math> Canonical Hermite interpolation
+converts these bounds to sup norms on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mn>2</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[-2,2]</annotation></semantics></math>
+at polynomial cost. For a fixed number of factors, raw polynomial
+multiplication therefore has that same additive exponential cost. The
+canonical remainder bound for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mi>s</mi></msub><annotation encoding="application/x-tex">P_s</annotation></semantics></math>,
+followed by its top-coefficient functional, gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mi mathvariant="normal">sup</mi><mrow><mo stretchy="false" form="prefix">|</mo><mi>s</mi><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mi>R</mi></mrow></munder><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>ϕ</mi><mi>s</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>e</mi><mi>h</mi></msub><msubsup><mi>e</mi><mi>a</mi><mn>8</mn></msubsup><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><msup><mi>N</mi><msub><mi>C</mi><mi>R</mi></msub></msup><msup><mi>e</mi><mrow><mn>8</mn><mi>N</mi><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mi>/</mi><mi>N</mi><mo stretchy="false" form="postfix">)</mo></mrow></msup><mo>,</mo><mspace width="2.0em"></mspace><mi>R</mi><mo>&lt;</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \sup_{|s|\le R}\left|\phi_s\left(e_he_a^8\right)\right|
+                  \le N^{C_R}e^{8Ng(a/N)},\qquad R&lt;1.
+\tag{2}
+</annotation></semantics></math> This step uses the proved
+bounded-degree Chebyshev folding and polynomial norm conversion, not a
+moving-versus-complete trace comparison. Equivalently it is the
+high-probe estimate in
+<code>notes/actual_main_meridian_source_bounds.md</code>, Section 3.3,
+before maximizing the eight low input weights. All first normals and
+fixed-quotient reductions are retained.</p>
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>5</mn><mi>a</mi><mo>+</mo><mn>1</mn><mo>,</mo><mi>h</mi><mo>=</mo><mn>4</mn><mi>a</mi></mrow><annotation encoding="application/x-tex">N=5a+1,h=4a</annotation></semantics></math>,
+(2) has rate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8</mn><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>5</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">8g(1/5)</annotation></semantics></math>.
+The positive correction in the counterexample can be exponentially
+larger than its particular complete trace while still obeying this
+absolute upper bound.</p>
+<p>Now attach nine actual or effective boundary modules with the
+original cone
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>f</mi><mrow><mi>i</mi><mo>,</mo><mi>N</mi><mo>,</mo><mi>r</mi></mrow></msub><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><msup><mi>e</mi><mrow><mi>N</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>c</mi><mi>i</mi></msub><mo>+</mo><mi>o</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow></msup><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><msup><mi>e</mi><mrow><mi>N</mi><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mi>/</mi><mi>N</mi><mo stretchy="false" form="postfix">)</mo></mrow></msup><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mi>r</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> low</mtext></mrow><mo>,</mo></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mn>1</mn><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mi>r</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> high</mtext></mrow><mi>.</mi></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">
+ |f_{i,N,r}|\le e^{N(c_i+o(1))}
+ \begin{cases}e^{Ng(r/N)},&amp;r\text{ low},\\1,&amp;r\text{ high}.
+ \end{cases}
+\tag{3}
+</annotation></semantics></math> At the specified tuple, the high
+boundary contributes no positive profile and the other eight contribute
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mi>/</mi><mi>N</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">g(a/N)</annotation></semantics></math>
+each. Thus its whole weighted contribution, uniformly on the compact
+meridian disk, has rate at most
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mn>9</mn></munderover><msub><mi>c</mi><mi>i</mi></msub><mo>+</mo><mn>16</mn><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>5</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                  \sum_{i=1}^9c_i+16g(1/5).
+\tag{4}
+</annotation></semantics></math> There is no assertion here that the
+physical high coefficient is nonzero. If it vanishes, the contribution
+is smaller still.</p>
+<h2 id="comparison-with-the-same-original-pure-action">2. Comparison
+with the same original pure action</h2>
+<p>The complete positive reference of this nine-boundary junction is the
+original scalar
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>h</mi><mn>9</mn></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">C(h^9)</annotation></semantics></math>,
+with its constants retained. Choose any one existing boundary as the
+comparison root; the other eight form the unturned product
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><msup><mi>h</mi><mn>8</mn></msup></mrow><annotation encoding="application/x-tex">A=h^8</annotation></semantics></math>.
+Let
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ω</mi><mn>8</mn></msub><mo>=</mo><munder><mi mathvariant="normal">max</mi><mrow><mi>x</mi><mo>≤</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow></munder><mo stretchy="false" form="prefix">{</mo><msub><mi>f</mi><mn>8</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mover><mi>ω</mi><mo accent="true">̂</mo></mover><mn>8</mn></msub><mo>=</mo><munder><mi mathvariant="normal">max</mi><mrow><mi>x</mi><mo>≤</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow></munder><mo stretchy="false" form="prefix">{</mo><msub><mi>f</mi><mn>8</mn></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \omega_8=\max_{x\le1/2}\{f_8(x)+g(x)\},
+ \qquad
+ \widehat\omega_8=\max_{x\le1/2}\{f_8(1-x)+g(x)\}.
+\tag{5}
+</annotation></semantics></math> The old positive product evaluation
+gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ω</mi><mn>8</mn></msub><mo>=</mo><mn>16</mn><msub><mi>G</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\omega_8=16G_0</annotation></semantics></math>,
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mn>0</mn></msub><mo>=</mo><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>4</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">G_0=g(1/4)</annotation></semantics></math>.
+The reflected product-pressure theorem gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>ω</mi><mo accent="true">̂</mo></mover><mn>8</mn></msub><mo>&gt;</mo><msub><mi>ω</mi><mn>8</mn></msub></mrow><annotation encoding="application/x-tex">\widehat\omega_8&gt;\omega_8</annotation></semantics></math>.
+These are exactly equations (H5)–(H13) in
+<code>notes/actual_main_meridian_source_bounds.md</code>, Sections
+3.1–3.2; they are pressure identities of the same positive source, not a
+sum of independent cap volumes.</p>
+<p>Consequently the original complete pressure is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mn>0</mn></msub><mo>=</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>c</mi><mi>i</mi></msub><mo>+</mo><msub><mover><mi>ω</mi><mo accent="true">̂</mo></mover><mn>8</mn></msub><mo>&gt;</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>c</mi><mi>i</mi></msub><mo>+</mo><mn>16</mn><msub><mi>G</mi><mn>0</mn></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                  F_0=\sum_i c_i+\widehat\omega_8
+                         &gt;\sum_i c_i+16G_0.
+\tag{6}
+</annotation></semantics></math> Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>g</mi><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>2</mn><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mrow><mi mathvariant="normal">cot</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>π</mi><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">g&#39;(x)=2\log\cot(\pi x)</annotation></semantics></math>,
+its unique maximum on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[0,1/2]</annotation></semantics></math>
+is at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">1/4</annotation></semantics></math>.
+Hence
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>δ</mi><mo>*</mo></msub><mo>:=</mo><mn>16</mn><mo stretchy="false" form="prefix">{</mo><msub><mi>G</mi><mn>0</mn></msub><mo>−</mo><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>5</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo><mo>&gt;</mo><mn>0</mn><mo>,</mo><mspace width="2.0em"></mspace><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>c</mi><mi>i</mi></msub><mo>+</mo><mn>16</mn><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>5</mn><mo stretchy="false" form="postfix">)</mo><mo>&lt;</mo><msub><mi>F</mi><mn>0</mn></msub><mo>−</mo><msub><mi>δ</mi><mo>*</mo></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \delta_*:=16\{G_0-g(1/5)\}&gt;0,
+ \qquad
+ \sum_i c_i+16g(1/5)&lt;F_0-\delta_*.
+\tag{7}
+</annotation></semantics></math> The exact counterexample family is
+therefore exponentially negligible relative to the actual complete
+geometric budget in this rigid-boundary setting. The already established
+singleton-hub theorem supplies an even stronger uniform gap for all high
+boundary tuples. Formula (7) merely exhibits the compensation at the
+particular witness without changing any boundary labels or introducing a
+new geometric component.</p>
+<p>A sufficiently small fixed neighborhood of the tuple has the same
+conclusion after reducing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>δ</mi><mo>*</mo></msub><annotation encoding="application/x-tex">\delta_*</annotation></semantics></math>,
+by continuity of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>
+and the closed basis estimates. This statement concerns the rigid
+low/high boundary cone (3). It is not a comparison to the much smaller
+complete trace at the identical tuple.</p>
+<h2 id="what-changes-for-a-neighboring-nonrigid-branch">3. What changes
+for a neighboring nonrigid branch</h2>
+<p>If the high incidence comes from an adjacent completed bare region
+rather than an L module, its boundary action is not generally the high
+constant in (3). For example, attaching an old two-leaf product across
+the physical turn gives the original boundary profile
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mrow><mi>h</mi><mi>h</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+                        f_{hh}(1-u)
+\tag{8}
+</annotation></semantics></math> at covariant high label
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>u</mi><annotation encoding="application/x-tex">u</annotation></semantics></math>,
+with all its own ordinary leaf contributions retained. It cannot be
+replaced by its independently maximized norm pressure without accounting
+for the shared boundary condition. Equations (4)–(7) do not make that
+replacement.</p>
+<p>The coupled complete-pressure comparison in
+<code>/private/tmp/md-old-whole-hub-simultaneous-half-pressure.md</code>
+does apply to such an old region if all its marked high boundaries are
+treated jointly. Its hypotheses are: actual hubs have full valence at
+least three; internal edges are physical turns; at most one marked
+incidence occurs at each hub; the other boundaries carry the original
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>+</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">g+c</annotation></semantics></math>
+profiles. It proves
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Ψ</mi><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝒛</mi><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mi mathvariant="normal">Ψ</mi><mo stretchy="false" form="prefix">(</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mn mathvariant="bold">𝟏</mn><mo stretchy="false" form="postfix">)</mo><mspace width="1.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝒛</mi><mo>≥</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mn mathvariant="bold">𝟏</mn><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+                     \Psi(\mathbf z)\le\Psi(\tfrac12\mathbf1)
+                          \quad(\mathbf z\ge\tfrac12\mathbf1),
+\tag{9}
+</annotation></semantics></math> strictly away from the all-half vector.
+It concerns the complete positive action. A separate moving
+higher-valence estimate is still required to sew the additional terms at
+the boundary.</p>
+<p>I checked its full derivation against the exact fixed-label support
+lemma in
+<code>notes/actual_conway_reduced_hub_source_normal_form.md</code>,
+Section 2. The product interval is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mi>i</mi></msub><msub><mi>a</mi><mi>i</mi></msub><mo>&lt;</mo><mi>b</mi><mo>&lt;</mo><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><msub><mo>∑</mo><mi>i</mi></msub><msub><mi>a</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\max_i a_i&lt;b&lt;\min(1,\sum_i a_i)</annotation></semantics></math>,
+with pairwise input sums less than one. The extra condition involving
+the exposed root label enters only when the product is closed. The
+half/three-eighths assignment is made on physical edges; the
+fixed-association interval construction supplies every hidden unturned
+wire. The endpoint descent handles both turn and unturned edges, and the
+strict gate Hessians give the analytic boundary pressure with negative
+definite Schur complement. The response induction passes proper product
+outputs through either edge type and never turns an uncompleted ordinary
+boundary leaf. Its supporting-gradient calculation therefore proves (9)
+without an independent-cap substitution.</p>
+<p>This supplies a valid coupled tool for a neighboring complete region,
+but does not yet show how to replace the valence-nine moving tensor by a
+complete tensor with compatible boundary profiles. The pointwise
+inequality has been disproved; the actual coupled geometric comparison
+remains a different question.</p>

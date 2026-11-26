@@ -1,0 +1,86 @@
+{
+  "scope": "Finite signed source diagnostic; separate exact odd support identity; no spectral supremum gap or full volume theorem.",
+  "artifacts": [
+    {
+      "path": "/private/tmp/md-undecorated-cancellation-bipyramid-diagnostic.py",
+      "sha256": "1ee758ce43146fc2c3e79aefb28bcce729987fe1270e4d7d8040139f5a383ca7"
+    },
+    {
+      "path": "/private/tmp/md-undecorated-cancellation-bipyramid-diagnostic-report.md",
+      "sha256": "924cb6793c8a96c238bb8108bc0f6fbdc4197e648ba088fa34c1b134762d18f0"
+    },
+    {
+      "path": "/private/tmp/md-undecorated-cancellation-bipyramid-odd-one-exception.md",
+      "sha256": "2c56da0600205f30e4da02a08e07621910ac3dca51d0d8a88c6f7905c25703d0"
+    },
+    {
+      "path": "/private/tmp/md-undecorated-cancellation-bipyramid-final-results.json",
+      "sha256": "bde5c61ea40f1bc5ad4c37650c98c649e24189582dab8ce29ac27e42abec52d3"
+    },
+    {
+      "path": "/private/tmp/md-undecorated-cancellation-bipyramid-final-extended-results.json",
+      "sha256": "e4aa032811ae848d42621a6faa5af0a2f0d07733b034e986bcf69ef285fcfa2d"
+    },
+    {
+      "path": "/private/tmp/md-undecorated-cancellation-bipyramid-final-220-results.json",
+      "sha256": "1b33ababeceb2c3780010ae03fc26c56227dc68a61ce0d3c1f00139ca2da6ab3"
+    },
+    {
+      "path": "/private/tmp/md-undecorated-cancellation-bipyramid-diagnostic-odd-extended-results.json",
+      "sha256": "90b46d1d85d6ec7fbe05bf6811e421568964776e2684c90f8457d3c4e3fcccfb"
+    },
+    {
+      "path": "/private/tmp/md-undecorated-cancellation-bipyramid-diagnostic-100-all-results.json",
+      "sha256": "e93dc04ba97fbf8b1dd23cc013377ec5d1418c73419857c0323bff1b356c86dc"
+    },
+    {
+      "path": "/private/tmp/md-undecorated-cancellation-bipyramid-precision-summary.py",
+      "sha256": "8be4e7e4a3ef691cc717209ebe452911b094375fceea3907332726254c6169af"
+    },
+    {
+      "path": "/private/tmp/md-undecorated-cancellation-bipyramid-precision-summary.json",
+      "sha256": "a3f7a2195e4eb8be93bace6be3258a3fdc5c9b5a695cec24b19e56880ff18774"
+    },
+    {
+      "path": "/private/tmp/md-undecorated-cancellation-bipyramid-exact-sewn-current.py",
+      "sha256": "249fd28979b20cb73e5fe4fe1e0f8f0b49fc59cc4f991acea20ba5390a778e00"
+    },
+    {
+      "path": "/private/tmp/md-undecorated-cancellation-bipyramid-exact-sewn-current.json",
+      "sha256": "0a35d6d886f8eb04fe0cdfdc3ad9a71f236c6e261cb81913af9324fd75899026"
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "/private/tmp/md-undecorated-bipyramid-exact-cyclic-transfer.md",
+      "sha256": "ee7b53066d7ea3a1c97f9a79872db3bf78eb5b9b7fc7b783a2571bbfd2139e54"
+    },
+    {
+      "path": "/private/tmp/md-undecorated-bipyramid-signed-grade-blocks.md",
+      "sha256": "f87406f16980db5d56ba0c2f173fb709d4c17cbca4903af7ca74c9937a7a7dd1"
+    },
+    {
+      "path": "/Users/sasha/volume-conjecture/notes/actual_homogeneous_casimir_face_source.md",
+      "sha256": "a7d89f310f2cb4193ab73ef49f715198b224d1c3756d84c4cb940d7fa850c2f2"
+    },
+    {
+      "path": "/Users/sasha/volume-conjecture/notes/actual_original_boundary_stationary_character.md",
+      "sha256": "44863c92734e7175ace911896989bd2ac7b1f46103603d2733766cccc29072ad"
+    },
+    {
+      "path": "/Users/sasha/volume-conjecture/notes/actual_balanced_terminal_fan_volume.md",
+      "sha256": "5376d8908a95ebbbcc74ef74f254f9d84b3cc011d4ba4dc72e62ee600508b5f8"
+    }
+  ],
+  "runtime": "/Users/sasha/.venvs/global/bin/python3; mpmath for diagnostic; standard library for exact sewn-current runner",
+  "commands": [
+    "python3 md-undecorated-cancellation-bipyramid-diagnostic.py --all-endpoints --precision 160 --output md-undecorated-cancellation-bipyramid-final-results.json",
+    "python3 md-undecorated-cancellation-bipyramid-diagnostic.py --all-endpoints --precision 100 --output md-undecorated-cancellation-bipyramid-diagnostic-100-all-results.json",
+    "python3 md-undecorated-cancellation-bipyramid-diagnostic.py --levels 14,16,20,24,32 --precision 160 --cases all_minus,north_plus_south_minus,north_minus_south_plus,interior --output md-undecorated-cancellation-bipyramid-final-extended-results.json",
+    "python3 md-undecorated-cancellation-bipyramid-diagnostic.py --levels 13,17,25 --precision 160 --all-endpoints --cases endpoint_mmmmmp,north_plus_south_minus --output md-undecorated-cancellation-bipyramid-diagnostic-odd-extended-results.json",
+    "python3 md-undecorated-cancellation-bipyramid-diagnostic.py --levels 12,25,32 --precision 220 --all-endpoints --cases all_minus,north_plus_south_minus,endpoint_mmmmmp,interior --output md-undecorated-cancellation-bipyramid-final-220-results.json",
+    "python3 md-undecorated-cancellation-bipyramid-exact-sewn-current.py",
+    "python3 md-undecorated-cancellation-bipyramid-precision-summary.py"
+  ],
+  "preservation": "Earlier intermediate result files and logs are retained. Some early result hashes refer to the same arithmetic core before additional independent integer/index checks were added."
+}

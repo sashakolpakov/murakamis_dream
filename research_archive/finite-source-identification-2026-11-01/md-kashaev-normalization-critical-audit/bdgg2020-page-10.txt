@@ -1,0 +1,76 @@
+2.1.2
+The ribbon structure on C
+Here we recall that C is a ribbon category, for details see for example [GPMT09, CGPM15c,
+GPM18]. We will describe the ribbon structure in terms of left/right dualities and a braiding.
+This formulation follows [GPM18], where it is shown that a ribbon category can be deﬁned
+as a pivotal braided category satisfying certain compatibility constraints on the natural twist
+morphism deﬁned from the braiding and dualities.
+This structure will be used later while
+deﬁning link invariants.
+Since U
+H
+ζ2r is a Hopf algebra, C is a monoidal category where the unit 1l is the 1-dimensional
+trivial module C. Moreover, C is C-linear: hom-sets are C-modules, the composition and tensor
+product of morphisms are C-bilinear, and EndC(1l) = C Id1l. We will often denote the unit 1l by
+C.
+Let V and W be objects of C.
+Let {vi} be a basis of V and {v∗
+i } be the dual basis of
+V ∗= HomC(V, C). The duality morphisms of C are
+−→
+coevV :C →V ⊗V ∗, given by 1 7→
+X
+vi ⊗v∗
+i ,
+−→
+ev V :V ∗⊗V →C, given by f ⊗w 7→f(w),
+←−
+coevV :C →V ∗⊗V, given by 1 7→
+X
+v∗
+i ⊗Kr−1vi,
+←−
+ev V :V ⊗V ∗→C, given by w ⊗f 7→f(K1−rw).
+As shown in [GPM18] these morphisms deﬁne a pivotal structure on C. Taking V = Vα, the cup
+and cap morphisms can be written
+←−
+coevVα: C →V ∗
+α ⊗Vα, given by 1 7→
+X
+ζ2r(r−1)(α−2i)v∗
+i ⊗vi,
+←−
+ev V : V ⊗V ∗→C, given by vi ⊗v∗
+j 7→ζ2r(1−r)(α−2i)δij
+(2.8)
+where δij denotes the Kronecker delta.
+In [Oht02], Ohtsuki truncates the usual formula of the h-adic quantum R-matrix to deﬁne
+an operator on V ⊗W by
+R = ζ2rH⊗H/2
+r−1
+X
+k=0
+(ζ2r −ζ2r−1)2k
+ζ2rk(ζ2r−2; ζ2r−2)k
+Ek ⊗F k.
+(2.9)
+where
+(x; p)n :=
+
+
+
+
+
+n−1
+Y
+k=0
+(1 −xpk)
+if n > 0
+0
+otherwise
+(2.10)
+denotes the q-factorial (a.k.a.
+q-Pochhammer symbol or quantum dilogarithm [FK94]) and
+ζ2rH⊗H/2 is the operator given by
+ζ2rH⊗H/2(v ⊗v′) = ζ2rλλ′/2v ⊗v′
+10

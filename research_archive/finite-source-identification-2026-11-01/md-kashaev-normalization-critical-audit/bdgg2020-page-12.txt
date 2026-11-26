@@ -1,0 +1,90 @@
+(for details see e.g. [Kas95, Tur16]). The value of any C-colored ribbon under F can be computed
+using the six building blocks, which are the morphisms
+,
+,
+↷
+,
+↶
+, ↶, ↷in RC. The functor
+F transforms these building blocks as follows:
+F(
+) = τ ◦R,
+F(
+↶
+) =
+−→
+coevV ,
+F(
+↷
+) =
+←−
+coevV ,
+F(
+) = τ ◦R−1,
+F(↷) =
+−→
+ev V ,
+F(↶) =
+←−
+ev V .
+(2.14)
+where τ(v ⊗w) = w ⊗v permutes the factors. Vertical lines are sent to the identity morphism
+and reversing the direction of an arrow is equivalent to coloring instead by the dual module.
+If L is a link with some component labeled by a simple object V ∈C then by cutting this
+component we obtain a (1, 1) tangle T whose two ends are labeled with V . By deﬁnition F(T) ∈
+EndC(V ). Since V is simple, this endomorphism is the product of the identity IdV : V →V
+with an element ⟨T⟩of the ground ring of C, i.e. F(T) = ⟨T⟩IdV . In particular,
+F(L) = F
+ 
+6
+T
+V
+!
+= ⟨T⟩F
+ 
+6
+IdV
+V
+!
+= ⟨T⟩F
+
+6V
+
+= ⟨T⟩(
+←−
+ev V ◦
+−→
+coevV ) = ⟨T⟩qdimC(V ).
+(2.15)
+When V = Vα is typical then a direct calculation shows that quantum dimension vanishes:
+qdimC(Vα) := (
+←−
+ev Vα ◦
+−→
+coevVα) = 0 .
+(2.16)
+See [GPMT09] for further details. Thus, from Equation (2.15) we have that F(L) = 0 if any
+component of L is colored by a typical module Vα.
+In [ADO92], Akutsu, Deguchi, and Ohtsuki showed that one can replace such a vanishing
+quantum dimension in Equation (2.15) with a non-zero scalar and obtain an invariant which is
+now known as the ADO invariant. This process was extended to a general theory in [GPMT09].
+We will brieﬂy recall this construction.
+Consider the function d from the set of typical modules to C given by
+d(Vα) =
+r−2
+Y
+j=0
+1
+ζ2rα+r−j −ζ2r−(α+r−j) = −ζ2r
+1
+2 r(1−r) ζ2rα+1 −ζ2r−(α+1)
+ζ2rrα −ζ2r−rα
+.
+(2.17)
+This function is called the modiﬁed dimension. Let L be a C-colored framed link with at least
+one component colored by a typical module Vα. Cutting this component as above, we obtain a
+(1, 1) tangle Tα. Then Proposition 35 of [GPMT09] implies that the assignment
+L 7→F ′(L) := d(Vα)⟨Tα⟩
+is independent of the choice of the component to be cut and yields a well-deﬁned isotopy invariant
+of L. This is the aforementioned ADO invariant.
+12

@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Physical-fold stable jets</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Physical-fold stable jets</h1>
+</header>
+<h1
+id="physical-fold-stable-atoms-for-the-original-central-values-and-first-normals">Physical-fold
+stable atoms for the original central values and first normals</h1>
+<p>This note gives exact finite expansions at both level parities. Every
+value and first spectral derivative of the original central polynomial
+on the real spectral interval is a signed sum of nonnegative monomials
+times principal positive determinants. The total absolute polynomial
+mass is bounded coefficientwise by a polynomial in the level times the
+actual maximal physical folded source. The same bound therefore survives
+the original common face coefficient extraction. The expansion does not
+concentrate its principal-rank deficits: even a first normal at the
+maximal fold involves every available size. No neighboring-spectrum
+cancellation or filling theorem follows from the mass bound alone.</p>
+<h2 id="original-source-and-the-actual-parity-dependent-reference">1.
+Original source and the actual parity-dependent reference</h2>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>≥</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">N\ge3</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">d=N-1</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>J</mi><mo>=</mo><mo stretchy="false" form="prefix">⌊</mo><mi>d</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo></mrow><annotation encoding="application/x-tex">J=\lfloor d/2\rfloor</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>=</mo><mi>d</mi><mo>−</mo><mn>2</mn><mi>J</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">e=d-2J\in\{0,1\}</annotation></semantics></math>,
+and
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi><mo>=</mo><mi>π</mi><mi>/</mi><mi>N</mi><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>s</mi><mi>j</mi></msub><mo>=</mo><mn>2</mn><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>j</mi><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>a</mi><mi>j</mi></msub><mo>=</mo><mn>2</mn><mo>+</mo><mn>2</mn><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>j</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>u</mi><mo>=</mo><mi>−</mi><mn>2</mn><mo>−</mo><mi>σ</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \theta=\pi/N,\qquad s_j=2\sin(j\theta),\qquad
+ a_j=2+2\cos((2j+1)\theta),\qquad u=-2-\sigma.
+ \tag{1}
+</annotation></semantics></math> The parity indicator
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math>
+is distinct from the sine sequence, whose value at index zero is zero.
+The physical folded nodes and maximal node are
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>u</mi><mi>a</mi></msub><mo>=</mo><mi>−</mi><msub><mi>a</mi><mi>a</mi></msub><mspace width="1.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>≤</mo><mi>a</mi><mo>≤</mo><mi>J</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>u</mi><mo>*</mo></msub><mo>:=</mo><msub><mi>u</mi><mi>J</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>c</mi><mo>*</mo></msub><mo>=</mo><mi>−</mi><mn>2</mn><mo>−</mo><msub><mi>u</mi><mo>*</mo></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ u_a=-a_a\quad(0\le a\le J),\qquad
+ u_*:=u_J,\qquad c_*=-2-u_*.
+ \tag{2}
+</annotation></semantics></math> Thus
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>u</mi><mo>*</mo></msub><mo>=</mo><mn>0</mn><mo>,</mo><msub><mi>c</mi><mo>*</mo></msub><mo>=</mo><mi>−</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">u_*=0,c_*=-2</annotation></semantics></math>
+at odd levels, whereas
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>u</mi><mo>*</mo></msub><mo>=</mo><mi>−</mi><mn>4</mn><msup><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mn>2</mn></msup><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">u_*=-4\sin^2(\theta/2)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mo>*</mo></msub><mo>=</mo><mi>−</mi><mn>2</mn><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">c_*=-2\cos\theta</annotation></semantics></math>
+at even levels. The even reference is a physical double node, not the
+nonphysical point
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><mi>−</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\sigma=-2</annotation></semantics></math>.</p>
+<p>For the original three face variables
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x,b,y</annotation></semantics></math>,
+set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mi>x</mi><mo>+</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">A=x+y</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>=</mo><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">P=xy</annotation></semantics></math>.
+The cleared cofactors are the explicitly constructed polynomials
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msub><mi>R</mi><mn>0</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>;</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mn>1</mn><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msub><mi>R</mi><mi>j</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>;</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><msup><mi>b</mi><mi>j</mi></msup><munder><mo>∏</mo><mrow><mi>r</mi><mo>&lt;</mo><mi>j</mi></mrow></munder><mo stretchy="false" form="prefix">(</mo><msub><mi>a</mi><mi>r</mi></msub><mo>+</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><msubsup><mi>s</mi><mi>j</mi><mn>2</mn></msubsup><mi>A</mi><msub><mi>R</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>;</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><msub><mi>s</mi><mi>j</mi></msub><msub><mi>s</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>a</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mi>P</mi><msub><mi>R</mi><mrow><mi>j</mi><mo>−</mo><mn>2</mn></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>;</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+ \begin{split}
+ R_0(b;u)&amp;=1,\\
+ R_j(b;u)&amp;=b^j\prod_{r&lt;j}(a_r+u)+s_j^2A R_{j-1}(b;u)
+       +s_js_{j-1}(a_{j-1}+u)P R_{j-2}(b;u).
+ \end{split}\tag{3}
+</annotation></semantics></math> The last term is absent when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">j=1</annotation></semantics></math>.
+The level remains
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>
+changes. Put
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>b</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>R</mi><mi>J</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>;</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>E</mi><mi>b</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>R</mi><mrow><mi>J</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>;</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msubsup><mi>F</mi><mi>b</mi><mo>*</mo></msubsup><mo>=</mo><msub><mi>F</mi><mi>b</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>u</mi><mo>*</mo></msub><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="1.0em"></mspace><msubsup><mi>E</mi><mi>b</mi><mo>*</mo></msubsup><mo>=</mo><msub><mi>E</mi><mi>b</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>u</mi><mo>*</mo></msub><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ F_b(u)=R_J(b;u),\qquad E_b(u)=R_{J-1}(b;u),\qquad
+ F_b^*=F_b(u_*),\quad E_b^*=E_b(u_*).
+ \tag{4}
+</annotation></semantics></math> Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>J</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">J\ge1</annotation></semantics></math>.
+The original central polynomial is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">𝒫</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>F</mi><mi>b</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>F</mi><mi>c</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>u</mi><msubsup><mi>s</mi><mi>J</mi><mn>2</mn></msubsup><mi>x</mi><mi>y</mi><msub><mi>E</mi><mi>b</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>E</mi><mi>c</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mi>N</mi><mo>=</mo><mn>2</mn><mi>J</mi><mo>+</mo><mn>1</mn><mo>,</mo></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><msubsup><mi>s</mi><mrow><mi>J</mi><mo>+</mo><mn>1</mn></mrow><mn>2</mn></msubsup><mi>A</mi><msub><mi>F</mi><mi>b</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>F</mi><mi>c</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><msub><mi>s</mi><mrow><mi>J</mi><mo>+</mo><mn>1</mn></mrow></msub><msub><mi>s</mi><mi>J</mi></msub><mi>x</mi><mi>y</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>a</mi><mi>J</mi></msub><mo>+</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">[</mo><msub><mi>F</mi><mi>b</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>E</mi><mi>c</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><msub><mi>E</mi><mi>b</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>F</mi><mi>c</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">]</mo><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mi>N</mi><mo>=</mo><mn>2</mn><mi>J</mi><mo>+</mo><mn>2</mn><mi>.</mi></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">
+ \mathcal P_N(u)=
+ \begin{cases}
+ F_b(u)F_c(u)+u s_J^2xy E_b(u)E_c(u),&amp;N=2J+1,\\
+ s_{J+1}^2A F_b(u)F_c(u)
+ +s_{J+1}s_Jxy(a_J+u)
+       [F_b(u)E_c(u)+E_b(u)F_c(u)],&amp;N=2J+2.
+ \end{cases}\tag{5}
+</annotation></semantics></math> This is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>d</mi></msup><msub><mi>H</mi><mrow><msub><mi>V</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo stretchy="false" form="postfix">)</mo></mrow></msub></mrow><annotation encoding="application/x-tex">(-1)^d H_{V_N(\sigma)}</annotation></semantics></math>
+restricted to the original central support. In particular the odd
+skipping term and the even two-step cut terms remain present. The
+original normal is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>∂</mi><mi>σ</mi></msub><mo>=</mo><mi>−</mi><msub><mi>∂</mi><mi>u</mi></msub></mrow><annotation encoding="application/x-tex">\partial_\sigma=-\partial_u</annotation></semantics></math>;
+the sign
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>d</mi></msup></mrow><annotation encoding="application/x-tex">(-1)^d</annotation></semantics></math>
+is restored when returning to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><msub><mi>V</mi><mi>N</mi></msub></msub><annotation encoding="application/x-tex">H_{V_N}</annotation></semantics></math>.</p>
+<p>Let
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Δ</mi><mi>a</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><mspace width="-0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><msub><mi>I</mi><mi>a</mi></msub><mo>+</mo><mfrac><mi>x</mi><mn>2</mn></mfrac><msubsup><mi>H</mi><mo>−</mo><mrow><mo stretchy="false" form="prefix">[</mo><mi>a</mi><mo stretchy="false" form="postfix">]</mo></mrow></msubsup><mo>+</mo><mfrac><mi>y</mi><mn>2</mn></mfrac><msubsup><mi>H</mi><mo>+</mo><mrow><mo stretchy="false" form="prefix">[</mo><mi>a</mi><mo stretchy="false" form="postfix">]</mo></mrow></msubsup><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><msub><mi mathvariant="normal">Δ</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \Delta_a(x,b,y)=\det\!\left(bI_a+\frac{x}{2}H_-^{[a]}
+                                  +\frac{y}{2}H_+^{[a]}\right),
+ \qquad \Delta_0=1.\tag{6}
+</annotation></semantics></math> These are leading principal submatrices
+of the same original
+level-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+positive Hermitian endpoint matrices. Their exact determinant identity
+and positivity are proved in the original q-Hahn and complete-circle
+notes. Consequently
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="normal">Δ</mi><mi>a</mi></msub><annotation encoding="application/x-tex">\Delta_a</annotation></semantics></math>
+is real stable and has nonnegative coefficients. Write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>k</mi></msub><mo>=</mo><msubsup><mo>∏</mo><mrow><mi>r</mi><mo>=</mo><mn>1</mn></mrow><mi>k</mi></msubsup><msub><mi>s</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">S_k=\prod_{r=1}^k s_r</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">S_0=1</annotation></semantics></math>.
+The exact node factorization gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>F</mi><mi>b</mi><mo>*</mo></msubsup><mo>=</mo><msub><mi>S</mi><mrow><mn>2</mn><mi>J</mi></mrow></msub><msub><mi mathvariant="normal">Δ</mi><mi>J</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msubsup><mi mathvariant="script">𝒫</mi><mi>N</mi><mo>*</mo></msubsup><mo>:=</mo><msub><mi mathvariant="script">𝒫</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>u</mi><mo>*</mo></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>N</mi><mn>2</mn></msup><msubsup><mi>β</mi><mi>J</mi><mn>2</mn></msubsup><msub><mi mathvariant="normal">Δ</mi><mi>J</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><msub><mi mathvariant="normal">Δ</mi><mi>J</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>P</mi><mi>e</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ F_b^*=S_{2J}\Delta_J(x,b,y),\qquad
+ \mathcal P_N^*:=\mathcal P_N(u_*)
+      =N^2\beta_J^2\Delta_J(x,b,y)\Delta_J(x,c,y)P_e(x,y),
+ \tag{7}
+</annotation></semantics></math> where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>β</mi><mi>J</mi></msub><mo>=</mo><msub><mi>S</mi><mrow><mn>2</mn><mi>J</mi></mrow></msub><mi>/</mi><msubsup><mi>S</mi><mi>J</mi><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">\beta_J=S_{2J}/S_J^2</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">P_0=1</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mn>1</mn></msub><mo>=</mo><mi>x</mi><mo>+</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">P_1=x+y</annotation></semantics></math>.
+For odd levels
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>S</mi><mi>J</mi><mn>2</mn></msubsup><mo>=</mo><msub><mi>S</mi><mrow><mn>2</mn><mi>J</mi></mrow></msub><mo>=</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">S_J^2=S_{2J}=N</annotation></semantics></math>.
+For even levels
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>S</mi><mi>J</mi><mn>2</mn></msubsup><mo>=</mo><mi>N</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">S_J^2=N/2</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mrow><mi>J</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">s_{J+1}=2</annotation></semantics></math>,
+and (5) at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>u</mi><mo>*</mo></msub><annotation encoding="application/x-tex">u_*</annotation></semantics></math>
+is exactly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mi>A</mi><msubsup><mi>S</mi><mrow><mn>2</mn><mi>J</mi></mrow><mn>2</mn></msubsup><msub><mi mathvariant="normal">Δ</mi><mi>J</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><msub><mi mathvariant="normal">Δ</mi><mi>J</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">4A S_{2J}^2\Delta_J(b)\Delta_J(c)</annotation></semantics></math>.
+This equals (7), with no missing factor of two or normal-order
+factor.</p>
+<h2
+id="positive-nodal-atoms-and-comparison-to-the-physical-reference">2.
+Positive nodal atoms and comparison to the physical reference</h2>
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>a</mi><mo>≤</mo><mi>j</mi><mo>≤</mo><mi>J</mi></mrow><annotation encoding="application/x-tex">0\le a\le j\le J</annotation></semantics></math>,
+the vanishing diagonal in (3) gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>j</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>;</mo><msub><mi>u</mi><mi>a</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>S</mi><mrow><mn>2</mn><mi>a</mi></mrow></msub><msub><mi mathvariant="normal">Δ</mi><mi>a</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>K</mi><mrow><mi>a</mi><mo>,</mo><mi>j</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>K</mi><mrow><mi>a</mi><mo>,</mo><mi>a</mi></mrow></msub><mo>=</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ R_j(b;u_a)=S_{2a}\Delta_a(x,b,y)K_{a,j}(x,y),\qquad K_{a,a}=1.
+ \tag{8}
+</annotation></semantics></math> The normalization
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>S</mi><mrow><mn>2</mn><mi>a</mi></mrow></msub><annotation encoding="application/x-tex">S_{2a}</annotation></semantics></math>
+follows from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∏</mo><mrow><mi>r</mi><mo>&lt;</mo><mi>a</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>a</mi><mi>r</mi></msub><mo>−</mo><msub><mi>a</mi><mi>a</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mo>∏</mo><mrow><mi>r</mi><mo>&lt;</mo><mi>a</mi></mrow></msub><msub><mi>s</mi><mrow><mi>a</mi><mo>−</mo><mi>r</mi></mrow></msub><msub><mi>s</mi><mrow><mi>a</mi><mo>+</mo><mi>r</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>S</mi><mrow><mn>2</mn><mi>a</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\prod_{r&lt;a}(a_r-a_a)=\prod_{r&lt;a}s_{a-r}s_{a+r+1}=S_{2a}</annotation></semantics></math>.
+After dividing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mrow><mi>a</mi><mo>,</mo><mi>a</mi><mo>+</mo><mi>n</mi></mrow></msub><annotation encoding="application/x-tex">K_{a,a+n}</annotation></semantics></math>
+by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∏</mo><mrow><mi>v</mi><mo>=</mo><mi>a</mi><mo>+</mo><mn>1</mn></mrow><mrow><mi>a</mi><mo>+</mo><mi>n</mi></mrow></msubsup><msubsup><mi>s</mi><mi>v</mi><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">\prod_{v=a+1}^{a+n}s_v^2</annotation></semantics></math>,
+its recurrence is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>k</mi><mn>1</mn></msub><mo>=</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>k</mi><mi>n</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>k</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>γ</mi><mi>n</mi></msub><mi>x</mi><mi>y</mi><msub><mi>k</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>γ</mi><mi>n</mi></msub><mo>=</mo><mn>1</mn><mo>−</mo><mfrac><mrow><msub><mi>s</mi><mi>a</mi></msub><msub><mi>s</mi><mrow><mi>a</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><mrow><msub><mi>s</mi><mrow><mi>a</mi><mo>+</mo><mi>n</mi></mrow></msub><msub><mi>s</mi><mrow><mi>a</mi><mo>+</mo><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow></mfrac><mo>∈</mo><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">]</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ k_0=1,\quad k_1=x+y,\quad
+ k_n=(x+y)k_{n-1}-\gamma_nxyk_{n-2},\qquad
+ \gamma_n=1-\frac{s_as_{a+1}}{s_{a+n}s_{a+n-1}}\in[0,1].
+ \tag{9}
+</annotation></semantics></math> The last interval holds at both
+parities because every index is at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>J</mi><mo>&lt;</mo><mi>N</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">J&lt;N/2</annotation></semantics></math>.
+Define
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mi>n</mi></msub><mo>=</mo><msub><mi>k</mi><mi>n</mi></msub><mo>−</mo><mi>x</mi><msub><mi>k</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">h_n=k_n-xk_{n-1}</annotation></semantics></math>.
+Then
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mn>1</mn></msub><mo>=</mo><mi>y</mi><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>h</mi><mi>n</mi></msub><mo>=</mo><mi>y</mi><msub><mi>h</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>γ</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">)</mo><mi>x</mi><mi>y</mi><msub><mi>k</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>k</mi><mi>n</mi></msub><mo>=</mo><mi>x</mi><msub><mi>k</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>h</mi><mi>n</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ h_1=y,\qquad h_n=yh_{n-1}+(1-\gamma_n)xyk_{n-2},\qquad
+ k_n=xk_{n-1}+h_n.\tag{10}
+</annotation></semantics></math> Induction proves nonnegative
+coefficients, and (9) then yields
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mi>n</mi></msub><mo>≼</mo><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>y</mi><msup><mo stretchy="false" form="postfix">)</mo><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">k_n\preceq(x+y)^n</annotation></semantics></math>.
+Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>≼</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">B\preceq C</annotation></semantics></math>
+means that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>−</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">C-B</annotation></semantics></math>
+has nonnegative coefficients in the original face variables. Expand
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>
+into its monomials: each term in (8) is a positive scalar times a
+monomial times
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="normal">Δ</mi><mi>a</mi></msub><annotation encoding="application/x-tex">\Delta_a</annotation></semantics></math>,
+and hence is real stable. It is unnecessary, and generally false, that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>
+itself be stable.</p>
+<p>For prefix rows
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&lt;</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">r&lt;a</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><msub><mi>a</mi><mi>r</mi></msub><mo>−</mo><msub><mi>a</mi><mi>a</mi></msub><mo>≤</mo><msub><mi>a</mi><mi>r</mi></msub><mo>−</mo><msub><mi>a</mi><mi>J</mi></msub></mrow><annotation encoding="application/x-tex">0\le a_r-a_a\le a_r-a_J</annotation></semantics></math>.
+The positive path formula for (3) gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>a</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>u</mi><mi>a</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>≼</mo><msub><mi>R</mi><mi>a</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>u</mi><mo>*</mo></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">R_a(u_a)\preceq R_a(u_*)</annotation></semantics></math>.
+The bound on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>k</mi><mi>n</mi></msub><annotation encoding="application/x-tex">k_n</annotation></semantics></math>
+extends the node by its all-one-step path; the reference recurrence
+contains that path with nonnegative additional terms. If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>&gt;</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">a&gt;j</annotation></semantics></math>,
+every diagonal in the prefix is directly nonnegative and no tail is
+needed. Thus
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≼</mo><msub><mi>R</mi><mi>j</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>;</mo><msub><mi>u</mi><mi>a</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>≼</mo><msub><mi>R</mi><mi>j</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>;</mo><msub><mi>u</mi><mo>*</mo></msub><mo stretchy="false" form="postfix">)</mo><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>≤</mo><mi>a</mi><mo>≤</mo><mi>J</mi><mo>,</mo><mspace width="0.222em"></mspace><mn>0</mn><mo>≤</mo><mi>j</mi><mo>≤</mo><mi>J</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ 0\preceq R_j(b;u_a)\preceq R_j(b;u_*)
+       \qquad(0\le a\le J,\ 0\le j\le J).\tag{11}
+</annotation></semantics></math> Only nodes with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≤</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">a\le j</annotation></semantics></math>
+will be used as stable atoms. In particular, the lower reference
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>E</mi><mi>b</mi><mo>*</mo></msubsup><annotation encoding="application/x-tex">E_b^*</annotation></semantics></math>
+itself is not assumed stable.</p>
+<h2 id="exact-cosine-interpolation-including-first-normals">3. Exact
+cosine interpolation, including first normals</h2>
+<p>Set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ϕ</mi><mi>a</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>a</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>θ</mi></mrow><annotation encoding="application/x-tex">\phi_a=(2a+1)\theta</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mi>−</mi><mn>1</mn><mo>−</mo><mi>u</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">z=-1-u/2</annotation></semantics></math>,
+and let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mi>a</mi></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">w_a=2</annotation></semantics></math>,
+except
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mi>J</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">w_J=1</annotation></semantics></math>
+at odd levels. The
+degree-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>J</mi><annotation encoding="application/x-tex">J</annotation></semantics></math>
+cardinal polynomial for node
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>u</mi><mi>a</mi></msub><annotation encoding="application/x-tex">u_a</annotation></semantics></math>
+is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mi>a</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><msub><mi>w</mi><mi>a</mi></msub><mi>N</mi></mfrac><mrow><mo stretchy="true" form="prefix">[</mo><mn>1</mn><mo>+</mo><mn>2</mn><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>J</mi></munderover><mi mathvariant="normal">cos</mi><mo stretchy="false" form="prefix">(</mo><mi>k</mi><msub><mi>ϕ</mi><mi>a</mi></msub><mo stretchy="false" form="postfix">)</mo><msub><mi>T</mi><mi>k</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="true" form="postfix">]</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ L_a(u)=\frac{w_a}{N}\left[1+2\sum_{k=1}^{J}
+                         \cos(k\phi_a)T_k(z)\right].\tag{12}
+</annotation></semantics></math> Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>k</mi></msub><mo stretchy="false" form="prefix">(</mo><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>k</mi><mi>t</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">T_k(\cos t)=\cos(kt)</annotation></semantics></math>.
+To prove (12), sum the modes over the actual
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+angles
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>r</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>π</mi><mi>/</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">(2r+1)\pi/N</annotation></semantics></math>.
+Folding conjugate angles gives weights
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>w</mi><mi>a</mi></msub><annotation encoding="application/x-tex">w_a</annotation></semantics></math>.
+Modes through
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>J</mi><annotation encoding="application/x-tex">J</annotation></semantics></math>
+are orthogonal: the constant has squared norm
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>,
+every nonconstant cosine has norm
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">N/2</annotation></semantics></math>,
+and all cross terms vanish, since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>J</mi><mo>&lt;</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">2J&lt;N</annotation></semantics></math>.
+Thus (12) reproduces every polynomial of degree at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>J</mi><annotation encoding="application/x-tex">J</annotation></semantics></math>
+and is its unique cardinal basis. At even levels there is no endpoint of
+weight one.</p>
+<p>Define constants
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mn>0</mn></msub><mo>=</mo><mn>2</mn><mi>J</mi><mo>+</mo><mn>1</mn><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>B</mi><mn>1</mn></msub><mo>=</mo><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>J</mi></munderover><msup><mi>k</mi><mn>2</mn></msup><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>B</mi><mn>2</mn></msub><mo>=</mo><mfrac><mn>1</mn><mn>6</mn></mfrac><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>J</mi></munderover><mo stretchy="false" form="prefix">(</mo><msup><mi>k</mi><mn>4</mn></msup><mo>−</mo><msup><mi>k</mi><mn>2</mn></msup><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>C</mi><mn>0</mn></msub><mo>=</mo><mn>4</mn><msub><mi>B</mi><mn>1</mn></msub><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>C</mi><mn>1</mn></msub><mo>=</mo><mn>2</mn><msub><mi>B</mi><mn>2</mn></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ B_0=2J+1,\qquad B_1=\sum_{k=1}^J k^2,\qquad
+ B_2=\frac16\sum_{k=1}^J(k^4-k^2),\qquad
+ C_0=4B_1,\quad C_1=2B_2.\tag{13}
+</annotation></semantics></math> For real
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>∈</mo><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mn>4</mn><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">u\in[-4,0]</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>∑</mo><mi>a</mi></munder><mo stretchy="false" form="prefix">|</mo><msub><mi>L</mi><mi>a</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><msub><mi>B</mi><mn>0</mn></msub><mo>,</mo><mspace width="2.0em"></mspace><munder><mo>∑</mo><mi>a</mi></munder><mo stretchy="false" form="prefix">|</mo><msubsup><mi>L</mi><mi>a</mi><mo>′</mo></msubsup><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><msub><mi>B</mi><mn>1</mn></msub><mo>,</mo><mspace width="2.0em"></mspace><munder><mo>∑</mo><mi>a</mi></munder><mo stretchy="false" form="prefix">|</mo><msubsup><mi>L</mi><mi>a</mi><mo>″</mo></msubsup><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><msub><mi>B</mi><mn>2</mn></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \sum_a|L_a(u)|\le B_0,\qquad
+ \sum_a|L&#39;_a(u)|\le B_1,\qquad
+ \sum_a|L&#39;&#39;_a(u)|\le B_2.\tag{14}
+</annotation></semantics></math> Indeed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>w</mi><mi>a</mi></msub><mo>=</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">\sum w_a=N</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>T</mi><mi>k</mi></msub><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|T_k|\le1</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msubsup><mi>T</mi><mi>k</mi><mo>′</mo></msubsup><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><msup><mi>k</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">|T&#39;_k|\le k^2</annotation></semantics></math>.
+The latter follows directly from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>T</mi><mi>k</mi><mo>′</mo></msubsup><mo>=</mo><mi>k</mi><msub><mi>U</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">T&#39;_k=kU_{k-1}</annotation></semantics></math>
+and the finite geometric sum for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>U</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">U_{k-1}</annotation></semantics></math>.
+Expanding that same sum into cosines and differentiating gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msubsup><mi>T</mi><mi>k</mi><mo>″</mo></msubsup><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><msup><mi>k</mi><mn>2</mn></msup><mo stretchy="false" form="prefix">(</mo><msup><mi>k</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">|T&#39;&#39;_k|\le k^2(k^2-1)/3</annotation></semantics></math>.
+The factors
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1/2</annotation></semantics></math>
+from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mi>z</mi><mi>/</mi><mi>d</mi><mi>u</mi></mrow><annotation encoding="application/x-tex">dz/du</annotation></semantics></math>
+give exactly (14); these are elementary finite bounds, not an asymptotic
+interpolation assertion.</p>
+<p>For the lower cofactor exclude the maximal node. The polynomials
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>T</mi><mi>a</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi></mrow></msubsup><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>u</mi><mi>a</mi></msub><mo>−</mo><msub><mi>u</mi><mo>*</mo></msub><mo stretchy="false" form="postfix">)</mo><mfrac><mrow><msub><mi>L</mi><mi>a</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mi>u</mi><mo>−</mo><msub><mi>u</mi><mo>*</mo></msub></mrow></mfrac><mspace width="1.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>≤</mo><mi>a</mi><mo>&lt;</mo><mi>J</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+ T_a^{\mathrm{low}}(u)
+       =(u_a-u_*)\frac{L_a(u)}{u-u_*}\quad(0\le a&lt;J)\tag{15}
+</annotation></semantics></math> have degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>J</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">J-1</annotation></semantics></math>,
+with the removable value at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>u</mi><mo>*</mo></msub><annotation encoding="application/x-tex">u_*</annotation></semantics></math>,
+and are cardinal for the remaining nodes. Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mi>a</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>u</mi><mo>*</mo></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">L_a(u_*)=0</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msubsup><mi>T</mi><mi>a</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi></mrow></msubsup><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>u</mi><mi>a</mi></msub><mo>−</mo><msub><mi>u</mi><mo>*</mo></msub><mo stretchy="false" form="postfix">)</mo><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup><msubsup><mi>L</mi><mi>a</mi><mo>′</mo></msubsup><mo stretchy="false" form="prefix">(</mo><msub><mi>u</mi><mo>*</mo></msub><mo>+</mo><mi>t</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>−</mo><msub><mi>u</mi><mo>*</mo></msub><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mspace width="0.167em"></mspace><mi>d</mi><mi>t</mi><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mo stretchy="false" form="prefix">(</mo><msubsup><mi>T</mi><mi>a</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi></mrow></msubsup><msup><mo stretchy="false" form="postfix">)</mo><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>u</mi><mi>a</mi></msub><mo>−</mo><msub><mi>u</mi><mo>*</mo></msub><mo stretchy="false" form="postfix">)</mo><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup><mi>t</mi><msubsup><mi>L</mi><mi>a</mi><mo>″</mo></msubsup><mo stretchy="false" form="prefix">(</mo><msub><mi>u</mi><mo>*</mo></msub><mo>+</mo><mi>t</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>−</mo><msub><mi>u</mi><mo>*</mo></msub><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mspace width="0.167em"></mspace><mi>d</mi><mi>t</mi><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+ \begin{split}
+ T_a^{\mathrm{low}}(u)&amp;=(u_a-u_*)\int_0^1
+             L&#39;_a(u_*+t(u-u_*))\,dt,\\
+ (T_a^{\mathrm{low}})&#39;(u)&amp;=(u_a-u_*)\int_0^1
+             tL&#39;&#39;_a(u_*+t(u-u_*))\,dt.
+ \end{split}\tag{16}
+</annotation></semantics></math> Thus their absolute sums are at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>0</mn></msub><mo>,</mo><msub><mi>C</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">C_0,C_1</annotation></semantics></math>,
+respectively. The exact identities are
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>b</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munderover><mo>∑</mo><mrow><mi>a</mi><mo>=</mo><mn>0</mn></mrow><mi>J</mi></munderover><msub><mi>L</mi><mi>a</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>R</mi><mi>J</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>;</mo><msub><mi>u</mi><mi>a</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>E</mi><mi>b</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munderover><mo>∑</mo><mrow><mi>a</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>J</mi><mo>−</mo><mn>1</mn></mrow></munderover><msubsup><mi>T</mi><mi>a</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi></mrow></msubsup><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>R</mi><mrow><mi>J</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>;</mo><msub><mi>u</mi><mi>a</mi></msub><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ F_b(u)=\sum_{a=0}^J L_a(u)R_J(b;u_a),\qquad
+ E_b(u)=\sum_{a=0}^{J-1}T_a^{\mathrm{low}}(u)R_{J-1}(b;u_a).
+ \tag{17}
+</annotation></semantics></math> They may be differentiated
+algebraically. This is interpolation of the actual cofactor of its known
+degree, not differentiation of an insufficient set of full-numerator
+samples. Consequently it retains the full Hermite first normal.</p>
+<p>Combine (8), (11), and (14)–(17), expanding each tail into its
+positive monomials. The absolute stable atomic masses obey
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="left" style="text-align: left"><mi mathvariant="fraktur">𝔐</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>F</mi><mi>b</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo>≼</mo><msub><mi>B</mi><mn>0</mn></msub><msubsup><mi>F</mi><mi>b</mi><mo>*</mo></msubsup><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mi mathvariant="fraktur">𝔐</mi><mo stretchy="false" form="prefix">(</mo><msubsup><mi>F</mi><mi>b</mi><mo>′</mo></msubsup><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo>≼</mo><msub><mi>B</mi><mn>1</mn></msub><msubsup><mi>F</mi><mi>b</mi><mo>*</mo></msubsup><mo>,</mo></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mi mathvariant="fraktur">𝔐</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>E</mi><mi>b</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo>≼</mo><msub><mi>C</mi><mn>0</mn></msub><msubsup><mi>E</mi><mi>b</mi><mo>*</mo></msubsup><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mi mathvariant="fraktur">𝔐</mi><mo stretchy="false" form="prefix">(</mo><msubsup><mi>E</mi><mi>b</mi><mo>′</mo></msubsup><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo>≼</mo><msub><mi>C</mi><mn>1</mn></msub><msubsup><mi>E</mi><mi>b</mi><mo>*</mo></msubsup><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+ \begin{array}{ll}
+ \mathfrak M(F_b(u))\preceq B_0F_b^*,&amp;
+ \mathfrak M(F&#39;_b(u))\preceq B_1F_b^*,\\
+ \mathfrak M(E_b(u))\preceq C_0E_b^*,&amp;
+ \mathfrak M(E&#39;_b(u))\preceq C_1E_b^*.
+ \end{array}\tag{18}
+</annotation></semantics></math> The mass is defined for the displayed
+signed expansion as the sum of absolute scalar coefficients times its
+nonnegative stable atoms. It is not the absolute value of the coherently
+summed polynomial.</p>
+<h2 id="the-complete-central-polynomial-and-its-first-normal">4. The
+complete central polynomial and its first normal</h2>
+<p>For odd levels, differentiating the first line of (5) gives all five
+terms
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi mathvariant="script">𝒫</mi><mi>N</mi><mo>′</mo></msubsup><mo>=</mo><msubsup><mi>F</mi><mi>b</mi><mo>′</mo></msubsup><msub><mi>F</mi><mi>c</mi></msub><mo>+</mo><msub><mi>F</mi><mi>b</mi></msub><msubsup><mi>F</mi><mi>c</mi><mo>′</mo></msubsup><mo>+</mo><msubsup><mi>s</mi><mi>J</mi><mn>2</mn></msubsup><mi>x</mi><mi>y</mi><msub><mi>E</mi><mi>b</mi></msub><msub><mi>E</mi><mi>c</mi></msub><mo>+</mo><mi>u</mi><msubsup><mi>s</mi><mi>J</mi><mn>2</mn></msubsup><mi>x</mi><mi>y</mi><mo stretchy="false" form="prefix">(</mo><msubsup><mi>E</mi><mi>b</mi><mo>′</mo></msubsup><msub><mi>E</mi><mi>c</mi></msub><mo>+</mo><msub><mi>E</mi><mi>b</mi></msub><msubsup><mi>E</mi><mi>c</mi><mo>′</mo></msubsup><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \mathcal P&#39;_N=F&#39;_bF_c+F_bF&#39;_c+s_J^2xyE_bE_c
+           +u s_J^2xy(E&#39;_bE_c+E_bE&#39;_c).\tag{19}
+</annotation></semantics></math> The endpoint recurrence implies
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>F</mi><mi>b</mi><mo>*</mo></msubsup><mo>≽</mo><msubsup><mi>s</mi><mi>J</mi><mn>2</mn></msubsup><mi>A</mi><msubsup><mi>E</mi><mi>b</mi><mo>*</mo></msubsup></mrow><annotation encoding="application/x-tex">F_b^*\succeq s_J^2A E_b^*</annotation></semantics></math>.
+Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>A</mi><mn>2</mn></msup><mo>≽</mo><mn>2</mn><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">A^2\succeq2xy</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>s</mi><mi>J</mi><mn>2</mn></msubsup><mi>x</mi><mi>y</mi><msubsup><mi>E</mi><mi>b</mi><mo>*</mo></msubsup><msubsup><mi>E</mi><mi>c</mi><mo>*</mo></msubsup><mo>≼</mo><mfrac><mn>1</mn><mrow><mn>2</mn><msubsup><mi>s</mi><mi>J</mi><mn>2</mn></msubsup></mrow></mfrac><msubsup><mi>F</mi><mi>b</mi><mo>*</mo></msubsup><msubsup><mi>F</mi><mi>c</mi><mo>*</mo></msubsup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ s_J^2xyE_b^*E_c^*\preceq\frac1{2s_J^2}F_b^*F_c^*.
+ \tag{20}
+</annotation></semantics></math> Hence the exact expansions supplied by
+(17) satisfy
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mi mathvariant="fraktur">𝔐</mi><mo stretchy="false" form="prefix">(</mo><msub><mi mathvariant="script">𝒫</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>≼</mo><mrow><mo stretchy="true" form="prefix">(</mo><msubsup><mi>B</mi><mn>0</mn><mn>2</mn></msubsup><mo>+</mo><mfrac><mrow><mo stretchy="false" form="prefix">|</mo><mi>u</mi><mo stretchy="false" form="prefix">|</mo><msubsup><mi>C</mi><mn>0</mn><mn>2</mn></msubsup></mrow><mrow><mn>2</mn><msubsup><mi>s</mi><mi>J</mi><mn>2</mn></msubsup></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><msubsup><mi mathvariant="script">𝒫</mi><mi>N</mi><mo>*</mo></msubsup><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mi mathvariant="fraktur">𝔐</mi><mo stretchy="false" form="prefix">(</mo><msubsup><mi mathvariant="script">𝒫</mi><mi>N</mi><mo>′</mo></msubsup><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>≼</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><msub><mi>B</mi><mn>0</mn></msub><msub><mi>B</mi><mn>1</mn></msub><mo>+</mo><mfrac><mrow><msubsup><mi>C</mi><mn>0</mn><mn>2</mn></msubsup><mo>+</mo><mn>2</mn><mo stretchy="false" form="prefix">|</mo><mi>u</mi><mo stretchy="false" form="prefix">|</mo><msub><mi>C</mi><mn>0</mn></msub><msub><mi>C</mi><mn>1</mn></msub></mrow><mrow><mn>2</mn><msubsup><mi>s</mi><mi>J</mi><mn>2</mn></msubsup></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><msubsup><mi mathvariant="script">𝒫</mi><mi>N</mi><mo>*</mo></msubsup><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+ \begin{split}
+ \mathfrak M(\mathcal P_N(u))&amp;\preceq
+ \left(B_0^2+\frac{|u|C_0^2}{2s_J^2}\right)\mathcal P_N^*,\\
+ \mathfrak M(\mathcal P&#39;_N(u))&amp;\preceq
+ \left(2B_0B_1+\frac{C_0^2+2|u|C_0C_1}{2s_J^2}\right)\mathcal P_N^*.
+ \end{split}\tag{21}
+</annotation></semantics></math> Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>s</mi><mi>J</mi><mn>2</mn></msubsup><mo>≥</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">s_J^2\ge3</annotation></semantics></math>.</p>
+<p>For even levels put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><msub><mi>a</mi><mi>J</mi></msub><mo>+</mo><mi>u</mi></mrow><annotation encoding="application/x-tex">t=a_J+u</annotation></semantics></math>.
+Differentiating the second line of (5) keeps the derivative of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>,
+as well as the differentiated cofactors. The same recurrence at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>u</mi><mo>*</mo></msub><annotation encoding="application/x-tex">u_*</annotation></semantics></math>
+gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>y</mi><msubsup><mi>F</mi><mi>b</mi><mo>*</mo></msubsup><msubsup><mi>E</mi><mi>c</mi><mo>*</mo></msubsup><mo>≼</mo><mfrac><mn>1</mn><mrow><mn>2</mn><msubsup><mi>s</mi><mi>J</mi><mn>2</mn></msubsup></mrow></mfrac><mi>A</mi><msubsup><mi>F</mi><mi>b</mi><mo>*</mo></msubsup><msubsup><mi>F</mi><mi>c</mi><mo>*</mo></msubsup><mo>,</mo><mspace width="2.0em"></mspace><mi>x</mi><mi>y</mi><msubsup><mi>E</mi><mi>b</mi><mo>*</mo></msubsup><msubsup><mi>F</mi><mi>c</mi><mo>*</mo></msubsup><mo>≼</mo><mfrac><mn>1</mn><mrow><mn>2</mn><msubsup><mi>s</mi><mi>J</mi><mn>2</mn></msubsup></mrow></mfrac><mi>A</mi><msubsup><mi>F</mi><mi>b</mi><mo>*</mo></msubsup><msubsup><mi>F</mi><mi>c</mi><mo>*</mo></msubsup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ xyF_b^*E_c^*\preceq\frac1{2s_J^2}A F_b^*F_c^*,
+ \qquad xyE_b^*F_c^*\preceq\frac1{2s_J^2}A F_b^*F_c^*.
+ \tag{22}
+</annotation></semantics></math> Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi mathvariant="script">𝒫</mi><mi>N</mi><mo>*</mo></msubsup><mo>=</mo><msubsup><mi>s</mi><mrow><mi>J</mi><mo>+</mo><mn>1</mn></mrow><mn>2</mn></msubsup><mi>A</mi><msubsup><mi>F</mi><mi>b</mi><mo>*</mo></msubsup><msubsup><mi>F</mi><mi>c</mi><mo>*</mo></msubsup></mrow><annotation encoding="application/x-tex">\mathcal P_N^*=s_{J+1}^2AF_b^*F_c^*</annotation></semantics></math>,
+the result is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mi mathvariant="fraktur">𝔐</mi><mo stretchy="false" form="prefix">(</mo><msub><mi mathvariant="script">𝒫</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>≼</mo><mrow><mo stretchy="true" form="prefix">(</mo><msubsup><mi>B</mi><mn>0</mn><mn>2</mn></msubsup><mo>+</mo><mfrac><mrow><mo stretchy="false" form="prefix">|</mo><mi>t</mi><mo stretchy="false" form="prefix">|</mo><msub><mi>B</mi><mn>0</mn></msub><msub><mi>C</mi><mn>0</mn></msub></mrow><mrow><msub><mi>s</mi><mrow><mi>J</mi><mo>+</mo><mn>1</mn></mrow></msub><msub><mi>s</mi><mi>J</mi></msub></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><msubsup><mi mathvariant="script">𝒫</mi><mi>N</mi><mo>*</mo></msubsup><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mi mathvariant="fraktur">𝔐</mi><mo stretchy="false" form="prefix">(</mo><msubsup><mi mathvariant="script">𝒫</mi><mi>N</mi><mo>′</mo></msubsup><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>≼</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><msub><mi>B</mi><mn>0</mn></msub><msub><mi>B</mi><mn>1</mn></msub><mo>+</mo><mfrac><mrow><msub><mi>B</mi><mn>0</mn></msub><msub><mi>C</mi><mn>0</mn></msub><mo>+</mo><mo stretchy="false" form="prefix">|</mo><mi>t</mi><mo stretchy="false" form="prefix">|</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>B</mi><mn>1</mn></msub><msub><mi>C</mi><mn>0</mn></msub><mo>+</mo><msub><mi>B</mi><mn>0</mn></msub><msub><mi>C</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo></mrow><mrow><msub><mi>s</mi><mrow><mi>J</mi><mo>+</mo><mn>1</mn></mrow></msub><msub><mi>s</mi><mi>J</mi></msub></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><msubsup><mi mathvariant="script">𝒫</mi><mi>N</mi><mo>*</mo></msubsup><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+ \begin{split}
+ \mathfrak M(\mathcal P_N(u))&amp;\preceq
+ \left(B_0^2+\frac{|t|B_0C_0}{s_{J+1}s_J}\right)\mathcal P_N^*,\\
+ \mathfrak M(\mathcal P&#39;_N(u))&amp;\preceq
+ \left(2B_0B_1+
+ \frac{B_0C_0+|t|(B_1C_0+B_0C_1)}{s_{J+1}s_J}\right)\mathcal P_N^*.
+ \end{split}\tag{23}
+</annotation></semantics></math> Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mrow><mi>J</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">s_{J+1}=2</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>s</mi><mi>J</mi><mn>2</mn></msubsup><mo>≥</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">s_J^2\ge2</annotation></semantics></math>.
+All constants are polynomial in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>,
+uniformly over the entire real interval. Multiplying a stable atom by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mi>x</mi><mo>+</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">A=x+y</annotation></semantics></math>,
+or expanding that factor into two positive monomials, preserves its
+admissibility. In particular the even parity factor is retained rather
+than hidden in a rate normalization.</p>
+<h2 id="the-original-shared-target-and-the-exact-rank-bookkeeping">5.
+The original shared target and the exact rank bookkeeping</h2>
+<p>Take a fixed finite collection of original central ports, with at
+most one spectral derivative per port, at arbitrary real spectral nodes.
+Substitute the expansions above before taking any absolute value.
+Multiply the atoms with the original positive stable spectator factors,
+identify the actual shared face variables, set the original protected
+variables to zero, and extract exactly the original face-target
+multi-index. Stability is preserved by these operations, or the
+coefficient is identically zero. Omit only such exact zero atoms. If two
+boundary variables remain, every nonzero extracted atom is a nonnegative
+homogeneous stable binary polynomial of the original boundary
+degree.</p>
+<p>The coefficientwise inequalities (21), (23) imply that the total
+absolute extracted mass, evaluated at any fixed positive boundary
+values, is at most a polynomial in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+times the corresponding extracted maximal-fold reference. This remains
+true with common face variables: it is one coefficientwise comparison
+followed by one common extraction, not independent extraction at each
+port. Fixed original unit phases multiply scalar coefficients; no phase
+of a local face polynomial is replaced by an independent choice. Signed
+spectators not themselves expanded into controlled stable atoms are
+outside this assertion.</p>
+<p>At an odd port the atom using
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Δ</mi><mi>a</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><msub><mi mathvariant="normal">Δ</mi><msup><mi>a</mi><mo>′</mo></msup></msub><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\Delta_a(b)\Delta_{a&#39;}(c)</annotation></semantics></math>
+has principal deletion rank
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mn>2</mn><mi>J</mi><mo>−</mo><mi>a</mi><mo>−</mo><msup><mi>a</mi><mo>′</mo></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ r=2J-a-a&#39;.\tag{24}
+</annotation></semantics></math> Its outer monomial compensates the lost
+degree, including the explicit
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">xy</annotation></semantics></math>
+in the skipping term. At an even port the first term retains the common
+factor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+and has the same rank. The second term deletes that additional
+one-dimensional positive pencil and compensates by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">xy</annotation></semantics></math>;
+its rank is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mn>2</mn><mi>J</mi><mo>−</mo><mi>a</mi><mo>−</mo><msup><mi>a</mi><mo>′</mo></msup><mo>+</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ r=2J-a-a&#39;+1.\tag{25}
+</annotation></semantics></math> Ranks add over ports. The separately
+proved monotone coefficient-path theorem applies to nonzero extracted
+atoms with these ranks; it does not require a feasible intermediate
+coefficient to be assumed. This gives root-count control by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>,
+but does not make
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>
+small.</p>
+<h2 id="what-the-polynomial-mass-does-and-does-not-resolve">6. What the
+polynomial mass does and does not resolve</h2>
+<p>The first derivatives in (17) normally have contributions from every
+node, even at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>=</mo><msub><mi>u</mi><mo>*</mo></msub></mrow><annotation encoding="application/x-tex">u=u_*</annotation></semantics></math>.
+Thus high deficits of order
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+occur already at first derivative order. Polynomial total mass does not
+imply a sublinear-rank concentration, nor a weighted mass estimate in
+which spectral perturbation order controls principal rank. Such a
+conclusion would require an additional estimate after the actual shared
+extraction.</p>
+<p>The original far-node cofactor estimate gives an exponential local
+loss at positive nonsingleton face triples when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mi>/</mi><mi>N</mi><mo>≤</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>−</mo><mi>δ</mi></mrow><annotation encoding="application/x-tex">a/N\le1/2-\delta</annotation></semantics></math>.
+Its reference
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">u=0</annotation></semantics></math>
+can be replaced by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>u</mi><mo>*</mo></msub><annotation encoding="application/x-tex">u_*</annotation></semantics></math>
+at bounded cost. For even levels the positive path expansion gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>j</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>;</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mo>≼</mo><msub><mi>C</mi><mi>N</mi></msub><msub><mi>R</mi><mi>j</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>;</mo><msub><mi>u</mi><mo>*</mo></msub><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>C</mi><mi>N</mi></msub><mo>=</mo><munder><mo>∏</mo><mrow><mi>r</mi><mo>&lt;</mo><mi>J</mi></mrow></munder><mfrac><msub><mi>a</mi><mi>r</mi></msub><mrow><msub><mi>a</mi><mi>r</mi></msub><mo>−</mo><msub><mi>a</mi><mi>J</mi></msub></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>2</mn><mrow><mi mathvariant="normal">cot</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><mi>N</mi></mfrac><mo>&lt;</mo><mfrac><mn>4</mn><mi>π</mi></mfrac><mo>&lt;</mo><mn>2</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ R_j(b;0)\preceq C_N R_j(b;u_*),\qquad
+ C_N=\prod_{r&lt;J}\frac{a_r}{a_r-a_J}
+       =\frac{2\cot(\theta/2)}{N}&lt;\frac4\pi&lt;2.
+ \tag{26}
+</annotation></semantics></math> Each path uses a subset of these
+distinct diagonal factors. The product follows from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∏</mo><mrow><mi>r</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>N</mi><mi>/</mi><mn>2</mn><mo>−</mo><mn>1</mn></mrow></msubsup><msub><mi>a</mi><mi>r</mi></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\prod_{r=0}^{N/2-1}a_r=2</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mrow><mi>N</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>=</mo><mi>N</mi><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">S_{N-2}=N/(2\sin\theta)</annotation></semantics></math>.
+At odd levels the two references coincide. A local weighted loss is not
+automatically a relative loss after coefficient extraction: the
+extracted reference requires its own matching lower asymptotic, and a
+loss tending to zero with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>
+need not exceed a separate cap budget. No such inequality is claimed
+here.</p>
+<p>There is also an exact obstruction to dispensing with signed atoms.
+For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>J</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">J\ge2</annotation></semantics></math>,
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mi>J</mi><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">a=J-2</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>J</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>;</mo><msub><mi>u</mi><mrow><mi>J</mi><mo>−</mo><mn>2</mn></mrow></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>S</mi><mrow><mn>2</mn><mi>J</mi><mo>−</mo><mn>4</mn></mrow></msub><msubsup><mi>s</mi><mrow><mi>J</mi><mo>−</mo><mn>1</mn></mrow><mn>2</mn></msubsup><msubsup><mi>s</mi><mi>J</mi><mn>2</mn></msubsup><msub><mi mathvariant="normal">Δ</mi><mrow><mi>J</mi><mo>−</mo><mn>2</mn></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">[</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo>−</mo><mi>γ</mi><mo stretchy="false" form="postfix">)</mo><mi>x</mi><mi>y</mi><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup><mo stretchy="false" form="postfix">]</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>γ</mi><mo>=</mo><mn>1</mn><mo>−</mo><msub><mi>s</mi><mrow><mi>J</mi><mo>−</mo><mn>2</mn></mrow></msub><mi>/</mi><msub><mi>s</mi><mi>J</mi></msub><mo>∈</mo><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">]</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ R_J(b;u_{J-2})=S_{2J-4}s_{J-1}^2s_J^2\Delta_{J-2}(x,b,y)
+       [x^2+(2-\gamma)xy+y^2],\qquad
+ \gamma=1-s_{J-2}/s_J\in(0,1].\tag{27}
+</annotation></semantics></math> The quadratic has nonreal ratio roots
+and is not real stable. Choose a ratio root with argument in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>π</mi><mo>,</mo><mi>π</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(-\pi,\pi)</annotation></semantics></math>,
+then choose
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x,y</annotation></semantics></math>
+in the upper half-plane with that ratio; the principal determinant
+remains nonzero when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>
+is also in that half-plane. These nodes approach
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>u</mi><mo>*</mo></msub><annotation encoding="application/x-tex">u_*</annotation></semantics></math>
+at order
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>N</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><annotation encoding="application/x-tex">N^{-2}</annotation></semantics></math>.
+Thus the full cofactor cannot have a positive semidefinite linear
+face-pencil representation on a fixed physical neighborhood at all
+levels. This does not obstruct the signed stable expansion proved above,
+a low-defect indefinite representation, or a correlated cap
+estimate.</p>
+<h2 id="exact-inputs-and-scope">7. Exact inputs and scope</h2>
+<p>The original recurrence, both-parity central cut, full-Hermite
+scalar, and complete-node identity are the formulas in
+<code>notes/actual_cross_cofactor_factorization.md</code>, sections 1–3.
+The positive determinant and forced polynomial are from
+<code>notes/actual_complete_circle_positive_face_polynomial.md</code>
+and <code>notes/actual_q_hahn_joint_accretive_determinant.md</code>. The
+nodal factorization, positive tail, and local far-node estimate are in
+<code>notes/actual_cross_cofactor_global_angular_gap.md</code>, sections
+1–2. The private <code>md-odd-nodal-signed-compression.md</code>
+supplies the sharper odd endpoint lower-cofactor weight sum
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">csc</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mn>1</mn><mo>≤</mo><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\csc(\theta/2)-1\le N-1</annotation></semantics></math>;
+it is compatible with, but not needed for, the generic first-normal
+bounds above. The rank-to-root-count input is the separately preserved
+<code>md-odd-neighbor-spectrum-matroid-path-and-cap-cost.md</code>.</p>
+<p>This result is finite source algebra and a coefficientwise mass
+bound, with explicit normals at both parities. The first normal here is
+the derivative of the original central-support polynomial; the separate
+left and right parts of the full resolvent numerator are not absorbed
+into it. It proves neither the still-missing rank-tail estimate nor the
+signed cap/filling cancellation. It does not promote a full-source
+volume theorem.</p>
+</body>
+</html>

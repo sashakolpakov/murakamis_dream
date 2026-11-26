@@ -272,6 +272,16 @@ part must come from the specified inverse pairing, with its actual
 source overlap. Reciprocity alone supplies neither its inverse norm
 nor a nonzero geometric contribution.
 
+The [exact Green comparison](research_actual_weyl_green_obstruction.md)
+shows why the two source overlaps cannot be replaced by a homogeneous
+left zero mode. The actual cyclic matrix has a whole kernel for every
+central meridian, so its unbordered determinant vanishes identically;
+every left zero mode annihilates \(B_1v_0\). The dual vector needed
+in (4.3) instead solves the inhomogeneous equation
+\(B_-^*g=e_0\). These distinctions already hold for the primitive
+minimal operator of the actual unknot, with the required root rank.
+They do not rule out a further estimate of that inhomogeneous pairing.
+
 ## 5. The metric period is independent of primitive generator units
 
 Another primitive minimal generator is B'=u B with

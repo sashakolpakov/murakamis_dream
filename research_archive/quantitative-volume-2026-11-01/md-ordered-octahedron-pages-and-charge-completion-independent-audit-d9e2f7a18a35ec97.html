@@ -1,0 +1,330 @@
+<h1
+id="independent-check-of-ordered-octahedral-pages-and-charge-path-completion">Independent
+check of ordered octahedral pages and charge-path completion</h1>
+<p>1 November 2026. This is a read-only mathematical audit of the actual
+ordered cut, its peripheral marking, and the ensuing geometric
+completion. No repository or publication files were changed.</p>
+<p>The checked drafts are:</p>
+<ul>
+<li><code>/private/tmp/md-all-circle-ordered-octahedron-page-decomposition.md</code>,
+SHA256
+<code>9932021d795d4955b2ac6e556e50f1d08cd525a30db00217babdb94cc778dd18</code>.</li>
+<li><code>/private/tmp/md-angular-edge-block-charge-path-completion.md</code>,
+SHA256
+<code>913e44b8d07b89e02ddf8496e7a9b9579c8b184d3d5f1dedeeeb4711d4af6a53</code>.</li>
+<li><code>/private/tmp/md-two-octahedron-angular-edge-block.md</code>,
+SHA256
+<code>a87b5b2f1ff39bff15bb2ac6f3ec90ebe3d047e82778d7a660f85c49e1c0d57a</code>.</li>
+</ul>
+<p>The last draft already has the separate full local audit
+<code>/private/tmp/md-two-octahedron-angular-edge-block-independent-audit.md</code>,
+SHA256
+<code>f563e9e8789492b321e18011a1ffd1819b3facf0254c401ce2da9c3900a27072</code>.
+The present audit additionally reread the original bowtie cut, the
+actual closed-turn collar moves, and the marked leaf words.</p>
+<h2 id="the-physical-root-and-the-local-frames">1. The physical root and
+the local frames</h2>
+<p>The original root adapter is a physical closed-collar isotopy:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mi>T</mi><msub><mi>P</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mi>T</mi><mo stretchy="false" form="prefix">(</mo><mi>E</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo>≃</mo><mi>C</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>P</mi><mn>0</mn></msub><msup><mi>T</mi><mn>2</mn></msup><mo stretchy="false" form="prefix">(</mo><mi>E</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>C</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>P</mi><mn>0</mn></msub><mi>τ</mi><mo stretchy="false" form="prefix">(</mo><mi>E</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ C((TP_0)T(E))\simeq C(P_0T^2(E))=C(P_0\tau(E)).
+</annotation></semantics></math> Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>
+is the actual planar half-turn. It reverses product order and transports
+all children, their four endpoint labels, their disk sides and their
+marks. The proof does not replace it by the identity merely because the
+complete source turn squares to the identity. The cited closed-turn
+isotopy uses the original empty four-arc gluing collar; it applies to
+the actual tangle balls, including their auxiliary circles.</p>
+<p>At a local junction, the exact physical inverse relation is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>v</mi></msub><mo>=</mo><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msub><mi>h</mi><mi>v</mi></msub></mrow><annotation encoding="application/x-tex">P_v=T^{-1}h_v</annotation></semantics></math>.
+If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>h</mi><mi>v</mi></msub><annotation encoding="application/x-tex">h_v</annotation></semantics></math>
+has ordered endpoints
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>v</mi><mn>0</mn></msub><mo>,</mo><msub><mi>v</mi><mn>1</mn></msub><mo>,</mo><msub><mi>v</mi><mn>2</mn></msub><mo>,</mo><msub><mi>v</mi><mn>3</mn></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(v_0,v_1,v_2,v_3)</annotation></semantics></math>,
+then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mi>v</mi></msub><annotation encoding="application/x-tex">P_v</annotation></semantics></math>
+has endpoints
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>v</mi><mn>3</mn></msub><mo>,</mo><msub><mi>v</mi><mn>0</mn></msub><mo>,</mo><msub><mi>v</mi><mn>1</mn></msub><mo>,</mo><msub><mi>v</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(v_3,v_0,v_1,v_2)</annotation></semantics></math>.
+This is the correct tuple for the subsequent insertion argument. It
+avoids using an involutive turn on an arbitrary physical child.</p>
+<p>The final draft also retains a circle operator in the middle of its
+two ordered child lists. This matters: cyclicity is available only at a
+closed root. The two-sided insertion construction below proves coverage
+without commuting an internal circle past arbitrary children.</p>
+<h2 id="direct-check-of-both-terminal-substitutions">2. Direct check of
+both terminal substitutions</h2>
+<p>The original stack rule joins the lower factor’s endpoint 2 to the
+upper factor’s endpoint 1, and lower 3 to upper 0.</p>
+<p>For insertion immediately after
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mi>v</mi></msub><annotation encoding="application/x-tex">P_v</annotation></semantics></math>,
+these are precisely
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mn>1</mn></msub><mo>−</mo><msub><mi>w</mi><mn>1</mn></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>v</mi><mn>2</mn></msub><mo>−</mo><msub><mi>w</mi><mn>0</mn></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ v_1-w_1,\qquad v_2-w_0.
+</annotation></semantics></math> The new output endpoints
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mn>2</mn></msub><mo>,</mo><msub><mi>w</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">w_2,w_3</annotation></semantics></math>
+take over the previous external matches of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mn>1</mn></msub><mo>,</mo><msub><mi>v</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">v_1,v_2</annotation></semantics></math>.
+This gives the draft’s (5) for arbitrary external partners
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">x_1,x_2</annotation></semantics></math>;
+those partners need not belong to one unrotated child leaf.</p>
+<p>For insertion immediately before
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mi>v</mi></msub><annotation encoding="application/x-tex">P_v</annotation></semantics></math>,
+the same stack rule gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mn>2</mn></msub><mo>−</mo><msub><mi>v</mi><mn>0</mn></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>w</mi><mn>3</mn></msub><mo>−</mo><msub><mi>v</mi><mn>3</mn></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ w_2-v_0,\qquad w_3-v_3.
+</annotation></semantics></math> The new input endpoints
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mn>0</mn></msub><mo>,</mo><msub><mi>w</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">w_0,w_1</annotation></semantics></math>
+inherit the old external matches of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mn>3</mn></msub><mo>,</mo><msub><mi>v</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">v_3,v_0</annotation></semantics></math>,
+respectively. This is exactly (7a). Both substitutions follow from the
+physical endpoint tuples, with no polynomial or scalar identity.</p>
+<p>For the right insertion, the old shaded face is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>O</mi><mi>v</mi></msub><mo>,</mo><mi>C</mi><mo>,</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(O_v,C,B)</annotation></semantics></math>.
+The new octahedron has equator
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo>,</mo><mi>B</mi><mo>,</mo><mi>C</mi><mo>,</mo><mi>D</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(A,B,C,D)</annotation></semantics></math>;
+its attaching face
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>O</mi><mi>v</mi></msub><mo>,</mo><mi>B</mi><mo>,</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(O_v,B,C)</annotation></semantics></math>
+has the opposite orientation. The three remaining shaded faces are
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>O</mi><mi>v</mi></msub><mo>,</mo><mi>D</mi><mo>,</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="1.0em"></mspace><mo stretchy="false" form="prefix">(</mo><msub><mi>O</mi><mi>w</mi></msub><mo>,</mo><mi>D</mi><mo>,</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="1.0em"></mspace><mo stretchy="false" form="prefix">(</mo><msub><mi>O</mi><mi>w</mi></msub><mo>,</mo><mi>B</mi><mo>,</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ (O_v,D,A),\quad(O_w,D,C),\quad(O_w,B,A).
+</annotation></semantics></math> They are exactly the replaced
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+face and the two new
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+faces after the stack substitution. At the attaching face’s vertices,
+removing its shaded sectors and concatenating the remaining sectors
+gives the literal planar ribbon order. The adjacent white pieces
+therefore merge into the original white facial walks. This verifies the
+full colored boundary identification, beyond the numerical face
+count.</p>
+<p>The left insertion performs the same construction on the other
+original shaded face. Applying a genuine child-ball rotation to the
+entire local picture transports this verification, including
+projection-copy labels; it does not require fixing the rotated child
+tangle pointwise.</p>
+<h2 id="coverage-and-the-actual-quotient">3. Coverage and the actual
+quotient</h2>
+<p>At each junction, insert children to the right in reverse final
+order, always immediately next to the circle operator. Insert children
+on the left in their final order, again next to the circle operator.
+These two procedures construct the prescribed final lists exactly.
+Descendant insertions occur within the already placed child ball. A
+retained quarter-turn, half-turn or input/output reversal carries all of
+those insertions with the ball. Thus the induction covers the original
+ordered fully circled tree, including unary chains and a circle operator
+between nonempty child lists.</p>
+<p>Choose a terminal vertex as the root by the actual closed-collar
+moves, and start with its unique edge. This prevents an existing child
+from occupying the middle of a list that is to be built by insertion;
+all subsequent left and right lists start empty. Starting with this
+genuine two-circle edge block, each step adds one octahedral ball along
+one triangular disk in each projection copy. Consequently the projection
+copies remain balls, with exactly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>
+octahedra and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">E-1</annotation></semantics></math>
+attachments. The remaining shaded count
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mi>E</mi><mo>−</mo><mn>2</mn><mo stretchy="false" form="prefix">(</mo><mi>E</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>2</mn><mo stretchy="false" form="prefix">(</mo><mi>E</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">4E-2(E-1)=2(E+1)</annotation></semantics></math>
+is consistent, but the stronger content is the preceding identification
+of every shaded sector and every white cycle.</p>
+<p>The original reversible projection/disk cut identifies the resulting
+boundary spheres and all their white and disk-face pairings with those
+of the actual link exterior. Extending the label-preserving boundary
+maps over the balls therefore gives the actual exterior. No open
+quadrilateral is being misidentified with a physical four-punctured
+sphere, and no equality of source values or volumes is used for
+topology.</p>
+<h2 id="the-pages-the-original-paths-and-the-half-twist">4. The pages,
+the original paths, and the half twist</h2>
+<p>An added triangular interface and its partner in the other projection
+copy form the two triangles of a disk-side pair of pants. Its three ends
+are the same original auxiliary circle and its two actual main
+punctures. The insertion order supplies the consecutive pages at that
+circle. The corresponding cusp torus is divided into annular sectors,
+one per incident edge block.</p>
+<p>The longitude along the boundary of every page is the same primitive
+disk longitude. Adding a terminal block subdivides one transverse
+meridian passage into two consecutive passages. It does not add a second
+circuit around the torus. The new interface coordinate changes cancel in
+consecutive inverse pairs, so after forgetting the subdivision the path
+is the original primitive meridian.</p>
+<p>There is exactly one distinguished original disk seam at each circle.
+All new page attachments are untwisted; the original pure or signed odd
+disk map is applied once at that distinguished seam. In particular a
+positive and negative retained half twist have the same puncture
+permutation but different marked meridian words. The old multipliers are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mi>Q</mi></mrow><annotation encoding="application/x-tex">\rho Q</annotation></semantics></math>
+for the actual negative crossing and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mi>/</mi><mi>Q</mi></mrow><annotation encoding="application/x-tex">\rho/Q</annotation></semantics></math>
+for the actual positive crossing. With
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>i</mi><msub><mi>τ</mi><mi>v</mi></msub></mrow></msup></mrow><annotation encoding="application/x-tex">Q=e^{i\tau_v}</annotation></semantics></math>,
+their correction is exactly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>i</mi><msub><mi>ϵ</mi><mi>v</mi></msub><msub><mi>τ</mi><mi>v</mi></msub></mrow><annotation encoding="application/x-tex">-i\epsilon_v\tau_v</annotation></semantics></math>,
+not an additional correction at every page.</p>
+<p>Using the independently checked local increments, the concatenation
+therefore gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>v</mi></msub><mo>=</mo><mi>−</mi><mn>2</mn><mi>π</mi><munder><mo>∑</mo><mrow><mi>e</mi><mo>∼</mo><mi>v</mi></mrow></munder><msub><mi>∂</mi><msub><mi>τ</mi><mi>v</mi></msub></msub><msub><mi>ψ</mi><mi>e</mi></msub><mo>−</mo><mi>i</mi><msub><mi>ϵ</mi><mi>v</mi></msub><msub><mi>τ</mi><mi>v</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>V</mi><mi>v</mi></msub><mo>=</mo><mn>2</mn><mi>i</mi><msub><mi>τ</mi><mi>v</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ U_v=-2\pi\sum_{e\sim v}\partial_{\tau_v}\psi_e-i\epsilon_v\tau_v,
+ \qquad V_v=2i\tau_v.
+</annotation></semantics></math> The coordinate changes between pages
+telescope in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo>−</mo><msub><mi>q</mi><mi>v</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">d\log(z-q_v)</annotation></semantics></math>.
+The equality concerns the continued path integral, not the principal
+logarithm of the final multiplier. With
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mi>v</mi></msub><mo>=</mo><msub><mi>ϵ</mi><mi>v</mi></msub><mo>−</mo><mn>2</mn><msub><mi>p</mi><mi>v</mi></msub></mrow><annotation encoding="application/x-tex">n_v=\epsilon_v-2p_v</annotation></semantics></math>,
+the charge equation gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>v</mi></msub><mo>+</mo><msub><mi>p</mi><mi>v</mi></msub><msub><mi>V</mi><mi>v</mi></msub><mo>=</mo><mi>−</mi><mn>2</mn><mi>π</mi><mi>i</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">U_v+p_vV_v=-2\pi ic</annotation></semantics></math>
+in the original primitive basis.</p>
+<h2 id="the-positive-metric-and-the-auxiliary-log-plane">5. The positive
+metric and the auxiliary log plane</h2>
+<p>The local eight-tetrahedron blocks remain positive in the explicit
+angular bidisk. The ordered outgoing/incoming seam ratios are inverse as
+complex numbers with the continued angle branches. Thus both shears and
+angle returns agree; the glued metric is nonsingular at ordinary points
+and at finite edges. At completeness the regular cells and their labeled
+face maps give the original complete cusp sections.</p>
+<p>At the distinguished odd seam I independently checked the additional
+explicit
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A,B</annotation></semantics></math>
+matrices, rather than deducing the odd gluing from the pure seam table.
+Their maps on the three ordered vertices are exactly the stated
+cross-copy maps. Direct matrix multiplication gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>W</mi><mn>0</mn><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mi>B</mi><msubsup><mi>W</mi><mn>2</mn><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mi>A</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>R</mi><mi>/</mi><mi>E</mi><mo stretchy="false" form="postfix">)</mo><mi>I</mi><mo>,</mo><mspace width="2.0em"></mspace><msubsup><mi>W</mi><mn>2</mn><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mi>B</mi><msubsup><mi>W</mi><mn>0</mn><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mi>A</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>R</mi><mi>/</mi><mi>E</mi><mo stretchy="false" form="postfix">)</mo><mi>I</mi><mo>,</mo><mspace width="2.0em"></mspace><msubsup><mi>W</mi><mn>1</mn><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mi>B</mi><msubsup><mi>W</mi><mn>3</mn><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mi>A</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mi>R</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mi>E</mi><mo stretchy="false" form="postfix">)</mo><mi>I</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ W_0^{-1}BW_2^{-1}A=(-R/E)I,\qquad
+ W_2^{-1}BW_0^{-1}A=(-R/E)I,\qquad
+ W_1^{-1}BW_3^{-1}A=((R-1)/E)I.
+</annotation></semantics></math> The scalar multiples are units in the
+selected chart, hence these are the asserted projective identity
+returns. Both apex images reduce to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi><mi>/</mi><mi>E</mi></mrow><annotation encoding="application/x-tex">Z/E</annotation></semantics></math>
+under the defining quadratic. Since the entire ordered two-triangle
+pants chart depends only on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>,
+transporting it between incident blocks with different other endpoints
+preserves this specific odd gluing. Its puncture exchange is the actual
+one fixed by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A,B</annotation></semantics></math>.
+This explicitly verifies the distinguished odd seam as well as the
+untwisted seams.</p>
+<p>The cusp links are nonsingular similarity tori. A main puncture is
+represented by its local nontrivial parabolic word, so the corresponding
+peripheral group is a translation group and its compact Euclidean link
+is complete.</p>
+<p>For an auxiliary cusp at positive charge,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℜ</mi><msub><mi>V</mi><mi>v</mi></msub><mo>=</mo><mi>−</mi><mn>2</mn><mi>ℑ</mi><msub><mi>τ</mi><mi>v</mi></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Re V_v=-2\Im\tau_v&gt;0</annotation></semantics></math>.
+The peripheral similarities therefore have a second common fixed point
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>q</mi><mi>v</mi></msub><annotation encoding="application/x-tex">q_v</annotation></semantics></math>.
+The invariant vector field
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo>−</mo><msub><mi>q</mi><mi>v</mi></msub><mo stretchy="false" form="postfix">)</mo><msub><mi>∂</mi><mi>z</mi></msub></mrow><annotation encoding="application/x-tex">(z-q_v)\partial_z</annotation></semantics></math>
+pulls back to a vector field on the link. Any zero has index
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">+1</annotation></semantics></math>,
+whereas the torus has Euler characteristic zero; hence the development
+misses
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>q</mi><mi>v</mi></msub><annotation encoding="application/x-tex">q_v</annotation></semantics></math>.
+Its logarithm on the simply connected link cover has nonzero derivative,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>d</mi><msub><mi>f</mi><mi>v</mi></msub><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">|df_v|^2</annotation></semantics></math>
+descends to a complete Euclidean metric on the compact link. The
+resulting developing local isometry covers the plane and is a
+diffeomorphism. Its two primitive periods form a real rank-two
+lattice.</p>
+<p>This argument gives the required log plane from the actual positive
+metric. It does not assume discreteness of the incomplete cone
+holonomy.</p>
+<h2 id="integer-periods-and-cone-completion">6. Integer periods and cone
+completion</h2>
+<p>The actual period differences
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>μ</mi></msub><mo>−</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">P_\mu-U</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>λ</mi></msub><mo>−</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">P_\lambda-V</annotation></semantics></math>
+lie in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>π</mi><mi>i</mi><mi mathvariant="double-struck">ℤ</mi></mrow><annotation encoding="application/x-tex">2\pi i\mathbb Z</annotation></semantics></math>
+and vary continuously for positive charge. The revised draft fixes their
+initial integers directly. In a peripheral frame continuous at
+completeness, the longitude is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>↦</mo><msup><mi>e</mi><mi>V</mi></msup><mi>z</mi><mo>+</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">z\mapsto e^V z+b</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">b(0)\ne0</annotation></semantics></math>.
+Its second fixed point
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mi>b</mi><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>e</mi><mi>V</mi></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">q=b/(1-e^V)</annotation></semantics></math>
+escapes to infinity. Each fixed generator path has bounded developed
+position and length for this fixed finite tree, so
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>P</mi><mi>γ</mi></msub><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mi>L</mi><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">|</mo><mi>q</mi><mo stretchy="false" form="prefix">|</mo><mi>−</mi><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo>→</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ |P_\gamma|\le L/(|q|-B)\longrightarrow0.
+</annotation></semantics></math> Both candidate logarithms also tend to
+zero. The two integers vanish near zero and thus throughout the
+connected charge path. No globally small representation norm is required
+at charge one.</p>
+<p>The ordered pair
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>μ</mi><mo>+</mo><mi>p</mi><mi>λ</mi><mo>,</mo><mi>λ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\mu+p\lambda,\lambda)</annotation></semantics></math>
+is a primitive integral basis. Its first period is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>2</mn><mi>π</mi><mi>i</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">-2\pi ic</annotation></semantics></math>;
+its second has real part
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℓ</mi><mo>=</mo><mi>ℜ</mi><mi>V</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\ell=\Re V&gt;0</annotation></semantics></math>.
+Thus
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math>,
+the complementary primitive curve itself, represents the oriented core
+generator.</p>
+<p>The cylindrical coordinate change
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mi>y</mi><mi>/</mi><mo stretchy="false" form="prefix">|</mo><mi>z</mi><mo stretchy="false" form="prefix">|</mo><mo>,</mo><mspace width="1.0em"></mspace><mi>R</mi><mo>=</mo><mrow><mi mathvariant="normal">arsinh</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mi>r</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="1.0em"></mspace><mi>θ</mi><mo>=</mo><mi>ℑ</mi><mi>f</mi><mo>,</mo><mspace width="1.0em"></mspace><mi>X</mi><mo>=</mo><mi>ℜ</mi><mi>f</mi><mo>+</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><msup><mi>r</mi><mn>2</mn></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+ r=y/|z|,\quad R=\operatorname{arsinh}(1/r),\quad
+ \theta=\Im f,\quad X=\Re f+\tfrac12\log(1+r^2)
+</annotation></semantics></math> gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><msup><mi>R</mi><mn>2</mn></msup><mo>+</mo><msup><mrow><mi mathvariant="normal">cosh</mi><mo>&#8289;</mo></mrow><mn>2</mn></msup><mi>R</mi><mspace width="0.167em"></mspace><mi>d</mi><msup><mi>X</mi><mn>2</mn></msup><mo>+</mo><msup><mrow><mi mathvariant="normal">sinh</mi><mo>&#8289;</mo></mrow><mn>2</mn></msup><mi>R</mi><mspace width="0.167em"></mspace><mi>d</mi><msup><mi>θ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">dR^2+\cosh^2R\,dX^2+\sinh^2R\,d\theta^2</annotation></semantics></math>.
+Compactness of the actual similarity link gives a whole sufficiently
+small punctured tube. Adding its axis produces angle
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>π</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">2\pi c</annotation></semantics></math>,
+and at charge one an ordinary smooth solid torus with the original
+filling meridian. The other ends remain complete main cusps and the
+middle is compact. This proves completeness on the actual filled
+topology, conditional only on the already separately supplied analytic
+charge path.</p>
+<h2 id="absolute-action-and-volume">7. Absolute action and volume</h2>
+<p>I recomputed the action normalization independently. With
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>U</mi><mn>0</mn></msup><mo>=</mo><mi>−</mi><mn>2</mn><mi>π</mi><msub><mi mathvariant="normal">Ψ</mi><mi>τ</mi></msub></mrow><annotation encoding="application/x-tex">U^0=-2\pi\Psi_\tau</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>G</mi><mn>0</mn></msup><mo>=</mo><mn>2</mn><mi>π</mi><mi>i</mi><mo stretchy="false" form="prefix">(</mo><mi mathvariant="normal">Ψ</mi><mo>−</mo><mi>τ</mi><mo>⋅</mo><msub><mi mathvariant="normal">Ψ</mi><mi>τ</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>d</mi><msup><mi>G</mi><mn>0</mn></msup><mo>=</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>∑</mo><mi>V</mi><mspace width="0.167em"></mspace><mi>d</mi><msup><mi>U</mi><mn>0</mn></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ G^0=2\pi i(\Psi-\tau\cdot\Psi_\tau),\qquad
+ dG^0=\tfrac12\sum V\,dU^0.
+</annotation></semantics></math> The one retained half twist contributes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>ϵ</mi><msup><mi>V</mi><mn>2</mn></msup><mi>/</mi><mn>8</mn></mrow><annotation encoding="application/x-tex">-\epsilon V^2/8</annotation></semantics></math>,
+giving the draft’s exact
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>.
+At the stationary charge point, writing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Φ</mi><mo>=</mo><mi>G</mi><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>π</mi><mi>i</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\Phi=G/(2\pi i)</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Φ</mi><mo>−</mo><mi mathvariant="script">𝒞</mi><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>−</mi><mfrac><mi>i</mi><mrow><mn>2</mn><mi>π</mi></mrow></mfrac><mo>∑</mo><msub><mi>p</mi><mi>v</mi></msub><msubsup><mi>τ</mi><mi>v</mi><mn>2</mn></msubsup><mo>,</mo><mspace width="2.0em"></mspace><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>ℜ</mi><msub><mi>U</mi><mi>v</mi></msub><mi>ℑ</mi><msub><mi>V</mi><mi>v</mi></msub><mo>=</mo><msub><mi>p</mi><mi>v</mi></msub><mi>ℑ</mi><mo stretchy="false" form="prefix">(</mo><msubsup><mi>τ</mi><mi>v</mi><mn>2</mn></msubsup><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \Phi-\mathcal C(c)=-\frac{i}{2\pi}\sum p_v\tau_v^2,
+ \qquad
+ \frac12\Re U_v\Im V_v=p_v\Im(\tau_v^2).
+</annotation></semantics></math> These two terms cancel in the actual
+marked regulator. Its complete constant is fixed by the regular
+two-octahedron blocks. Hence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi mathvariant="normal">Vol</mi><mo>&#8289;</mo></mrow><mi>c</mi></msub><mo>=</mo><mn>2</mn><mi>π</mi><mi>ℜ</mi><mi mathvariant="script">𝒞</mi><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{Vol}_c=2\pi\Re\mathcal C(c)</annotation></semantics></math>.
+Differentiation gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>π</mi><mo>∑</mo><mi>ℑ</mi><msub><mi>τ</mi><mi>v</mi></msub></mrow><annotation encoding="application/x-tex">2\pi\sum\Im\tau_v</annotation></semantics></math>,
+which agrees with the cone Schläfli expression
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>∑</mo><msub><mi>ℓ</mi><mi>v</mi></msub><mspace width="0.167em"></mspace><mi>d</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>π</mi><mi>c</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">-\tfrac12\sum\ell_v\,d(2\pi c)</annotation></semantics></math>.
+The factor, sign, and complementary primitive curve are consistent.</p>
+<h2 id="verdict-and-exact-scope">8. Verdict and exact scope</h2>
+<p>The ordered topological proof and the charge-path geometric
+completion check in full in the versions identified above. No
+mathematical correction is requested. Together with the previously
+checked local chart, they supply the actual disk-page topology and
+primitive path input that was left conditional in the local
+calculation.</p>
+<p>The conclusion concerns finite ordered fully circled trees, with
+every inherited frame, projection label and distinguished signed disk
+seam retained. It does not extend the decomposition to arbitrary tensor
+networks, bare product junctions, graphs with cycles, or arbitrary
+changes of puncture matching. The analytic existence and dominance of
+the charge path remain the separate short-twist analytic certificate. No
+geometric conclusion was inferred from a source identity, and no general
+all-short-filling claim is made.</p>
+<p>Original reference hashes retained in this audit:</p>
+<ul>
+<li><code>notes/actual_conway_bowtie_projection_cut.md</code>:
+<code>d111390b82a56ed52e9afe9ffb99070762286b72df81fbe9e34d7050ceabaccc</code>.</li>
+<li><code>notes/actual_conway_net_twist_volume.md</code>:
+<code>cd76d2d1f9b0ce2961308343d80098ec3336dd367248fbe36ee811e959fbcfa2</code>.</li>
+<li><code>notes/actual_conway_general_mask_marked_filling.md</code>:
+<code>f3d0b91665c0bf62d26f71e4e0fa3368fe8714cdccab7d30b4e04272c61c209d</code>.</li>
+</ul>

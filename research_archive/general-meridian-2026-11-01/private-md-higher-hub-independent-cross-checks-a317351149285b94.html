@@ -1,0 +1,101 @@
+<h1
+id="independent-checks-of-the-higher-hub-pressure-and-trace-obstruction">Independent
+checks of the higher-hub pressure and trace obstruction</h1>
+<p>1 November 2026. Private record; no repository edits.</p>
+<h2 id="whole-hub-old-pressure">1. Whole-hub old pressure</h2>
+<p>I read the full derivation in
+/private/tmp/md-old-whole-hub-simultaneous-half-pressure.md, Sections
+1–6, source SHA256
+a5da4e61b4b0c30504f6d03c132a5c34104a49d5aab9bce6f52418f61ccca729.</p>
+<p>The strict arity construction works for the fixed original
+association. At a parent with prescribed output
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>,
+the two restricted child ranges have lower-sum endpoint less than one
+and upper-sum endpoint greater than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>.
+The individual upper bounds are at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>.
+Their sum interval therefore meets
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(b,1)</annotation></semantics></math>;
+the singleton cases satisfy the same strict inequalities without an
+extra variable. Induction produces the required hidden wire values. This
+proves the physical half/three-eighths witness without incorrectly
+assigning three-eighths to artificial complementary edges.</p>
+<p>The endpoint barrier is unchanged along an unturned output/input wire
+and exchanges zero with one along a physical turn. Descent terminates in
+the finite rooted tree; fixed half terminals cannot be its endpoint. The
+subsequent gate-face barrier excludes all remaining saturated faces.
+Strict gate Hessians cover every free variable and every varying marked
+coordinate, so the full Hessian and its boundary Schur complement are
+negative definite.</p>
+<p>The response induction correctly distinguishes both edge types. A
+proper product output stays proper as an ordinary next input; a physical
+turn swaps the two strict inequalities. Fixed half terminals acquire
+only the incident positive response and no fictitious action. Re-rooting
+uses the same symmetric cubic resolution, preserving complementary
+labels on artificial edges and equal labels on physical ones. At the
+marked half root, the derivative calculation and joint supporting plane
+give the simultaneous comparison. The small-segment inequality at a
+closed endpoint and the negative definite Hessian give strictness away
+from the all-half boundary.</p>
+<p>No moving higher-valence estimate follows from this old-pressure
+theorem alone. The requirement of at most one marked incidence per
+original hub remains essential to the strict witness.</p>
+<h2 id="independent-divided-difference-obstruction">2. Independent
+divided-difference obstruction</h2>
+<p>I read
+/private/tmp/md-one-high-admissible-hub-trace-exponential-obstruction.md,
+Sections 1–5. Its family and conclusion agree with the independent
+positive-Laurent proof in
+/private/tmp/md-complete-admissible-hub-trace-exponential-obstruction.md.</p>
+<p>The exact reflection identity is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mi>h</mi></msub><msub><mi>B</mi><mrow><mi>a</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>B</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">B_hB_{a+1}=B_N</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>4</mn><mi>a</mi></mrow><annotation encoding="application/x-tex">h=4a</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>5</mn><mi>a</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">N=5a+1</annotation></semantics></math>.
+Together with the sine-product normalization it gives the polynomial
+cardinal factor and the exact coefficient of the moving relation.
+Canceling
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>B</mi><mi>a</mi><mn>2</mn></msubsup><annotation encoding="application/x-tex">B_a^2</annotation></semantics></math>
+removes precisely the two copies of every upper node
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mn>0</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>c</mi><mrow><mi>a</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">c_0,\ldots,c_{a-1}</annotation></semantics></math>.
+The remaining multiset has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>a</mi><mo>+</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">3a+2</annotation></semantics></math>
+nodes, including the added
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>c</mi><mi>a</mi></msub><annotation encoding="application/x-tex">c_a</annotation></semantics></math>,
+all at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>c</mi><mi>a</mi></msub><annotation encoding="application/x-tex">c_a</annotation></semantics></math>.
+Its divided-difference order is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>a</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">3a+1</annotation></semantics></math>.</p>
+<p>After cancellation the numerator is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>B</mi><mi>a</mi><mn>5</mn></msubsup><mi>/</mi><msubsup><mi>S</mi><mi>a</mi><mn>14</mn></msubsup></mrow><annotation encoding="application/x-tex">B_a^5/S_a^{14}</annotation></semantics></math>.
+All derivatives below
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>c</mi><mi>a</mi></msub><annotation encoding="application/x-tex">c_a</annotation></semantics></math>
+have alternating fixed sign, and the absolute derivative of the required
+order is minimized at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>c</mi><mi>a</mi></msub><annotation encoding="application/x-tex">c_a</annotation></semantics></math>.
+The simplex formula therefore provides a valid lower bound even at
+repeated nodes. The sign of the moving coefficient is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>a</mi></msup></mrow><annotation encoding="application/x-tex">(-1)^a</annotation></semantics></math>,
+matching the original coefficient trace at both level parities.</p>
+<p>Dividing by the complete trace leaves
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mi>a</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>c</mi><mi>a</mi></msub><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>−</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">B_a(c_a)^{-2}</annotation></semantics></math>
+times an elementary symmetric polynomial in five copies of each
+reciprocal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mi>r</mi></msub><mo>−</mo><msub><mi>c</mi><mi>a</mi></msub></mrow><annotation encoding="application/x-tex">c_r-c_a</annotation></semantics></math>.
+Bounding these distances by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mn>0</mn></msub><mo>−</mo><msub><mi>c</mi><mi>a</mi></msub><mo>&lt;</mo><mn>3</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">c_0-c_a&lt;3/2</annotation></semantics></math>,
+and using the mode of the binomial distribution with parameters
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn><mi>a</mi><mo>,</mo><mn>3</mn><mi>/</mi><mn>5</mn></mrow><annotation encoding="application/x-tex">5a,3/5</annotation></semantics></math>,
+gives the printed constant
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>25000</mn><mi>/</mi><mn>6561</mn></mrow><annotation encoding="application/x-tex">25000/6561</annotation></semantics></math>.
+All powers of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>,
+signs and factorial normalizations agree. The reverse triangle
+inequality gives exponential relative growth for every fixed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Δ</mi><mi>s</mi></msub><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta_s\ne0</annotation></semantics></math>;
+a favorable real or imaginary sign is optional.</p>
+<p>These arguments refute the proposed complete-admissible pointwise
+denominator. They do not refute a source-selected coupled-pressure
+estimate or a whole invariant asymptotic. The two independent proofs
+require no numerical extrapolation.</p>

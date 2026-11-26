@@ -1,0 +1,138 @@
+<h1
+id="independent-check-of-the-preferred-main-longitude-calculation">Independent
+check of the preferred main-longitude calculation</h1>
+<p>1 November 2026. Read-only mathematical check of
+<code>/private/tmp/md-general-conway-preferred-main-longitude-translation.md</code>,
+final input SHA256
+<code>def6e731a84429d678e14801c4a278936b818b02be4abc31933dc810dce13ab1</code>.
+No repository source was edited.</p>
+<h2 id="oriented-affine-addition">1. Oriented affine addition</h2>
+<p>The local arc multiplier is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msub><mi>d</mi><mi>j</mi></msub><msub><mi>d</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">-d_jd_k</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mi>j</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>j</mi></msup></mrow><annotation encoding="application/x-tex">d_j=(-1)^j</annotation></semantics></math>,
+because an inward arc has oriented meridian
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>d</mi><mi>j</mi></msub><annotation encoding="application/x-tex">d_j</annotation></semantics></math>
+times the local unit and an outward arc has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msub><mi>d</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">-d_k</annotation></semantics></math>
+times that unit. The displacement
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msub><mi>d</mi><mi>k</mi></msub><mi>β</mi></mrow><annotation encoding="application/x-tex">-d_k\beta</annotation></semantics></math>
+is unchanged when both traversal and meridian orientation reverse. A
+joining segment has displacement
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mi>k</mi></msub><mi>β</mi></mrow><annotation encoding="application/x-tex">d_k\beta</annotation></semantics></math>;
+multiplying arc, join and arc gives exactly the three-term sum in
+equation (10).</p>
+<p>For a change of endpoint frame
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>u</mi><mi>j</mi><mo>′</mo></msubsup><mo>=</mo><msub><mi>α</mi><mi>j</mi></msub><msub><mi>u</mi><mi>j</mi></msub><mo>+</mo><msub><mi>β</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">u&#39;_j=\alpha_j u_j+\beta_j</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>α</mi><mi>j</mi></msub><mo>=</mo><msub><mi>d</mi><mi>j</mi></msub><mi>/</mi><msubsup><mi>d</mi><mi>j</mi><mo>′</mo></msubsup></mrow><annotation encoding="application/x-tex">\alpha_j=d_j/d&#39;_j</annotation></semantics></math>,
+direct affine substitution gives one term
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msubsup><mi>d</mi><mi>j</mi><mo>′</mo></msubsup><msub><mi>β</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">-d&#39;_j\beta_j</annotation></semantics></math>
+at each exposed endpoint. This proves (11), including the odd routes
+with multiplier minus one. The explicit global rule
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>α</mi><mi>b</mi></msub><mi>κ</mi><mo>=</mo><msub><mi>α</mi><mi>a</mi></msub></mrow><annotation encoding="application/x-tex">\alpha_b\kappa=\alpha_a</annotation></semantics></math>,
+with contribution
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>α</mi><mi>b</mi></msub><mi>β</mi></mrow><annotation encoding="application/x-tex">\alpha_b\beta</annotation></semantics></math>,
+is consistent with it. The final open-chart qualification is necessary
+and correct: this calculation transports boundary charts with virtual
+completions until the original closed mask theorem supplies every actual
+white transition.</p>
+<h2 id="rational-identities">2. Rational identities</h2>
+<p>I constructed the Möbius frames from equation (6) and the normalized
+three-point map of each world quadrilateral, independently of the
+printed translation tables. Exact rational simplification checks all
+four unit meridians, all four odd routes, all four turn rebasing maps,
+all four closing maps, all six product maps, and the
+product/turn/closure potential identities. This is 69 scalar checks,
+using the independent symbols
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>,</mo><mi>R</mi><mo>,</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">E,R,a,b,c</annotation></semantics></math>.</p>
+<p>The private executable is
+<code>/private/tmp/md-ledger-peer-geometric-cocycle-check.py</code>,
+SHA256
+<code>a582447e4e032b6acce5c9c56e57c2702e4c87601936d5c66c5760444ffbf9b2</code>.
+Its result is
+<code>/private/tmp/md-ledger-peer-geometric-cocycle-check-results.json</code>,
+SHA256
+<code>0c3f41dc22046c34756398df61c8250b42deca10b2eb932f74904c30ed506ae5</code>.
+These checks establish matrix identities only; the actual path and
+homology arguments were read separately.</p>
+<p>The product potential
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>E</mi><mo>+</mo><mi>R</mi><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mi>E</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">P=(E+R)/(E-1)</annotation></semantics></math>
+cancels every unturned product correction. A turn contributes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>2</mn><mi>i</mi><mrow><mi mathvariant="normal">cot</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>π</mi><mi>b</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">-2i\cot(\pi b)</annotation></semantics></math>,
+and the closed root cancels the two remaining boundary potentials. A
+pure turned leaf has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi><mo>=</mo><mn>2</mn><mi>i</mi><mrow><mi mathvariant="normal">cot</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>π</mi><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">I=2i\cot(\pi x)</annotation></semantics></math>,
+while an odd leaf has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi><mo>=</mo><mn>2</mn><mi>i</mi><mrow><mi mathvariant="normal">cot</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>π</mi><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">I=2i\cot(\pi x)-\epsilon</annotation></semantics></math>.
+Thus the covariant labels give precisely the physical-turn-edge sum,
+without an artificial contribution from a binary product resolution.</p>
+<h2 id="actual-words-and-preferred-framing">3. Actual words and
+preferred framing</h2>
+<p>The original
+<code>notes/actual_conway_general_mask_marked_filling.md</code>, Section
+6, explicitly identifies
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>A</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msub><mi>W</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">A^{-1}W_0</annotation></semantics></math>
+with physical
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>R</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">R^{-1}</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>W</mi><mn>0</mn><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mi>B</mi></mrow><annotation encoding="application/x-tex">W_0^{-1}B</annotation></semantics></math>
+with physical
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>.
+It fixes those signs by the actual threading calculation, independently
+of the new longitude proof.</p>
+<p>The old edge words therefore give the rows of (32) as identities of
+paths. Abelianizing the positive row gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msub><mi>t</mi><mn>0</mn></msub><msub><mi>t</mi><mn>1</mn></msub><msub><mi>μ</mi><mi>K</mi></msub><mo>+</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>t</mi><mn>0</mn></msub><mo>−</mo><msub><mi>t</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><msub><mi>μ</mi><mrow><mi mathvariant="normal">a</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">x</mi></mrow></msub><mo>;</mo></mrow><annotation encoding="application/x-tex">
+ -t_0t_1\mu_K+(t_0-t_1)\mu_{\mathrm{aux}};
+</annotation></semantics></math> the negative row gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mn>0</mn></msub><msub><mi>t</mi><mn>1</mn></msub><msub><mi>μ</mi><mi>K</mi></msub><mo>+</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>t</mi><mn>0</mn></msub><mo>−</mo><msub><mi>t</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><msub><mi>μ</mi><mrow><mi mathvariant="normal">a</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">x</mi></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ t_0t_1\mu_K+(t_0-t_1)\mu_{\mathrm{aux}}.
+</annotation></semantics></math> Undoing the actual turn sends parallel
+positive-braid strands to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mn>0</mn></msub><mo>=</mo><mi>−</mi><msub><mi>t</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">t_0=-t_1</annotation></semantics></math>;
+consequently these main-meridian coefficients are exactly the actual
+oriented writhe contributions. The pure row has no main-meridian
+coefficient. Since all outside strips are crossing free, the total path
+has self-framing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>w</mi><mi>ϵ</mi></msub><annotation encoding="application/x-tex">w_\epsilon</annotation></semantics></math>.
+Its underlying component follows every actual main segment once, so it
+is a single longitude traversal, rather than an unspecified multiple.
+Subtracting
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mi>ϵ</mi></msub><msub><mi>μ</mi><mi>K</mi></msub></mrow><annotation encoding="application/x-tex">w_\epsilon\mu_K</annotation></semantics></math>
+therefore gives the preferred augmented main longitude.</p>
+<p>For the disjoint original crossing-circle disks,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><msub><mi>λ</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">]</mo><mo>=</mo><msub><mi>ℓ</mi><mi>i</mi></msub><mo stretchy="false" form="prefix">[</mo><msub><mi>μ</mi><mi>K</mi></msub><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[\lambda_i]=\ell_i[\mu_K]</annotation></semantics></math>.
+The primitive filling kills
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>μ</mi><mi>i</mi></msub><mo>+</mo><msub><mi>p</mi><mi>i</mi></msub><msub><mi>λ</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\mu_i+p_i\lambda_i</annotation></semantics></math>,
+whence the image of the augmented main longitude has homology
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msub><mo>∑</mo><mi>i</mi></msub><msub><mi>p</mi><mi>i</mi></msub><msubsup><mi>ℓ</mi><mi>i</mi><mn>2</mn></msubsup><msub><mi>μ</mi><mi>K</mi></msub></mrow><annotation encoding="application/x-tex">-\sum_i p_i\ell_i^2\mu_K</annotation></semantics></math>.
+Adding
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mi>i</mi></msub><msub><mi>p</mi><mi>i</mi></msub><msubsup><mi>ℓ</mi><mi>i</mi><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">\sum_i p_i\ell_i^2</annotation></semantics></math>
+main meridians is therefore the correct preferred-longitude correction,
+with the positive sign in (40). This uses the actual auxiliary slope
+convention and leaves the main cusp unfilled.</p>
+<h2 id="agreement-with-the-independently-calculated-quantum-scalar">4.
+Agreement with the independently calculated quantum scalar</h2>
+<p>The geometric proof gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>=</mo><mn>2</mn><mi>i</mi><munder><mo>∑</mo><mi>e</mi></munder><mrow><mi mathvariant="normal">cot</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>π</mi><msubsup><mi>x</mi><mi>e</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">l</mi></mrow></msubsup><mo stretchy="false" form="postfix">)</mo><mo>−</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>ϵ</mi><mi>i</mi></msub><mo>−</mo><msub><mi>w</mi><mi>ϵ</mi></msub><mo>+</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>p</mi><mi>i</mi></msub><msubsup><mi>ℓ</mi><mi>i</mi><mn>2</mn></msubsup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \tau_{\mathrm{main}}
+ =2i\sum_e\cot(\pi x_e^{\mathrm{fill}})
+       -\sum_i\epsilon_i-w_\epsilon+\sum_i p_i\ell_i^2.
+</annotation></semantics></math> Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>ℓ</mi><mi>i</mi><mn>2</mn></msubsup><mo>=</mo><mn>2</mn><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><msub><mi>o</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\ell_i^2=2(1+o_i)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mi>ϵ</mi></msub><mo>=</mo><msub><mo>∑</mo><mi>i</mi></msub><msub><mi>o</mi><mi>i</mi></msub><msub><mi>ϵ</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">w_\epsilon=\sum_i o_i\epsilon_i</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mi>i</mi></msub><mo>=</mo><msub><mi>ϵ</mi><mi>i</mi></msub><mo>−</mo><mn>2</mn><msub><mi>p</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">n_i=\epsilon_i-2p_i</annotation></semantics></math>,
+its integer equals
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msub><mi>w</mi><mi mathvariant="bold-italic">𝒏</mi></msub><mo>−</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>n</mi><mi>i</mi></msub><mo>=</mo><mi>−</mi><mn>2</mn><munder><mo>∑</mo><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi></mrow></munder><msub><mi>n</mi><mi>i</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ -w_{\mathbf{n}}-\sum_i n_i=-2\sum_{\mathrm{parallel}}n_i.
+</annotation></semantics></math> This is exactly the scalar exponent in
+the separate quantum ledger. Neither proof uses the conclusion of the
+other. The geometric result itself requires only the actual strict
+marked geometry and filling branch, not the narrower analytic
+component-path condition needed for the currently established
+moving-meridian packet.</p>
+<p>No correction is required. The correspondence identifies the first
+scalar-plus-edge correction in the proved microscopic profile with the
+actual preferred cusp shape for its covered class. It does not identify
+a classical factor of a quantum annihilator.</p>

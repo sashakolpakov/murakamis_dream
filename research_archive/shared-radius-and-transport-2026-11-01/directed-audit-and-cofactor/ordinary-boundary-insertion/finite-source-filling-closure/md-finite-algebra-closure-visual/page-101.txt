@@ -1,0 +1,46 @@
+15. Proof inputs and reproduction
+88
+The diagram must satisfy the particular theorem’s packing or certificate hypothesis, and
+its strand connections must give one knot. Each tuple p is fixed inside the limit. In the
+protected-sum theorem the number of pieces is also fixed before T is chosen. The assertion
+does not supply one threshold for every diagram or allow the diagram or filling integers to
+vary with N.
+The dependency map in repro/manuscript_logic.json records the interfaces used by
+Appendices N–R. Each full-volume conclusion must name its exact invariant, nonzero con-
+tribution, full remainder bound, specified completed metric, absolute action-volume identity,
+and final rate-transfer argument. The general unchanged-sphere route retains its unresolved
+remainder requirement. It is separate from the completed weak-balance, protected-sum and
+ordinary-boundary routes.
+The following command checks that the recorded premises have the right roles, retain their
+assumptions and level scope, refer to existing statements, and contain no circular dependency:
+python3 repro/check_manuscript_logic.py \
+--output repro/results/manuscript-logic
+It also deliberately introduces nine defects and checks that each is rejected. These include
+removing the remainder premise, replacing it by the central contribution, importing an open
+estimate, and using an odd-level estimate in an all-level conclusion. The map is supplied by
+the author; its consistency is not a proof of the mathematics at its vertices. The recorded
+source hashes identify the texts used by the check. Internal analytic and geometric lemmas
+still require their written proofs.
+For ordinary-boundary insertion, the map additionally records the conditional disk minimum
+and the small-boundary certificate hypothesis. The scalar comparison in Appendix R has
+a Lean proof. It distinguishes a wholly central inserted block from a block with a central
+attaching label but noncentral terms elsewhere. The duplicated target is twice the boundary
+logarithm in the doubled Lean normalization; it is not twice the removed triangle potential.
+The conditional packing and the existence of the shared witnesses remain separate written
+inputs to those declarations.
+15.3
+Finite steps checked in Lean
+The directory formal/ contains a small formalization using Lean’s standard library. It checks
+the exact even- and odd-level degree cutoffs, polynomial divided differences without division
+at a spectral root, the double-root Hermite identity after clearing denominators, and the finite
+tensor-product subtraction used when node values vanish. The formalization also constructs
+synthetic division on coefficient lists and the remainder modulo a split monic polynomial
+p(X) = Q
+i(X −ri). It proves the reconstruction identity coefficient by coefficient, the degree
+bound on the remainder, and the formula for its top coefficient as an iterated divided difference.
+Repeated nodes are allowed; no inverse of ri −rj is introduced. The constructed remainder
+and functional are also proved linear over the coefficient ring. Coefficient-equivalent input lists,
+including arbitrary trailing zeros, give the same output. Adding a multiple of the constructed
+monic polynomial leaves the remainder and functional unchanged. These statements establish
+independence of the polynomial representative; they do not yet identify the functional with the
+original crossing matrix. The product module constructs multiplication of the coefficient lists

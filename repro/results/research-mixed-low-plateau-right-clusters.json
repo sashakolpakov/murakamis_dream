@@ -1,0 +1,208 @@
+{
+  "status": "passed",
+  "precision_bits": 256,
+  "outward_support_checks": 7,
+  "outward_support_margins": [
+    {
+      "name": "lower inner derivative exceeds 13/20",
+      "strict_positive_margin": "[0.007177374966653254706146836299685712355445337449564702173552617742390447290 +/- 5.38e-76]"
+    },
+    {
+      "name": "upper inner derivative is below -1/10",
+      "strict_positive_margin": "[0.009498125017586370306773172999191015408121138059787543580692991931630329172 +/- 4.28e-76]"
+    },
+    {
+      "name": "outward p derivative exceeds 1/25",
+      "strict_positive_margin": "[0.006985837040785813849598498814951685112504182988096047596292959090649745875 +/- 5.07e-76]"
+    },
+    {
+      "name": "ell(1/5) positive",
+      "strict_positive_margin": "[0.1617535655787233699013103765943626983138081713742991706476528884484628131228 +/- 5.78e-77]"
+    },
+    {
+      "name": "ell(3/10) positive",
+      "strict_positive_margin": "[0.4812118250596034474977589134243684231351843343856605196610181688401638676082 +/- 3.93e-77]"
+    },
+    {
+      "name": "ell(11/50) positive",
+      "strict_positive_margin": "[0.2428269397349560687084803692289691326994542227991370979061334367713101821169 +/- 8.24e-77]"
+    },
+    {
+      "name": "smaller ell endpoint is 21/50",
+      "strict_positive_margin": "[0.0299457128796772378751152245967777483867538421504326306381973430526195738715 +/- 4.90e-77]"
+    }
+  ],
+  "exact_mixed_reset_cases": [
+    {
+      "types": [
+        0,
+        0
+      ],
+      "right_cause": "right-first",
+      "low_debit": "261/20000",
+      "low_loss_remaining": "739/20000"
+    },
+    {
+      "types": [
+        0,
+        0
+      ],
+      "right_cause": "right-second",
+      "low_debit": "2241/200000",
+      "low_loss_remaining": "7759/200000"
+    },
+    {
+      "types": [
+        0,
+        1
+      ],
+      "right_cause": "right-first",
+      "low_debit": "1827/50000",
+      "low_loss_remaining": "673/50000"
+    },
+    {
+      "types": [
+        0,
+        1
+      ],
+      "right_cause": "right-second",
+      "low_debit": "339201/20000000",
+      "low_loss_remaining": "660799/20000000"
+    },
+    {
+      "types": [
+        1,
+        0
+      ],
+      "right_cause": "right-first",
+      "low_debit": "47241/2000000",
+      "low_loss_remaining": "52759/2000000"
+    },
+    {
+      "types": [
+        1,
+        0
+      ],
+      "right_cause": "right-second",
+      "low_debit": "6939/200000",
+      "low_loss_remaining": "3061/200000"
+    },
+    {
+      "types": [
+        1,
+        1
+      ],
+      "right_cause": "right-first",
+      "low_debit": "490599/20000000",
+      "low_loss_remaining": "509401/20000000"
+    },
+    {
+      "types": [
+        1,
+        1
+      ],
+      "right_cause": "right-second",
+      "low_debit": "35739/2000000",
+      "low_loss_remaining": "64261/2000000"
+    }
+  ],
+  "source_records": 16,
+  "region_patterns": 88572,
+  "genuinely_three_region_patterns": 82464,
+  "pattern_counts": [
+    {
+      "length": 1,
+      "region_patterns": 3
+    },
+    {
+      "length": 2,
+      "region_patterns": 9
+    },
+    {
+      "length": 3,
+      "region_patterns": 27
+    },
+    {
+      "length": 4,
+      "region_patterns": 81
+    },
+    {
+      "length": 5,
+      "region_patterns": 243
+    },
+    {
+      "length": 6,
+      "region_patterns": 729
+    },
+    {
+      "length": 7,
+      "region_patterns": 2187
+    },
+    {
+      "length": 8,
+      "region_patterns": 6561
+    },
+    {
+      "length": 9,
+      "region_patterns": 19683
+    },
+    {
+      "length": 10,
+      "region_patterns": 59049
+    }
+  ],
+  "all_selection_scope": "Selections on real blocks have modulus one; active selected PP blocks replace nonnegative debits by proved losses.",
+  "proof_sha256": "d1d3ea266d56f7dff6d684cd32dc67eca824c0684854d2e332fe5c317652753d",
+  "script_sha256": "2c99c1b6ec55fb0e78f46787e6717ae1e4f05c836f6bc1f65ca391404ac129ac",
+  "dependencies_sha256": {
+    "notes/research_mixed_full_plateau_right_clusters.md": "0bca7562ace235b95e55c65fdb9938fbb3a1451efa6dee0eba6d4b5b6d2b7d0b",
+    "experiments/check_mixed_full_plateau_right_clusters.py": "0351ab0295344938dd1c29a609d1e33e3a7637fb7a1e74e9735da8b593629feb",
+    "repro/results/research-mixed-full-plateau-right-clusters.json": "a9895612b5bafb0f60fd53124b4ac78ee5d64bc78e8932315a5f00bbf3de1366",
+    "notes/research_mixed_right_pair_raw_reduction.md": "c755467379f11869968dce5a8bb845f3365023c3e4b732fe0e364078070993a5",
+    "experiments/check_mixed_right_pair_raw_reduction.py": "1512c5739de3e8ae8780ec0d07fe85773a044899ceef82c9be5c174c67f6fda6",
+    "repro/results/research-mixed-right-pair-raw-reduction.json": "334e8806d880ea93ebcea1917fee1a701f6a3df9a5eeb72d48d42a97460de8f9",
+    "notes/research_mixed_selected_low_plateau_clusters.md": "5b0f7ec31fc758980038a9cb4bd559f2fdaa67f1468dc4a02856245ac405e364",
+    "experiments/check_mixed_selected_low_plateau_clusters.py": "30b2fd912044fa934c29d78994bffb6fb10a7a937fbad63cee9789fcf5c35ae4",
+    "repro/results/research-mixed-selected-low-plateau-clusters.json": "42940259c55155e251801668415615fa68a7303f57312da4bfddc44a83571bdd",
+    "notes/research_mixed_uniform_low_plateau_clusters.md": "75066bf34ce6978c0f236619c138a45f3343bf2fbef6ef2e4b52c8ec46ccb940",
+    "experiments/check_mixed_uniform_low_plateau_clusters.py": "b458a79e22f628f00eeebed90d39b4d00df50b89731b12662ca41fa9b43a439e",
+    "repro/results/research-mixed-uniform-low-plateau-clusters.json": "ac6eb5dd9e0da113ca897737d33babab5af11179a67593b4882a6308f0ad426b",
+    "notes/research_mixed_both_low_raw_support.md": "5f1af5b7ca141884958c4efeecd9a10e6cc69f066a866c7d43d98452c5ebeb59",
+    "experiments/certify_mixed_both_low_raw_support.py": "219050721633b024e737197df1c171971dd264f16b5d03e21cd7018d5bd677cb",
+    "repro/results/research-mixed-both-low-raw-support.json": "50d57d0d1e0acfb0c4eefda4c2e721f8565898a5b44141608222f65a38d3abcd",
+    "notes/research_mixed_real_zero_collar.md": "0a54e6e33f3c9f9edc29ce3d3bd8436e4fd0bde3ba6553c168153518de3ed3a3",
+    "experiments/certify_mixed_real_zero_collar.py": "41a6cf0f58ad6362fbfe73ea7cdd77f0904515928c5480ecfa4a015b7108621c",
+    "repro/results/research-mixed-real-zero-collar.json": "36dcb523972f279da7396d811e994aa9b553b3faab7edbec5789d22269ac217e",
+    "notes/research_mixed_real_one_small_support.md": "91fb84fe5ef55eaa96e28c14b509d030ded0b3c77eede1ce862c3320037bfb37",
+    "experiments/certify_mixed_real_one_small_support.py": "e25d61c4c0a60d988ccb3687ca2d55225a11c6bd8c9337c42221cc8f1f03a334",
+    "repro/results/research-mixed-real-one-small-support.json": "7045c652fb1592b2b1a302fc13b2563ec4118385a08ac3a30630a04bc160aa68",
+    "notes/research_mixed_oriented_height_reset.md": "62249cff6f35c34c0a9e9db957a87352143cb70c205a8d8214b2cea362777c2a",
+    "experiments/certify_mixed_oriented_height_reset.py": "3d8166a5584ebadaf111f9987321b946b02adaf6139589d3a59f41f848d1b04f",
+    "repro/results/research-mixed-oriented-height-reset.json": "93652abf94a75aeee2aac22181f3330b9d008e9da16ebb3bb7d222ea2295537d",
+    "notes/research_mixed_full_height_reset.md": "0e77dffdc469ae8341000d7e2e39ee508be58dda72159cc08e451c6f49fa7ca0",
+    "experiments/certify_mixed_full_height_reset.py": "433c9ff471aa9434ed6845e2a1a393701c35b77f3fc45490347ff739d4b88da7",
+    "repro/results/research-mixed-full-height-reset.json": "82c32e0e020bc9050b6e8340ed949dd75e3852aab85585b0c47e4ac61dbaf20c",
+    "notes/research_mixed_same_sign_height_reset.md": "0a8326e410e785a160428a92aa7ee899a5c4a2e78711af62ec524bc7ec23ddd2",
+    "experiments/certify_mixed_same_sign_height_reset.py": "a5283a3db12ace2db5f6f716e3b4b02ef315b0bc160a6f58e2a3909117584c3a",
+    "repro/results/research-mixed-same-sign-height-reset.json": "f61c961388e11d098f286f25eba0c0694822585bd761f874e2981cc5b139a31e",
+    "notes/research_mixed_selected_reset_plateau_support.md": "0336acc6adb4c208302be4b03028aa28928033162b4f6620a5b6c71afdc862da",
+    "experiments/certify_mixed_selected_reset_plateau_support.py": "8e1a6efa9cc958e655a84c85bddbdd9e7d1b92aab43bad4802631e9ec8ec0d1d",
+    "repro/results/research-mixed-selected-reset-plateau-support.json": "1e630609f370c981875a5c45bb6009c254c06178ee64b2132e8b0a309d12b2a8",
+    "notes/research_mixed_selected_plateau_support.md": "50855b32befac35481552776f1641d751acebe1aa4d7f917ec71fe60253b4f2f",
+    "experiments/certify_mixed_selected_plateau_support.py": "550b995c53263c1e4917ece80e4c39736f0e1441d8ca22fd8ab714f785627e01",
+    "repro/results/research-mixed-selected-plateau-support.json": "a57f7ff1f8a35efe10eafdcdbb947dae2b48cbfce1f817eb81dfc0cc5f5cf4a5",
+    "notes/research_mixed_coupled_outer_graph.md": "4d1c9d50acfbdfc43680fd48811e6145d9b4bf4ec753ece6498ca06d885888df",
+    "experiments/check_mixed_coupled_outer_graph.py": "03939346fb1856724d9d6ed33a9cd09cf03abdfeceef39aa684036c617d6a117",
+    "repro/results/research-mixed-coupled-outer-graph.json": "f7d57104ab1db06579efaf977efb3e308a29eb9b396d6e12fb38994fe68f784a",
+    "notes/research_mixed_conditional_torus_composition.md": "8a25a25a95bf11767c4f305317a6fab9a9c17724ae0e24a36014b5fd8ec4f693",
+    "experiments/check_mixed_conditional_torus_composition.py": "3189e37ce5f54c2bdd9c10bad66b097ba75dffbe697c28f2d56b1654499db5ab",
+    "repro/results/research-mixed-conditional-torus-composition.json": "5501cff97d66bd5ec06ec4d6871dfb3f4b626e5eba04619c277d80e38ce0e3b3",
+    "notes/research_mixed_fourier_weight_continuation.md": "0bae41d83f414eb91fd137de1242120a11408147d56ec752e466ca5ed7e7f48e",
+    "experiments/check_mixed_fourier_weight_continuation.py": "1a60987d050961832fc90a0846d0d04601906f8ab1b0adeb1b0c36eb6d53b760",
+    "repro/results/research-mixed-fourier-weight-continuation.json": "31baaa6335e12d6dfe1b0b1d335bd664f431afd43b121d53666bb4527ee5df07",
+    "notes/research_mixed_boundary_strip_bounds.md": "e288c5d0bcf77a073dbaa8bb2f27bd46ce208a56e63c8bd0e98dfdbbc8f8c6ff",
+    "experiments/check_mixed_boundary_strip_bounds.py": "e3fcd532e6eff1a8662211dc52bb75fd4daad5eb353eeaec51fcb0d671b19b51",
+    "repro/results/research-mixed-boundary-strip-bounds.json": "6200cbe5a784a33d7cbdd76f72a3d3a1856bcb580917c458fd0a2b7d20c2187d"
+  },
+  "scope": "Full original all-selection source bound on closed L/P/R boxes of the coupled contour. The open transition intervals and full outer-period theorem remain outside this result."
+}

@@ -1,0 +1,47 @@
+{
+  "source": "/private/tmp/murakamis_dream-publication/formal/VolumeLogic/MonicLinearity.lean",
+  "sha256": "75b8cebc8e8bd4cd72257cff082ffe2d74f67391f90942df59f80782f6a8db2b",
+  "theorems": [
+    "coefficient_polyScale",
+    "horner_zero_of_coefficients_zero",
+    "horner_congr",
+    "horner_polyAdd",
+    "horner_polyScale",
+    "coefficient_drop",
+    "coeffEq_drop",
+    "coefficient_synthetic",
+    "synthetic_congr",
+    "synthetic_polyAdd",
+    "synthetic_polyScale",
+    "monicRemainder_congr",
+    "monicRemainder_polyAdd",
+    "monicRemainder_polyScale",
+    "newtonFunctional_congr",
+    "newtonFunctional_polyAdd",
+    "newtonFunctional_polyScale",
+    "monicRemainder_add_multiple",
+    "newtonFunctional_quotient_invariant",
+    "monicRemainder_quotient_invariant",
+    "coefficient_replicate_zero",
+    "coeffEq_append_zeros",
+    "monicRemainder_append_zeros",
+    "newtonFunctional_append_zeros"
+  ],
+  "new_definition": "VolumeLogic.polyScale",
+  "scope": "Arbitrary commutative ring; repeated roots and empty root lists; constructed remainder/functional linearity and quotient invariance. No Chebyshev or crossing identification.",
+  "validation": {
+    "toolchain": "leanprover/lean4:v4.32.2",
+    "build": "lake build VolumeLogic: passed, no warnings",
+    "axiom_audit": "All 24 theorems inspected with #print axioms; only propext, Classical.choice, Quot.sound, or no axioms. No sorryAx.",
+    "audit_source": "/private/tmp/md-monic-linearity-axiom-audit.lean"
+  },
+  "changed_repository_files": {
+    "formal/VolumeLogic/MonicLinearity.lean": "75b8cebc8e8bd4cd72257cff082ffe2d74f67391f90942df59f80782f6a8db2b",
+    "formal/VolumeLogic.lean": "09415df9316112fad7aac62b45342b3730ee5ec66487b5cc15abbce4aecec49d"
+  },
+  "limits": [
+    "No abstract quotient-ring type or LinearMap structure is introduced (Std only).",
+    "No permutation invariance of the root list is proved here.",
+    "No Chebyshev root factorization, crossing polynomial identification, or analytic filling statement is added."
+  ]
+}

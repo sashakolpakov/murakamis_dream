@@ -29,7 +29,7 @@ The optional `--topology` additionally uses the installed Regina package
 to replay and verify every move. In this workspace the complete rerun is:
 
 ```sh
-PYTHONPATH=.venv/lib/python3.14/site-packages python3 experiments/audit_positive_alias_volume_counterexample.py --topology
+PYTHONPATH=/Users/sasha/volume-conjecture/.venv/lib/python3.14/site-packages python3 experiments/audit_positive_alias_volume_counterexample.py --topology
 ```
 
 ## 1. The actual triangulation

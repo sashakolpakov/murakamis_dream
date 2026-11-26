@@ -1,0 +1,705 @@
+<h1
+id="the-global-longitude-word-and-the-remaining-decorated-seam-calculation">The
+global longitude word and the remaining decorated seam calculation</h1>
+<p>Private derivation, 1 November 2026. This report concerns the
+original ordered all-circle tree, not a comparison diagram. Its local
+inputs are the actual white/shaded chart in
+/private/tmp/md-nonparabolic-two-octahedron-pure-adapter.md and the
+matched punctures in Section 7 of
+/private/tmp/md-all-circle-edge-four-punctured-character-adapter.md.</p>
+<p>Sections 1–6 isolate the original framing reduction and the missing
+decorated seam calculation. Sections 7–9 then give the actual odd path
+operator and the explicit pure switch used for a squared chain identity.
+A local four-segment commutator is not multiplied over the edges without
+checking both main routes at every attachment.</p>
+<h2 id="the-topological-peripheral-correction-is-already-fixed">1. The
+topological peripheral correction is already fixed</h2>
+<p>Keep the prescribed main orientation and the original primitive
+crossing-circle pairs
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>μ</mi><mi>v</mi></msub><mo>,</mo><msub><mi>λ</mi><mi>v</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\mu_v,\lambda_v)</annotation></semantics></math>.
+Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ϵ</mi><mi>v</mi></msub><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mi>±</mi><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\epsilon_v\in\{0,\pm1\}</annotation></semantics></math>
+be the retained half twist, let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>p</mi><mi>v</mi></msub><annotation encoding="application/x-tex">p_v</annotation></semantics></math>
+be the filling integer, and put
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mi>v</mi></msub><mo>=</mo><msub><mi>ϵ</mi><mi>v</mi></msub><mo>−</mo><mn>2</mn><msub><mi>p</mi><mi>v</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ n_v=\epsilon_v-2p_v.
+ \tag{1}
+</annotation></semantics></math> Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">h</mi></mrow></msub><annotation encoding="application/x-tex">L_{\mathrm{path}}</annotation></semantics></math>
+be the original peripheral push-off defined by the pure and odd routes
+in Sections 5–6 of the preferred-cusp proof. It follows the main knot
+once. Its exact topological framing is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><msub><mi>L</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">h</mi></mrow></msub><mo stretchy="false" form="postfix">]</mo><mo>=</mo><msub><mi>w</mi><mi>ϵ</mi></msub><mo stretchy="false" form="prefix">[</mo><msub><mi>μ</mi><mi>K</mi></msub><mo stretchy="false" form="postfix">]</mo><mo>+</mo><munder><mo>∑</mo><mi>v</mi></munder><msub><mi>ℓ</mi><mi>v</mi></msub><mo stretchy="false" form="prefix">[</mo><msub><mi>μ</mi><mi>v</mi></msub><mo stretchy="false" form="postfix">]</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>λ</mi><mi>K</mi></msub><mo>=</mo><msub><mi>L</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">h</mi></mrow></msub><msubsup><mi>μ</mi><mi>K</mi><mrow><mi>−</mi><msub><mi>w</mi><mi>ϵ</mi></msub></mrow></msubsup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ [L_{\mathrm{path}}]
+ =w_\epsilon[\mu_K]+\sum_v\ell_v[\mu_v],
+ \qquad
+ \lambda_K=L_{\mathrm{path}}\mu_K^{-w_\epsilon}.
+ \tag{2}
+</annotation></semantics></math> Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>ℓ</mi><mi>v</mi></msub><annotation encoding="application/x-tex">\ell_v</annotation></semantics></math>
+is the oriented intersection with the original crossing disk. These
+identities were proved using the original threading words and the two
+endpoint orientations. They are not consequences of parabolicity or of
+an additive cusp calculation. The equality in the second formula is an
+equality of boundary curve classes: both curves traverse the knot once,
+and the main meridian has primitive nonzero ambient homology, so their
+difference is exactly the stated meridian power.</p>
+<p>The crossing circles are pairwise unlinked. The original integral
+fillings give
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>λ</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>=</mo><msub><mi>λ</mi><mi>K</mi></msub><msubsup><mi>μ</mi><mi>K</mi><mrow><munder><mo>∑</mo><mi>v</mi></munder><msub><mi>p</mi><mi>v</mi></msub><msubsup><mi>ℓ</mi><mi>v</mi><mn>2</mn></msubsup></mrow></msubsup><mo>=</mo><msub><mi>L</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">h</mi></mrow></msub><msubsup><mi>μ</mi><mi>K</mi><mrow><mi>−</mi><msub><mi>w</mi><mi>ϵ</mi></msub><mo>+</mo><munder><mo>∑</mo><mi>v</mi></munder><msub><mi>p</mi><mi>v</mi></msub><msubsup><mi>ℓ</mi><mi>v</mi><mn>2</mn></msubsup></mrow></msubsup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \lambda_{\mathrm{fill}}
+ =\lambda_K\mu_K^{\sum_vp_v\ell_v^2}
+ =L_{\mathrm{path}}\mu_K^{-w_\epsilon+\sum_vp_v\ell_v^2}.
+ \tag{3}
+</annotation></semantics></math> This is a fixed main-boundary word
+before imposing a representation. At a smooth filled endpoint it is the
+preferred zero-linking longitude. It remains the same word on a nearby
+nonparabolic representation of that filled group.</p>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>o</mi><mi>v</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">o_v=1</annotation></semantics></math>
+for parallel strands in the original unturned braid box and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>o</mi><mi>v</mi></msub><mo>=</mo><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">o_v=-1</annotation></semantics></math>
+for antiparallel strands. The literal crossing convention gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>ℓ</mi><mi>v</mi><mn>2</mn></msubsup><mo>=</mo><mn>2</mn><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><msub><mi>o</mi><mi>v</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>w</mi><mi>ϵ</mi></msub><mo>=</mo><munder><mo>∑</mo><mi>v</mi></munder><msub><mi>o</mi><mi>v</mi></msub><msub><mi>ϵ</mi><mi>v</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>w</mi><mi mathvariant="bold-italic">𝒏</mi></msub><mo>=</mo><munder><mo>∑</mo><mi>v</mi></munder><msub><mi>o</mi><mi>v</mi></msub><msub><mi>n</mi><mi>v</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \ell_v^2=2(1+o_v),\qquad
+ w_\epsilon=\sum_vo_v\epsilon_v,\qquad
+ w_{\mathbf n}=\sum_vo_vn_v.
+ \tag{4}
+</annotation></semantics></math> Consequently
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><munder><mo>∑</mo><mi>v</mi></munder><msub><mi>ϵ</mi><mi>v</mi></msub><mo>−</mo><msub><mi>w</mi><mi>ϵ</mi></msub><mo>+</mo><munder><mo>∑</mo><mi>v</mi></munder><msub><mi>p</mi><mi>v</mi></msub><msubsup><mi>ℓ</mi><mi>v</mi><mn>2</mn></msubsup><mo>=</mo><mi>−</mi><munder><mo>∑</mo><mi>v</mi></munder><msub><mi>n</mi><mi>v</mi></msub><mo>−</mo><msub><mi>w</mi><mi mathvariant="bold-italic">𝒏</mi></msub><mo>=</mo><mi>a</mi><mo stretchy="false" form="prefix">(</mo><mi>D</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ -\sum_v\epsilon_v-w_\epsilon+\sum_vp_v\ell_v^2
+ =-\sum_vn_v-w_{\mathbf n}=a(D).
+ \tag{5}
+</annotation></semantics></math> All these equalities are representation
+independent. The actual half-turns in the root exposure move the entire
+marked curves and therefore do not change (2)–(5).</p>
+<p>On the source flag the positive main meridian has eigenvalue
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>M</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">M^{-1}</annotation></semantics></math>.
+Define a longitude coordinate as the inverse of its eigenvalue on this
+flag. Multiplication of a longitude word by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>μ</mi><mi>K</mi><mi>k</mi></msubsup><annotation encoding="application/x-tex">\mu_K^k</annotation></semantics></math>
+therefore multiplies its coordinate by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>M</mi><mi>k</mi></msup><annotation encoding="application/x-tex">M^k</annotation></semantics></math>.
+If the marked path calculation supplies
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">h</mi><mo mathvariant="normal">,</mo><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi></mrow></msub><mo>=</mo><mi>−</mi><msup><mi>M</mi><mrow><mi>−</mi><munder><mo>∑</mo><mi>v</mi></munder><msub><mi>ϵ</mi><mi>v</mi></msub></mrow></msup><munder><mo>∏</mo><mi>e</mi></munder><mfrac><mrow><msup><mi>M</mi><mn>2</mn></msup><mo>−</mo><msub><mi>X</mi><mi>e</mi></msub></mrow><mrow><mn>1</mn><mo>−</mo><msup><mi>M</mi><mn>2</mn></msup><msub><mi>X</mi><mi>e</mi></msub></mrow></mfrac><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ L_{\mathrm{path,eff}}
+ =-M^{-\sum_v\epsilon_v}
+       \prod_e\frac{M^2-X_e}{1-M^2X_e},
+ \tag{6}
+</annotation></semantics></math> then (3)–(5), without any further
+analytic argument, give
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">l</mi><mo mathvariant="normal">,</mo><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi></mrow></msub><mo>=</mo><mi>−</mi><msup><mi>M</mi><mrow><mi>a</mi><mo stretchy="false" form="prefix">(</mo><mi>D</mi><mo stretchy="false" form="postfix">)</mo></mrow></msup><munder><mo>∏</mo><mi>e</mi></munder><mfrac><mrow><msup><mi>M</mi><mn>2</mn></msup><mo>−</mo><msub><mi>X</mi><mi>e</mi></msub></mrow><mrow><mn>1</mn><mo>−</mo><msup><mi>M</mi><mn>2</mn></msup><msub><mi>X</mi><mi>e</mi></msub></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ L_{\mathrm{fill,eff}}
+ =-M^{a(D)}\prod_e\frac{M^2-X_e}{1-M^2X_e}.
+ \tag{7}
+</annotation></semantics></math> Thus the exact missing task is (6),
+with the actual source flag, rather than a new framing or surgery
+calculation.</p>
+<h2 id="the-native-pure-block-and-its-four-actual-routes">2. The native
+pure block and its four actual routes</h2>
+<p>Write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mi>j</mi></msub><mo>=</mo><msubsup><mi>W</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><msub><mi>W</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">N_j=W_{j-1}^{-1}W_j</annotation></semantics></math>,
+with corners
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>,</mo><mi>∞</mi><mo>,</mo><mn>1</mn><mo>,</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">0,\infty,1,R</annotation></semantics></math>.
+The determinant-one punctures of the matched pure block are
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>g</mi></msub><mo>=</mo><msup><mi>M</mi><mrow><mi>−</mi><mn>3</mn></mrow></msup><msub><mi>N</mi><mn>3</mn></msub><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>B</mi><mi>g</mi></msub><mo>=</mo><mi>M</mi><msub><mi>N</mi><mn>0</mn></msub><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>C</mi><mi>g</mi></msub><mo>=</mo><mi>M</mi><msub><mi>N</mi><mn>1</mn></msub><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>D</mi><mi>g</mi></msub><mo>=</mo><mi>M</mi><msub><mi>N</mi><mn>2</mn></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ A_g=M^{-3}N_3,\quad B_g=MN_0,\quad
+ C_g=MN_1,\quad D_g=MN_2.
+ \tag{8}
+</annotation></semantics></math> The actual shaded paths satisfy
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msub><mi>S</mi><mi>v</mi></msub><msub><mi>C</mi><mi>g</mi></msub><msubsup><mi>S</mi><mi>v</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><msubsup><mi>B</mi><mi>g</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mo>,</mo></mtd><mtd columnalign="right" style="text-align: right; padding-right: 0"><msub><mi>S</mi><mi>v</mi></msub><msub><mi>D</mi><mi>g</mi></msub><msubsup><mi>S</mi><mi>v</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><msubsup><mi>A</mi><mi>g</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msub><mi>S</mi><mi>w</mi></msub><msub><mi>A</mi><mi>g</mi></msub><msubsup><mi>S</mi><mi>w</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><msubsup><mi>B</mi><mi>g</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mo>,</mo></mtd><mtd columnalign="right" style="text-align: right; padding-right: 0"><msub><mi>S</mi><mi>w</mi></msub><msub><mi>D</mi><mi>g</mi></msub><msubsup><mi>S</mi><mi>w</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><msubsup><mi>C</mi><mi>g</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+ \begin{aligned}
+ S_vC_gS_v^{-1}&amp;=B_g^{-1},&amp;
+ S_vD_gS_v^{-1}&amp;=A_g^{-1},\\
+ S_wA_gS_w^{-1}&amp;=B_g^{-1},&amp;
+ S_wD_gS_w^{-1}&amp;=C_g^{-1}.
+ \end{aligned}
+ \tag{9}
+</annotation></semantics></math> The four-segment traversal
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>∞</mi><mo>→</mo><mn>0</mn><mo>→</mo><mi>R</mi><mo>→</mo><mn>1</mn><mo>→</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">
+ \infty\longrightarrow0\longrightarrow R
+       \longrightarrow1\longrightarrow\infty
+ \tag{10}
+</annotation></semantics></math> uses
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>v</mi></msub><mo>,</mo><msubsup><mi>S</mi><mi>w</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mo>,</mo><msubsup><mi>S</mi><mi>v</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mo>,</mo><msub><mi>S</mi><mi>w</mi></msub></mrow><annotation encoding="application/x-tex">S_v,S_w^{-1},S_v^{-1},S_w</annotation></semantics></math>,
+respectively. Its based matrix is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Λ</mi><mi>∞</mi></msub><mo>=</mo><msub><mi>S</mi><mi>w</mi></msub><msubsup><mi>S</mi><mi>v</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><msubsup><mi>S</mi><mi>w</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><msub><mi>S</mi><mi>v</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \Lambda_\infty=S_wS_v^{-1}S_w^{-1}S_v.
+ \tag{11}
+</annotation></semantics></math> The positive oriented meridians
+transported along (10) are, in order,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>g</mi></msub><mo>,</mo><mspace width="1.0em"></mspace><msubsup><mi>B</mi><mi>g</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>A</mi><mi>g</mi></msub><mo>,</mo><mspace width="1.0em"></mspace><msubsup><mi>D</mi><mi>g</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ C_g,\quad B_g^{-1},\quad A_g,\quad D_g^{-1}.
+ \tag{12}
+</annotation></semantics></math> Each has eigenvalue
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>M</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">M^{-1}</annotation></semantics></math>
+at its indicated geometric corner. This point is important: the native
+puncture matrices themselves do not all have eigenvalue
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>M</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">M^{-1}</annotation></semantics></math>
+at the drawn corners.</p>
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>e</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msup><mi>M</mi><mn>2</mn></msup><mo>−</mo><msub><mi>X</mi><mi>e</mi></msub><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>M</mi><mn>2</mn></msup><msub><mi>X</mi><mi>e</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f_e=(M^2-X_e)/(1-M^2X_e)</annotation></semantics></math>,
+the direct local calculation gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Λ</mi><mi>∞</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><msubsup><mi>f</mi><mi>e</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup></mtd><mtd columnalign="center" style="text-align: center"><mi>*</mi></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><msub><mi>f</mi><mi>e</mi></msub></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \Lambda_\infty=
+ \begin{pmatrix}-f_e^{-1}&amp;*\\0&amp;-f_e\end{pmatrix}.
+ \tag{13}
+</annotation></semantics></math> Its source flag is infinity and its
+local inverse-eigenvalue longitude is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msub><mi>f</mi><mi>e</mi></msub></mrow><annotation encoding="application/x-tex">-f_e</annotation></semantics></math>.
+The projective derivative at that flag is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>f</mi><mi>e</mi><mn>2</mn></msubsup><annotation encoding="application/x-tex">f_e^2</annotation></semantics></math>.</p>
+<p>The matched character construction uses
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>=</mo><msubsup><mi>S</mi><mi>v</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup></mrow><annotation encoding="application/x-tex">V=S_v^{-1}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>=</mo><msubsup><mi>S</mi><mi>w</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup></mrow><annotation encoding="application/x-tex">T=S_w^{-1}</annotation></semantics></math>,
+not
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>=</mo><msub><mi>S</mi><mi>v</mi></msub><mo>,</mo><mi>T</mi><mo>=</mo><msub><mi>S</mi><mi>w</mi></msub></mrow><annotation encoding="application/x-tex">V=S_v,T=S_w</annotation></semantics></math>.
+The transport
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>S</mi><mi>w</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><msub><mi>S</mi><mi>v</mi></msub></mrow><annotation encoding="application/x-tex">S_w^{-1}S_v</annotation></semantics></math>
+carries the infinity basepoint and its marked meridian to the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+basepoint. This conjugates (11) to the corresponding character
+commutator and preserves its selected eigenvalue. No independent change
+of flag is allowed in making that comparison.</p>
+<h2 id="what-the-literal-terminal-insertion-does-to-the-main-routes">3.
+What the literal terminal insertion does to the main routes</h2>
+<p>For a right insertion, the original endpoint rule is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>v</mi><mn>1</mn></msub><mo>−</mo><msub><mi>x</mi><mn>1</mn></msub></mtd><mtd columnalign="center" style="text-align: center"><msub><mi>v</mi><mn>1</mn></msub><mo>−</mo><msub><mi>w</mi><mn>1</mn></msub><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>w</mi><mn>2</mn></msub><mo>−</mo><msub><mi>x</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>v</mi><mn>2</mn></msub><mo>−</mo><msub><mi>x</mi><mn>2</mn></msub></mtd><mtd columnalign="center" style="text-align: center"><msub><mi>v</mi><mn>2</mn></msub><mo>−</mo><msub><mi>w</mi><mn>0</mn></msub><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>w</mi><mn>3</mn></msub><mo>−</mo><msub><mi>x</mi><mn>2</mn></msub><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+ \begin{array}{c|c}
+ v_1-x_1&amp;v_1-w_1,\quad w_2-x_1\\
+ v_2-x_2&amp;v_2-w_0,\quad w_3-x_2.
+ \end{array}
+ \tag{14}
+</annotation></semantics></math> The pure terminal tangle has pairings
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mn>0</mn></msub><mo>−</mo><msub><mi>w</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">w_0-w_1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mn>2</mn></msub><mo>−</mo><msub><mi>w</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">w_2-w_3</annotation></semantics></math>.
+Suppressing its bivalent internal points, (14) therefore replaces the
+two old connections by
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mn>1</mn></msub><mo>−</mo><msub><mi>v</mi><mn>2</mn></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>x</mi><mn>1</mn></msub><mo>−</mo><msub><mi>x</mi><mn>2</mn></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ v_1-v_2,\qquad x_1-x_2.
+ \tag{15}
+</annotation></semantics></math> This is a reconnection of the two
+strands; it is not the insertion of independent scalar factors into
+their old individual routes. In particular the two modified portions can
+lie on the same main component or on different main components.</p>
+<p>The left insertion is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>v</mi><mn>3</mn></msub><mo>−</mo><msub><mi>x</mi><mn>3</mn></msub></mtd><mtd columnalign="center" style="text-align: center"><msub><mi>v</mi><mn>3</mn></msub><mo>−</mo><msub><mi>w</mi><mn>3</mn></msub><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>w</mi><mn>0</mn></msub><mo>−</mo><msub><mi>x</mi><mn>3</mn></msub></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>v</mi><mn>0</mn></msub><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub></mtd><mtd columnalign="center" style="text-align: center"><msub><mi>v</mi><mn>0</mn></msub><mo>−</mo><msub><mi>w</mi><mn>2</mn></msub><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>w</mi><mn>1</mn></msub><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+ \begin{array}{c|c}
+ v_3-x_3&amp;v_3-w_3,\quad w_0-x_3\\
+ v_0-x_0&amp;v_0-w_2,\quad w_1-x_0.
+ \end{array}
+ \tag{16}
+</annotation></semantics></math> It is the same reconnection on the
+other original disk face. The physical quarter-turn, an inverse turn, or
+the root half-turn carries this entire ordered substitution. None can be
+replaced by a scalar identity.</p>
+<p>An exact global proof of the product in (6) must consequently use the
+tensor product of the two transported main lines at this face. It cannot
+choose one of the two modified routes and treat the other as an
+unchanged spectator.</p>
+<p>There is also a useful exact parity consequence. A reconnection of
+two edges in a disjoint union of cycles changes the number of cycles by
+one modulo two: it either splits one cycle or merges two. The pure
+one-edge closed block has one main cycle. Inducting with (14) or (16)
+gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>≡</mo><mo stretchy="false" form="prefix">|</mo><mi>E</mi><mo stretchy="false" form="prefix">|</mo><mrow><mspace width="0.222em"></mspace><mo stretchy="false" form="prefix">(</mo><mrow><mi mathvariant="normal">mod</mi><mo>&#8289;</mo></mrow><mspace width="0.222em"></mspace><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><mspace width="1.0em"></mspace><mtext mathvariant="normal">for the pure tree</mtext><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ c_{\mathrm{main}}\equiv |E|\pmod{2}
+ \quad\text{for the pure tree}.
+ \tag{17}
+</annotation></semantics></math> Replacing a pure circle seam by either
+retained odd seam switches its two strand pairings and toggles this
+parity. Hence in general
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>≡</mo><mo stretchy="false" form="prefix">|</mo><mi>E</mi><mo stretchy="false" form="prefix">|</mo><mi>+</mi><mi>#</mi><mo stretchy="false" form="prefix">{</mo><mi>v</mi><mo>:</mo><msub><mi>ϵ</mi><mi>v</mi></msub><mo>≠</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo><mrow><mspace width="0.222em"></mspace><mo stretchy="false" form="prefix">(</mo><mrow><mi mathvariant="normal">mod</mi><mo>&#8289;</mo></mrow><mspace width="0.222em"></mspace><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ c_{\mathrm{main}}\equiv |E|+
+             \#\{v:\epsilon_v\ne0\}\pmod{2}.
+ \tag{18}
+</annotation></semantics></math> Full twists have even parity and do not
+change it. Thus, if the exact local transport assigns one negative lift
+per edge and one per odd seam, their product has the required negative
+sign for a single main knot. Formula (18) is a topological sign count;
+it does not supply the unproved odd transport factor.</p>
+<h2 id="the-two-line-normalization-and-orientation-reversal">4. The
+two-line normalization and orientation reversal</h2>
+<p>For a projective map
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mi>z</mi><mo>+</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mi>z</mi><mo>+</mo><mi>d</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">T(z)=(az+b)/(cz+d)</annotation></semantics></math>,
+direct differentiation gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>T</mi><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><msub><mi>q</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><msup><mi>T</mi><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><msub><mi>q</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><mi>T</mi><msub><mi>q</mi><mn>1</mn></msub><mo>−</mo><mi>T</mi><msub><mi>q</mi><mn>2</mn></msub></mrow><mrow><msub><mi>q</mi><mn>1</mn></msub><mo>−</mo><msub><mi>q</mi><mn>2</mn></msub></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ T&#39;(q_1)T&#39;(q_2)
+ =\left(\frac{Tq_1-Tq_2}{q_1-q_2}\right)^2.
+ \tag{19}
+</annotation></semantics></math> The formula extends in local
+coordinates when a point is infinity. Equivalently, for a linear lift
+and two lifted flags,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>T</mi><msub><mi>v</mi><mn>1</mn></msub><mo>,</mo><mi>T</mi><msub><mi>v</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>T</mi><mo stretchy="false" form="postfix">)</mo><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>v</mi><mn>1</mn></msub><mo>,</mo><msub><mi>v</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \det(Tv_1,Tv_2)=\det(T)\det(v_1,v_2).
+ \tag{20}
+</annotation></semantics></math> These identities show precisely how the
+tensor product of the two flag lines can be normalized by their wedge. A
+seam comparison made with the same transported pair has no unrecorded
+shear in this tensor normalization.</p>
+<p>For a single oriented main segment, choose determinant-one
+eigenframes at its endpoints. If its transport has diagonal entries
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>,</mo><msup><mi>a</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">a,a^{-1}</annotation></semantics></math>,
+reversing the traversal and exchanging the selected meridian eigenline
+uses the second diagonal entry of its inverse, namely
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>.
+Thus the scalar is unchanged. With an endpoint permutation the same
+statement holds up to the fixed permutation sign; it is exact after
+squaring.</p>
+<p>This is the multiplicative counterpart of the direction-independent
+displacement convention in the parabolic longitude proof. It is not
+permission to exchange one flag while keeping its original transport
+matrix or white frame fixed. The two flags used in (19)–(20) must be the
+flags carried by the actual routes (14)–(16). With that condition,
+internal frame factors can telescope when the scalar line transports are
+multiplied in cyclic order.</p>
+<p>The remaining pure insertion calculation is to match the two-line
+normalization in (19)–(20) to the normalization used in the closed
+traversal (11) for every transported endpoint frame. Its projective
+target is that adjoining one pure edge multiplies the total squared path
+coordinate by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>f</mi><mi>e</mi><mn>2</mn></msubsup><annotation encoding="application/x-tex">f_e^2</annotation></semantics></math>.
+This is a statement about the two actual routes at the deleted triangle,
+not about arbitrary pants decompositions or local commutator values
+alone.</p>
+<h2 id="why-the-equal-eigenvalue-hurwitz-identity-is-insufficient">5.
+Why the equal-eigenvalue Hurwitz identity is insufficient</h2>
+<p>The actual native disk flags have opposite eigenvalues for its two
+raw boundary generators. To make the issue explicit, take a basis
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><msub><mi>e</mi><mn>1</mn></msub><mo>,</mo><mi>b</mi><mo>=</mo><msub><mi>e</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">a=e_1,b=e_2</annotation></semantics></math>
+and write
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mi>λ</mi></mtd><mtd columnalign="center" style="text-align: center"><mi>α</mi></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><msup><mi>λ</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mi>B</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mi>λ</mi></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>β</mi></mtd><mtd columnalign="center" style="text-align: center"><msup><mi>λ</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ A=\begin{pmatrix}\lambda&amp;\alpha\\0&amp;\lambda^{-1}\end{pmatrix},
+ \qquad
+ B=\begin{pmatrix}\lambda&amp;0\\\beta&amp;\lambda^{-1}\end{pmatrix}.
+ \tag{21}
+</annotation></semantics></math> Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>a</mi><mo>=</mo><mi>λ</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">Aa=\lambda a</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mi>b</mi><mo>=</mo><msup><mi>λ</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mi>b</mi></mrow><annotation encoding="application/x-tex">Bb=\lambda^{-1}b</annotation></semantics></math>.
+Put
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mi>λ</mi><mo>−</mo><msup><mi>λ</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>,</mo><mspace width="2.0em"></mspace><mi>D</mi><mo>=</mo><mi>α</mi><mi>β</mi><mo>+</mo><msup><mi>h</mi><mn>2</mn></msup><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>a</mi><mo>−</mo></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>α</mi><mo>,</mo><mi>h</mi><msup><mo stretchy="false" form="postfix">)</mo><mi mathvariant="sans-serif">𝖳</mi></msup><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>b</mi><mo>+</mo></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>h</mi><mo>,</mo><mi>β</mi><msup><mo stretchy="false" form="postfix">)</mo><mi mathvariant="sans-serif">𝖳</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ h=\lambda-\lambda^{-1},\qquad
+ D=\alpha\beta+h^2,\qquad
+ a_-=(-\alpha,h)^{\mathsf T},\quad
+ b_+=(h,\beta)^{\mathsf T}.
+ \tag{22}
+</annotation></semantics></math> The latter two vectors are the other
+eigenflags. Let
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mi>A</mi><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>−</mo><mi>I</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ K=(BA)^{-1}-I.
+ \tag{23}
+</annotation></semantics></math> Direct multiplication, without
+diagonalizing at the parabolic value, gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><msub><mi>a</mi><mo>−</mo></msub><mo>=</mo><mi>D</mi><msup><mi>A</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mi>b</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>K</mi><msub><mi>b</mi><mo>+</mo></msub><mo>=</mo><mi>−</mi><msup><mi>λ</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mi>D</mi><mi>a</mi><mo>,</mo><mspace width="2.0em"></mspace><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><mi>K</mi><mo>=</mo><mi>−</mi><mi>D</mi><mo>,</mo><mspace width="2.0em"></mspace><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>a</mi><mo>−</mo></msub><mo>,</mo><msub><mi>b</mi><mo>+</mo></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>−</mi><mi>D</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ Ka_-=D A^{-1}b,\qquad Kb_+=-\lambda^{-1}D a,
+ \qquad \det K=-D,\qquad
+ \det(a_-,b_+)=-D.
+ \tag{24}
+</annotation></semantics></math> For example
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mi>α</mi><mi>β</mi><mo>+</mo><msup><mi>λ</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo>−</mo><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mi>λ</mi><mi>α</mi></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mi>λ</mi><mi>β</mi></mtd><mtd columnalign="center" style="text-align: center"><msup><mi>λ</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ K=\begin{pmatrix}
+ \alpha\beta+\lambda^{-2}-1&amp;-\lambda\alpha\\
+ -\lambda\beta&amp;\lambda^2-1
+ \end{pmatrix},
+ \tag{25}
+</annotation></semantics></math> which makes (24) immediate using
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mi>h</mi><mo>=</mo><msup><mi>λ</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\lambda h=\lambda^2-1</annotation></semantics></math>.
+Thus the regular Hurwitz conjugator does send the exchanged input flags
+to the desired permuted output flags. It does not send the original pair
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a,b)</annotation></semantics></math>
+to that pair.</p>
+<p>Wedge normalization of (24) is exact, but it compares two different
+input line pairs. It does not define a scalar identification between
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>⊗</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a\otimes b</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mo>−</mo></msub><mo>⊗</mo><msub><mi>b</mi><mo>+</mo></msub></mrow><annotation encoding="application/x-tex">a_-\otimes b_+</annotation></semantics></math>.
+Such an identification must come from the actual oriented disk paths and
+their transported white frames.</p>
+<p>Consequently the valid identity for two equal raw eigenvalues cannot
+yet establish that the actual positive odd seam contributes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>M</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">M^{-1}</annotation></semantics></math>
+to the inverse-eigenvalue path coordinate, or that the negative seam
+contributes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>.
+An actual collar calculation with its flag exchange is necessary. The
+desired squared correction is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>M</mi><mrow><mi>−</mi><mn>2</mn><msub><mi>ϵ</mi><mi>v</mi></msub></mrow></msup><annotation encoding="application/x-tex">M^{-2\epsilon_v}</annotation></semantics></math>,
+with one contribution per distinguished original odd seam.</p>
+<h2 id="exact-remaining-statement">6. Exact remaining statement</h2>
+<p>The sufficient remaining local-to-global statement is:</p>
+<ol type="1">
+<li>Under each literal left/right pure terminal insertion, both
+transported main lines give the normalized squared path multiplier
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>f</mi><mi>e</mi><mn>2</mn></msubsup><annotation encoding="application/x-tex">f_e^2</annotation></semantics></math>,
+with their endpoint wedge factors cancelled in the actual seam
+charts.</li>
+<li>The actual positive and negative distinguished seams, with all white
+frames and eigenflags transported, give
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>M</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><annotation encoding="application/x-tex">M^{-2}</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>M</mi><mn>2</mn></msup><annotation encoding="application/x-tex">M^2</annotation></semantics></math>,
+respectively.</li>
+<li>Their determinant-one lifts have the local signs retained in (13)
+and in the actual collar calculation. Equation (18) then fixes the
+single global negative sign when the main strands form a knot.</li>
+</ol>
+<p>These statements would establish (6). Equations (2)–(5) then prove
+(7) with the original preferred longitude and original filling integers.
+No cusp derivative, source asymptotic, reciprocity, or equality of
+abstract character polynomials is needed in that final framing step.</p>
+<p>At this checkpoint the topological framing formulas, literal
+reconnection/parity calculation, local marked commutator, and
+linear-algebra identities above are established. The decorated insertion
+and odd-collar comparisons are the explicit outstanding word
+calculations. There is no assertion here that the general geometric
+eigenvalue identification has already been completed.</p>
+<h2 id="the-actual-odd-paths-give-the-inverse-returned-braid">7. The
+actual odd paths give the inverse returned braid</h2>
+<p>The exact peripheral paths resolve an ambiguity left by an unbased
+Hurwitz calculation. This section is an additional local result; the
+global cancellation of the resulting endpoint frames remains
+separate.</p>
+<p>Use the first row of the full boundary table in the pure-page sewing
+note, and abbreviate
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><msub><mi>B</mi><mi>g</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><mi>b</mi><mo>=</mo><msub><mi>A</mi><mi>g</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>C</mi><mn>0</mn></msub><mo>=</mo><msubsup><mi>S</mi><mi>v</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mo>,</mo><mspace width="2.0em"></mspace><mi>H</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mi>a</mi><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>−</mo><mi>I</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>δ</mi><mo>=</mo><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><mi>H</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ a=B_g,\qquad b=A_g,\qquad C_0=S_v^{-1},\qquad
+ H=(ba)^{-1}-I,\qquad \delta=\det H.
+ \tag{26}
+</annotation></semantics></math> Then
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>0</mn></msub><mi>a</mi><msubsup><mi>C</mi><mn>0</mn><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mo>=</mo><msubsup><mi>C</mi><mi>g</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>C</mi><mn>0</mn></msub><mi>b</mi><msubsup><mi>C</mi><mn>0</mn><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mo>=</mo><msubsup><mi>D</mi><mi>g</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ C_0aC_0^{-1}=C_g^{-1},\qquad
+ C_0bC_0^{-1}=D_g^{-1}.
+ \tag{27}
+</annotation></semantics></math> The actual positive auxiliary meridian
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mo>+</mo></msub><mo>=</mo><msub><mi>C</mi><mn>0</mn></msub><mi>H</mi></mrow><annotation encoding="application/x-tex">C_+=C_0H</annotation></semantics></math>.
+The original longitudinal paths, with the original white-side choices,
+are
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>02</mn></msub><mo>=</mo><msubsup><mi>C</mi><mi>g</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><msub><mi>C</mi><mo>+</mo></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>L</mi><mn>13</mn></msub><mo>=</mo><msubsup><mi>C</mi><mo>+</mo><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ L_{02}=C_g^{-1}C_+,\qquad L_{13}=C_+^{-1}.
+ \tag{28}
+</annotation></semantics></math> These are the words of the
+preferred-cusp proof, equation (32), with its
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>μ</mi><mn>1</mn></msub><mo>=</mo><msubsup><mi>C</mi><mi>g</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup></mrow><annotation encoding="application/x-tex">\mu_1=C_g^{-1}</annotation></semantics></math>.
+They are identities of the original cut paths, so they survive a change
+of the developed white charts. In particular (27) gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>02</mn></msub><mo>=</mo><msub><mi>C</mi><mn>0</mn></msub><mi>a</mi><mi>H</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                         L_{02}=C_0aH.
+ \tag{29}
+</annotation></semantics></math> Reverse the second path and exchange
+its eigenline. In determinant-normalized eigenframes this preserves its
+transport coefficient. Both paths now cross the disk collar in the
+direction of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mn>0</mn></msub><annotation encoding="application/x-tex">C_0</annotation></semantics></math>.
+Their ordered input lines are the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>M</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">M^{-1}</annotation></semantics></math>
+lines of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a,b)</annotation></semantics></math>:
+the other line of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mi>g</mi></msub><annotation encoding="application/x-tex">B_g</annotation></semantics></math>
+at the first puncture, and the displayed line of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>A</mi><mi>g</mi></msub><annotation encoding="application/x-tex">A_g</annotation></semantics></math>
+at the second. Thus the pair used here is explicitly different from the
+two native ideal flags.</p>
+<p>After returning the output frame by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>C</mi><mn>0</mn><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><annotation encoding="application/x-tex">C_0^{-1}</annotation></semantics></math>,
+and putting the outgoing strands in their prescribed order, their tensor
+transport is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">ℒ</mi><mo>+</mo></msub><mo>=</mo><msup><mi>δ</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>H</mi><mo>⊗</mo><mi>a</mi><mi>H</mi><mo stretchy="false" form="postfix">)</mo><mi mathvariant="sans-serif">𝗌</mi><mo>,</mo><mspace width="2.0em"></mspace><mi mathvariant="sans-serif">𝗌</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>⊗</mo><mi>v</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>v</mi><mo>⊗</mo><mi>u</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \mathscr L_+
+   =\delta^{-1}(H\otimes aH)\mathsf s,\qquad
+ \mathsf s(u\otimes v)=v\otimes u.
+ \tag{30}
+</annotation></semantics></math> The determinant factor is the two-line
+normalization: the simultaneous frame change
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+acts on a tensor pair by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>H</mi><mo>⊗</mo><mi>H</mi><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><mi>H</mi></mrow><annotation encoding="application/x-tex">(H\otimes H)/\det H</annotation></semantics></math>,
+not by a chosen square root. The extra
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+in the second factor is the actual extra meridian in (28).</p>
+<p>The returned braid of the separate linear-algebra calculation is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">ℬ</mi><mo>=</mo><mi>δ</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>H</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msup><mi>a</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>⊗</mo><msup><mi>H</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo><mi mathvariant="sans-serif">𝗌</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \mathscr B=
+   \delta(H^{-1}a^{-1}\otimes H^{-1})\mathsf s.
+ \tag{31}
+</annotation></semantics></math> Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="sans-serif">𝗌</mi><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo>⊗</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>Y</mi><mo>⊗</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo><mi mathvariant="sans-serif">𝗌</mi></mrow><annotation encoding="application/x-tex">\mathsf s(X\otimes Y)=(Y\otimes X)\mathsf s</annotation></semantics></math>,
+(30) is exactly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="script">ℬ</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">\mathscr B^{-1}</annotation></semantics></math>.
+On two equal eigenlines
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mi>u</mi><mo>=</mo><mi>λ</mi><mi>u</mi><mo>,</mo><mspace width="0.222em"></mspace><mi>b</mi><mi>v</mi><mo>=</mo><mi>λ</mi><mi>v</mi></mrow><annotation encoding="application/x-tex">au=\lambda u,\ bv=\lambda v</annotation></semantics></math>,
+that operator has the scalar
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">ℒ</mi><mo>+</mo></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>⊗</mo><mi>v</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>−</mi><msup><mi>λ</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mi>u</mi><mo>⊗</mo><mi>v</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \mathscr L_+(u\otimes v)
+       =-\lambda^{-1}u\otimes v.
+ \tag{32}
+</annotation></semantics></math> Taking
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><msup><mi>M</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\lambda=M^{-1}</annotation></semantics></math>,
+the inverse-eigenvalue path factor is therefore
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msup><mi>M</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">-M^{-1}</annotation></semantics></math>.
+Its square is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>M</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><annotation encoding="application/x-tex">M^{-2}</annotation></semantics></math>.
+This sign and exponent follow from the actual white-side route (28),
+rather than from a cusp derivative.</p>
+<p>The negative collar is equally explicit. Put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mo>−</mo></msub><mo>=</mo><msub><mi>C</mi><mn>0</mn></msub><msup><mi>H</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">C_-=C_0H^{-1}</annotation></semantics></math>.
+The original negative paths are
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>02</mn></msub><mo>=</mo><msub><mi>C</mi><mo>−</mo></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>L</mi><mn>13</mn></msub><mo>=</mo><mi>a</mi><msubsup><mi>C</mi><mo>−</mo><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ L_{02}=C_-,\qquad L_{13}=aC_-^{-1}.
+ \tag{33}
+</annotation></semantics></math> Reverse and dualize the second one as
+before. The ordered returned tensor is now
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">ℒ</mi><mo>−</mo></msub><mo>=</mo><mi>δ</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>H</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msup><mi>a</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>⊗</mo><msup><mi>H</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo><mi mathvariant="sans-serif">𝗌</mi><mo>=</mo><mi mathvariant="script">ℬ</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \mathscr L_-=
+   \delta(H^{-1}a^{-1}\otimes H^{-1})\mathsf s
+   =\mathscr B.
+ \tag{34}
+</annotation></semantics></math> It has scalar
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>λ</mi></mrow><annotation encoding="application/x-tex">-\lambda</annotation></semantics></math>
+on the equal pair, and consequently inverse-eigenvalue path factor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>M</mi></mrow><annotation encoding="application/x-tex">-M</annotation></semantics></math>,
+with square
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>M</mi><mn>2</mn></msup><annotation encoding="application/x-tex">M^2</annotation></semantics></math>.
+The pure returned pair is the identity. Thus both signs of the desired
+local odd correction are now fixed by actual route words.</p>
+<p>Equations (30)–(34) should not be applied to the original mixed
+native ideal pair. The preliminary reversal and dualization is part of
+the derivation. To use these local factors in (6), the same
+determinant-normalized endpoint frames must be retained and cancelled
+through the actual global peripheral circuit. That is the remaining
+chain calculation.</p>
+<h2 id="a-two-line-formulation-of-the-remaining-pure-insertion">8. A
+two-line formulation of the remaining pure insertion</h2>
+<p>Here is a precise scalar-line formulation which reduces the global
+issue to the actual boundary substitution. It also explains why merely
+multiplying matrices for closed local commutators is inadequate.</p>
+<p>For an ordered pair of puncture matrices
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a,b)</annotation></semantics></math>,
+select the same eigenvalue
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><msup><mi>M</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\lambda=M^{-1}</annotation></semantics></math>
+after coorienting the two strands. Write their eigenlines as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mi>a</mi></msub><mo>,</mo><msub><mi>L</mi><mi>b</mi></msub></mrow><annotation encoding="application/x-tex">L_a,L_b</annotation></semantics></math>.
+On the open set where their eigenvectors are independent, the tensor
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="fraktur">𝔱</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><mi>u</mi><mo>⊗</mo><mi>v</mi></mrow><mrow><mi>u</mi><mo>∧</mo><mi>v</mi></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><mi>u</mi><mo>∈</mo><msub><mi>L</mi><mi>a</mi></msub><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="0.222em"></mspace><mi>v</mi><mo>∈</mo><msub><mi>L</mi><mi>b</mi></msub><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+       \mathfrak t(a,b)=
+          \frac{u\otimes v}{u\wedge v},
+       \qquad u\in L_a\setminus\{0\},\
+              v\in L_b\setminus\{0\},
+ \tag{35}
+</annotation></semantics></math> is independent of their separate
+scales. Its denominator belongs to the determinant line of the
+two-dimensional representation space. For every simultaneous change of
+developed frame
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>G</mi><mo>⊗</mo><mi>G</mi></mrow><mrow><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><mi>G</mi></mrow></mfrac><mspace width="0.167em"></mspace><mi mathvariant="fraktur">𝔱</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi mathvariant="fraktur">𝔱</mi><mo stretchy="false" form="prefix">(</mo><mi>G</mi><mi>a</mi><msup><mi>G</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>,</mo><mi>G</mi><mi>b</mi><msup><mi>G</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \frac{G\otimes G}{\det G}\,\mathfrak t(a,b)
+       =\mathfrak t(GaG^{-1},GbG^{-1}).
+ \tag{36}
+</annotation></semantics></math> Consequently a pure ordered disk-side
+identification contributes one in these pair sections. This uses both
+puncture conjugacies, not only the auxiliary boundary multiplier.
+Exchanging their order changes the wedge sign. That sign disappears in
+the squared longitude calculation.</p>
+<p>An actual main arc can be evaluated in either direction: the inverse
+path on the other meridian eigenline has the same coefficient in
+determinant-normalized eigenframes. This permits every local disk pair
+to be cooriented before using (35). The endpoint changes have to be
+carried into the adjoining pair sections; (36) is the exact cancellation
+identity when the two adjoining sections describe the same transported
+punctures.</p>
+<p>To complete the pure induction one must establish the following
+boundary-torsor statement from the two-sided substitutions (14),(16).
+After adjoining the new edge block and closing its new terminal circle
+by its pure distinguished seam, the two original boundary routes induce
+a map of the old pair section to the new pair section. Its squared
+inverse-eigenvalue coefficient is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>f</mi><mi>e</mi><mn>2</mn></msubsup><annotation encoding="application/x-tex">f_e^2</annotation></semantics></math>.
+The ordinary pure disk-side closure of that same local map gives the
+four-segment word (11). Since the closure contributes one by (36), this
+would identify its coefficient by (13).</p>
+<p>There are two concrete checks in that statement. First, the pairs
+used before and after the insertion must be the two transported
+punctures in (14), including the dualization forced when the
+reconnection reverses a strand. Second, the local closing operation must
+be exactly the pure disk-side identification used to obtain (11), rather
+than a different choice of boundary framing. The endpoint compiler and
+full boundary tuple supply the data to make these checks. A
+dimension-one argument without those checks would only identify an
+unspecified scalar.</p>
+<p>Once that boundary-torsor statement is proved, induction on terminal
+insertions multiplies
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>f</mi><mi>e</mi><mn>2</mn></msubsup><annotation encoding="application/x-tex">f_e^2</annotation></semantics></math>
+over all edges. The endpoint sections cancel by (36), independent of
+whether an insertion joins two old peripheral cycles or splits one. At
+each distinguished odd seam the actual maps (30),(34) then supply
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>M</mi><mrow><mi>−</mi><mn>2</mn><msub><mi>ϵ</mi><mi>v</mi></msub></mrow></msup><annotation encoding="application/x-tex">M^{-2\epsilon_v}</annotation></semantics></math>.
+The topology parity (18) fixes the remaining global lift sign after the
+individual lift normalization has been checked. This is a finite chain
+calculation on the original ordered diagram; no isotropy of a character
+variety or equality of cusp derivatives is part of it.</p>
+<h2 id="the-explicit-pure-switch-and-its-squared-chain-identity">9. The
+explicit pure switch and its squared chain identity</h2>
+<p>The actual attachment labels supply the two checks specified in
+Section 8. In the octahedron attached along
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>O</mi><mi>v</mi></msub><mo>,</mo><mi>B</mi><mo>,</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(O_v,B,C)</annotation></semantics></math>
+to the old face
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>O</mi><mi>v</mi></msub><mo>,</mo><mi>C</mi><mo>,</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(O_v,C,B)</annotation></semantics></math>,
+put
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo>,</mo><mi>B</mi><mo>,</mo><mi>C</mi><mo>,</mo><mi>D</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>∞</mi><mo>,</mo><mn>1</mn><mo>,</mo><mi>R</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+       (A,B,C,D)=(0,\infty,1,R).
+ \tag{37}
+</annotation></semantics></math> The old exposed pair is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>∞</mi><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\infty,1)</annotation></semantics></math>;
+the new inner pair is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>R</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,R)</annotation></semantics></math>.
+The remaining new
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+face is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>O</mi><mi>v</mi></msub><mo>,</mo><mi>R</mi><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(O_v,R,0)</annotation></semantics></math>.
+The two new
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+faces are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>O</mi><mi>w</mi></msub><mo>,</mo><mi>R</mi><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(O_w,R,1)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>O</mi><mi>w</mi></msub><mo>,</mo><mi>∞</mi><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(O_w,\infty,0)</annotation></semantics></math>.
+Thus the frame comparison from old to new is precisely
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>S</mi><mi>v</mi></msub><annotation encoding="application/x-tex">S_v</annotation></semantics></math>:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>v</mi></msub><mo>:</mo><mi>∞</mi><mo>↦</mo><mn>0</mn><mo>,</mo><mspace width="1.0em"></mspace><mn>1</mn><mo>↦</mo><mi>R</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ S_v:\infty\longmapsto0,\quad1\longmapsto R.
+ \tag{38}
+</annotation></semantics></math> The actual pure terminal-circle
+identification is precisely
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>S</mi><mi>w</mi></msub><annotation encoding="application/x-tex">S_w</annotation></semantics></math>:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>w</mi></msub><mo>:</mo><mi>R</mi><mo>↦</mo><mn>0</mn><mo>,</mo><mspace width="1.0em"></mspace><mn>1</mn><mo>↦</mo><mi>∞</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ S_w:R\longmapsto0,\quad1\longmapsto\infty.
+ \tag{39}
+</annotation></semantics></math> No three-point map has been chosen to
+fit a desired scalar: these are the four original shaded triangles in
+the literal insertion table. The same statement for left insertion is
+its transported face table, with the actual endpoint reversal
+retained.</p>
+<p>Here is the scalar-line switch identity used for those four strips.
+Assign determinant-one eigenframes to their endpoints. Evaluate a strip
+in either direction, exchanging its eigenline when its direction is
+reversed. Its coefficient is unchanged by that operation. Normalize a
+cut pair by (35). Suppose the old pair is replaced by the two new
+connections (39), and identify its new inner endpoint frames with its
+old frames by (38). The ratio of the squared inverse-eigenvalue products
+of all resulting closed peripheral cycles is the projective derivative
+of
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>∞</mi><mover><mo>→</mo><msub><mi>S</mi><mi>v</mi></msub></mover><mn>0</mn><mover><mo>→</mo><msubsup><mi>S</mi><mi>w</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup></mover><mi>R</mi><mover><mo>→</mo><msubsup><mi>S</mi><mi>v</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup></mover><mn>1</mn><mover><mo>→</mo><msub><mi>S</mi><mi>w</mi></msub></mover><mi>∞</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \infty\xrightarrow{S_v}0
+ \xrightarrow{S_w^{-1}}R
+ \xrightarrow{S_v^{-1}}1
+ \xrightarrow{S_w}\infty .
+ \tag{40}
+</annotation></semantics></math></p>
+<p>For clarity, this identity does not require the two outside routes to
+lie on the same cycle. Choose the frames at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>,</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">0,R</annotation></semantics></math>
+to be the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>S</mi><mi>v</mi></msub><annotation encoding="application/x-tex">S_v</annotation></semantics></math>-transports
+of the frames at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>∞</mi><mo>,</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\infty,1</annotation></semantics></math>.
+Then the old-to-new comparisons contribute one on their selected lines.
+At a reversed strip use the dual frame, so its coefficient is still the
+original coefficient, rather than its reciprocal. All unaffected outside
+strips occur once in both products and cancel. The remaining inner and
+outer connections are exactly the second and fourth arrows of (40);
+restoring the chosen comparison frames inserts its first and third
+arrows. Their product is the based return in (40). Changing either
+endpoint eigenframe rescales the two adjacent coefficients reciprocally.
+Changing the simultaneous developed frame at a cut pair cancels by (36).
+Exchanging the pair order changes only the determinant sign, which
+disappears after squaring. These statements also cover the split-cycle
+and merged-cycle cases of the reconnection.</p>
+<p>Equivalently, in these transported full eigenframes write the two
+maps in (39) as
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>w</mi></msub><mo>:</mo><mi>R</mi><mo>→</mo><mn>0</mn><mo>:</mo><mspace width="0.222em"></mspace><mrow><mi mathvariant="normal">diag</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo>,</mo><msup><mi>c</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>S</mi><mi>w</mi></msub><mo>:</mo><mn>1</mn><mo>→</mo><mi>∞</mi><mo>:</mo><mspace width="0.222em"></mspace><mrow><mi mathvariant="normal">diag</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>d</mi><mo>,</mo><msup><mi>d</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ S_w:R\longrightarrow0:\ 
+       \operatorname{diag}(c,c^{-1}),\qquad
+ S_w:1\longrightarrow\infty:\ 
+       \operatorname{diag}(d,d^{-1}).
+ \tag{40a}
+</annotation></semantics></math> Here the frame at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+in the first display is the one transported by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>S</mi><mi>v</mi></msub><annotation encoding="application/x-tex">S_v</annotation></semantics></math>,
+with its dual chosen whenever the actual route is reversed. The selected
+coefficient of (40) is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mi>/</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">d/c</annotation></semantics></math>.
+Its inverse-eigenvalue square is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mi>/</mi><mi>d</mi><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(c/d)^2</annotation></semantics></math>,
+which is the same switch ratio obtained by cancelling the outside
+strips. This makes the inverse on the inner connection visible;
+multiplying
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>
+without that reversal would be incorrect.</p>
+<p>By (11)–(13), the derivative in (40), at the selected infinity flag
+in its finite coordinate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">1/z</annotation></semantics></math>,
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>f</mi><mi>e</mi><mn>2</mn></msubsup><annotation encoding="application/x-tex">f_e^2</annotation></semantics></math>.
+Therefore every actual pure terminal insertion has squared path
+multiplier
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><msubsup><mi>L</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">h</mi><mo mathvariant="normal">,</mo><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">w</mi></mrow><mn>2</mn></msubsup><msubsup><mi>L</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">h</mi><mo mathvariant="normal">,</mo><mi mathvariant="normal">o</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">d</mi></mrow><mn>2</mn></msubsup></mfrac><mo>=</mo><msubsup><mi>f</mi><mi>e</mi><mn>2</mn></msubsup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \frac{L_{\mathrm{path,new}}^2}
+      {L_{\mathrm{path,old}}^2}=f_e^2.
+ \tag{41}
+</annotation></semantics></math> There is a native-frame qualification
+in using this calculation through the whole tree. The local page chart
+at an edge can use the parameter
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mi>e</mi></msub><mo>=</mo><msup><mi>M</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">M_e=M^{-1}</annotation></semantics></math>,
+as required by the bipartition of its two disk-side frames. In that
+chart
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>M</mi><mi>e</mi></msub><mo>,</mo><msub><mi>X</mi><mi>e</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>M</mi><mo>,</mo><msub><mi>X</mi><mi>e</mi></msub><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>−</mi><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">f(M_e,X_e)=f(M,X_e)^{-1}</annotation></semantics></math>.
+The globally selected
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>M</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">M^{-1}</annotation></semantics></math>
+meridian line is then the other line of the canonical local meridian,
+whose displayed eigenvalue is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>M</mi><mi>e</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mo>=</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">M_e^{-1}=M</annotation></semantics></math>.
+The projective derivative of the local return on that other line is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>M</mi><mi>e</mi></msub><mo>,</mo><msub><mi>X</mi><mi>e</mi></msub><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo>=</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>M</mi><mo>,</mo><msub><mi>X</mi><mi>e</mi></msub><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">f(M_e,X_e)^{-2}=f(M,X_e)^2</annotation></semantics></math>.
+Reversing the physical traversal exchanges the line and inverts the
+return simultaneously, leaving the same answer. Thus (41) always uses
+the original global parameter
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>;
+it does not multiply factors formed with inconsistent native choices of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mi>e</mi></msub><annotation encoding="application/x-tex">M_e</annotation></semantics></math>.
+The formula is an identity of the normalized scalar-line products; it
+does not identify the old and new individual peripheral cycles. For a
+single knot their product is its own path coordinate. For several
+intermediate cycles, the direction/dual convention is used before taking
+that product.</p>
+<p>Induction with the original ordered terminal insertions proves the
+pure product. At an odd distinguished seam the very same pair
+normalization is used in (30),(34), after the explicit coorientation of
+its second path. Those two operators act scalarly on that pair, so no
+mixed native eigenline is silently identified with a different one.
+Consequently the squared formula for the actual ordered construction is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>L</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">h</mi><mo mathvariant="normal">,</mo><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi></mrow><mn>2</mn></msubsup><mo>=</mo><msup><mi>M</mi><mrow><mi>−</mi><mn>2</mn><munder><mo>∑</mo><mi>v</mi></munder><msub><mi>ϵ</mi><mi>v</mi></msub></mrow></msup><munder><mo>∏</mo><mi>e</mi></munder><msubsup><mi>f</mi><mi>e</mi><mn>2</mn></msubsup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ L_{\mathrm{path,eff}}^2
+       =M^{-2\sum_v\epsilon_v}\prod_e f_e^2.
+ \tag{42}
+</annotation></semantics></math> This argument retains every original
+half-turn frame and every left/right insertion, since they transport the
+entire switch (37)–(40). It uses the actual odd path words (28),(33),
+not just a mapping-class action on unframed punctures.</p>
+<p>Formula (42), together with (3)–(5), gives the exact squared
+preferred-longitude identity. The squared chain proof deliberately does
+not conceal the remaining lift sign in a choice of square root. It can
+be fixed independently by the Seifert-surface frame argument in
+/private/tmp/md-preferred-longitude-negative-lift-seifert-frame.md: at
+an actual complete filled knot point the preferred longitude has
+negative unipotent lift. Every factor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mi>e</mi></msub><annotation encoding="application/x-tex">f_e</annotation></semantics></math>
+is one there, and the holomorphic two-valued ratio is constant. This
+gives the negative sign in (7) on the connected geometric germ. The
+calibration concerns only the remaining sign; it is not used to infer
+the squared dependence in (42).</p>

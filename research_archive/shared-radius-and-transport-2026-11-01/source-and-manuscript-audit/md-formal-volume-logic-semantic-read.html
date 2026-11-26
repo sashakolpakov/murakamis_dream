@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Finite Lean semantic audit</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Finite Lean semantic audit</h1>
+</header>
+<h1 id="semantic-read-of-the-finite-lean-kernels">Semantic read of the
+finite Lean kernels</h1>
+<p>This read covers the working-tree versions of
+formal/VolumeLogic/FiniteSupport.lean,
+formal/VolumeLogic/FiniteAlgebra.lean,
+formal/VolumeLogic/RateComparison.lean, and formal/README.md. The
+accompanying manifest records their hashes. It includes the two new
+strict-gap wrapper theorems. I did not rerun Lean or the axiom
+inspection. No public files were edited.</p>
+<h2 id="conclusion">1. Conclusion</h2>
+<p>The declarations correctly encode the finite implications they state.
+I found no wrong parity cutoff, reversed product choice, lost sign in
+the cleared Hermite formula, or vacuous hypothesis producing a false
+mathematical conclusion.</p>
+<p>The README accurately limits the formal result. It leaves the actual
+source adapter, Chebyshev root data, analytic estimates, nonzero
+contribution, primitive geometry and volume identity as written inputs.
+It also distinguishes theorem parameters from trusted axioms. An axiom
+scan is therefore not described as proving all the premises.</p>
+<p>My initial read identified a description issue: the numerical margins
+in nonempty_sector_gap and filled_rate_gap were not assumed positive,
+although the prose discussed strict gaps. Their algebraic conclusions
+were valid. The author has now added sector_strictly_below and
+filled_remainder_strictly_below with explicit positive-margin
+hypotheses, and clarified the README. These additions resolve the issue.
+The README also now separates the analytic range
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>t</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0&lt;t&lt;1</annotation></semantics></math>
+from the weaker
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">t\ge0</annotation></semantics></math>
+needed by the scalar flattening comparison.</p>
+<h2 id="finitesupport">2. FiniteSupport</h2>
+<p>three_supports uses the genuine middle powers
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>,</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">i,t</annotation></semantics></math>
+and the total support
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>+</mo><mi>t</mi><mo>≤</mo><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">i+t\le N-1</annotation></semantics></math>.
+It exhausts the central and two one-sided regions and proves that the
+two strict one-sided alternatives do not overlap. Its additional
+validity at small nonphysical natural-number values is harmless.</p>
+<p>left_endpoint_cutoff assumes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">N\ge2</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>&lt;</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">j&lt;N</annotation></semantics></math>,
+so natural subtraction
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>−</mo><mn>1</mn><mo>−</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">N-1-j</annotation></semantics></math>
+is the actual complementary degree. It correctly identifies the left
+range
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>&lt;</mo><mo stretchy="false" form="prefix">⌊</mo><mi>N</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo></mrow><annotation encoding="application/x-tex">j&lt;\lfloor N/2\rfloor</annotation></semantics></math>.
+central_endpoint_even gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>&lt;</mo><mi>m</mi><mo>,</mo><mspace width="0.222em"></mspace><mi>j</mi><mo>≥</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">i&lt;m,\ j\ge m</annotation></semantics></math>
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>2</mn><mi>m</mi></mrow><annotation encoding="application/x-tex">N=2m</annotation></semantics></math>.
+central_endpoint_odd gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>≤</mo><mi>m</mi><mo>,</mo><mspace width="0.222em"></mspace><mi>j</mi><mo>≥</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">i\le m,\ j\ge m</annotation></semantics></math>
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>2</mn><mi>m</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">N=2m+1</annotation></semantics></math>.
+Thus the odd middle row is assigned to the central piece, as required by
+the original numerator decomposition.</p>
+<p>protected_moment_degree retains
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mo stretchy="false" form="prefix">⌊</mo><mi>N</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">M=\lfloor N/2\rfloor-1</annotation></semantics></math>
+and proves
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>+</mo><mi>j</mi><mo>≤</mo><mi>N</mi><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">i+j\le N-2</annotation></semantics></math>.
+This is only a finite degree bound. It does not prove moment positivity,
+an inverse-Gram estimate, or a protected source theorem. The README does
+not claim those conclusions.</p>
+<h2 id="finitealgebra">3. FiniteAlgebra</h2>
+<p>horner uses ascending coefficients. The recurrence for
+dividedDifference gives, for example,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>+</mo><msub><mi>a</mi><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo>+</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">a_1+a_2(z+w)</annotation></semantics></math>
+from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>+</mo><msub><mi>a</mi><mn>1</mn></msub><mi>z</mi><mo>+</mo><msub><mi>a</mi><mn>2</mn></msub><msup><mi>z</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">a_0+a_1z+a_2z^2</annotation></semantics></math>.
+The difference identity holds in arbitrary commutative rings, including
+rings with nilpotents, without dividing by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>−</mo><mi>w</mi></mrow><annotation encoding="application/x-tex">z-w</annotation></semantics></math>.
+annihilating_root_identity correctly adds the explicit polynomial-root
+hypothesis. This is the scalar algebra behind a resolvent numerator; it
+is not yet a quotient trace theorem or a physical matrix adapter.</p>
+<p>double_root_jet_identity substitutes
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mn>0</mn></msub><mo>=</mo><msub><mi>h</mi><mn>0</mn></msub><mi>q</mi><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>v</mi><mn>1</mn></msub><mo>=</mo><msub><mi>h</mi><mn>0</mn></msub><mi>p</mi><mo>+</mo><msub><mi>h</mi><mn>1</mn></msub><mi>q</mi></mrow><annotation encoding="application/x-tex">
+ v_0=h_0q,\qquad v_1=h_0p+h_1q
+</annotation></semantics></math> and proves the denominator-cleared
+formula for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mn>0</mn></msub><mi>p</mi><mo>+</mo><msub><mi>f</mi><mn>1</mn></msub><mi>q</mi></mrow><annotation encoding="application/x-tex">f_0p+f_1q</annotation></semantics></math>.
+It retains the nilpotent term
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mn>1</mn></msub><mi>q</mi></mrow><annotation encoding="application/x-tex">f_1q</annotation></semantics></math>.
+The actual Hermite application still needs the Chebyshev values of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mn>0</mn></msub><mo>,</mo><msub><mi>h</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">h_0,h_1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mn>0</mn></msub><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">h_0\ne0</annotation></semantics></math>
+before division. The README states this separation.</p>
+<p>nonemptySecondChoices has exactly the required recursion: select the
+first entry now and a second one later, or select the second entry now
+and any suffix. Hence tensor_grid_subtraction removes precisely the
+all-evaluation term. Repeated equal entries in a list still count as
+distinct coordinates, as the tensor application requires.</p>
+<p>productDifference telescopes as
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>−</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>∏</mo><msub><mi>a</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>+</mo><mi>b</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>∏</mo><msub><mi>a</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>−</mo><mo>∏</mo><msub><mi>b</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">l</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ (a-b)\prod a_{\mathrm{tail}}
+ +b\left(\prod a_{\mathrm{tail}}-\prod b_{\mathrm{tail}}\right).
+</annotation></semantics></math> It never divides by a potentially zero
+factor. The commutative-ring setting is appropriate for scalar source
+coefficients and makes no claim that neighboring physical crossing
+matrices commute.</p>
+<h2 id="ratecomparison-including-the-new-wrappers">4. RateComparison,
+including the new wrappers</h2>
+<p>doubled_flattening_gain reduces to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo stretchy="false" form="prefix">(</mo><mi>h</mi><mo>−</mo><mi>t</mi><mspace width="0.167em"></mspace><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">y</mi></mrow><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">t(h-t\,\mathrm{energy})\ge0</annotation></semantics></math>.
+Its hypotheses are exactly sufficient for that implication. It does not
+establish the preceding entropy or Hessian estimates.
+strict_weak_balance_gain adds
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">t&gt;0</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">h&gt;0</annotation></semantics></math>;
+the doubled gain is at least
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mi>h</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">th&gt;0</annotation></semantics></math>,
+so this is a genuine strict conclusion.</p>
+<p>total_nonnegative and nonempty_sector_gap correctly preserve a
+supplied numerical margin after adding nonnegative losses.
+sector_strictly_below now adds
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mrow><mi mathvariant="normal">g</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">p</mi></mrow></mrow><annotation encoding="application/x-tex">0&lt;\mathrm{gap}</annotation></semantics></math>
+and concludes strictly below
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ϕ</mi><annotation encoding="application/x-tex">\phi</annotation></semantics></math>,
+with the desired nonempty-sector semantics.</p>
+<p>filled_rate_gap combines
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mspace width="0.167em"></mspace><mrow><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">D</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">p</mi></mrow><mo>&lt;</mo><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">G</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">p</mi></mrow><mo>,</mo><mspace width="2.0em"></mspace><mi>ϕ</mi><mo>−</mo><mrow><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">D</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">p</mi></mrow><mo>≤</mo><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">R</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi></mrow></mrow><annotation encoding="application/x-tex">
+ 2\,\mathrm{actionDrop}&lt;\mathrm{sourceGap},\qquad
+ \phi-\mathrm{actionDrop}\le\mathrm{filledRate}
+</annotation></semantics></math> to obtain
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo stretchy="false" form="prefix">(</mo><mi>ϕ</mi><mo>−</mo><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">G</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">p</mi></mrow><mo stretchy="false" form="postfix">)</mo><mo>&lt;</mo><mn>2</mn><mspace width="0.167em"></mspace><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">R</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi></mrow><mo>−</mo><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">G</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">p</mi></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ 2(\phi-\mathrm{sourceGap})
+       &lt;2\,\mathrm{filledRate}-\mathrm{sourceGap}.
+</annotation></semantics></math> The new filled_remainder_strictly_below
+explicitly assumes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">G</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">p</mi></mrow><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\mathrm{sourceGap}&gt;0</annotation></semantics></math>,
+and correctly concludes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi><mo>−</mo><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">G</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">p</mi></mrow><mo>&lt;</mo><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">R</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi></mrow></mrow><annotation encoding="application/x-tex">\phi-\mathrm{sourceGap}&lt;\mathrm{filledRate}</annotation></semantics></math>.
+No source exponential bound, nonzero leading term, or geometric
+calibration is hidden as a conclusion of this scalar algebra.</p>
+<h2 id="remaining-formalization-boundary">5. Remaining formalization
+boundary</h2>
+<p>These kernels guard meaningful finite steps: natural-number cutoffs,
+normal terms, tensor subtraction and scalar budget arithmetic. Their
+compilation does not by itself verify the enclosing analytic or
+topological arguments.</p>
+<p>The next connected step identified by the README is appropriate:
+define the polynomial quotient and top-coefficient trace, prove
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>τ</mi><mo stretchy="false" form="prefix">(</mo><mi>F</mi><mi>V</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi mathvariant="normal">Ω</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\tau(FV)=F(\Omega)</annotation></semantics></math>,
+derive the local Hermite formula, and connect it to the actual crossing
+jets. This would link the existing divided difference and cleared jet
+identities to Appendix N’s finite functional.</p>
+<p>The review is semantic and read-only. The author’s reported Lean
+compilation and axiom inspection were not repeated, and no finite
+experimental result is used as a proof of an analytic input.</p>
+</body>
+</html>

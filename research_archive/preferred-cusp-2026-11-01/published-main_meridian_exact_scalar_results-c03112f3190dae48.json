@@ -1,0 +1,227 @@
+{
+  "closed_expression_examples": [
+    {
+      "crossing_sum": -3,
+      "expression": "T(T(T(T(T(T(R[++,-3]))))))",
+      "phase": 3
+    },
+    {
+      "crossing_sum": -2,
+      "expression": "T(T(T(T(T(T(R[++,-2]))))))",
+      "phase": 2
+    },
+    {
+      "crossing_sum": -1,
+      "expression": "T(T(T(T(T(T(R[++,-1]))))))",
+      "phase": 1
+    },
+    {
+      "crossing_sum": 0,
+      "expression": "T(T(T(T(T(T(R[++,0]))))))",
+      "phase": 0
+    },
+    {
+      "crossing_sum": 1,
+      "expression": "T(T(T(T(T(T(R[++,1]))))))",
+      "phase": -1
+    },
+    {
+      "crossing_sum": 2,
+      "expression": "T(T(T(T(T(T(R[++,2]))))))",
+      "phase": -2
+    },
+    {
+      "crossing_sum": 3,
+      "expression": "T(T(T(T(T(T(R[++,3]))))))",
+      "phase": -3
+    },
+    {
+      "crossing_sum": -3,
+      "expression": "T(T(T(T(T(T(R[--,-3]))))))",
+      "phase": 3
+    }
+  ],
+  "counts": {
+    "closed_End_states": 366,
+    "compatible_type_products": 10,
+    "exact_polynomial_exponent_identities": 3,
+    "framed_End_states": 2562,
+    "generator_inverse_identities": 4,
+    "mixed_sign_words": 988,
+    "monodromy_identities": 2,
+    "negative_net_words": 412,
+    "negative_odd_net_words": 170,
+    "reachable_typed_states": 540,
+    "signed_words": 1022,
+    "turn_types": 6,
+    "typed_product_transitions": 6720,
+    "typed_turn_transitions": 402
+  },
+  "derived_turn_potential": {
+    "AA": 0,
+    "AB": 1,
+    "BA": -1,
+    "BB": 0,
+    "MM": 0,
+    "PP": 0
+  },
+  "local_inputs": {
+    "positive_AB": "G r",
+    "positive_BA": "t^-2 r G^-1",
+    "six_turn_table": {
+      "AA": [
+        "BB",
+        0
+      ],
+      "AB": [
+        "PP",
+        -1
+      ],
+      "BA": [
+        "MM",
+        1
+      ],
+      "BB": [
+        "AA",
+        0
+      ],
+      "MM": [
+        "AB",
+        1
+      ],
+      "PP": [
+        "BA",
+        -1
+      ]
+    },
+    "t": "q^(s^2/2)"
+  },
+  "method": "exact integer Laurent exponents and rational polynomial coefficients",
+  "negative_odd_examples": [
+    {
+      "finish": "B",
+      "r_exponent": -1,
+      "signs": [
+        -1
+      ],
+      "start": "A",
+      "t_exponent": 2
+    },
+    {
+      "finish": "A",
+      "r_exponent": -1,
+      "signs": [
+        -1
+      ],
+      "start": "B",
+      "t_exponent": 0
+    },
+    {
+      "finish": "B",
+      "r_exponent": -3,
+      "signs": [
+        -1,
+        -1,
+        -1
+      ],
+      "start": "A",
+      "t_exponent": 4
+    },
+    {
+      "finish": "A",
+      "r_exponent": -3,
+      "signs": [
+        -1,
+        -1,
+        -1
+      ],
+      "start": "B",
+      "t_exponent": 2
+    },
+    {
+      "finish": "B",
+      "r_exponent": -1,
+      "signs": [
+        -1,
+        -1,
+        1
+      ],
+      "start": "A",
+      "t_exponent": 2
+    },
+    {
+      "finish": "A",
+      "r_exponent": -1,
+      "signs": [
+        -1,
+        -1,
+        1
+      ],
+      "start": "B",
+      "t_exponent": 0
+    },
+    {
+      "finish": "B",
+      "r_exponent": -1,
+      "signs": [
+        -1,
+        1,
+        -1
+      ],
+      "start": "A",
+      "t_exponent": 2
+    },
+    {
+      "finish": "A",
+      "r_exponent": -1,
+      "signs": [
+        -1,
+        1,
+        -1
+      ],
+      "start": "B",
+      "t_exponent": 0
+    },
+    {
+      "finish": "B",
+      "r_exponent": -1,
+      "signs": [
+        1,
+        -1,
+        -1
+      ],
+      "start": "A",
+      "t_exponent": 2
+    },
+    {
+      "finish": "A",
+      "r_exponent": -1,
+      "signs": [
+        1,
+        -1,
+        -1
+      ],
+      "start": "B",
+      "t_exponent": 0
+    }
+  ],
+  "parameters": {
+    "max_expression_tree_size": 7,
+    "max_word_length": 8,
+    "primitive_block_exponents": [
+      -3,
+      -2,
+      -1,
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  "polynomial_checks": [
+    "physical_chirp_mod_2Nj",
+    "ribbon_twist_square",
+    "stripped_Cartan_linear_gauge"
+  ],
+  "scope": "Finite exact scalar algebra. The local physical tensors, topology, uniform asymptotics and cusp interpretation are separate inputs; expression states are compatible algebraic morphisms, not a knot census."
+}

@@ -1,0 +1,493 @@
+<h1
+id="full-internal-labels-at-a-two-junction-component-and-a-coupled-clamping-question">Full
+internal labels at a two-junction component, and a coupled clamping
+question</h1>
+<p>Private derivation, 1 November 2026. No repository source is
+changed.</p>
+<p>The present component theorem cuts every retained edge at one half.
+That cutoff cannot be kept for arbitrary bare components: a genuine
+two-junction component already has its complete maximum on the cutoff.
+Keeping that internal label gives an exact Gram identity and a source
+theorem for this smallest adjacent component, with no boundary-count
+hypothesis. The last sections isolate a possible general comparison and
+an exact obstruction to its coordinatewise version.</p>
+<h2 id="exact-conventions-and-the-comparison-inputs">1. Exact
+conventions and the comparison inputs</h2>
+<p>Use the fixed complete basis and physical relations from
+<code>notes/actual_main_meridian_source_bounds.md</code>:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>M</mi><mi>N</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">⌊</mo><mi>d</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>S</mi><mi>j</mi></msub><mo>=</mo><munderover><mo>∏</mo><mrow><mi>r</mi><mo>=</mo><mn>1</mn></mrow><mi>j</mi></munderover><mn>2</mn><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>π</mi><mi>r</mi><mi>/</mi><mi>N</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>e</mi><mi>j</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msubsup><mi>S</mi><mi>j</mi><mrow><mi>−</mi><mn>2</mn></mrow></msubsup><munderover><mo>∏</mo><mrow><mi>r</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></munderover><mo stretchy="false" form="prefix">(</mo><msub><mi>c</mi><mi>r</mi></msub><mo>−</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>c</mi><mi>r</mi></msub><mo>=</mo><mn>2</mn><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>r</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>π</mi><mi>/</mi><mi>N</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ d=N-1,\quad M_N=\lfloor d/2\rfloor,\quad
+ S_j=\prod_{r=1}^j2\sin(\pi r/N),\quad
+ e_j(z)=S_j^{-2}\prod_{r=0}^{j-1}(c_r-z),
+ \quad c_r=2\cos((2r+1)\pi/N).
+ \tag{1}
+</annotation></semantics></math> Write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>σ</mi></msub><mo>=</mo><msub><mi mathvariant="sans-serif">𝖳</mi><mi>N</mi></msub><mo>+</mo><mn>2</mn><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>π</mi><mi>σ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">P_\sigma=\mathsf T_N+2\cos(2\pi\sigma)</annotation></semantics></math>,
+where the actual type chooses
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><mn>0</mn><mo>,</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">\sigma=0,s</annotation></semantics></math>,
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">-s</annotation></semantics></math>.
+The normalized trace and unchanged metric are
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ϕ</mi><mi>σ</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>F</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>d</mi></msup><msup><mi>N</mi><mn>2</mn></msup><mo stretchy="false" form="prefix">[</mo><msup><mi>z</mi><mi>d</mi></msup><mo stretchy="false" form="postfix">]</mo><msub><mrow><mi mathvariant="normal">rem</mi><mo>&#8289;</mo></mrow><msub><mi>P</mi><mi>σ</mi></msub></msub><mi>F</mi><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>ϕ</mi><mi>σ</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>e</mi><mi>i</mi></msub><msub><mi>e</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mn mathvariant="bold">𝟏</mn><mrow><mi>i</mi><mo>+</mo><mi>j</mi><mo>=</mo><mi>d</mi></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \phi_\sigma(F)=(-1)^dN^2[z^d]\operatorname{rem}_{P_\sigma}F,
+ \qquad \phi_\sigma(e_i e_j)=\mathbf1_{i+j=d}.
+ \tag{2}
+</annotation></semantics></math> Every actual physical turn edge in
+lower-index convention has tensor
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mi>r</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>γ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mfrac><mrow><msub><mi>H</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><msub><mi>W</mi><mi>r</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>W</mi><mi>r</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>W</mi><mrow><mi>d</mi><mo>−</mo><mi>r</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>H</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>s</mi><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ D_r(s)=\gamma_N(s)\frac{H_N(s)}{W_r(s)},\qquad
+ W_r(s)W_{d-r}(s)=H_N(s)^2.
+ \tag{3}
+</annotation></semantics></math> Its two incident indices are equal. The
+prescribed scalar
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>γ</mi><mi>N</mi></msub><annotation encoding="application/x-tex">\gamma_N</annotation></semantics></math>
+is kept. For every fixed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>s</mi><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mi>R</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|s|\le R&lt;1</annotation></semantics></math>,
+both
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>D</mi><mi>r</mi></msub><annotation encoding="application/x-tex">D_r</annotation></semantics></math>
+and its inverse are bounded uniformly in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>,</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">N,r</annotation></semantics></math>.
+These facts concern a physical turn edge; an artificial unturned edge
+introduced by resolving a larger product instead identifies
+complementary labels.</p>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msubsup><mo>∫</mo><mn>0</mn><mi>u</mi></msubsup><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mi>π</mi><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mspace width="0.167em"></mspace><mi>d</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">J(u)=\int_0^u\log(2\sin\pi t)\,dt</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mn>4</mn><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">g(u)=J(2u)-4J(u)</annotation></semantics></math>
+on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[0,1/2]</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mn>0</mn></msub><mo>=</mo><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>4</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>2</mn><mi>G</mi><mi>/</mi><mi>π</mi></mrow><annotation encoding="application/x-tex">G_0=g(1/4)=2G/\pi</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+Catalan’s constant. Four boundary arrays satisfy
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mi>a</mi><mo>,</mo><mi>N</mi><mo>,</mo><mi>s</mi></mrow></msub><mo>=</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mi>d</mi></munderover><msub><mi>f</mi><mrow><mi>a</mi><mo>,</mo><mi>N</mi><mo>,</mo><mi>s</mi><mo>,</mo><mi>j</mi></mrow></msub><msub><mi>e</mi><mi>j</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">|</mo><msub><mi>f</mi><mrow><mi>a</mi><mo>,</mo><mi>N</mi><mo>,</mo><mi>s</mi><mo>,</mo><mi>j</mi></mrow></msub><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><msup><mi>e</mi><mrow><mi>N</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>c</mi><mi>a</mi></msub><mo>+</mo><mi>o</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow></msup><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><msup><mi>e</mi><mrow><mi>N</mi><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>j</mi><mi>/</mi><mi>N</mi><mo stretchy="false" form="postfix">)</mo></mrow></msup><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mi>j</mi><mo>≤</mo><msub><mi>M</mi><mi>N</mi></msub><mo>,</mo></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mn>1</mn><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mi>j</mi><mo>&gt;</mo><msub><mi>M</mi><mi>N</mi></msub><mi>.</mi></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">
+ F_{a,N,s}=\sum_{j=0}^d f_{a,N,s,j}e_j,\qquad
+ |f_{a,N,s,j}|\le e^{N(c_a+o(1))}
+ \begin{cases}e^{Ng(j/N)},&amp;j\le M_N,\\1,&amp;j&gt;M_N.
+ \end{cases}
+ \tag{4}
+</annotation></semantics></math> The errors are uniform over the actual
+physical input parameters and the chosen main disk. The constants are
+fixed. The arrays may be complex and need not attain these bounds.</p>
+<p>An output norm is included by using as the fourth boundary array the
+positive probe
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>W</mi><mi>N</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">b</mi><mi mathvariant="normal">e</mi></mrow></msubsup><mo>=</mo><munder><mo>∑</mo><mrow><mi>j</mi><mo>≤</mo><msub><mi>M</mi><mi>N</mi></msub></mrow></munder><msub><mi>e</mi><mi>j</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><msub><mi>e</mi><mi>j</mi></msub><mo>+</mo><munder><mo>∑</mo><mrow><mi>j</mi><mo>&gt;</mo><msub><mi>M</mi><mi>N</mi></msub></mrow></munder><msub><mi>e</mi><mi>j</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ W_N^{\mathrm{probe}}=\sum_{j\le M_N}e_j(-2)e_j+\sum_{j&gt;M_N}e_j.
+ \tag{5}
+</annotation></semantics></math> Its coefficient rate is exactly (4)
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mn>4</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">c_4=0</annotation></semantics></math>,
+up to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>N</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(\log N)</annotation></semantics></math>.
+The full value-and-first-normal norm obeys
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><msub><mi>e</mi><mi>j</mi></msub><msub><mo stretchy="false" form="postfix">∥</mo><mi mathvariant="script">𝒥</mi></msub><mo>≤</mo><msup><mi>N</mi><mi>C</mi></msup><mo stretchy="false" form="prefix">[</mo><msub><mi>e</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">]</mo><msubsup><mi>W</mi><mi>N</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">b</mi><mi mathvariant="normal">e</mi></mrow></msubsup></mrow><annotation encoding="application/x-tex">\|e_j\|_{\mathcal J}\le N^C[e_j]W_N^{\mathrm{probe}}</annotation></semantics></math>.
+When the output itself is a typed turn, its exact extractor adds the
+factor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>γ</mi><mi>N</mi></msub><msub><mi>H</mi><mi>N</mi></msub><mi>/</mi><msub><mi>W</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">\gamma_NH_N/W_j</annotation></semantics></math>
+to the probe coefficient. It is retained in the finite expression and
+costs only the uniform constant from (3) in the norm bound. This probe
+only bounds the output; it is not inserted into the knot.</p>
+<h2 id="the-two-junction-gram-identity">2. The two-junction Gram
+identity</h2>
+<p>Consider two trivalent bare vertices joined by one physical turn.
+Each has two boundary factors. If all four factors are supported on low
+indices, their ordinary products
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><msub><mi>F</mi><mn>1</mn></msub><msub><mi>F</mi><mn>2</mn></msub><mo>=</mo><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi>d</mi></munderover><msub><mi>A</mi><mi>k</mi></msub><msub><mi>e</mi><mi>k</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><mi>B</mi><mo>=</mo><msub><mi>F</mi><mn>3</mn></msub><msub><mi>F</mi><mn>4</mn></msub><mo>=</mo><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi>d</mi></munderover><msub><mi>B</mi><mi>k</mi></msub><msub><mi>e</mi><mi>k</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ A=F_1F_2=\sum_{k=0}^d A_k e_k,\qquad
+ B=F_3F_4=\sum_{k=0}^d B_k e_k.
+ \tag{6}
+</annotation></semantics></math> have degree at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msub><mi>M</mi><mi>N</mi></msub><mo>≤</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">2M_N\le d</annotation></semantics></math>.
+Thus no quotient reduction occurs in either product, regardless of which
+vertex relation is moving. Their complete positive multiplication table
+determines the coefficients in (6).</p>
+<p>The covariant trace at the first vertex equals
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>A</mi><mrow><mi>d</mi><mo>−</mo><mi>r</mi></mrow></msub><annotation encoding="application/x-tex">A_{d-r}</annotation></semantics></math>,
+by (2); the second equals
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mrow><mi>d</mi><mo>−</mo><mi>r</mi></mrow></msub><annotation encoding="application/x-tex">B_{d-r}</annotation></semantics></math>.
+Consequently the whole component is exactly
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><mspace width="1.0em"></mspace><msub><mi mathvariant="script">𝒞</mi><mi>s</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>F</mi><mn>1</mn></msub><mo>,</mo><msub><mi>F</mi><mn>2</mn></msub><mo>,</mo><msub><mi>F</mi><mn>3</mn></msub><mo>,</mo><msub><mi>F</mi><mn>4</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munderover><mo>∑</mo><mrow><mi>r</mi><mo>=</mo><mn>0</mn></mrow><mi>d</mi></munderover><msub><mi>D</mi><mi>r</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>A</mi><mrow><mi>d</mi><mo>−</mo><mi>r</mi></mrow></msub><msub><mi>B</mi><mrow><mi>d</mi><mo>−</mo><mi>r</mi></mrow></msub><mo>=</mo><mfrac><mrow><msub><mi>γ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><msub><mi>H</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi>d</mi></munderover><msub><mi>W</mi><mi>k</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>A</mi><mi>k</mi></msub><msub><mi>B</mi><mi>k</mi></msub><mi>.</mi><mspace width="1.0em"></mspace></mrow></menclose><annotation encoding="application/x-tex">
+ \boxed{\quad
+ \mathcal C_s(F_1,F_2,F_3,F_4)
+ =\sum_{r=0}^dD_r(s)A_{d-r}B_{d-r}
+ =\frac{\gamma_N(s)}{H_N(s)}
+                 \sum_{k=0}^d W_k(s)A_kB_k.
+ \quad}
+ \tag{7}
+</annotation></semantics></math> This is an identity with all canonical
+coefficients and all normals retained. In particular its internal index
+is not restricted to the low range.</p>
+<p>For nonnegative arrays the same expression at completeness is a
+positive Gram contraction. For arbitrary complex low arrays, replace
+each boundary coefficient by its modulus before forming
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>A</mi><mrow><mi mathvariant="normal">a</mi><mi mathvariant="normal">b</mi><mi mathvariant="normal">s</mi></mrow></msup><mo>,</mo><msup><mi>B</mi><mrow><mi mathvariant="normal">a</mi><mi mathvariant="normal">b</mi><mi mathvariant="normal">s</mi></mrow></msup></mrow><annotation encoding="application/x-tex">A^{\mathrm{abs}},B^{\mathrm{abs}}</annotation></semantics></math>.
+Complete Newton multiplication is positive, hence
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi mathvariant="script">𝒞</mi><mi>s</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>F</mi><mn>1</mn></msub><mo>,</mo><msub><mi>F</mi><mn>2</mn></msub><mo>,</mo><msub><mi>F</mi><mn>3</mn></msub><mo>,</mo><msub><mi>F</mi><mn>4</mn></msub><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><msub><mi>C</mi><mi>R</mi></msub><munder><mo>∑</mo><mi>k</mi></munder><msubsup><mi>A</mi><mi>k</mi><mrow><mi mathvariant="normal">a</mi><mi mathvariant="normal">b</mi><mi mathvariant="normal">s</mi></mrow></msubsup><msubsup><mi>B</mi><mi>k</mi><mrow><mi mathvariant="normal">a</mi><mi mathvariant="normal">b</mi><mi mathvariant="normal">s</mi></mrow></msubsup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ |\mathcal C_s(F_1,F_2,F_3,F_4)|
+ \le C_R\sum_k A_k^{\mathrm{abs}}B_k^{\mathrm{abs}}.
+ \tag{8}
+</annotation></semantics></math> The same assertion holds for an
+arbitrary prescribed set of internal indices. It is a coefficientwise
+positive majorant of the full internal sum, not an operator-norm
+comparison of a general turn.</p>
+<h2 id="the-coupled-complete-pressure">3. The coupled complete
+pressure</h2>
+<p>Let
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mi>N</mi></msub><mo>=</mo><munder><mo>∑</mo><mrow><mi>j</mi><mo>≤</mo><msub><mi>M</mi><mi>N</mi></msub></mrow></munder><msub><mi>a</mi><mrow><mi>N</mi><mo>,</mo><mi>j</mi></mrow></msub><msub><mi>e</mi><mi>j</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>a</mi><mrow><mi>N</mi><mo>,</mo><mi>j</mi></mrow></msub><mo>=</mo><mfrac><mrow><msup><mi>N</mi><mn>2</mn></msup><msub><mi>S</mi><mrow><mn>2</mn><mi>j</mi></mrow></msub></mrow><msubsup><mi>S</mi><mi>j</mi><mn>4</mn></msubsup></mfrac><mo>,</mo><mspace width="2.0em"></mspace><msubsup><mi>h</mi><mi>N</mi><mn>2</mn></msubsup><mo>=</mo><munder><mo>∑</mo><mi>k</mi></munder><msubsup><mi>A</mi><mrow><mi>N</mi><mo>,</mo><mi>k</mi></mrow><mn>0</mn></msubsup><msub><mi>e</mi><mi>k</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ h_N=\sum_{j\le M_N}a_{N,j}e_j,
+ \qquad a_{N,j}=\frac{N^2S_{2j}}{S_j^4},\qquad
+ h_N^2=\sum_k A_{N,k}^0e_k.
+ \tag{9}
+</annotation></semantics></math> The closed low coefficient rate of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>h</mi><mi>N</mi></msub><annotation encoding="application/x-tex">h_N</annotation></semantics></math>
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>.
+Write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f_2(x)</annotation></semantics></math>
+for the actual positive coefficient profile of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>h</mi><mi>N</mi><mn>2</mn></msubsup><annotation encoding="application/x-tex">h_N^2</annotation></semantics></math>.
+It is the constrained maximum of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>v</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>m</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo>,</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">g(u)+g(v)+m(u,v,x)</annotation></semantics></math>
+on the original gate domain. The original two-leaf stationarity gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>f</mi><mn>2</mn><mo>′</mo></msubsup><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>2</mn><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>2</mn><msup><mi>X</mi><mn>2</mn></msup><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>X</mi><mo>=</mo><mfrac><mrow><mrow><mi mathvariant="normal">cot</mi><mo>&#8289;</mo></mrow><mi>π</mi><mi>x</mi><mo>+</mo><msqrt><mrow><msup><mrow><mi mathvariant="normal">cot</mi><mo>&#8289;</mo></mrow><mn>2</mn></msup><mi>π</mi><mi>x</mi><mo>+</mo><mn>2</mn></mrow></msqrt></mrow><mn>2</mn></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ f_2&#39;(x)=2\log(2X^2),\qquad
+ X=\frac{\cot\pi x+\sqrt{\cot^2\pi x+2}}2.
+ \tag{10}
+</annotation></semantics></math> Thus the unique maximum is at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">x=1/2</annotation></semantics></math>.
+Positivity, the uniform closed sine-factorial rates, and strict integer
+approximation at this output give at both parities
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Φ</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">r</mi></mrow></msub><mo>:=</mo><mrow><mi mathvariant="normal">lim</mi><mo>&#8289;</mo></mrow><mfrac><mn>1</mn><mi>N</mi></mfrac><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><munder><mo>∑</mo><mi>k</mi></munder><mo stretchy="false" form="prefix">(</mo><msubsup><mi>A</mi><mrow><mi>N</mi><mo>,</mo><mi>k</mi></mrow><mn>0</mn></msubsup><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo>=</mo><mn>2</mn><msub><mi>f</mi><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \Phi_{\mathrm{pair}}
+ :=\lim\frac1N\log\sum_k(A_{N,k}^0)^2
+ =2f_2(1/2).
+ \tag{11}
+</annotation></semantics></math> This is the original closed pressure of
+the two-junction tree with four effective pure leaves. Its derivation
+keeps the common internal label; it does not sum independent cap
+pressures.</p>
+<p>A useful exact lower bound needs no solution of the stationary
+equations. The feasible state
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>=</mo><mi>v</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>4</mn><mo>,</mo><mi>x</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">u=v=1/4,x=1/2</annotation></semantics></math>
+has
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>4</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>4</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>G</mi><mn>0</mn></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>f</mi><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><mn>3</mn><msub><mi>G</mi><mn>0</mn></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi mathvariant="normal">Φ</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">r</mi></mrow></msub><mo>≥</mo><mn>6</mn><msub><mi>G</mi><mn>0</mn></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ m(1/4,1/4,1/2)=G_0,
+ \qquad f_2(1/2)\ge3G_0,
+ \qquad \Phi_{\mathrm{pair}}\ge6G_0.
+ \tag{12}
+</annotation></semantics></math> The state lies on one gate face, which
+is allowed for this lower bound. Finite indices with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>=</mo><mi>v</mi><mo>=</mo><mo stretchy="false" form="prefix">⌊</mo><mi>N</mi><mi>/</mi><mn>4</mn><mo stretchy="false" form="postfix">⌋</mo><mi>/</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">u=v=\lfloor N/4\rfloor/N</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>2</mn><mo stretchy="false" form="prefix">⌊</mo><mi>N</mi><mi>/</mi><mn>4</mn><mo stretchy="false" form="postfix">⌋</mo></mrow><annotation encoding="application/x-tex">k=2\lfloor N/4\rfloor</annotation></semantics></math>
+give the same limiting rate. The actual maximizer used for (11) is
+strict.</p>
+<p>The full component action is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Ω</mi><mo>=</mo><munderover><mo>∑</mo><mrow><mi>a</mi><mo>=</mo><mn>1</mn></mrow><mn>4</mn></munderover><msub><mi>c</mi><mi>a</mi></msub><mo>+</mo><msub><mi mathvariant="normal">Φ</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">r</mi></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                         \Omega=\sum_{a=1}^4c_a+\Phi_{\mathrm{pair}}.
+ \tag{13}
+</annotation></semantics></math> The constants are affine because each
+boundary array occurs once. If the fourth array is the probe, set its
+constant to zero.</p>
+<p>Equation (8), the polynomial comparison of low coefficient envelopes
+with (9), and (11) prove the action bound
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><mi>N</mi><mo stretchy="false" form="prefix">(</mo><mi mathvariant="normal">Ω</mi><mo>+</mo><mi>o</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow></msup><annotation encoding="application/x-tex">e^{N(\Omega+o(1))}</annotation></semantics></math>
+for the all-low boundary sector. Internal labels above one half remain
+inside this leading comparison.</p>
+<h2 id="high-boundary-sectors-and-genuine-return-terms">4. High boundary
+sectors and genuine return terms</h2>
+<p>The exact covariant cubic tensor is the sum of the old positive
+tensor and the return tensor. The old support is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>+</mo><mi>j</mi><mo>,</mo><mspace width="0.222em"></mspace><mi>i</mi><mo>+</mo><mi>k</mi><mo>,</mo><mspace width="0.222em"></mspace><mi>j</mi><mo>+</mo><mi>k</mi><mo>≤</mo><mi>d</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>i</mi><mo>+</mo><mi>j</mi><mo>+</mo><mi>k</mi><mo>≥</mo><mi>d</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ i+j,\ i+k,\ j+k\le d,\qquad i+j+k\ge d.
+ \tag{14}
+</annotation></semantics></math> Its logarithmic action is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo>+</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo>+</mo><mi>z</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ t(x,y,z)=J(x+y)+J(x+z)+J(y+z)
+          -J(x)-J(y)-J(z)-J(x+y+z-1).
+ \tag{15}
+</annotation></semantics></math> It equals the old product action after
+setting its output to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">1-z</annotation></semantics></math>.
+The decomposition into three ideal tetrahedron volumes gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>≤</mo><mfrac><mrow><mn>3</mn><msub><mi>v</mi><mn>3</mn></msub></mrow><mi>π</mi></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                              t\le\frac{3v_3}{\pi}.
+ \tag{16}
+</annotation></semantics></math> This is the decomposition in
+<code>notes/actual_conway_general_core_packet_and_gap.md</code>, Section
+3, including boundary states.</p>
+<p>The return support is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>+</mo><mi>j</mi><mo>,</mo><mspace width="0.222em"></mspace><mi>i</mi><mo>+</mo><mi>k</mi><mo>,</mo><mspace width="0.222em"></mspace><mi>j</mi><mo>+</mo><mi>k</mi><mo>≥</mo><mi>N</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>i</mi><mo>+</mo><mi>j</mi><mo>+</mo><mi>k</mi><mo>≥</mo><mn>2</mn><mi>N</mi><mo>−</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ i+j,\ i+k,\ j+k\ge N,\qquad i+j+k\ge2N-1.
+ \tag{17}
+</annotation></semantics></math> Its absolute coefficient is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi mathvariant="normal">Δ</mi><mi>σ</mi></msub><mo stretchy="false" form="prefix">|</mo><mi mathvariant="normal">Λ</mi><mo stretchy="false" form="prefix">(</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo>,</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">|\Delta_\sigma|\Lambda(i,j,k)</annotation></semantics></math>,
+with
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Δ</mi><mi>σ</mi></msub><mo>=</mo><mn>2</mn><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>π</mi><mi>σ</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mn>2</mn><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>t</mi><mn>0</mn></msub><mo>=</mo><mi>i</mi><mo>+</mo><mi>j</mi><mo>+</mo><mi>k</mi><mo>−</mo><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>N</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mi mathvariant="normal">Λ</mi><mo stretchy="false" form="prefix">(</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo>,</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><msup><mi>N</mi><mn>2</mn></msup><mrow><msub><mi>S</mi><mi>i</mi></msub><msub><mi>S</mi><mi>j</mi></msub><msub><mi>S</mi><mi>k</mi></msub><msub><mi>S</mi><msub><mi>t</mi><mn>0</mn></msub></msub><msub><mi>S</mi><mrow><mi>i</mi><mo>−</mo><msub><mi>t</mi><mn>0</mn></msub></mrow></msub><msub><mi>S</mi><mrow><mi>j</mi><mo>−</mo><msub><mi>t</mi><mn>0</mn></msub></mrow></msub><msub><mi>S</mi><mrow><mi>k</mi><mo>−</mo><msub><mi>t</mi><mn>0</mn></msub></mrow></msub></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \Delta_\sigma=2\cos(2\pi\sigma)-2,\quad
+ t_0=i+j+k-(2N-1),\qquad
+ \Lambda(i,j,k)=
+ \frac{N^2}{S_iS_jS_kS_{t_0}S_{i-t_0}S_{j-t_0}S_{k-t_0}}.
+ \tag{18}
+</annotation></semantics></math> The complete alternating sign remains
+in the actual tensor. For the estimate in this section only, we take its
+absolute value. The exact quotient proof in
+<code>/private/tmp/md-fixed-newton-return-gates-and-contracted-tensor.md</code>
+gives a uniform polynomial bound for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="normal">Λ</mi><annotation encoding="application/x-tex">\Lambda</annotation></semantics></math>.
+Its uniform closed rate, with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mn>1</mn><mo>−</mo><mi>i</mi><mi>/</mi><mi>N</mi><mo>,</mo><mi>b</mi><mo>=</mo><mn>1</mn><mo>−</mo><mi>j</mi><mi>/</mi><mi>N</mi><mo>,</mo><mi>c</mi><mo>=</mo><mn>1</mn><mo>−</mo><mi>k</mi><mi>/</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">a=1-i/N,b=1-j/N,c=1-k/N</annotation></semantics></math>,
+is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">ℛ</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo>+</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>+</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>+</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mn>0</mn><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ \mathcal R(a,b,c)=J(a)+J(b)+J(c)+J(a+b+c)
+          -J(a+b)-J(a+c)-J(b+c)\le0,
+ \tag{19}
+</annotation></semantics></math> where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo>≥</mo><mn>0</mn><mo>,</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo>+</mo><mi>c</mi><mo>≤</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">a,b,c\ge0,a+b+c\le1</annotation></semantics></math>.
+The full-region proof is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">ℛ</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>−</mi><msup><mi>π</mi><mn>2</mn></msup><msubsup><mo>∫</mo><mn>0</mn><mi>a</mi></msubsup><msubsup><mo>∫</mo><mn>0</mn><mi>b</mi></msubsup><msubsup><mo>∫</mo><mn>0</mn><mi>c</mi></msubsup><msup><mrow><mi mathvariant="normal">csc</mi><mo>&#8289;</mo></mrow><mn>2</mn></msup><mo stretchy="false" form="prefix">(</mo><mi>π</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>+</mo><mi>v</mi><mo>+</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mspace width="0.167em"></mspace><mi>d</mi><mi>w</mi><mspace width="0.167em"></mspace><mi>d</mi><mi>v</mi><mspace width="0.167em"></mspace><mi>d</mi><mi>u</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \mathcal R(a,b,c)
+ =-\pi^2\int_0^a\int_0^b\int_0^c
+        \csc^2(\pi(u+v+w))\,dw\,dv\,du.
+ \tag{20}
+</annotation></semantics></math> Its corner singularities are
+integrable. The inequality is strict if all three complements are
+positive, even on their total-one face.</p>
+<p>Every return vertex has at least two high incidences, since two low
+indices have sum at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>&lt;</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">d&lt;N</annotation></semantics></math>.
+At a vertex of this two-junction component, at most one incidence is
+internal. Therefore a return requires at least one high external
+boundary input. This statement includes a high output probe.</p>
+<p>Expand the two tensors into their old and return parts. If neither is
+a return, the complete positive sector with any high boundary has the
+strict gap supplied by
+<code>notes/actual_conway_unflagged_core_probe_bound.md</code>, Sections
+2–4. Its proof applies to arbitrary low
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>+</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">g+c</annotation></semantics></math>/high
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>
+arrays, not only physical alias arrays. Bounded paired edge weights
+preserve that positive majorant.</p>
+<p>If exactly one vertex is a return, at least one of the four boundary
+indices is high. The boundary rates add to at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>c</mi><mi>a</mi></msub><mo>+</mo><mn>3</mn><msub><mi>G</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\sum c_a+3G_0</annotation></semantics></math>.
+Equations (16),(19) give the total rate at most
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>c</mi><mi>a</mi></msub><mo>+</mo><mn>3</mn><msub><mi>G</mi><mn>0</mn></msub><mo>+</mo><mfrac><mrow><mn>3</mn><msub><mi>v</mi><mn>3</mn></msub></mrow><mi>π</mi></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                         \sum c_a+3G_0+\frac{3v_3}{\pi}.
+ \tag{21}
+</annotation></semantics></math> If both vertices are returns, at least
+two boundary indices are high, and the rate is at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>c</mi><mi>a</mi></msub><mo>+</mo><mn>2</mn><msub><mi>G</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\sum c_a+2G_0</annotation></semantics></math>.
+In an actual typed edge the two-return case is absent, as Section 6
+explains, but this estimate does not need its absence.</p>
+<p>The elementary bounds recorded in the isolated three-leaf proof give
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mn>3</mn></msub><mo>&lt;</mo><mfrac><mn>273</mn><mn>256</mn></mfrac><mo>,</mo><mspace width="2.0em"></mspace><mn>4</mn><mi>G</mi><mo>&gt;</mo><mfrac><mn>32</mn><mn>9</mn></mfrac><mo>,</mo><mspace width="2.0em"></mspace><mn>3</mn><msub><mi>v</mi><mn>3</mn></msub><mo>&lt;</mo><mn>4</mn><mi>G</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ v_3&lt;\frac{273}{256},\qquad
+ 4G&gt;\frac{32}{9},\qquad 3v_3&lt;4G.
+ \tag{22}
+</annotation></semantics></math> Therefore
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><msub><mi>v</mi><mn>3</mn></msub><mi>/</mi><mi>π</mi><mo>&lt;</mo><mn>2</mn><msub><mi>G</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">3v_3/\pi&lt;2G_0</annotation></semantics></math>.
+Comparing (21) and the two-return bound with (12) shows that every new
+return sector has a loss strictly greater than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mn>0</mn></msub><annotation encoding="application/x-tex">G_0</annotation></semantics></math>
+from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="normal">Ω</mi><annotation encoding="application/x-tex">\Omega</annotation></semantics></math>.
+Uniform factorial errors and the fixed polynomial number of states
+preserve any smaller positive loss. This includes all endpoint return
+states and all
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>s</mi><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mi>R</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|s|\le R&lt;1</annotation></semantics></math>;
+zeros of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="normal">Δ</mi><mi>σ</mi></msub><annotation encoding="application/x-tex">\Delta_\sigma</annotation></semantics></math>
+only improve the upper bound.</p>
+<p>We have proved a full component theorem: the norm is bounded at the
+original action (13), and every sector with a high boundary input or a
+high output probe has a strict exponential gap. Its clean term keeps
+every boundary input and its output low, but sums the entire internal
+label. If an inherited error lowers one whole boundary coefficient cone
+by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>η</mi><annotation encoding="application/x-tex">\eta</annotation></semantics></math>,
+affine homogeneity in (13) preserves that deficit. Thus this component
+may replace a singleton or a path-qualified component in the existing
+flagged/bare mutual source induction. It admits arbitrary repeated
+occurrences separated by flagged junctions; no independent cap budget is
+added.</p>
+<h2
+id="why-the-internal-half-cutoff-fails-and-the-correct-local-window">5.
+Why the internal half cutoff fails, and the correct local window</h2>
+<p>The positive complete internal law in (11) has its maximum at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mi>/</mi><mi>N</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">k/N=1/2</annotation></semantics></math>.
+Its covariant edge label is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mi>d</mi><mo>−</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">r=d-k</annotation></semantics></math>,
+so it too tends to one half. Choose supported indices with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&gt;</mo><msub><mi>M</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">r&gt;M_N</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mi>/</mi><mi>N</mi><mo>→</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">r/N\to1/2</annotation></semantics></math>.
+Strict approximation of the two original pair fibers gives the same
+limiting action
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="normal">Φ</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">r</mi></mrow></msub><annotation encoding="application/x-tex">\Phi_{\mathrm{pair}}</annotation></semantics></math>
+on these individual terms. Hence the complete internal-high sector has
+no fixed exponential deficit. This is an exact obstruction to extending
+the published all-retained-low invariant unchanged.</p>
+<p>It causes no singularity in the actual local saddle. At every strict
+old cubic vertex, the three pair sums are less than one, so its total
+normalized degree is less than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">3/2</annotation></semantics></math>.
+On a fixed sufficiently small original maximizing window, the raw
+polynomial degree is therefore less than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2N-1</annotation></semantics></math>.
+One division by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mn>0</mn></msub><annotation encoding="application/x-tex">P_0</annotation></semantics></math>
+then has quotient degree at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">N-2</annotation></semantics></math>,
+and
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ϕ</mi><mi>σ</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>e</mi><mi>i</mi></msub><msub><mi>e</mi><mi>j</mi></msub><msub><mi>e</mi><mi>k</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>ϕ</mi><mn>0</mn></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>e</mi><mi>i</mi></msub><msub><mi>e</mi><mi>j</mi></msub><msub><mi>e</mi><mi>k</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+                      \phi_\sigma(e_i e_j e_k)=\phi_0(e_i e_j e_k)
+ \tag{23}
+</annotation></semantics></math> exactly on that window, even if one of
+its indices is above
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mi>N</mi></msub><annotation encoding="application/x-tex">M_N</annotation></semantics></math>.</p>
+<p>Only circle-incident labels must stay in a compact low interval for
+the circle trace and angular Gaussian. The internal bare–bare label may
+cross one half while remaining in a compact subset of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,1)</annotation></semantics></math>.
+Its exact edge interpolation and bulk expansion remain regular there:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><msub><mi>H</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><msub><mi>W</mi><mrow><mi>N</mi><mi>x</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mo>=</mo><mfrac><mrow><msub><mi>G</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>N</mi><mi>x</mi><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow><mrow><msub><mi>G</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>N</mi><mi>x</mi><mo>−</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>G</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>N</mi><mi>x</mi><mo>+</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mo>=</mo><mn>1</mn><mo>−</mo><mfrac><mrow><mi>π</mi><msup><mi>s</mi><mn>2</mn></msup></mrow><mi>N</mi></mfrac><mrow><mi mathvariant="normal">cot</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>π</mi><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><msub><mi>O</mi><mi>R</mi></msub><mo stretchy="false" form="prefix">(</mo><msup><mi>N</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \frac{H_N(s)}{W_{Nx}(s)}
+ =\frac{G_N(Nx)^2}{G_N(Nx-s)G_N(Nx+s)}
+ =1-\frac{\pi s^2}{N}\cot(\pi x)+O_R(N^{-2}).
+ \tag{24}
+</annotation></semantics></math> The first equality at nonintegral
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">Nx</annotation></semantics></math>
+defines the canonical interpolation. Original strict gate arguments stay
+positive at this half-label state. Thus the finite primitive window and
+strict Hessian can be treated by the same grouped contour construction,
+retaining this full internal coordinate. This paragraph identifies the
+local interface; it does not assert an independently assembled filled
+theorem for the enlarged class.</p>
+<h2 id="actual-typing-isolates-moving-return-vertices">6. Actual typing
+isolates moving return vertices</h2>
+<p>The six-type physical turn table has the four-cycle
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">End</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>+</mi><mi>+</mi><mo stretchy="false" form="postfix">)</mo><mo>→</mo><mrow><mi mathvariant="normal">Hom</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>+</mi><mo>,</mo><mi>+</mi><mi>−</mi><mo stretchy="false" form="postfix">)</mo><mo>→</mo><mrow><mi mathvariant="normal">End</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>−</mi><mo stretchy="false" form="postfix">)</mo><mo>→</mo><mrow><mi mathvariant="normal">Hom</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>+</mi><mi>−</mi><mo>,</mo><mi>−</mi><mi>+</mi><mo stretchy="false" form="postfix">)</mo><mo>→</mo><mrow><mi mathvariant="normal">End</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>+</mi><mi>+</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ \operatorname{End}(++)\longrightarrow
+ \operatorname{Hom}(-+,+-)\longrightarrow
+ \operatorname{End}(--)\longrightarrow
+ \operatorname{Hom}(+-,-+)\longrightarrow
+ \operatorname{End}(++),
+ \tag{25}
+</annotation></semantics></math> and interchanges the two opposite-color
+endomorphism spaces. Only the equal-color endomorphism spaces have the
+moving relation; all four opposite-order spaces have the constant
+relation. At a lowered product vertex, compatibility makes its factors
+share that Casimir class. Hence every original physical turn edge has at
+least one constant-relation endpoint: moving vertices form an
+independent set.</p>
+<p>This applies to the original reduced junction tree, not to unturned
+edges introduced in an artificial binary resolution of a high-valence
+product. In a trivalent physical-turn tree, distinct return vertices
+therefore cannot be adjacent. Their high incidences end in old vertices,
+which have at most one high incidence each. This is a useful extra
+restriction on the return sectors. It does not by itself control the
+pressures of the old regions joining several return vertices.</p>
+<h2
+id="a-coupled-pressure-obstruction-and-the-remaining-general-lemma">7. A
+coupled pressure obstruction and the remaining general lemma</h2>
+<p>For a general trivalent component, remove its return vertices and
+consider one connected remaining old region. Its boundary can have
+several prescribed high labels
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>z</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">z_1,\ldots,z_r</annotation></semantics></math>.
+Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Ψ</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>z</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>z</mi><mi>r</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\Psi(z_1,\ldots,z_r)</annotation></semantics></math>
+be its actual old constrained pressure, including every ordinary leaf
+profile and constant. A sufficient simultaneous-clamping statement would
+be
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Ψ</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>z</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>z</mi><mi>r</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mi mathvariant="normal">Ψ</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo><mi>…</mi><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mspace width="1.0em"></mspace><mo stretchy="false" form="prefix">(</mo><msub><mi>z</mi><mi>j</mi></msub><mo>≥</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \Psi(z_1,\ldots,z_r)\le\Psi(1/2,\ldots,1/2)
+                  \quad(z_j\ge1/2).
+ \tag{26}
+</annotation></semantics></math> If (26) held, all regions could be
+reoptimized simultaneously at the half interfaces, without adding
+independent caps. Each return vertex would be replaced by an old vertex
+with two or three half incidences; its old action is nonnegative whereas
+its return action is nonpositive. The resulting feasible old state has a
+saturated pair-sum inequality. The original strict maximum then gives a
+uniform positive boundary gap. This is only a conditional global
+argument: (26) has not been established here.</p>
+<p>The tempting coordinatewise strengthening of (26) is false even for a
+genuine positive old region. Take two old trivalent vertices joined by
+label
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>u</mi><annotation encoding="application/x-tex">u</annotation></semantics></math>,
+each with one physical pure leaf, and prescribe the remaining boundary
+labels
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>,</mo><mi>w</mi></mrow><annotation encoding="application/x-tex">z,w</annotation></semantics></math>.
+Its coupled pressure is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Ψ</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo>,</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mi mathvariant="normal">max</mi><mrow><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>u</mi></mrow></munder><mo stretchy="false" form="prefix">{</mo><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>t</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo>,</mo><mi>a</mi><mo>,</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>t</mi><mo stretchy="false" form="prefix">(</mo><mi>w</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="1.0em"></mspace><mi>a</mi><mo>,</mo><mi>b</mi><mo>∈</mo><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">]</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ \Psi(z,w)=\max_{a,b,u}
+   \{g(a)+g(b)+t(z,a,u)+t(w,b,u)\},
+ \quad a,b\in[0,1/2],
+ \tag{27}
+</annotation></semantics></math> with the two original old support
+domains. At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">w=1</annotation></semantics></math>,
+the second vertex forces
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>=</mo><mi>u</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">b=u=0</annotation></semantics></math>.
+The first forces
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mn>1</mn><mo>−</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">a=1-z</annotation></semantics></math>,
+and both cubic actions are zero. Thus
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Ψ</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mi mathvariant="normal">Ψ</mi><mo stretchy="false" form="prefix">(</mo><mn>3</mn><mi>/</mi><mn>4</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>G</mi><mn>0</mn></msub><mo>&gt;</mo><mn>0</mn><mo>=</mo><mi mathvariant="normal">Ψ</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                    \Psi(z,1)=g(1-z),\qquad
+ \Psi(3/4,1)=G_0&gt;0=\Psi(1/2,1).
+ \tag{28}
+</annotation></semantics></math> This also gives an interior failure.
+Put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>=</mo><mn>1</mn><mo>−</mo><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">w=1-\epsilon</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>=</mo><mi>b</mi><mo>=</mo><mn>3</mn><mi>ϵ</mi><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">u=b=3\epsilon/4</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mn>1</mn><mo>−</mo><mi>z</mi><mo>−</mo><mn>3</mn><mi>ϵ</mi><mi>/</mi><mn>8</mn></mrow><annotation encoding="application/x-tex">a=1-z-3\epsilon/8</annotation></semantics></math>.
+For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">z=1/2</annotation></semantics></math>
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">3/4</annotation></semantics></math>,
+all old gate inequalities and both leaf ranges are strict for
+sufficiently small
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\epsilon&gt;0</annotation></semantics></math>,
+and the action tends to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">g(1-z)</annotation></semantics></math>.
+Compactness gives the matching upper limit, since every limiting
+feasible state at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">w=1</annotation></semantics></math>
+is the forced state above. Consequently
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Ψ</mi><mo stretchy="false" form="prefix">(</mo><mn>3</mn><mi>/</mi><mn>4</mn><mo>,</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo><mo>&gt;</mo><mi mathvariant="normal">Ψ</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\Psi(3/4,w)&gt;\Psi(1/2,w)</annotation></semantics></math>
+for all sufficiently large
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">w&lt;1</annotation></semantics></math>.</p>
+<p>Thus the derivative bound for a one-output complete branch cannot be
+applied one coordinate at a time to a region with several prescribed
+interfaces. The simultaneous inequality (26) is not contradicted by
+(28), because it also changes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>.
+Since the old joint pressure is concave, one possible proof of (26)
+would be a nonpositive supporting gradient at the all-half boundary.
+Strict angle feasibility at the all-half assignment is elementary here:
+each old vertex has at most one marked high-boundary incidence. Set
+those incidences to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1/2</annotation></semantics></math>,
+and all other internal and ordinary-leaf labels to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>/</mi><mn>8</mn></mrow><annotation encoding="application/x-tex">3/8</annotation></semantics></math>.
+An unmarked cubic has total
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>9</mn><mi>/</mi><mn>8</mn></mrow><annotation encoding="application/x-tex">9/8</annotation></semantics></math>
+and pair sums
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">3/4</annotation></semantics></math>;
+a marked one has total
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">5/4</annotation></semantics></math>
+and largest pair sum
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn><mi>/</mi><mn>8</mn></mrow><annotation encoding="application/x-tex">7/8</annotation></semantics></math>.
+Both are strict. What is not yet proved is that the constrained
+maximizer is strict and supplies positive boundary multipliers.
+Establishing those properties and the supporting gradient is a new
+geometric obligation; they do not follow solely from this feasible angle
+assignment or from the existing one-output probe theorem.</p>
+<p>For higher-valence bare vertices, even the trivalent physical-edge
+support reduction needs further work: a raw low product can have a
+nonzero return trace without a high exterior label. The regular
+low-window Fourier comparison remains available, but it is not a global
+high-sector theorem. No general arbitrary-component moving-meridian
+bound or volume equality is claimed here.</p>

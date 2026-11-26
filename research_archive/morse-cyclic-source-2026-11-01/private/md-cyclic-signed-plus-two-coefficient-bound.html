@@ -1,0 +1,418 @@
+<h1
+id="a-polynomial-bound-for-every-original-face-coefficient-at-the-positive-spectral-endpoint">A
+polynomial bound for every original face coefficient at the positive
+spectral endpoint</h1>
+<p>At the real spectral endpoint
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">+2</annotation></semantics></math>,
+every coefficient of the full original resolvent face polynomial is
+bounded by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msup><mi>N</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">2N^3</annotation></semantics></math>.
+This includes the interior entries, both one-sided parts and the CROSS
+part, at both level parities. The proof retains the cancellation between
+one-step and two-step paths. It does not replace their signed continuant
+by its absolute path expansion.</p>
+<p>Consequently, for any fixed marked diagram with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>
+such boxes, the full shared source, its CROSS part, and their difference
+are polynomially bounded at the single spectral tuple
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo>,</mo><mi>…</mi><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(2,\ldots,2)</annotation></semantics></math>.
+This is an endpoint statement, not a uniform bound on the spectral cube
+and not a filling-volume theorem.</p>
+<h2 id="the-original-interval-continuant">1. The original interval
+continuant</h2>
+<p>Put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">N\ge2</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">d=N-1</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi><mo>=</mo><mi>π</mi><mi>/</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">\theta=\pi/N</annotation></semantics></math>,
+and
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mi>j</mi></msub><mo>=</mo><mn>2</mn><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>j</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>s</mi><mi>j</mi></msub><mo>=</mo><mn>2</mn><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>j</mi><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>γ</mi><mi>j</mi></msub><mo>=</mo><mn>2</mn><mo>−</mo><msub><mi>c</mi><mi>j</mi></msub><mo>=</mo><mn>4</mn><msup><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mn>2</mn></msup><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mi>j</mi><mo>+</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo stretchy="false" form="postfix">)</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ c_j=2\cos((2j+1)\theta),\quad s_j=2\sin(j\theta),\quad
+ \gamma_j=2-c_j=4\sin^2((j+\tfrac12)\theta).
+ \tag{1}
+</annotation></semantics></math> The actual homogeneous face operator at
+outer variables
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x,y</annotation></semantics></math>
+is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><msup><mi>z</mi><mi>j</mi></msup><mo>=</mo><msub><mi>c</mi><mi>j</mi></msub><msup><mi>z</mi><mi>j</mi></msup><mo>−</mo><msubsup><mi>s</mi><mi>j</mi><mn>2</mn></msubsup><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><msup><mi>z</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>−</mo><msub><mi>s</mi><mi>j</mi></msub><msub><mi>s</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mi>x</mi><mi>y</mi><msup><mi>z</mi><mrow><mi>j</mi><mo>−</mo><mn>2</mn></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ C(x,y)z^j=c_jz^j-s_j^2(x+y)z^{j-1}
+                         -s_js_{j-1}xy z^{j-2}.
+ \tag{2}
+</annotation></semantics></math> The matrix acts by columns on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>,</mo><mi>z</mi><mo>,</mo><mi>…</mi><mo>,</mo><msup><mi>z</mi><mi>d</mi></msup></mrow><annotation encoding="application/x-tex">1,z,\ldots,z^d</annotation></semantics></math>.
+The source polynomial is defined from the full numerator
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>V</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo>;</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>χ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mi>I</mi><mo>−</mo><mi>C</mi><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>χ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>2</mn><msub><mi>T</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mn>2</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ V_N(\sigma;C)=\chi_N(\sigma)(\sigma I-C)^{-1},
+ \qquad \chi_N(\sigma)=2T_N(\sigma/2)+2.
+ \tag{3}
+</annotation></semantics></math> All repeated-root information is
+retained. At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\sigma=2</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>χ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">\chi_N(2)=4</annotation></semantics></math>
+and every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>γ</mi><mi>j</mi></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\gamma_j&gt;0</annotation></semantics></math>.</p>
+<p>Fix an interval
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>i</mi><mo>≤</mo><mi>j</mi><mo>≤</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">0\le i\le j\le d</annotation></semantics></math>.
+Set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mi>S</mi><mo>,</mo><mi>y</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x=S,y=1</annotation></semantics></math>.
+Its cleared signed continuant satisfies
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msub><mi>P</mi><mrow><mi>i</mi><mo>,</mo><mi>i</mi></mrow></msub></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mn>1</mn><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>P</mi><mrow><mi>i</mi><mo>,</mo><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mi>−</mi><msubsup><mi>s</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow><mn>2</mn></msubsup><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msub><mi>P</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mi>−</mi><msubsup><mi>s</mi><mi>j</mi><mn>2</mn></msubsup><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>P</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>s</mi><mi>j</mi></msub><msub><mi>s</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><msub><mi>γ</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mi>S</mi><msub><mi>P</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi><mo>−</mo><mn>2</mn></mrow></msub><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+ \begin{split}
+ P_{i,i}&amp;=1,\qquad P_{i,i+1}=-s_{i+1}^2(1+S),\\
+ P_{i,j}&amp;=-s_j^2(1+S)P_{i,j-1}
+             -s_js_{j-1}\gamma_{j-1}S P_{i,j-2}.
+ \end{split}
+ \tag{4}
+</annotation></semantics></math> Indeed a decreasing path enters its
+final interval by a one-step arrow or a two-step arrow. In the second
+case the skipped row contributes its unused factor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>γ</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">\gamma_{j-1}</annotation></semantics></math>.
+Both arrows of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+are negative, giving the two signs in (4). Thus the full original
+numerator entry is exactly
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><msub><mi>V</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo>;</mo><mi>C</mi><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><msub><mo stretchy="false" form="postfix">]</mo><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub><mo>=</mo><msub><mi>P</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><munder><mo>∏</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mrow><mn>0</mn><mo>≤</mo><mi>r</mi><mo>&lt;</mo><mi>i</mi></mrow></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mrow><mrow><mtext mathvariant="normal">or </mtext><mspace width="0.333em"></mspace></mrow><mi>j</mi><mo>&lt;</mo><mi>r</mi><mo>≤</mo><mi>d</mi></mrow></mtd></mtr></mtable></munder><msub><mi>γ</mi><mi>r</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ [V_N(2;C(S,1))]_{i,j}
+   =P_{i,j}(S)
+       \prod_{\substack{0\le r&lt;i\\\text{or }j&lt;r\le d}}\gamma_r.
+ \tag{5}
+</annotation></semantics></math> There is no sum over omitted normal
+channels in (5).</p>
+<p>Normalize only the continuant:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>j</mi><mo>−</mo><mi>i</mi></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><munderover><mo>∏</mo><mrow><mi>r</mi><mo>=</mo><mi>i</mi><mo>+</mo><mn>1</mn></mrow><mi>j</mi></munderover><msubsup><mi>s</mi><mi>r</mi><mn>2</mn></msubsup><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>h</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ P_{i,j}(S)
+   =(-1)^{j-i}\left(\prod_{r=i+1}^j s_r^2\right)
+                                  h_{i,j}(S).
+ \tag{6}
+</annotation></semantics></math> Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mrow><mi>i</mi><mo>,</mo><mi>i</mi></mrow></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">h_{i,i}=1</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mrow><mi>i</mi><mo>,</mo><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>1</mn><mo>+</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">h_{i,i+1}=1+S</annotation></semantics></math>,
+and
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>h</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>ρ</mi><mi>j</mi></msub><mi>S</mi><msub><mi>h</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>ρ</mi><mi>j</mi></msub><mo>=</mo><mfrac><msub><mi>γ</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mrow><msub><mi>s</mi><mi>j</mi></msub><msub><mi>s</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow></mfrac><mo>=</mo><mn>1</mn><mo>+</mo><msub><mi>ε</mi><mi>j</mi></msub><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ h_{i,j}=(1+S)h_{i,j-1}-\rho_jS h_{i,j-2},
+ \qquad
+ \rho_j=\frac{\gamma_{j-1}}{s_js_{j-1}}=1+\varepsilon_j,
+ \tag{7}
+</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ε</mi><mi>j</mi></msub><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mn>2</mn></msup><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>j</mi><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mi>j</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mspace width="1.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo>≤</mo><mi>j</mi><mo>≤</mo><mi>d</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \varepsilon_j=
+ \frac{\sin^2(\theta/2)}{\sin(j\theta)\sin((j-1)\theta)}
+ \quad(2\le j\le d).
+ \tag{8}
+</annotation></semantics></math> The identity behind the final equality
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mn>0</mn></msub><mo>−</mo><msub><mi>c</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>s</mi><mi>j</mi></msub><msub><mi>s</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">c_0-c_{j-1}=s_js_{j-1}</annotation></semantics></math>.</p>
+<h2 id="three-elementary-bounds-on-the-recurrence">2. Three elementary
+bounds on the recurrence</h2>
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>≥</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">N\ge3</annotation></semantics></math>,
+the positive sequence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>ε</mi><mi>j</mi></msub><annotation encoding="application/x-tex">\varepsilon_j</annotation></semantics></math>
+decreases and then increases. This follows from
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>j</mi><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mi>j</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mi>θ</mi><mo>−</mo><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>j</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow><mn>2</mn></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \sin(j\theta)\sin((j-1)\theta)
+     =\frac{\cos\theta-\cos((2j-1)\theta)}2.
+ \tag{9}
+</annotation></semantics></math> Its maximum occurs at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">j=2</annotation></semantics></math>
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>=</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">j=d</annotation></semantics></math>,
+and
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><msub><mi>ε</mi><mi>j</mi></msub><mo>≤</mo><mfrac><mn>1</mn><mrow><mn>8</mn><msup><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mn>2</mn></msup><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mi>θ</mi></mrow></mfrac><mo>≤</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>ε</mi><mi>j</mi></msub><mo>≥</mo><msup><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mn>2</mn></msup><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><msup><mi>N</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ 0&lt;\varepsilon_j\le
+ \frac{1}{8\cos^2(\theta/2)\cos\theta}\le\frac13,
+ \qquad
+ \varepsilon_j\ge\sin^2(\theta/2)\ge N^{-2}.
+ \tag{10}
+</annotation></semantics></math> The first endpoint bound uses
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi><mo>≤</mo><mi>π</mi><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">\theta\le\pi/3</annotation></semantics></math>;
+the last is the sine chord inequality on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mi>π</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[0,\pi/2]</annotation></semantics></math>.</p>
+<p>The total perturbation is bounded independently of the interval and
+the level. The exact telescoping formula is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>2</mn></mrow><mi>d</mi></munderover><msub><mi>ε</mi><mi>j</mi></msub></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mn>2</mn></msup><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mi>θ</mi></mrow></mfrac><mo minsize="120%" maxsize="120%" stretchy="true" form="prefix">(</mo><mrow><mi mathvariant="normal">cot</mi><mo>&#8289;</mo></mrow><mi>θ</mi><mo>−</mo><mrow><mi mathvariant="normal">cot</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>d</mi><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mo minsize="120%" maxsize="120%" stretchy="true" form="postfix">)</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mfrac><mrow><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mi>θ</mi></mrow><mrow><mn>1</mn><mo>+</mo><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mi>θ</mi></mrow></mfrac><mo>&lt;</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+ \begin{split}
+ \sum_{j=2}^{d}\varepsilon_j
+ &amp;=\frac{\sin^2(\theta/2)}{\sin\theta}
+             \bigl(\cot\theta-\cot(d\theta)\bigr)\\
+ &amp;=\frac{\cos\theta}{1+\cos\theta}&lt;\frac12.
+ \end{split}
+ \tag{11}
+</annotation></semantics></math> In particular every interval product
+obeys
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∏</mo><msub><mi>ρ</mi><mi>j</mi></msub><mo>&lt;</mo><msup><mi>e</mi><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow></msup><mo>&lt;</mo><mn>2</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                    \prod \rho_j&lt;e^{1/2}&lt;2.
+ \tag{12}
+</annotation></semantics></math></p>
+<h2 id="a-positive-energy-for-the-signed-continuant">3. A positive
+energy for the signed continuant</h2>
+<p>Write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>=</mo><msup><mi>e</mi><mrow><mn>2</mn><mi>i</mi><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">S=e^{2it}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>=</mo><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">c=\cos t</annotation></semantics></math>,
+and for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>j</mi><mo>−</mo><mi>i</mi></mrow><annotation encoding="application/x-tex">k=0,\ldots,j-i</annotation></semantics></math>
+define
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mi>k</mi></msub><mo>=</mo><msup><mi>e</mi><mrow><mi>−</mi><mi>i</mi><mi>k</mi><mi>t</mi></mrow></msup><msub><mi>h</mi><mrow><mi>i</mi><mo>,</mo><mi>i</mi><mo>+</mo><mi>k</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><msup><mi>e</mi><mrow><mn>2</mn><mi>i</mi><mi>t</mi></mrow></msup><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                  y_k=e^{-ikt}h_{i,i+k}(e^{2it}).
+ \tag{13}
+</annotation></semantics></math> The recurrence makes every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>y</mi><mi>k</mi></msub><annotation encoding="application/x-tex">y_k</annotation></semantics></math>
+real:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>y</mi><mn>1</mn></msub><mo>=</mo><mn>2</mn><mi>c</mi><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>y</mi><mi>k</mi></msub><mo>=</mo><mn>2</mn><mi>c</mi><msub><mi>y</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>ρ</mi><mrow><mi>i</mi><mo>+</mo><mi>k</mi></mrow></msub><msub><mi>y</mi><mrow><mi>k</mi><mo>−</mo><mn>2</mn></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ y_0=1,\qquad y_1=2c,\qquad
+ y_k=2cy_{k-1}-\rho_{i+k}y_{k-2}.
+ \tag{14}
+</annotation></semantics></math> For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\rho&gt;1</annotation></semantics></math>
+use the positive quadratic form
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mi>ρ</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>u</mi><mn>2</mn></msup><mo>+</mo><mi>ρ</mi><msup><mi>v</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><mi>c</mi><mi>u</mi><mi>v</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>−</mo><mi>c</mi><mi>v</mi><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>ρ</mi><mo>−</mo><msup><mi>c</mi><mn>2</mn></msup><mo stretchy="false" form="postfix">)</mo><msup><mi>v</mi><mn>2</mn></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ Q_\rho(u,v)=u^2+\rho v^2-2cuv
+            =(u-cv)^2+(\rho-c^2)v^2.
+ \tag{15}
+</annotation></semantics></math> The exact step identity is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mi>ρ</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>c</mi><mi>u</mi><mo>−</mo><mi>ρ</mi><mi>v</mi><mo>,</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>ρ</mi><msub><mi>Q</mi><mi>ρ</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ Q_\rho(2cu-\rho v,u)=\rho Q_\rho(u,v).
+ \tag{16}
+</annotation></semantics></math> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>ρ</mi><mo>′</mo></msup><mo>≤</mo><mi>ρ</mi></mrow><annotation encoding="application/x-tex">\rho&#39;\le\rho</annotation></semantics></math>,
+then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><msup><mi>ρ</mi><mo>′</mo></msup></msub><mo>≤</mo><msub><mi>Q</mi><mi>ρ</mi></msub></mrow><annotation encoding="application/x-tex">Q_{\rho&#39;}\le Q_\rho</annotation></semantics></math>.
+If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>ρ</mi><mo>′</mo></msup><mo>≥</mo><mi>ρ</mi></mrow><annotation encoding="application/x-tex">\rho&#39;\ge\rho</annotation></semantics></math>,
+completion of the square gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><msup><mi>ρ</mi><mo>′</mo></msup></msub><mo>≤</mo><mfrac><mrow><msup><mi>ρ</mi><mo>′</mo></msup><mo>−</mo><msup><mi>c</mi><mn>2</mn></msup></mrow><mrow><mi>ρ</mi><mo>−</mo><msup><mi>c</mi><mn>2</mn></msup></mrow></mfrac><msub><mi>Q</mi><mi>ρ</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ Q_{\rho&#39;}\le
+       \frac{\rho&#39;-c^2}{\rho-c^2}Q_\rho.
+ \tag{17}
+</annotation></semantics></math> The increase factors in (17) telescope
+because the sequence decreases and then increases. Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>ρ</mi><mo>*</mo></msub><annotation encoding="application/x-tex">\rho_*</annotation></semantics></math>
+be the minimum over the recurrence steps of the chosen interval, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>ρ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">d</mi></mrow></msub><annotation encoding="application/x-tex">\rho_{\mathrm{end}}</annotation></semantics></math>
+its last coefficient. Starting from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><msub><mi>ρ</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">t</mi></mrow></msub></msub><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>c</mi><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>ρ</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Q_{\rho_{\mathrm{start}}}(2c,1)=\rho_{\mathrm{start}}</annotation></semantics></math>,
+(12), (16), and (17) give
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><msub><mi>ρ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">d</mi></mrow></msub></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>y</mi><mi>k</mi></msub><mo>,</mo><msub><mi>y</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mn>2</mn><msub><mi>ρ</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">t</mi></mrow></msub><mfrac><mrow><msub><mi>ρ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>−</mo><msup><mi>c</mi><mn>2</mn></msup></mrow><mrow><msub><mi>ρ</mi><mo>*</mo></msub><mo>−</mo><msup><mi>c</mi><mn>2</mn></msup></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ Q_{\rho_{\mathrm{end}}}(y_k,y_{k-1})
+ \le
+ 2\rho_{\mathrm{start}}
+       \frac{\rho_{\mathrm{end}}-c^2}{\rho_*-c^2}.
+ \tag{18}
+</annotation></semantics></math> If the interval ends before the minimum
+of the full sequence, its own minimum is its last coefficient and the
+ratio in (18) is one. Thus the displayed formula also covers monotone
+subintervals.</p>
+<p>Minimizing (15) in its second variable shows
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mi>ρ</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><mfrac><mrow><mi>ρ</mi><mo>−</mo><msup><mi>c</mi><mn>2</mn></msup></mrow><mi>ρ</mi></mfrac><msup><mi>u</mi><mn>2</mn></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ Q_\rho(u,v)\ge\frac{\rho-c^2}{\rho}u^2.
+ \tag{19}
+</annotation></semantics></math> Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>,</mo><msub><mi>ρ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>≤</mo><mn>4</mn><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">\rho_{\mathrm{start}},\rho_{\mathrm{end}}\le4/3</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mo>*</mo></msub><mo>−</mo><msup><mi>c</mi><mn>2</mn></msup><mo>≥</mo><msub><mi>ρ</mi><mo>*</mo></msub><mo>−</mo><mn>1</mn><mo>≥</mo><msup><mi>N</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\rho_*-c^2\ge\rho_*-1\ge N^{-2}</annotation></semantics></math>,
+equations (18)–(19) imply
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>h</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>&lt;</mo><mn>2</mn><mi>N</mi><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">|</mo><mi>S</mi><mo stretchy="false" form="prefix">|</mo><mo>=</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                 |h_{i,j}(S)|&lt;2N\qquad(|S|=1).
+ \tag{20}
+</annotation></semantics></math> Intervals of length zero or one satisfy
+the same bound directly. At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">N=2</annotation></semantics></math>
+there are only those intervals. Cauchy’s coefficient formula therefore
+gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mo stretchy="false" form="prefix">[</mo><msup><mi>S</mi><mi>p</mi></msup><mo stretchy="false" form="postfix">]</mo><msub><mi>h</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mn>2</mn><mi>N</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                  |[S^p]h_{i,j}(S)|\le2N.
+ \tag{21}
+</annotation></semantics></math> This energy argument controls the
+original alternating recurrence. Taking absolute values in (7) before
+its negative second term has been combined would not give (20).</p>
+<h2 id="the-exact-unused-row-factor-is-polynomial">4. The exact
+unused-row factor is polynomial</h2>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>w</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub><annotation encoding="application/x-tex">w_{i,j}</annotation></semantics></math>
+be the positive monomer prefactor in (5)–(6):
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><munderover><mo>∏</mo><mrow><mi>r</mi><mo>=</mo><mi>i</mi><mo>+</mo><mn>1</mn></mrow><mi>j</mi></munderover><msubsup><mi>s</mi><mi>r</mi><mn>2</mn></msubsup><mo stretchy="true" form="postfix">)</mo></mrow><munder><mo>∏</mo><mrow><mi>r</mi><mo>&lt;</mo><mi>i</mi><mspace width="0.222em"></mspace><mtext mathvariant="normal">or</mtext><mspace width="0.222em"></mspace><mi>r</mi><mo>&gt;</mo><mi>j</mi></mrow></munder><msub><mi>γ</mi><mi>r</mi></msub><mo>=</mo><mfrac><mn>4</mn><msub><mi>γ</mi><mi>i</mi></msub></mfrac><munderover><mo>∏</mo><mrow><mi>r</mi><mo>=</mo><mi>i</mi><mo>+</mo><mn>1</mn></mrow><mi>j</mi></munderover><mfrac><msubsup><mi>s</mi><mi>r</mi><mn>2</mn></msubsup><msub><mi>γ</mi><mi>r</mi></msub></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ w_{i,j}
+   =\left(\prod_{r=i+1}^j s_r^2\right)
+       \prod_{r&lt;i\ \text{or}\ r&gt;j}\gamma_r
+   =\frac4{\gamma_i}
+       \prod_{r=i+1}^j\frac{s_r^2}{\gamma_r}.
+ \tag{22}
+</annotation></semantics></math> The last equality uses the exact
+shifted sine product
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∏</mo><mrow><mi>r</mi><mo>=</mo><mn>0</mn></mrow><mi>d</mi></msubsup><msub><mi>γ</mi><mi>r</mi></msub><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">\prod_{r=0}^d\gamma_r=4</annotation></semantics></math>.
+Define the full-index cap weights
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>j</mi></msub><mo>=</mo><mfrac><mn>4</mn><msub><mi>γ</mi><mn>0</mn></msub></mfrac><munderover><mo>∏</mo><mrow><mi>r</mi><mo>=</mo><mn>1</mn></mrow><mi>j</mi></munderover><mfrac><msubsup><mi>s</mi><mi>r</mi><mn>2</mn></msubsup><msub><mi>γ</mi><mi>r</mi></msub></mfrac><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>V</mi><mi>j</mi></msub><mo>=</mo><mfrac><mrow><msub><mi>γ</mi><mi>j</mi></msub><msub><mi>U</mi><mi>j</mi></msub></mrow><mn>4</mn></mfrac><mo>=</mo><munderover><mo>∏</mo><mrow><mi>r</mi><mo>=</mo><mn>1</mn></mrow><mi>j</mi></munderover><mfrac><mrow><msup><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mn>2</mn></msup><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><msup><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mn>2</mn></msup><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mo>−</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo stretchy="false" form="postfix">)</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ U_j=\frac4{\gamma_0}
+       \prod_{r=1}^j\frac{s_r^2}{\gamma_r},
+ \qquad
+ V_j=\frac{\gamma_jU_j}{4}
+       =\prod_{r=1}^j
+          \frac{\sin^2(r\theta)}{\sin^2((r-\tfrac12)\theta)}.
+ \tag{23}
+</annotation></semantics></math> The sequence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>U</mi><mi>j</mi></msub><annotation encoding="application/x-tex">U_j</annotation></semantics></math>
+decreases and then increases, because its adjacent ratio is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mn>2</mn></msup><mo stretchy="false" form="prefix">(</mo><mi>j</mi><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mi>/</mi><msup><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mn>2</mn></msup><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mi>j</mi><mo>+</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo stretchy="false" form="postfix">)</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\sin^2(j\theta)/\sin^2((j+\tfrac12)\theta)</annotation></semantics></math>.
+Its endpoint values are
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mn>0</mn></msub><mo>=</mo><msup><mrow><mi mathvariant="normal">csc</mi><mo>&#8289;</mo></mrow><mn>2</mn></msup><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><msup><mi>N</mi><mn>2</mn></msup><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>U</mi><mi>d</mi></msub><mo>=</mo><msup><mi>N</mi><mn>2</mn></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ U_0=\csc^2(\theta/2)\le N^2,\qquad U_d=N^2.
+ \tag{24}
+</annotation></semantics></math> Hence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>j</mi></msub><mo>≤</mo><msup><mi>N</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">U_j\le N^2</annotation></semantics></math>
+everywhere. The sequence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>V</mi><mi>j</mi></msub><annotation encoding="application/x-tex">V_j</annotation></semantics></math>
+increases and then decreases. Its endpoint values are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>V</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">V_0=1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>V</mi><mi>d</mi></msub><mo>=</mo><msup><mi>N</mi><mn>2</mn></msup><msup><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mn>2</mn></msup><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">V_d=N^2\sin^2(\theta/2)\ge1</annotation></semantics></math>,
+so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>V</mi><mi>j</mi></msub><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">V_j\ge1</annotation></semantics></math>
+everywhere. These monotonicity statements follow by comparing the two
+sine arguments and their reflections about
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\pi/2</annotation></semantics></math>;
+they include the possible central equality.</p>
+<p>Consequently
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub><mo>=</mo><mfrac><msub><mi>U</mi><mi>j</mi></msub><msub><mi>V</mi><mi>i</mi></msub></mfrac><mo>≤</mo><msup><mi>N</mi><mn>2</mn></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                         w_{i,j}=\frac{U_j}{V_i}\le N^2.
+ \tag{25}
+</annotation></semantics></math> Combining (5), (6), (21), and (25)
+proves the uniform finite coefficient estimate
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><mspace width="1.0em"></mspace><mrow><mo stretchy="true" form="prefix">|</mo><mo stretchy="false" form="prefix">[</mo><msup><mi>x</mi><mi>p</mi></msup><msup><mi>y</mi><mrow><mi>j</mi><mo>−</mo><mi>i</mi><mo>−</mo><mi>p</mi></mrow></msup><mo stretchy="false" form="postfix">]</mo><mo stretchy="false" form="prefix">[</mo><msub><mi>V</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo>;</mo><mi>C</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><msub><mo stretchy="false" form="postfix">]</mo><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mn>2</mn><msup><mi>N</mi><mn>3</mn></msup><mi>.</mi><mspace width="1.0em"></mspace></mrow></menclose><annotation encoding="application/x-tex">
+ \boxed{\quad
+  \left|[x^p y^{j-i-p}]
+            [V_N(2;C(x,y))]_{i,j}\right|
+                   \le2N^3 .
+ \quad}
+ \tag{26}
+</annotation></semantics></math> Homogeneity identifies the coefficient
+in (26) with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><msup><mi>S</mi><mi>p</mi></msup><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[S^p]</annotation></semantics></math>
+after
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mi>S</mi><mo>,</mo><mi>y</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x=S,y=1</annotation></semantics></math>.
+Thus every monomial coefficient of the original four-face homogeneous
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mrow><msub><mi>V</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow></msub><annotation encoding="application/x-tex">H_{V_N(2)}</annotation></semantics></math>
+has the same bound. The original input/output middle degrees are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>,</mo><mi>d</mi><mo>−</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">i,d-j</annotation></semantics></math>,
+so no further normalization occurs.</p>
+<h2 id="endpoint-calibration-and-a-shrinking-spectral-interval">5.
+Endpoint calibration and a shrinking spectral interval</h2>
+<p>At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><msub><mi>c</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\sigma=c_0</annotation></semantics></math>,
+the normalized interval recurrence (7) has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>j</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\rho_j=1</annotation></semantics></math>.
+Therefore
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1</mn><mo>+</mo><mi>S</mi><mo>+</mo><mi>⋯</mi><mo>+</mo><msup><mi>S</mi><mrow><mi>j</mi><mo>−</mo><mi>i</mi></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ h_{i,j}(S)=1+S+\cdots+S^{j-i}.
+ \tag{27}
+</annotation></semantics></math> For the full interval
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">0,\ldots,d</annotation></semantics></math>
+there are no unused rows. Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∏</mo><mrow><mi>r</mi><mo>=</mo><mn>1</mn></mrow><mi>d</mi></msubsup><msubsup><mi>s</mi><mi>r</mi><mn>2</mn></msubsup><mo>=</mo><msup><mi>N</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\prod_{r=1}^d s_r^2=N^2</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><msub><mi>V</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>c</mi><mn>0</mn></msub><mo>;</mo><mi>C</mi><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><msub><mo stretchy="false" form="postfix">]</mo><mrow><mn>0</mn><mo>,</mo><mi>d</mi></mrow></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>d</mi></msup><msup><mi>N</mi><mn>2</mn></msup><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>S</mi><mo>+</mo><mi>⋯</mi><mo>+</mo><msup><mi>S</mi><mi>d</mi></msup><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ [V_N(c_0;C(S,1))]_{0,d}
+       =(-1)^dN^2(1+S+\cdots+S^d).
+ \tag{28}
+</annotation></semantics></math> This is an exact root-normal
+calibration of every south-degree coefficient, not an endpoint
+asymptotic.</p>
+<p>There is also a uniform polynomial estimate on the entire interval
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mn>0</mn></msub><mo>≤</mo><mi>σ</mi><mo>≤</mo><mn>2</mn><mo>,</mo><mspace width="2.0em"></mspace><mn>2</mn><mo>−</mo><msub><mi>c</mi><mn>0</mn></msub><mo>=</mo><mi>O</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>N</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                    c_0\le\sigma\le2,
+ \qquad 2-c_0=O(N^{-2}).
+ \tag{28a}
+</annotation></semantics></math> Write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><msub><mi>c</mi><mn>0</mn></msub><mo>+</mo><mi>λ</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo>−</mo><msub><mi>c</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\sigma=c_0+\lambda(2-c_0)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>λ</mi><mo>≤</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0\le\lambda\le1</annotation></semantics></math>.
+The normalized recurrence (7) has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>j</mi></msub><mo>=</mo><mn>1</mn><mo>+</mo><mi>λ</mi><msub><mi>ε</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">\rho_j=1+\lambda\varepsilon_j</annotation></semantics></math>.
+If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>≥</mo><msup><mi>N</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\lambda\ge N^{-2}</annotation></semantics></math>,
+the same energy argument gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mo>*</mo></msub><mo>−</mo><msup><mi>c</mi><mn>2</mn></msup><mo>≥</mo><mi>λ</mi><msup><mi>N</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo>≥</mo><msup><mi>N</mi><mrow><mi>−</mi><mn>4</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\rho_*-c^2\ge\lambda N^{-2}\ge N^{-4}</annotation></semantics></math>,
+hence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>h</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mn>2</mn><msup><mi>N</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">|h_{i,j}(S)|\le2N^2</annotation></semantics></math>
+on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>S</mi><mo stretchy="false" form="prefix">|</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|S|=1</annotation></semantics></math>.</p>
+<p>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>λ</mi><mo>&lt;</mo><msup><mi>N</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">0\le\lambda&lt;N^{-2}</annotation></semantics></math>,
+compare (14) with the free Chebyshev recurrence. For an interval of
+length
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>,
+the exact forced solution is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mi>k</mi></msub><mo>=</mo><msub><mi>U</mi><mi>k</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>λ</mi><munderover><mo>∑</mo><mrow><mi>r</mi><mo>=</mo><mn>2</mn></mrow><mi>k</mi></munderover><msub><mi>ε</mi><mrow><mi>i</mi><mo>+</mo><mi>r</mi></mrow></msub><msub><mi>U</mi><mrow><mi>k</mi><mo>−</mo><mi>r</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>y</mi><mrow><mi>r</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ y_k=U_k(c)
+       -\lambda\sum_{r=2}^k
+             \varepsilon_{i+r}U_{k-r}(c)y_{r-2},
+ \tag{28b}
+</annotation></semantics></math> where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn><mo>,</mo><msub><mi>U</mi><mn>1</mn></msub><mo>=</mo><mn>2</mn><mi>c</mi></mrow><annotation encoding="application/x-tex">U_0=1,U_1=2c</annotation></semantics></math>.
+Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>U</mi><mi>ℓ</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mi>ℓ</mi><mo>+</mo><mn>1</mn><mo>≤</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">|U_\ell(c)|\le\ell+1\le N</annotation></semantics></math>,
+the maximum
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+of the finitely many
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>y</mi><mi>k</mi></msub><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">|y_k|</annotation></semantics></math>
+on the interval satisfies
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>≤</mo><mi>N</mi><mo>+</mo><mfrac><mrow><mi>N</mi><mi>λ</mi></mrow><mn>2</mn></mfrac><mi>M</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>M</mi><mo>≤</mo><mn>2</mn><mi>N</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ M\le N+\frac{N\lambda}{2}M,\qquad M\le2N.
+ \tag{28c}
+</annotation></semantics></math> The unused-row monomer prefactor is
+nonnegative throughout (28a), because
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>c</mi><mn>0</mn></msub><annotation encoding="application/x-tex">c_0</annotation></semantics></math>
+is the largest node. Each unused factor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>−</mo><msub><mi>c</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">\sigma-c_r</annotation></semantics></math>
+is at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>−</mo><msub><mi>c</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">2-c_r</annotation></semantics></math>,
+so that prefactor is bounded by the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>N</mi><mn>2</mn></msup><annotation encoding="application/x-tex">N^2</annotation></semantics></math>
+from (25), without division at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><msub><mi>c</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\sigma=c_0</annotation></semantics></math>.
+Therefore
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><mspace width="1.0em"></mspace><munder><mi mathvariant="normal">sup</mi><mrow><msub><mi>c</mi><mn>0</mn></msub><mo>≤</mo><mi>σ</mi><mo>≤</mo><mn>2</mn></mrow></munder><mrow><mo stretchy="true" form="prefix">|</mo><mo stretchy="false" form="prefix">[</mo><msup><mi>x</mi><mi>p</mi></msup><msup><mi>y</mi><mrow><mi>j</mi><mo>−</mo><mi>i</mi><mo>−</mo><mi>p</mi></mrow></msup><mo stretchy="false" form="postfix">]</mo><mo stretchy="false" form="prefix">[</mo><msub><mi>V</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo>;</mo><mi>C</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><msub><mo stretchy="false" form="postfix">]</mo><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mn>2</mn><msup><mi>N</mi><mn>4</mn></msup><mi>.</mi><mspace width="1.0em"></mspace></mrow></menclose><annotation encoding="application/x-tex">
+ \boxed{\quad
+ \sup_{c_0\le\sigma\le2}
+ \left|[x^p y^{j-i-p}]
+           [V_N(\sigma;C(x,y))]_{i,j}\right|
+                         \le2N^4.
+ \quad}
+ \tag{28d}
+</annotation></semantics></math> For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">N=2</annotation></semantics></math>
+the absence of length-two intervals proves the same statement directly.
+This shrinking interval is not a fixed spectral neighborhood.</p>
+<h2 id="whole-shared-contractions-and-scope">6. Whole shared
+contractions and scope</h2>
+<p>For a fixed marked source with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>
+original boxes, there are at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>N</mi><mn>3</mn></msup><annotation encoding="application/x-tex">N^3</annotation></semantics></math>
+monomials in each local homogeneous polynomial of degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>
+in four faces. The full original shared coefficient is a sum of at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>N</mi><mrow><mn>3</mn><mi>r</mi></mrow></msup><annotation encoding="application/x-tex">N^{3r}</annotation></semantics></math>
+monomial selections. Equation (26) therefore yields
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mo stretchy="false" form="prefix">|</mo><msubsup><mi>S</mi><mi>N</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">l</mi></mrow></msubsup><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo>,</mo><mi>…</mi><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>≤</mo><msup><mn>2</mn><mi>r</mi></msup><msup><mi>N</mi><mrow><mn>6</mn><mi>r</mi></mrow></msup><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mo stretchy="false" form="prefix">|</mo><msubsup><mi>S</mi><mi>N</mi><mrow><mi mathvariant="normal">C</mi><mi mathvariant="normal">R</mi><mi mathvariant="normal">O</mi><mi mathvariant="normal">S</mi><mi mathvariant="normal">S</mi></mrow></msubsup><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo>,</mo><mi>…</mi><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>≤</mo><msup><mn>2</mn><mi>r</mi></msup><msup><mi>N</mi><mrow><mn>6</mn><mi>r</mi></mrow></msup><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mo stretchy="false" form="prefix">|</mo><msub><mi>D</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo>,</mo><mi>…</mi><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>≤</mo><msup><mn>2</mn><mrow><mi>r</mi><mo>+</mo><mn>1</mn></mrow></msup><msup><mi>N</mi><mrow><mn>6</mn><mi>r</mi></mrow></msup><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+ \begin{split}
+ |S_N^{\mathrm{full}}(2,\ldots,2)|
+       &amp;\le2^rN^{6r},\\
+ |S_N^{\mathrm{CROSS}}(2,\ldots,2)|
+       &amp;\le2^rN^{6r},\\
+ |D_N(2,\ldots,2)|&amp;\le2^{r+1}N^{6r}.
+ \end{split}
+ \tag{29}
+</annotation></semantics></math> The CROSS projection, or any fixed
+LEFT/CROSS/RIGHT assignment, selects original input/output intervals,
+hence a subset of these monomial coefficients. This justifies the same
+estimate without introducing absolute values inside the local
+continuants.</p>
+<p>The same argument using (28d) gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mi mathvariant="normal">sup</mi><mrow><mi mathvariant="bold-italic">𝝈</mi><mo>∈</mo><mo stretchy="false" form="prefix">[</mo><msub><mi>c</mi><mn>0</mn></msub><mo>,</mo><mn>2</mn><msup><mo stretchy="false" form="postfix">]</mo><mi>r</mi></msup></mrow></munder><mo stretchy="false" form="prefix">|</mo><msub><mi>D</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝝈</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><msup><mn>2</mn><mrow><mi>r</mi><mo>+</mo><mn>1</mn></mrow></msup><msup><mi>N</mi><mrow><mn>7</mn><mi>r</mi></mrow></msup><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ \sup_{\boldsymbol\sigma\in[c_0,2]^r}|D_N(\boldsymbol\sigma)|
+                         \le2^{r+1}N^{7r},
+ \tag{30}
+</annotation></semantics></math> and half that displayed bound for the
+full or CROSS source separately. All protected targets, shared ordinary
+targets, and the original mark are imposed before these estimates are
+used. They add no quantum dimension or Cartan correction. They do not
+estimate mixed tuples elsewhere in the fixed spectral cube, a
+neighborhood uniformly large enough for filling, or the supremum
+required for the undecorated bipyramid theorem.</p>

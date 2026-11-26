@@ -1,0 +1,131 @@
+<h1 id="murakamis-dream">Murakami’s Dream</h1>
+<p>Kashaev invariants and the hyperbolic volumes of knot
+complements.</p>
+<p><strong><a
+href="https://sashakolpakov.github.io/murakamis_dream/">Read the
+illustrated guide</a></strong> · <a
+href="manuscript/README.md">Manuscript and PDF</a> · <a
+href="repro/README.md">Reproduction instructions</a></p>
+<p>The volume conjecture predicts that the exponential growth of
+Kashaev’s root-of-unity invariant recovers the volume of a hyperbolic
+knot complement. This project studies that comparison by assembling
+knots from tangles.</p>
+<p>The manuscript treats a specified family of Conway tangle
+constructions. Start with elementary twist pieces, join them in order,
+turn intermediate tangles, and apply the prescribed closure. For each
+allowed finite construction, independently sufficiently large positive
+or negative twist numbers give the volume limit. The construction and
+all twist numbers stay fixed while the quantum level tends to
+infinity.</p>
+<p>A <a
+href="https://sashakolpakov.github.io/murakamis_dream/notes/actual_conway_net_twist_volume.html">companion
+theorem</a> starts with any fixed ordered composition closed by the
+prescribed cylindrical closure. An explicit tangle reduction groups its
+twist numbers into disjoint sums. Unless the result is an elementary
+two-strand braid closure, sufficiently large magnitudes of these sums
+give the volume limit whenever the closed diagram is a knot. These are
+the <em>net twist numbers</em>: large positive and negative twists in
+one group can cancel. The reduction preserves the actual knot and its
+complement. The <a
+href="https://sashakolpakov.github.io/murakamis_dream/guide/results.html">results
+chapter</a> explains the groups, the closure condition, and the exact
+quantifiers. Another companion reconstructs the invariant from a quantum
+A-operator and initial data, giving the same volume limit in recurrence
+form.</p>
+<p>The <a
+href="https://sashakolpakov.github.io/murakamis_dream/notes/actual_conway_arbitrary_closure_volume.html">closure
+extension</a> also allows cap closures and exact cancellation of twist
+sums. Its reduction can split the diagram into connected-sum factors.
+For a hyperbolic input, if every surviving strict factor has
+sufficiently long net twists, exactly one such factor remains and all
+other factors are unknots. The original knot is therefore isotopic to a
+covered long-twist knot. This extends the criterion for presentations,
+without adding an estimate for short twists.</p>
+<p>The <a
+href="https://sashakolpakov.github.io/murakamis_dream/notes/actual_main_meridian_filled_volume.html">moving-meridian
+theorem</a> also controls the invariant within distance of order
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">1/N</annotation></semantics></math>
+of completeness for every fixed strict Conway tree with independently
+sufficiently long signed twists. Product junctions may have arbitrary
+valence and adjacency. The theorem gives a uniform volume limit, a
+nonzero normalized profile, and a first correction determined by the
+preferred cusp shape. The <a
+href="https://sashakolpakov.github.io/murakamis_dream/guide/results.html#the-volume-limit-while-the-meridian-varies">results
+chapter</a> explains the finite-sum comparison and its hypotheses.</p>
+<p>These intrinsic conclusions also pass through the net-twist and
+closure reductions when their stated longness and knot hypotheses hold.
+The ambient isotopy preserves the whole zero-framed meridian family and
+the preferred peripheral curves. The comparison uses the volume and cusp
+of the original knot, even when its reduced presentation has a different
+auxiliary augmented link. The meridian disk stops before the first
+ordinary-color resonances; continuation through them remains a separate
+problem.</p>
+<figure>
+<img src="book/figures/research-map.png"
+alt="Tangle reduction, the finite quantum evaluation, and the volume of the resulting knot complement" />
+<figcaption aria-hidden="true">Tangle reduction, the finite quantum
+evaluation, and the volume of the resulting knot complement</figcaption>
+</figure>
+<p>The general conjecture remains open. In particular, the theorem does
+not classify all arborescent knots or cover arbitrary short twist
+numbers.</p>
+<h2 id="finding-the-material">Finding the material</h2>
+<p>The guide gives a continuous explanation of the results and their
+proofs. The <a
+href="https://sashakolpakov.github.io/murakamis_dream/library.html">research
+library</a> organizes supporting arguments by question, and the <a
+href="https://sashakolpakov.github.io/murakamis_dream/figures.html">figure
+gallery</a> explains the constructions with editable drawings. The
+Fourier, torsor, weighted Cauchy, cube, and other approaches remain
+available there.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Directory</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>manuscript/</code></td>
+<td>TeX paper, bibliography, figures, and compiled PDF</td>
+</tr>
+<tr>
+<td><code>repro/</code></td>
+<td>Exact-certificate runner and explanation of what it checks</td>
+</tr>
+<tr>
+<td><code>book/</code></td>
+<td>Guide chapters, reading routes, and editable diagrams</td>
+</tr>
+<tr>
+<td><code>docs/</code></td>
+<td>Rendered illustrated guide</td>
+</tr>
+<tr>
+<td><code>notes/</code></td>
+<td>Detailed mathematical arguments and historical research notes</td>
+</tr>
+<tr>
+<td><code>experiments/</code></td>
+<td>Verification programs and recorded results</td>
+</tr>
+<tr>
+<td><code>tools/</code></td>
+<td>Paper, guide, and figure builders</td>
+</tr>
+</tbody>
+</table>
+<h2 id="reading-locally">Reading locally</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> http.server 8000 <span class="at">--directory</span> docs</span></code></pre></div>
+<p>Open <code>http://localhost:8000</code>. See the <a
+href="book/README.md">guide maintenance instructions</a> for rebuilding
+the pages, and <a href="repro/README.md">reproduction instructions</a>
+for the exact arithmetic checks.</p>
+<p>The <a href="RESEARCH_LOG.md">research log</a> preserves the earlier
+working history. The publication manifest records the files and hashes
+included in each release.</p>

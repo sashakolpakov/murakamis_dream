@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Odd-level support identity</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Odd-level support identity</h1>
+</header>
+<h1 id="an-exact-odd-level-support-identity-for-the-marked-bipyramid">An
+exact odd-level support identity for the marked bipyramid</h1>
+<p>This is a finite polynomial identity for the original opposite-offset
+bipyramid source. It is independent of any limiting spectral estimate.
+It concerns Newton path indices, not a change of auxiliary colors or the
+replacement of a source factor by a covariant coupon.</p>
+<p>Let the equator have even size
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>≥</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">m\ge6</annotation></semantics></math>.
+Write its faces as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mn>0</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>z</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">z_0,\ldots,z_{m-1}</annotation></semantics></math>,
+protect the north face and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>z</mi><mn>0</mn></msub><annotation encoding="application/x-tex">z_0</annotation></semantics></math>,
+and retain one south variable
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>.
+Thus the original ordered factors are
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>j</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>H</mi><mrow><msub><mi>V</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>σ</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mi>N</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><msub><mi>z</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>z</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>z</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mi>j</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> odd</mtext></mrow><mo>,</mo></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>H</mi><mrow><msub><mi>V</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>σ</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mi>N</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo>,</mo><msub><mi>z</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>z</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>z</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mi>j</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> even</mtext></mrow><mi>.</mi></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">
+ F_j=
+ \begin{cases}
+ H_{V_N(\sigma_j),N}(0,z_{j-1},z_{j+1},z_j),&amp;j\text{ odd},\\
+ H_{V_N(\sigma_j),N}(S,z_{j+1},z_{j-1},z_j),&amp;j\text{ even}.
+ \end{cases}
+ \tag{1}
+</annotation></semantics></math> Indices are cyclic, and the source
+extracts
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><msup><mi>S</mi><mi>d</mi></msup><msubsup><mi>z</mi><mn>1</mn><mi>d</mi></msubsup><mi>⋯</mi><msubsup><mi>z</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow><mi>d</mi></msubsup><mo stretchy="false" form="postfix">]</mo><msub><mo>∏</mo><mi>j</mi></msub><msub><mi>F</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">[
+ S^d z_1^d\cdots z_{m-1}^d
+]\prod_jF_j</annotation></semantics></math> after
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">z_0=0</annotation></semantics></math>,
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">d=N-1</annotation></semantics></math>.
+Here
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>χ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>2</mn><msub><mi>T</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mn>2</mn><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>V</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo>;</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><msub><mi>χ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><msub><mi>χ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mi>σ</mi><mo>−</mo><mi>C</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">
+ \chi_N(\sigma)=2T_N(\sigma/2)+2,\qquad
+ V_N(\sigma;C)=
+ \frac{\chi_N(\sigma)-\chi_N(C)}{\sigma-C}
+ \tag{2}
+</annotation></semantics></math> is polynomial functional calculus
+before root specialization. The raw upper-triangular Casimir has
+diagonal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mi>r</mi></msub><mo>=</mo><mn>2</mn><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>r</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>π</mi><mi>/</mi><mi>N</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">c_r=2\cos((2r+1)\pi/N)</annotation></semantics></math>,
+first upper diagonal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msubsup><mi>s</mi><mi>r</mi><mn>2</mn></msubsup><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">-s_r^2(x+y)</annotation></semantics></math>,
+and second upper diagonal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msub><mi>s</mi><mi>r</mi></msub><msub><mi>s</mi><mrow><mi>r</mi><mo>−</mo><mn>1</mn></mrow></msub><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">-s_rs_{r-1}xy</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mi>r</mi></msub><mo>=</mo><mn>2</mn><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mi>π</mi><mi>/</mi><mi>N</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">s_r=2\sin(r\pi/N)</annotation></semantics></math>.</p>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>S</mi><mi>N</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">l</mi></mrow></msubsup><annotation encoding="application/x-tex">S_N^{\mathrm{full}}</annotation></semantics></math>
+denote this shared coefficient and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>S</mi><mi>N</mi><mi mathvariant="normal">C</mi></msubsup><annotation encoding="application/x-tex">S_N^{\mathrm C}</annotation></semantics></math>
+the same coefficient after restricting every original resolvent path to
+CROSS. These restrictions are performed before multiplying the original
+face polynomials.</p>
+<p><strong>Finite support identity.</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>2</mn><mi>h</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">N=2h+1</annotation></semantics></math>
+is odd and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mi>j</mi></msub><mo>=</mo><mi>−</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\sigma_j=-2</annotation></semantics></math>
+for every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">j\ne0</annotation></semantics></math>,
+then
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>S</mi><mi>N</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">l</mi></mrow></msubsup><mo stretchy="false" form="prefix">(</mo><msub><mi>σ</mi><mn>0</mn></msub><mo>,</mo><mi>−</mi><mn>2</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>−</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msubsup><mi>S</mi><mi>N</mi><mi mathvariant="normal">C</mi></msubsup><mo stretchy="false" form="prefix">(</mo><msub><mi>σ</mi><mn>0</mn></msub><mo>,</mo><mi>−</mi><mn>2</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>−</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mspace width="1.0em"></mspace><mrow><mtext mathvariant="normal">for every </mtext><mspace width="0.333em"></mspace></mrow><msub><mi>σ</mi><mn>0</mn></msub><mo>∈</mo><mi mathvariant="double-struck">ℂ</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ S_N^{\mathrm{full}}(\sigma_0,-2,\ldots,-2)
+ =S_N^{\mathrm C}(\sigma_0,-2,\ldots,-2)
+ \quad\text{for every }\sigma_0\in\mathbb C.
+ \tag{3}
+</annotation></semantics></math> In particular the unsplit remainder
+vanishes identically on this line of the spectral parameter space. There
+is no assertion here about its size off that line.</p>
+<p>To prove this, first retain the complete path expression for the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(i,j)</annotation></semantics></math>-entry
+of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>V</mi><mi>N</mi></msub><annotation encoding="application/x-tex">V_N</annotation></semantics></math>,
+including all unused diagonal factors. At odd level the central node is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mi>h</mi></msub><mo>=</mo><mi>−</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">c_h=-2</annotation></semantics></math>.
+If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>&lt;</mo><mi>h</mi></mrow><annotation encoding="application/x-tex">j&lt;h</annotation></semantics></math>
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>&gt;</mo><mi>h</mi></mrow><annotation encoding="application/x-tex">i&gt;h</annotation></semantics></math>,
+that central node is unused by every path and contributes the factor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>−</mo><msub><mi>c</mi><mi>h</mi></msub></mrow><annotation encoding="application/x-tex">\sigma-c_h</annotation></semantics></math>.
+Consequently at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><mi>−</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\sigma=-2</annotation></semantics></math>
+those two one-sided blocks vanish identically in the face variables.
+Only
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>≤</mo><mi>h</mi><mo>≤</mo><mi>j</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ i\le h\le j.
+ \tag{4}
+</annotation></semantics></math> can remain. This is exactly the
+odd-level CROSS support, with the central row retained. Some paths that
+jump over the central row can also vanish, which only reduces the
+support; no such path is restored.</p>
+<p>Every factor other than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mn>0</mn></msub><annotation encoding="application/x-tex">F_0</annotation></semantics></math>
+therefore already equals its CROSS restriction. The protected input face
+of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding="application/x-tex">F_1</annotation></semantics></math>
+forces its row to be zero. Its column
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>j</mi><mn>1</mn></msub><annotation encoding="application/x-tex">j_1</annotation></semantics></math>
+satisfies
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>j</mi><mn>1</mn></msub><mo>≥</mo><mi>h</mi></mrow><annotation encoding="application/x-tex">j_1\ge h</annotation></semantics></math>
+by (4). Since its north outer variable is zero, this factor has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>z</mi><mn>1</mn></msub><annotation encoding="application/x-tex">z_1</annotation></semantics></math>-degree
+exactly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>j</mi><mn>1</mn></msub><annotation encoding="application/x-tex">j_1</annotation></semantics></math>,
+hence at least
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>.
+Similarly the protected output of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">F_{m-1}</annotation></semantics></math>
+forces its column to be
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>;
+its row
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>i</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>≤</mo><mi>h</mi></mrow><annotation encoding="application/x-tex">i_{m-1}\le h</annotation></semantics></math>.
+Thus it has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>z</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">z_{m-1}</annotation></semantics></math>-degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>−</mo><msub><mi>i</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>≥</mo><mi>h</mi></mrow><annotation encoding="application/x-tex">d-i_{m-1}\ge h</annotation></semantics></math>.</p>
+<p>Consider now a monomial of the exceptional factor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mn>0</mn></msub><annotation encoding="application/x-tex">F_0</annotation></semantics></math>,
+whose original row and column are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>i</mi><mn>0</mn></msub><mo>,</mo><msub><mi>j</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">i_0,j_0</annotation></semantics></math>.
+Its middle face degrees are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>i</mi><mn>0</mn></msub><annotation encoding="application/x-tex">i_0</annotation></semantics></math>
+on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>z</mi><mn>1</mn></msub><annotation encoding="application/x-tex">z_1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>−</mo><msub><mi>j</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">d-j_0</annotation></semantics></math>
+on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>z</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">z_{m-1}</annotation></semantics></math>.
+All contributions from every other factor are nonnegative degrees. The
+unchanged target
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mn>2</mn><mi>h</mi></mrow><annotation encoding="application/x-tex">d=2h</annotation></semantics></math>
+on these two shared faces therefore implies
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>i</mi><mn>0</mn></msub><mo>+</mo><mi>h</mi><mo>≤</mo><mn>2</mn><mi>h</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>d</mi><mo>−</mo><msub><mi>j</mi><mn>0</mn></msub><mo>+</mo><mi>h</mi><mo>≤</mo><mn>2</mn><mi>h</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ i_0+h\le2h,\qquad d-j_0+h\le2h.
+ \tag{5}
+</annotation></semantics></math> Hence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>i</mi><mn>0</mn></msub><mo>≤</mo><mi>h</mi><mo>≤</mo><msub><mi>j</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">i_0\le h\le j_0</annotation></semantics></math>.
+The exceptional factor is forced to be CROSS as well. This is a termwise
+statement about the original coefficient support, so it proves (3) with
+all signs, the shared south demand, and all root-normal data intact.</p>
+<p>This proof uses bare
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>V</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">V_N(-2)</annotation></semantics></math>,
+not the regularized positive full-reference numerator used in odd-level
+energy comparisons. The latter includes a derivative and need not have
+the same support. No filling functional has been applied to (3), so no
+normal or endpoint current has been discarded.</p>
+</body>
+</html>

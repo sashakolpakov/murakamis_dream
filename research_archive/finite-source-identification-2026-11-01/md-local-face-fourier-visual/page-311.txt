@@ -1,0 +1,53 @@
+N. Uniform bounds for inserting twist powers
+298
+The same transform gives the complete local polynomial adapter. For any polynomial f,
+write
+f(−T)zj =
+X
+α,β≥0, α+β≤j
+Mf(j; α, β)xαyβzj−α−β
+and define
+Hf(x, b, c, y) =
+d
+X
+j=0
+X
+α+β≤j
+Mf(j; α, β)xαbj−α−βcd−jyβ.
+(N.11)
+Its exponents are nonnegative and its total degree is d, regardless of the degree of f. Fourier
+inversion is particularly simple:
+(E−1)jr = 1
+N b−j
+r .
+For a polynomial f, (N.10) gives
+Ef(−T)E−1 = G−1f(Ωs)TG.
+Use the displayed inverse of E. For b = bu, c = br, the result is
+(f(Ωs))ru = 1
+N q−d(r−u)c−dHf(x, b, c, y).
+(N.12)
+This proves the factor 1/N, the direction of the shift and the full polynomial identity directly
+from the original pair matrices. If the input and output have different integer totals, the left
+side is zero: the modular block is the direct sum of its actual-total blocks. Hence the right
+side also vanishes at such a grid point.
+At even levels qd(p+N) = −qdp. The exponent r −u in (N.12) is therefore the canonical
+integer displacement, not an arbitrarily chosen residue. The endpoint calculation above is
+what permits the Fourier transform; it does not assume that this phase is periodic. With the
+coherent face-logarithm lifts, c = Q−(r−u)b converts the prefactor to N−1(bc)−d/2, exactly as
+in the global source calculation.
+This argument holds at every fixed root with N ≥2, including composite levels. It
+proves the annihilator and the adapter for polynomials of the actual Casimir. The polynomial
+representing a crossing power, its repeated-node derivatives, and the comparison with the
+specified knot invariant are separate inputs. No derivative with respect to a generic deformation
+of q is taken here.
+N.3
+Why the polynomial reduction is well defined
+Before using the particular spectral roots, we record the algebraic fact behind reduction at
+repeated roots. It explains which parts of the calculation depend only on the polynomial and
+which still require the original crossing operator.
+Let R be a commutative ring with identity, and let r1, . . . , rm ∈R, with m ≥1. Repetitions
+are allowed. Put p(X) = Qm
+j=1(X −rj). Given f ∈R[X], define f0 = f and successively define
+fj by
+fj−1(X) = fj−1(rj) + (X −rj)fj(X),
+1 ≤j ≤m.

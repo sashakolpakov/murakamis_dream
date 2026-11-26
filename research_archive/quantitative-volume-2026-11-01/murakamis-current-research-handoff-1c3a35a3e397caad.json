@@ -1,0 +1,95 @@
+{
+  "updated_utc": "2026-11-01T05:05:50.633585+00:00",
+  "goal": "get the most general equality AND show that it is indeed the hyperbolic volume involved",
+  "goal_status": "active",
+  "current_turn": "progress: explicit degree-and-twist criterion upgraded from analytic limit to actual knot-volume theorem; full geometry, preferred cusp, operator corollary and detailed manuscript published",
+  "public_checkout": "/private/tmp/murakamis_dream-publication",
+  "public_head": "d8ff75be41f307c34867046445c530a6251ec5cf",
+  "pushed": true,
+  "pages_run": 41275478378,
+  "live_verified": 12,
+  "latest_user_caption": "Schematic hyperbolic pyramid. All five vertices are ideal. Quadrilateral gluing face. Remains correct in source, live image and manuscript.",
+  "previous_broader_volume_result": "Every fixed strict ordered Conway tree with independently sufficiently long fixed signed twists, arbitrary bare-component size/valence/adjacency. Uniform microscopic meridian profile and preferred cusp; intrinsic formulas transfer through the proved net-twist and closure reductions. Do not narrow these older theorems to circle-only trees.",
+  "new_published_volume_theorem": {
+    "class": "Any fixed literal ordered circle tree with at least one edge. Every vertex has an original crossing circle; main strands must form one knot with no internal extra component. Original endpoint frames, order, half turns and disk slopes are retained.",
+    "definition": "Choose terminal root0. W_v=(prod_{w in Iminus}T W_w)R^n_v(prod_{w in Iplus}T W_w); close R^n0 T W_w cylindrically. Products ordered; physical T\u00b2 half-turn retained.",
+    "criterion": "S=sum_v d_v/(d_v\u00b2+n_v\u00b2)<=2^-25",
+    "automatic_strictness": "One unturned circle H with turned child factors L yields H; terminal closure H/L is strict. No extra strict-angle test for this literal class. Two-vertex allodd case excluded by knot test.",
+    "conclusion": "Actual knot complement hyperbolic; (2pi/N)log|K_N| -> its volume. F_N(q^s)/[F_N(1) A_N(s) H_N(s)]=1+O(N^-1) uniformly |s|<=R<1, eventually nonzero, both parities/composites. Graph/powers fixed beforeN.",
+    "scalar": "q=e^{pi i/N};H_N=sin(pi s)/(Nsin(pi s/N));A_N=q^{a(D)s\u00b2/2},a(D)=-w(D)-sum n_v.",
+    "preferred_cusp": "tauK=a(D)+2i sum_physical_edges cot(pi x_e*);F_N(e^{z/(2N)})/[F_N(1)Hcal_N(z)]=1+tauK*z\u00b2/(8pi iN)+O(N^-2), |z|<=2piR. Exact s-independent base/insertion rule proves the remainder under the same criterion.",
+    "operator_period": "Any fixed genuine all-level quantum A-operator with finite initial ordinary-color data and singular-step Laurent/jet treatment gives exact P_N(P,c0)=K_N and hence the same volume limit. No classical geometric-factor identification asserted.",
+    "explicit_bounds": [
+      "all |n_v|>=8192sqrt(E) suffices",
+      "add B terminal circles per original vertex of any m-vertex tree; new |n|>=B gives S<2m/B, so B>=2^26m suffices subject to knot/parity. This changes the knot.",
+      "R0 insertion preserves filled diagram, changes augmented exterior, contributes1/d to S; high-degree bare junctions may qualify."
+    ],
+    "normalized_length": "L_v\u00b2=(d_v\u00b2+n_v\u00b2)/(2d_v);S=.5 sum L_v^-2."
+  },
+  "geometric_proof": {
+    "topology": "Actual labeled ribbon insertion attaches one octahedron per edge per projection half; correct left/right order and terminal root half-turn. Each circle has d_v sectors, exactly one original signed seam. All primitive curves retained.",
+    "local_chart": "Eight positive tetrahedra per edge, all shapes i atzero; |tau_v|<=.01 chart with exact full complex pants ratios and odd return matrices. C composed with T placement retained.",
+    "path": "Psi_tau+i n tau/(2pi)=ic,0<=c<=1; |tau_v(c)|<=2pi c/[.98sqrt(d_v\u00b2+n_v\u00b2)]<.00111, Imtau<0.",
+    "periods": "U=-2pi Psi_tau-i eps tau;V=2i tau;n=eps-2p;U+pV=-2piic.",
+    "completion": "Invariant vector field on compact similarity torus rules out second fixed point in developing image. Log development gives complete flat torus. Fixed initial generator periods tend to0 as second fixed point goes toinfinity, fixing integer lifts without a small-global-log assumption. Primitive tube angle2pi c; at1 smooth original surgery; main cusp complete.",
+    "volume": "G=2pi i(Psi-sum tauPsi_tau)+.5sum eps tau\u00b2;dG=.5sum VdU;Vol=ImG-.5sum ReU ImV=2pi Re C(c);completeanchor2E v8. Core lambda length=-2Imtau; Schlaefli sign/factor agree.",
+    "cusp": "Compare actual representations nearzero on new positive triangulation via mixed main-meridian/aux-longitude marked gluing rigidity. Exact Legendre equations identify physical x_e; intrinsic main translation continues holomorphically along chart. Fixed surgery word is preferred at smooth endpoint."
+  },
+  "publication": {
+    "master": "notes/actual_all_circle_quantitative_volume.md",
+    "proofs": [
+      "notes/actual_all_circle_curvature_filling_limit.md",
+      "notes/all_circle_uniform_newton_bounds.md",
+      "notes/actual_all_circle_octahedral_decomposition.md",
+      "notes/actual_all_circle_angular_octahedra.md",
+      "notes/actual_all_circle_geometric_completion.md",
+      "notes/actual_all_circle_preferred_cusp.md"
+    ],
+    "manuscript": "130 pages, Chapter9 and full AppendicesE/F, exact A-period corollary; zero warnings. All130 source displays and510 inline formulas preserved in appendices.",
+    "manuscript_pdf_sha256": "8ab525bc9435d06b10e2d5012d2d640eb9050903666e41ea890fac05b8a3ddcf",
+    "guide": "README, guide/results/frontier/geometry/manuscript/audits/index, gallery, current-status notes and reproduction map updated. Sphinx redirects to the same guide.",
+    "illustration": "book/figures/octahedral-page-attachment nativeTeX+SVG+PNG+PDF; manuscript shares nativefragment. Complete endpoint/face labels and gluing orientation explained.",
+    "reproduction": "python3 repro/run_research_checks.py curvature-fillings",
+    "checks": "3/3 programs;4 symbolic+990 numerical cases;46 rational+7bounds;128trees/448attachments/28algebra. Finite scope explicit, no general proof inferred from tests.",
+    "validation": {
+      "book": {
+        "status": "PASS",
+        "HTML_pages": 1052,
+        "local_resource_links": 27229,
+        "images_with_alt": 100,
+        "technical_notes_indexed": 1033,
+        "search_records": 2620,
+        "failures": []
+      },
+      "browser_page_checks": 28,
+      "browser_failures": [],
+      "manuscript_warnings": [],
+      "reproduction": {
+        "all_circle_curvature_packet": {
+          "script_sha256": "a561c2e08ff20518cbcf896523b1ef26e795d8062e25ef31fbd569a1e44554e8",
+          "results_sha256": "aedb5abc3cfd174cb46b81c16328ae5bf2e9944f825f10be53810c9a9593eab2"
+        },
+        "two_octahedron_angular_edge_block": {
+          "script_sha256": "ee58ec1a7efe8668fcd16320fe21ce65f3a4533deb917bc36c88bc211e324091",
+          "results_sha256": "ae239f8c56e58fb1e13706f59bef1eca9132d324b33fdd3298d3e1368957d3e7"
+        },
+        "ordered_octahedron_pages": {
+          "script_sha256": "8bda678aa124f30eaa9df55a50df12e6e5190fb76c47fab6a7f61a3486b42936",
+          "results_sha256": "f596ac2e3d1c8e9216a2ca842f6a029082a5eaea36f2deee86ea2340426986af"
+        }
+      },
+      "finite_check_scope": "4 exact edge identities and990 finite complex samples;46 local rational identities and7 bounds;128 tree cases with448 attachments and28 algebra identities. These supplement the written uniform, topological and geometric proofs."
+    }
+  },
+  "remaining_general_problem": [
+    "Arbitrary short twists outside S criterion; other knot constructions, cyclic interaction graphs and growing diagrams.",
+    "The selected classical geometric A-factor and its exact marked regulator module remain open. Microscopic finite jets alone do not force that identification."
+  ],
+  "private_A_factor_report": "/private/tmp/md-main-meridian-marked-a-factor-interface-and-jet-obstruction.md: finite resultant criterion ord>P bidegree bound for supplied classical factor; root multipliers invisible at any fixed microscopic order. They change ordinary-color pointing, so are not counterexamples for actual knot state.",
+  "next_steps": [
+    "Do not repeat completed caption/publication or reopen the proved circle-tree completion as an outstanding gap.",
+    "Build further structural extension or actual classical-A selection argument without confusing complete geometric source, actual signed invariant and selected recurrence period.",
+    "Keep all earlier methods and failed routes archived; preserve broad old strict-tree theorem. General goal remains active."
+  ],
+  "archive": "/Users/sasha/volume-conjecture/research_archive/quantitative-volume-2026-11-01"
+}

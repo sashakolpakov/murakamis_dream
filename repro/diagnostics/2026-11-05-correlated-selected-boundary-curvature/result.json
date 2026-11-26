@@ -1,0 +1,3369 @@
+{
+  "status": "bounded_diagnostic_complete",
+  "scope": "Floating necessary-feasible references and continued KKT points only; not a certificate or word-realizability claim",
+  "budget": {
+    "references": 25,
+    "heights_per_reference": 8,
+    "reference_newton_steps": 12,
+    "optimizer_iterations": 40,
+    "seconds": 120,
+    "no_replacement_references": true
+  },
+  "script_sha256": "0a29325198d59f544ca61aa93b620f85555d7810a139862677f36a56b46534af",
+  "dependencies_sha256": {
+    "repro/results/research-mixed-open-word-critical-localization.json": "ac2991d4cd5b7a78d202a237efebf98a9ad7ab77b6bacc4ab82568b8aa3cdad5",
+    "repro/results/research-mixed-open-word-critical-localization-replay.json": "2b5d91f8fbfa860d978f7b2076270b33bbe40d7410d39e91c9733e41b03ec247",
+    "notes/research_mixed_open_word_critical_localization.md": "a3f8a0f781abd43f8ca17321171081ba37c91b284f83f22a4f7ae34e270424fa",
+    "experiments/certify_mixed_open_word_critical_localization.py": "49704425b4f1a0fc7613284080e9d50e56afa087b518a51bd9c49d079ca47e00",
+    "notes/research_mixed_selected_boundary_height_envelope.md": "aff8665ef9ae0c170677656829245a75f845dc7412bed11cd0f8cf1796da1759",
+    "notes/research_mixed_actual_last_row_reference_domains.md": "c6cecc3e935116829c9f222553d24a5503c092d8544764ac95082299fc039798",
+    "notes/research_mixed_first_four_attached_height_bound.md": "42329b71c8af492823bb5fd5a74b2a472eab8b4f0ecdf2b25cb83ae7f09d7bfe",
+    "repro/results/research-mixed-first-four-attached-height-bound.json": "81532e4b412b740cc8beb66141f6a932298bdc3232f86300afd53b1c31f58217"
+  },
+  "versions": {
+    "python": "3.14.6",
+    "numpy": "2.4.4",
+    "scipy": "1.17.1"
+  },
+  "references": [
+    {
+      "number": 0,
+      "next_epsilon": 0,
+      "input_rationals": [
+        ".31",
+        "-.05"
+      ],
+      "heights": [],
+      "endpoint_tree_node": 1479,
+      "endpoint_parameter_box": [
+        [
+          "-15/32",
+          "-7/16"
+        ],
+        [
+          "-1/2",
+          "-7/16"
+        ]
+      ],
+      "original_witness_sha256": "17647e4aa3c8f13e5b8bbbfa2c26882fec8367b07718d67ac6feca799e582fe0",
+      "endpoint_refinement": {
+        "residual_history": [
+          0.010479154553191112,
+          1.8971141269681952e-05,
+          6.084303335610958e-11,
+          3.608224830031759e-16
+        ],
+        "final_residual": 3.608224830031759e-16,
+        "maximum_distance_from_saved_center": 0.0010971866862984725,
+        "saved_radius": 0.004,
+        "roots": [
+          [
+            0.3457016781248008,
+            -0.0376421153135986
+          ],
+          [
+            0.306844444323044,
+            -0.06607079992698517
+          ],
+          [
+            0.22562603500246053,
+            0.03511570883178419
+          ]
+        ],
+        "canonical_u_difference": 0.0,
+        "status": "small_residual_inside_inherited_witness"
+      },
+      "filters": {
+        "ordinary_B": [
+          -0.9444299092016739,
+          0.006065565725321694
+        ],
+        "filter_rejections": [
+          "B_not_in_original_lower_half_plane"
+        ]
+      },
+      "status": "necessary_filter_rejected"
+    },
+    {
+      "number": 1,
+      "next_epsilon": 0,
+      "input_rationals": [
+        ".31",
+        "-.025"
+      ],
+      "heights": [],
+      "endpoint_tree_node": 1414,
+      "endpoint_parameter_box": [
+        [
+          "-1/2",
+          "-7/16"
+        ],
+        [
+          "-3/16",
+          "-1/8"
+        ]
+      ],
+      "original_witness_sha256": "0ce73636bf61c591b7fc5378ab29a1916e20ef8dfcf7169a3c2ccae4fed77305",
+      "endpoint_refinement": {
+        "residual_history": [
+          0.010211770292855828,
+          1.888977845617737e-05,
+          6.40486083358745e-11,
+          2.618455766672135e-16
+        ],
+        "final_residual": 2.618455766672135e-16,
+        "maximum_distance_from_saved_center": 0.0010746723787504384,
+        "saved_radius": 0.004,
+        "roots": [
+          [
+            0.34482554043866576,
+            -0.03501130007973401
+          ],
+          [
+            0.2970027070367273,
+            -0.07206937238251213
+          ],
+          [
+            0.22460643889573892,
+            0.03565237171702538
+          ]
+        ],
+        "canonical_u_difference": 6.938893903907228e-18,
+        "status": "small_residual_inside_inherited_witness"
+      },
+      "filters": {
+        "ordinary_B": [
+          -0.6318526932429941,
+          -0.09356289629285636
+        ],
+        "b": [
+          0.47660282212045263,
+          -0.07134184790198901
+        ],
+        "next_reciprocal_exponential": [
+          1.4285429691964313,
+          1.5059896851997479
+        ],
+        "next_external": [
+          0.1291993627558245,
+          -0.11623447616324556
+        ],
+        "next_external_domain_memberships": [],
+        "ordinary_zero_lift_residual": 1.1115240672321391e-15,
+        "rational_endpoint_consistency_residual": 3.159750121719031e-15,
+        "filter_rejections": [
+          "b_not_in_typed_ordinary_domain",
+          "first_height_below_coupled_floor",
+          "next_external_outside_typed_union"
+        ]
+      },
+      "status": "necessary_filter_rejected"
+    },
+    {
+      "number": 2,
+      "next_epsilon": 0,
+      "input_rationals": [
+        ".31",
+        "0"
+      ],
+      "heights": [],
+      "endpoint_tree_node": 1103,
+      "endpoint_parameter_box": [
+        [
+          "-1/2",
+          "-7/16"
+        ],
+        [
+          "1/16",
+          "1/8"
+        ]
+      ],
+      "original_witness_sha256": "84062b99bcca3e153d78b8183160767c60a9dfe08e9d6c9f614c12d3bc8afbe9",
+      "endpoint_refinement": {
+        "residual_history": [
+          0.010962415897177336,
+          2.244291402300367e-05,
+          9.51521145256836e-11,
+          8.617648093045562e-16
+        ],
+        "final_residual": 8.617648093045562e-16,
+        "maximum_distance_from_saved_center": 0.0011528727040920985,
+        "saved_radius": 0.004,
+        "roots": [
+          [
+            0.34404820678800657,
+            -0.03254951824192013
+          ],
+          [
+            0.28726133620130334,
+            -0.07711617110218665
+          ],
+          [
+            0.22367183966684806,
+            0.03617097123750218
+          ]
+        ],
+        "canonical_u_difference": 2.8609792490763984e-17,
+        "status": "small_residual_inside_inherited_witness"
+      },
+      "filters": {
+        "ordinary_B": [
+          -0.3718141220482035,
+          -0.1608245812221234
+        ],
+        "b": [
+          0.4350265939453415,
+          -0.14381372706733994
+        ],
+        "next_reciprocal_exponential": [
+          1.0581536495179527,
+          0.8466710852164672
+        ],
+        "next_external": [
+          0.10740194394027608,
+          -0.04837386778178041
+        ],
+        "next_external_domain_memberships": [],
+        "ordinary_zero_lift_residual": 3.3306690738754696e-16,
+        "rational_endpoint_consistency_residual": 1.7979101253009106e-15,
+        "filter_rejections": [
+          "b_not_in_typed_ordinary_domain",
+          "first_height_below_coupled_floor",
+          "next_external_outside_typed_union"
+        ]
+      },
+      "status": "necessary_filter_rejected"
+    },
+    {
+      "number": 3,
+      "next_epsilon": 0,
+      "input_rationals": [
+        ".31",
+        ".025"
+      ],
+      "heights": [],
+      "endpoint_tree_node": 1066,
+      "endpoint_parameter_box": [
+        [
+          "-1/2",
+          "-7/16"
+        ],
+        [
+          "3/8",
+          "7/16"
+        ]
+      ],
+      "original_witness_sha256": "233802b74d836548952993537d73f2160a9f59519568f290e7f7662ea48bc36c",
+      "endpoint_refinement": {
+        "residual_history": [
+          0.010293209240386394,
+          2.041187995944333e-05,
+          8.214541956645067e-11,
+          6.280369834735101e-16
+        ],
+        "final_residual": 6.280369834735101e-16,
+        "maximum_distance_from_saved_center": 0.0010761742934811084,
+        "saved_radius": 0.004,
+        "roots": [
+          [
+            0.34336897853527676,
+            -0.03025740952431415
+          ],
+          [
+            0.2777705957646059,
+            -0.08121247037568118
+          ],
+          [
+            0.2228210298303022,
+            0.03666984573566137
+          ]
+        ],
+        "canonical_u_difference": 5.551115123125783e-17,
+        "status": "small_residual_inside_inherited_witness"
+      },
+      "filters": {
+        "ordinary_B": [
+          -0.15533434177977745,
+          -0.20333808821682714
+        ],
+        "b": [
+          0.35382496725581536,
+          -0.21693493669116587
+        ],
+        "next_reciprocal_exponential": [
+          0.8262362458287258,
+          0.4218813850952307
+        ],
+        "next_external": [
+          0.07513650060806096,
+          0.011941959256487177
+        ],
+        "next_external_domain_memberships": [],
+        "ordinary_zero_lift_residual": 6.804363002006077e-16,
+        "rational_endpoint_consistency_residual": 5.179223133388387e-15,
+        "filter_rejections": [
+          "b_not_in_typed_ordinary_domain",
+          "first_height_below_coupled_floor",
+          "next_external_outside_typed_union"
+        ]
+      },
+      "status": "necessary_filter_rejected"
+    },
+    {
+      "number": 4,
+      "next_epsilon": 0,
+      "input_rationals": [
+        ".31",
+        ".05"
+      ],
+      "heights": [],
+      "endpoint_tree_node": 970,
+      "endpoint_parameter_box": [
+        [
+          "-1/2",
+          "-7/16"
+        ],
+        [
+          "5/8",
+          "3/4"
+        ]
+      ],
+      "original_witness_sha256": "b0acbab0c3b3e305c6c2f972223100984be2cc17b6e50cb418ebe5750ffd9cfb",
+      "endpoint_refinement": {
+        "residual_history": [
+          0.01032501807994734,
+          2.101379012610078e-05,
+          9.015968906818203e-11,
+          7.335644917278549e-16
+        ],
+        "final_residual": 7.335644917278549e-16,
+        "maximum_distance_from_saved_center": 0.0010688558295870359,
+        "saved_radius": 0.004,
+        "roots": [
+          [
+            0.34278511884656004,
+            -0.028135032320628552
+          ],
+          [
+            0.2686737070551846,
+            -0.08439828476140064
+          ],
+          [
+            0.2220520498910945,
+            0.03714707740382804
+          ]
+        ],
+        "canonical_u_difference": 2.8609792490763984e-17,
+        "status": "small_residual_inside_inherited_witness"
+      },
+      "filters": {
+        "ordinary_B": [
+          0.02507952578644315,
+          -0.22716091000702043
+        ],
+        "b": [
+          0.23249949619532034,
+          -0.2349188959099907
+        ],
+        "next_reciprocal_exponential": [
+          0.6912973090450871,
+          0.15533288286872438
+        ],
+        "next_external": [
+          0.03517748318556507,
+          0.05483801129322717
+        ],
+        "next_external_domain_memberships": [],
+        "ordinary_zero_lift_residual": 4.344434768182728e-16,
+        "rational_endpoint_consistency_residual": 8.482132971516369e-15,
+        "filter_rejections": [
+          "b_not_in_typed_ordinary_domain",
+          "first_height_below_coupled_floor",
+          "next_external_outside_typed_union"
+        ]
+      },
+      "status": "necessary_filter_rejected"
+    },
+    {
+      "number": 5,
+      "next_epsilon": 0,
+      "input_rationals": [
+        ".34",
+        "-.05"
+      ],
+      "heights": [],
+      "endpoint_tree_node": 1356,
+      "endpoint_parameter_box": [
+        [
+          "-1/8",
+          "-3/32"
+        ],
+        [
+          "-1/2",
+          "-7/16"
+        ]
+      ],
+      "original_witness_sha256": "81c01a1d570e98ee4f8bdc084d61ccac31035bea7f3d824fe068e15693287ba1",
+      "endpoint_refinement": {
+        "residual_history": [
+          0.009933803746299154,
+          1.4982830562554218e-05,
+          3.435467293758934e-11,
+          5.551115123125783e-16
+        ],
+        "final_residual": 5.551115123125783e-16,
+        "maximum_distance_from_saved_center": 0.000960757519611279,
+        "saved_radius": 0.004,
+        "roots": [
+          [
+            0.3488895104205383,
+            -0.036410105515807555
+          ],
+          [
+            0.2991047316511276,
+            -0.05488325466554548
+          ],
+          [
+            0.22621895164679362,
+            0.036402430804542876
+          ]
+        ],
+        "canonical_u_difference": 2.8609792490763984e-17,
+        "status": "small_residual_inside_inherited_witness"
+      },
+      "filters": {
+        "ordinary_B": [
+          -1.0386938575982887,
+          -0.43112873719756967
+        ],
+        "b": [
+          0.4373839418055967,
+          0.01869115205337414
+        ],
+        "next_reciprocal_exponential": [
+          0.38896106070726155,
+          2.958901164740716
+        ],
+        "next_external": [
+          0.2291976329605143,
+          -0.17401751910080573
+        ],
+        "next_external_domain_memberships": [],
+        "ordinary_zero_lift_residual": 5.551115123125783e-16,
+        "rational_endpoint_consistency_residual": 4.416190325251268e-15,
+        "filter_rejections": [
+          "b_not_in_typed_ordinary_domain",
+          "next_external_outside_typed_union"
+        ]
+      },
+      "status": "necessary_filter_rejected"
+    },
+    {
+      "number": 6,
+      "next_epsilon": 0,
+      "input_rationals": [
+        ".34",
+        "-.025"
+      ],
+      "heights": [],
+      "endpoint_tree_node": 1318,
+      "endpoint_parameter_box": [
+        [
+          "-1/8",
+          "-1/16"
+        ],
+        [
+          "-3/16",
+          "-1/8"
+        ]
+      ],
+      "original_witness_sha256": "cf38ef134337f3a73dcd9ccc2af9601d319793df6428e64e2efa3631d353eb68",
+      "endpoint_refinement": {
+        "residual_history": [
+          0.007821193253268582,
+          9.66046814822396e-06,
+          1.5111505948054337e-11,
+          7.417804156968782e-16
+        ],
+        "final_residual": 7.417804156968782e-16,
+        "maximum_distance_from_saved_center": 0.0007585063199390611,
+        "saved_radius": 0.004,
+        "roots": [
+          [
+            0.34781008989831624,
+            -0.03389732001990274
+          ],
+          [
+            0.2902950210853375,
+            -0.06093684646171469
+          ],
+          [
+            0.22517903822902036,
+            0.0368374270127438
+          ]
+        ],
+        "canonical_u_difference": 6.938893903907228e-18,
+        "status": "small_residual_inside_inherited_witness"
+      },
+      "filters": {
+        "ordinary_B": [
+          -0.6902800133465775,
+          -0.4553809389662453
+        ],
+        "b": [
+          0.4071860494075857,
+          -0.030239801410469738
+        ],
+        "next_reciprocal_exponential": [
+          0.355947779958656,
+          1.7952432440780781
+        ],
+        "next_external": [
+          0.2188479387577658,
+          -0.09619643692234725
+        ],
+        "next_external_domain_memberships": [],
+        "ordinary_zero_lift_residual": 2.9667321830339977e-16,
+        "rational_endpoint_consistency_residual": 1.4054300946555646e-15,
+        "filter_rejections": [
+          "next_external_outside_typed_union"
+        ]
+      },
+      "status": "necessary_filter_rejected"
+    },
+    {
+      "number": 7,
+      "next_epsilon": 0,
+      "input_rationals": [
+        ".34",
+        "0"
+      ],
+      "heights": [],
+      "endpoint_tree_node": 1025,
+      "endpoint_parameter_box": [
+        [
+          "-1/8",
+          "-1/16"
+        ],
+        [
+          "1/16",
+          "1/8"
+        ]
+      ],
+      "original_witness_sha256": "4b0db6c5fbea4dbeaf5f36cd918ce885f6ad8ce72e467f4cab14e3577730b40e",
+      "endpoint_refinement": {
+        "residual_history": [
+          0.008994323039180303,
+          1.3174256729476107e-05,
+          2.95110501030989e-11,
+          6.628005886499562e-16
+        ],
+        "final_residual": 6.628005886499562e-16,
+        "maximum_distance_from_saved_center": 0.0008725291595291523,
+        "saved_radius": 0.004,
+        "roots": [
+          [
+            0.34682981703275445,
+            -0.03155416599976977
+          ],
+          [
+            0.2816042682034158,
+            -0.06619374676179184
+          ],
+          [
+            0.22422277334350318,
+            0.037255619123910205
+          ]
+        ],
+        "canonical_u_difference": 2.7755575615628914e-17,
+        "status": "small_residual_inside_inherited_witness"
+      },
+      "filters": {
+        "ordinary_B": [
+          -0.40324212884263133,
+          -0.46034221236374445
+        ],
+        "b": [
+          0.36449199129928395,
+          -0.07815401338597325
+        ],
+        "next_reciprocal_exponential": [
+          0.35381345939753217,
+          1.0204845002193572
+        ],
+        "next_external": [
+          0.19688331438875623,
+          -0.012260503444994058
+        ],
+        "next_external_domain_memberships": [],
+        "ordinary_zero_lift_residual": 3.5388358909926865e-16,
+        "rational_endpoint_consistency_residual": 4.4367268087626334e-15,
+        "filter_rejections": [
+          "b_not_in_typed_ordinary_domain",
+          "next_external_outside_typed_union"
+        ]
+      },
+      "status": "necessary_filter_rejected"
+    },
+    {
+      "number": 8,
+      "next_epsilon": 0,
+      "input_rationals": [
+        ".34",
+        ".025"
+      ],
+      "heights": [],
+      "endpoint_tree_node": 988,
+      "endpoint_parameter_box": [
+        [
+          "-1/8",
+          "-1/16"
+        ],
+        [
+          "3/8",
+          "7/16"
+        ]
+      ],
+      "original_witness_sha256": "0fc6d6ae78717b1a865c0c3927b2fb581f9f9f892a2d91d09596262c9dfb28a4",
+      "endpoint_refinement": {
+        "residual_history": [
+          0.008424739861410869,
+          1.1960210051664238e-05,
+          2.5367937903924818e-11,
+          4.47545209131181e-16
+        ],
+        "final_residual": 4.47545209131181e-16,
+        "maximum_distance_from_saved_center": 0.0008144885850800589,
+        "saved_radius": 0.004,
+        "roots": [
+          [
+            0.3459485582909577,
+            -0.029379053627089185
+          ],
+          [
+            0.27314372929093705,
+            -0.07065391552910551
+          ],
+          [
+            0.2233486406282377,
+            0.037656133782463914
+          ]
+        ],
+        "canonical_u_difference": 2.8609792490763984e-17,
+        "status": "small_residual_inside_inherited_witness"
+      },
+      "filters": {
+        "ordinary_B": [
+          -0.16673700674513817,
+          -0.45142757589984456
+        ],
+        "b": [
+          0.30631099525889083,
+          -0.11640552574242195
+        ],
+        "next_reciprocal_exponential": [
+          0.373796116306121,
+          0.5142635407056437
+        ],
+        "next_external": [
+          0.14996723436256237,
+          0.07208675768950536
+        ],
+        "next_external_domain_memberships": [],
+        "ordinary_zero_lift_residual": 3.510833468576701e-16,
+        "rational_endpoint_consistency_residual": 2.2315206618374916e-15,
+        "filter_rejections": [
+          "b_not_in_typed_ordinary_domain",
+          "first_height_below_coupled_floor",
+          "next_external_outside_typed_union"
+        ]
+      },
+      "status": "necessary_filter_rejected"
+    },
+    {
+      "number": 9,
+      "next_epsilon": 0,
+      "input_rationals": [
+        ".34",
+        ".05"
+      ],
+      "heights": [],
+      "endpoint_tree_node": 922,
+      "endpoint_parameter_box": [
+        [
+          "-1/8",
+          "-1/16"
+        ],
+        [
+          "5/8",
+          "3/4"
+        ]
+      ],
+      "original_witness_sha256": "61b7115a113bf5adb42061d1644c699750ac47442bbff301a703557bfb4d3eb8",
+      "endpoint_refinement": {
+        "residual_history": [
+          0.008690665373386449,
+          1.307729956177128e-05,
+          3.145119481748893e-11,
+          6.894341957538586e-16
+        ],
+        "final_residual": 6.894341957538586e-16,
+        "maximum_distance_from_saved_center": 0.0008347951122767195,
+        "saved_radius": 0.004,
+        "roots": [
+          [
+            0.3451644403794097,
+            -0.027369796543730056
+          ],
+          [
+            0.2650191945006094,
+            -0.07434390216701338
+          ],
+          [
+            0.2225544850960171,
+            0.03803791787944335
+          ]
+        ],
+        "canonical_u_difference": 3.1031676915590914e-17,
+        "status": "small_residual_inside_inherited_witness"
+      },
+      "filters": {
+        "ordinary_B": [
+          0.02821528121921676,
+          -0.432849957793799
+        ],
+        "b": [
+          0.239640157594889,
+          -0.13293322627060403
+        ],
+        "next_reciprocal_exponential": [
+          0.40893573219447643,
+          0.19154926615024925
+        ],
+        "next_external": [
+          0.06971895765682576,
+          0.12653054352324222
+        ],
+        "next_external_domain_memberships": [],
+        "ordinary_zero_lift_residual": 1.4152622167509192e-16,
+        "rational_endpoint_consistency_residual": 8.252325904466731e-15,
+        "filter_rejections": [
+          "b_not_in_typed_ordinary_domain",
+          "first_height_below_coupled_floor",
+          "next_external_outside_typed_union"
+        ]
+      },
+      "status": "necessary_filter_rejected"
+    },
+    {
+      "number": 10,
+      "next_epsilon": 0,
+      "input_rationals": [
+        ".37",
+        "-.05"
+      ],
+      "heights": [],
+      "endpoint_tree_node": 648,
+      "endpoint_parameter_box": [
+        [
+          "3/16",
+          "1/4"
+        ],
+        [
+          "-1/2",
+          "-7/16"
+        ]
+      ],
+      "original_witness_sha256": "da706cb118f41e140750a55f9a57aa5c5454c2bf557cd0a4efc9d194f2140515",
+      "endpoint_refinement": {
+        "residual_history": [
+          0.010130793406662439,
+          1.3809758151781223e-05,
+          2.669118190064308e-11,
+          4.440892098500626e-16
+        ],
+        "final_residual": 4.440892098500626e-16,
+        "maximum_distance_from_saved_center": 0.0009104017762467367,
+        "saved_radius": 0.004,
+        "roots": [
+          [
+            0.3519363563007729,
+            -0.034932070466688496
+          ],
+          [
+            0.2913532864474039,
+            -0.044812073037353725
+          ],
+          [
+            0.22668992121768122,
+            0.037712358635066986
+          ]
+        ],
+        "canonical_u_difference": 3.1031676915590914e-17,
+        "status": "small_residual_inside_inherited_witness"
+      },
+      "filters": {
+        "ordinary_B": [
+          -1.0265223908081755,
+          -0.9055270027003179
+        ],
+        "b": [
+          0.38495414417643004,
+          0.049969057337297916
+        ],
+        "next_reciprocal_exponential": [
+          -1.2758859827267386,
+          2.6252875502376996
+        ],
+        "next_external": [
+          0.32199912612289944,
+          -0.17048825998457376
+        ],
+        "next_external_domain_memberships": [],
+        "ordinary_zero_lift_residual": 4.0412728104402656e-16,
+        "rational_endpoint_consistency_residual": 5.551115123125783e-16,
+        "filter_rejections": [
+          "next_external_outside_typed_union"
+        ]
+      },
+      "status": "necessary_filter_rejected"
+    },
+    {
+      "number": 11,
+      "next_epsilon": 0,
+      "input_rationals": [
+        ".37",
+        "-.025"
+      ],
+      "heights": [
+        {
+          "status": "KKT_candidate",
+          "x": [
+            0.3506513660648606,
+            0.37,
+            0.28341680188025864,
+            0.3556901708229713
+          ],
+          "gradient": [
+            -2.4942548026984923e-13,
+            3.3306690738754696e-16,
+            9.799938638366257e-13,
+            0.0
+          ],
+          "projected_gradient": 9.799938638366257e-13,
+          "active_coordinates": [],
+          "value": 1.9417166325950657,
+          "history": [
+            {
+              "iteration": 0,
+              "projected_gradient": 9.799938638366257e-13,
+              "value": 1.9417166325950657
+            }
+          ],
+          "evaluations": 2,
+          "positive_real_hessian": true,
+          "eigenvalues_over_pi": [
+            0.7855952458530969,
+            2.377195294073179,
+            2.766118929982257,
+            3.642383639162332
+          ],
+          "K_over_pi": 4.510491328748436,
+          "scalar_formula_difference": 0.0,
+          "pivots": [
+            2.7998686006527134,
+            1.3414909849893402,
+            1.6563476975214932,
+            3.024428534131534
+          ],
+          "Q_residual": -0.5446174290639367,
+          "step": 0,
+          "height": -0.05095936134953223,
+          "base_excess_over_reference": 0.0,
+          "factorial_excess_over_reference": 0.3201871104946362
+        },
+        {
+          "status": "KKT_candidate",
+          "x": [
+            0.3530579677808468,
+            0.3639638104764391,
+            0.281775258419809,
+            0.35954933305754283
+          ],
+          "gradient": [
+            3.7470027081099033e-16,
+            1.1102230246251565e-16,
+            1.1102230246251565e-16,
+            2.220446049250313e-16
+          ],
+          "projected_gradient": 3.885780586188048e-16,
+          "active_coordinates": [],
+          "value": 1.9422285429919097,
+          "history": [
+            {
+              "iteration": 0,
+              "projected_gradient": 0.03411110836847853,
+              "value": 1.94208416446046
+            },
+            {
+              "iteration": 1,
+              "projected_gradient": 0.00028069811755826457,
+              "value": 1.9422285375397583
+            },
+            {
+              "iteration": 2,
+              "projected_gradient": 1.9054739119894748e-08,
+              "value": 1.94222854299191
+            },
+            {
+              "iteration": 3,
+              "projected_gradient": 3.885780586188048e-16,
+              "value": 1.9422285429919097
+            }
+          ],
+          "evaluations": 8,
+          "positive_real_hessian": true,
+          "eigenvalues_over_pi": [
+            0.783867935452262,
+            2.384342097097859,
+            2.7514642609590956,
+            3.6632433391610593
+          ],
+          "K_over_pi": 4.535158257922573,
+          "scalar_formula_difference": 8.881784197001252e-16,
+          "pivots": [
+            2.783202720524421,
+            1.3148750054969096,
+            1.672934517090129,
+            3.0770379953465485
+          ],
+          "Q_residual": -0.6354561527121574,
+          "step": 1,
+          "height": -0.042466134457943526,
+          "base_excess_over_reference": 0.0005119103968440619,
+          "factorial_excess_over_reference": 0.26733450247570756
+        },
+        {
+          "status": "KKT_candidate",
+          "x": [
+            0.3556081401403142,
+            0.3582084324245482,
+            0.27990804032737093,
+            0.3632518658819511
+          ],
+          "gradient": [
+            -1.8041124150158794e-16,
+            3.608224830031759e-16,
+            6.661338147750939e-16,
+            1.1102230246251565e-16
+          ],
+          "projected_gradient": 6.661338147750939e-16,
+          "active_coordinates": [],
+          "value": 1.9437684036961111,
+          "history": [
+            {
+              "iteration": 0,
+              "projected_gradient": 0.03312248909765214,
+              "value": 1.9436254043689298
+            },
+            {
+              "iteration": 1,
+              "projected_gradient": 0.000253595080348612,
+              "value": 1.943768399129864
+            },
+            {
+              "iteration": 2,
+              "projected_gradient": 1.4892182376158303e-08,
+              "value": 1.943768403696112
+            },
+            {
+              "iteration": 3,
+              "projected_gradient": 6.661338147750939e-16,
+              "value": 1.9437684036961111
+            }
+          ],
+          "evaluations": 8,
+          "positive_real_hessian": true,
+          "eigenvalues_over_pi": [
+            0.7812591253178552,
+            2.390271230407552,
+            2.736449597568378,
+            3.6824993995089734
+          ],
+          "K_over_pi": 4.570404580747753,
+          "scalar_formula_difference": 0.0,
+          "pivots": [
+            2.7645777961508466,
+            1.2898135472273187,
+            1.6875417195103941,
+            3.1272468036885552
+          ],
+          "Q_residual": -0.7293956870773433,
+          "step": 2,
+          "height": -0.03397290756635482,
+          "base_excess_over_reference": 0.0020517711010454853,
+          "factorial_excess_over_reference": 0.2155098447641363
+        },
+        {
+          "status": "KKT_candidate",
+          "x": [
+            0.3583091275022304,
+            0.3527108226046047,
+            0.2778121590748643,
+            0.3668104547924126
+          ],
+          "gradient": [
+            9.71445146547012e-17,
+            -4.996003610813204e-16,
+            -4.440892098500626e-16,
+            0.0
+          ],
+          "projected_gradient": 4.996003610813204e-16,
+          "active_coordinates": [],
+          "value": 1.9463441977953762,
+          "history": [
+            {
+              "iteration": 0,
+              "projected_gradient": 0.03216569775792727,
+              "value": 1.9462011384623683
+            },
+            {
+              "iteration": 1,
+              "projected_gradient": 0.0002243719566125124,
+              "value": 1.9463441939065813
+            },
+            {
+              "iteration": 2,
+              "projected_gradient": 1.0999236299547022e-08,
+              "value": 1.9463441977953766
+            },
+            {
+              "iteration": 3,
+              "projected_gradient": 4.996003610813204e-16,
+              "value": 1.9463441977953762
+            }
+          ],
+          "evaluations": 8,
+          "positive_real_hessian": true,
+          "eigenvalues_over_pi": [
+            0.7778966195076434,
+            2.394501133507578,
+            2.721289288399592,
+            3.6999867968988607
+          ],
+          "K_over_pi": 4.615997578200331,
+          "scalar_formula_difference": -8.881784197001252e-16,
+          "pivots": [
+            2.7439148154917845,
+            1.266154889436741,
+            1.7003273904229872,
+            3.174839724870763
+          ],
+          "Q_residual": -0.8266812169445468,
+          "step": 3,
+          "height": -0.025479680674766116,
+          "base_excess_over_reference": 0.004627565200310491,
+          "factorial_excess_over_reference": 0.1647211204476286
+        },
+        {
+          "status": "KKT_candidate",
+          "x": [
+            0.36116852961722445,
+            0.3474499104046996,
+            0.2754834184085341,
+            0.3702367823937247
+          ],
+          "gradient": [
+            -6.938893903907228e-17,
+            -2.636779683484747e-16,
+            -3.3306690738754696e-16,
+            1.1102230246251565e-16
+          ],
+          "projected_gradient": 3.3306690738754696e-16,
+          "active_coordinates": [],
+          "value": 1.9499662560595437,
+          "history": [
+            {
+              "iteration": 0,
+              "projected_gradient": 0.03123957581613418,
+              "value": 1.9498216958345633
+            },
+            {
+              "iteration": 1,
+              "projected_gradient": 0.00019272476315213005,
+              "value": 1.9499662526548227
+            },
+            {
+              "iteration": 2,
+              "projected_gradient": 7.352487507716887e-09,
+              "value": 1.9499662560595432
+            },
+            {
+              "iteration": 3,
+              "projected_gradient": 3.3306690738754696e-16,
+              "value": 1.9499662560595437
+            }
+          ],
+          "evaluations": 8,
+          "positive_real_hessian": true,
+          "eigenvalues_over_pi": [
+            0.7738913150655701,
+            2.3965060822669626,
+            2.7062684433947877,
+            3.7155227355200244
+          ],
+          "K_over_pi": 4.671860297419151,
+          "scalar_formula_difference": 0.0,
+          "pivots": [
+            2.7211383551789576,
+            1.2437646462069725,
+            1.7114381357727853,
+            3.2195803500670936
+          ],
+          "Q_residual": -0.9275517858815336,
+          "step": 4,
+          "height": -0.01698645378317741,
+          "base_excess_over_reference": 0.008249623464477995,
+          "factorial_excess_over_reference": 0.1149786602960234
+        },
+        {
+          "status": "KKT_candidate",
+          "x": [
+            0.36419433476890123,
+            0.34240625675810854,
+            0.2729163942453617,
+            0.3735417217552479
+          ],
+          "gradient": [
+            -6.938893903907228e-17,
+            -2.0816681711721685e-17,
+            -4.440892098500626e-16,
+            -5.551115123125783e-17
+          ],
+          "projected_gradient": 4.440892098500626e-16,
+          "active_coordinates": [],
+          "value": 1.954647239355492,
+          "history": [
+            {
+              "iteration": 0,
+              "projected_gradient": 0.030342944778891212,
+              "value": 1.9544997158779642
+            },
+            {
+              "iteration": 1,
+              "projected_gradient": 0.00015834760016186777,
+              "value": 1.9546472362419443
+            },
+            {
+              "iteration": 2,
+              "projected_gradient": 6.07461891899419e-09,
+              "value": 1.9546472393554915
+            },
+            {
+              "iteration": 3,
+              "projected_gradient": 4.440892098500626e-16,
+              "value": 1.954647239355492
+            }
+          ],
+          "evaluations": 8,
+          "positive_real_hessian": true,
+          "eigenvalues_over_pi": [
+            0.7693388140378691,
+            2.3957225108499958,
+            2.69173566512728,
+            3.7289030531717913
+          ],
+          "K_over_pi": 4.738063761598784,
+          "scalar_formula_difference": 0.0,
+          "pivots": [
+            2.6961772474721193,
+            1.22252275466556,
+            1.7210106568285932,
+            3.261209570969016
+          ],
+          "Q_residual": -1.0322432904902759,
+          "step": 5,
+          "height": -0.008493226891588705,
+          "base_excess_over_reference": 0.012930606760426233,
+          "factorial_excess_over_reference": 0.06629512517619893
+        },
+        {
+          "status": "KKT_candidate",
+          "x": [
+            0.36739496120746407,
+            0.3375617686288852,
+            0.27010438503446044,
+            0.3767355001393568
+          ],
+          "gradient": [
+            -1.8041124150158794e-16,
+            -3.3306690738754696e-16,
+            4.440892098500626e-16,
+            1.1102230246251565e-16
+          ],
+          "projected_gradient": 4.440892098500626e-16,
+          "active_coordinates": [],
+          "value": 1.9604021547214545,
+          "history": [
+            {
+              "iteration": 0,
+              "projected_gradient": 0.03131490811607773,
+              "value": 1.9602501648407638
+            },
+            {
+              "iteration": 1,
+              "projected_gradient": 0.0001584123397486148,
+              "value": 1.960402151693687
+            },
+            {
+              "iteration": 2,
+              "projected_gradient": 6.530748275501708e-09,
+              "value": 1.9604021547214545
+            },
+            {
+              "iteration": 3,
+              "projected_gradient": 4.440892098500626e-16,
+              "value": 1.9604021547214545
+            }
+          ],
+          "evaluations": 8,
+          "positive_real_hessian": true,
+          "eigenvalues_over_pi": [
+            0.7643209385265917,
+            2.3915751600201594,
+            2.678075361253985,
+            3.7398989684913606
+          ],
+          "K_over_pi": 4.814825846789807,
+          "scalar_formula_difference": 8.881784197001252e-16,
+          "pivots": [
+            2.6689651011078555,
+            1.2023210307624124,
+            1.7291729788147503,
+            3.299443349630956
+          ],
+          "Q_residual": -1.1409910693395093,
+          "step": 6,
+          "height": 0.0,
+          "base_excess_over_reference": 0.018685522126388854,
+          "factorial_excess_over_reference": 0.018685522126388854
+        },
+        {
+          "status": "KKT_candidate",
+          "x": [
+            0.3713996162257235,
+            0.3320901127066235,
+            0.2664684369318753,
+            0.38036656914695693
+          ],
+          "gradient": [
+            4.163336342344337e-17,
+            -4.718447854656915e-16,
+            0.0,
+            -2.7755575615628914e-16
+          ],
+          "projected_gradient": 4.440892098500626e-16,
+          "active_coordinates": [],
+          "value": 1.9685784376693738,
+          "history": [
+            {
+              "iteration": 0,
+              "projected_gradient": 0.0395398018973212,
+              "value": 1.9683585596371147
+            },
+            {
+              "iteration": 1,
+              "projected_gradient": 0.00024398760040506007,
+              "value": 1.9685784315193644
+            },
+            {
+              "iteration": 2,
+              "projected_gradient": 1.2979789576483824e-08,
+              "value": 1.968578437669374
+            },
+            {
+              "iteration": 3,
+              "projected_gradient": 4.440892098500626e-16,
+              "value": 1.9685784376693738
+            }
+          ],
+          "evaluations": 8,
+          "positive_real_hessian": true,
+          "eigenvalues_over_pi": [
+            0.7579098992384666,
+            2.3816607273556305,
+            2.6636015504226176,
+            3.7494389198311326
+          ],
+          "K_over_pi": 4.919252633856411,
+          "scalar_formula_difference": 0.0,
+          "pivots": [
+            2.633956923583826,
+            1.1797357041391676,
+            1.73713864171045,
+            3.339682220735121
+          ],
+          "Q_residual": -1.2745533505604691,
+          "step": 7,
+          "height": 0.01,
+          "base_excess_over_reference": 0.02686180507430813,
+          "factorial_excess_over_reference": -0.035970047997487736
+        }
+      ],
+      "endpoint_tree_node": 616,
+      "endpoint_parameter_box": [
+        [
+          "3/16",
+          "1/4"
+        ],
+        [
+          "-3/16",
+          "-1/8"
+        ]
+      ],
+      "original_witness_sha256": "40b35dc20d3c059a237071cc7e475dc5ed8bd16b4dd90a39c83e3b0c3074228a",
+      "endpoint_refinement": {
+        "residual_history": [
+          0.004288233940521213,
+          2.5795230052867392e-06,
+          9.797728822775326e-13
+        ],
+        "final_residual": 9.797728822775326e-13,
+        "maximum_distance_from_saved_center": 0.00038683198857080234,
+        "saved_radius": 0.004,
+        "roots": [
+          [
+            0.3506513660648606,
+            -0.03253894687303113
+          ],
+          [
+            0.28341680188025864,
+            -0.05095936134953223
+          ],
+          [
+            0.22563101186204385,
+            0.03804660813380989
+          ]
+        ],
+        "canonical_u_difference": 2.186632531584665e-15,
+        "status": "small_residual_inside_inherited_witness"
+      },
+      "filters": {
+        "ordinary_B": [
+          -0.6609771683116026,
+          -0.8445388424128878
+        ],
+        "b": [
+          0.3556901708229713,
+          0.011131358927551712
+        ],
+        "next_reciprocal_exponential": [
+          -0.7603630418257332,
+          1.5386117632632814
+        ],
+        "next_external": [
+          0.3230500473927757,
+          -0.08596524681561708
+        ],
+        "next_external_domain_memberships": [
+          "O4",
+          "A4"
+        ],
+        "ordinary_zero_lift_residual": 5.551115123125783e-17,
+        "rational_endpoint_consistency_residual": 1.5725363094045914e-12,
+        "filter_rejections": []
+      },
+      "status": "necessary_feasible_not_word_realized",
+      "reference": [
+        [
+          0.3506513660648606,
+          -0.03253894687303113
+        ],
+        [
+          0.37,
+          -0.025
+        ],
+        [
+          0.28341680188025864,
+          -0.05095936134953223
+        ],
+        [
+          0.3556901708229713,
+          0.011131358927551712
+        ]
+      ],
+      "cut_p_b": [
+        -0.24691372994856942,
+        -1.1420838275783023
+      ],
+      "baseline": 1.9417166325950657,
+      "baseline_real_gradient": [
+        -2.4942548026984923e-13,
+        3.3306690738754696e-16,
+        9.799938638366257e-13,
+        0.0
+      ]
+    },
+    {
+      "number": 12,
+      "next_epsilon": 0,
+      "input_rationals": [
+        ".37",
+        "0"
+      ],
+      "heights": [
+        {
+          "status": "KKT_candidate",
+          "x": [
+            0.34946833203206173,
+            0.37,
+            0.2756140706930014,
+            0.31927022566721774
+          ],
+          "gradient": [
+            4.163336342344337e-17,
+            4.440892098500626e-16,
+            2.220446049250313e-16,
+            0.0
+          ],
+          "projected_gradient": 4.440892098500626e-16,
+          "active_coordinates": [],
+          "value": 1.9075686754785988,
+          "history": [
+            {
+              "iteration": 0,
+              "projected_gradient": 4.440892098500626e-16,
+              "value": 1.9075686754785988
+            }
+          ],
+          "evaluations": 2,
+          "positive_real_hessian": true,
+          "eigenvalues_over_pi": [
+            0.8716220253231531,
+            2.2192352306937346,
+            2.6677779478139945,
+            3.6085818978986612
+          ],
+          "K_over_pi": 4.3831491090609696,
+          "scalar_formula_difference": -8.881784197001252e-16,
+          "pivots": [
+            2.7801193036748977,
+            1.303392619545799,
+            1.6646550251933818,
+            3.087129458314721
+          ],
+          "Q_residual": -0.38547337929047887,
+          "step": 0,
+          "height": -0.0564265652135268,
+          "base_excess_over_reference": 0.0,
+          "factorial_excess_over_reference": 0.35453856548424234
+        },
+        {
+          "status": "KKT_candidate",
+          "x": [
+            0.35205192345277053,
+            0.36363994124965765,
+            0.2742947111777808,
+            0.32254419290320935
+          ],
+          "gradient": [
+            -4.0245584642661925e-16,
+            2.220446049250313e-16,
+            -1.1102230246251565e-16,
+            1.1102230246251565e-16
+          ],
+          "projected_gradient": 3.885780586188048e-16,
+          "active_coordinates": [],
+          "value": 1.9081787193006827,
+          "history": [
+            {
+              "iteration": 0,
+              "projected_gradient": 0.03541973704679169,
+              "value": 1.9080259895382978
+            },
+            {
+              "iteration": 1,
+              "projected_gradient": 0.00031392539747499004,
+              "value": 1.9081787122374394
+            },
+            {
+              "iteration": 2,
+              "projected_gradient": 2.659320796905007e-08,
+              "value": 1.9081787193006825
+            },
+            {
+              "iteration": 3,
+              "projected_gradient": 3.885780586188048e-16,
+              "value": 1.9081787193006827
+            }
+          ],
+          "evaluations": 8,
+          "positive_real_hessian": true,
+          "eigenvalues_over_pi": [
+            0.8702329961506616,
+            2.224895972238174,
+            2.6474496865983554,
+            3.6379916180675718
+          ],
+          "K_over_pi": 4.410197335022862,
+          "scalar_formula_difference": 0.0,
+          "pivots": [
+            2.763185310734386,
+            1.2753440310625888,
+            1.6825281910254608,
+            3.1451035615245195
+          ],
+          "Q_residual": -0.48979743704453566,
+          "step": 1,
+          "height": -0.047022137677939,
+          "base_excess_over_reference": 0.000610043822083961,
+          "factorial_excess_over_reference": 0.2960588483922859
+        },
+        {
+          "status": "KKT_candidate",
+          "x": [
+            0.3548051901894694,
+            0.35761419372661585,
+            0.2726843101694803,
+            0.3256488096574621
+          ],
+          "gradient": [
+            -1.249000902703301e-16,
+            -4.440892098500626e-16,
+            -1.1102230246251565e-16,
+            0.0
+          ],
+          "projected_gradient": 4.440892098500626e-16,
+          "active_coordinates": [],
+          "value": 1.9100144305834204,
+          "history": [
+            {
+              "iteration": 0,
+              "projected_gradient": 0.03426764664573745,
+              "value": 1.9098635927502532
+            },
+            {
+              "iteration": 1,
+              "projected_gradient": 0.00028343662283403237,
+              "value": 1.9100144248581545
+            },
+            {
+              "iteration": 2,
+              "projected_gradient": 2.123076292548376e-08,
+              "value": 1.9100144305834206
+            },
+            {
+              "iteration": 3,
+              "projected_gradient": 4.440892098500626e-16,
+              "value": 1.9100144305834204
+            }
+          ],
+          "evaluations": 8,
+          "positive_real_hessian": true,
+          "eigenvalues_over_pi": [
+            0.8676966893544196,
+            2.2306881657487954,
+            2.625405312615492,
+            3.6654571083670593
+          ],
+          "K_over_pi": 4.449447664799361,
+          "scalar_formula_difference": 0.0,
+          "pivots": [
+            2.743954015701851,
+            1.2490924330096425,
+            1.6982159332896924,
+            3.200125331866723
+          ],
+          "Q_residual": -0.5977564738745336,
+          "step": 2,
+          "height": -0.0376177101423512,
+          "base_excess_over_reference": 0.0024457551048215898,
+          "factorial_excess_over_reference": 0.23880479876098315
+        },
+        {
+          "status": "KKT_candidate",
+          "x": [
+            0.3577378866161352,
+            0.3518939232743017,
+            0.27078017866791054,
+            0.32859863449916293
+          ],
+          "gradient": [
+            -1.249000902703301e-16,
+            2.220446049250313e-16,
+            6.661338147750939e-16,
+            -2.220446049250313e-16
+          ],
+          "projected_gradient": 6.661338147750939e-16,
+          "active_coordinates": [],
+          "value": 1.9130867095347184,
+          "history": [
+            {
+              "iteration": 0,
+              "projected_gradient": 0.03315459288709799,
+              "value": 1.912935720229537
+            },
+            {
+              "iteration": 1,
+              "projected_gradient": 0.00024945624243399855,
+              "value": 1.9130867048297937
+            },
+            {
+              "iteration": 2,
+              "projected_gradient": 1.603086885459959e-08,
+              "value": 1.9130867095347184
+            },
+            {
+              "iteration": 3,
+              "projected_gradient": 6.661338147750939e-16,
+              "value": 1.9130867095347184
+            }
+          ],
+          "evaluations": 8,
+          "positive_real_hessian": true,
+          "eigenvalues_over_pi": [
+            0.8642089375960381,
+            2.2363071550645683,
+            2.6015737688818876,
+            3.6907266781971737
+          ],
+          "K_over_pi": 4.500657242261955,
+          "scalar_formula_difference": 0.0,
+          "pivots": [
+            2.72231475561192,
+            1.2244528745975676,
+            1.711901184095208,
+            3.2519145958428366
+          ],
+          "Q_residual": -0.7096704512691336,
+          "step": 3,
+          "height": -0.0282132826067634,
+          "base_excess_over_reference": 0.005518034056119614,
+          "factorial_excess_over_reference": 0.18278731679824078
+        },
+        {
+          "status": "KKT_candidate",
+          "x": [
+            0.36086027360020073,
+            0.34645288698905063,
+            0.26857782673961256,
+            0.3314069292992768
+          ],
+          "gradient": [
+            2.0816681711721685e-16,
+            4.440892098500626e-16,
+            -2.220446049250313e-16,
+            4.440892098500626e-16
+          ],
+          "projected_gradient": 4.440892098500626e-16,
+          "active_coordinates": [],
+          "value": 1.9174097839145468,
+          "history": [
+            {
+              "iteration": 0,
+              "projected_gradient": 0.032079122490588086,
+              "value": 1.9172565854522312
+            },
+            {
+              "iteration": 1,
+              "projected_gradient": 0.00021142407163354804,
+              "value": 1.917409779936703
+            },
+            {
+              "iteration": 2,
+              "projected_gradient": 1.0994751331594443e-08,
+              "value": 1.9174097839145468
+            },
+            {
+              "iteration": 3,
+              "projected_gradient": 4.440892098500626e-16,
+              "value": 1.9174097839145468
+            }
+          ],
+          "evaluations": 8,
+          "positive_real_hessian": true,
+          "eigenvalues_over_pi": [
+            0.8599376144850114,
+            2.2414848825056737,
+            2.575894060868833,
+            3.713518117398014
+          ],
+          "K_over_pi": 4.563784283494556,
+          "scalar_formula_difference": 0.0,
+          "pivots": [
+            2.698161500259664,
+            1.2012625742300453,
+            1.7237545067425437,
+            3.300160048011845
+          ],
+          "Q_residual": -0.8258488301792992,
+          "step": 4,
+          "height": -0.0188088550711756,
+          "base_excess_over_reference": 0.009841108435947987,
+          "factorial_excess_over_reference": 0.12802063026402877
+        },
+        {
+          "status": "KKT_candidate",
+          "x": [
+            0.3641831702136586,
+            0.3412669710234714,
+            0.26607094129220343,
+            0.33408589340946754
+          ],
+          "gradient": [
+            -1.8041124150158794e-16,
+            4.2327252813834093e-16,
+            4.440892098500626e-16,
+            -5.551115123125783e-17
+          ],
+          "projected_gradient": 4.440892098500626e-16,
+          "active_coordinates": [],
+          "value": 1.9230011972482397,
+          "history": [
+            {
+              "iteration": 0,
+              "projected_gradient": 0.031039741858941428,
+              "value": 1.9228436859244689
+            },
+            {
+              "iteration": 1,
+              "projected_gradient": 0.0001707197411267014,
+              "value": 1.923001193699865
+            },
+            {
+              "iteration": 2,
+              "projected_gradient": 8.385432237467683e-09,
+              "value": 1.92300119724824
+            },
+            {
+              "iteration": 3,
+              "projected_gradient": 4.440892098500626e-16,
+              "value": 1.9230011972482397
+            }
+          ],
+          "evaluations": 8,
+          "positive_real_hessian": true,
+          "eigenvalues_over_pi": [
+            0.8550251339845168,
+            2.245983140176433,
+            2.54831841490917,
+            3.7335152098339286
+          ],
+          "K_over_pi": 4.638980370800413,
+          "scalar_formula_difference": -8.881784197001252e-16,
+          "pivots": [
+            2.671394016706857,
+            1.1793768723333256,
+            1.7339358725592715,
+            3.3445169639495074
+          ],
+          "Q_residual": -0.946595154210871,
+          "step": 5,
+          "height": -0.009404427535587796,
+          "base_excess_over_reference": 0.015432521769640939,
+          "factorial_excess_over_reference": 0.0745222826836813
+        },
+        {
+          "status": "KKT_candidate",
+          "x": [
+            0.36771801934044157,
+            0.3363138077717314,
+            0.2632513124059557,
+            0.3366468578671449
+          ],
+          "gradient": [
+            -1.249000902703301e-16,
+            0.0,
+            0.0,
+            -5.551115123125783e-17
+          ],
+          "projected_gradient": 1.1102230246251565e-16,
+          "active_coordinates": [],
+          "value": 1.9298818509938163,
+          "history": [
+            {
+              "iteration": 0,
+              "projected_gradient": 0.03149430901249817,
+              "value": 1.9297178456477513
+            },
+            {
+              "iteration": 1,
+              "projected_gradient": 0.0001913868128589069,
+              "value": 1.9298818475465969
+            },
+            {
+              "iteration": 2,
+              "projected_gradient": 9.112986809611812e-09,
+              "value": 1.929881850993816
+            },
+            {
+              "iteration": 3,
+              "projected_gradient": 1.1102230246251565e-16,
+              "value": 1.9298818509938163
+            }
+          ],
+          "evaluations": 8,
+          "positive_real_hessian": true,
+          "eigenvalues_over_pi": [
+            0.8495910487994713,
+            2.2495817206957454,
+            2.518819913607282,
+            3.75036418162387
+          ],
+          "K_over_pi": 4.726592589651915,
+          "scalar_formula_difference": 0.0,
+          "pivots": [
+            2.641918800125768,
+            1.1586659842960763,
+            1.7425960066327408,
+            3.384603707040997
+          ],
+          "Q_residual": -1.0722109487079734,
+          "step": 6,
+          "height": 0.0,
+          "base_excess_over_reference": 0.022313175515217498,
+          "factorial_excess_over_reference": 0.022313175515217498
+        },
+        {
+          "status": "KKT_candidate",
+          "x": [
+            0.3717228615989562,
+            0.3312788525876686,
+            0.25989853726957574,
+            0.3392524549043115
+          ],
+          "gradient": [
+            -4.0245584642661925e-16,
+            -3.608224830031759e-16,
+            0.0,
+            -2.220446049250313e-16
+          ],
+          "projected_gradient": 3.885780586188048e-16,
+          "active_coordinates": [],
+          "value": 1.9386398903073496,
+          "history": [
+            {
+              "iteration": 0,
+              "projected_gradient": 0.036567136973527425,
+              "value": 1.9384441790374298
+            },
+            {
+              "iteration": 1,
+              "projected_gradient": 0.0002424608522858529,
+              "value": 1.9386398855181641
+            },
+            {
+              "iteration": 2,
+              "projected_gradient": 1.2071943555902465e-08,
+              "value": 1.9386398903073496
+            },
+            {
+              "iteration": 3,
+              "projected_gradient": 3.885780586188048e-16,
+              "value": 1.9386398903073496
+            }
+          ],
+          "evaluations": 8,
+          "positive_real_hessian": true,
+          "eigenvalues_over_pi": [
+            0.843351460000137,
+            2.2521706469314813,
+            2.485356620112861,
+            3.764382930158948
+          ],
+          "K_over_pi": 4.833998558750728,
+          "scalar_formula_difference": 0.0,
+          "pivots": [
+            2.607510218829656,
+            1.1378007622461879,
+            1.7502953087599191,
+            3.4220695824458454
+          ],
+          "Q_residual": -1.2114631309293122,
+          "step": 7,
+          "height": 0.01,
+          "base_excess_over_reference": 0.03107121482875086,
+          "factorial_excess_over_reference": -0.03176063824304501
+        }
+      ],
+      "endpoint_tree_node": 317,
+      "endpoint_parameter_box": [
+        [
+          "3/16",
+          "1/4"
+        ],
+        [
+          "1/16",
+          "1/8"
+        ]
+      ],
+      "original_witness_sha256": "2847c3b853f9f02e30cc6311623af2adfdf30cc12f5a2d49f05ce9dc6ed0ebf5",
+      "endpoint_refinement": {
+        "residual_history": [
+          0.006546956251939249,
+          6.1970103251669944e-06,
+          5.921361183352487e-12,
+          4.965068306494546e-16
+        ],
+        "final_residual": 4.965068306494546e-16,
+        "maximum_distance_from_saved_center": 0.000591244925897073,
+        "saved_radius": 0.004,
+        "roots": [
+          [
+            0.34946833203206173,
+            -0.030316660204083395
+          ],
+          [
+            0.2756140706930014,
+            -0.0564265652135268
+          ],
+          [
+            0.22465524819049548,
+            0.03836566830590132
+          ]
+        ],
+        "canonical_u_difference": 3.469446951953614e-17,
+        "status": "small_residual_inside_inherited_witness"
+      },
+      "filters": {
+        "ordinary_B": [
+          -0.3624450559786932,
+          -0.779492526528777
+        ],
+        "b": [
+          0.31927022566721774,
+          -0.02407148202795772
+        ],
+        "next_reciprocal_exponential": [
+          -0.38186992632580613,
+          0.8177427905452767
+        ],
+        "next_external": [
+          0.319532379899038,
+          0.01632504633181872
+        ],
+        "next_external_domain_memberships": [
+          "O3",
+          "A3"
+        ],
+        "ordinary_zero_lift_residual": 5.051591013050331e-16,
+        "rational_endpoint_consistency_residual": 5.552225235150304e-15,
+        "filter_rejections": []
+      },
+      "status": "necessary_feasible_not_word_realized",
+      "reference": [
+        [
+          0.34946833203206173,
+          -0.030316660204083395
+        ],
+        [
+          0.37,
+          0.0
+        ],
+        [
+          0.2756140706930014,
+          -0.0564265652135268
+        ],
+        [
+          0.31927022566721774,
+          -0.02407148202795772
+        ]
+      ],
+      "cut_p_b": [
+        -0.01748250023131781,
+        -1.0632843110491197
+      ],
+      "baseline": 1.9075686754785988,
+      "baseline_real_gradient": [
+        4.163336342344337e-17,
+        4.440892098500626e-16,
+        2.220446049250313e-16,
+        0.0
+      ]
+    },
+    {
+      "number": 13,
+      "next_epsilon": 0,
+      "input_rationals": [
+        ".37",
+        ".025"
+      ],
+      "heights": [],
+      "endpoint_tree_node": 280,
+      "endpoint_parameter_box": [
+        [
+          "3/16",
+          "1/4"
+        ],
+        [
+          "3/8",
+          "7/16"
+        ]
+      ],
+      "original_witness_sha256": "100c16a862891ea2ed2a2358d8533b40480485ba96165198699b7250d9e48c14",
+      "endpoint_refinement": {
+        "residual_history": [
+          0.006121174060760432,
+          5.6167011837624115e-06,
+          5.067925339894401e-12,
+          9.289828890135277e-16
+        ],
+        "final_residual": 9.289828890135277e-16,
+        "maximum_distance_from_saved_center": 0.000551957123185121,
+        "saved_radius": 0.004,
+        "roots": [
+          [
+            0.3483877564459663,
+            -0.028261636758732687
+          ],
+          [
+            0.2680291235313533,
+            -0.061211613416791905
+          ],
+          [
+            0.22376088744013956,
+            0.03866936627769117
+          ]
+        ],
+        "canonical_u_difference": 3.1031676915590914e-17,
+        "status": "small_residual_inside_inherited_witness"
+      },
+      "filters": {
+        "ordinary_B": [
+          -0.1187556927691412,
+          -0.7131551290442503
+        ],
+        "b": [
+          0.27626175498656164,
+          -0.051626735612496026
+        ],
+        "next_reciprocal_exponential": [
+          -0.10008619449523641,
+          0.34967846854335927
+        ],
+        "next_external": [
+          0.2943676834816909,
+          0.16096466046713967
+        ],
+        "next_external_domain_memberships": [],
+        "ordinary_zero_lift_residual": 8.899114524108741e-16,
+        "rational_endpoint_consistency_residual": 7.361875398226483e-15,
+        "filter_rejections": [
+          "b_not_in_typed_ordinary_domain",
+          "next_external_outside_typed_union"
+        ]
+      },
+      "status": "necessary_filter_rejected"
+    },
+    {
+      "number": 14,
+      "next_epsilon": 0,
+      "input_rationals": [
+        ".37",
+        ".05"
+      ],
+      "heights": [],
+      "endpoint_tree_node": 202,
+      "endpoint_parameter_box": [
+        [
+          "3/16",
+          "1/4"
+        ],
+        [
+          "5/8",
+          "3/4"
+        ]
+      ],
+      "original_witness_sha256": "0cda515c82d65e3cc371b9230fc4d2233a377a1e365e4c17676c8061a626aaae",
+      "endpoint_refinement": {
+        "residual_history": [
+          0.006808068981408318,
+          7.160508999279529e-06,
+          8.549557602505075e-12,
+          6.432246110830865e-16
+        ],
+        "final_residual": 6.432246110830865e-16,
+        "maximum_distance_from_saved_center": 0.0006115758538849724,
+        "saved_radius": 0.004,
+        "roots": [
+          [
+            0.3474085506284711,
+            -0.02636972070357573
+          ],
+          [
+            0.2607415330599047,
+            -0.06533133710665803
+          ],
+          [
+            0.22294562047502323,
+            0.03895738216082819
+          ]
+        ],
+        "canonical_u_difference": 2.7755575615628914e-17,
+        "status": "small_residual_inside_inherited_witness"
+      },
+      "filters": {
+        "ordinary_B": [
+          0.08011569294869196,
+          -0.6475413017269296
+        ],
+        "b": [
+          0.23040844776041705,
+          -0.06795550169490748
+        ],
+        "next_reciprocal_exponential": [
+          0.1131524991026746,
+          0.05465762149618414
+        ],
+        "next_external": [
+          0.07161828015188793,
+          0.33011271256274966
+        ],
+        "next_external_domain_memberships": [],
+        "ordinary_zero_lift_residual": 2.651347637902923e-16,
+        "rational_endpoint_consistency_residual": 1.5100665727558131e-15,
+        "filter_rejections": [
+          "b_not_in_typed_ordinary_domain",
+          "next_external_outside_typed_union"
+        ]
+      },
+      "status": "necessary_filter_rejected"
+    },
+    {
+      "number": 15,
+      "next_epsilon": 0,
+      "input_rationals": [
+        ".40",
+        "-.05"
+      ],
+      "heights": [],
+      "endpoint_tree_node": 463,
+      "endpoint_parameter_box": [
+        [
+          "1/2",
+          "9/16"
+        ],
+        [
+          "-1/2",
+          "-7/16"
+        ]
+      ],
+      "original_witness_sha256": "e6114416be007212b6590a595ef64969c1535be8541cd3b676690ddaef9e87ec",
+      "endpoint_refinement": {
+        "residual_history": [
+          0.014467776052838692,
+          2.509127231358553e-05,
+          8.111580742307515e-11,
+          7.28550816809042e-16
+        ],
+        "final_residual": 7.28550816809042e-16,
+        "maximum_distance_from_saved_center": 0.0012132428400258677,
+        "saved_radius": 0.004,
+        "roots": [
+          [
+            0.3548389339210745,
+            -0.03320349045695323
+          ],
+          [
+            0.28353090207533643,
+            -0.035695334494729634
+          ],
+          [
+            0.22703928461044026,
+            0.039044114328647586
+          ]
+        ],
+        "canonical_u_difference": 3.1031676915590914e-17,
+        "status": "small_residual_inside_inherited_witness"
+      },
+      "filters": {
+        "ordinary_B": [
+          -0.8975046840736403,
+          -1.3907871365554727
+        ],
+        "b": [
+          0.3412083840742435,
+          0.08020503609888185
+        ],
+        "next_reciprocal_exponential": [
+          -2.6676943876640156,
+          1.5538360060572063
+        ],
+        "next_external": [
+          0.41605760885853,
+          -0.1794113574664527
+        ],
+        "next_external_domain_memberships": [],
+        "ordinary_zero_lift_residual": 4.441434166503683e-16,
+        "rational_endpoint_consistency_residual": 3.4421390178013257e-15,
+        "filter_rejections": [
+          "b_not_in_typed_ordinary_domain",
+          "next_external_outside_typed_union"
+        ]
+      },
+      "status": "necessary_filter_rejected"
+    },
+    {
+      "number": 16,
+      "next_epsilon": 0,
+      "input_rationals": [
+        ".40",
+        "-.025"
+      ],
+      "heights": [],
+      "endpoint_tree_node": 431,
+      "endpoint_parameter_box": [
+        [
+          "1/2",
+          "9/16"
+        ],
+        [
+          "-3/16",
+          "-1/8"
+        ]
+      ],
+      "original_witness_sha256": "4bb50557dee09a46ee8c0735b2f4ed8735bb677dc034921bc121dda13fe79cc1",
+      "endpoint_refinement": {
+        "residual_history": [
+          0.010521318048715934,
+          1.3817252204828158e-05,
+          2.5722439421231977e-11,
+          4.1748851477261605e-16
+        ],
+        "final_residual": 4.1748851477261605e-16,
+        "maximum_distance_from_saved_center": 0.0008857801373480808,
+        "saved_radius": 0.004,
+        "roots": [
+          [
+            0.35334536154308166,
+            -0.03093441882778318
+          ],
+          [
+            0.27634619852783343,
+            -0.04196675243081638
+          ],
+          [
+            0.22596309613144755,
+            0.03927760725432973
+          ]
+        ],
+        "canonical_u_difference": 1.3877787807814457e-17,
+        "status": "small_residual_inside_inherited_witness"
+      },
+      "filters": {
+        "ordinary_B": [
+          -0.5359297602428265,
+          -1.2392603733777174
+        ],
+        "b": [
+          0.31496255917625815,
+          0.047784389983375856
+        ],
+        "next_reciprocal_exponential": [
+          -1.684222246443042,
+          0.7685808941424073
+        ],
+        "next_external": [
+          0.4318633529496427,
+          -0.09802185473808016
+        ],
+        "next_external_domain_memberships": [],
+        "ordinary_zero_lift_residual": 5.775561153410717e-16,
+        "rational_endpoint_consistency_residual": 1.0532500405730103e-15,
+        "filter_rejections": [
+          "next_external_outside_typed_union"
+        ]
+      },
+      "status": "necessary_filter_rejected"
+    },
+    {
+      "number": 17,
+      "next_epsilon": 0,
+      "input_rationals": [
+        ".40",
+        "0"
+      ],
+      "heights": [],
+      "endpoint_tree_node": 148,
+      "endpoint_parameter_box": [
+        [
+          "1/2",
+          "9/16"
+        ],
+        [
+          "1/16",
+          "1/8"
+        ]
+      ],
+      "original_witness_sha256": "49538568ab14d0a2856bc539e932938cddd7a5da1b162fdffa73036d448eb7ac",
+      "endpoint_refinement": {
+        "residual_history": [
+          0.011238261964858071,
+          1.6237360442663222e-05,
+          3.710004531088573e-11,
+          1.0269562977782698e-15
+        ],
+        "final_residual": 1.0269562977782698e-15,
+        "maximum_distance_from_saved_center": 0.0009479559527696353,
+        "saved_radius": 0.004,
+        "roots": [
+          [
+            0.35195883685101376,
+            -0.028838125319968672
+          ],
+          [
+            0.26930894413209194,
+            -0.04764732056802114
+          ],
+          [
+            0.22497033579728232,
+            0.03949779498087794
+          ]
+        ],
+        "canonical_u_difference": 6.938893903907228e-18,
+        "status": "small_residual_inside_inherited_witness"
+      },
+      "filters": {
+        "ordinary_B": [
+          -0.24329844190729752,
+          -1.1002840708166164
+        ],
+        "b": [
+          0.2846355361536159,
+          0.019009028980545805
+        ],
+        "next_reciprocal_exponential": [
+          -0.9817852655781913,
+          0.2604949603177953
+        ],
+        "next_external": [
+          0.45872284236839495,
+          -0.0024880705004125983
+        ],
+        "next_external_domain_memberships": [],
+        "ordinary_zero_lift_residual": 4.2554149388868045e-16,
+        "rational_endpoint_consistency_residual": 2.9996574304705472e-15,
+        "filter_rejections": [
+          "next_external_outside_typed_union"
+        ]
+      },
+      "status": "necessary_filter_rejected"
+    },
+    {
+      "number": 18,
+      "next_epsilon": 0,
+      "input_rationals": [
+        ".40",
+        ".025"
+      ],
+      "heights": [],
+      "endpoint_tree_node": 111,
+      "endpoint_parameter_box": [
+        [
+          "1/2",
+          "9/16"
+        ],
+        [
+          "3/8",
+          "1/2"
+        ]
+      ],
+      "original_witness_sha256": "1474128ad2364632a74855e5525d837ade818a8401a7cffa0ce0012858ff0d0a",
+      "endpoint_refinement": {
+        "residual_history": [
+          0.019017578501581686,
+          4.8489817463058876e-05,
+          3.4392341944746715e-10,
+          1.0429598422709816e-15
+        ],
+        "final_residual": 1.0429598422709816e-15,
+        "maximum_distance_from_saved_center": 0.0016042487998085679,
+        "saved_radius": 0.004,
+        "roots": [
+          [
+            0.3506805289790229,
+            -0.026909152674043434
+          ],
+          [
+            0.26248354464097096,
+            -0.05273254888041341
+          ],
+          [
+            0.22405907132594044,
+            0.03970515313282004
+          ]
+        ],
+        "canonical_u_difference": 2.0816681711721685e-17,
+        "status": "small_residual_inside_inherited_witness"
+      },
+      "filters": {
+        "ordinary_B": [
+          -0.006753437951541098,
+          -0.9736718645312769
+        ],
+        "b": [
+          0.25110388913968995,
+          -0.004242573106638284
+        ],
+        "next_reciprocal_exponential": [
+          -0.4777425329850647,
+          -0.05728071293322401
+        ],
+        "filter_rejections": [
+          "next_exponential_wrong_half_plane"
+        ]
+      },
+      "status": "necessary_filter_rejected"
+    },
+    {
+      "number": 19,
+      "next_epsilon": 0,
+      "input_rationals": [
+        ".40",
+        ".05"
+      ],
+      "heights": [],
+      "endpoint_tree_node": 39,
+      "endpoint_parameter_box": [
+        [
+          "1/2",
+          "9/16"
+        ],
+        [
+          "5/8",
+          "3/4"
+        ]
+      ],
+      "original_witness_sha256": "e7e0e783263bd20ec4650130c886726e1a677d91b8d869e6b3bebd54802bd8ae",
+      "endpoint_refinement": {
+        "residual_history": [
+          0.0104667686602041,
+          1.5126006337634289e-05,
+          3.4783209378716074e-11,
+          7.632783294297951e-16
+        ],
+        "final_residual": 7.632783294297951e-16,
+        "maximum_distance_from_saved_center": 0.0008817878032426951,
+        "saved_radius": 0.004,
+        "roots": [
+          [
+            0.3495100510051396,
+            -0.025141486909811196
+          ],
+          [
+            0.2559305550118674,
+            -0.05723183253473808
+          ],
+          [
+            0.2232268437406152,
+            0.03990001505475157
+          ]
+        ],
+        "canonical_u_difference": 5.928593550334434e-17,
+        "status": "small_residual_inside_inherited_witness"
+      },
+      "filters": {
+        "ordinary_B": [
+          0.18424876635948056,
+          -0.8589991816086137
+        ],
+        "b": [
+          0.2163720082770606,
+          -0.020610134276895658
+        ],
+        "next_reciprocal_exponential": [
+          -0.11378500245086487,
+          -0.2458761223422049
+        ],
+        "filter_rejections": [
+          "next_exponential_wrong_half_plane"
+        ]
+      },
+      "status": "necessary_filter_rejected"
+    },
+    {
+      "number": 20,
+      "next_epsilon": 1,
+      "input_rationals": [
+        ".28",
+        "-.065"
+      ],
+      "heights": [],
+      "endpoint_tree_node": 1313,
+      "endpoint_parameter_box": [
+        [
+          "-5/16",
+          "-1/4"
+        ],
+        [
+          "-1/4",
+          "-3/16"
+        ]
+      ],
+      "original_witness_sha256": "6ae0b3f475f94ddfc54d761b5633531598cd39dd05528e99fdb34a0ee7bb05f1",
+      "endpoint_refinement": {
+        "residual_history": [
+          0.010344285818150778,
+          2.041759510061234e-05,
+          7.568842889527211e-11,
+          7.216449660063518e-16
+        ],
+        "final_residual": 7.216449660063518e-16,
+        "maximum_distance_from_saved_center": 0.0011697561305109038,
+        "saved_radius": 0.004,
+        "roots": [
+          [
+            0.342825856192457,
+            -0.04036182017291967
+          ],
+          [
+            0.3212564676119112,
+            -0.0744501441217578
+          ],
+          [
+            0.2255507936976901,
+            0.03346069503918211
+          ]
+        ],
+        "canonical_u_difference": 2.8609792490763984e-17,
+        "status": "small_residual_inside_inherited_witness"
+      },
+      "filters": {
+        "ordinary_B": [
+          -0.38658220298889057,
+          -0.04487948647407051
+        ],
+        "b": [
+          0.48160556826953516,
+          -0.1501972196004525
+        ],
+        "next_reciprocal_exponential": [
+          2.0819028115312284,
+          0.867967718331442
+        ],
+        "next_external": [
+          0.06286605941232243,
+          -0.12945848973947793
+        ],
+        "next_external_domain_memberships": [],
+        "ordinary_zero_lift_residual": 7.021666937153402e-16,
+        "rational_endpoint_consistency_residual": 3.1130819905933367e-15,
+        "filter_rejections": [
+          "b_not_in_typed_ordinary_domain",
+          "next_external_outside_typed_union"
+        ]
+      },
+      "status": "necessary_filter_rejected"
+    },
+    {
+      "number": 21,
+      "next_epsilon": 1,
+      "input_rationals": [
+        ".295",
+        "-.055"
+      ],
+      "heights": [],
+      "endpoint_tree_node": 1245,
+      "endpoint_parameter_box": [
+        [
+          "-1/8",
+          "-1/16"
+        ],
+        [
+          "-1/16",
+          "0"
+        ]
+      ],
+      "original_witness_sha256": "30589e8a8f6c701d19cff259bb88b2726d2c342f11e5cde610f3440d73cffa43",
+      "endpoint_refinement": {
+        "residual_history": [
+          0.0064234735984866585,
+          7.593400361434477e-06,
+          1.0163960909404102e-11,
+          9.43689570931383e-16
+        ],
+        "final_residual": 9.43689570931383e-16,
+        "maximum_distance_from_saved_center": 0.0007004483711857336,
+        "saved_radius": 0.004,
+        "roots": [
+          [
+            0.34422195361674357,
+            -0.038725214882094496
+          ],
+          [
+            0.31281595278084934,
+            -0.07082611915731166
+          ],
+          [
+            0.22549562992886205,
+            0.0343616320332569
+          ]
+        ],
+        "canonical_u_difference": 6.938893903907228e-18,
+        "status": "small_residual_inside_inherited_witness"
+      },
+      "filters": {
+        "ordinary_B": [
+          -0.2693088819608709,
+          -0.34773637992088385
+        ],
+        "b": [
+          0.35487902467325894,
+          -0.13072567178185043
+        ],
+        "next_reciprocal_exponential": [
+          0.7300585858832422,
+          1.2498878378992129
+        ],
+        "next_external": [
+          0.16586341713548713,
+          -0.058859593837299065
+        ],
+        "next_external_domain_memberships": [],
+        "ordinary_zero_lift_residual": 5.117875266520904e-16,
+        "rational_endpoint_consistency_residual": 3.897756505132699e-15,
+        "filter_rejections": [
+          "b_not_in_typed_ordinary_domain",
+          "next_external_outside_typed_union"
+        ]
+      },
+      "status": "necessary_filter_rejected"
+    },
+    {
+      "number": 22,
+      "next_epsilon": 1,
+      "input_rationals": [
+        ".31",
+        "-.045"
+      ],
+      "heights": [
+        {
+          "status": "KKT_candidate",
+          "x": [
+            0.34551857926033225,
+            0.31,
+            0.304875188611434,
+            0.27695063499416955
+          ],
+          "gradient": [
+            1.5265566588595902e-16,
+            0.0,
+            -1.6653345369377348e-16,
+            0.0
+          ],
+          "projected_gradient": 1.6653345369377348e-16,
+          "active_coordinates": [],
+          "value": 2.0074967412609053,
+          "history": [
+            {
+              "iteration": 0,
+              "projected_gradient": 1.6653345369377348e-16,
+              "value": 2.0074967412609053
+            }
+          ],
+          "evaluations": 2,
+          "positive_real_hessian": true,
+          "eigenvalues_over_pi": [
+            1.3586254832080222,
+            2.2049177429671962,
+            2.70436572654947,
+            3.3407100734697432
+          ],
+          "K_over_pi": 3.8652563034086898,
+          "scalar_formula_difference": 4.440892098500626e-16,
+          "pivots": [
+            2.889766305205285,
+            1.4124849536167101,
+            2.511365252050803,
+            2.6402188316371227
+          ],
+          "Q_residual": -0.7691867922186636,
+          "step": 0,
+          "height": -0.06734541517220069,
+          "base_excess_over_reference": 0.0,
+          "factorial_excess_over_reference": 0.42314372311588055
+        },
+        {
+          "status": "KKT_candidate",
+          "x": [
+            0.3485072568762974,
+            0.3044008668151036,
+            0.30148384827972596,
+            0.2778997065713227
+          ],
+          "gradient": [
+            3.7470027081099033e-16,
+            -2.220446049250313e-16,
+            1.6653345369377348e-16,
+            1.6653345369377348e-16
+          ],
+          "projected_gradient": 3.885780586188048e-16,
+          "active_coordinates": [],
+          "value": 2.008266647070626,
+          "history": [
+            {
+              "iteration": 0,
+              "projected_gradient": 0.04809289281807705,
+              "value": 2.008045563551876
+            },
+            {
+              "iteration": 1,
+              "projected_gradient": 0.000164925866194654,
+              "value": 2.00826664039407
+            },
+            {
+              "iteration": 2,
+              "projected_gradient": 1.3493106965078994e-08,
+              "value": 2.0082666470706254
+            },
+            {
+              "iteration": 3,
+              "projected_gradient": 3.885780586188048e-16,
+              "value": 2.008266647070626
+            }
+          ],
+          "evaluations": 8,
+          "positive_real_hessian": true,
+          "eigenvalues_over_pi": [
+            1.3470872119950468,
+            2.251281587655054,
+            2.712752414099187,
+            3.3722442228046745
+          ],
+          "K_over_pi": 3.943764662709436,
+          "scalar_formula_difference": -4.440892098500626e-16,
+          "pivots": [
+            2.8676446895486034,
+            1.3924245031748075,
+            2.5569737257468086,
+            2.717261580462349
+          ],
+          "Q_residual": -0.8509807998429959,
+          "step": 1,
+          "height": -0.05612117931016724,
+          "base_excess_over_reference": 0.0007699058097205835,
+          "factorial_excess_over_reference": 0.3533896750729544
+        },
+        {
+          "status": "KKT_candidate",
+          "x": [
+            0.3517258257839852,
+            0.2990759968132902,
+            0.2978395826659786,
+            0.2787643410371808
+          ],
+          "gradient": [
+            -2.3592239273284576e-16,
+            4.440892098500626e-16,
+            -1.6653345369377348e-16,
+            0.0
+          ],
+          "projected_gradient": 4.440892098500626e-16,
+          "active_coordinates": [],
+          "value": 2.0105978249010032,
+          "history": [
+            {
+              "iteration": 0,
+              "projected_gradient": 0.04664539634236209,
+              "value": 2.0103748856880137
+            },
+            {
+              "iteration": 1,
+              "projected_gradient": 0.00017187213367142462,
+              "value": 2.010597819960427
+            },
+            {
+              "iteration": 2,
+              "projected_gradient": 8.19079015723645e-09,
+              "value": 2.0105978249010032
+            },
+            {
+              "iteration": 3,
+              "projected_gradient": 4.440892098500626e-16,
+              "value": 2.0105978249010032
+            }
+          ],
+          "evaluations": 8,
+          "positive_real_hessian": true,
+          "eigenvalues_over_pi": [
+            1.3352059706677109,
+            2.2919489968037383,
+            2.720514512153402,
+            3.4028590744126452
+          ],
+          "K_over_pi": 4.033633591836342,
+          "scalar_formula_difference": 0.0,
+          "pivots": [
+            2.8424214343781724,
+            1.3735830747802436,
+            2.5990887906349482,
+            2.791796180460825
+          ],
+          "Q_residual": -0.9392456914599586,
+          "step": 2,
+          "height": -0.04489694344813379,
+          "base_excess_over_reference": 0.003101083640097979,
+          "factorial_excess_over_reference": 0.285196899050685
+        },
+        {
+          "status": "KKT_candidate",
+          "x": [
+            0.3551897626880165,
+            0.29400248912848587,
+            0.29392553991777637,
+            0.2795524686487543
+          ],
+          "gradient": [
+            -3.469446951953614e-16,
+            1.1102230246251565e-16,
+            -3.885780586188048e-16,
+            2.220446049250313e-16
+          ],
+          "projected_gradient": 3.885780586188048e-16,
+          "active_coordinates": [],
+          "value": 2.0145258555995778,
+          "history": [
+            {
+              "iteration": 0,
+              "projected_gradient": 0.045220648859319756,
+              "value": 2.0142982334884727
+            },
+            {
+              "iteration": 1,
+              "projected_gradient": 0.0001957902764862518,
+              "value": 2.014525851668447
+            },
+            {
+              "iteration": 2,
+              "projected_gradient": 8.743695878443702e-09,
+              "value": 2.014525855599578
+            },
+            {
+              "iteration": 3,
+              "projected_gradient": 3.885780586188048e-16,
+              "value": 2.0145258555995778
+            }
+          ],
+          "evaluations": 8,
+          "positive_real_hessian": true,
+          "eigenvalues_over_pi": [
+            1.3232188171294215,
+            2.3251309501072095,
+            2.7290750315778456,
+            3.432072853459591
+          ],
+          "K_over_pi": 4.135219560986969,
+          "scalar_formula_difference": 0.0,
+          "pivots": [
+            2.8139115788751967,
+            1.355846173983294,
+            2.6379220189468726,
+            2.863309143674028
+          ],
+          "Q_residual": -1.034449937034355,
+          "step": 3,
+          "height": -0.033672707586100345,
+          "base_excess_over_reference": 0.007029114338672482,
+          "factorial_excess_over_reference": 0.21860097589661276
+        },
+        {
+          "status": "KKT_candidate",
+          "x": [
+            0.3589155392967459,
+            0.2891591087365147,
+            0.2897227452483186,
+            0.28027119939122414
+          ],
+          "gradient": [
+            5.967448757360216e-16,
+            1.1102230246251565e-16,
+            7.216449660063518e-16,
+            -5.551115123125783e-17
+          ],
+          "projected_gradient": 7.216449660063518e-16,
+          "active_coordinates": [],
+          "value": 2.020090964894461,
+          "history": [
+            {
+              "iteration": 0,
+              "projected_gradient": 0.04381954424341272,
+              "value": 2.0198556463420103
+            },
+            {
+              "iteration": 1,
+              "projected_gradient": 0.00022252636538583337,
+              "value": 2.0200909612307716
+            },
+            {
+              "iteration": 2,
+              "projected_gradient": 8.638520954118434e-09,
+              "value": 2.0200909648944614
+            },
+            {
+              "iteration": 3,
+              "projected_gradient": 7.216449660063518e-16,
+              "value": 2.020090964894461
+            }
+          ],
+          "evaluations": 8,
+          "positive_real_hessian": true,
+          "eigenvalues_over_pi": [
+            1.3112815787840348,
+            2.349110904083871,
+            2.739816546360237,
+            3.4594169592533848
+          ],
+          "K_over_pi": 4.249104264390157,
+          "scalar_formula_difference": 0.0,
+          "pivots": [
+            2.7819402302198055,
+            1.339110424251651,
+            2.6736788562830185,
+            2.931233718907369
+          ],
+          "Q_residual": -1.1370771720518784,
+          "step": 4,
+          "height": -0.022448471724066894,
+          "base_excess_over_reference": 0.012594223633555668,
+          "factorial_excess_over_reference": 0.15364213133884919
+        },
+        {
+          "status": "KKT_candidate",
+          "x": [
+            0.36292074353047366,
+            0.28452591495435864,
+            0.2852098247666747,
+            0.2809269315813671
+          ],
+          "gradient": [
+            -4.579669976578771e-16,
+            -1.3877787807814457e-16,
+            -1.6653345369377348e-16,
+            5.551115123125783e-17
+          ],
+          "projected_gradient": 4.440892098500626e-16,
+          "active_coordinates": [],
+          "value": 2.027338254444795,
+          "history": [
+            {
+              "iteration": 0,
+              "projected_gradient": 0.042442564149010625,
+              "value": 2.0270919832751604
+            },
+            {
+              "iteration": 1,
+              "projected_gradient": 0.00025234555092579214,
+              "value": 2.0273382502238193
+            },
+            {
+              "iteration": 2,
+              "projected_gradient": 7.6561912920603e-09,
+              "value": 2.027338254444795
+            },
+            {
+              "iteration": 3,
+              "projected_gradient": 4.440892098500626e-16,
+              "value": 2.027338254444795
+            }
+          ],
+          "evaluations": 8,
+          "positive_real_hessian": true,
+          "eigenvalues_over_pi": [
+            1.2994939972670088,
+            2.362596377458353,
+            2.753719379609314,
+            3.4844158095258115
+          ],
+          "K_over_pi": 4.376119649386047,
+          "scalar_formula_difference": 0.0,
+          "pivots": [
+            2.7463447196753705,
+            1.3232815257683848,
+            2.7065603069684365,
+            2.994942311797796
+          ],
+          "Q_residual": -1.2476291592896545,
+          "step": 5,
+          "height": -0.011224235862033444,
+          "base_excess_over_reference": 0.019841513183889603,
+          "factorial_excess_over_reference": 0.09036546703653633
+        },
+        {
+          "status": "KKT_candidate",
+          "x": [
+            0.36722423697221696,
+            0.2800839370838635,
+            0.2803626390635173,
+            0.28152543929598633
+          ],
+          "gradient": [
+            9.71445146547012e-17,
+            -4.440892098500626e-16,
+            -3.885780586188048e-16,
+            1.6653345369377348e-16
+          ],
+          "projected_gradient": 4.440892098500626e-16,
+          "active_coordinates": [],
+          "value": 2.036318032413231,
+          "history": [
+            {
+              "iteration": 0,
+              "projected_gradient": 0.043894973327380515,
+              "value": 2.0360572464398414
+            },
+            {
+              "iteration": 1,
+              "projected_gradient": 0.00028553846756301793,
+              "value": 2.0363180266573107
+            },
+            {
+              "iteration": 2,
+              "projected_gradient": 8.157730213564918e-09,
+              "value": 2.036318032413231
+            },
+            {
+              "iteration": 3,
+              "projected_gradient": 4.440892098500626e-16,
+              "value": 2.036318032413231
+            }
+          ],
+          "evaluations": 8,
+          "positive_real_hessian": true,
+          "eigenvalues_over_pi": [
+            1.287916541179768,
+            2.365079670440508,
+            2.7709983039579535,
+            3.5065642608673424
+          ],
+          "K_over_pi": 4.517387424892074,
+          "scalar_formula_difference": -8.881784197001252e-16,
+          "pivots": [
+            2.7069762135883013,
+            1.3082725461239535,
+            2.7367641243724763,
+            3.053736236112627
+          ],
+          "Q_residual": -1.3666292320214384,
+          "step": 6,
+          "height": 0.0,
+          "base_excess_over_reference": 0.028821291152325568,
+          "factorial_excess_over_reference": 0.028821291152325568
+        },
+        {
+          "status": "KKT_candidate",
+          "x": [
+            0.37132607977738724,
+            0.27627265591530364,
+            0.275740425610063,
+            0.28201471381065696
+          ],
+          "gradient": [
+            -5.134781488891349e-16,
+            -1.3877787807814457e-16,
+            -1.6653345369377348e-16,
+            5.551115123125783e-17
+          ],
+          "projected_gradient": 4.996003610813204e-16,
+          "active_coordinates": [],
+          "value": 2.0458230165874465,
+          "history": [
+            {
+              "iteration": 0,
+              "projected_gradient": 0.04190983724430514,
+              "value": 2.0456022533005753
+            },
+            {
+              "iteration": 1,
+              "projected_gradient": 0.0002546021054292136,
+              "value": 2.04582301134047
+            },
+            {
+              "iteration": 2,
+              "projected_gradient": 5.8946191816566795e-09,
+              "value": 2.0458230165874456
+            },
+            {
+              "iteration": 3,
+              "projected_gradient": 4.996003610813204e-16,
+              "value": 2.0458230165874465
+            }
+          ],
+          "evaluations": 8,
+          "positive_real_hessian": true,
+          "eigenvalues_over_pi": [
+            1.2778056788766954,
+            2.3582908697058045,
+            2.7887468045021837,
+            3.523444915454605
+          ],
+          "K_over_pi": 4.656435956204206,
+          "scalar_formula_difference": 8.881784197001252e-16,
+          "pivots": [
+            2.6686143004644176,
+            1.2955253685120087,
+            2.761576732483722,
+            3.1013437800679795
+          ],
+          "Q_residual": -1.4802111145242394,
+          "step": 7,
+          "height": 0.01,
+          "base_excess_over_reference": 0.038326275326541204,
+          "factorial_excess_over_reference": -0.024505577745254664
+        }
+      ],
+      "endpoint_tree_node": 332,
+      "endpoint_parameter_box": [
+        [
+          "1/8",
+          "3/16"
+        ],
+        [
+          "1/16",
+          "1/8"
+        ]
+      ],
+      "original_witness_sha256": "cc671dd16eee51fbc9e63af0802fd4ed4f70495f0fdf99338b09f4ee3e69ed91",
+      "endpoint_refinement": {
+        "residual_history": [
+          0.00446378692509331,
+          3.4701463141084813e-06,
+          2.062769005952186e-12,
+          5.311767472816653e-16
+        ],
+        "final_residual": 5.311767472816653e-16,
+        "maximum_distance_from_saved_center": 0.0004676304207561295,
+        "saved_radius": 0.004,
+        "roots": [
+          [
+            0.34551857926033225,
+            -0.03710247191166945
+          ],
+          [
+            0.304875188611434,
+            -0.06734541517220069
+          ],
+          [
+            0.22541528081111875,
+            0.03522441786881512
+          ]
+        ],
+        "canonical_u_difference": 3.469446951953614e-17,
+        "status": "small_residual_inside_inherited_witness"
+      },
+      "filters": {
+        "ordinary_B": [
+          -0.10879102322371796,
+          -0.6363046750725138
+        ],
+        "b": [
+          0.27695063499416955,
+          -0.06965757012379624
+        ],
+        "next_reciprocal_exponential": [
+          -0.35294289009193835,
+          0.7958242543313877
+        ],
+        "next_external": [
+          0.3164360428376022,
+          0.02205866238093168
+        ],
+        "next_external_domain_memberships": [
+          "O3"
+        ],
+        "ordinary_zero_lift_residual": 4.308824046522781e-16,
+        "rational_endpoint_consistency_residual": 2.4525628233156873e-15,
+        "filter_rejections": []
+      },
+      "status": "necessary_feasible_not_word_realized",
+      "reference": [
+        [
+          0.34551857926033225,
+          -0.03710247191166945
+        ],
+        [
+          0.31,
+          -0.045
+        ],
+        [
+          0.304875188611434,
+          -0.06734541517220069
+        ],
+        [
+          0.27695063499416955,
+          -0.06965757012379624
+        ]
+      ],
+      "cut_p_b": [
+        -0.0050754684043409215,
+        -0.9581748994449613
+      ],
+      "baseline": 2.0074967412609053,
+      "baseline_real_gradient": [
+        1.5265566588595902e-16,
+        0.0,
+        -1.6653345369377348e-16,
+        0.0
+      ]
+    },
+    {
+      "number": 23,
+      "next_epsilon": 1,
+      "input_rationals": [
+        ".325",
+        "-.035"
+      ],
+      "heights": [],
+      "endpoint_tree_node": 239,
+      "endpoint_parameter_box": [
+        [
+          "3/8",
+          "7/16"
+        ],
+        [
+          "1/4",
+          "5/16"
+        ]
+      ],
+      "original_witness_sha256": "5db3a17f63ab54c70b5ed845972d3050fe04407045a465e5ecfa2e5dd6da8ced",
+      "endpoint_refinement": {
+        "residual_history": [
+          0.006182972093281365,
+          6.344971438382152e-06,
+          6.706602285031257e-12,
+          2.9893669801409083e-16
+        ],
+        "final_residual": 2.9893669801409083e-16,
+        "maximum_distance_from_saved_center": 0.0006228873485380526,
+        "saved_radius": 0.004,
+        "roots": [
+          [
+            0.34671482056581093,
+            -0.03549318842803636
+          ],
+          [
+            0.29738380724642804,
+            -0.06404111057005092
+          ],
+          [
+            0.2253097043870881,
+            0.03604953316222928
+          ]
+        ],
+        "canonical_u_difference": 6.938893903907228e-18,
+        "status": "small_residual_inside_inherited_witness"
+      },
+      "filters": {
+        "ordinary_B": [
+          0.09007497917589202,
+          -0.9082227842117911
+        ],
+        "b": [
+          0.23426691029462968,
+          -0.014542233240906702
+        ],
+        "next_reciprocal_exponential": [
+          -0.9171742407063092,
+          -0.17213869039973884
+        ],
+        "filter_rejections": [
+          "next_exponential_wrong_half_plane"
+        ]
+      },
+      "status": "necessary_filter_rejected"
+    },
+    {
+      "number": 24,
+      "next_epsilon": 1,
+      "input_rationals": [
+        ".34",
+        "-.025"
+      ],
+      "heights": [],
+      "endpoint_tree_node": 96,
+      "endpoint_parameter_box": [
+        [
+          "5/8",
+          "11/16"
+        ],
+        [
+          "3/8",
+          "1/2"
+        ]
+      ],
+      "original_witness_sha256": "0e98cf6d5cc20854025189d2f53476be47a3800c2ad82cb32bb5915d01ba3f5f",
+      "endpoint_refinement": {
+        "residual_history": [
+          0.009595372651078004,
+          1.4527114564583296e-05,
+          3.417735777595324e-11,
+          3.663841114510704e-16
+        ],
+        "final_residual": 3.663841114510704e-16,
+        "maximum_distance_from_saved_center": 0.0009302668416926495,
+        "saved_radius": 0.004,
+        "roots": [
+          [
+            0.3478100898983163,
+            -0.033897320019902734
+          ],
+          [
+            0.2902950210853375,
+            -0.06093684646171469
+          ],
+          [
+            0.22517903822902033,
+            0.0368374270127438
+          ]
+        ],
+        "canonical_u_difference": 2.8609792490763984e-17,
+        "status": "small_residual_inside_inherited_witness"
+      },
+      "filters": {
+        "ordinary_B": [
+          0.32221503530033435,
+          -1.162017913476829
+        ],
+        "b": [
+          0.20694966569438372,
+          0.029793229555075237
+        ],
+        "next_reciprocal_exponential": [
+          -0.8785814998511008,
+          -1.3268545821658677
+        ],
+        "filter_rejections": [
+          "next_exponential_wrong_half_plane"
+        ]
+      },
+      "status": "necessary_filter_rejected"
+    }
+  ],
+  "elapsed_seconds": 0.12850883399369195,
+  "dependencies_unchanged": {
+    "repro/results/research-mixed-open-word-critical-localization.json": true,
+    "repro/results/research-mixed-open-word-critical-localization-replay.json": true,
+    "notes/research_mixed_open_word_critical_localization.md": true,
+    "experiments/certify_mixed_open_word_critical_localization.py": true,
+    "notes/research_mixed_selected_boundary_height_envelope.md": true,
+    "notes/research_mixed_actual_last_row_reference_domains.md": true,
+    "notes/research_mixed_first_four_attached_height_bound.md": true,
+    "repro/results/research-mixed-first-four-attached-height-bound.json": true
+  },
+  "script_unchanged": true,
+  "summary": {
+    "references_processed": 25,
+    "necessary_feasible": 3,
+    "KKT_points": 24,
+    "positive_hessian_points": 24,
+    "next_3_maximum": {
+      "reference": 11,
+      "step": 7,
+      "K_over_pi": 4.919252633856411
+    },
+    "next_4_maximum": {
+      "reference": 22,
+      "step": 7,
+      "K_over_pi": 4.656435956204206
+    }
+  }
+}

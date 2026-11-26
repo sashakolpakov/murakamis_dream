@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Native maximal fold cap bound</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Native maximal fold cap bound</h1>
+</header>
+<h1
+id="the-protected-cap-bound-at-the-actual-maximal-folded-nodes-at-both-parities">The
+protected cap bound at the actual maximal folded nodes, at both
+parities</h1>
+<p>The odd-level restriction in the existing protected-cap application
+comes from placing every neighboring central spectrum at the fixed
+number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">-2</annotation></semantics></math>.
+At even levels that number is not a physical spectral node. This note
+instead keeps each neighbor at its actual maximal folded node. The
+resulting exterior is stable at both parities, and its common
+coefficient saddle has the same classical pressure, response and tilted
+upper bounds. Consequently the existing whole-real-interval cap estimate
+extends to all sufficiently large levels for this specified source
+slice.</p>
+<p>This does not fill the neighboring regions or vary their spectra. In
+particular it does not control their first normals, the whole spectral
+cube, multiple noncentral regions, or the full knot invariant.</p>
+<h2 id="exact-original-polynomial-and-parity">1. Exact original
+polynomial and parity</h2>
+<p>Fix the same simple matched-sphere Morse diagram, original MAIN mark,
+protected vertices, and protected left region with ordered quartet
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo>,</mo><mn>0</mn><mo>,</mo><mi>A</mi><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(C,0,A,0)</annotation></semantics></math>.
+Put
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo>,</mo><mspace width="2.0em"></mspace><mi>J</mi><mo>=</mo><mo stretchy="false" form="prefix">⌊</mo><mi>d</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>e</mi><mo>=</mo><mi>d</mi><mo>−</mo><mn>2</mn><mi>J</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>M</mi><mo>=</mo><mo stretchy="false" form="prefix">⌊</mo><mi>N</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo><mo>−</mo><mn>1</mn><mo>,</mo><mspace width="2.0em"></mspace><mi>θ</mi><mo>=</mo><mi>π</mi><mi>/</mi><mi>N</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ d=N-1,\qquad J=\lfloor d/2\rfloor,\qquad e=d-2J\in\{0,1\},
+ \qquad M=\lfloor N/2\rfloor-1,\qquad\theta=\pi/N.
+ \tag{1}
+</annotation></semantics></math> The indices
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>J</mi><annotation encoding="application/x-tex">J</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+have different functions:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>J</mi><annotation encoding="application/x-tex">J</annotation></semantics></math>
+is the maximal folded channel and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+is the literal protected-left cutoff. They agree at even levels; at odd
+levels
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mi>J</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">M=J-1</annotation></semantics></math>.</p>
+<p>The actual maximal spectral value is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>c</mi><mi>N</mi><mo>*</mo></msubsup><mo>=</mo><mn>2</mn><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>J</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><mi>−</mi><mn>2</mn><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mi>N</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> odd</mtext></mrow><mo>,</mo></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mi>−</mi><mn>2</mn><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mi>θ</mi><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mi>N</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> even</mtext></mrow><mi>.</mi></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">
+ c_N^*=2\cos((2J+1)\theta)
+   =\begin{cases}-2,&amp;N\text{ odd},\\-2\cos\theta,&amp;N\text{ even}.
+     \end{cases}\tag{2}
+</annotation></semantics></math> At each other original region, the
+complete-node/full-resolvent identity gives, after removing only its
+fixed raw sign
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>d</mi></msup></mrow><annotation encoding="application/x-tex">(-1)^d</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mrow><mi>N</mi><mo>,</mo><mi>*</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>N</mi><mn>2</mn></msup><msubsup><mi>β</mi><mi>J</mi><mn>2</mn></msubsup><msub><mi mathvariant="normal">Δ</mi><mi>J</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><msub><mi mathvariant="normal">Δ</mi><mi>J</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>P</mi><mi>e</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>P</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>P</mi><mn>1</mn></msub><mo>=</mo><mi>x</mi><mo>+</mo><mi>y</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ B_{N,*}(x,b,c,y)=N^2\beta_J^2
+      \Delta_J(x,b,y)\Delta_J(x,c,y)P_e(x,y),
+ \qquad P_0=1,\quad P_1=x+y.
+ \tag{3}
+</annotation></semantics></math> Here
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Δ</mi><mi>J</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><msub><mi>I</mi><mi>J</mi></msub><mo>+</mo><mfrac><mi>x</mi><mn>2</mn></mfrac><msubsup><mi>H</mi><mo>−</mo><mrow><mo stretchy="false" form="prefix">[</mo><mi>J</mi><mo stretchy="false" form="postfix">]</mo></mrow></msubsup><mo>+</mo><mfrac><mi>y</mi><mn>2</mn></mfrac><msubsup><mi>H</mi><mo>+</mo><mrow><mo stretchy="false" form="prefix">[</mo><mi>J</mi><mo stretchy="false" form="postfix">]</mo></mrow></msubsup><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>S</mi><mi>k</mi></msub><mo>=</mo><munderover><mo>∏</mo><mrow><mi>r</mi><mo>=</mo><mn>1</mn></mrow><mi>k</mi></munderover><mn>2</mn><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>β</mi><mi>J</mi></msub><mo>=</mo><msub><mi>S</mi><mrow><mn>2</mn><mi>J</mi></mrow></msub><mi>/</mi><msubsup><mi>S</mi><mi>J</mi><mn>2</mn></msubsup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \Delta_J(x,b,y)=\det\left(bI_J+\frac x2H_-^{[J]}+
+                                      \frac y2H_+^{[J]}\right),
+ \quad S_k=\prod_{r=1}^k2\sin(r\theta),\quad
+ \beta_J=S_{2J}/S_J^2.\tag{4}
+</annotation></semantics></math> The matrices are the original positive
+Hermitian matrices at level
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>,
+not matrices at a smaller level. At odd levels
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>β</mi><mi>J</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\beta_J=1</annotation></semantics></math>.
+At even levels
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>S</mi><mi>J</mi><mn>2</mn></msubsup><mo>=</mo><mi>N</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">S_J^2=N/2</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mrow><mn>2</mn><mi>J</mi></mrow></msub><mo>=</mo><mi>N</mi><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">S_{2J}=N/(2\sin\theta)</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>β</mi><mi>J</mi></msub><mo>=</mo><mn>1</mn><mi>/</mi><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\beta_J=1/\sin\theta</annotation></semantics></math>.
+In particular every scalar in (3) is polynomial in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>.</p>
+<p>One can check the even factor without a limiting argument. The exact
+even central cut is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>s</mi><mrow><mi>J</mi><mo>+</mo><mn>1</mn></mrow><mn>2</mn></msubsup><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>R</mi><mi>J</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>;</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>R</mi><mi>J</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo>;</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><msub><mi>s</mi><mrow><mi>J</mi><mo>+</mo><mn>1</mn></mrow></msub><msub><mi>s</mi><mi>J</mi></msub><mi>x</mi><mi>y</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>a</mi><mi>J</mi></msub><mo>+</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">[</mo><msub><mi>R</mi><mi>J</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>;</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>R</mi><mrow><mi>J</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo>;</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><msub><mi>R</mi><mrow><mi>J</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>;</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>R</mi><mi>J</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo>;</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">]</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ s_{J+1}^2(x+y)R_J(b;u)R_J(c;u)
+ +s_{J+1}s_Jxy(a_J+u)
+       [R_J(b;u)R_{J-1}(c;u)+R_{J-1}(b;u)R_J(c;u)].\tag{5}
+</annotation></semantics></math> At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>=</mo><mi>−</mi><msub><mi>a</mi><mi>J</mi></msub></mrow><annotation encoding="application/x-tex">u=-a_J</annotation></semantics></math>,
+its second term is zero and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mrow><mi>J</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">s_{J+1}=2</annotation></semantics></math>.
+Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>J</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>;</mo><mi>−</mi><msub><mi>a</mi><mi>J</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>S</mi><mrow><mn>2</mn><mi>J</mi></mrow></msub><msub><mi mathvariant="normal">Δ</mi><mi>J</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">R_J(b;-a_J)=S_{2J}\Delta_J(x,b,y)</annotation></semantics></math>,
+(5) becomes exactly (3). The neighboring values, rather than neighboring
+first normals, are being used here.</p>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math>
+be the ordinary faces other than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">A,C</annotation></semantics></math>.
+The unchanged exterior is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>P</mi><mi>N</mi><mo>*</mo></msubsup><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo>,</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><munder><mo>∏</mo><mrow><mi>f</mi><mo>∈</mo><mi>I</mi></mrow></munder><msubsup><mi>L</mi><mi>f</mi><mi>d</mi></msubsup><mo stretchy="true" form="postfix">]</mo></mrow><munder><mo>∏</mo><mrow><mi>q</mi><mo>≠</mo><msub><mi>q</mi><mo>*</mo></msub></mrow></munder><msub><mi>B</mi><mrow><mi>N</mi><mo>,</mo><mi>*</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>L</mi><msub><mi>x</mi><mi>q</mi></msub></msub><mo>,</mo><msub><mi>L</mi><msub><mi>b</mi><mi>q</mi></msub></msub><mo>,</mo><msub><mi>L</mi><msub><mi>c</mi><mi>q</mi></msub></msub><mo>,</mo><msub><mi>L</mi><msub><mi>y</mi><mi>q</mi></msub></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mi>d</mi></munderover><msubsup><mi>p</mi><mrow><mi>N</mi><mo>,</mo><mi>j</mi></mrow><mo>*</mo></msubsup><msup><mi>A</mi><mi>j</mi></msup><msup><mi>C</mi><mrow><mi>d</mi><mo>−</mo><mi>j</mi></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ P_N^*(A,C)=
+ \left[\prod_{f\in I}L_f^d\right]
+    \prod_{q\ne q_*}B_{N,*}(L_{x_q},L_{b_q},L_{c_q},L_{y_q})
+   =\sum_{j=0}^{d}p_{N,j}^*A^jC^{d-j}.\tag{6}
+</annotation></semantics></math> Protected variables are zero before
+extraction. Each factor has degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>J</mi><mo>+</mo><mi>e</mi><mo>=</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">2J+e=d</annotation></semantics></math>,
+so the residual degree is exactly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>.
+No new target is introduced by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mn>1</mn></msub><annotation encoding="application/x-tex">P_1</annotation></semantics></math>,
+and no old target is decreased to absorb it.</p>
+<p>Each determinant in (3) is stable with nonnegative coefficients; so
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x+y</annotation></semantics></math>.
+Products, identifications of shared variables, coefficient extraction,
+and protected specializations preserve stability or give zero. Hence
+every nonzero
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>P</mi><mi>N</mi><mo>*</mo></msubsup><annotation encoding="application/x-tex">P_N^*</annotation></semantics></math>
+is a nonnegative stable homogeneous binary polynomial of degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>.</p>
+<p>There is no hidden vanishing parity factor for the intended
+simple-sphere MAIN mark. The two protected vertices are the endpoints of
+a nonmatching edge. If a matching edge had both protected endpoints,
+simplicity would identify it with that same edge, a contradiction.
+Therefore at least one outer argument in each spectator
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x+y</annotation></semantics></math>
+is positive at a positive ordinary-weight assignment. If a more general
+source does have an identically zero factor, its exterior and the cap
+source are zero, and the upper bound is trivial; it cannot be used to
+assert a nonzero pressure packet.</p>
+<h2 id="the-same-common-coefficient-pressure-at-both-parities">2. The
+same common coefficient pressure at both parities</h2>
+<p>Assume the original exterior has a strict positive feasible half-load
+table at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mi>C</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">A=C=1</annotation></semantics></math>,
+with every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math>-load
+equal to one, and its supported ordinary pair graph is connected. These
+are the same assumptions used in the existing odd pressure theorem; they
+are verified for the recorded 54-region source.</p>
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><msup><mi>e</mi><mi>z</mi></msup><mo>,</mo><mi>C</mi><mo>=</mo><mn>1</mn><mo>,</mo><msub><mi>L</mi><mi>f</mi></msub><mo>=</mo><msup><mi>e</mi><msub><mi>w</mi><mi>f</mi></msub></msup></mrow><annotation encoding="application/x-tex">A=e^z,C=1,L_f=e^{w_f}</annotation></semantics></math>,
+let
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">ℱ</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo>,</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mo>∑</mo><mrow><mi>t</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> exterior</mtext></mrow></mrow></munder><msub><mi>Q</mi><mi>t</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>L</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><munder><mo>∑</mo><mrow><mi>f</mi><mo>∈</mo><mi>I</mi></mrow></munder><msub><mi>w</mi><mi>f</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi mathvariant="script">ℱ</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo>,</mo><mi>w</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>∂</mi><mi>w</mi></msub><mi mathvariant="script">ℱ</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo>,</mo><mi>w</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \mathcal F(z,w)=\sum_{t\text{ exterior}}Q_t(L)-\sum_{f\in I}w_f,
+ \qquad F(z)=\mathcal F(z,w(z)),\quad
+ \partial_w\mathcal F(z,w(z))=0.\tag{7}
+</annotation></semantics></math> The triangles and targets are the
+original ones. The half-triangle potential is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mi>t</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>L</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mi mathvariant="normal">max</mi><mtable><mtr><mtd columnalign="center" style="text-align: center"><mrow><msub><mi>α</mi><mi>f</mi></msub><mo>≥</mo><mn>0</mn></mrow></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mrow><munder><mo>∑</mo><mi>f</mi></munder><msub><mi>α</mi><mi>f</mi></msub><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow></mtd></mtr></mtable></munder><munder><mo>∑</mo><mi>f</mi></munder><mo stretchy="false" form="prefix">{</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>α</mi><mi>f</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>+</mo><msub><mi>α</mi><mi>f</mi></msub><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><msub><mi>L</mi><mi>f</mi></msub><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Λ</mi><mo stretchy="false" form="prefix">(</mo><mi>π</mi><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi mathvariant="normal">Λ</mi><mo stretchy="false" form="prefix">(</mo><mi>π</mi><mi>/</mi><mn>2</mn><mo>−</mo><mi>π</mi><mi>a</mi><mo stretchy="false" form="postfix">)</mo></mrow><mi>π</mi></mfrac><mo>,</mo><mspace width="1.0em"></mspace><mi mathvariant="normal">Λ</mi><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>−</mi><msubsup><mo>∫</mo><mn>0</mn><mi>t</mi></msubsup><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">|</mo><mn>2</mn><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mi>v</mi><mo stretchy="false" form="prefix">|</mo><mspace width="0.167em"></mspace><mi>d</mi><mi>v</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ Q_t(L)=\max_{\substack{\alpha_f\ge0\\\sum_f\alpha_f=1/2}}
+       \sum_f\{f(\alpha_f)+\alpha_f\log L_f\},\qquad
+ f(a)=\frac{\Lambda(\pi a)+\Lambda(\pi/2-\pi a)}\pi,
+ \quad \Lambda(t)=-\int_0^t\log|2\sin v|\,dv.\tag{8}
+</annotation></semantics></math> Protected-zero loads are zero. The
+strict table and connected pair graph give coercivity in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+and a positive-definite grounded Hessian. Thus the finite stationary
+point at zero is unique, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">w(z)</annotation></semantics></math>
+is holomorphic for small
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>.</p>
+<p>Define the exact finite potential using (3), not an even comparator:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">ℱ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo>,</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mn>1</mn><mi>N</mi></mfrac><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><munder><mo>∏</mo><mrow><mi>q</mi><mo>≠</mo><msub><mi>q</mi><mo>*</mo></msub></mrow></munder><msub><mi>B</mi><mrow><mi>N</mi><mo>,</mo><mi>*</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>L</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mfrac><mi>d</mi><mi>N</mi></mfrac><munder><mo>∑</mo><mrow><mi>f</mi><mo>∈</mo><mi>I</mi></mrow></munder><msub><mi>w</mi><mi>f</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \mathcal F_N(z,w)=\frac1N\log\prod_{q\ne q_*}B_{N,*}(L)
+                         -\frac dN\sum_{f\in I}w_f.\tag{9}
+</annotation></semantics></math> On a fixed complex neighborhood of the
+positive stationary weights, the normalized logarithms and all fixed
+derivatives converge to (7), along the full sequence of levels. Here are
+the inputs and the parity bookkeeping.</p>
+<ol type="1">
+<li>The determinant angle-force and absolute positive triangle
+normalization apply to every actual channel approaching the fold,
+including
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>J</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">J=(N-1)/2</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>J</mi><mo>=</mo><mi>N</mi><mi>/</mi><mn>2</mn><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">J=N/2-1</annotation></semantics></math>.
+The normalized determinant log therefore has limit
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mi>t</mi></msub><annotation encoding="application/x-tex">Q_t</annotation></semantics></math>.
+The finite positive curvature theorem gives a common complex
+neighborhood with every fixed positive-order log derivative bounded by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mi>N</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(N)</annotation></semantics></math>.
+Cauchy estimates applied to the normalized holomorphic logs upgrade
+their locally uniform limit to convergence of all fixed derivatives.
+There is no differentiation of a merely pointwise coefficient rate.</li>
+<li>The number of factors
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mi>e</mi></msub><annotation encoding="application/x-tex">P_e</annotation></semantics></math>
+is fixed by the diagram. Each even factor has a nonzero positive value
+and a holomorphic logarithm on that neighborhood; its fixed log
+derivatives are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math>.
+Thus its contribution to (9) and all normalized derivatives is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>N</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(N^{-1})</annotation></semantics></math>.
+The original degree change it compensates remains in (6).</li>
+<li>The factors
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>N</mi><mn>2</mn></msup><msubsup><mi>β</mi><mi>J</mi><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">N^2\beta_J^2</annotation></semantics></math>
+are independent of the faces, contribute
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>N</mi><mi>/</mi><mi>N</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(\log N/N)</annotation></semantics></math>
+in (9), and no log derivative. The target difference
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mi>/</mi><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">d/N-1</annotation></semantics></math>
+contributes only a linear
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>N</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(N^{-1})</annotation></semantics></math>
+term.</li>
+</ol>
+<p>The preconditioned implicit-function theorem consequently supplies
+finite stationary points
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">w_N(z)</annotation></semantics></math>
+on one common smaller complex disk, tending to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">w(z)</annotation></semantics></math>,
+with a uniformly invertible normalized Hessian.</p>
+<p>The original
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>I</mi><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">|I|</annotation></semantics></math>-torus
+coefficient integral has only one angular maximum. Indeed determinant
+contraction controls the primitive phase differences on the connected
+supported pair graph, with a lower bound proportional to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>.
+Both
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">A,C</annotation></semantics></math>
+are fixed at zero phase. Hence every extracted phase is forced to zero,
+with no additional lattice coset. The nonnegative even factors
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x+y</annotation></semantics></math>
+have modulus ratio at most one and cannot weaken this bound. On compact
+weights the same bulk pair traces work through both maximal
+parities.</p>
+<p>The local contour can therefore be shifted to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">w_N(z)</annotation></semantics></math>
+for fixed small complex
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>;
+the old angular complement and connectors retain a fixed gap. Taylor
+expansion with the uniform higher derivative bounds gives the actual
+relative coefficient estimate
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>P</mi><mi>N</mi><mo>*</mo></msubsup><mo stretchy="false" form="prefix">(</mo><msup><mi>e</mi><mi>z</mi></msup><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>N</mi><msub><mi>F</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>π</mi><mi>N</mi><msup><mo stretchy="false" form="postfix">)</mo><mrow><mo stretchy="false" form="prefix">|</mo><mi>I</mi><mo stretchy="false" form="prefix">|</mo><mi>/</mi><mn>2</mn></mrow></msup><msqrt><mrow><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><msub><mi>H</mi><mrow><mi>N</mi><mo>,</mo><mi>I</mi><mi>I</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo></mrow></msqrt></mrow></mfrac><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>O</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>N</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>F</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi mathvariant="script">ℱ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo>,</mo><msub><mi>w</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ P_N^*(e^z,1)=
+ \frac{\exp(NF_N(z))}
+ {(2\pi N)^{|I|/2}\sqrt{\det H_{N,II}(z)}}
+       (1+O(N^{-1})),\quad
+ F_N(z)=\mathcal F_N(z,w_N(z)).\tag{10}
+</annotation></semantics></math> Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mrow><mi>N</mi><mo>,</mo><mi>I</mi><mi>I</mi></mrow></msub><mo>=</mo><msubsup><mi>∂</mi><mi>w</mi><mn>2</mn></msubsup><msub><mi mathvariant="script">ℱ</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">H_{N,II}=\partial_w^2\mathcal F_N</annotation></semantics></math>,
+and the square root continues from its positive real value. The
+zero-dimensional case uses the empty determinant one. Equation (10) is
+uniform and relative on a fixed complex disk; its leading factor is
+nonzero. Consequently
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mi>N</mi></mfrac><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><msubsup><mi>P</mi><mi>N</mi><mo>*</mo></msubsup><mo stretchy="false" form="prefix">(</mo><msup><mi>e</mi><mi>z</mi></msup><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>→</mo><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>ν</mi><mi>N</mi></msub><mo>:=</mo><mfrac><mrow><msub><mi>∂</mi><mi>z</mi></msub><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><msubsup><mi>P</mi><mi>N</mi><mo>*</mo></msubsup><mo stretchy="false" form="prefix">(</mo><msup><mi>e</mi><mi>z</mi></msup><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><msub><mo stretchy="false" form="prefix">|</mo><mn>0</mn></msub></mrow><mi>d</mi></mfrac><mo>→</mo><mi>ν</mi><mo>=</mo><msup><mi>F</mi><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>κ</mi><mi>N</mi></msub><mo>:=</mo><mfrac><mrow><msubsup><mi>∂</mi><mi>z</mi><mn>2</mn></msubsup><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><msubsup><mi>P</mi><mi>N</mi><mo>*</mo></msubsup><mo stretchy="false" form="prefix">(</mo><msup><mi>e</mi><mi>z</mi></msup><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><msub><mo stretchy="false" form="prefix">|</mo><mn>0</mn></msub></mrow><mi>d</mi></mfrac><mo>→</mo><mi>κ</mi><mo>=</mo><msup><mi>F</mi><mo>″</mo></msup><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \frac1N\log P_N^*(e^z,1)\longrightarrow F(z),\qquad
+ \nu_N:=\frac{\partial_z\log P_N^*(e^z,1)|_0}{d}\to\nu=F&#39;(0),
+ \quad
+ \kappa_N:=\frac{\partial_z^2\log P_N^*(e^z,1)|_0}{d}\to\kappa=F&#39;&#39;(0).
+ \tag{11}
+</annotation></semantics></math> This proves the required same-pressure
+statement, including nonvanishing at all sufficiently large levels. It
+does not compare even and odd coefficients term by term or infer
+equality of asymptotics from a finite sample.</p>
+<h2 id="tilted-and-cutoff-bounds-retain-the-original-targets">3. Tilted
+and cutoff bounds retain the original targets</h2>
+<p>For every fixed positive trial vector with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mi>T</mi><mo>,</mo><mi>C</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">A=T,C=1</annotation></semantics></math>,
+positivity gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mi mathvariant="normal">limsup</mi><mi>N</mi></munder><mfrac><mn>1</mn><mi>N</mi></mfrac><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mfrac><mrow><msubsup><mi>P</mi><mi>N</mi><mo>*</mo></msubsup><mo stretchy="false" form="prefix">(</mo><mi>T</mi><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><msup><mi>T</mi><mrow><mi>d</mi><mi>/</mi><mn>2</mn></mrow></msup></mfrac><mo>≤</mo><munder><mo>∑</mo><mrow><mi>t</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> exterior</mtext></mrow></mrow></munder><msub><mi>Q</mi><mi>t</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>L</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><munder><mo>∑</mo><mrow><mi>f</mi><mo>∈</mo><mi>I</mi></mrow></munder><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><msub><mi>L</mi><mi>f</mi></msub><mo>−</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>T</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \limsup_N\frac1N\log\frac{P_N^*(T,1)}{T^{d/2}}
+ \le \sum_{t\text{ exterior}}Q_t(L)-\sum_{f\in I}\log L_f
+                                  -\tfrac12\log T.\tag{12}
+</annotation></semantics></math> The right side is exactly the earlier
+classical trial-pressure expression. This upper bound needs no remote
+stationary point at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>,
+and the parity factor and source scalar have zero normalized logarithmic
+cost.</p>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">R(s)</annotation></semantics></math>
+be the original residual complete-triangle capacity for boundary loads
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>:</mo><mi>s</mi><mo>,</mo><mi>C</mi><mo>:</mo><mn>1</mn><mo>−</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">A:s,C:1-s</annotation></semantics></math>
+and all
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math>-loads
+one. The complete strict optimizer gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mi mathvariant="normal">max</mi><mrow><mn>1</mn><mi>/</mi><mn>2</mn><mo>≤</mo><mi>s</mi><mo>≤</mo><mn>1</mn></mrow></munder><mi>R</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mi mathvariant="normal">Φ</mi><mo>−</mo><msub><mi>γ</mi><mi>D</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>γ</mi><mi>D</mi></msub><mo>&gt;</mo><mn>0</mn><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ \max_{1/2\le s\le1}R(s)\le\Phi-\gamma_D,
+ \qquad \gamma_D&gt;0,\tag{13}
+</annotation></semantics></math> where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>π</mi><mi mathvariant="normal">Φ</mi></mrow><annotation encoding="application/x-tex">2\pi\Phi</annotation></semantics></math>
+is the original augmented volume. This is the same closed entropy
+problem; it has no level parity. The coefficient upper follows at either
+parity directly from positive Cauchy bounds and compact entropy duality:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mi mathvariant="normal">limsup</mi><mi>N</mi></munder><mfrac><mn>1</mn><mi>N</mi></mfrac><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><msubsup><mi>p</mi><mrow><mi>N</mi><mo>,</mo><msub><mi>j</mi><mi>N</mi></msub></mrow><mo>*</mo></msubsup><mo>≤</mo><mi>R</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mspace width="1.0em"></mspace><mrow><mtext mathvariant="normal">if </mtext><mspace width="0.333em"></mspace></mrow><msub><mi>j</mi><mi>N</mi></msub><mi>/</mi><mi>d</mi><mo>→</mo><mi>s</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \limsup_N\frac1N\log p_{N,j_N}^*\le R(s)
+                    \quad\text{if }j_N/d\to s.\tag{14}
+</annotation></semantics></math> One may first use any finite positive
+trial vector, then take the infimum. The compact supported triangle
+entropy supplies its closed concave dual, including boundary loads; no
+coefficient lower asymptotic is needed. In particular
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mi>/</mi><mi>d</mi><mo>→</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">M/d\to1/2</annotation></semantics></math>,
+so
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mi mathvariant="normal">limsup</mi><mi>N</mi></munder><msup><mi>N</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><msubsup><mi>p</mi><mrow><mi>N</mi><mo>,</mo><mi>M</mi></mrow><mo>*</mo></msubsup><mo>≤</mo><mi mathvariant="normal">Φ</mi><mo>−</mo><msub><mi>γ</mi><mi>D</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \limsup_N N^{-1}\log p_{N,M}^*\le\Phi-\gamma_D.\tag{15}
+</annotation></semantics></math> The exact one-step difference between
+the two parity cutoffs is retained before this limit.</p>
+<h2 id="all-level-protected-spectral-bound-and-the-recorded-example">4.
+All-level protected spectral bound and the recorded example</h2>
+<p>The original protected functional is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>S</mi><mi>N</mi><mo>*</mo></msubsup><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mi>M</mi></munderover><msub><mi>v</mi><mrow><mi>N</mi><mo>,</mo><mi>j</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo stretchy="false" form="postfix">)</mo><msubsup><mi>p</mi><mrow><mi>N</mi><mo>,</mo><mi>j</mi></mrow><mo>*</mo></msubsup><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>v</mi><mrow><mi>N</mi><mo>,</mo><mi>j</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>j</mi></msup><msubsup><mi>S</mi><mi>j</mi><mn>2</mn></msubsup><munderover><mo>∏</mo><mrow><mi>r</mi><mo>=</mo><mi>j</mi><mo>+</mo><mn>1</mn></mrow><mi>d</mi></munderover><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo>−</mo><msub><mi>c</mi><mi>r</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>c</mi><mi>r</mi></msub><mo>=</mo><mn>2</mn><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>r</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ S_N^*(\sigma)=\sum_{j=0}^{M}v_{N,j}(\sigma)p_{N,j}^*,\qquad
+ v_{N,j}(\sigma)=(-1)^jS_j^2\prod_{r=j+1}^{d}(\sigma-c_r),
+ \quad c_r=2\cos((2r+1)\theta).\tag{16}
+</annotation></semantics></math> It retains every original unused-row
+factor and both remaining degree targets. The common raw signs removed
+in (3) multiply (16) by one unit scalar and do not alter its
+modulus.</p>
+<p>The finite sine-Cauchy and alternating-section theorem already
+applies to both parities. Its cutoff has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>M</mi><mo>=</mo><mi>N</mi><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">2M=N-2</annotation></semantics></math>
+at even levels and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>M</mi><mo>=</mo><mi>N</mi><mo>−</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">2M=N-3</annotation></semantics></math>
+at odd levels, and its last Gram diagonal is respectively
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mi>θ</mi><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>≤</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">(2\cos\theta)^{-1}\le1</annotation></semantics></math>.
+Thus no missing full-square moment is used. For the stable factorization
+of (6), put
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mn>1</mn><mo>−</mo><mi>ν</mi><mo>−</mo><mi>κ</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>b</mi><mo>=</mo><mi>ν</mi><mo>−</mo><mi>κ</mi><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>R</mi><mi>T</mi></msub><mo>=</mo><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mn>1</mn><mo>−</mo><mn>4</mn><mi>κ</mi><mo>,</mo><mi>a</mi><mi>/</mi><mi>T</mi><mo>+</mo><mi>b</mi><mi>T</mi><mo>−</mo><mn>2</mn><mi>κ</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ a=1-\nu-\kappa,\qquad b=\nu-\kappa,\qquad
+ R_T=\max\{a,b,1-4\kappa,a/T+bT-2\kappa\}.\tag{17}
+</annotation></semantics></math> Combining its exact finite estimate
+with (11), (12), and (15) gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mi mathvariant="normal">limsup</mi><mrow><mi>N</mi><mo>→</mo><mi>∞</mi></mrow></munder><mfrac><mn>1</mn><mi>N</mi></mfrac><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><munder><mi mathvariant="normal">sup</mi><mrow><mi>σ</mi><mo>∈</mo><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mn>2</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">]</mo></mrow></munder><mo stretchy="false" form="prefix">|</mo><msubsup><mi>S</mi><mi>N</mi><mo>*</mo></msubsup><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><msub><mi>R</mi><mi>T</mi></msub><mo>,</mo><mspace width="0.222em"></mspace><msub><mi>F</mi><mi>T</mi></msub><mo>,</mo><mspace width="0.222em"></mspace><mi mathvariant="normal">Φ</mi><mo>−</mo><msub><mi>γ</mi><mi>D</mi></msub><mo stretchy="false" form="postfix">}</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ \limsup_{N\to\infty}\frac1N\log
+       \sup_{\sigma\in[-2,2]}|S_N^*(\sigma)|
+ \le\max\{F(0)+\tfrac12\log R_T,\ F_T,\ \Phi-\gamma_D\},\tag{18}
+</annotation></semantics></math> where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>T</mi></msub><annotation encoding="application/x-tex">F_T</annotation></semantics></math>
+is any certified upper bound in (12). All level parities now enter the
+limsup. The finite spectral theorem is unchanged; the new input is the
+actual even maximal-fold exterior and its pressure proof above.</p>
+<p>For the unchanged 54-region source, the selected region is 32, its
+quartet is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>50</mn><mo>,</mo><mn>16</mn><mo>,</mo><mn>29</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,50,16,29)</annotation></semantics></math>,
+the protected faces are 29 and 50, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><msub><mi>L</mi><mn>16</mn></msub><mo>,</mo><mi>C</mi><mo>=</mo><msub><mi>L</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">A=L_{16},C=L_0</annotation></semantics></math>.
+The existing rational response and trial-vector certificates give
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mn>67.894</mn><mo>,</mo><mspace width="1.0em"></mspace><mn>.27</mn><mo>≤</mo><mi>ν</mi><mo>≤</mo><mn>.275</mn><mo>,</mo><mspace width="1.0em"></mspace><mi>κ</mi><mo>≥</mo><mn>.088</mn><mo>,</mo><mspace width="1.0em"></mspace><mi mathvariant="normal">Φ</mi><mo>≥</mo><mn>67.687</mn><mo>,</mo><mspace width="1.0em"></mspace><mi>T</mi><mo>=</mo><mn>17</mn><mi>/</mi><mn>5</mn><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>F</mi><mi>T</mi></msub><mo>&lt;</mo><mn>67.684</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ F(0)\le67.894,\quad .27\le\nu\le.275,\quad
+ \kappa\ge.088,\quad\Phi\ge67.687,\quad
+ T=17/5,\quad F_T&lt;67.684.\tag{19}
+</annotation></semantics></math> These are classical finite
+certificates, unchanged by parity. Exact rational arithmetic gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>−</mo><mi>T</mi><mi>b</mi><mo>≥</mo><mn>3</mn><mi>/</mi><mn>2500</mn></mrow><annotation encoding="application/x-tex">a-Tb\ge3/2500</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>T</mi></msub><mo>≤</mo><mn>81</mn><mi>/</mi><mn>125</mn></mrow><annotation encoding="application/x-tex">R_T\le81/125</annotation></semantics></math>.
+The already certified logarithmic inequality
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>81</mn><mi>/</mi><mn>125</mn><mo stretchy="false" form="postfix">)</mo><mo>&gt;</mo><mn>.216</mn></mrow><annotation encoding="application/x-tex">-\tfrac12\log(81/125)&gt;.216</annotation></semantics></math>
+gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><mspace width="1.0em"></mspace><munder><mi mathvariant="normal">limsup</mi><mrow><mi>N</mi><mo>→</mo><mi>∞</mi></mrow></munder><mfrac><mn>1</mn><mi>N</mi></mfrac><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><munder><mi mathvariant="normal">sup</mi><mrow><mi>σ</mi><mo>∈</mo><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mn>2</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">]</mo></mrow></munder><mo stretchy="false" form="prefix">|</mo><msubsup><mi>S</mi><mi>N</mi><mo>*</mo></msubsup><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mi mathvariant="normal">Φ</mi><mo>−</mo><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><mn>.003</mn><mo>,</mo><msub><mi>γ</mi><mi>D</mi></msub><mo stretchy="false" form="postfix">}</mo><mo>&lt;</mo><mi mathvariant="normal">Φ</mi><mi>.</mi><mspace width="1.0em"></mspace></mrow></menclose><annotation encoding="application/x-tex">
+ \boxed{\quad
+ \limsup_{N\to\infty}\frac1N\log
+     \sup_{\sigma\in[-2,2]}|S_N^*(\sigma)|
+       \le\Phi-\min\{.003,\gamma_D\}&lt;\Phi.
+ \quad}\tag{20}
+</annotation></semantics></math> Every smaller fixed gap holds
+eventually. No explicit numerical value for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>γ</mi><mi>D</mi></msub><annotation encoding="application/x-tex">\gamma_D</annotation></semantics></math>
+is asserted. The theorem concerns the same original singleton sector and
+actual common extraction. Its neighboring spectral values are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>c</mi><mi>N</mi><mo>*</mo></msubsup><annotation encoding="application/x-tex">c_N^*</annotation></semantics></math>,
+not
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">-2</annotation></semantics></math>
+at even levels.</p>
+<p>Since (16) has spectral degree at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>,
+its first cap derivative has the same exponential rate by the elementary
+polynomial derivative bound. The original one-variable full-Hermite
+insertion of any fixed signed power also preserves this gap by its
+finite norm. These statements apply only to the selected cap variable;
+neighboring spectral derivatives and neighboring filling operations are
+not covered.</p>
+<h2 id="dependencies-and-remaining-application">5. Dependencies and
+remaining application</h2>
+<p>The source scalar and central/full equality at physical nodes are in
+<code>actual_cross_cofactor_factorization.md</code> section 3 and
+<code>actual_complete_circle_positive_face_polynomial.md</code>. The
+local finite curvature, zero-free log neighborhoods and bulk pair traces
+include both maximal parities in
+<code>actual_q_hahn_boundary_model_curvature.md</code>. The action and
+angle-force normalization are in
+<code>actual_original_boundary_stationary_character.md</code>; the
+original coefficient contour and primitive angular gap are in
+<code>actual_positive_face_coefficient_saddle.md</code>. The exterior
+variant repeats their finite connected-graph argument as in
+<code>research_global_cap_effective_response_criterion.md</code>, now
+with the retained even factor. The existing exact finite cap theorem is
+<code>research_cap_uniform_spectral_gap.md</code>. Its old odd-only
+application is extended here only along the specified physical-node
+slice.</p>
+<p>The result does not show that positive stable atom masses at
+neighboring first normals have sufficiently small rank. The separate
+nodal stable-jet theorem has polynomial total mass but includes ranks of
+order
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>.
+A quantitative comparison for that rank distribution after the same face
+extraction remains necessary before applying any neighboring-spectrum or
+full-period conclusion.</p>
+</body>
+</html>

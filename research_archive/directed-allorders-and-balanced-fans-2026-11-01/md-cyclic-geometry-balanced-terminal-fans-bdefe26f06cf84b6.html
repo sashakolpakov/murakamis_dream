@@ -1,0 +1,337 @@
+<h1 id="two-sided-terminal-fans-and-complete-radius-balance">Two-sided
+terminal fans and complete-radius balance</h1>
+<p>Private working theorem, 1 November 2026. The conclusion concerns an
+actual augmented diagram and its one marked complete packing. It is not
+a claim that arbitrary cyclic contractions reduce to the scalar kernels
+of a tangle-operation tree.</p>
+<h2 id="input-and-the-local-geometric-operation">1. Input and the local
+geometric operation</h2>
+<p>Start with a connected augmented diagram whose labeled white
+triangulation is a simple triangulated sphere and whose matching pairs
+are the original crossing-circle ports. Retain the original marked MAIN
+edge and its two protected zero curvatures. Assume the supplied positive
+complete packing is the original geometric certificate. An original port
+has ordered weights</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>A</mi><mo>=</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo>&gt;</mo><mn>0</mn><mo>,</mo><mspace width="2.0em"></mspace><mi>P</mi><mo>=</mo><mi>x</mi><mi>y</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>δ</mi><mo>=</mo><mi>P</mi><mi>/</mi><msup><mi>A</mi><mn>2</mn></msup><mo>∈</mo><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>4</mn><mo stretchy="false" form="postfix">]</mo><mi>.</mi><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+(x,b,c,y),\qquad A=x+y&gt;0,\qquad P=xy,\qquad
+\delta=P/A^2\in[0,1/4].                                      \qquad(1)
+</annotation></semantics></math></p>
+<p>Its matching edge is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">xy</annotation></semantics></math>,
+and its two shaded triangles are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(x,b,y)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(x,c,y)</annotation></semantics></math>.
+The letters in (1) denote circle curvatures, not independent choices of
+radii for different source factors.</p>
+<p>Stellarly subdivide the first triangle by its positive interstice
+circle</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mn>1</mn></msub><mo>=</mo><mi>A</mi><mo>+</mo><mi>b</mi><mo>+</mo><mn>2</mn><msqrt><mrow><mi>A</mi><mi>b</mi><mo>+</mo><mi>P</mi></mrow></msqrt><mi>.</mi><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+b_1=A+b+2\sqrt{Ab+P}.                                      \qquad(2)
+</annotation></semantics></math></p>
+<p>Retain
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">xy</annotation></semantics></math>
+as the old matching edge and match the other two new triangles along
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><msub><mi>b</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">bb_1</annotation></semantics></math>.
+Thus the two resulting ports have unordered outer/middle pairs</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtable><mtr><mtd columnalign="center" style="text-align: center"></mtd><mtd columnalign="center" style="text-align: center"><mtext mathvariant="normal">outer pair</mtext></mtd><mtd columnalign="center" style="text-align: center"><mtext mathvariant="normal">middle pair</mtext></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mtext mathvariant="normal">retained port</mtext></mtd><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">(</mo><msub><mi>b</mi><mn>1</mn></msub><mo>,</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mtext mathvariant="normal">new port</mtext></mtd><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>,</mo><msub><mi>b</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mtd></mtr></mtable><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>3</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+\begin{array}{c|c|c}
+ &amp;\text{outer pair}&amp;\text{middle pair}\\ \hline
+\text{retained port}&amp;(x,y)&amp;(b_1,c)\\
+\text{new port}&amp;(b,b_1)&amp;(x,y).
+\end{array}                                                   \qquad(3)
+</annotation></semantics></math></p>
+<p>Their oriented four-leg frames are inherited from the local disk
+insertion, rather than chosen afterwards from this table.</p>
+<p>This is a literal terminal-tangle insertion. In the endpoint
+convention of
+<code>actual_all_circle_octahedral_decomposition.md</code>, take the
+unturned old box
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>v</mi></msub><mo>=</mo><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msub><mi>h</mi><mi>v</mi></msub></mrow><annotation encoding="application/x-tex">P_v=T^{-1}h_v</annotation></semantics></math>,
+with exposed tuple
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>v</mi><mn>3</mn></msub><mo>,</mo><msub><mi>v</mi><mn>0</mn></msub><mo>,</mo><msub><mi>v</mi><mn>1</mn></msub><mo>,</mo><msub><mi>v</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(v_3,v_0,v_1,v_2)</annotation></semantics></math>.
+If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">x_1,x_2</annotation></semantics></math>
+are its two current output neighbors, inserting
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>h</mi><mi>w</mi></msub><annotation encoding="application/x-tex">h_w</annotation></semantics></math>
+immediately after
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mi>v</mi></msub><annotation encoding="application/x-tex">P_v</annotation></semantics></math>
+replaces</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtable><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>v</mi><mn>1</mn></msub><mo>−</mo><msub><mi>x</mi><mn>1</mn></msub></mtd><mtd columnalign="center" style="text-align: center"><msub><mi>v</mi><mn>1</mn></msub><mo>−</mo><msub><mi>w</mi><mn>1</mn></msub><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>w</mi><mn>2</mn></msub><mo>−</mo><msub><mi>x</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>v</mi><mn>2</mn></msub><mo>−</mo><msub><mi>x</mi><mn>2</mn></msub></mtd><mtd columnalign="center" style="text-align: center"><msub><mi>v</mi><mn>2</mn></msub><mo>−</mo><msub><mi>w</mi><mn>0</mn></msub><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>w</mi><mn>3</mn></msub><mo>−</mo><msub><mi>x</mi><mn>2</mn></msub><mi>.</mi></mtd></mtr></mtable><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>4</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+\begin{array}{c|c}
+v_1-x_1&amp;v_1-w_1,\quad w_2-x_1\\
+v_2-x_2&amp;v_2-w_0,\quad w_3-x_2.
+\end{array}                                                   \qquad(4)
+</annotation></semantics></math></p>
+<p>The endpoint calculation uses only this framed product collar. The
+outside arcs may belong to an arbitrary fixed diagram; they need not
+come from a tree. The left insertion replaces
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mn>3</mn></msub><mo>−</mo><msub><mi>x</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">v_3-x_3</annotation></semantics></math>
+by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mn>3</mn></msub><mo>−</mo><msub><mi>w</mi><mn>3</mn></msub><mo>,</mo><msub><mi>w</mi><mn>0</mn></msub><mo>−</mo><msub><mi>x</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">v_3-w_3,w_0-x_3</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mn>0</mn></msub><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">v_0-x_0</annotation></semantics></math>
+by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mn>0</mn></msub><mo>−</mo><msub><mi>w</mi><mn>2</mn></msub><mo>,</mo><msub><mi>w</mi><mn>1</mn></msub><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">v_0-w_2,w_1-x_0</annotation></semantics></math>.
+It gives the second side without changing the inherited frame. The
+octahedron in that reference attaches to precisely the shaded face being
+subdivided. Its three other shaded faces give (3), with the old and new
+white boundary cycles fixed by (4).</p>
+<p>All old circles remain fixed. The new disk lies in the chosen
+interstice, and the positive Descartes solution is (2). The supporting
+planes and opposite ideal vertices are those of the regular octahedron
+attached across the old ideal triangle; this is also the literal
+construction in <code>actual_smoothing_fixed_radius_gap.md</code>,
+Section 5. Consequently the same complete labeled certificate extends to
+the new diagram. This attaches one regular octahedron in each projection
+copy, so the augmented volume increases by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msub><mi>v</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">2v_{\mathrm{oct}}</annotation></semantics></math>
+per insertion. This geometric statement uses the face attachment, not
+just its volume.</p>
+<p>The protected zeros remain zero. Their marked MAIN edge is a boundary
+edge of every subdivision containing it and is not removed. The formulas
+include a zero middle and one zero outer curvature. In the case with two
+protected lines, (2) is the corresponding positive interstice disk
+between those lines. Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">A&gt;0</annotation></semantics></math>,
+no three-zero triangle occurs.</p>
+<h2 id="exact-fan-recurrence-and-even-counts">2. Exact fan recurrence
+and even counts</h2>
+<p>Repeat the operation only at the retained port, on the same side. Put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mi>j</mi></msub><mo>=</mo><msqrt><mrow><mi>A</mi><msub><mi>b</mi><mi>j</mi></msub><mo>+</mo><mi>P</mi></mrow></msqrt></mrow><annotation encoding="application/x-tex">t_j=\sqrt{Ab_j+P}</annotation></semantics></math>.
+Direct substitution into (2) gives</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>t</mi><mi>j</mi></msub><mo>+</mo><mi>A</mi><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>b</mi><mi>j</mi></msub><mo>=</mo><mi>b</mi><mo>+</mo><mn>2</mn><mi>j</mi><msqrt><mrow><mi>A</mi><mi>b</mi><mo>+</mo><mi>P</mi></mrow></msqrt><mo>+</mo><msup><mi>j</mi><mn>2</mn></msup><mi>A</mi><mi>.</mi><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>5</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+t_{j+1}=t_j+A,\qquad
+b_j=b+2j\sqrt{Ab+P}+j^2A.                                  \qquad(5)
+</annotation></semantics></math></p>
+<p>The positive square root is essential here. Normalize</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>=</mo><msqrt><mrow><mi>b</mi><mi>/</mi><mi>A</mi><mo>+</mo><mi>δ</mi></mrow></msqrt><mo>,</mo><mspace width="2.0em"></mspace><mi>v</mi><mo>=</mo><msqrt><mrow><mi>c</mi><mi>/</mi><mi>A</mi><mo>+</mo><mi>δ</mi></mrow></msqrt><mi>.</mi></mrow><annotation encoding="application/x-tex">
+u=\sqrt{b/A+\delta},\qquad v=\sqrt{c/A+\delta}.
+</annotation></semantics></math></p>
+<p>After
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>
+insertions on the first side and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+on the second,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mi>j</mi></msub><mo>=</mo><mi>A</mi><mo stretchy="false" form="prefix">[</mo><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>+</mo><mi>j</mi><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo>−</mo><mi>δ</mi><mo stretchy="false" form="postfix">]</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>c</mi><mi>k</mi></msub><mo>=</mo><mi>A</mi><mo stretchy="false" form="prefix">[</mo><mo stretchy="false" form="prefix">(</mo><mi>v</mi><mo>+</mo><mi>k</mi><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo>−</mo><mi>δ</mi><mo stretchy="false" form="postfix">]</mo><mi>.</mi><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>6</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+b_j=A[(u+j)^2-\delta],\qquad
+c_k=A[(v+k)^2-\delta].                                    \qquad(6)
+</annotation></semantics></math></p>
+<p>There are even nonnegative integers
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>,</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">j,k</annotation></semantics></math>
+with</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><mi>u</mi><mo>+</mo><mi>j</mi><mo>≥</mo><mn>4</mn><mo>,</mo><mspace width="2.0em"></mspace><mi>V</mi><mo>=</mo><mi>v</mi><mo>+</mo><mi>k</mi><mo>≥</mo><mn>4</mn><mo>,</mo><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">|</mo><mi>U</mi><mo>−</mo><mi>V</mi><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mn>1</mn><mi>.</mi><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>7</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+U=u+j\ge4,\qquad V=v+k\ge4,\qquad |U-V|\le1.              \qquad(7)
+</annotation></semantics></math></p>
+<p>Indeed choose an integer
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+nearest
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>−</mo><mi>v</mi><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">-(u-v)/2</annotation></semantics></math>.
+Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>u</mi><mo>−</mo><mi>v</mi><mo>+</mo><mn>2</mn><mi>m</mi><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|u-v+2m|\le1</annotation></semantics></math>.
+Set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>=</mo><mn>2</mn><mo stretchy="false" form="prefix">(</mo><mi>L</mi><mo>+</mo><mi>m</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">j=2(L+m)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>2</mn><mi>L</mi></mrow><annotation encoding="application/x-tex">k=2L</annotation></semantics></math>,
+and take the integer
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
+large enough to make both counts nonnegative and both quantities in (7)
+at least four. Adding the same even count to both sides preserves the
+difference condition.</p>
+<p>Give each inserted terminal an odd crossing power. Its turned
+four-terminal pairing is the crossing pairing, so an even stack has the
+identity pairing and creates no internal component. Hence these two even
+fans preserve the original box’s four-endpoint pairing. In particular a
+specified knot parity pattern of the core remains a knot pattern. The
+new fillings may have independently chosen sufficiently large odd
+positive or negative powers. This preserves endpoint connectivity, not
+the isotopy type of the filled core knot.</p>
+<h2 id="an-exact-integral-for-the-source-normalized-triangle-action">3.
+An exact integral for the source-normalized triangle action</h2>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">F(x,b,y)</annotation></semantics></math>
+be the complete triangle action with the original determinant, beta and
+half-forced-product normalization. Its exact entropy definition is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mi mathvariant="normal">max</mi><mrow><msub><mi>α</mi><mi>x</mi></msub><mo>+</mo><msub><mi>α</mi><mi>b</mi></msub><mo>+</mo><msub><mi>α</mi><mi>y</mi></msub><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow></munder><mrow><mo stretchy="true" form="prefix">{</mo><munder><mo>∑</mo><mi>j</mi></munder><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>α</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>+</mo><msub><mi>α</mi><mi>x</mi></msub><mi mathvariant="normal">log</mi><mi>x</mi><mo>+</mo><msub><mi>α</mi><mi>b</mi></msub><mi mathvariant="normal">log</mi><mi>b</mi><mo>+</mo><msub><mi>α</mi><mi>y</mi></msub><mi mathvariant="normal">log</mi><mi>y</mi><mo stretchy="true" form="postfix">}</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>8</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+F(x,b,y)=\max_{\alpha_x+\alpha_b+\alpha_y=1/2}
+\left\{\sum_j f(\alpha_j)+\alpha_x\log x+
+\alpha_b\log b+\alpha_y\log y\right\},                     \qquad(8)
+</annotation></semantics></math></p>
+<p>where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mrow><mi mathvariant="normal">cot</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>π</mi><mi>t</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f&#39;(t)=\log\cot(\pi t)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">f(0)=f(1/2)=0</annotation></semantics></math>,
+and zero weights force zero allocation. The complete stationary middle
+load is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>∂</mi><mi>F</mi></mrow><mrow><mi>∂</mi><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>b</mi></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mi>π</mi></mfrac><mrow><mi mathvariant="normal">arctan</mi><mo>&#8289;</mo></mrow><mfrac><mi>b</mi><msqrt><mrow><mi>A</mi><mi>b</mi><mo>+</mo><mi>P</mi></mrow></msqrt></mfrac><mi>.</mi><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>9</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+\frac{\partial F}{\partial\log b}
+=\frac1\pi\arctan\frac{b}{\sqrt{Ab+P}}.                   \qquad(9)
+</annotation></semantics></math></p>
+<p>These are the calibrated identities in
+<code>actual_triangle_entropy_algebraic_balance.md</code> and
+<code>actual_cross_cofactor_marked_action.md</code>; no additive entropy
+constant is available to change.</p>
+<p>Homogeneity of (8) gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>b</mi><mo>=</mo><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mi>/</mi><mi>b</mi><mo>,</mo><mn>1</mn><mo>,</mo><mi>y</mi><mi>/</mi><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">F(x,b,y)-\tfrac12\log b=F(x/b,1,y/b)\to0</annotation></semantics></math>
+as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>→</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">b\to\infty</annotation></semantics></math>.
+For completeness, the vertex allocation to the middle has value zero.
+Any maximizing allocations along a sequence with the two outer weights
+tending to zero must have their outer allocations tending to zero:
+otherwise the bounded continuous entropy cannot offset the negative
+log-weight term. Their entropy then tends to zero, proving the upper
+limit as well. Integrating (9) from infinity therefore gives exactly</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>b</mi><mo>+</mo><mi>R</mi><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>R</mi><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mn>1</mn><mi>π</mi></mfrac><msubsup><mo>∫</mo><mi>b</mi><mi>∞</mi></msubsup><mrow><mi mathvariant="normal">arctan</mi><mo>&#8289;</mo></mrow><mfrac><msqrt><mrow><mi>A</mi><mi>t</mi><mo>+</mo><mi>P</mi></mrow></msqrt><mi>t</mi></mfrac><mspace width="0.167em"></mspace><mfrac><mrow><mi>d</mi><mi>t</mi></mrow><mi>t</mi></mfrac><mo>&gt;</mo><mn>0</mn><mi>.</mi><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>10</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+F(x,b,y)=\tfrac12\log b+R(b),\qquad
+R(b)=\frac1\pi\int_b^\infty
+\arctan\frac{\sqrt{At+P}}t\,\frac{dt}{t}&gt;0.                \qquad(10)
+</annotation></semantics></math></p>
+<p>The integral converges by its
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>t</mi><mrow><mi>−</mi><mn>3</mn><mi>/</mi><mn>2</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(t^{-3/2})</annotation></semantics></math>
+integrand. It is also valid when one outer curvature is zero.</p>
+<p>Using
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">P\ge0</annotation></semantics></math>,
+monotonicity of arctangent, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">arctan</mi><mo>&#8289;</mo></mrow><mi>z</mi><mo>≥</mo><mi>z</mi><mo>−</mo><msup><mi>z</mi><mn>3</mn></msup><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">\arctan z\ge z-z^3/3</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">z\ge0</annotation></semantics></math>,
+we obtain</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><mfrac><mn>2</mn><mi>π</mi></mfrac><msqrt><mrow><mi>A</mi><mi>/</mi><mi>b</mi></mrow></msqrt><mo>−</mo><mfrac><mn>2</mn><mrow><mn>9</mn><mi>π</mi></mrow></mfrac><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mi>/</mi><mi>b</mi><msup><mo stretchy="false" form="postfix">)</mo><mrow><mn>3</mn><mi>/</mi><mn>2</mn></mrow></msup><mi>.</mi><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>11</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+R(b)\ge \frac2\pi\sqrt{A/b}
+-\frac2{9\pi}(A/b)^{3/2}.                                \qquad(11)
+</annotation></semantics></math></p>
+<h2 id="strict-balance-at-the-retained-port">4. Strict balance at the
+retained port</h2>
+<p>Assume (7), and exchange the two sides if necessary so that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>≥</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">U\ge V</annotation></semantics></math>.
+Put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>b</mi><mo>′</mo></msup><mo>=</mo><mi>A</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>U</mi><mn>2</mn></msup><mo>−</mo><mi>δ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">b&#39;=A(U^2-\delta)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>c</mi><mo>′</mo></msup><mo>=</mo><mi>A</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>V</mi><mn>2</mn></msup><mo>−</mo><mi>δ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">c&#39;=A(V^2-\delta)</annotation></semantics></math>.
+They are positive. Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>↦</mo><mn>2</mn><mi>w</mi><mo>−</mo><mn>2</mn><msup><mi>w</mi><mn>3</mn></msup><mi>/</mi><mn>9</mn></mrow><annotation encoding="application/x-tex">w\mapsto 2w-2w^3/9</annotation></semantics></math>
+is increasing on the range in use, (11) and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>≤</mo><mn>1</mn><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">\delta\le1/4</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>,</mo><mi>V</mi><mo>≥</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">U,V\ge4</annotation></semantics></math>,
+give</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>b</mi><mo>′</mo></msup><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>R</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>c</mi><mo>′</mo></msup><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><mfrac><mn>2</mn><mi>π</mi></mfrac><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mn>1</mn><mi>U</mi></mfrac><mo>+</mo><mfrac><mn>1</mn><mi>V</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mfrac><mn>2</mn><mrow><mn>9</mn><mi>π</mi></mrow></mfrac><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mn>1</mn><msup><mi>U</mi><mn>3</mn></msup></mfrac><mo>+</mo><mfrac><mn>1</mn><msup><mi>V</mi><mn>3</mn></msup></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>≥</mo><mfrac><mn>643</mn><mrow><mn>180</mn><mi>π</mi><mi>V</mi></mrow></mfrac><mi>.</mi><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>12</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+R(b&#39;)+R(c&#39;)\ge
+\frac2\pi\left(\frac1U+\frac1V\right)
+-\frac2{9\pi}\left(\frac1{U^3}+\frac1{V^3}\right)
+\ge\frac{643}{180\pi V}.                                 \qquad(12)
+</annotation></semantics></math></p>
+<p>For the last inequality use
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>≤</mo><mi>V</mi><mo>+</mo><mn>1</mn><mo>≤</mo><mn>5</mn><mi>V</mi><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">U\le V+1\le5V/4</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>V</mi><mrow><mi>−</mi><mn>3</mn></mrow></msup><mo>≤</mo><mo stretchy="false" form="prefix">(</mo><mn>16</mn><mi>V</mi><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>−</mi><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">V^{-3}\le(16V)^{-1}</annotation></semantics></math>.
+On the other hand,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msup><mi>b</mi><mo>′</mo></msup><mi>/</mi><msup><mi>c</mi><mo>′</mo></msup><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msubsup><mo>∫</mo><mi>V</mi><mi>U</mi></msubsup><mfrac><mi>t</mi><mrow><msup><mi>t</mi><mn>2</mn></msup><mo>−</mo><mi>δ</mi></mrow></mfrac><mspace width="0.167em"></mspace><mi>d</mi><mi>t</mi><mo>≤</mo><mfrac><mn>64</mn><mrow><mn>63</mn><mi>V</mi></mrow></mfrac><mi>.</mi><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>13</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+\frac12\log(b&#39;/c&#39;)
+=\int_V^U\frac{t}{t^2-\delta}\,dt
+\le\frac{64}{63V}.                                      \qquad(13)
+</annotation></semantics></math></p>
+<p>The rational bound
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi><mo>&lt;</mo><mn>22</mn><mi>/</mi><mn>7</mn></mrow><annotation encoding="application/x-tex">\pi&lt;22/7</annotation></semantics></math>
+proves</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>643</mn><mrow><mn>180</mn><mi>π</mi></mrow></mfrac><mo>−</mo><mfrac><mn>64</mn><mn>63</mn></mfrac><mo>&gt;</mo><mfrac><mn>3347</mn><mn>27720</mn></mfrac><mo>&gt;</mo><mn>0</mn><mi>.</mi><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>14</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+\frac{643}{180\pi}-\frac{64}{63}
+&gt;\frac{3347}{27720}&gt;0.                                  \qquad(14)
+</annotation></semantics></math></p>
+<p>It follows from (10)–(14) that the original retained port has</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><msup><mi>b</mi><mo>′</mo></msup><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><msup><mi>c</mi><mo>′</mo></msup><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><msup><mi>b</mi><mo>′</mo></msup><mo>,</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><msup><mi>c</mi><mo>′</mo></msup><mo stretchy="false" form="postfix">)</mo><mo>&gt;</mo><mfrac><mn>3347</mn><mrow><mn>27720</mn><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>U</mi><mo>,</mo><mi>V</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mo>&gt;</mo><mn>0</mn><mi>.</mi><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>15</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+F(x,b&#39;,y)+F(x,c&#39;,y)-\max(\log b&#39;,\log c&#39;)
+&gt;\frac{3347}{27720\min(U,V)}&gt;0.                          \qquad(15)
+</annotation></semantics></math></p>
+<p>Thus it satisfies the true complete-radius balance condition,
+including the source’s exact absolute normalization. The simpler
+algebraic sufficient test need not hold here; using it instead of (10)
+would lose the construction.</p>
+<h2 id="every-added-port-already-balances">5. Every added port already
+balances</h2>
+<p>At an insertion with current middle
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>,
+the new port has outer sum
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>A</mi><mo>′</mo></msup><mo>=</mo><mi>b</mi><mo>+</mo><msub><mi>b</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">A&#39;=b+b_1</annotation></semantics></math>
+and middle pair
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(x,y)</annotation></semantics></math>.
+From (2),</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>A</mi><mo>′</mo></msup><mo>≥</mo><mi>A</mi><mo>=</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo>≥</mo><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+A&#39;\ge A=x+y\ge\max(x,y).
+</annotation></semantics></math></p>
+<p>Consequently</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msup><mi>A</mi><mo>′</mo></msup><mo>+</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><msup><mi>A</mi><mo>′</mo></msup><mo>+</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>,</mo><msup><mi>y</mi><mn>2</mn></msup><mo stretchy="false" form="postfix">)</mo><mi>.</mi><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>16</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+(A&#39;+x)(A&#39;+y)\ge\max(x^2,y^2).                            \qquad(16)
+</annotation></semantics></math></p>
+<p>The source-normalized entropy inequality
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>t</mi><mo>,</mo><mi>d</mi><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>+</mo><mi>t</mi><mo>+</mo><mi>d</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">F(a,t,d)\ge\tfrac12\log(a+t+d)</annotation></semantics></math>,
+strict when two weights are positive, shows that (16) implies the
+required strict balance for every positive middle. A zero middle needs
+no logarithm; its overloaded one-sided finite sector is absent. Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>A</mi><mo>′</mo></msup><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">A&#39;&gt;0</annotation></semantics></math>,
+this covers all protected-zero cases too.</p>
+<p>Later fan steps subdivide only the retained port’s triangle. No
+previously added port changes again. Performing the construction at
+different original ports likewise preserves their already fixed
+curvatures and all previously settled ports. There are finitely many
+original ports. Hence the procedure terminates with one actual marked
+complete packing in which every port balances strictly.</p>
+<p>The construction therefore proves a geometric realization theorem:
+every fixed certified simple-white core has a finite two-sided terminal
+decoration, with even fan sizes, preserving its knot endpoint pairing
+and original marked edge, whose entire complete packing satisfies the
+true radius-balance inequalities. The sizes depend on the original
+packing; no uniform count or bridge-width assertion is made.</p>
+<h2 id="what-happens-to-the-shared-magnetic-flow-graph">6. What happens
+to the shared magnetic-flow graph</h2>
+<p>This refinement does not turn a cyclic source into a scalar tree
+source. In the cubic dual, the old shaded vertex
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(x,b,y)</annotation></semantics></math>,
+whose matching edge is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">xy</annotation></semantics></math>,
+is replaced along its nonmatching physical cycle by</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo><mspace width="0.278em"></mspace><mo>−</mo><mi>−</mi><mspace width="0.278em"></mspace><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo><mspace width="0.278em"></mspace><mo>−</mo><mi>−</mi><mspace width="0.278em"></mspace><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>17</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+(x,b,w)\;--\;(x,y,w)\;--\;(y,b,w).
+\qquad(17)
+</annotation></semantics></math></p>
+<p>The old matching edge remains incident to the middle vertex. The new
+matching edge
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mi>w</mi></mrow><annotation encoding="application/x-tex">bw</annotation></semantics></math>
+joins the first and last vertices. Thus, after collapsing each physical
+W/<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>π</mi><annotation encoding="application/x-tex">\pi</annotation></semantics></math>
+cycle as in
+<code>actual_matching_graph_shared_cycle_fourier_compiler.md</code>, the
+new edge is a loop at the old cycle vertex. The existing cycle
+incidences are unchanged, and the integral flow lattice acquires one
+independent loop coordinate. Any cups/caps used to draw the local Morse
+collar remain bivalent and do not change this topological statement.</p>
+<p>In particular this is not a bridge attachment. Pair-local decorations
+do not erase the original cyclic magnetic channels. The potential
+advantage of this particular construction is its shared-radius bound,
+not a claim of scalar-kernel factorization.</p>
+<h2 id="exact-source-and-the-remaining-analytic-interface">7. Exact
+source and the remaining analytic interface</h2>
+<p>The final matched sphere has an actual general Morse realization and
+the exact original coefficient source of
+<code>research_matched_sphere_morse_source.md</code>. In that theorem
+the whole source is the product of the original four-leg polynomials,
+extracted at the original ordinary targets, with the two protected
+variables set to zero; all actual turns, cups/caps, half-index phases
+and reduced mark are retained. The finite full-Hermite filling
+functional is also the original one. There is therefore a genuine source
+for the decorated diagram, not merely an entropy model.</p>
+<p>The currently stated complete-radius filling theorem and its local
+packet inputs begin with a marked flat plat. The terminal insertion can
+introduce intermediate cups/caps. This note does not silently replace
+that hypothesis by a general Morse presentation, nor claim that a
+platification preserves every designated disk and source frame. To
+conclude the full long-filling volume theorem for these decorated cores,
+one must verify that the exact Morse coefficient and primitive geometric
+dictionary supply every hypothesis of the existing packet, global CROSS
+and whole-period theorems. The local one-sided estimates and the strict
+balance in (15)–(16) already use only this shared coefficient and its
+actual complete radii. A proof of the remaining interface would yield
+the full invariant conclusion for independently long fixed fillings of
+the decorated diagram, with its own original knot complement as the
+target.</p>
+<p>No volume statement for the undecorated core, no short-filling
+theorem, and no claim that increasing valence alone forces balance is
+contained in the construction. In fact a one-sided fan sends one middle
+curvature to infinity with the other fixed and eventually violates
+balance.</p>

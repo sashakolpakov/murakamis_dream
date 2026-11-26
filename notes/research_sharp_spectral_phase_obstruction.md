@@ -193,4 +193,5 @@ A signed-clock assignment could restore the two conics locally; whether
 those signs sew at every original face, cup, cap and unrestricted mark
 is a separate incidence and phase problem.
 
-The historical diagnostic for this calculation is not included in the public reproduction suite.
+Focused exact audit:
+/private/tmp/md-audit-sharp-spectral-absolute-phase-obstruction.py.

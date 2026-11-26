@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Appendix N functional audit</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Appendix N functional audit</h1>
+</header>
+<h1
+id="appendix-n-exact-functional-audit-and-a-formalization-skeleton">Appendix
+N: exact functional audit and a formalization skeleton</h1>
+<p>This is a read-only proof audit of the public manuscript at commit
+c5d9c851c672b941bdbbec51da50d8f1a5c2cf12. It covers
+manuscript/sections/N-uniform-filling-bound.tex and the literal finite
+source dependencies listed below. No public source was edited. No
+Appendix N reproduction program was run for this read. The separate new
+coupled-moment checker was executed, but is not evidence for any input
+of Appendix N.</p>
+<h2 id="findings-and-exact-scope">1. Findings and exact scope</h2>
+<p>I found no mathematical defect in the scalar functional inequalities,
+their two parity cases, their tensor extensions, or the stated
+conditional transfer to a volume limit.</p>
+<p>The proof is not a proof of a geometric estimate for the
+complementary source. That missing premise remains explicit at lines
+338–341, label uf:eq-26. The nonzero central asymptotic and strict
+comparison of its rate remain separate premises at lines 352–357,
+uf:eq-28. Geometric identification is separately required at lines
+362–365. There is no promotion of node vanishing or a finite
+reproduction into one of those premises.</p>
+<p>For the actual invariant, the appendix imports the all-level local
+matrix/face adapter and the original marked coefficient identity. The
+norm proof alone does not establish them. The division is explicit in
+lines 71–120, especially uf:eq-5 through uf:eq-7. I read the relevant
+source derivations rather than using their finite-check reports.</p>
+<p>One minor source-text precision lies outside this manuscript file:
+notes/actual_uniform_filling_supremum_bound.md, lines 33–39, states the
+joint-grid bound without repeating that the new polynomial has degree at
+most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">N-1</annotation></semantics></math>
+in every coordinate. The preceding source context may suggest it, but
+the standalone formulation needs this hypothesis. The manuscript already
+states it explicitly at lines 50–54. No manuscript correction is needed
+for that issue.</p>
+<h2 id="repeated-roots-and-the-exact-operator-functional">2. Repeated
+roots and the exact operator functional</h2>
+<p>The relevant manuscript locations are lines 125–159, uf:eq-8 through
+uf:eq-12. Let
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>χ</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>2</mn><msub><mi>T</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mn>2</mn><mo>,</mo><mspace width="2.0em"></mspace><mi>d</mi><mo>=</mo><mi>N</mi><mo>−</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \chi(z)=2T_N(z/2)+2,\qquad d=N-1.
+</annotation></semantics></math> There are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⌊</mo><mi>N</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo></mrow><annotation encoding="application/x-tex">\lfloor N/2\rfloor</annotation></semantics></math>
+distinct double roots
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mi>a</mi></msub><mo>=</mo><mn>2</mn><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>a</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>π</mi><mi>/</mi><mi>N</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">c_a=2\cos((2a+1)\pi/N)</annotation></semantics></math>,
+indexed by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>a</mi><mo>&lt;</mo><mo stretchy="false" form="prefix">⌊</mo><mi>N</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo></mrow><annotation encoding="application/x-tex">0\le a&lt;\lfloor N/2\rfloor</annotation></semantics></math>.
+At odd level there is one additional simple root
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">-2</annotation></semantics></math>.
+This is exactly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+roots counted with multiplicity. The full grid of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+odd angles counts each double root twice and the odd simple root
+once.</p>
+<p>Writing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>χ</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo>−</mo><mi>c</mi><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">h(z)=\chi(z)/(z-c)^2</annotation></semantics></math>,
+the Chebyshev equation and its derivative give
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><msup><mi>N</mi><mn>2</mn></msup><mrow><mn>4</mn><mo>−</mo><msup><mi>c</mi><mn>2</mn></msup></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><mfrac><mrow><msup><mi>h</mi><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mi>h</mi><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mo>=</mo><mfrac><mi>c</mi><mrow><mn>4</mn><mo>−</mo><msup><mi>c</mi><mn>2</mn></msup></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ h(c)=\frac{N^2}{4-c^2},\qquad
+ \frac{h&#39;(c)}{h(c)}=\frac{c}{4-c^2}.
+</annotation></semantics></math> The derivative computation uses
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>χ</mi><mo>″</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>2</mn><mi>h</mi><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\chi&#39;&#39;(c)=2h(c)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>χ</mi><mo>‴</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>6</mn><msup><mi>h</mi><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\chi&#39;&#39;&#39;(c)=6h&#39;(c)</annotation></semantics></math>;
+there is no missing factor of two or three. For odd
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>χ</mi><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>N</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\chi&#39;(-2)=N^2</annotation></semantics></math>.</p>
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>χ</mi><mo stretchy="false" form="prefix">(</mo><mi mathvariant="normal">Ω</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\chi(\Omega)=0</annotation></semantics></math>,
+the local principal resolvent terms are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>c</mi></msub><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo>−</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><msub><mi>Q</mi><mi>c</mi></msub><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo>−</mo><mi>c</mi><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">P_c/(z-c)+Q_c/(z-c)^2</annotation></semantics></math>.
+Thus
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>h</mi><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>Q</mi><mi>c</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msup><mi>V</mi><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>h</mi><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>P</mi><mi>c</mi></msub><mo>+</mo><msup><mi>h</mi><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>Q</mi><mi>c</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ V(c)=h(c)Q_c,\qquad
+ V&#39;(c)=h(c)P_c+h&#39;(c)Q_c .
+</annotation></semantics></math> Solving these equations and
+substituting into
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>P</mi><mi>c</mi></msub><mo>+</mo><msup><mi>f</mi><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>Q</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">f(c)P_c+f&#39;(c)Q_c</annotation></semantics></math>
+proves exactly uf:eq-10, including its nilpotent term. At the odd simple
+root the remaining term is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mi>V</mi><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mi>/</mi><msup><mi>N</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">f(-2)V(-2)/N^2</annotation></semantics></math>.</p>
+<p>An especially useful route for formalization avoids resolvent
+notation altogether. Work in the finite algebra
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">ℂ</mi><mo stretchy="false" form="prefix">[</mo><mi>w</mi><mo stretchy="false" form="postfix">]</mo><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mi>χ</mi><mo stretchy="false" form="prefix">(</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathbb C[w]/(\chi(w))</annotation></semantics></math>.
+Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>
+be the unique
+degree-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">&lt;N</annotation></semantics></math>
+polynomial with the prescribed values and first derivatives at the
+double roots, and the prescribed value at the odd simple root. Define
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>τ</mi><mo stretchy="false" form="prefix">(</mo><mi>P</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">[</mo><msup><mi>z</mi><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">]</mo><mspace width="0.167em"></mspace><msub><mrow><mi mathvariant="normal">rem</mi><mo>&#8289;</mo></mrow><mrow><mi>χ</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo></mrow></msub><mi>P</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>V</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo>,</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><mi>χ</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>χ</mi><mo stretchy="false" form="prefix">(</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mi>z</mi><mo>−</mo><mi>w</mi></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><msup><mi mathvariant="script">ℒ</mi><mi>f</mi></msup><mo stretchy="false" form="prefix">(</mo><mi>H</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>τ</mi><mo stretchy="false" form="prefix">(</mo><mi>F</mi><mi>H</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \tau(P)=[z^{N-1}]\,\operatorname{rem}_{\chi(z)}P,\qquad
+ V(z,w)=\frac{\chi(z)-\chi(w)}{z-w},\qquad
+ \mathcal L^f(H)=\tau(FH).
+ \tag{A}
+</annotation></semantics></math> The two-variable quotient defining
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math>
+is a polynomial. Since
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mi>V</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo>,</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>χ</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mfrac><mrow><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mi>z</mi><mo>−</mo><mi>w</mi></mrow></mfrac><mspace width="1.0em"></mspace><mrow><mtext mathvariant="normal">modulo </mtext><mspace width="0.333em"></mspace></mrow><mi>χ</mi><mo stretchy="false" form="prefix">(</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ (F(z)-F(w))V(z,w)
+       =\chi(z)\frac{F(z)-F(w)}{z-w}
+       \quad\text{modulo }\chi(w),
+ \tag{B}
+</annotation></semantics></math> and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math>
+is monic of degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">N-1</annotation></semantics></math>
+in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>,
+reduction modulo
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>χ</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\chi(z)</annotation></semantics></math>
+gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="script">ℒ</mi><mi>f</mi></msup><mo stretchy="false" form="prefix">(</mo><mi>V</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                    \mathcal L^f(V)=F(w).
+ \tag{C}
+</annotation></semantics></math> The partial-fraction coefficient of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>z</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">z^{-1}</annotation></semantics></math>
+in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mi>H</mi><mi>/</mi><mi>χ</mi></mrow><annotation encoding="application/x-tex">FH/\chi</annotation></semantics></math>,
+or equivalently polynomial Chinese remaindering, gives uf:eq-10 from
+(A). This is a finite algebra identity and is valid even when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="normal">Ω</mi><annotation encoding="application/x-tex">\Omega</annotation></semantics></math>
+is not semisimple. Evaluation at the actual
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="normal">Ω</mi><annotation encoding="application/x-tex">\Omega</annotation></semantics></math>
+then gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi mathvariant="normal">Ω</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(\Omega)</annotation></semantics></math>.</p>
+<p>The angular check is also exact. Differentiating
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mi>ϕ</mi><mspace width="0.167em"></mspace><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mi>ϕ</mi><mo stretchy="false" form="postfix">)</mo><mi>H</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mi>ϕ</mi><mo stretchy="false" form="postfix">)</mo><mi>/</mi><msup><mi>N</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">2\sin\phi\,f(2\cos\phi)H(2\cos\phi)/N^2</annotation></semantics></math>,
+with the prefactor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">-1/2</annotation></semantics></math>,
+gives half the double-root expression at each of its two angles. At the
+single odd angle
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi><mo>=</mo><mi>π</mi></mrow><annotation encoding="application/x-tex">\phi=\pi</annotation></semantics></math>,
+the sine term vanishes and the differentiated cosine contributes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mi>H</mi><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mi>/</mi><msup><mi>N</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">f(-2)H(-2)/N^2</annotation></semantics></math>.
+This verifies the signs and multiplicities in uf:eq-12 without
+discarding a derivative.</p>
+<h2 id="actual-signed-crossing-powers-and-the-scalar-norm">3. Actual
+signed crossing powers and the scalar norm</h2>
+<p>Manuscript lines 161–181, uf:eq-13 through uf:eq-15, use the actual
+fixed-root Gaussian, not a Gaussian reconstructed from values alone. The
+required source input is notes/actual_direct_long_power_source.md, lines
+127–152. Its paired-node data are the original crossing value and
+logarithmic derivative, lines 70–78:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>c</mi><mi>a</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>a</mi></msup><msup><mi>q</mi><mrow><mi>a</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow></msup><mo>,</mo><mspace width="2.0em"></mspace><mfrac><mrow><msubsup><mi>r</mi><mi>N</mi><mo>′</mo></msubsup><mo stretchy="false" form="prefix">(</mo><msub><mi>c</mi><mi>a</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><mrow><msub><mi>r</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>c</mi><mi>a</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mo>=</mo><mi>−</mi><mfrac><mrow><mi>N</mi><mo>−</mo><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>a</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mn>2</mn><mo stretchy="false" form="prefix">(</mo><msup><mi>q</mi><mrow><mn>2</mn><mi>a</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>−</mo><msup><mi>q</mi><mrow><mi>−</mi><mn>2</mn><mi>a</mi><mo>−</mo><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ r_N(c_a)=(-1)^a q^{a(a+1)},\qquad
+ \frac{r_N&#39;(c_a)}{r_N(c_a)}
+  =-\frac{N-(2a+1)}{2(q^{2a+1}-q^{-2a-1})}.
+ \tag{D}
+</annotation></semantics></math> The displayed Gaussian matches both
+entries in (D), after retaining the scalar
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>q</mi><mrow><mi>n</mi><msup><mi>d</mi><mn>2</mn></msup><mi>/</mi><mn>2</mn></mrow></msup><annotation encoding="application/x-tex">q^{nd^2/2}</annotation></semantics></math>.
+Raising unit values to negative integral powers multiplies the
+logarithmic derivative by the same signed integer
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>,
+so the argument covers all
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>∈</mo><mi mathvariant="double-struck">ℤ</mi></mrow><annotation encoding="application/x-tex">n\in\mathbb Z</annotation></semantics></math>.
+For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">n=0</annotation></semantics></math>,
+it gives the identity functional.</p>
+<p>At the odd simple root, symmetry about
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi><mo>=</mo><mi>π</mi></mrow><annotation encoding="application/x-tex">\phi=\pi</annotation></semantics></math>
+makes the Gaussian analytic in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>+</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">z+2</annotation></semantics></math>;
+only its value is used. The branch endpoint
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">z=2</annotation></semantics></math>
+is not a spectral node. The finite norm argument requires only its
+bounded angular values and derivative, not holomorphic extension across
+that endpoint.</p>
+<p>The finite Riesz formula at manuscript lines 187–209, uf:eq-16
+through uf:eq-19, acts on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>ϕ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>H</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mi>ϕ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">P(\phi)=H(2\cos\phi)</annotation></semantics></math>,
+which has trigonometric degree at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>.
+It is not applied to the nonpolynomial Gaussian times
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>.
+Checking the Fourier modes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>d</mi><mo>+</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">-d+1,\ldots,d</annotation></semantics></math>,
+and then the aliased mode
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">-d</annotation></semantics></math>,
+proves the identity at every degree. The sum of the absolute weights is
+exactly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>,
+so complex coefficients cause no problem. This supplies a direct finite
+proof of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><msup><mi>P</mi><mo>′</mo></msup><msub><mo stretchy="false" form="postfix">∥</mo><mi>∞</mi></msub><mo>≤</mo><mi>d</mi><mo stretchy="false" form="postfix">∥</mo><mi>P</mi><msub><mo stretchy="false" form="postfix">∥</mo><mi>∞</mi></msub></mrow><annotation encoding="application/x-tex">\|P&#39;\|_\infty\le d\|P\|_\infty</annotation></semantics></math>.</p>
+<p>In uf:eq-15 the evaluation coefficient is bounded by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>+</mo><mo stretchy="false" form="prefix">|</mo><mi>n</mi><mo stretchy="false" form="prefix">|</mo><mi>N</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1+|n|N/2</annotation></semantics></math>,
+the coefficient of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>P</mi><mo>′</mo></msup><annotation encoding="application/x-tex">P&#39;</annotation></semantics></math>
+by one, and there are exactly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+terms with common factor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>N</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><annotation encoding="application/x-tex">N^{-2}</annotation></semantics></math>.
+This gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mi>N</mi></mfrac><mo>+</mo><mfrac><mrow><mo stretchy="false" form="prefix">|</mo><mi>n</mi><mo stretchy="false" form="prefix">|</mo></mrow><mn>2</mn></mfrac><mo>+</mo><mfrac><mi>d</mi><mi>N</mi></mfrac><mo>=</mo><mn>1</mn><mo>+</mo><mfrac><mrow><mo stretchy="false" form="prefix">|</mo><mi>n</mi><mo stretchy="false" form="prefix">|</mo></mrow><mn>2</mn></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \frac1N+\frac{|n|}{2}+\frac dN=1+\frac{|n|}{2}.
+ \tag{E}
+</annotation></semantics></math> If all node values of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+vanish, the entire evaluation term vanishes, including the derivative of
+the crossing phase; the remaining
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>P</mi><mo>′</mo></msup><annotation encoding="application/x-tex">P&#39;</annotation></semantics></math>
+term gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mi>/</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">d/N</annotation></semantics></math>.
+It does not vanish in general. These are uf:eq-1 and uf:eq-2, proved at
+lines 220–231.</p>
+<h2 id="one-sided-support-and-the-unsplit-tensor-cancellation">4.
+One-sided support and the unsplit tensor cancellation</h2>
+<p>For actual source use, manuscript lines 233–255 and 277–287 import
+the one-sided divisibility of the original central-cut decomposition.
+The relevant cutoff is the input row
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>j</mi><mo>≤</mo><mo stretchy="false" form="prefix">⌊</mo><mi>N</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo><mo>−</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+               0\le j\le \lfloor N/2\rfloor-1 .
+ \tag{F}
+</annotation></semantics></math> The original face operator lowers
+polynomial degree. Its restriction to this block is triangular with the
+distinct diagonal entries
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mn>0</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>c</mi><mrow><mo stretchy="false" form="prefix">⌊</mo><mi>N</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">c_0,\ldots,c_{\lfloor N/2\rfloor-1}</annotation></semantics></math>,
+and is therefore annihilated by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mo>−</mo></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mo>∏</mo><mi>a</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo>−</mo><msub><mi>c</mi><mi>a</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">D_-(z)=\prod_a(z-c_a)</annotation></semantics></math>.
+Multiplying its block resolvent by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>χ</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\chi(z)</annotation></semantics></math>
+leaves the polynomial factor
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>χ</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mi>/</mi><msub><mi>D</mi><mo>−</mo></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>D</mi><mo>−</mo></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mi>N</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> even</mtext></mrow><mo>,</mo></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo>+</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo><msub><mi>D</mi><mo>−</mo></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mi>N</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> odd</mtext></mrow><mi>.</mi></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">
+ \chi(z)/D_-(z)=
+ \begin{cases}
+  D_-(z),&amp;N\text{ even},\\
+  (z+2)D_-(z),&amp;N\text{ odd}.
+ \end{cases}
+ \tag{G}
+</annotation></semantics></math> The reflected upper block has the same
+spectrum. At odd level the central row is excluded from both one-sided
+pieces and retained in the central piece. Thus both one-sided
+polynomials vanish at every full spectral node, including the odd simple
+node. This is value vanishing only; it does not discard their first
+normal data.</p>
+<p>For the tensor estimate, let the polynomial have multidegree at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>.
+In each coordinate write uf:eq-15 as an evaluation operator plus a
+numerator-derivative operator. Iterated Riesz interpolation bounds every
+mixed angular derivative by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>d</mi><mrow><mo stretchy="false" form="prefix">|</mo><mi>A</mi><mo stretchy="false" form="prefix">|</mo></mrow></msup><annotation encoding="application/x-tex">d^{|A|}</annotation></semantics></math>
+times the original cube supremum. The coefficient cost for the
+differentiated coordinate is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mi>/</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">d/N</annotation></semantics></math>;
+for an evaluation coordinate it is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mi>e</mi></msub><mo>=</mo><mn>1</mn><mi>/</mi><mi>N</mi><mo>+</mo><mo stretchy="false" form="prefix">|</mo><msub><mi>n</mi><mi>e</mi></msub><mo stretchy="false" form="prefix">|</mo><mi>/</mi><mn>2</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                         b_e=1/N+|n_e|/2.
+ \tag{H}
+</annotation></semantics></math> If the polynomial vanishes only on the
+product node grid, then only the term with no differentiated variables
+is forced to vanish. It vanishes pointwise before any grid summation.
+Adding all other subsets gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>∑</mo><mrow><mi>⌀</mi><mo>≠</mo><mi>A</mi><mo>⊆</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>r</mi><mo stretchy="false" form="postfix">}</mo></mrow></munder><munder><mo>∏</mo><mrow><mi>e</mi><mo>∈</mo><mi>A</mi></mrow></munder><mfrac><mi>d</mi><mi>N</mi></mfrac><munder><mo>∏</mo><mrow><mi>e</mi><mo>∉</mo><mi>A</mi></mrow></munder><msub><mi>b</mi><mi>e</mi></msub><mo>=</mo><munder><mo>∏</mo><mi>e</mi></munder><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mo stretchy="false" form="prefix">|</mo><msub><mi>n</mi><mi>e</mi></msub><mo stretchy="false" form="prefix">|</mo><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>−</mo><munder><mo>∏</mo><mi>e</mi></munder><msub><mi>b</mi><mi>e</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \sum_{\varnothing\ne A\subseteq\{1,\ldots,r\}}
+       \prod_{e\in A}\frac dN\prod_{e\notin A}b_e
+   =\prod_e(1+|n_e|/2)-\prod_e b_e .
+ \tag{I}
+</annotation></semantics></math> This proves uf:eq-4 at lines 265–275.
+It does not assume vanishing on coordinate hyperplanes and does not
+infer vanishing of mixed derivatives at the grid.</p>
+<p>When a coordinate hyperplane does vanish identically for all other
+variables, the finite functionals in those other variables preserve that
+property, including their derivative terms. This separately justifies
+iteration of the stronger estimate in uf:eq-3.</p>
+<p>Finally, (G) gives local polynomial equality
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mi>V</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>H</mi><mi>C</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">H_V(c)=H_C(c)</annotation></semantics></math>,
+with all four face variables still formal. Products of these equalities,
+followed by the single original shared coefficient extraction, prove
+uf:eq-25 for the full-minus-central source. No absolute decomposition
+into local source terms occurs. Its spectral multidegree is at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>,
+since each spectral variable occurs at only its own coupon before
+extraction.</p>
+<h2 id="exact-source-normalization-the-additional-adapter">5. Exact
+source normalization: the additional adapter</h2>
+<p>The necessary all-level input for uf:eq-6 and uf:eq-7 is the local
+homogeneous adapter followed by the original marked Morse compiler. I
+checked these specific steps:</p>
+<ul>
+<li>notes/actual_homogeneous_casimir_face_source.md, lines 55–86: the
+inverse finite Fourier transform of the literal Casimir step words gives
+the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>N</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">N^{-1}</annotation></semantics></math>
+local polynomial factor. Wrong unwrapped physical totals have zero
+coefficient before a modular face-grid interpretation.</li>
+<li>The same note, lines 99–168: coherent lifted face potentials and
+original cup, cap and mark entries cancel the half-index factors.
+Whole-source conservation, rather than an early truncation of the mark,
+forces its two surviving heads to be complementary.</li>
+<li>notes/research_matched_sphere_morse_source.md, lines 177–248: the
+face turning identity is proved on the actual spherical Morse diagram;
+it is not transported from a presumed flat plat. The summand has factor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>N</mi><mrow><mi>−</mi><mi>R</mi><mo>−</mo><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">N^{-R-1}</annotation></semantics></math>;
+its
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">R+1</annotation></semantics></math>
+primitive face grids cancel this exactly.</li>
+<li>The homogeneous total face degree is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">dR</annotation></semantics></math>.
+The
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+ordinary targets have minimum nonnegative residue representative
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>;
+they already exhaust that degree. Thus there is only the prescribed
+alias, both protected exponents are zero, and the even-level coset
+character is one at that target.</li>
+<li>The Morse note, lines 250–307: insertion of the independent signed
+local matrix functionals is justified by multilinearity of the ordered
+contraction. Neighboring Casimirs need not commute. The reduced ribbon
+scalar and the specified zero-framed/enhanced or full one-cut
+conventions remain distinguished.</li>
+</ul>
+<p>Thus the absence of an extra
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>N</mi><mi>R</mi></msup><annotation encoding="application/x-tex">N^R</annotation></semantics></math>
+in uf:eq-7 is supported by the actual source proof. It is not a
+consequence of the scalar norm inequality. The abstract scalar theorem
+applies at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">N\ge2</annotation></semantics></math>;
+the physical compiler is explicitly invoked at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>≥</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">N\ge3</annotation></semantics></math>.</p>
+<h2 id="dependency-skeleton-for-formalization">6. Dependency skeleton
+for formalization</h2>
+<p>The following modules separate finite algebra, elementary analysis,
+and the diagram adapter. Each arrow below means a theorem dependency,
+not a finite numerical test.</p>
+<ol type="1">
+<li><strong>Chebyshev polynomial and roots.</strong> Define
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mi>N</mi></msub><annotation encoding="application/x-tex">T_N</annotation></semantics></math>,
+prove its recurrence, factorization of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>χ</mi><annotation encoding="application/x-tex">\chi</annotation></semantics></math>,
+root multiplicities, derivative identities, and odd-angle grid
+multiplicities.</li>
+<li><strong>Finite quotient and coefficient trace.</strong> Define
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">ℂ</mi><mo stretchy="false" form="prefix">[</mo><mi>z</mi><mo stretchy="false" form="postfix">]</mo><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mi>χ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathbb C[z]/(\chi)</annotation></semantics></math>,
+the top-coefficient functional
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>,
+Hermite interpolation by the Chinese remainder theorem, and prove
+(A)–(C). This proves the full resolvent functional without assuming a
+diagonalizable Casimir.</li>
+<li><strong>Actual crossing jets.</strong> From the literal signed
+braid/Casimir matrices prove their value and first-derivative data (D),
+including the scalar lift and the odd simple value. Match these jets
+with the displayed Gaussian. This module is independent of global
+topology.</li>
+<li><strong>Midpoint functional.</strong> Combine modules 1–3 and the
+elementary chain rule to obtain uf:eq-12 and uf:eq-15.</li>
+<li><strong>Finite trigonometric interpolation.</strong> Prove Riesz
+interpolation on a basis of Fourier monomials, sum its absolute weights
+by the sine product, and extend to finite-dimensional normed
+spaces.</li>
+<li><strong>One-variable functional bound.</strong> Combine modules 4–5
+with the two Gaussian modulus estimates; prove (E), the vanishing-value
+variant, and uf:eq-1/uf:eq-2.</li>
+<li><strong>Multivariable polynomial norm.</strong> Prove preservation
+of hyperplane vanishing, mixed derivative bounds, and the
+nonempty-subset identity (I). This proves uf:eq-3/uf:eq-4 for arbitrary
+polynomials of the stated multidegree.</li>
+<li><strong>Actual source adapter.</strong> Define the ordered physical
+tensors, homogeneous face kernel, mark and target; prove the local
+Fourier identity, true support, face winding, primitive grid, parity
+coset and total-degree alias exclusion. This proves uf:eq-6/uf:eq-7
+independently of source positivity.</li>
+<li><strong>Actual central-cut support.</strong> Prove the triangular
+block restriction (F), factor (G), reflected block, and odd central row
+assignment. Then local node equality and module 8 prove uf:eq-25.</li>
+<li><strong>Conditional rate transfer.</strong> For a fixed diagram and
+fixed signed powers, modules 7–9 turn uf:eq-26 into uf:eq-27. Given the
+separate nonzero asymptotic uf:eq-28 with its strict real-action
+inequality, the reverse triangle inequality proves uf:eq-29. Geometric
+identification is a further theorem, not an output of modules 1–9.</li>
+</ol>
+<p>Modules 1,2,3,5,8,9 contain finite sums or polynomial identities well
+suited to formal algebra. Modules 4–7 require only elementary
+differentiation and norm inequalities. Module 10 uses a genuine
+asymptotic premise. None is certified for all levels merely because the
+reproduction checks finitely many cases. This audit supplies a proof
+dependency plan, not a machine-checked formal proof.</p>
+</body>
+</html>

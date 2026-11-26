@@ -1,0 +1,496 @@
+<h1 id="the-signed-current-of-an-actual-adjacent-bipyramidal-pair">The
+signed current of an actual adjacent bipyramidal pair</h1>
+<p>The opposite-offset bipyramid has an exact two-box coefficient kernel
+with both exterior demands retained. It is not the aligned cap/CROSS
+contraction. The difference is visible in a finite Green identity: the
+aligned reflection cancels the interior current, whereas the actual
+opposite-offset shift leaves four bands. This note proves the kernel and
+the resulting finite clock recurrence. It makes no estimate of the full
+complementary source and no volume assertion.</p>
+<p>All matrices below are the actual polynomial face matrices. No
+independent absolute local envelope is substituted. The current identity
+holds at repeated spectral nodes, at coincident spectral parameters, and
+at both level parities.</p>
+<h2 id="the-literal-adjacent-boxes-and-their-exterior-demands">1. The
+literal adjacent boxes and their exterior demands</h2>
+<p>Use the oriented bipyramidal source with even
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>≥</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">m\ge6</annotation></semantics></math>,
+north spokes matched at odd indices, south spokes matched at even
+indices, and protected original mark
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><msub><mi>z</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">Nz_0</annotation></semantics></math>.
+At the marked north box
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">j=1</annotation></semantics></math>
+and the next south box
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">j=2</annotation></semantics></math>,
+put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mo>=</mo><msub><mi>z</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">Y=z_1</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi><mo>=</mo><msub><mi>z</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">Z=z_2</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><msub><mi>z</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">B=z_3</annotation></semantics></math>.
+Their actual ordered factors are
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mrow><mi>V</mi><mo>,</mo><mi mathvariant="normal">L</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo>,</mo><mi>Z</mi><mo>,</mo><mi>Y</mi><mo>;</mo><mi>σ</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>H</mi><mrow><mi>V</mi><mo>,</mo><mi mathvariant="normal">C</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo>,</mo><mi>B</mi><mo>,</mo><mi>Y</mi><mo>,</mo><mi>Z</mi><mo>;</mo><mi>τ</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ H_{V,\mathrm L}(0,0,Z,Y;\sigma),
+ \qquad H_{V,\mathrm C}(S,B,Y,Z;\tau).
+ \tag{1}
+</annotation></semantics></math> The north factor in (1) is its LEFT
+part; the south factor is its CROSS part. Their common spectral
+parameters remain independent. Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+is the single south-pole face variable, shared with the other south
+boxes.</p>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>
+be the degree supplied to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>
+by the box
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">j=0</annotation></semantics></math>,
+and let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math>
+be the degree supplied to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math>
+by the box
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">j=3</annotation></semantics></math>.
+These are actual exterior degrees, not independently chosen replacement
+targets. The pair therefore supplies the coefficient
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">ℬ</mi><mrow><mi>α</mi><mo>,</mo><mi>β</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo>,</mo><mi>B</mi><mo>;</mo><mi>σ</mi><mo>,</mo><mi>τ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">[</mo><msup><mi>Y</mi><mrow><mi>d</mi><mo>−</mo><mi>α</mi></mrow></msup><msup><mi>Z</mi><mrow><mi>d</mi><mo>−</mo><mi>β</mi></mrow></msup><mo stretchy="false" form="postfix">]</mo><msub><mi>H</mi><mrow><mi>V</mi><mo>,</mo><mi mathvariant="normal">L</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo>,</mo><mi>Z</mi><mo>,</mo><mi>Y</mi><mo>;</mo><mi>σ</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>H</mi><mrow><mi>V</mi><mo>,</mo><mi mathvariant="normal">C</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo>,</mo><mi>B</mi><mo>,</mo><mi>Y</mi><mo>,</mo><mi>Z</mi><mo>;</mo><mi>τ</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>d</mi><mo>=</mo><mi>N</mi><mo>−</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \mathcal B_{\alpha,\beta}(S,B;\sigma,\tau)
+  =[Y^{d-\alpha}Z^{d-\beta}]
+       H_{V,\mathrm L}(0,0,Z,Y;\sigma)
+       H_{V,\mathrm C}(S,B,Y,Z;\tau),
+ \qquad d=N-1.
+ \tag{2}
+</annotation></semantics></math> The remainder of the cyclic contraction
+retains its original
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>-
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>-demands.
+In particular (2) must not be evaluated at separate optimized values of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>.</p>
+<p>Put
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo>=</mo><msup><mi>q</mi><mn>2</mn></msup><mo>,</mo><mspace width="1.0em"></mspace><mi>q</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>π</mi><mi>i</mi><mi>/</mi><mi>N</mi></mrow></msup><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>c</mi><mi>r</mi></msub><mo>=</mo><mi>q</mi><msup><mi>Q</mi><mi>r</mi></msup><mo>+</mo><msup><mi>q</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msup><mi>Q</mi><mrow><mi>−</mi><mi>r</mi></mrow></msup><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>a</mi><mi>r</mi></msub><mo>=</mo><mn>2</mn><mo>−</mo><msup><mi>Q</mi><mi>r</mi></msup><mo>−</mo><msup><mi>Q</mi><mrow><mi>−</mi><mi>r</mi></mrow></msup><mo>=</mo><mn>4</mn><msup><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mn>2</mn></msup><mfrac><mrow><mi>π</mi><mi>r</mi></mrow><mi>N</mi></mfrac><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ Q=q^2,\quad q=e^{\pi i/N},\quad
+ c_r=qQ^r+q^{-1}Q^{-r},\quad
+ a_r=2-Q^r-Q^{-r}=4\sin^2\frac{\pi r}{N},
+ \tag{3}
+</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mi>r</mi></msub><mo>=</mo><mi>q</mi><mo>+</mo><msup><mi>q</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>−</mo><msup><mi>q</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msup><mi>Q</mi><mi>r</mi></msup><mo>−</mo><mi>q</mi><msup><mi>Q</mi><mrow><mi>−</mi><mi>r</mi></mrow></msup><mo>=</mo><mn>4</mn><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mfrac><mrow><mi>π</mi><mi>r</mi></mrow><mi>N</mi></mfrac><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mfrac><mrow><mi>π</mi><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><mi>N</mi></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ b_r=q+q^{-1}-q^{-1}Q^r-qQ^{-r}
+      =4\sin\frac{\pi r}{N}\sin\frac{\pi(r-1)}{N}.
+ \tag{4}
+</annotation></semantics></math> The original face Casimir at outer
+variables
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>,</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">S,1</annotation></semantics></math>,
+acting by columns on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>,</mo><mi>z</mi><mo>,</mo><mi>…</mi><mo>,</mo><msup><mi>z</mi><mi>d</mi></msup></mrow><annotation encoding="application/x-tex">1,z,\ldots,z^d</annotation></semantics></math>,
+is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><msup><mi>z</mi><mi>r</mi></msup><mo>=</mo><msub><mi>c</mi><mi>r</mi></msub><msup><mi>z</mi><mi>r</mi></msup><mo>−</mo><msub><mi>a</mi><mi>r</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><msup><mi>z</mi><mrow><mi>r</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>−</mo><msub><mi>b</mi><mi>r</mi></msub><mi>S</mi><msup><mi>z</mi><mrow><mi>r</mi><mo>−</mo><mn>2</mn></mrow></msup><mo>,</mo><mspace width="2.0em"></mspace><mi>C</mi><mo>=</mo><mi>C</mi><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ C(S)z^r=c_rz^r-a_r(1+S)z^{r-1}-b_rS z^{r-2},
+ \qquad C=C(0).
+ \tag{5}
+</annotation></semantics></math> The endpoint coefficients
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><msub><mi>a</mi><mi>N</mi></msub><mo>=</mo><msub><mi>b</mi><mn>0</mn></msub><mo>=</mo><msub><mi>b</mi><mn>1</mn></msub><mo>=</mo><msub><mi>b</mi><mi>N</mi></msub><mo>=</mo><msub><mi>b</mi><mrow><mi>N</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a_0=a_N=b_0=b_1=b_N=b_{N+1}=0</annotation></semantics></math>
+implement every missing arrow that is used below.</p>
+<p>Let
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>χ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>2</mn><msub><mi>T</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mn>2</mn><mo>,</mo><mspace width="1.0em"></mspace><mi>A</mi><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>V</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo>;</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="1.0em"></mspace><mi>B</mi><mo stretchy="false" form="prefix">(</mo><mi>τ</mi><mo>,</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>V</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>τ</mi><mo>;</mo><mi>C</mi><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>V</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo>;</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>χ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mi>I</mi><mo>−</mo><mi>C</mi><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>−</mi><mn>1</mn></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \chi_N(t)=2T_N(t/2)+2,\quad
+ A(\sigma)=V_N(\sigma;C),\quad
+ B(\tau,S)=V_N(\tau;C(S)),
+ \qquad V_N(t;C)=\chi_N(t)(tI-C)^{-1}.
+ \tag{6}
+</annotation></semantics></math> The last expression denotes its
+polynomial continuation. These matrices satisfy both left and right
+cleared-resolvent equations, since their full characteristic polynomial
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>χ</mi><mi>N</mi></msub><annotation encoding="application/x-tex">\chi_N</annotation></semantics></math>.
+Set
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>l</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>A</mi><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><msub><mo stretchy="false" form="postfix">)</mo><mrow><mn>0</mn><mo>,</mo><mi>l</mi></mrow></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>B</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi><mo>,</mo><mi>p</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>τ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">[</mo><msup><mi>S</mi><mi>p</mi></msup><mo stretchy="false" form="postfix">]</mo><mi>B</mi><mo stretchy="false" form="prefix">(</mo><mi>τ</mi><mo>,</mo><mi>S</mi><msub><mo stretchy="false" form="postfix">)</mo><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ v_l(\sigma)=A(\sigma)_{0,l},\qquad
+ B_{i,j,p}(\tau)=[S^p]B(\tau,S)_{i,j}.
+ \tag{7}
+</annotation></semantics></math></p>
+<p>Homogeneity in (2) forces
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>+</mo><mi>p</mi><mo>=</mo><mi>α</mi><mo>+</mo><mi>β</mi></mrow><annotation encoding="application/x-tex">i+p=\alpha+\beta</annotation></semantics></math>
+for the coefficient of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>B</mi><mi>i</mi></msup><msup><mi>S</mi><mi>p</mi></msup></mrow><annotation encoding="application/x-tex">B^iS^p</annotation></semantics></math>.
+The exact coefficient is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><msup><mi>B</mi><mi>i</mi></msup><msup><mi>S</mi><mi>p</mi></msup><mo stretchy="false" form="postfix">]</mo><msub><mi mathvariant="script">ℬ</mi><mrow><mi>α</mi><mo>,</mo><mi>β</mi></mrow></msub><mo>=</mo><munderover><mo>∑</mo><mrow><mi>l</mi><mo>=</mo><mi>L</mi></mrow><mi>U</mi></munderover><msub><mi>v</mi><mi>l</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>B</mi><mrow><mi>i</mi><mo>,</mo><mi>l</mi><mo>+</mo><mi>α</mi><mo>,</mo><mi>p</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>τ</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ [B^iS^p]\mathcal B_{\alpha,\beta}
+       =\sum_{l=L}^{U}v_l(\sigma)B_{i,l+\alpha,p}(\tau),
+ \tag{8}
+</annotation></semantics></math> where
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mi>h</mi></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mo stretchy="false" form="prefix">⌊</mo><mi>d</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>M</mi><mo>=</mo><mo stretchy="false" form="prefix">⌊</mo><mi>N</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo><mo>−</mo><mn>1</mn><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mi>L</mi></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mi>β</mi><mo>,</mo><mo stretchy="false" form="prefix">⌊</mo><mi>N</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo><mo>−</mo><mi>α</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mi>U</mi></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><mi>M</mi><mo>,</mo><mi>d</mi><mo>−</mo><mi>α</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+ \begin{split}
+ h&amp;=\lfloor d/2\rfloor,\qquad M=\lfloor N/2\rfloor-1,\\
+ L&amp;=\max\{0,\beta,\lfloor N/2\rfloor-\alpha\},\\
+ U&amp;=\min\{M,d-\alpha\}.
+ \end{split}
+ \tag{9}
+</annotation></semantics></math> It is zero unless
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>i</mi><mo>≤</mo><mi>h</mi></mrow><annotation encoding="application/x-tex">0\le i\le h</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">p\ge0</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>+</mo><mi>p</mi><mo>=</mo><mi>α</mi><mo>+</mo><mi>β</mi></mrow><annotation encoding="application/x-tex">i+p=\alpha+\beta</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>≤</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">L\le U</annotation></semantics></math>.</p>
+<p>To prove this, the first factor contributes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>l</mi></msub><msup><mi>Y</mi><mi>l</mi></msup><msup><mi>Z</mi><mrow><mi>d</mi><mo>−</mo><mi>l</mi></mrow></msup></mrow><annotation encoding="application/x-tex">v_lY^lZ^{d-l}</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>l</mi><mo>≤</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">0\le l\le M</annotation></semantics></math>.
+In the second factor let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>
+be its input monomial degree and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>
+its output middle degree. Its monomial is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>S</mi><mi>p</mi></msup><msup><mi>B</mi><mi>i</mi></msup><msup><mi>Y</mi><mrow><mi>d</mi><mo>−</mo><mi>j</mi></mrow></msup><msup><mi>Z</mi><mrow><mi>j</mi><mo>−</mo><mi>i</mi><mo>−</mo><mi>p</mi></mrow></msup></mrow><annotation encoding="application/x-tex">S^pB^iY^{d-j}Z^{j-i-p}</annotation></semantics></math>.
+The two demands in (2) give
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>=</mo><mi>l</mi><mo>+</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">j=l+\alpha</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>+</mo><mi>p</mi><mo>=</mo><mi>α</mi><mo>+</mo><mi>β</mi></mrow><annotation encoding="application/x-tex">i+p=\alpha+\beta</annotation></semantics></math>.
+The remaining
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math>-degree
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mo>−</mo><mi>β</mi></mrow><annotation encoding="application/x-tex">l-\beta</annotation></semantics></math>,
+so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mo>≥</mo><mi>β</mi></mrow><annotation encoding="application/x-tex">l\ge\beta</annotation></semantics></math>.
+The original CROSS support is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>≤</mo><mi>h</mi></mrow><annotation encoding="application/x-tex">i\le h</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>≥</mo><mo stretchy="false" form="prefix">⌊</mo><mi>N</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo></mrow><annotation encoding="application/x-tex">j\ge\lfloor N/2\rfloor</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>≤</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">j\le d</annotation></semantics></math>,
+giving exactly (9). At odd
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>,
+the central row stays in CROSS. This argument neither divides out its
+zero nor changes the cutoff.</p>
+<h2 id="a-finite-kernel-with-an-explicit-depth-clock">2. A finite kernel
+with an explicit depth clock</h2>
+<p>Fix an interval
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi><mo>=</mo><mo stretchy="false" form="prefix">[</mo><mi>L</mi><mo>,</mo><mi>U</mi><mo stretchy="false" form="postfix">]</mo><mo>⊆</mo><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mi>d</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">I=[L,U]\subseteq[0,d]</annotation></semantics></math>,
+initially without choosing it from (9). Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mi>I</mi></msub><annotation encoding="application/x-tex">P_I</annotation></semantics></math>
+be its diagonal projector. Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>U</mi><mi>α</mi></msub><annotation encoding="application/x-tex">U_\alpha</annotation></semantics></math>
+be the finite shift matrix
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>U</mi><mi>α</mi></msub><msub><mo stretchy="false" form="postfix">)</mo><mrow><mi>l</mi><mo>,</mo><mi>j</mi></mrow></msub><mo>=</mo><msub><mn mathvariant="bold">𝟏</mn><mrow><mo stretchy="false" form="prefix">{</mo><mi>j</mi><mo>=</mo><mi>l</mi><mo>+</mo><mi>α</mi><mo>,</mo><mspace width="0.222em"></mspace><mn>0</mn><mo>≤</mo><mi>l</mi><mo>,</mo><mi>j</mi><mo>≤</mo><mi>d</mi><mo stretchy="false" form="postfix">}</mo></mrow></msub><mo>,</mo><mspace width="2.0em"></mspace><mi>Z</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mi mathvariant="normal">diag</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mi>z</mi><mo>,</mo><mi>…</mi><mo>,</mo><msup><mi>z</mi><mi>d</mi></msup><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ (U_\alpha)_{l,j}=\mathbf1_{\{j=l+\alpha,\ 0\le l,j\le d\}},
+ \qquad
+ Z(z)=\operatorname{diag}(1,z,\ldots,z^d).
+ \tag{10}
+</annotation></semantics></math> The finite clock
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>
+records the original north depth. Define
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mrow><mi>α</mi><mo>,</mo><mi>i</mi><mo>,</mo><mi>I</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo>,</mo><mi>S</mi><mo>;</mo><mi>σ</mi><mo>,</mo><mi>τ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msubsup><mi>e</mi><mn>0</mn><mi mathvariant="sans-serif">𝖳</mi></msubsup><mi>A</mi><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>P</mi><mi>I</mi></msub><mi>Z</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>U</mi><mi>α</mi></msub><mi>B</mi><mo stretchy="false" form="prefix">(</mo><mi>τ</mi><mo>,</mo><mi>S</mi><msup><mo stretchy="false" form="postfix">)</mo><mi mathvariant="sans-serif">𝖳</mi></msup><msub><mi>e</mi><mi>i</mi></msub><mo>=</mo><munder><mo>∑</mo><mrow><mi>l</mi><mo>∈</mo><mi>I</mi></mrow></munder><msup><mi>z</mi><mi>l</mi></msup><msub><mi>v</mi><mi>l</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo stretchy="false" form="postfix">)</mo><mi>B</mi><mo stretchy="false" form="prefix">(</mo><mi>τ</mi><mo>,</mo><mi>S</mi><msub><mo stretchy="false" form="postfix">)</mo><mrow><mi>i</mi><mo>,</mo><mi>l</mi><mo>+</mo><mi>α</mi></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ K_{\alpha,i,I}(z,S;\sigma,\tau)
+   =e_0^{\mathsf T}A(\sigma)P_IZ(z)U_\alpha
+                         B(\tau,S)^{\mathsf T}e_i
+   =\sum_{l\in I}z^lv_l(\sigma)B(\tau,S)_{i,l+\alpha}.
+ \tag{11}
+</annotation></semantics></math> Out-of-range matrix indices mean zero.
+Formula (8) is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><msup><mi>S</mi><mi>p</mi></msup><mo stretchy="false" form="postfix">]</mo><msub><mi>K</mi><mrow><mi>α</mi><mo>,</mo><mi>i</mi><mo>,</mo><mi>I</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mi>S</mi><mo>;</mo><mi>σ</mi><mo>,</mo><mi>τ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">[S^p]K_{\alpha,i,I}(1,S;\sigma,\tau)</annotation></semantics></math>
+with the literal interval (9). The extra clock does not change the
+source. It retains phase information needed to close the finite
+recurrence.</p>
+<p>For a polynomial
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">F(z)</annotation></semantics></math>,
+write
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">𝒯</mi><mo>+</mo></msub><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>Q</mi><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi mathvariant="script">𝒯</mi><mo>−</mo></msub><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>F</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>Q</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \mathcal T_+F(z)=F(Qz),\qquad
+ \mathcal T_-F(z)=F(Q^{-1}z).
+ \tag{12}
+</annotation></semantics></math> Define the finite clock operators
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msub><mi mathvariant="script">𝒟</mi><mi>α</mi></msub></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mi>q</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>Q</mi><mi>α</mi></msup><mo stretchy="false" form="postfix">)</mo><msub><mi mathvariant="script">𝒯</mi><mo>+</mo></msub><mo>+</mo><msup><mi>q</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>Q</mi><mrow><mi>−</mi><mi>α</mi></mrow></msup><mo stretchy="false" form="postfix">)</mo><msub><mi mathvariant="script">𝒯</mi><mo>−</mo></msub><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msub><mi mathvariant="script">𝒜</mi><mi>r</mi></msub></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mn>2</mn><mo>−</mo><msup><mi>Q</mi><mi>r</mi></msup><msub><mi mathvariant="script">𝒯</mi><mo>+</mo></msub><mo>−</mo><msup><mi>Q</mi><mrow><mi>−</mi><mi>r</mi></mrow></msup><msub><mi mathvariant="script">𝒯</mi><mo>−</mo></msub><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msub><mi mathvariant="script">ℬ</mi><mi>r</mi></msub></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mi>q</mi><mo>+</mo><msup><mi>q</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>−</mo><msup><mi>q</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msup><mi>Q</mi><mi>r</mi></msup><msub><mi mathvariant="script">𝒯</mi><mo>+</mo></msub><mo>−</mo><mi>q</mi><msup><mi>Q</mi><mrow><mi>−</mi><mi>r</mi></mrow></msup><msub><mi mathvariant="script">𝒯</mi><mo>−</mo></msub><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+ \begin{split}
+ \mathcal D_\alpha
+     &amp;=q(1-Q^\alpha)\mathcal T_+
+          +q^{-1}(1-Q^{-\alpha})\mathcal T_-,\\
+ \mathcal A_r
+     &amp;=2-Q^r\mathcal T_+-Q^{-r}\mathcal T_-,\\
+ \mathcal B_r
+     &amp;=q+q^{-1}-q^{-1}Q^r\mathcal T_+
+                              -qQ^{-r}\mathcal T_-.
+ \end{split}
+ \tag{13}
+</annotation></semantics></math> For example
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="script">𝒜</mi><mi>r</mi></msub><annotation encoding="application/x-tex">\mathcal A_r</annotation></semantics></math>
+multiplies the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>z</mi><mi>l</mi></msup><annotation encoding="application/x-tex">z^l</annotation></semantics></math>
+coefficient by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><mrow><mi>l</mi><mo>+</mo><mi>r</mi></mrow></msub><annotation encoding="application/x-tex">a_{l+r}</annotation></semantics></math>.
+These operators preserve every original root phase.</p>
+<h2 id="the-root-safe-green-identity">3. The root-safe Green
+identity</h2>
+<p>Suppress
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>,</mo><mi>I</mi><mo>,</mo><mi>σ</mi><mo>,</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">i,I,\sigma,\tau</annotation></semantics></math>
+in the notation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mi>α</mi></msub><annotation encoding="application/x-tex">K_\alpha</annotation></semantics></math>.
+Then
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo>−</mo><mi>τ</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>K</mi><mi>α</mi></msub><mo>=</mo><mrow></mrow></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><msub><mi>F</mi><mrow><mi>α</mi><mo>,</mo><mi>i</mi><mo>,</mo><mi>I</mi></mrow></msub><mo>+</mo><msub><mi mathvariant="script">𝒟</mi><mi>α</mi></msub><msub><mi>K</mi><mi>α</mi></msub><mo>−</mo><mi>z</mi><msub><mi mathvariant="script">𝒜</mi><mn>1</mn></msub><msub><mi>K</mi><mrow><mi>α</mi><mo>+</mo><mn>1</mn></mrow></msub></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mi>+</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><msub><mi mathvariant="script">𝒜</mi><mi>α</mi></msub><msub><mi>K</mi><mrow><mi>α</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><mi>S</mi><msub><mi mathvariant="script">ℬ</mi><mi>α</mi></msub><msub><mi>K</mi><mrow><mi>α</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><msub><mi>E</mi><mrow><mi>α</mi><mo>,</mo><mi>i</mi><mo>,</mo><mi>I</mi></mrow></msub><mo>,</mo></mtd></mtr></mtable><annotation encoding="application/x-tex">
+ \begin{split}
+ (\sigma-\tau)K_\alpha
+ ={}&amp;F_{\alpha,i,I}
+     +\mathcal D_\alpha K_\alpha
+     -z\mathcal A_1K_{\alpha+1}\\
+    &amp;+(1+S)\mathcal A_\alpha K_{\alpha-1}
+      +S\mathcal B_\alpha K_{\alpha-2}
+      +E_{\alpha,i,I},
+ \end{split}
+ \tag{14}
+</annotation></semantics></math> where all kernels on the right have the
+<strong>same fixed interval
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math></strong>.
+The two resolvent forcing terms are
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mi>α</mi><mo>,</mo><mi>i</mi><mo>,</mo><mi>I</mi></mrow></msub><mo>=</mo><msub><mi>χ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo stretchy="false" form="postfix">)</mo><msub><mn mathvariant="bold">𝟏</mn><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>∈</mo><mi>I</mi><mo stretchy="false" form="postfix">}</mo></mrow></msub><mi>B</mi><mo stretchy="false" form="prefix">(</mo><mi>τ</mi><mo>,</mo><mi>S</mi><msub><mo stretchy="false" form="postfix">)</mo><mrow><mi>i</mi><mo>,</mo><mi>α</mi></mrow></msub><mo>−</mo><msub><mi>χ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>τ</mi><mo stretchy="false" form="postfix">)</mo><msub><mn mathvariant="bold">𝟏</mn><mrow><mo stretchy="false" form="prefix">{</mo><mi>i</mi><mo>−</mo><mi>α</mi><mo>∈</mo><mi>I</mi><mo stretchy="false" form="postfix">}</mo></mrow></msub><msup><mi>z</mi><mrow><mi>i</mi><mo>−</mo><mi>α</mi></mrow></msup><msub><mi>v</mi><mrow><mi>i</mi><mo>−</mo><mi>α</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ F_{\alpha,i,I}
+  =\chi_N(\sigma)\mathbf1_{\{0\in I\}}B(\tau,S)_{i,\alpha}
+    -\chi_N(\tau)\mathbf1_{\{i-\alpha\in I\}}
+                    z^{i-\alpha}v_{i-\alpha}(\sigma),
+ \tag{15}
+</annotation></semantics></math> and both cutoff currents are retained:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msub><mi>E</mi><mrow><mi>α</mi><mo>,</mo><mi>i</mi><mo>,</mo><mi>I</mi></mrow></msub><mo>=</mo><mrow></mrow></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mi>−</mi><msub><mi>a</mi><mi>L</mi></msub><msup><mi>z</mi><mi>L</mi></msup><msub><mi>v</mi><mrow><mi>L</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo stretchy="false" form="postfix">)</mo><mi>B</mi><mo stretchy="false" form="prefix">(</mo><mi>τ</mi><mo>,</mo><mi>S</mi><msub><mo stretchy="false" form="postfix">)</mo><mrow><mi>i</mi><mo>,</mo><mi>L</mi><mo>+</mo><mi>α</mi></mrow></msub></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mi>+</mi><msub><mi>a</mi><mrow><mi>U</mi><mo>+</mo><mn>1</mn></mrow></msub><msup><mi>z</mi><mrow><mi>U</mi><mo>+</mo><mn>1</mn></mrow></msup><msub><mi>v</mi><mi>U</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo stretchy="false" form="postfix">)</mo><mi>B</mi><mo stretchy="false" form="prefix">(</mo><mi>τ</mi><mo>,</mo><mi>S</mi><msub><mo stretchy="false" form="postfix">)</mo><mrow><mi>i</mi><mo>,</mo><mi>U</mi><mo>+</mo><mn>1</mn><mo>+</mo><mi>α</mi></mrow></msub><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+ \begin{split}
+ E_{\alpha,i,I}
+  ={}&amp;-a_Lz^Lv_{L-1}(\sigma)B(\tau,S)_{i,L+\alpha}\\
+     &amp;+a_{U+1}z^{U+1}v_U(\sigma)
+                         B(\tau,S)_{i,U+1+\alpha}.
+ \end{split}
+ \tag{16}
+</annotation></semantics></math> The stated endpoint convention makes
+(16) valid at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">L=0</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">U=d</annotation></semantics></math>.
+Equation (14) is a polynomial identity. There is no division by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>−</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">\sigma-\tau</annotation></semantics></math>,
+so it remains valid on the coincident-spectrum diagonal and at every
+root normal.</p>
+<p>For the proof, use the two cleared-resolvent equations on the matrix
+product to obtain
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo>−</mo><mi>τ</mi><mo stretchy="false" form="postfix">)</mo><mi>A</mi><msub><mi>P</mi><mi>I</mi></msub><mi>Z</mi><msub><mi>U</mi><mi>α</mi></msub><msup><mi>B</mi><mi mathvariant="sans-serif">𝖳</mi></msup><mo>=</mo><mrow></mrow></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><msub><mi>χ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>P</mi><mi>I</mi></msub><mi>Z</mi><msub><mi>U</mi><mi>α</mi></msub><msup><mi>B</mi><mi mathvariant="sans-serif">𝖳</mi></msup><mo>−</mo><msub><mi>χ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>τ</mi><mo stretchy="false" form="postfix">)</mo><mi>A</mi><msub><mi>P</mi><mi>I</mi></msub><mi>Z</mi><msub><mi>U</mi><mi>α</mi></msub></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mi>+</mi><mi>A</mi><mo stretchy="false" form="prefix">{</mo><mi>C</mi><msub><mi>P</mi><mi>I</mi></msub><mi>Z</mi><msub><mi>U</mi><mi>α</mi></msub><mo>−</mo><msub><mi>P</mi><mi>I</mi></msub><mi>Z</mi><msub><mi>U</mi><mi>α</mi></msub><mi>C</mi><mo stretchy="false" form="prefix">(</mo><mi>S</mi><msup><mo stretchy="false" form="postfix">)</mo><mi mathvariant="sans-serif">𝖳</mi></msup><mo stretchy="false" form="postfix">}</mo><msup><mi>B</mi><mi mathvariant="sans-serif">𝖳</mi></msup><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+ \begin{split}
+ (\sigma-\tau)AP_IZU_\alpha B^{\mathsf T}
+ ={}&amp;\chi_N(\sigma)P_IZU_\alpha B^{\mathsf T}
+       -\chi_N(\tau)AP_IZU_\alpha\\
+    &amp;+A\{CP_IZU_\alpha-P_IZU_\alpha C(S)^{\mathsf T}\}
+                                                 B^{\mathsf T}.
+ \end{split}
+ \tag{17}
+</annotation></semantics></math> The projector commutator is exactly
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>C</mi><mo>,</mo><msub><mi>P</mi><mi>I</mi></msub><mo stretchy="false" form="postfix">]</mo><mo>=</mo><mi>−</mi><msub><mi>a</mi><mi>L</mi></msub><msub><mi>E</mi><mrow><mi>L</mi><mo>−</mo><mn>1</mn><mo>,</mo><mi>L</mi></mrow></msub><mo>+</mo><msub><mi>a</mi><mrow><mi>U</mi><mo>+</mo><mn>1</mn></mrow></msub><msub><mi>E</mi><mrow><mi>U</mi><mo>,</mo><mi>U</mi><mo>+</mo><mn>1</mn></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ [C,P_I]
+        =-a_LE_{L-1,L}+a_{U+1}E_{U,U+1}.
+ \tag{18}
+</annotation></semantics></math> This gives (16). In the remaining term
+factor the row weight
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>z</mi><mi>l</mi></msup><annotation encoding="application/x-tex">z^l</annotation></semantics></math>.
+The four possible column offsets from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>l</mi><annotation encoding="application/x-tex">l</annotation></semantics></math>
+are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>,</mo><mi>α</mi><mo>+</mo><mn>1</mn><mo>,</mo><mi>α</mi><mo>−</mo><mn>1</mn><mo>,</mo><mi>α</mi><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\alpha,\alpha+1,\alpha-1,\alpha-2</annotation></semantics></math>,
+with coefficients
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mi>l</mi></msub><mo>−</mo><msub><mi>c</mi><mrow><mi>l</mi><mo>+</mo><mi>α</mi></mrow></msub><mo>,</mo><mspace width="2.0em"></mspace><mo>−</mo><mi>z</mi><msub><mi>a</mi><mrow><mi>l</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>a</mi><mrow><mi>l</mi><mo>+</mo><mi>α</mi></mrow></msub><mo>,</mo><mspace width="2.0em"></mspace><mi>S</mi><msub><mi>b</mi><mrow><mi>l</mi><mo>+</mo><mi>α</mi></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ c_l-c_{l+\alpha},\qquad
+ -za_{l+1},\qquad
+ (1+S)a_{l+\alpha},\qquad
+ Sb_{l+\alpha}.
+ \tag{19}
+</annotation></semantics></math> The formulas (3), (4) turn these
+coefficient multipliers into (13), proving (14). The physical endpoint
+zeros in (5) also justify the calculation when a shifted index lies just
+outside the matrix.</p>
+<p>Taking the coefficient of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>S</mi><mi>p</mi></msup><annotation encoding="application/x-tex">S^p</annotation></semantics></math>
+gives a finite recurrence that retains the south degree:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo>−</mo><mi>τ</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>K</mi><mrow><mi>α</mi><mo>,</mo><mi>p</mi></mrow></msub><mo>=</mo><mrow></mrow></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><msub><mi>F</mi><mrow><mi>α</mi><mo>,</mo><mi>p</mi></mrow></msub><mo>+</mo><msub><mi mathvariant="script">𝒟</mi><mi>α</mi></msub><msub><mi>K</mi><mrow><mi>α</mi><mo>,</mo><mi>p</mi></mrow></msub><mo>−</mo><mi>z</mi><msub><mi mathvariant="script">𝒜</mi><mn>1</mn></msub><msub><mi>K</mi><mrow><mi>α</mi><mo>+</mo><mn>1</mn><mo>,</mo><mi>p</mi></mrow></msub></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mi>+</mi><msub><mi mathvariant="script">𝒜</mi><mi>α</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>K</mi><mrow><mi>α</mi><mo>−</mo><mn>1</mn><mo>,</mo><mi>p</mi></mrow></msub><mo>+</mo><msub><mi>K</mi><mrow><mi>α</mi><mo>−</mo><mn>1</mn><mo>,</mo><mi>p</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="postfix">)</mo><mo>+</mo><msub><mi mathvariant="script">ℬ</mi><mi>α</mi></msub><msub><mi>K</mi><mrow><mi>α</mi><mo>−</mo><mn>2</mn><mo>,</mo><mi>p</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>E</mi><mrow><mi>α</mi><mo>,</mo><mi>p</mi></mrow></msub><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+ \begin{split}
+ (\sigma-\tau)K_{\alpha,p}
+ ={}&amp;F_{\alpha,p}+\mathcal D_\alpha K_{\alpha,p}
+          -z\mathcal A_1K_{\alpha+1,p}\\
+    &amp;+\mathcal A_\alpha
+           (K_{\alpha-1,p}+K_{\alpha-1,p-1})
+          +\mathcal B_\alpha K_{\alpha-2,p-1}
+          +E_{\alpha,p}.
+ \end{split}
+ \tag{20}
+</annotation></semantics></math> Negative
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
+means zero. There are finitely many degrees
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>,
+and the clock shifts are periodic modulo
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>.
+No infinite Fourier series is used.</p>
+<p>One cannot change the cutoff on each neighboring
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mrow><mi>α</mi><mo>±</mo><mi>r</mi><mo>,</mo><mi>p</mi></mrow></msub><annotation encoding="application/x-tex">K_{\alpha\pm r,p}</annotation></semantics></math>
+to the interval that would arise from a different actual exterior load
+without adding the corresponding finite interval-difference terms.
+Formula (20) uses one fixed interval throughout. This is necessary to
+retain all projected endpoint currents.</p>
+<h2 id="why-the-aligned-telescope-does-not-sew-unchanged">4. Why the
+aligned telescope does not sew unchanged</h2>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>J</mi><annotation encoding="application/x-tex">J</annotation></semantics></math>
+reverse the complete range
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">0,\ldots,d</annotation></semantics></math>.
+Exact root reflection gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>J</mi><mo>=</mo><mi>J</mi><msup><mi>C</mi><mi mathvariant="sans-serif">𝖳</mi></msup></mrow><annotation encoding="application/x-tex">CJ=JC^{\mathsf T}</annotation></semantics></math>.
+Consequently the unprojected complementary-index kernel
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo stretchy="false" form="postfix">)</mo><mi>J</mi><mi>B</mi><mo stretchy="false" form="prefix">(</mo><mi>τ</mi><mo>,</mo><mn>0</mn><msup><mo stretchy="false" form="postfix">)</mo><mi mathvariant="sans-serif">𝖳</mi></msup></mrow><annotation encoding="application/x-tex">A(\sigma)JB(\tau,0)^{\mathsf T}</annotation></semantics></math>
+obeys a resolvent difference identity without an interior current. With
+a cutoff, only the finite commutator
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>C</mi><mo>,</mo><msub><mi>P</mi><mi>I</mi></msub><mo stretchy="false" form="postfix">]</mo><mi>J</mi></mrow><annotation encoding="application/x-tex">[C,P_I]J</annotation></semantics></math>
+remains. This is the mechanism behind the aligned two-row telescope: its
+indices are complementary.</p>
+<p>The actual opposite-offset pair (1) instead has the shift
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>U</mi><mi>α</mi></msub><annotation encoding="application/x-tex">U_\alpha</annotation></semantics></math>.
+Even before the cutoff, its interior current at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">z=1</annotation></semantics></math>
+is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><msub><mi>U</mi><mi>α</mi></msub><mo>−</mo><msub><mi>U</mi><mi>α</mi></msub><mi>C</mi><mo stretchy="false" form="prefix">(</mo><mi>S</mi><msup><mo stretchy="false" form="postfix">)</mo><mi mathvariant="sans-serif">𝖳</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                  CU_\alpha-U_\alpha C(S)^{\mathsf T}.
+ \tag{21}
+</annotation></semantics></math> It is exactly the four-band matrix
+(19), with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">z=1</annotation></semantics></math>.
+It does not vanish in general. For instance
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mo>,</mo><mi>S</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\alpha=0,S=0</annotation></semantics></math>
+gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>−</mo><msup><mi>C</mi><mi mathvariant="sans-serif">𝖳</mi></msup></mrow><annotation encoding="application/x-tex">C-C^{\mathsf T}</annotation></semantics></math>,
+whose first off-diagonal entries are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msub><mi>a</mi><mn>1</mn></msub><mo>,</mo><msub><mi>a</mi><mn>1</mn></msub><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">-a_1,a_1\ne0</annotation></semantics></math>.
+That example describes the full unprojected kernel; the actual
+LEFT/CROSS block has its additional interval (9). The example is not
+asserted to be a nonzero admissible LEFT/CROSS sector at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\alpha=0</annotation></semantics></math>.</p>
+<p>Nor does the depth clock disappear from (20): evaluating the original
+source at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">z=1</annotation></semantics></math>
+couples it to the actual values at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo>,</mo><msup><mi>Q</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">Q,Q^{-1}</annotation></semantics></math>.
+Dropping those phases changes the finite identity. Thus a direct reuse
+of the aligned endpoint telescope would omit a genuine interior term as
+well as, potentially, a cutoff current.</p>
+<h2
+id="the-interior-current-need-not-disappear-after-the-actual-shared-extraction">5.
+The interior current need not disappear after the actual shared
+extraction</h2>
+<p>This can be checked exactly without any asymptotic estimate. First
+use the full north and south coupons, rather than their projections in
+(1), and take
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi><mo>=</mo><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mi>d</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">I=[0,d]</annotation></semantics></math>
+in (17). Its two endpoint currents vanish. Contract this identity with
+the entire remaining original bipyramidal source, including every
+ordinary face demand. Write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="script">𝒮</mi><mi>N</mi></msub><annotation encoding="application/x-tex">\mathscr S_N</annotation></semantics></math>
+for this multilinear marked source, and let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi mathvariant="script">𝒮</mi><mi>N</mi><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>:</mo><mi>I</mi><mo stretchy="false" form="postfix">)</mo></mrow></msubsup><annotation encoding="application/x-tex">\mathscr S_N^{(1:I)}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi mathvariant="script">𝒮</mi><mi>N</mi><mrow><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo>:</mo><mi>I</mi><mo stretchy="false" form="postfix">)</mo></mrow></msubsup><annotation encoding="application/x-tex">\mathscr S_N^{(2:I)}</annotation></semantics></math>
+mean that the indicated coupon is replaced by the identity polynomial.
+The globally sewn interior current is exactly
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mi>N</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo>−</mo><mi>τ</mi><mo stretchy="false" form="postfix">)</mo><msub><mi mathvariant="script">𝒮</mi><mi>N</mi></msub><mo>−</mo><msub><mi>χ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo stretchy="false" form="postfix">)</mo><msubsup><mi mathvariant="script">𝒮</mi><mi>N</mi><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>:</mo><mi>I</mi><mo stretchy="false" form="postfix">)</mo></mrow></msubsup><mo>+</mo><msub><mi>χ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>τ</mi><mo stretchy="false" form="postfix">)</mo><msubsup><mi mathvariant="script">𝒮</mi><mi>N</mi><mrow><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo>:</mo><mi>I</mi><mo stretchy="false" form="postfix">)</mo></mrow></msubsup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ G_N=(\sigma-\tau)\mathscr S_N
+       -\chi_N(\sigma)\mathscr S_N^{(1:I)}
+       +\chi_N(\tau)\mathscr S_N^{(2:I)}.
+ \tag{22}
+</annotation></semantics></math> Equivalently it is the original shared
+source with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><msub><mi>V</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo>;</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">C V_N(\sigma;C)</annotation></semantics></math>
+inserted at the north box, minus the source with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><msub><mi>V</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>τ</mi><mo>;</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">C V_N(\tau;C)</annotation></semantics></math>
+inserted at the south box. These are insertions at their respective
+actual pairs; they are not silently identified.</p>
+<p>At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">N=3</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">m=6</annotation></semantics></math>,
+take the actual ordered spectral tuple
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo>,</mo><mn>0</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(2,0,2,2,2,2)</annotation></semantics></math>,
+so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\sigma=0</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>τ</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\tau=2</annotation></semantics></math>.
+The full original homogeneous source and the two identity replacements
+are
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">𝒮</mi><mn>3</mn></msub><mo>=</mo><mn>910845</mn><mo>,</mo><mspace width="2.0em"></mspace><msubsup><mi mathvariant="script">𝒮</mi><mn>3</mn><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>:</mo><mi>I</mi><mo stretchy="false" form="postfix">)</mo></mrow></msubsup><mo>=</mo><mn>115587</mn><mo>,</mo><mspace width="2.0em"></mspace><msubsup><mi mathvariant="script">𝒮</mi><mn>3</mn><mrow><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo>:</mo><mi>I</mi><mo stretchy="false" form="postfix">)</mo></mrow></msubsup><mo>=</mo><mn>243</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \mathscr S_3=910845,\qquad
+ \mathscr S_3^{(1:I)}=115587,\qquad
+ \mathscr S_3^{(2:I)}=243.
+ \tag{23}
+</annotation></semantics></math> These integers follow by multiplying
+the six literal homogeneous polynomials and extracting
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>S</mi><mn>2</mn></msup><msubsup><mi>z</mi><mn>1</mn><mn>2</mn></msubsup><mi>⋯</mi><msubsup><mi>z</mi><mn>5</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">S^2z_1^2\cdots z_5^2</annotation></semantics></math>,
+with north and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>z</mi><mn>0</mn></msub><annotation encoding="application/x-tex">z_0</annotation></semantics></math>
+protected. Here
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>3</mn><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>3</mn><mi>S</mi></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>3</mn><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>V</mi><mn>3</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo>;</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>C</mi><mn>2</mn></msup><mo>+</mo><mi>t</mi><mi>C</mi><mo>+</mo><mo stretchy="false" form="prefix">(</mo><msup><mi>t</mi><mn>2</mn></msup><mo>−</mo><mn>3</mn><mo stretchy="false" form="postfix">)</mo><mi>I</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ C(S)=
+ \begin{pmatrix}
+ 1&amp;-3(1+S)&amp;-3S\\
+ 0&amp;-2&amp;-3(1+S)\\
+ 0&amp;0&amp;1
+ \end{pmatrix},
+ \qquad V_3(t;C)=C^2+tC+(t^2-3)I.
+ \tag{24}
+</annotation></semantics></math> Thus the input data involve only exact
+integer arithmetic. Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>χ</mi><mn>3</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>t</mi><mn>3</mn></msup><mo>−</mo><mn>3</mn><mi>t</mi><mo>+</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\chi_3(t)=t^3-3t+2</annotation></semantics></math>,
+equation (22) gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mn>3</mn></msub><mo>=</mo><mi>−</mi><mn>2051892</mn><mo>≠</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                    G_3=-2051892\ne0.
+ \tag{25}
+</annotation></semantics></math> The same result is obtained by the two
+direct
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><msub><mi>V</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">C V_3</annotation></semantics></math>
+insertions, without using (22). The private checker records both
+constructions. This disproves automatic disappearance of this interior
+current after the full original shared extraction. It is not a
+counterexample to the desired strict bound for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>D</mi><mi>N</mi></msub><annotation encoding="application/x-tex">D_N</annotation></semantics></math>.</p>
+<p>The elementary root Ward identity is consistent with this result.
+Define
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><msup><mi>z</mi><mi>j</mi></msup><mo>=</mo><mn>2</mn><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>j</mi><mi>π</mi><mi>/</mi><mi>N</mi><mo stretchy="false" form="postfix">)</mo><msup><mi>z</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">Dz^j=2\sin(j\pi/N)z^{j-1}</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>E</mi><mi>q</mi></msub><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>q</mi><mi>z</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">E_qf(z)=f(qz)</annotation></semantics></math>.
+Then
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mi>g</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>D</mi><mi>f</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>E</mi><mi>q</mi></msub><mi>g</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mo stretchy="false" form="prefix">(</mo><msubsup><mi>E</mi><mi>q</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mi>f</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mi>D</mi><mi>g</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">[</mo><msup><mi>z</mi><mi>d</mi></msup><mo stretchy="false" form="postfix">]</mo><mi>D</mi><mi>P</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">
+ D(fg)=(Df)(E_qg)+(E_q^{-1}f)(Dg),
+ \qquad [z^d]DP=0
+ \tag{26}
+</annotation></semantics></math> for every polynomial
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>,
+because the only possible contribution comes from its
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>z</mi><mi>N</mi></msup><annotation encoding="application/x-tex">z^N</annotation></semantics></math>
+coefficient and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mi>π</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\sin\pi=0</annotation></semantics></math>.
+At an ordinary equatorial face there are three incident coupons, so the
+corresponding exact divergence reads
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><msup><mi>z</mi><mi>d</mi></msup><mo stretchy="false" form="postfix">]</mo><mrow><mo stretchy="true" form="prefix">{</mo><mo stretchy="false" form="prefix">(</mo><mi>D</mi><mi>f</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>E</mi><mi>q</mi></msub><mi>g</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>E</mi><mi>q</mi></msub><mi>h</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mo stretchy="false" form="prefix">(</mo><msubsup><mi>E</mi><mi>q</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mi>f</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mi>D</mi><mi>g</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>E</mi><mi>q</mi></msub><mi>h</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mo stretchy="false" form="prefix">(</mo><msubsup><mi>E</mi><mi>q</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mi>f</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><msubsup><mi>E</mi><mi>q</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mi>g</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mi>D</mi><mi>h</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="true" form="postfix">}</mo></mrow><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ [z^d]\left\{
+ (Df)(E_qg)(E_qh)
+ +(E_q^{-1}f)(Dg)(E_qh)
+ +(E_q^{-1}f)(E_q^{-1}g)(Dh)\right\}=0.
+ \tag{27}
+</annotation></semantics></math> The spectator factors are shifted.
+Moving a derivative from the chosen pair onto the remaining source
+therefore leaves those shifts and spectator insertions; it does not give
+a zero for (22). Any use of (27) in a cyclic estimate must retain
+them.</p>
+<h2 id="what-this-identity-leaves-to-prove">6. What this identity leaves
+to prove</h2>
+<p>Formula (20) supplies a finite recurrence for the actual two-box
+block with both exterior demands and every south-degree coefficient
+present. A global proof could seek cancellation of these interior
+currents after the remaining cyclic source is contracted, or a
+quantitative signed bound on that contraction. Neither conclusion
+follows merely from the nonincreasing grade count.</p>
+<p>The required global estimate is still for the original unsplit
+difference
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mi>N</mi></msub><mo>=</mo><msubsup><mi>S</mi><mi>N</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">l</mi></mrow></msubsup><mo>−</mo><msubsup><mi>S</mi><mi>N</mi><mrow><mi mathvariant="normal">C</mi><mi mathvariant="normal">R</mi><mi mathvariant="normal">O</mi><mi mathvariant="normal">S</mi><mi mathvariant="normal">S</mi></mrow></msubsup></mrow><annotation encoding="application/x-tex">D_N=S_N^{\mathrm{full}}-S_N^{\mathrm{CROSS}}</annotation></semantics></math>:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><msub><mi>D</mi><mi>N</mi></msub><msub><mo stretchy="false" form="postfix">∥</mo><mrow><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mn>2</mn><mo>,</mo><mn>2</mn><msup><mo stretchy="false" form="postfix">]</mo><mi>m</mi></msup></mrow></msub><mo>≤</mo><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><mi>N</mi><mo stretchy="false" form="prefix">(</mo><mrow><mi mathvariant="normal">Vol</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>π</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>η</mi><mo>+</mo><mi>o</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>η</mi><mo>&gt;</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+       \|D_N\|_{[-2,2]^m}
+          \le
+       \exp\{N(\operatorname{Vol}(Y)/(2\pi)-\eta+o(1))\},
+       \qquad \eta&gt;0.
+ \tag{28}
+</annotation></semantics></math> It must keep one common south-pole
+demand and all original equatorial demands. The exact finite filling
+norm adds no exponential cost to (22), but cannot supply it. The
+all-CROSS nonzero filling asymptotic and its applicability to the
+literal bipyramid remain a separate input. This note proves no new
+volume limit.</p>

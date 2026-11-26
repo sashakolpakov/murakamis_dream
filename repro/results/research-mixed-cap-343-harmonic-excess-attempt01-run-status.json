@@ -1,0 +1,83 @@
+{
+  "schema": "external-checker-launch-status-v1",
+  "recorded_date": "2026-11-09",
+  "recorded_by": "/root/boundary_assembly_review",
+  "scope": "External launch metadata only. This is not checker-produced output and contains no mathematical result or fabricated checker operation counts.",
+  "status": "launch_failed_before_checker_main",
+  "mathematical_result": "none",
+  "attempt": "attempt01",
+  "launch_count_reported_by_root": 1,
+  "launcher": "/root",
+  "reported_interpreter": ".venv/bin/python",
+  "reported_checker": "experiments/check_mixed_cap_343_harmonic_excess.py",
+  "launcher_evidence": {
+    "tool": "exec_command",
+    "exact_shell_command": ".venv/bin/python experiments/check_mixed_cap_343_harmonic_excess.py > repro/results/research-mixed-cap-343-harmonic-excess-attempt01.log 2>&1",
+    "exit_code": 1,
+    "session_returned": false,
+    "source": "Root's report of the actual exec_command request and returned result."
+  },
+  "inferred_program_argv": [
+    ".venv/bin/python",
+    "experiments/check_mixed_cap_343_harmonic_excess.py"
+  ],
+  "argv_evidence_scope": "These program arguments are inferred from the exact shell command; no separate process-argv inspection was performed. The redirections belong to the shell command.",
+  "failure": {
+    "stage": "top-level dependency import",
+    "file": "experiments/check_mixed_cap_343_harmonic_excess.py",
+    "line": 15,
+    "statement": "from flint import acb, acb_mat, arb, ctx",
+    "exception": "ModuleNotFoundError",
+    "message": "No module named 'flint'",
+    "log": "repro/results/research-mixed-cap-343-harmonic-excess-attempt01.log"
+  },
+  "execution_stage_observations": {
+    "checker_main_entered": false,
+    "checker_provenance_validation_started": false,
+    "precision_setting_reached": false,
+    "saved_M3_interval_decoded": false,
+    "cell_arithmetic_started": false,
+    "exclusive_checker_output_created": false
+  },
+  "expected_checker_output": "repro/results/research-mixed-cap-343-harmonic-excess-attempt01.json",
+  "expected_checker_output_exists_at_recording": false,
+  "evidence": {
+    "root_launch_report": "Root reported authorization of the bound manifest, the exact shell command above, exit_code=1 with no session, failure at the line-15 flint import, and no rerun.",
+    "log_read": true,
+    "failure_line_statically_checked": true,
+    "checker_output_absence_checked": true,
+    "source_of_stage_conclusions": "The recorded traceback and frozen source place the failure before ROOT/constants, function definitions, main, provenance validation, precision changes, interval decoding, arithmetic, and exclusive output creation."
+  },
+  "files_sha256": {
+    "experiments/check_mixed_cap_343_harmonic_excess.py": "5994945befc591bdb9c97b2bc3a57f128d3e9c56a6a0e8f468f89526518045c1",
+    "notes/research_mixed_cap_343_harmonic_excess_protocol.md": "02bb39264019b0fe1214276af0d97f6ee181c5fe8a2cf46190b971366c4bce59",
+    "repro/protocols/research-mixed-cap-343-harmonic-excess.json": "585ec1aa99a913d4a2a241e43f313c208f99e6da2ca6c13b427dae73ba74a9e8",
+    "repro/results/research-mixed-cap-343-harmonic-excess-attempt01.log": "55476b88fded31121caeb1f027beb491b914877314b5f9ff3f9b6a4fc3954870"
+  },
+  "environment_metadata": {
+    "inspection_method": "Read-only filesystem metadata and package METADATA text; no package import, interpreter probe, pip execution, compilation, or installation.",
+    "pyvenv_config": ".venv/pyvenv.cfg",
+    "pyvenv_config_sha256": "011e62ae29ed6a5614d877605bfa9e590af02f5eef1ad96566c6c0f7756f0650",
+    "declared_python_version": "3.14.6",
+    "include_system_site_packages": true,
+    "python_link_chain": [
+      ".venv/bin/python",
+      ".venv/bin/python3.14",
+      "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/bin/python3.14"
+    ],
+    "inspected_site_packages": ".venv/lib/python3.14/site-packages",
+    "flint_named_entries_found": [],
+    "flint_distribution_metadata_matches": [],
+    "limitation": "Only the named virtual-environment package directory was inspected. No claim is made about every other interpreter or package directory."
+  },
+  "preservation": {
+    "authorized_manifest_changed_by_recorder": false,
+    "checker_changed_by_recorder": false,
+    "protocol_changed_by_recorder": false,
+    "log_changed_by_recorder": false,
+    "checker_output_fabricated": false,
+    "rerun_performed": false,
+    "new_execution_authorized": false
+  },
+  "conclusion": "The authorized launch produced no mathematical enclosure or sign information. This status record does not authorize an environment change, retry, or second attempt."
+}

@@ -155,7 +155,7 @@ if __name__=='__main__':
     parser.add_argument('--levels',default='8,12,16,24,32')
     parser.add_argument('--dps',type=int,default=140)
     parser.add_argument('--deficit',type=int,default=0,help='additional deficit below nearest paired center')
-    parser.add_argument('--output',default='actual_marked_boundary_conditioning_diagnostic.json')
+    parser.add_argument('--output',default='/private/tmp/actual_marked_boundary_conditioning_diagnostic.json')
     args=parser.parse_args()
     rows=[]
     for N in map(int,args.levels.split(',')):

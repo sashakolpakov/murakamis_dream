@@ -1,0 +1,482 @@
+<h1
+id="positive-circle-determinants-and-the-central-cofactor-packet">Positive
+circle determinants and the central cofactor packet</h1>
+<p>This is a bounded reading of the finite positivity, pair-trace, and
+cofactor inputs used by Appendix O. The initial publication checkout was
+commit 2301771b66296cb7f2331938f1bfe0855719dd3d. The companion snapshot
+records exact source hashes and sections read. No publication source was
+changed for this private report.</p>
+<p>These inputs have written proofs with the required fixed-diagram,
+both-parity scope. I found no correction to their mathematical
+statements. Coefficient positivity at a complete root is not being used
+as positivity at arbitrary complex spectra. The latter neighborhood is
+obtained from separate cofactor recurrences, nonzero initial
+projections, and analytic interpolation.</p>
+<p>This conclusion is conditional on the specified white/cup formula and
+its Casimir/Hermite adapter being the original invariant source. Their
+full representation-theoretic derivation and the global Morse compiler
+are outside this reading. So are suppression of one-sided sectors, the
+later spectral filling contour, and absolute geometric volume
+calibration.</p>
+<h2 id="exact-source-and-parity">1. Exact source and parity</h2>
+<p>The formula read in
+actual_complete_circle_positive_face_polynomial.md, §§1–4, is at the
+fixed root
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi><mo>=</mo><mi>π</mi><mi>/</mi><mi>N</mi><mo>,</mo><mspace width="1.0em"></mspace><mi>q</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>i</mi><mi>θ</mi></mrow></msup><mo>,</mo><mspace width="1.0em"></mspace><mi>Q</mi><mo>=</mo><msup><mi>q</mi><mn>2</mn></msup><mo>,</mo><mspace width="1.0em"></mspace><mi>d</mi><mo>=</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo>,</mo><mspace width="1.0em"></mspace><mn>0</mn><mo>≤</mo><mi>a</mi><mo>≤</mo><mo stretchy="false" form="prefix">⌊</mo><mi>d</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo><mo>,</mo><mspace width="1.0em"></mspace><mi>s</mi><mo>=</mo><mi>d</mi><mo>−</mo><mn>2</mn><mi>a</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \theta=\pi/N,\quad q=e^{i\theta},\quad Q=q^2,\quad d=N-1,\quad
+ 0\le a\le\lfloor d/2\rfloor,\quad s=d-2a.
+</annotation></semantics></math> Put
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>j</mi></msub><mo>=</mo><munderover><mo>∏</mo><mrow><mi>r</mi><mo>=</mo><mn>1</mn></mrow><mi>j</mi></munderover><mn>2</mn><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>β</mi><mi>a</mi></msub><mo>=</mo><msub><mi>S</mi><mrow><mn>2</mn><mi>a</mi></mrow></msub><mi>/</mi><msubsup><mi>S</mi><mi>a</mi><mn>2</mn></msubsup><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>D</mi><mi>a</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mi>I</mi><mo>+</mo><mi>x</mi><msub><mi>H</mi><mo>−</mo></msub><mi>/</mi><mn>2</mn><mo>+</mo><mi>y</mi><msub><mi>H</mi><mo>+</mo></msub><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ S_j=\prod_{r=1}^j2\sin(r\theta),\quad
+ \beta_a=S_{2a}/S_a^2,\quad
+ D_a(x,b,y)=\det(bI+xH_-/2+yH_+/2).
+</annotation></semantics></math> The variables
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x,y</annotation></semantics></math>
+are the outer faces and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>,</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">b,c</annotation></semantics></math>
+the two middle faces of the same crossing. With the specified centered
+physical head logarithms, the whole circle coefficient is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mrow><mn>0</mn><mo>,</mo><mi>a</mi></mrow></msub><msub><mi>W</mi><mi>a</mi></msub><msub><mi>π</mi><mi>a</mi></msub><mo>=</mo><msub><mi>k</mi><mi>a</mi></msub><msubsup><mi>β</mi><mi>a</mi><mn>2</mn></msubsup><mfrac><mrow><msub><mi>D</mi><mi>a</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>D</mi><mi>a</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><msub><mover><mi>P</mi><mo accent="true">̃</mo></mover><mi>s</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mi>c</mi><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>d</mi><mi>/</mi><mn>2</mn></mrow></msup></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><msub><mover><mi>P</mi><mo accent="true">̃</mo></mover><mi>s</mi></msub><mo>=</mo><munderover><mo>∏</mo><mrow><mi>j</mi><mo>=</mo><mi>a</mi><mo>+</mo><mn>1</mn></mrow><mrow><mi>d</mi><mo>−</mo><mi>a</mi></mrow></munderover><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><msup><mi>Q</mi><mi>j</mi></msup><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ h_{0,a}W_a\pi_a
+ =k_a\beta_a^2
+ \frac{D_a(x,b,y)D_a(x,c,y)\widetilde P_s(x,y)}{(bc)^{d/2}},
+ \qquad \widetilde P_s=\prod_{j=a+1}^{d-a}(x-Q^jy),
+ \tag{1}
+</annotation></semantics></math> where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mi>a</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k_a=1</annotation></semantics></math>
+at the odd simple fold
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">s=0</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mi>a</mi></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">k_a=2</annotation></semantics></math>
+otherwise. Its proof keeps the actual cup,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>γ</mi><mi>a</mi></msub><mo>=</mo><msup><mi>q</mi><mrow><mn>2</mn><mo>−</mo><msup><mi>a</mi><mn>2</mn></msup></mrow></msup><mi>/</mi><msup><mi>N</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\gamma_a=q^{2-a^2}/N^2</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mrow><mn>0</mn><mo>,</mo><mi>a</mi></mrow></msub><mo>=</mo><msub><mi>k</mi><mi>a</mi></msub><mi>N</mi><msub><mi>β</mi><mi>a</mi></msub></mrow><annotation encoding="application/x-tex">h_{0,a}=k_aN\beta_a</annotation></semantics></math>,
+without inverting an exceptional paired norm.</p>
+<p>I checked the scalar reduction using
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>j</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>i</mi><msup><mo stretchy="false" form="postfix">)</mo><mi>j</mi></msup><msup><mi>q</mi><mrow><mi>j</mi><mo stretchy="false" form="prefix">(</mo><mi>j</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mn>2</mn></mrow></msup><msub><mi>S</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">F_j=(-i)^jq^{j(j+1)/2}S_j</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mrow><mi>d</mi><mo>−</mo><mi>j</mi></mrow></msub><mo>=</mo><mi>N</mi><mi>/</mi><msub><mi>S</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">S_{d-j}=N/S_j</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>a</mi></msub><mo>=</mo><msup><mi>q</mi><msup><mi>a</mi><mn>2</mn></msup></msup><msub><mi>β</mi><mi>a</mi></msub></mrow><annotation encoding="application/x-tex">K_a=q^{a^2}\beta_a</annotation></semantics></math>.
+The remaining ratio is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>q</mi><mrow><mi>−</mi><mn>2</mn><mi>N</mi><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>2</mn><mi>N</mi><mo>+</mo><mi>a</mi><mo>+</mo><mn>3</mn><mo stretchy="false" form="postfix">)</mo></mrow></msup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">q^{-2N(-2N+a+3)}=1</annotation></semantics></math>.
+The physical half-index substitution gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mi>a</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>−</mi><msup><mi>q</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mi>x</mi><mi>/</mi><mi>b</mi><mo>,</mo><mi>−</mi><msup><mi>q</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mi>b</mi><mi>/</mi><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><msup><mi>q</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msup><mo stretchy="false" form="postfix">)</mo><mi>a</mi></msup><msub><mi>K</mi><mi>a</mi></msub><msup><mi>y</mi><mrow><mi>−</mi><mi>a</mi></mrow></msup><msub><mi>D</mi><mi>a</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ H_a(-q^{-1}x/b,-q^{-1}b/y)
+ =(-q^{-1})^aK_a y^{-a}D_a(x,b,y).
+</annotation></semantics></math> The outer sine product has scalar
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>i</mi><mi>s</mi></msup><msup><mi>q</mi><mrow><mi>−</mi><mi>s</mi><mi>N</mi><mi>/</mi><mn>2</mn></mrow></msup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">i^sq^{-sN/2}=1</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mn>2</mn><mi>a</mi><mo>+</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">d=2a+s</annotation></semantics></math>
+cancels the remaining face powers. Additional
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>-lifts
+retain the character
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>d</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>n</mi><mi>R</mi></msub><mo>+</mo><msub><mi>n</mi><mi>S</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">(-1)^{d(n_R+n_S)}</annotation></semantics></math>.
+Its global cancellation is an input from the compiler, not a local
+convention.</p>
+<p>At the maximal fold, the forced factor is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>
+for odd
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x+y</annotation></semantics></math>
+for even
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>.
+The corresponding
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>β</mi><mi>a</mi></msub><annotation encoding="application/x-tex">\beta_a</annotation></semantics></math>
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">csc</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>π</mi><mi>/</mi><mi>N</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\csc(\pi/N)</annotation></semantics></math>,
+respectively. The finite fold interpolation retains these scalars in its
+exact anchor.</p>
+<h2 id="actual-matrix-positivity-and-coefficient-support">2. Actual
+matrix positivity and coefficient support</h2>
+<p>The matrices
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mo>±</mo></msub><annotation encoding="application/x-tex">H_\pm</annotation></semantics></math>
+have diagonal
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mi>n</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">[</mo><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><msup><mo stretchy="false" form="postfix">]</mo><mrow><mi>−</mi><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">
+ d_n=[\cos(n\theta)\cos((n+1)\theta)]^{-1}
+</annotation></semantics></math> and adjacent entries
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><msub><mi>b</mi><mi>n</mi></msub></msqrt><mo stretchy="false" form="prefix">(</mo><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mo>±</mo><mi>i</mi><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\sqrt{b_n}(\sin(n\theta)\pm i\cos(n\theta))</annotation></semantics></math>,
+where
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mi>n</mi></msub><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mn>2</mn></msup><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><msup><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mn>2</mn></msup><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ b_n=\frac{\sin^2(n\theta)}
+ {\cos^2(n\theta)\sin((2n-1)\theta)\sin((2n+1)\theta)}.
+</annotation></semantics></math> They are diagonal-unitarily equivalent
+to the real Jacobi matrix with adjacent entries
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><msub><mi>b</mi><mi>n</mi></msub></msqrt><annotation encoding="application/x-tex">\sqrt{b_n}</annotation></semantics></math>.</p>
+<p>The endpoint positivity check can be derived directly. The LDL pivots
+are
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>=</mo><mfrac><mrow><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ p_{n-1}=\frac{\sin(n\theta)}
+ {\cos(n\theta)\sin((2n-1)\theta)}.
+ \tag{2}
+</annotation></semantics></math> The first is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">1/\cos\theta</annotation></semantics></math>.
+Also
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mi>n</mi></msub><mi>/</mi><msub><mi>p</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>=</mo><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mo stretchy="false" form="prefix">[</mo><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">b_n/p_{n-1}=\sin(n\theta)/[\cos(n\theta)\sin((2n+1)\theta)]</annotation></semantics></math>.
+Subtracting this from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>d</mi><mi>n</mi></msub><annotation encoding="application/x-tex">d_n</annotation></semantics></math>
+and using the sine addition identity gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>p</mi><mi>n</mi></msub><annotation encoding="application/x-tex">p_n</annotation></semantics></math>.
+Every denominator is positive for the actual rows, since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>a</mi><mo>&lt;</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">2a&lt;N</annotation></semantics></math>;
+no virtual endpoint pivot is used. Consequently
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mrow><mi>−</mi><mi>a</mi></mrow></msup><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><msub><mi>H</mi><mo>±</mo></msub><mo>=</mo><mfrac><mrow><munderover><mo>∏</mo><mrow><mi>r</mi><mo>=</mo><mn>1</mn></mrow><mi>a</mi></munderover><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><munderover><mo>∏</mo><mrow><mi>r</mi><mo>=</mo><mi>a</mi><mo>+</mo><mn>1</mn></mrow><mrow><mn>2</mn><mi>a</mi></mrow></munderover><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mo>=</mo><msubsup><mi>β</mi><mi>a</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mo>&gt;</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ 2^{-a}\det H_\pm
+ =\frac{\prod_{r=1}^a\sin(r\theta)}
+ {\prod_{r=a+1}^{2a}\sin(r\theta)}
+ =\beta_a^{-1}&gt;0.
+ \tag{3}
+</annotation></semantics></math></p>
+<p>Cauchy–Binet for the three positive summands expresses every
+coefficient of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>D</mi><mi>a</mi></msub><annotation encoding="application/x-tex">D_a</annotation></semantics></math>
+as a sum of squared minors. Subtracting a sufficiently small multiple of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math>
+from each summand leaves them semidefinite and supplies a positive
+multiple of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>b</mi><mo>+</mo><mi>y</mi><msup><mo stretchy="false" form="postfix">)</mo><mi>a</mi></msup></mrow><annotation encoding="application/x-tex">(x+b+y)^a</annotation></semantics></math>.
+Thus every
+degree-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+monomial has a positive coefficient. This is finite positivity, not an
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>-uniform
+lower bound for individual coefficients.</p>
+<p>The forced factor has the exact expansion
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>P</mi><mo accent="true">̃</mo></mover><mi>s</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mi>s</mi></munderover><mfrac><msub><mi>S</mi><mi>s</mi></msub><mrow><msub><mi>S</mi><mi>j</mi></msub><msub><mi>S</mi><mrow><mi>s</mi><mo>−</mo><mi>j</mi></mrow></msub></mrow></mfrac><msup><mi>x</mi><mrow><mi>s</mi><mo>−</mo><mi>j</mi></mrow></msup><msup><mi>y</mi><mi>j</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \widetilde P_s(x,y)=\sum_{j=0}^s
+       \frac{S_s}{S_jS_{s-j}}x^{s-j}y^j.
+ \tag{4}
+</annotation></semantics></math> Its Gaussian-binomial phase cancels
+because
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>a</mi><mo>+</mo><mn>1</mn><mo>+</mo><mi>s</mi><mo>=</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">2a+1+s=N</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>&lt;</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">s&lt;N</annotation></semantics></math>
+makes all sine coefficients positive. These facts establish positivity
+of the
+degree-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>
+polynomial in (1), after separating its recorded Laurent character.</p>
+<p>The exact finite white determinant is traced through
+actual_q_hahn_joint_accretive_determinant.md §§1–4,
+actual_q_hahn_full_physical_complex_packet.md §1, and
+actual_q_hahn_complementary_hard_edge.md §4. The chain is the specified
+Newton polynomial, its joint Casimir coefficient recurrence, the monic
+three-term recurrence, and the determinant with the same recurrence and
+initial values. I checked this recurrence/determinant conversion and
+normalization, not the full Hopf derivation of the Casimir equation.</p>
+<h2 id="protected-middle-curvature">3. Protected-middle curvature</h2>
+<p>The exact boundary polynomial is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mi>a</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mn>0</mn><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msubsup><mi>β</mi><mi>a</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi>a</mi></munderover><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><msub><mi>S</mi><mi>a</mi></msub><mrow><msub><mi>S</mi><mi>k</mi></msub><msub><mi>S</mi><mrow><mi>a</mi><mo>−</mo><mi>k</mi></mrow></msub></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><msup><mi>x</mi><mrow><mi>a</mi><mo>−</mo><mi>k</mi></mrow></msup><msup><mi>y</mi><mi>k</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ D_a(x,0,y)=\beta_a^{-1}
+ \sum_{k=0}^a\left(\frac{S_a}{S_kS_{a-k}}\right)^2x^{a-k}y^k.
+ \tag{5}
+</annotation></semantics></math> It follows from the boundary
+specialization of the finite white determinant, or its tridiagonal
+coefficient recurrence; (3) fixes the leading scalar.</p>
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>=</mo><mi>y</mi><mi>/</mi><mi>x</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">w=y/x&gt;0</annotation></semantics></math>,
+logarithmic curvature is the variance of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+under weights proportional to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>S</mi><mi>a</mi></msub><mi>/</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>S</mi><mi>k</mi></msub><msub><mi>S</mi><mrow><mi>a</mi><mo>−</mo><mi>k</mi></mrow></msub><mo stretchy="false" form="postfix">)</mo><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><msup><mi>w</mi><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">(S_a/(S_kS_{a-k}))^2w^k</annotation></semantics></math>.
+Their exact ratio satisfies
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo stretchy="false" form="prefix">(</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>w</mi><msup><mrow><mo stretchy="true" form="prefix">[</mo><mfrac><mrow><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>−</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mi>k</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mo stretchy="true" form="postfix">]</mo></mrow><mn>2</mn></msup><mo>,</mo><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>R</mi><msup><mo stretchy="false" form="postfix">)</mo><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>−</mi><mfrac><mrow><mn>2</mn><mi>θ</mi><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>−</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ R(k)=w\left[\frac{\sin((a-k)\theta)}{\sin((k+1)\theta)}\right]^2,
+ \qquad
+ (\log R)&#39;(t)=
+ -\frac{2\theta\sin((a+1)\theta)}
+ {\sin((a-t)\theta)\sin((t+1)\theta)}.
+ \tag{6}
+</annotation></semantics></math> For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mi>N</mi><mo>≤</mo><mi>a</mi><mo>≤</mo><mo stretchy="false" form="prefix">⌊</mo><mi>d</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo></mrow><annotation encoding="application/x-tex">a_0N\le a\le\lfloor d/2\rfloor</annotation></semantics></math>
+and a fixed positive compact of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>,
+the mode stays
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">cN</annotation></semantics></math>
+from both endpoints. The derivative is at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>c</mi><mi>/</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">-c/N</annotation></semantics></math>
+everywhere and has absolute value at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>/</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">C/N</annotation></semantics></math>
+in a fixed bulk around the mode. Multiplying the ratios gives Gaussian
+upper tails and comparable weights on two separated intervals of length
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mi>N</mi></msqrt><annotation encoding="application/x-tex">\sqrt N</annotation></semantics></math>.
+Their probabilities are bounded below after normalization, so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mi>N</mi><mo>≤</mo><mrow><mi mathvariant="normal">Var</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mi>C</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">cN\le\operatorname{Var}(k)\le CN</annotation></semantics></math>.
+This is the full written proof in
+actual_q_hahn_boundary_model_curvature.md §4. One-variable triangles
+remain monomials and supply no angular penalty.</p>
+<h2 id="pair-trace-identities-and-uniformity">4. Pair-trace identities
+and uniformity</h2>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>j</mi></msub><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">X_j\ge0</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><msub><mo>∑</mo><mi>j</mi></msub><msub><mi>X</mi><mi>j</mi></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">M=\sum_jX_j&gt;0</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>j</mi></msub><mo>=</mo><msup><mi>M</mi><mrow><mi>−</mi><mn>1</mn><mi>/</mi><mn>2</mn></mrow></msup><msub><mi>X</mi><mi>j</mi></msub><msup><mi>M</mi><mrow><mi>−</mi><mn>1</mn><mi>/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">A_j=M^{-1/2}X_jM^{-1/2}</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><msub><mo>∑</mo><mi>j</mi></msub><msup><mi>e</mi><mrow><mi>i</mi><msub><mi>ϑ</mi><mi>j</mi></msub></mrow></msup><msub><mi>A</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">B=\sum_je^{i\vartheta_j}A_j</annotation></semantics></math>.
+Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>A</mi><mi>j</mi></msub><mo>=</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">\sum A_j=I</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+is a compression of a unitary. Direct cyclic trace expansion gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">Tr</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo>−</mo><msup><mi>B</mi><mo>*</mo></msup><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mo>∑</mo><mrow><mi>i</mi><mo>&lt;</mo><mi>j</mi></mrow></munder><mo stretchy="false" form="prefix">|</mo><msup><mi>e</mi><mrow><mi>i</mi><msub><mi>ϑ</mi><mi>i</mi></msub></mrow></msup><mo>−</mo><msup><mi>e</mi><mrow><mi>i</mi><msub><mi>ϑ</mi><mi>j</mi></msub></mrow></msup><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup><mrow><mi mathvariant="normal">Tr</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>A</mi><mi>i</mi></msub><msub><mi>A</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \operatorname{Tr}(I-B^*B)=
+ \sum_{i&lt;j}|e^{i\vartheta_i}-e^{i\vartheta_j}|^2
+                       \operatorname{Tr}(A_iA_j).
+ \tag{7}
+</annotation></semantics></math> The pair traces are nonnegative.
+Applying
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>t</mi><mo>≤</mo><mi>t</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\log t\le t-1</annotation></semantics></math>
+to squared singular values gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><mi>B</mi><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mspace width="-0.167em"></mspace><mrow><mo stretchy="true" form="prefix">[</mo><mi>−</mi><mfrac><mn>1</mn><mn>2</mn></mfrac><munder><mo>∑</mo><mrow><mi>i</mi><mo>&lt;</mo><mi>j</mi></mrow></munder><mo stretchy="false" form="prefix">|</mo><msup><mi>e</mi><mrow><mi>i</mi><msub><mi>ϑ</mi><mi>i</mi></msub></mrow></msup><mo>−</mo><msup><mi>e</mi><mrow><mi>i</mi><msub><mi>ϑ</mi><mi>j</mi></msub></mrow></msup><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup><mi mathvariant="normal">Tr</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>A</mi><mi>i</mi></msub><msub><mi>A</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo><mo stretchy="true" form="postfix">]</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ |\det B|\le\exp\!\left[-\frac12\sum_{i&lt;j}
+ |e^{i\vartheta_i}-e^{i\vartheta_j}|^2\operatorname{Tr}(A_iA_j)\right].
+ \tag{8}
+</annotation></semantics></math> The singular case follows by
+continuity; no commutation of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mo>−</mo></msub><annotation encoding="application/x-tex">H_-</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mo>+</mo></msub><annotation encoding="application/x-tex">H_+</annotation></semantics></math>
+is used.</p>
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mi>I</mi><mo>+</mo><mi>X</mi><mo>+</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">M=I+X+Y</annotation></semantics></math>,
+direct differentiation gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>D</mi><mn>2</mn></msup><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><mi>M</mi><mo>=</mo><msup><mi>u</mi><mn>2</mn></msup><mrow><mi mathvariant="normal">Tr</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>X</mi><msup><mi>M</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo><mo>+</mo><msup><mi>v</mi><mn>2</mn></msup><mrow><mi mathvariant="normal">Tr</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>Y</mi><msup><mi>M</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>−</mo><mi>v</mi><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mrow><mi mathvariant="normal">Tr</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msup><mi>M</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mi>X</mi><msup><mi>M</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mi>Y</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ D^2\log\det M=
+ u^2\operatorname{Tr}(XM^{-2})+
+ v^2\operatorname{Tr}(YM^{-2})+
+ (u-v)^2\operatorname{Tr}(M^{-1}XM^{-1}Y).
+ \tag{9}
+</annotation></semantics></math> The actual second raw clock is
+inverted, changing the last square to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>+</mo><mi>v</mi><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(u+v)^2</annotation></semantics></math>.
+The source note retains that sign.</p>
+<p>For the lower bound, disjoint adjacent LDL squares wholly inside a
+fixed bulk interval give
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>≥</mo><mi>c</mi><mi>P</mi></mrow><annotation encoding="application/x-tex">X\ge cP</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+a projection of rank at least
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">cN</annotation></semantics></math>.
+Its normalized vectors satisfy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⟨</mo><msub><mi>w</mi><mi>j</mi></msub><mo>,</mo><mi>M</mi><msub><mi>w</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">⟩</mo><mo>≤</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">\langle w_j,Mw_j\rangle\le C</annotation></semantics></math>.
+Scalar Jensen for their spectral measures gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⟨</mo><msub><mi>w</mi><mi>j</mi></msub><mo>,</mo><msup><mi>M</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><msub><mi>w</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">⟩</mo><mo>≥</mo><msup><mi>C</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\langle w_j,M^{-2}w_j\rangle\ge C^{-2}</annotation></semantics></math>.
+Tracing the positive inequality proves
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">Tr</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>X</mi><msup><mi>M</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><mi>c</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">\operatorname{Tr}(XM^{-2})\ge cN</annotation></semantics></math>,
+and separately the same for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>.
+This is a trace argument, not a false operator-monotonicity assertion
+about inverse squares. It remains valid when terminal matrix entries
+grow at the fold.</p>
+<p>These are the middle–outer pair traces for a positive middle; (5)–(6)
+give the outer–outer trace when the middle is protected. Thus every
+nonmonomial triangle has an
+order-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+angular penalty on the entire phase torus.</p>
+<p>Fixed small complex relative coefficient changes have
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo stretchy="false" form="prefix">(</mo><mi>ζ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>M</mi><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo>+</mo><mi>E</mi><mo stretchy="false" form="prefix">(</mo><mi>ζ</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><msup><mi>M</mi><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow></msup><mo>,</mo><mspace width="2.0em"></mspace><mo stretchy="false" form="postfix">∥</mo><mi>E</mi><mo stretchy="false" form="prefix">(</mo><mi>ζ</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">∥</mo><mo>&lt;</mo><mn>1</mn><mi>/</mi><mn>2</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ M(\zeta)=M^{1/2}(I+E(\zeta))M^{1/2},\qquad \|E(\zeta)\|&lt;1/2.
+ \tag{10}
+</annotation></semantics></math> This follows from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>A</mi><mi>j</mi></msub><mo>=</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">\sum A_j=I</annotation></semantics></math>,
+also with protected zeros fixed. The relative matrix logarithm is single
+valued, of size
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(a)</annotation></semantics></math>,
+and all fixed derivatives are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mi>N</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(N)</annotation></semantics></math>
+on smaller fixed neighborhoods. No neighborhood shrinking with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+is hidden here.</p>
+<h2 id="the-original-positive-coefficient">5. The original positive
+coefficient</h2>
+<p>The graph inputs are a fixed simple triangulated white sphere and a
+marked unmatched edge
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mi>v</mi></mrow><annotation encoding="application/x-tex">uv</annotation></semantics></math>,
+with only
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>,</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">u,v</annotation></semantics></math>
+set to zero. The induced ordinary graph is connected: reroute paths
+along the first deleted vertex’s link cycle, then along the second’s
+link with the first vertex removed. Simplicity prevents a matching edge
+from having both protected endpoints. Thus
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>+</mo><mi>y</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x+y&gt;0</annotation></semantics></math>
+at every crossing, and at least one of its two triangles is
+nonmonomial.</p>
+<p>These are exactly the graph facts used in
+actual_positive_face_coefficient_saddle.md §§2–4 and
+actual_morse_cross_filling_period.md §§2–4. Formula (8) along a fixed
+spanning tree gives a penalty off the common phase. Individual phase
+differences have integer coefficient
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>,
+so after fixing one ordinary face there is no extra phase alias.</p>
+<p>The target is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>
+at each ordinary face, and total numerator degree is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">dR</annotation></semantics></math>,
+so the common angular integral is exactly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>.
+The geometric angle-force input makes the supplied packing critical for
+the limiting pressure. The finite Hessian is between
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mi>D</mi></msub><mi>N</mi><mi>I</mi></mrow><annotation encoding="application/x-tex">c_DNI</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>D</mi></msub><mi>N</mi><mi>I</mi></mrow><annotation encoding="application/x-tex">C_DNI</annotation></semantics></math>;
+uniform holomorphic derivative bounds give a nearby actual finite
+critical radius. The original Cauchy torus, global angular penalty, and
+Gaussian calculation give a positive coefficient with a nonzero
+determinant prefactor.</p>
+<p>This reading does not redo the geometric angle-force or absolute
+coned-facet volume proof. It also does not infer an off-node central
+packet from coefficient positivity alone.</p>
+<h2 id="actual-cofactor-amplitudes">6. Actual cofactor amplitudes</h2>
+<p>The cleared cofactor is the determinant of the original upper
+two-diagonal matrix with its last row replaced. Hence it extends
+polynomially across every vanished diagonal. Its exact path expansion is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>j</mi></msub><mo>=</mo><msup><mi>b</mi><mi>j</mi></msup><munder><mo>∏</mo><mrow><mi>r</mi><mo>&lt;</mo><mi>j</mi></mrow></munder><msub><mi>α</mi><mi>r</mi></msub><mo>+</mo><msub><mi>p</mi><mi>j</mi></msub><msub><mi>R</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>q</mi><mi>j</mi></msub><msub><mi>R</mi><mrow><mi>j</mi><mo>−</mo><mn>2</mn></mrow></msub><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>p</mi><mi>j</mi></msub><mo>=</mo><msubsup><mi>s</mi><mi>j</mi><mn>2</mn></msubsup><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>q</mi><mi>j</mi></msub><mo>=</mo><msub><mi>s</mi><mi>j</mi></msub><msub><mi>s</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><msub><mi>α</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mi>x</mi><mi>y</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ R_j=b^j\prod_{r&lt;j}\alpha_r+p_jR_{j-1}+q_jR_{j-2},
+ \quad p_j=s_j^2(x+y),\quad q_j=s_js_{j-1}\alpha_{j-1}xy.
+ \tag{11}
+</annotation></semantics></math> Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>α</mi><mi>r</mi></msub><mo>=</mo><mn>4</mn><msup><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mn>2</mn></msup><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mo>+</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo stretchy="false" form="postfix">)</mo><mi>π</mi><mi>/</mi><mi>N</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>u</mi></mrow><annotation encoding="application/x-tex">\alpha_r=4\cos^2((r+\tfrac12)\pi/N)+u</annotation></semantics></math>.
+The independent symbolic check verifies the row-replacement recurrence
+with formal diagonal and superdiagonal entries.</p>
+<p>At a physical node, the zero diagonal removes later starts and gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>j</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>,</mo><mi>−</mi><msub><mi>a</mi><mi>a</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>K</mi><mrow><mi>a</mi><mo>,</mo><mi>j</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>−</mi><msub><mi>a</mi><mi>a</mi></msub><mo stretchy="false" form="postfix">)</mo><msub><mi>R</mi><mi>a</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>,</mo><mi>−</mi><msub><mi>a</mi><mi>a</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>R</mi><mi>a</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>,</mo><mi>−</mi><msub><mi>a</mi><mi>a</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>S</mi><mrow><mn>2</mn><mi>a</mi></mrow></msub><msub><mi>D</mi><mi>a</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ R_j(b,-a_a)=K_{a,j}(-a_a)R_a(b,-a_a),\qquad
+ R_a(b,-a_a)=S_{2a}D_a(x,b,y).
+ \tag{12}
+</annotation></semantics></math> The second equality uses the original
+complete-node identity and comparison of the monic
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>b</mi><mi>a</mi></msup><mo>,</mo><msup><mi>c</mi><mi>a</mi></msup></mrow><annotation encoding="application/x-tex">b^a,c^a</annotation></semantics></math>
+coefficients. Its scalar is fixed by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∏</mo><mrow><mi>r</mi><mo>&lt;</mo><mi>a</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>a</mi><mi>r</mi></msub><mo>−</mo><msub><mi>a</mi><mi>a</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mo>∏</mo><mrow><mi>r</mi><mo>&lt;</mo><mi>a</mi></mrow></msub><mn>4</mn><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>+</mo><mi>r</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>−</mo><mi>r</mi><mo stretchy="false" form="postfix">)</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>S</mi><mrow><mn>2</mn><mi>a</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\prod_{r&lt;a}(a_r-a_a)=\prod_{r&lt;a}4\sin((a+r+1)\theta)\sin((a-r)\theta)=S_{2a}</annotation></semantics></math>.
+Cancellation is in a polynomial domain, not division by a possibly zero
+numerical factor.</p>
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">b&gt;0</annotation></semantics></math>,
+the actual start sum has a unique interior saddle. Nested-domain Riccati
+iteration around its dominant transfer root has a contraction factor
+below one. Its initial projection is an analytic truncated sum with
+limit
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><msub><mi>k</mi><mn>0</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">1/(1+k_0(t))&gt;0</annotation></semantics></math>.
+The smaller root may vanish, but is never inverted. Prefix logarithms
+are used only below the interior start, where the diagonal is nonzero.
+Optimally truncated Euler–Maclaurin sums retain finite anchors and have
+exponential errors. Starts outside the saddle interval retain their
+exponential penalty under sufficiently small fixed complex
+perturbations. The finite cotangent-grid contour retains, and bounds,
+its vertical sides. These are the written steps in
+actual_cross_cofactor_interior_packet.md §§2–5.</p>
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">b=0</annotation></semantics></math>,
+that start saddle is inapplicable. The separate protected packet keeps
+the initial negative transfer branch. At the lower endpoint its ratio is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>,
+but
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">1-r</annotation></semantics></math>
+stays separated from zero. Near-identity diagonalization leaves
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>N</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(N^{-2})</annotation></semantics></math>
+error per step; the negative product is exponentially small by a
+positive terminal proportion. The initial positive coefficient is
+exactly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><msub><mi>g</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">1/g_0</annotation></semantics></math>,
+giving the holomorphic unit
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><msub><mi>λ</mi><mrow><mi>n</mi><mo>,</mo><mi>+</mi></mrow></msub><msub><mi>g</mi><mn>0</mn></msub></mfrac><munderover><mo>∏</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mfrac><mrow><msub><mi>λ</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn><mo>,</mo><mi>+</mi></mrow></msub><mo>−</mo><msub><mi>λ</mi><mrow><mi>j</mi><mo>,</mo><mi>−</mi></mrow></msub></mrow><msub><mi>g</mi><mi>j</mi></msub></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \frac{\lambda_{n,+}}{g_0}
+ \prod_{j=1}^n\frac{\lambda_{j-1,+}-\lambda_{j,-}}{g_j}.
+ \tag{13}
+</annotation></semantics></math> If one outer face also vanishes, the
+exact monomer product applies instead. The all-zero triangle is excluded
+by the stated graph hypotheses.</p>
+<p>For the whole crossing let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mi>x</mi><mo>+</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">A=x+y</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>=</mo><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">P=xy</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>=</mo><msqrt><mrow><msup><mi>A</mi><mn>2</mn></msup><mo>+</mo><mi>u</mi><mi>P</mi></mrow></msqrt></mrow><annotation encoding="application/x-tex">S=\sqrt{A^2+uP}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Λ</mi><mo>*</mo></msub><mo>=</mo><mn>2</mn><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo>+</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\Lambda_*=2(A+S)</annotation></semantics></math>.
+The actual terminal ratios converge uniformly to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="normal">Λ</mi><mo>*</mo></msub><annotation encoding="application/x-tex">\Lambda_*</annotation></semantics></math>.
+The exact even and odd central factors tend respectively to
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mi>A</mi><mo>+</mo><mfrac><mrow><mn>8</mn><mi>u</mi><mi>P</mi></mrow><msub><mi mathvariant="normal">Λ</mi><mo>*</mo></msub></mfrac><mo>=</mo><mn>4</mn><mi>S</mi><mo>,</mo><mspace width="2.0em"></mspace><mn>1</mn><mo>+</mo><mfrac><mrow><mn>4</mn><mi>u</mi><mi>P</mi></mrow><msubsup><mi mathvariant="normal">Λ</mi><mo>*</mo><mn>2</mn></msubsup></mfrac><mo>=</mo><mfrac><mrow><mn>2</mn><mi>S</mi></mrow><mrow><mi>A</mi><mo>+</mo><mi>S</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ 4A+\frac{8uP}{\Lambda_*}=4S,\qquad
+ 1+\frac{4uP}{\Lambda_*^2}=\frac{2S}{A+S}.
+ \tag{14}
+</annotation></semantics></math> They are units near
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">u=0</annotation></semantics></math>,
+also at a protected outer face. Thus the central-cut sum cannot cancel
+its local amplitude. The odd term proportional to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>u</mi><annotation encoding="application/x-tex">u</annotation></semantics></math>,
+including its derivative, is retained.</p>
+<h2 id="the-specific-h1h2-dependency">7. The specific H1/H2
+dependency</h2>
+<p>The complete-fold interpolation keeps the exact finite anchor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mrow><mi>N</mi><mo>,</mo><mi>M</mi></mrow></msub><annotation encoding="application/x-tex">B_{N,M}</annotation></semantics></math>.
+Nested analytic contractions construct approximate pivots with
+exponential residuals; comparison with actual pivots gives exponential
+accuracy on the physical channel grid. This is read in
+actual_positive_face_exponential_fold_interpolation.md §§1–6.</p>
+<p>The actual cofactor packets and this interpolation have uniform
+normalized holomorphic logarithms. Their dense physical node values
+force agreement of the limiting logarithms. Thus their ratio has
+subexponential outer-circle growth. The finite Cauchy–Lagrange formula
+on the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mi>/</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">j/N</annotation></semantics></math>
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>j</mi><mo>+</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">(j+\tfrac12)/N</annotation></semantics></math>
+grid and its reflection then gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi mathvariant="normal">C</mi></msub><mo>=</mo><msup><mi>N</mi><mn>2</mn></msup><msub><mi mathvariant="script">ℬ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>O</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>e</mi><mrow><mi>−</mi><mi>κ</mi><mi>N</mi></mrow></msup><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+ P_{\mathrm C}=N^2\mathcal B_N(1+O(e^{-\kappa N}))
+ \tag{15}
+</annotation></semantics></math> on a smaller fixed complex face and
+spectral neighborhood. The denominator was proved nonzero before
+interpolation. Cauchy estimates give fixed derivatives. This is
+actual_cross_cofactor_interpolant_rigidity.md §§2–4, not a
+differentiation of value-only node data.</p>
+<p>The
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>N</mi><mn>2</mn></msup><annotation encoding="application/x-tex">N^2</annotation></semantics></math>
+is the specified cofactor/complete-node adapter. The odd simple node
+contributes a value in the Hermite functional, not an extra derivative
+or paired multiplicity. Its complete derivation belongs to the separate
+Casimir/Hermite audit.</p>
+<p>The angular complement also uses the exact post-node tail
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mi>r</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>q</mi><mrow><mi>r</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>γ</mi><mi>r</mi></msub><mi>x</mi><mi>y</mi><msub><mi>q</mi><mrow><mi>r</mi><mo>−</mo><mn>2</mn></mrow></msub></mrow><annotation encoding="application/x-tex">q_r=(x+y)q_{r-1}-\gamma_rxyq_{r-2}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><msub><mi>γ</mi><mi>r</mi></msub><mo>≤</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0\le\gamma_r\le1</annotation></semantics></math>.
+Induction on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mi>r</mi></msub><mo>−</mo><mi>x</mi><msub><mi>q</mi><mrow><mi>r</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">q_r-xq_{r-1}</annotation></semantics></math>
+proves its coefficientwise positivity and monomer upper bound. Near
+nodes use (8); far nodes have a strict path penalty. Exact cosine-grid
+interpolation extends to the real spectral interval. For finitely
+omitted terminal nodes the proof first multiplies by their factors, then
+proves division costs only a polynomial. A polynomial exterior estimate
+supplies the thin complex strip.</p>
+<p>This supplies the local unit, positivity, and angular inputs to
+actual_morse_cross_filling_period.md lines 109–162. Its fixed complex
+neighborhoods and constants depend on the fixed diagram and compact;
+there is no growing-diagram claim. H1 follows on the prescribed face
+torus once the declared angle-force input is supplied.</p>
+<p>For H2, the strict real-spectral comparison additionally uses
+actual_global_cross_spectral_gap.md §§1–2. Its full block-transfer and
+prefix-integrability argument was read in the previous O analytic audit
+and has not been repeated here. Pair traces alone do not imply H2.
+Neither the later spectral filling period nor the noncentral remainder
+has been re-audited here.</p>
+<h2 id="finite-checks-and-exclusions">8. Finite checks and
+exclusions</h2>
+<p>The companion script checks formal row-replacement identities and
+independently compares finite Newton polynomials, matrices, LDL
+normalization, (5), the nodal scalar, forced factors, and pair traces at
+both parities. It replays the original literal white/dual-cup scalar
+test by loading only its named function bodies. Results are recorded
+separately. These are finite algebra diagnostics, not proofs of uniform
+analytic estimates.</p>
+<p>Still outside this report are the complete quantum
+representation/Casimir/Hermite derivation; the exact global Morse
+compiler and its carriers, grid measure, cup/cap characters and targets;
+positive packing existence and absolute action-volume calibration; the
+later whole spectral filling period and primitive metric completion;
+full-source restoration;
+moving-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>
+and external-color/all-orders claims.</p>
+<p>The older local notes’ historical statements that the filling period
+remained open do not alter the local results checked here. Their current
+use is the explicitly central-only theorem in
+actual_morse_cross_filling_period.md. Its H1/H2 do not prove the full
+invariant theorem for every simple sphere without a separate remainder
+argument.</p>

@@ -1,0 +1,802 @@
+<h1
+id="the-regular-main-meridian-period-existing-results-and-the-polarization-obstruction">The
+regular main-meridian period: existing results and the polarization
+obstruction</h1>
+<p>31 October 2026. Private continuation; no repository or public file
+is changed by this report. The purpose is to locate the remaining
+selected classical-factor problem after the scalar volume theorem,
+rather than to propose another invariant or reintroduce a uniform
+nonzero WKB formula for the reduced state near completeness.</p>
+<p>The eight requested inputs were read, together with their relevant
+later dependencies: <code>regularized_kashaev_period</code>,
+<code>peripheral_normal_period</code>, <code>actual_weyl_descent</code>,
+<code>actual_peripheral_fusion</code>, <code>ramified_weyl_fibre</code>,
+<code>source_corrected_quantum_normal_connection</code>,
+<code>first_quantum_normal_connection</code>, and
+<code>affine_quantum_a_period</code>; also
+<code>torsion_initial_rank</code>,
+<code>actual_geometric_normal_period</code>,
+<code>actual_meridian_companion_source_compatibility</code>,
+<code>source_symbol_duality_and_presentation</code>,
+<code>fourier_mellin_actual_source</code>,
+<code>actual_mellin_normal_source_rigidity</code>,
+<code>mellin_cyclotomic_jet_uniqueness</code>,
+<code>central_source_freedom_in_regular_profiles</code>, and
+<code>scaled_meridian_regular_profile</code>. All names in this
+paragraph refer to <code>.md</code> files under the workspace’s
+<code>notes/</code> directory. Old sentences saying the volume limit is
+unproved must now be read with the established strict/net-twist knot
+class separated from unrestricted knots.</p>
+<h2 id="the-exact-objects-already-available">1. The exact objects
+already available</h2>
+<p>Fix a zero-framed knot, put</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mi>N</mi></msub><mo>=</mo><msup><mi>e</mi><mrow><mi>π</mi><mi>i</mi><mi>/</mi><mi>N</mi></mrow></msup><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>Q</mi><mi>N</mi></msub><mo>=</mo><msubsup><mi>q</mi><mi>N</mi><mn>2</mn></msubsup><mo>,</mo><mspace width="1.0em"></mspace><mi>M</mi><mo>=</mo><mi>−</mi><msub><mi>q</mi><mi>N</mi></msub><mi>x</mi><mo>,</mo><mspace width="1.0em"></mspace><mi>Y</mi><mo>=</mo><msup><mi>M</mi><mn>2</mn></msup><mo>,</mo><mspace width="1.0em"></mspace><mi>U</mi><mo>=</mo><msup><mi>Y</mi><mi>N</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ q_N=e^{\pi i/N},\quad Q_N=q_N^2,\quad M=-q_Nx,
+ \quad Y=M^2,\quad U=Y^N.
+ \tag{1}
+</annotation></semantics></math></p>
+<p>The reduced ADO state is the actual cut scalar. Write it as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f_N(Y)</annotation></semantics></math>;
+its complete value is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>N</mi></msub><mo>=</mo><msub><mi>f</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">K_N=f_N(1)</annotation></semantics></math>.
+The ordinary-color identities are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><msubsup><mi>Q</mi><mi>N</mi><mi>j</mi></msubsup><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>C</mi><mi>j</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>q</mi><mi>N</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f_N(Q_N^j)=C_j(q_N)</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>j</mi><mo>&lt;</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">1\le j&lt;N</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">C_1=1</annotation></semantics></math>.
+The full state is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">𝒩</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>M</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>η</mi><mi>N</mi></msub><msup><mi>M</mi><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></msup><mfrac><mrow><msub><mi>f</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><msub><mi>S</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>S</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><msup><mi>Y</mi><mi>N</mi></msup><mo>−</mo><mn>1</mn></mrow><mrow><mi>Y</mi><mo>−</mo><mn>1</mn></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>η</mi><mi>N</mi></msub><mo>=</mo><msup><mi>i</mi><mrow><mi>N</mi><mo>+</mo><mn>3</mn></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \mathcal N_N(M)=\eta_NM^{N-1}\frac{f_N(Y)}{S_N(Y)},
+ \qquad S_N(Y)=\frac{Y^N-1}{Y-1},\qquad \eta_N=i^{N+3}.
+ \tag{2}
+</annotation></semantics></math></p>
+<p>Its shift character is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mo>=</mo><mi>−</mi><msubsup><mi>q</mi><mi>N</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup></mrow><annotation encoding="application/x-tex">\kappa=-q_N^{-1}</annotation></semantics></math>
+and its
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>-cycle
+sign is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">(-1)^{N-1}</annotation></semantics></math>.
+Neither is an optional gauge choice.</p>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>P</mi><mi>N</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">d</mi></mrow></msubsup><annotation encoding="application/x-tex">P_N^{\mathrm{ord}}</annotation></semantics></math>
+be the
+degree-at-most-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">N-2</annotation></semantics></math>
+polynomial interpolating the ordinary colors at the nontrivial
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>th
+roots. Then the canonical regular remainder is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>N</mi></msub><mo>=</mo><msubsup><mi>P</mi><mi>N</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">d</mi></mrow></msubsup><mi>/</mi><msub><mi>S</mi><mi>N</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>R</mi><mi>N</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>f</mi><mi>N</mi></msub><mo>−</mo><msubsup><mi>P</mi><mi>N</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">d</mi></mrow></msubsup><mo stretchy="false" form="postfix">)</mo><mi>/</mi><msub><mi>S</mi><mi>N</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>f</mi><mi>N</mi></msub><mo>=</mo><msub><mi>S</mi><mi>N</mi></msub><msub><mi>R</mi><mi>N</mi></msub><mo>+</mo><msubsup><mi>P</mi><mi>N</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">d</mi></mrow></msubsup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ p_N=P_N^{\mathrm{ord}}/S_N,\qquad
+ R_N=(f_N-P_N^{\mathrm{ord}})/S_N,
+ \qquad f_N=S_NR_N+P_N^{\mathrm{ord}}.
+ \tag{3}
+</annotation></semantics></math></p>
+<p>The remainder is Laurent polynomial. For a fixed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>-strand
+braid, the actual positive ordinary-color trace gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>C</mi><mi>j</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>q</mi><mi>N</mi></msub><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><msub><mi>D</mi><mi>N</mi></msub><mo>≤</mo><mo stretchy="false" form="prefix">(</mo><mi>N</mi><mi>/</mi><mn>2</mn><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>b</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">|C_j(q_N)|\le D_N\le(N/2)^{b-1}</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>p</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><msub><mi>D</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">|p_N(1)|\le D_N</annotation></semantics></math>.
+Consequently, on the now-proved positive-volume knot class,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mi>N</mi></mfrac><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>K</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">|</mo><mo>→</mo><mfrac><mi>V</mi><mrow><mn>2</mn><mi>π</mi></mrow></mfrac><mo>&gt;</mo><mn>0</mn><mspace width="1.0em"></mspace><mo>⇒</mo><mspace width="1.0em"></mspace><mfrac><mn>1</mn><mi>N</mi></mfrac><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>R</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>→</mo><mfrac><mi>V</mi><mrow><mn>2</mn><mi>π</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \frac1N\log|K_N|\longrightarrow\frac{V}{2\pi}&gt;0
+ \quad\Longrightarrow\quad
+ \frac1N\log|R_N(1)|\longrightarrow\frac{V}{2\pi}.
+ \tag{4}
+</annotation></semantics></math></p>
+<p>This is a proved scalar consequence, not a remaining conjecture for
+that class. It says nothing by itself about a fixed meridian
+neighborhood. The new nearby-zero theorem rules out such a nonzero
+uniform scalar WKB expression for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><msup><mi>M</mi><mn>2</mn></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f_N(M^2)</annotation></semantics></math>
+itself near
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">M=1</annotation></semantics></math>.</p>
+<p>Every specified actual reduced annihilator, after the retained
+rational gauge and denominator clearing, supplies</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>N</mi></msub><msub><mi>R</mi><mi>N</mi></msub><mo>=</mo><msub><mi>b</mi><mi>N</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>b</mi><mi>N</mi></msub><mo>=</mo><mi>−</mi><msub><mi>A</mi><mi>N</mi></msub><msub><mi>p</mi><mi>N</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ A_N R_N=b_N,\qquad b_N=-A_Np_N.
+ \tag{5}
+</annotation></semantics></math></p>
+<p>The Laurent support of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>b</mi><mi>N</mi></msub><annotation encoding="application/x-tex">b_N</annotation></semantics></math>
+lies in one fixed interval and its coefficients are polynomially bounded
+in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>.
+Its coefficients are explicit finite sine moments of the ordinary
+colors. This is a rootwise source, not a proved single rational function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo stretchy="false" form="prefix">(</mo><mi>q</mi><mo>,</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">b(q,Y)</annotation></semantics></math>;
+its transverse quantum derivatives are not controlled merely by the
+ordinary-color bound. Replacing the source by one chosen to make a
+candidate solve (5) would change the question.</p>
+<h2 id="the-main-meridian-normal-lattice-is-already-explicit">2. The
+main-meridian normal lattice is already explicit</h2>
+<p>Put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>N</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>Y</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><msub><mi>f</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">v_N=(Y-1)f_N</annotation></semantics></math>.
+The primitive minimal actual normal operator
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+has the proved reciprocity</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mi>J</mi><mo>=</mo><msup><mi>J</mi><mo>′</mo></msup><mi>B</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>J</mi><mo>=</mo><mi>−</mi><mi>Y</mi><mi mathvariant="script">ℛ</mi><mo>,</mo><mspace width="2.0em"></mspace><msup><mi>J</mi><mo>′</mo></msup><mo>=</mo><mi>σ</mi><msup><mi>q</mi><mrow><mi>d</mi><mi>m</mi></mrow></msup><msup><mi>Y</mi><mi>m</mi></msup><msup><mi>T</mi><mi>d</mi></msup><mi mathvariant="script">ℛ</mi><mo>,</mo><mspace width="2.0em"></mspace><mi mathvariant="script">ℛ</mi><mi>h</mi><mo stretchy="false" form="prefix">(</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>h</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>Y</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="1.0em"></mspace><mi>T</mi><mi>Y</mi><mo>=</mo><msup><mi>q</mi><mn>2</mn></msup><mi>Y</mi><mi>T</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ BJ=J&#39;B,\qquad J=-Y\mathcal R,\qquad
+ J&#39;=\sigma q^{dm}Y^mT^d\mathcal R,\qquad
+ \mathcal Rh(Y)=h(Y^{-1}),\quad TY=q^2YT.
+ \tag{6}
+</annotation></semantics></math></p>
+<p>Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>
+is the operator order,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+is an integer, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mi>+</mi><mn>1</mn><mo>,</mo><mi>−</mi><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\sigma\in\{+1,-1\}</annotation></semantics></math>
+is the retained sign. The actual state obeys
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>J</mi><msub><mi>v</mi><mi>N</mi></msub><mo>=</mo><msub><mi>v</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">Jv_N=v_N</annotation></semantics></math>.
+On the marked roots
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mi>r</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>U</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msubsup><mi>Q</mi><mi>N</mi><mi>r</mi></msubsup><msup><mi>U</mi><mrow><mn>1</mn><mi>/</mi><mi>N</mi></mrow></msup></mrow><annotation encoding="application/x-tex">Y_r(U)=Q_N^rU^{1/N}</annotation></semantics></math>,
+expand
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>U</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>B</mi><mn>0</mn></msub><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>U</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><msub><mi>B</mi><mn>1</mn></msub><mo>+</mo><mi>⋯</mi></mrow><annotation encoding="application/x-tex">B_N(U)=B_0+(U-1)B_1+\cdots</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>U</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>v</mi><mn>0</mn></msub><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>U</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><msub><mi>v</mi><mn>1</mn></msub><mo>+</mo><mi>⋯</mi></mrow><annotation encoding="application/x-tex">v_N(U)=v_0+(U-1)v_1+\cdots</annotation></semantics></math>.
+Exactly</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>v</mi><mn>0</mn></msub><msub><mo stretchy="false" form="postfix">)</mo><mn>0</mn></msub><mo>=</mo><mn>0</mn><mo>,</mo><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">(</mo><msub><mi>v</mi><mn>0</mn></msub><msub><mo stretchy="false" form="postfix">)</mo><mi>r</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msubsup><mi>Q</mi><mi>N</mi><mi>r</mi></msubsup><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><msub><mi>C</mi><mi>r</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>q</mi><mi>N</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>B</mi><mn>0</mn></msub><msub><mi>v</mi><mn>1</mn></msub><mo>=</mo><mi>−</mi><msub><mi>B</mi><mn>1</mn></msub><msub><mi>v</mi><mn>0</mn></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>K</mi><mi>N</mi></msub><mo>=</mo><mi>N</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>v</mi><mn>1</mn></msub><msub><mo stretchy="false" form="postfix">)</mo><mn>0</mn></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ (v_0)_0=0,\qquad (v_0)_r=(Q_N^r-1)C_r(q_N),\qquad
+ B_0v_1=-B_1v_0,\qquad K_N=N(v_1)_0.
+ \tag{7}
+</annotation></semantics></math></p>
+<p>The source in (7) is polynomially bounded. The complete functional
+and source both lie in the negative Weyl sectors. If the complete
+coordinate annihilates the kernel of the negative block, the exact
+inverse formula is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>N</mi></msub><mo>=</mo><mi>−</mi><mi>N</mi><msubsup><mi>e</mi><mn>0</mn><mo>*</mo></msubsup><msubsup><mi>B</mi><mo>−</mo><mo>+</mo></msubsup><msub><mi>B</mi><mn>1</mn></msub><msub><mi>v</mi><mn>0</mn></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ K_N=-N e_0^*B_-^+B_1v_0.
+ \tag{8}
+</annotation></semantics></math></p>
+<p>Injectivity of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mo>−</mo></msub><annotation encoding="application/x-tex">B_-</annotation></semantics></math>
+suffices, but is not proved for arbitrary actual operators. The explicit
+sector dimensions in <code>ramified_weyl_fibre</code> even forbid
+injectivity for some reciprocity signatures. Generic rational rank one
+is a different condition and does not imply this special-fibre
+injectivity.</p>
+<p>Ramified descent preserves the derivative without requiring either
+rank condition. Set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>U</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mi>U</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">z=(U-1)/(U+1)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><msup><mi>z</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">s=z^2</annotation></semantics></math>,
+and use the specified unit
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>U</mi><mrow><mi>−</mi><mn>1</mn><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>N</mi><mo stretchy="false" form="postfix">)</mo></mrow></msup><annotation encoding="application/x-tex">U^{-1/(2N)}</annotation></semantics></math>
+on the input. The invariant lattice is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Λ</mi><mo>=</mo><mi mathvariant="double-struck">ℂ</mi><mo stretchy="false" form="prefix">[</mo><mo stretchy="false" form="prefix">[</mo><mi>s</mi><mo stretchy="false" form="postfix">]</mo><mo stretchy="false" form="postfix">]</mo><msub><mi>E</mi><mo>+</mo></msub><mo>⊕</mo><mi>z</mi><mi mathvariant="double-struck">ℂ</mi><mo stretchy="false" form="prefix">[</mo><mo stretchy="false" form="prefix">[</mo><mi>s</mi><mo stretchy="false" form="postfix">]</mo><mo stretchy="false" form="postfix">]</mo><msub><mi>E</mi><mo>−</mo></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \Lambda=\mathbb C[[s]]E_+\oplus z\mathbb C[[s]]E_-.
+ \tag{9}
+</annotation></semantics></math></p>
+<p>Its special fibre has coordinates
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>a</mi><mn>0</mn></msub><mo>,</mo><msub><mi>b</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a_0,b_0)</annotation></semantics></math>:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><msub><mi>v</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">a_0=v_0</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mn>0</mn></msub><mo>=</mo><mn>2</mn><msub><mi>v</mi><mn>1</mn></msub><mo>−</mo><msub><mi>v</mi><mn>0</mn></msub><mi>/</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">b_0=2v_1-v_0/N</annotation></semantics></math>.
+The original complete evaluations are</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>N</mi></msub><mo>=</mo><mfrac><mi>N</mi><mn>2</mn></mfrac><msubsup><mi>e</mi><mn>0</mn><mo>*</mo></msubsup><msub><mi>b</mi><mn>0</mn></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi mathvariant="script">𝒩</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><msub><mi>η</mi><mi>N</mi></msub><mn>2</mn></mfrac><msubsup><mi>e</mi><mn>0</mn><mo>*</mo></msubsup><msub><mi>b</mi><mn>0</mn></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ K_N=\frac N2e_0^*b_0,\qquad
+ \mathcal N_N(1)=\frac{\eta_N}{2}e_0^*b_0.
+ \tag{10}
+</annotation></semantics></math></p>
+<p>The factor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><msub><mi>e</mi><mo>−</mo></msub></mrow><annotation encoding="application/x-tex">ze_-</annotation></semantics></math>
+is a nonzero generator in this descended fibre. Setting
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">z=0</annotation></semantics></math>
+before taking the invariant lattice would discard it. An equivariant
+shear that is identity on the ordinary fibre can still change
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>b</mi><mn>0</mn></msub><annotation encoding="application/x-tex">b_0</annotation></semantics></math>;
+the cut functional must be transported as well.</p>
+<p>The physical adjacent-color fusion proves this is the actual boundary
+lattice. In
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mi>N</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>M</mi><mo>−</mo><msup><mi>M</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo><msub><mi>F</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>M</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">w_N=(M-M^{-1})F_N(M)</annotation></semantics></math>,
+a preferred fundamental parallel acts by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mo stretchy="false" form="prefix">(</mo><mi>T</mi><mo>+</mo><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">-(T+T^{-1})</annotation></semantics></math>,
+whereas in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>N</mi></msub><mo>=</mo><mi>M</mi><msub><mi>w</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">v_N=Mw_N</annotation></semantics></math>
+it acts by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mi>T</mi><mo>+</mo><msup><mi>κ</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\kappa T+\kappa^{-1}T^{-1}</annotation></semantics></math>.
+Its complete Casimir residue is square zero, has rank
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">N-1</annotation></semantics></math>,
+and has pivotal partial trace equal to the identity. The knot-dependent
+coefficient of that residue uses the derivative at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><msub><mi>q</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">M=q_N</annotation></semantics></math>,
+not the complete derivative at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">M=1</annotation></semantics></math>.
+The universal nilpotent residue alone does not prove its excitation by
+the selected knot state or its identification with a geometric
+factor.</p>
+<h2 id="three-different-normal-directions-must-be-distinguished">3.
+Three different normal directions must be distinguished</h2>
+<p>There are three exact constructions, with different inputs.</p>
+<ul>
+<li>The derivative in (7) varies the central meridian
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><msup><mi>Y</mi><mi>N</mi></msup></mrow><annotation encoding="application/x-tex">U=Y^N</annotation></semantics></math>
+at a fixed root
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mi>N</mi></msub><annotation encoding="application/x-tex">Q_N</annotation></semantics></math>.
+It is the normal coordinate entering the complete ADO value.</li>
+<li>The first quantum-normal connection varies
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo>=</mo><msub><mi>Q</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>ϵ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">Q=Q_N(1+\epsilon)</annotation></semantics></math>
+at fixed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>,
+retaining the moving shift. If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="sans-serif">𝖳</mi><mo stretchy="false" form="prefix">(</mo><mi>Q</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathsf T(Q)</annotation></semantics></math>
+is the solution transport and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>=</mo><msubsup><mi mathvariant="sans-serif">𝖳</mi><mn>0</mn><mi>N</mi></msubsup></mrow><annotation encoding="application/x-tex">H_0=\mathsf T_0^N</annotation></semantics></math>,
+its first term is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>+</mo><mi>N</mi><msub><mi>H</mi><mn>0</mn></msub><mi>Y</mi><msub><mi>∂</mi><mi>Y</mi></msub></mrow><annotation encoding="application/x-tex">H_1+NH_0Y\partial_Y</annotation></semantics></math>.
+After division by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>N</mi><mn>2</mn></msup><annotation encoding="application/x-tex">N^2</annotation></semantics></math>,
+its kernel-to-cokernel symbol is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><msub><mi>∂</mi><mi>U</mi></msub></mrow><annotation encoding="application/x-tex">U\partial_U</annotation></semantics></math>
+times the natural map
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ι</mi><mo>:</mo><mrow><mi mathvariant="normal">ker</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>H</mi><mn>0</mn></msub><mo>−</mo><mi>I</mi><mo stretchy="false" form="postfix">)</mo><mo>→</mo><mrow><mi mathvariant="normal">coker</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>H</mi><mn>0</mn></msub><mo>−</mo><mi>I</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\iota:\ker(H_0-I)\to\operatorname{coker}(H_0-I)</annotation></semantics></math>.</li>
+<li>The Mellin construction has base coordinate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>,
+shift
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>X</mi></msub><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>Q</mi><mi>X</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">S_Xg(X)=g(QX)</annotation></semantics></math>,
+and central variable
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>X</mi><mi>N</mi></msup><annotation encoding="application/x-tex">X^N</annotation></semantics></math>.
+Its quantum-normal connection and source quotient concern that
+polarization.</li>
+</ul>
+<p>For the actual finite cut lift the first quantum-normal equation has
+the correction determined by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>∂</mi><mi>Z</mi></msub><mi mathvariant="script">𝒜</mi></mrow><annotation encoding="application/x-tex">\partial_Z\mathcal A</annotation></semantics></math>
+of the same whole preoperator
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">𝒜</mi><mo stretchy="false" form="prefix">(</mo><mi>Q</mi><mo>,</mo><mi>Z</mi><mo>,</mo><mi>Y</mi><mo>,</mo><mi>T</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathcal A(Q,Z,Y,T)</annotation></semantics></math>,
+specialized at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi><mo>=</mo><msup><mi>Q</mi><mi>N</mi></msup></mrow><annotation encoding="application/x-tex">Z=Q^N</annotation></semantics></math>.
+It is not the unsourced connection. The corrected operator satisfies a
+Leibniz rule with symbol
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ι</mi><annotation encoding="application/x-tex">\iota</annotation></semantics></math>.
+If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ι</mi><mo stretchy="false" form="prefix">(</mo><mi>v</mi><mo stretchy="false" form="postfix">)</mo><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\iota(v)\ne0</annotation></semantics></math>,
+two central scalar multiples admitting that same whole lifting rule
+differ by a constant; the ordinary anchor fixes the constant. Neither
+nonzero-symbol nor special-fibre rank follows from the existence of the
+reduced scalar at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">M=1</annotation></semantics></math>.</p>
+<p>In the actual Mellin source presentation the selected-symbol
+nonvanishing is proved for every knot: an observable row has value one
+on the selected section and kills the image of monodromy minus identity.
+The bounded cyclotomic quantum-jet theorem goes further. It fixes the
+entire rational root Mellin function from the actual source, starting
+lattice, pole numerator of degree at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D(s-1)+1</annotation></semantics></math>
+quantum jet levels in the stated finite color window. It requires no
+rank-one or semisimplicity assumption. Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>
+is the meridian exponent span of the fixed recurrence’s leading
+coefficient and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
+is its number of collected monomials. This is an exact uniqueness
+theorem, not yet a map from a proposed main-meridian geometric
+realization.</p>
+<h2 id="the-precise-fourier-map-exchanges-two-central-divisors">4. The
+precise Fourier map exchanges two central divisors</h2>
+<p>Use the generic quantum torus</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">ℛ</mi><mi>Q</mi></msub><mo>=</mo><mi mathvariant="double-struck">ℂ</mi><mo stretchy="false" form="prefix">(</mo><mi>Q</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">⟨</mo><msup><mi>Y</mi><mrow><mi>±</mi><mn>1</mn></mrow></msup><mo>,</mo><msup><mi>T</mi><mrow><mi>±</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">⟩</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>T</mi><mi>Y</mi><mo>=</mo><mi>Q</mi><mi>Y</mi><mi>T</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \mathcal R_Q=\mathbb C(Q)\langle Y^{\pm1},T^{\pm1}\rangle,
+ \qquad TY=QYT.
+ \tag{11}
+</annotation></semantics></math></p>
+<p>The actual finite-start generating series is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi><mo stretchy="false" form="prefix">(</mo><mi>Q</mi><mo>,</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mo>∑</mo><mrow><mi>n</mi><mo>≥</mo><msub><mi>n</mi><mn>0</mn></msub></mrow></msub><msub><mi>C</mi><mi>n</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>Q</mi><mo stretchy="false" form="postfix">)</mo><msup><mi>X</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">Z(Q,X)=\sum_{n\ge n_0}C_n(Q)X^n</annotation></semantics></math>.
+Its Fourier map is exactly</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Φ</mi><mo stretchy="false" form="prefix">(</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>S</mi><mi>X</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><mi mathvariant="normal">Φ</mi><mo stretchy="false" form="prefix">(</mo><mi>T</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>X</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>,</mo><mspace width="2.0em"></mspace><msup><mi>X</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msub><mi>S</mi><mi>X</mi></msub><mo>=</mo><mi>Q</mi><msub><mi>S</mi><mi>X</mi></msub><msup><mi>X</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \Phi(Y)=S_X,\qquad \Phi(T)=X^{-1},\qquad
+ X^{-1}S_X=QS_XX^{-1}.
+ \tag{12}
+</annotation></semantics></math></p>
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>=</mo><msub><mo>∑</mo><mrow><mi>j</mi><mo>,</mo><mi>m</mi></mrow></msub><msub><mi>a</mi><mrow><mi>j</mi><mi>m</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>Q</mi><mo stretchy="false" form="postfix">)</mo><msup><mi>Y</mi><mi>m</mi></msup><msup><mi>T</mi><mi>j</mi></msup></mrow><annotation encoding="application/x-tex">P=\sum_{j,m}a_{jm}(Q)Y^mT^j</annotation></semantics></math>,
+its ordered image is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Φ</mi><mo stretchy="false" form="prefix">(</mo><mi>P</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mo>∑</mo><mrow><mi>j</mi><mo>,</mo><mi>m</mi></mrow></msub><msub><mi>a</mi><mrow><mi>j</mi><mi>m</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>Q</mi><mo stretchy="false" form="postfix">)</mo><msup><mi>Q</mi><mrow><mi>−</mi><mi>m</mi><mi>j</mi></mrow></msup><msup><mi>X</mi><mrow><mi>−</mi><mi>j</mi></mrow></msup><msubsup><mi>S</mi><mi>X</mi><mi>m</mi></msubsup></mrow><annotation encoding="application/x-tex">\Phi(P)=\sum_{j,m}a_{jm}(Q)Q^{-mj}X^{-j}S_X^m</annotation></semantics></math>.
+The finite starting point creates the explicit source
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Φ</mi><mo stretchy="false" form="prefix">(</mo><mi>P</mi><mo stretchy="false" form="postfix">)</mo><mi>Z</mi><mo>=</mo><mi mathvariant="script">ℬ</mi></mrow><annotation encoding="application/x-tex">\Phi(P)Z=\mathcal B</annotation></semantics></math>,
+rather than a homogeneous equation. Here is its full nonvanishing
+argument in the actual all-knot conventions. Write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><msub><mi>d</mi><mi>c</mi></msub></msubsup><msub><mi>a</mi><mi>j</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>Q</mi><mo>,</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo><msup><mi>T</mi><mi>j</mi></msup></mrow><annotation encoding="application/x-tex">P=\sum_{j=0}^{d_c}a_j(Q,Y)T^j</annotation></semantics></math>,
+with both endpoint coefficients nonzero after one fixed denominator
+clearing and shift. Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>A</mi><mi>c</mi></msub><annotation encoding="application/x-tex">A_c</annotation></semantics></math>
+be the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>-exponent
+span of the collected Laurent monomials of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><msub><mi>d</mi><mi>c</mi></msub></msub><annotation encoding="application/x-tex">a_{d_c}</annotation></semantics></math>.
+Choose a fixed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mn>0</mn></msub><mo>≥</mo><msub><mi>d</mi><mi>c</mi></msub><mo>+</mo><msub><mi>A</mi><mi>c</mi></msub><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n_0\ge d_c+A_c+1</annotation></semantics></math>.
+If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&gt;</mo><msub><mi>A</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">r&gt;A_c</annotation></semantics></math>,
+distinct monomials of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><msub><mi>d</mi><mi>c</mi></msub></msub><mo stretchy="false" form="prefix">(</mo><mi>Q</mi><mo>,</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">a_{d_c}(Q,Y)</annotation></semantics></math>
+stay distinct after
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mo>=</mo><msup><mi>Q</mi><mi>r</mi></msup></mrow><annotation encoding="application/x-tex">Y=Q^r</annotation></semantics></math>:
+a collision with different
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>
+exponents would require
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>≤</mo><msub><mi>A</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">r\le A_c</annotation></semantics></math>.
+Hence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><msub><mi>d</mi><mi>c</mi></msub></msub><mo stretchy="false" form="prefix">(</mo><mi>Q</mi><mo>,</mo><msup><mi>Q</mi><mrow><msub><mi>n</mi><mn>0</mn></msub><mo>−</mo><msub><mi>d</mi><mi>c</mi></msub></mrow></msup><mo stretchy="false" form="postfix">)</mo><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a_{d_c}(Q,Q^{n_0-d_c})\ne0</annotation></semantics></math>.</p>
+<p>Termwise summation of the actual color recurrence gives</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">ℬ</mi><mo stretchy="false" form="prefix">(</mo><mi>Q</mi><mo>,</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mo>∑</mo><mrow><mi>j</mi><mo>,</mo><mi>m</mi></mrow></munder><msub><mi>a</mi><mrow><mi>j</mi><mi>m</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>Q</mi><mo stretchy="false" form="postfix">)</mo><msup><mi>Q</mi><mrow><mi>−</mi><mi>m</mi><mi>j</mi></mrow></msup><msup><mi>X</mi><mrow><mi>−</mi><mi>j</mi></mrow></msup><munderover><mo>∑</mo><mrow><mi>r</mi><mo>=</mo><msub><mi>n</mi><mn>0</mn></msub></mrow><mrow><msub><mi>n</mi><mn>0</mn></msub><mo>+</mo><mi>j</mi><mo>−</mo><mn>1</mn></mrow></munderover><msub><mi>C</mi><mi>r</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>Q</mi><mo stretchy="false" form="postfix">)</mo><msup><mi>Q</mi><mrow><mi>m</mi><mi>r</mi></mrow></msup><msup><mi>X</mi><mi>r</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \mathcal B(Q,X)=
+ \sum_{j,m}a_{jm}(Q)Q^{-mj}X^{-j}
+       \sum_{r=n_0}^{n_0+j-1}C_r(Q)Q^{mr}X^r.
+ \tag{12a}
+</annotation></semantics></math></p>
+<p>The inner sum is empty for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">j=0</annotation></semantics></math>.
+The powers of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+range from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mn>0</mn></msub><mo>−</mo><msub><mi>d</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">n_0-d_c</annotation></semantics></math>
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mn>0</mn></msub><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n_0-1</annotation></semantics></math>,
+and its least coefficient is exactly</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><msup><mi>X</mi><mrow><msub><mi>n</mi><mn>0</mn></msub><mo>−</mo><msub><mi>d</mi><mi>c</mi></msub></mrow></msup><mo stretchy="false" form="postfix">]</mo><mi mathvariant="script">ℬ</mi><mo>=</mo><msub><mi>C</mi><msub><mi>n</mi><mn>0</mn></msub></msub><mo stretchy="false" form="prefix">(</mo><mi>Q</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>a</mi><msub><mi>d</mi><mi>c</mi></msub></msub><mo stretchy="false" form="prefix">(</mo><mi>Q</mi><mo>,</mo><msup><mi>Q</mi><mrow><msub><mi>n</mi><mn>0</mn></msub><mo>−</mo><msub><mi>d</mi><mi>c</mi></msub></mrow></msup><mo stretchy="false" form="postfix">)</mo><mo>≠</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ [X^{n_0-d_c}]\mathcal B
+       =C_{n_0}(Q)a_{d_c}(Q,Q^{n_0-d_c})\ne0.
+ \tag{12b}
+</annotation></semantics></math></p>
+<p>The actual fixed-color function obeys
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><msub><mi>n</mi><mn>0</mn></msub></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">C_{n_0}(1)=1</annotation></semantics></math>,
+so it is not the zero Laurent polynomial. The product in (12b) is a
+fixed nonzero rational function of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>
+and has only finitely many zeros and poles. Thus
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">ℬ</mi><mi>N</mi></msub><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\mathcal B_N\ne0</annotation></semantics></math>
+as a rational function of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+at every sufficiently large principal root. This excludes only finitely
+many levels of the fixed operator and source, not selected
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+values. If a negative shift normalization is removed from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Φ</mi><mo stretchy="false" form="prefix">(</mo><mi>P</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\Phi(P)</annotation></semantics></math>,
+the same left shift is applied to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℬ</mi><annotation encoding="application/x-tex">\mathcal B</annotation></semantics></math>;
+its nonvanishing is preserved. No asymptotic input is used here. In
+(12a)–(12b),
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>r</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>Q</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">C_r(Q)</annotation></semantics></math>
+denotes the same fixed-color invariant in its proved squared-parameter
+convention
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo>=</mo><msup><mi>q</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">Q=q^2</annotation></semantics></math>;
+it is not a new choice of colors.</p>
+<p>At a primitive
+level-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+root, introduce both pairs of central coordinates:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><msup><mi>Y</mi><mi>N</mi></msup><mo>,</mo><mspace width="1.0em"></mspace><mi>V</mi><mo>=</mo><msup><mi>T</mi><mi>N</mi></msup><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>U</mi><mi>X</mi></msub><mo>=</mo><msup><mi>X</mi><mi>N</mi></msup><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>V</mi><mi>X</mi></msub><mo>=</mo><msubsup><mi>S</mi><mi>X</mi><mi>N</mi></msubsup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ U=Y^N,\quad V=T^N,\qquad
+ U_X=X^N,\quad V_X=S_X^N.
+ \tag{13}
+</annotation></semantics></math></p>
+<p>Then</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Φ</mi><mo stretchy="false" form="prefix">(</mo><mi>U</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>V</mi><mi>X</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><mi mathvariant="normal">Φ</mi><mo stretchy="false" form="prefix">(</mo><mi>V</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msubsup><mi>U</mi><mi>X</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \Phi(U)=V_X,\qquad \Phi(V)=U_X^{-1}.
+ \tag{14}
+</annotation></semantics></math></p>
+<p>Rational functions of the main meridian, with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+acting by root shift, satisfy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">V=1</annotation></semantics></math>
+while
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>
+varies. Their Fourier image would therefore lie on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>X</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">U_X=1</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>V</mi><mi>X</mi></msub><annotation encoding="application/x-tex">V_X</annotation></semantics></math>
+variable. Rational functions of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>,
+on which
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>S</mi><mi>X</mi></msub><annotation encoding="application/x-tex">S_X</annotation></semantics></math>
+is root shift, instead satisfy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>V</mi><mi>X</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">V_X=1</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>U</mi><mi>X</mi></msub><annotation encoding="application/x-tex">U_X</annotation></semantics></math>
+variable. In the original coordinates this second divisor is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">U=1</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>=</mo><msup><mi>X</mi><mrow><mi>−</mi><mi>N</mi></mrow></msup></mrow><annotation encoding="application/x-tex">V=X^{-N}</annotation></semantics></math>
+variable.</p>
+<p>These two support divisors are different. An isomorphism over the
+fixed root center cannot identify modules whose generic central
+annihilator ideals are respectively
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>V</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(V-1)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>U</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(U-1)</annotation></semantics></math>:
+their annihilator ideals would have to agree. Fourier is an isomorphism
+of the unlocalized quantum tori, but it does not identify these two
+chosen rational realizations by a free renaming of variables.</p>
+<h3 id="the-finite-orbit-comparison-that-does-hold">4.1 The finite orbit
+comparison that does hold</h3>
+<p>At their intersection
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><mi>V</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">U=V=1</annotation></semantics></math>
+there is the exact finite Fourier intertwiner</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">ℱ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>h</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munderover><mo>∑</mo><mrow><mi>r</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></munderover><mi>h</mi><mo stretchy="false" form="prefix">(</mo><msubsup><mi>Q</mi><mi>N</mi><mi>r</mi></msubsup><mo stretchy="false" form="postfix">)</mo><msup><mi>X</mi><mi>r</mi></msup><mspace width="1.0em"></mspace><mrow><mtext mathvariant="normal">in </mtext><mspace width="0.333em"></mspace></mrow><mi mathvariant="double-struck">ℂ</mi><mo stretchy="false" form="prefix">[</mo><mi>X</mi><mo stretchy="false" form="postfix">]</mo><mi>/</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>X</mi><mi>N</mi></msup><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \mathscr F_N(h)=\sum_{r=0}^{N-1}h(Q_N^r)X^r
+       \quad\text{in }\mathbb C[X]/(X^N-1).
+ \tag{15}
+</annotation></semantics></math></p>
+<p>Indeed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">ℱ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>Y</mi><mi>h</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>S</mi><mi>X</mi></msub><msub><mi mathvariant="script">ℱ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>h</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathscr F_N(Yh)=S_X\mathscr F_N(h)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">ℱ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>T</mi><mi>h</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>X</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msub><mi mathvariant="script">ℱ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>h</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathscr F_N(Th)=X^{-1}\mathscr F_N(h)</annotation></semantics></math>.
+This follows term by term, using cyclic reindexing only after imposing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>X</mi><mi>N</mi></msup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">X^N=1</annotation></semantics></math>.</p>
+<p>For the actual meridian state its polynomial image is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>N</mi></msub><mo>+</mo><msubsup><mo>∑</mo><mrow><mi>r</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></msubsup><msub><mi>C</mi><mi>r</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>q</mi><mi>N</mi></msub><mo stretchy="false" form="postfix">)</mo><msup><mi>X</mi><mi>r</mi></msup></mrow><annotation encoding="application/x-tex">K_N+\sum_{r=1}^{N-1}C_r(q_N)X^r</annotation></semantics></math>
+modulo
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>X</mi><mi>N</mi></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">X^N-1</annotation></semantics></math>.
+The Mellin pole numerator has the specified lift</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>X</mi><mi>N</mi></msup><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>Z</mi><mi>N</mi></msub><mo>+</mo><msub><mi>p</mi><mo>&lt;</mo></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munderover><mo>∑</mo><mrow><mi>r</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></munderover><msub><mi>C</mi><mi>r</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>q</mi><mi>N</mi></msub><mo stretchy="false" form="postfix">)</mo><msup><mi>X</mi><mi>r</mi></msup><mo>+</mo><msub><mi>K</mi><mi>N</mi></msub><msup><mi>X</mi><mi>N</mi></msup><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ (1-X^N)(Z_N+p_{&lt;})
+   =\sum_{r=1}^{N-1}C_r(q_N)X^r+K_NX^N,
+ \tag{16}
+</annotation></semantics></math></p>
+<p>where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mo>&lt;</mo></msub><mo>=</mo><msub><mo>∑</mo><mrow><mn>1</mn><mo>≤</mo><mi>r</mi><mo>&lt;</mo><msub><mi>n</mi><mn>0</mn></msub></mrow></msub><msub><mi>C</mi><mi>r</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>q</mi><mi>N</mi></msub><mo stretchy="false" form="postfix">)</mo><msup><mi>X</mi><mi>r</mi></msup></mrow><annotation encoding="application/x-tex">p_{&lt;}=\sum_{1\le r&lt;n_0}C_r(q_N)X^r</annotation></semantics></math>.
+Thus (15) compares the meridian orbit with the residue numerator, not
+with a finite value of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Z</mi><mi>N</mi></msub><annotation encoding="application/x-tex">Z_N</annotation></semantics></math>
+at a pole. In particular
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi mathvariant="normal">Res</mi><mo>&#8289;</mo></mrow><mrow><mi>X</mi><mo>=</mo><mi>∞</mi></mrow></msub><msub><mi>Z</mi><mi>N</mi></msub><mspace width="0.167em"></mspace><mi>d</mi><mi>X</mi><mi>/</mi><mi>X</mi><mo>=</mo><msub><mi>K</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">\operatorname{Res}_{X=\infty}Z_N\,dX/X=K_N</annotation></semantics></math>.</p>
+<p>There is also an explicit linear map from the marked normal fibre (9)
+to (16). For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>r</mi><mo>&lt;</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">1\le r&lt;N</annotation></semantics></math>,
+recover the ordinary value as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mn>0</mn><mo>,</mo><mi>r</mi></mrow></msub><mi>/</mi><mo stretchy="false" form="prefix">(</mo><msubsup><mi>Q</mi><mi>N</mi><mi>r</mi></msubsup><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">a_{0,r}/(Q_N^r-1)</annotation></semantics></math>
+and recover the complete value as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>N</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><msubsup><mi>e</mi><mn>0</mn><mo>*</mo></msubsup><msub><mi>b</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">(N/2)e_0^*b_0</annotation></semantics></math>.
+Substitute those values into (16). For the actual fibre this produces
+the actual rational Mellin function. It retains the complete functional
+rather than replacing it by the ordinary normal value, which is
+zero.</p>
+<p>This map loses all other components of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>b</mi><mn>0</mn></msub><annotation encoding="application/x-tex">b_0</annotation></semantics></math>
+and all higher central meridian jets. It is neither an inverse
+reconstruction of the meridian profile nor a transport of its first
+quantum-normal operator. It proves the scalar/residue agreement already
+supported by the pointing, without granting a module comparison.</p>
+<h3
+id="the-finite-clock-fibre-cannot-have-the-proposed-first-order-lift">4.2
+The finite clock fibre cannot have the proposed first-order lift</h3>
+<p>The obstruction is visible before any knot is chosen. Set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo>=</mo><msub><mi>Q</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>ϵ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">Q=Q_N(1+\epsilon)</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>ϵ</mi><mn>2</mn></msup><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\epsilon^2=0</annotation></semantics></math>.
+In the whole quantum torus,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mi>U</mi><mo>=</mo><msup><mi>Q</mi><msup><mi>N</mi><mn>2</mn></msup></msup><mi>U</mi><mi>V</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><msup><mi>N</mi><mn>2</mn></msup><mi>ϵ</mi><mo stretchy="false" form="postfix">)</mo><mi>U</mi><mi>V</mi><mo>,</mo><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">[</mo><mi>V</mi><mo>,</mo><mi>U</mi><mo stretchy="false" form="postfix">]</mo><mo>=</mo><msup><mi>N</mi><mn>2</mn></msup><mi>ϵ</mi><mi>U</mi><mi>V</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ VU=Q^{N^2}UV=(1+N^2\epsilon)UV,
+ \qquad [V,U]=N^2\epsilon UV.
+ \tag{17}
+</annotation></semantics></math></p>
+<p>Suppose the finite orbit fibre admitted a free matrix lift over the
+dual numbers with both central actions reducing to identity. Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><mi>I</mi><mo>+</mo><mi>ϵ</mi><mi>A</mi></mrow><annotation encoding="application/x-tex">U=I+\epsilon A</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>=</mo><mi>I</mi><mo>+</mo><mi>ϵ</mi><mi>B</mi></mrow><annotation encoding="application/x-tex">V=I+\epsilon B</annotation></semantics></math>,
+so their commutator is zero modulo
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ϵ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\epsilon^2</annotation></semantics></math>.
+Equation (17) would instead give
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>N</mi><mn>2</mn></msup><mi>ϵ</mi><mi>I</mi></mrow><annotation encoding="application/x-tex">N^2\epsilon I</annotation></semantics></math>,
+a contradiction in characteristic zero. Equivalently, invertible
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>-by-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+clock matrices with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mi>Y</mi><mo>=</mo><mi>Q</mi><mi>Y</mi><mi>T</mi></mrow><annotation encoding="application/x-tex">TY=QYT</annotation></semantics></math>
+would have determinants forcing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>Q</mi><mi>N</mi></msup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">Q^N=1</annotation></semantics></math>,
+whereas
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>Q</mi><mi>N</mi></msup><mo>=</mo><mn>1</mn><mo>+</mo><mi>N</mi><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">Q^N=1+N\epsilon</annotation></semantics></math>.</p>
+<p>This forbids extending the root Fourier intertwiner as an ordinary
+finite free clock-matrix gauge through the quantum-normal direction. It
+does not forbid a comparison retaining differential normal operators,
+relative sources, or a larger module. The derivative term in the first
+quantum-normal construction records precisely why an off-root shift is
+not a finite-order linear clock. Any such bridge must retain that term
+and its source/co-source.</p>
+<h2 id="the-boundary-module-explains-the-mellin-selected-symbol">5. The
+boundary module explains the Mellin selected symbol</h2>
+<p>The meridian boundary module is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Δ</mi><mi>Y</mi></msub><mo>=</mo><msub><mi mathvariant="script">ℛ</mi><mi>Q</mi></msub><mi>/</mi><msub><mi mathvariant="script">ℛ</mi><mi>Q</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>Y</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \Delta_Y=\mathcal R_Q/\mathcal R_Q(Y-1).
+ \tag{18}
+</annotation></semantics></math></p>
+<p>Localization of the meridian to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">ℂ</mi><mo stretchy="false" form="prefix">(</mo><mi>Q</mi><mo>,</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathbb C(Q,Y)</annotation></semantics></math>
+kills it, since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">Y-1</annotation></semantics></math>
+becomes a unit. Its Fourier image is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">ℛ</mi><mi>X</mi></msub><mi>/</mi><msub><mi mathvariant="script">ℛ</mi><mi>X</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>S</mi><mi>X</mi></msub><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathcal R_X/\mathcal R_X(S_X-1)</annotation></semantics></math>,
+which survives localization to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">ℂ</mi><mo stretchy="false" form="prefix">(</mo><mi>Q</mi><mo>,</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathbb C(Q,X)</annotation></semantics></math>
+as a rank-one trivial difference module. Consequently the two rational
+localizations discard different boundary information.</p>
+<p>There is a stronger actual consequence on the covered positive-volume
+class. Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>=</mo><msub><mo>∑</mo><mi>i</mi></msub><msub><mi>a</mi><mi>i</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>Q</mi><mo>,</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo><msup><mi>T</mi><mi>i</mi></msup></mrow><annotation encoding="application/x-tex">P=\sum_i a_i(Q,Y)T^i</annotation></semantics></math>
+be any denominator-cleared polynomial reduced-state annihilator. The
+boundary-column argument in <code>peripheral_normal_period</code>
+applies to the now-proved exponential rate: every coefficient satisfies
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>Q</mi><mo>,</mo><msup><mi>Q</mi><mrow><mi>−</mi><mi>i</mi></mrow></msup><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a_i(Q,Q^{-i})=0</annotation></semantics></math>
+identically. Hence</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>=</mo><mi>B</mi><mo stretchy="false" form="prefix">(</mo><mi>Y</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>A</mi><mo>:=</mo><mi mathvariant="normal">Φ</mi><mo stretchy="false" form="prefix">(</mo><mi>P</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi mathvariant="normal">Φ</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>S</mi><mi>X</mi></msub><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ P=B(Y-1),\qquad A:=\Phi(P)=\Phi(B)(S_X-1).
+ \tag{19}
+</annotation></semantics></math></p>
+<p>The order is important: these are right factors. Any fixed initial
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>S</mi><mi>X</mi></msub><annotation encoding="application/x-tex">S_X</annotation></semantics></math>
+shift applied to both
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+and its source preserves
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">A(1)=0</annotation></semantics></math>.
+The actual Mellin equation has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><msub><mi>Z</mi><mi>N</mi></msub><mo>=</mo><msub><mi mathvariant="script">ℬ</mi><mi>N</mi></msub><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">AZ_N=\mathcal B_N\ne0</annotation></semantics></math>
+for all sufficiently large
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>.
+Its canonical homogenization is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>A</mi><mo accent="true">̂</mo></mover><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>S</mi><mi>X</mi></msub><mo>−</mo><mi>σ</mi><mi mathvariant="script">ℬ</mi><mi>/</mi><mi mathvariant="script">ℬ</mi><mo stretchy="false" form="postfix">)</mo><mi>A</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \widehat A=(S_X-\sigma\mathcal B/\mathcal B)A.
+ \tag{20}
+</annotation></semantics></math></p>
+<p>Both
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Z</mi><mi>N</mi></msub><annotation encoding="application/x-tex">Z_N</annotation></semantics></math>
+are rational root solutions of (20), and they are independent over
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">ℂ</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>X</mi><mi>N</mi></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathbb C(X^N)</annotation></semantics></math>.
+Otherwise
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Z</mi><mi>N</mi></msub><annotation encoding="application/x-tex">Z_N</annotation></semantics></math>
+would be central and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><msub><mi>Z</mi><mi>N</mi></msub><mo>=</mo><msub><mi>Z</mi><mi>N</mi></msub><mi>A</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">AZ_N=Z_NA(1)=0</annotation></semantics></math>,
+contrary to its nonzero source. Their companion vectors are also
+independent over
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">ℂ</mi><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathbb C(X)</annotation></semantics></math>.
+Indeed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>J</mi><mn>1</mn><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo>,</mo><mi>…</mi><msup><mo stretchy="false" form="postfix">)</mo><mi>t</mi></msup></mrow><annotation encoding="application/x-tex">J1=(1,1,\ldots)^t</annotation></semantics></math>;
+a relation would force
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>J</mi><msub><mi>Z</mi><mi>N</mi></msub><mo>=</mo><msub><mi>Z</mi><mi>N</mi></msub><mi>J</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">JZ_N=Z_NJ1</annotation></semantics></math>,
+hence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>X</mi></msub><msub><mi>Z</mi><mi>N</mi></msub><mo>=</mo><msub><mi>Z</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">S_XZ_N=Z_N</annotation></semantics></math>.
+The fixed field of the primitive root shift is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">ℂ</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>X</mi><mi>N</mi></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathbb C(X^N)</annotation></semantics></math>,
+contradicting the preceding independence. Both vectors are fixed by the
+solution transport
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="sans-serif">𝖳</mi><mn>0</mn></msub><mo>=</mo><msubsup><mi>C</mi><mi>N</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><msub><mi>S</mi><mi>X</mi></msub></mrow><annotation encoding="application/x-tex">\mathsf T_0=C_N^{-1}S_X</annotation></semantics></math>
+and therefore by its
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>th
+power
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>.
+This proves</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi mathvariant="normal">dim</mi><mo>&#8289;</mo></mrow><mrow><mi mathvariant="double-struck">ℂ</mi><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo></mrow></msub><mrow><mi mathvariant="normal">ker</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>H</mi><mn>0</mn></msub><mo>−</mo><mi>I</mi><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><mn>2</mn><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>∂</mi><mi>t</mi></msub><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mi>I</mi><mo>−</mo><msub><mi>H</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><msub><mo minsize="120%" maxsize="120%" stretchy="true" form="prefix">|</mo><mrow><mi>t</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \dim_{\mathbb C(X)}\ker(H_0-I)\ge2,
+ \qquad \partial_t\det(tI-H_0)\big|_{t=1}=0.
+ \tag{20a}
+</annotation></semantics></math></p>
+<p>Thus the solution-companion monodromy of (20) has eigenvalue one of
+geometric multiplicity at least two, not merely a repeated
+characteristic root. All statements are for sufficiently large levels
+where the fixed rational source and endpoint coefficients specialize
+nontrivially. The argument neither asserts a Jordan block nor determines
+the dimension of the entire one-sector.</p>
+<p>This is a new consequence of combining the existing boundary-factor
+theorem with the established positive volume rate. It concerns this
+canonical sourced Mellin presentation, not every minimal meridian
+operator or every possible inhomogeneous factor. The additional constant
+solution does not belong to the prescribed starting lattice
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>X</mi><msub><mi>n</mi><mn>0</mn></msub></msup><mi mathvariant="double-struck">ℂ</mi><mo stretchy="false" form="prefix">[</mo><mo stretchy="false" form="prefix">[</mo><mi>X</mi><mo stretchy="false" form="postfix">]</mo><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">X^{n_0}\mathbb C[[X]]</annotation></semantics></math>.
+Its existence in the rational companion kernel therefore does not
+contradict uniqueness of the actual generic sourced series in that
+lattice. Removing this homogeneous direction from a companion still
+requires its source and lattice comparison; it is not a regular gauge
+change.</p>
+<p>There is no conflict with selected-symbol nonvanishing. The
+observable source row is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℓ</mi><mi>J</mi><mi>f</mi><mo>=</mo><mi>A</mi><mi>f</mi><mi>/</mi><mi mathvariant="script">ℬ</mi></mrow><annotation encoding="application/x-tex">\ell Jf=Af/\mathcal B</annotation></semantics></math>
+and satisfies</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℓ</mi><mi>J</mi><mn>1</mn><mo>=</mo><mn>0</mn><mo>,</mo><mspace width="2.0em"></mspace><mi>ℓ</mi><mi>J</mi><msub><mi>Z</mi><mi>N</mi></msub><mo>=</mo><mn>1</mn><mo>,</mo><mspace width="2.0em"></mspace><mi>ℓ</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>H</mi><mn>0</mn></msub><mo>−</mo><mi>I</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \ell J1=0,\qquad \ell JZ_N=1,
+ \qquad \ell(H_0-I)=0.
+ \tag{21}
+</annotation></semantics></math></p>
+<p>It detects the selected direction while ignoring the homogeneous
+boundary direction. Thus the existing observable-row theorem is
+essentially weaker than, and more appropriate than, a simple-root test.
+Simplicity is not an available replacement for it in (20). The row is
+the source quotient: it vanishes on every homogeneous solution of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>.
+Its nonzero value on the affine section therefore does not by itself
+prove a nonzero projection to a proposed geometric homogeneous factor of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>.</p>
+<p>An exact actual-unknot example further shows presentation dependence.
+Take the genuine annihilator
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>T</mi><mo>−</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(T-1)^2</annotation></semantics></math>
+of the constant meridian state. Its solution companion is a nontrivial
+Jordan block, and the selected vector lies in the image of monodromy
+minus identity: its selected symbol is zero. Choose the admissible start
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mn>0</mn></msub><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">n_0=3</annotation></semantics></math>.
+Then</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi><mo>=</mo><msup><mi>X</mi><mn>3</mn></msup><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>A</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msup><mi>X</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>−</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo>,</mo><mspace width="2.0em"></mspace><mi mathvariant="script">ℬ</mi><mo>=</mo><mi>X</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ Z=X^3/(1-X),\qquad A=(X^{-1}-1)^2,
+ \qquad \mathcal B=X(1-X).
+ \tag{22}
+</annotation></semantics></math></p>
+<p>The canonical Mellin homogenization has order one in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>S</mi><mi>X</mi></msub><annotation encoding="application/x-tex">S_X</annotation></semantics></math>,
+and its observable row has value one; its selected symbol is nonzero.
+Conjugating the meridian operator by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">Y-1</annotation></semantics></math>
+gives the same generic Jordan obstruction for the normal state. This
+example does not claim failure for the primitive minimal meridian
+operator. It proves that Fourier transformation together with the actual
+finite-start source is not a regular gauge preserving the meridian
+companion’s selected-symbol test.</p>
+<h2
+id="concrete-algebraic-comparison-criteria-with-their-missing-inputs">6.
+Concrete algebraic comparison criteria, with their missing inputs</h2>
+<p>There are two useful exact routes. Neither asks for a nonzero WKB
+formula for the reduced meridian state across
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">M=1</annotation></semantics></math>.</p>
+<h3 id="a.-a-shared-marked-normal-kernel">A. A shared marked normal
+kernel</h3>
+<p>A fixed initial-form torsion certificate can prove generic rational
+kernel rank one at every sufficiently large level. Explicitly, the least
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>-coefficient
+polynomial of a rational-coefficient annihilator must have exactly one
+occupied root on the grid
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>q</mi><mi>N</mi></msub><mo>,</mo><msubsup><mi>Q</mi><mi>N</mi><mi>r</mi></msubsup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(q_N,Q_N^r)</annotation></semantics></math>;
+the finite binomial-curve test in <code>torsion_initial_rank</code>
+certifies this uniformly and permits non-toric factors with finitely
+many exceptional levels.</p>
+<p>Suppose a proposed geometric period is actually placed in that same
+kernel, the same saturated ramified lattice, and the same Weyl
+equivariance, with the ordinary anchor equal to one. Then it is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo stretchy="false" form="prefix">(</mo><mi>U</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>v</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">h(U)v_N</annotation></semantics></math>
+for a central unit with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">h(1)=1</annotation></semantics></math>.
+Weyl symmetry gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo stretchy="false" form="prefix">(</mo><mi>U</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>h</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>U</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">h(U)=h(U^{-1})</annotation></semantics></math>,
+hence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>h</mi><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">h&#39;(1)=0</annotation></semantics></math>.
+Its two marked fibre coordinates and the complete functional (10)
+therefore agree exactly. This does not require special-fibre
+injectivity. It is the existing rigid comparison criterion, not an
+unconditional construction of the second period.</p>
+<p>Without generic rank one, there is a precise finite lattice test. Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>K</mi><mi>N</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">t</mi></mrow></msubsup><annotation encoding="application/x-tex">K_N^{\mathrm{sat}}</annotation></semantics></math>
+be the special fibre of the saturated generic kernel inside (9), let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>π</mi><mo>+</mo></msub><annotation encoding="application/x-tex">\pi_+</annotation></semantics></math>
+record the supplied ordinary data, and let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ℓ</mi><mi>N</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>N</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><msubsup><mi>e</mi><mn>0</mn><mo>*</mo></msubsup></mrow><annotation encoding="application/x-tex">\ell_N=(N/2)e_0^*</annotation></semantics></math>
+on its negative coordinate. Two lifts with those ordinary data have the
+same scalar if and only if</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ℓ</mi><mi>N</mi></msub><mo minsize="120%" maxsize="120%" stretchy="true" form="prefix">(</mo><msubsup><mi>K</mi><mi>N</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">t</mi></mrow></msubsup><mo>∩</mo><mrow><mi mathvariant="normal">ker</mi><mo>&#8289;</mo></mrow><msub><mi>π</mi><mo>+</mo></msub><mo minsize="120%" maxsize="120%" stretchy="true" form="postfix">)</mo><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \ell_N\bigl(K_N^{\mathrm{sat}}\cap\ker\pi_+\bigr)=0.
+ \tag{23}
+</annotation></semantics></math></p>
+<p>This follows by subtracting lifts, and is checkable by ranks or
+minors after a saturated basis has been computed. Replacing the
+saturated fibre by the larger special matrix kernel is not justified. No
+uniform theorem establishing (23) for every actual minimal operator has
+been found in the inspected notes.</p>
+<p>To compare whole central profiles, rather than just their marked
+complete scalar, the stronger source-corrected first-normal condition is
+required: the same whole preoperator, its actual linear source rule, and
+a nonzero selected symbol. The algebraic dual certificate is a row
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+satisfying
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>H</mi><mn>0</mn></msub><mo>−</mo><mi>I</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">w(H_0-I)=0</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mi>v</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">wv\ne0</annotation></semantics></math>.
+It removes central multipliers by the Leibniz rule, but not arbitrary
+homogeneous source-kernel additions.</p>
+<h3 id="b.-a-shared-sourced-mellin-realization">B. A shared sourced
+Mellin realization</h3>
+<p>The bounded cyclotomic-jet theorem supplies a stronger uniqueness
+criterion without any rank assumption. A proposed geometric realization
+must produce a rational function with the same fixed starting lattice
+and the same pole numerator of degree at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>,
+and a lift through
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D(s-1)+1</annotation></semantics></math>
+quantum levels satisfying the same finite-window source equation with
+the actual initial colors. It then equals
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Z</mi><mi>N</mi></msub><annotation encoding="application/x-tex">Z_N</annotation></semantics></math>
+identically, and its residue is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mi>N</mi></msub><annotation encoding="application/x-tex">K_N</annotation></semantics></math>.</p>
+<p>This criterion is finite in the quantum-normal order and retains
+every source coefficient. But obtaining that realization is not the same
+as applying the generic Fourier map to a rational main-meridian section;
+Sections 4–5 give exact reasons why. The source and cyclotomic lattice
+must be constructed and carried through the polarization change.</p>
+<h2 id="what-remains-for-a-selected-classical-main-meridian-factor">7.
+What remains for a selected classical main-meridian factor</h2>
+<p>The existing geometric coefficient calculation supplies a nonzero
+transverse formal normal block with the correct marked longitude action
+and formal amplitude connection. It does not prove that the remaining
+global source pairing survives in the minimal operator of the summed
+knot state. The now-proved complete scalar growth does not supply that
+missing map by itself.</p>
+<p>A useful algebraic target is a nonzero map from the actual normal
+module, retaining its source and marked lattice, to the geometric formal
+rank-one module on a branch with shift multiplier
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo stretchy="false" form="prefix">(</mo><mi>h</mi><mo>,</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>L</mi><mrow><mi mathvariant="normal">g</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">o</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mi>h</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">a(h,Y)=L_{\mathrm{geo}}(Y)+O(h)</annotation></semantics></math>.
+If the image of the cyclic generator is a nonzero formal Laurent series,
+apply the actual normal annihilator to that image and inspect its first
+nonzero
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>
+coefficient. It gives</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">l</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>Y</mi><mo>,</mo><msub><mi>L</mi><mrow><mi mathvariant="normal">g</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">o</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ B_{\mathrm{cl}}(Y,L_{\mathrm{geo}}(Y))=0.
+ \tag{24}
+</annotation></semantics></math></p>
+<p>Indeed every finite shift has the leading multiplier
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>L</mi><mrow><mi mathvariant="normal">g</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">o</mi></mrow><mi>j</mi></msubsup><annotation encoding="application/x-tex">L_{\mathrm{geo}}^j</annotation></semantics></math>,
+and the first nonzero coefficient of the image can be cancelled in the
+geometric function field. Thus a source-compatible nonzero normal-module
+map is a concrete sufficient survival theorem. A local geometric
+coefficient block not known to satisfy the <em>summed</em> operator does
+not supply (24). Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">h=\log Q</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>h</mi><mi>/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">q=e^{h/2}</annotation></semantics></math>.
+The notation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><mrow><mi mathvariant="normal">g</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">o</mi></mrow></msub><annotation encoding="application/x-tex">L_{\mathrm{geo}}</annotation></semantics></math>
+means the geometric multiplier in the same normal-state character
+convention as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>;
+conversion to the preferred boundary eigenvalue must retain
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mo>=</mo><mi>−</mi><msup><mi>q</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\kappa=-q^{-1}</annotation></semantics></math>
+and the chosen lift. No longitude sign is removed by (24).</p>
+<p>For two supplied affine presentations, the additional source
+condition is exact, not an unspecified normalization: after a
+homogeneous comparison
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>,
+the difference of their sources must be
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mo>−</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">(\sigma-C)t</annotation></semantics></math>.
+The corresponding augmented map must transport the selected section, the
+full cyclotomic/normal lattice, and the cut row including its affine
+constant. These are the equations already written in
+<code>actual_geometric_normal_period</code> Section 8 and
+<code>fourier_mellin_actual_source</code> Section 6. Rootwise splitting
+of an affine system, formal Gaussian equivalence, or matching only the
+ordinary fibre does not prove them.</p>
+<p>The minimal unresolved task is therefore an actual source/lattice
+comparison with nonzero selected geometric image, using either criterion
+A or criterion B or an equally explicit replacement. It is not existence
+of an ADO annihilator, construction of a normal-period functional, or
+scalar volume growth for the proved knot class. Auxiliary
+crossing-circle deformation and filling parameters used in that volume
+theorem are not the unrolled main-meridian variable
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>;
+their established complex packets do not silently provide this missing
+comparison.</p>
+<p>One concrete route beyond the obstruction is to retain the polynomial
+meridian module before inverting
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">Y-1</annotation></semantics></math>,
+apply the exact generic Fourier map, and carry the finite-start boundary
+relation (12a) as part of the object. A proposed geometric construction
+would then have to produce an augmented source-one section in this same
+presentation, with the actual prefix, the pole numerator (16), and the
+finite quantum-jet certificate of criterion B. These conditions would
+prove equality with the actual root Mellin function, rather than assume
+equality from its residue. Separately, the construction must map its
+nonzero geometric formal normal block into that sourced presentation and
+retain its cut pairing; the first nonzero formal coefficient would then
+prove (24). The required quantum-normal transport must allow the
+derivations in (17), not attempt the impossible finite free clock
+lift.</p>
+<p>The generic Fourier map, finite boundary source, pole/jet uniqueness,
+and local nonzero geometric coefficient block are proved inputs. The
+source-preserving map from that block and its selected global cycle into
+the same augmented realization is the unproved part of this route. A
+construction that defines its geometric section by dividing by or
+interpolating the already known
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mi>N</mi></msub><annotation encoding="application/x-tex">K_N</annotation></semantics></math>
+would not supply that map or a classical-factor proof.</p>
+<p>No new general geometric-factor theorem is claimed here. The exact
+new deductions preserved for continuation are the central-divisor
+separation, its finite-orbit comparison and first-order obstruction, and
+the forced multiple eigenvalue-one sector in the canonical Mellin
+presentation of a positive-volume knot.</p>

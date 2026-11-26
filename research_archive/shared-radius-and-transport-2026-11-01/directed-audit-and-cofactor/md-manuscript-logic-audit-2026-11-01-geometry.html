@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>md-manuscript-logic-audit-2026-11-01-geometry</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<h1
+id="bounded-geometry-and-source-interface-audit-of-appendices-p-and-q">Bounded
+geometry and source-interface audit of Appendices P and Q</h1>
+<p>1 November 2026. Repository:
+/private/tmp/murakamis_dream-publication. Base commit:
+021e6482b99f8456b4a34912e9f97969fc546a69, including the current
+uncommitted O/Q corrections. The accompanying JSON records exact source
+hashes.</p>
+<p>This is a read-only examination of specified written implications. It
+is not a certification of every manuscript proof, a formalization of
+topology or analysis, or an inference from finite numerical tests.</p>
+<h2 id="findings-and-incorporated-corrections">1. Findings and
+incorporated corrections</h2>
+<p>I read P and Q in full and checked their source, geometry and filling
+interfaces against the portions of N, O, L and the original technical
+notes listed in Section 7. Two precise corrections were reported and are
+now incorporated:</p>
+<ol type="1">
+<li><strong>Q, lines 506–510:</strong> face identifiers 11 and 14 are
+not numerical weights. The corrected inequality
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><msup><mi>e</mi><msub><mi>q</mi><mn>11</mn></msub></msup><mo>,</mo><msup><mi>e</mi><msub><mi>q</mi><mn>14</mn></msub></msup><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><msub><mi>q</mi><mn>11</mn></msub><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">
+Q(0,e^{q_{11}},e^{q_{14}})\ge q_{11}/2
+</annotation></semantics></math> follows by selecting the simplex vertex
+supported at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><msub><mi>q</mi><mn>11</mn></msub></msup><annotation encoding="application/x-tex">e^{q_{11}}</annotation></semantics></math>.
+The added explanation correctly distinguishes face labels from
+weights.</li>
+<li><strong>O, lines 1309–1315:</strong> the correct derivative limit is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>∂</mi><mi>e</mi></msub><msub><mi>A</mi><mi>N</mi></msub><mo>=</mo><mi>−</mi><mn>2</mn><msub><mi>δ</mi><mi>e</mi></msub><msub><mi>B</mi><mrow><mi>e</mi><mo>,</mo><mi>N</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><msup><mi mathvariant="bold-italic">𝜹</mi><mn>2</mn></msup><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>B</mi><mrow><mi>e</mi><mo>,</mo><mi>N</mi></mrow></msub><mo>→</mo><msub><mi>B</mi><mrow><mi>e</mi><mo>,</mo><mn>0</mn></mrow></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>B</mi><mrow><mi>e</mi><mo>,</mo><mn>0</mn></mrow></msub><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>C</mi><mi>e</mi></msub><mo>&gt;</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\partial_e A_N=-2\delta_e B_{e,N}(\boldsymbol\delta^2),
+\qquad B_{e,N}\longrightarrow B_{e,0},\qquad B_{e,0}(0)=C_e&gt;0.
+</annotation></semantics></math> At a nonzero argument the limit need
+not equal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>e</mi></msub><annotation encoding="application/x-tex">C_e</annotation></semantics></math>.
+Shrinking one fixed complex chart and then increasing the starting level
+gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">Re</mi><mo>&#8289;</mo></mrow><msub><mi>B</mi><mrow><mi>e</mi><mo>,</mo><mi>N</mi></mrow></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\operatorname{Re}B_{e,N}&gt;0</annotation></semantics></math>,
+which is the required input to the critical-point and nonunit-holonomy
+arguments.</li>
+</ol>
+<p>Neither correction changes the theorem hypotheses. I found no
+additional defect in the checked algebra, target accounting, quantifiers
+or geometric interfaces. The unexamined proof layers remain explicit
+imports in Section 7.</p>
+<h2 id="the-logical-separation">2. The logical separation</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Input</th>
+<th>Written implication</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fixed simple oriented triangulated sphere, perfect dual matching,
+nonmatching mark, original orders</td>
+<td>Inverse cut and simple-sphere packing</td>
+<td>Original
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mi>D</mi></msub><mo>⊂</mo><msup><mi>S</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">Y_D\subset S^3</annotation></semantics></math>,
+complete positive structure,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Φ</mi><mi>D</mi></msub><mo>=</mo><mrow><mi mathvariant="normal">Vol</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>Y</mi><mi>D</mi></msub><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>π</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\Phi_D=\operatorname{Vol}(Y_D)/(2\pi)</annotation></semantics></math></td>
+</tr>
+<tr>
+<td>The same diagram and cup/cap transports</td>
+<td>Exact Morse source identity</td>
+<td>Shared coefficient extraction with original targets and scalar</td>
+</tr>
+<tr>
+<td>Complete source and marked deformation</td>
+<td>O’s local estimates and whole-period argument</td>
+<td>Nonzero entire central contribution for fixed independently long
+signed fillings</td>
+</tr>
+<tr>
+<td>Selected critical point and primitive peripheral words</td>
+<td>Representation, actual logarithmic periods and smooth
+completion</td>
+<td>Metric on the specified filled knot complement</td>
+</tr>
+<tr>
+<td>Same developed fundamental chain and complete anchor</td>
+<td>Regulator and filling correction</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>π</mi><mrow><mi mathvariant="normal">Re</mi><mo>&#8289;</mo></mrow><msub><mi>S</mi><mi>D</mi></msub><mo>=</mo><mrow><mi mathvariant="normal">Vol</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msup><mi>S</mi><mn>3</mn></msup><mo>\</mo><msub><mi>K</mi><mi>D</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">2\pi\operatorname{Re}S_D=\operatorname{Vol}(S^3\setminus K_D)</annotation></semantics></math></td>
+</tr>
+<tr>
+<td>P’s weak balance, or Q’s unabridged input certificates</td>
+<td>Shared-weight comparison of every genuine noncentral string</td>
+<td>Strict full-cube bound for the complementary polynomial</td>
+</tr>
+<tr>
+<td>Full-cube bound and N’s exact filling norm</td>
+<td>Larger fixed twist threshold</td>
+<td>Exponentially smaller filled remainder</td>
+</tr>
+<tr>
+<td>Nonzero central term and smaller full remainder</td>
+<td>Rate transfer</td>
+<td>Full invariant volume limit</td>
+</tr>
+</tbody>
+</table>
+<p>The central contribution is not substituted for the full invariant.
+The initial simple-sphere geometry uses neither weak balance nor the
+desired full-source bound. P and Q do not use their volume conclusion to
+prove their source bounds.</p>
+<h2 id="appendix-p">3. Appendix P</h2>
+<h3 id="fixed-data-and-normalization">Fixed data and normalization</h3>
+<p>P, lines 15–81, fixes the sphere, protected adjacent vertices, local
+orders and a retained half-twist pattern whose actual strand pairing is
+a knot. Ordinary targets are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">d=N-1</annotation></semantics></math>;
+both protected targets are zero. The powers satisfy
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mi>e</mi></msub><mo>=</mo><msub><mi>ϵ</mi><mi>e</mi></msub><mo>−</mo><mn>2</mn><msub><mi>p</mi><mi>e</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>ϵ</mi><mi>e</mi></msub><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mi>±</mi><mn>1</mn><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+n_e=\epsilon_e-2p_e,\qquad \epsilon_e\in\{0,\pm1\}.
+</annotation></semantics></math> The diagram, half twists and integers
+are fixed before
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>→</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">N\to\infty</annotation></semantics></math>.
+The invariant is reduced and zero-framed, with unknot value one. There
+is no uniform estimate for a diagram growing with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>,
+and no bounded-ratio condition on independently large signed powers.</p>
+<p>The triangle homogeneity is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mi>t</mi><msub><mi>w</mi><mn>1</mn></msub><mo>,</mo><mi>t</mi><msub><mi>w</mi><mn>2</mn></msub><mo>,</mo><mi>t</mi><msub><mi>w</mi><mn>3</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>w</mi><mn>1</mn></msub><mo>,</mo><msub><mi>w</mi><mn>2</mn></msub><mo>,</mo><msub><mi>w</mi><mn>3</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>t</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+Q(tw_1,tw_2,tw_3)=Q(w_1,w_2,w_3)+\tfrac12\log t.
+</annotation></semantics></math> Two triangles at a crossing have total
+logarithmic degree one, consistent with the ordinary target count. The
+geometric normalization is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>π</mi><msub><mi mathvariant="normal">Φ</mi><mi>D</mi></msub><mo>=</mo><mrow><mi mathvariant="normal">Vol</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>Y</mi><mi>D</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">2\pi\Phi_D=\operatorname{Vol}(Y_D)</annotation></semantics></math>.</p>
+<h3 id="why-the-gap-is-strict">Why the gap is strict</h3>
+<p>I checked P, lines 85–264. The triangle log-weight Hessian is the
+stated positive semidefinite Laplacian, with off-diagonal entries
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mfrac><mrow><msub><mi>w</mi><mi>i</mi></msub><msub><mi>w</mi><mi>j</mi></msub></mrow><mrow><mn>2</mn><mi>π</mi><msub><mi>D</mi><mi>t</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>w</mi><mi>i</mi></msub><mo>+</mo><msub><mi>w</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+-\frac{w_iw_j}{2\pi D_t(w_i+w_j)}.
+</annotation></semantics></math> The complete action is stationary
+modulo common scaling. The common flattening
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>↦</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mi>q</mi></mrow><annotation encoding="application/x-tex">q\mapsto(1-t)q</annotation></semantics></math>
+costs at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>t</mi><mn>2</mn></msup><mi>E</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">t^2E/2</annotation></semantics></math>,
+while supported triangle entropy decreases as the log weights are
+multiplied by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math>.
+Thus
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>e</mi></msub><mo>−</mo><msub><mi>A</mi><mrow><mi>e</mi><mo>,</mo><mi>s</mi></mrow></msub><mo>≥</mo><mi>t</mi><msub><mi>h</mi><mrow><mi>e</mi><mo>,</mo><mi>s</mi></mrow></msub><mo>−</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>ϵ</mi><mrow><mi>e</mi><mo>,</mo><mi>s</mi></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+X_e-A_{e,s}\ge t h_{e,s}-(1-t)\epsilon_{e,s}.
+</annotation></semantics></math> The relevant
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>h</mi><mrow><mi>e</mi><mo>,</mo><mi>s</mi></mrow></msub><annotation encoding="application/x-tex">h_{e,s}</annotation></semantics></math>
+is strictly positive: the matching outer edge cannot be the protected
+nonmatching edge of a simple sphere, so the overloaded-middle triangle
+has another ordinary supported corner. The proof does not assign
+positive entropy to a protected singleton triangle. Weak balance makes
+the defects zero, so a fixed small
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">t&gt;0</annotation></semantics></math>
+gives a linear local loss against a quadratic complete-action cost.</p>
+<p>P, lines 266–310, uses this single common weight vector on the same
+shared face torus for every genuine sector string. Every noncentral
+string has a surviving one-sided label. The finitely many strings are
+independent of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>;
+summing them preserves the exponential gap. Both parities and the full
+real spectral cube are retained.</p>
+<h3 id="filling-transfer">Filling transfer</h3>
+<p>P, lines 322–369, applies N’s exact norm
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">∥</mo><msub><mo>⨂</mo><mi>e</mi></msub><msubsup><mi mathvariant="script">ℒ</mi><mi>N</mi><msub><mi>n</mi><mi>e</mi></msub></msubsup><mo stretchy="true" form="postfix">∥</mo></mrow><mo>≤</mo><munder><mo>∏</mo><mi>e</mi></munder><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mo stretchy="false" form="prefix">|</mo><msub><mi>n</mi><mi>e</mi></msub><mo stretchy="false" form="prefix">|</mo><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\left\|\bigotimes_e\mathcal L_N^{n_e}\right\|
+\le\prod_e(1+|n_e|/2).
+</annotation></semantics></math> For fixed powers this has zero
+exponential rate. O supplies a nonzero central term with
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">Re</mi><mo>&#8289;</mo></mrow><msub><mi>A</mi><mi mathvariant="bold-italic">𝒏</mi></msub><mo>=</mo><msub><mi mathvariant="normal">Φ</mi><mi>D</mi></msub><mo>−</mo><msub><mi>O</mi><mi>D</mi></msub><mspace width="-0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><munder><mo>∑</mo><mi>e</mi></munder><msubsup><mi>n</mi><mi>e</mi><mrow><mi>−</mi><mn>2</mn></mrow></msubsup><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\operatorname{Re}A_{\boldsymbol n}
+=\Phi_D-O_D\!\left(\sum_e n_e^{-2}\right).
+</annotation></semantics></math> The twist threshold is chosen after the
+fixed positive source gap, making the action decrease smaller than that
+gap. This order is present. The original framing phase has modulus one;
+the modified scalar
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>i</mi><mrow><mi>N</mi><mo>+</mo><mn>3</mn></mrow></msup><mi>/</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">i^{N+3}/N</annotation></semantics></math>
+has zero exponential rate.</p>
+<h2 id="appendix-q">4. Appendix Q</h2>
+<h3 id="the-operation-and-the-original-topology">The operation and the
+original topology</h3>
+<p>Q, lines 132–182, removes oppositely oriented faces
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo>,</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(u,v,B)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>,</mo><mi>B</mi><mo>,</mo><mi>v</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(u,B,v)</annotation></semantics></math>
+from two fresh spheres. Their retained partners are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>,</mo><mi>a</mi><mo>,</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(u,a,B)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>,</mo><mi>B</mi><mo>,</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(u,B,c)</annotation></semantics></math>,
+producing the ordered quartet
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>,</mo><mi>a</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(u,a,c,B)</annotation></semantics></math>.
+Fresh interiors prevent additional identifications. Only the three
+boundary edges are identified; the embedded boundary cycles and opposite
+orientations give a simple oriented sphere. The induced matching is
+perfect and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mi>v</mi></mrow><annotation encoding="application/x-tex">uv</annotation></semantics></math>
+remains nonmatching:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">w</mi></mrow></msub><mo>=</mo><msub><mi>R</mi><mn>1</mn></msub><mo>+</mo><msub><mi>R</mi><mn>2</mn></msub><mo>−</mo><mn>1</mn><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>V</mi><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">w</mi></mrow></msub><mo>=</mo><msub><mi>R</mi><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">w</mi></mrow></msub><mo>+</mo><mn>2</mn><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>F</mi><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">w</mi></mrow></msub><mo>=</mo><mn>2</mn><msub><mi>R</mi><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">w</mi></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+R_{\mathrm{new}}=R_1+R_2-1,\qquad
+V_{\mathrm{new}}=R_{\mathrm{new}}+2,\qquad F_{\mathrm{new}}=2R_{\mathrm{new}}.
+</annotation></semantics></math> The inverse-cut construction is applied
+to this new sphere with its retained local orders. It produces a link in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>S</mi><mn>3</mn></msup><annotation encoding="application/x-tex">S^3</annotation></semantics></math>
+with the stated crossing disks, not an abstract tensor network assigned
+an unrelated manifold. A whole-input reflection transports its orders
+and signs; it is not an isolated matrix symmetry.</p>
+<p>The new diagram must satisfy its own knot-component test. A
+knot-producing parity exists by choosing odd crossings on a spanning
+tree of the connected untwisted-component adjacency graph. The theorem
+does not say that arbitrary old knot parities remain knots, that knot
+type is preserved, or that filled volumes add.</p>
+<h3 id="target-cancellation-and-the-geometric-action">Target
+cancellation and the geometric action</h3>
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mi>B</mi></msub><mo>=</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">q_B=\log B</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mi>a</mi></msub><mo>=</mo><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>a</mi><mo>,</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">Q_a=Q(0,a,B)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mi>c</mi></msub><mo>=</mo><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>c</mi><mo>,</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">Q_c=Q(0,c,B)</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>=</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><msub><mi>q</mi><mi>B</mi></msub><mo>+</mo><msub><mi>Q</mi><mi>c</mi></msub><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><msub><mi>Q</mi><mi>a</mi></msub><mo>+</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><msub><mi>q</mi><mi>B</mi></msub><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>X</mi><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">w</mi></mrow></msub><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>−</mo><msub><mi>q</mi><mi>B</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+C_1=\tfrac12q_B+Q_c,\quad C_2=Q_a+\tfrac12q_B,\quad
+X_{\mathrm{new}}=C_1+C_2-q_B.
+</annotation></semantics></math> The two old actions subtract the
+ordinary
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>-target
+twice and the new action subtracts it once. The local
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msub><mi>q</mi><mi>B</mi></msub></mrow><annotation encoding="application/x-tex">-q_B</annotation></semantics></math>
+correction therefore cancels exactly the duplicated target:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">w</mi></mrow></msub><mo>=</mo><msub><mi>P</mi><mn>1</mn></msub><mo>+</mo><msub><mi>P</mi><mn>2</mn></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+P_{\mathrm{new}}=P_1+P_2.
+</annotation></semantics></math> The protected targets remain zero. Each
+whole action is invariant under common scaling of ordinary weights;
+normalize both minimizers to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">B=1</annotation></semantics></math>.
+This proves
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Φ</mi><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">w</mi></mrow></msub><mo>=</mo><msub><mi mathvariant="normal">Φ</mi><mn>1</mn></msub><mo>+</mo><msub><mi mathvariant="normal">Φ</mi><mn>2</mn></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\Phi_{\mathrm{new}}=\Phi_1+\Phi_2.
+</annotation></semantics></math> The simple-sphere calibration gives the
+volume of the <strong>new augmented complement</strong> divided by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>π</mi></mrow><annotation encoding="application/x-tex">2\pi</annotation></semantics></math>.
+It makes no assertion about a sum of filled knot volumes.</p>
+<h3 id="all-strings-and-arbitrary-fixed-finite-iteration">All strings
+and arbitrary fixed finite iteration</h3>
+<p>Q, lines 231–385, keeps the actual index partition at both parities
+and maps
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>↦</mo><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo>,</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>L</mi><mo>↦</mo><mo stretchy="false" form="prefix">(</mo><mi>L</mi><mo>,</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>R</mi><mo>↦</mo><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo>,</mo><mi>R</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+C\mapsto(C,C),\qquad L\mapsto(L,C),\qquad R\mapsto(C,R).
+</annotation></semantics></math> The inequalities use
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mi>a</mi></msub><mo>,</mo><msub><mi>Q</mi><mi>c</mi></msub><mo>≥</mo><msub><mi>q</mi><mi>B</mi></msub><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">Q_a,Q_c\ge q_B/2</annotation></semantics></math>,
+including the mixed branches. A new noncentral string induces at least
+one noncentral input string; no protected-overloaded input label is
+introduced.</p>
+<p>The input requirement covers <strong>every locally allowed noncentral
+string, even if its old global coefficient vanished</strong>. This is
+necessary: old global support vanishing need not survive gluing. The
+proof retains this unabridged hypothesis.</p>
+<p>Choose a certified witness for a noncentral input and its complete
+minimizer for a central input. Scale each whole vector to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">B=1</annotation></semantics></math>.
+This gives one valid shared torus for the new string and gap at least
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>γ</mi><mn>1</mn></msub><mo>,</mo><msub><mi>γ</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\min(\gamma_1,\gamma_2)</annotation></semantics></math>.
+Distinct strings may use distinct tori, while all factors of any one
+string use the same torus.</p>
+<p>Q, lines 390–427, repeats with one common protected mark and fresh
+interiors. The whole previously assembled witness is rescaled, not one
+already shared face. Any fixed finite number of positive input gaps has
+a positive minimum. No growing-assembly limit is asserted. N and O are
+reapplied to the resulting fixed diagram, with its own metric and
+primitive slopes.</p>
+<h3 id="seventeen-region-application">Seventeen-region application</h3>
+<p>I checked the logical certificate use and preserved incidences in Q,
+lines 458–546. Fifteen nonempty-right-subset branches and twenty-five
+remaining anchored branches cover all locally allowed noncentral
+strings. The restricted anchor-12 dual has mixed spectators only at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">2,4,7</annotation></semantics></math>,
+localizing a weak-balance failure to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>J</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>12</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">J=\{2,4,7,12\}</annotation></semantics></math>.
+The crossing-15 attachment leaves these candidates untouched and
+preserves their complete ratios up to common scale. The repeatable
+tetrahedral input has the stated
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>,</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>4</mn></mfrac></mstyle><mo>,</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>4</mn></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\tfrac12,\tfrac14,\tfrac14</annotation></semantics></math>
+loads.</p>
+<p>This is the claimed separation between sufficient conditions for
+marked diagrams. It does not establish that the resulting unmarked knots
+lack another covered presentation. I did not rerun the interval
+certificates this turn; the numerical margins remain imports from the
+named exact public certificate/verifier pairs. The eight-attachment
+replay is a finite check, not the proof of arbitrary finite
+iteration.</p>
+<h2 id="actual-complement-volume-identification">5. Actual
+complement-volume identification</h2>
+<h3 id="complete-anchor-independent-of-the-source-remainder">Complete
+anchor independent of the source remainder</h3>
+<p>I read O, lines 658–811, with L, lines 48–144, and the original Morse
+inverse cut. The simple-sphere packing proof precedes fan insertion. It
+separates strict Hall feasibility from the entropy boundary-exclusion
+argument, then uses the strict interior maximizer and degree-one center
+development. It does not infer interiority from feasibility alone.</p>
+<p>The center-triangle sectors give disjoint disks and remote
+supporting-circle inequalities, including separating triangles. Labeled
+halfspaces give the original convex right-angled ideal polyhedron. Its
+reflection double has the original white and shaded maps; complete torus
+links and four-right-angle edge cycles give the complete augmented
+metric and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>π</mi><msub><mi mathvariant="normal">Φ</mi><mi>D</mi></msub><mo>=</mo><mrow><mi mathvariant="normal">Vol</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>Y</mi><mi>D</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">2\pi\Phi_D=\operatorname{Vol}(Y_D)</annotation></semantics></math>.
+The crossing-circle balls and inverse cut supply the topology in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>S</mi><mn>3</mn></msup><annotation encoding="application/x-tex">S^3</annotation></semantics></math>.
+Cycles in the matching graph are allowed; no tree substitute is
+used.</p>
+<h3 id="actual-source-coordinates-and-primitive-words">Actual source
+coordinates and primitive words</h3>
+<p>O, lines 877–1094, constructs a marked holomorphic circle pattern
+near completeness, fixing scale and translation by the original
+protected strip. White reflections and prefix products give the actual
+group representation. The consecutive
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>,</mo><mi>G</mi><mo>,</mo><mi>F</mi></mrow><annotation encoding="application/x-tex">F,G,F</annotation></semantics></math>
+factors cancel at cups/caps, so a flat plat sweep is not assumed.</p>
+<p>For the original ordered pair
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>=</mo><mi>B</mi><mi>A</mi></mrow><annotation encoding="application/x-tex">P=BA</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>e</mi></msub><mo>=</mo><mi>−</mi><mrow><mi mathvariant="normal">Log</mi><mo>&#8289;</mo></mrow><msub><mi>R</mi><mrow><mn>0</mn><mo>,</mo><mi>e</mi></mrow></msub><mo>−</mo><msub><mi>ϵ</mi><mi>e</mi></msub><mrow><mi mathvariant="normal">Log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><msub><mi>J</mi><mi>e</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>V</mi><mi>e</mi></msub><mo>=</mo><mn>2</mn><mrow><mi mathvariant="normal">Log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><msub><mi>J</mi><mi>e</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>−</mi><mn>4</mn><mi>π</mi><mi>i</mi><msub><mi>δ</mi><mi>e</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+U_e=-\operatorname{Log}R_{0,e}-\epsilon_e\operatorname{Log}(-J_e),
+\qquad V_e=2\operatorname{Log}(-J_e)=-4\pi i\delta_e.
+</annotation></semantics></math> The corner-map eigenratio is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>R</mi><mrow><mn>0</mn><mo>,</mo><mi>e</mi></mrow></msub><annotation encoding="application/x-tex">R_{0,e}</annotation></semantics></math>,
+not its square. The signed Hurwitz seam contributes once. The stated
+matrix has determinant one and eigenvalue
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><msub><mi>U</mi><mi>e</mi></msub><mi>/</mi><mn>2</mn></mrow></msup><annotation encoding="application/x-tex">e^{U_e/2}</annotation></semantics></math>.</p>
+<p>With
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><msup><mi>A</mi><mi>ϵ</mi></msup><mo>=</mo><mo>∑</mo><msub><mi>U</mi><mi>e</mi></msub><mspace width="0.167em"></mspace><mi>d</mi><msub><mi>δ</mi><mi>e</mi></msub></mrow><annotation encoding="application/x-tex">dA^\epsilon=\sum U_e\,d\delta_e</annotation></semantics></math>,
+the stationary action
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>=</mo><msup><mi>A</mi><mi>ϵ</mi></msup><mo>−</mo><mn>2</mn><mi>π</mi><mi>i</mi><mo>∑</mo><msub><mi>p</mi><mi>e</mi></msub><msubsup><mi>δ</mi><mi>e</mi><mn>2</mn></msubsup><mo>+</mo><mn>2</mn><mi>π</mi><mi>i</mi><mo>∑</mo><msub><mi>δ</mi><mi>e</mi></msub></mrow><annotation encoding="application/x-tex">
+S=A^\epsilon-2\pi i\sum p_e\delta_e^2+2\pi i\sum\delta_e
+</annotation></semantics></math> gives the original primitive equation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>e</mi></msub><mo>+</mo><msub><mi>p</mi><mi>e</mi></msub><msub><mi>V</mi><mi>e</mi></msub><mo>=</mo><mi>−</mi><mn>2</mn><mi>π</mi><mi>i</mi></mrow><annotation encoding="application/x-tex">U_e+p_eV_e=-2\pi i</annotation></semantics></math>.
+The reciprocal-slope implicit-function theorem starts at the complete
+pattern and gives a fixed neighborhood for independently large signed
+slopes, without a ratio restriction.</p>
+<h3 id="smooth-completion-not-just-a-multiplier-equation">Smooth
+completion, not just a multiplier equation</h3>
+<p>O, lines 1099–1204, applies the written small-framed-representation
+construction in the general regulator/hyperbolic-equality note. Its
+needed hypotheses are supplied: positive complete starting structure,
+nearby actual framed representation, complete main cusps, original
+primitive bases, and small individual-generator logarithms.</p>
+<p>At the unit-charge critical point the corrected derivative identity
+implies
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">Im</mi><mo>&#8289;</mo></mrow><msub><mi>δ</mi><mi>e</mi></msub><mo>&gt;</mo><mn>0</mn><mo>,</mo><mspace width="2.0em"></mspace><mrow><mi mathvariant="normal">Re</mi><mo>&#8289;</mo></mrow><msub><mi>V</mi><mi>e</mi></msub><mo>=</mo><mn>4</mn><mi>π</mi><mrow><mi mathvariant="normal">Im</mi><mo>&#8289;</mo></mrow><msub><mi>δ</mi><mi>e</mi></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">
+\operatorname{Im}\delta_e&gt;0,\qquad
+\operatorname{Re}V_e=4\pi\operatorname{Im}\delta_e&gt;0
+</annotation></semantics></math> for either sign of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>n</mi><mi>e</mi></msub><annotation encoding="application/x-tex">n_e</annotation></semantics></math>.
+This is nonunit modulus. The second auxiliary fixed point escapes the
+complete cusp frame. Generator paths avoid it, and their logarithmic
+increments tend to zero and equal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>e</mi></msub><mo>,</mo><msub><mi>V</mi><mi>e</mi></msub></mrow><annotation encoding="application/x-tex">U_e,V_e</annotation></semantics></math>
+before multiplication by the large integer.</p>
+<p>The developed torus has a complete flat logarithmic metric and
+rank-two period lattice. The primitive slope has actual period
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>2</mn><mi>π</mi><mi>i</mi></mrow><annotation encoding="application/x-tex">-2\pi i</annotation></semantics></math>,
+not merely exponential one. The complementary primitive period has
+nonzero real part. The tube therefore closes smoothly with angle
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>π</mi></mrow><annotation encoding="application/x-tex">2\pi</annotation></semantics></math>,
+along exactly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>μ</mi><mi>e</mi></msub><mo>+</mo><msub><mi>p</mi><mi>e</mi></msub><msub><mi>λ</mi><mi>e</mi></msub></mrow><annotation encoding="application/x-tex">\mu_e+p_e\lambda_e</annotation></semantics></math>.
+The main cusps stay complete. This is a complete finite-volume metric on
+the original filled knot exterior; no cone-to-smooth or
+multiplier-to-group shortcut is used.</p>
+<h3 id="absolute-action-on-the-same-fundamental-chain">Absolute action
+on the same fundamental chain</h3>
+<p>I checked the signs and factors:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>π</mi><mi>i</mi><msup><mi>A</mi><mi>ϵ</mi></msup><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>−</mi><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>∑</mo><msub><mi>U</mi><mi>e</mi></msub><mspace width="0.167em"></mspace><mi>d</mi><msub><mi>V</mi><mi>e</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><mn>2</mn><mi>π</mi><mrow><mi mathvariant="normal">Re</mi><mo>&#8289;</mo></mrow><msup><mi>A</mi><mi>ϵ</mi></msup><mo>=</mo><mrow><mi mathvariant="normal">Vol</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>ρ</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>∑</mo><mrow><mi mathvariant="normal">Im</mi><mo>&#8289;</mo></mrow><msub><mi>U</mi><mi>e</mi></msub><mrow><mi mathvariant="normal">Re</mi><mo>&#8289;</mo></mrow><msub><mi>V</mi><mi>e</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+d(2\pi iA^\epsilon)=-\tfrac12\sum U_e\,dV_e,\qquad
+2\pi\operatorname{Re}A^\epsilon
+=\operatorname{Vol}(\rho)-\tfrac12\sum\operatorname{Im}U_e\operatorname{Re}V_e.
+</annotation></semantics></math> At a primitive critical point,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">Re</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>2</mn><mi>π</mi><mi>i</mi><msub><mi>p</mi><mi>e</mi></msub><msubsup><mi>δ</mi><mi>e</mi><mn>2</mn></msubsup><mo>+</mo><mn>2</mn><mi>π</mi><mi>i</mi><msub><mi>δ</mi><mi>e</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><mrow><mi mathvariant="normal">Im</mi><mo>&#8289;</mo></mrow><msub><mi>U</mi><mi>e</mi></msub><mrow><mi mathvariant="normal">Re</mi><mo>&#8289;</mo></mrow><msub><mi>V</mi><mi>e</mi></msub></mrow><mrow><mn>4</mn><mi>π</mi></mrow></mfrac><mo>,</mo></mrow><annotation encoding="application/x-tex">
+\operatorname{Re}(-2\pi i p_e\delta_e^2+2\pi i\delta_e)
+=\frac{\operatorname{Im}U_e\operatorname{Re}V_e}{4\pi},
+</annotation></semantics></math> which cancels the boundary term, with
+the complete constant fixed.</p>
+<p>The metric comparison uses the same finite boundary triangulation and
+developed relative chain. The cusp map is homotoped to an axis-valued
+boundary map with vanishing limiting homotopy volume. Extending that
+assignment across the filled solid torus adds collinear straight
+tetrahedra of zero volume. Thus representation volume equals the
+constructed metric volume in the same fundamental class. An unrelated
+triangulation or volume-rigidity slogan is not being substituted.</p>
+<p>P/Q do not require the separate result that a filled knot’s meridian
+is a local character-variety coordinate. They do not use the all-orders
+geometric-characteristic or annihilator-factor theorem.</p>
+<h2 id="declared-dependency-checker">6. Declared dependency checker</h2>
+<p>I read the JSON map and Python checker and executed it with output
+confined to /private/tmp. It checked seventeen declared steps and
+rejected seven supplied invalid substitutions.</p>
+<p>The map separates six final roles: exact invariant, nonzero
+contribution, full remainder, specified metric, absolute volume, and
+rate transfer. It propagates assumptions and level restrictions, detects
+graph cycles, and prevents a written conclusion from depending on an
+open node. The general unchanged-sphere remainder and full-volume claim
+remain open.</p>
+<p>This is a manually supplied graph. It does not discover hidden
+dependencies, prove node statements, or derive truth from
+anchors/hashes. The metric node bundles the framed deformation and
+primitive-log construction reviewed above. The long-twist assumption now
+explicitly says <strong>absolute values</strong> exceed the threshold,
+and the tensor norm node points to its tensor-product formula. These
+agree with the manuscript’s signed-magnitude quantifier and the precise
+N interface. My private checker execution preceded those two
+reference/prose refinements; the parent reports a successful execution
+of the revised map.</p>
+<h2 id="read-scope-and-remaining-imports">7. Read scope and remaining
+imports</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Source</th>
+<th>Portion examined</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P-weak-balance.tex</td>
+<td>Full theorem/proof: flattening, positivity, full source, filling
+transfer</td>
+</tr>
+<tr>
+<td>Q-protected-triangular-sums.tex</td>
+<td>Full theorem/proof: all bridge cases, topology, iteration,
+seventeen-region logical application</td>
+</tr>
+<tr>
+<td>N-uniform-filling-bound.tex</td>
+<td>Finite source/domain/normalization, norm statement and tensor use,
+rate interface</td>
+</tr>
+<tr>
+<td>O-morse-geometric-contribution.tex</td>
+<td>Analytic assumptions/whole-period statement and graph applicability;
+full original geometry, matrices, filling, regulator/metric interface;
+charge summary</td>
+</tr>
+<tr>
+<td>L-balanced-terminal-fans.tex</td>
+<td>Initial simple-sphere existence before fans; local whole-spectrum
+rate statements</td>
+</tr>
+<tr>
+<td>research_matched_sphere_morse_source.md</td>
+<td>Inverse cut, actual endpoint connections, knot parity,
+degree/clock/even-coset normalization</td>
+</tr>
+<tr>
+<td>actual_global_left_weighted_spectral_envelope.md</td>
+<td>Original finite sector/unused factors, uniform envelope and endpoint
+meaning</td>
+</tr>
+<tr>
+<td>general_source_regulator_hyperbolic_equality.md</td>
+<td>Hypotheses, compact core, primitive tube completion, same-chain
+comparison</td>
+</tr>
+<tr>
+<td>general_peripheral_representation_volume_bound.md;
+actual_pretzel_marked_regulator_and_filling_action.md</td>
+<td>Identification of the further boundary-chain/regulator dependencies,
+not a new full proof audit</td>
+</tr>
+<tr>
+<td>manuscript_logic.json; check_manuscript_logic.py</td>
+<td>Semantic N–Q interface comparison and private execution of
+structural checks</td>
+</tr>
+</tbody>
+</table>
+<p>I did not reprove N’s entire Chebyshev/Hermite calculation, every
+global cofactor estimate, O’s complete contour/all-charge tail argument,
+or the bottom-level Bloch-boundary/fundamental-chain identities this
+turn. These remain written mathematical imports, not newly verified Lean
+theorems. Nor did I rerun the seventeen-region exact interval
+certificates.</p>
+<p>The new thin-face research was frozen separately at
+/private/tmp/md-thin-face-source-certificate-extension.md, retaining its
+independent-review obligations. It is not an input to this audit or the
+published P/Q conclusions.</p>
+</body>
+</html>

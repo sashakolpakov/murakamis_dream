@@ -1,0 +1,17 @@
+# Final bounded check of Appendix R and its guide exposition
+
+The final PDF inspected has SHA256 `2dc4d2bab113ffe6cb599809b764be434b897c838103b3d972153617634921a2`, 370 pages. I rendered and visually inspected PDF pages 355–368 (printed 342–355), including both new figures on PDF pages 361 and 365. Equations, labels, captions, diagram labels, the whole-block case split, and the final theorem were legible. I found no clipped text, overlapping material, missing mathematical glyph, or unresolved `??` reference.
+
+I compared the new ordinary-triangular-face section in `book/chapters/results.md` with the source proof and the earlier bounded audit. Its finite certificate requirement, ratios u/b and v/b, original targets, n+4 and n+20 counts, 40+5 branch coverage, monotonicity for larger even n, final knot-parity test, fixed long signed fillings, and distinction between augmented and filled volumes agree. The two suggested notation precisions were incorporated before the built-page check: the opening describes small boundary ratios, and Q's logarithmic sum excludes zero weights.
+
+Using Chromium, I inspected the built results section, the new audits section, and the two figure-gallery entries at desktop width 1440 and mobile width 390. Both images loaded at their native aspect ratios. There were no JavaScript page errors and no page-wide horizontal overflow. The long Q display has an intentional local horizontal scroll container on mobile; I checked both its left and right ends. The code command similarly remains in its own scroll container. These are not lost formula or command content.
+
+The visual evidence is in `/private/tmp/md-r-final-visual/`, with PDF page PNGs, desktop/mobile screenshots, and JSON records. No public file was edited in this pass.
+
+## Proof and formalization boundary
+
+The new R-specific argument has no additional open-general-source premise in the statements I checked. The fixed-boundary minimum, its supported coercivity and limit, the bounded-interstice curvature comparison, the actual three-sector map, duplicate target cancellation, whole-block central/noncentral split, explicit core comparisons, and extension of the finite witness cover are written proofs. My substantive bounded source/prerequisite read is recorded in `md-thin-face-17-extension-coherent-audit.md`; the 45-rate checker was independently replayed there. I also read the public runner's later finite oriented-topology and old-dual replay additions, without repeating their fresh execution.
+
+The global local-spectral envelopes, Appendix N's full-Hermite norm, and Appendix O's nonzero central period and actual metric-volume calibration remain imported earlier written theorems. This pass checked their stated hypotheses and normalization against the final source. It was not a new end-to-end proof audit of all their analytic contour or geometric subarguments. I found no concrete applicability gap or import of an unresolved general remainder estimate.
+
+The nine `TriangularBoundary` Lean declarations formalize the scalar local comparisons, target correction and rate-case implications with explicit hypotheses. The conditional circle packing, witness continuity, source topology, general spectral envelopes and actual hyperbolic completion are not thereby machine formalized. The finite numerical and incidence checks likewise supplement the all-length and analytic written proofs; they do not prove those statements by sampling.

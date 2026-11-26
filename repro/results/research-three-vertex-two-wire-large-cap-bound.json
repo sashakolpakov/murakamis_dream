@@ -1,0 +1,85 @@
+{
+  "status": "passed",
+  "precision_bits": 192,
+  "strict_scalar_comparisons": 16,
+  "exact_endpoint_identities": 5,
+  "exact_joint_Hessian_identities": 1,
+  "checks": [
+    {
+      "name": "original central value exceeds .646",
+      "margin": "[0.00013189443890102818727302144761278814448368156117403226 +/- 7.28e-57]"
+    },
+    {
+      "name": "J one-third endpoint below first-endpoint tangent",
+      "margin": "[0.03641358938053540088225059795486507975668127667501942224 +/- 5.22e-57]"
+    },
+    {
+      "name": "reported weighted low-sum bound below .624573",
+      "margin": "[8.7913266946106506278416156048352523253589158766235e-7 +/- 5.18e-57]"
+    },
+    {
+      "name": "weighted low-sum bound below original central value",
+      "margin": "[0.02155977357157048925233580560917327166971621745276169461 +/- 8.74e-57]"
+    },
+    {
+      "name": "smaller-index monotonicity through middle sum band",
+      "margin": "[0.207106781186547524400844362104849039284835937688474036588 +/- 4.10e-58]"
+    },
+    {
+      "name": "index and wire coefficient monotonicity",
+      "margin": "[0.115452894071311326267716642378790730110480767295274698834 +/- 8.70e-58]"
+    },
+    {
+      "name": "index endpoint coercivity exceeds 3/2",
+      "margin": "[0.08761218155947129839703106516936108459817761616034607444 +/- 5.93e-57]"
+    },
+    {
+      "name": "wire endpoint coefficient exceeds3",
+      "margin": "[0.17522436311894259679406213033872216919635523232069214889 +/- 5.22e-57]"
+    },
+    {
+      "name": "left index-face distance exceeds1/15",
+      "margin": "[0.00666666666666666666666666666666666666666666666666666666667 +/- 4.90e-60]"
+    },
+    {
+      "name": "global index-exit loss exceeds both capped weights",
+      "margin": "[0.000633333333333333333333333333333333333333333333333333333333 +/- 4.66e-61]"
+    },
+    {
+      "name": "positive common Hessian coefficient",
+      "margin": "[0.0200000000000000000000000000000000000000000000000000000000 +/- 7.18e-60]"
+    },
+    {
+      "name": "top sine endpoint remains below1",
+      "margin": "[0.200000000000000000000000000000000000000000000000000000000 +/- 7.18e-59]"
+    },
+    {
+      "name": "left wire boundary outside clipped interval",
+      "margin": "[0.00666666666666666666666666666666666666666666666666666666667 +/- 4.90e-60]"
+    },
+    {
+      "name": "right wire boundary outside clipped interval",
+      "margin": "[0.00333333333333333333333333333333333333333333333333333333333 +/- 3.80e-60]"
+    },
+    {
+      "name": "lower difference angle is positive",
+      "margin": "[0.0600000000000000000000000000000000000000000000000000000000 +/- 1.16e-59]"
+    },
+    {
+      "name": "upper difference angle is below half-period",
+      "margin": "[0.230000000000000000000000000000000000000000000000000000000 +/- 5.26e-59]"
+    }
+  ],
+  "cap_radius": "3/100",
+  "both_distance_coefficients": "3/2",
+  "weighted_low_sum_upper": "[0.624572120867330538934937215838439516474767464108412337654 +/- 8.61e-58]",
+  "index_exit_reserve": "19/30000",
+  "wire_endpoint_coefficient": "[3.17522436311894259679406213033872216919635523232069214889 +/- 5.22e-57]",
+  "scope": "Global real two-wire original retained-summand upper bound, including finite endpoints. No source lower bound or independent height extension.",
+  "script_sha256": "b113cfd4eefeec73f2e203065343af758a88b91c136b568f9c1f8a5e434ee770",
+  "dependencies_sha256": {
+    "notes/research_three_vertex_two_wire_large_cap_bound.md": "4f116ee1945104880ce6f6e90b52a195b8d53b3831e8e2358eaaad7fdd4e321d",
+    "notes/research_three_vertex_global_wire_bound.md": "9624e3802f39d4b46e34907fe4b4a5a11c2420449c71bf84c78328323d91ce12",
+    "notes/research_three_vertex_symmetric_height_bound.md": "bde1eb910917b649141787032795689a4865fed1cd9b41b9b6075539266fd4c9"
+  }
+}

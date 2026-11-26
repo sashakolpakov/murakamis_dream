@@ -1,0 +1,80 @@
+O. The geometric contribution for matched spherical diagrams
+316
+In particular, translating any of the free grids by a nonzero factor does not change this average.
+Proof. By linearity it suffices to take a monomial with nonnegative exponents mf. The finite
+geometric sum in each ordinary variable vanishes unless mf ≡d (mod N); the grid at v also
+requires mv ≡0 (mod N). Every ordinary exponent that survives is at least d. Their sum is
+therefore at least Rd, which exhausts the assumed total-degree bound. Hence every ordinary
+exponent equals d and mu = mv = 0. The remaining multiplier is Q
+f̸=u,v ξmf−d
+f
+ξmv
+v
+= 1.
+This monomial contributes its coefficient; every other monomial contributes zero. No sign or
+positivity condition on the coefficients was used.
+Each original He is homogeneous of degree d, so their product meets this propo-
+sition with degree exactly Rd.
+For the even-level physical grids take ξf
+= qtf ; the
+forced exponents show directly why their extra character is one. The six declarations in
+formal/VolumeLogic/FaceGridSupport.lean verify the exponent argument, including the
+conclusion for degree strictly below Rd. Character orthogonality, the primitive physical grid
+and the original turn normalization remain the written steps described above.
+Replace each homogeneous factor in (O.33) by its central cofactor factor and retain the
+physical spectral trace. Write Craw
+N (δ) for the resulting entire spectral numerator, with each
+node −2 cos(2πδe). It is even separately in every coordinate, has degree at most d in each node,
+and satisfies Craw
+N
+= (−1)dRC+
+N in the positive cofactor normalization. The exact original
+filling period is
+IN,C = qd2 P
+e ne/4(−i)R
+X
+ℓ∈(Z\{0})R
+Y
+e
+ℓe
+
+(−1)(N+1)P
+e ℓe
+·
+Z
+[−1/2,1/2]R
+Y
+e
+sin(2πδe)
+
+Craw
+N (δ) exp
+"
+N
+X
+e
+{πineδ2
+e + 2πiℓeδe}
+#
+dδ.
+(O.35)
+The sum is the original trace identity with its endpoint currents; it is not defined by an
+unqualified termwise Poisson rearrangement. The odd-level simple node and the double-node
+normals are included. The same finite proof is the matched-sphere source, sections 5–7.
+No operation in (O.33)–(O.35) changes a disk, a strand pairing, or a peripheral curve. In
+particular the all-central source for the original sphere exists before a fan construction, and its
+ordinary-face targets are still d.
+O.2.4
+One marked circle pattern on the whole sphere
+Normalize the complete protected white disks to Im z ≤0 and Im z ≥1. For each finite face
+use center (Xf, Yf) and radius rf. At a strand edge set Ifg = 1; at matching edge e set
+Ifg = cos(2πδe). The equations are
+(Xf −Xg)2 + (Yf −Yg)2 = r2
+f + r2
+g + 2Ifgrfrg,
+Yf = rfIfu,
+1 −Yf = rfIfv,
+(O.36)
+where the last two equations are imposed at the appropriate marked line incidences. Fix one
+horizontal translation. The marked line-line edge is automatic; the remaining system has
+3R −1 equations and variables.

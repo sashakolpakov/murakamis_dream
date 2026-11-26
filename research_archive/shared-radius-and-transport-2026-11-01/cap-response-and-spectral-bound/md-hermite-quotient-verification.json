@@ -1,0 +1,273 @@
+{
+  "scope": "Split monic polynomial quotient algorithm and top-coefficient/Newton identity over any Lean.Grind.CommRing; arbitrary repeated nodes. No Chebyshev or analytic theorem.",
+  "toolchain": "leanprover/lean4:v4.32.2",
+  "new_theorem_count": 37,
+  "all_theorem_count": 55,
+  "build": "lake build completed successfully, 7 jobs; no warnings",
+  "axioms": {
+    "VolumeLogic.three_supports": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.left_endpoint_cutoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.central_endpoint_even": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.central_endpoint_odd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.protected_moment_degree": [
+      "propext",
+      "Quot.sound"
+    ],
+    "VolumeLogic.divided_difference_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.annihilating_root_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.double_root_jet_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.all_choices_product": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.tensor_grid_subtraction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.product_difference_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.doubled_flattening_gain": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.strict_weak_balance_gain": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.total_nonnegative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.nonempty_sector_gap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.sector_strictly_below": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.filled_rate_gap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.filled_remainder_strictly_below": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.coefficient_addConstant_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.coefficient_addConstant_succ": [
+      "propext"
+    ],
+    "VolumeLogic.coefficient_timesLinear_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.coefficient_timesLinear_succ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.horner_addConstant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.horner_timesLinear": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.synthetic_reconstruct_nonempty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.synthetic_reconstruct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.synthetic_horner": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.coefficient_polyAdd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.timesLinear_congr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.addConstant_congr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.monic_division_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.timesLinear_length": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.monicRemainder_length": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.coefficient_eq_zero_of_length_le": [
+      "propext"
+    ],
+    "VolumeLogic.monic_remainder_degree_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.top_coefficient_is_newton": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.two_node_top_coefficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.monicMultiple_length": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.monicPolynomial_monic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.synthetic_length": [
+      "propext",
+      "Quot.sound"
+    ],
+    "VolumeLogic.monicQuotient_length": [
+      "propext",
+      "Quot.sound"
+    ],
+    "VolumeLogic.monicMultiple_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.monicRemainder_of_degree_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.newtonFunctional_of_degree_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.synthetic_timesLinear": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.monicRemainder_annihilates_multiple": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.newtonFunctional_annihilates_multiple": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.double_root_top_coefficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.double_root_remainder": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "VolumeLogic.coeffEq_refl": [],
+    "VolumeLogic.coeffEq_symm": [],
+    "VolumeLogic.coeffEq_trans": [],
+    "VolumeLogic.synthetic_addConstant": [],
+    "VolumeLogic.synthetic_cons": [],
+    "VolumeLogic.diagonal_divided_difference": []
+  },
+  "files": {
+    "/private/tmp/md-hermite-quotient-formal/VolumeLogic/MonicRemainder.lean": "f6781dba17c7677adcfe2aec41d31f8742004fc38a45be9732c24ce98b65dbfd",
+    "/private/tmp/md-hermite-quotient-formal/VolumeLogic.lean": "e9e6f5f8ce87a533bc519226fe2ddc160066a634006e0243cb723419c58815a3",
+    "/private/tmp/md-hermite-quotient-formal/AxiomAudit.lean": "07bd2dc631c5ad0edd4a553bc7b43593290272fec700b2cc49ed2be26654f7c1",
+    "/private/tmp/md-hermite-quotient-formal/lean-toolchain": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
+    "/private/tmp/md-hermite-quotient-formal/lakefile.toml": "d4fbe5befdea32352528a400922442a9814ad56dd607ec3dbbff3639120d947b"
+  },
+  "read_inputs": {
+    "/private/tmp/murakamis_dream-publication/manuscript/sections/N-uniform-filling-bound.tex": "aa5bfe82e28c6fa4dd319bc160992aaddb7b62d6672c4271cea398d32b69df82",
+    "/private/tmp/murakamis_dream-publication/notes/actual_spectral_total_derivative_source.md": "f9ee4862c928e014522d671136cf402713f5edbf2b0f209bd01b5d43ced62ffc",
+    "/private/tmp/murakamis_dream-publication/formal/VolumeLogic/FiniteAlgebra.lean": "da1f26ce23fdbc6a8fc22a7a61f46b916c45d8b4301914a35803f767a42bf400",
+    "/private/tmp/murakamis_dream-publication/formal/README.md": "49c51e644d5779234709427788032cc0f87f7676a1112370b8d6e411f2c5d0bd"
+  },
+  "not_formalized": [
+    "Chebyshev factorization, roots and root multiplicities",
+    "general abstract quotient-ring construction and full functional linearity",
+    "general confluent root-sum evaluation for multiple distinct double roots",
+    "original Casimir relation and resolvent-to-crossing evaluation",
+    "analytic derivative identities, norms, source estimates, filling, volume"
+  ]
+}

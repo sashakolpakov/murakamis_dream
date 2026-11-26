@@ -1,0 +1,186 @@
+{
+  "status": "passed",
+  "precision_bits": 192,
+  "scope": "Exact period coverage, class inclusions, real reset and action drift, finite-word orientation and powers of N, and hashes of passed component records. Does not independently re-prove the analytic contour, source entrance, corner transfer or volume calibration.",
+  "strict_scalar_comparisons": 13,
+  "comparisons": [
+    {
+      "name": "gradient upper bound contracts",
+      "strict_positive_margin": "[0.76621404914191218668603712998242815434917145657759695398 +/- 3.13e-57]"
+    },
+    {
+      "name": "disk derivative remains in the class",
+      "strict_positive_margin": "[0.0200000000000000000000000000000000000000000000000000000000 +/- 9.24e-59]"
+    },
+    {
+      "name": "real-interval derivative remains in the class",
+      "strict_positive_margin": "[0.0300000000000000000000000000000000000000000000000000000000 +/- 9.88e-59]"
+    },
+    {
+      "name": "central accretivity exceeds18 on the entire output union",
+      "strict_positive_margin": "[0.6572800607227363279844550906902534760432657996353128319 +/- 5.10e-56]"
+    },
+    {
+      "name": "local real packet resets quadratic envelope",
+      "strict_positive_margin": "[3.0528430273898910817024666067189811402690959337395588723 +/- 2.75e-56]"
+    },
+    {
+      "name": "whole-period reset at zero gradient",
+      "strict_positive_margin": "[4.0500000000000000000000000000000000000000000000000000000e-6 +/- 4.37e-62]"
+    },
+    {
+      "name": "whole-period reset at largest gradient exceeds .00001061",
+      "strict_positive_margin": "[1.421431760786041006337036991980472461530505226224327e-9 +/- 3.40e-61]"
+    },
+    {
+      "name": "reset quadratic is convex",
+      "strict_positive_margin": "[0.81029446073135174962211527169420945653387704647615683828 +/- 5.34e-57]"
+    },
+    {
+      "name": "total normalization drift below six millionths",
+      "strict_positive_margin": "[5.31651640567278903592043109163785284315140373534011045e-8 +/- 4.10e-62]"
+    },
+    {
+      "name": "one attachment need not reach small certified class",
+      "strict_positive_margin": "[0.0009325799198911005358895883591001595202097226975076973623 +/- 3.06e-59]"
+    },
+    {
+      "name": "two attachments reach .000312",
+      "strict_positive_margin": "[4.6153633386457514609321717740727650955820118429710714e-7 +/- 6.64e-60]"
+    },
+    {
+      "name": "two attachments reach the small class",
+      "strict_positive_margin": "[8.846153633386457514609321717740727650955820118429710714e-5 +/- 6.63e-60]"
+    },
+    {
+      "name": "larger cap weakens to small cap for small class",
+      "strict_positive_margin": "[0.0279031172466443879402842907329845734235544763959085148545 +/- 3.24e-59]"
+    }
+  ],
+  "exact_period_regions": [
+    {
+      "interval": [
+        "-1/2",
+        "-1/50"
+      ],
+      "type": "far"
+    },
+    {
+      "interval": [
+        "-1/50",
+        "-9/1000"
+      ],
+      "type": "intermediate"
+    },
+    {
+      "interval": [
+        "-9/1000",
+        "-1/200"
+      ],
+      "type": "near"
+    },
+    {
+      "interval": [
+        "-1/200",
+        "1/200"
+      ],
+      "type": "central"
+    },
+    {
+      "interval": [
+        "1/200",
+        "9/1000"
+      ],
+      "type": "near"
+    },
+    {
+      "interval": [
+        "9/1000",
+        "1/50"
+      ],
+      "type": "intermediate"
+    },
+    {
+      "interval": [
+        "1/50",
+        "1/2"
+      ],
+      "type": "far"
+    }
+  ],
+  "minimum_complementary_gap": "1/100000",
+  "normalization_identities": 2,
+  "noncommuting_word_checks": 6,
+  "passed_component_records": [
+    {
+      "record": "repro/results/research-three-real-output-phase-schur.json",
+      "sha256": "ac44bc999adc3dcbaae0100909820aa2602a79fed79c47a7ee79a67e46c649b8",
+      "status": "passed",
+      "current_script_and_dependency_hashes_verified": true,
+      "scope": "Passed component record reused; analytic check not rerun by assembly."
+    },
+    {
+      "record": "repro/results/research-three-real-output-phase-schur-replay.json",
+      "sha256": "32d8c9fa51ceea9861c4598f9cc4bb8c8b0c970fd2b1b4723c94479f2666a764",
+      "status": "passed",
+      "current_script_and_dependency_hashes_verified": true,
+      "scope": "Passed component record reused; analytic check not rerun by assembly."
+    },
+    {
+      "record": "repro/results/research-three-generic-source-outer-transport.json",
+      "sha256": "c5c09ea9f85067624850ea01f84f207b2a03f31a6ca7544d8ecbe34597fe55be",
+      "status": "passed",
+      "current_script_and_dependency_hashes_verified": true,
+      "scope": "Passed component record reused; analytic check not rerun by assembly."
+    },
+    {
+      "record": "repro/results/research-three-larger-source-intermediate-annulus.json",
+      "sha256": "469b2159ca7e9c491f86cd624636813babadb3cc02abccd3c592fbe16a5eecc1",
+      "status": "passed",
+      "current_script_and_dependency_hashes_verified": true,
+      "scope": "Passed component record reused; analytic check not rerun by assembly."
+    },
+    {
+      "record": "repro/results/research-three-first-entrance-real-budgets.json",
+      "sha256": "54f7a21268a1085ca9115bc6eb5ee7e628e6a63692da305270f432c556225e7a",
+      "status": "passed",
+      "current_script_and_dependency_hashes_verified": true,
+      "scope": "Passed component record reused; analytic check not rerun by assembly."
+    },
+    {
+      "record": "repro/results/research-three-vertex-real-input-union.json",
+      "sha256": "9409dec4fbbca05789bffd89124e592f016e43a1ca47620004aa9db8d170397e",
+      "status": "passed",
+      "current_script_and_dependency_hashes_verified": true,
+      "scope": "Passed component record reused; analytic check not rerun by assembly."
+    },
+    {
+      "record": "repro/results/research-three-vertex-real-input-union-replay.json",
+      "sha256": "0a62d5e1e03631f4c0f243d9d42f76d3d4d3090e5238fb392dcfaaede951c9d1",
+      "status": "passed",
+      "current_script_and_dependency_hashes_verified": true,
+      "scope": "Passed component record reused; analytic check not rerun by assembly."
+    }
+  ],
+  "constants": {
+    "Z": "[0.23378595085808781331396287001757184565082854342240304602 +/- 2.85e-57]",
+    "two_step_gradient_upper": "[0.00031153846366613542485390678282259272349044179881570289286 +/- 6.58e-60]",
+    "summed_action_drift_upper": "[5.9468348359432721096407956890836214715684859626465988955e-6 +/- 3.88e-62]"
+  },
+  "script_sha256": "81240d3616b0a12f78ab7d6cb1b4c985704747b5451bf9ddb1724e43a746405e",
+  "dependencies_sha256": {
+    "notes/research_three_larger_source_propagation.md": "224878c2752e8ab3036211be96542324be29b976e14ca0a14e3d561b4be05309",
+    "notes/research_three_larger_phase_class.md": "60f5d53889a947b4c2633a08888fcc0dcfaee1fa71cdcaf1062c2322ab3e5001",
+    "notes/research_three_generic_source_outer_transport.md": "a3dedfad0dfe394963409aefa2898550815fe875e33c8ac474799e2537102351",
+    "notes/research_three_larger_source_intermediate_annulus.md": "e109cb7e6b1d37ec15e078260833cb1e6af50b3043412f48fbaae90288d43714",
+    "notes/research_three_first_entrance_real_extension.md": "3922d3d19e43fdc9cab21c111cbd78ec340d3d81a4e5c665eb34d84cb44e304f",
+    "notes/research_three_prepared_cap_real_extension.md": "8fdff52ec92fa69177697a9b06e4092dcc330b7fc87c656febd834f4e8bdb273",
+    "notes/research_three_vertex_real_input_union.md": "13de1fd04b89a69702818b7f11d6680185410e8c803619c4cf45c35a63afdc68",
+    "notes/research_three_vertex_bidisk_packet.md": "6afc920448853e9f2badfdf97ae96cfe84a2fbd20e884a32ae8aa38dc39444c9",
+    "notes/research_three_vertex_two_wire_large_cap_bound.md": "4f116ee1945104880ce6f6e90b52a195b8d53b3831e8e2358eaaad7fdd4e321d",
+    "notes/research_three_vertex_large_cap_height_bound.md": "7275e3f3ac11c39ccc52eff394283043ae635984def0b8b01645e42ddc92bf59",
+    "notes/research_three_source_tail_propagation.md": "78db862c24a34d02148ab89279ef8ef0f56436fe3f3558d1ec3f2114ae6b0583",
+    "notes/research_three_small_source_closure.md": "85401cee8aa9e1c6a8f383ecc0839d61d62d0584ea54fb0f30a6b03cd8c248a6",
+    "notes/research_three_chain_fourier_corner_transfer.md": "adebf93d876610bfdad00f3bf8071d369179ba174680cb74bfe75fb2a243b21e"
+  }
+}

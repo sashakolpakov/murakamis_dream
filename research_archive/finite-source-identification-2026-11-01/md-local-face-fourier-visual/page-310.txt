@@ -1,0 +1,53 @@
+N. Uniform bounds for inserting twist powers
+297
+where
+Aj = −(qQj + q−1Q−j),
+Bj = 2 −Qj −Q−j,
+Cj = q + q−1 −qQ−j −q−1Qj.
+The only potentially negative powers have coefficients B0 = C0 = C1 = 0. In particular T
+preserves the N-dimensional space of polynomials of degree at most d, and it preserves total
+degree when x, y, z all have degree one.
+Proposition N.1 (The actual Casimir and the face operator). For s = 0, . . . , d, let Ωs be the
+restriction of Ωto the ordered basis
+eu ⊗e[s−u]N ,
+0 ≤u < N,
+where [a]N is the representative of a in {0, . . . , N −1}. Choose y̸ = 0, set x = Qs+1y, and put
+bu = −q−1xQ−u,
+Euj = bj
+u,
+Guu = qdu.
+The matrix E evaluates a polynomial at the N distinct points bu. With T written in the
+monomial basis,
+ETE−1 = −G−1ΩT
+s G.
+(N.10)
+Consequently the full original pair matrix satisfies χN(Ω) = 0, including its nilpotent parts.
+Proof. At z = bu, the two physical clocks are
+−q−1x/bu = Qu,
+−q−1bu/y = Qs−u.
+The coefficients in (N.9) are therefore −D, q−1A+, and qA−. Since qd = −q−1, the positive
+coefficient is −qdA+, and the negative one is −q−dA−. Evaluation at Q−1bu increments the
+first index, while evaluation at Qbu decrements it. The endpoint zeros in (N.8) kill every
+attempted wrap. Thus the coefficient from row u to column r is −qd(r−u)(Ωs)ru, proving
+(N.10). The transpose occurs because evaluation acts on functions of the input index, whereas
+the physical matrix sends input columns to output rows.
+The matrix of −T is triangular, with diagonal tj + t−1
+j , where tj = qQj. Its characteristic
+polynomial is
+N−1
+Y
+j=0
+(X −tj −t−1
+j ) = 2TN(X/2) + 2.
+To check the identity with multiplicities, substitute X = w + w−1 and multiply by wN. The
+left side becomes
+N−1
+Y
+j=0
+(w −tj)(w −t−1
+j ) = (wN + 1)2,
+because both lists are exactly the roots of tN = −1. The right side gives the same Laurent
+polynomial. Substitution X = w + w−1 is injective on polynomials, so the identity follows.
+Cayley–Hamilton and (N.10) give χN(Ωs) = 0. The N residue spaces form a direct sum of the
+full pair space, proving the assertion for Ω. This proves a matrix identity, not only an identity
+on its eigenvalues.

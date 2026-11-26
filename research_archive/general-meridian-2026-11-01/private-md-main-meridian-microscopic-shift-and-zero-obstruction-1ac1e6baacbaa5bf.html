@@ -1,0 +1,298 @@
+<h1 id="the-actual-complete-point-shift-ratio-and-nearby-zeros">The
+actual complete-point shift ratio and nearby zeros</h1>
+<p>31 October 2026. Private mathematical continuation. This strengthens
+the already recorded obstruction to a uniform main-meridian WKB
+expression for the reduced ADO state. It uses the now-proved positive
+volume rate, the exact ordinary-color anchor, and an explicit degree
+bound from the original finite crossing matrices. It does not construct
+a replacement knot invariant or identify a classical A-polynomial
+factor.</p>
+<h2 id="the-state-and-the-exact-microscopic-shift">1. The state and the
+exact microscopic shift</h2>
+<p>Fix a zero-framed knot K for which the actual all-level theorem
+gives</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mi>N</mi></msub><mo>=</mo><msup><mi>e</mi><mrow><mi>π</mi><mi>i</mi><mi>/</mi><mi>N</mi></mrow></msup><mo>,</mo><mspace width="2.0em"></mspace><mfrac><mn>1</mn><mi>N</mi></mfrac><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>K</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>K</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>→</mo><mi>v</mi><mo>=</mo><mfrac><mi>V</mi><mrow><mn>2</mn><mi>π</mi></mrow></mfrac><mo>&gt;</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ q_N=e^{\pi i/N},\qquad
+ \frac1N\log|K_N(K)|\longrightarrow v=\frac{V}{2\pi}&gt;0.
+ \tag{1}
+</annotation></semantics></math> This includes the covered strict
+long-twist knots and the knots obtained from them by the ordered
+net-weight normalization. The knot and all integer twist weights are
+fixed before N grows.</p>
+<p>Let F_N(M) be the actual reduced literature ADO state, in the marked
+coordinate</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msubsup><mi>q</mi><mi>N</mi><mi>α</mi></msubsup><mo>,</mo><mspace width="2.0em"></mspace><mi>M</mi><mo>=</mo><mi>−</mi><msub><mi>q</mi><mi>N</mi></msub><mi>x</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ x=q_N^\alpha,\qquad M=-q_Nx.
+ \tag{2}
+</annotation></semantics></math> The actual quotient-color theorem
+states</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>−</mi><msubsup><mi>q</mi><mi>N</mi><mi>j</mi></msubsup><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>C</mi><mi>j</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>q</mi><mi>N</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="1.0em"></mspace><mn>1</mn><mo>≤</mo><mi>j</mi><mo>≤</mo><mi>N</mi><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>F</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>K</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>K</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>C</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>q</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ F_N(-q_N^j)=C_j(q_N),\quad 1\le j\le N,\qquad
+ F_N(1)=K_N(K),\qquad C_1(q)=1.
+ \tag{3}
+</annotation></semantics></math> Here F_N is the reduced, zero-framed
+state. It is not an unnormalized state, and no crossing Cartan or
+framing monomial is omitted from it.</p>
+<p>The source proof in <code>notes/even_meridian_norm_descent.md</code>,
+Sections 1–2, gives, at every level and both parities,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>M</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>F</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>M</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ F_N(-M)=F_N(M).
+ \tag{4}
+</annotation></semantics></math> For specificity, its exact insertion is
+a function of Y=M^2, and its N-fold cyclic norm is one. The residual
+framing exponent there is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>κ</mi><mi>D</mi></msub><mo>=</mo><mi>w</mi><mo>−</mo><mi>b</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\kappa_D=w-b+1</annotation></semantics></math>,
+which is even for a b-strand braid closing to a knot: its permutation
+has sign
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>b</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>w</mi></msup></mrow><annotation encoding="application/x-tex">(-1)^{b-1}=(-1)^w</annotation></semantics></math>.
+Thus the framing norm
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>q</mi><mi>N</mi><mrow><mi>−</mi><mi>N</mi><msub><mi>κ</mi><mi>D</mi></msub></mrow></msubsup><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><msub><mi>κ</mi><mi>D</mi></msub></msup></mrow><annotation encoding="application/x-tex">q_N^{-N\kappa_D}=(-1)^{\kappa_D}</annotation></semantics></math>
+equals one. Alternatively, the source’s exponent of x is even term by
+term after the conserved position coboundary is summed. This is the
+precise reason that (4) has no additional sign. It applies to the
+zero-framed reduced state, not to the full modified state, whose parity
+is different at even N.</p>
+<p>Combining (3)–(4) proves the actual identity</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>q</mi><mi>N</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>F</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>−</mi><msub><mi>q</mi><mi>N</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1</mn><mo>,</mo><mspace width="2.0em"></mspace><mfrac><mrow><msub><mi>F</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>q</mi><mi>N</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><mrow><msub><mi>F</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mrow><msub><mi>K</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>K</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ F_N(q_N)=F_N(-q_N)=1,
+ \qquad
+ \frac{F_N(q_N)}{F_N(1)}=\frac1{K_N(K)}.
+ \tag{5}
+</annotation></semantics></math> The denominator is nonzero for all
+sufficiently large N by (1). Hence</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mi mathvariant="normal">lim</mi><mrow><mi>N</mi><mo>→</mo><mi>∞</mi></mrow></munder><mfrac><mn>1</mn><mi>N</mi></mfrac><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mrow><mo stretchy="true" form="prefix">|</mo><mfrac><mrow><msub><mi>F</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>q</mi><mi>N</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><mrow><msub><mi>F</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mi>−</mi><mi>v</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \lim_{N\to\infty}\frac1N
+     \log\left|\frac{F_N(q_N)}{F_N(1)}\right|=-v.
+ \tag{6}
+</annotation></semantics></math> The shift in (5) is the genuine
+meridian shift M-&gt;q_N M. In squared coordinates, writing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>F</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>M</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f_N(Y)=F_N(M)</annotation></semantics></math>,
+it is Y-&gt;Q_NY with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mi>N</mi></msub><mo>=</mo><msubsup><mi>q</mi><mi>N</mi><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">Q_N=q_N^2</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>Q</mi><mi>N</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">f_N(Q_N)=1</annotation></semantics></math>.
+There is no parity exception.</p>
+<p>The qualitative failure of a uniform nonzero WKB amplitude across
+these two points was already explained in
+<code>regularized_kashaev_period.md</code>, Section 7, and
+<code>formal_a_curve_period_torsor.md</code>, Section 3. Equation (6)
+supplies its exact exponential rate for the knots now covered by the
+volume theorem. Sections 2–3 give a further quantitative consequence for
+the zeros of the actual Laurent polynomial.</p>
+<h2 id="an-explicit-linear-laurent-degree-bound">2. An explicit linear
+Laurent-degree bound</h2>
+<p>Choose any fixed braid presentation of K with b strands and L
+crossings. Let L_+ and L_- count its positive and negative crossings, so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><msub><mi>L</mi><mo>+</mo></msub><mo>+</mo><msub><mi>L</mi><mo>−</mo></msub></mrow><annotation encoding="application/x-tex">L=L_++L_-</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>=</mo><msub><mi>L</mi><mo>+</mo></msub><mo>−</mo><msub><mi>L</mi><mo>−</mo></msub></mrow><annotation encoding="application/x-tex">w=L_+-L_-</annotation></semantics></math>.
+Put d=N-1.</p>
+<p>Use precisely the finite lift of
+<code>finite_sum_annihilator.md</code>, Section 1. After removing the
+common Cartan scalar, the positive crossing is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>R</mi><mo accent="true">̃</mo></mover><mo>=</mo><mi>D</mi><mi mathvariant="normal">Θ</mi></mrow><annotation encoding="application/x-tex">\widetilde R=D\Theta</annotation></semantics></math>,
+where the diagonal D has x-power
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mrow><mi>−</mi><mi>a</mi><mo>−</mo><mi>b</mi></mrow></msup><annotation encoding="application/x-tex">x^{-a-b}</annotation></semantics></math>.
+A nonzero summand of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="normal">Θ</mi><annotation encoding="application/x-tex">\Theta</annotation></semantics></math>
+shifts an input (a,b) to (a-k,b+k), with</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>≤</mo><mi>d</mi><mo>,</mo><mspace width="2.0em"></mspace><mn>0</mn><mo>≤</mo><mi>k</mi><mo>≤</mo><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>d</mi><mo>−</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ 0\le a,b\le d,\qquad 0\le k\le\min(a,d-b).
+ \tag{7}
+</annotation></semantics></math> The product of k unrolled E factors has
+Laurent x-exponents between -k and k. The diagonal sees the same
+conserved sum a+b before and after the shift. Thus every positive
+crossing entry has exponents in</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mi>a</mi><mo>−</mo><mi>b</mi><mo>−</mo><mi>k</mi><mo>,</mo><mi>−</mi><mi>a</mi><mo>−</mo><mi>b</mi><mo>+</mo><mi>k</mi><mo stretchy="false" form="postfix">]</mo><mo>⊂</mo><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mn>2</mn><mi>d</mi><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">]</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ [-a-b-k,-a-b+k]\subset[-2d,0].
+ \tag{8}
+</annotation></semantics></math> Indeed a+b+k&lt;=2d follows from
+k&lt;=d-b, and -a-b+k&lt;=0 follows from k&lt;=a. The actual inverse is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="normal">Θ</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msup><mi>D</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\Theta^{-1}D^{-1}</annotation></semantics></math>,
+with the same allowed shifts and the same x-degree range of its E
+factors. Every negative crossing entry therefore has exponents in</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo>−</mo><mi>k</mi><mo>,</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo>+</mo><mi>k</mi><mo stretchy="false" form="postfix">]</mo><mo>⊂</mo><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>2</mn><mi>d</mi><mo stretchy="false" form="postfix">]</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ [a+b-k,a+b+k]\subset[0,2d].
+ \tag{9}
+</annotation></semantics></math> Permutation and transpose conventions
+only permute these entries. There is no denominator depending on x in
+this matrix formula: the factorial denominators depend on q and are
+nonzero at q_N. Products, sums and the finite trace cannot enlarge the
+resulting exponent interval.</p>
+<p>The residual zero-framing factor is x^(wd). Each of the b-1 pivotal
+traces contributes the same x-power x^(-d); its remaining dependence on
+the head index is a power of q. Thus the full fixed shift is
+x^(d(w-b+1)). Combining it with (8)–(9) puts the support of F_N in</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mi>d</mi><mo stretchy="false" form="prefix">(</mo><mi>L</mi><mo>+</mo><mi>b</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="0.222em"></mspace><mi>d</mi><mo stretchy="false" form="prefix">(</mo><mi>L</mi><mo>−</mo><mi>b</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">]</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ [-d(L+b-1),\ d(L-b+1)].
+ \tag{10}
+</annotation></semantics></math> The substitution x=-q_N^{-1}M
+multiplies coefficients by nonzero scalars and leaves this exponent
+interval unchanged. The removed common Cartan was already canceled by
+the exact zero-framing normalization; it must not be inserted a second
+time into (10).</p>
+<p>Let m_N and n_N be the least and greatest actual nonzero Laurent
+exponents after any cancellations. Then</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mi>N</mi></msub><mo>=</mo><msub><mi>n</mi><mi>N</mi></msub><mo>−</mo><msub><mi>m</mi><mi>N</mi></msub><mo>≤</mo><mn>2</mn><mi>L</mi><mo stretchy="false" form="prefix">(</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ D_N=n_N-m_N\le 2L(N-1).
+ \tag{11}
+</annotation></semantics></math> This bound is for the actual reduced
+state and holds at every level. The number of state-sum terms need not
+be bounded to prove it. By (4), all actual exponents are even, so the
+corresponding Laurent spread in Y=M^2 obeys</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>D</mi><mi>N</mi><mi>Y</mi></msubsup><mo>≤</mo><mi>L</mi><mo stretchy="false" form="prefix">(</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ D_N^{Y}\le L(N-1).
+ \tag{12}
+</annotation></semantics></math> For a positive-volume knot L&gt;0. Also
+D_N&gt;0 for all sufficiently large N: a Laurent monomial has equal
+modulus at 1 and q_N and cannot satisfy (1) and (5).</p>
+<h2 id="actual-zeros-approach-the-complete-point-at-distance-o1n">3.
+Actual zeros approach the complete point at distance O(1/N)</h2>
+<p>Define</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>δ</mi><mi>N</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">|</mo><msub><mi>q</mi><mi>N</mi></msub><mo>−</mo><mn>1</mn><mo stretchy="false" form="prefix">|</mo><mo>=</mo><mn>2</mn><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mfrac><mi>π</mi><mrow><mn>2</mn><mi>N</mi></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>r</mi><mi>N</mi></msub><mo>=</mo><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">|</mo><mi>z</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="prefix">|</mo><mo>:</mo><msub><mi>F</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0</mn><mo>,</mo><mspace width="0.222em"></mspace><mi>z</mi><mo>≠</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \delta_N=|q_N-1|=2\sin\frac{\pi}{2N},\qquad
+ r_N=\min\{|z-1|: F_N(z)=0,\ z\ne0\}.
+ \tag{13}
+</annotation></semantics></math> For sufficiently large N the zero set
+in (13) is nonempty. Indeed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>M</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>M</mi><mrow><mi>−</mi><msub><mi>m</mi><mi>N</mi></msub></mrow></msup><msub><mi>F</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>M</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">P_N(M)=M^{-m_N}F_N(M)</annotation></semantics></math>
+is a degree-D_N polynomial with nonzero constant term and D_N&gt;0.
+Neither 1 nor q_N is a root.</p>
+<p>Factor P_N with multiplicities as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>N</mi></msub><msubsup><mo>∏</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><msub><mi>D</mi><mi>N</mi></msub></msubsup><mo stretchy="false" form="prefix">(</mo><mi>M</mi><mo>−</mo><msub><mi>z</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">a_N\prod_{j=1}^{D_N}(M-z_j)</annotation></semantics></math>.
+Since |q_N|=1, the Laurent monomial has exactly unit modulus between the
+two evaluation points. If r_N&gt;delta_N, the triangle inequality
+gives</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mrow><mo stretchy="true" form="prefix">|</mo><mfrac><mrow><msub><mi>F</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>q</mi><mi>N</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><mrow><msub><mi>F</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mo stretchy="true" form="postfix">|</mo></mrow></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><msub><mi>D</mi><mi>N</mi></msub></munderover><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mfrac><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>q</mi><mi>N</mi></msub><mo>−</mo><msub><mi>z</mi><mi>j</mi></msub><mo stretchy="false" form="prefix">|</mo></mrow><mrow><mo stretchy="false" form="prefix">|</mo><mn>1</mn><mo>−</mo><msub><mi>z</mi><mi>j</mi></msub><mo stretchy="false" form="prefix">|</mo></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>≥</mo><msub><mi>D</mi><mi>N</mi></msub><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mfrac><msub><mi>δ</mi><mi>N</mi></msub><msub><mi>r</mi><mi>N</mi></msub></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+ \begin{aligned}
+ \log\left|\frac{F_N(q_N)}{F_N(1)}\right|
+ &amp;=\sum_{j=1}^{D_N}\log\frac{|q_N-z_j|}{|1-z_j|}\\
+ &amp;\ge D_N\log\left(1-\frac{\delta_N}{r_N}\right).
+ \end{aligned}
+ \tag{14}
+</annotation></semantics></math> There is no generic-position or
+simple-root assumption. By (5), the left side is -log|K_N|. Solving (14)
+yields</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>N</mi></msub><mo>≤</mo><mfrac><msub><mi>δ</mi><mi>N</mi></msub><mrow><mn>1</mn><mo>−</mo><mo stretchy="false" form="prefix">|</mo><msub><mi>K</mi><mi>N</mi></msub><msup><mo stretchy="false" form="prefix">|</mo><mrow><mi>−</mi><mn>1</mn><mi>/</mi><msub><mi>D</mi><mi>N</mi></msub></mrow></msup></mrow></mfrac><mo>≤</mo><mfrac><msub><mi>δ</mi><mi>N</mi></msub><mrow><mn>1</mn><mo>−</mo><mo stretchy="false" form="prefix">|</mo><msub><mi>K</mi><mi>N</mi></msub><msup><mo stretchy="false" form="prefix">|</mo><mrow><mi>−</mi><mn>1</mn><mi>/</mi><mo stretchy="false" form="prefix">[</mo><mn>2</mn><mi>L</mi><mo stretchy="false" form="prefix">(</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">]</mo></mrow></msup></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ r_N\le
+ \frac{\delta_N}{1-|K_N|^{-1/D_N}}
+ \le\frac{\delta_N}{1-|K_N|^{-1/[2L(N-1)]}}.
+ \tag{15}
+</annotation></semantics></math> If r_N&lt;=delta_N, the second bound in
+(15) holds automatically, because |K_N|&gt;1 for large N. Thus it is an
+unconditional eventual bound. Using (1), (15) implies</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mi mathvariant="normal">limsup</mi><mrow><mi>N</mi><mo>→</mo><mi>∞</mi></mrow></munder><mi>N</mi><msub><mi>r</mi><mi>N</mi></msub><mo>≤</mo><mfrac><mi>π</mi><mrow><mn>1</mn><mo>−</mo><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>V</mi><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>4</mn><mi>π</mi><mi>L</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \limsup_{N\to\infty} N r_N
+ \le \frac{\pi}{1-\exp(-V/(4\pi L))}.
+ \tag{16}
+</annotation></semantics></math> This is a proof about zeros of the
+actual knot state, not an artificial family having the same scalar
+growth.</p>
+<p>The exact squared-meridian descent improves the displayed constant.
+Apply the same argument to f_N(Y), the point Q_N, and the degree bound
+(12). A zero
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>ζ</mi><mi>N</mi></msub><annotation encoding="application/x-tex">\zeta_N</annotation></semantics></math>
+satisfies</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">limsup</mi><mo>&#8289;</mo></mrow><mi>N</mi><mo stretchy="false" form="prefix">|</mo><msub><mi>ζ</mi><mi>N</mi></msub><mo>−</mo><mn>1</mn><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mrow><mn>1</mn><mo>−</mo><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>V</mi><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>π</mi><mi>L</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \limsup N|\zeta_N-1|
+ \le\frac{2\pi}{1-\exp(-V/(2\pi L))}.
+ \tag{17}
+</annotation></semantics></math> Choose its square root z_N near 1.
+Evenness says that this is a zero of F_N, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>z</mi><mi>N</mi></msub><mo>−</mo><mn>1</mn><mo stretchy="false" form="prefix">|</mo><mo>=</mo><mo stretchy="false" form="prefix">|</mo><msub><mi>ζ</mi><mi>N</mi></msub><mo>−</mo><mn>1</mn><mo stretchy="false" form="prefix">|</mo><mi>/</mi><mo stretchy="false" form="prefix">|</mo><msub><mi>z</mi><mi>N</mi></msub><mo>+</mo><mn>1</mn><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">|z_N-1|=|\zeta_N-1|/|z_N+1|</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>z</mi><mi>N</mi></msub><mo>+</mo><mn>1</mn><mo stretchy="false" form="prefix">|</mo><mo>→</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">|z_N+1|\to2</annotation></semantics></math>.
+Consequently</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><munder><mi mathvariant="normal">limsup</mi><mrow><mi>N</mi><mo>→</mo><mi>∞</mi></mrow></munder><mi>N</mi><msub><mi>r</mi><mi>N</mi></msub><mo>≤</mo><mfrac><mi>π</mi><mrow><mn>1</mn><mo>−</mo><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>V</mi><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>π</mi><mi>L</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mi>.</mi></mrow></menclose><annotation encoding="application/x-tex">
+ \boxed{\displaystyle
+ \limsup_{N\to\infty} N r_N
+ \le \frac{\pi}{1-\exp(-V/(2\pi L))}.}
+ \tag{18}
+</annotation></semantics></math> Any fixed braid presentation gives a
+valid L in these bounds; the proof does not require a minimal-crossing
+presentation. The statements do not count the zeros in this shrinking
+disk, describe their limiting angles, or identify their algebraic
+factors with the classical A-polynomial.</p>
+<h2 id="what-this-rules-out-including-the-full-normalization">4. What
+this rules out, including the full normalization</h2>
+<p>There cannot be a fixed complex neighborhood U of M=1 on which every
+sufficiently large F_N is nonvanishing. Thus the unrevised sufficient
+ratio premise in Section 3 of the private main-meridian interface note,
+when U contains the complete point, is impossible for the actual reduced
+state with positive volume. Already (5)–(6) exclude a nonzero finite
+limit for its one-step ratio at 1. The zero theorem strengthens that
+pointwise contradiction to failure of any fixed zero-free neighborhood.
+The same conditional ratio lemma remains correct on another domain; its
+premise at the complete point must not be assumed for F_N.</p>
+<p>A scalar normalization independent of M does not change the ratio in
+(5) or any zero. Nor does a fixed rational/algebraic gauge that is a
+holomorphic nonzero unit on a common neighborhood of (q,M)=(1,1): its
+ratio at the two points tends to one, and it cannot remove the zeros in
+(18). A gauge with moving zeros or poles requires its whole lattice and
+normalization to be retained; it is not covered by this unit
+assertion.</p>
+<p>In particular the actual full modified factor is not such a unit:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>M</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>η</mi><mi>N</mi></msub><mfrac><mrow><mi>M</mi><mo>−</mo><msup><mi>M</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mrow><mrow><msup><mi>M</mi><mi>N</mi></msup><mo>−</mo><msup><mi>M</mi><mrow><mi>−</mi><mi>N</mi></mrow></msup></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>η</mi><mi>N</mi></msub><mo>=</mo><msup><mi>i</mi><mrow><mi>N</mi><mo>+</mo><mn>3</mn></mrow></msup><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>d</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>η</mi><mi>N</mi></msub><mi>/</mi><mi>N</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ d_N(M)=\eta_N\frac{M-M^{-1}}{M^N-M^{-N}},\qquad
+ \eta_N=i^{N+3},\qquad d_N(1)=\eta_N/N.
+ \tag{19}
+</annotation></semantics></math> At M=q_N it has a simple pole. Since
+F_N(q_N)=1, that pole is not canceled in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">𝒩</mi><mi>N</mi></msub><mo>=</mo><msub><mi>d</mi><mi>N</mi></msub><msub><mi>F</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">\mathcal N_N=d_NF_N</annotation></semantics></math>.
+Its exact residue is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi mathvariant="normal">Res</mi><mo>&#8289;</mo></mrow><mrow><mi>M</mi><mo>=</mo><msub><mi>q</mi><mi>N</mi></msub></mrow></msub><msub><mi mathvariant="script">𝒩</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>M</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><msub><mi>η</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><msubsup><mi>q</mi><mi>N</mi><mn>2</mn></msubsup><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mn>2</mn><mi>N</mi></mrow></mfrac><mo>≠</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \operatorname{Res}_{M=q_N}\mathcal N_N(M)
+   =\frac{\eta_N(1-q_N^2)}{2N}\ne0.
+ \tag{20}
+</annotation></semantics></math> Indeed the denominator derivative at
+q_N is -2N q_N^{-1}. This works at every N&gt;=2 and both parities. The
+complete value remains
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>η</mi><mi>N</mi></msub><msub><mi>K</mi><mi>N</mi></msub><mi>/</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">\eta_N K_N/N</annotation></semantics></math>,
+finite and exponentially large. Thus the full-state normalization does
+not furnish a uniformly holomorphic nonzero scalar packet across the
+complete point and its first shifted point either. Its shift quotient is
+meromorphic, with a pole at M=1 for each sufficiently large level. This
+matches the exact gauge
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msubsup><mi>q</mi><mi>N</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mo stretchy="false" form="prefix">(</mo><msubsup><mi>q</mi><mi>N</mi><mn>2</mn></msubsup><msup><mi>M</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>M</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">-q_N^{-1}(q_N^2M^2-1)/(M^2-1)</annotation></semantics></math>;
+no sign was discarded.</p>
+<h2 id="the-regularized-affine-state-is-the-remaining-candidate">5. The
+regularized affine state is the remaining candidate</h2>
+<p>The existing regular-period theorem supplies a canonical correction,
+not an arbitrary scalar normalization. With Y=M^2, let P_N^ord be the
+unique degree-at-most-N-2 polynomial matching the ordinary orbit values
+at Q_N^j, 1&lt;=j&lt;N. Then</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><msup><mi>Y</mi><mi>N</mi></msup><mo>−</mo><mn>1</mn></mrow><mrow><mi>Y</mi><mo>−</mo><mn>1</mn></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><msubsup><mi>R</mi><mi>N</mi><mrow><mi>r</mi><mi>e</mi><mi>g</mi></mrow></msubsup><mo stretchy="false" form="prefix">(</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><msub><mi>f</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><msubsup><mi>P</mi><mi>N</mi><mrow><mi>o</mi><mi>r</mi><mi>d</mi></mrow></msubsup><mo stretchy="false" form="prefix">(</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><msub><mi>S</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ S_N(Y)=\frac{Y^N-1}{Y-1},\qquad
+ R_N^{reg}(Y)=\frac{f_N(Y)-P_N^{ord}(Y)}{S_N(Y)}.
+ \tag{21}
+</annotation></semantics></math> This is a Laurent polynomial. The
+ordinary-color bound gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>P</mi><mi>N</mi><mrow><mi>o</mi><mi>r</mi><mi>d</mi></mrow></msubsup><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mi>N</mi><mo>=</mo><msub><mi>O</mi><mi>K</mi></msub><mo stretchy="false" form="prefix">(</mo><msup><mi>N</mi><mrow><mi>b</mi><mo>−</mo><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">P_N^{ord}(1)/N=O_K(N^{b-1})</annotation></semantics></math>,
+and hence</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>R</mi><mi>N</mi><mrow><mi>r</mi><mi>e</mi><mi>g</mi></mrow></msubsup><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>K</mi><mi>N</mi></msub><mi>/</mi><mi>N</mi><mo>−</mo><msubsup><mi>P</mi><mi>N</mi><mrow><mi>o</mi><mi>r</mi><mi>d</mi></mrow></msubsup><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mi>N</mi><mo>,</mo><mspace width="2.0em"></mspace><mfrac><mn>1</mn><mi>N</mi></mfrac><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">|</mo><msubsup><mi>R</mi><mi>N</mi><mrow><mi>r</mi><mi>e</mi><mi>g</mi></mrow></msubsup><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>→</mo><mi>v</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ R_N^{reg}(1)=K_N/N-P_N^{ord}(1)/N,
+ \qquad \frac1N\log|R_N^{reg}(1)|\longrightarrow v.
+ \tag{22}
+</annotation></semantics></math> There is no fixed ordinary-color anchor
+for R_N^reg(Q_N): it depends on meridian derivatives of the original f_N
+and P_N^ord. The exact obstruction (5) has therefore not been
+transferred to this regular state. Neither has a uniform shift-ratio
+theorem been proved for it.</p>
+<p>A specified all-level annihilator gives the existing rootwise affine
+recurrence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>N</mi></msub><msubsup><mi>R</mi><mi>N</mi><mrow><mi>r</mi><mi>e</mi><mi>g</mi></mrow></msubsup><mo>=</mo><msub><mi>b</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">A_N R_N^{reg}=b_N</annotation></semantics></math>,
+after its recorded rational gauge and denominator clearing. Its source
+b_N has fixed Laurent support and polynomially bounded coefficients. A
+sufficient next statement would be a fixed-domain, nonzero geometric
+shift-ratio limit for this actual regular state, together with a locally
+uniform exponential lower bound making b_N/R_N^reg tend to zero.
+Dividing the finite affine equation by R_N^reg would then give its
+homogeneous classical symbol on the limiting ratio. The preferred
+longitude, gauge and source would still have to be identified. Equation
+(22) alone supplies none of those neighborhood estimates.</p>
+<p>This continuation preserves the complete scalar volume theorem and
+the pointed quantum A-period/Gram formulations. It corrects the choice
+of candidate for a complete-point scalar WKB or shift-ratio theorem: the
+actual reduced F_N has an exponential one-step drop and nearby zeros;
+the actual full state has nearby poles. Their canonical regular affine
+component is a different, explicitly sourced object.</p>

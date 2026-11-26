@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Endpoint locality and the original filling functional</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Endpoint locality and the original filling
+functional</h1>
+</header>
+<h1
+id="why-endpoint-concentration-does-not-localize-the-original-filling-functional">Why
+endpoint concentration does not localize the original filling
+functional</h1>
+<p>1 November 2026. Private proof and source-interface review. The
+release <code>f2076a1b</code> is unchanged.</p>
+<p>The positive endpoint theorem and its small-polydisk extension are
+genuine source estimates on their stated original certified flat-plat
+class. They do not, by themselves, localize the finite filling
+functional to that polydisk. This note proves that limitation inside the
+exact degree and node-vanishing space of a one-sided source. The
+obstruction persists for every fixed odd signed twist power, however
+large that power is. It invalidates an inference from the
+spectral-polydisk estimate, degree, divisor, and Hermite functional
+alone. It does not by itself invalidate a theorem using a small positive
+Fejér reference mass before the shared coefficient is taken.</p>
+<p>This is not a counterexample to a closed knot source or its volume
+limit. The test polynomial below is a bounded linear combination of
+actual local one-sided diagonal coefficients. It has not been realized
+as the one shared coefficient of a fixed closed diagram. Thus a useful
+theorem for the actual shared source must exploit a restriction beyond
+the local degree, divisor, endpoint estimate, and finite functional
+norm.</p>
+<h2 id="the-source-statements-that-can-and-cannot-be-combined">1. The
+source statements that can and cannot be combined</h2>
+<p>The exact homogeneous source and its central/left/right partition
+retain the original four-face order, ordinary degree targets
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">d=N-1</annotation></semantics></math>,
+and two protected zero targets. The whole complementary polynomial
+is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">𝒟</mi><mi>N</mi></msub><mo>=</mo><msub><mi>S</mi><mrow><mi>N</mi><mo>,</mo><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">l</mi></mrow></mrow></msub><mo>−</mo><msub><mi>S</mi><mrow><mi>N</mi><mo>,</mo><mi mathvariant="normal">C</mi></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \mathcal D_N=S_{N,\mathrm{full}}-S_{N,\mathrm C}.
+ \tag{1}
+</annotation></semantics></math></p>
+<p>It has degree at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>
+in each spectral variable and vanishes on the product of all spectral
+node sets. This is value vanishing; repeated-node derivatives generally
+survive. Applying the exact functional in each variable inserts the
+actual signed powers. The finite supremum theorem controls this
+operation on the whole real spectral cube. It does not replace that cube
+by a neighborhood of the negative endpoint.</p>
+<p>For the original certified flat plats in
+<code>actual_fejer_unique_geometric_maximizer.md</code>, the positive
+endpoint entropy has a unique geometric maximizer, separated from every
+one-sided support.
+<code>actual_fejer_spectral_polydisk_complement.md</code> then proves a
+strict bound for (1) when every spectral variable lies sufficiently
+close to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">-2</annotation></semantics></math>,
+including all fixed endpoint derivatives. Both notes explicitly retain
+the remaining filling-cycle problem. Neither statement alone supplies a
+bound on all the other spectral nodes used by the exact functional.</p>
+<p>The general sector-cover method instead bounds the whole real
+spectral cube before applying the functional. Its sufficient hypothesis
+is a strict shared-radius certificate for every relevant genuine
+noncentral string. The 54-region example in
+<code>actual_singleton_sector_envelope_obstruction.md</code> disproves
+the universal existence of this certificate for arbitrary simple
+matched-sphere Morse sources: one genuine singleton sector, nonzero at
+all sufficiently large even levels, has envelope capacity greater than
+the complete action by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>5</mn></mrow><annotation encoding="application/x-tex">1/5</annotation></semantics></math>.
+That example does not contradict the earlier flat-plat endpoint theorem.
+It also does not furnish a signed-source or filled-invariant lower
+bound.</p>
+<p>Appendix Q is a closure theorem for sources already possessing an
+unabridged cover. Its insistence on including locally allowed strings
+whose old whole coefficients happen to vanish is essential: gluing can
+change that global support. It does not assert that every source has a
+cover. There is consequently no logical route from Q alone to a
+universal noncentral gap.</p>
+<h2 id="the-exact-one-variable-functional">2. The exact one-variable
+functional</h2>
+<p>Set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">N\ge2</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">d=N-1</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mo stretchy="false" form="prefix">⌊</mo><mi>N</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo></mrow><annotation encoding="application/x-tex">m=\lfloor N/2\rfloor</annotation></semantics></math>,
+and</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>χ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>2</mn><msub><mi>T</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mn>2</mn><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>c</mi><mi>a</mi></msub><mo>=</mo><mn>2</mn><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><msub><mi>ϕ</mi><mi>a</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>ϕ</mi><mi>a</mi></msub><mo>=</mo><mfrac><mrow><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>a</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>π</mi></mrow><mi>N</mi></mfrac><mo>,</mo><mspace width="1.0em"></mspace><mn>0</mn><mo>≤</mo><mi>a</mi><mo>&lt;</mo><mi>m</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \chi_N(z)=2T_N(z/2)+2,\qquad
+ c_a=2\cos\phi_a,\qquad
+ \phi_a=\frac{(2a+1)\pi}{N},\quad 0\le a&lt;m.
+ \tag{2}
+</annotation></semantics></math></p>
+<p>The
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>c</mi><mi>a</mi></msub><annotation encoding="application/x-tex">c_a</annotation></semantics></math>
+are distinct double roots. When
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+is odd,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">-2</annotation></semantics></math>
+is the additional simple root. Write</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munderover><mo>∏</mo><mrow><mi>a</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></munderover><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo>−</mo><msub><mi>c</mi><mi>a</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>Z</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>B</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mi>N</mi><mo>=</mo><mn>2</mn><mi>m</mi><mo>,</mo></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo>+</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo><msub><mi>B</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mi>N</mi><mo>=</mo><mn>2</mn><mi>m</mi><mo>+</mo><mn>1</mn><mi>.</mi></mtd></mtr></mtable></mrow><mspace width="2.0em"></mspace><msub><mi>χ</mi><mi>N</mi></msub><mo>=</mo><msub><mi>Z</mi><mi>N</mi></msub><msub><mi>B</mi><mi>N</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ B_N(z)=\prod_{a=0}^{m-1}(z-c_a),\qquad
+ Z_N(z)=\begin{cases}B_N(z),&amp;N=2m,\\
+                         (z+2)B_N(z),&amp;N=2m+1.
+          \end{cases}
+ \qquad \chi_N=Z_NB_N.
+ \tag{3}
+</annotation></semantics></math></p>
+<p>Every left or right source entry is divisible by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Z</mi><mi>N</mi></msub><annotation encoding="application/x-tex">Z_N</annotation></semantics></math>.
+In particular the exact one-sided scalar space is contained in, and its
+diagonal entries span,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Z</mi><mi>N</mi></msub><mi mathvariant="double-struck">ℂ</mi><mo stretchy="false" form="prefix">[</mo><mi>z</mi><msub><mo stretchy="false" form="postfix">]</mo><mrow><mo>≤</mo><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">Z_N\mathbb C[z]_{\le m-1}</annotation></semantics></math>.
+No repeated-root normal has been removed by taking this space.</p>
+<p>For a polynomial
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+vanishing at all nodes, the original full-Hermite functional reduces
+to</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi mathvariant="script">ℒ</mi><mi>N</mi><mi>n</mi></msubsup><mi>H</mi><mo>=</mo><mfrac><mn>1</mn><msup><mi>N</mi><mn>2</mn></msup></mfrac><munderover><mo>∑</mo><mrow><mi>a</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></munderover><mo stretchy="false" form="prefix">(</mo><mn>4</mn><mo>−</mo><msubsup><mi>c</mi><mi>a</mi><mn>2</mn></msubsup><mo stretchy="false" form="postfix">)</mo><msub><mi>f</mi><mi>n</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>c</mi><mi>a</mi></msub><mo stretchy="false" form="postfix">)</mo><msup><mi>H</mi><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><msub><mi>c</mi><mi>a</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ \mathcal L_N^nH=
+ \frac1{N^2}\sum_{a=0}^{m-1}
+        (4-c_a^2)f_n(c_a)H&#39;(c_a),
+ \tag{4}
+</annotation></semantics></math></p>
+<p>where the omitted simple-root value is zero and the crossing
+multiplier retains its original lift:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>n</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mi>ϕ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>q</mi><mrow><mi>n</mi><msup><mi>d</mi><mn>2</mn></msup><mi>/</mi><mn>4</mn></mrow></msup><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mspace width="-0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><mi>i</mi><mi>n</mi><mi>N</mi><mo stretchy="false" form="prefix">(</mo><mi>ϕ</mi><mo>−</mo><mi>π</mi><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow><mrow><mn>4</mn><mi>π</mi></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mi>q</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>π</mi><mi>i</mi><mi>/</mi><mi>N</mi></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ f_n(2\cos\phi)=
+ q^{nd^2/4}\exp\!\left(\frac{inN(\phi-\pi)^2}{4\pi}\right),
+ \qquad q=e^{\pi i/N}.
+ \tag{5}
+</annotation></semantics></math></p>
+<p>These are the formulas in
+<code>actual_uniform_filling_supremum_bound.md</code>, equations (10),
+(13), and (22). The derivative of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mi>n</mi></msub><annotation encoding="application/x-tex">f_n</annotation></semantics></math>
+disappears in (4) because the numerator value is zero, not because the
+crossing phase has been replaced by its absolute value. All values
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>n</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>c</mi><mi>a</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f_n(c_a)</annotation></semantics></math>
+have modulus one, at both parities and at composite levels.</p>
+<h2 id="a-polynomial-in-the-actual-one-sided-divisor-space">3. A
+polynomial in the actual one-sided divisor space</h2>
+<p>Define</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>Z</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><mi>z</mi><mo>+</mo><mn>2</mn></mrow><mn>4</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ H_N(z)=Z_N(z)\left(\frac{z+2}{4}\right)^{m-1}.
+ \tag{6}
+</annotation></semantics></math></p>
+<p>Its degree is exactly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>.
+It vanishes at every spectral node. At the endpoint
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">-2</annotation></semantics></math>,
+its vanishing order is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m-1</annotation></semantics></math>
+for even levels and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+for odd levels. Hence every fixed finite list of endpoint derivatives is
+identically zero for all sufficiently large
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>.</p>
+<p>The elementary Chebyshev identities are</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msub><mi>B</mi><mrow><mn>2</mn><mi>m</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mi>ϕ</mi><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mn>2</mn><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>m</mi><mi>ϕ</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msub><mi>B</mi><mrow><mn>2</mn><mi>m</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mi>ϕ</mi><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mfrac><mrow><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mi>m</mi><mo>+</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo stretchy="false" form="postfix">)</mo><mi>ϕ</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>ϕ</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mo>=</mo><msub><mi>U</mi><mi>m</mi></msub><mo stretchy="false" form="prefix">(</mo><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mi>ϕ</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><msub><mi>U</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="prefix">(</mo><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mi>ϕ</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msub><mi>Z</mi><mrow><mn>2</mn><mi>m</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mi>ϕ</mi><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mn>4</mn><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>ϕ</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mi>m</mi><mo>+</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo stretchy="false" form="postfix">)</mo><mi>ϕ</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+ \begin{aligned}
+ B_{2m}(2\cos\phi)&amp;=2\cos(m\phi),\\
+ B_{2m+1}(2\cos\phi)
+   &amp;=\frac{\cos((m+\tfrac12)\phi)}{\cos(\phi/2)}
+     =U_m(\cos\phi)-U_{m-1}(\cos\phi),\\
+ Z_{2m+1}(2\cos\phi)
+   &amp;=4\cos(\phi/2)\cos((m+\tfrac12)\phi).
+ \end{aligned}
+ \tag{7}
+</annotation></semantics></math></p>
+<p>The quotient in the second line is its polynomial continuation at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi><mo>=</mo><mi>π</mi></mrow><annotation encoding="application/x-tex">\phi=\pi</annotation></semantics></math>.
+Consequently</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><msub><mi>H</mi><mi>N</mi></msub><msub><mo stretchy="false" form="postfix">∥</mo><mrow><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mn>2</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">]</mo></mrow></msub><mo>≤</mo><mn>4</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                 \|H_N\|_{[-2,2]}\le4.
+ \tag{8}
+</annotation></semantics></math></p>
+<p>There is also a fixed complex neighborhood on which this bounded
+polynomial is exponentially small. For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>r</mi><mo>≤</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0&lt;r\le1</annotation></semantics></math>,
+put</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>r</mi></msub><mo>=</mo><mfrac><mrow><mn>2</mn><mo>+</mo><mi>r</mi><mo>+</mo><msqrt><mrow><mi>r</mi><mo stretchy="false" form="prefix">(</mo><mn>4</mn><mo>+</mo><mi>r</mi><mo stretchy="false" form="postfix">)</mo></mrow></msqrt></mrow><mn>2</mn></mfrac><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>θ</mi><mi>r</mi></msub><mo>=</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><msub><mi>ρ</mi><mi>r</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \rho_r=\frac{2+r+\sqrt{r(4+r)}}2,
+ \qquad \theta_r=\log\rho_r.
+ \tag{9}
+</annotation></semantics></math></p>
+<p>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>z</mi><mo>+</mo><mn>2</mn><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">|z+2|\le r</annotation></semantics></math>,
+choose
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mi>w</mi><mo>+</mo><msup><mi>w</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">z=w+w^{-1}</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>w</mi><mo stretchy="false" form="prefix">|</mo><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|w|\ge1</annotation></semantics></math>.
+The identity</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>z</mi><mo>−</mo><mn>2</mn><mo stretchy="false" form="postfix">|</mo><mo>+</mo><mo stretchy="false" form="prefix">|</mo><mi>z</mi><mo>+</mo><mn>2</mn><mo stretchy="false" form="postfix">|</mo><mo>=</mo><mn>2</mn><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">|</mo><mi>w</mi><mo stretchy="false" form="postfix">|</mo><mo>+</mo><mo stretchy="false" form="prefix">|</mo><mi>w</mi><msup><mo stretchy="false" form="postfix">|</mo><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mn>4</mn><mo>+</mo><mn>2</mn><mi>r</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \lvert z-2\rvert+\lvert z+2\rvert
+   =2(\lvert w\rvert+\lvert w\rvert^{-1})\le4+2r.
+ \tag{10}
+</annotation></semantics></math></p>
+<p>implies
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>w</mi><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><msub><mi>ρ</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">|w|\le\rho_r</annotation></semantics></math>.
+Using
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mrow><mn>2</mn><mi>m</mi></mrow></msub><mo>=</mo><msup><mi>w</mi><mi>m</mi></msup><mo>+</mo><msup><mi>w</mi><mrow><mi>−</mi><mi>m</mi></mrow></msup></mrow><annotation encoding="application/x-tex">B_{2m}=w^m+w^{-m}</annotation></semantics></math>,
+and using the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m+1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+terms in the two polynomials
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>m</mi></msub><mo>,</mo><msub><mi>U</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">U_m,U_{m-1}</annotation></semantics></math>
+for odd levels, gives</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mi mathvariant="normal">sup</mi><mrow><mo stretchy="false" form="prefix">|</mo><mi>z</mi><mo>+</mo><mn>2</mn><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mi>r</mi></mrow></munder><mo stretchy="false" form="prefix">|</mo><msub><mi>H</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo>,</mo><mi>N</mi><mi>r</mi><mo stretchy="false" form="postfix">)</mo><msubsup><mi>ρ</mi><mi>r</mi><mi>m</mi></msubsup><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mi>/</mi><mn>4</mn><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \sup_{|z+2|\le r}|H_N(z)|
+ \le \max(2,Nr)\rho_r^m(r/4)^{m-1}.
+ \tag{11}
+</annotation></semantics></math></p>
+<p>For example, at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">r=1</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mn>1</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>3</mn><mo>+</mo><msqrt><mn>5</mn></msqrt><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mn>2</mn><mo>&lt;</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">\rho_1=(3+\sqrt5)/2&lt;4</annotation></semantics></math>.
+Therefore the right side is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>γ</mi><mi>N</mi><mo>+</mo><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>N</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\exp(-\gamma N+O(\log N))</annotation></semantics></math>,
+where</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mfrac><mn>8</mn><mrow><mn>3</mn><mo>+</mo><msqrt><mn>5</mn></msqrt></mrow></mfrac><mo>&gt;</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \gamma=\frac12\log\frac{8}{3+\sqrt5}&gt;0.
+ \tag{12}
+</annotation></semantics></math></p>
+<p>The same upper bound holds on every smaller fixed polydisk after
+taking products of these one-variable polynomials.</p>
+<h2 id="this-is-a-bounded-combination-of-literal-source-coefficients">4.
+This is a bounded combination of literal source coefficients</h2>
+<p>The original homogeneous face formula gives, for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>a</mi><mo>&lt;</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">0\le a&lt;m</annotation></semantics></math>,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><msup><mi>x</mi><mn>0</mn></msup><msup><mi>b</mi><mi>a</mi></msup><msup><mi>c</mi><mrow><mi>d</mi><mo>−</mo><mi>a</mi></mrow></msup><msup><mi>y</mi><mn>0</mn></msup><mo stretchy="false" form="postfix">]</mo><msub><mi>H</mi><mrow><mi>V</mi><mo>,</mo><mi mathvariant="normal">L</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>y</mi><mo>;</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><msub><mi>χ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mi>z</mi><mo>−</mo><msub><mi>c</mi><mi>a</mi></msub></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ [x^0b^ac^{d-a}y^0]H_{V,\mathrm L}(x,b,c,y;z)
+             =\frac{\chi_N(z)}{z-c_a}.
+ \tag{13}
+</annotation></semantics></math></p>
+<p>Indeed the associated path has identical initial and final row
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>;
+it uses no lowering step and leaves every other diagonal row unused.
+Thus (13) includes the full unused-row product and the same scalar
+normalization as the original resolvent numerator. It is not a spectral
+interpolant substituted for that numerator.</p>
+<p>Partial fractions, or Lagrange interpolation of a polynomial of
+degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m-1</annotation></semantics></math>,
+now give the exact identity</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munderover><mo>∑</mo><mrow><mi>a</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></munderover><msub><mi>α</mi><mrow><mi>N</mi><mo>,</mo><mi>a</mi></mrow></msub><mfrac><mrow><msub><mi>χ</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mi>z</mi><mo>−</mo><msub><mi>c</mi><mi>a</mi></msub></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>α</mi><mrow><mi>N</mi><mo>,</mo><mi>a</mi></mrow></msub><mo>=</mo><mfrac><mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>c</mi><mi>a</mi></msub><mo>+</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mn>4</mn><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow><mrow><msubsup><mi>B</mi><mi>N</mi><mo>′</mo></msubsup><mo stretchy="false" form="prefix">(</mo><msub><mi>c</mi><mi>a</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ H_N(z)=\sum_{a=0}^{m-1}\alpha_{N,a}
+                   \frac{\chi_N(z)}{z-c_a},\qquad
+ \alpha_{N,a}=\frac{((c_a+2)/4)^{m-1}}{B_N&#39;(c_a)}.
+ \tag{14}
+</annotation></semantics></math></p>
+<p>The derivatives in (7) yield</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>α</mi><mrow><mi>N</mi><mo>,</mo><mi>a</mi></mrow></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><mfrac><mn>2</mn><mi>N</mi></mfrac><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>a</mi></msup><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><msub><mi>ϕ</mi><mi>a</mi></msub><msup><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mrow><mi>N</mi><mo>−</mo><mn>2</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><msub><mi>ϕ</mi><mi>a</mi></msub><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mi>N</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> even</mtext></mrow><mo>,</mo></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mfrac><mn>4</mn><mi>N</mi></mfrac><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>a</mi></msup><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><msub><mi>ϕ</mi><mi>a</mi></msub><msup><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mrow><mi>N</mi><mo>−</mo><mn>2</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><msub><mi>ϕ</mi><mi>a</mi></msub><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mi>N</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> odd</mtext></mrow><mi>.</mi></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">
+ \alpha_{N,a}=
+ \begin{cases}
+ \displaystyle\frac2N(-1)^a\sin\phi_a
+                         \cos^{N-2}(\phi_a/2),&amp;N\text{ even},\\[3pt]
+ \displaystyle\frac4N(-1)^a\sin\phi_a
+                         \cos^{N-2}(\phi_a/2),&amp;N\text{ odd}.
+ \end{cases}
+ \tag{15}
+</annotation></semantics></math></p>
+<p>In particular
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mi>a</mi></msub><mo stretchy="false" form="prefix">|</mo><msub><mi>α</mi><mrow><mi>N</mi><mo>,</mo><mi>a</mi></mrow></msub><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\sum_a|\alpha_{N,a}|\le2</annotation></semantics></math>.
+The coefficients are level dependent and alternate in sign; they are not
+asserted to be produced by one fixed exterior diagram. Their bounded
+total mass shows that the obstruction does not arise from exponentially
+large external scalar weights.</p>
+<p>The exact resolvent/Hermite identity sends each polynomial in (13) to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>n</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>c</mi><mi>a</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f_n(c_a)</annotation></semantics></math>.
+Equivalently, (4) and the Chebyshev double-root normalization give</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi mathvariant="script">ℒ</mi><mi>N</mi><mi>n</mi></msubsup><msub><mi>H</mi><mi>N</mi></msub><mo>=</mo><munder><mo>∑</mo><mi>a</mi></munder><msub><mi>α</mi><mrow><mi>N</mi><mo>,</mo><mi>a</mi></mrow></msub><msub><mi>f</mi><mi>n</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>c</mi><mi>a</mi></msub><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+               \mathcal L_N^nH_N=\sum_a\alpha_{N,a}f_n(c_a).
+ \tag{16}
+</annotation></semantics></math></p>
+<p>This is where the retained normal matters. Replacing the numerator by
+its zero values would incorrectly make (16) zero.</p>
+<h2 id="every-fixed-odd-twist-power-detects-it-at-polynomial-size">5.
+Every fixed odd twist power detects it at polynomial size</h2>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>∈</mo><mn>2</mn><mi mathvariant="double-struck">ℤ</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n\in2\mathbb Z+1</annotation></semantics></math>
+be fixed, positive or negative. Define a unit phase and a parity factor
+by</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ξ</mi><mrow><mi>N</mi><mo>,</mo><mi>n</mi></mrow></msub><mo>=</mo><msup><mi>q</mi><mrow><mi>n</mi><msup><mi>d</mi><mn>2</mn></msup><mi>/</mi><mn>4</mn></mrow></msup><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mspace width="-0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><mi>i</mi><mi>n</mi><mi>N</mi><mi>π</mi></mrow><mn>4</mn></mfrac><mo>−</mo><mfrac><mrow><mi>i</mi><mi>n</mi><mi>π</mi></mrow><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>κ</mi><mi>N</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><mn>2</mn><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mi>N</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> even</mtext></mrow><mo>,</mo></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mn>4</mn><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mi>N</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> odd</mtext></mrow><mi>.</mi></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">
+ \xi_{N,n}=q^{nd^2/4}
+       \exp\!\left(\frac{inN\pi}{4}-\frac{in\pi}{2}\right),
+ \qquad \kappa_N=\begin{cases}2,&amp;N\text{ even},\\4,&amp;N\text{ odd}.
+                         \end{cases}
+ \tag{17}
+</annotation></semantics></math></p>
+<p>At the actual midpoint grid, the linear phase in (5) obeys
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mrow><mi>−</mi><mi>i</mi><mi>n</mi><mi>N</mi><msub><mi>ϕ</mi><mi>a</mi></msub><mi>/</mi><mn>2</mn></mrow></msup><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>a</mi></msup><msup><mi>e</mi><mrow><mi>−</mi><mi>i</mi><mi>n</mi><mi>π</mi><mi>/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">e^{-inN\phi_a/2}=(-1)^ae^{-in\pi/2}</annotation></semantics></math>.
+It therefore cancels the alternating sign in (15), exactly, before any
+estimate. Equations (15)–(16) become</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi mathvariant="script">ℒ</mi><mi>N</mi><mi>n</mi></msubsup><msub><mi>H</mi><mi>N</mi></msub><mo>=</mo><msub><mi>ξ</mi><mrow><mi>N</mi><mo>,</mo><mi>n</mi></mrow></msub><mfrac><msub><mi>κ</mi><mi>N</mi></msub><mi>N</mi></mfrac><munderover><mo>∑</mo><mrow><mi>a</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></munderover><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><msub><mi>ϕ</mi><mi>a</mi></msub><mspace width="0.167em"></mspace><msup><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mrow><mi>N</mi><mo>−</mo><mn>2</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><msub><mi>ϕ</mi><mi>a</mi></msub><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mspace width="-0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><mi>i</mi><mi>n</mi><mi>N</mi><msubsup><mi>ϕ</mi><mi>a</mi><mn>2</mn></msubsup></mrow><mrow><mn>4</mn><mi>π</mi></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \mathcal L_N^nH_N=
+ \xi_{N,n}\frac{\kappa_N}{N}
+ \sum_{a=0}^{m-1}\sin\phi_a\,
+     \cos^{N-2}(\phi_a/2)
+       \exp\!\left(\frac{inN\phi_a^2}{4\pi}\right).
+ \tag{18}
+</annotation></semantics></math></p>
+<p>The sum has the nonzero limit</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>a</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></munderover><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><msub><mi>ϕ</mi><mi>a</mi></msub><mspace width="0.167em"></mspace><msup><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mrow><mi>N</mi><mo>−</mo><mn>2</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><msub><mi>ϕ</mi><mi>a</mi></msub><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><msup><mi>e</mi><mrow><mi>i</mi><mi>n</mi><mi>N</mi><msubsup><mi>ϕ</mi><mi>a</mi><mn>2</mn></msubsup><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>4</mn><mi>π</mi><mo stretchy="false" form="postfix">)</mo></mrow></msup><mo>→</mo><mfrac><mn>2</mn><mrow><mi>π</mi><mo>−</mo><mn>2</mn><mi>i</mi><mi>n</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \sum_{a=0}^{m-1}\sin\phi_a\,
+     \cos^{N-2}(\phi_a/2)e^{inN\phi_a^2/(4\pi)}
+       \longrightarrow \frac{2}{\pi-2in}.
+ \tag{19}
+</annotation></semantics></math></p>
+<p>Here is a direct justification. Put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mi>a</mi></msub><mo>=</mo><msqrt><mi>N</mi></msqrt><msub><mi>ϕ</mi><mi>a</mi></msub></mrow><annotation encoding="application/x-tex">t_a=\sqrt N\phi_a</annotation></semantics></math>;
+their spacing is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>π</mi><mi>/</mi><msqrt><mi>N</mi></msqrt></mrow><annotation encoding="application/x-tex">2\pi/\sqrt N</annotation></semantics></math>,
+with the first point at half that spacing. On every bounded
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>-interval,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mi>N</mi></msqrt><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mi>/</mi><msqrt><mi>N</mi></msqrt><mo stretchy="false" form="postfix">)</mo><msup><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mrow><mi>N</mi><mo>−</mo><mn>2</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><msqrt><mi>N</mi></msqrt><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><msup><mi>e</mi><mrow><mi>i</mi><mi>n</mi><msup><mi>t</mi><mn>2</mn></msup><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>4</mn><mi>π</mi><mo stretchy="false" form="postfix">)</mo></mrow></msup><mo>→</mo><mi>t</mi><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>8</mn><mo>−</mo><mi>i</mi><mi>n</mi><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>4</mn><mi>π</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><msup><mi>t</mi><mn>2</mn></msup><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">
+ \sqrt N\sin(t/\sqrt N)
+ \cos^{N-2}(t/(2\sqrt N))
+ e^{int^2/(4\pi)}
+ \longrightarrow t\exp[-(1/8-in/(4\pi))t^2]
+ \tag{20}
+</annotation></semantics></math></p>
+<p>uniformly. For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>≥</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">N\ge4</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>t</mi><mo>&lt;</mo><mi>π</mi><msqrt><mi>N</mi></msqrt></mrow><annotation encoding="application/x-tex">0\le t&lt;\pi\sqrt N</annotation></semantics></math>,
+the absolute value of the left side is at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><msup><mi>e</mi><mrow><mi>−</mi><msup><mi>t</mi><mn>2</mn></msup><mi>/</mi><mn>16</mn></mrow></msup></mrow><annotation encoding="application/x-tex">t e^{-t^2/16}</annotation></semantics></math>:
+use
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mi>x</mi><mo>≤</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">\sin x\le x</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mi>−</mi><msup><mi>x</mi><mn>2</mn></msup><mi>/</mi><mn>8</mn></mrow><annotation encoding="application/x-tex">\log\cos(x/2)\le-x^2/8</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>−</mo><mn>2</mn><mo>≥</mo><mi>N</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">N-2\ge N/2</annotation></semantics></math>.
+Its lattice tails are uniformly summable, as follows by comparing the
+eventually decreasing Gaussian bound with its integral. Midpoint Riemann
+sums therefore converge to</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mn>2</mn><mi>π</mi></mrow></mfrac><msubsup><mo>∫</mo><mn>0</mn><mi>∞</mi></msubsup><mi>t</mi><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>8</mn><mo>−</mo><mi>i</mi><mi>n</mi><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>4</mn><mi>π</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><msup><mi>t</mi><mn>2</mn></msup><mo stretchy="false" form="postfix">]</mo><mspace width="0.167em"></mspace><mi>d</mi><mi>t</mi><mo>=</mo><mfrac><mn>2</mn><mrow><mi>π</mi><mo>−</mo><mn>2</mn><mi>i</mi><mi>n</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \frac1{2\pi}\int_0^\infty
+      t\exp[-(1/8-in/(4\pi))t^2]\,dt
+          =\frac{2}{\pi-2in}.
+ \tag{21}
+</annotation></semantics></math></p>
+<p>This proves (19) without an exchange of an infinite Fourier charge
+sum. It follows that, separately at either parity,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi mathvariant="script">ℒ</mi><mi>N</mi><mi>n</mi></msubsup><msub><mi>H</mi><mi>N</mi></msub><mo>=</mo><mfrac><msub><mi>ξ</mi><mrow><mi>N</mi><mo>,</mo><mi>n</mi></mrow></msub><mi>N</mi></mfrac><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><mn>2</mn><msub><mi>κ</mi><mi>N</mi></msub></mrow><mrow><mi>π</mi><mo>−</mo><mn>2</mn><mi>i</mi><mi>n</mi></mrow></mfrac><mo>+</mo><mi>o</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><munder><mi mathvariant="normal">lim</mi><mrow><mi>N</mi><mo>→</mo><mi>∞</mi></mrow></munder><mfrac><mn>1</mn><mi>N</mi></mfrac><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">|</mo><msubsup><mi mathvariant="script">ℒ</mi><mi>N</mi><mi>n</mi></msubsup><msub><mi>H</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">|</mo><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \mathcal L_N^nH_N
+   =\frac{\xi_{N,n}}N
+       \left(\frac{2\kappa_N}{\pi-2in}+o(1)\right),
+ \qquad
+ \lim_{N\to\infty}\frac1N\log|\mathcal L_N^nH_N|=0.
+ \tag{22}
+</annotation></semantics></math></p>
+<p>The contribution in (19) comes from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi><mo>=</mo><mi>O</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>N</mi><mrow><mi>−</mi><mn>1</mn><mi>/</mi><mn>2</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\phi=O(N^{-1/2})</annotation></semantics></math>,
+hence from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mn>2</mn><mo>−</mo><mi>O</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>N</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">z=2-O(N^{-1})</annotation></semantics></math>,
+at the opposite end of the spectrum from the controlled polydisk. For
+any fixed closed neighborhood of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">-2</annotation></semantics></math>
+separated from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>,
+its restricted derivative-node sum in (18) is exponentially small: on
+that part of the grid
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>ϕ</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\cos(\phi/2)</annotation></semantics></math>
+is bounded strictly below one. The odd simple-node value is zero
+throughout.</p>
+<h2 id="exact-obstruction-and-the-remaining-source-question">6. Exact
+obstruction and the remaining source question</h2>
+<p>There cannot be a bound</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msubsup><mi mathvariant="script">ℒ</mi><mi>N</mi><mi>n</mi></msubsup><mi>H</mi><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><msup><mi>e</mi><mrow><mi>o</mi><mo stretchy="false" form="prefix">(</mo><mi>N</mi><mo stretchy="false" form="postfix">)</mo></mrow></msup><munder><mi mathvariant="normal">sup</mi><mrow><mo stretchy="false" form="prefix">|</mo><mi>z</mi><mo>+</mo><mn>2</mn><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mn>1</mn></mrow></munder><mo stretchy="false" form="prefix">|</mo><mi>H</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">
+ |\mathcal L_N^nH|
+       \le e^{o(N)}\sup_{|z+2|\le1}|H(z)|
+ \tag{23}
+</annotation></semantics></math></p>
+<p>valid for every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>∈</mo><msub><mi>Z</mi><mi>N</mi></msub><mi mathvariant="double-struck">ℂ</mi><mo stretchy="false" form="prefix">[</mo><mi>z</mi><msub><mo stretchy="false" form="postfix">]</mo><mrow><mo>≤</mo><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">H\in Z_N\mathbb C[z]_{\le m-1}</annotation></semantics></math>,
+even with the added assumptions
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>H</mi><msub><mo stretchy="false" form="postfix">∥</mo><mrow><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mn>2</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">]</mo></mrow></msub><mo>≤</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">\|H\|_{[-2,2]}\le4</annotation></semantics></math>
+and vanishing of every fixed number of endpoint derivatives. The
+polynomials (6), with (11) and (22), disprove it for every fixed odd
+signed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>.
+The same conclusion holds for any smaller fixed endpoint disk.</p>
+<p>Thus the finite filling norm, the true one-sided divisor,
+repeated-node normal recovery, and endpoint concentration do not
+automatically justify discarding the rest of the spectral grid.
+Increasing a fixed twist power does not fix this general functional
+issue. The actual midpoint phases can reinforce an alternating one-sided
+combination at the opposite endpoint.</p>
+<p>There is an additional distinction between spectral locality and the
+stronger positive endpoint comparison. The smallness of (6) on the
+endpoint disk results from cancellation in (14). It does not imply a
+small sum of the corresponding positive Fejér coefficients. Therefore
+this example alone does not disprove a source-specific argument using
+that positive reference before taking the shared coefficient.</p>
+<p>A universal coefficientwise comparison with that reference
+nevertheless fails, by a different exact example already present in the
+<a href="actual_fejer_entropy_signs_and_tail_insertion.md">Fejér entropy
+sign calculation</a>. At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>2</mn><mi>m</mi></mrow><annotation encoding="application/x-tex">N=2m</annotation></semantics></math>,
+let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>j</mi><mo>≤</mo><mi>m</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0\le j\le m-1</annotation></semantics></math>,
+and let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi>N</mi><mo>,</mo><mi>j</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">v_{N,j}(z)</annotation></semantics></math>
+be the literal left coefficient of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mi>j</mi></msup><msup><mi>c</mi><mrow><mi>d</mi><mo>−</mo><mi>j</mi></mrow></msup></mrow><annotation encoding="application/x-tex">x^jc^{d-j}</annotation></semantics></math>.
+Put</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mi>r</mi></msub><mo>=</mo><mn>2</mn><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>π</mi><mi>r</mi><mi>/</mi><mi>N</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>a</mi><mi>r</mi></msub><mo>=</mo><mn>4</mn><msup><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mn>2</mn></msup><mo stretchy="false" form="prefix">(</mo><mi>π</mi><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mo>+</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mi>N</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ s_r=2\sin(\pi r/N),\qquad
+ a_r=4\cos^2(\pi(r+\tfrac12)/N).
+ \tag{24}
+</annotation></semantics></math></p>
+<p>The single
+all-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+path and its unused rows give its positive reference coefficient
+exactly:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi>N</mi><mo>,</mo><mi>j</mi></mrow></msub><mo>=</mo><mo stretchy="false" form="prefix">|</mo><msub><mi>v</mi><mrow><mi>N</mi><mo>,</mo><mi>j</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>=</mo><mfrac><mn>4</mn><msub><mi>a</mi><mn>0</mn></msub></mfrac><munderover><mo>∏</mo><mrow><mi>r</mi><mo>=</mo><mn>1</mn></mrow><mi>j</mi></munderover><mfrac><msubsup><mi>s</mi><mi>r</mi><mn>2</mn></msubsup><msub><mi>a</mi><mi>r</mi></msub></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ p_{N,j}=|v_{N,j}(-2)|
+       =\frac4{a_0}\prod_{r=1}^j\frac{s_r^2}{a_r}.
+ \tag{25}
+</annotation></semantics></math></p>
+<p>For the original
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>R</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">R^{-1}</annotation></semantics></math>,
+equation (10) of the <a
+href="actual_homogeneous_casimir_face_source.md">homogeneous source
+formula</a> instead gives</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msubsup><mi mathvariant="script">ℒ</mi><mi>N</mi><mrow><mi>±</mi><mn>1</mn></mrow></msubsup><msub><mi>v</mi><mrow><mi>N</mi><mo>,</mo><mi>j</mi></mrow></msub><mo stretchy="false" form="prefix">|</mo><mo>=</mo><mfrac><mi>N</mi><mrow><msub><mi>S</mi><mi>j</mi></msub><msub><mi>S</mi><mrow><mi>d</mi><mo>−</mo><mi>j</mi></mrow></msub></mrow></mfrac><mo>=</mo><mn>1</mn><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>S</mi><mi>k</mi></msub><mo>=</mo><munderover><mo>∏</mo><mrow><mi>r</mi><mo>=</mo><mn>1</mn></mrow><mi>k</mi></munderover><mn>2</mn><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>π</mi><mi>r</mi><mi>/</mi><mi>N</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ |\mathcal L_N^{\pm1}v_{N,j}|
+       =\frac{N}{S_jS_{d-j}}=1,
+ \qquad S_k=\prod_{r=1}^k2\sin(\pi r/N).
+ \tag{26}
+</annotation></semantics></math></p>
+<p>Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>j</mi></msub><msub><mi>S</mi><mrow><mi>d</mi><mo>−</mo><mi>j</mi></mrow></msub><mo>=</mo><msub><mi>S</mi><mi>d</mi></msub><mo>=</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">S_jS_{d-j}=S_d=N</annotation></semantics></math>,
+and the omitted original lift is a unit phase. Since this face monomial
+is strictly one-sided, no central or right contribution can change (26).
+If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mi>/</mi><mi>N</mi><mo>→</mo><mi>u</mi><mo>∈</mo><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">j/N\to u\in(0,1/2)</annotation></semantics></math>,
+(25) has rate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msubsup><mo>∫</mo><mn>0</mn><mi>u</mi></msubsup><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mrow><mi mathvariant="normal">tan</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>π</mi><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mspace width="0.167em"></mspace><mi>d</mi><mi>t</mi><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">2\int_0^u\log\tan(\pi t)\,dt&lt;0</annotation></semantics></math>.
+Thus no subexponential coefficientwise filling cost relative to the
+positive endpoint reference holds for all powers. The two powers in (26)
+are not independently long; this observation does not decide a statement
+that uses long powers together with additional closed-source
+constraints.</p>
+<p>The missing step for an actual closed source remains more specific:
+prove a bound for its shared complementary polynomial on the rest of the
+grid, or prove cancellation of its exact weighted normal sum with all
+original face targets still imposed. The bounded combinations (14) have
+not been shown to arise from those targets. They therefore rule out a
+generic locality inference, but do not rule out a source-specific
+coherent estimate. No claim about hyperbolic volume follows from this
+counterexample in either direction.</p>
+<h2 id="checks-and-dependencies">7. Checks and dependencies</h2>
+<p>The accompanying private script
+<code>md-general-sector-functional-locality-check.py</code> checks the
+polynomial factorization, actual diagonal expansion, full derivative
+functional and odd-power phase cancellation exactly at selected small
+levels. It also records a short high-precision check of the nonzero
+constant in (19). These finite computations do not prove the uniform
+norm or asymptotic; their proofs are (7)–(22). Equations (24)–(26) are a
+comparison with existing exact source results, not a new numerical
+experiment.</p>
+<p>The only quantum inputs are the written homogeneous source
+definition, the one-sided path partition, and the complete Hermite
+functional with its original Gaussian lift. The new local polynomial
+argument is elementary and uses no geometric or source-capacity
+assumption. A source hash manifest records the specific public files
+read. No public source, manuscript, or experiment file was changed.</p>
+</body>
+</html>

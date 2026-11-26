@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The actual braided residual-framing current · Murakami’s Dream</title><meta name="description" content="Research guide to original quantum sources, A-structures and actual hyperbolic volume. General conjecture remains open.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script src="../assets/site.js" defer></script></head>
+<body data-base="../"><a class="skip" href="#main">Skip to content</a>
+<div class="mobile-bar"><a href="../index.html">Murakami’s Dream</a><button class="mobile-menu" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+<aside class="sidebar" id="sidebar"><a class="brand" href="../index.html">Murakami’s<br>Dream</a><div class="brand-sub">A research notebook</div>
+<button class="search-trigger" data-search-open>Search research <kbd>/</kbd></button><div class="nav-label">Read the argument</div><nav aria-label="Main navigation"><a href="../index.html" class="">Overview</a><a href="../guide/manuscript.html" class="">The manuscript</a><a href="../guide/results.html" class="">Equality results</a><a href="../guide/mechanism.html" class="">The mechanism</a><a href="../guide/geometry.html" class="">Actual geometry</a><a href="../guide/frontier.html" class="">Current frontier</a><a href="../guide/notation.html" class="">Notation</a><a href="../guide/audits.html" class="">Reproducing audits</a><div class="nav-label">Explore the research</div><a href="../library.html" class="">Research library</a><a href="../figures.html" class="">Figure gallery</a><a href="../archive.html" class="active">Search the archive</a></nav>
+<div class="sidebar-bottom">Research edition · 31 October 2026<br>General conjecture remains open.<a href="https://github.com/sashakolpakov/murakamis_dream">Repository ↗</a><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/RESEARCH_LOG.md">Historical research log ↗</a></div></aside>
+<main id="main" class="layout"><div class="eyebrow">Source and transport</div><div class="reading-grid"><article class="content"><div class="note-context"><a href="../library.html">Research library</a> / <a href="../library.html#source">Calculating the finite quantum evaluation</a><p><span class="badge">Actual finite framing current and source-preserving boundary weights</span> Technical research note. Exact scope and later corrections are stated in the text.</p><div class="note-resources"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_braided_residual_framing_current.md">Markdown source</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_braided_residual_framing_current.py">Audit script</a> <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_braided_residual_framing_current_results.json">Recorded output</a><a href="../guide/frontier.html">Current frontier</a></div></div><h1 id="the-actual-braided-residual-framing-current">The actual braided residual-framing current</h1>
+<p>30 October 2026. After a legitimate coherent functional fixes the first cut, the actual Hopf adjoint gives an exact current in the second cut. Its coefficients are two routed OFF-DIAGONAL bands of the original tensor. They are not reconstructed from the diagonal two-cut array. The identity holds at arbitrary width, with actual finite endpoints and every genuine quantum jet.</p>
+<p>This is a finite-source integration-by-parts identity. Its closed flux is zero; no nonzero relative framing residue or selected global cycle coefficient is inferred from that fact.</p>
+<h2 id="the-source-coherent-first-cut-and-actual-generic-generators">1. The source, coherent first cut, and actual generic generators</h2>
+<p>Use the <a href="actual_braided_two_cut_source_adapter.html">braided source adapter</a>. Fix d=N-1 and zeta=q0 exp(epsilon). At the two actual Morse cuts let V=V_d^tensor b, W=V_d^tensor c, with b,c&gt;=1, and let A:W-&gt;V and B:V-&gt;W be the original covariant maps. Original cups, caps and all scalar/peripheral factors remain in A,B. The partial closure P_V uses the actual generic pivot g=(-1)^d K on the closed heads.</p>
+<p>Let U be the recorded braid carrying the chosen W head to its first position. Thus in the parallel convention U=R_1…R_j, with R_j acting first. Define the WHOLE band operator</p>
+<pre><code>C_(p,q)=P_V[A U^-1(E_pq tensor I)U B],
+J_(a,l)=(C_(l,l))_(a,a).                              (1)</code></pre>
+<p>Indices outside 0,…,d are zero ACTUAL matrix entries. No Fourier wrap or continued endpoint is substituted for that zero. By actual integer degree conservation C_(l,l) is diagonal, although the nearby band operators in (1) need not be. Closing the identity cut gives sum_l C_(l,l)=z(epsilon)I.</p>
+<p>For t distinct from 0,1 put</p>
+<pre><code>beta_a(t)=binom(d,a)t^a(1-t)^(d-a),
+e_t=beta(t) 1^T,              Tr e_t=sum_a beta_a=1.  (2)</code></pre>
+<p>This is the existing coherent boundary functional with w=1 and z_coh=t/(1-t). It is source-preserving on the WHOLE exposed scalar: Tr(e_t zI)=z, exactly, including the fixed d=N-1. It is not an additional normalized state on the second identity edge. All formulas below also hold for any specified quantum-independent vector beta of sum one; (2) is the legitimate coherent localization used here.</p>
+<p>Write the actual generic generator entries as</p>
+<pre><code>k_a=zeta^(d-2a),
+f_a=1-Q^(a+1),                   0&lt;=a&lt;d,
+e_a=zeta^(-N)(1-Q^(N-a)),        1&lt;=a&lt;=d,
+Q=zeta^2.                                            (3)</code></pre>
+<p>Their missing endpoint arrows are ZERO. In particular f_d=e_0=0 as matrices, even though the untruncated expressions in (3) need not vanish there at generic zeta. The Hopf adjoints are</p>
+<pre><code>ad_K C=K C K^-1,
+ad_E C=[E,C]K^-1,
+ad_F C=[F,C]+K^-1[K,C]F.</code></pre>
+<p>The residual combination is</p>
+<pre><code>D_c=ad_F-ad_E-2(ad_K-I).                              (4)</code></pre>
+<p>Its proved principal framing field is partial_r in the actual F(r,s) chart, with the first cut clock A_cut=(1+s)^-1 fixed; see <a href="actual_borel_ward_cut_contraction.html">the actual Ward fields</a>. Multiplication by s gives s partial_r. We do not identify a finite translation with this infinitesimal field merely from its symbol.</p>
+<h2 id="a-source-defined-flux-using-the-two-neighboring-bands">2. A source-defined flux using the two neighboring bands</h2>
+<p>For 0&lt;=a&lt;d define</p>
+<pre><code>L_a=f_a beta_a+(e_(a+1)/k_(a+1)) beta_(a+1),
+L_-1=L_d=0.                                          (5)</code></pre>
+<p>Define the actual band pairing and its second-head flux by</p>
+<pre><code>T_t(p,q)=Tr(e_t C_(p,q)),
+M_l=f_l T_t(l+1,l)
+              +(e_(l+1)/k_(l+1)) T_t(l,l+1), 0&lt;=l&lt;d,
+M_-1=M_d=0.                                          (6)</code></pre>
+<p>Every C_(p,q) contains the full U and U^-1 and all original contractions. In particular (6) is not a choice of interpolation for J. The source identity is</p>
+<pre><code>M_l-M_(l-1)
+   =sum_(a=0)^d (L_a-L_(a-1)) J_(a,l)
+   =sum_(a=0)^(d-1) L_a[J_(a,l)-J_(a+1,l)],
+                     0&lt;=l&lt;=d.                        (7)</code></pre>
+<p>Here is a direct proof. Generic pivotal partial closure is an exact Hopf-adjoint map, and A,B,U intertwine the actual coproduct. Therefore applying D_c to C_(l,l) is the same as replacing its inserted E_ll by the corresponding adjoint in W. Since E_ll commutes with K, the spectator terms cancel, and the inserted matrix is exactly</p>
+<pre><code>f_l E_(l+1,l)+(e_(l+1)/k_(l+1))E_(l,l+1)
+   -f_(l-1)E_(l,l-1)-(e_l/k_l)E_(l-1,l),             (8)</code></pre>
+<p>tensored with the spectator identity and conjugated by U. Its pairing is the left side of (7), with all four bands and their actual order.</p>
+<p>On the first cut the dual rows are, literally,</p>
+<pre><code>e_(t,K)=K^-1 e_t K-e_t,
+e_(t,E)=K^-1 e_t E-E K^-1 e_t,
+e_(t,F)=e_t F-K F e_t K^-1.</code></pre>
+<p>The K row has zero diagonal. Direct multiplication gives</p>
+<pre><code>(e_(t,F)-e_(t,E)-2e_(t,K))_(a,a)
+  =f_a beta_a-f_(a-1) beta_(a-1)
+    -(e_a/k_a) beta_a+(e_(a+1)/k_(a+1)) beta_(a+1)
+  =L_a-L_(a-1).                                     (9)</code></pre>
+<p>Only these diagonals pair with C_(l,l). This proves the first equality in (7); finite summation by parts gives the second. The proof applies to rectangular A,B and arbitrary fixed width. It uses the actual routed bands, not a scalar Ward operator assigned to an unrelated residual index.</p>
+<p>For clarity, the generic interior coefficient in (5) is</p>
+<pre><code>e_(a+1)/k_(a+1)=zeta[Q^(a+1-N)-1].</code></pre>
+<p>At the root (5) becomes L_a=(1-Q^(a+1))[beta_a-q0 beta_(a+1)]. This shorter root formula must NOT be differentiated as the generic current: the omitted term is zeta Q<sup>(a+1)(Q</sup>-N-1) beta_(a+1), whose first derivative at zero is -2N q0 Q^(a+1) beta_(a+1). Equation (5) retains it and all higher genuine derivatives.</p>
+<h2 id="finite-head-integration-by-parts-with-the-interval-ends">3. Finite-head integration by parts, with the interval ends</h2>
+<p>Let R_l denote either expression on the right of (7), and let h_l be any specified finite-head weight. On EVERY actual subinterval 0&lt;=L&lt;=R&lt;=d,</p>
+<pre><code>sum_(l=L)^R h_l R_l
+  =h_R M_R-h_L M_(L-1)
+     +sum_(l=L)^(R-1)(h_l-h_(l+1)) M_l.              (10)</code></pre>
+<p>In particular a window’s two current ends are retained. On the whole head interval the actual endpoint arrows make M_-1=M_d=0. For h=1 this says sum_l R_l=0. It also follows from sum_l J_(a,l)=z and sum_a(L_a-L_(a-1))=0. Neither proof says that the current has zero period on an arbitrarily selected relative subchain, or that one of its two ends contributes nontrivially.</p>
+<p>The identity is generic before any specialization. It may be differentiated to any fixed quantum order, with the derivatives of the actual U, inverse route, generator entries, pivots, coupons and any moving h retained. The same holds for a specified finite sum of channel assignments with its original coefficients. The original closed normalization remains F=D_N z and z(0)=F’(0)/nu_N, with D_N=(-1)^d[N]_zeta. No extra derivative per band or per vertex is introduced by (7).</p>
+<h3 id="the-complete-fourier-endpoint-of-the-same-actual-channel">The complete Fourier endpoint of the same actual channel</h3>
+<p>At completeness let S be the cyclic physical-head shift and X_j its original Fourier projectors,</p>
+<pre><code>(X_j)_(r,s)=Q^[j(s-r)]/N, eta_j=Q^j, j mod N.</code></pre>
+<p>For the ROUTED first-slot channel C(X)=P_V[A U^-1(X tensor I)U B], the <a href="universal_resonant_fourier_source_completion.html">complete Fourier source theorem</a> applies: A U^-1 and U B are still actual covariant maps. Thus C(X_j)=z X_j. Its proof uses the actual root adjoint equations and C(I)=zI and also applies to the rectangular maps above. Since 1^T X_j=delta_(j,0)1^T, the legitimate first coherent functional still gives Tr(e_t C(X_j))=z delta_(j,0), exactly for every t.</p>
+<p>The actual cyclic generator formulas give</p>
+<pre><code>D_c X_j=(eta_j-q0 eta_j^-1+2)X_j
+      +(q0^-1 eta_j^-1-2)X_(j+1)-Q^-1 eta_j X_(j-1).
+                                                           (10a)</code></pre>
+<p>Consequently this SAME sourced residual current has the exact three-node Fourier endpoint distribution</p>
+<pre><code>Tr[e_t C(D_c X_j)]
+   =z[(3-q0)delta_(j,0)+(q0-2)delta_(j,N-1)
+                                 -delta_(j,1)].      (10b)</code></pre>
+<p>Overlapping labels are added when N=2. The total of (10b) is zero. It is a statement about the original complete root source, not its generic normal, and no off-root cyclic endpoint is added. It locates the current at the complete resonance rather than at regular-node principal samples. Its coefficient remains the UNKNOWN whole scalar z; homogeneous Ward equations alone cannot determine it or show that the selected geometric component survives there.</p>
+<h2 id="the-specified-moving-period-realization-and-its-boundary-chain">4. The specified moving-period realization and its boundary chain</h2>
+<p>There is a source-preserving residue realization of the coefficients in (6), not a new interpolation of those finite values. Expand their original generic tensors, including the routed crossings, in the specified finite white/cup/cap presentation. For U and U^-1 this is the FULL generic spectral expansion of each original crossing, with both small and large partner channels and their actual spectral denominators. It is not the restricted regular complete-circle sector sum. Use the actual large white polynomials and moving-period factorial with P=pi i/Log zeta. Keep every fixed generic spectral scalar and every integral character; clear a known intermediate scalar pole before taking the required higher jet. This is the source class of the <a href="actual_tensor_source_finite_jet_connection.html">actual tensor connection</a>.</p>
+<p>For each admissible assignment and each off-diagonal band retain its own primitive affine head lattice and original finite support. The band source has a fixed integral charge offset. At every allowed integer point its moving-period coefficient is the actual generic matrix entry. Its small product-cotangent torus therefore gives that same entry. Summing those tori reproduces T_t(p,q), and the displayed combinations reproduce M_l and (7), with no omitted normal. An original constant forbidden stratum remains zero rather than being assigned a 0/0 continuation.</p>
+<p>The first head may be left as the exact finite coherent sum (2). There is no need to invent a meromorphic interpolation of beta_a. For the remaining free coordinates x of an individual band let S(epsilon,x) be its specified meromorphic summand, Gamma its actual ordered residue cycle, and c(x)=product_j pi cot(pi x_j). For an integral translation v and an analytic retained weight w, change of variables gives the EXACT chain identity</p>
+<pre><code>integral_Gamma c w (S_v-I)S
+   =integral_Gamma c (S_-v w-w)S
+      +integral_(Gamma+v-Gamma) c (S_-v w)S.         (11)</code></pre>
+<p>All periods use (2pi i)^(-n_free). The only fact used about c is its integer periodicity. When the last cycle difference is filled by an allowed annular chain, its value is the sum of the actual crossed source residues, with their orientations. All other crossed divisors, and any remaining relative ends, stay in that formula. At a coincident source/cotangent pole one must use the full finite part and complement derivative, as in the <a href="actual_matching_edge_degree_cycle_boundary.html">actual degree-wall theorem</a>. It is not enough to multiply a cup’s simple residue by an assigned geometric scalar.</p>
+<p>Equation (7) is proved AFTER the original finite internal period contraction. The subsequent <a href="actual_matching_graph_common_band_ward_current.html">common-band theorem</a> supplies its meromorphic interior Ward assembly on one primitive free-head lattice, with the actual charged insertions and full routed source. Its different original support cycles are still retained. Equation (10) keeps the exact finite-head ends of this contracted current, and (11) transports EACH specified band summand with those cycle differences. These formulas do not replace Gamma+v by Gamma merely because the source has a moving-P quasiperiod. The latter has its nontrivial rational gauge, characters and divisors even at finite normal order.</p>
+<h2 id="the-literal-source-between-fourier-nodes">5. The literal source between Fourier nodes</h2>
+<p>The actual routed channel has more information than its cyclic samples. Its genuine integral source preserves UNWRAPPED integer charge: if an inserted matrix is supported on row minus column equal to n, its output has that same charge. This follows before root specialization from the original crossings, cups, caps and typed degree equations. The fixed weight differences of rectangular A and B cancel. A bare root K-eigenvalue, which would identify n and n+N, is not used here.</p>
+<p>Put T_n=sum_(r-s=n)E_rs, with -d&lt;=n&lt;=d. Then X_j=N^-1 sum_n eta_j^(-n)T_n. Separating the DISTINCT output matrix diagonals in C(X_j)=zX_j proves</p>
+<pre><code>C(T_n)=zT_n, -d&lt;=n&lt;=d,
+X(p)_(r,s)=p^(r-s)/N,
+C(X(p))=zX(p), p in C*.                              (12)</code></pre>
+<p>In fact the j=0 identity suffices. X(p) is a specified finite rank-one matrix, not an interpolation assigned to contracted source values. Every physical position and every unwrapped band remains. Pairing with the same first coherent functional (2) gives exactly</p>
+<pre><code>Tr[e_t C(X(p))]=z b_N(t,p),
+b_N(t,p)=(1-p^N)/[N(1-p)] (1-t+t/p)^(N-1).           (13)</code></pre>
+<p>The factor at p=1 is its removable value one. This formula follows by separately summing p^r and beta_s p^(-s), so it keeps the actual coherent degree d=N-1 and the original p=eta^-1 orientation. Whenever b_N(t,p)!=0, dividing THIS specified functional by b_N returns exactly the original root scalar z. This licenses that finite band-momentum boundary family; it does not license a general second diagonal functional or simultaneous evaluation of two heads.</p>
+<p>There is an exact whole-source absorption of this insertion. Let H=C(I)=P_V[AB]=zI, with the original pivots and all other source factors. Equation (12) gives</p>
+<pre><code>Tr[e_t C(X(p))]/b_N(t,p)=Tr[e_eff H],
+e_eff=e_t X(p)/b_N(t,p),
+(e_eff)_(a,c)=beta_a(t)p^(-c)/(1-t+t/p)^d.            (13a)</code></pre>
+<p>Thus the right side is evaluated on the original white-cut network, without the extra U and U^-1 insertions. This is an identity AFTER the whole root contraction, not a local rule for moving X(p) through one crossing or moving a bare mark. No pivot has been added or removed.</p>
+<p>Moreover e_eff is exactly the existing normalized coherent kernel with z_coh=t/(1-t) and w=p^-1. Put D_p=diag(p^a). Directly,</p>
+<pre><code>D_p^-1 e_eff D_p=e_(t_eff),
+t_eff=t/[p(1-t)+t].                                 (13b)</code></pre>
+<p>The <a href="compact_framing_gauge_and_boundary_residue.html">original common diagonal gauge</a> preserves t_eff and removes this common momentum p. Its one-cut physical map forgets the residual centralizer coordinate. Therefore the absorption supplies no additional pin of that coordinate: the two apparent parameters are one coherent position and the already present common diagonal gauge. The canceled formula for e_eff may extend across a Fourier zero of b_N, but this is not a generic-q removal of that zero or a contour transport statement.</p>
+<p>The source therefore has an exact boundary-scale test. In the first-slot chart r=1/(1-p)-b0 s, retain c0=b0 s and set</p>
+<pre><code>p_N=1-1/(N rho+c0).</code></pre>
+<p>For rho in a fixed compact subset of C*, and t,c0 in fixed compacts, direct expansion of the FINITE factor in (13) gives</p>
+<pre><code>b_N(t,p_N)=rho(1-exp(-1/rho))exp(t/rho)+O(N^-1).     (14)</code></pre>
+<p>The error is uniform and absolute, including its limiting zeros. On a compact avoiding those zeros it is relative, and b_N and its inverse have bounded size for large N. At the exact Fourier nodes p=Q^-j, j!=0, (13) instead vanishes exactly. Their limiting positions rho=1/(2pi i j) are precisely the zeros in (14). At rho=infinity the displayed limiting factor tends to one. No pointwise substitution of p into the whole internal source is used to prove these facts.</p>
+<p>In the absorbed one-cut expression, t_eff=t+t(1-t)/(N rho)+O(N^-2). Thus this scaling gives a small coherent-position tilt, not an independent centralizer condition.</p>
+<p>All of (12)–(14) is ROOT-ONLY. For the original moving-q channel write Delta(epsilon,p)=C_epsilon(X(p))-z(epsilon)X(p). Although Delta(0,p)=0, its genuine first quantum derivative need not vanish. The focused original-matrix checks below exhibit nonzero derivatives, including after the coherent pairing. They retain the actual route, endpoint arrows and generic pivot. Thus differentiating (13) would discard a source term. If a quantum-dependent p is used, the additional p derivative of Delta(0,p) is zero; it does not remove the genuine defect. All required normals still use the original generic channel and the source currents (5)–(11).</p>
+<p>More explicitly, for the SAME actual generic A,B,U and pivot, the identity retaining every quantum correction is</p>
+<pre><code>Tr[e_t C_epsilon(X(p))]/b_N
+    =Tr[e_eff H_epsilon]+Tr[e_t Delta(epsilon,p)]/b_N.
+                                                           (14a)</code></pre>
+<p>Every genuine jet differentiates the full right side. The second term cannot be discarded by the root absorption (13a).</p>
+<p>Equation (14) is a matching condition for any proposed contracted hard-edge calculation. Its coefficient is the UNKNOWN whole z. Local nonzero white packets do not determine how their transverse periods and charged support cycles reproduce that coefficient.</p>
+<h2 id="what-covariance-fixes-in-the-genuine-normal">6. What covariance fixes in the genuine normal</h2>
+<p>There is an exact freedom at every N. Write tau_e(X)=Tr(g_e X), D_e=tau_e(I), with the original generic pivot, and put</p>
+<pre><code>B_e(X)=D_e X-tau_e(X)I.                              (15)</code></pre>
+<p>Cyclicity of trace gives tau_e(ad_E X)=tau_e(ad_F X)=0 and tau_e(ad_K X)=tau_e(X) for the actual adjoints above; I is invariant. Thus B_e is a regular covariant channel, made from the straight channel and pivotal evaluation and coevaluation. It has B_e(I)=0. At the root tau_0(T_n)=0 for every unwrapped band, including T_0=I since D_0=0. Adding c(e)B_e therefore preserves C_e(I)=z(e)I and every root identity (12), for any holomorphic c. Nevertheless the constant diagonal of X(p) gives EXACTLY</p>
+<pre><code>B_e(X(p))=D_e[X(p)-I/N],
+B&#39;_0(X(p))=nu_N[X(p)-I/N],
+Tr[e_t B&#39;_0(X(p))]=nu_N[b_N(t,p)-1/N].               (16)</code></pre>
+<p>Except at the displayed zeros, this changes the retained coherent normal without changing z. This is freedom in the linear span of actual covariant tensor channels; it does not assert that every such linear combination is a single connected augmented plat. For the original routed channel, charge conservation also implies that Delta(e,p) has zero diagonal at every e: its charge-zero input is I/N and C_e(I)=z(e)I. A diagonal first functional consequently kills this defect, but also kills every nonzero off-node band. That is a zero constraint, not a determination of a boundary coefficient.</p>
+<p>The freedom is visible in an exact family of connected source words. At N=2 retain q as the generic quantum parameter, eta=q^(1/2) with eta_0=exp(pi i/4), and the original positive crossing and pivot</p>
+<pre><code>R=eta Rhat,
+Rhat=[[1,0,0,0],[0,0,q^-1,0],
+      [0,q^-1,1-q^-2,0],[0,0,0,1]],
+g=diag(-q,-q^-1), D=-q-q^-1.                        (17)</code></pre>
+<p>These are the d=1 specialization of the original highest-weight R and pivotal closure. For any odd k&gt;=3 choose A=R^(k-1), B=U=R. The actual routed channel is</p>
+<pre><code>C_k(X)=ptr_g[R^(k-2)(X tensor I)R^2],
+C_k=eta^k Chat_k, z_k=eta^k zhat_k.</code></pre>
+<p>Set lambda=-q^-2, u_j=sum_(r&lt;j)lambda^r and v_j=1-u_j. The middle block of Rhat has roots 1,lambda, so its kth power is u_k times that block plus v_k I. The two literal pivotal terms of Chat_k(E10) are -q u_(k-1) and -q^-3. It follows that</p>
+<pre><code>zhat_k=-q-q^-1 v_k,
+psihat_k=Chat_k(E10)_(1,0)-zhat_k
+        =(q^-1-q^-5)u_(k-2),
+Chat_k(X)=(zhat_k+psihat_k)X-psihat_k tau_q(X)I/D.
+                                                           (18)</code></pre>
+<p>For the last formula, the actual generic adjoint module End(V_1) splits as C I plus ker tau_q; the latter is generated by E10 and its E-adjoint ladder and has dimension three. Equivalently (18) follows by multiplying the displayed middle-block powers. Its apparently singular quotient denotes the regular literal source. Since tau_q(X(p))=D/2, the actual defect is exactly eta^k psihat_k[X(p)-I/2]. At q=i,</p>
+<pre><code>zhat_k=-ki, psihat_k=0,
+partial_e psihat_k=-4i(k-2),
+[partial_e Delta_k(E10)]_(1,0)/z_k(0)=4(k-2)/k.      (19)</code></pre>
+<p>Here Delta_k(E10) means C_k(E10)-z_k E10. The Cartan factor eta_0^k is restored in both numerator and denominator; its derivative multiplies psihat_k(i)=0. Any retained nonzero regular exterior framing scalar has the same cancellation in this ratio. The ratios are 4/3 for k=3 and 12/5 for k=5. In particular C_5-(5/3)eta_0^2 C_3 has root scalar zero but nonzero extreme-band normal (-16i/3)eta_0^5. Both individual words are original connected odd two-braid closures with the same cut, pivot and route. For t=2/3,p=2, b_2=1 and the paired defect is HALF the extreme-band coefficient, giving ratios 2/3 and 6/5 instead.</p>
+<p>Covariance does identify the extra datum. For ANY regular covariant N=2 channel with C(I)=zI and the root identities (12), the same generic adjoint decomposition gives (18) with a scalar psi vanishing at the root. Since D’_0=-2i and g_0[0,0]=-i,</p>
+<pre><code>C_0(E00)-z_0 E00=-psi&#39;_0 I/2,
+Delta&#39;_0(X(p))=psi&#39;_0[X(p)-I/2].                    (20)</code></pre>
+<p>Thus this normal is determined by an additional ROOT open-diagonal source period, not by the whole-source scalar z.</p>
+<p>More generally the defect is independent of the regular covariant lift when the FULL root channel is fixed. Suppose C_e and Ctilde_e use the SAME actual generator family and fixed highest weights, are regular covariant, preserve unwrapped charge, and C_0=Ctilde_0 as maps on End(V_d). The quotient L_e=(C_e-Ctilde_e)/e is then regular, covariant and scalar on I. The proof in Sections 3–4 of the <a href="universal_resonant_fourier_source_completion.html">universal root theorem</a> applies to this quotient: it uses only linearity, root adjoint covariance and L(I)=zI. Our actual root generators are precisely its M=1 generators, with BOTH missing endpoint arrows zero. Its K row, highest-input E recurrence and physical F induction therefore give L_0(X_j)=(z’_0-ztilde’_0)X_j; its Fourier-row basis gives the full matrix identity. No realization of L_e as one closed word is needed. Unwrapped charge separates the T_n as in (12), so</p>
+<pre><code>Delta&#39;_0(p)=Deltatilde&#39;_0(p).                       (21)</code></pre>
+<p>This requires equality of the whole open root map, not merely its scalar closure, nor equality of individual small/large root columns. Equations (15)–(21) rule out determining it from covariance and root absorption alone. They neither refute the hyperbolic conjecture nor show that the additional period cannot be controlled on the selected geometry.</p>
+<h2 id="the-remaining-equation-at-the-framing-diagonal">7. The remaining equation at the framing diagonal</h2>
+<p>The new ingredient relative to the old formal Ward ideal is the source-defined M_l in (6), including the off-diagonal routed bands and its finite endpoint chain. Its principal D_c field is the residual centralizer direction. A stationary pushforward would have to send THIS current and THIS chain, with the coherent first head and original complement, to the residual framing current.</p>
+<p>In particular neither the finite values J_(a,l) nor the nonzero local stationary density determine the residue at the framing diagonal. No continuous second-head current has been defined by interpolating (7). To obtain the desired framing coefficient one must identify the pushforward of the prescribed band periods (6) and the endpoint/divisor chain (10),(11) with that diagonal current, and compute its actual relative coefficient. A global cycle or nonzero endpoint intersection is not proved here.</p>
+<p>The <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/audit_actual_braided_residual_framing_current.py">focused audit</a> and <a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/experiments/actual_braided_residual_framing_current_results.json">results</a> check 19 actual braid/complete-circle sources, including rectangular one-to-three-head birth/death cuts: 326 original routed band value/first jet coefficients, 134 flux coefficients, 334 weighted interval/jet identities, and 48 nonzero retained generic-normal corrections. Separate original-matrix checks verify 1177 full Fourier-projector channel entries and 67 three-node complete current values. The off-node extension checks 2087 unwrapped Toeplitz entries, 801 literal rank-one source entries and 57 coherent pairings. It retains 588 nonzero genuine first-normal entries and 54 nonzero coherent normal defects. Twelve boundary-scale checks include a limiting Fourier zero. The whole-source absorption has 114 actual root/first-jet checks and 801 effective coherent-gauge entries; 139 symbolic kernel identities, 139 gauge identities, six trace normalizations and the first position tilt are checked independently. The genuine-normal extension additionally checks the literal N=2 crossing and pivot jets, the factorized arbitrary-k channel identity, and the full generic channels, restored normal ratios and open-diagonal adapter for five odd braid powers. These finite checks accompany the all-k block-power proof (18), rather than replacing it. Symbolic checks verify the universal integer-shift chain rule and its resonant cotangent finite part. They do not audit an off-grid Ward identity or a stationary framing pushforward.</p>
+<p>Finite currents, off-grid Ward identities and a geometric period are distinct levels of the argument.</p>
+<p>The off-node result concerns the finite rank-one source, unwrapped charge and root boundary profile. It does not determine z, differentiate its root factor, or select a transverse period. The absorption identities (13a),(13b),(14a) reduce the whole source to the existing one-cut coherent family; they do not independently localize the residual framing direction.</p>
+<p>Freedom in the normal tensor span is distinct from freedom among two actual connected words. Independence of a lift is not determination by a scalar root coordinate, and no geometric-period obstruction follows.</p>
+
+<footer class="page-footer"><a href="https://github.com/sashakolpakov/murakamis_dream/blob/main/notes/actual_braided_residual_framing_current.md">Edit or inspect source</a><a href="https://github.com/sashakolpakov/murakamis_dream">Source repository</a><p>Written arguments, exact audits, and numerical diagnostics retain their distinct scopes.</p></footer></article><aside class="toc" aria-label="On this page"><p>On this page</p><a href="#the-source-coherent-first-cut-and-actual-generic-generators">1. The source, coherent first cut, and actual generic generators</a><a href="#a-source-defined-flux-using-the-two-neighboring-bands">2. A source-defined flux using the two neighboring bands</a><a href="#finite-head-integration-by-parts-with-the-interval-ends">3. Finite-head integration by parts, with the interval ends</a><a href="#the-specified-moving-period-realization-and-its-boundary-chain">4. The specified moving-period realization and its boundary chain</a><a href="#the-literal-source-between-fourier-nodes">5. The literal source between Fourier nodes</a><a href="#what-covariance-fixes-in-the-genuine-normal">6. What covariance fixes in the genuine normal</a><a href="#the-remaining-equation-at-the-framing-diagonal">7. The remaining equation at the framing diagonal</a></aside></div></main>
+<dialog class="search-dialog" id="search-dialog" aria-label="Search research"><div class="dialog-head"><input id="search-input" type="search" aria-label="Search notes and audits" placeholder="Search notes, formulas, or audit names…"><button id="search-close" aria-label="Close search">Esc</button></div><div class="dialog-body"><p id="search-status" class="dialog-hint" role="status">Search guide chapters, full technical notes, and audit filenames.</p><div id="search-results"></div></div></dialog>
+</body></html>

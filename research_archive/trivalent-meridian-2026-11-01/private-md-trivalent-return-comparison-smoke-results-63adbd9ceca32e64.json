@@ -1,0 +1,246 @@
+{
+  "scope": "Finite exact source, endpoint and type reproduction; not an analytic clamp or asymptotic proof.",
+  "construction": "Newton polynomials -> exact division modulo P0+Delta -> normalized top coefficient",
+  "script_sha256": "f58b7ba64736ef34740a25fd87afac888f771cc4b3003e60cac39bce83ea0f1b",
+  "versions": {
+    "sympy": "1.14.0"
+  },
+  "exact_cyclotomic_levels": [
+    {
+      "N": 2,
+      "field": "Q[q]/Phi_4(q)",
+      "trace_normalization": "(-1)^(N-1) N^2 [z^(N-1)] remainder",
+      "deformation": "formal Delta; exact polynomial arithmetic",
+      "counts": {
+        "old_preservation_with_high_index": 1,
+        "old_support_boundary_triples": 1,
+        "old_supported_triples": 1,
+        "ordered_triples_represented": 8,
+        "quotient_trace_identity_checks": 4,
+        "raw_degree_preservation_checks": 3,
+        "return_d_normalization_checks": 1,
+        "return_extreme_sum_triples": 1,
+        "return_supported_triples": 1,
+        "return_zero_complement_triples": 1,
+        "strict_old_triples": 0,
+        "symmetric_triples": 4,
+        "zero_triples": 2
+      },
+      "moving_metric_checks": 4,
+      "largest_factorial_argument_offset": "1",
+      "example_triples": {
+        "old_high": [
+          0,
+          0,
+          1
+        ],
+        "return_zero_complement": [
+          1,
+          1,
+          1
+        ],
+        "extreme_sum": {
+          "indices": [
+            1,
+            1,
+            1
+          ],
+          "d_normalized_complement_sum": "0",
+          "N_normalized_complement_sum": "3/2"
+        }
+      },
+      "result": "all exact checks passed"
+    },
+    {
+      "N": 3,
+      "field": "Q[q]/Phi_6(q)",
+      "trace_normalization": "(-1)^(N-1) N^2 [z^(N-1)] remainder",
+      "deformation": "formal Delta; exact polynomial arithmetic",
+      "counts": {
+        "old_preservation_with_high_index": 1,
+        "old_support_boundary_triples": 3,
+        "old_supported_triples": 3,
+        "ordered_triples_represented": 27,
+        "quotient_trace_identity_checks": 10,
+        "raw_degree_preservation_checks": 8,
+        "return_d_normalization_checks": 2,
+        "return_extreme_sum_triples": 1,
+        "return_supported_triples": 2,
+        "return_zero_complement_triples": 2,
+        "strict_old_triples": 0,
+        "symmetric_triples": 10,
+        "zero_triples": 5
+      },
+      "moving_metric_checks": 9,
+      "largest_factorial_argument_offset": "2/3",
+      "example_triples": {
+        "old_high": [
+          0,
+          0,
+          2
+        ],
+        "return_zero_complement": [
+          1,
+          2,
+          2
+        ],
+        "extreme_sum": {
+          "indices": [
+            1,
+            2,
+            2
+          ],
+          "d_normalized_complement_sum": "1/2",
+          "N_normalized_complement_sum": "4/3"
+        }
+      },
+      "result": "all exact checks passed"
+    },
+    {
+      "N": 4,
+      "field": "Q[q]/Phi_8(q)",
+      "trace_normalization": "(-1)^(N-1) N^2 [z^(N-1)] remainder",
+      "deformation": "formal Delta; exact polynomial arithmetic",
+      "counts": {
+        "old_preservation_with_high_index": 3,
+        "old_support_boundary_triples": 4,
+        "old_supported_triples": 4,
+        "ordered_triples_represented": 64,
+        "quotient_trace_identity_checks": 20,
+        "raw_degree_preservation_checks": 16,
+        "return_d_normalization_checks": 4,
+        "return_extreme_sum_triples": 2,
+        "return_supported_triples": 4,
+        "return_zero_complement_triples": 4,
+        "strict_old_triples": 0,
+        "symmetric_triples": 20,
+        "zero_triples": 12
+      },
+      "moving_metric_checks": 16,
+      "largest_factorial_argument_offset": "1/2",
+      "example_triples": {
+        "old_high": [
+          0,
+          0,
+          3
+        ],
+        "return_zero_complement": [
+          1,
+          3,
+          3
+        ],
+        "extreme_sum": {
+          "indices": [
+            1,
+            3,
+            3
+          ],
+          "d_normalized_complement_sum": "2/3",
+          "N_normalized_complement_sum": "5/4"
+        }
+      },
+      "result": "all exact checks passed"
+    }
+  ],
+  "typed_physical_currying": {
+    "derivation": "endpoint permutation from literal currying indices, with dual colors",
+    "turn_rows": [
+      {
+        "input_morphism": "++ -> ++",
+        "turned_morphism": "-+ -> +-",
+        "input_relation": "moving",
+        "output_relation": "constant"
+      },
+      {
+        "input_morphism": "-- -> --",
+        "turned_morphism": "+- -> -+",
+        "input_relation": "moving",
+        "output_relation": "constant"
+      },
+      {
+        "input_morphism": "+- -> +-",
+        "turned_morphism": "-+ -> -+",
+        "input_relation": "constant",
+        "output_relation": "constant"
+      },
+      {
+        "input_morphism": "-+ -> -+",
+        "turned_morphism": "+- -> +-",
+        "input_relation": "constant",
+        "output_relation": "constant"
+      },
+      {
+        "input_morphism": "+- -> -+",
+        "turned_morphism": "++ -> ++",
+        "input_relation": "constant",
+        "output_relation": "moving"
+      },
+      {
+        "input_morphism": "-+ -> +-",
+        "turned_morphism": "-- -> --",
+        "input_relation": "constant",
+        "output_relation": "moving"
+      }
+    ],
+    "four_turn_cycles": [
+      [
+        "++ -> ++",
+        "-+ -> +-",
+        "-- -> --",
+        "+- -> -+"
+      ],
+      [
+        "-- -> --",
+        "+- -> -+",
+        "++ -> ++",
+        "-+ -> +-"
+      ],
+      [
+        "+- -> +-",
+        "-+ -> -+",
+        "+- -> +-",
+        "-+ -> -+"
+      ],
+      [
+        "-+ -> -+",
+        "+- -> +-",
+        "-+ -> -+",
+        "+- -> +-"
+      ],
+      [
+        "+- -> -+",
+        "++ -> ++",
+        "-+ -> +-",
+        "-- -> --"
+      ],
+      [
+        "-+ -> +-",
+        "-- -> --",
+        "+- -> -+",
+        "++ -> ++"
+      ]
+    ],
+    "compatible_product_pairs_checked": 10,
+    "conclusion": "No physical turn joins two moving-relation vertices.",
+    "scope": "These are the six actual Casimir intertwiner types, not arbitrary linear maps."
+  },
+  "symbolic_identities": {
+    "exact_identities": 5,
+    "half_vertex_identity": {
+      "checked": "exp(g'(x)) = exp(d/dx [2J(1/2+x)-2J(x)])",
+      "normalizing_inputs": "J(0)=J(1/2)=J(1)=0, with real logarithms for 0<x<1/2",
+      "deduction": "t(1/2,1/2,x)=g(x), including endpoints by continuity"
+    },
+    "supporting_gradient": {
+      "checked": [
+        "B-X=((X-B1)(X-B2)-1)/(B1+B2)",
+        "B=0 implies Y^2=B1 B2=1-X^2",
+        "X^2-B1 B2=X(X-B1)+B1(X-B2)",
+        "the cotangent addition identity used for 0<X<1"
+      ],
+      "required_analytic_hypotheses": "B1,B2>0, Bi<=X, strict stationary region; not established by finite tests"
+    }
+  },
+  "numerical_checks": [],
+  "result": "all exact checks passed"
+}

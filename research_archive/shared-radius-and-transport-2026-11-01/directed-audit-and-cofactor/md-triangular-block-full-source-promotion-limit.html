@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>md-triangular-block-full-source-promotion-limit</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<h1 id="what-triangular-substitution-preserves-in-the-full-source">What
+triangular substitution preserves in the full source</h1>
+<p>This note pressure-tests the triangular-block identity in
+md-cap-triangular-block-response-invariance.md. That identity is correct
+at the level of complete triangle entropy and the original coefficient
+targets. It does not, by itself, promote a full knot-volume theorem from
+a smaller diagram to a larger one.</p>
+<p>Three precise conclusions are available. Arbitrary triangular
+substitution preserves the complete boundary pressure up to a constant.
+At a protected triangular attachment there is an exact finite
+factorization on one odd complete-node spectral slice. On the other
+hand, arbitrary substitution can destroy weak balance and can import the
+certified R54 obstruction to the same shared-radius envelopes. An
+independently variable joining spectrum is a substantive remaining
+obligation, not a change of notation.</p>
+<p>All sources in this note are the literal matched-sphere Morse
+sources. All diagram constructions are made before the level tends to
+infinity. Only private statements are recorded here.</p>
+<h2 id="the-classical-identity-and-its-precise-hypotheses">1. The
+classical identity and its precise hypotheses</h2>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+be a triangulated disk with boundary
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mi>b</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">abc</annotation></semantics></math>,
+with distinct boundary vertices, such that capping by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mi>b</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">abc</annotation></semantics></math>
+gives a simple triangulated sphere. All
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+interior vertices are ordinary, each with target one in the normalized
+action. No restriction on separating triangles or internal cycles is
+required. With the original triangle potential
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">𝒬</mi><mi>P</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mi mathvariant="normal">inf</mi><mrow><msub><mi>ℓ</mi><mi>i</mi></msub><mo>&gt;</mo><mn>0</mn></mrow></munder><mrow><mo stretchy="true" form="prefix">{</mo><munder><mo>∑</mo><mrow><mi>t</mi><mo>⊂</mo><mi>P</mi></mrow></munder><msub><mi>Q</mi><mi>t</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>ℓ</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><munder><mo>∑</mo><mrow><mi>i</mi><mo>∈</mo><msup><mi>P</mi><mo>∘</mo></msup></mrow></munder><mi mathvariant="normal">log</mi><msub><mi>ℓ</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">}</mo></mrow><mo>=</mo><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><msub><mi>C</mi><mi>P</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \mathcal{Q}_P(a,b,c)=
+ \inf_{\ell_i&gt;0}
+ \left\{\sum_{t\subset P}Q_t(\ell)-\sum_{i\in P^\circ}\log\ell_i\right\}
+ =Q(a,b,c)+C_P.                                      \tag{1}
+</annotation></semantics></math></p>
+<p>For positive boundary radii, the fixed-boundary packing theorem
+constructs the unique strict interior solution. Its center triangles
+develop to the prescribed boundary center triangle with degree one. Thus
+the aggregate angle at each boundary vertex equals the angle of that
+triangle. The three derivatives of the difference in (1) vanish:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>∂</mi><mrow><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>a</mi></mrow></msub><msub><mi mathvariant="script">𝒬</mi><mi>P</mi></msub><mo>=</mo><mfrac><msub><mi mathvariant="normal">Θ</mi><mi>a</mi></msub><mrow><mn>2</mn><mi>π</mi></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mi>π</mi></mfrac><mrow><mi mathvariant="normal">arctan</mi><mo>&#8289;</mo></mrow><mfrac><mi>a</mi><msqrt><mrow><mi>a</mi><mi>b</mi><mo>+</mo><mi>b</mi><mi>c</mi><mo>+</mo><mi>c</mi><mi>a</mi></mrow></msqrt></mfrac><mo>=</mo><msub><mi>∂</mi><mrow><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>a</mi></mrow></msub><mi>Q</mi><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ \partial_{\log a}\mathcal{Q}_P
+ =\frac{\Theta_a}{2\pi}
+ =\frac1\pi\arctan\frac{a}{\sqrt{ab+bc+ca}}
+ =\partial_{\log a}Q,                               \tag{2}
+</annotation></semantics></math> and similarly at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>,</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">b,c</annotation></semantics></math>.
+The positive octant is connected. This fixes the additive constant as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">𝒬</mi><mi>P</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathcal{Q}_P(1,1,1)-Q(1,1,1)</annotation></semantics></math>.</p>
+<p>The corresponding compact concave entropy identity is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">ℰ</mi><mi>P</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>α</mi><mi>a</mi></msub><mo>,</mo><msub><mi>α</mi><mi>b</mi></msub><mo>,</mo><msub><mi>α</mi><mi>c</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi></mrow></munder><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>α</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>+</mo><msub><mi>C</mi><mi>P</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>α</mi><mi>i</mi></msub><mo>≥</mo><mn>0</mn><mo>,</mo><mspace width="1.0em"></mspace><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>α</mi><mi>i</mi></msub><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \mathcal{E}_P(\alpha_a,\alpha_b,\alpha_c)
+ =\sum_{i=a,b,c}f(\alpha_i)+C_P,\qquad
+ \alpha_i\ge0,\quad\sum_i\alpha_i=\frac12.             \tag{3}
+</annotation></semantics></math> It follows by closed concave duality
+from (1). In particular, a protected boundary coordinate has aggregate
+load zero, hence every corner there has load zero. This retains the
+original targets exactly. One or two protected boundary vertices are
+allowed; three protected corners are not. The supported Hall and
+boundary-exclusion arguments in the earlier note supply finite interior
+multipliers.</p>
+<p>The supporting geometric inputs are the fixed-boundary construction
+in actual_smoothed_source_capacity_blocks.md, section 4, the
+simple-sphere packing in actual_balanced_terminal_fan_volume.md, section
+2, and the source-normalized entropy in
+actual_triangle_entropy_algebraic_balance.md. No statement about a
+noncentral local spectral polynomial is used in (1)–(3).</p>
+<h2 id="literal-matching-and-the-actual-augmented-volume">2. Literal
+matching and the actual augmented volume</h2>
+<p>To substitute
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+for a triangle
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>
+of a matched sphere, supply a matched simple sphere
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mi>P</mi><mo>∪</mo><mi>f</mi></mrow><annotation encoding="application/x-tex">B=P\cup f</annotation></semantics></math>,
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>=</mo><mi>a</mi><mi>b</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">f=abc</annotation></semantics></math>
+is the removed face. Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>
+be the triangle matched to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>.
+If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>t</mi><mo>′</mo></msup><annotation encoding="application/x-tex">t&#39;</annotation></semantics></math>
+is the triangle matched to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>,
+identify the boundary so that their matched sides agree, delete
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>,</mo><mi>f</mi></mrow><annotation encoding="application/x-tex">t,f</annotation></semantics></math>,
+and pair
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>t</mi><mo>′</mo></msup><annotation encoding="application/x-tex">t&#39;</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>.
+Keep all remaining matching edges and oriented face orders.</p>
+<p>Every interior vertex of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+is new. Thus the result is again a simple oriented triangulated sphere;
+the two triangles at the new matching edge have four distinct vertices.
+A protected mark on a boundary side is retained only when that side is
+nonmatching in both inputs. If the mark lies outside the replaced
+triangle, it is untouched. These conditions are needed: an abstract
+triangulation with a newly selected matching is not the same recorded
+diagram.</p>
+<p>The inverse-cut theorem gives the resulting augmented link in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>S</mi><mn>3</mn></msup><annotation encoding="application/x-tex">S^3</annotation></semantics></math>,
+with its own primitive disk meridians and longitudes. The connected
+matching graph admits a knot-producing parity pattern by the original
+spanning-tree pairing argument. This does not assert that an arbitrary
+preassigned parity pattern survives the substitution. The substitution
+can change knot type.</p>
+<p>Applying (1) before optimizing the old variables gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Φ</mi><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">w</mi></mrow></msub><mo>=</mo><msub><mi mathvariant="normal">Φ</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>+</mo><msub><mi>C</mi><mi>P</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><mrow><mi mathvariant="normal">Vol</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">w</mi></mrow></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>2</mn><mi>π</mi><mo stretchy="false" form="prefix">(</mo><msub><mi mathvariant="normal">Φ</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>+</mo><msub><mi>C</mi><mi>P</mi></msub><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \Phi_{\mathrm{new}}=\Phi_{\mathrm{old}}+C_P,\qquad
+ \operatorname{Vol}(Y_{\mathrm{new}})
+   =2\pi(\Phi_{\mathrm{old}}+C_P).                    \tag{4}
+</annotation></semantics></math> The second equality uses the actual
+complete simple-sphere metric and its original fundamental chain. It is
+not an identification of the filled complements. Sufficiently long
+primitive fillings of this fixed new diagram are geometrically realized
+by the general-Morse completion theorem. Their filled volume is its
+selected continued action, rather than an asserted sum of independently
+filled volumes. Without a full-source estimate, this geometric
+conclusion is not a limit theorem for the full invariant.</p>
+<h2 id="arbitrary-substitution-does-not-preserve-weak-balance">3.
+Arbitrary substitution does not preserve weak balance</h2>
+<p>Consider a matching edge with nonnegative curvatures
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(x,b,c,y)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">A=x+y&gt;0</annotation></semantics></math>,
+and keep the opposite triangle
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(x,c,y)</annotation></semantics></math>
+fixed. Repeated stellar insertion only in the triangle on the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>
+side is a special case of triangular substitution. Its actual packing
+curvatures are
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mi>j</mi></msub><mo>=</mo><mi>b</mi><mo>+</mo><mn>2</mn><mi>j</mi><msqrt><mrow><mi>A</mi><mi>b</mi><mo>+</mo><mi>x</mi><mi>y</mi></mrow></msqrt><mo>+</mo><msup><mi>j</mi><mn>2</mn></msup><mi>A</mi><mo>=</mo><mi>A</mi><mrow><mo stretchy="true" form="prefix">[</mo><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>+</mo><mi>j</mi><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo>−</mo><mi>δ</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo>,</mo><mspace width="1.0em"></mspace><mi>u</mi><mo>=</mo><msqrt><mrow><mi>b</mi><mi>/</mi><mi>A</mi><mo>+</mo><mi>δ</mi></mrow></msqrt><mo>,</mo><mspace width="1.0em"></mspace><mi>δ</mi><mo>=</mo><mi>x</mi><mi>y</mi><mi>/</mi><msup><mi>A</mi><mn>2</mn></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ b_j=b+2j\sqrt{Ab+xy}+j^2A
+     =A\left[(u+j)^2-\delta\right],\quad
+ u=\sqrt{b/A+\delta},\quad\delta=xy/A^2.              \tag{5}
+</annotation></semantics></math> This is the literal positive Descartes
+insertion, with the original matching edge retained. The other old
+curvatures, including
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>,
+do not move.</p>
+<p>For fixed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x,y</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">A&gt;0</annotation></semantics></math>,
+the triangle entropy gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>t</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>t</mi><mo>→</mo><mn>0</mn><mspace width="1.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo>→</mo><mi>∞</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ Q(x,t,y)-\frac12\log t\longrightarrow0
+ \quad(t\longrightarrow\infty).                     \tag{6}
+</annotation></semantics></math> Indeed its variational formula, after
+subtracting
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">\frac12\log t</annotation></semantics></math>,
+has nonnegative maximum and penalizes every positive outer load by a
+logarithm tending to minus infinity. Compactness forces the maximizing
+loads to the middle simplex vertex, where the entropy is zero. This
+proof also permits one zero outer curvature.</p>
+<p>Consequently the inherited matching edge satisfies
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><msub><mi>b</mi><mi>j</mi></msub><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><msub><mi>b</mi><mi>j</mi></msub><mo>=</mo><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><msub><mi>b</mi><mi>j</mi></msub><mo>+</mo><mi>o</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>→</mo><mi>−</mi><mi>∞</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ Q(x,b_j,y)+Q(x,c,y)-\log b_j
+ =Q(x,c,y)-\frac12\log b_j+o(1)\longrightarrow-\infty.
+                                                               \tag{7}
+</annotation></semantics></math> It eventually violates even nonstrict
+complete weak balance. Every new matched edge created by this particular
+fan has its newly inscribed curvature as an outer weight, larger than
+either middle, so those new matching edges satisfy the elementary strict
+balance test. The failure is at the inherited interface.</p>
+<p>This is a structural obstruction across arbitrary size, not a
+floating-point example. Starting with any covered weak-balanced core
+does not prevent it. Even numbers of inserted odd terminal pieces may be
+used, preserving the original four-endpoint pairing and hence its
+existing knot test; this still can change knot type. It disproves
+inheritance of the weak-balance hypothesis under arbitrary triangular
+substitution, not a volume theorem for the resulting knots.</p>
+<h2
+id="a-protected-attachment-imports-a-certified-envelope-obstruction">4.
+A protected attachment imports a certified envelope obstruction</h2>
+<p>There is a stronger obstruction to promoting the same shared-radius
+method. Let a fixed marked core
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>
+have protected nonmatching edge
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mi>v</mi></mrow><annotation encoding="application/x-tex">uv</annotation></semantics></math>.
+Choose one incident triangle
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo>,</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">t=(u,v,B)</annotation></semantics></math>;
+it is a singleton row after the protected specialization. Its matching
+edge is one of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mi>B</mi><mo>,</mo><mi>v</mi><mi>B</mi></mrow><annotation encoding="application/x-tex">uB,vB</annotation></semantics></math>,
+since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mi>v</mi></mrow><annotation encoding="application/x-tex">uv</annotation></semantics></math>
+is nonmatching.</p>
+<p>In the certified R54 sphere the mark is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>29</mn><mspace width="-0.167em"></mspace><mo>−</mo><mspace width="-0.167em"></mspace><mn>50</mn></mrow><annotation encoding="application/x-tex">29\!-\!50</annotation></semantics></math>.
+The two incident faces are
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>29</mn><mo>,</mo><mn>50</mn><mo>,</mo><mn>22</mn><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>50</mn><mo>,</mo><mn>29</mn><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ (29,50,22),\qquad(50,29,0).
+</annotation></semantics></math> Remove
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>29</mn><mo>,</mo><mn>50</mn><mo>,</mo><mn>22</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f=(29,50,22)</annotation></semantics></math>,
+face 34 of the certificate. It belongs to crossing 28, whose quartet is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>29</mn><mo>,</mo><mn>50</mn><mo>,</mo><mn>45</mn><mo>,</mo><mn>22</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(29,50,45,22)</annotation></semantics></math>,
+and is matched to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>29</mn><mo>,</mo><mn>22</mn><mo>,</mo><mn>45</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">g=(29,22,45)</annotation></semantics></math>,
+face 97. The selected left region 32, with quartet
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>50</mn><mo>,</mo><mn>16</mn><mo>,</mo><mn>29</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,50,16,29)</annotation></semantics></math>,
+uses faces 39 and 62, so neither of its triangles is removed.</p>
+<p>Glue this punctured sphere into
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>,
+identifying
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>22</mn><annotation encoding="application/x-tex">22</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+and the protected pair with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>,</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">u,v</annotation></semantics></math>,
+with the matching edge aligned. An orientation reversal of the entire
+block, if required, transports all cyclic orders and the chosen
+left/right label together. It does not select a different local
+comparison function. The new sphere has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>D</mi></msub><mo>+</mo><mn>53</mn></mrow><annotation encoding="application/x-tex">R_D+53</annotation></semantics></math>
+matching edges. Its selected noncentral region is the inherited R54
+region; all other regions are central.</p>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mn>54</mn></msub><annotation encoding="application/x-tex">G_{54}</annotation></semantics></math>
+be the exact convex envelope for that fixed R54 string, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mi>D</mi></msub><annotation encoding="application/x-tex">P_D</annotation></semantics></math>
+the complete core action before minimization. Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mi>B</mi></msub><mo>=</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">q_B=\log B</annotation></semantics></math>.
+Each of the two removed triangles contributes exactly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mi>B</mi></msub><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">q_B/2</annotation></semantics></math>.
+On merging the sources, the ordinary target at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>,
+previously counted once in each input, is counted once. Thus the
+weighted functions satisfy the exact identity
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">w</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>q</mi><mi>D</mi></msub><mo>,</mo><msub><mi>q</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi></mrow></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>P</mi><mi>D</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>q</mi><mi>D</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>+</mo><msub><mi>G</mi><mn>54</mn></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>q</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>,</mo><msub><mi>q</mi><mi>B</mi></msub><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ G_{\mathrm{new}}(q_D,q_{\mathrm{int}})
+       =P_D(q_D)+G_{54}(q_{\mathrm{int}},q_B).         \tag{8}
+</annotation></semantics></math> Every coordinate is shared as
+indicated; none has been independently optimized per incidence.
+Homogeneity makes the infimum of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mn>54</mn></msub><annotation encoding="application/x-tex">G_{54}</annotation></semantics></math>
+independent of the prescribed finite
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>q</mi><mi>B</mi></msub><annotation encoding="application/x-tex">q_B</annotation></semantics></math>.
+Taking infima in (8) therefore proves
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">𝒞</mi><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">w</mi></mrow></msub><mo>=</mo><msub><mi mathvariant="normal">Φ</mi><mi>D</mi></msub><mo>+</mo><msub><mi mathvariant="script">𝒞</mi><mn>54</mn></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi mathvariant="normal">Φ</mi><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">w</mi></mrow></msub><mo>=</mo><msub><mi mathvariant="normal">Φ</mi><mi>D</mi></msub><mo>+</mo><msub><mi mathvariant="normal">Φ</mi><mn>54</mn></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \mathcal{C}_{\mathrm{new}}=\Phi_D+\mathcal{C}_{54},
+ \qquad
+ \Phi_{\mathrm{new}}=\Phi_D+\Phi_{54}.                \tag{9}
+</annotation></semantics></math> The second identity is the complete
+version of the same calculation, or (1) with this protected boundary. No
+attainment of the noncentral infimum is required.</p>
+<p>The public certificate gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">𝒞</mi><mn>54</mn></msub><mo>&gt;</mo><msub><mi mathvariant="normal">Φ</mi><mn>54</mn></msub><mo>+</mo><mfrac><mn>1</mn><mn>5</mn></mfrac><mo>,</mo><mspace width="2.0em"></mspace><msub><mi mathvariant="script">𝒞</mi><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">w</mi></mrow></msub><mo>&gt;</mo><msub><mi mathvariant="normal">Φ</mi><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">w</mi></mrow></msub><mo>+</mo><mfrac><mn>1</mn><mn>5</mn></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \mathcal{C}_{54}&gt;\Phi_{54}+\frac15,
+ \qquad
+ \mathcal{C}_{\mathrm{new}}&gt;\Phi_{\mathrm{new}}+\frac15. \tag{10}
+</annotation></semantics></math> In particular no shared-radius
+weak-balance or strict-restoration argument using these same local
+envelope functions can be inherited under arbitrary block substitution.
+This imports an obstruction into any such marked core, including cores
+for which a full volume theorem is already known. It still is not a
+lower bound for the signed coefficient, the full spectral supremum, or
+the filled invariant. This proposition concerns envelope capacity; it
+makes no additional claim here about all-level support after gluing.</p>
+<p>The exact R54 incidence above was read from
+experiments/actual_singleton_sector_obstruction_certificate.json. The
+only numerical inequality imported in (10) is the already certified
+theorem of actual_singleton_sector_envelope_obstruction.md; no new
+optimizer or uncertified value enters this argument.</p>
+<h2
+id="a-genuine-finite-factorization-on-a-protected-odd-endpoint-slice">5.
+A genuine finite factorization on a protected odd endpoint slice</h2>
+<p>There is an exact finite statement, narrower than full spectral
+substitution. Let both closed matched spheres have their mark on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mi>v</mi></mrow><annotation encoding="application/x-tex">uv</annotation></semantics></math>,
+and glue protected singleton triangles as in section 4. Write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mi>D</mi></msub><mo>,</mo><msub><mi>e</mi><mi>B</mi></msub></mrow><annotation encoding="application/x-tex">e_D,e_B</annotation></semantics></math>
+for their matching regions and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>e</mi><mo>*</mo></msub><annotation encoding="application/x-tex">e_*</annotation></semantics></math>
+for the merged region. For odd
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>2</mn><mi>m</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">N=2m+1</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mn>2</mn><mi>m</mi></mrow><annotation encoding="application/x-tex">d=2m</annotation></semantics></math>,
+use the original homogeneous numerator
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>S</mi><mi>N</mi></msub><annotation encoding="application/x-tex">S_N</annotation></semantics></math>,
+with all ordinary targets
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>.</p>
+<p>At the simple complete node, the literal local formula is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mrow><msub><mi>V</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>N</mi><mn>2</mn></msup><msub><mi>D</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>D</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>D</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo>,</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>B</mi><mi>m</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ H_{V_N(-2)}(x,b,c,y)
+      =N^2D_N(x,b,y)D_N(x,c,y),\qquad
+ D_N(0,0,B)=B^m.                                    \tag{11}
+</annotation></semantics></math> The endpoint determinant has degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>.
+Its normalization follows from the original
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>R</mi><mi>m</mi></msub><annotation encoding="application/x-tex">R_m</annotation></semantics></math>
+recurrence:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mi>N</mi></msub><mo>=</mo><msub><mi>R</mi><mi>m</mi></msub><mi>/</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">D_N=R_m/N</annotation></semantics></math>,
+and both pure outer and pure middle coefficients equal one by the root
+sine-product identities. Thus (11) keeps the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>N</mi><mn>2</mn></msup><annotation encoding="application/x-tex">N^2</annotation></semantics></math>
+scalar, not merely its exponential rate.</p>
+<p>Specialize the merged spectrum to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">-2</annotation></semantics></math>;
+every other original spectrum is arbitrary. The old marked-region
+factors are
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>N</mi><mn>2</mn></msup><msup><mi>B</mi><mi>m</mi></msup><msub><mi>D</mi><msup><mi>t</mi><mo>′</mo></msup></msub><mo>,</mo><mspace width="2.0em"></mspace><msup><mi>N</mi><mn>2</mn></msup><msup><mi>B</mi><mi>m</mi></msup><msub><mi>D</mi><mi>g</mi></msub><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ N^2B^mD_{t&#39;},\qquad N^2B^mD_g,
+</annotation></semantics></math> whereas the merged factor is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>N</mi><mn>2</mn></msup><msub><mi>D</mi><msup><mi>t</mi><mo>′</mo></msup></msub><msub><mi>D</mi><mi>g</mi></msub></mrow><annotation encoding="application/x-tex">N^2D_{t&#39;}D_g</annotation></semantics></math>.
+After extracting all targets in either punctured input except
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>,
+homogeneity leaves exactly degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>.
+That partial polynomial is therefore a scalar multiple of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>B</mi><mi>m</mi></msup><annotation encoding="application/x-tex">B^m</annotation></semantics></math>,
+regardless of the other spectra or phases. The final
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>B</mi><mi>d</mi></msup><annotation encoding="application/x-tex">B^d</annotation></semantics></math>
+extraction gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mrow><mi>N</mi><mo>,</mo><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">w</mi></mrow></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝝈</mi><mo>,</mo><mi mathvariant="bold-italic">𝝉</mi><mo>;</mo><msub><mi>σ</mi><msub><mi>e</mi><mo>*</mo></msub></msub><mo>=</mo><mi>−</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>N</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><msub><mi>S</mi><mrow><mi>N</mi><mo>,</mo><mi>D</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝝈</mi><mo>;</mo><msub><mi>σ</mi><msub><mi>e</mi><mi>D</mi></msub></msub><mo>=</mo><mi>−</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mspace width="0.167em"></mspace><msub><mi>S</mi><mrow><mi>N</mi><mo>,</mo><mi>B</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝝉</mi><mo>;</mo><msub><mi>σ</mi><msub><mi>e</mi><mi>B</mi></msub></msub><mo>=</mo><mi>−</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ S_{N,\mathrm{new}}(\boldsymbol\sigma,\boldsymbol\tau;
+                    \sigma_{e_*}=-2)
+ =N^{-2}
+ S_{N,D}(\boldsymbol\sigma;\sigma_{e_D}=-2)\,
+ S_{N,B}(\boldsymbol\tau;\sigma_{e_B}=-2).             \tag{12}
+</annotation></semantics></math> This is a complete finite coefficient
+calculation, not an entropy approximation. It applies to the original
+full homogeneous sources on that slice. No independent boundary
+coefficient target was introduced.</p>
+<p>At this node the local full numerator is central. Hence the central
+parts obey the same factorization. If both input diagrams have full
+source remainder estimates with gaps
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>γ</mi><mi>D</mi></msub><mo>,</mo><msub><mi>γ</mi><mi>B</mi></msub></mrow><annotation encoding="application/x-tex">\gamma_D,\gamma_B</annotation></semantics></math>
+and full source upper rates at most their complete actions, then (12)
+gives an odd-level full remainder gap at least
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>γ</mi><mi>D</mi></msub><mo>,</mo><msub><mi>γ</mi><mi>B</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\min(\gamma_D,\gamma_B)</annotation></semantics></math>
+on the merged slice. This permits every other spectral variable to vary
+on its full real interval.</p>
+<p>It does not permit the merged variable to vary. A filling functional
+there uses the whole spectral polynomial, including paired-node
+derivative data; its value at the odd simple node does not determine
+that functional. Fixing this node is also not the same as inserting the
+zero crossing power. Thus (12) alone gives no new fully filled
+knot-volume theorem.</p>
+<h2
+id="why-scalar-contraction-fails-for-the-full-spectral-polynomial">6.
+Why scalar contraction fails for the full spectral polynomial</h2>
+<p>The failure is visible at a single original stellar attachment at
+level
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">N=3</annotation></semantics></math>,
+so it does not depend on endpoint asymptotics. Put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mi>x</mi><mo>+</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">A=x+y</annotation></semantics></math>,
+and set
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>s</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>+</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>b</mi><mi>s</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>−</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ a_s=(s-1)(s+2),\qquad b_s=(s-1)^2.
+</annotation></semantics></math> The original face Casimir has diagonal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>,</mo><mi>−</mi><mn>2</mn><mo>,</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">1,-2,1</annotation></semantics></math>,
+one-step entries
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>3</mn><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">-3(x+y)</annotation></semantics></math>,
+and two-step entry
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>3</mn><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">-3xy</annotation></semantics></math>.
+Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>χ</mi><mn>3</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>s</mi><mn>3</mn></msup><mo>−</mo><mn>3</mn><mi>s</mi><mo>+</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\chi_3(s)=s^3-3s+2</annotation></semantics></math>,
+its polynomial resolvent is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>s</mi><mn>2</mn></msup><mi>I</mi><mo>+</mo><mi>s</mi><mi mathvariant="normal">Ω</mi><mo>+</mo><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup><mo>−</mo><mn>3</mn><mi>I</mi></mrow><annotation encoding="application/x-tex">s^2I+s\Omega+\Omega^2-3I</annotation></semantics></math>.
+The exact homogeneous numerator is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>3</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>y</mi><mo>;</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>a</mi><mi>s</mi></msub><mo stretchy="false" form="prefix">(</mo><msup><mi>b</mi><mn>2</mn></msup><mo>+</mo><msup><mi>c</mi><mn>2</mn></msup><mo stretchy="false" form="postfix">)</mo><mo>+</mo><msub><mi>b</mi><mi>s</mi></msub><mi>b</mi><mi>c</mi><mo>+</mo><mn>3</mn><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>+</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mn>9</mn><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>y</mi><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo>−</mo><mn>3</mn><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>+</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mi>x</mi><mi>y</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ H_3(x,b,c,y;s)
+ =a_s(b^2+c^2)+b_sbc
+   +3(1-s)(x+y)(b+c)
+   +9(x+y)^2-3(s+2)xy.                              \tag{13}
+</annotation></semantics></math></p>
+<p>The actual stellar ordering is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">ℬ</mi><mn>3</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">[</mo><msup><mi>w</mi><mn>2</mn></msup><mo stretchy="false" form="postfix">]</mo><mspace width="0.167em"></mspace><msub><mi>H</mi><mn>3</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>w</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>y</mi><mo>;</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mspace width="0.167em"></mspace><msub><mi>H</mi><mn>3</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>x</mi><mo>,</mo><mi>w</mi><mo>;</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \mathcal{B}_3=[w^2]\,
+ H_3(x,w,c,y;s)\,H_3(b,y,x,w;t).                     \tag{14}
+</annotation></semantics></math> In particular its new quartet has input
+middle
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>,
+output middle
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>;
+it has not been reflected to a preferred order. Its coefficients satisfy
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><msup><mi>b</mi><mn>2</mn></msup><mo stretchy="false" form="postfix">]</mo><msub><mi mathvariant="script">ℬ</mi><mn>3</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">[</mo><msup><mi>c</mi><mn>2</mn></msup><mo stretchy="false" form="postfix">]</mo><msub><mi mathvariant="script">ℬ</mi><mn>3</mn></msub><mo>=</mo><mn>9</mn><msub><mi>a</mi><mi>s</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">[</mo><mi>b</mi><mi>c</mi><mo stretchy="false" form="postfix">]</mo><msub><mi mathvariant="script">ℬ</mi><mn>3</mn></msub><mo>=</mo><mn>3</mn><mo stretchy="false" form="prefix">(</mo><mn>4</mn><mo>−</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>b</mi><mi>s</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ [b^2]\mathcal{B}_3=[c^2]\mathcal{B}_3=9a_s,\qquad
+ [bc]\mathcal{B}_3=3(4-t)b_s.                           \tag{15}
+</annotation></semantics></math> At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mi>t</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">s=t=0</annotation></semantics></math>,
+equality with a scalar multiple of the old
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>3</mn></msub><annotation encoding="application/x-tex">H_3</annotation></semantics></math>
+would force that scalar to be
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>9</mn><annotation encoding="application/x-tex">9</annotation></semantics></math>,
+from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>b</mi><mn>2</mn></msup><annotation encoding="application/x-tex">b^2</annotation></semantics></math>,
+whereas its
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">bc</annotation></semantics></math>
+coefficient is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>12</mn><annotation encoding="application/x-tex">12</annotation></semantics></math>,
+rather than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>9</mn><annotation encoding="application/x-tex">9</annotation></semantics></math>.
+Thus even an arbitrary scalar depending on both spectral parameters
+cannot make the full inserted kernel equal to the old kernel. Both
+parameters here lie in the physical real spectral interval.</p>
+<p>At the complete node
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mi>−</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">s=-2</annotation></semantics></math>,
+the same calculation instead gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">ℬ</mi><mn>3</mn></msub><mo>=</mo><mn>3</mn><mo stretchy="false" form="prefix">(</mo><mn>4</mn><mo>−</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>H</mi><mn>3</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>y</mi><mo>;</mo><mi>−</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ \mathcal{B}_3=3(4-t)H_3(x,b,c,y;-2),                    \tag{16}
+</annotation></semantics></math> which illustrates why a complete-node
+scalar calculation can look promising while failing away from that node.
+No large-level exponential obstruction follows from this finite example.
+It only disproves the proposed exact scalar identity on which a direct
+full-source promotion might otherwise rely.</p>
+<h2
+id="the-available-full-volume-consequence-and-the-remaining-estimate">7.
+The available full-volume consequence and the remaining estimate</h2>
+<p>For a given substituted diagram, a genuine full volume theorem
+follows if its new complete packing satisfies the existing weak-balance
+or quantified-defect hypothesis. Equation (1) makes this a modular
+geometric check:</p>
+<ul>
+<li>every matching edge disjoint from the substituted triangle and its
+matching neighbor has its old four curvatures and old comparison;</li>
+<li>the new internal matching edges use the fixed-boundary block
+packing;</li>
+<li>the single inherited matching edge uses its new block-side middle
+and the unchanged opposite middle.</li>
+</ul>
+<p>If these last two sets of comparisons hold, the existing full-source
+theorem applies to the actual new source at both parities, the finite
+Hermite functional restores every independent long filling, and the
+general-Morse primitive completion identifies the rate with the actual
+new knot-complement volume. The diagram, parity pattern and powers are
+fixed before
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+grows. This is a useful local way to check the existing theorem, not a
+new criterion implied by arbitrary block topology.</p>
+<p>To transfer a full theorem without those new comparisons, one still
+needs a bound for the partially extracted, matrix-valued or
+polynomial-valued block on the original shared boundary variables,
+uniform in its independent real spectra and with the true Hermite normal
+data retained. It must control every newly introduced noncentral sector
+and the inherited interface. The complete pressure identity (1), an odd
+fixed-node factorization (12), and a cap gap with all other spectra
+fixed do not supply this estimate. Equations (7), (10), and (15) show
+three distinct reasons why the most immediate promotions fail.</p>
+<p>The most general unconditional geometric statement retained here is
+(4), together with actual long primitive completion of the new
+simple-sphere diagram. The most general new finite contraction proved
+here is (12). No unconditional full invariant-volume equality for
+arbitrary triangular substitutions has been established.</p>
+</body>
+</html>

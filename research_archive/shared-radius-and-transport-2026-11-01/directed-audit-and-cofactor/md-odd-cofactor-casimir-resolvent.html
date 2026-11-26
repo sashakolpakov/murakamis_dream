@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>md-odd-cofactor-casimir-resolvent</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<h1
+id="the-original-odd-lower-cofactor-as-a-forced-casimir-polynomial">The
+original odd lower cofactor as a forced Casimir polynomial</h1>
+<p>This is an exact finite reduction of the source cofactor. It does not
+establish a signed compression representation or a neighboring-spectrum
+bound.</p>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>2</mn><mi>m</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">N=2m+1</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi><mo>=</mo><mi>π</mi><mi>/</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">\theta=\pi/N</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mi>j</mi></msub><mo>=</mo><mn>2</mn><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>j</mi><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>a</mi><mi>j</mi></msub><mo>=</mo><mn>2</mn><mo>+</mo><mn>2</mn><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>j</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="1.0em"></mspace><mi>A</mi><mo>=</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo>,</mo><mspace width="1.0em"></mspace><mi>P</mi><mo>=</mo><mi>x</mi><mi>y</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ s_j=2\sin(j\theta),\quad
+ a_j=2+2\cos((2j+1)\theta),\quad A=x+y,\quad P=xy.
+</annotation></semantics></math> The level remains
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>.
+Define the polynomial operator
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">𝒟</mi><msup><mi>b</mi><mi>j</mi></msup><mo>=</mo><msub><mi>s</mi><mi>j</mi></msub><msup><mi>b</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>,</mo><mspace width="2.0em"></mspace><mi mathvariant="script">ℒ</mi><mo>=</mo><mi mathvariant="script">𝒟</mi><mspace width="0.167em"></mspace><mo stretchy="false" form="prefix">(</mo><msup><mi>b</mi><mn>2</mn></msup><mo>+</mo><mi>A</mi><mi>b</mi><mo>+</mo><mi>P</mi><mo stretchy="false" form="postfix">)</mo><mspace width="0.167em"></mspace><mi mathvariant="script">𝒟</mi><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>λ</mi><mi>j</mi></msub><mo>=</mo><msub><mi>s</mi><mi>j</mi></msub><msub><mi>s</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \mathcal D b^j=s_j b^{j-1},\qquad
+ \mathcal L=\mathcal D\,(b^2+Ab+P)\,\mathcal D,
+ \qquad \lambda_j=s_js_{j+1}.
+ \tag{1}
+</annotation></semantics></math> Multiplication by the quadratic is
+performed before the leftmost
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">𝒟</mi><annotation encoding="application/x-tex">\mathcal D</annotation></semantics></math>.
+In particular
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">ℒ</mi><msup><mi>b</mi><mi>j</mi></msup><mo>=</mo><msub><mi>λ</mi><mi>j</mi></msub><msup><mi>b</mi><mi>j</mi></msup><mo>+</mo><msubsup><mi>s</mi><mi>j</mi><mn>2</mn></msubsup><mi>A</mi><msup><mi>b</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>+</mo><msub><mi>s</mi><mi>j</mi></msub><msub><mi>s</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mi>P</mi><msup><mi>b</mi><mrow><mi>j</mi><mo>−</mo><mn>2</mn></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \mathcal L b^j
+ =\lambda_j b^j+s_j^2A b^{j-1}
+       +s_js_{j-1}P b^{j-2}.
+ \tag{2}
+</annotation></semantics></math> Absent negative powers have zero
+coefficient. The elementary cosine identity gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>λ</mi><mi>m</mi></msub><mo>=</mo><msubsup><mi>s</mi><mi>m</mi><mn>2</mn></msubsup><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>λ</mi><mi>m</mi></msub><mo>−</mo><msub><mi>λ</mi><mi>j</mi></msub><mo>=</mo><msub><mi>a</mi><mi>j</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \lambda_m=s_m^2,\qquad \lambda_m-\lambda_j=a_j.
+ \tag{3}
+</annotation></semantics></math> Thus the matrix of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>λ</mi><mi>m</mi></msub><mo>−</mo><mi mathvariant="script">ℒ</mi></mrow><annotation encoding="application/x-tex">\lambda_m-\mathcal L</annotation></semantics></math>
+in the monomial basis is exactly the original triangular Casimir block:
+diagonal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><mi>j</mi></msub><annotation encoding="application/x-tex">a_j</annotation></semantics></math>,
+first lowering entry
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msubsup><mi>s</mi><mi>j</mi><mn>2</mn></msubsup><mi>A</mi></mrow><annotation encoding="application/x-tex">-s_j^2A</annotation></semantics></math>,
+and second lowering entry
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msub><mi>s</mi><mi>j</mi></msub><msub><mi>s</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mi>P</mi></mrow><annotation encoding="application/x-tex">-s_js_{j-1}P</annotation></semantics></math>.</p>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>j</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>;</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">R_j(b;0)</annotation></semantics></math>
+denote the literal last-row-replacement polynomials of
+<code>actual_cross_cofactor_factorization.md</code>, and set
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>=</mo><msub><mi>R</mi><mi>m</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>;</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>D</mi><mo>=</mo><msub><mi>R</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>;</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ G=R_m(b;0),\qquad D=R_{m-1}(b;0).
+</annotation></semantics></math> The exact source identities are
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><mspace width="1.0em"></mspace><mo stretchy="false" form="prefix">(</mo><msub><mi>λ</mi><mi>m</mi></msub><mo>−</mo><mi mathvariant="script">ℒ</mi><mo stretchy="false" form="postfix">)</mo><mi>G</mi><mo>=</mo><mn>0</mn><mo>,</mo><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">(</mo><msub><mi>λ</mi><mi>m</mi></msub><mo>−</mo><mi mathvariant="script">ℒ</mi><mo stretchy="false" form="postfix">)</mo><mfrac><mi>D</mi><mi>N</mi></mfrac><mo>=</mo><msup><mi>b</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msup><mi>.</mi><mspace width="1.0em"></mspace></mrow></menclose><annotation encoding="application/x-tex">
+ \boxed{\quad
+  (\lambda_m-\mathcal L)G=0,\qquad
+  (\lambda_m-\mathcal L)\frac DN=b^{m-1}.
+ \quad}
+ \tag{4}
+</annotation></semantics></math> Here is a direct proof of the
+normalization. On degrees at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m-1</annotation></semantics></math>,
+write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>=</mo><msub><mi>λ</mi><mi>m</mi></msub><mo>−</mo><mi mathvariant="script">ℒ</mi></mrow><annotation encoding="application/x-tex">T=\lambda_m-\mathcal L</annotation></semantics></math>.
+Its determinant is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><mi>T</mi><mo>=</mo><munderover><mo>∏</mo><mrow><mi>r</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></munderover><msub><mi>a</mi><mi>r</mi></msub><mo>=</mo><mi>N</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \det T=\prod_{r=0}^{m-1}a_r=N.
+ \tag{5}
+</annotation></semantics></math> Indeed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>r</mi></msub><mo>=</mo><msubsup><mi>s</mi><mrow><mi>m</mi><mo>−</mo><mi>r</mi></mrow><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">a_r=s_{m-r}^2</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∏</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>m</mi></msubsup><msubsup><mi>s</mi><mi>j</mi><mn>2</mn></msubsup><mo>=</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">\prod_{j=1}^{m}s_j^2=N</annotation></semantics></math>
+is the odd root-of-unity sine product. The last-row-replacement formula
+gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>N</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mi>b</mi><mo>,</mo><mi>…</mi><mo>,</mo><msup><mi>b</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo><mspace width="0.167em"></mspace><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msub><mi>e</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ D(b)=N(1,b,\ldots,b^{m-1})\,T^{-1}e_{m-1}.
+</annotation></semantics></math> Applying
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+as a polynomial operator proves the second equation of (4). For the
+first, append the row and column of degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>.
+Its diagonal is zero by (3), and the original monic eigenvector
+recursion determines the coefficients below degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>.
+The last-row-replacement polynomial has leading coefficient
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∏</mo><mrow><mi>r</mi><mo>&lt;</mo><mi>m</mi></mrow></msub><msub><mi>a</mi><mi>r</mi></msub><mo>=</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">\prod_{r&lt;m}a_r=N</annotation></semantics></math>,
+hence is exactly this eigenpolynomial multiplied by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>.
+Equivalently, multiplying the triangular matrix by its adjugate proves
+the identity without division.</p>
+<p>The coefficientwise proof is equally explicit. If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mo>∑</mo><msub><mi>h</mi><mi>j</mi></msub><msup><mi>b</mi><mi>j</mi></msup></mrow><annotation encoding="application/x-tex">h=\sum h_jb^j</annotation></semantics></math>,
+then
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><msup><mi>b</mi><mi>j</mi></msup><mo stretchy="false" form="postfix">]</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>λ</mi><mi>m</mi></msub><mo>−</mo><mi mathvariant="script">ℒ</mi><mo stretchy="false" form="postfix">)</mo><mi>h</mi><mo>=</mo><msub><mi>a</mi><mi>j</mi></msub><msub><mi>h</mi><mi>j</mi></msub><mo>−</mo><msubsup><mi>s</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow><mn>2</mn></msubsup><mi>A</mi><msub><mi>h</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>s</mi><mrow><mi>j</mi><mo>+</mo><mn>2</mn></mrow></msub><msub><mi>s</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msub><mi>P</mi><msub><mi>h</mi><mrow><mi>j</mi><mo>+</mo><mn>2</mn></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ [b^j](\lambda_m-\mathcal L)h
+ =a_jh_j-s_{j+1}^2A h_{j+1}
+       -s_{j+2}s_{j+1}P h_{j+2}.
+ \tag{6}
+</annotation></semantics></math> The original path coefficients obey
+this recurrence. For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>,
+its top coefficient is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>/</mi><msub><mi>a</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">N/a_{m-1}</annotation></semantics></math>,
+so the right side is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>=</mo><mi>m</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">j=m-1</annotation></semantics></math>
+and zero below it. For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>,
+the top coefficient is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>,
+the diagonal at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+is zero, and every row vanishes.</p>
+<h2 id="the-exact-spectral-expansion-and-its-limitation">The exact
+spectral expansion and its limitation</h2>
+<p>For each
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>n</mi><mo>≤</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">0\le n\le m</annotation></semantics></math>,
+let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mi>n</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>;</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">Q_n(b;x,y)</annotation></semantics></math>
+be the unique monic polynomial of degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+satisfying
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">ℒ</mi><msub><mi>Q</mi><mi>n</mi></msub><mo>=</mo><msub><mi>λ</mi><mi>n</mi></msub><msub><mi>Q</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">\mathcal LQ_n=\lambda_nQ_n</annotation></semantics></math>.
+This is the actual homogenized q-Hahn polynomial. Uniqueness follows
+from
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>λ</mi><mi>n</mi></msub><mo>−</mo><msub><mi>λ</mi><mi>j</mi></msub><mo>=</mo><mn>4</mn><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo>−</mo><mi>j</mi><mo stretchy="false" form="postfix">)</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo>+</mo><mi>j</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mo>&gt;</mo><mn>0</mn><mspace width="1.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>≤</mo><mi>j</mi><mo>&lt;</mo><mi>n</mi><mo>≤</mo><mi>m</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \lambda_n-\lambda_j
+ =4\sin((n-j)\theta)\sin((n+j+1)\theta)&gt;0
+ \quad(0\le j&lt;n\le m).
+ \tag{7}
+</annotation></semantics></math> Expand the monomial in this triangular
+basis,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>b</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>=</mo><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></munderover><msub><mi>c</mi><mi>n</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>Q</mi><mi>n</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>;</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ b^{m-1}=\sum_{n=0}^{m-1}c_n(x,y)Q_n(b;x,y).
+</annotation></semantics></math> Then (4) gives the exact finite formula
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mi>D</mi><mi>N</mi></mfrac><mo>=</mo><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></munderover><mfrac><mrow><msub><mi>c</mi><mi>n</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo></mrow><msub><mi>a</mi><mi>n</mi></msub></mfrac><msub><mi>Q</mi><mi>n</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>;</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \frac{D}{N}
+ =\sum_{n=0}^{m-1}\frac{c_n(x,y)}{a_n}Q_n(b;x,y).
+ \tag{8}
+</annotation></semantics></math> Its smallest denominator is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>4</mn><msup><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mn>2</mn></msup><mi>θ</mi></mrow><annotation encoding="application/x-tex">a_{m-1}=4\sin^2\theta</annotation></semantics></math>,
+of order
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>N</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><annotation encoding="application/x-tex">N^{-2}</annotation></semantics></math>.
+This fact alone is <strong>not</strong> an operator-norm bound. The
+expansion coefficients and the norm of the triangular change of basis
+must also be controlled in the norm relevant to coherent extraction. The
+auxiliary q-Hahn moment functional depends on the face parameters; it
+cannot silently be treated as a fixed positive metric on all complex or
+negative face values.</p>
+<p>The central positive determinant remains
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>=</mo><mi>N</mi><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mi>I</mi><mo>+</mo><mfrac><mi>x</mi><mn>2</mn></mfrac><msub><mi>H</mi><mo>−</mo></msub><mo>+</mo><mfrac><mi>y</mi><mn>2</mn></mfrac><msub><mi>H</mi><mo>+</mo></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ G=N\det\left(bI+\frac x2H_-+\frac y2H_+\right).
+ \tag{9}
+</annotation></semantics></math> Consequently the unresolved task can be
+stated precisely: lift the inverse in (4) to a controlled
+constant-matrix operator on adjugates of the pencil in (9), or find
+another source-exact signed compression representation with a controlled
+norm. The proposed identity is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mi>D</mi><mi>N</mi></mfrac><mo>=</mo><mrow><mi mathvariant="normal">Tr</mi><mo>&#8289;</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>W</mi><mi>N</mi></msub><mi mathvariant="normal">adj</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mi>I</mi><mo>+</mo><mfrac><mi>x</mi><mn>2</mn></mfrac><msub><mi>H</mi><mo>−</mo></msub><mo>+</mo><mfrac><mi>y</mi><mn>2</mn></mfrac><msub><mi>H</mi><mo>+</mo></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \frac DN=\operatorname{Tr}\left(W_N\operatorname{adj}
+       \left(bI+\frac x2H_-+\frac y2H_+\right)\right).
+ \tag{10}
+</annotation></semantics></math> No such all-level formula for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>W</mi><mi>N</mi></msub><annotation encoding="application/x-tex">W_N</annotation></semantics></math>
+has been proved here.</p>
+<p>The one-level script <code>md-odd-adjugate-casimir-probe.py</code>
+checks a tempting but unsupported lift: the ordinary Hilbert–Schmidt
+Gram matrix of adjugate coefficients does not make the coefficient
+operator in (2) self-adjoint at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">N=7</annotation></semantics></math>.
+Its relative matrix defect is approximately
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0.237</mn><annotation encoding="application/x-tex">0.237</annotation></semantics></math>.
+A second one-level nonlinear fit,
+<code>md-odd-adjugate-rank-two-probe.py</code>, did not find a rank-two
+representation at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>13</mn></mrow><annotation encoding="application/x-tex">N=13</annotation></semantics></math>;
+this is not an impossibility proof. Both are diagnostics used to avoid
+assuming a simple metric or rank reduction. Neither supplies an analytic
+estimate.</p>
+<p>The original deformed central numerator is still
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mi>b</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>G</mi><mi>c</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>u</mi><msubsup><mi>s</mi><mi>m</mi><mn>2</mn></msubsup><mi>x</mi><mi>y</mi><msub><mi>D</mi><mi>b</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>D</mi><mi>c</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ G_b(u)G_c(u)+u s_m^2xyD_b(u)D_c(u).
+</annotation></semantics></math> Its central-skipping term, all spectral
+normal derivatives, and the original shared face targets remain
+necessary. Equations (4)–(10) make no new one-cap, multi-cap, filling,
+or volume claim.</p>
+</body>
+</html>

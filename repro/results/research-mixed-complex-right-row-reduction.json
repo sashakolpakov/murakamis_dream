@@ -1,0 +1,54 @@
+{
+  "status": "passed",
+  "precision_bits": 256,
+  "exact_identities": 2,
+  "height_cases": [
+    {
+      "height_sign": -1,
+      "complex_target_first": 0,
+      "lambda_over_2piH": 0
+    },
+    {
+      "height_sign": -1,
+      "complex_target_first": 1,
+      "lambda_over_2piH": 1
+    },
+    {
+      "height_sign": 1,
+      "complex_target_first": 0,
+      "lambda_over_2piH": 1
+    },
+    {
+      "height_sign": 1,
+      "complex_target_first": 1,
+      "lambda_over_2piH": 0
+    }
+  ],
+  "scalar_bounds": [
+    {
+      "case": "y=0, v<=1/4",
+      "outward_upper_expression": "[-0.062672325991881743555482817989907199370723813294360935388758322916231692586 +/- 3.34e-76]",
+      "positive_margin_below_minus_3_over_50": "[0.002672325991881743555482817989907199370723813294360935388758322916231692586 +/- 3.35e-76]"
+    },
+    {
+      "case": "y=1/2, v<=1/4",
+      "outward_upper_expression": "[-0.1687351841643008483190206754321948816972412473321843576981445910253031525832 +/- 6.12e-77]",
+      "positive_margin_below_minus_3_over_50": "[0.1087351841643008483190206754321948816972412473321843576981445910253031525832 +/- 6.14e-77]"
+    },
+    {
+      "case": "v>=1/4",
+      "outward_upper_expression": "[-0.091511414159195392924949156764036373055563914727422502267369270165637830660 +/- 1.84e-76]",
+      "positive_margin_below_minus_3_over_50": "[0.031511414159195392924949156764036373055563914727422502267369270165637830660 +/- 1.84e-76]"
+    }
+  ],
+  "quarter_constant": "[0.1457804520154093900691922282341974594320330769929186351305007845558738184402 +/- 2.99e-77]",
+  "rr_lower_row_reserve": "[0.5831218080616375602767689129367898377281323079716745405220031382234952737609 +/- 7.17e-77]",
+  "proof_sha256": "7d01b89109a29f61bbe681e60a9e0d25e080e5aa6a5f925deb10706070140c1b",
+  "script_sha256": "42ca1e3e33209d70e566af66c270a74950dd274f42bcb73a0369ce76e77d92e0",
+  "dependencies": {
+    "notes/research_mixed_right_pair_raw_reduction.md": "c755467379f11869968dce5a8bb845f3365023c3e4b732fe0e364078070993a5",
+    "notes/research_mixed_right_half_source_reduction.md": "70b2e84688b41fcc794153c3f06b2cf5cb195b8ae1c27d783f9c7cfd3be7834c",
+    "notes/research_mixed_split_cutoff_hybrid_contour.md": "6318c11366520ff2080b47028ce3ef8196d0835df2a21d0d7d5a504a80b1cc67"
+  },
+  "scope": "Three outward scalar bounds and exact algebra supporting the written continuous maximization proof. Strong row concavity and its quadratic tangent consequence are proved analytically in the note, not by these scalar checks. Every original upper row is bounded by the fixed lower-row envelope, with gap 3/50. No kernel lower bound, interface sign, full-period asymptotic, or knot-family conclusion is checked."
+}

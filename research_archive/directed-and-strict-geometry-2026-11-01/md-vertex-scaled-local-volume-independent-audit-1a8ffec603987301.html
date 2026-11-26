@@ -1,0 +1,212 @@
+<h1
+id="independent-check-of-the-vertex-scaled-local-volume-criterion">Independent
+check of the vertex-scaled local-volume criterion</h1>
+<p>1 November 2026.</p>
+<h2 id="conclusion">1. Conclusion</h2>
+<p>The proposed strengthening of the local-message theorem is valid by
+the displayed proof, with the original fixed-tree interpretation. For
+some chosen order-of-evaluation root
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>r</mi><mo>*</mo></msub><annotation encoding="application/x-tex">r_*</annotation></semantics></math>,
+the sufficient conditions are
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>d</mi><mi>v</mi><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>n</mi><mi>v</mi><mn>2</mn></msubsup><mo>≥</mo><msup><mn>2</mn><mn>82</mn></msup><mspace width="1.0em"></mspace><mtext mathvariant="normal">for every vertex</mtext><mo>,</mo><mspace width="2.0em"></mspace><mfrac><msub><mi>d</mi><mi>v</mi></msub><mrow><msubsup><mi>d</mi><mi>v</mi><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>n</mi><mi>v</mi><mn>2</mn></msubsup></mrow></mfrac><mo>≤</mo><msup><mn>2</mn><mrow><mi>−</mi><mn>47</mn></mrow></msup><mspace width="1.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mi>v</mi><mo>≠</mo><msub><mi>r</mi><mo>*</mo></msub><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ d_v^2+n_v^2\ge2^{82}\quad\text{for every vertex},\qquad
+ \frac{d_v}{d_v^2+n_v^2}\le2^{-47}\quad(v\ne r_*).
+</annotation></semantics></math> In particular all fixed signed powers
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>n</mi><mi>v</mi></msub><mo stretchy="false" form="prefix">|</mo><mo>≥</mo><msup><mn>2</mn><mn>46</mn></msup></mrow><annotation encoding="application/x-tex">|n_v|\ge2^{46}</annotation></semantics></math>
+suffice. The main-parameter radius remains any fixed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">R&lt;1</annotation></semantics></math>,
+and no graph or power is allowed to grow with the level.</p>
+<p>This check follows the fresh source audit in
+md-local-volume-fresh-audit.md. It does not use an earlier approval of
+the original numerical condition. No public file was changed.</p>
+<p>There is one scalar-description precision: the exact contraction (1a)
+must leave outside the original <strong>closing/framing, opposite-order
+reference, and reduced-cut factors</strong>. The source treats the mixed
+reference factors separately from the closing scalar. They must not
+disappear in the wording of the reordered contraction. This does not
+change any bound or require a mathematical alteration of the
+argument.</p>
+<h2 id="exact-rerooting-does-not-change-the-typed-source">2. Exact
+rerooting does not change the typed source</h2>
+<p>The lower-index source is a finite sum of a product of vertex tensors
+and diagonal edge tensors:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>∑</mo><mi mathvariant="bold-italic">𝒌</mi></munder><munder><mo>∏</mo><mi>e</mi></munder><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>γ</mi><mi>e</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mfrac><mrow><msub><mi>H</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><msub><mi>W</mi><msub><mi>k</mi><mi>e</mi></msub></msub><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><munder><mo>∏</mo><mi>v</mi></munder><msub><mi>ϕ</mi><msub><mi>σ</mi><mi>v</mi></msub></msub><mrow><mo stretchy="true" form="prefix">(</mo><msubsup><mi>R</mi><msub><mi>σ</mi><mi>v</mi></msub><msub><mi>n</mi><mi>v</mi></msub></msubsup><munder><mo>∏</mo><mrow><mi>e</mi><mo>∋</mo><mi>v</mi></mrow></munder><msub><mi>e</mi><msub><mi>k</mi><mi>e</mi></msub></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \sum_{\mathbf k}
+ \prod_e\left(\gamma_e(s)\frac{H_N(s)}{W_{k_e}(s)}\right)
+ \prod_v
+ \phi_{\sigma_v}\left(R_{\sigma_v}^{n_v}
+                    \prod_{e\ni v}e_{k_e}\right).
+</annotation></semantics></math> Here every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>σ</mi><mi>v</mi></msub><annotation encoding="application/x-tex">\sigma_v</annotation></semantics></math>,
+crossing reference, edge scalar and external closing factor is the one
+already assigned by the original physical compiler. No type is
+reassigned when the sum is evaluated in another order.</p>
+<p>The edge contraction matrix is diagonal, hence symmetric. Evaluating
+the finite sum from any selected vertex therefore gives exactly the same
+kernel recursion with that vertex evaluated last. In particular one must
+keep an edge’s original
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>γ</mi><mi>e</mi></msub><annotation encoding="application/x-tex">\gamma_e</annotation></semantics></math>,
+rather than replacing it by the scalar for a newly imagined physical
+inverse turn. The root’s trace is its original vertex tensor, not a new
+physical closure functional. The original marked cut and its one
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mi>N</mi></msub><annotation encoding="application/x-tex">H_N</annotation></semantics></math>
+factor stay outside unchanged.</p>
+<p>Thus the proposal is algebraic Fubini for an already compiled tensor
+network. It uses neither ambient isotopy nor a physical half-turn
+identity. At the final root there is no parent angle and no outgoing
+polynomial whose real envelope must be regenerated.</p>
+<h2 id="saddle-size-and-the-current-vertex-drop">3. Saddle size and the
+current-vertex drop</h2>
+<p>Put
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>v</mi></msub><mo>=</mo><mfrac><msub><mi>d</mi><mi>v</mi></msub><mrow><mn>2</mn><mi>π</mi></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>D</mi><mi>v</mi></msub><mo>=</mo><mfrac><mrow><msub><mi>d</mi><mi>v</mi></msub><mo>−</mo><mi>i</mi><msub><mi>n</mi><mi>v</mi></msub></mrow><mrow><mn>2</mn><mi>π</mi></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>R</mi><mi>v</mi></msub><mo>=</mo><msqrt><mrow><msubsup><mi>d</mi><mi>v</mi><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>n</mi><mi>v</mi><mn>2</mn></msubsup></mrow></msqrt><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ a_v=\frac{d_v}{2\pi},\qquad
+ D_v=\frac{d_v-in_v}{2\pi},\qquad R_v=\sqrt{d_v^2+n_v^2}.
+</annotation></semantics></math> Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>v</mi></msub><mo>≥</mo><msup><mn>2</mn><mn>41</mn></msup></mrow><annotation encoding="application/x-tex">R_v\ge2^{41}</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>π</mi><mo>&lt;</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">2\pi&lt;8</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>D</mi><mi>v</mi></msub><mo stretchy="false" form="prefix">|</mo><mo>&gt;</mo><msup><mn>2</mn><mn>38</mn></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ |D_v|&gt;2^{38}.
+</annotation></semantics></math> Consequently the first saddle lies
+deeply inside the fixed disk and the retained cutoff
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⌊</mo><msup><mn>2</mn><mrow><mi>−</mi><mn>16</mn></mrow></msup><mo stretchy="false" form="prefix">|</mo><msub><mi>D</mi><mi>v</mi></msub><mo stretchy="false" form="prefix">|</mo><mo stretchy="false" form="postfix">⌋</mo></mrow><annotation encoding="application/x-tex">\lfloor2^{-16}|D_v|\rfloor</annotation></semantics></math>
+is at least one, in fact much larger. The phase-class contraction and
+all charge inequalities use
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>D</mi><mi>v</mi></msub><mo stretchy="false" form="prefix">|</mo><mo>≥</mo><msub><mi>a</mi><mi>v</mi></msub></mrow><annotation encoding="application/x-tex">|D_v|\ge a_v</annotation></semantics></math>,
+so they remain valid at a large-degree zero-power root, where equality
+holds.</p>
+<p>The exact first-drop estimate is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Δ</mi><mi>v</mi></msub><mo>≤</mo><mfrac><mn>210</mn><mn>361</mn></mfrac><mfrac><msub><mi>a</mi><mi>v</mi></msub><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>D</mi><mi>v</mi></msub><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup></mrow></mfrac><mo>&lt;</mo><msup><mn>2</mn><mrow><mi>−</mi><mn>76</mn></mrow></msup><msub><mi>a</mi><mi>v</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \Delta_v\le\frac{210}{361}\frac{a_v}{|D_v|^2}
+ &lt;2^{-76}a_v.
+</annotation></semantics></math> The strict inequality follows from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>D</mi><mi>v</mi></msub><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup><mo>&gt;</mo><msup><mn>2</mn><mn>76</mn></msup></mrow><annotation encoding="application/x-tex">|D_v|^2&gt;2^{76}</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>210</mn><mi>/</mi><mn>361</mn><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">210/361&lt;1</annotation></semantics></math>.
+With
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>η</mi><mi>v</mi></msub><mo>=</mo><msup><mn>2</mn><mrow><mi>−</mi><mn>75</mn></mrow></msup><msub><mi>a</mi><mi>v</mi></msub></mrow><annotation encoding="application/x-tex">\eta_v=2^{-75}a_v</annotation></semantics></math>,
+this gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Δ</mi><mi>v</mi></msub><mo>&lt;</mo><msub><mi>η</mi><mi>v</mi></msub><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\Delta_v&lt;\eta_v/2</annotation></semantics></math>,
+including at the exempt root. For nonroot vertices the independent
+estimate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Δ</mi><mi>v</mi></msub><mo>&lt;</mo><mn>4</mn><msub><mi>κ</mi><mi>v</mi></msub></mrow><annotation encoding="application/x-tex">\Delta_v&lt;4\kappa_v</annotation></semantics></math>
+is retained for the outgoing envelope.</p>
+<h2 id="every-absolute-conditional-error-keeps-the-factor-a_v">4. Every
+absolute conditional error keeps the factor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><mi>v</mi></msub><annotation encoding="application/x-tex">a_v</annotation></semantics></math></h2>
+<p>The relevant errors in the actual finite trace are:</p>
+<ul>
+<li>Infinite charge tail:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><msub><mi>A</mi><mn>0</mn></msub><msubsup><mi>t</mi><mn>0</mn><mn>2</mn></msubsup><msub><mi>a</mi><mi>v</mi></msub><mo>=</mo><msup><mn>2</mn><mrow><mi>−</mi><mn>74</mn></mrow></msup><msub><mi>a</mi><mi>v</mi></msub></mrow><annotation encoding="application/x-tex">\tfrac12 A_0t_0^2a_v=2^{-74}a_v</annotation></semantics></math>.</li>
+<li>Real complement of the local interval:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mrow><mi>−</mi><mn>20</mn></mrow></msup><msub><mi>a</mi><mi>v</mi></msub><msup><mi>ρ</mi><mn>2</mn></msup><mo>=</mo><msup><mn>2</mn><mrow><mi>−</mi><mn>48</mn></mrow></msup><msub><mi>a</mi><mi>v</mi></msub></mrow><annotation encoding="application/x-tex">2^{-20}a_v\rho^2=2^{-48}a_v</annotation></semantics></math>.</li>
+<li>Local vertical connectors:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>v</mi></msub><msup><mi>ρ</mi><mn>2</mn></msup><mi>/</mi><mn>8</mn><mo>=</mo><msup><mn>2</mn><mrow><mi>−</mi><mn>31</mn></mrow></msup><msub><mi>a</mi><mi>v</mi></msub></mrow><annotation encoding="application/x-tex">a_v\rho^2/8=2^{-31}a_v</annotation></semantics></math>.</li>
+<li>Original vertical sides and zero-mode endpoint currents: at least
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mspace width="0.167em"></mspace><msup><mn>2</mn><mrow><mi>−</mi><mn>20</mn></mrow></msup><msup><mi>π</mi><mn>2</mn></msup><msub><mi>a</mi><mi>v</mi></msub></mrow><annotation encoding="application/x-tex">\tfrac12\,2^{-20}\pi^2a_v</annotation></semantics></math>.</li>
+</ul>
+<p>These follow directly from the full normalized input’s Gaussian
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msup><mn>2</mn><mrow><mi>−</mi><mn>20</mn></mrow></msup><msub><mi>a</mi><mi>v</mi></msub><msup><mi>t</mi><mn>2</mn></msup><mo>+</mo><mn>128</mn><msub><mi>a</mi><mi>v</mi></msub><msup><mi>y</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">-2^{-20}a_v t^2+128a_vy^2</annotation></semantics></math>,
+and not from an unnormalized augmented action. Thus all exceed the
+selected
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>η</mi><mi>v</mi></msub><annotation encoding="application/x-tex">\eta_v</annotation></semantics></math>.
+Fixed polynomial prefactors and a fixed finite number of retained
+charges are absorbed by the margin between
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mrow><mi>−</mi><mn>74</mn></mrow></msup><msub><mi>a</mi><mi>v</mi></msub></mrow><annotation encoding="application/x-tex">2^{-74}a_v</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mrow><mi>−</mi><mn>75</mn></mrow></msup><msub><mi>a</mi><mi>v</mi></msub></mrow><annotation encoding="application/x-tex">2^{-75}a_v</annotation></semantics></math>.
+The infinite tail is a geometric series once
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+exceeds a threshold depending on its positive fixed height.</p>
+<p>The source argument also has finite interpolation errors in the local
+edge kernel. They do <strong>not</strong> invalidate this list. The
+complete kernel has a uniform relative holomorphic saddle expansion on
+the small bidisk. This is substituted on the local deformed contour,
+where it multiplies the selected phase and amplitude. It is not
+estimated as an arbitrary absolute error at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msub><mi>G</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">2G_0</annotation></semantics></math>
+on the original real contour.</p>
+<p>The same distinction applies to child messages. They are retained
+exactly, divided by their exact nonzero values at zero, and represented
+by a local logarithm plus an analytic amplitude correction. Their
+normalized errors are not expanded into absolute augmented remainders.
+On the selected local Gaussian contour the absolute Gaussian integral is
+comparable to its nonzero leading term for the fixed data. Therefore a
+uniform holomorphic relative error stays relative there. This remains
+true even if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><mi>v</mi></msub><annotation encoding="application/x-tex">a_v</annotation></semantics></math>
+is so large that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>η</mi><mi>v</mi></msub><annotation encoding="application/x-tex">\eta_v</annotation></semantics></math>
+exceeds the fixed interpolation gap.</p>
+<p>No other absolute error from the original local proof needs a
+degree-independent subtraction. The translated endpoints differ by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mi>N</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(1/N)</annotation></semantics></math>
+and change only allowed fixed-data prefactors.</p>
+<h2 id="outgoing-envelope-regeneration">5. Outgoing-envelope
+regeneration</h2>
+<p>At nonroot vertices, the full polynomial trace norm gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>M</mi><mi>v</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mi>C</mi><msup><mi>N</mi><mi>A</mi></msup><mrow><mo stretchy="true" form="prefix">|</mo><munder><mo>∏</mo><mi>w</mi></munder><msub><mi>M</mi><mi>w</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="true" form="postfix">|</mo></mrow><msup><mi>e</mi><mrow><mi>N</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><msub><mi>G</mi><mn>0</mn></msub><mo>−</mo><msub><mi>c</mi><mi>K</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ |M_v(u)|\le C N^A\left|\prod_wM_w(0)\right|
+ e^{N(2G_0-c_K(1-\cos u))}.
+</annotation></semantics></math> The lower asymptotic at zero has rate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msub><mi>G</mi><mn>0</mn></msub><mo>−</mo><msub><mi mathvariant="normal">Δ</mi><mi>v</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">2G_0-\Delta_v(0)</annotation></semantics></math>.
+For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><msup><mn>2</mn><mrow><mi>−</mi><mn>12</mn></mrow></msup></mrow><annotation encoding="application/x-tex">r=2^{-12}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mi>K</mi></msub><mo>=</mo><msup><mn>2</mn><mrow><mi>−</mi><mn>16</mn></mrow></msup></mrow><annotation encoding="application/x-tex">c_K=2^{-16}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>=</mo><msup><mn>2</mn><mrow><mi>−</mi><mn>18</mn></mrow></msup></mrow><annotation encoding="application/x-tex">c=2^{-18}</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>c</mi><mi>K</mi></msub><mo>−</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><mn>3</mn><mspace width="0.167em"></mspace><msup><mn>2</mn><mrow><mi>−</mi><mn>18</mn></mrow></msup><mfrac><msup><mn>2</mn><mrow><mi>−</mi><mn>26</mn></mrow></msup><mn>3</mn></mfrac><mo>=</mo><msup><mn>2</mn><mrow><mi>−</mi><mn>44</mn></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ (c_K-c)(1-\cos(r/2))
+ \ge3\,2^{-18}\frac{2^{-26}}3=2^{-44}.
+</annotation></semantics></math> Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mi>x</mi><mo>≥</mo><msup><mi>x</mi><mn>2</mn></msup><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">1-\cos x\ge x^2/3</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>x</mi><mo>≤</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0\le x\le1</annotation></semantics></math>;
+Taylor’s lower bound
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mi>/</mi><mn>2</mn><mo>−</mo><msup><mi>x</mi><mn>4</mn></msup><mi>/</mi><mn>24</mn></mrow><annotation encoding="application/x-tex">x^2/2-x^4/24</annotation></semantics></math>
+already proves it. Meanwhile the nonroot condition gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Δ</mi><mi>v</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mo>&lt;</mo><mn>4</mn><msub><mi>κ</mi><mi>v</mi></msub><mo>≤</mo><msup><mn>2</mn><mrow><mi>−</mi><mn>45</mn></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \Delta_v(0)&lt;4\kappa_v\le2^{-45}.
+</annotation></semantics></math> There is a factor-two margin in the
+required envelope comparison. The small interval uses the stronger local
+phase Hessian, then the exact degree bound and Poisson estimate
+regenerate the strip.</p>
+<p>This is the only use of the additional
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>κ</mi><mi>v</mi></msub><annotation encoding="application/x-tex">\kappa_v</annotation></semantics></math>
+condition. The root only needs its incoming messages, conditional saddle
+and tail comparison. It does not require its own version of this
+outgoing envelope step.</p>
+<h2 id="geometry-normalization-and-scope">6. Geometry, normalization,
+and scope</h2>
+<p>The bound
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>v</mi></msub><mo>≥</mo><msup><mn>2</mn><mn>41</mn></msup></mrow><annotation encoding="application/x-tex">R_v\ge2^{41}</annotation></semantics></math>
+is stronger than the geometric radius criterion
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>v</mi></msub><mo>≥</mo><mn>630</mn></mrow><annotation encoding="application/x-tex">R_v\ge630</annotation></semantics></math>.
+The same weighted simultaneous contraction therefore gives the actual
+positive charge path
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>τ</mi><mi>v</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mfrac><mi>c</mi><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mn>1</mn><mi>/</mi><mn>50</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><msub><mi>D</mi><mi>v</mi></msub><mo stretchy="false" form="prefix">|</mo></mrow></mfrac><mo>&lt;</mo><msup><mn>10</mn><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo>,</mo><mspace width="2.0em"></mspace><mrow><mi mathvariant="normal">Im</mi><mo>&#8289;</mo></mrow><msub><mi>τ</mi><mi>v</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mo>&lt;</mo><mn>0</mn><mspace width="1.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo>&gt;</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ |\tau_v(c)|\le\frac{c}{(1-1/50)|D_v|}&lt;10^{-2},
+ \qquad \operatorname{Im}\tau_v(c)&lt;0 \quad(c&gt;0).
+</annotation></semantics></math> The selected action, original primitive
+periods and unfilled main cusp are unchanged. The stronger criterion
+does not introduce a new scalar-to-volume inference.</p>
+<p>Likewise the nonzero first coefficient, Gaussian power
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>N</mi><mrow><mn>3</mn><mi>/</mi><mn>2</mn></mrow></msup><annotation encoding="application/x-tex">N^{3/2}</annotation></semantics></math>,
+exact quadratic framing/reference scalar, and single reduced-cut
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mi>N</mi></msub><annotation encoding="application/x-tex">H_N</annotation></semantics></math>
+are unchanged by the order of finite evaluation. Thus the same
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>N</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(N^{-1})</annotation></semantics></math>
+profile and actual knot volume equality follow. An optional higher-order
+profile statement still requires its higher-order insertion expansion,
+not just this numerical improvement.</p>
+<p>Finally
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mi>/</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>d</mi><mn>2</mn></msup><mo>+</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mn>1</mn><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo stretchy="false" form="prefix">|</mo><mi>n</mi><mo stretchy="false" form="prefix">|</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">d/(d^2+n^2)\le1/(2|n|)</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>n</mi><mo stretchy="false" form="prefix">|</mo><mo>≥</mo><msup><mn>2</mn><mn>46</mn></msup></mrow><annotation encoding="application/x-tex">|n|\ge2^{46}</annotation></semantics></math>
+gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mo>≤</mo><msup><mn>2</mn><mrow><mi>−</mi><mn>47</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\kappa\le2^{-47}</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>d</mi><mn>2</mn></msup><mo>+</mo><msup><mi>n</mi><mn>2</mn></msup><mo>≥</mo><msup><mn>2</mn><mn>92</mn></msup><mo>&gt;</mo><msup><mn>2</mn><mn>82</mn></msup></mrow><annotation encoding="application/x-tex">d^2+n^2\ge2^{92}&gt;2^{82}</annotation></semantics></math>.
+This proves the claimed universal sufficient integer bound. An exempt
+root can also have a much shorter or zero power if its degree supplies
+the first condition; it remains an actual crossing-circle vertex and
+does not represent deleting or padding the original knot diagram.</p>

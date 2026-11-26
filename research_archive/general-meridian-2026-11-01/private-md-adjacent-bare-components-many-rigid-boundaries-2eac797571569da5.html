@@ -1,0 +1,534 @@
+<h1
+id="adjacent-bare-components-with-many-rigid-boundary-branches">Adjacent
+bare components with many rigid boundary branches</h1>
+<p>Private theorem and proof, 1 November 2026. No repository source is
+changed. The conclusion enlarges a moving-main-meridian source estimate
+under an explicit finite structural condition; it does not assert a
+limiting microscopic profile or a displaced-meridian filled-knot
+theorem.</p>
+<p>The new step is a quantitative lower bound for the original
+reflection surplus at a product junction. It uses one admissible
+contribution to the original coupled positive probe. It does not add
+independent cap budgets. Combined with the exact conditional propagation
+estimate, this closes bare components of arbitrary finite shape when
+their rigid boundary branches are sufficiently numerous.</p>
+<p>The exact inputs are the authoritative workspace notes
+<code>actual_main_meridian_source_bounds.md</code> and
+<code>actual_main_meridian_auxiliary_color_gap.md</code>, published in
+the c7f758a state, together with the original strict profile and
+geometry theorems linked there. The conditional transfer is written in
+<code>/private/tmp/md-adjacent-bare-hub-conditional-error-propagation.md</code>.
+All private paths below are proof inputs, not publication links.</p>
+<h2 id="positive-references-and-the-error-invariant">1. Positive
+references and the error invariant</h2>
+<p>Put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">d=N-1</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mo stretchy="false" form="prefix">⌊</mo><mi>d</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo></mrow><annotation encoding="application/x-tex">M=\lfloor d/2\rfloor</annotation></semantics></math>,
+and use the fixed complete Newton basis
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>e</mi><mi>r</mi></msub><annotation encoding="application/x-tex">e_r</annotation></semantics></math>,
+full spectral-jet norm
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mo>⋅</mo><msub><mo stretchy="false" form="postfix">∥</mo><mi mathvariant="normal">J</mi></msub></mrow><annotation encoding="application/x-tex">\|\cdot\|_{\mathrm J}</annotation></semantics></math>,
+and typed relations
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mi>s</mi></msub><annotation encoding="application/x-tex">P_s</annotation></semantics></math>
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mn>0</mn></msub><annotation encoding="application/x-tex">P_0</annotation></semantics></math>
+of the source-bound theorem. Let
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msubsup><mo>∫</mo><mn>0</mn><mi>u</mi></msubsup><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mi>π</mi><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mspace width="0.167em"></mspace><mi>d</mi><mi>t</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mn>4</mn><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>G</mi><mn>0</mn></msub><mo>=</mo><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>4</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ J(u)=\int_0^u\log(2\sin\pi t)\,dt,\qquad
+ g(u)=J(2u)-4J(u),\qquad G_0=g(1/4).
+ \tag{1}
+</annotation></semantics></math> An original positive branch profile
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mi>Q</mi></msub><annotation encoding="application/x-tex">f_Q</annotation></semantics></math>
+has intrinsic pressure
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Ω</mi><mi>Q</mi></msub><mo>=</mo><munder><mi mathvariant="normal">max</mi><mrow><mn>0</mn><mo>≤</mo><mi>u</mi><mo>≤</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow></munder><mo stretchy="false" form="prefix">{</mo><msub><mi>f</mi><mi>Q</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \Omega_Q=\max_{0\le u\le1/2}\{f_Q(u)+g(u)\}.
+ \tag{2}
+</annotation></semantics></math> Every absolute constant accumulated
+inside the branch is included in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mi>Q</mi></msub><annotation encoding="application/x-tex">f_Q</annotation></semantics></math>.</p>
+<p>We use positive comparison polynomials with these original profiles.
+For an L branch with rigid profile
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>+</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">g+c</annotation></semantics></math>,
+choose
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>Q</mi><mi>N</mi><mn>0</mn></msubsup><mo>=</mo><msup><mi>e</mi><mrow><mi>N</mi><mi>c</mi></mrow></msup><msub><mi>h</mi><mi>N</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>h</mi><mi>N</mi></msub><mo>=</mo><munder><mo>∑</mo><mrow><mi>r</mi><mo>≤</mo><mi>M</mi></mrow></munder><mfrac><mrow><msup><mi>N</mi><mn>2</mn></msup><msub><mi>S</mi><mrow><mn>2</mn><mi>r</mi></mrow></msub></mrow><msubsup><mi>S</mi><mi>r</mi><mn>4</mn></msubsup></mfrac><msub><mi>e</mi><mi>r</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ Q^0_N=e^{Nc}h_N,\qquad
+ h_N=\sum_{r\le M}\frac{N^2S_{2r}}{S_r^4}e_r.
+ \tag{3}
+</annotation></semantics></math> For a bare output, define its reference
+recursively by the original complete product and reversal,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>Q</mi><mrow><mi>v</mi><mo>,</mo><mi>N</mi></mrow><mn>0</mn></msubsup><mo>=</mo><msub><mi>T</mi><mn>0</mn></msub><munderover><mo>∏</mo><mi>i</mi><msub><mo>*</mo><mn>0</mn></msub></munderover><msubsup><mi>Q</mi><mrow><mi>i</mi><mo>,</mo><mi>N</mi></mrow><mn>0</mn></msubsup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                  Q^0_{v,N}=T_0\prod_i^{*_0}Q^0_{i,N}.
+ \tag{4}
+</annotation></semantics></math> These are nonnegative-coefficient
+comparison polynomials. They are not asserted to be identical to the
+finite physical subtree coupons. Their coefficient actions are the
+original boundary profiles: (3) is the rigid-profile identity with its
+absolute constant, and the positive Newton Laplace principle makes (4)
+the original constrained product action followed by output
+complementation. In particular every reference has the correct intrinsic
+pressure (2). The usual strict interior lattice rounding supplies the
+coefficient lower rate at any fixed interior output used below. This
+reference choice avoids an unsupported pointwise comparison to a
+physical endpoint coefficient that may vanish at one parity.</p>
+<p>The invariant for an actual module is an exact decomposition
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mrow><mi>N</mi><mo>,</mo><mi>s</mi></mrow></msub><mo>=</mo><msub><mi>C</mi><mrow><mi>N</mi><mo>,</mo><mi>s</mi></mrow></msub><mo>+</mo><msub><mi>E</mi><mrow><mi>N</mi><mo>,</mo><mi>s</mi></mrow></msub><mo>,</mo><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">[</mo><msub><mi>e</mi><mi>r</mi></msub><mo stretchy="false" form="postfix">]</mo><msub><mi>C</mi><mrow><mi>N</mi><mo>,</mo><mi>s</mi></mrow></msub><mo>=</mo><mn>0</mn><mspace width="0.222em"></mspace><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mo>&gt;</mo><mi>M</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ Q_{N,s}=C_{N,s}+E_{N,s},\qquad
+ [e_r]C_{N,s}=0\ (r&gt;M),
+ \tag{5}
+</annotation></semantics></math> with
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mo stretchy="false" form="prefix">[</mo><msub><mi>e</mi><mi>r</mi></msub><mo stretchy="false" form="postfix">]</mo><msub><mi>C</mi><mrow><mi>N</mi><mo>,</mo><mi>s</mi></mrow></msub><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><msup><mi>e</mi><mrow><mi>N</mi><mi>o</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow></msup><mo stretchy="false" form="prefix">[</mo><msub><mi>e</mi><mi>r</mi></msub><mo stretchy="false" form="postfix">]</mo><msubsup><mi>Q</mi><mi>N</mi><mn>0</mn></msubsup><mspace width="1.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mo>≤</mo><mi>M</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mo stretchy="false" form="postfix">∥</mo><msub><mi>E</mi><mrow><mi>N</mi><mo>,</mo><mi>s</mi></mrow></msub><msub><mo stretchy="false" form="postfix">∥</mo><mi mathvariant="normal">J</mi></msub><mo>≤</mo><msup><mi>e</mi><mrow><mi>N</mi><mo stretchy="false" form="prefix">(</mo><msub><mi mathvariant="normal">Ω</mi><mi>Q</mi></msub><mo>−</mo><msub><mi>γ</mi><mi>Q</mi></msub><mo>+</mo><mi>o</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow></msup><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>γ</mi><mi>Q</mi></msub><mo>&gt;</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ |[e_r]C_{N,s}|\le e^{No(1)}[e_r]Q_N^0\quad(r\le M),
+ \qquad
+ \|E_{N,s}\|_{\mathrm J}
+       \le e^{N(\Omega_Q-\gamma_Q+o(1))},\quad\gamma_Q&gt;0.
+ \tag{6}
+</annotation></semantics></math> All bounds are uniform on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>s</mi><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mi>R</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|s|\le R&lt;1</annotation></semantics></math>,
+over the original finite auxiliary-color cube, and over fixed half-twist
+choices. The comparison keeps the original low-coordinate profile,
+rather than replacing an A branch by a rigid leaf.</p>
+<p>For every decorated L branch the invariant starts with the rate gap
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msub><mi>G</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">2G_0</annotation></semantics></math>.
+Indeed, if its input has spectral rate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>,
+the actual decorated theorem gives low coefficients at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><mi>N</mi><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo>+</mo><mi>g</mi><mo>+</mo><mi>o</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow></msup><annotation encoding="application/x-tex">e^{N(c+g+o(1))}</annotation></semantics></math>
+and high coefficients at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><mi>N</mi><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo>+</mo><mi>o</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow></msup><annotation encoding="application/x-tex">e^{N(c+o(1))}</annotation></semantics></math>.
+Take
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+to be its low-coordinate part. Equation (3)’s sine-factorial rate gives
+the first inequality in (6). Every high basis element has polynomial
+full-jet norm, so the high-coordinate remainder has rate at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>=</mo><msub><mi mathvariant="normal">Ω</mi><mi>L</mi></msub><mo>−</mo><mn>2</mn><msub><mi>G</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">c=\Omega_L-2G_0</annotation></semantics></math>.
+Thus
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>γ</mi><mi>L</mi></msub><mo>=</mo><mn>2</mn><msub><mi>G</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">
+                         \gamma_L=2G_0
+ \tag{7}
+</annotation></semantics></math> is valid as a rate statement, with a
+uniform
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>o</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">o(1)</annotation></semantics></math>.
+This also applies to an ordinary original leaf. A flagged junction can
+therefore restore (7) after accepting arbitrary already-established
+spectral input budgets.</p>
+<h2 id="the-exact-pressure-surplus-and-its-conditional-use">2. The exact
+pressure surplus and its conditional use</h2>
+<p>Let a bare junction have children with original profiles
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mi>i</mi></msub><annotation encoding="application/x-tex">f_i</annotation></semantics></math>
+and pressures
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="normal">Ω</mi><mi>i</mi></msub><annotation encoding="application/x-tex">\Omega_i</annotation></semantics></math>.
+Write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><msub><mo>∏</mo><mi>i</mi></msub><msub><mi>Q</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">A=\prod_iQ_i</annotation></semantics></math>
+for its unturned product,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mi>v</mi></msub><mo>=</mo><mi>T</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">Q_v=T(A)</annotation></semantics></math>,
+and define
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Ω</mi><mi>A</mi></msub><mo>=</mo><munder><mi mathvariant="normal">max</mi><mrow><mi>u</mi><mo>≤</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow></munder><mo stretchy="false" form="prefix">{</mo><msub><mi>f</mi><mi>A</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi mathvariant="normal">Ω</mi><mi>v</mi></msub><mo>=</mo><munder><mi mathvariant="normal">max</mi><mrow><mi>u</mi><mo>≤</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow></munder><mo stretchy="false" form="prefix">{</mo><msub><mi>f</mi><mi>A</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi mathvariant="normal">Δ</mi><mi>v</mi></msub><mo>=</mo><msub><mi mathvariant="normal">Ω</mi><mi>v</mi></msub><mo>−</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mi mathvariant="normal">Ω</mi><mi>i</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \Omega_A=\max_{u\le1/2}\{f_A(u)+g(u)\},\qquad
+ \Omega_v=\max_{u\le1/2}\{f_A(1-u)+g(u)\},\qquad
+ \Delta_v=\Omega_v-\sum_i\Omega_i.
+ \tag{8}
+</annotation></semantics></math> The positive references satisfy the
+exact odd-node identity
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>A</mi><mi>N</mi><mn>0</mn></msubsup><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mo>∏</mo><mi>i</mi></msub><msubsup><mi>Q</mi><mrow><mi>i</mi><mo>,</mo><mi>N</mi></mrow><mn>0</mn></msubsup><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">A_N^0(-2)=\prod_iQ_{i,N}^0(-2)</annotation></semantics></math>.
+High Newton factors vanish there, low factors are positive, and their
+weighted positive sums have rates
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="normal">Ω</mi><mi>A</mi></msub><annotation encoding="application/x-tex">\Omega_A</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="normal">Ω</mi><mi>i</mi></msub><annotation encoding="application/x-tex">\Omega_i</annotation></semantics></math>.
+Hence
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Ω</mi><mi>A</mi></msub><mo>=</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mi mathvariant="normal">Ω</mi><mi>i</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                       \Omega_A=\sum_i\Omega_i.
+ \tag{9}
+</annotation></semantics></math> This is an identity at the common
+intrinsic probe of this unturned product. It does not assert additivity
+at an arbitrary boundary cut of a closed diagram.</p>
+<p>The original unsquared product equations give
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>f</mi><mi>A</mi><mo>′</mo></msubsup><mo>≥</mo><msubsup><mi>f</mi><mrow><mi>h</mi><mi>h</mi></mrow><mo>′</mo></msubsup></mrow><annotation encoding="application/x-tex">f_A&#39;\ge f_{hh}&#39;</annotation></semantics></math>,
+strictly when the last product has an A child. Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mrow><mi>h</mi><mi>h</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>f</mi><mrow><mi>h</mi><mi>h</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f_{hh}(u)=f_{hh}(1-u)</annotation></semantics></math>,
+integration shows
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Δ</mi><mi>v</mi></msub><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta_v\ge0</annotation></semantics></math>,
+with strictness if an A child is present or the junction has at least
+three inputs. The two-L-input exception has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Δ</mi><mi>v</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta_v=0</annotation></semantics></math>.</p>
+<p>For completeness, the precise transfer of (6) is as follows. Define
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>v</mi></msub><mo>=</mo><msub><mi mathvariant="normal">Π</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi></mrow></msub><msub><mi mathvariant="script">𝒯</mi><mi>s</mi></msub><munderover><mo>∏</mo><mi>i</mi><msub><mo>*</mo><mi>σ</mi></msub></munderover><msub><mi>C</mi><mi>i</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>E</mi><mi>v</mi></msub><mo>=</mo><msub><mi>Q</mi><mi>v</mi></msub><mo>−</mo><msub><mi>C</mi><mi>v</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ C_v=\Pi_{\mathrm{lo}}\mathscr T_s\prod_i^{*_\sigma}C_i,
+ \qquad E_v=Q_v-C_v.
+</annotation></semantics></math> The all-parity low-array Fourier
+comparison preserves the reference majorant in (6). The high output of
+the all-clean product has spectral rate at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mi>i</mi></msub><msub><mi mathvariant="normal">Ω</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum_i\Omega_i</annotation></semantics></math>.
+If a nonempty set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+of inputs is replaced by errors, signed quotient folding gives raw rate
+at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mi>i</mi></msub><msub><mi mathvariant="normal">Ω</mi><mi>i</mi></msub><mo>−</mo><msub><mo>∑</mo><mrow><mi>i</mi><mo>∈</mo><mi>S</mi></mrow></msub><msub><mi>γ</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum_i\Omega_i-\sum_{i\in S}\gamma_i</annotation></semantics></math>.
+High-output extraction has only polynomial cost; low-output extraction
+and reconstruction together cost at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msub><mi>G</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">2G_0</annotation></semantics></math>.
+Consequently, if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>γ</mi><mo>*</mo></msub><annotation encoding="application/x-tex">\gamma_*</annotation></semantics></math>
+is the smallest child gap,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><msub><mi>E</mi><mi>v</mi></msub><msub><mo stretchy="false" form="postfix">∥</mo><mi mathvariant="normal">J</mi></msub><mo>≤</mo><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mi>N</mi><mrow><mo stretchy="true" form="prefix">{</mo><msub><mi mathvariant="normal">Ω</mi><mi>v</mi></msub><mo>−</mo><mi mathvariant="normal">min</mi><mo stretchy="false" form="prefix">(</mo><msub><mi mathvariant="normal">Δ</mi><mi>v</mi></msub><mo>,</mo><msub><mi mathvariant="normal">Δ</mi><mi>v</mi></msub><mo>+</mo><msub><mi>γ</mi><mo>*</mo></msub><mo>−</mo><mn>2</mn><msub><mi>G</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>o</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="true" form="postfix">}</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \|E_v\|_{\mathrm J}
+ \le\exp N\left\{\Omega_v-
+       \min(\Delta_v,\Delta_v+\gamma_*-2G_0)+o(1)\right\}.
+ \tag{10}
+</annotation></semantics></math> Every retained type scalar is bounded
+on the disk. This proves the conditional inequality without assuming
+that a positive child gap automatically pays for the next turn.</p>
+<h2 id="a-quantitative-coupled-source-lower-bound">3. A quantitative
+coupled-source lower bound</h2>
+<p>Suppose the bare junction has at least
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≥</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">k\ge4</annotation></semantics></math>
+L-type children, with profiles
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>+</mo><msub><mi>c</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><mi>g</mi><mo>+</mo><msub><mi>c</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">g+c_1,\ldots,g+c_k</annotation></semantics></math>.
+Other children may have arbitrary fixed strict L/A profiles and their
+own intrinsic pressures. Put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mi>k</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m=k+1</annotation></semantics></math>,
+and define
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ε</mi><mi>k</mi></msub><mo>=</mo><mi>m</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>J</mi><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mi>m</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>J</mi><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mo>−</mo><mfrac><mn>1</mn><mi>m</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mn>2</mn><mi>J</mi><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">]</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \varepsilon_k=m\left[
+ J\left(\frac14+\frac1m\right)+
+ J\left(\frac14-\frac1m\right)-2J\left(\frac14\right)\right].
+ \tag{11}
+</annotation></semantics></math> Then the original pressure satisfies
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><mspace width="1.0em"></mspace><msub><mi mathvariant="normal">Δ</mi><mi>v</mi></msub><mo>≥</mo><mn>2</mn><msub><mi>G</mi><mn>0</mn></msub><mo>−</mo><msub><mi>ε</mi><mi>k</mi></msub><mi>.</mi><mspace width="1.0em"></mspace></mrow></menclose><annotation encoding="application/x-tex">
+                  \boxed{\quad \Delta_v\ge2G_0-\varepsilon_k.\quad}
+ \tag{12}
+</annotation></semantics></math> The lower bound is independent of the
+other children’s profiles and sizes. Their intrinsic constants are
+retained on both sides.</p>
+<p>Here is a finite-source proof. The pressure
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="normal">Ω</mi><mi>v</mi></msub><annotation encoding="application/x-tex">\Omega_v</annotation></semantics></math>
+is the rate of the original positive intrinsic probe
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ϕ</mi><mn>0</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>h</mi><mi>N</mi></msub><munder><mo>∏</mo><mi>i</mi></munder><msubsup><mi>Q</mi><mrow><mi>i</mi><mo>,</mo><mi>N</mi></mrow><mn>0</mn></msubsup><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                    \phi_0\left(h_N\prod_iQ^0_{i,N}\right).
+ \tag{13}
+</annotation></semantics></math> Work along odd levels to prove an
+identity or inequality of the parity-independent classical actions. In
+(13), choose one Newton term with index nearest
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">N/4</annotation></semantics></math>
+from each of the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+indicated L references and from the one intrinsic probe leaf. The latter
+is a device already present in the definition of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="normal">Ω</mi><mi>v</mi></msub><annotation encoding="application/x-tex">\Omega_v</annotation></semantics></math>;
+it is not an added physical component. From every remaining child choose
+a low index nearest one of its intrinsic maximizers
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>β</mi><mi>i</mi></msub><mo>∈</mo><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\beta_i\in(0,1/2)</annotation></semantics></math>.
+Such an interior index is available by the original strict probe
+geometry. The reference coefficient there has rate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>i</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>β</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f_i(\beta_i)</annotation></semantics></math>,
+while a quarter-index coefficient in an L reference has rate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mi>i</mi></msub><mo>+</mo><msub><mi>G</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">c_i+G_0</annotation></semantics></math>.</p>
+<p>All chosen indices are low. Their pair sums are less than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+for sufficiently large levels, and the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+quarter indices alone have total larger than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>,
+since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>≥</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">m\ge5</annotation></semantics></math>.
+They therefore lie in the original positive closed-hub support. The
+whole contraction at this boundary tuple retains its internal state
+constraints.</p>
+<p>To lower-bound its exact trace, expand the selected Newton product at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mi>−</mi><mi>u</mi><mo>−</mo><msup><mi>u</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">z=-u-u^{-1}</annotation></semantics></math>.
+A low factor of index
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+has Laurent coefficient at exponent
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>a</mi><mi>r</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo></mrow></msubsup><mo>=</mo><mfrac><msub><mi>S</mi><mrow><mn>2</mn><mi>n</mi></mrow></msub><mrow><msubsup><mi>S</mi><mi>n</mi><mn>2</mn></msubsup><msub><mi>S</mi><mrow><mi>n</mi><mo>+</mo><mi>r</mi></mrow></msub><msub><mi>S</mi><mrow><mi>n</mi><mo>−</mo><mi>r</mi></mrow></msub></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><mfrac><mn>1</mn><mi>N</mi></mfrac><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><msubsup><mi>a</mi><mi>r</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo></mrow></msubsup><mo>=</mo><msub><mi>b</mi><mrow><mi>n</mi><mi>/</mi><mi>N</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mi>/</mi><mi>N</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>N</mi><mi>/</mi><mi>N</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ a_r^{(n)}=\frac{S_{2n}}{S_n^2S_{n+r}S_{n-r}},
+ \qquad
+ \frac1N\log a_r^{(n)}
+ =b_{n/N}(r/N)+O(\log N/N),
+ \tag{14}
+</annotation></semantics></math> where
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mi>u</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mn>2</mn><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>+</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>J</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>−</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>b</mi><mi>u</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ b_u(t)=J(2u)-2J(u)-J(u+t)-J(u-t),\qquad b_u(0)=g(u).
+ \tag{15}
+</annotation></semantics></math> All these Laurent coefficients are
+nonnegative, symmetric and unimodal. Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><mi>r</mi></msub><annotation encoding="application/x-tex">a_r</annotation></semantics></math>
+be their convolution. At odd levels the exact Fourier trace has
+nonnegative alias contributions, so the interval-tail inequality gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ϕ</mi><mn>0</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mo>∏</mo><msub><mi>e</mi><msub><mi>n</mi><mi>i</mi></msub></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>≥</mo><msup><mi>N</mi><mn>2</mn></msup><mo stretchy="false" form="prefix">(</mo><msub><mi>a</mi><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>a</mi><mrow><mi>N</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><msup><mi>N</mi><mrow><mn>2</mn><mo>−</mo><msup><mi>B</mi><mo>′</mo></msup></mrow></msup><msub><mi>a</mi><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ \phi_0\left(\prod e_{n_i}\right)
+    \ge N^2(a_{N-1}-a_{N+1})
+    \ge N^{2-B&#39;}a_{N-1},
+ \tag{16}
+</annotation></semantics></math> where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>B</mi><mo>′</mo></msup><annotation encoding="application/x-tex">B&#39;</annotation></semantics></math>
+is the fixed total number of incident factors, including the probe. No
+asymptotic derivative of a coefficient is being assumed.</p>
+<p>In the positive convolution coefficient
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">a_{N-1}</annotation></semantics></math>,
+distribute the exponent
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">N-1</annotation></semantics></math>
+as equally as possible among the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+quarter-index factors and put exponent zero on every other factor. Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mi>m</mi><mo>&lt;</mo><mn>1</mn><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">1/m&lt;1/4</annotation></semantics></math>,
+this gives legitimate integer exponents for large
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>.
+Formula (14) then gives the trace lower rate
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mspace width="0.167em"></mspace><msub><mi>b</mi><mrow><mn>1</mn><mi>/</mi><mn>4</mn></mrow></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mi>m</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><munder><mo>∑</mo><mrow><mi>i</mi><mspace width="0.222em"></mspace><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi></mrow></mrow></munder><mi>g</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>β</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ m\,b_{1/4}(1/m)+\sum_{i\ \mathrm{other}}g(\beta_i).
+</annotation></semantics></math> Including the previously chosen
+reference coefficients in (13) gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Ω</mi><mi>v</mi></msub><mo>≥</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>k</mi></munderover><msub><mi>c</mi><mi>i</mi></msub><mo>+</mo><munder><mo>∑</mo><mrow><mi>i</mi><mspace width="0.222em"></mspace><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi></mrow></mrow></munder><msub><mi mathvariant="normal">Ω</mi><mi>i</mi></msub><mo>+</mo><mi>m</mi><mo minsize="120%" maxsize="120%" stretchy="true" form="prefix">[</mo><msub><mi>G</mi><mn>0</mn></msub><mo>+</mo><msub><mi>b</mi><mrow><mn>1</mn><mi>/</mi><mn>4</mn></mrow></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mi>m</mi><mo stretchy="false" form="postfix">)</mo><mo minsize="120%" maxsize="120%" stretchy="true" form="postfix">]</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \Omega_v\ge
+ \sum_{i=1}^{k}c_i+
+ \sum_{i\ \mathrm{other}}\Omega_i+
+ m\bigl[G_0+b_{1/4}(1/m)\bigr].
+ \tag{17}
+</annotation></semantics></math> Subtract
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mi>i</mi></msub><msub><mi mathvariant="normal">Ω</mi><mi>i</mi></msub><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>k</mi></msubsup><mo stretchy="false" form="prefix">(</mo><msub><mi>c</mi><mi>i</mi></msub><mo>+</mo><mn>2</mn><msub><mi>G</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>+</mo><msub><mo>∑</mo><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi></mrow></msub><msub><mi mathvariant="normal">Ω</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum_i\Omega_i=\sum_{i=1}^k(c_i+2G_0)+\sum_{\mathrm{other}}\Omega_i</annotation></semantics></math>.
+Because
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mi>k</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m=k+1</annotation></semantics></math>,
+the difference is exactly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msub><mi>G</mi><mn>0</mn></msub><mo>−</mo><msub><mi>ε</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">2G_0-\varepsilon_k</annotation></semantics></math>,
+proving (12).</p>
+<p>This construction is a single valid lower contribution to the coupled
+positive probe. It has not independently optimized incompatible shared
+boundary states. In particular (17) does not contradict the earlier
+warning against arbitrary additive cap budgets.</p>
+<p>On
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,1/2)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>J</mi><mo>″</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>π</mi><mrow><mi mathvariant="normal">cot</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>π</mi><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">J&#39;&#39;(x)=\pi\cot(\pi x)&gt;0</annotation></semantics></math>.
+Thus
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ε</mi><mi>k</mi></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\varepsilon_k&gt;0</annotation></semantics></math>,
+and Taylor expansion gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ε</mi><mi>k</mi></msub><mo>=</mo><mfrac><mi>π</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mo>+</mo><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mi>k</mi><mo>+</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>−</mi><mn>3</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                     \varepsilon_k=\frac\pi{k+1}+O((k+1)^{-3}).
+ \tag{18}
+</annotation></semantics></math> An explicit bound, requiring no
+asymptotic estimate, is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ε</mi><mi>k</mi></msub><mo>≤</mo><mfrac><mrow><mi>π</mi><mrow><mi mathvariant="normal">sec</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>π</mi><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mi>k</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><mi>k</mi><mo>≥</mo><mn>4</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \varepsilon_k\le
+ \frac{\pi\sec(2\pi/(k+1))}{k+1},\qquad k\ge4.
+ \tag{19}
+</annotation></semantics></math> Indeed, the central second difference
+is the integral of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>J</mi><mo>″</mo></msup><annotation encoding="application/x-tex">J&#39;&#39;</annotation></semantics></math>
+against the symmetric triangular kernel of total mass
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>k</mi><mo>+</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>−</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">(k+1)^{-2}</annotation></semantics></math>,
+and
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><msup><mi>J</mi><mo>″</mo></msup><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>4</mn><mo>+</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><msup><mi>J</mi><mo>″</mo></msup><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>4</mn><mo>−</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo></mrow><mn>2</mn></mfrac><mo>=</mo><mi>π</mi><mrow><mi mathvariant="normal">sec</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>π</mi><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \frac{J&#39;&#39;(1/4+t)+J&#39;&#39;(1/4-t)}2=\pi\sec(2\pi t).
+</annotation></semantics></math> The right side is increasing for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mn>1</mn><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mi>k</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>&lt;</mo><mn>1</mn><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">0\le t\le1/(k+1)&lt;1/4</annotation></semantics></math>.
+In particular, if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>+</mo><mn>1</mn><mo>≥</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">k+1\ge8</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ε</mi><mi>k</mi></msub><mo>≤</mo><mfrac><mrow><mi>π</mi><msqrt><mn>2</mn></msqrt></mrow><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                 \varepsilon_k\le\frac{\pi\sqrt2}{k+1}.
+ \tag{20}
+</annotation></semantics></math></p>
+<h2 id="a-stable-error-rate-along-a-bare-component">4. A stable error
+rate along a bare component</h2>
+<p>Cap every maintained child gap at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msub><mi>G</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">2G_0</annotation></semantics></math>;
+this only weakens an upper estimate. Suppose a bare vertex has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≥</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">k\ge4</annotation></semantics></math>
+L children and its children obey (6) with smallest gap
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><msub><mi>γ</mi><mo>*</mo></msub><mo>≤</mo><mn>2</mn><msub><mi>G</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">0&lt;\gamma_*\le2G_0</annotation></semantics></math>.
+Combining (10) and (12) gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi mathvariant="normal">Δ</mi><mi>v</mi></msub><mo>,</mo><msub><mi mathvariant="normal">Δ</mi><mi>v</mi></msub><mo>+</mo><msub><mi>γ</mi><mo>*</mo></msub><mo>−</mo><mn>2</mn><msub><mi>G</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><msub><mi>γ</mi><mo>*</mo></msub><mo>−</mo><msub><mi>ε</mi><mi>k</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+          \min(\Delta_v,\Delta_v+\gamma_*-2G_0)
+                         \ge\gamma_*-\varepsilon_k.
+ \tag{21}
+</annotation></semantics></math> Thus, whenever the right side is
+positive, the original low profile and a strictly smaller spectral
+remainder pass through the next bare junction. The loss of gap is at
+most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>ε</mi><mi>k</mi></msub><annotation encoding="application/x-tex">\varepsilon_k</annotation></semantics></math>;
+it is not an uncontrolled
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msub><mi>G</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">2G_0</annotation></semantics></math>.</p>
+<p>Consider a maximal connected component
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">𝒰</mi><annotation encoding="application/x-tex">\mathcal U</annotation></semantics></math>
+of bare hubs in a fixed reduced tree. For a vertex
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>,
+let
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mi>v</mi></msub><mo>=</mo><msub><mi>d</mi><mi>v</mi></msub><mo>−</mo><msub><mrow><mi mathvariant="normal">deg</mi><mo>&#8289;</mo></mrow><mi mathvariant="script">𝒰</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>v</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+ b_v=d_v-\deg_{\mathcal U}(v)
+ \tag{22}
+</annotation></semantics></math> be its number of boundary incidences.
+Each incidence is an ordinary original leaf or an edge to a flagged hub.
+In a rooted evaluation toward any boundary incidence of the component,
+these supply L-type children, except for at most the one incidence used
+as the parent of the component root. Hence every vertex has at least
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mi>v</mi></msub><mo>=</mo><msub><mi>b</mi><mi>v</mi></msub><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k_v=b_v-1</annotation></semantics></math>
+L children, uniformly over the possible choices of closing root. Nonroot
+vertices generally have one additional L child; it is simply left among
+the other children in (12).</p>
+<p>Assume
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mi>v</mi></msub><mo>≥</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">b_v\ge5</annotation></semantics></math>
+and the finite path condition
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mi mathvariant="normal">max</mi><mtable><mtr><mtd columnalign="center" style="text-align: center"><mrow><mi mathvariant="script">𝒫</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> a simple path</mtext></mrow></mrow></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mrow><mrow><mtext mathvariant="normal">in </mtext><mspace width="0.333em"></mspace></mrow><mi mathvariant="script">𝒰</mi></mrow></mtd></mtr></mtable></munder><munder><mo>∑</mo><mrow><mi>v</mi><mo>∈</mo><mi mathvariant="script">𝒫</mi></mrow></munder><msub><mi>ε</mi><mrow><msub><mi>b</mi><mi>v</mi></msub><mo>−</mo><mn>1</mn></mrow></msub><mo>&lt;</mo><mn>2</mn><msub><mi>G</mi><mn>0</mn></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \max_{\substack{\mathcal P\text{ a simple path}\\\text{in }\mathcal U}}
+                 \sum_{v\in\mathcal P}\varepsilon_{b_v-1}&lt;2G_0.
+ \tag{23}
+</annotation></semantics></math> Boundary L modules enter with gap
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msub><mi>G</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">2G_0</annotation></semantics></math>
+by (7). Inducting toward the chosen root with (21) proves that an
+outgoing module at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+has gap at least
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msub><mi>G</mi><mn>0</mn></msub><mo>−</mo><munder><mi mathvariant="normal">max</mi><mtable><mtr><mtd columnalign="center" style="text-align: center"><mrow><mi mathvariant="script">𝒫</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> a directed path</mtext></mrow></mrow></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mrow><mrow><mtext mathvariant="normal">from </mtext><mspace width="0.333em"></mspace></mrow><mi>v</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> to its descendants</mtext></mrow></mrow></mtd></mtr></mtable></munder><munder><mo>∑</mo><mrow><mi>w</mi><mo>∈</mo><mi mathvariant="script">𝒫</mi></mrow></munder><msub><mi>ε</mi><mrow><msub><mi>b</mi><mi>w</mi></msub><mo>−</mo><mn>1</mn></mrow></msub><mo>&gt;</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ 2G_0-\max_{\substack{\mathcal P\text{ a directed path}\\
+                        \text{from }v\text{ to its descendants}}}
+                  \sum_{w\in\mathcal P}\varepsilon_{b_w-1}&gt;0.
+ \tag{24}
+</annotation></semantics></math> Every such directed path is a simple
+path of the component, so (23) works for every root direction. The
+coefficient reference at each step is precisely (4), with the original
+profile. The component is finite, so all polynomial costs and uniform
+errors remain
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><mi>N</mi><mi>o</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow></msup><annotation encoding="application/x-tex">e^{No(1)}</annotation></semantics></math>.</p>
+<p>A simpler sufficient condition is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>∑</mo><mrow><mi>v</mi><mo>∈</mo><mi mathvariant="script">𝒰</mi></mrow></munder><msub><mi>ε</mi><mrow><msub><mi>b</mi><mi>v</mi></msub><mo>−</mo><mn>1</mn></mrow></msub><mo>&lt;</mo><mn>2</mn><msub><mi>G</mi><mn>0</mn></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+                      \sum_{v\in\mathcal U}\varepsilon_{b_v-1}&lt;2G_0.
+ \tag{25}
+</annotation></semantics></math> There is also a deliberately coarse
+integer condition. If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mo stretchy="false" form="prefix">|</mo><mi mathvariant="script">𝒰</mi><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">m=|\mathcal U|</annotation></semantics></math>
+and
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mi>v</mi></msub><mo>≥</mo><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>8</mn><mo>,</mo><mn>4</mn><mi>m</mi><mo stretchy="false" form="postfix">)</mo><mspace width="1.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mi>v</mi><mo>∈</mo><mi mathvariant="script">𝒰</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+                        b_v\ge\max(8,4m)\quad(v\in\mathcal U),
+ \tag{26}
+</annotation></semantics></math> then (20),
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi><mo>&lt;</mo><mn>22</mn><mi>/</mi><mn>7</mn></mrow><annotation encoding="application/x-tex">\pi&lt;22/7</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mn>2</mn></msqrt><mo>&lt;</mo><mn>10</mn><mi>/</mi><mn>7</mn></mrow><annotation encoding="application/x-tex">\sqrt2&lt;10/7</annotation></semantics></math>
+give
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>∑</mo><mi>v</mi></munder><msub><mi>ε</mi><mrow><msub><mi>b</mi><mi>v</mi></msub><mo>−</mo><mn>1</mn></mrow></msub><mo>&lt;</mo><mfrac><mrow><mn>220</mn><mi>m</mi></mrow><mrow><mn>49</mn><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>8</mn><mo>,</mo><mn>4</mn><mi>m</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mo>≤</mo><mfrac><mn>55</mn><mn>49</mn></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \sum_v\varepsilon_{b_v-1}
+ &lt;\frac{220m}{49\max(8,4m)}\le\frac{55}{49}.
+ \tag{27}
+</annotation></semantics></math> Catalan’s alternating series gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>&gt;</mo><mn>1</mn><mo>−</mo><mn>1</mn><mi>/</mi><mn>9</mn><mo>=</mo><mn>8</mn><mi>/</mi><mn>9</mn></mrow><annotation encoding="application/x-tex">G&gt;1-1/9=8/9</annotation></semantics></math>.
+Therefore
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msub><mi>G</mi><mn>0</mn></msub><mo>=</mo><mfrac><mrow><mn>4</mn><mi>G</mi></mrow><mi>π</mi></mfrac><mo>&gt;</mo><mfrac><mn>112</mn><mn>99</mn></mfrac><mo>&gt;</mo><mfrac><mn>55</mn><mn>49</mn></mfrac><mo>,</mo><mspace width="2.0em"></mspace><mfrac><mn>112</mn><mn>99</mn></mfrac><mo>−</mo><mfrac><mn>55</mn><mn>49</mn></mfrac><mo>=</mo><mfrac><mn>43</mn><mn>4851</mn></mfrac><mo>&gt;</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ 2G_0=\frac{4G}{\pi}&gt;\frac{112}{99}&gt;\frac{55}{49},
+ \qquad \frac{112}{99}-\frac{55}{49}=\frac{43}{4851}&gt;0.
+ \tag{28}
+</annotation></semantics></math> This proves (25) with an explicit
+positive margin. It works for a component of arbitrary finite shape and
+size. It is a sufficient structural condition, not a sharp
+classification.</p>
+<p>A component consisting of a single bare hub need not satisfy (23) or
+(26): the already proved whole-hub theorem covers every valence at least
+three. Different components are separated by flagged hubs, which accept
+the established spectral budgets and restore the L cone and gap (7).
+Thus each maximal bare component may be either a singleton covered by
+the published theorem or a component satisfying (23).</p>
+<h2 id="the-original-geometric-rate-and-the-source-upper-bound">5. The
+original geometric rate and the source upper bound</h2>
+<p>Use the hypotheses of the original strict ordered Conway theorem,
+including its knot/component and marked framing conditions when a volume
+interpretation is made. Assume every nonsingleton bare component
+satisfies (23). At a flagged hub the original action identities are
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>L</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>c</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>c</mi><mo>=</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mi mathvariant="normal">Ω</mi><mi>i</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi mathvariant="normal">Ω</mi><mi>L</mi></msub><mo>=</mo><mi>c</mi><mo>+</mo><mn>2</mn><msub><mi>G</mi><mn>0</mn></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ f_L(u)=g(u)+c,\qquad c=\sum_i\Omega_i,
+ \qquad \Omega_L=c+2G_0.
+ \tag{29}
+</annotation></semantics></math> At every bare hub, (4) and the positive
+compiler give its original profile
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>Q</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>f</mi><mi>A</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f_Q(u)=f_A(1-u)</annotation></semantics></math>
+and pressure (8), without replacing that profile by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>+</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">g+c</annotation></semantics></math>.
+Equations (6), (21), and (24) therefore give the actual spectral bound
+at exactly that intrinsic pressure.</p>
+<p>A flagged root has normalized source
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ϕ</mi><mi>σ</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>p</mi><mn>0</mn></msub><msub><mo>∏</mo><mi>i</mi></msub><msub><mi>Q</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\phi_\sigma(p_0\prod_iQ_i)</annotation></semantics></math>,
+with its prescribed typed scalar. The physical coupon
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mn>0</mn></msub><mo>=</mo><msubsup><mi>R</mi><mi>s</mi><msub><mi>ϵ</mi><mn>0</mn></msub></msubsup><msub><mi>L</mi><msub><mi>j</mi><mn>0</mn></msub></msub></mrow><annotation encoding="application/x-tex">p_0=R_s^{\epsilon_0}L_{j_0}</annotation></semantics></math>,
+the fixed-valence quotient product, and the trace have polynomial norm
+cost. The original root action identity is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mn>0</mn></msub><mo>=</mo><msub><mo>∑</mo><mi>i</mi></msub><msub><mi mathvariant="normal">Ω</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">F_0=\sum_i\Omega_i</annotation></semantics></math>.
+If no flagged hub exists, expose an existing ordinary leaf and transfer
+its closing turn by the exact Frobenius adjunction. The remaining
+outgoing component is controlled in the direction selected by that
+boundary incidence, and its intrinsic probe is the original
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mn>0</mn></msub><annotation encoding="application/x-tex">F_0</annotation></semantics></math>.
+No additional leaf or exponential budget is introduced.</p>
+<p>The fixed-metric adjunction and all six physical turn scalars are
+those of the published compiler. They change a recursively exposed
+scalar only by recorded bounded factors on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>s</mi><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mi>R</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|s|\le R&lt;1</annotation></semantics></math>.
+The primitive cut still supplies exactly one factor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mi>N</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">H_N(s)</annotation></semantics></math>.
+Consequently, for every fixed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">R&lt;1</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mi mathvariant="normal">sup</mi><mrow><mo stretchy="false" form="prefix">|</mo><mi>s</mi><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mi>R</mi><mo>,</mo><mspace width="0.167em"></mspace><mn>1</mn><mo>≤</mo><msub><mi>j</mi><mi>i</mi></msub><mo>≤</mo><mi>N</mi></mrow></munder><mo stretchy="false" form="prefix">|</mo><msubsup><mi mathvariant="script">ℱ</mi><mrow><mi>N</mi><mo>,</mo><mi mathvariant="bold-italic">𝒋</mi></mrow><mi>ϵ</mi></msubsup><mo stretchy="false" form="prefix">(</mo><msup><mi>q</mi><mi>s</mi></msup><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><mi>N</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>F</mi><mn>0</mn></msub><mo>+</mo><mi>o</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \sup_{|s|\le R,\,1\le j_i\le N}
+        |\mathcal F_{N,\mathbf j}^{\epsilon}(q^s)|
+                 \le\exp\{N(F_0+o(1))\}.
+ \tag{30}
+</annotation></semantics></math> All original auxiliary colors and fixed
+half-twist signs are retained. The bound holds at both parities. The
+complete-color witness at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">s=0</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold-italic">𝒋</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>N</mi><mo>,</mo><mi>…</mi><mo>,</mo><mi>N</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathbf j=(N,\ldots,N)</annotation></semantics></math>,
+is the previously proved nonzero actual packet. Under the same original
+geometric and two-leaf qualifications, it supplies the matching lower
+rate. Thus the logarithmic supremum in (30) has limit
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>π</mi><msub><mi>F</mi><mn>0</mn></msub><mo>=</mo><mrow><mi mathvariant="normal">Vol</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msup><mi>Y</mi><mi>ϵ</mi></msup><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+                              2\pi F_0=\operatorname{Vol}(Y^\epsilon),
+ \tag{31}
+</annotation></semantics></math> where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>Y</mi><mi>ϵ</mi></msup><annotation encoding="application/x-tex">Y^\epsilon</annotation></semantics></math>
+is the original augmented complement with the crossing circles unfilled.
+This conclusion uses the existing complete lower theorem; it does not
+establish a lower bound at a displaced main meridian.</p>
+<h2 id="gaussian-localization-and-what-remains-separate">6. Gaussian
+localization and what remains separate</h2>
+<p>The invariant also supplies a fresh canonical angular Gaussian. For
+an A output, its clean low coefficients are majorized by the original
+positive reference. The old intrinsic probe has a unique strict interior
+maximizer
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi><mo>∈</mo><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\beta\in(0,1/2)</annotation></semantics></math>
+of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>Q</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f_Q(u)+g(u)</annotation></semantics></math>.
+On a small fixed interval about
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math>,
+the low Newton strip bound has a uniform quadratic angular loss; on the
+complementary low-index set the original positive probe has a strict
+compactness gap. The spectral remainder in (6) has its own strict gap.
+Canonical Hermite interpolation bounds that remainder on a strip by its
+J norm times
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">poly</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>N</mi><mo stretchy="false" form="postfix">)</mo><msup><mi>e</mi><mrow><mi>N</mi><mo stretchy="false" form="prefix">|</mo><mi>y</mi><mo stretchy="false" form="prefix">|</mo></mrow></msup></mrow><annotation encoding="application/x-tex">\operatorname{poly}(N)e^{N|y|}</annotation></semantics></math>,
+which its gap absorbs after shrinking the fixed strip. Thus
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>Q</mi><mrow><mi>N</mi><mo>,</mo><mi>s</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>ϑ</mi><mo>+</mo><mi>i</mi><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mi>N</mi><mo stretchy="false" form="prefix">{</mo><msub><mi mathvariant="normal">Ω</mi><mi>Q</mi></msub><mo>−</mo><mi>c</mi><mo stretchy="false" form="prefix">(</mo><mi>ϑ</mi><mo>−</mo><mi>π</mi><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo>+</mo><mi>C</mi><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mi>o</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">
+ |Q_{N,s}(2\cos(\vartheta+iy))|
+ \le\exp N\{\Omega_Q-c(\vartheta-\pi)^2+Cy^2+o(1)\}
+ \tag{32}
+</annotation></semantics></math> for fixed positive
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>,</mo><mi>C</mi><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">c,C,y_0</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>y</mi><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">|y|\le y_0</annotation></semantics></math>.
+This is the same reconstruction proof as the published general-profile
+Gaussian lemma; it uses the original profile majorant, not a claim that
+an arbitrary turn preserves a Gaussian. L outputs have their published
+fresh Gaussian directly.</p>
+<p>Condition (23) is independent of the chosen root direction. Therefore
+each original physical circle can be exposed using the same three typed
+cases as in the published auxiliary-color gap theorem. In the
+ordinary-leaf-at-bare case, the remaining canonical output is now an
+entire bare component controlled by (24), rather than just one hub. It
+has (32) at its original intrinsic pressure. The root contour then gives
+the same strict auxiliary-color deficit on every fixed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>s</mi><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mi>R</mi><mo>&lt;</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">|s|\le R&lt;1/2</annotation></semantics></math>,
+at the original augmented action. This is a consequence of the uniform
+all-root invariant; it does not require reordering open tangles or
+changing the main cut.</p>
+<p>Arbitrary components with too few rigid boundary branches are not
+settled by this argument. Nor does the source upper bound or
+auxiliary-color deficit identify a limiting regular main-meridian
+profile or the smaller volume of a filled knot at displaced meridian.
+Those require the literal main-color leaf asymptotics and conditioned
+whole-source or filling analysis. No such extension is inferred
+here.</p>

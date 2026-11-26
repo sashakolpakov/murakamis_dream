@@ -1,10 +1,8 @@
-# Historical research log
-
-This file preserves chronological checkpoints. Earlier statements may be superseded by later work. Use [README.md](README.md) for the current scope; neither file asserts the general volume conjecture.
-
 # Quantum A-polynomials and volume
 
-Research chronology. Unpublished background input is omitted from this public snapshot.
+Research calculations based on the supplied manuscript,
+*Polyhedral coordinates, Weil–Petersson volumes, and geodesic identities*
+(24 October 2026, 56 pages).
 
 The target is to prove Kashaev's hyperbolic-volume growth through the
 pointed quantum A-structure attached to that invariant. The geometric
@@ -13,6 +11,10 @@ the source, lattice and peripheral factors retained. A relation with
 Jones is a separate question and is not required for this route.
 [The current torsor status](notes/a_polynomial_torsor_status.md)
 compares this proposal with the constructions already in this repo.
+
+[Preserved research routes](notes/research_routes_and_preserved_ideas.md)
+keeps the cube, Fourier, torsor, pretzel and general recoupling ideas
+together, with links to their proofs, limitations and open steps.
 
 29 October, [full filled-volume equality](notes/actual_long_filled_octahedral_belt_stack_volume.md)
 now holds in the research notes for every fixed nonempty signed
@@ -50,9 +52,10 @@ fold-partner branches and at most four Taylor derivatives. The
 is nondegenerate, with explicit source and dual costs. The
 [generic single Racah identity](notes/actual_generic_trivalent_racah_source_identity.md)
 now supplies its finite source formula, including high fold partners;
-the [normal-jet envelope](notes/central_racah_normal_jet_envelope.md)
-proves polynomial conditioning in a fixed central corridor at both
-level parities. Whole-support conditioning remains open. The
+the [whole-support normal-jet envelope](notes/actual_whole_support_boundary_gram_envelope.md)
+now proves polynomial boundary Gram costs on every supported folded
+triple, including its boundary, at both level parities. Physical
+recoupling norms and sharp global energy remain open. The
 [rectified-core geometry](notes/actual_nc_graph_rectified_core_geometry.md)
 constructs the actual augmented graph complement from a supplied
 positive ideal core Q and octahedra, with volume 4b v8+2 Vol(Q).
@@ -64,6 +67,17 @@ weight. [Six-head source pruning](notes/actual_exposed_six_port_complete_circle_
 proves that unsupported complete-circle seam channels vanish before
 the mark or exterior acts, so this is the whole source for the typed
 operation. It does not establish growing-color noncancellation.
+
+The [general four-port source kernel](notes/actual_general_four_port_single_racah_kernel.md)
+now has an exact single-sum formula and a proved seven-factorial
+conversion, with its actual row/column normalization. In the supported
+integer-spin chamber, the
+[positive scalar and normal-jet theorem](notes/actual_supported_racah_common_phase_and_normal_metric.md)
+and [hyperideal volume theorem](notes/actual_four_port_hyperideal_angle_volume.md)
+give the local action as an actual truncated-tetrahedron volume.
+The complete paired normal transport and the actual global edge
+constraints remain essential; four local support inequalities alone
+maximize at an octahedral boundary.
 
 The [positive Newton multiplication law](notes/actual_positive_newton_multiplication.md)
 is an exact nonnegative multiplication table in the original full root
@@ -79,6 +93,17 @@ allows all four untwisted rung colors to vary at polynomial cost, so
 this larger sector has the same augmented cube-complement volume
 limit. Eight cycle colors are still fixed; the full cube invariant,
 even levels for this cube result, and general graph growth remain open.
+
+The [generalization of the proved pretzel route](notes/pretzel_to_general_source_strategy.md)
+records the main direction: extend whole-source growth control and
+weighted Cauchy through changing pair decompositions, prove geometric
+survival, and apply the full Casson--Rivin certificate. Cube and
+positive-circuit ideas are retained with their precise scope.
+For every fixed robust Conway expression, the
+[whole-source variational theorem](notes/actual_positive_conway_variational_limit.md)
+now proves an all-level limit as a concave ideal-angle maximum. Its
+integer support gives a lower bound at every level. Identifying this
+angle problem with the actual complement is still a separate task.
 
 The [outer-color Fourier kernel](notes/actual_outer_color_squared_kernel.md)
 cancels the dangerous endpoint alias through the retained Hermite

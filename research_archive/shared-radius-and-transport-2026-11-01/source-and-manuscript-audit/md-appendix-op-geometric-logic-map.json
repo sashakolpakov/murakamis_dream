@@ -1,0 +1,206 @@
+{
+  "scope": "Bounded geometry interface audit, not full theorem formalization.",
+  "source_hashes": {
+    "manuscript/sections/O-morse-geometric-contribution.tex": "d5cc3e01a847f263b8159e8c1f11c20cf5b244334d8ba02ab34fcf3a6003fe65",
+    "manuscript/sections/P-weak-balance.tex": "2fa93c0a481941f1075feef21a1fc05915457abc2c3d1a125b9508ab130130aa",
+    "manuscript/sections/N-uniform-filling-bound.tex": "aa5bfe82e28c6fa4dd319bc160992aaddb7b62d6672c4271cea398d32b69df82",
+    "manuscript/sections/L-balanced-terminal-fans.tex": "4c5b03317602d547a44028908a99e8cd449922f391c27ba80e8dafd5156f4775",
+    "notes/actual_morse_geometric_contribution.md": "36018844b8e14207ae30ed65180b5f87d62028f0bf12aa2db63f06374ec12654",
+    "notes/actual_morse_cross_filling_period.md": "6ef1f3c2271df37017b448428869b6c4470db3c0d163f52bfaa735966d9d44ed",
+    "notes/general_weak_balance_volume.md": "0ef64d51f203009a6ed144d6e1caed4f6ae3f23d723bdddc8aafee831017cd63",
+    "notes/research_matched_sphere_morse_source.md": "8fdfde4a0d83220f3709048f00cd9373cfbc9d14b05943e9f16f58ab50777f4f",
+    "notes/actual_balanced_terminal_fan_volume.md": "5376d8908a95ebbbcc74ef74f254f9d84b3cc011d4ba4dc72e62ee600508b5f8",
+    "notes/actual_marked_deformed_circle_pattern.md": "2a4e2c979e337b1ff0ccc92414b9eb5c4d36525dff44a534b88d4b2a58582e6c",
+    "notes/actual_deformed_circle_primitive_collar.md": "9463458a3a1da8efe8ff49080076d53ad256827eb43506e3f3e78ebfb3773463",
+    "notes/actual_complete_core_geometric_deformation.md": "6b3be9bb1c1f79f2d3b4a679a8cfa5f6f5df37640354add9ab04fdb8f8c4f580",
+    "notes/actual_augmented_plat_critical_scheme.md": "bc722440c41cab1ed366d24b48be7d186b6a86cde8d2e70f43322891f77c1ebd",
+    "notes/actual_original_boundary_stationary_character.md": "44863c92734e7175ace911896989bd2ac7b1f46103603d2733766cccc29072ad",
+    "notes/general_source_regulator_hyperbolic_equality.md": "2e86cdb646af4cb348081d0e76a698c109af98286904dfe66664954a043ed8ac",
+    "notes/general_peripheral_representation_volume_bound.md": "74ff37913153fce15de9729b5cbe53b23d4e236b9232232359e30769f7082feb",
+    "notes/actual_pretzel_marked_regulator_and_filling_action.md": "35fbe009565c49b4d6513bd38012836834ca14431a08bd2f1db8f4f600cc0241",
+    "notes/bloch_lift_and_boundary_torsor.md": "d4e8f4295a355c930de26b7f385882688c9f85c2cae1edc9f32b71d6eddeba7d",
+    "notes/general_marked_multicusp_gluing_rigidity.md": "f882d2c7d1f723590391d3cc03dcd9bba7a12d13c2e006c6dea570e1b4af1b42"
+  },
+  "dependency_nodes": {
+    "input": {
+      "requires": [],
+      "claim": "Finite oriented simple triangulated sphere; dual perfect matching; nonmatching marked edge; retained cyclic frames and epsilon; original component test."
+    },
+    "topology": {
+      "requires": [
+        "input"
+      ],
+      "claim": "Inverse cut gives the original S3 augmented diagram, primitive disk bases and n=epsilon-2p."
+    },
+    "packing": {
+      "requires": [
+        "input"
+      ],
+      "claim": "Strict Hall feasibility, interior entropy maximizer, injective center development and support halfspaces give positive ideal right-angled cut polyhedron."
+    },
+    "complete_metric": {
+      "requires": [
+        "topology",
+        "packing"
+      ],
+      "claim": "Original face pairings and cusp links give complete Y with Vol(Y)=2Vol(Q)."
+    },
+    "finite_source": {
+      "requires": [
+        "topology"
+      ],
+      "claim": "Exact homogeneous Morse coefficient, original degree d targets, protected zeros, full Hermite and raw scalars."
+    },
+    "complete_action": {
+      "requires": [
+        "packing",
+        "complete_metric",
+        "finite_source"
+      ],
+      "claim": "Original endpoint determinant calibration and facet coning give P(q*)=Phi=Vol(Y)/(2pi), gradient0."
+    },
+    "circle_germ": {
+      "requires": [
+        "packing",
+        "complete_action"
+      ],
+      "claim": "Marked line-circle Jacobian invertible; analytic common pattern and source stationary radii agree."
+    },
+    "group_germ": {
+      "requires": [
+        "topology",
+        "circle_germ"
+      ],
+      "claim": "Full reflection prefixes, cup/cap identities, threading and signed Hurwitz maps give actual framed rho_delta near rho0."
+    },
+    "peripheral": {
+      "requires": [
+        "group_germ"
+      ],
+      "claim": "Primitive logs U=-Log R0-epsilon Log(-J), V=2Log(-J); actual main groups remain parabolic."
+    },
+    "regulator": {
+      "requires": [
+        "complete_action",
+        "peripheral"
+      ],
+      "claim": "Fixed oriented fundamental-chain volume differential gives absolute corrected action identity."
+    },
+    "critical_point": {
+      "requires": [
+        "circle_germ",
+        "peripheral"
+      ],
+      "claim": "Multivariate reciprocal-slope IFT gives first charge; U+pV=-2pi i and Im delta>0."
+    },
+    "metric_completion": {
+      "requires": [
+        "complete_metric",
+        "group_germ",
+        "peripheral",
+        "critical_point"
+      ],
+      "claim": "Actual small log periods, nonunit auxiliary multiplier and primitive angle2pi fill smooth solid tori; main cusps remain complete."
+    },
+    "filled_action": {
+      "requires": [
+        "regulator",
+        "metric_completion"
+      ],
+      "claim": "Same boundary triangulation axis comparison identifies 2pi Re S with actual filled metric volume."
+    },
+    "central_asymptotic": {
+      "requires": [
+        "finite_source",
+        "complete_action",
+        "critical_point"
+      ],
+      "claim": "O analytic part: H1/H2, first Gaussian and all charge currents give nonzero central period at both parities."
+    },
+    "central_volume": {
+      "requires": [
+        "filled_action",
+        "central_asymptotic"
+      ],
+      "claim": "Central contribution rate equals actual original filled complement volume."
+    },
+    "weak_balance": {
+      "requires": [
+        "complete_action"
+      ],
+      "claim": "Additional actual complete-radius inequalities, with fixed finite data."
+    },
+    "remainder": {
+      "requires": [
+        "finite_source",
+        "complete_action",
+        "weak_balance"
+      ],
+      "claim": "P power flattening and one shared torus give full-minus-central real-cube gap."
+    },
+    "hermite_bound": {
+      "requires": [
+        "finite_source"
+      ],
+      "claim": "N finite operator norm transfers the remainder at subexponential cost for fixed powers."
+    },
+    "full_volume": {
+      "requires": [
+        "topology",
+        "central_volume",
+        "remainder",
+        "hermite_bound"
+      ],
+      "claim": "Increase fixed long-twist threshold; central rate dominates, hence original normalized invariant volume limit."
+    }
+  },
+  "topological_order": [
+    "input",
+    "topology",
+    "packing",
+    "complete_metric",
+    "finite_source",
+    "complete_action",
+    "hermite_bound",
+    "circle_germ",
+    "weak_balance",
+    "group_germ",
+    "remainder",
+    "peripheral",
+    "regulator",
+    "critical_point",
+    "metric_completion",
+    "central_asymptotic",
+    "filled_action",
+    "central_volume",
+    "full_volume"
+  ],
+  "dependency_cycle": false,
+  "exact_checks": [
+    "primitive meridian eigenvalues and determinant, epsilon=-1",
+    "primitive meridian eigenvalues and determinant, epsilon=0",
+    "primitive meridian eigenvalues and determinant, epsilon=1",
+    "O(mcgeq24) exact real boundary cancellation for either sign of p",
+    "O(mcgeq18-20) exact differential after boundary correction",
+    "O(mcgeq28) exact hyperbolic tube metric pullback"
+  ],
+  "internal_reference_checks": {
+    "manuscript/sections/O-morse-geometric-contribution.tex": {
+      "references": 99,
+      "distinct_targets": 51,
+      "missing": [],
+      "duplicate_targets": []
+    },
+    "manuscript/sections/P-weak-balance.tex": {
+      "references": 24,
+      "distinct_targets": 18,
+      "missing": [],
+      "duplicate_targets": []
+    }
+  },
+  "limitations": [
+    "No reproof or rerun of analytic H1/H2 constants and Fourier tails.",
+    "No proof-assistant verification of Hall packing, fundamental-chain differential, or metric completion.",
+    "Full invariant conclusion requires weak balance/quantified remainder and fixed sufficiently long powers."
+  ]
+}

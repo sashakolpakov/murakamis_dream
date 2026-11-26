@@ -331,7 +331,7 @@ regular-cell metric above.
 
 Reproducible local commands (no dependency installation):
 
-    python3 experiments/audit_actual_balanced_octahedral_belt_stack_volume.py
+    /Users/sasha/.venvs/global/bin/python experiments/audit_actual_balanced_octahedral_belt_stack_volume.py
     .venv/bin/python experiments/audit_actual_balanced_octahedral_belt_stack_volume.py --software-only
 
 The first uses NumPy for full original source matrices. The second

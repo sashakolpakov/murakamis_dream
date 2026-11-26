@@ -1,0 +1,182 @@
+<h1
+id="independent-calculation-of-the-normalized-ordered-collar-operator">Independent
+calculation of the normalized ordered collar operator</h1>
+<p>1 November 2026. This records a local algebraic check. It does not
+assert a global preferred-longitude formula.</p>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>B</mi><mo>∈</mo><msub><mrow><mi mathvariant="normal">S</mi><mi mathvariant="normal">L</mi></mrow><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><mi mathvariant="double-struck">ℂ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">A,B\in\mathrm{SL}_2(\mathbb C)</annotation></semantics></math>
+have equal trace, and set
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>=</mo><mi>B</mi><mi>A</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>K</mi><mo>=</mo><msup><mi>P</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>−</mo><mi>I</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>δ</mi><mo>=</mo><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><mi>K</mi><mo>≠</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ P=BA,\qquad K=P^{-1}-I,\qquad \delta=\det K\ne0.
+</annotation></semantics></math> The actual positive ordered convention
+is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo>,</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo>↦</mo><mo stretchy="false" form="prefix">(</mo><msup><mi>A</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mi>B</mi><mi>A</mi><mo>,</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ (A,B)\longmapsto(A^{-1}BA,A).
+ \tag{1}
+</annotation></semantics></math> This is the convention of equation
+(5.2) in /Users/sasha/volume-conjecture/notes/marked_braid_holonomy.md.
+Its two strand paths carry the ordered input vectors
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a,b)</annotation></semantics></math>
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msup><mi>A</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mi>b</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(A^{-1}b,a)</annotation></semantics></math>.</p>
+<h2 id="algebra-without-eigenframes">1. Algebra without eigenframes</h2>
+<p>Cayley–Hamilton and equality of the traces give
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mi>B</mi><mo>=</mo><mi>A</mi><mi>K</mi><mo>,</mo><mspace width="1.0em"></mspace><mi>K</mi><mi>A</mi><msup><mi>K</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>=</mo><msup><mi>A</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mi>B</mi><mi>A</mi><mo>,</mo><mspace width="1.0em"></mspace><msup><mi>K</mi><mn>2</mn></msup><mo>=</mo><mi>−</mi><mi>δ</mi><msup><mi>P</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>,</mo><mspace width="1.0em"></mspace><msup><mi>K</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo>=</mo><mi>−</mi><mi>P</mi><mi>/</mi><mi>δ</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ KB=AK,\quad KAK^{-1}=A^{-1}BA,\quad
+ K^2=-\delta P^{-1},\quad K^{-2}=-P/\delta.
+ \tag{2}
+</annotation></semantics></math> Consequently the operator
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">ℬ</mi><mo>=</mo><mi>δ</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>K</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msup><mi>A</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>⊗</mo><msup><mi>K</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo><mspace width="0.167em"></mspace><mi mathvariant="sans-serif">𝗌</mi></mrow><annotation encoding="application/x-tex">
+ \mathcal B=\delta(K^{-1}A^{-1}\otimes K^{-1})\,\mathsf{s}
+ \tag{3}
+</annotation></semantics></math> has square
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msup><mi mathvariant="script">ℬ</mi><mn>2</mn></msup></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><msup><mi>δ</mi><mn>2</mn></msup><mo stretchy="false" form="prefix">(</mo><msup><mi>K</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msup><mi>A</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msup><mi>K</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo><mo>⊗</mo><mo stretchy="false" form="prefix">(</mo><msup><mi>K</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><msup><mi>A</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><msup><mi>δ</mi><mn>2</mn></msup><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>A</mi><mi>/</mi><mi>δ</mi><mo stretchy="false" form="postfix">)</mo><mo>⊗</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>B</mi><mi>/</mi><mi>δ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>A</mi><mo>⊗</mo><mi>B</mi><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+ \begin{aligned}
+ \mathcal B^2
+ &amp;=\delta^2(K^{-1}A^{-1}K^{-1})
+       \otimes(K^{-2}A^{-1})\\
+ &amp;=\delta^2(-A/\delta)\otimes(-B/\delta)
+ =A\otimes B .
+ \end{aligned}
+ \tag{4}
+</annotation></semantics></math> Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="sans-serif">𝗌</mi><annotation encoding="application/x-tex">\mathsf{s}</annotation></semantics></math>
+interchanges the two tensor factors. The order in (4) is essential. In
+particular the first factor is not
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>K</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><msup><mi>A</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">K^{-2}A^{-1}</annotation></semantics></math>.</p>
+<p>The operator exchanges the two eigenvalue labels:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">ℬ</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo>⊗</mo><mi>I</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo>⊗</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mi mathvariant="script">ℬ</mi><mo>,</mo><mspace width="2.0em"></mspace><mi mathvariant="script">ℬ</mi><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo>⊗</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo>⊗</mo><mi>I</mi><mo stretchy="false" form="postfix">)</mo><mi mathvariant="script">ℬ</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \mathcal B(A\otimes I)=(I\otimes B)\mathcal B,\qquad
+ \mathcal B(I\otimes B)=(A\otimes I)\mathcal B.
+ \tag{5}
+</annotation></semantics></math> It is equivariant under a common
+conjugation of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A,B</annotation></semantics></math>.
+It is regular where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>
+is a unit, including the noncentral parabolic point. All its integer
+powers follow from (4), since it is invertible.</p>
+<h2 id="the-four-states-and-the-parabolic-limit">2. The four states and
+the parabolic limit</h2>
+<p>In a common vector basis write
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mi>λ</mi></mtd><mtd columnalign="center" style="text-align: center"><mi>α</mi></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><msup><mi>λ</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mi>B</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><msup><mi>λ</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>β</mi></mtd><mtd columnalign="center" style="text-align: center"><mi>λ</mi></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ A=\begin{pmatrix}\lambda&amp;\alpha\\0&amp;\lambda^{-1}\end{pmatrix},
+ \qquad
+ B=\begin{pmatrix}\lambda^{-1}&amp;0\\\beta&amp;\lambda\end{pmatrix}.
+ \tag{6}
+</annotation></semantics></math> Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>=</mo><mi>−</mi><mi>α</mi><mi>β</mi></mrow><annotation encoding="application/x-tex">\delta=-\alpha\beta</annotation></semantics></math>.
+In the ambient tensor basis
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>e</mi><mn>1</mn></msub><msub><mi>e</mi><mn>1</mn></msub><mo>,</mo><msub><mi>e</mi><mn>1</mn></msub><msub><mi>e</mi><mn>2</mn></msub><mo>,</mo><msub><mi>e</mi><mn>2</mn></msub><msub><mi>e</mi><mn>1</mn></msub><mo>,</mo><msub><mi>e</mi><mn>2</mn></msub><msub><mi>e</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(e_1e_1,e_1e_2,e_2e_1,e_2e_2)</annotation></semantics></math>,
+direct substitution in (3) gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">ℬ</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mi>α</mi><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mi>β</mi><mi>λ</mi><mo stretchy="false" form="postfix">)</mo></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mi>λ</mi></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mi>α</mi></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><msup><mi>λ</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mi>β</mi><mi>λ</mi><mi>/</mi><mi>α</mi></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mi>β</mi></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \mathcal B=
+ \begin{pmatrix}
+ 0&amp;0&amp;0&amp;-\alpha/(\beta\lambda)\\
+ 0&amp;-\lambda&amp;0&amp;-\alpha\\
+ 0&amp;0&amp;-\lambda^{-1}&amp;0\\
+ -\beta\lambda/\alpha&amp;0&amp;-\beta&amp;0
+ \end{pmatrix}.
+ \tag{7}
+</annotation></semantics></math> This expression has no denominator
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>−</mo><msup><mi>λ</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\lambda-\lambda^{-1}</annotation></semantics></math>.</p>
+<p>Put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mi>λ</mi><mo>−</mo><msup><mi>λ</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">h=\lambda-\lambda^{-1}</annotation></semantics></math>
+and use the eigenvectors
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mo>+</mo></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>0</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>t</mi></msup><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>a</mi><mo>−</mo></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>α</mi><mo>,</mo><mi>h</mi><msup><mo stretchy="false" form="postfix">)</mo><mi>t</mi></msup><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>b</mi><mo>+</mo></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>t</mi></msup><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>b</mi><mo>−</mo></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>h</mi><mo>,</mo><mi>−</mi><mi>β</mi><msup><mo stretchy="false" form="postfix">)</mo><mi>t</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ a_+=(1,0)^t,\quad a_-=(-\alpha,h)^t,\qquad
+ b_+=(0,1)^t,\quad b_-=(h,-\beta)^t.
+</annotation></semantics></math> For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">h\ne0</annotation></semantics></math>,
+equation (7) gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mi mathvariant="script">ℬ</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>a</mi><mo>+</mo></msub><mo>⊗</mo><msub><mi>b</mi><mo>+</mo></msub><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mi>−</mi><mi>λ</mi><mspace width="0.167em"></mspace><msub><mi>a</mi><mo>+</mo></msub><mo>⊗</mo><msub><mi>b</mi><mo>+</mo></msub><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mi mathvariant="script">ℬ</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>a</mi><mo>−</mo></msub><mo>⊗</mo><msub><mi>b</mi><mo>−</mo></msub><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mi>−</mi><msup><mi>λ</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msub><mi>a</mi><mo>−</mo></msub><mo>⊗</mo><msub><mi>b</mi><mo>−</mo></msub><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mi mathvariant="script">ℬ</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>a</mi><mo>+</mo></msub><mo>⊗</mo><msub><mi>b</mi><mo>−</mo></msub><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mi>−</mi><mfrac><mrow><mi>λ</mi><mi>β</mi></mrow><mi>α</mi></mfrac><msub><mi>a</mi><mo>−</mo></msub><mo>⊗</mo><msub><mi>b</mi><mo>+</mo></msub><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mi mathvariant="script">ℬ</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>a</mi><mo>−</mo></msub><mo>⊗</mo><msub><mi>b</mi><mo>+</mo></msub><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mi>−</mi><mfrac><mi>α</mi><mrow><mi>λ</mi><mi>β</mi></mrow></mfrac><msub><mi>a</mi><mo>+</mo></msub><mo>⊗</mo><msub><mi>b</mi><mo>−</mo></msub><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+ \begin{aligned}
+ \mathcal B(a_+\otimes b_+)&amp;=-\lambda\,a_+\otimes b_+,\\
+ \mathcal B(a_-\otimes b_-)&amp;=-\lambda^{-1}a_-\otimes b_-,\\
+ \mathcal B(a_+\otimes b_-)&amp;=
+       -\frac{\lambda\beta}{\alpha}a_-\otimes b_+,\\
+ \mathcal B(a_-\otimes b_+)&amp;=
+       -\frac{\alpha}{\lambda\beta}a_+\otimes b_- .
+ \end{aligned}
+ \tag{8}
+</annotation></semantics></math> The two mixed coefficients multiply to
+one. The mixed states are exchanged, not multiplied separately by the
+equal-state coefficient. The eigenframes degenerate at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">h=0</annotation></semantics></math>,
+but (7) remains regular. These identities were also checked by direct
+symbolic multiplication, including both relations in (5); the displayed
+derivations are the proof.</p>
+<h2 id="what-normalization-3-means-geometrically">3. What normalization
+(3) means geometrically</h2>
+<p>The unnormalized actual strand transport is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msup><mi>A</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>⊗</mo><mi>I</mi><mo stretchy="false" form="postfix">)</mo><mi mathvariant="sans-serif">𝗌</mi></mrow><annotation encoding="application/x-tex">(A^{-1}\otimes I)\mathsf{s}</annotation></semantics></math>.
+The outgoing representation is identified with the incoming one by the
+common projective map
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>K</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">K^{-1}</annotation></semantics></math>.
+Choose either determinant-one lift
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>K</mi><mo accent="true">̂</mo></mover><mo>=</mo><mi>K</mi><mi>/</mi><msqrt><mi>δ</mi></msqrt></mrow><annotation encoding="application/x-tex">\widehat K=K/\sqrt{\delta}</annotation></semantics></math>.
+Applying
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mover><mi>K</mi><mo accent="true">̂</mo></mover><mrow><mi>−</mi><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">\widehat K^{-1}</annotation></semantics></math>
+to both outgoing vectors gives exactly (3). Changing the common
+square-root sign affects both vectors and hence does not change their
+tensor. This explains the factor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>;
+it is not an additional asserted knot normalization.</p>
+<p>Replacing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>
+by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mi>K</mi></mrow><annotation encoding="application/x-tex">cK</annotation></semantics></math>
+leaves (3) unchanged provided
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>
+is, as defined, recomputed as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">det</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mi>K</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\det(cK)</annotation></semantics></math>.
+Thus (3) records the normalized two-path comparison intrinsically. It
+does not identify the actual selected input eigenlines by itself.</p>
+<h2 id="comparison-with-the-native-collar-words">4. Comparison with the
+native collar words</h2>
+<p>The native determinant-one punctures are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>A</mi><mi>g</mi></msub><mo>,</mo><msub><mi>B</mi><mi>g</mi></msub><mo>,</mo><msub><mi>C</mi><mi>g</mi></msub><mo>,</mo><msub><mi>D</mi><mi>g</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(A_g,B_g,C_g,D_g)</annotation></semantics></math>,
+with product one. The pure boundary tables are
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="center" style="text-align: center"></mtd><mtd columnalign="center" style="text-align: center"><mrow><mtext mathvariant="normal">input </mtext><mspace width="0.333em"></mspace></mrow><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="center" style="text-align: center"><mrow><mtext mathvariant="normal">output </mtext><mspace width="0.333em"></mspace></mrow><mo stretchy="false" form="prefix">(</mo><msup><mi>a</mi><mo>′</mo></msup><mo>,</mo><msup><mi>b</mi><mo>′</mo></msup><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="center" style="text-align: center"><msub><mi>C</mi><mn>0</mn></msub></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>v</mi></mtd><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">(</mo><msub><mi>B</mi><mi>g</mi></msub><mo>,</mo><msub><mi>A</mi><mi>g</mi></msub><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">(</mo><msubsup><mi>C</mi><mi>g</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mo>,</mo><msubsup><mi>D</mi><mi>g</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="center" style="text-align: center"><msubsup><mi>S</mi><mi>v</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>w</mi></mtd><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">(</mo><msubsup><mi>B</mi><mi>g</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mo>,</mo><msubsup><mi>C</mi><mi>g</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">(</mo><msub><mi>A</mi><mi>g</mi></msub><mo>,</mo><msub><mi>D</mi><mi>g</mi></msub><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="center" style="text-align: center"><msubsup><mi>S</mi><mi>w</mi><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+ \begin{array}{c|c|c|c}
+ &amp;\text{input }(a,b)&amp;\text{output }(a&#39;,b&#39;)&amp;C_0\\ \hline
+ v&amp;(B_g,A_g)&amp;(C_g^{-1},D_g^{-1})&amp;S_v^{-1}\\
+ w&amp;(B_g^{-1},C_g^{-1})&amp;(A_g,D_g)&amp;S_w^{-1}.
+ \end{array}
+ \tag{9}
+</annotation></semantics></math> They follow from the actual six
+white/shaded returns. Both rows intertwine the two generators, not
+merely their traces, and preserve
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>=</mo><mi>b</mi><mi>a</mi><mo>=</mo><msup><mi>b</mi><mo>′</mo></msup><msup><mi>a</mi><mo>′</mo></msup></mrow><annotation encoding="application/x-tex">P=ba=b&#39;a&#39;</annotation></semantics></math>.
+Therefore
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>0</mn></msub><mi>K</mi></mrow><annotation encoding="application/x-tex">C_0K</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>=</mo><msup><mi>P</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>−</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">K=P^{-1}-I</annotation></semantics></math>
+in the input frame, implements the actual positive collar (1). Its sign
+agrees with the full
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">M=1</annotation></semantics></math>
+positive-collar matrix calibration.</p>
+<p>The geometric ideal flags on a native disk side have opposite
+selections. Formula (8), rather than the equal-state specialization, is
+the appropriate raw bookkeeping. Alternatively one may explicitly
+reverse one oriented strand path and switch its selected eigenline; its
+transport coefficient is unchanged in determinant-normalized
+eigenframes. That operation can turn a raw opposite pair into an
+equal-selected pair, but a closed calculation must still cancel the new
+endpoint frames consistently.</p>
+<p>The corrected sewing construction first glues the full boundary
+representations by (9) and (1), and then decorates the resulting
+original group representation by its actual positive-main-meridian
+eigenflags. That construction respects the necessary Weyl exchange. It
+rebuilds the triangle maps rather than retaining the known incorrect
+fixed-white odd chart. It gives a local decorated representation. A
+global preferred-longitude product still requires the original closed
+path and framing calculation.</p>
+<h2 id="source-references-and-a-transcription-correction">5. Source
+references and a transcription correction</h2>
+<p>The reviewed inputs are
+/private/tmp/md-decorated-hurwitz-line-transport.md and
+/private/tmp/md-nonparabolic-pure-pages-and-hurwitz-collar.md. In the
+former, equation (15) initially contained commas immediately after three
+scalar coefficients. They mean multiplication and should be replaced by
+ordinary TeX spacing. No algebraic correction is needed.</p>

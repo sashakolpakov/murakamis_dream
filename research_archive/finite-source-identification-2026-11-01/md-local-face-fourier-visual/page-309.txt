@@ -1,0 +1,62 @@
+N. Uniform bounds for inserting twist powers
+296
+The polynomial degree and the identities (N.5)–(N.7), rather than a hypothesis about
+arbitrary polynomial solutions of a recurrence, are the source assumptions used here. The
+scalar inequalities (N.1)–(N.4) themselves hold for every polynomial of the indicated degree
+and every N ≥2.
+N.2
+The local source identity from a finite Fourier transform
+We give the local matrix calculation, including its normalization.
+It explains both the
+annihilating polynomial and the homogeneous face polynomial used above. No decomposition
+into simple modules is needed.
+Put Q = q2. In the balanced basis e0, . . . , ed of the complete-color module, the original
+matrices are
+Kei = qd−2iei,
+Fei = (1 −Qi+1)ei+1,
+Eei = (Q−i −1)ei−1.
+Here E = (q −q−1)2E, and a term outside 0, . . . , d is zero. These formulas follow by replacing
+the usual basis vector vi by vi/(Q; Q)i; all these denominators are nonzero because i < N.
+The pair matrices are
+K12 = K ⊗K,
+F12 = F ⊗I + K−1 ⊗F,
+E12 = E ⊗K + I ⊗E,
+Ω= F12E12 + qK12 + q−1K−1
+12 .
+On an input eu ⊗ev, set U = Qu, V = Qv. Multiplying these displayed matrices gives the
+diagonal coefficient D, and the two coefficients A+, A−that change the first index by +1, −1:
+D(U, V ) = 2qU + 2q−1V −1 −(q + q−1)U/V,
+A+(U, V ) = (V −1 −1)(1 −QU),
+A−(U, V ) = (Q−1V −1 −1)(1 −U).
+(N.8)
+The second index changes by the opposite amount. The positive shift vanishes when u = d or
+v = 0, and the negative shift vanishes when u = 0 or v = d. Thus these formulas retain the
+true integer total and all physical endpoints.
+For independent outer face variables x, y, define an operator on polynomials in z by
+(Tg)(z) = −q−1
+ 
+1 + q(x + y)
+z
++ q2xy
+z2
+!
+g(Q−1z)
+−q
+ 
+1 + q−1(x + y)
+z
++ q−2xy
+z2
+!
+g(Qz)
++
+ 
+2(x + y)
+z
++ (q + q−1)xy
+z2
+!
+g(z).
+(N.9)
+Its denominators cancel on polynomials. Indeed,
+Tzj = Ajzj + Bj(x + y)zj−1 + Cjxyzj−2,

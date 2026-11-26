@@ -1,0 +1,169 @@
+<h1
+id="dependency-check-after-the-one-high-whole-trace-obstruction">Dependency
+check after the one-high whole-trace obstruction</h1>
+<p>1 November 2026. Read-only check of the publication checkout
+/private/tmp/murakamis_dream-publication. No repository or checkout
+edits.</p>
+<p>The three checked publication files are byte-identical to their
+workspace copies:</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>File under notes/</th>
+<th>SHA256</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>actual_main_meridian_source_bounds.md</td>
+<td>153abbbdaac292c763c787a3de235ec123194d4aae944d6f10f111fc17a967d7</td>
+</tr>
+<tr>
+<td>actual_main_meridian_component_extension.md</td>
+<td>a75f9fbca9a0c6ea1302ed229826e16110f773b600195b453d8348b6659dae66</td>
+</tr>
+<tr>
+<td>actual_main_meridian_regular_bare_trace.md</td>
+<td>bb545421973876c313e33c32d4fb7e171846fc1978d6b4070941071ccbc27663</td>
+</tr>
+</tbody>
+</table>
+<h2 id="singleton-hubs">1. Singleton hubs</h2>
+<p>The pointwise comparison in source_bounds Section 2.1, (F3), assumes
+that every incident Newton index is at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>m</mi><mi>N</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">⌊</mo><mo stretchy="false" form="prefix">(</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo></mrow><annotation encoding="application/x-tex">m_N=\lfloor(N-1)/2\rfloor</annotation></semantics></math>.
+Its arbitrary-array version in Section 2.5, (F19), assumes low support
+in every input array. The output application (F20) also explicitly
+restricts the inserted probe to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≤</mo><msub><mi>m</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">k\le m_N</annotation></semantics></math>.
+The paragraph following (F20) states that this comparison does not cover
+a high input or high output.</p>
+<p>Section 3.3 uses precisely those hypotheses: (H14) has low input
+projections and a low output probe. The reference replacement (H15) is
+coefficientwise in the complete positive algebra. It does not introduce
+a moving high-index factor into (H14).</p>
+<p>All other sectors are estimated differently in Section 3.4. The exact
+Chebyshev folding bounds of Section 1.2, (D8)–(D10), give polynomial
+quotient-multiplication cost in the full value-and-normal norm. A low
+input with coefficient profile
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>+</mo><mi>g</mi></mrow><annotation encoding="application/x-tex">c+g</annotation></semantics></math>
+has norm rate at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>+</mo><mn>2</mn><msub><mi>G</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">c+2G_0</annotation></semantics></math>.
+A high input with coefficient profile
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>
+has norm rate at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>,
+since each high Newton basis element has polynomial full-normal
+norm.</p>
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+inputs, of which
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>
+are high, (H18) consequently gives raw rate
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>c</mi><mi>b</mi></msub><mo>+</mo><mn>2</mn><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo>−</mo><mi>h</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>G</mi><mn>0</mn></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \sum c_b+2(B-h)G_0.
+</annotation></semantics></math> A high output uses a polynomial-norm
+probe and polynomial-norm reconstruction, giving (H19) at that same
+rate. A low output costs at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mn>0</mn></msub><annotation encoding="application/x-tex">G_0</annotation></semantics></math>
+for its probe and another
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mn>0</mn></msub><annotation encoding="application/x-tex">G_0</annotation></semantics></math>
+for reconstruction, giving (H20). These are absolute norm estimates;
+they are not ratios to the complete trace of the same index tuple.</p>
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>≥</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">B\ge3</annotation></semantics></math>,
+the independently proved geometric inequality (H6) gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>ω</mi><mo accent="true">̂</mo></mover><mi>B</mi></msub><mo>&gt;</mo><mn>2</mn><mi>B</mi><msub><mi>G</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\widehat\omega_B&gt;2BG_0</annotation></semantics></math>.
+Thus every high-input contribution and the high output of the all-low
+input product lie strictly below the original turned pressure. The new
+one-high obstruction is consistent with this: its positive complete
+scalar may be much smaller than this absolute coupled budget.</p>
+<p>The
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">B=2</annotation></semantics></math>
+exceptions are also safe. Two low input indices have sum at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>,
+so their raw polynomial product is canonical and unchanged. One high
+input and low output produce a cubic trace with two low incident
+factors; its degree is at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>d</mi><mo>&lt;</mo><mn>2</mn><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2d&lt;2N-1</annotation></semantics></math>,
+equivalently the exact return support is empty because those two low
+indices have sum below
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>.
+The old high-input/probe gap is applied only after this exact equality.
+Cases with high output and/or two high inputs are covered by the strict
+norm savings in (H19)–(H20). No one-high moving-versus-complete
+pointwise inequality is used.</p>
+<h2 id="adjacent-path-admissible-components">2. Adjacent path-admissible
+components</h2>
+<p>In component_extension Section 3, the clean branch in (15) has low
+coefficient support. Equation (20) defines its next clean output by
+projecting the product of clean children onto low output indices. Every
+factor in the trace to which source_bounds (F19) is applied is therefore
+low, including the output probe.</p>
+<p>The positive reference polynomial may have additional complete high
+coefficients. Enlarging the complete comparison from the low projection
+to that full positive reference uses positivity of the old
+multiplication only. It does not extend the moving trace comparison to
+high factors.</p>
+<p>The remainder estimate (21) is instead a full norm estimate. An input
+error saves its maintained
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>γ</mi><mi>i</mi></msub><annotation encoding="application/x-tex">\gamma_i</annotation></semantics></math>
+in the raw product. High extraction costs a power of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>;
+low extraction and reconstruction can cost
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msub><mi>G</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">2G_0</annotation></semantics></math>.
+This cost is written explicitly in
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>γ</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>≥</mo><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi mathvariant="normal">Δ</mi><mi>v</mi></msub><mo>,</mo><msub><mi mathvariant="normal">Δ</mi><mi>v</mi></msub><mo>+</mo><msub><mi>γ</mi><mo>*</mo></msub><mo>−</mo><mn>2</mn><msub><mi>G</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \gamma_{\mathrm{out}}
+ \ge\min(\Delta_v,\Delta_v+\gamma_*-2G_0).
+</annotation></semantics></math> Sections 4–5 then prove and use the
+coupled pressure lower bound
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Δ</mi><mi>v</mi></msub><mo>≥</mo><mn>2</mn><msub><mi>G</mi><mn>0</mn></msub><mo>−</mo><msub><mi>ε</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\Delta_v\ge2G_0-\varepsilon_k</annotation></semantics></math>.
+The path condition pays the possible repeated deficit; no one-high
+scalar ratio is substituted for it.</p>
+<p>The witness in Section 4, (23)–(27), selects only low Newton indices
+in a complete positive trace. The odd Fourier positivity and
+interval-tail lower bound used there are within their stated all-low
+range.</p>
+<p>Section 6 distinguishes inherited full-cone losses from newly
+generated high outputs. Equation (16) converts a full-norm deficit
+through a physical decorated turn into a deficit in both coefficient
+ranges. The whole-component pressure is affine in these constants, as
+stated in (36). This homogeneity avoids a further unnecessary charge
+across a flagged separator; it does not assert a high-index pointwise
+trace comparison.</p>
+<h2 id="the-regular-bare-trace">3. The regular bare trace</h2>
+<p>regular_bare_trace Section 1 begins with low factors
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mi>i</mi></msub><mo>≤</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">n_i\le M</annotation></semantics></math>
+in (1). Its regular window (4) strengthens that to
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>≤</mo><msub><mi>n</mi><mi>i</mi></msub><mi>/</mi><mi>N</mi><mo>≤</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>−</mo><mi>δ</mi><mo>,</mo><mspace width="2.0em"></mspace><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>n</mi><mi>i</mi></msub><mi>/</mi><mi>N</mi><mo>≥</mo><mn>1</mn><mo>+</mo><mi>δ</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \delta\le n_i/N\le1/2-\delta,\qquad \sum_i n_i/N\ge1+\delta.
+</annotation></semantics></math> The positive sine-binomial
+coefficients, convolution concavity, and tail differences in Sections
+2–3 all retain these assumptions. The ratio theorem (18) in Section 4 is
+explicitly proved on this same window. The exact statement for at most
+four factors, (19), is also stated for low indices.</p>
+<p>Section 5 applies the result to signed arrays only on a common window
+satisfying (4), and first bounds the error by a positive absolute
+majorant. It does not claim a relative result for an arbitrary signed
+contraction or a high-index tuple.</p>
+<p>The trivalent extension requires a different local argument for its
+internal labels: on strict old cubic support the raw degree is below
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2N-1</annotation></semantics></math>,
+so the moving trace is exactly complete. The global extension draft
+makes that replacement explicitly. It does not invoke the regular
+all-low lemma across a high bare–bare edge.</p>
+<h2 id="conclusion">4. Conclusion</h2>
+<p>The refuted comparison is absent from these published dependencies.
+The existing singleton theorem uses an all-low trace comparison plus a
+separate full-norm/geometric-surplus estimate. The path theorem retains
+the explicit turn cost and pays it with its stated pressure criterion.
+The local regular trace remains all-low. The counterexample therefore
+does not invalidate these estimates.</p>
+<p>This conclusion checks the actual logical branches and their
+hypotheses, rather than inferring safety from the stated theorem scopes
+alone.</p>
